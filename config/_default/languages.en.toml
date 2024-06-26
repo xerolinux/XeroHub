@@ -10,9 +10,10 @@ rtl = false
 dateFormat = "2 January 2006"
 logo = "logo.png"
 description = "OUR PROJECT HUB"
+showComments = true
 
 [author]
-name = "XeroLinux"
-image = "logo.png"
+name = "DarkXero"
+image = "Avvy.gif"
 headline = "OUR PROJECT HUB"
-links = [ { eye = "https://discord.gg/5sqxTSuKZu" }, { github = "https://github.com/darkxero-dev" }, { ko-fi = "https://ko-fi.com/XeroLinux" }, { link = "https://techxero.com" }, { linkedin = "https://linkedin.com/in/schaanine" }, { mastodon = "https://fosstodon.org/@XeroLinux" }, { youtube = "https://youtube.com/@XeroLinux" } ]
+links = [ { discord = "https://discord.gg/5sqxTSuKZu" }, { github = "https://github.com/darkxero-dev" }, { ko-fi = "https://ko-fi.com/XeroLinux" }, { link = "https://techxero.com" }, { linkedin = "https://linkedin.com/in/schaanine" }, { mastodon = "https://fosstodon.org/@XeroLinux" }, { youtube = "https://youtube.com/@XeroLinux" } ]

@@ -1,106 +1,125 @@
+# -- Theme Options --
+# These options control how the theme functions and allow you to
+# customise the display of your website.
+#
+# Refer to the theme docs for more details about each of these parameters.
+# https://blowfish.page/docs/configuration/#theme-parameters
+
 colorScheme = "marvel"
-defaultAppearance = "dark"
+defaultAppearance = "dark" # valid options: light or dark
 autoSwitchAppearance = false
-enableSearch = false
+
+enableSearch = true
 enableCodeCopy = true
-disableImageOptimization = false
-disableTextInHeader = false
-defaultBackgroundImage = "bg.png"
-highlightCurrentMenuArea = false
-defaultFeaturedImage = "logo.png"
+
+mainSections = ["posts"]
+# robots = ""
+
+disableImageOptimization = true
+
+defaultBackgroundImage = "bg.png" # used as default for background images
+defaultFeaturedImage = "bg.png" # used as default for featured images in all articles
+
+highlightCurrentMenuArea = true
+smartTOC = true
+smartTOCHideUnfocusedChildren = false
 
 [header]
-layout = "fixed-fill-blur"
+  layout = "fixed" # valid options: basic, fixed, fixed-fill, fixed-fill-blur
 
 [footer]
-showMenu = false
-showCopyright = true
-showThemeAttribution = true
-showAppearanceSwitcher = true
-showScrollToTop = true
+  showMenu = false
+  showCopyright = true
+  showThemeAttribution = true
+  showAppearanceSwitcher = true
+  showScrollToTop = true
 
 [homepage]
-layout = "background"
-showRecent = true
-showRecentItems = "3"
-showMoreLink = false
-showMoreLinkDest = "/posts"
-cardView = true
-cardViewScreenWidth = false
-layoutBackgroundBlur = true
-homepageImage = "bg.png"
+  layout = "background" # valid options: page, profile, hero, card, background, custom
+  homepageImage = "bg.png" # used in: hero, and card
+  showRecent = true
+  showRecentItems = 12
+  showMoreLink = true
+  showMoreLinkDest = "/posts"
+  cardView = true
+  cardViewScreenWidth = false
+  layoutBackgroundBlur = true # only used when layout equals background
 
 [article]
-showDate = false
-showViews = false
-showLikes = false
-showDateOnlyInArticle = false
-showDateUpdated = false
-showAuthor = true
-showHero = false
-layoutBackgroundBlur = true
-layoutBackgroundHeaderSpace = false
-showBreadcrumbs = false
-showDraftLabel = true
-showEdit = false
-editAppendPath = true
-seriesOpened = false
-showHeadingAnchors = true
-showPagination = true
-invertPagination = false
-showReadingTime = true
-showTableOfContents = false
-showTaxonomies = true
-showAuthorsBadges = true
-showWordCount = true
-showZenMode = true
-enableZenMode = true
-heroStyle = "big"
+  showDate = false
+  showViews = true
+  showLikes = true
+  showDateUpdated = false
+  showAuthor = true
+  showHero = true
+  heroStyle = "background" # valid options: basic, big, background, thumbAndBackground
+  layoutBackgroundBlur = true # only used when heroStyle equals background or thumbAndBackground
+  layoutBackgroundHeaderSpace = true # only used when heroStyle equals background
+  showBreadcrumbs = false
+  showDraftLabel = true
+  showEdit = false
+  editAppendPath = true
+  seriesOpened = false
+  showHeadingAnchors = true
+  showPagination = true
+  invertPagination = false
+  showReadingTime = true
+  showTableOfContents = true
+  showRelatedContent = false
+  relatedContentLimit = 6
+  showTaxonomies = true
+  showAuthorsBadges = true
+  showWordCount = false
+  sharingLinks = [ "linkedin", "twitter", "reddit", "facebook", "whatsapp", "telegram"]
 
 [list]
-showHero = false
-layoutBackgroundBlur = true
-layoutBackgroundHeaderSpace = true
-showBreadcrumbs = false
-showSummary = false
-showViews = false
-showLikes = false
-showTableOfContents = false
-showCards = false
-orderByWeight = false
-groupByYear = true
-cardView = false
-cardViewScreenWidth = false
-constrainItemsWidth = false
+  showHero = true
+  heroStyle = "background" # valid options: basic, big, background, thumbAndBackground
+  layoutBackgroundBlur = true # only used when heroStyle equals background or thumbAndBackground
+  layoutBackgroundHeaderSpace = false # only used when heroStyle equals background
+  showBreadcrumbs = false
+  showSummary = false
+  showViews = true
+  showLikes = true
+  showTableOfContents = false
+  showCards = false
+  groupByYear = false
+  cardView = true
+  cardViewScreenWidth = false
+  constrainItemsWidth = false
 
 [sitemap]
-excludedKinds = [ "taxonomy", "term" ]
+  excludedKinds = []
 
 [taxonomy]
-showTermCount = true
-showHero = false
-showBreadcrumbs = false
-showViews = false
-showLikes = false
-showTableOfContents = false
-cardView = false
+  showTermCount = true
+  showHero = true
+  heroStyle = "background" # valid options: basic, big, background, thumbAndBackground
+  showBreadcrumbs = false
+  showViews = true
+  showLikes = true
+  showTableOfContents = true
+  cardView = false
 
 [term]
-showHero = false
-showBreadcrumbs = false
-showViews = false
-showLikes = false
-showTableOfContents = true
-groupByYear = false
-cardView = false
-cardViewScreenWidth = false
+  showHero = true
+  heroStyle = "background" # valid options: basic, big, background, thumbAndBackground
+  showBreadcrumbs = false
+  showViews = true
+  showLikes = true
+  showTableOfContents = true
+  groupByYear = false
+  cardView = false
+  cardViewScreenWidth = false
 
 [firebase]
 
 [fathomAnalytics]
-
-[umamiAnalytics]
-
-[buymeacoffee]
+  # site = "ABC12345"
+  # domain = "llama.yoursite.com"
 
 [verification]
+  # google = ""
+  # bing = ""
+  # pinterest = ""
+  # yandex = ""
