@@ -34,9 +34,9 @@ layoutBackgroundBlur = true
 
 [article]
 showDate = false
-showViews = true
-showLikes = true
-showDateUpdated = false
+showViews = false
+showLikes = false
+showDateUpdated = true
 showAuthor = true
 showHero = true
 heroStyle = "background"
