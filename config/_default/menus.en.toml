@@ -1,0 +1,30 @@
+[[main]]
+name = "Forums"
+pre = "link"
+url = "https://forum.xerolinux.xyz"
+identifier = "UYjuTjvH9W"
+weight = 4
+
+[[main]]
+name = "Github"
+pre = "github"
+url = "https://github.com/xerolinux"
+identifier = "R5K4LrER4e"
+weight = 3
+
+[[main]]
+name = "Blog"
+pre = "fire"
+url = "https://blog.xerolinux.xyz"
+identifier = "W3EFHAU6qb"
+weight = 2
+
+[[main]]
+name = "RSS"
+pre = "rss"
+url = "https://xerolinux.xyz/index.xml"
+identifier = "dQrZgi97Wk"
+weight = 1
+
+[[footer]]
+none = "none"

@@ -1,0 +1,18 @@
+languageCode = "en"
+languageName = "English"
+weight = 1
+title = "XeroLinux Hub"
+
+[params]
+displayName = "EN"
+isoCode = "en"
+rtl = false
+dateFormat = "2 January 2006"
+logo = "logo.png"
+description = "OUR PROJECT HUB"
+
+[author]
+name = "XeroLinux"
+image = "logo.png"
+headline = "OUR PROJECT HUB"
+links = [ { eye = "https://discord.gg/5sqxTSuKZu" }, { github = "https://github.com/darkxero-dev" }, { ko-fi = "https://ko-fi.com/XeroLinux" }, { link = "https://techxero.com" }, { linkedin = "https://linkedin.com/in/schaanine" }, { mastodon = "https://fosstodon.org/@XeroLinux" }, { youtube = "https://youtube.com/@XeroLinux" } ]

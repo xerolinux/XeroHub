@@ -1,0 +1,31 @@
+theme = "blowfish"
+defaultContentLanguage = "en"
+enableRobotsTXT = true
+paginate = 10
+summaryLength = 0
+buildDrafts = false
+buildFuture = true
+enableEmoji = true
+baseURL = "https://xerolinux.xyz"
+
+[imaging]
+anchor = "Center"
+
+[taxonomies]
+tag = "tags"
+category = "categories"
+author = "authors"
+series = "series"
+
+[sitemap]
+changefreq = "daily"
+filename = "sitemap.xml"
+priority = 0.5
+
+[outputs]
+home = [ "HTML", "RSS", "JSON" ]
+
+[related]
+threshold = 0
+toLower = false
+indices = [ { name = "tags", weight = 100 }, { name = "categories", weight = 100 }, { name = "series", weight = 50 }, { name = "authors", weight = 20 }, { name = "date", weight = 10 }, { applyFilter = false, name = "fragmentrefs", type = "fragments", weight = 10 } ]
