@@ -1,6 +1,6 @@
 ---
-title: XeroLinux's Home
-description: Your More Than Average Tech G33k
+title: XeroLinux H.Q
+description: Our Base of Operations
 background: "bg.png"
 logo: "logo.png"
 ---
