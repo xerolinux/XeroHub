@@ -14,6 +14,6 @@ description = "Home To All Our Current/Future Projects & More..."
 [author]
 name = "DarkXero"
 image = "Avvy.gif"
-headline = "Project Leader, Tech Enthuiast & All Around Great Guy. 🤔"
+headline = "Project Leader, Tech Enthusiast & All Around Great Guy. 🤔"
 bio = "I create content about Linux & FOSS software. You'll find me rocking ArchLinux with KDE Plasma, probably helping somebody with a question. 😎"
 links = [ { discord = "https://discord.gg/5sqxTSuKZu" }, { github = "https://github.com/xerolinux" }, { ko-fi = "https://ko-fi.com/XeroLinux" }, { link = "https://techxero.com" }, { linkedin = "https://linkedin.com/in/schaanine" }, { link = "https://blog.xerolinux.xyz" }, { mastodon = "https://fosstodon.org/@XeroLinux" }, { youtube = "https://youtube.com/@XeroLinux" },  { twitter = "https://x.com/XeroLinuxOP" } ]
