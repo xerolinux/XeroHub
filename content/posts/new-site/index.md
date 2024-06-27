@@ -3,7 +3,7 @@ title: "Fresh New Look"
 date: 2024-06-26
 draft: false
 description: "site update"
-tags: ["xerolinux", "site", "design"]
+tags: ["XeroLinux", "Site", "Design"]
 ---
 ### Not Again !
 
@@ -15,11 +15,15 @@ Well, if you do not know, this site is using [**Hugo**](https://gohugo.io) with 
 
 ### What about your other blog ?
 
-That's a tricky question. Consider the other blog as my journal, where I post my thoughts and feelings about things that are happening in the **FOSS** world. Here I will be posting updates related to my various projects, as well as some other **Open Source** news/articles. However guides will be on [**Forums**](https://forum.xerolinux.xyz).
+That's a tricky question. Consider the other blog as my journal, where I post my thoughts and feelings about things that are happening in the **FOSS** world. Here I will be posting updates related to my various projects, as well as some other **Open Source** news/articles.
 
-I know this might be a lot to take in. I am trying to organize things to the best of my abilities. In the future, if the project survives these hard times, I will consider putting everything under one site, this one. Getting rid of my "journal" as well as forums. I do not know yet, time will tell.
+### And the Forum ?
+
+The XeroLinux [**Forums**](https://forum.xerolinux.xyz) will be closed down by then end of this month once I have ported over all releveant posts from it. So do not be surprised if you come looking and you don't find them.
 
 ### Closing words
+
+I know this might be a lot to take in. I am trying to organize things to the best of my abilities. I will be putting everything under one roof, this one. My "Journal" however will remain coz I do not want to tarnish this site with my ramblings.
 
 Until then let me know what you think of this new look. If you have any suggestions or ideas on how I can make it all better feel free to let me know how. Thanks for reading this. Here's to future posts...
 
