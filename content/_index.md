@@ -1,8 +1,8 @@
 ---
 title: XeroLinux H.Q
 description: Our Base of Operations
-background: "bg.png"
-logo: "logo.png"
+background: "img/bg.png"
+logo: "logos/logo.png"
 ---
 
 <script src='https://storage.ko-fi.com/cdn/scripts/overlay-widget.js'></script>

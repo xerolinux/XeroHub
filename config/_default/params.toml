@@ -4,9 +4,9 @@ autoSwitchAppearance = false
 enableSearch = true
 enableCodeCopy = true
 mainSections = [ "posts" ]
-disableImageOptimization = true
-defaultBackgroundImage = "bg.png"
-defaultFeaturedImage = "bg.png"
+disableImageOptimization = false
+defaultBackgroundImage = "img/bg.png"
+defaultFeaturedImage = "img/bg.png"
 highlightCurrentMenuArea = true
 smartTOC = true
 smartTOCHideUnfocusedChildren = false
@@ -23,9 +23,9 @@ showScrollToTop = true
 
 [homepage]
 layout = "background"
-homepageImage = "bg.png"
+homepageImage = "img/bg.png"
 showRecent = true
-showRecentItems = 12
+showRecentItems = "6"
 showMoreLink = true
 showMoreLinkDest = "/posts"
 cardView = true

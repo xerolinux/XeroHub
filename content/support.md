@@ -2,6 +2,7 @@
 title: Support
 date: 2024-06-26
 draft: false
+logo: featured/support.png
 ---
 {{< figure src="https://i.imgur.com/coqI5QA.png" alt="Support" class="center-image" >}}
 

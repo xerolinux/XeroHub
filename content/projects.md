@@ -2,6 +2,7 @@
 title: Projects
 date: 2024-06-26
 draft: false
+logo: featured/projects.png
 ---
 
 ### The Toolkit.
