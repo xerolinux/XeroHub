@@ -3,7 +3,7 @@ title: "Topgrade AiO Updater"
 date: 2024-06-26
 draft: false
 description: "All-in-One updater tool"
-tags: ["Update", "All-In-One", "TUI", "Terminal", "Tool", "Linux"]
+tags: ["Update", "All-In-One", "TUI", "Terminal", "Tools", "Linux"]
 ---
 
 ### Intro

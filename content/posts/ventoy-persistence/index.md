@@ -3,7 +3,7 @@ title: "Ventoy Persistence"
 date: 2024-06-26
 draft: false
 description: "Use Persistence in Ventoy"
-tags: ["Ventoy", "Mluti-Boot", "Tool", "Linux", "USB"]
+tags: ["Ventoy", "Mluti-Boot", "Tools", "Linux", "USB"]
 ---
 
 ### Intro

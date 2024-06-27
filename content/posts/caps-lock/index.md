@@ -3,7 +3,7 @@ title: "Caps-Lock Delayer Script"
 date: 2024-06-27
 draft: false
 description: "Delay Caps Lock for Devs"
-tags: ["Caps-Lock", "Scripting", "Tool", "linux"]
+tags: ["Caps-Lock", "Scripting", "Tools", "linux"]
 ---
 ### What is it ?
 

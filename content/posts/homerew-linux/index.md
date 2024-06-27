@@ -3,7 +3,7 @@ title: "Homebrew on Linux"
 date: 2024-06-26
 draft: false
 description: "Use Homebrew on Linux"
-tags: ["Bash", "Scripts", "Tool", "Linux"]
+tags: ["Bash", "Scripts", "Tools", "Linux"]
 ---
 ### Intro
 
