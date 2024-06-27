@@ -19,7 +19,7 @@ That's a tricky question. Consider the other blog as my journal, where I post my
 
 ### And the Forum ?
 
-The XeroLinux [**Forums**](https://forum.xerolinux.xyz) will be closed down by then end of this month once I have ported over all releveant posts from it. So do not be surprised if you come looking and you don't find them.
+The XeroLinux [**Forums**](https://forum.xerolinux.xyz) will be closed down by the end of this month once I have ported over all releveant posts from it. So do not be surprised if you come looking and you don't find them.
 
 ### Closing words
 

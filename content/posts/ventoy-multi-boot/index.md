@@ -7,8 +7,6 @@ tags: ["ventoy", "usb-boot", "multi-boot", "distro-hopping", "linux", "opensourc
 ---
 ### Preface
 
-Hello fellow Linux users,
-
 In this here post I will be talking about the famous **Ventoy** USB tool. People have asked me many times what USB tool I use to make bootable Linux drives. Well that should answer that question.
 
 But before I dive deeper into the why I use it over others here some info to get started.
