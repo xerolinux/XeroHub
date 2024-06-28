@@ -100,6 +100,11 @@ cardView = false
 cardViewScreenWidth = false
 
 [firebase]
+  apiKey = "AIzaSyDT_MJQFqPiRXwqJzRJN_VdNR9qF-1ki_s"
+  authDomain = "xerolinux-6e564.firebaseapp.com"
+  projectId = "xerolinux-6e564"
+  storageBucket = "xerolinux-6e564.appspot.com"
+  measurementId = "G-XTMB3XQHP4"
 
 [fathomAnalytics]
 
