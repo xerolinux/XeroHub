@@ -13,11 +13,11 @@ So, I was thinking, why be the only one submitting content for the site ? This s
 
 In case you feel like doing a write up that you think would be useful to others, you can do that, and guess what, it's super easy... It's just a single *markdown* file called `index.md` which contains the text and an image called `featured.png` inside a folder named `post-title`. That's it ! Once that's done you zip them n send my way when I will go through it clean it up n publish...
 
-**- Folder contents
+**- Folder contents**
 
 ![Image1](https://i.imgur.com/nBUbAZg.png)
 
-**- Markdown contents
+**- Markdown contents**
 
 ![Image2](https://i.imgur.com/sdCCPtn.png)
 
