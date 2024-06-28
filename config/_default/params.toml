@@ -34,8 +34,8 @@ layoutBackgroundBlur = true
 
 [article]
 showDate = false
-showViews = false
-showLikes = false
+showViews = true
+showLikes = true
 showDateUpdated = true
 showAuthor = true
 showHero = true
@@ -66,8 +66,8 @@ layoutBackgroundBlur = true
 layoutBackgroundHeaderSpace = false
 showBreadcrumbs = false
 showSummary = false
-showViews = true
-showLikes = true
+showViews = false
+showLikes = false
 showTableOfContents = false
 showCards = false
 groupByYear = false
