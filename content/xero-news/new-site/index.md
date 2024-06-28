@@ -1,6 +1,6 @@
 ---
 title: "Fresh New Look"
-date: 2024-06-26
+date: 2024-06-27
 draft: false
 description: "site update"
 tags: ["XeroLinux", "Site", "Design"]
