@@ -66,8 +66,8 @@ layoutBackgroundBlur = true
 layoutBackgroundHeaderSpace = false
 showBreadcrumbs = false
 showSummary = false
-showViews = false
-showLikes = false
+showViews = true
+showLikes = true
 showTableOfContents = false
 showCards = false
 groupByYear = false
@@ -83,8 +83,8 @@ showTermCount = true
 showHero = true
 heroStyle = "background"
 showBreadcrumbs = false
-showViews = false
-showLikes = false
+showViews = true
+showLikes = true
 showTableOfContents = true
 cardView = false
 
@@ -92,19 +92,19 @@ cardView = false
 showHero = true
 heroStyle = "background"
 showBreadcrumbs = false
-showViews = false
-showLikes = false
+showViews = true
+showLikes = true
 showTableOfContents = true
 groupByYear = false
 cardView = false
 cardViewScreenWidth = false
 
 [firebase]
-  apiKey = "AIzaSyDT_MJQFqPiRXwqJzRJN_VdNR9qF-1ki_s"
-  authDomain = "xerolinux-6e564.firebaseapp.com"
-  projectId = "xerolinux-6e564"
-  storageBucket = "xerolinux-6e564.appspot.com"
-  measurementId = "G-XTMB3XQHP4"
+apiKey = "AIzaSyDT_MJQFqPiRXwqJzRJN_VdNR9qF-1ki_s"
+authDomain = "xerolinux-6e564.firebaseapp.com"
+projectId = "xerolinux-6e564"
+storageBucket = "xerolinux-6e564.appspot.com"
+measurementId = "G-XTMB3XQHP4"
 
 [fathomAnalytics]
 
