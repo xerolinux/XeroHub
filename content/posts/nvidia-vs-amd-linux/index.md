@@ -18,13 +18,15 @@ Examining AMD GPUs on Linux reveals both their strengths and challenges. Here’
 
 - **Open-Source Drivers:** AMD’s commitment to open-source drivers is a significant advantage for Linux users. Installation is straightforward, and compatibility with modern Linux distributions like Ubuntu and ArchLinux is generally robust. Gaming performance out of the box is commendable, with most titles running smoothly using these drivers.
 
-- **Price Performance Ratio:** One of the standout features of AMD GPUs is their competitive pricing relative to Nvidia. The RX 6700 XT, for example offers excellent value for money, often providing more VRAM at a lower cost compared to Nvidia’s equivalents.
+A quote from AMD's **Forrest Norod** :
+
+> We are absolutely committed to open [ecosystems], even open to working with customers or others that are directly competing with us in the end. That is to everybody's benefit, ourselves included.
+
+- **Price Performance Ratio:** One of the standout features of AMD GPUs is their competitive pricing relative to Nvidia. The RX 6700 XT, for example offers excellent value for money, often providing more VRAM at a lower cost compared to Nvidia’s equivalents. See in the [**AMD vs nVidia Gaming Benchmarks](https://www.phoronix.com/review/august-2023-linux-gpus/2) **Phoronix article**.
 
 - **Gaming Experience:** For gaming enthusiasts, AMD GPUs shine brightly. Titles run seamlessly on Linux with open-source drivers, leveraging Vulkan and OpenGL without major issues. They handle high-resolution gaming admirably, although it may fall significantly behind Nvidia in raw ray tracing performance.
 
-- **OpenCL and ROCm Support:** While AMD supports OpenCL, the ecosystem is still catching up to Nvidia’s CUDA dominance in fields like machine learning and professional video editing. Updates like ROCm 6.0.x show promise but may not yet fully match Nvidia’s capabilities in these specialized areas.
-
-- **Setup and Compatibility:** Setting up AMD GPUs can be straightforward with open-source drivers, but challenges arise when needing specific features like hardware video encoding (VAAPI) or compatibility with proprietary software such as DaVinci Resolve. Installing bleeding-edge Mesa libraries and kernels may be necessary for optimal performance, which can complicate the setup for less experienced users.
+- **Setup and Compatibility:** Setting up AMD GPUs is straightforward with open-source drivers.
 
 ### Challenges with AMD GPUs
 
@@ -32,13 +34,17 @@ Examining AMD GPUs on Linux reveals both their strengths and challenges. Here’
 
 - **Machine Learning:** Nvidia’s dominance in machine learning tasks remains unchallenged on Linux, primarily due to superior CUDA support. Although AMD’s ROCm platform is evolving, compatibility and performance may not yet match Nvidia’s offerings for AI and deep learning applications.
 
+- **Machine Learning & Encoding:** Challenges arise when needing specific features like hardware video encoding (VAAPI) or compatibility with proprietary software such as DaVinci Resolve. Installing bleeding-edge Mesa libraries and kernels may be necessary for optimal performance, which can complicate the setup for less experienced users.
+
+- **OpenCL and ROCm Support:** While AMD supports OpenCL, the ecosystem is still catching up to Nvidia’s CUDA dominance in fields like machine learning and professional video editing. Updates like ROCm 6.0.x show promise but may not yet fully match Nvidia’s capabilities in these specialized areas.
+
 ### Nvidia RTX Series : Proprietary but Robust
 
 Nvidia’s RTX GPUs offer a diverse range of advantages over AMD, but they also come with their own set of challenges. Now we are not gonna be mentioning older GTX and lower GPUs since those present even more limitations.
 
 - **CUDA and Proprietary Drivers:** Nvidia’s proprietary drivers are highly esteemed for stability and performance on Linux, particularly in scientific computing, AI, and professional video editing where CUDA acceleration is indispensable. They generally integrate well with distributions like **Ubuntu** but may encounter occasional compatibility and stability issues, especially with newer kernel versions or specific configurations.
 
-- **Enhanced Stability with Version 555.x:** Recent updates introduce [**Explicit Sync**](https://9to5linux.com/developer-explains-why-explicit-sync-will-finally-solve-the-nvidia-wayland-issues) support for **Wayland** users, enhancing stability and performance optimizations without additional configuration. This feature is particularly beneficial for CUDA-accelerated workflows, although full support depends on the desktop environment like **KDE Plasma** or **GNOME**, not currently available for **Hyprland**, highlighting ongoing compatibility considerations.
+- **Enhanced Stability with Version 555.x:** Recent updates introduce [**Explicit Sync Explained**](https://zamundaaa.github.io/wayland/2024/04/05/explicit-sync.html) support for **Wayland** users, [**merged**](https://gitlab.freedesktop.org/wayland/wayland-protocols/-/merge_requests/90) a short while ago, enhancing stability and performance optimizations without additional configuration, although full support depends on the desktop environment like **KDE Plasma** or **GNOME**, not currently available for **Hyprland**.
 
 - **Ray Tracing and DLSS:** Nvidia RTX GPUs excel in real-time ray tracing and AI-enhanced features such as DLSS, delivering superior visual fidelity and performance in supported games and applications. This makes them a preferred choice for users seeking cutting-edge graphics capabilities on Linux.
 
@@ -62,4 +68,9 @@ Choosing between AMD Radeon and Nvidia RTX GPUs on Linux boils down to your spec
 
 In conclusion, whether you lean towards AMD Radeon for its open-source ethos and gaming prowess or Nvidia RTX for CUDA-driven performance and advanced graphics capabilities, understanding these nuances is crucial for making an informed decision on your next GPU purchase for Linux.
 
-It's that simple!!
+### Data Links
+
+Since I do not have the hardware myself to test and provide the data some of you out there might want to look at, below are some relevant links.
+
+- [**Nvidia vs AMD: GPUs in Machine Learning**](https://www.quora.com/Which-is-a-better-GPU-for-machine-learning-AMD-or-NVIDIA)
+- [**Nvidia nVenc vs AMD VCE**](https://www.tomshardware.com/news/amd-intel-nvidia-video-encoding-performance-quality-tested)
