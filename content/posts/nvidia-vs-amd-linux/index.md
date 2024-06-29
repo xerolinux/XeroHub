@@ -22,7 +22,7 @@ A quote from AMD's **Forrest Norod** :
 
 > We are absolutely committed to open [ecosystems], even open to working with customers or others that are directly competing with us in the end. That is to everybody's benefit, ourselves included.
 
-- **Price Performance Ratio:** One of the standout features of AMD GPUs is their competitive pricing relative to Nvidia. The RX 6700 XT, for example offers excellent value for money, often providing more VRAM at a lower cost compared to Nvidia’s equivalents. See in the [**AMD vs nVidia Gaming Benchmarks](https://www.phoronix.com/review/august-2023-linux-gpus/2) **Phoronix article**.
+- **Price Performance Ratio:** One of the standout features of AMD GPUs is their competitive pricing relative to Nvidia. The RX 6700 XT, for example offers excellent value for money, often providing more VRAM at a lower cost compared to Nvidia’s equivalents.
 
 - **Gaming Experience:** For gaming enthusiasts, AMD GPUs shine brightly. Titles run seamlessly on Linux with open-source drivers, leveraging Vulkan and OpenGL without major issues. They handle high-resolution gaming admirably, although it may fall significantly behind Nvidia in raw ray tracing performance.
 
@@ -72,5 +72,6 @@ In conclusion, whether you lean towards AMD Radeon for its open-source ethos and
 
 Since I do not have the hardware myself to test and provide the data some of you out there might want to look at, below are some relevant links.
 
+- [**AMD vs nVidia Gaming Benchmarks**](https://www.phoronix.com/review/august-2023-linux-gpus/2)
 - [**Nvidia vs AMD: GPUs in Machine Learning**](https://www.quora.com/Which-is-a-better-GPU-for-machine-learning-AMD-or-NVIDIA)
 - [**Nvidia nVenc vs AMD VCE**](https://www.tomshardware.com/news/amd-intel-nvidia-video-encoding-performance-quality-tested)
