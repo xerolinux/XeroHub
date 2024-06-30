@@ -6,7 +6,13 @@ description: "The Age Old Debate or nVidia vs AMD on Linux"
 tags: ["nVidia", "AMD", "Debate", "Linux"]
 ---
 
-### Intro
+### Disclaimer
+
+I've gathered some relevant information for you below, which I hope you'll find useful. Please use it at your discretion. If you perceive any favoritism, it's not intentional on my part. The goal here is to provide what best fits your needs. It won't make a difference to me what you choose; what's important is that it works for you.
+
+The information might be incomplete due to the short notice, but it's the best I could compile. I could have made this post much longer, but I want to ensure you actually read and find value in it. So, enjoy what I've put together!
+
+### Introduction
 
 Choosing the right GPU for your Linux system involves weighing several factors, especially considering the evolving landscape of drivers, performance benchmarks, and software compatibility. The debate between AMD Radeon and Nvidia RTX GPUs is one of the oldest in the tech community, akin to the timeless Android vs iOS debate. Here’s a general breakdown based on recent experiences with AMD Radeon and insights into Nvidia GPUs
 

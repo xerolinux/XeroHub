@@ -21,7 +21,7 @@ In case you feel like doing a write up that you think would be useful to others,
 
 ![Image2](https://i.imgur.com/sdCCPtn.png)
 
-Don't forget to update the date of the post in `date:`, also give it a short descriptive `title:` with a good `description`. Finally use the right `tags:` as shown in the screenshot.
+Don't forget to update the date of the post in `date:`, also give it a short descriptive `title:` with a good `description`. Finally use the right `tags:` as shown in the screenshot. If in doubt click this  to check >> [**Template**](https://github.com/xerolinux/XeroHub/tree/main/content/posts/spotube-for-spotify)
 
 With that out of the way, for more information about the various supported **Shortcodes** you can use, you can find them here >> [**BlowFish Shortcodes**](https://blowfish.page/docs/shortcodes/).
 
