@@ -45,11 +45,13 @@ They even supply an image for us devs out there with all the tools we might need
 
 ### The Downsides (No Dealbreakers)
 
-* **Too Much Done / Less Self Reliance**
+* **Too Much Cruft ?**
 
-Which brings me to the only *Big* downside, which is in my humble opinion, that it does way too much out the box, that the average user who wants to learn more about Linux, not everyone, just won't. Don't get me wrong here, we all strive for stability, but the way I see it, leaving room for users to do stuff, will allow them to learn more and grow, without having to rely on anyone, be self reliant as I like to put it.
+Which brings me to the only *Big* downside, which is in my humble opinion, that it has way too much out the box, even the simple version. I get it, it aims to be as out of one's way as possible letting us be more productive, while I agree with this, it tends to target a smaller audience. Coz not everyone wants or needs everything it provides. I mean we don't even get to choose what we want out the box, ending up having to remove the cruft we do not need. Maybe that's more of a **Fedora** limitation I do not know.
 
-If I have learned something during my Distro Maintaining days, it's that doing too much for the user out the box, will make them both lazy and will end up too dependant on us devs/maintainers. Now I dunno about the team behind **uBlue**, but that just spells disaster and too much work since we can't satisfy everyone. It's impossible.
+* **Laziness / No Self-Reliance**
+
+Now this is much less of an issue, more of an obervation, but if I have learned something during my Distro Maintaining days, it's that doing too much for the user out the box, will make them both lazy and will end up too dependant on us devs/maintainers. While I can't speak for the team behind **uBlue**, it's just impossible to satisfy everyone.
 
 * **No Freedom To Tinker**
 
