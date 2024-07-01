@@ -11,7 +11,7 @@ tags: ["WayDroid", "Wayland", "Setup", "Guide", "Linux"]
 
 If you're trying to run Android apps on Linux, WayDroid is the way to do it, and former "Android on Linux" tools like Anbox recommend it. WayDroid is compatible with a wide variety of Linux distributions and CPU architectures. Additionally, it harnesses Android's Mesa technology to enable efficient GPU pass-through from the container to the host system, which enhances the performance of graphical applications, ensuring a smooth user experience.
 
-{{< youtube 4hr6A806mZc >}}
+{{< github repo="waydroid/waydroid" >}}
 
 ### Setting Up WayDroid in No Time
 
@@ -23,16 +23,13 @@ Waydroid supports most of the common architectures (ARM, ARM64, x86 & x86_64 CPU
 
 - II) Supported GPUs :
 
-Waydroid uses Android’s mesa integration for passthrough, and that enables support to most ARM/ARM64 SOCs on the mobile side, and Intel/AMD GPUs for the PC side. For Nvidia GPUs (except tegra) and VMs, we recommend using software-rendering 100 (check out the link for steps to force Waydroid to run without GPU acceleration).
+Waydroid uses Android’s mesa integration for passthrough, and that enables support to most ARM/ARM64 SOCs on the mobile side, and Intel/AMD GPUs for the PC side.
 
 [If you have Nvidia dedicated GPU and an integrated AMD/Intel GPU, you can choose to pass Waydroid graphics only through your integrated one.
 
-1. Wayland:
+1. Waydroid only works in a Wayland session manager, so make sure you are in that session.
 
-First of all, you need Wayland.
-Waydroid only works in a Wayland 344 session manager, so make sure you are in a Wayland session.
-
-2. binder_linux-dkms modules:
+2. Second you will need the necessary Binder modules
 
 ```Bash
 paru -S binder_linux-dkms
@@ -86,8 +83,4 @@ To fix unusable rotated apps, since some rotated for phones rather than tablets.
 sudo waydroid shell wm set-fix-to-user-rotation enabled
 ```
 
-{{< github repo="waydroid/waydroid" >}}
-
 Hope this answers that question....
-
-
