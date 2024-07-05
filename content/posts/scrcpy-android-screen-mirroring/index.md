@@ -98,4 +98,16 @@ There are more, but am not gonna put them all here. Just head on over to the pro
 
 {{< github repo="Genymobile/scrcpy" >}}
 
+### Bonus : GUI Version of SCRCPY
+
+If you prefer a GUI based version of SCRCPY, there is one. However it's not as maintained as the official version. It uses `QT` so it works best on those types of DEs, like **KDE Plasma**, **LXQT** and so on. To install it from the AUR
+
+```Bash
+paru -S qtscrcpy
+```
+
+For more info and issues visit the project **Git Repo**
+
+{{< github repo="barry-ran/QtScrcpy" >}}
+
 That's it, enjoy and let us know how it works for you...
