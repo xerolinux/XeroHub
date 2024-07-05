@@ -1,5 +1,5 @@
 ---
-title: "M4LW Hyprlands Dots"
+title: "M4LW Hyprland Dots"
 date: 2024-07-05
 draft: false
 description: "The Most Advanced Hyprland Dots Ever!"
