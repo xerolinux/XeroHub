@@ -1,12 +1,17 @@
-colorScheme = "slate"
+colorScheme = "marvel"
 defaultAppearance = "dark"
 autoSwitchAppearance = false
+
 enableSearch = true
 enableCodeCopy = true
+
 mainSections = [ "posts" ]
+
 disableImageOptimization = false
+
 defaultBackgroundImage = "img/bg.png"
 defaultFeaturedImage = "img/bg.png"
+
 highlightCurrentMenuArea = true
 smartTOC = true
 smartTOCHideUnfocusedChildren = false
@@ -69,7 +74,7 @@ showSummary = false
 showViews = false
 showLikes = false
 showTableOfContents = false
-showCards = false
+showCards = true
 groupByYear = false
 cardView = true
 cardViewScreenWidth = false
@@ -83,8 +88,8 @@ showTermCount = true
 showHero = true
 heroStyle = "background"
 showBreadcrumbs = false
-showViews = true
-showLikes = true
+showViews = false
+showLikes = false
 showTableOfContents = true
 cardView = false
 
@@ -92,9 +97,9 @@ cardView = false
 showHero = true
 heroStyle = "background"
 showBreadcrumbs = false
-showViews = true
-showLikes = true
-showTableOfContents = true
+showViews = false
+showLikes = false
+showTableOfContents = false
 groupByYear = false
 cardView = false
 cardViewScreenWidth = false
