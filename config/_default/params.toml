@@ -1,3 +1,10 @@
+# -- Theme Options --
+# These options control how the theme functions and allow you to
+# customise the display of your website.
+#
+# Refer to the theme docs for more details about each of these parameters.
+# https://blowfish.page/docs/configuration/#theme-parameters
+
 colorScheme = "marvel"
 defaultAppearance = "dark"
 autoSwitchAppearance = false
@@ -6,8 +13,10 @@ enableSearch = true
 enableCodeCopy = true
 
 mainSections = [ "posts" ]
+# robots = ""
 
-disableImageOptimization = false
+disableImageOptimization = true
+disableTextInHeader = false
 
 defaultBackgroundImage = "img/bg.png"
 defaultFeaturedImage = "img/bg.png"
@@ -17,100 +26,124 @@ smartTOC = true
 smartTOCHideUnfocusedChildren = false
 
 [header]
-layout = "fixed"
+  layout = "fixed" # valid options: basic, fixed, fixed-fill, fixed-gradient, fixed-fill-blur
 
 [footer]
-showMenu = false
-showCopyright = true
-showThemeAttribution = true
-showAppearanceSwitcher = true
-showScrollToTop = true
+  showMenu = false
+  showCopyright = true
+  showThemeAttribution = true
+  showAppearanceSwitcher = true
+  showScrollToTop = true
 
 [homepage]
-layout = "background"
-homepageImage = "img/bg.png"
-showRecent = true
-showRecentItems = "6"
-showMoreLink = true
-showMoreLinkDest = "/posts"
-cardView = true
-cardViewScreenWidth = false
-layoutBackgroundBlur = true
+  layout = "background" # valid options: page, profile, hero, card, background, custom
+  homepageImage = "img/bg.png" # used in: hero, and card
+  showRecent = true
+  showRecentItems = 6
+  showMoreLink = true
+  showMoreLinkDest = "/posts"
+  cardView = true
+  cardViewScreenWidth = false
+  layoutBackgroundBlur = true # only used when layout equals background
 
 [article]
-showDate = false
-showViews = true
-showLikes = true
-showDateUpdated = true
-showAuthor = true
-showHero = true
-heroStyle = "background"
-layoutBackgroundBlur = true
-layoutBackgroundHeaderSpace = true
-showBreadcrumbs = false
-showDraftLabel = true
-showEdit = false
-editAppendPath = true
-seriesOpened = false
-showHeadingAnchors = true
-showPagination = true
-invertPagination = false
-showReadingTime = true
-showTableOfContents = true
-showRelatedContent = false
-relatedContentLimit = 6
-showTaxonomies = true
-showAuthorsBadges = true
-showWordCount = false
-sharingLinks = [ "linkedin", "twitter", "reddit", "facebook", "whatsapp", "telegram" ]
+  showDate = true
+  showViews = true
+  showLikes = true
+  showDateOnlyInArticle = false
+  showDateUpdated = true
+  showAuthor = true
+  showAuthorBottom = false
+  showHero = true
+  heroStyle = "background" # valid options: basic, big, background, thumbAndBackground
+  layoutBackgroundBlur = true # only used when heroStyle equals background or thumbAndBackground
+  layoutBackgroundHeaderSpace = false # only used when heroStyle equals background
+  showBreadcrumbs = false
+  showDraftLabel = true
+  showEdit = false
+  # editURL = "https://github.com/username/repo/"
+  editAppendPath = false
+  seriesOpened = false
+  showHeadingAnchors = true
+  showPagination = true
+  invertPagination = false
+  showReadingTime = true
+  showTableOfContents = true
+  showRelatedContent = false
+  # relatedContentLimit = 3
+  showTaxonomies = true
+  showAuthorsBadges = true
+  showWordCount = false
+  sharingLinks = [ "linkedin", "twitter", "reddit", "facebook", "whatsapp", "telegram" ]
+  showZenMode = true
 
 [list]
-showHero = true
-heroStyle = "background"
-layoutBackgroundBlur = true
-layoutBackgroundHeaderSpace = false
-showBreadcrumbs = false
-showSummary = false
-showViews = false
-showLikes = false
-showTableOfContents = false
-showCards = true
-groupByYear = false
-cardView = true
-cardViewScreenWidth = false
-constrainItemsWidth = false
+  showHero = true
+  heroStyle = "background" # valid options: basic, big, background, thumbAndBackground
+  layoutBackgroundBlur = true # only used when heroStyle equals background or thumbAndBackground
+  layoutBackgroundHeaderSpace = false # only used when heroStyle equals background
+  showBreadcrumbs = false
+  showSummary = false
+  showViews = false
+  showLikes = false
+  showTableOfContents = false
+  showCards = true
+  orderByWeight = false
+  groupByYear = false
+  cardView = true
+  cardViewScreenWidth = false
+  constrainItemsWidth = false
 
 [sitemap]
-excludedKinds = []
+  excludedKinds = ["taxonomy", "term"]
 
 [taxonomy]
-showTermCount = true
-showHero = true
-heroStyle = "background"
-showBreadcrumbs = false
-showViews = false
-showLikes = false
-showTableOfContents = true
-cardView = false
+  showTermCount = true
+  showHero = true
+  heroStyle = "background" # valid options: basic, big, background, thumbAndBackground
+  showBreadcrumbs = false
+  showViews = false
+  showLikes = false
+  showTableOfContents = false
+  cardView = false
 
 [term]
-showHero = true
-heroStyle = "background"
-showBreadcrumbs = false
-showViews = false
-showLikes = false
-showTableOfContents = false
-groupByYear = false
-cardView = false
-cardViewScreenWidth = false
+  showHero = true
+  heroStyle = "background" # valid options: basic, big, background, thumbAndBackground
+  showBreadcrumbs = false
+  showViews = false
+  showLikes = false
+  showTableOfContents = false
+  groupByYear = false
+  cardView = false
+  cardViewScreenWidth = false
 
 [firebase]
-apiKey = "AIzaSyDT_MJQFqPiRXwqJzRJN_VdNR9qF-1ki_s"
-authDomain = "xerolinux-6e564.firebaseapp.com"
-projectId = "xerolinux-6e564"
-storageBucket = "xerolinux-6e564.appspot.com"
-measurementId = "G-XTMB3XQHP4"
+  apiKey = "AIzaSyDT_MJQFqPiRXwqJzRJN_VdNR9qF-1ki_s"
+  authDomain = "xerolinux-6e564.firebaseapp.com"
+  projectId = "xerolinux-6e564"
+  storageBucket = "xerolinux-6e564.appspot.com"
+  # messagingSenderId = "XXXXXX"
+  # appId = "XXXXXX"
+  measurementId = "G-XTMB3XQHP4"
 
 [fathomAnalytics]
+  # site = "ABC12345"
+  # domain = "llama.yoursite.com"
+
+[umamiAnalytics]
+  # websiteid = "ABC12345"
+  # domain = "llama.yoursite.com"
+
+[buymeacoffee]
+  # identifier = ""
+  # globalWidget = true
+  # globalWidgetMessage = "Hello"
+  # globalWidgetColor = "#FFDD00"
+  # globalWidgetPosition = "Right"
 
 [verification]
+  # google = ""
+  # bing = ""
+  # pinterest = ""
+  # yandex = ""
