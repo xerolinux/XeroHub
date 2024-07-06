@@ -10,7 +10,7 @@ title = "XeroLinux HQ"
   dateFormat = "2 January 2006"
   logo = "logos/logo.png"
   # secondaryLogo = "img/secondary-logo.png"
-  description = "Home To All Our Current/Future Projects & More..."
+  description = "Our Base Of Operations..."
   copyright = "Copy, _right?_ :thinking_face:"
 
 [author]

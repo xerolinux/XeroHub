@@ -1,7 +1,8 @@
 ---
-title: "Posts"
-date: 2024-06-26
-draft: false
+title: "FOSS Posts"
+description: "FOSS Tools & Guides"
+background: "img/bg.png"
+logo: "logos/logo.png"
 
 showDate : false
 showDateUpdated : false

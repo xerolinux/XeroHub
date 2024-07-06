@@ -1,6 +1,4 @@
 ---
-title: XeroLinux H.Q
-description: Our Base of Operations
 background: "img/bg.png"
 logo: "logos/logo.png"
 ---
