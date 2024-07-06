@@ -107,7 +107,7 @@ Finally, for now at least, once script is done, we will be prompted to exit and 
 
 ### Part 3 - Setting up the system
 
-If all went smoothly, we should now be greeted with `SDDM`, **KDE**'s login page. I would recommend **Plasma X11** over **Wayland**, at least for now.
+If all went smoothly, we should now be greeted with `SDDM`, **KDE**'s login page. I would recommend **Plasma X11** over **Wayland**, at least for now. Yes, my script still includes **X11** for compatibility. I will not get rid of it any time soon, at least not until I feel that more apps are ready for **Wayland**.
 
 Once logged in, there are a few things we need to take care of first. Open Terminal, as shown in video, and update the system
 
