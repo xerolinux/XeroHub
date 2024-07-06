@@ -5,7 +5,7 @@ draft: false
 description: "Get XeroLinux Back With Our Tool"
 tags: ["XeroLinux", "Distro", "Script", "Toolkit", "Plasma", "Guide", "Arch", "Linux"]
 ---
-{{< youtubeLite id="GHYk1Iv4GkY" >}}
+{{< youtubeLite id="VIDEO_ID" >}}
 
 ### Introduction
 
@@ -15,13 +15,13 @@ Now, this guide complements the above video, they are to be used together, I wil
 
 Yeah we can easily get **XeroLinux** back in all its glory, it's just no longer an ISO with **Calamares**. It's still easy to install thanks in part to the *infamous* **ArchInstall** script then my own. So all is not lost.
 
-In this super detailed guide I will be showing how do it. Please go through it very carefully.
+In this super detailed guide I will be showing off how it can be done.
 
 ![XeroLayan](https://i.imgur.com/VA2tycb.jpeg)
 
-### Requirements
+### What we need
 
-Let's start off by knowing what we need to get started. First off, we will need the latest version of the >> [**ArchLinux ISO**](https://archlinux.org/download/), a USB stick to burn ISO onto, we can either use [**Balena Etcher**](https://etcher.balena.io/#download-etcher) or the highly recommended **Ventoy** linked below.
+Let's start off by knowing what we need to get started. First off, we will need the latest version of the >> [**ArchLinux ISO**](https://archlinux.org/download/), a USB stick to burn ISO onto, we can either use >> [**Balena Etcher**](https://etcher.balena.io/#download-etcher) or the highly recommended >> **Ventoy** linked below.
 
 {{< article link="/posts/ventoy-multi-boot/" >}}
 
@@ -35,13 +35,13 @@ Ok, so now that we have burned the ISO to the USB using either tools, boot the s
 
 **Note :**
 
-This guide expects us to be connected to the internet via ethernet. If we aren't and need to connect over WiFi, we can follow guide on the [**ArchWiki**](https://wiki.archlinux.org/title/Installation_guide#Connect_to_the_internet)
+> This guide expects you to be connected to the internet via ethernet. If you aren't and need to connect over WiFi, you can follow guide on the [**ArchWiki**](https://wiki.archlinux.org/title/Installation_guide#Connect_to_the_internet)
 
 - **Remote Install via SSH**
 
 Now, unlike other guides out there, I will be showing how we can use **SSH** to do the installation remotely, which will make things much easier. All we need is a secondary PC running **Linux**. If none is available, this part can be skipped.
 
-Ok, first things first, we need to set a password to the *root* user. You do like this :
+Ok, first things first, we need to set a password to the *root* user. We do it by typing the following command in the TTY, like this :
 
 ```Bash
 passwd
@@ -63,7 +63,7 @@ We confirm by typing `yes`. That's it, now we are connected to the machine remot
 
 - **ArchInstall Script**
 
-Once booted, first thing we will have to do is, make sure we have latest version of **ArchInstall**. We do that by running the following command :
+Once connected, first thing we will have to do is, make sure we have latest version of **ArchInstall**. We do that by running the following command :
 
 ```Bash
 pacman -Syy archinstall && archinstall --advanced
@@ -78,7 +78,7 @@ Ok, now that we have the installer running, am not going to go through each and 
 That's why we will be using the **Best Guess** option, carefully selecting the correct drive we want install **ArchLinux** onto.
 
 {{< alert icon="fire" cardColor="#e63946" iconColor="#1d3557" textColor="#f1faee" >}}
-I will not be held responsible for any data loss resulting from selection of the wrong drive. **BE VERY CAREFUL HERE.
+I will not be held responsible for any data loss resulting from selection of the wrong drive. **BE VERY CAREFUL HERE**.
 {{< /alert >}}
 
 Anyway, let's make sure we skip the parts I mentioned in the video, since everything will now be done **Post-Install** via my Toolkit. Don't forget to set parallel downloads to as many as you like for faster downloads. Also as mentioned, we do not need to enable any extra repos like *multilib* since my script will do that for us later on.
@@ -123,11 +123,11 @@ It's up to you to discover all the options, that's why I did not mention them al
 
 - **1 : System Setup**
 
-There's nothing to do here except select **Install 3rd-Party GUI Package Manager(s) (AUR)** or **Add & Enable the ChaoticAUR Repository**, since my **Plasma Script** took care of the rest for us. Neat eh ?
+There's nothing to do here except select **Install 3rd-Party GUI Package Manager(s)** or **Add & Enable the ChaoticAUR Repository**, since my **Plasma Script** took care of the rest for us. Neat eh ?
 
 - **2 : System Drivers**
 
-This is the part where you select drivers you need for our hardware. Am not going to help you here. All you need to know was mentioned in the video. Just know that selecting the wrong ones will break the system, so that's where you need to understand what works for us.
+This is the part where you select drivers you need for our hardware. Am not going to help you here. All you need to know was mentioned in the video. Just know that selecting the wrong ones will break the system, so that's where you need to understand what works for you.
 
 - **4 : System Customization**
 
@@ -135,7 +135,7 @@ Now we jump to Customization section. Just select option **x. XeroLinux's Layan 
 
 **Note :**
 
-If you have selected to enable the **Chaotic AUR** repos, install will go fast. If not it will take a bit, while it compiles some packages from the **AUR**.
+> If you have selected to enable the **Chaotic AUR** repos, install will go fast. If not it will take a bit, while it compiles some packages from the **AUR**.
 
 ### Final words
 
@@ -145,7 +145,7 @@ I will do my best to answer. Keep in mind that I might not have all the answers,
 
 {{< github repo="xerolinux/xero-plasma" >}}
 
-Use the repo above to report any issues with **PlasmaInstall, and I will get to them as soon as I can. You can also request features to be added there too..
+Use the repo above to report any issues with **PlasmaInstall**, and I will get to them as soon as I can. You can also request features to be added there too..
 
 If you want features to be added to the Toolkit, or have any issues to report, feel free to do so on the repo below. I will do my best to get to them...
 
