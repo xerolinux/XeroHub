@@ -1,5 +1,5 @@
 ---
-title: "Amelia** Automated Archinstall"
+title: "Amelia Automated Archinstall"
 date: 2024-07-07
 draft: false
 description: "Neat Project for Automating ArchInstall"
