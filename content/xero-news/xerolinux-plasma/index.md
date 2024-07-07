@@ -94,7 +94,7 @@ Now once everything is configured and set, hit install, sit back, grab a cup of 
 Once that's all done, we will be prompted if we want to `chroot` into our new install, we answer with yes of course since we still have no DE yet.
 
 {{< alert icon="fire" cardColor="#e63946" iconColor="#1d3557" textColor="#f1faee" >}}
-**BE VERY CAREFUL HERE**. We do not recommend to blindly execute scripts without inspecting them first.
+**User Caution**. We do not recommend to blindly execute scripts without inspecting them first.
 {{< /alert >}}
 
 To download and inspect script, use the following command, open it in your IDE of choice and inspect it. Only run it when you trust the code.
