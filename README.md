@@ -1,5 +1,3 @@
-# XeroHub
-
 <h1 align="center">Please do not Clone/Fork !</h1>
 
 <div align="center">
