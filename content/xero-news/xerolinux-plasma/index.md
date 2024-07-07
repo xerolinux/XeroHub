@@ -5,7 +5,7 @@ draft: false
 description: "Get XeroLinux Back With Our Tool"
 tags: ["XeroLinux", "Distro", "Script", "Toolkit", "Plasma", "Guide", "Arch", "Linux"]
 ---
-{{< youtubeLite id="VIDEO_ID" >}}
+{{< youtubeLite id="v0UPif52i5A" >}}
 
 ### Introduction
 
@@ -124,6 +124,10 @@ It's up to you to discover all the options, that's why I did not mention them al
 - **1 : System Setup**
 
 There's nothing to do here except select **Install 3rd-Party GUI Package Manager(s)** or **Add & Enable the ChaoticAUR Repository**, since my **Plasma Script** took care of the rest for us. Neat eh ?
+
+**Note :**
+
+> I would highly recommend you enable the **Chaotic AUR** repo, if you install a lot of packages from the **AUR**, to avoid having to compile them.
 
 - **2 : System Drivers**
 
