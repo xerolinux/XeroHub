@@ -93,7 +93,17 @@ Now once everything is configured and set, hit install, sit back, grab a cup of 
 
 Once that's all done, we will be prompted if we want to `chroot` into our new install, we answer with yes of course since we still have no DE yet.
 
-Depending on the method that was used, `ssh` or not, we either copy paste the command below or type it manually :
+{{< alert icon="fire" cardColor="#e63946" iconColor="#1d3557" textColor="#f1faee" >}}
+**BE VERY CAREFUL HERE**. We do not recommend to blindly execute scripts without inspecting them first.
+{{< /alert >}}
+
+To download and inspect script, use the follwing command, open it in your IDE of choice and inspect it. Only run it when you trust the code.
+
+```Bash
+wget https://tinyurl.com/PlasmaInstall
+```
+
+Once you trust it, you can move on. Now, depending on the method that was used, `ssh` or not, we either copy paste the command below or type it manually :
 
 ```Bash
 bash -c "$(curl -fsSL https://tinyurl.com/PlasmaInstall)"
