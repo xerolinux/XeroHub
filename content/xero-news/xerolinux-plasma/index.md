@@ -97,7 +97,7 @@ Once that's all done, we will be prompted if we want to `chroot` into our new in
 **BE VERY CAREFUL HERE**. We do not recommend to blindly execute scripts without inspecting them first.
 {{< /alert >}}
 
-To download and inspect script, use the follwing command, open it in your IDE of choice and inspect it. Only run it when you trust the code.
+To download and inspect script, use the following command, open it in your IDE of choice and inspect it. Only run it when you trust the code.
 
 ```Bash
 wget https://tinyurl.com/PlasmaInstall
