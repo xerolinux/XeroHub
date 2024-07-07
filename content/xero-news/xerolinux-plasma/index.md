@@ -11,6 +11,10 @@ tags: ["XeroLinux", "Distro", "Script", "Toolkit", "Plasma", "Guide", "Arch", "L
 
 I want to begin by thanking everyone who has shown the Distro all the the love. Without whom it wouldn't have lasted as long as it did. As well as the rest of the projects present and future.
 
+**Clarification :**
+
+> Intention of the **PlasmaInstall** script was not to replace **ArchInstall** but to fix its **Plasma** profile while extending it further nothing more. If you want **Gnome**, **XFCE** or any other DE/WM for that matter, existing profiles are fine. The only other one that is messed up is the **Hyprland** one but alas since I don't use it I have no idea how to fix it. However, the Toolkit can be used on any DE or WM it's agnostic.
+
 Now, this guide complements the above video, they are to be used together, I will try not to ramble on too much. Some of you have asked the question, "is the Distro really gone ?" I would like to say, no, not really. Let me explain a bit before going ahead with written guide. Since it was nothing but **ArchLinux** + Customized/riced **KDE Plasma** nothing more, one could achieve the same result by using my **Plasma Install** script.
 
 Yeah we can easily get **XeroLinux** back in all its glory, it's just no longer an ISO with **Calamares**. It's still easy to install thanks in part to the *infamous* **ArchInstall** script then my own. So all is not lost.
