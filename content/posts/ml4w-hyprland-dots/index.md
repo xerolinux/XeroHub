@@ -15,7 +15,7 @@ Before getting to it, I would like to say that, while I, myself do not and will 
 
 That being said, I have been following Hyprland's growth as time went on, especially all the rices being created for it. I have see so many awesome ones, but the one that caught my eye, which we will be talking about, is the one by a guy named [**@Stephan Raabe**](https://gitlab.com/stephan-raabe).
 
-{{< youtubeLite id="GHYk1Iv4GkY" >}}
+{{< youtube GHYk1Iv4GkY >}}
 
 As you can see from the video above, he has gone above and beyond the natural limits, making **Hyprland** all that more fun and easy to use by creating *GUI Config Tools* written in **GTK** not only for his dots but you can can effortlessly configure almost every aspect of **Hyprland** making it truly your own. It's truly amazing !!!!
 

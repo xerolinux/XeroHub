@@ -3,7 +3,7 @@ title: "Oh My Posh Prompt"
 date: 2024-07-08
 draft: false
 description: "A beautiful prompt for your $hell"
-tags: ["Prompt", "Shell", "ZSH", "Bash", "OhMyZsh", "Linux"]
+tags: ["Prompt", "Shell", "ZSH", "Bash", "OhMyZsh", "OhMyPosh", "Linux"]
 ---
 
 {{< youtube 9U8LCjuQzdc >}}
