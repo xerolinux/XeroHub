@@ -3,6 +3,11 @@ public/
 resources/
 exampleSite/resources/
 
+# Dot Dirs
+.git/
+.github/
+.vscode/
+
 # Binaries for programs and plugins
 *.exe
 *.exe~
