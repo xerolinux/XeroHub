@@ -84,6 +84,14 @@ Here's a list of all Flags/Commands :
 
 It's a shame to see a project like **Powerlevel10k** slowly die. But where one goes others are born from their ashes. Now **THAT**'s the beauty of Open Source.
 
+![Toolkit](https://i.imgur.com/tWgYv7k.png)
+
+As you can see from the image above, for those of you out there using the **XeroLinux Post Install Toolkit**, we added the option that will do everything mentioned in this guide automatically for you.
+
+Keep in mind that this only applies to **Bash**, for anyone who prefers **Fish** that will always be *Vanilla* as for those of you, who, like myself love **ZSH**, well it is included with option **4. ZSH All-in-one w/OMP**...
+
+{{< github repo="xerolinux/xlapit-cli" >}}
+
 There's nothing to say now, except that this project is awesome, I love it and hope it lives long an prosper. Now as mentioned earlier if you want to create your very own config, just head on over to the project's **Git** below or check out the >> [**OMP Docs**](https://ohmyposh.dev/docs/)
 
 {{< github repo="JanDeDobbeleer/oh-my-posh" >}}
