@@ -5,7 +5,7 @@ draft: false
 description: "Get XeroLinux Back With Our Tool"
 tags: ["XeroLinux", "Distro", "Script", "Toolkit", "Plasma", "Guide", "Arch", "Linux"]
 ---
-{{< youtubeLite id="v0UPif52i5A" >}}
+{{< youtube v0UPif52i5A >}}
 
 ### Introduction
 

@@ -30,7 +30,7 @@ paru -S oh-my-posh-bin
 
 Now that it is installed, we need to activate it. In the video above, it was shown on `.zshrc` but the same can be done for `.bashrc`. Worry not though, I will be showing both. But before we do that, unlike video, we are not going to create a custom config, you are free to do so, will link you to the project **Git** at the end of this post where you can follow a more in-depth tutorial. We will be keeping it simple here.
 
-So let's grab the one we like from >> [**OMP Theme Repo**]
+So let's grab the one we like from >> [**OMP Theme Repo**](https://ohmyposh.dev/docs/themes)
 
 ![Aliens](https://i.imgur.com/OL0pbr3.png)
 
