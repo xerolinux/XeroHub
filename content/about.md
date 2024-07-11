@@ -41,21 +41,29 @@ I do dabble with other Distros from time to time to keep my knowledge fresh howe
 
 I do own many, 3 Desktops and 1 Laptop. Main, Home-Lab & HTPC. Laptop is unimportant just runs my shop.
 
-** The Beast :**
+**The Beast :**
 
-Main rig, the one I do all my *Development*, *Gaming* and other things on, which I label as **StationXero** is as follows :
+Main rig, the one I do all my *Development*, *Gaming* and other things on, which I label as **StationXero**, runs **ArchLinux** with **KDE Plasma**.
 
-![SationXero](https://techxero.com/images/specs.png)
+![SationXero](https://i.imgur.com/GJiIrxm.png)
 
 I know the `GTX 1080` is an aging GPU, trust me I am trying to raise money to replace it with at least an `RTC 3080/3090`. I could use better **Wayland** support. Am not really a gamer though, so that part I do not perticularly care about.
 
+![SationSpecs](https://techxero.com/images/specs.png)
+
 **Home-Lab :**
 
-Another desktop I call **XeroLab**, as the name implies, is my **Home-Lab** PC, it runs all my **Docker Containers**. The OS it runs is the last surviving instance of **XeroLinux** ~780 Days running. It has `32GB RAM` with a `Core i7 6800K` and an old P.O.S `GT-710` GPU that I will be replacing as soon as I can raise the money for one.
+Another desktop I call **XeroLab**, as the name implies, is my **Home-Lab** PC, it runs all my **Docker Containers**. The OS it runs is the last surviving instance of **XeroLinux** `~780` Days running. It has `32GB RAM` with a `Core i7 6800K` and an old P.O.S `GT-710` GPU that I will be replacing as soon as I can raise the money for one.
+
+![XeroLab](https://i.imgur.com/Lwr2xgR.jpeg)
+
+That thing has survived many failed `nvidia-470xx` driver updates, but I finally decided with how old GPU is to stick with `nouveau` open source drivers.
 
 **The HTPC :**
 
-Finally there's my HTPC, which has the same CPU as **XeroLab**, with a few differences, being the GPU which is a `GTX 650 Ti-Boost OC`, and the `16GB RAM`. Now whith it being my HTPC, it has 14 Drives of various sizes totalling `~68TB` of storage. The OS it runs, is, and please do not comment on that, **Manjaro KDE**.. Yes, it's been running for almost **~1300 Days** without any issues, since the only app installed on it is [**Plex Server**](https://plex.tv) as a **Snap**.
+Finally there's my HTPC, which has the same CPU as **XeroLab**, with a few differences, being the GPU which is a `GTX 650 Ti-Boost OC`, and the `16GB RAM`. Now whith it being my HTPC, it has 14 Drives of various sizes totalling `~68TB` of storage. The OS it runs, is, and please do not comment on that, [**Manjaro KDE**](https://manjaro.org).. Yes, it's been running for almost **~1300 Days** without any issues, since the only app installed on it is [**Plex Server**](https://plex.tv) as a **Snap**.
+
+![HTPC](https://i.imgur.com/HDlPIZi.jpeg)
 
 That's it folks. Now you have a better idea of what equipment I use on a daily basis to bring you everything I do. I did not list all the softwares I use coz it's a long list that varies a lot. Thanks for reading.
 
