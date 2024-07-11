@@ -69,7 +69,13 @@ To all you `Vim` users out there visit the => [**Vim Docs**](https://zed.dev/doc
 
 ### What I think of it
 
-I love this thing. It's slowly replacing my current IDE **Kate**. It's more flexible, cutomizable and most importantly it's got **GPU Acceleration** where Kate doesn't, at least not as well. Oh it's also super lightweight. Nothing else to say about it except that I highly recommend you give it a try.
+I love this thing. It's slowly replacing my current IDE **Kate**. It's more flexible, cutomizable and most importantly it's got **GPU Acceleration** where Kate doesn't, at least not as well. Oh it's also super lightweight.
+
+While it's not as the video says, a 1:1 **VSCode** replacement, with some lacking features, it's getting there. IMO, it's relatively new, so I only see good things in its future, so it needs time to cook.
+
+However, it already includes support for the main plugins I, myself care about, like **Git**, **Docker Compose**, **Toml**, **Yaml**, **Make**, **Java** among others, with more in the pipeline...
+
+And if you know me by now I love its theme engine, with the likes of **Dracula**, **Catppuccin**, **Nord**, **Synthwave '84** among others already available to install.. It's one of the main things that attracted me to it lol. Nothing else to say about it except that I highly recommend you give it a try.
 
 It has way more than what I mentioned here, so if you want to know more about it, either go to the >> [**Docs/Wiki**](https://zed.dev/docs/) page, or visit their **Git Repo** below.
 
