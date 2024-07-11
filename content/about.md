@@ -47,7 +47,7 @@ Main rig, the one I do all my *Development*, *Gaming* and other things on, which
 
 ![SationXero](https://i.imgur.com/GJiIrxm.png)
 
-I know the `GTX 1080` is an aging GPU, trust me I am trying to raise money to replace it with at least an `RTC 3080/3090`. I could use better **Wayland** support. Am not really a gamer though, so that part I do not perticularly care about.
+I know the `GTX 1080` is an aging GPU, trust me I am trying to raise money to replace it with at least an `RTX 3080/3090`. I could use better **Wayland** support. Am not really a gamer though, so that part I do not perticularly care about.
 
 ![SationSpecs](https://techxero.com/images/specs.png)
 
@@ -61,9 +61,13 @@ That thing has survived many failed `nvidia-470xx` driver updates, but I finally
 
 **The HTPC :**
 
-Finally there's my HTPC, which has the same CPU as **XeroLab**, with a few differences, being the GPU which is a `GTX 650 Ti-Boost OC`, and the `16GB RAM`. Now whith it being my HTPC, it has 14 Drives of various sizes totalling `~68TB` of storage. The OS it runs, is, and please do not comment on that, [**Manjaro KDE**](https://manjaro.org).. Yes, it's been running for almost **~1300 Days** without any issues, since the only app installed on it is [**Plex Server**](https://plex.tv) as a **Snap**.
+Finally there's my HTPC, which has the same CPU as **XeroLab**, with a few differences, being the GPU which is a `GTX 650 Ti-Boost OC`, and the `16GB RAM`. Now whith it being my HTPC, it has 14 Drives of various sizes totalling `~68TB` of storage.
+
+As for the OS it has been running for the past **~1300 Days** without any issues, it's [**Manjaro KDE**](https://manjaro.org).. With the only app installed being [**Plex Server**](https://plex.tv) as a *Snap*.
 
 ![HTPC](https://i.imgur.com/HDlPIZi.jpeg)
+
+Since I need **Hardware Acceleration** so I am able to encode & decode the movies & TV-Shows I watch, I have no choice but to use the Distro provided **nVidia-470xx** proprietary ones. So far so good, no issues.
 
 That's it folks. Now you have a better idea of what equipment I use on a daily basis to bring you everything I do. I did not list all the softwares I use coz it's a long list that varies a lot. Thanks for reading.
 
