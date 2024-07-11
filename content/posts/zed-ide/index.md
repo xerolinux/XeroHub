@@ -5,9 +5,12 @@ draft: false
 description: "GPU Accelerated IDE"
 tags: ["Zed", "IDE", "Dev", "Developers", "Atom", "Linux"]
 ---
+
 {{< youtube JGz7Ou0Nwo8 >}}
 
-A quick one for today. I stumbled upon this new IDE called **ZED**, and I thought I'd share it with y'all...
+A quick one for today. I stumbled upon this new IDE called **ZED**, and I thought I'd share it with y'all.
+
+The *Linux* version has been in development for a while, they just announced its availablability via their >> [**Linux when? Linux now**](https://zed.dev/blog/zed-on-linux) post...
 
 ### Some Information
 
