@@ -15,20 +15,50 @@ With **XeroLinux** no longer being a Distro, but a collection of _Projects/Scrip
 Don't forget to [follow me](https://fosstodon.org/@XeroLinux) on Fosstodon.
 {{< /alert >}}
 
+### Point of this site
+
 Our job from now on, on this site, is, to bring you the most useful **FOSS** tools and guides alongside our various projects as we work on them. It's your one-stop shop for those kinds of posts.
 
 As mentioned on a dedicated post, we will not be posting any news, Distro reviews and Vs. articles to avoid any drama, and because news tend to get old real fast. Also we try to avoid opinionated posts as much as we can.
 
 {{< article link="/xero-news/youtube-status/" >}}
 
-Anyway enjoy your stay here ;)
+I have so many great ideas in the pipeline, it's crazy !
 
-### ArchLinux / KDE Plasma
+### XeroLinux Equipment & OS
 
-I have so many great ideas in the pipeline, it's crazy ! I love working with **ArchLinux**. It's the most flexible Distro I have ever had the pleasure to work with. Allowing me to build things from the ground up without it being too complex, or getting in my way.
+- **Linux Distro :**
+
+I love working with **ArchLinux**. It's the most flexible Distro I have ever had the pleasure to work with. Allowing me to build things from the ground up without it being too complex, or getting in my way.
+
+- **Desktop Environment :**
 
 I also love working with **KDE Plasma**, simply because it's so damn beautiful, and easy to work with. And since I am more of a visual old geezer, it fits my needs so well it ain't a joke. That's why I don't see myself using anything else for a long time to come.
 
 I do dabble with other Distros from time to time to keep my knowledge fresh however. And if I like what I see, you will see me talking about it here.
+
+- **Current System Specs :**
+
+I do own many, 3 Desktops and 1 Laptop. Main, Home-Lab & HTPC. Laptop is unimportant just runs my shop.
+
+** The Beast :**
+
+Main rig, the one I do all my *Development*, *Gaming* and other things on, which I label as **StationXero** is as follows :
+
+![SationXero](https://techxero.com/images/specs.png)
+
+I know the `GTX 1080` is an aging GPU, trust me I am trying to raise money to replace it with at least an `RTC 3080/3090`. I could use better **Wayland** support. Am not really a gamer though, so that part I do not perticularly care about.
+
+**Home-Lab :**
+
+Another desktop I call **XeroLab**, as the name implies, is my **Home-Lab** PC, it runs all my **Docker Containers**. The OS it runs is the last surviving instance of **XeroLinux** ~780 Days running. It has `32GB RAM` with a `Core i7 6800K` and an old P.O.S `GT-710` GPU that I will be replacing as soon as I can raise the money for one.
+
+**The HTPC :**
+
+Finally there's my HTPC, which has the same CPU as **XeroLab**, with a few differences, being the GPU which is a `GTX 650 Ti-Boost OC`, and the `16GB RAM`. Now whith it being my HTPC, it has 14 Drives of various sizes totalling `~68TB` of storage. The OS it runs, is, and please do not comment on that, **Manjaro KDE**.. Yes, it's been running for almost **~1300 Days** without any issues, since the only app installed on it is [**Plex Server**](https://plex.tv) as a **Snap**.
+
+That's it folks. Now you have a better idea of what equipment I use on a daily basis to bring you everything I do. I did not list all the softwares I use coz it's a long list that varies a lot. Thanks for reading.
+
+Enjoy your stay here.
 
 Cheers y'all 😀
