@@ -13,25 +13,32 @@ identifier = "yjhEZtlj41"
 weight = 2
 
 [[main]]
+name = "The Gear"
+pre = "fire"
+pageRef = "Gear"
+identifier = "ZFozXYGy5E"
+weight = 3
+
+[[main]]
 name = "Support"
 pre = "ko-fi"
 pageRef = "support"
 identifier = "lCg1v3VPgs"
-weight = 3
+weight = 4
 
 [[main]]
 name = "News"
 pre = "globe"
 pageRef = "xero-news"
 identifier = "WmM3BrLWvc"
-weight = 4
+weight = 5
 
 [[main]]
 name = "RSS"
 pre = "rss"
 url = "https://xerolinux.xyz/index.xml"
 identifier = "dQrZgi97Wk"
-weight = 5
+weight = 6
 
 [[footer]]
 none = "none"
