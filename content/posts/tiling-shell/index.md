@@ -87,6 +87,18 @@ Even though I do not like or use **Window Tiling** myself, I think the developer
 
 With Windows constantly shooting itself in the foot, it's fun to see its most useful parts being cherry picked and ported to **Linux**. Windows' loss is **Liinux**'s gain lol. Well, I hope you enjoy this neat little extension...
 
+### Honorable mention
+
+As a bonus, I would like to mention another *Tiling* extension. But before I mention which, I want you to keep in mind that sometimes this extension, like many others tends to lag behind major **Gnome** releases, so for example when **Gnome 47** lands, you will have to disable it and wait a while before it's updated adding in support.
+
+Now, with **TilingShell** covering newcomers from Windows, the extension am talking about here, is none other than [**Forge**](https://extensions.gnome.org/extension/4481/forge/), specifically targeted to those coming from a *Tiling Window Manager*, who prefer that way of doing things.
+
+![Forge](https://i.imgur.com/ncyrt2L.png)
+
+To install it use the aforementioned **Extension Manager** app. For more information about its features and how to use it, link to project's **Git** found below. Enjoy your experience on **Gnome** my fellow **FOSS G33ks**...
+
+{{< github repo="forge-ext/forge" >}}
+
 That’s it folks...
 
 Cheers !
