@@ -63,48 +63,6 @@ vi docker-compose.yml
 
 The downloaded `docker-compose.yml` file should contain the template below with default environment variables.
 
-```YAML
-version: "3"
-
-services:
-  docmost:
-    image: docmost/docmost:latest
-    depends_on:
-      - db
-      - redis
-    environment:
-      APP_URL: "http://localhost:3000"
-      APP_SECRET: "REPLACE_WITH_LONG_SECRET"
-      DATABASE_URL: "postgresql://docmost:STRONG_DB_PASSWORD@db:5432/docmost?schema=public"
-      REDIS_URL: "redis://redis:6379"
-    ports:
-      - "3000:3000"
-    restart: unless-stopped
-    volumes:
-      - docmost:/app/data/storage
-
-  db:
-    image: postgres:16-alpine
-    environment:
-      POSTGRES_DB: docmost
-      POSTGRES_USER: docmost
-      POSTGRES_PASSWORD: STRONG_DB_PASSWORD
-    restart: unless-stopped
-    volumes:
-      - db_data:/var/lib/postgresql/data
-
-  redis:
-    image: redis:7.2-alpine
-    restart: unless-stopped
-    volumes:
-      - redis_data:/data
-
-volumes:
-  docmost:
-  db_data:
-  redis_data:
-```
-
 - **Replace the default configs :**
 
 You are to replace the default environment variables in the `docker-compose.yml` file.
