@@ -18,8 +18,8 @@ mainSections = [ "posts" ]
 disableImageOptimization = true
 disableTextInHeader = false
 
-defaultBackgroundImage = "img/bg.png"
-defaultFeaturedImage = "img/bg.png"
+defaultBackgroundImage = "img/bg.webp"
+defaultFeaturedImage = "img/bg.webp"
 
 highlightCurrentMenuArea = true
 smartTOC = true
@@ -37,7 +37,7 @@ smartTOCHideUnfocusedChildren = false
 
 [homepage]
   layout = "background" # valid options: page, profile, hero, card, background, custom
-  homepageImage = "img/bg.png" # used in: hero, and card
+  homepageImage = "img/bg.webp" # used in: hero, and card
   showRecent = true
   showRecentItems = 6
   showMoreLink = true
