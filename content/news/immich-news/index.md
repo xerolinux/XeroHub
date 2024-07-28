@@ -38,9 +38,9 @@ So as you can see the product is not as bad as you think. It's an opt-in feature
 
 </div>
 
-Responding to community feedback, we’ve revamped how you can purchase Immich. We’ve playfully named these updates “The-Words-Which-Must-Not-Be-Named.” The goal? To make buying options and licensing clearer and more user-friendly.
+Responding to community feedback, they’ve revamped how you can purchase Immich. They also playfully named these updates *“The-Words-Which-Must-Not-Be-Named.”* The goal? To make buying options and licensing clearer and more user-friendly.
 
-For instance, a shiny new “Buy” button will appear once your account hits the 14-day mark. And don't worry, we've included options to hide this button temporarily or forever, because who doesn’t love a good disappearing act?
+For instance, a shiny new “Buy” button will appear once your account hits the 14-day mark. And don't worry, they included options to hide this button temporarily or forever, because who doesn’t love a good disappearing act?
 
 ### More New Features
 
