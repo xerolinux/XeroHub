@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Setup on XeroLinux HQ</title>
+    <link>https://xerolinux.xyz/tags/setup/</link>
+    <description>Recent content in Setup on XeroLinux HQ</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>Copy, _right?_ 🫨</copyright>
+    <lastBuildDate>Mon, 01 Jul 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://xerolinux.xyz/tags/setup/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+    <title>WayDroid Setup Guide</title>
+      <link>https://xerolinux.xyz/posts/waydroid-guide/</link>
+        <pubDate>Mon, 01 Jul 2024 00:00:00 +0000</pubDate>
+        
+        <guid>https://xerolinux.xyz/posts/waydroid-guide/</guid>
+        <description>WayDroid in a nutshell # WayDroid is a container-based tool that allows for launching a complete Android system within the Linux desktop. It does this with Linux namespaces, effectively utilizing the Linux kernel.</description>
+        <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/waydroid-guide/featured.png" />
+      </item>
+      
+    </channel>
+  </rss>

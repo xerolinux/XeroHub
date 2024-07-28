@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Recovery on XeroLinux HQ</title>
+    <link>https://xerolinux.xyz/tags/recovery/</link>
+    <description>Recent content in Recovery on XeroLinux HQ</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>Copy, _right?_ 🫨</copyright>
+    <lastBuildDate>Thu, 27 Jun 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://xerolinux.xyz/tags/recovery/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+    <title>Recover deleted files in Linux</title>
+      <link>https://xerolinux.xyz/posts/recover-deleted-files/</link>
+        <pubDate>Thu, 27 Jun 2024 00:00:00 +0000</pubDate>
+        
+        <guid>https://xerolinux.xyz/posts/recover-deleted-files/</guid>
+        <description>Introduction # I have recently decided to make the switch to Linux as my main daily OS, leaving Windows behind just for occasional gaming. But since am new to Linux, everything requires me to do research.</description>
+        <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/recover-deleted-files/featured.png" />
+      </item>
+      
+    </channel>
+  </rss>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Cd on XeroLinux HQ</title>
+    <link>https://xerolinux.xyz/tags/cd/</link>
+    <description>Recent content in Cd on XeroLinux HQ</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>Copy, _right?_ 🫨</copyright>
+    <lastBuildDate>Thu, 27 Jun 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://xerolinux.xyz/tags/cd/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+    <title>Zoxide the smarter cd command</title>
+      <link>https://xerolinux.xyz/posts/zoxide-cd/</link>
+        <pubDate>Thu, 27 Jun 2024 00:00:00 +0000</pubDate>
+        
+        <guid>https://xerolinux.xyz/posts/zoxide-cd/</guid>
+        <description>Intro # While browsing YouTube I stumbled upon a video showing off a neat little tool called Zoxide. It&amp;rsquo;s touted to be a smarter cd command, inspired by z and autojump.</description>
+        <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/zoxide-cd/featured.png" />
+      </item>
+      
+    </channel>
+  </rss>

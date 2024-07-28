@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Helper on XeroLinux HQ</title>
+    <link>https://xerolinux.xyz/tags/helper/</link>
+    <description>Recent content in Helper on XeroLinux HQ</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>Copy, _right?_ 🫨</copyright>
+    <lastBuildDate>Sat, 29 Jun 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://xerolinux.xyz/tags/helper/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+    <title>Zellij Dev&#39;s Best Friend</title>
+      <link>https://xerolinux.xyz/posts/zellij-terminal/</link>
+        <pubDate>Sat, 29 Jun 2024 00:00:00 +0000</pubDate>
+        
+        <guid>https://xerolinux.xyz/posts/zellij-terminal/</guid>
+        <description>What is Zellij ? # Another day another Terminal utility. Zellij is a terminal workspace. It has the base functionality of a terminal multiplexer (similar to tmux or screen) but includes many built-in features that would allow users to extend it and create their own personalized environment.</description>
+        <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/zellij-terminal/featured.png" />
+      </item>
+      
+    </channel>
+  </rss>

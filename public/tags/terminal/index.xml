@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Terminal on XeroLinux HQ</title>
+    <link>https://xerolinux.xyz/tags/terminal/</link>
+    <description>Recent content in Terminal on XeroLinux HQ</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>Copy, _right?_ 🫨</copyright>
+    <lastBuildDate>Sat, 29 Jun 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://xerolinux.xyz/tags/terminal/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+    <title>Zellij Dev&#39;s Best Friend</title>
+      <link>https://xerolinux.xyz/posts/zellij-terminal/</link>
+        <pubDate>Sat, 29 Jun 2024 00:00:00 +0000</pubDate>
+        
+        <guid>https://xerolinux.xyz/posts/zellij-terminal/</guid>
+        <description>What is Zellij ? # Another day another Terminal utility. Zellij is a terminal workspace. It has the base functionality of a terminal multiplexer (similar to tmux or screen) but includes many built-in features that would allow users to extend it and create their own personalized environment.</description>
+        <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/zellij-terminal/featured.png" />
+      </item>
+      
+    <item>
+    <title>Nix Package Manager</title>
+      <link>https://xerolinux.xyz/posts/nix-package-manager/</link>
+        <pubDate>Fri, 28 Jun 2024 00:00:00 +0000</pubDate>
+        
+        <guid>https://xerolinux.xyz/posts/nix-package-manager/</guid>
+        <description>Intro # Yet again my good friend and Linux enthusiast ChriTitus has brought another cool Package Manager this time called #Nix.
+Seems to be cool and easy to Install and use.</description>
+        <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/nix-package-manager/featured.png" />
+      </item>
+      
+    <item>
+    <title>Tabby Terminal</title>
+      <link>https://xerolinux.xyz/posts/tabby-terminal/</link>
+        <pubDate>Thu, 27 Jun 2024 00:00:00 +0000</pubDate>
+        
+        <guid>https://xerolinux.xyz/posts/tabby-terminal/</guid>
+        <description>Intro # I just ran across a video by @MattTLC from TheLinuxCast about a neat fully featured Terminal Emulator called Tabby.. I kinda like it, and I will be adding it to our package manager as an option.</description>
+        <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/tabby-terminal/featured.png" />
+      </item>
+      
+    <item>
+    <title>Terminal Aliases</title>
+      <link>https://xerolinux.xyz/posts/terminal-aliases/</link>
+        <pubDate>Thu, 27 Jun 2024 00:00:00 +0000</pubDate>
+        
+        <guid>https://xerolinux.xyz/posts/terminal-aliases/</guid>
+        <description>A quick one today, a video by DistroTube popped up that explains shell aliases and how to create your very own.. He does it in Ubuntu but you can do the same thing in Arch&amp;hellip;</description>
+        <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/terminal-aliases/featured.png" />
+      </item>
+      
+    <item>
+    <title>Zoxide the smarter cd command</title>
+      <link>https://xerolinux.xyz/posts/zoxide-cd/</link>
+        <pubDate>Thu, 27 Jun 2024 00:00:00 +0000</pubDate>
+        
+        <guid>https://xerolinux.xyz/posts/zoxide-cd/</guid>
+        <description>Intro # While browsing YouTube I stumbled upon a video showing off a neat little tool called Zoxide. It&amp;rsquo;s touted to be a smarter cd command, inspired by z and autojump.</description>
+        <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/zoxide-cd/featured.png" />
+      </item>
+      
+    <item>
+    <title>Topgrade AiO Updater</title>
+      <link>https://xerolinux.xyz/posts/topgrade-updater/</link>
+        <pubDate>Wed, 26 Jun 2024 00:00:00 +0000</pubDate>
+        
+        <guid>https://xerolinux.xyz/posts/topgrade-updater/</guid>
+        <description>Intro # Upgrading Linux has gotten much easier than it used to be. In the old days, you might upgrade certain pieces of software, but mostly you would wait until you bought the next version of your distro of choice.</description>
+        <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/topgrade-updater/featured.png" />
+      </item>
+      
+    </channel>
+  </rss>

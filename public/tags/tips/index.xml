@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tips on XeroLinux HQ</title>
+    <link>https://xerolinux.xyz/tags/tips/</link>
+    <description>Recent content in Tips on XeroLinux HQ</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>Copy, _right?_ 🫨</copyright>
+    <lastBuildDate>Thu, 27 Jun 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://xerolinux.xyz/tags/tips/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+    <title>Flatpak Tips &amp; Tricks</title>
+      <link>https://xerolinux.xyz/posts/flatpak-tips/</link>
+        <pubDate>Thu, 27 Jun 2024 00:00:00 +0000</pubDate>
+        
+        <guid>https://xerolinux.xyz/posts/flatpak-tips/</guid>
+        <description>Intro # Slowly and steadily, Flatpak has a growing acceptance in the desktop Linux world.
+It is well integrated into Fedora and many other distributions like Linux Mint, elementary, Solus, etc.</description>
+        <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/flatpak-tips/featured.png" />
+      </item>
+      
+    </channel>
+  </rss>

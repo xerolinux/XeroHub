@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>USB on XeroLinux HQ</title>
+    <link>https://xerolinux.xyz/tags/usb/</link>
+    <description>Recent content in USB on XeroLinux HQ</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>Copy, _right?_ 🫨</copyright>
+    <lastBuildDate>Wed, 26 Jun 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://xerolinux.xyz/tags/usb/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+    <title>Ventoy Persistence</title>
+      <link>https://xerolinux.xyz/posts/ventoy-persistence/</link>
+        <pubDate>Wed, 26 Jun 2024 00:00:00 +0000</pubDate>
+        
+        <guid>https://xerolinux.xyz/posts/ventoy-persistence/</guid>
+        <description>Intro # Most of you might already know about the amazing tool called Ventoy and how amazing it is at removing the need to have more USB drives if you need to have more ISOs, but you might not know about how many more amazing features it has.</description>
+        <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/ventoy-persistence/featured.png" />
+      </item>
+      
+    </channel>
+  </rss>

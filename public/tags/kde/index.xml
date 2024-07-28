@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Kde on XeroLinux HQ</title>
+    <link>https://xerolinux.xyz/tags/kde/</link>
+    <description>Recent content in Kde on XeroLinux HQ</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>Copy, _right?_ 🫨</copyright>
+    <lastBuildDate>Thu, 27 Jun 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://xerolinux.xyz/tags/kde/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+    <title>Konsave TUI</title>
+      <link>https://xerolinux.xyz/posts/konsave-tool/</link>
+        <pubDate>Thu, 27 Jun 2024 00:00:00 +0000</pubDate>
+        
+        <guid>https://xerolinux.xyz/posts/konsave-tool/</guid>
+        <description>Intro # I have recently stumbled upon a handy little tool for us who love customizing KDE but hate the work of switching between rices&amp;hellip; It&amp;rsquo;s called KonSave.
+As you can see from above video, tool is very useful.</description>
+        <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/konsave-tool/featured.png" />
+      </item>
+      
+    <item>
+    <title>LightlyShaders Effects</title>
+      <link>https://xerolinux.xyz/posts/lightly-shaders/</link>
+        <pubDate>Thu, 27 Jun 2024 00:00:00 +0000</pubDate>
+        
+        <guid>https://xerolinux.xyz/posts/lightly-shaders/</guid>
+        <description>What is it ? # I would like to share a neat little &amp;ldquo;Effect&amp;rdquo; if you will, called LightlyShaders which is fork of another project that is a simple KWin/5 effect that simply rounds corners of windows, to do this it uses an opengl shader and is able to round any window, like mpv video for example will have rounded corners.</description>
+        <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/lightly-shaders/featured.png" />
+      </item>
+      
+    <item>
+    <title>Make KDE apps use System theme in XFCE/Gnome</title>
+      <link>https://xerolinux.xyz/posts/fix-grub/</link>
+        <pubDate>Thu, 27 Jun 2024 00:00:00 +0000</pubDate>
+        
+        <guid>https://xerolinux.xyz/posts/fix-grub/</guid>
+        <description>Info # In case you are one of the affected people, below is how you can fix the issue. I have tested it and it works fine. And keep in mind that XeroLinux is basically ArchLinux so below fix will work on Arch as well as any Arch-Based distros with the exception of Manjaro that is NOT Arch&amp;hellip; Read more on that &amp;raquo; Here &amp;laquo;</description>
+        <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/fix-grub/featured.png" />
+      </item>
+      
+    <item>
+    <title>Make KDE apps use System theme in XFCE/Gnome</title>
+      <link>https://xerolinux.xyz/posts/theme-qt-apps-on-gtk-de/</link>
+        <pubDate>Thu, 27 Jun 2024 00:00:00 +0000</pubDate>
+        
+        <guid>https://xerolinux.xyz/posts/theme-qt-apps-on-gtk-de/</guid>
+        <description>Intro # As I was working on XFCE &amp;amp; Gnome, I noticed that since they both use GTK3/4, some QT apps made for KDE like KdenLive did not follow the system theme.</description>
+        <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/theme-qt-apps-on-gtk-de/featured.png" />
+      </item>
+      
+    <item>
+    <title>ML4W Plasma &#43; Hyprland side-by-side</title>
+      <link>https://xerolinux.xyz/posts/ml4w-hyprland-plasma/</link>
+        <pubDate>Thu, 27 Jun 2024 00:00:00 +0000</pubDate>
+        
+        <guid>https://xerolinux.xyz/posts/ml4w-hyprland-plasma/</guid>
+        <description>What is it ? # Our good friend from ML4W just posted a video showing us how to have both Plasma 6 and Hyprland side-by-side with his awesome dotfiles.. Check it out below with a link to his repos&amp;hellip;</description>
+        <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/ml4w-hyprland-plasma/featured.png" />
+      </item>
+      
+    <item>
+    <title>Wallpaper Engine for Plasma</title>
+      <link>https://xerolinux.xyz/posts/wallpaper-engine/</link>
+        <pubDate>Thu, 27 Jun 2024 00:00:00 +0000</pubDate>
+        
+        <guid>https://xerolinux.xyz/posts/wallpaper-engine/</guid>
+        <description>Intro # I have always wanted to use cool animated wallpapers on Linux. Found many free ways, but nothing rivaled the awesome features of Wallpaper Engine found on steam for the low price of $5.</description>
+        <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/wallpaper-engine/featured.png" />
+      </item>
+      
+    </channel>
+  </rss>

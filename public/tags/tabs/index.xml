@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tabs on XeroLinux HQ</title>
+    <link>https://xerolinux.xyz/tags/tabs/</link>
+    <description>Recent content in Tabs on XeroLinux HQ</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>Copy, _right?_ 🫨</copyright>
+    <lastBuildDate>Thu, 27 Jun 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://xerolinux.xyz/tags/tabs/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+    <title>Tabby Terminal</title>
+      <link>https://xerolinux.xyz/posts/tabby-terminal/</link>
+        <pubDate>Thu, 27 Jun 2024 00:00:00 +0000</pubDate>
+        
+        <guid>https://xerolinux.xyz/posts/tabby-terminal/</guid>
+        <description>Intro # I just ran across a video by @MattTLC from TheLinuxCast about a neat fully featured Terminal Emulator called Tabby.. I kinda like it, and I will be adding it to our package manager as an option.</description>
+        <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/tabby-terminal/featured.png" />
+      </item>
+      
+    </channel>
+  </rss>

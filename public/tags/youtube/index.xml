@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>YouTube on XeroLinux HQ</title>
+    <link>https://xerolinux.xyz/tags/youtube/</link>
+    <description>Recent content in YouTube on XeroLinux HQ</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>Copy, _right?_ 🫨</copyright>
+    <lastBuildDate>Thu, 04 Jul 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://xerolinux.xyz/tags/youtube/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+    <title>XeroLinux YouTube</title>
+      <link>https://xerolinux.xyz/xero-news/youtube-status/</link>
+        <pubDate>Thu, 04 Jul 2024 00:00:00 +0000</pubDate>
+        
+        <guid>https://xerolinux.xyz/xero-news/youtube-status/</guid>
+        <description>Today I bring you a different kind of post. So sit back, grab a cup of tea/coffee and read on. It&amp;rsquo;s under this category coz it simply isn&amp;rsquo;t related to Linux.</description>
+        <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/xero-news/youtube-status/featured.png" />
+      </item>
+      
+    </channel>
+  </rss>

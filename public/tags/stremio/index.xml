@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Stremio on XeroLinux HQ</title>
+    <link>https://xerolinux.xyz/tags/stremio/</link>
+    <description>Recent content in Stremio on XeroLinux HQ</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>Copy, _right?_ 🫨</copyright>
+    <lastBuildDate>Thu, 27 Jun 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://xerolinux.xyz/tags/stremio/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+    <title>Stremio - Best Streaming tool</title>
+      <link>https://xerolinux.xyz/posts/stremio-tool/</link>
+        <pubDate>Thu, 27 Jun 2024 00:00:00 +0000</pubDate>
+        
+        <guid>https://xerolinux.xyz/posts/stremio-tool/</guid>
+        <description>What is Stremio? # Stremio is a one-stop hub for video content aggregation. Discover, organize and watch video from all kind of sources on any device that you own. Movies, TV shows, series, live television or web channels like YouTube and Twitch.</description>
+        <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/stremio-tool/featured.png" />
+      </item>
+      
+    </channel>
+  </rss>

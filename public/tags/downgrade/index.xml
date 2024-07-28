@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Downgrade on XeroLinux HQ</title>
+    <link>https://xerolinux.xyz/tags/downgrade/</link>
+    <description>Recent content in Downgrade on XeroLinux HQ</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>Copy, _right?_ 🫨</copyright>
+    <lastBuildDate>Thu, 27 Jun 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://xerolinux.xyz/tags/downgrade/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+    <title>How To Downgrade Packages</title>
+      <link>https://xerolinux.xyz/posts/downgrade-tool/</link>
+        <pubDate>Thu, 27 Jun 2024 00:00:00 +0000</pubDate>
+        
+        <guid>https://xerolinux.xyz/posts/downgrade-tool/</guid>
+        <description>What is Downgrade ? # Downgrade is a Bash script that makes it easier to downgrade packages in Arch Linux to an older version. It checks both the local pacman cache and the Arch Linux Archive (ALA) for available older versions of a package and allows you to select which version to install</description>
+        <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/downgrade-tool/featured.png" />
+      </item>
+      
+    </channel>
+  </rss>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Debate on XeroLinux HQ</title>
+    <link>https://xerolinux.xyz/tags/debate/</link>
+    <description>Recent content in Debate on XeroLinux HQ</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>Copy, _right?_ 🫨</copyright>
+    <lastBuildDate>Sun, 30 Jun 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://xerolinux.xyz/tags/debate/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+    <title>nVidia vs AMD on Linux</title>
+      <link>https://xerolinux.xyz/posts/nvidia-vs-amd-linux/</link>
+        <pubDate>Sun, 30 Jun 2024 00:00:00 +0000</pubDate>
+        
+        <guid>https://xerolinux.xyz/posts/nvidia-vs-amd-linux/</guid>
+        <description>Disclaimer # I&amp;rsquo;ve gathered some relevant information for you below, which I hope you&amp;rsquo;ll find useful. Please use it at your discretion. If you perceive any favoritism, it&amp;rsquo;s not intentional on my part.</description>
+        <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/nvidia-vs-amd-linux/featured.png" />
+      </item>
+      
+    </channel>
+  </rss>

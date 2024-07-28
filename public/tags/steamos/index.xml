@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>SteamOS on XeroLinux HQ</title>
+    <link>https://xerolinux.xyz/tags/steamos/</link>
+    <description>Recent content in SteamOS on XeroLinux HQ</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>Copy, _right?_ 🫨</copyright>
+    <lastBuildDate>Tue, 23 Jul 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://xerolinux.xyz/tags/steamos/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+    <title>Batocera On Deck - Part 2</title>
+      <link>https://xerolinux.xyz/posts/retro-deck/</link>
+        <pubDate>Tue, 23 Jul 2024 00:00:00 +0000</pubDate>
+        
+        <guid>https://xerolinux.xyz/posts/retro-deck/</guid>
+        <description>Hey there, retro gamer! Are you like me, and prefer to replace SteamOS with Batocera transforming your Deck into a Retro Gaming powerhouse ? Then this guide is for you&amp;hellip;</description>
+        <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/retro-deck/featured.png" />
+      </item>
+      
+    </channel>
+  </rss>

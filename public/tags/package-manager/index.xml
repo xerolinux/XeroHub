@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Package Manager on XeroLinux HQ</title>
+    <link>https://xerolinux.xyz/tags/package-manager/</link>
+    <description>Recent content in Package Manager on XeroLinux HQ</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>Copy, _right?_ 🫨</copyright>
+    <lastBuildDate>Thu, 27 Jun 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://xerolinux.xyz/tags/package-manager/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+    <title>PacSeek TUI</title>
+      <link>https://xerolinux.xyz/posts/pacseek-tui/</link>
+        <pubDate>Thu, 27 Jun 2024 00:00:00 +0000</pubDate>
+        
+        <guid>https://xerolinux.xyz/posts/pacseek-tui/</guid>
+        <description>Intro # I just found a neat little tool called &amp;ldquo;Pacseek&amp;rdquo; which is a terminal user interface for searching and installing Arch Linux packages&amp;hellip;
+What is it ? # Pacseek is terminal user interface, written in Rust which allows you to browse and search through the Arch Linux package databases as well as the Arch User Repository.</description>
+        <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/pacseek-tui/featured.png" />
+      </item>
+      
+    </channel>
+  </rss>

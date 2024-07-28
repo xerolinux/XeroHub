@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ChaotiAUR on XeroLinux HQ</title>
+    <link>https://xerolinux.xyz/tags/chaotiaur/</link>
+    <description>Recent content in ChaotiAUR on XeroLinux HQ</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>Copy, _right?_ 🫨</copyright>
+    <lastBuildDate>Wed, 03 Jul 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://xerolinux.xyz/tags/chaotiaur/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+    <title>The Chaotic-AUR</title>
+      <link>https://xerolinux.xyz/posts/chaotic-aur/</link>
+        <pubDate>Wed, 03 Jul 2024 00:00:00 +0000</pubDate>
+        
+        <guid>https://xerolinux.xyz/posts/chaotic-aur/</guid>
+        <description>A bit of information # Chaotic-AUR is an unofficial package repository that contains pre-built packages from the Arch User Repository (AUR) . It is an automated building service that compiles AUR packages so users don&amp;rsquo;t have to build them themselves.</description>
+        <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/chaotic-aur/featured.png" />
+      </item>
+      
+    </channel>
+  </rss>

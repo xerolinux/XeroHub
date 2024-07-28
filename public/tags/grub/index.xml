@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Grub on XeroLinux HQ</title>
+    <link>https://xerolinux.xyz/tags/grub/</link>
+    <description>Recent content in Grub on XeroLinux HQ</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>Copy, _right?_ 🫨</copyright>
+    <lastBuildDate>Fri, 28 Jun 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://xerolinux.xyz/tags/grub/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+    <title>Fix Unbootable System</title>
+      <link>https://xerolinux.xyz/posts/fix-boot/</link>
+        <pubDate>Fri, 28 Jun 2024 00:00:00 +0000</pubDate>
+        
+        <guid>https://xerolinux.xyz/posts/fix-boot/</guid>
+        <description>Preface # Are you having an issue after updating your system with the message vmlinuz-linux not found ? Watch the video below by Erik Dubois, should help you get out of that predicament &amp;hellip;</description>
+        <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/fix-boot/featured.png" />
+      </item>
+      
+    </channel>
+  </rss>

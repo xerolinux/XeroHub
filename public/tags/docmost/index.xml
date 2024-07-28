@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Docmost on XeroLinux HQ</title>
+    <link>https://xerolinux.xyz/tags/docmost/</link>
+    <description>Recent content in Docmost on XeroLinux HQ</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>Copy, _right?_ 🫨</copyright>
+    <lastBuildDate>Mon, 22 Jul 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://xerolinux.xyz/tags/docmost/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+    <title>Docmost Notes</title>
+      <link>https://xerolinux.xyz/posts/docmost-notes/</link>
+        <pubDate>Mon, 22 Jul 2024 00:00:00 +0000</pubDate>
+        
+        <guid>https://xerolinux.xyz/posts/docmost-notes/</guid>
+        <description>Discover Docmost # Ever dreamt of a magical realm where creating, collaborating, and sharing knowledge is as smooth as casting a spell? Welcome to Docmost, the open-source documentation software that&amp;rsquo;s like Hogwarts for your inner nerd.</description>
+        <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/docmost-notes/featured.png" />
+      </item>
+      
+    </channel>
+  </rss>

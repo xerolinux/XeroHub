@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Fedora on XeroLinux HQ</title>
+    <link>https://xerolinux.xyz/tags/fedora/</link>
+    <description>Recent content in Fedora on XeroLinux HQ</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>Copy, _right?_ 🫨</copyright>
+    <lastBuildDate>Mon, 01 Jul 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://xerolinux.xyz/tags/fedora/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+    <title>Bluefin Aurora</title>
+      <link>https://xerolinux.xyz/posts/aurora-atomic/</link>
+        <pubDate>Mon, 01 Jul 2024 00:00:00 +0000</pubDate>
+        
+        <guid>https://xerolinux.xyz/posts/aurora-atomic/</guid>
+        <description>What is uBlue Atomic ? # uBlue is a project which produces images based on Fedora Atomic distros. You can use one of the presupplied images like Bazzite (gaming-focused image), Bluefin (general use zero-manitenance image), Aurora or their base images with minimal customizations to vanilla kinoite/silverblue/etc.</description>
+        <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/aurora-atomic/featured.png" />
+      </item>
+      
+    </channel>
+  </rss>

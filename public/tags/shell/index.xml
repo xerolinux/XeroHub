@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Shell on XeroLinux HQ</title>
+    <link>https://xerolinux.xyz/tags/shell/</link>
+    <description>Recent content in Shell on XeroLinux HQ</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>Copy, _right?_ 🫨</copyright>
+    <lastBuildDate>Wed, 17 Jul 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://xerolinux.xyz/tags/shell/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+    <title>Gnome Tiling Shell</title>
+      <link>https://xerolinux.xyz/posts/tiling-shell/</link>
+        <pubDate>Wed, 17 Jul 2024 00:00:00 +0000</pubDate>
+        
+        <guid>https://xerolinux.xyz/posts/tiling-shell/</guid>
+        <description>A quick one for today. I do not use Gnome myself, but I keep a close eye on what&amp;rsquo;s going on. Recently @DistroTube made a video about an extension that most of you out there might like, so I thought, why not post about it here&amp;hellip;</description>
+        <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/tiling-shell/featured.png" />
+      </item>
+      
+    <item>
+    <title>Oh My Posh Prompt</title>
+      <link>https://xerolinux.xyz/posts/ohmyposh-p10k-replacement/</link>
+        <pubDate>Mon, 08 Jul 2024 00:00:00 +0000</pubDate>
+        
+        <guid>https://xerolinux.xyz/posts/ohmyposh-p10k-replacement/</guid>
+        <description>Some information # Oh My Posh is a custom prompt engine for any shell that has the ability to adjust the prompt string with a function or variable. It’s beautiful, elegant and intuitive; if you use git from the command line it will be great for you.</description>
+        <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/ohmyposh-p10k-replacement/featured.png" />
+      </item>
+      
+    </channel>
+  </rss>

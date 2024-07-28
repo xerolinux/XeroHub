@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Manager on XeroLinux HQ</title>
+    <link>https://xerolinux.xyz/tags/manager/</link>
+    <description>Recent content in Manager on XeroLinux HQ</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>Copy, _right?_ 🫨</copyright>
+    <lastBuildDate>Thu, 27 Jun 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://xerolinux.xyz/tags/manager/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+    <title>Warehouse Flatpak Toolbox</title>
+      <link>https://xerolinux.xyz/posts/warehouse-flatpak/</link>
+        <pubDate>Thu, 27 Jun 2024 00:00:00 +0000</pubDate>
+        
+        <guid>https://xerolinux.xyz/posts/warehouse-flatpak/</guid>
+        <description>What is it ? # Warehouse is a versatile toolbox for managing flatpak user data, viewing flatpak app info, and batch managing installed flatpaks.
+Main Features :
+- Viewing Flatpak Info: 📋 Warehouse can display all the information provided by the flatpak list command in a user-friendly graphical window.</description>
+        <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/warehouse-flatpak/featured.png" />
+      </item>
+      
+    </channel>
+  </rss>

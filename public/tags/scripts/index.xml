@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Scripts on XeroLinux HQ</title>
+    <link>https://xerolinux.xyz/tags/scripts/</link>
+    <description>Recent content in Scripts on XeroLinux HQ</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>Copy, _right?_ 🫨</copyright>
+    <lastBuildDate>Thu, 04 Jul 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://xerolinux.xyz/tags/scripts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+    <title>Proxmox VE Helper-Scripts</title>
+      <link>https://xerolinux.xyz/posts/proxmoxve-scripts/</link>
+        <pubDate>Thu, 04 Jul 2024 00:00:00 +0000</pubDate>
+        
+        <guid>https://xerolinux.xyz/posts/proxmoxve-scripts/</guid>
+        <description>This is a shor one. Just letting you all know of a recent discovery of mine while I was looking into Proxmox VE
+What are they ? # Proxmox Helper Scripts empower users to create a Linux container or virtual machine interactively, providing choices for both simple and advanced configurations.</description>
+        <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/proxmoxve-scripts/featured.png" />
+      </item>
+      
+    <item>
+    <title>Homebrew on Linux</title>
+      <link>https://xerolinux.xyz/posts/homerew-linux/</link>
+        <pubDate>Wed, 26 Jun 2024 00:00:00 +0000</pubDate>
+        
+        <guid>https://xerolinux.xyz/posts/homerew-linux/</guid>
+        <description>Intro # @ChrisTitus brought to my attention HomeBrew or Brew for short, the so called &amp;ldquo;Forgotten Package Manager&amp;rdquo; usually used on macOS&amp;hellip; It&amp;rsquo;s Distro agnostic so it can be installed and enabled on any of your choice.</description>
+        <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/homerew-linux/featured.png" />
+      </item>
+      
+    </channel>
+  </rss>

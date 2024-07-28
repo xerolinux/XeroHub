@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Repo on XeroLinux HQ</title>
+    <link>https://xerolinux.xyz/tags/repo/</link>
+    <description>Recent content in Repo on XeroLinux HQ</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>Copy, _right?_ 🫨</copyright>
+    <lastBuildDate>Fri, 28 Jun 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://xerolinux.xyz/tags/repo/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+    <title>Add XeroLinux Repo</title>
+      <link>https://xerolinux.xyz/xero-news/add-our-repo/</link>
+        <pubDate>Fri, 28 Jun 2024 00:00:00 +0000</pubDate>
+        
+        <guid>https://xerolinux.xyz/xero-news/add-our-repo/</guid>
+        <description>Hey there&amp;hellip;
+I was recently asked if my Repo can be added to other Arch-Based Distros, short answer is yes of course you can. I will be showing you how below.</description>
+        <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/xero-news/add-our-repo/featured.png" />
+      </item>
+      
+    </channel>
+  </rss>

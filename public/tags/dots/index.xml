@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Dots on XeroLinux HQ</title>
+    <link>https://xerolinux.xyz/tags/dots/</link>
+    <description>Recent content in Dots on XeroLinux HQ</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>Copy, _right?_ 🫨</copyright>
+    <lastBuildDate>Fri, 05 Jul 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://xerolinux.xyz/tags/dots/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+    <title>M4LW Hyprland Dots</title>
+      <link>https://xerolinux.xyz/posts/ml4w-hyprland-dots/</link>
+        <pubDate>Fri, 05 Jul 2024 00:00:00 +0000</pubDate>
+        
+        <guid>https://xerolinux.xyz/posts/ml4w-hyprland-dots/</guid>
+        <description>What is Hyprland ? # In a nutshell, Hyprland is a dynamic tiling Wayland compositor based on wlroots that doesn&amp;rsquo;t sacrifice on its looks. It provides the latest Wayland features, is highly customizable, has all the eyecandy, the most powerful plugins, easy IPC, much more QoL stuff than other wlr-based compositors and more&amp;hellip;</description>
+        <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/ml4w-hyprland-dots/featured.png" />
+      </item>
+      
+    </channel>
+  </rss>

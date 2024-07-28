@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Video on XeroLinux HQ</title>
+    <link>https://xerolinux.xyz/tags/video/</link>
+    <description>Recent content in Video on XeroLinux HQ</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>Copy, _right?_ 🫨</copyright>
+    <lastBuildDate>Sat, 20 Jul 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://xerolinux.xyz/tags/video/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+    <title>FFmpeg cheat sheet</title>
+      <link>https://xerolinux.xyz/posts/ffmpeg-cheat-sheet/</link>
+        <pubDate>Sat, 20 Jul 2024 00:00:00 +0000</pubDate>
+        
+        <guid>https://xerolinux.xyz/posts/ffmpeg-cheat-sheet/</guid>
+        <description>This will come in useful to all of you Content Creators out there, who like doing things the G33ky &amp;amp; Nerdy way. I use it a lot. This is a a list of useful commands for the FFmpeg command line tool.</description>
+        <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/ffmpeg-cheat-sheet/featured.png" />
+      </item>
+      
+    <item>
+    <title>OBS Studio Official Package</title>
+      <link>https://xerolinux.xyz/posts/obs-official/</link>
+        <pubDate>Thu, 27 Jun 2024 00:00:00 +0000</pubDate>
+        
+        <guid>https://xerolinux.xyz/posts/obs-official/</guid>
+        <description>What is OBS-Studio ? # OBS Studio is a free and open-source, cross-platform screencasting and streaming app. It is available for Windows, macOS, Linux distributions, and BSD. The OBS Project raises funds on Open Collective and Patreon.</description>
+        <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/obs-official/featured.png" />
+      </item>
+      
+    </channel>
+  </rss>

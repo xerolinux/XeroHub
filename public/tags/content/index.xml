@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Content on XeroLinux HQ</title>
+    <link>https://xerolinux.xyz/tags/content/</link>
+    <description>Recent content in Content on XeroLinux HQ</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>Copy, _right?_ 🫨</copyright>
+    <lastBuildDate>Fri, 28 Jun 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://xerolinux.xyz/tags/content/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+    <title>Submit Site Content</title>
+      <link>https://xerolinux.xyz/xero-news/submit-content/</link>
+        <pubDate>Fri, 28 Jun 2024 00:00:00 +0000</pubDate>
+        
+        <guid>https://xerolinux.xyz/xero-news/submit-content/</guid>
+        <description>Intro # So, I was thinking, why be the only one submitting content for the site ? This site is now a place to post Linux news, guides, and tools among other stuff.</description>
+        <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/xero-news/submit-content/featured.png" />
+      </item>
+      
+    </channel>
+  </rss>

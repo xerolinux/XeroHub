@@ -1,0 +1,573 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Linux on XeroLinux HQ</title>
+    <link>https://xerolinux.xyz/tags/linux/</link>
+    <description>Recent content in Linux on XeroLinux HQ</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>Copy, _right?_ 🫨</copyright>
+    <lastBuildDate>Tue, 23 Jul 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://xerolinux.xyz/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+    <title>Batocera On Deck - Part 2</title>
+      <link>https://xerolinux.xyz/posts/retro-deck/</link>
+        <pubDate>Tue, 23 Jul 2024 00:00:00 +0000</pubDate>
+        
+        <guid>https://xerolinux.xyz/posts/retro-deck/</guid>
+        <description>Hey there, retro gamer! Are you like me, and prefer to replace SteamOS with Batocera transforming your Deck into a Retro Gaming powerhouse ? Then this guide is for you&amp;hellip;</description>
+        <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/retro-deck/featured.png" />
+      </item>
+      
+    <item>
+    <title>Docmost Notes</title>
+      <link>https://xerolinux.xyz/posts/docmost-notes/</link>
+        <pubDate>Mon, 22 Jul 2024 00:00:00 +0000</pubDate>
+        
+        <guid>https://xerolinux.xyz/posts/docmost-notes/</guid>
+        <description>Discover Docmost # Ever dreamt of a magical realm where creating, collaborating, and sharing knowledge is as smooth as casting a spell? Welcome to Docmost, the open-source documentation software that&amp;rsquo;s like Hogwarts for your inner nerd.</description>
+        <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/docmost-notes/featured.png" />
+      </item>
+      
+    <item>
+    <title>FFmpeg cheat sheet</title>
+      <link>https://xerolinux.xyz/posts/ffmpeg-cheat-sheet/</link>
+        <pubDate>Sat, 20 Jul 2024 00:00:00 +0000</pubDate>
+        
+        <guid>https://xerolinux.xyz/posts/ffmpeg-cheat-sheet/</guid>
+        <description>This will come in useful to all of you Content Creators out there, who like doing things the G33ky &amp;amp; Nerdy way. I use it a lot. This is a a list of useful commands for the FFmpeg command line tool.</description>
+        <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/ffmpeg-cheat-sheet/featured.png" />
+      </item>
+      
+    <item>
+    <title>Gnome Tiling Shell</title>
+      <link>https://xerolinux.xyz/posts/tiling-shell/</link>
+        <pubDate>Wed, 17 Jul 2024 00:00:00 +0000</pubDate>
+        
+        <guid>https://xerolinux.xyz/posts/tiling-shell/</guid>
+        <description>A quick one for today. I do not use Gnome myself, but I keep a close eye on what&amp;rsquo;s going on. Recently @DistroTube made a video about an extension that most of you out there might like, so I thought, why not post about it here&amp;hellip;</description>
+        <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/tiling-shell/featured.png" />
+      </item>
+      
+    <item>
+    <title>Batocera On Deck - Part 1</title>
+      <link>https://xerolinux.xyz/posts/bato-deck/</link>
+        <pubDate>Mon, 15 Jul 2024 00:00:00 +0000</pubDate>
+        
+        <guid>https://xerolinux.xyz/posts/bato-deck/</guid>
+        <description>Hey there, retro gamer! Ready to turn your Steam Deck into a time machine for classic games? That&amp;rsquo;s where this guide comes in!
+Batocera # Batocera is an open-source and completely free retro-gaming distribution that can be copied to a USB stick or an SD card with the aim of turning any computer/nano computer into a gaming console during a game or permanently.</description>
+        <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/bato-deck/featured.png" />
+      </item>
+      
+    <item>
+    <title>Zed Rust based IDE</title>
+      <link>https://xerolinux.xyz/posts/zed-ide/</link>
+        <pubDate>Thu, 11 Jul 2024 00:00:00 +0000</pubDate>
+        
+        <guid>https://xerolinux.xyz/posts/zed-ide/</guid>
+        <description>A quick one for today. I stumbled upon this new IDE called ZED, and I thought I&amp;rsquo;d share it with y&amp;rsquo;all.
+The Linux version has been in development for a while, they just announced its availablability via their &amp;raquo; Linux when?</description>
+        <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/zed-ide/featured.png" />
+      </item>
+      
+    <item>
+    <title>Oh My Posh Prompt</title>
+      <link>https://xerolinux.xyz/posts/ohmyposh-p10k-replacement/</link>
+        <pubDate>Mon, 08 Jul 2024 00:00:00 +0000</pubDate>
+        
+        <guid>https://xerolinux.xyz/posts/ohmyposh-p10k-replacement/</guid>
+        <description>Some information # Oh My Posh is a custom prompt engine for any shell that has the ability to adjust the prompt string with a function or variable. It’s beautiful, elegant and intuitive; if you use git from the command line it will be great for you.</description>
+        <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/ohmyposh-p10k-replacement/featured.png" />
+      </item>
+      
+    <item>
+    <title>XeroLinux Plasma Install</title>
+      <link>https://xerolinux.xyz/xero-news/xerolinux-plasma/</link>
+        <pubDate>Mon, 08 Jul 2024 00:00:00 +0000</pubDate>
+        
+        <guid>https://xerolinux.xyz/xero-news/xerolinux-plasma/</guid>
+        <description>Introduction # I want to begin by thanking everyone who has shown the Distro all the the love. Without whom it wouldn&amp;rsquo;t have lasted as long as it did. As well as the rest of the projects present and future.</description>
+        <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/xero-news/xerolinux-plasma/featured.png" />
+      </item>
+      
+    <item>
+    <title>Amelia Automated Archinstall</title>
+      <link>https://xerolinux.xyz/posts/amelia-automated-archinstall/</link>
+        <pubDate>Sun, 07 Jul 2024 00:00:00 +0000</pubDate>
+        
+        <guid>https://xerolinux.xyz/posts/amelia-automated-archinstall/</guid>
+        <description>Overview # Meet Amelia – your new best friend for installing ArchLinux! This Bash script is all about automation and ease, bringing you through the installation process with a slick TUI interface that’s both stylish and user-friendly.</description>
+        <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/amelia-automated-archinstall/featured.png" />
+      </item>
+      
+    <item>
+    <title>M4LW Hyprland Dots</title>
+      <link>https://xerolinux.xyz/posts/ml4w-hyprland-dots/</link>
+        <pubDate>Fri, 05 Jul 2024 00:00:00 +0000</pubDate>
+        
+        <guid>https://xerolinux.xyz/posts/ml4w-hyprland-dots/</guid>
+        <description>What is Hyprland ? # In a nutshell, Hyprland is a dynamic tiling Wayland compositor based on wlroots that doesn&amp;rsquo;t sacrifice on its looks. It provides the latest Wayland features, is highly customizable, has all the eyecandy, the most powerful plugins, easy IPC, much more QoL stuff than other wlr-based compositors and more&amp;hellip;</description>
+        <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/ml4w-hyprland-dots/featured.png" />
+      </item>
+      
+    <item>
+    <title>Scrcpy Android screen mirroring tool</title>
+      <link>https://xerolinux.xyz/posts/scrcpy-android-screen-mirroring/</link>
+        <pubDate>Fri, 05 Jul 2024 00:00:00 +0000</pubDate>
+        
+        <guid>https://xerolinux.xyz/posts/scrcpy-android-screen-mirroring/</guid>
+        <description>This article was graciously contributed by Cylis. What is it? # Scrcpy is free, open-source Android screen-mirroring application that lets you use your Android with Scrcpy for Windows, macOS, or even Linux.</description>
+        <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/scrcpy-android-screen-mirroring/featured.png" />
+      </item>
+      
+    <item>
+    <title>Proxmox VE Helper-Scripts</title>
+      <link>https://xerolinux.xyz/posts/proxmoxve-scripts/</link>
+        <pubDate>Thu, 04 Jul 2024 00:00:00 +0000</pubDate>
+        
+        <guid>https://xerolinux.xyz/posts/proxmoxve-scripts/</guid>
+        <description>This is a shor one. Just letting you all know of a recent discovery of mine while I was looking into Proxmox VE
+What are they ? # Proxmox Helper Scripts empower users to create a Linux container or virtual machine interactively, providing choices for both simple and advanced configurations.</description>
+        <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/proxmoxve-scripts/featured.png" />
+      </item>
+      
+    <item>
+    <title>The Chaotic-AUR</title>
+      <link>https://xerolinux.xyz/posts/chaotic-aur/</link>
+        <pubDate>Wed, 03 Jul 2024 00:00:00 +0000</pubDate>
+        
+        <guid>https://xerolinux.xyz/posts/chaotic-aur/</guid>
+        <description>A bit of information # Chaotic-AUR is an unofficial package repository that contains pre-built packages from the Arch User Repository (AUR) . It is an automated building service that compiles AUR packages so users don&amp;rsquo;t have to build them themselves.</description>
+        <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/chaotic-aur/featured.png" />
+      </item>
+      
+    <item>
+    <title>Bluefin Aurora</title>
+      <link>https://xerolinux.xyz/posts/aurora-atomic/</link>
+        <pubDate>Mon, 01 Jul 2024 00:00:00 +0000</pubDate>
+        
+        <guid>https://xerolinux.xyz/posts/aurora-atomic/</guid>
+        <description>What is uBlue Atomic ? # uBlue is a project which produces images based on Fedora Atomic distros. You can use one of the presupplied images like Bazzite (gaming-focused image), Bluefin (general use zero-manitenance image), Aurora or their base images with minimal customizations to vanilla kinoite/silverblue/etc.</description>
+        <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/aurora-atomic/featured.png" />
+      </item>
+      
+    <item>
+    <title>WayDroid Setup Guide</title>
+      <link>https://xerolinux.xyz/posts/waydroid-guide/</link>
+        <pubDate>Mon, 01 Jul 2024 00:00:00 +0000</pubDate>
+        
+        <guid>https://xerolinux.xyz/posts/waydroid-guide/</guid>
+        <description>WayDroid in a nutshell # WayDroid is a container-based tool that allows for launching a complete Android system within the Linux desktop. It does this with Linux namespaces, effectively utilizing the Linux kernel.</description>
+        <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/waydroid-guide/featured.png" />
+      </item>
+      
+    <item>
+    <title>Burn My Windows Desktop Effects</title>
+      <link>https://xerolinux.xyz/posts/burn-my-windows/</link>
+        <pubDate>Sun, 30 Jun 2024 00:00:00 +0000</pubDate>
+        
+        <guid>https://xerolinux.xyz/posts/burn-my-windows/</guid>
+        <description>What is it ? # Burn-My-Windows is a desktop effect extension that adds a variety of visually striking window closing animations to Linux desktop environments like GNOME and KDE Plasma.</description>
+        <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/burn-my-windows/featured.png" />
+      </item>
+      
+    <item>
+    <title>nVidia vs AMD on Linux</title>
+      <link>https://xerolinux.xyz/posts/nvidia-vs-amd-linux/</link>
+        <pubDate>Sun, 30 Jun 2024 00:00:00 +0000</pubDate>
+        
+        <guid>https://xerolinux.xyz/posts/nvidia-vs-amd-linux/</guid>
+        <description>Disclaimer # I&amp;rsquo;ve gathered some relevant information for you below, which I hope you&amp;rsquo;ll find useful. Please use it at your discretion. If you perceive any favoritism, it&amp;rsquo;s not intentional on my part.</description>
+        <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/nvidia-vs-amd-linux/featured.png" />
+      </item>
+      
+    <item>
+    <title>Zellij Dev&#39;s Best Friend</title>
+      <link>https://xerolinux.xyz/posts/zellij-terminal/</link>
+        <pubDate>Sat, 29 Jun 2024 00:00:00 +0000</pubDate>
+        
+        <guid>https://xerolinux.xyz/posts/zellij-terminal/</guid>
+        <description>What is Zellij ? # Another day another Terminal utility. Zellij is a terminal workspace. It has the base functionality of a terminal multiplexer (similar to tmux or screen) but includes many built-in features that would allow users to extend it and create their own personalized environment.</description>
+        <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/zellij-terminal/featured.png" />
+      </item>
+      
+    <item>
+    <title>Add XeroLinux Repo</title>
+      <link>https://xerolinux.xyz/xero-news/add-our-repo/</link>
+        <pubDate>Fri, 28 Jun 2024 00:00:00 +0000</pubDate>
+        
+        <guid>https://xerolinux.xyz/xero-news/add-our-repo/</guid>
+        <description>Hey there&amp;hellip;
+I was recently asked if my Repo can be added to other Arch-Based Distros, short answer is yes of course you can. I will be showing you how below.</description>
+        <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/xero-news/add-our-repo/featured.png" />
+      </item>
+      
+    <item>
+    <title>Automount Drives in Linux</title>
+      <link>https://xerolinux.xyz/posts/automount-drives/</link>
+        <pubDate>Fri, 28 Jun 2024 00:00:00 +0000</pubDate>
+        
+        <guid>https://xerolinux.xyz/posts/automount-drives/</guid>
+        <description>Intro # This keeps being asked on social. So I decided to post it here.. It&amp;rsquo;s all over the net but I guess either no one knows how to search or too lazy, in any case here it is&amp;hellip;</description>
+        <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/automount-drives/featured.png" />
+      </item>
+      
+    <item>
+    <title>Fix Unbootable System</title>
+      <link>https://xerolinux.xyz/posts/fix-boot/</link>
+        <pubDate>Fri, 28 Jun 2024 00:00:00 +0000</pubDate>
+        
+        <guid>https://xerolinux.xyz/posts/fix-boot/</guid>
+        <description>Preface # Are you having an issue after updating your system with the message vmlinuz-linux not found ? Watch the video below by Erik Dubois, should help you get out of that predicament &amp;hellip;</description>
+        <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/fix-boot/featured.png" />
+      </item>
+      
+    <item>
+    <title>Keep XeroLinux Alive</title>
+      <link>https://xerolinux.xyz/xero-news/keep-xerolinux-alive/</link>
+        <pubDate>Fri, 28 Jun 2024 00:00:00 +0000</pubDate>
+        
+        <guid>https://xerolinux.xyz/xero-news/keep-xerolinux-alive/</guid>
+        <description>Intro # With the Distro is now gone, you have two choices, either back up your data and move on to another one. I would recommend you install Vanilla Arch using the ArchInstall script via the official Arch ISO if you want to benefit from the XeroCLI.</description>
+        <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/xero-news/keep-xerolinux-alive/featured.png" />
+      </item>
+      
+    <item>
+    <title>Nix Package Manager</title>
+      <link>https://xerolinux.xyz/posts/nix-package-manager/</link>
+        <pubDate>Fri, 28 Jun 2024 00:00:00 +0000</pubDate>
+        
+        <guid>https://xerolinux.xyz/posts/nix-package-manager/</guid>
+        <description>Intro # Yet again my good friend and Linux enthusiast ChriTitus has brought another cool Package Manager this time called #Nix.
+Seems to be cool and easy to Install and use.</description>
+        <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/nix-package-manager/featured.png" />
+      </item>
+      
+    <item>
+    <title>Spotube a better alternative to Spotify</title>
+      <link>https://xerolinux.xyz/posts/spotube-for-spotify/</link>
+        <pubDate>Fri, 28 Jun 2024 00:00:00 +0000</pubDate>
+        
+        <guid>https://xerolinux.xyz/posts/spotube-for-spotify/</guid>
+        <description>What is it ? # It&amp;rsquo;s an Open Source Spotify client that doesn&amp;rsquo;t require Premium nor uses Electron! Available for both desktop &amp;amp; mobile!
+Following are the features that currently spotube offers:</description>
+        <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/spotube-for-spotify/featured.png" />
+      </item>
+      
+    <item>
+    <title>Caps-Lock Delayer Script</title>
+      <link>https://xerolinux.xyz/posts/caps-lock/</link>
+        <pubDate>Thu, 27 Jun 2024 00:00:00 +0000</pubDate>
+        
+        <guid>https://xerolinux.xyz/posts/caps-lock/</guid>
+        <description>What is it ? # I just discovered a niche of users who prefer using CAPS-Lock instead of Shift while typing.. Very weird, but hey.. Anyway, one of those users shared a neat little script that solves an aging issue with CAPS Delay on Linux.</description>
+        <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/caps-lock/featured.png" />
+      </item>
+      
+    <item>
+    <title>Chroot Guide</title>
+      <link>https://xerolinux.xyz/posts/chroot-guide/</link>
+        <pubDate>Thu, 27 Jun 2024 00:00:00 +0000</pubDate>
+        
+        <guid>https://xerolinux.xyz/posts/chroot-guide/</guid>
+        <description>Info # Changing Root (Chroot) is the process of changing of the apparent disk root directory (and the current running process and its children) to another root directory. When you change root to another directory you cannot access files and commands outside that directory.</description>
+        <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/chroot-guide/featured.png" />
+      </item>
+      
+    <item>
+    <title>Converseen, the batch image converter</title>
+      <link>https://xerolinux.xyz/posts/coverseen-img-convert/</link>
+        <pubDate>Thu, 27 Jun 2024 00:00:00 +0000</pubDate>
+        
+        <guid>https://xerolinux.xyz/posts/coverseen-img-convert/</guid>
+        <description>This one such a time saver.. # Converseen can do batch image conversion, apply similar alteration like rotation, resize, remove image metadata, let you ignore specific files if you import a collection.</description>
+        <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/coverseen-img-convert/featured.png" />
+      </item>
+      
+    <item>
+    <title>DConf Editor Gnome</title>
+      <link>https://xerolinux.xyz/posts/dconf-editor/</link>
+        <pubDate>Thu, 27 Jun 2024 00:00:00 +0000</pubDate>
+        
+        <guid>https://xerolinux.xyz/posts/dconf-editor/</guid>
+        <description>What is it ? # Dconf Editor is a graphical tool used to configure settings in Linux, particularly on GNOME desktop environments. It allows users to navigate and modify system options stored in the dconf database, which is a key-value store that manages different aspects of the system.</description>
+        <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/dconf-editor/featured.png" />
+      </item>
+      
+    <item>
+    <title>Docker &amp; Docker-Compose</title>
+      <link>https://xerolinux.xyz/posts/docker-usage/</link>
+        <pubDate>Thu, 27 Jun 2024 00:00:00 +0000</pubDate>
+        
+        <guid>https://xerolinux.xyz/posts/docker-usage/</guid>
+        <description>Intro # After messing with Docker Containers for so long, I thought I would share the knowledge. Hopefully a video showing it in action soon. In this short tutorial we will be using the Docker Compose feature to deploy our containers.</description>
+        <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/docker-usage/featured.png" />
+      </item>
+      
+    <item>
+    <title>Enable Snaps on Arch</title>
+      <link>https://xerolinux.xyz/posts/enable-snaps/</link>
+        <pubDate>Thu, 27 Jun 2024 00:00:00 +0000</pubDate>
+        
+        <guid>https://xerolinux.xyz/posts/enable-snaps/</guid>
+        <description>What are Snaps ? # Snaps are a innovative packaging format for distributing applications on Linux. Developed by Canonical, snaps are self-contained software bundles that include the app and all its dependencies.</description>
+        <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/enable-snaps/featured.png" />
+      </item>
+      
+    <item>
+    <title>Ferdium WebApp</title>
+      <link>https://xerolinux.xyz/posts/ferdium-web/</link>
+        <pubDate>Thu, 27 Jun 2024 00:00:00 +0000</pubDate>
+        
+        <guid>https://xerolinux.xyz/posts/ferdium-web/</guid>
+        <description>What is it ? # Ferdium is a desktop app that helps you organize how you use your favourite apps by combining them into one application. It is based on Franz - a software already used by thousands of people - with the difference that Ferdium gives you many additional features and doesn&amp;rsquo;t restrict its usage!</description>
+        <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/ferdium-web/featured.png" />
+      </item>
+      
+    <item>
+    <title>Flatpak Tips &amp; Tricks</title>
+      <link>https://xerolinux.xyz/posts/flatpak-tips/</link>
+        <pubDate>Thu, 27 Jun 2024 00:00:00 +0000</pubDate>
+        
+        <guid>https://xerolinux.xyz/posts/flatpak-tips/</guid>
+        <description>Intro # Slowly and steadily, Flatpak has a growing acceptance in the desktop Linux world.
+It is well integrated into Fedora and many other distributions like Linux Mint, elementary, Solus, etc.</description>
+        <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/flatpak-tips/featured.png" />
+      </item>
+      
+    <item>
+    <title>How To Downgrade Packages</title>
+      <link>https://xerolinux.xyz/posts/downgrade-tool/</link>
+        <pubDate>Thu, 27 Jun 2024 00:00:00 +0000</pubDate>
+        
+        <guid>https://xerolinux.xyz/posts/downgrade-tool/</guid>
+        <description>What is Downgrade ? # Downgrade is a Bash script that makes it easier to downgrade packages in Arch Linux to an older version. It checks both the local pacman cache and the Arch Linux Archive (ALA) for available older versions of a package and allows you to select which version to install</description>
+        <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/downgrade-tool/featured.png" />
+      </item>
+      
+    <item>
+    <title>Install Yay or Paru</title>
+      <link>https://xerolinux.xyz/posts/install-yay-paru/</link>
+        <pubDate>Thu, 27 Jun 2024 00:00:00 +0000</pubDate>
+        
+        <guid>https://xerolinux.xyz/posts/install-yay-paru/</guid>
+        <description>What Are Those ? # Yay &amp;amp; Paru are AUR Helpers. What&amp;rsquo;s that ? Well, an AUR helper is a tool that automates the process of installing and managing packages from the Arch User Repository (AUR) on Arch Linux.</description>
+        <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/install-yay-paru/featured.png" />
+      </item>
+      
+    <item>
+    <title>Konsave TUI</title>
+      <link>https://xerolinux.xyz/posts/konsave-tool/</link>
+        <pubDate>Thu, 27 Jun 2024 00:00:00 +0000</pubDate>
+        
+        <guid>https://xerolinux.xyz/posts/konsave-tool/</guid>
+        <description>Intro # I have recently stumbled upon a handy little tool for us who love customizing KDE but hate the work of switching between rices&amp;hellip; It&amp;rsquo;s called KonSave.
+As you can see from above video, tool is very useful.</description>
+        <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/konsave-tool/featured.png" />
+      </item>
+      
+    <item>
+    <title>LightlyShaders Effects</title>
+      <link>https://xerolinux.xyz/posts/lightly-shaders/</link>
+        <pubDate>Thu, 27 Jun 2024 00:00:00 +0000</pubDate>
+        
+        <guid>https://xerolinux.xyz/posts/lightly-shaders/</guid>
+        <description>What is it ? # I would like to share a neat little &amp;ldquo;Effect&amp;rdquo; if you will, called LightlyShaders which is fork of another project that is a simple KWin/5 effect that simply rounds corners of windows, to do this it uses an opengl shader and is able to round any window, like mpv video for example will have rounded corners.</description>
+        <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/lightly-shaders/featured.png" />
+      </item>
+      
+    <item>
+    <title>Make KDE apps use System theme in XFCE/Gnome</title>
+      <link>https://xerolinux.xyz/posts/fix-grub/</link>
+        <pubDate>Thu, 27 Jun 2024 00:00:00 +0000</pubDate>
+        
+        <guid>https://xerolinux.xyz/posts/fix-grub/</guid>
+        <description>Info # In case you are one of the affected people, below is how you can fix the issue. I have tested it and it works fine. And keep in mind that XeroLinux is basically ArchLinux so below fix will work on Arch as well as any Arch-Based distros with the exception of Manjaro that is NOT Arch&amp;hellip; Read more on that &amp;raquo; Here &amp;laquo;</description>
+        <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/fix-grub/featured.png" />
+      </item>
+      
+    <item>
+    <title>Make KDE apps use System theme in XFCE/Gnome</title>
+      <link>https://xerolinux.xyz/posts/theme-qt-apps-on-gtk-de/</link>
+        <pubDate>Thu, 27 Jun 2024 00:00:00 +0000</pubDate>
+        
+        <guid>https://xerolinux.xyz/posts/theme-qt-apps-on-gtk-de/</guid>
+        <description>Intro # As I was working on XFCE &amp;amp; Gnome, I noticed that since they both use GTK3/4, some QT apps made for KDE like KdenLive did not follow the system theme.</description>
+        <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/theme-qt-apps-on-gtk-de/featured.png" />
+      </item>
+      
+    <item>
+    <title>ML4W Plasma &#43; Hyprland side-by-side</title>
+      <link>https://xerolinux.xyz/posts/ml4w-hyprland-plasma/</link>
+        <pubDate>Thu, 27 Jun 2024 00:00:00 +0000</pubDate>
+        
+        <guid>https://xerolinux.xyz/posts/ml4w-hyprland-plasma/</guid>
+        <description>What is it ? # Our good friend from ML4W just posted a video showing us how to have both Plasma 6 and Hyprland side-by-side with his awesome dotfiles.. Check it out below with a link to his repos&amp;hellip;</description>
+        <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/ml4w-hyprland-plasma/featured.png" />
+      </item>
+      
+    <item>
+    <title>OBS Studio Official Package</title>
+      <link>https://xerolinux.xyz/posts/obs-official/</link>
+        <pubDate>Thu, 27 Jun 2024 00:00:00 +0000</pubDate>
+        
+        <guid>https://xerolinux.xyz/posts/obs-official/</guid>
+        <description>What is OBS-Studio ? # OBS Studio is a free and open-source, cross-platform screencasting and streaming app. It is available for Windows, macOS, Linux distributions, and BSD. The OBS Project raises funds on Open Collective and Patreon.</description>
+        <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/obs-official/featured.png" />
+      </item>
+      
+    <item>
+    <title>Pacman Issues</title>
+      <link>https://xerolinux.xyz/posts/pacman-issues/</link>
+        <pubDate>Thu, 27 Jun 2024 00:00:00 +0000</pubDate>
+        
+        <guid>https://xerolinux.xyz/posts/pacman-issues/</guid>
+        <description>Info # This will be a short one. I noticed lately, that Pacman has been behaving badly.. I decided to attach all the videos that cover how to handle them.</description>
+        <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/pacman-issues/featured.png" />
+      </item>
+      
+    <item>
+    <title>PacSeek TUI</title>
+      <link>https://xerolinux.xyz/posts/pacseek-tui/</link>
+        <pubDate>Thu, 27 Jun 2024 00:00:00 +0000</pubDate>
+        
+        <guid>https://xerolinux.xyz/posts/pacseek-tui/</guid>
+        <description>Intro # I just found a neat little tool called &amp;ldquo;Pacseek&amp;rdquo; which is a terminal user interface for searching and installing Arch Linux packages&amp;hellip;
+What is it ? # Pacseek is terminal user interface, written in Rust which allows you to browse and search through the Arch Linux package databases as well as the Arch User Repository.</description>
+        <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/pacseek-tui/featured.png" />
+      </item>
+      
+    <item>
+    <title>Recover deleted files in Linux</title>
+      <link>https://xerolinux.xyz/posts/recover-deleted-files/</link>
+        <pubDate>Thu, 27 Jun 2024 00:00:00 +0000</pubDate>
+        
+        <guid>https://xerolinux.xyz/posts/recover-deleted-files/</guid>
+        <description>Introduction # I have recently decided to make the switch to Linux as my main daily OS, leaving Windows behind just for occasional gaming. But since am new to Linux, everything requires me to do research.</description>
+        <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/recover-deleted-files/featured.png" />
+      </item>
+      
+    <item>
+    <title>Stremio - Best Streaming tool</title>
+      <link>https://xerolinux.xyz/posts/stremio-tool/</link>
+        <pubDate>Thu, 27 Jun 2024 00:00:00 +0000</pubDate>
+        
+        <guid>https://xerolinux.xyz/posts/stremio-tool/</guid>
+        <description>What is Stremio? # Stremio is a one-stop hub for video content aggregation. Discover, organize and watch video from all kind of sources on any device that you own. Movies, TV shows, series, live television or web channels like YouTube and Twitch.</description>
+        <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/stremio-tool/featured.png" />
+      </item>
+      
+    <item>
+    <title>Tabby Terminal</title>
+      <link>https://xerolinux.xyz/posts/tabby-terminal/</link>
+        <pubDate>Thu, 27 Jun 2024 00:00:00 +0000</pubDate>
+        
+        <guid>https://xerolinux.xyz/posts/tabby-terminal/</guid>
+        <description>Intro # I just ran across a video by @MattTLC from TheLinuxCast about a neat fully featured Terminal Emulator called Tabby.. I kinda like it, and I will be adding it to our package manager as an option.</description>
+        <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/tabby-terminal/featured.png" />
+      </item>
+      
+    <item>
+    <title>Terminal Aliases</title>
+      <link>https://xerolinux.xyz/posts/terminal-aliases/</link>
+        <pubDate>Thu, 27 Jun 2024 00:00:00 +0000</pubDate>
+        
+        <guid>https://xerolinux.xyz/posts/terminal-aliases/</guid>
+        <description>A quick one today, a video by DistroTube popped up that explains shell aliases and how to create your very own.. He does it in Ubuntu but you can do the same thing in Arch&amp;hellip;</description>
+        <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/terminal-aliases/featured.png" />
+      </item>
+      
+    <item>
+    <title>Theming Flatpaks</title>
+      <link>https://xerolinux.xyz/posts/flatpak-theming/</link>
+        <pubDate>Thu, 27 Jun 2024 00:00:00 +0000</pubDate>
+        
+        <guid>https://xerolinux.xyz/posts/flatpak-theming/</guid>
+        <description>Intro # One of the reasons why some users avoid installing Flatpak apps is that most Flatpak apps don’t change their appearance as per the current system theme. This makes the applications look out of the place in your otherwise beautiful set up.</description>
+        <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/flatpak-theming/featured.png" />
+      </item>
+      
+    <item>
+    <title>TKG nVidia-AiO Installer</title>
+      <link>https://xerolinux.xyz/posts/tkg-nvidia-all/</link>
+        <pubDate>Thu, 27 Jun 2024 00:00:00 +0000</pubDate>
+        
+        <guid>https://xerolinux.xyz/posts/tkg-nvidia-all/</guid>
+        <description>Introduction # In this post I will be telling you about a very useful tool/script that might help all of you out there having issues with the infamous nVidia GPU on Linux&amp;hellip;</description>
+        <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/tkg-nvidia-all/featured.png" />
+      </item>
+      
+    <item>
+    <title>Ventoy - Best multi-boot tool</title>
+      <link>https://xerolinux.xyz/posts/ventoy-multi-boot/</link>
+        <pubDate>Thu, 27 Jun 2024 00:00:00 +0000</pubDate>
+        
+        <guid>https://xerolinux.xyz/posts/ventoy-multi-boot/</guid>
+        <description>Preface # In this here post I will be talking about the famous Ventoy USB tool. People have asked me many times what USB tool I use to make bootable Linux drives.</description>
+        <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/ventoy-multi-boot/featured.png" />
+      </item>
+      
+    <item>
+    <title>Wallpaper Engine for Plasma</title>
+      <link>https://xerolinux.xyz/posts/wallpaper-engine/</link>
+        <pubDate>Thu, 27 Jun 2024 00:00:00 +0000</pubDate>
+        
+        <guid>https://xerolinux.xyz/posts/wallpaper-engine/</guid>
+        <description>Intro # I have always wanted to use cool animated wallpapers on Linux. Found many free ways, but nothing rivaled the awesome features of Wallpaper Engine found on steam for the low price of $5.</description>
+        <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/wallpaper-engine/featured.png" />
+      </item>
+      
+    <item>
+    <title>Warehouse Flatpak Toolbox</title>
+      <link>https://xerolinux.xyz/posts/warehouse-flatpak/</link>
+        <pubDate>Thu, 27 Jun 2024 00:00:00 +0000</pubDate>
+        
+        <guid>https://xerolinux.xyz/posts/warehouse-flatpak/</guid>
+        <description>What is it ? # Warehouse is a versatile toolbox for managing flatpak user data, viewing flatpak app info, and batch managing installed flatpaks.
+Main Features :
+- Viewing Flatpak Info: 📋 Warehouse can display all the information provided by the flatpak list command in a user-friendly graphical window.</description>
+        <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/warehouse-flatpak/featured.png" />
+      </item>
+      
+    <item>
+    <title>Zoxide the smarter cd command</title>
+      <link>https://xerolinux.xyz/posts/zoxide-cd/</link>
+        <pubDate>Thu, 27 Jun 2024 00:00:00 +0000</pubDate>
+        
+        <guid>https://xerolinux.xyz/posts/zoxide-cd/</guid>
+        <description>Intro # While browsing YouTube I stumbled upon a video showing off a neat little tool called Zoxide. It&amp;rsquo;s touted to be a smarter cd command, inspired by z and autojump.</description>
+        <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/zoxide-cd/featured.png" />
+      </item>
+      
+    <item>
+    <title>Homebrew on Linux</title>
+      <link>https://xerolinux.xyz/posts/homerew-linux/</link>
+        <pubDate>Wed, 26 Jun 2024 00:00:00 +0000</pubDate>
+        
+        <guid>https://xerolinux.xyz/posts/homerew-linux/</guid>
+        <description>Intro # @ChrisTitus brought to my attention HomeBrew or Brew for short, the so called &amp;ldquo;Forgotten Package Manager&amp;rdquo; usually used on macOS&amp;hellip; It&amp;rsquo;s Distro agnostic so it can be installed and enabled on any of your choice.</description>
+        <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/homerew-linux/featured.png" />
+      </item>
+      
+    <item>
+    <title>Topgrade AiO Updater</title>
+      <link>https://xerolinux.xyz/posts/topgrade-updater/</link>
+        <pubDate>Wed, 26 Jun 2024 00:00:00 +0000</pubDate>
+        
+        <guid>https://xerolinux.xyz/posts/topgrade-updater/</guid>
+        <description>Intro # Upgrading Linux has gotten much easier than it used to be. In the old days, you might upgrade certain pieces of software, but mostly you would wait until you bought the next version of your distro of choice.</description>
+        <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/topgrade-updater/featured.png" />
+      </item>
+      
+    <item>
+    <title>Ventoy Persistence</title>
+      <link>https://xerolinux.xyz/posts/ventoy-persistence/</link>
+        <pubDate>Wed, 26 Jun 2024 00:00:00 +0000</pubDate>
+        
+        <guid>https://xerolinux.xyz/posts/ventoy-persistence/</guid>
+        <description>Intro # Most of you might already know about the amazing tool called Ventoy and how amazing it is at removing the need to have more USB drives if you need to have more ISOs, but you might not know about how many more amazing features it has.</description>
+        <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/ventoy-persistence/featured.png" />
+      </item>
+      
+    </channel>
+  </rss>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ferdium on XeroLinux HQ</title>
+    <link>https://xerolinux.xyz/tags/ferdium/</link>
+    <description>Recent content in Ferdium on XeroLinux HQ</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>Copy, _right?_ 🫨</copyright>
+    <lastBuildDate>Thu, 27 Jun 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://xerolinux.xyz/tags/ferdium/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+    <title>Ferdium WebApp</title>
+      <link>https://xerolinux.xyz/posts/ferdium-web/</link>
+        <pubDate>Thu, 27 Jun 2024 00:00:00 +0000</pubDate>
+        
+        <guid>https://xerolinux.xyz/posts/ferdium-web/</guid>
+        <description>What is it ? # Ferdium is a desktop app that helps you organize how you use your favourite apps by combining them into one application. It is based on Franz - a software already used by thousands of people - with the difference that Ferdium gives you many additional features and doesn&amp;rsquo;t restrict its usage!</description>
+        <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/ferdium-web/featured.png" />
+      </item>
+      
+    </channel>
+  </rss>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Opensource on XeroLinux HQ</title>
+    <link>https://xerolinux.xyz/tags/opensource/</link>
+    <description>Recent content in Opensource on XeroLinux HQ</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>Copy, _right?_ 🫨</copyright>
+    <lastBuildDate>Thu, 27 Jun 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://xerolinux.xyz/tags/opensource/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+    <title>TKG nVidia-AiO Installer</title>
+      <link>https://xerolinux.xyz/posts/tkg-nvidia-all/</link>
+        <pubDate>Thu, 27 Jun 2024 00:00:00 +0000</pubDate>
+        
+        <guid>https://xerolinux.xyz/posts/tkg-nvidia-all/</guid>
+        <description>Introduction # In this post I will be telling you about a very useful tool/script that might help all of you out there having issues with the infamous nVidia GPU on Linux&amp;hellip;</description>
+        <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/tkg-nvidia-all/featured.png" />
+      </item>
+      
+    <item>
+    <title>Ventoy - Best multi-boot tool</title>
+      <link>https://xerolinux.xyz/posts/ventoy-multi-boot/</link>
+        <pubDate>Thu, 27 Jun 2024 00:00:00 +0000</pubDate>
+        
+        <guid>https://xerolinux.xyz/posts/ventoy-multi-boot/</guid>
+        <description>Preface # In this here post I will be talking about the famous Ventoy USB tool. People have asked me many times what USB tool I use to make bootable Linux drives.</description>
+        <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/ventoy-multi-boot/featured.png" />
+      </item>
+      
+    </channel>
+  </rss>

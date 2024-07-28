@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Multi-Boot on XeroLinux HQ</title>
+    <link>https://xerolinux.xyz/tags/multi-boot/</link>
+    <description>Recent content in Multi-Boot on XeroLinux HQ</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>Copy, _right?_ 🫨</copyright>
+    <lastBuildDate>Thu, 27 Jun 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://xerolinux.xyz/tags/multi-boot/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+    <title>Ventoy - Best multi-boot tool</title>
+      <link>https://xerolinux.xyz/posts/ventoy-multi-boot/</link>
+        <pubDate>Thu, 27 Jun 2024 00:00:00 +0000</pubDate>
+        
+        <guid>https://xerolinux.xyz/posts/ventoy-multi-boot/</guid>
+        <description>Preface # In this here post I will be talking about the famous Ventoy USB tool. People have asked me many times what USB tool I use to make bootable Linux drives.</description>
+        <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/ventoy-multi-boot/featured.png" />
+      </item>
+      
+    </channel>
+  </rss>

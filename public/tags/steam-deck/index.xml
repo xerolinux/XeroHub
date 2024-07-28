@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Steam Deck on XeroLinux HQ</title>
+    <link>https://xerolinux.xyz/tags/steam-deck/</link>
+    <description>Recent content in Steam Deck on XeroLinux HQ</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>Copy, _right?_ 🫨</copyright>
+    <lastBuildDate>Tue, 23 Jul 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://xerolinux.xyz/tags/steam-deck/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+    <title>Batocera On Deck - Part 2</title>
+      <link>https://xerolinux.xyz/posts/retro-deck/</link>
+        <pubDate>Tue, 23 Jul 2024 00:00:00 +0000</pubDate>
+        
+        <guid>https://xerolinux.xyz/posts/retro-deck/</guid>
+        <description>Hey there, retro gamer! Are you like me, and prefer to replace SteamOS with Batocera transforming your Deck into a Retro Gaming powerhouse ? Then this guide is for you&amp;hellip;</description>
+        <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/retro-deck/featured.png" />
+      </item>
+      
+    <item>
+    <title>Batocera On Deck - Part 1</title>
+      <link>https://xerolinux.xyz/posts/bato-deck/</link>
+        <pubDate>Mon, 15 Jul 2024 00:00:00 +0000</pubDate>
+        
+        <guid>https://xerolinux.xyz/posts/bato-deck/</guid>
+        <description>Hey there, retro gamer! Ready to turn your Steam Deck into a time machine for classic games? That&amp;rsquo;s where this guide comes in!
+Batocera # Batocera is an open-source and completely free retro-gaming distribution that can be copied to a USB stick or an SD card with the aim of turning any computer/nano computer into a gaming console during a game or permanently.</description>
+        <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/bato-deck/featured.png" />
+      </item>
+      
+    </channel>
+  </rss>

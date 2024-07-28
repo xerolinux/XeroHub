@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Python on XeroLinux HQ</title>
+    <link>https://xerolinux.xyz/tags/python/</link>
+    <description>Recent content in Python on XeroLinux HQ</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>Copy, _right?_ 🫨</copyright>
+    <lastBuildDate>Thu, 27 Jun 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://xerolinux.xyz/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+    <title>My First Python Script</title>
+      <link>https://xerolinux.xyz/posts/first-python-script/</link>
+        <pubDate>Thu, 27 Jun 2024 00:00:00 +0000</pubDate>
+        
+        <guid>https://xerolinux.xyz/posts/first-python-script/</guid>
+        <description>What prompted me ? # Well, as I was porting all relevant forum posts to this site in markdown, I needed a better way to do so. Someone on Mastodon gave me the idea of writing a python script that does it for me.</description>
+        <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/first-python-script/featured.png" />
+      </item>
+      
+    </channel>
+  </rss>

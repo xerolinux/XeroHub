@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Packages on XeroLinux HQ</title>
+    <link>https://xerolinux.xyz/tags/packages/</link>
+    <description>Recent content in Packages on XeroLinux HQ</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>Copy, _right?_ 🫨</copyright>
+    <lastBuildDate>Fri, 28 Jun 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://xerolinux.xyz/tags/packages/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+    <title>Nix Package Manager</title>
+      <link>https://xerolinux.xyz/posts/nix-package-manager/</link>
+        <pubDate>Fri, 28 Jun 2024 00:00:00 +0000</pubDate>
+        
+        <guid>https://xerolinux.xyz/posts/nix-package-manager/</guid>
+        <description>Intro # Yet again my good friend and Linux enthusiast ChriTitus has brought another cool Package Manager this time called #Nix.
+Seems to be cool and easy to Install and use.</description>
+        <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/nix-package-manager/featured.png" />
+      </item>
+      
+    <item>
+    <title>Pacman Issues</title>
+      <link>https://xerolinux.xyz/posts/pacman-issues/</link>
+        <pubDate>Thu, 27 Jun 2024 00:00:00 +0000</pubDate>
+        
+        <guid>https://xerolinux.xyz/posts/pacman-issues/</guid>
+        <description>Info # This will be a short one. I noticed lately, that Pacman has been behaving badly.. I decided to attach all the videos that cover how to handle them.</description>
+        <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/pacman-issues/featured.png" />
+      </item>
+      
+    </channel>
+  </rss>

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Flatpak on XeroLinux HQ</title>
+    <link>https://xerolinux.xyz/tags/flatpak/</link>
+    <description>Recent content in Flatpak on XeroLinux HQ</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>Copy, _right?_ 🫨</copyright>
+    <lastBuildDate>Fri, 28 Jun 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://xerolinux.xyz/tags/flatpak/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+    <title>Spotube a better alternative to Spotify</title>
+      <link>https://xerolinux.xyz/posts/spotube-for-spotify/</link>
+        <pubDate>Fri, 28 Jun 2024 00:00:00 +0000</pubDate>
+        
+        <guid>https://xerolinux.xyz/posts/spotube-for-spotify/</guid>
+        <description>What is it ? # It&amp;rsquo;s an Open Source Spotify client that doesn&amp;rsquo;t require Premium nor uses Electron! Available for both desktop &amp;amp; mobile!
+Following are the features that currently spotube offers:</description>
+        <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/spotube-for-spotify/featured.png" />
+      </item>
+      
+    <item>
+    <title>Ferdium WebApp</title>
+      <link>https://xerolinux.xyz/posts/ferdium-web/</link>
+        <pubDate>Thu, 27 Jun 2024 00:00:00 +0000</pubDate>
+        
+        <guid>https://xerolinux.xyz/posts/ferdium-web/</guid>
+        <description>What is it ? # Ferdium is a desktop app that helps you organize how you use your favourite apps by combining them into one application. It is based on Franz - a software already used by thousands of people - with the difference that Ferdium gives you many additional features and doesn&amp;rsquo;t restrict its usage!</description>
+        <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/ferdium-web/featured.png" />
+      </item>
+      
+    <item>
+    <title>Flatpak Tips &amp; Tricks</title>
+      <link>https://xerolinux.xyz/posts/flatpak-tips/</link>
+        <pubDate>Thu, 27 Jun 2024 00:00:00 +0000</pubDate>
+        
+        <guid>https://xerolinux.xyz/posts/flatpak-tips/</guid>
+        <description>Intro # Slowly and steadily, Flatpak has a growing acceptance in the desktop Linux world.
+It is well integrated into Fedora and many other distributions like Linux Mint, elementary, Solus, etc.</description>
+        <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/flatpak-tips/featured.png" />
+      </item>
+      
+    <item>
+    <title>OBS Studio Official Package</title>
+      <link>https://xerolinux.xyz/posts/obs-official/</link>
+        <pubDate>Thu, 27 Jun 2024 00:00:00 +0000</pubDate>
+        
+        <guid>https://xerolinux.xyz/posts/obs-official/</guid>
+        <description>What is OBS-Studio ? # OBS Studio is a free and open-source, cross-platform screencasting and streaming app. It is available for Windows, macOS, Linux distributions, and BSD. The OBS Project raises funds on Open Collective and Patreon.</description>
+        <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/obs-official/featured.png" />
+      </item>
+      
+    <item>
+    <title>Theming Flatpaks</title>
+      <link>https://xerolinux.xyz/posts/flatpak-theming/</link>
+        <pubDate>Thu, 27 Jun 2024 00:00:00 +0000</pubDate>
+        
+        <guid>https://xerolinux.xyz/posts/flatpak-theming/</guid>
+        <description>Intro # One of the reasons why some users avoid installing Flatpak apps is that most Flatpak apps don’t change their appearance as per the current system theme. This makes the applications look out of the place in your otherwise beautiful set up.</description>
+        <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/flatpak-theming/featured.png" />
+      </item>
+      
+    <item>
+    <title>Warehouse Flatpak Toolbox</title>
+      <link>https://xerolinux.xyz/posts/warehouse-flatpak/</link>
+        <pubDate>Thu, 27 Jun 2024 00:00:00 +0000</pubDate>
+        
+        <guid>https://xerolinux.xyz/posts/warehouse-flatpak/</guid>
+        <description>What is it ? # Warehouse is a versatile toolbox for managing flatpak user data, viewing flatpak app info, and batch managing installed flatpaks.
+Main Features :
+- Viewing Flatpak Info: 📋 Warehouse can display all the information provided by the flatpak list command in a user-friendly graphical window.</description>
+        <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/warehouse-flatpak/featured.png" />
+      </item>
+      
+    </channel>
+  </rss>
