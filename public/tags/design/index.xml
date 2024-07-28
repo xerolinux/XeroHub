@@ -10,12 +10,12 @@
     <lastBuildDate>Thu, 27 Jun 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://xerolinux.xyz/tags/design/index.xml" rel="self" type="application/rss+xml" />
     <item>
     <title>Fresh New Look</title>
-      <link>https://xerolinux.xyz/xero-news/new-site/</link>
+      <link>https://xerolinux.xyz/news/new-site/</link>
         <pubDate>Thu, 27 Jun 2024 00:00:00 +0000</pubDate>
         
-        <guid>https://xerolinux.xyz/xero-news/new-site/</guid>
+        <guid>https://xerolinux.xyz/news/new-site/</guid>
         <description>Not Again ! # Yep, again lol&amp;hellip; I dunno what else to say. I will keep trying different designs out until I am satisfied. But if all goes well, this will be the last time, who knows ?</description>
-        <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/xero-news/new-site/featured.png" />
+        <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/news/new-site/featured.webp" />
       </item>
       
     </channel>

@@ -7,7 +7,57 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>Copy, _right?_ 🫨</copyright>
-    <lastBuildDate>Tue, 23 Jul 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://xerolinux.xyz/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 28 Jul 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://xerolinux.xyz/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+    <title>Docker</title>
+      <link>https://xerolinux.xyz/tags/docker/</link>
+        <pubDate>Sun, 28 Jul 2024 00:00:00 +0000</pubDate>
+        
+        <guid>https://xerolinux.xyz/tags/docker/</guid>
+        <description></description>
+        
+      </item>
+      
+    <item>
+    <title>Image Hosting</title>
+      <link>https://xerolinux.xyz/tags/image-hosting/</link>
+        <pubDate>Sun, 28 Jul 2024 00:00:00 +0000</pubDate>
+        
+        <guid>https://xerolinux.xyz/tags/image-hosting/</guid>
+        <description></description>
+        
+      </item>
+      
+    <item>
+    <title>Immich</title>
+      <link>https://xerolinux.xyz/tags/immich/</link>
+        <pubDate>Sun, 28 Jul 2024 00:00:00 +0000</pubDate>
+        
+        <guid>https://xerolinux.xyz/tags/immich/</guid>
+        <description></description>
+        
+      </item>
+      
+    <item>
+    <title>Linux</title>
+      <link>https://xerolinux.xyz/tags/linux/</link>
+        <pubDate>Sun, 28 Jul 2024 00:00:00 +0000</pubDate>
+        
+        <guid>https://xerolinux.xyz/tags/linux/</guid>
+        <description></description>
+        
+      </item>
+      
+    <item>
+    <title>Self-Hosting</title>
+      <link>https://xerolinux.xyz/tags/self-hosting/</link>
+        <pubDate>Sun, 28 Jul 2024 00:00:00 +0000</pubDate>
+        
+        <guid>https://xerolinux.xyz/tags/self-hosting/</guid>
+        <description></description>
+        
+      </item>
+      
     <item>
     <title>Batocera</title>
       <link>https://xerolinux.xyz/tags/batocera/</link>
@@ -34,16 +84,6 @@
         <pubDate>Tue, 23 Jul 2024 00:00:00 +0000</pubDate>
         
         <guid>https://xerolinux.xyz/tags/emulation/</guid>
-        <description></description>
-        
-      </item>
-      
-    <item>
-    <title>Linux</title>
-      <link>https://xerolinux.xyz/tags/linux/</link>
-        <pubDate>Tue, 23 Jul 2024 00:00:00 +0000</pubDate>
-        
-        <guid>https://xerolinux.xyz/tags/linux/</guid>
         <description></description>
         
       </item>
@@ -84,16 +124,6 @@
         <pubDate>Tue, 23 Jul 2024 00:00:00 +0000</pubDate>
         
         <guid>https://xerolinux.xyz/tags/steamos/</guid>
-        <description></description>
-        
-      </item>
-      
-    <item>
-    <title>Docker</title>
-      <link>https://xerolinux.xyz/tags/docker/</link>
-        <pubDate>Mon, 22 Jul 2024 00:00:00 +0000</pubDate>
-        
-        <guid>https://xerolinux.xyz/tags/docker/</guid>
         <description></description>
         
       </item>

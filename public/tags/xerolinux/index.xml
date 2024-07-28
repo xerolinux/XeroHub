@@ -10,63 +10,63 @@
     <lastBuildDate>Mon, 08 Jul 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://xerolinux.xyz/tags/xerolinux/index.xml" rel="self" type="application/rss+xml" />
     <item>
     <title>XeroLinux Plasma Install</title>
-      <link>https://xerolinux.xyz/xero-news/xerolinux-plasma/</link>
+      <link>https://xerolinux.xyz/news/xerolinux-plasma/</link>
         <pubDate>Mon, 08 Jul 2024 00:00:00 +0000</pubDate>
         
-        <guid>https://xerolinux.xyz/xero-news/xerolinux-plasma/</guid>
+        <guid>https://xerolinux.xyz/news/xerolinux-plasma/</guid>
         <description>Introduction # I want to begin by thanking everyone who has shown the Distro all the the love. Without whom it wouldn&amp;rsquo;t have lasted as long as it did. As well as the rest of the projects present and future.</description>
-        <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/xero-news/xerolinux-plasma/featured.png" />
+        <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/news/xerolinux-plasma/featured.webp" />
       </item>
       
     <item>
     <title>XeroLinux YouTube</title>
-      <link>https://xerolinux.xyz/xero-news/youtube-status/</link>
+      <link>https://xerolinux.xyz/news/youtube-status/</link>
         <pubDate>Thu, 04 Jul 2024 00:00:00 +0000</pubDate>
         
-        <guid>https://xerolinux.xyz/xero-news/youtube-status/</guid>
+        <guid>https://xerolinux.xyz/news/youtube-status/</guid>
         <description>Today I bring you a different kind of post. So sit back, grab a cup of tea/coffee and read on. It&amp;rsquo;s under this category coz it simply isn&amp;rsquo;t related to Linux.</description>
-        <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/xero-news/youtube-status/featured.png" />
+        <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/news/youtube-status/featured.webp" />
       </item>
       
     <item>
     <title>Add XeroLinux Repo</title>
-      <link>https://xerolinux.xyz/xero-news/add-our-repo/</link>
+      <link>https://xerolinux.xyz/news/add-our-repo/</link>
         <pubDate>Fri, 28 Jun 2024 00:00:00 +0000</pubDate>
         
-        <guid>https://xerolinux.xyz/xero-news/add-our-repo/</guid>
+        <guid>https://xerolinux.xyz/news/add-our-repo/</guid>
         <description>Hey there&amp;hellip;
 I was recently asked if my Repo can be added to other Arch-Based Distros, short answer is yes of course you can. I will be showing you how below.</description>
-        <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/xero-news/add-our-repo/featured.png" />
+        <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/news/add-our-repo/featured.webp" />
       </item>
       
     <item>
     <title>Continue to use XeroLinux</title>
-      <link>https://xerolinux.xyz/xero-news/keep-xerolinux-alive/</link>
+      <link>https://xerolinux.xyz/news/keep-xerolinux-alive/</link>
         <pubDate>Fri, 28 Jun 2024 00:00:00 +0000</pubDate>
         
-        <guid>https://xerolinux.xyz/xero-news/keep-xerolinux-alive/</guid>
+        <guid>https://xerolinux.xyz/news/keep-xerolinux-alive/</guid>
         <description>Intro # With the Distro is now gone, you have two choices, either back up your data and move on to another one. I would recommend you install Vanilla Arch using the ArchInstall script via the official Arch ISO if you want to benefit from the XeroCLI.</description>
-        <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/xero-news/keep-xerolinux-alive/featured.png" />
+        <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/news/keep-xerolinux-alive/featured.webp" />
       </item>
       
     <item>
     <title>Submit Site Content</title>
-      <link>https://xerolinux.xyz/xero-news/submit-content/</link>
+      <link>https://xerolinux.xyz/news/submit-content/</link>
         <pubDate>Fri, 28 Jun 2024 00:00:00 +0000</pubDate>
         
-        <guid>https://xerolinux.xyz/xero-news/submit-content/</guid>
+        <guid>https://xerolinux.xyz/news/submit-content/</guid>
         <description>Intro # So, I was thinking, why be the only one submitting content for the site ? This site is now a place to post Linux news, guides, and tools among other stuff.</description>
-        <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/xero-news/submit-content/featured.png" />
+        <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/news/submit-content/featured.webp" />
       </item>
       
     <item>
     <title>Fresh New Look</title>
-      <link>https://xerolinux.xyz/xero-news/new-site/</link>
+      <link>https://xerolinux.xyz/news/new-site/</link>
         <pubDate>Thu, 27 Jun 2024 00:00:00 +0000</pubDate>
         
-        <guid>https://xerolinux.xyz/xero-news/new-site/</guid>
+        <guid>https://xerolinux.xyz/news/new-site/</guid>
         <description>Not Again ! # Yep, again lol&amp;hellip; I dunno what else to say. I will keep trying different designs out until I am satisfied. But if all goes well, this will be the last time, who knows ?</description>
-        <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/xero-news/new-site/featured.png" />
+        <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/news/new-site/featured.webp" />
       </item>
       
     </channel>

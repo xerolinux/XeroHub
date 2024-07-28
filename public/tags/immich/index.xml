@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Immich on XeroLinux HQ</title>
+    <link>https://xerolinux.xyz/tags/immich/</link>
+    <description>Recent content in Immich on XeroLinux HQ</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>Copy, _right?_ 🫨</copyright>
+    <lastBuildDate>Sun, 28 Jul 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://xerolinux.xyz/tags/immich/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+    <title>Immich Updates</title>
+      <link>https://xerolinux.xyz/news/immich-news/</link>
+        <pubDate>Sun, 28 Jul 2024 00:00:00 +0000</pubDate>
+        
+        <guid>https://xerolinux.xyz/news/immich-news/</guid>
+        <description>I know I previously said no news on this site as they get old. But I thought this one requires your attention, so there you go. It&amp;rsquo;s not news as much as it is an awreness post, letting you know more about what&amp;rsquo;s going on in Immich land.</description>
+        <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/news/immich-news/featured.avif" />
+      </item>
+      
+    </channel>
+  </rss>

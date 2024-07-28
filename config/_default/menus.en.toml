@@ -29,7 +29,7 @@ weight = 4
 [[main]]
 name = "News"
 pre = "globe"
-pageRef = "xero-news"
+pageRef = "news"
 identifier = "WmM3BrLWvc"
 weight = 5
 

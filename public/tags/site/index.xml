@@ -10,22 +10,22 @@
     <lastBuildDate>Fri, 28 Jun 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://xerolinux.xyz/tags/site/index.xml" rel="self" type="application/rss+xml" />
     <item>
     <title>Submit Site Content</title>
-      <link>https://xerolinux.xyz/xero-news/submit-content/</link>
+      <link>https://xerolinux.xyz/news/submit-content/</link>
         <pubDate>Fri, 28 Jun 2024 00:00:00 +0000</pubDate>
         
-        <guid>https://xerolinux.xyz/xero-news/submit-content/</guid>
+        <guid>https://xerolinux.xyz/news/submit-content/</guid>
         <description>Intro # So, I was thinking, why be the only one submitting content for the site ? This site is now a place to post Linux news, guides, and tools among other stuff.</description>
-        <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/xero-news/submit-content/featured.png" />
+        <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/news/submit-content/featured.webp" />
       </item>
       
     <item>
     <title>Fresh New Look</title>
-      <link>https://xerolinux.xyz/xero-news/new-site/</link>
+      <link>https://xerolinux.xyz/news/new-site/</link>
         <pubDate>Thu, 27 Jun 2024 00:00:00 +0000</pubDate>
         
-        <guid>https://xerolinux.xyz/xero-news/new-site/</guid>
+        <guid>https://xerolinux.xyz/news/new-site/</guid>
         <description>Not Again ! # Yep, again lol&amp;hellip; I dunno what else to say. I will keep trying different designs out until I am satisfied. But if all goes well, this will be the last time, who knows ?</description>
-        <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/xero-news/new-site/featured.png" />
+        <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/news/new-site/featured.webp" />
       </item>
       
     </channel>
