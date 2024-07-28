@@ -213,6 +213,16 @@ I was recently asked if my Repo can be added to other Arch-Based Distros, short 
       </item>
       
     <item>
+    <title>Continue to use XeroLinux</title>
+      <link>https://xerolinux.xyz/xero-news/keep-xerolinux-alive/</link>
+        <pubDate>Fri, 28 Jun 2024 00:00:00 +0000</pubDate>
+        
+        <guid>https://xerolinux.xyz/xero-news/keep-xerolinux-alive/</guid>
+        <description>Intro # With the Distro is now gone, you have two choices, either back up your data and move on to another one. I would recommend you install Vanilla Arch using the ArchInstall script via the official Arch ISO if you want to benefit from the XeroCLI.</description>
+        <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/xero-news/keep-xerolinux-alive/featured.png" />
+      </item>
+      
+    <item>
     <title>Fix Unbootable System</title>
       <link>https://xerolinux.xyz/posts/fix-boot/</link>
         <pubDate>Fri, 28 Jun 2024 00:00:00 +0000</pubDate>
@@ -220,16 +230,6 @@ I was recently asked if my Repo can be added to other Arch-Based Distros, short 
         <guid>https://xerolinux.xyz/posts/fix-boot/</guid>
         <description>Preface # Are you having an issue after updating your system with the message vmlinuz-linux not found ? Watch the video below by Erik Dubois, should help you get out of that predicament &amp;hellip;</description>
         <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/fix-boot/featured.png" />
-      </item>
-      
-    <item>
-    <title>Keep XeroLinux Alive</title>
-      <link>https://xerolinux.xyz/xero-news/keep-xerolinux-alive/</link>
-        <pubDate>Fri, 28 Jun 2024 00:00:00 +0000</pubDate>
-        
-        <guid>https://xerolinux.xyz/xero-news/keep-xerolinux-alive/</guid>
-        <description>Intro # With the Distro is now gone, you have two choices, either back up your data and move on to another one. I would recommend you install Vanilla Arch using the ArchInstall script via the official Arch ISO if you want to benefit from the XeroCLI.</description>
-        <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/xero-news/keep-xerolinux-alive/featured.png" />
       </item>
       
     <item>

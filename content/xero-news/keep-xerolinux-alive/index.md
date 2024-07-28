@@ -1,5 +1,5 @@
 ---
-title: "Keep XeroLinux Alive"
+title: "Continue to use XeroLinux"
 date: 2024-06-28
 draft: false
 description: "How To Keep Using XeroLinux"
