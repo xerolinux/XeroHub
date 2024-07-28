@@ -57,7 +57,7 @@ Put it on your **Ventoy** USB, or flash it on USB stick with **Balena Etcher** c
 
 I would recommend you be connected over ethernet via *Dongle/Hub* if you can, but if you can't, it's Ok, I will show you how to connect to WiFi.
 
-Using your mouse n keyboard, lick on the WiFi icon in the system tray, select your connection and enter you password. That's it. If you do not have a dongle or hub then it will be more difficult since **LMDE** was not created with the Deck in mind.
+Using your mouse n keyboard, click on the WiFi icon in the system tray, select your connection and enter you password. That's it. If you do not have a dongle or hub then it will be more difficult since **LMDE** was not created with the Deck in mind.
 
 You would have to go into `Settings > Accessibility > Keyboard` and enable it from there. It's up to you really. That's why I would highly recommend you have a *Hub/Dongle/Dock* handy.
 

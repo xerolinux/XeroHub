@@ -5,7 +5,7 @@ draft: false
 description: "OMG! Another app Paywalled ?"
 tags: ["Immich", "Docker", "Image Hosting", "Self-Hosting", "Linux"]
 ---
-I know I previously said no news on this site as they get old. But I thought this one requires your attention, so there you go. It's not news as much as it is an awreness post, letting you know more about what's going on in **Immich** land.
+I know I previously said no news on this site as they get old. But I thought this one requires your attention, so there you go. It's not news as much as it is an awareness post, letting you know more about what's going on in **Immich** land.
 
 ### What's Immich ?
 
@@ -24,7 +24,7 @@ It introduced two types of licenses with this update:
 
 Some of you out there might see this and decide to run for the hills. Please don't, and continue reading otherwise you will end up judging it too harshly.
 
-### Licencing Explained
+### Licensing Explained
 
 Introducing these licenses comes on the heels of the Immich team’s new full-time commitment to the project, thanks to their exciting partnership with **FUTO**.
 
@@ -66,7 +66,7 @@ This update isn’t just about looks and security. We’ve ramped up our machine
 
 ### Wrapping up
 
-There you have it folks. We shouldn't judge a book by its cover as the saying goes. In this case we should't hate on a project as big as Immich when they clearly show that they care about the **FOSS** community listening to us. I hope you have enjoyed this post. As usual find a link to their git below.
+There you have it folks. We shouldn't judge a book by its cover as the saying goes. In this case we shouldn't hate on a project as big as Immich when they clearly show that they care about the **FOSS** community listening to us. I hope you have enjoyed this post. As usual find a link to their git below.
 
 {{< github repo="immich-app/immich" >}}
 
