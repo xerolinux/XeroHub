@@ -15,7 +15,7 @@
         
         <guid>https://xerolinux.xyz/posts/first-python-script/</guid>
         <description>What prompted me ? # Well, as I was porting all relevant forum posts to this site in markdown, I needed a better way to do so. Someone on Mastodon gave me the idea of writing a python script that does it for me.</description>
-        <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/first-python-script/featured.png" />
+        <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/first-python-script/featured.webp" />
       </item>
       
     </channel>

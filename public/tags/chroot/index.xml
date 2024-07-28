@@ -15,7 +15,7 @@
         
         <guid>https://xerolinux.xyz/posts/chroot-guide/</guid>
         <description>Info # Changing Root (Chroot) is the process of changing of the apparent disk root directory (and the current running process and its children) to another root directory. When you change root to another directory you cannot access files and commands outside that directory.</description>
-        <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/chroot-guide/featured.png" />
+        <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/chroot-guide/featured.webp" />
       </item>
       
     </channel>

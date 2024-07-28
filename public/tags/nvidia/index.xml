@@ -15,7 +15,7 @@
         
         <guid>https://xerolinux.xyz/posts/nvidia-vs-amd-linux/</guid>
         <description>Disclaimer # I&amp;rsquo;ve gathered some relevant information for you below, which I hope you&amp;rsquo;ll find useful. Please use it at your discretion. If you perceive any favoritism, it&amp;rsquo;s not intentional on my part.</description>
-        <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/nvidia-vs-amd-linux/featured.png" />
+        <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/nvidia-vs-amd-linux/featured.webp" />
       </item>
       
     <item>
@@ -25,7 +25,7 @@
         
         <guid>https://xerolinux.xyz/posts/tkg-nvidia-all/</guid>
         <description>Introduction # In this post I will be telling you about a very useful tool/script that might help all of you out there having issues with the infamous nVidia GPU on Linux&amp;hellip;</description>
-        <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/tkg-nvidia-all/featured.png" />
+        <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/tkg-nvidia-all/featured.webp" />
       </item>
       
     </channel>

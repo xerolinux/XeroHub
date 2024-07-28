@@ -15,7 +15,7 @@
         
         <guid>https://xerolinux.xyz/posts/aurora-atomic/</guid>
         <description>What is uBlue Atomic ? # uBlue is a project which produces images based on Fedora Atomic distros. You can use one of the presupplied images like Bazzite (gaming-focused image), Bluefin (general use zero-manitenance image), Aurora or their base images with minimal customizations to vanilla kinoite/silverblue/etc.</description>
-        <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/aurora-atomic/featured.png" />
+        <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/aurora-atomic/featured.webp" />
       </item>
       
     </channel>

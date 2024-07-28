@@ -15,7 +15,7 @@
         
         <guid>https://xerolinux.xyz/posts/fix-grub/</guid>
         <description>Info # In case you are one of the affected people, below is how you can fix the issue. I have tested it and it works fine. And keep in mind that XeroLinux is basically ArchLinux so below fix will work on Arch as well as any Arch-Based distros with the exception of Manjaro that is NOT Arch&amp;hellip; Read more on that &amp;raquo; Here &amp;laquo;</description>
-        <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/fix-grub/featured.png" />
+        <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/fix-grub/featured.webp" />
       </item>
       
     <item>
@@ -25,7 +25,7 @@
         
         <guid>https://xerolinux.xyz/posts/theme-qt-apps-on-gtk-de/</guid>
         <description>Intro # As I was working on XFCE &amp;amp; Gnome, I noticed that since they both use GTK3/4, some QT apps made for KDE like KdenLive did not follow the system theme.</description>
-        <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/theme-qt-apps-on-gtk-de/featured.png" />
+        <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/theme-qt-apps-on-gtk-de/featured.webp" />
       </item>
       
     </channel>

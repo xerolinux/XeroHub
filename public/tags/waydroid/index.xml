@@ -15,7 +15,7 @@
         
         <guid>https://xerolinux.xyz/posts/waydroid-guide/</guid>
         <description>WayDroid in a nutshell # WayDroid is a container-based tool that allows for launching a complete Android system within the Linux desktop. It does this with Linux namespaces, effectively utilizing the Linux kernel.</description>
-        <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/waydroid-guide/featured.png" />
+        <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/waydroid-guide/featured.webp" />
       </item>
       
     </channel>

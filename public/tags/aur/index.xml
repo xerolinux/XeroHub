@@ -15,7 +15,7 @@
         
         <guid>https://xerolinux.xyz/posts/chaotic-aur/</guid>
         <description>A bit of information # Chaotic-AUR is an unofficial package repository that contains pre-built packages from the Arch User Repository (AUR) . It is an automated building service that compiles AUR packages so users don&amp;rsquo;t have to build them themselves.</description>
-        <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/chaotic-aur/featured.png" />
+        <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/chaotic-aur/featured.webp" />
       </item>
       
     <item>
@@ -25,7 +25,7 @@
         
         <guid>https://xerolinux.xyz/posts/install-yay-paru/</guid>
         <description>What Are Those ? # Yay &amp;amp; Paru are AUR Helpers. What&amp;rsquo;s that ? Well, an AUR helper is a tool that automates the process of installing and managing packages from the Arch User Repository (AUR) on Arch Linux.</description>
-        <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/install-yay-paru/featured.png" />
+        <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/install-yay-paru/featured.webp" />
       </item>
       
     </channel>

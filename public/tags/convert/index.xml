@@ -15,7 +15,7 @@
         
         <guid>https://xerolinux.xyz/posts/ffmpeg-cheat-sheet/</guid>
         <description>This will come in useful to all of you Content Creators out there, who like doing things the G33ky &amp;amp; Nerdy way. I use it a lot. This is a a list of useful commands for the FFmpeg command line tool.</description>
-        <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/ffmpeg-cheat-sheet/featured.png" />
+        <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/ffmpeg-cheat-sheet/featured.webp" />
       </item>
       
     <item>
@@ -25,7 +25,7 @@
         
         <guid>https://xerolinux.xyz/posts/coverseen-img-convert/</guid>
         <description>This one such a time saver.. # Converseen can do batch image conversion, apply similar alteration like rotation, resize, remove image metadata, let you ignore specific files if you import a collection.</description>
-        <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/coverseen-img-convert/featured.png" />
+        <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/coverseen-img-convert/featured.webp" />
       </item>
       
     </channel>

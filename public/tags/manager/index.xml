@@ -17,7 +17,7 @@
         <description>What is it ? # Warehouse is a versatile toolbox for managing flatpak user data, viewing flatpak app info, and batch managing installed flatpaks.
 Main Features :
 - Viewing Flatpak Info: 📋 Warehouse can display all the information provided by the flatpak list command in a user-friendly graphical window.</description>
-        <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/warehouse-flatpak/featured.png" />
+        <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/warehouse-flatpak/featured.webp" />
       </item>
       
     </channel>

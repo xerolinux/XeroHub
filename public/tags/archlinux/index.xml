@@ -15,7 +15,7 @@
         
         <guid>https://xerolinux.xyz/posts/amelia-automated-archinstall/</guid>
         <description>Overview # Meet Amelia – your new best friend for installing ArchLinux! This Bash script is all about automation and ease, bringing you through the installation process with a slick TUI interface that’s both stylish and user-friendly.</description>
-        <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/amelia-automated-archinstall/featured.png" />
+        <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/amelia-automated-archinstall/featured.webp" />
       </item>
       
     <item>
@@ -25,7 +25,7 @@
         
         <guid>https://xerolinux.xyz/posts/chaotic-aur/</guid>
         <description>A bit of information # Chaotic-AUR is an unofficial package repository that contains pre-built packages from the Arch User Repository (AUR) . It is an automated building service that compiles AUR packages so users don&amp;rsquo;t have to build them themselves.</description>
-        <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/chaotic-aur/featured.png" />
+        <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/chaotic-aur/featured.webp" />
       </item>
       
     <item>
@@ -46,7 +46,7 @@ I was recently asked if my Repo can be added to other Arch-Based Distros, short 
         
         <guid>https://xerolinux.xyz/posts/downgrade-tool/</guid>
         <description>What is Downgrade ? # Downgrade is a Bash script that makes it easier to downgrade packages in Arch Linux to an older version. It checks both the local pacman cache and the Arch Linux Archive (ALA) for available older versions of a package and allows you to select which version to install</description>
-        <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/downgrade-tool/featured.png" />
+        <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/downgrade-tool/featured.webp" />
       </item>
       
     <item>
@@ -56,7 +56,7 @@ I was recently asked if my Repo can be added to other Arch-Based Distros, short 
         
         <guid>https://xerolinux.xyz/posts/install-yay-paru/</guid>
         <description>What Are Those ? # Yay &amp;amp; Paru are AUR Helpers. What&amp;rsquo;s that ? Well, an AUR helper is a tool that automates the process of installing and managing packages from the Arch User Repository (AUR) on Arch Linux.</description>
-        <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/install-yay-paru/featured.png" />
+        <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/install-yay-paru/featured.webp" />
       </item>
       
     </channel>

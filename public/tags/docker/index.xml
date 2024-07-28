@@ -15,7 +15,7 @@
         
         <guid>https://xerolinux.xyz/posts/docmost-notes/</guid>
         <description>Discover Docmost # Ever dreamt of a magical realm where creating, collaborating, and sharing knowledge is as smooth as casting a spell? Welcome to Docmost, the open-source documentation software that&amp;rsquo;s like Hogwarts for your inner nerd.</description>
-        <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/docmost-notes/featured.png" />
+        <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/docmost-notes/featured.webp" />
       </item>
       
     <item>
@@ -25,7 +25,7 @@
         
         <guid>https://xerolinux.xyz/posts/docker-usage/</guid>
         <description>Intro # After messing with Docker Containers for so long, I thought I would share the knowledge. Hopefully a video showing it in action soon. In this short tutorial we will be using the Docker Compose feature to deploy our containers.</description>
-        <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/docker-usage/featured.png" />
+        <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/docker-usage/featured.webp" />
       </item>
       
     </channel>

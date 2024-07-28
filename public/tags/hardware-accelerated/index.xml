@@ -15,7 +15,7 @@
         
         <guid>https://xerolinux.xyz/posts/tabby-terminal/</guid>
         <description>Intro # I just ran across a video by @MattTLC from TheLinuxCast about a neat fully featured Terminal Emulator called Tabby.. I kinda like it, and I will be adding it to our package manager as an option.</description>
-        <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/tabby-terminal/featured.png" />
+        <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/tabby-terminal/featured.webp" />
       </item>
       
     </channel>

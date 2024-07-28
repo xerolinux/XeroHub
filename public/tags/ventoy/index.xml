@@ -15,7 +15,7 @@
         
         <guid>https://xerolinux.xyz/posts/ventoy-multi-boot/</guid>
         <description>Preface # In this here post I will be talking about the famous Ventoy USB tool. People have asked me many times what USB tool I use to make bootable Linux drives.</description>
-        <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/ventoy-multi-boot/featured.png" />
+        <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/ventoy-multi-boot/featured.webp" />
       </item>
       
     <item>
@@ -25,7 +25,7 @@
         
         <guid>https://xerolinux.xyz/posts/ventoy-persistence/</guid>
         <description>Intro # Most of you might already know about the amazing tool called Ventoy and how amazing it is at removing the need to have more USB drives if you need to have more ISOs, but you might not know about how many more amazing features it has.</description>
-        <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/ventoy-persistence/featured.png" />
+        <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/ventoy-persistence/featured.webp" />
       </item>
       
     </channel>

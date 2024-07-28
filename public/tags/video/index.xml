@@ -15,7 +15,7 @@
         
         <guid>https://xerolinux.xyz/posts/ffmpeg-cheat-sheet/</guid>
         <description>This will come in useful to all of you Content Creators out there, who like doing things the G33ky &amp;amp; Nerdy way. I use it a lot. This is a a list of useful commands for the FFmpeg command line tool.</description>
-        <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/ffmpeg-cheat-sheet/featured.png" />
+        <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/ffmpeg-cheat-sheet/featured.webp" />
       </item>
       
     <item>
@@ -25,7 +25,7 @@
         
         <guid>https://xerolinux.xyz/posts/obs-official/</guid>
         <description>What is OBS-Studio ? # OBS Studio is a free and open-source, cross-platform screencasting and streaming app. It is available for Windows, macOS, Linux distributions, and BSD. The OBS Project raises funds on Open Collective and Patreon.</description>
-        <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/obs-official/featured.png" />
+        <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/obs-official/featured.webp" />
       </item>
       
     </channel>

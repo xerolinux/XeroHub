@@ -15,7 +15,7 @@
         
         <guid>https://xerolinux.xyz/posts/downgrade-tool/</guid>
         <description>What is Downgrade ? # Downgrade is a Bash script that makes it easier to downgrade packages in Arch Linux to an older version. It checks both the local pacman cache and the Arch Linux Archive (ALA) for available older versions of a package and allows you to select which version to install</description>
-        <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/downgrade-tool/featured.png" />
+        <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/downgrade-tool/featured.webp" />
       </item>
       
     </channel>

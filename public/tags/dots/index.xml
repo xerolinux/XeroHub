@@ -15,7 +15,7 @@
         
         <guid>https://xerolinux.xyz/posts/ml4w-hyprland-dots/</guid>
         <description>What is Hyprland ? # In a nutshell, Hyprland is a dynamic tiling Wayland compositor based on wlroots that doesn&amp;rsquo;t sacrifice on its looks. It provides the latest Wayland features, is highly customizable, has all the eyecandy, the most powerful plugins, easy IPC, much more QoL stuff than other wlr-based compositors and more&amp;hellip;</description>
-        <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/ml4w-hyprland-dots/featured.png" />
+        <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/ml4w-hyprland-dots/featured.webp" />
       </item>
       
     </channel>

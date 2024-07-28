@@ -15,7 +15,7 @@
         
         <guid>https://xerolinux.xyz/posts/enable-snaps/</guid>
         <description>What are Snaps ? # Snaps are a innovative packaging format for distributing applications on Linux. Developed by Canonical, snaps are self-contained software bundles that include the app and all its dependencies.</description>
-        <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/enable-snaps/featured.png" />
+        <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/enable-snaps/featured.webp" />
       </item>
       
     </channel>

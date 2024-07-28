@@ -15,7 +15,7 @@
         
         <guid>https://xerolinux.xyz/posts/docker-usage/</guid>
         <description>Intro # After messing with Docker Containers for so long, I thought I would share the knowledge. Hopefully a video showing it in action soon. In this short tutorial we will be using the Docker Compose feature to deploy our containers.</description>
-        <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/docker-usage/featured.png" />
+        <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/docker-usage/featured.webp" />
       </item>
       
     </channel>

@@ -16,7 +16,7 @@
         <guid>https://xerolinux.xyz/posts/nix-package-manager/</guid>
         <description>Intro # Yet again my good friend and Linux enthusiast ChriTitus has brought another cool Package Manager this time called #Nix.
 Seems to be cool and easy to Install and use.</description>
-        <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/nix-package-manager/featured.png" />
+        <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/nix-package-manager/featured.webp" />
       </item>
       
     <item>
@@ -26,7 +26,7 @@ Seems to be cool and easy to Install and use.</description>
         
         <guid>https://xerolinux.xyz/posts/pacman-issues/</guid>
         <description>Info # This will be a short one. I noticed lately, that Pacman has been behaving badly.. I decided to attach all the videos that cover how to handle them.</description>
-        <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/pacman-issues/featured.png" />
+        <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/pacman-issues/featured.webp" />
       </item>
       
     </channel>

@@ -15,7 +15,7 @@
         
         <guid>https://xerolinux.xyz/posts/ohmyposh-p10k-replacement/</guid>
         <description>Some information # Oh My Posh is a custom prompt engine for any shell that has the ability to adjust the prompt string with a function or variable. It’s beautiful, elegant and intuitive; if you use git from the command line it will be great for you.</description>
-        <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/ohmyposh-p10k-replacement/featured.png" />
+        <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/ohmyposh-p10k-replacement/featured.webp" />
       </item>
       
     <item>
@@ -25,7 +25,7 @@
         
         <guid>https://xerolinux.xyz/posts/amelia-automated-archinstall/</guid>
         <description>Overview # Meet Amelia – your new best friend for installing ArchLinux! This Bash script is all about automation and ease, bringing you through the installation process with a slick TUI interface that’s both stylish and user-friendly.</description>
-        <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/amelia-automated-archinstall/featured.png" />
+        <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/amelia-automated-archinstall/featured.webp" />
       </item>
       
     <item>
@@ -35,7 +35,7 @@
         
         <guid>https://xerolinux.xyz/posts/tkg-nvidia-all/</guid>
         <description>Introduction # In this post I will be telling you about a very useful tool/script that might help all of you out there having issues with the infamous nVidia GPU on Linux&amp;hellip;</description>
-        <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/tkg-nvidia-all/featured.png" />
+        <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/tkg-nvidia-all/featured.webp" />
       </item>
       
     <item>
@@ -45,7 +45,7 @@
         
         <guid>https://xerolinux.xyz/posts/homerew-linux/</guid>
         <description>Intro # @ChrisTitus brought to my attention HomeBrew or Brew for short, the so called &amp;ldquo;Forgotten Package Manager&amp;rdquo; usually used on macOS&amp;hellip; It&amp;rsquo;s Distro agnostic so it can be installed and enabled on any of your choice.</description>
-        <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/homerew-linux/featured.png" />
+        <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/homerew-linux/featured.webp" />
       </item>
       
     </channel>

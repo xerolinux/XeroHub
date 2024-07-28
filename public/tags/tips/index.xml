@@ -16,7 +16,7 @@
         <guid>https://xerolinux.xyz/posts/flatpak-tips/</guid>
         <description>Intro # Slowly and steadily, Flatpak has a growing acceptance in the desktop Linux world.
 It is well integrated into Fedora and many other distributions like Linux Mint, elementary, Solus, etc.</description>
-        <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/flatpak-tips/featured.png" />
+        <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/flatpak-tips/featured.webp" />
       </item>
       
     </channel>

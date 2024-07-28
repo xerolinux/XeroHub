@@ -15,7 +15,7 @@
         
         <guid>https://xerolinux.xyz/posts/ffmpeg-cheat-sheet/</guid>
         <description>This will come in useful to all of you Content Creators out there, who like doing things the G33ky &amp;amp; Nerdy way. I use it a lot. This is a a list of useful commands for the FFmpeg command line tool.</description>
-        <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/ffmpeg-cheat-sheet/featured.png" />
+        <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/ffmpeg-cheat-sheet/featured.webp" />
       </item>
       
     <item>
@@ -35,7 +35,7 @@
         
         <guid>https://xerolinux.xyz/posts/waydroid-guide/</guid>
         <description>WayDroid in a nutshell # WayDroid is a container-based tool that allows for launching a complete Android system within the Linux desktop. It does this with Linux namespaces, effectively utilizing the Linux kernel.</description>
-        <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/waydroid-guide/featured.png" />
+        <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/waydroid-guide/featured.webp" />
       </item>
       
     <item>
@@ -45,7 +45,7 @@
         
         <guid>https://xerolinux.xyz/posts/automount-drives/</guid>
         <description>Intro # This keeps being asked on social. So I decided to post it here.. It&amp;rsquo;s all over the net but I guess either no one knows how to search or too lazy, in any case here it is&amp;hellip;</description>
-        <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/automount-drives/featured.png" />
+        <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/automount-drives/featured.webp" />
       </item>
       
     <item>
@@ -55,7 +55,7 @@
         
         <guid>https://xerolinux.xyz/posts/fix-boot/</guid>
         <description>Preface # Are you having an issue after updating your system with the message vmlinuz-linux not found ? Watch the video below by Erik Dubois, should help you get out of that predicament &amp;hellip;</description>
-        <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/fix-boot/featured.png" />
+        <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/fix-boot/featured.webp" />
       </item>
       
     <item>
@@ -65,7 +65,7 @@
         
         <guid>https://xerolinux.xyz/posts/chroot-guide/</guid>
         <description>Info # Changing Root (Chroot) is the process of changing of the apparent disk root directory (and the current running process and its children) to another root directory. When you change root to another directory you cannot access files and commands outside that directory.</description>
-        <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/chroot-guide/featured.png" />
+        <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/chroot-guide/featured.webp" />
       </item>
       
     <item>
@@ -75,7 +75,7 @@
         
         <guid>https://xerolinux.xyz/posts/dconf-editor/</guid>
         <description>What is it ? # Dconf Editor is a graphical tool used to configure settings in Linux, particularly on GNOME desktop environments. It allows users to navigate and modify system options stored in the dconf database, which is a key-value store that manages different aspects of the system.</description>
-        <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/dconf-editor/featured.png" />
+        <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/dconf-editor/featured.webp" />
       </item>
       
     <item>
@@ -85,7 +85,7 @@
         
         <guid>https://xerolinux.xyz/posts/docker-usage/</guid>
         <description>Intro # After messing with Docker Containers for so long, I thought I would share the knowledge. Hopefully a video showing it in action soon. In this short tutorial we will be using the Docker Compose feature to deploy our containers.</description>
-        <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/docker-usage/featured.png" />
+        <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/docker-usage/featured.webp" />
       </item>
       
     <item>
@@ -95,7 +95,7 @@
         
         <guid>https://xerolinux.xyz/posts/enable-snaps/</guid>
         <description>What are Snaps ? # Snaps are a innovative packaging format for distributing applications on Linux. Developed by Canonical, snaps are self-contained software bundles that include the app and all its dependencies.</description>
-        <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/enable-snaps/featured.png" />
+        <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/enable-snaps/featured.webp" />
       </item>
       
     <item>
@@ -105,7 +105,7 @@
         
         <guid>https://xerolinux.xyz/posts/downgrade-tool/</guid>
         <description>What is Downgrade ? # Downgrade is a Bash script that makes it easier to downgrade packages in Arch Linux to an older version. It checks both the local pacman cache and the Arch Linux Archive (ALA) for available older versions of a package and allows you to select which version to install</description>
-        <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/downgrade-tool/featured.png" />
+        <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/downgrade-tool/featured.webp" />
       </item>
       
     <item>
@@ -115,7 +115,7 @@
         
         <guid>https://xerolinux.xyz/posts/install-yay-paru/</guid>
         <description>What Are Those ? # Yay &amp;amp; Paru are AUR Helpers. What&amp;rsquo;s that ? Well, an AUR helper is a tool that automates the process of installing and managing packages from the Arch User Repository (AUR) on Arch Linux.</description>
-        <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/install-yay-paru/featured.png" />
+        <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/install-yay-paru/featured.webp" />
       </item>
       
     <item>
@@ -125,7 +125,7 @@
         
         <guid>https://xerolinux.xyz/posts/recover-deleted-files/</guid>
         <description>Introduction # I have recently decided to make the switch to Linux as my main daily OS, leaving Windows behind just for occasional gaming. But since am new to Linux, everything requires me to do research.</description>
-        <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/recover-deleted-files/featured.png" />
+        <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/recover-deleted-files/featured.webp" />
       </item>
       
     <item>
@@ -135,7 +135,7 @@
         
         <guid>https://xerolinux.xyz/posts/flatpak-theming/</guid>
         <description>Intro # One of the reasons why some users avoid installing Flatpak apps is that most Flatpak apps don’t change their appearance as per the current system theme. This makes the applications look out of the place in your otherwise beautiful set up.</description>
-        <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/flatpak-theming/featured.png" />
+        <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/flatpak-theming/featured.webp" />
       </item>
       
     </channel>
