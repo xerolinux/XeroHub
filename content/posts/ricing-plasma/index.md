@@ -55,7 +55,7 @@ This will take care of the awesome window blur and transparency effects for all 
 
 Another element **KDE Plasma** uses, is [**SDDM**](https://wiki.archlinux.org/title/SDDM) for its **Display Manager/Login**.
 
-![SDDM](https://i.imgur.com/DNfv0aG.png)
+![SDDM](https://i.imgur.com/hLBbJvF.jpeg)
 
 It too can be themed.
 
