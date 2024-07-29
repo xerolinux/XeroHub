@@ -45,23 +45,33 @@ Please read the above warning, ignoring it will result in nothing but headaches.
 
 First, we will need and app that I highly recommend to have on hand, called **Kvantum**. I consider it an essantial tool for every ricer out there.
 
+![Kvantum](https://i.imgur.com/DNfv0aG.png)
+
 {{< github repo="tsujan/Kvantum" >}}
 
 This will take care of the awesome window blur and transparency effects for all **Qt** based apps. It will not work on anything else, keep that in mind.
 
 - **SDDM Login Manager**
 
-Another element **KDE Plasma** uses, is [**SDDM**](https://wiki.archlinux.org/title/SDDM) for its **Display Manager/Login**. It too can be themed.
+Another element **KDE Plasma** uses, is [**SDDM**](https://wiki.archlinux.org/title/SDDM) for its **Display Manager/Login**.
+
+![SDDM](https://i.imgur.com/DNfv0aG.png)
+
+It too can be themed.
 
 - **Grub Bootloader**
 
 Now, I can already hear you say that this is unrelated to **KDE Plasma**, to which I will say, yes I agree. Also, not everyone will be using [**Grub**](https://wiki.archlinux.org/title/GRUB). Also true.
+
+![Grub](https://i.imgur.com/tyoOZV1.png)
 
 But for the sake of completeness, I do like to theme it as well.
 
 - **Konsole Terminal Emulator**
 
 [**Konsole**](https://konsole.kde.org/) is the *Terminal Emulator* that **Plasma** ships. I know most of you switch to **Alacritty** or even **Kitty**. But I prefer to stick with what ships with the DE I use.
+
+![Konsole](https://i.imgur.com/pXDM5ZM.png)
 
 That too can be themed.
 
@@ -81,11 +91,13 @@ Once we have found a noce theme, we need to make sure it applies to the followin
 - **Icons** : A fitting icon theme. (Optional)
 - **SDDM** : Login theme.
 
+![Settings](https://i.imgur.com/ggNKZYO.png)
+
 That's it really. In case you do not find a theme that contains all these elements, it's not a huge issue, you can always hunt for one that fits the **Global Theme**. It's hard to find one I know, but who knows you might get lucky lol.
 
 ### Applying our themes
 
-Once you have downloaded your chosen theme and theme elents from their sources (Github/Gitlab), follow their respective guides to install them, then head on over to the **KDE Settings** to apply them.
+Once you have downloaded your chosen theme and theme elements from their sources (Github/Gitlab), follow their respective guides to install them, then head on over to the **KDE Settings** to apply them.
 
 For **Kvantum**, just launch it, select the theme from the drop down and hit apply. Then select it as the **Application Style**.
 
@@ -101,7 +113,9 @@ Oh boy, the reason I will not be talking about those is is simple, it's your ric
 **Warning :** Please make sure they are compatible with **Plasma 6**.
 {{< /alert >}}
 
-As for the panel, position it wherever your heart desires. Top, bottom, left or right. It's all up to you. You can even use it as a Dock.
+![XeroLayan](https://i.imgur.com/VA2tycb.jpeg)
+
+As for the panel, position it wherever your heart desires. Top, bottom, left or right. It's all up to you. You can even use it as a Dock. Above is the end result of my very own rice I call the **XeroLayan** rice.
 
 ### Bonus for the G33ks
 
