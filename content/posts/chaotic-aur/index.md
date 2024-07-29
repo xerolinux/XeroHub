@@ -3,7 +3,7 @@ title: "The Chaotic-AUR"
 date: 2024-07-03
 draft: false
 description: "Install AUR Packages Without Building Them"
-tags: ["AUR", "ChaotiAUR", "Repos", "Repository", "ArchLinux", "Arch", "Linux"]
+tags: ["AUR", "Chaotic-AUR", "Repos", "Repository", "ArchLinux", "Arch", "Linux"]
 ---
 ### A bit of information
 
@@ -38,9 +38,9 @@ echo -e '\n[chaotic-aur]\nInclude = /etc/pacman.d/chaotic-mirrorlist' | sudo tee
 
 ### The benefits
 
-Only one benefit comes from using the **ChaoticAUR**. And that's the fact that packages are most often if not always screened by the maintainers before being added, saving us the headache of being the guinea pigs.
+Only one benefit comes from using the **Chaotic-AUR**. And that's the fact that packages are most often if not always screened by the maintainers before being added, saving us the headache of being the guinea pigs.
 
-Did I mention that you can request packages to be added there ? Oh yes, that's a side-benefit to all this. If you want to do that head on over to their **Gi Repo** linked below and use the issues tab to either report an issue with a package, request a new package to be added or a **PKGBUILD** to be updated.
+Did I mention that you can request packages to be added there ? Oh yes, that's a side-benefit to all this. If you want to do that head on over to their **Github Repo** linked below and use the issues tab to either report an issue with a package, request a new package to be added or a **PKGBUILD** to be updated.
 
 {{< github repo="chaotic-aur/packages" >}}
 

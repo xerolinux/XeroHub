@@ -17,13 +17,13 @@ This means that if you found a beautiful GTK theme, your Flatpak applications wi
 
 ## Tutorial
 
-In this tutorial, I am going to introduce you a way to make flatpak apps aware of external GTK themes.
+In this tutorial, I am going to introduce you a way to make Flatpak apps aware of external GTK themes.
 
 To enable this functionality, users need to install the GTK themes similar to the one used in KDE (as for other distros) but also run these commands:
 
 **- Step 1:** Give Flatpak apps access to GTK themes location
 
-GTK themes are located in `/usr/share/themes` for all users, and in `~/.themes` for a specific user. Notice that you can’t give access to `/usr/share/themes` because according to [Flatpak Documentation](https://docs.flatpak.org/en/latest/sandbox-permissions.html#filesystem-access) they are black listed.
+GTK themes are located in `/usr/share/themes` for all users, and in `~/.themes` for a specific user. Notice that you can’t give access to `/usr/share/themes` because according to [Flatpak Documentation](https://docs.flatpak.org/en/latest/sandbox-permissions.html#filesystem-access) they are blacklisted.
 
 So, since all included GTK Themes in XeroLinux  are located under `/usr/share/themes` which Flatpaks cannot access we need to copy them to `~/.themes` .
 

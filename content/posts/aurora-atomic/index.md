@@ -5,11 +5,11 @@ draft: false
 description: "Best Atomic KDE Distro"
 tags: ["uBlue", "Distro", "Bluefin", "Fedora", "Atomic", "Aurora", "Linux"]
 ---
-### What is uBlue Atomic ?
+### What is uBlue Atomic?
 
 [**uBlue**](https://universal-blue.org/) is a project which produces images based on **Fedora Atomic** distros. You can use one of the presupplied images like [**Bazzite**](bazzite.gg/) (gaming-focused image), [**Bluefin**](https://projectbluefin.io) (general use zero-manitenance image), **Aurora** or their base images with minimal customizations to vanilla kinoite/silverblue/etc.
 
-### What is Aurora ?
+### What is Aurora?
 
 Before explaining it, I would like to answer the "Why Aurora ?" question, well in case you did not know it yet, I am a **KDE Plasma** shill, so why not **Aurora** ? LoL. Now on to what it is...
 
@@ -17,7 +17,7 @@ Before explaining it, I would like to answer the "Why Aurora ?" question, well i
 
 {{< github repo="ublue-os/bluefin" >}}
 
-It includes everything that makes **Bluefin** and **Bluefin-DX** so awesome, including brew on host, the bluefin-cli, the starship CLI experience, Tailscale and the container-native Ptyxis terminal. You’ll find that most of the things you’re used to in Bluefin are the same under the hood, including the just commands. Aurora is not designed to be a drastically different experience than Bluefin, which also means we ( I ) can keep it regularly in sync with upstream so you get the latest changes.
+It includes everything that makes **Bluefin** and **Bluefin-DX** so awesome, including brew on host, the bluefin-cli, the starship CLI experience, Tailscale and the container-native Ptyxis terminal. You’ll find that most of the things you’re used to in Bluefin are the same under the hood, including the just commands. Aurora is not designed to be a drastically different experience than Bluefin, which also means we (I) can keep it regularly in sync with upstream so you get the latest changes.
 
 It is built on the **kinoite-main** Images. The images feature almost no customization, aside from some quality of life features and some branding. You can expect a vanilla KDE experience with developer batteries under the hood.
 
@@ -33,7 +33,7 @@ I will begin by saying this, it's a neat project, I love how they use their sort
 
 * **Pre-Bundled Scripts**
 
-Not just that, but they also supply so many pre-configured scripts that make harder tasks on other distros so damn simple, it's not even funny. They even supply an image with the **nVidia** or **AMD** drivers baked it and pre-configured for you so you don't have to lif a finger.
+Not just that, but they also supply so many pre-configured scripts that make harder tasks on other distros so damn simple, it's not even funny. They even supply an image with the **nVidia** or **AMD** drivers baked it and pre-configured for you so you don't have to lift a finger.
 
 ![ujust](https://i.imgur.com/qNeqmIG.png)
 
@@ -51,7 +51,7 @@ Which brings me to the only *Big* downside, which is in my humble opinion, that 
 
 * **Laziness / No Self-Reliance**
 
-Now this is much less of an issue, more of an obervation, but if I have learned something during my Distro Maintaining days, it's that doing too much for the user out the box, will make them both lazy and will end up too dependant on us devs/maintainers. While I can't speak for the team behind **uBlue**, it's just impossible to satisfy everyone.
+Now this is much less of an issue, more of an obervation, but if I have learned something during my Distro Maintaining days, it's that doing too much for the user out the box, will make them both lazy and will end up too dependent on us devs/maintainers. While I can't speak for the team behind **uBlue**, it's just impossible to satisfy everyone.
 
 * **No Freedom To Tinker**
 
@@ -61,7 +61,7 @@ The other downside to this whole idea of **Atomic** distros, is that, if you wer
 
 In conclusion, I will say, this is my opinion, and that you should take it with a huge grain of salt. I am a tinkerer, a not so ordinary user so to speak. And I have only been using it a day as of the writing of this post.
 
-But yes, of ourse I would **Highly** recommend you at least give it a try. Just make sure to select the version that works best for you. Be it **AMD**, **nVidia**, **Dev/DX** version.
+But yes, of ourse I would **Highly** recommend you at least give it a try. Just make sure to select the version that works best for you. Be it **AMD**, **nVidia**, or the **Dev/DX** version.
 
 Just make sure you know that you will not be able to tinker much with it, the way you would be able to with the likes of **Arch** or the likes.
 

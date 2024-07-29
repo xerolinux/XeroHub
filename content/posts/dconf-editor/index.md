@@ -5,7 +5,7 @@ draft: false
 description: "Configure Gnome With Ease"
 tags: ["DConf", "Settings", "Tools", "Gnome", "Linux", "Guide"]
 ---
-### What is it ?
+### What is it?
 
 Dconf Editor is a graphical tool used to configure settings in Linux, particularly on GNOME desktop environments. It allows users to navigate and modify system options stored in the dconf database, which is a key-value store that manages different aspects of the system.
 
@@ -22,7 +22,7 @@ sudo pacman -S dconf
 ### Backup/Restore & Reset GNOME Settings With Dconf
 
 
-Believe or not, this is one of the easiest way to backup and restore system settings with a just single command. To backup your current Linux desktop settings using dconf, do run this command:
+Believe it or not, this is one of the easiest way to backup and restore system settings with a just single command. To backup your current Linux desktop settings using dconf, do run this command:
 
 ```Bash
 dconf dump /org/gnome/ > gnome-desktop.conf

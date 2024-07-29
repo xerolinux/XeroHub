@@ -29,7 +29,7 @@ Waydroid uses Android’s mesa integration for passthrough, and that enables sup
 
 1. Waydroid only works in a Wayland session manager, so make sure you are in that session.
 
-2. Second you will need the necessary Binder modules
+2. Second you will need the necessary binder modules
 
 ```Bash
 paru -S binder_linux-dkms

@@ -42,7 +42,7 @@ Before we can deploy our container(s) we will need to install docker and its dep
 sudo pacman -S docker docker-compose
 ```
 
-Now that we have Docker installed we will need to add ourselves to the Docker group and start the service. Do like this :
+Now that we have Docker installed we will need to add ourselves to the Docker group and start the service. Do it like this :
 
 ```Bash
 sudo usermod -aG docker $USER
@@ -70,7 +70,7 @@ services:
     restart: always
 ```
 
-Just make sure to change the "443" posrt to one you prefer without touching part to the right which is the internal Docker one. Also in the "Volumes" section change the "- /<path-to-shared-folder>:/data" part, do not modify right side just the left, before the ":", and set it to what you want to share between your machines. DO NOT SHARE ROOT ! At least if you are going to make it public. If you want to keep it internal like me, do it if you so wish it's up to you.
+Just make sure to change the "443" port to one you prefer without touching part to the right which is the internal Docker one. Also in the "Volumes" section change the "- /<path-to-shared-folder>:/data" part, do not modify right side just the left, before the ":", and set it to what you want to share between your machines. DO NOT SHARE ROOT ! At least if you are going to make it public. If you want to keep it internal like me, do it if you so wish it's up to you.
 
 Now save the file, and open Terminal inside the folder and run the following command to start it as a Daemon :
 

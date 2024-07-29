@@ -11,7 +11,7 @@ In this here post I will be talking about the famous **Ventoy** USB tool. People
 
 But before I dive deeper into the why I use it over others here some info to get started.
 
-### What's Ventoy exactly ?
+### What's Ventoy exactly?
 
 **Ventoy** creates bootable USB devices using ISO images. That sounds an awful lot like what established programs such as Rufus do at first, but when you realize that it puts the ISO images on the drive and does not extract them, it becomes interesting.
 
@@ -43,5 +43,5 @@ To get it on **Arch** you first need to have an **AUR** helper installed since i
 yay or paru -S ventoy-bin
 ```
 
-That's it ! Enjoy your Distro-Hopping. Maybe you find the one that fits your needs the best :smile:
+That's it ! Enjoy your distro-hopping. Maybe you find the one that fits your needs the best :smile:
 

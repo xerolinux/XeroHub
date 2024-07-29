@@ -111,7 +111,7 @@
     "keywords": ["Docker","Docker-Compose","Tools","Containers","Linux","Guide"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "816"
+    "wordCount": "817"
   }]
   </script>
 
@@ -1487,7 +1487,7 @@
 </h3>
 <p>Before we can deploy our container(s) we will need to install docker and its dependencies then enable the service. To do so type this in terminal (ArchLinux) :</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Bash" data-lang="Bash"><span class="line"><span class="cl">sudo pacman -S docker docker-compose
-</span></span></code></pre></div><p>Now that we have Docker installed we will need to add ourselves to the Docker group and start the service. Do like this :</p>
+</span></span></code></pre></div><p>Now that we have Docker installed we will need to add ourselves to the Docker group and start the service. Do it like this :</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Bash" data-lang="Bash"><span class="line"><span class="cl">sudo usermod -aG docker <span class="nv">$USER</span>
 </span></span><span class="line"><span class="cl">sudo systemctl <span class="nb">enable</span> --now docker
 </span></span></code></pre></div>
@@ -1516,7 +1516,7 @@
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">environment</span><span class="p">:</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="l">FB_BASEURL=/</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">restart</span><span class="p">:</span><span class="w"> </span><span class="l">always</span><span class="w">
-</span></span></span></code></pre></div><p>Just make sure to change the &ldquo;443&rdquo; posrt to one you prefer without touching part to the right which is the internal Docker one. Also in the &ldquo;Volumes&rdquo; section change the &ldquo;- /<path-to-shared-folder>:/data&rdquo; part, do not modify right side just the left, before the &ldquo;:&rdquo;, and set it to what you want to share between your machines. DO NOT SHARE ROOT ! At least if you are going to make it public. If you want to keep it internal like me, do it if you so wish it&rsquo;s up to you.</p>
+</span></span></span></code></pre></div><p>Just make sure to change the &ldquo;443&rdquo; port to one you prefer without touching part to the right which is the internal Docker one. Also in the &ldquo;Volumes&rdquo; section change the &ldquo;- /<path-to-shared-folder>:/data&rdquo; part, do not modify right side just the left, before the &ldquo;:&rdquo;, and set it to what you want to share between your machines. DO NOT SHARE ROOT ! At least if you are going to make it public. If you want to keep it internal like me, do it if you so wish it&rsquo;s up to you.</p>
 <p>Now save the file, and open Terminal inside the folder and run the following command to start it as a Daemon :</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Bash" data-lang="Bash"><span class="line"><span class="cl">docker compose up -d
 </span></span></code></pre></div><p>If all was done correctly, you will now be able to access your newly created container via following URLs :</p>

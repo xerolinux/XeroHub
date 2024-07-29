@@ -7,9 +7,9 @@ tags: ["Recovery", "Guide", "Linux"]
 ---
 ### Introduction
 
-I have recently decided to make the switch to Linux as my main daily OS, leaving Windows behind just for occasional gaming. But since am new to Linux, everything requires me to do research. New things to learn I guess.
+I have recently decided to make the switch to Linux as my main daily OS, leaving Windows behind just for occasional gaming. But since I am new to Linux, everything requires me to do research. New things to learn I guess.
 
-### What Happened ?
+### What Happened?
 
 Today something lame happened to me, I deleted my entire TV Shows folder while trying to move them LoL … DERP … Which prompted me to look for a way to recover them. Now on Windows it’s super easy I have a tool that does that 2 clicks. On Linux I had to do some research, a lot of it.
 

@@ -5,9 +5,9 @@ draft: false
 description: "Scripts for Simplifying your HomeLab"
 tags: ["Proxmox", "ProxmoxVE", "Scripts", "Scripting", "HomeLab", "Automation", "Linux"]
 ---
-This is a shor one. Just letting you all know of a recent discovery of mine while I was looking into [**Proxmox VE**](https://www.proxmox.com/en/proxmox-virtual-environment/overview)
+This is a short one. Just letting you all know of a recent discovery of mine while I was looking into [**Proxmox VE**](https://www.proxmox.com/en/proxmox-virtual-environment/overview)
 
-### What are they ?
+### What are they?
 
 **Proxmox Helper Scripts**  empower users to create a Linux container or virtual machine interactively, providing choices for both simple and advanced configurations. The basic setup adheres to default settings, while the advanced setup gives users the ability to customize these defaults.
 

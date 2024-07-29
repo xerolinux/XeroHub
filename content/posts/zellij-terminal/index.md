@@ -5,15 +5,15 @@ draft: false
 description: "A Terminal Like No Other"
 tags: ["terminal", "Helper", "Tiling", "Tools", "Linux"]
 ---
-### What is Zellij ?
+### What is Zellij?
 
 Another day another Terminal utility. **Zellij** is a terminal workspace. It has the base functionality of a terminal multiplexer (similar to `tmux` or `screen`) but includes many built-in features that would allow users to extend it and create their own personalized environment. Visit [**Official Site**](https://zellij.dev) for more. Or watch video below.
 
 {{< youtube ZPfQS5FHNYQ >}}
 
-### How to get it ?
+### How to get it?
 
-There are 2 ways to get it, either via your Arch's package manager or a CURL command. However the devs recommend the latter. I will post both below.
+There are 2 ways to get it, either via your Arch package manager or a CURL command. However the devs recommend the latter. I will post both below.
 
 ![Zellij](https://raw.githubusercontent.com/zellij-org/zellij/main/assets/demo.gif)
 

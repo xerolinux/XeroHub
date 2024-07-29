@@ -2,8 +2,8 @@
 title: "My First Python Script"
 date: 2024-06-27
 draft: false
-description: "COnvert Forum Psts With Python"
-tags: ["Python", "Script", "Scripting", "Programming", Llinux"]
+description: "Convert Forum Psts With Python"
+tags: ["Python", "Script", "Scripting", "Programming", Linux"]
 ---
 ### What prompted me ?
 

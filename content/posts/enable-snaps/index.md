@@ -7,11 +7,11 @@ tags: ["Snaps", "SnapCraft", "Arch", "Guide", "Linux"]
 ---
 ### What are Snaps ?
 
-Snaps are a innovative packaging format for distributing applications on Linux. Developed by **Canonical**, snaps are self-contained software bundles that include the app and all its dependencies. This allows snaps to work consistently across a wide range of Linux distributions, without compatibility issues. Snaps also use transactional updates, automatically rolling back if an update fails. Running in a secure sandbox, snaps have limited access to the host system, enhancing security. While some Linux users have reservations about Canonical's involvement, the snap format provides a convenient way to package and distribute applications that "just work" on any Linux desktop or server. For users and developers seeking a reliable, cross-distro packaging solution, snaps offer a compelling option to explore.
+Snaps are an innovative packaging format for distributing applications on Linux. Developed by **Canonical**, snaps are self-contained software bundles that include the app and all its dependencies. This allows snaps to work consistently across a wide range of Linux distributions, without compatibility issues. Snaps also use transactional updates, automatically rolling back if an update fails. Running in a secure sandbox, snaps have limited access to the host system, enhancing security. While some Linux users have reservations about Canonical's involvement, the snap format provides a convenient way to package and distribute applications that "just work" on any Linux desktop or server. For users and developers seeking a reliable, cross-distro packaging solution, snaps offer a compelling option to explore.
 
 ### Disclaimer :
 
-Snap support was never intended to be used outside Ubuntu / Debian that package manager was created by Cannonical for their Distribution and subsidiaries. Therefore  I will not be held responsible for any damage you incur by doing it. You will be on your own. Keep that in mind.
+Snap support was never intended to be used outside Ubuntu / Debian that package manager was created by Canonical for their Distribution and subsidiaries. Therefore  I will not be held responsible for any damage you incur by doing it. You will be on your own. Keep that in mind.
 
 ### Installation
 
@@ -31,9 +31,9 @@ sudo systemctl enable --now snapd.apparmor
 
 Make sure to reboot the system after doing that for services to start correctly.
 
-* Step 2 : Install The Snap-Store
+* Step 2 : Install The Snap Store
 
-Once that's done, either start installing your snaps via `sudo snap refresh && sudo snap install packagename` commands or if you prefer to use a GUI App Store install the aforementioned Snap-Store via command below.
+Once that's done, either start installing your snaps via `sudo snap refresh && sudo snap install packagename` commands or if you prefer to use a GUI App Store install the aforementioned Snap Store via command below.
 
 Install the Snap Store :
 

@@ -7,7 +7,7 @@ tags: ["Stremio", "Streaming", "Tools", "Linux"]
 ---
 ### What is Stremio?
 
-Stremio is a one-stop hub for video content aggregation. Discover, organize and watch video from all kind of sources on any device that you own. Movies, TV shows, series, live television or web channels like YouTube and Twitch.tv – you can find all this on Stremio.
+Stremio is a one-stop hub for video content aggregation. Discover, organize and watch video from all kinds of sources on any device that you own. Movies, TV shows, series, live television or web channels like YouTube and Twitch.tv – you can find all this on Stremio.
 
 Features
 
@@ -18,7 +18,7 @@ Features
 * Enjoy your video content on a bigger screen
 * Watch video from many different sources
 
-This package it available on Flathub so just install from there, best part of Flatpaks is that they are Distro-Agnostic can install on any Distro no matter what it might be as long as it has them enabled.
+This package is available on Flathub so just install from there, best part of Flatpaks is that they are Distro-Agnostic can install on any Distro no matter what it might be as long as it has them enabled.
 
 {{< youtube q7qLqpLdyc0 >}}
 

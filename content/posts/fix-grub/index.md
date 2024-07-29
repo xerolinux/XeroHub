@@ -9,7 +9,7 @@ tags: ["ricing", "gtk", "kde", "plasma", "themes", "qt", "linux"]
 
 ### Info
 
-In case you are one of the affected people, below is how you can fix the issue. I have tested it and it works fine. And keep in mind that XeroLinux is basically ArchLinux so below fix will work on Arch as well as any Arch-Based distros with the exception of Manjaro that is NOT Arch... Read more on that >> [Here](https://wiki.manjaro.org/index.php/Manjaro:A_Different_Kind_of_Beast#:~:text=Manjaro%20is%20developed%20independently%20from,from%20its%20own%20independent%20repositories) <<
+In case you are one of the affected people, below is how you can fix the issue. I have tested it and it works fine. And keep in mind that XeroLinux is basically ArchLinux so below fix will work on Arch as well as any Arch-Based distros with the exception of Manjaro that is NOT Arch. Read more on that >> [Here](https://wiki.manjaro.org/index.php/Manjaro:A_Different_Kind_of_Beast#:~:text=Manjaro%20is%20developed%20independently%20from,from%20its%20own%20independent%20repositories) <<
 
 ### Disclaimer :
 
@@ -19,7 +19,7 @@ Anyway here's what to do...
 
 ### Mount your system to work in..
 
-First of all boot using Arch or XeroLinux Live boot USB and follow below...
+First of all; boot using Arch or XeroLinux Live boot USB and follow the steps below...
 
 The device or partition with your Linux system on it will need to be mounted. To discover the kernel name of the storage device name, type:
 

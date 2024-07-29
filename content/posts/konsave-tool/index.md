@@ -7,11 +7,11 @@ tags: ["Themes", "Plasma", "KDE", "tools", "linux"]
 ---
 ### Intro
 
-I have recently stumbled upon a handy little tool for us who love customizing KDE but hate the work of switching between rices... It's called KonSave.
+I have recently stumbled upon a handy little tool for us who love customizing KDE but hate the work of switching between rices... It's called Konsave.
 
 {{< youtube c54iZyEXlas >}}
 
-As you can see from above video, tool is very useful. What I love about it is the fact that we can export & share our configs. I been having so much fun with it, it made my ricing life so much easier now...
+As you can see from above video, tool is very useful. What I love about it is the fact that we can export & share our configs. I have been having so much fun with it, it made my ricing life so much easier now...
 
 ### Something to note
 

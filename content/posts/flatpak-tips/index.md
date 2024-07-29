@@ -38,7 +38,7 @@ There is also an Install button but it doesn’t install the application for you
 
 ![[Image: wovEk8x.png]](https://i.imgur.com/wovEk8x.png)
 
-If you have to use the command line ultimately, it doesn’t make sense to download the fltapakref file.
+If you have to use the command line ultimately, it doesn’t make sense to download the flatpakref file.
 
 You can make things better by using Flatline. It’s a Browser extension and it makes that Install button useful by converting it into appstream link.
 
@@ -49,7 +49,7 @@ This way, when you click on the Install button for any application on the [Flath
 
 ![[Image: Nsvf6WO.png]](https://i.imgur.com/Nsvf6WO.png)
 
-This also means that you should have the Fltapak support integrated into the software center.
+This also means that you should have Fltapak support integrated into the software center.
 
 ### Manage Flatpak permissions graphically With Flatseal
 

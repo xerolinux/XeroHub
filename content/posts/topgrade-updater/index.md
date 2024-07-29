@@ -10,7 +10,7 @@ tags: ["Update", "All-In-One", "TUI", "Terminal", "Tools", "Linux"]
 
 Upgrading Linux has gotten much easier than it used to be. In the old days, you might upgrade certain pieces of software, but mostly you would wait until you bought the next version of your distro of choice. Then you’d install it and marvel at the upgraded software.
 
-Package management systems have made this easy, but they can’t update every part of your system. What about Ruby Gems or packages you installed via a third-party package manager like Linuxbrew? How will you keep your your configuration files synced?
+Package management systems have made this easy, but they can’t update every part of your system. What about Ruby Gems or packages you installed via a third-party package manager like Linuxbrew? How will you keep your configuration files synced?
 
 ![[Image: Aqqr28I.png]](https://i.imgur.com/Aqqr28I.png)
 

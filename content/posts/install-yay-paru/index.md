@@ -5,7 +5,7 @@ draft: false
 description: "Best Ways To Install Yay or Paru"
 tags: ["Yay", "Paru", "AUR", "Guide", "Linux", "Arch", "ArchLinux"]
 ---
-### What Are Those ?
+### What Are Those?
 
 Yay & Paru are **AUR** Helpers. What's that ? Well, an **AUR** helper is a tool that automates the process of installing and managing packages from the Arch User Repository (AUR) on Arch Linux. The main purpose of AUR helpers is to simplify the installation and updating of AUR packages, which are not available in the official Arch Linux repositories
 
@@ -48,4 +48,4 @@ paru --gendb;
 
 ###  Closing
 
-Once that is done, you can use it to start installing packages from the [AUR](https://aur.archlinux.org). Keep in mind that you do not need to install both just select the one you prefer, either one works.. I would recommend YaY myself though.. [ArchWiki Page](https://wiki.archlinux.org/title/AUR_helpers)
+Once that is done, you can use it to start installing packages from the [AUR](https://aur.archlinux.org). Keep in mind that you do not need to install both; just select the one you prefer, either one works.. I would recommend YaY myself though.. [ArchWiki Page](https://wiki.archlinux.org/title/AUR_helpers)

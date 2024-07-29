@@ -5,7 +5,7 @@ draft: false
 description: "Best way to get OBS-Studio"
 tags: ["video", "streaming", "obs", "flatpak", "tools", "linux"]
 ---
-### What is OBS-Studio ?
+### What is OBS Studio?
 
 **OBS Studio** is a free and open-source, cross-platform screencasting and streaming app. It is available for Windows, macOS, Linux distributions, and BSD. The OBS Project raises funds on Open Collective and Patreon.
 

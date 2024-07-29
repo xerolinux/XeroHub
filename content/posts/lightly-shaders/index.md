@@ -7,7 +7,7 @@ tags: ["ricing", "kde", "plasma", "themes", "linux"]
 ---
 ### What is it ?
 
-I would like to share a neat little "Effect" if you will, called LightlyShaders which is fork of another project that is a simple KWin/5 effect that simply rounds corners of windows, to do this it uses an opengl shader and is able to round any window, like mpv video for example will have rounded corners.
+I would like to share a neat little "Effect" if you will, called LightlyShaders which is a fork of another project that is a simple KWin/5 effect that simply rounds corners of windows, to do this it uses an opengl shader and is able to round any window, like mpv video for example will have rounded corners.
 
 ![[Image: ngDtR0J.jpeg]](https://i.imgur.com/ngDtR0J.jpeg)
 

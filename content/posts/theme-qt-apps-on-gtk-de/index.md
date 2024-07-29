@@ -7,9 +7,9 @@ tags: ["ricing", "gtk", "kde", "plasma", "themes", "qt", "linux"]
 ---
 ### Intro
 
-As I was working on **XFCE** & **Gnome**, I noticed that since they both use **GTK3/4**, some **QT** apps made for **KDE** like **KdenLive** did not follow the system theme. I found a guide that I will be sharing with you all...
+As I was working on **XFCE** & **Gnome**, I noticed that since they both use **GTK3/4**, some **Qt** apps made for **KDE** like **KdenLive** did not follow the system theme. I found a guide that I will be sharing with you all...
 
-Apps built with QT (aka KDE apps) do not look great on the XFCE4 & GNOME desktop because they don’t respect the default theme. The way to fix this is to use **Kvantum**. With it, you can set **KDE** app themes to use a similar theme to what you use.
+Apps built with Q (aka KDE apps) do not look great on the XFCE4 & GNOME desktop because they don’t respect the default theme. The way to fix this is to use **Kvantum**. With it, you can set **KDE** app themes to use a similar theme to what you use.
 
 ![Shot1](https://i.imgur.com/UK5MPRI.png)
 

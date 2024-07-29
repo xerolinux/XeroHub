@@ -11,11 +11,11 @@ In this post I will be telling you about a very useful tool/script that might he
 
 Now, a few users were reporting issues with **nVidia** lately, so I went on the hunt for a few fixes. After some research I stumbled upon an AiO Installer Script by the famous **TKG**...
 
-### What is it ?
+### What is it?
 
-What that script does is actually very simple, it gives the you, the user an option to install various versions of the **nVidia** drivers. Meaning that if you are using one that requires an older version you can install it, or if you need a specific one that is more compatible you can do that too..
+What that script does is actually very simple, it gives the you, the user, an option to install various versions of the **nVidia** drivers. Meaning that if you are using one that requires an older version you can install it, or if you need a specific one that is more compatible you can do that too..
 
-You can also select to install the **DKMS** version in the case where you are using a custom Kernel other than **LTS** or **Zen**...
+You can also select to install the **DKMS** version in the case where you are using a custom kernel other than **LTS** or **Zen**...
 
 {{< youtube QW2XGMAu6VE >}}
 

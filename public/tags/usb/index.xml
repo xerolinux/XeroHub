@@ -4,19 +4,74 @@
     <title>USB on XeroLinux HQ</title>
     <link>https://xerolinux.xyz/tags/usb/</link>
     <description>Recent content in USB on XeroLinux HQ</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>en</language>
-    <copyright>Copy, _right?_ 🫨</copyright>
-    <lastBuildDate>Wed, 26 Jun 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://xerolinux.xyz/tags/usb/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 26 Jun 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://xerolinux.xyz/tags/usb/index.xml" rel="self" type="application/rss+xml" />
     <item>
     <title>Ventoy Persistence</title>
       <link>https://xerolinux.xyz/posts/ventoy-persistence/</link>
         <pubDate>Wed, 26 Jun 2024 00:00:00 +0000</pubDate>
-        
         <guid>https://xerolinux.xyz/posts/ventoy-persistence/</guid>
-        <description>Intro # Most of you might already know about the amazing tool called Ventoy and how amazing it is at removing the need to have more USB drives if you need to have more ISOs, but you might not know about how many more amazing features it has.</description>
-        <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/ventoy-persistence/featured.webp" />
+        <description>&#xA;&#xA;&lt;h3 class=&#34;relative group&#34;&gt;Intro &#xA;    &lt;div id=&#34;intro&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;&#xA;    &#xA;    &lt;span&#xA;        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100&#34;&gt;&#xA;        &lt;a class=&#34;group-hover:text-primary-300 dark:group-hover:text-neutral-700&#34;&#xA;            style=&#34;text-decoration-line: none !important;&#34; href=&#34;#intro&#34; aria-label=&#34;Anchor&#34;&gt;#&lt;/a&gt;&#xA;    &lt;/span&gt;        &#xA;    &#xA;&lt;/h3&gt;&#xA;&lt;p&gt;Most of you might already know about the amazing tool called &lt;strong&gt;Ventoy&lt;/strong&gt; and how amazing it is at removing the need to have more USB drives if you want to use multiple ISOs, but you might not know about how many more amazing features it has.&lt;/p&gt;&#xA;&lt;p&gt;Today I will be showing you how to make a specific Live ISO on your Ventoy USB Drive save all the changes that you make to it.&lt;/p&gt;&#xA;&#xA;&#xA;&lt;h3 class=&#34;relative group&#34;&gt;The Guide &#xA;    &lt;div id=&#34;the-guide&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;&#xA;    &#xA;    &lt;span&#xA;        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100&#34;&gt;&#xA;        &lt;a class=&#34;group-hover:text-primary-300 dark:group-hover:text-neutral-700&#34;&#xA;            style=&#34;text-decoration-line: none !important;&#34; href=&#34;#the-guide&#34; aria-label=&#34;Anchor&#34;&gt;#&lt;/a&gt;&#xA;    &lt;/span&gt;        &#xA;    &#xA;&lt;/h3&gt;&#xA;&lt;p&gt;Starting off you would want to have &lt;strong&gt;Ventoy&lt;/strong&gt; installed and copy the folder from &lt;code&gt;/opt/ventoy&lt;/code&gt; to your USB Drive and renaming it to &lt;code&gt;ventoy_plugins&lt;/code&gt; or anything else that you might like.&lt;/p&gt;&#xA;&lt;p&gt;&#xA;  &lt;figure&gt;&#xA;    &lt;img class=&#34;my-0 rounded-md&#34; loading=&#34;lazy&#34; src=&#34;https://i.imgur.com/Hg7iIzd.png&#34; alt=&#34;[Image: Hg7iIzd.png]&#34; /&gt;&#xA;    &#xA;  &lt;/figure&gt;&#xA;&lt;/p&gt;&#xA;&lt;p&gt;Then go into the &lt;code&gt;ventoy_plugins&lt;/code&gt; folder open a terminal and run &lt;code&gt;sudo sh CreatePersistenceImg.sh -s 20480 -l vtoycow&lt;/code&gt; this will create a file called &lt;code&gt;persistence.dat&lt;/code&gt; with the size of 20GB, refer to &lt;a href=&#34;https://www.ventoy.net/en/plugin_persistence.html&#34; target=&#34;_blank&#34;&gt;this&lt;/a&gt; article from Ventoy for different arguments for the command. After a while you will be granted with this confirmation, just hit &lt;code&gt;y&lt;/code&gt; and &lt;code&gt;enter&lt;/code&gt; and in a few seconds it should be done.&lt;/p&gt;&#xA;&lt;p&gt;&#xA;  &lt;figure&gt;&#xA;    &lt;img class=&#34;my-0 rounded-md&#34; loading=&#34;lazy&#34; src=&#34;https://i.imgur.com/8rKKvT4.png&#34; alt=&#34;[Image: 8rKKvT4.png]&#34; /&gt;&#xA;    &#xA;  &lt;/figure&gt;&#xA;&lt;/p&gt;&#xA;&lt;p&gt;Now create a new folder called &lt;code&gt;persistence&lt;/code&gt; in the root folder and move the &lt;code&gt;persistence.dat&lt;/code&gt; there. Going back to the terminal run &lt;code&gt;sudo sh VentoyPlugson.sh /dev/sdx&lt;/code&gt; where &lt;code&gt;x&lt;/code&gt; is your USB Drive id.&lt;/p&gt;&#xA;&lt;p&gt;&#xA;  &lt;figure&gt;&#xA;    &lt;img class=&#34;my-0 rounded-md&#34; loading=&#34;lazy&#34; src=&#34;https://i.imgur.com/GElDr8y.png&#34; alt=&#34;[Image: GElDr8y.png]&#34; /&gt;&#xA;    &#xA;  &lt;/figure&gt;&#xA;&lt;/p&gt;&#xA;&lt;p&gt;Just head over to the webaddress that you get from the terminal, there you will be granted with the Ventoy Plugson WebUI. Head over to the &lt;code&gt;Persistence Plugin&lt;/code&gt; and click on add new and just enter the file paths to the ISO that you want and the &lt;code&gt;persistence.dat&lt;/code&gt; file and make sure that it says &lt;code&gt;OK&lt;/code&gt;.&lt;/p&gt;&#xA;&lt;p&gt;&#xA;  &lt;figure&gt;&#xA;    &lt;img class=&#34;my-0 rounded-md&#34; loading=&#34;lazy&#34; src=&#34;https://i.imgur.com/PGduHPr.png&#34; alt=&#34;[Image: PGduHPr.png]&#34; /&gt;&#xA;    &#xA;  &lt;/figure&gt;&#xA;&lt;/p&gt;&#xA;&lt;p&gt;Now if you boot into the Xero Linux ISO any changes that you make to it should get saved.&lt;/p&gt;&#xA;&lt;p&gt;Cheers :heart:&lt;/p&gt;&#xA;</description>
+        <content:encoded>&lt;![CDATA[
+
+<h3 class="relative group">Intro 
+    <div id="intro" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#intro" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p>Most of you might already know about the amazing tool called <strong>Ventoy</strong> and how amazing it is at removing the need to have more USB drives if you want to use multiple ISOs, but you might not know about how many more amazing features it has.</p>
+<p>Today I will be showing you how to make a specific Live ISO on your Ventoy USB Drive save all the changes that you make to it.</p>
+
+
+<h3 class="relative group">The Guide 
+    <div id="the-guide" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#the-guide" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p>Starting off you would want to have <strong>Ventoy</strong> installed and copy the folder from <code>/opt/ventoy</code> to your USB Drive and renaming it to <code>ventoy_plugins</code> or anything else that you might like.</p>
+<p>
+  <figure>
+    <img class="my-0 rounded-md" loading="lazy" src="https://i.imgur.com/Hg7iIzd.png" alt="[Image: Hg7iIzd.png]" />
+    
+  </figure>
+</p>
+<p>Then go into the <code>ventoy_plugins</code> folder open a terminal and run <code>sudo sh CreatePersistenceImg.sh -s 20480 -l vtoycow</code> this will create a file called <code>persistence.dat</code> with the size of 20GB, refer to <a href="https://www.ventoy.net/en/plugin_persistence.html" target="_blank">this</a> article from Ventoy for different arguments for the command. After a while you will be granted with this confirmation, just hit <code>y</code> and <code>enter</code> and in a few seconds it should be done.</p>
+<p>
+  <figure>
+    <img class="my-0 rounded-md" loading="lazy" src="https://i.imgur.com/8rKKvT4.png" alt="[Image: 8rKKvT4.png]" />
+    
+  </figure>
+</p>
+<p>Now create a new folder called <code>persistence</code> in the root folder and move the <code>persistence.dat</code> there. Going back to the terminal run <code>sudo sh VentoyPlugson.sh /dev/sdx</code> where <code>x</code> is your USB Drive id.</p>
+<p>
+  <figure>
+    <img class="my-0 rounded-md" loading="lazy" src="https://i.imgur.com/GElDr8y.png" alt="[Image: GElDr8y.png]" />
+    
+  </figure>
+</p>
+<p>Just head over to the webaddress that you get from the terminal, there you will be granted with the Ventoy Plugson WebUI. Head over to the <code>Persistence Plugin</code> and click on add new and just enter the file paths to the ISO that you want and the <code>persistence.dat</code> file and make sure that it says <code>OK</code>.</p>
+<p>
+  <figure>
+    <img class="my-0 rounded-md" loading="lazy" src="https://i.imgur.com/PGduHPr.png" alt="[Image: PGduHPr.png]" />
+    
+  </figure>
+</p>
+<p>Now if you boot into the Xero Linux ISO any changes that you make to it should get saved.</p>
+<p>Cheers :heart:</p>
+]]></content:encoded>
+        <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
       </item>
-      
     </channel>
   </rss>

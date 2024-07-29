@@ -13,7 +13,7 @@ While browsing **YouTube** I stumbled upon a video showing off a neat little too
 
 ### How to get it ?
 
-There are 2 ways to get it, either via your Arch's package manager or a CURL command. However the devs recommend the latter. I will post both below.
+There are 2 ways to get it, either via your Arch Linux's package manager or a CURL command. However the devs recommend the latter. I will post both below.
 
 **- Arch's Pacman**
 ```Bash

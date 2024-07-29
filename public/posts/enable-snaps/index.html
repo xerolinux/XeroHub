@@ -94,7 +94,7 @@
     "name": "Enable Snaps on Arch",
     "headline": "Enable Snaps on Arch",
     "description": "Custom Optimized nVidia Drivers",
-    "abstract": "What are Snaps ? # Snaps are a innovative packaging format for distributing applications on Linux. Developed by Canonical, snaps are self-contained software bundles that include the app and all its dependencies.",
+    "abstract": "What are Snaps ? # Snaps are an innovative packaging format for distributing applications on Linux. Developed by Canonical, snaps are self-contained software bundles that include the app and all its dependencies.",
     "inLanguage": "en",
     "url" : "https:\/\/xerolinux.xyz\/posts\/enable-snaps\/",
     "author" : {
@@ -110,7 +110,7 @@
     "keywords": ["Snaps","SnapCraft","Arch","Guide","Linux"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "407"
+    "wordCount": "409"
   }]
   </script>
 
@@ -1393,7 +1393,7 @@
     </span>        
     
 </h3>
-<p>Snaps are a innovative packaging format for distributing applications on Linux. Developed by <strong>Canonical</strong>, snaps are self-contained software bundles that include the app and all its dependencies. This allows snaps to work consistently across a wide range of Linux distributions, without compatibility issues. Snaps also use transactional updates, automatically rolling back if an update fails. Running in a secure sandbox, snaps have limited access to the host system, enhancing security. While some Linux users have reservations about Canonical&rsquo;s involvement, the snap format provides a convenient way to package and distribute applications that &ldquo;just work&rdquo; on any Linux desktop or server. For users and developers seeking a reliable, cross-distro packaging solution, snaps offer a compelling option to explore.</p>
+<p>Snaps are an innovative packaging format for distributing applications on Linux. Developed by <strong>Canonical</strong>, snaps are self-contained software bundles that include the app and all its dependencies. This allows snaps to work consistently across a wide range of Linux distributions, without compatibility issues. Snaps also use transactional updates, automatically rolling back if an update fails. Running in a secure sandbox, snaps have limited access to the host system, enhancing security. While some Linux users have reservations about Canonical&rsquo;s involvement, the snap format provides a convenient way to package and distribute applications that &ldquo;just work&rdquo; on any Linux desktop or server. For users and developers seeking a reliable, cross-distro packaging solution, snaps offer a compelling option to explore.</p>
 
 
 <h3 class="relative group">Disclaimer : 
@@ -1406,7 +1406,7 @@
     </span>        
     
 </h3>
-<p>Snap support was never intended to be used outside Ubuntu / Debian that package manager was created by Cannonical for their Distribution and subsidiaries. Therefore  I will not be held responsible for any damage you incur by doing it. You will be on your own. Keep that in mind.</p>
+<p>Snap support was never intended to be used outside Ubuntu / Debian that package manager was created by Canonical for their Distribution and subsidiaries. Therefore  I will not be held responsible for any damage you incur by doing it. You will be on your own. Keep that in mind.</p>
 
 
 <h3 class="relative group">Installation 
@@ -1435,9 +1435,9 @@
 </span></span><span class="line"><span class="cl">sudo systemctl <span class="nb">enable</span> --now snapd.apparmor
 </span></span></code></pre></div><p>Make sure to reboot the system after doing that for services to start correctly.</p>
 <ul>
-<li>Step 2 : Install The Snap-Store</li>
+<li>Step 2 : Install The Snap Store</li>
 </ul>
-<p>Once that&rsquo;s done, either start installing your snaps via <code>sudo snap refresh &amp;&amp; sudo snap install packagename</code> commands or if you prefer to use a GUI App Store install the aforementioned Snap-Store via command below.</p>
+<p>Once that&rsquo;s done, either start installing your snaps via <code>sudo snap refresh &amp;&amp; sudo snap install packagename</code> commands or if you prefer to use a GUI App Store install the aforementioned Snap Store via command below.</p>
 <p>Install the Snap Store :</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Bash" data-lang="Bash"><span class="line"><span class="cl">sudo snap install snap-store
 </span></span></code></pre></div><p>This might take a while depending on your connection since it has to populate the massive database on first install, just be patient while it does that. Finally launch the store from the App-menu..</p>

@@ -13,7 +13,7 @@ This keeps being asked on social. So I decided to post it here.. It's all over t
 
 [Gnome Disks](https://wiki.gnome.org/Apps/Disks) has many features, like S.M.A.R.T. monitoring, partition management, benchmarking, and more, including one that might not be obvious, but is very useful: it can set drives to mount automatically at startup.
 
-Use it to auto-mount your new hard disk that uses Ext4, your Windows NTFS / exFAT partition, etc.
+Use it to automount your new hard disk that uses Ext4, your Windows NTFS / exFAT partition, etc.
 
 ![[Image: jsnRZUU.png]](https://i.imgur.com/jsnRZUU.png)
 
@@ -21,7 +21,7 @@ Disks, or Gnome Disk Utility, is installed by default in many Linux distribution
 
 For each partition you set to mount automatically on startup, Gnome Disks adds an entry in your /etc/fstab file, useful for those who are not very familiar with editing /etc/fstab. That means each partition mounted on startup through Disks is available system-wide, and not just for your user.
 
-### How to auto-mount Disks on startup
+### How to automount Disks on startup
 
 Start by launching "Disks" from your applications menu. Choose the hard disk from the left Disks sidebar, select the partition you want to auto mount on startup, then click the button with the gears icon under it, and click `Edit Mount Options`:
 
@@ -31,7 +31,7 @@ In the mount options, toggle the `User Session Defaults` option (this may be cal
 
 ![[Image: HzloKaO.png]](https://i.imgur.com/HzloKaO.png)
 
-To test the changes, you can reboot your system or type the following command to mount all filesystems mentioned in `fstab` (since Disks sets partitions to auto-mount on startup by adding them to `/etc/fstab`) :
+To test the changes, you can reboot your system or type the following command to mount all filesystems mentioned in `fstab` (since Disks sets partitions to automount on startup by adding them to `/etc/fstab`) :
 
 ```Bash
 sudo mount --all

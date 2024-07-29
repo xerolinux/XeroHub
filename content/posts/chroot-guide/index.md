@@ -9,7 +9,7 @@ tags: ["Chroot", "Troubleshooting", "Arch", "Guide", "linux"]
 
 ![[Image: jll2heu.png]](https://i.imgur.com/jll2heu.png)
 
-Changing Root (Chroot) is the process of changing of the apparent disk root directory (and the current running process and its children) to another root directory. When you change root to another directory you cannot access files and commands outside that directory. This directory is called a “chroot jail”. Changing root is commonly done for system maintenance for such tasks as reinstalling GRUB or resetting a forgotten password. Changing root is often done from from a LiveCD or LiveUSB into a mounted partition that contains an installed system.
+Changing Root (Chroot) is the process of changing of the apparent disk root directory (and the current running process and its children) to another root directory. When you change root to another directory you cannot access files and commands outside that directory. This directory is called a “chroot jail”. Changing root is commonly done for system maintenance for such tasks as reinstalling GRUB or resetting a forgotten password. Changing root is often done from a LiveCD or LiveUSB into a mounted partition that contains an installed system.
 
 ### Requirements
 
@@ -67,7 +67,7 @@ Mount other parts of your filesystem (e.g. /boot, /var, /usr…) that reside on 
 sudo mount /dev/device_or_partition_name boot/
 ```
 
-It’s possible to mount filesystems after you’ve chrooted, but it’s more convenient to do so beforehand. The reasoning for this is you’ll have to unmount the temporary filesystems after you exit a chroot so this lets you umount all the filesystems in a single command. This also allows a safer shutdown. Because the external Linux environment knows all mounted partitions it can safely unmount them during shutdown.
+It’s possible to mount filesystems after you’ve chrooted, but it’s more convenient to do so beforehand. The reasoning for this is you’ll have to unmount the temporary filesystems after you exit a chroot so this lets you unmount all the filesystems in a single command. This also allows a safer shutdown. Because the external Linux environment knows all mounted partitions it can safely unmount them during shutdown.
 
 If you’ve setup your network and want to use it in the chroot environment, copy over your DNS servers so that you will be connected to the network:
 
@@ -125,7 +125,7 @@ To make sure `arch-chroot` is working check after your users home folder ls `/ho
 
 ### Exiting chroot
 
-hen you’re finished with system maintenance, exit the chroot shell:
+When you’re finished with system maintenance, exit the chroot shell:
 
 ```Bash
 exit

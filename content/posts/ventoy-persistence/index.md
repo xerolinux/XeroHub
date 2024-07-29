@@ -3,12 +3,12 @@ title: "Ventoy Persistence"
 date: 2024-06-26
 draft: false
 description: "Use Persistence in Ventoy"
-tags: ["Ventoy", "Mluti-Boot", "Tools", "Linux", "USB"]
+tags: ["Ventoy", "Multi-Boot", "Tools", "Linux", "USB"]
 ---
 
 ### Intro
 
-Most of you might already know about the amazing tool called **Ventoy** and how amazing it is at removing the need to have more USB drives if you need to have more ISOs, but you might not know about how many more amazing features it has.
+Most of you might already know about the amazing tool called **Ventoy** and how amazing it is at removing the need to have more USB drives if you want to use multiple ISOs, but you might not know about how many more amazing features it has.
 
 Today I will be showing you how to make a specific Live ISO on your Ventoy USB Drive save all the changes that you make to it.
 

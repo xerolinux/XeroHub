@@ -7,7 +7,7 @@ tags: ["Caps-Lock", "Scripting", "Tools", "linux"]
 ---
 ### What is it ?
 
-I just discovered a niche of users who prefer using CAPS-Lock instead of Shift while typing.. Very weird, but hey.. Anyway, one of those users shared a neat little script that solves an aging issue with CAPS Delay on Linux.. Video Below + Github...
+I just discovered a niche of users who prefer using CAPS Lock instead of Shift while typing.. Very weird, but hey.. Anyway, one of those users shared a neat little script that solves an age-old issue with CAPS Delay on Linux.. Video Below + Github...
 
 {{< youtube v7XWlCFkj4A >}}
 

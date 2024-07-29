@@ -110,7 +110,7 @@
     "keywords": ["Chroot","Troubleshooting","Arch","Guide","linux"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "808"
+    "wordCount": "807"
   }]
   </script>
 
@@ -1405,7 +1405,7 @@
     
   </figure>
 </p>
-<p>Changing Root (Chroot) is the process of changing of the apparent disk root directory (and the current running process and its children) to another root directory. When you change root to another directory you cannot access files and commands outside that directory. This directory is called a “chroot jail”. Changing root is commonly done for system maintenance for such tasks as reinstalling GRUB or resetting a forgotten password. Changing root is often done from from a LiveCD or LiveUSB into a mounted partition that contains an installed system.</p>
+<p>Changing Root (Chroot) is the process of changing of the apparent disk root directory (and the current running process and its children) to another root directory. When you change root to another directory you cannot access files and commands outside that directory. This directory is called a “chroot jail”. Changing root is commonly done for system maintenance for such tasks as reinstalling GRUB or resetting a forgotten password. Changing root is often done from a LiveCD or LiveUSB into a mounted partition that contains an installed system.</p>
 
 
 <h3 class="relative group">Requirements 
@@ -1466,7 +1466,7 @@
 </span></span><span class="line"><span class="cl">sudo mount -o <span class="nb">bind</span> /dev dev/
 </span></span></code></pre></div><p>Mount other parts of your filesystem (e.g. /boot, /var, /usr…) that reside on separate partitions but which you need access to. For example:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Bash" data-lang="Bash"><span class="line"><span class="cl">sudo mount /dev/device_or_partition_name boot/
-</span></span></code></pre></div><p>It’s possible to mount filesystems after you’ve chrooted, but it’s more convenient to do so beforehand. The reasoning for this is you’ll have to unmount the temporary filesystems after you exit a chroot so this lets you umount all the filesystems in a single command. This also allows a safer shutdown. Because the external Linux environment knows all mounted partitions it can safely unmount them during shutdown.</p>
+</span></span></code></pre></div><p>It’s possible to mount filesystems after you’ve chrooted, but it’s more convenient to do so beforehand. The reasoning for this is you’ll have to unmount the temporary filesystems after you exit a chroot so this lets you unmount all the filesystems in a single command. This also allows a safer shutdown. Because the external Linux environment knows all mounted partitions it can safely unmount them during shutdown.</p>
 <p>If you’ve setup your network and want to use it in the chroot environment, copy over your DNS servers so that you will be connected to the network:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Bash" data-lang="Bash"><span class="line"><span class="cl">cp -L /etc/resolv.conf etc/resolv.conf
 </span></span></code></pre></div><p>Now chroot to your installed device or partition and define your shell:</p>
@@ -1515,7 +1515,7 @@
     </span>        
     
 </h3>
-<p>hen you’re finished with system maintenance, exit the chroot shell:</p>
+<p>When you’re finished with system maintenance, exit the chroot shell:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Bash" data-lang="Bash"><span class="line"><span class="cl"><span class="nb">exit</span>
 </span></span></code></pre></div><p>Then unmount the temporary filesystems and any mounted devices:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Bash" data-lang="Bash"><span class="line"><span class="cl">umount <span class="o">{</span>proc,sys,dev,boot...<span class="o">}</span>

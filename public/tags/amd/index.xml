@@ -4,19 +4,196 @@
     <title>AMD on XeroLinux HQ</title>
     <link>https://xerolinux.xyz/tags/amd/</link>
     <description>Recent content in AMD on XeroLinux HQ</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>en</language>
-    <copyright>Copy, _right?_ 🫨</copyright>
-    <lastBuildDate>Sun, 30 Jun 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://xerolinux.xyz/tags/amd/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 30 Jun 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://xerolinux.xyz/tags/amd/index.xml" rel="self" type="application/rss+xml" />
     <item>
     <title>nVidia vs AMD on Linux</title>
       <link>https://xerolinux.xyz/posts/nvidia-vs-amd-linux/</link>
         <pubDate>Sun, 30 Jun 2024 00:00:00 +0000</pubDate>
-        
         <guid>https://xerolinux.xyz/posts/nvidia-vs-amd-linux/</guid>
-        <description>Disclaimer # I&amp;rsquo;ve gathered some relevant information for you below, which I hope you&amp;rsquo;ll find useful. Please use it at your discretion. If you perceive any favoritism, it&amp;rsquo;s not intentional on my part.</description>
-        <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/nvidia-vs-amd-linux/featured.webp" />
+        <description>&#xA;&#xA;&lt;h3 class=&#34;relative group&#34;&gt;Disclaimer &#xA;    &lt;div id=&#34;disclaimer&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;&#xA;    &#xA;    &lt;span&#xA;        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100&#34;&gt;&#xA;        &lt;a class=&#34;group-hover:text-primary-300 dark:group-hover:text-neutral-700&#34;&#xA;            style=&#34;text-decoration-line: none !important;&#34; href=&#34;#disclaimer&#34; aria-label=&#34;Anchor&#34;&gt;#&lt;/a&gt;&#xA;    &lt;/span&gt;        &#xA;    &#xA;&lt;/h3&gt;&#xA;&lt;p&gt;I&amp;rsquo;ve gathered some relevant information for you below, which I hope you&amp;rsquo;ll find useful. Please use it at your discretion. If you perceive any favoritism, it&amp;rsquo;s not intentional on my part. The goal here is to provide what best fits your needs. It won&amp;rsquo;t make a difference to me what you choose; what&amp;rsquo;s important is that it works for you.&lt;/p&gt;&#xA;&lt;p&gt;The information might be incomplete due to the short notice, but it&amp;rsquo;s the best I could compile. I could have made this post much longer, but I want to ensure you actually read and find value in it. So, enjoy what I&amp;rsquo;ve put together!&lt;/p&gt;&#xA;&#xA;&#xA;&lt;h3 class=&#34;relative group&#34;&gt;Introduction &#xA;    &lt;div id=&#34;introduction&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;&#xA;    &#xA;    &lt;span&#xA;        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100&#34;&gt;&#xA;        &lt;a class=&#34;group-hover:text-primary-300 dark:group-hover:text-neutral-700&#34;&#xA;            style=&#34;text-decoration-line: none !important;&#34; href=&#34;#introduction&#34; aria-label=&#34;Anchor&#34;&gt;#&lt;/a&gt;&#xA;    &lt;/span&gt;        &#xA;    &#xA;&lt;/h3&gt;&#xA;&lt;p&gt;Choosing the right GPU for your Linux system involves weighing several factors, especially considering the evolving landscape of drivers, performance benchmarks, and software compatibility. The debate between AMD Radeon and Nvidia RTX GPUs is one of the oldest in the tech community, akin to the timeless Android vs iOS debate. Here’s a general breakdown based on recent experiences with AMD Radeon and insights into Nvidia GPUs&lt;/p&gt;&#xA;&#xA;&#xA;    &#xA;    &lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;&#xA;      &lt;iframe allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&#34; allowfullscreen=&#34;allowfullscreen&#34; loading=&#34;eager&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; src=&#34;https://www.youtube.com/embed/oDCRXhR5n2g?autoplay=0&amp;controls=1&amp;end=0&amp;loop=0&amp;mute=0&amp;start=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;YouTube video&#34;&#xA;      &gt;&lt;/iframe&gt;&#xA;    &lt;/div&gt;&#xA;&#xA;&#xA;&#xA;&lt;h3 class=&#34;relative group&#34;&gt;AMD Radeon : FOSS and Easy &#xA;    &lt;div id=&#34;amd-radeon--foss-and-easy&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;&#xA;    &#xA;    &lt;span&#xA;        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100&#34;&gt;&#xA;        &lt;a class=&#34;group-hover:text-primary-300 dark:group-hover:text-neutral-700&#34;&#xA;            style=&#34;text-decoration-line: none !important;&#34; href=&#34;#amd-radeon--foss-and-easy&#34; aria-label=&#34;Anchor&#34;&gt;#&lt;/a&gt;&#xA;    &lt;/span&gt;        &#xA;    &#xA;&lt;/h3&gt;&#xA;&lt;p&gt;Examining AMD GPUs on Linux reveals both their strengths and challenges. Here’s a breakdown of the pros and cons.&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Open-Source Drivers:&lt;/strong&gt; AMD’s commitment to open-source drivers is a significant advantage for Linux users. Installation is straightforward, and compatibility with modern Linux distributions like Ubuntu and ArchLinux is generally robust. Gaming performance out of the box is commendable, with most titles running smoothly using these drivers.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;A quote from AMD&amp;rsquo;s &lt;strong&gt;Forrest Norod&lt;/strong&gt; :&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;We are absolutely committed to open [ecosystems], even open to working with customers or others that are directly competing with us in the end. That is to everybody&amp;rsquo;s benefit, ourselves included.&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;strong&gt;Price Performance Ratio:&lt;/strong&gt; One of the standout features of AMD GPUs is their competitive pricing relative to Nvidia. The RX 6700 XT, for example offers excellent value for money, often providing more VRAM at a lower cost compared to Nvidia’s equivalents.&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;strong&gt;Gaming Experience:&lt;/strong&gt; For gaming enthusiasts, AMD GPUs shine brightly. Titles run seamlessly on Linux with open-source drivers, leveraging Vulkan and OpenGL without major issues. They handle high-resolution gaming admirably, although it may fall significantly behind Nvidia in raw ray tracing performance.&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;strong&gt;Setup and Compatibility:&lt;/strong&gt; Setting up AMD GPUs is straightforward with open-source drivers.&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&#xA;&#xA;&lt;h3 class=&#34;relative group&#34;&gt;Challenges with AMD GPUs &#xA;    &lt;div id=&#34;challenges-with-amd-gpus&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;&#xA;    &#xA;    &lt;span&#xA;        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100&#34;&gt;&#xA;        &lt;a class=&#34;group-hover:text-primary-300 dark:group-hover:text-neutral-700&#34;&#xA;            style=&#34;text-decoration-line: none !important;&#34; href=&#34;#challenges-with-amd-gpus&#34; aria-label=&#34;Anchor&#34;&gt;#&lt;/a&gt;&#xA;    &lt;/span&gt;        &#xA;    &#xA;&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://www.blackmagicdesign.com/products/davinciresolve&#34; target=&#34;_blank&#34;&gt;&lt;strong&gt;DaVinci Resolve&lt;/strong&gt;&lt;/a&gt; and &lt;strong&gt;OpenCL:&lt;/strong&gt; AMD’s support for &lt;strong&gt;DaVinci Resolve&lt;/strong&gt; can be hit or miss. While recent updates have improved compatibility, Nvidia GPUs still hold an edge in performance and reliability for professional video editing tasks due to robust CUDA support.&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;strong&gt;Machine Learning:&lt;/strong&gt; Nvidia’s dominance in machine learning tasks remains unchallenged on Linux, primarily due to superior CUDA support. Although AMD’s ROCm platform is evolving, compatibility and performance may not yet match Nvidia’s offerings for AI and deep learning applications.&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;strong&gt;Machine Learning &amp;amp; Encoding:&lt;/strong&gt; Challenges arise when needing specific features like hardware video encoding (VAAPI) or compatibility with proprietary software such as DaVinci Resolve. Installing bleeding-edge Mesa libraries and kernels may be necessary for optimal performance, which can complicate the setup for less experienced users.&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;strong&gt;OpenCL and ROCm Support:&lt;/strong&gt; While AMD supports OpenCL, the ecosystem is still catching up to Nvidia’s CUDA dominance in fields like machine learning and professional video editing. Updates like ROCm 6.0.x show promise but may not yet fully match Nvidia’s capabilities in these specialized areas.&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&#xA;&#xA;&lt;h3 class=&#34;relative group&#34;&gt;Nvidia RTX Series : Proprietary but Robust &#xA;    &lt;div id=&#34;nvidia-rtx-series--proprietary-but-robust&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;&#xA;    &#xA;    &lt;span&#xA;        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100&#34;&gt;&#xA;        &lt;a class=&#34;group-hover:text-primary-300 dark:group-hover:text-neutral-700&#34;&#xA;            style=&#34;text-decoration-line: none !important;&#34; href=&#34;#nvidia-rtx-series--proprietary-but-robust&#34; aria-label=&#34;Anchor&#34;&gt;#&lt;/a&gt;&#xA;    &lt;/span&gt;        &#xA;    &#xA;&lt;/h3&gt;&#xA;&lt;p&gt;Nvidia’s RTX GPUs offer a diverse range of advantages over AMD, but they also come with their own set of challenges. Now we are not gonna be mentioning older GTX and lower GPUs since those present even more limitations.&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;strong&gt;CUDA and Proprietary Drivers:&lt;/strong&gt; Nvidia’s proprietary drivers are highly esteemed for stability and performance on Linux, particularly in scientific computing, AI, and professional video editing where CUDA acceleration is indispensable. They generally integrate well with distributions like &lt;strong&gt;Ubuntu&lt;/strong&gt; but may encounter occasional compatibility and stability issues, especially with newer kernel versions or specific configurations.&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;strong&gt;Enhanced Stability with Version 555.x:&lt;/strong&gt; Recent updates introduce &lt;a href=&#34;https://zamundaaa.github.io/wayland/2024/04/05/explicit-sync.html&#34; target=&#34;_blank&#34;&gt;&lt;strong&gt;Explicit Sync Explained&lt;/strong&gt;&lt;/a&gt; support for &lt;strong&gt;Wayland&lt;/strong&gt; users, &lt;a href=&#34;https://gitlab.freedesktop.org/wayland/wayland-protocols/-/merge_requests/90&#34; target=&#34;_blank&#34;&gt;&lt;strong&gt;merged&lt;/strong&gt;&lt;/a&gt; a short while ago, enhancing stability and performance optimizations without additional configuration, although full support depends on the desktop environment like &lt;strong&gt;KDE Plasma&lt;/strong&gt; or &lt;strong&gt;GNOME&lt;/strong&gt;, not currently available for &lt;strong&gt;Hyprland&lt;/strong&gt;.&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;strong&gt;Ray Tracing and DLSS:&lt;/strong&gt; Nvidia RTX GPUs excel in real-time ray tracing and AI-enhanced features such as DLSS, delivering superior visual fidelity and performance in supported games and applications. This makes them a preferred choice for users seeking cutting-edge graphics capabilities on Linux.&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;strong&gt;Encoder Superiority:&lt;/strong&gt; Nvidia’s NVENC (encoder) is widely regarded as superior to AMD’s &lt;strong&gt;VCE&lt;/strong&gt;-based encoding solutions. This advantage is crucial for professionals relying on robust hardware video encoding capabilities, where Nvidia’s NVENC outperforms AMD’s offerings.&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&#xA;&#xA;&lt;h3 class=&#34;relative group&#34;&gt;Challenges with nVidia GPUs &#xA;    &lt;div id=&#34;challenges-with-nvidia-gpus&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;&#xA;    &#xA;    &lt;span&#xA;        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100&#34;&gt;&#xA;        &lt;a class=&#34;group-hover:text-primary-300 dark:group-hover:text-neutral-700&#34;&#xA;            style=&#34;text-decoration-line: none !important;&#34; href=&#34;#challenges-with-nvidia-gpus&#34; aria-label=&#34;Anchor&#34;&gt;#&lt;/a&gt;&#xA;    &lt;/span&gt;        &#xA;    &#xA;&lt;/h3&gt;&#xA;&lt;p&gt;Although Nvidia has these significant advantages over AMD, it also faces its own set of challenges:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Setup Complexity:&lt;/strong&gt; Setting up Nvidia drivers on Linux can be intricate, especially with newer kernel versions. Compatibility issues may arise, necessitating manual configuration and occasional troubleshooting for optimal performance. Despite recent updates enhancing Wayland support, Nvidia’s settings control panel remains non-functional on &lt;strong&gt;Wayland&lt;/strong&gt;, contrasting with ongoing improvements in &lt;strong&gt;AMDGPU&lt;/strong&gt; Linux graphics drivers.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&#xA;&#xA;&lt;h3 class=&#34;relative group&#34;&gt;Conclusion: Making the Right Choice &#xA;    &lt;div id=&#34;conclusion-making-the-right-choice&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;&#xA;    &#xA;    &lt;span&#xA;        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100&#34;&gt;&#xA;        &lt;a class=&#34;group-hover:text-primary-300 dark:group-hover:text-neutral-700&#34;&#xA;            style=&#34;text-decoration-line: none !important;&#34; href=&#34;#conclusion-making-the-right-choice&#34; aria-label=&#34;Anchor&#34;&gt;#&lt;/a&gt;&#xA;    &lt;/span&gt;        &#xA;    &#xA;&lt;/h3&gt;&#xA;&lt;p&gt;Choosing between AMD Radeon and Nvidia RTX GPUs on Linux boils down to your specific needs and priorities:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;strong&gt;Gaming and Budget:&lt;/strong&gt; If gaming performance and budget-friendly options are your main concerns, AMD Radeon GPUs offer compelling choices with good open-source driver support and competitive pricing.&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;strong&gt;Professional Applications:&lt;/strong&gt; For professionals needing CUDA support for applications like DaVinci Resolve or extensive machine learning tasks, Nvidia RTX GPUs provide superior performance and reliability, albeit with a more complex setup process.&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;strong&gt;Future Prospects:&lt;/strong&gt; AMD’s continuous improvement with open-source drivers and updates like ROCm 6.0.x suggest promising developments for broader compatibility and performance gains. Nvidia’s established dominance in CUDA and advanced features ensures robust support for demanding professional workflows.&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;In conclusion, whether you lean towards AMD Radeon for its open-source ethos and gaming prowess or Nvidia RTX for CUDA-driven performance and advanced graphics capabilities, understanding these nuances is crucial for making an informed decision on your next GPU purchase for Linux.&lt;/p&gt;&#xA;&#xA;&#xA;&lt;h3 class=&#34;relative group&#34;&gt;Data Links &#xA;    &lt;div id=&#34;data-links&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;&#xA;    &#xA;    &lt;span&#xA;        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100&#34;&gt;&#xA;        &lt;a class=&#34;group-hover:text-primary-300 dark:group-hover:text-neutral-700&#34;&#xA;            style=&#34;text-decoration-line: none !important;&#34; href=&#34;#data-links&#34; aria-label=&#34;Anchor&#34;&gt;#&lt;/a&gt;&#xA;    &lt;/span&gt;        &#xA;    &#xA;&lt;/h3&gt;&#xA;&lt;p&gt;Since I do not have the hardware myself to test and provide the data some of you out there might want to look at, below are some relevant links.&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://www.phoronix.com/review/august-2023-linux-gpus/2&#34; target=&#34;_blank&#34;&gt;&lt;strong&gt;AMD vs nVidia Gaming Benchmarks&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://www.quora.com/Which-is-a-better-GPU-for-machine-learning-AMD-or-NVIDIA&#34; target=&#34;_blank&#34;&gt;&lt;strong&gt;Nvidia vs AMD: GPUs in Machine Learning&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://www.tomshardware.com/news/amd-intel-nvidia-video-encoding-performance-quality-tested&#34; target=&#34;_blank&#34;&gt;&lt;strong&gt;Nvidia nVenc vs AMD VCE&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;</description>
+        <content:encoded>&lt;![CDATA[
+
+<h3 class="relative group">Disclaimer 
+    <div id="disclaimer" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#disclaimer" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p>I&rsquo;ve gathered some relevant information for you below, which I hope you&rsquo;ll find useful. Please use it at your discretion. If you perceive any favoritism, it&rsquo;s not intentional on my part. The goal here is to provide what best fits your needs. It won&rsquo;t make a difference to me what you choose; what&rsquo;s important is that it works for you.</p>
+<p>The information might be incomplete due to the short notice, but it&rsquo;s the best I could compile. I could have made this post much longer, but I want to ensure you actually read and find value in it. So, enjoy what I&rsquo;ve put together!</p>
+
+
+<h3 class="relative group">Introduction 
+    <div id="introduction" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#introduction" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p>Choosing the right GPU for your Linux system involves weighing several factors, especially considering the evolving landscape of drivers, performance benchmarks, and software compatibility. The debate between AMD Radeon and Nvidia RTX GPUs is one of the oldest in the tech community, akin to the timeless Android vs iOS debate. Here’s a general breakdown based on recent experiences with AMD Radeon and insights into Nvidia GPUs</p>
+
+
+    
+    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+      <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/oDCRXhR5n2g?autoplay=0&controls=1&end=0&loop=0&mute=0&start=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="YouTube video"
+      ></iframe>
+    </div>
+
+
+
+<h3 class="relative group">AMD Radeon : FOSS and Easy 
+    <div id="amd-radeon--foss-and-easy" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#amd-radeon--foss-and-easy" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p>Examining AMD GPUs on Linux reveals both their strengths and challenges. Here’s a breakdown of the pros and cons.</p>
+<ul>
+<li><strong>Open-Source Drivers:</strong> AMD’s commitment to open-source drivers is a significant advantage for Linux users. Installation is straightforward, and compatibility with modern Linux distributions like Ubuntu and ArchLinux is generally robust. Gaming performance out of the box is commendable, with most titles running smoothly using these drivers.</li>
+</ul>
+<p>A quote from AMD&rsquo;s <strong>Forrest Norod</strong> :</p>
+<blockquote>
+<p>We are absolutely committed to open [ecosystems], even open to working with customers or others that are directly competing with us in the end. That is to everybody&rsquo;s benefit, ourselves included.</p>
+</blockquote>
+<ul>
+<li>
+<p><strong>Price Performance Ratio:</strong> One of the standout features of AMD GPUs is their competitive pricing relative to Nvidia. The RX 6700 XT, for example offers excellent value for money, often providing more VRAM at a lower cost compared to Nvidia’s equivalents.</p>
+</li>
+<li>
+<p><strong>Gaming Experience:</strong> For gaming enthusiasts, AMD GPUs shine brightly. Titles run seamlessly on Linux with open-source drivers, leveraging Vulkan and OpenGL without major issues. They handle high-resolution gaming admirably, although it may fall significantly behind Nvidia in raw ray tracing performance.</p>
+</li>
+<li>
+<p><strong>Setup and Compatibility:</strong> Setting up AMD GPUs is straightforward with open-source drivers.</p>
+</li>
+</ul>
+
+
+<h3 class="relative group">Challenges with AMD GPUs 
+    <div id="challenges-with-amd-gpus" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#challenges-with-amd-gpus" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<ul>
+<li>
+<p><a href="https://www.blackmagicdesign.com/products/davinciresolve" target="_blank"><strong>DaVinci Resolve</strong></a> and <strong>OpenCL:</strong> AMD’s support for <strong>DaVinci Resolve</strong> can be hit or miss. While recent updates have improved compatibility, Nvidia GPUs still hold an edge in performance and reliability for professional video editing tasks due to robust CUDA support.</p>
+</li>
+<li>
+<p><strong>Machine Learning:</strong> Nvidia’s dominance in machine learning tasks remains unchallenged on Linux, primarily due to superior CUDA support. Although AMD’s ROCm platform is evolving, compatibility and performance may not yet match Nvidia’s offerings for AI and deep learning applications.</p>
+</li>
+<li>
+<p><strong>Machine Learning &amp; Encoding:</strong> Challenges arise when needing specific features like hardware video encoding (VAAPI) or compatibility with proprietary software such as DaVinci Resolve. Installing bleeding-edge Mesa libraries and kernels may be necessary for optimal performance, which can complicate the setup for less experienced users.</p>
+</li>
+<li>
+<p><strong>OpenCL and ROCm Support:</strong> While AMD supports OpenCL, the ecosystem is still catching up to Nvidia’s CUDA dominance in fields like machine learning and professional video editing. Updates like ROCm 6.0.x show promise but may not yet fully match Nvidia’s capabilities in these specialized areas.</p>
+</li>
+</ul>
+
+
+<h3 class="relative group">Nvidia RTX Series : Proprietary but Robust 
+    <div id="nvidia-rtx-series--proprietary-but-robust" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#nvidia-rtx-series--proprietary-but-robust" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p>Nvidia’s RTX GPUs offer a diverse range of advantages over AMD, but they also come with their own set of challenges. Now we are not gonna be mentioning older GTX and lower GPUs since those present even more limitations.</p>
+<ul>
+<li>
+<p><strong>CUDA and Proprietary Drivers:</strong> Nvidia’s proprietary drivers are highly esteemed for stability and performance on Linux, particularly in scientific computing, AI, and professional video editing where CUDA acceleration is indispensable. They generally integrate well with distributions like <strong>Ubuntu</strong> but may encounter occasional compatibility and stability issues, especially with newer kernel versions or specific configurations.</p>
+</li>
+<li>
+<p><strong>Enhanced Stability with Version 555.x:</strong> Recent updates introduce <a href="https://zamundaaa.github.io/wayland/2024/04/05/explicit-sync.html" target="_blank"><strong>Explicit Sync Explained</strong></a> support for <strong>Wayland</strong> users, <a href="https://gitlab.freedesktop.org/wayland/wayland-protocols/-/merge_requests/90" target="_blank"><strong>merged</strong></a> a short while ago, enhancing stability and performance optimizations without additional configuration, although full support depends on the desktop environment like <strong>KDE Plasma</strong> or <strong>GNOME</strong>, not currently available for <strong>Hyprland</strong>.</p>
+</li>
+<li>
+<p><strong>Ray Tracing and DLSS:</strong> Nvidia RTX GPUs excel in real-time ray tracing and AI-enhanced features such as DLSS, delivering superior visual fidelity and performance in supported games and applications. This makes them a preferred choice for users seeking cutting-edge graphics capabilities on Linux.</p>
+</li>
+<li>
+<p><strong>Encoder Superiority:</strong> Nvidia’s NVENC (encoder) is widely regarded as superior to AMD’s <strong>VCE</strong>-based encoding solutions. This advantage is crucial for professionals relying on robust hardware video encoding capabilities, where Nvidia’s NVENC outperforms AMD’s offerings.</p>
+</li>
+</ul>
+
+
+<h3 class="relative group">Challenges with nVidia GPUs 
+    <div id="challenges-with-nvidia-gpus" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#challenges-with-nvidia-gpus" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p>Although Nvidia has these significant advantages over AMD, it also faces its own set of challenges:</p>
+<ul>
+<li><strong>Setup Complexity:</strong> Setting up Nvidia drivers on Linux can be intricate, especially with newer kernel versions. Compatibility issues may arise, necessitating manual configuration and occasional troubleshooting for optimal performance. Despite recent updates enhancing Wayland support, Nvidia’s settings control panel remains non-functional on <strong>Wayland</strong>, contrasting with ongoing improvements in <strong>AMDGPU</strong> Linux graphics drivers.</li>
+</ul>
+
+
+<h3 class="relative group">Conclusion: Making the Right Choice 
+    <div id="conclusion-making-the-right-choice" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#conclusion-making-the-right-choice" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p>Choosing between AMD Radeon and Nvidia RTX GPUs on Linux boils down to your specific needs and priorities:</p>
+<ul>
+<li>
+<p><strong>Gaming and Budget:</strong> If gaming performance and budget-friendly options are your main concerns, AMD Radeon GPUs offer compelling choices with good open-source driver support and competitive pricing.</p>
+</li>
+<li>
+<p><strong>Professional Applications:</strong> For professionals needing CUDA support for applications like DaVinci Resolve or extensive machine learning tasks, Nvidia RTX GPUs provide superior performance and reliability, albeit with a more complex setup process.</p>
+</li>
+<li>
+<p><strong>Future Prospects:</strong> AMD’s continuous improvement with open-source drivers and updates like ROCm 6.0.x suggest promising developments for broader compatibility and performance gains. Nvidia’s established dominance in CUDA and advanced features ensures robust support for demanding professional workflows.</p>
+</li>
+</ul>
+<p>In conclusion, whether you lean towards AMD Radeon for its open-source ethos and gaming prowess or Nvidia RTX for CUDA-driven performance and advanced graphics capabilities, understanding these nuances is crucial for making an informed decision on your next GPU purchase for Linux.</p>
+
+
+<h3 class="relative group">Data Links 
+    <div id="data-links" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#data-links" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p>Since I do not have the hardware myself to test and provide the data some of you out there might want to look at, below are some relevant links.</p>
+<ul>
+<li><a href="https://www.phoronix.com/review/august-2023-linux-gpus/2" target="_blank"><strong>AMD vs nVidia Gaming Benchmarks</strong></a></li>
+<li><a href="https://www.quora.com/Which-is-a-better-GPU-for-machine-learning-AMD-or-NVIDIA" target="_blank"><strong>Nvidia vs AMD: GPUs in Machine Learning</strong></a></li>
+<li><a href="https://www.tomshardware.com/news/amd-intel-nvidia-video-encoding-performance-quality-tested" target="_blank"><strong>Nvidia nVenc vs AMD VCE</strong></a></li>
+</ul>
+]]></content:encoded>
+        <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
       </item>
-      
     </channel>
   </rss>

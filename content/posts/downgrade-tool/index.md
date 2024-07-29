@@ -11,7 +11,7 @@ Downgrade is a Bash script that makes it easier to downgrade packages in Arch Li
 
 ### Why do we need it ?
 
-As you might know, Arch Linux is a rolling release and DIY (do-it-yourself) distribution. So you have to be bit careful while updating it often, especially installing or updating packages from the third party repositories like AUR. You might be end up with broken system if you don't know what you are doing. It is your responsibility to make Arch Linux more stable. However, we all do mistakes. It is difficult to be careful all time. Sometimes, you want to update to most bleeding edge, and you might be stuck with broken packages. Don't panic! In such cases, you can simply rollback to the old stable packages. This short tutorial describes how to downgrade a package in Arch Linux and its variants like EndeavourOS, Manjaro Linux.
+As you might know, Arch Linux is a rolling release and DIY (do-it-yourself) distribution. So you have to be a bit careful while updating it often, especially installing or updating packages from the third party repositories like AUR. You might be end up with broken system if you don't know what you are doing. It is your responsibility to make Arch Linux more stable. However, we all do mistakes. It is difficult to be careful all time. Sometimes, you want to update to most bleeding edge, and you might be stuck with broken packages. Don't panic! In such cases, you can simply rollback to the old stable packages. This short tutorial describes how to downgrade a package in Arch Linux and its variants like EndeavourOS, Manjaro Linux.
 
 ### Install Downgrade utility
 

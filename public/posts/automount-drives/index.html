@@ -1286,7 +1286,7 @@
       <ul>
         <li><a href="#intro">Intro</a></li>
         <li><a href="#gnome-disks">Gnome Disks</a></li>
-        <li><a href="#how-to-auto-mount-disks-on-startup">How to auto-mount Disks on startup</a></li>
+        <li><a href="#how-to-automount-disks-on-startup">How to automount Disks on startup</a></li>
       </ul>
     </li>
   </ul>
@@ -1306,7 +1306,7 @@
       <ul>
         <li><a href="#intro">Intro</a></li>
         <li><a href="#gnome-disks">Gnome Disks</a></li>
-        <li><a href="#how-to-auto-mount-disks-on-startup">How to auto-mount Disks on startup</a></li>
+        <li><a href="#how-to-automount-disks-on-startup">How to automount Disks on startup</a></li>
       </ul>
     </li>
   </ul>
@@ -1416,7 +1416,7 @@
     
 </h3>
 <p><a href="https://wiki.gnome.org/Apps/Disks" target="_blank">Gnome Disks</a> has many features, like S.M.A.R.T. monitoring, partition management, benchmarking, and more, including one that might not be obvious, but is very useful: it can set drives to mount automatically at startup.</p>
-<p>Use it to auto-mount your new hard disk that uses Ext4, your Windows NTFS / exFAT partition, etc.</p>
+<p>Use it to automount your new hard disk that uses Ext4, your Windows NTFS / exFAT partition, etc.</p>
 <p>
   <figure>
     <img class="my-0 rounded-md" loading="lazy" src="https://i.imgur.com/jsnRZUU.png" alt="[Image: jsnRZUU.png]" />
@@ -1427,13 +1427,13 @@
 <p>For each partition you set to mount automatically on startup, Gnome Disks adds an entry in your /etc/fstab file, useful for those who are not very familiar with editing /etc/fstab. That means each partition mounted on startup through Disks is available system-wide, and not just for your user.</p>
 
 
-<h3 class="relative group">How to auto-mount Disks on startup 
-    <div id="how-to-auto-mount-disks-on-startup" class="anchor"></div>
+<h3 class="relative group">How to automount Disks on startup 
+    <div id="how-to-automount-disks-on-startup" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#how-to-auto-mount-disks-on-startup" aria-label="Anchor">#</a>
+            style="text-decoration-line: none !important;" href="#how-to-automount-disks-on-startup" aria-label="Anchor">#</a>
     </span>        
     
 </h3>
@@ -1451,7 +1451,7 @@
     
   </figure>
 </p>
-<p>To test the changes, you can reboot your system or type the following command to mount all filesystems mentioned in <code>fstab</code> (since Disks sets partitions to auto-mount on startup by adding them to <code>/etc/fstab</code>) :</p>
+<p>To test the changes, you can reboot your system or type the following command to mount all filesystems mentioned in <code>fstab</code> (since Disks sets partitions to automount on startup by adding them to <code>/etc/fstab</code>) :</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Bash" data-lang="Bash"><span class="line"><span class="cl">sudo mount --all
 </span></span></code></pre></div><p>Hope this answers that question&hellip;.</p>
 

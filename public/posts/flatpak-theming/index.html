@@ -110,7 +110,7 @@
     "keywords": ["Flatpak","Theming","Ricing","Guide","linux"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "401"
+    "wordCount": "400"
   }]
   </script>
 
@@ -1414,10 +1414,10 @@
     </span>        
     
 </h2>
-<p>In this tutorial, I am going to introduce you a way to make flatpak apps aware of external GTK themes.</p>
+<p>In this tutorial, I am going to introduce you a way to make Flatpak apps aware of external GTK themes.</p>
 <p>To enable this functionality, users need to install the GTK themes similar to the one used in KDE (as for other distros) but also run these commands:</p>
 <p><strong>- Step 1:</strong> Give Flatpak apps access to GTK themes location</p>
-<p>GTK themes are located in <code>/usr/share/themes</code> for all users, and in <code>~/.themes</code> for a specific user. Notice that you can’t give access to <code>/usr/share/themes</code> because according to <a href="https://docs.flatpak.org/en/latest/sandbox-permissions.html#filesystem-access" target="_blank">Flatpak Documentation</a> they are black listed.</p>
+<p>GTK themes are located in <code>/usr/share/themes</code> for all users, and in <code>~/.themes</code> for a specific user. Notice that you can’t give access to <code>/usr/share/themes</code> because according to <a href="https://docs.flatpak.org/en/latest/sandbox-permissions.html#filesystem-access" target="_blank">Flatpak Documentation</a> they are blacklisted.</p>
 <p>So, since all included GTK Themes in XeroLinux  are located under <code>/usr/share/themes</code> which Flatpaks cannot access we need to copy them to <code>~/.themes</code> .</p>
 <p>Once that is done, to give all flatpak packages permission to access <code>~/.themes</code> run the following command:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Bash" data-lang="Bash"><span class="line"><span class="cl">sudo flatpak override --filesystem<span class="o">=</span><span class="nv">$HOME</span>/.themes

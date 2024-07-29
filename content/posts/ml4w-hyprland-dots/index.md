@@ -5,7 +5,7 @@ draft: false
 description: "The Most Advanced Hyprland Dots Ever!"
 tags: ["Hyprland", "Dots", "Ricing", "Theming", "GTK", "Wayland", "Linux"]
 ---
-### What is Hyprland ?
+### What is Hyprland?
 
 In a nutshell, **Hyprland** is a dynamic tiling **Wayland** compositor based on *wlroots* that doesn't sacrifice on its looks. It provides the latest Wayland features, is highly customizable, has all the eyecandy, the most powerful plugins, easy IPC, much more QoL stuff than other wlr-based compositors and more...
 
@@ -13,11 +13,11 @@ In a nutshell, **Hyprland** is a dynamic tiling **Wayland** compositor based on 
 
 Before getting to it, I would like to say that, while I, myself do not and will not ever be using WMs since my workflow is tailored around DEs, that doesn't mean I do not appreciate the hard work others put into making them more approachable, and pretty to both look at and use.
 
-That being said, I have been following Hyprland's growth as time went on, especially all the rices being created for it. I have see so many awesome ones, but the one that caught my eye, which we will be talking about, is the one by a guy named [**@Stephan Raabe**](https://gitlab.com/stephan-raabe).
+That being said, I have been following Hyprland's growth as time went on, especially all the rices being created for it. I have seen so many awesome ones, but the one that caught my eye, which we will be talking about, is the one by a guy named [**@Stephan Raabe**](https://gitlab.com/stephan-raabe).
 
 {{< youtube GHYk1Iv4GkY >}}
 
-As you can see from the video above, he has gone above and beyond the natural limits, making **Hyprland** all that more fun and easy to use by creating *GUI Config Tools* written in **GTK** not only for his dots but you can can effortlessly configure almost every aspect of **Hyprland** making it truly your own. It's truly amazing !!!!
+As you can see from the video above, he has gone above and beyond the natural limits, making **Hyprland** all that more fun and easy to use by creating *GUI Config Tools* written in **GTK** not only for his dots but you can effortlessly configure almost every aspect of **Hyprland** making it truly your own. It's truly amazing !!!!
 
 Here's a quote from the dev :
 
@@ -33,7 +33,7 @@ Before we start, just know that the **ML4W** Dotfiles should work on all Arch Li
 - Garuda Linux
 - Arco Linux
 
-> For **Manjaro** users: Hyprland and required packages are under ongoing development. That's why it could be possible that some packages are not immediatly available on Manjaro. But usually, the packages will be published later. Maybe you can install required packages manually.
+> For **Manjaro** users: Hyprland and required packages are under ongoing development. That's why it could be possible that some packages are not immediately available on Manjaro. But usually, the packages will be published later. Maybe you can install required packages manually.
 
 > For **ArcoLinux** users: Please reinstall/force the installation of all packages during the installation/update process of the install script. The script will also offer to remove ttf-ms-fonts if installed to avoid issues with icons on waybar.
 

@@ -11,7 +11,7 @@ I just found a neat little tool called "**Pacseek**" which is a terminal user in
 
 {{< figure src="https://raw.githubusercontent.com/moson-mo/pacseek/main/assets/pacseek_animation.gif" alt="specs" class="center-image" >}}
 
-### What is it ?
+### What is it?
 
 Pacseek is terminal user interface, written in **Rust** which allows you to browse and search through the **Arch Linux** package databases as well as the **Arch User Repository**.
 
@@ -27,7 +27,7 @@ paru/yay -S pacseek-bin
 
 ### Closing words
 
-I use this on a daily. It's highly recommended for the *G33ks* out there who love the terminal like I do. If you prefer **GUIs** then this is not for you, intead use something you prefer. Anyway below is a link to project **Github**
+I use this on a daily. It's highly recommended for the *G33ks* out there who love the terminal like I do. If you prefer **GUIs** then this is not for you, instead use something you prefer. Anyway below is a link to project **Github**
 
 {{< github repo="moson-mo/pacseek" >}}
 

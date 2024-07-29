@@ -9,7 +9,7 @@ tags: ["Spotube", "Spotify", "Tools", "Flathub", "Flatpak", "Audio", "Streaming"
 
 It's an Open Source **Spotify** client that doesn't require Premium nor uses Electron! Available for both desktop & mobile!
 
-Following are the features that currently spotube offers:
+Following are the features that currently Spotube offers:
 
 🚫 No ads<br>
 ⬇️ Downloadable tracks<br>

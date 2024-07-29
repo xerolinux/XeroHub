@@ -5,7 +5,7 @@ draft: false
 description: "Add More Effects To Plasma"
 tags: ["Effects", "Plasma", "Tools", "Desktop", "Linux"]
 ---
-### What is it ?
+### What is it?
 
 Burn-My-Windows is a desktop effect extension that adds a variety of visually striking window closing animations to Linux desktop environments like GNOME and KDE Plasma.
 
@@ -20,7 +20,7 @@ In summary, Burn-My-Windows is a fun and highly configurable desktop extension t
 
 {{< youtube ZHMboQq8Z5c >}}
 
-### Install it On Plasma
+### Install it on Plasma
 
 There are multiple ways to install this extension. One of them being from the [**KDE Store**](https://www.pling.com/find?search=burn-my-windows) on many distros running **KDE Plasma** or the **A.U.R** on **ArchLinux**. Here I will be showing you the latter.
 
