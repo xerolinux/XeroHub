@@ -21,9 +21,9 @@ Ricing can be a bit invloved. At least if you are like me, and care about consis
 
 ![Rice](https://i.imgur.com/irOECxY.jpeg)
 
-**KDE Plasma** is ricing a beast, no doubt about that. That's one of its biggest selling points. So it's normal when I say, it can be very, very intricate. You can rice everything in it.
+**KDE Plasma** is a ricing a beast, no doubt about that. That's one of its biggest selling points. So it's normal when I say, it can be very, very intricate. You can rice everything in it.
 
-We need to also know what library the system uses. **KDE** uses a library called **Qt**, pronounced like *cute*. But you might encounter apps that use the **GTK2/3/4** library, typically ones created for **Gnome** or **XFCE**. But fear not, most themes come with elements that address those apps.
+We need to also know what library the system uses. **KDE** uses a library called **Qt**, pronounced like *cute*. But you might encounter apps that use the **GTK2/3/4** library, typically ones created for **Gnome** or **XFCE**.
 
 > Keep in mind though, to successfully theme **GTK4** or, as it's called now **LibAdwaita**, we need to make sure the necessary *Hacks* are included in the theme we have chosen, simply because, as we all know, **Gnome** devs despise the whole idea of theming for whatever reason.
 
@@ -33,7 +33,7 @@ With that out of the way, let's get to it shall we ?
 
 ### KDE Plasma pieces
 
-As I said earlier in the post, **KDE Plasma** is made of many elements that can be themes or riced. So here, I will be explaining what they are and the tools we need to theme them.
+As I said earlier in the post, **KDE Plasma** is made of many elements that can be themed or riced. So here, I will be explaining what they are and the tools we need to theme them.
 
 {{< alert icon="fire" cardColor="#e63946" iconColor="#1d3557" textColor="#f1faee" >}}
 **Friendly Advice :** Never install themes from any repos or the **AUR**. Always grab them from source, after you have inspected the code. For your own sanity. And make sure they are compatible with **Plasma 6**.
@@ -81,7 +81,7 @@ Once we have found a noce theme, we need to make sure it applies to the followin
 - **Icons** : A fitting icon theme. (Optional)
 - **SDDM** : Login theme.
 
-That's it really. In case you do not find a theme that contains all these elements, it's not a huge issue, you can always hunt a theme for each one that fits the **Global Theme**. It's hard to find one I know, but who knows you might get lucky lol.
+That's it really. In case you do not find a theme that contains all these elements, it's not a huge issue, you can always hunt for one that fits the **Global Theme**. It's hard to find one I know, but who knows you might get lucky lol.
 
 ### Applying our themes
 
