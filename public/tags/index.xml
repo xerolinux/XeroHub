@@ -6,8 +6,62 @@
     <description>Recent content in Tags on XeroLinux HQ</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 28 Jul 2024 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 29 Jul 2024 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://xerolinux.xyz/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+    <title>Guide</title>
+      <link>https://xerolinux.xyz/tags/guide/</link>
+        <pubDate>Mon, 29 Jul 2024 00:00:00 +0000</pubDate>
+        <guid>https://xerolinux.xyz/tags/guide/</guid>
+        <description></description>
+        <content:encoded>&lt;![CDATA[]]></content:encoded>
+        <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+      </item>
+    <item>
+    <title>Kde</title>
+      <link>https://xerolinux.xyz/tags/kde/</link>
+        <pubDate>Mon, 29 Jul 2024 00:00:00 +0000</pubDate>
+        <guid>https://xerolinux.xyz/tags/kde/</guid>
+        <description></description>
+        <content:encoded>&lt;![CDATA[]]></content:encoded>
+        <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+      </item>
+    <item>
+    <title>KDE Plasma</title>
+      <link>https://xerolinux.xyz/tags/kde-plasma/</link>
+        <pubDate>Mon, 29 Jul 2024 00:00:00 +0000</pubDate>
+        <guid>https://xerolinux.xyz/tags/kde-plasma/</guid>
+        <description></description>
+        <content:encoded>&lt;![CDATA[]]></content:encoded>
+        <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+      </item>
+    <item>
+    <title>Linux</title>
+      <link>https://xerolinux.xyz/tags/linux/</link>
+        <pubDate>Mon, 29 Jul 2024 00:00:00 +0000</pubDate>
+        <guid>https://xerolinux.xyz/tags/linux/</guid>
+        <description></description>
+        <content:encoded>&lt;![CDATA[]]></content:encoded>
+        <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+      </item>
+    <item>
+    <title>Plasma</title>
+      <link>https://xerolinux.xyz/tags/plasma/</link>
+        <pubDate>Mon, 29 Jul 2024 00:00:00 +0000</pubDate>
+        <guid>https://xerolinux.xyz/tags/plasma/</guid>
+        <description></description>
+        <content:encoded>&lt;![CDATA[]]></content:encoded>
+        <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+      </item>
+    <item>
+    <title>Ricing</title>
+      <link>https://xerolinux.xyz/tags/ricing/</link>
+        <pubDate>Mon, 29 Jul 2024 00:00:00 +0000</pubDate>
+        <guid>https://xerolinux.xyz/tags/ricing/</guid>
+        <description></description>
+        <content:encoded>&lt;![CDATA[]]></content:encoded>
+        <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+      </item>
     <item>
     <title>Docker</title>
       <link>https://xerolinux.xyz/tags/docker/</link>
@@ -31,15 +85,6 @@
       <link>https://xerolinux.xyz/tags/immich/</link>
         <pubDate>Sun, 28 Jul 2024 00:00:00 +0000</pubDate>
         <guid>https://xerolinux.xyz/tags/immich/</guid>
-        <description></description>
-        <content:encoded>&lt;![CDATA[]]></content:encoded>
-        <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
-      </item>
-    <item>
-    <title>Linux</title>
-      <link>https://xerolinux.xyz/tags/linux/</link>
-        <pubDate>Sun, 28 Jul 2024 00:00:00 +0000</pubDate>
-        <guid>https://xerolinux.xyz/tags/linux/</guid>
         <description></description>
         <content:encoded>&lt;![CDATA[]]></content:encoded>
         <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
@@ -184,15 +229,6 @@
       <link>https://xerolinux.xyz/tags/ffmpeg/</link>
         <pubDate>Sat, 20 Jul 2024 00:00:00 +0000</pubDate>
         <guid>https://xerolinux.xyz/tags/ffmpeg/</guid>
-        <description></description>
-        <content:encoded>&lt;![CDATA[]]></content:encoded>
-        <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
-      </item>
-    <item>
-    <title>Guide</title>
-      <link>https://xerolinux.xyz/tags/guide/</link>
-        <pubDate>Sat, 20 Jul 2024 00:00:00 +0000</pubDate>
-        <guid>https://xerolinux.xyz/tags/guide/</guid>
         <description></description>
         <content:encoded>&lt;![CDATA[]]></content:encoded>
         <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
@@ -351,15 +387,6 @@
         <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
       </item>
     <item>
-    <title>Plasma</title>
-      <link>https://xerolinux.xyz/tags/plasma/</link>
-        <pubDate>Mon, 08 Jul 2024 00:00:00 +0000</pubDate>
-        <guid>https://xerolinux.xyz/tags/plasma/</guid>
-        <description></description>
-        <content:encoded>&lt;![CDATA[]]></content:encoded>
-        <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
-      </item>
-    <item>
     <title>Prompt</title>
       <link>https://xerolinux.xyz/tags/prompt/</link>
         <pubDate>Mon, 08 Jul 2024 00:00:00 +0000</pubDate>
@@ -481,15 +508,6 @@
       <link>https://xerolinux.xyz/tags/mirroring/</link>
         <pubDate>Fri, 05 Jul 2024 00:00:00 +0000</pubDate>
         <guid>https://xerolinux.xyz/tags/mirroring/</guid>
-        <description></description>
-        <content:encoded>&lt;![CDATA[]]></content:encoded>
-        <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
-      </item>
-    <item>
-    <title>Ricing</title>
-      <link>https://xerolinux.xyz/tags/ricing/</link>
-        <pubDate>Fri, 05 Jul 2024 00:00:00 +0000</pubDate>
-        <guid>https://xerolinux.xyz/tags/ricing/</guid>
         <description></description>
         <content:encoded>&lt;![CDATA[]]></content:encoded>
         <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
@@ -1093,15 +1111,6 @@
       <link>https://xerolinux.xyz/tags/issues/</link>
         <pubDate>Thu, 27 Jun 2024 00:00:00 +0000</pubDate>
         <guid>https://xerolinux.xyz/tags/issues/</guid>
-        <description></description>
-        <content:encoded>&lt;![CDATA[]]></content:encoded>
-        <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
-      </item>
-    <item>
-    <title>Kde</title>
-      <link>https://xerolinux.xyz/tags/kde/</link>
-        <pubDate>Thu, 27 Jun 2024 00:00:00 +0000</pubDate>
-        <guid>https://xerolinux.xyz/tags/kde/</guid>
         <description></description>
         <content:encoded>&lt;![CDATA[]]></content:encoded>
         <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
