@@ -16,7 +16,7 @@ title = "XeroLinux HQ"
 [author]
   name = "DarkXero"
   image = "logos/Avvy.gif"
-  headline = "Project Leader, Tech Enthusiast & All Around Great Guy. 🤔"
+  headline = "Tech/FOSS Enthusiast & All Around Fun Guy. 🤔"
   bio = "I create content about Linux & FOSS software. You'll find me rocking ArchLinux with KDE Plasma, probably helping somebody with a question. 😎"
   links = [
     { discord = "https://discord.gg/5sqxTSuKZu" },

@@ -33,12 +33,5 @@ pageRef = "news"
 identifier = "WmM3BrLWvc"
 weight = 5
 
-[[main]]
-name = "RSS"
-pre = "rss"
-url = "https://xerolinux.xyz/index.xml"
-identifier = "dQrZgi97Wk"
-weight = 6
-
 [[footer]]
 none = "none"
