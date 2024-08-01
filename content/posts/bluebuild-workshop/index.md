@@ -37,13 +37,15 @@ This project is still young, so it will naturally come with some growing pains. 
 
 At first glance it looks easy enough to pull off a custom build. But after digging deeper, as I always do, it's not all as straightforward as I'd hoped. You will hit a few snags, which I find natural with every relatively new **FOSS** project.
 
-One example being, dependencies. I keep running into this problem over and over and over. Hower it's unrelated to the project, it's just Fedora being Fedora. Sitll a newcomer will not be able to differentiate. I am not giving up though.
+One example being, dependencies. I keep running into this problem over and over and over. However it's unrelated to the project, it's just Fedora being Fedora. Sitll a newcomer will not be able to differentiate.
+
+One idea would be to have some sort of error logs for the modules. Like, **BlueBuild** sees that the command failed and provides some help tips. (Thanks **@tulip** for suggestion) which would make it easier to debug.
 
 Bottom line is, although devs are doing their best to make the project as easy as possible to use, sometimes issues happen outside project itself that require a lot of Linux know-how to troubleshoot. So as easy as it appears to be, it really isn't as I first thought.
 
-One idea would be to have some sort of error logs for the modules would be interesting. Like, **BlueBuild** sees that the command failed and provides some pointers or something like that. (Thanks **@tulip** for suggestion) which would make it it easier to debug.
+Don't get me wrong here, I still love the project though, and so should you if you like stuff like that. That's why I will keep a close eye on it and see where it goes. I have super high hopes for it. As an Arch user, and ex-Distro maintainer, I see many images being born using this down the line...
 
-I still love the project though, and so should you if you like stuff like that. That's why I will keep a close eye on it and see where it goes. I have super high hopes for it. As an Arch user, and ex-Distro maintainer, I see many images being born using this down the line...
+> Please do not judge it too harshly just yet. It still has a long way to go. And devs are on the right track. If you encounter any issues, I would highly recommend you join thei [**Discord**](https://discord.com/invite/MKhpfbw2) server for help.
 
 That’s it folks ..
 
