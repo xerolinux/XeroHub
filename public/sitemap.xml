@@ -255,10 +255,6 @@
     <lastmod>2024-06-27T00:00:00+00:00</lastmod>
   </url>
   <url>
-    <loc>https://xerolinux.xyz/about/</loc>
-    <lastmod>2024-06-26T00:00:00+00:00</lastmod>
-  </url>
-  <url>
     <loc>https://xerolinux.xyz/posts/homebrew-linux/</loc>
     <lastmod>2024-06-26T00:00:00+00:00</lastmod>
   </url>
@@ -277,5 +273,8 @@
   <url>
     <loc>https://xerolinux.xyz/posts/ventoy-persistence/</loc>
     <lastmod>2024-06-26T00:00:00+00:00</lastmod>
+  </url>
+  <url>
+    <loc>https://xerolinux.xyz/about/</loc>
   </url>
 </urlset>

@@ -1,5 +1,4 @@
 ---
-background: "img/bg.png"
 logo: "logos/logo.png"
 description: "Latest FOSS Tools, Guides & More"
 ---

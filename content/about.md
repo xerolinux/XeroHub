@@ -1,8 +1,7 @@
 ---
 title: About
-date: 2024-06-26
-draft: false
 description: "About This Site"
+background: "img/about.png"
 ---
 
 {{< figure src="https://i.imgur.com/SKZO0zo.png" alt="Support" class="center-image" >}}
