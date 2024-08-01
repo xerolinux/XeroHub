@@ -111,7 +111,7 @@
     "keywords": ["uBlue","Distro","Bluefin","Fedora","Atomic","Builder","Linux"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "665"
+    "wordCount": "893"
   }]
   </script>
 
@@ -227,7 +227,7 @@
   
   <div class="min-h-[148px]"></div>
 <div class="fixed inset-x-0 pl-[24px] pr-[24px]" style="z-index:100">
-  <div id="menu-blur" class="absolute opacity-0 inset-x-0 top-0 h-full single_hero_background nozoom backdrop-blur-2xl shadow-2xl"></div>
+  <div id="menu-blur" class="absolute opacity-0 inset-x-0 top-0 h-full single_hero_background nozoom bg-neutral dark:bg-neutral-800"></div>
   <div class="relative max-w-[64rem] ml-auto mr-auto">
     <div style="padding-left:0;padding-right:0;padding-top:2px;padding-bottom:3px"
     class="main-menu flex items-center justify-between px-4 py-6 sm:px-6 md:justify-start space-x-3">
@@ -666,18 +666,16 @@
   
 
 
+<div class="w-full rounded-md h-36 md:h-56 lg:h-72 single_hero_basic nozoom" style="background-image:url(/posts/bluebuild-workshop/featured_huab0f7642486b21bc97bc348533d0712a_12934_1200x0_resize_q75_h2_box_2.webp);"></div>
 
 
-    
-    <div class="fixed inset-x-0 top-0 h-[800px] single_hero_background nozoom"
-    style="background-image:url(/posts/bluebuild-workshop/featured_huab0f7642486b21bc97bc348533d0712a_12934_1200x0_resize_q75_h2_box_2.webp);">
-    
 
-
+<div class="fixed inset-x-0 top-0 h-[800px] single_hero_background nozoom"
+    style="background-image:url(/img/bg_hu00881acea75ace54c2392e89909d1474_423398_1200x0_resize_q75_h2_box_2.webp);">
     <div class="absolute inset-0 bg-gradient-to-t from-neutral dark:from-neutral-800 to-transparent mix-blend-normal">
     </div>
     <div
-        class="absolute inset-0 opacity-60 bg-gradient-to-t from-neutral dark:from-neutral-800 to-neutral-100 dark:to-neutral-800 mix-blend-normal">
+        class="absolute inset-0 opacity-30 dark:opacity-60 bg-gradient-to-t from-neutral dark:from-neutral-800 to-neutral dark:to-neutral-800 mix-blend-normal">
     </div>
 </div>
 
@@ -690,10 +688,49 @@
     });
 </script>
 
+
+
   
   
 
   <header id="single_header" class="mt-5 max-w-prose">
+    
+    <ol class="text-sm text-neutral-500 dark:text-neutral-400 print:hidden">
+  
+  
+    
+  
+    
+  
+  <li class="inline hidden">
+    <a
+      class="hover:underline decoration-neutral-300 dark:underline-neutral-600"
+      href="/"
+      ></a
+    ><span class="px-1 text-primary-500">/</span>
+  </li>
+
+  
+  <li class="inline ">
+    <a
+      class="hover:underline decoration-neutral-300 dark:underline-neutral-600"
+      href="/posts/"
+      >FOSS Posts</a
+    ><span class="px-1 text-primary-500">/</span>
+  </li>
+
+  
+  <li class="inline hidden">
+    <a
+      class="hover:underline decoration-neutral-300 dark:underline-neutral-600"
+      href="/posts/bluebuild-workshop/"
+      >BlueBuild Workshop</a
+    ><span class="px-1 text-primary-500">/</span>
+  </li>
+
+</ol>
+
+
     
     <h1 class="mt-0 text-4xl font-extrabold text-neutral-900 dark:text-neutral">
       BlueBuild Workshop
@@ -747,7 +784,7 @@
 <div class="flex flex-row flex-wrap items-center">
   
   
-  <time datetime="2024-08-01 00:00:00 &#43;0000 UTC">1 August 2024</time><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">4 mins</span><span class="px-2 text-primary-500">&middot;</span><span>
+  <time datetime="2024-08-01 00:00:00 &#43;0000 UTC">1 August 2024</time><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">5 mins</span><span class="px-2 text-primary-500">&middot;</span><span>
   
   
     
@@ -1200,6 +1237,8 @@
     <li>
       <ul>
         <li><a href="#what-is-bluebuild-workshop">What is BlueBuild Workshop?</a></li>
+        <li><a href="#whats-a-custom-image">What’s a custom image?</a></li>
+        <li><a href="#bluebuild-and-ublue-differences">BlueBuild and uBlue Differences</a></li>
         <li><a href="#why-use-it">Why use it?</a></li>
         <li><a href="#benefits-vs-drawbacks">Benefits vs Drawbacks</a></li>
         <li><a href="#my-thoughts-on-bluebuild">My thoughts on BlueBuild</a></li>
@@ -1221,6 +1260,8 @@
     <li>
       <ul>
         <li><a href="#what-is-bluebuild-workshop">What is BlueBuild Workshop?</a></li>
+        <li><a href="#whats-a-custom-image">What’s a custom image?</a></li>
+        <li><a href="#bluebuild-and-ublue-differences">BlueBuild and uBlue Differences</a></li>
         <li><a href="#why-use-it">Why use it?</a></li>
         <li><a href="#benefits-vs-drawbacks">Benefits vs Drawbacks</a></li>
         <li><a href="#my-thoughts-on-bluebuild">My thoughts on BlueBuild</a></li>
@@ -1399,7 +1440,33 @@
       .catch(error => console.error(error))
   </script>
 </a>
-<p>All images will be based off of <strong>Fedora</strong> and have <strong>Atomic</strong> elements. No <strong>Debian</strong> or <strong>ArchLinux</strong> bases as of the writing of this post. Maybe in the future? Also this project is totally unrealted to <strong>uBlue</strong> or <strong>Bluefin</strong>.</p>
+<p>All images will be based off of <strong>Fedora</strong> and have <strong>Atomic</strong> elements. No <strong>Debian</strong> or <strong>ArchLinux</strong> bases as of the writing of this post. Maybe in the future? Also this project is totally unrelated to <strong>uBlue</strong> or <strong>Bluefin</strong>.</p>
+
+
+<h3 class="relative group">What’s a custom image? 
+    <div id="whats-a-custom-image" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#whats-a-custom-image" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p>Picture this: a custom image in the Linux world is like a gourmet pizza you can switch to without having to bake from scratch every time. So, making your own distro? Well, it’s kind of like claiming you’ve invented pizza when you’re really just adding your favorite toppings. When you’re whipping up custom images, you’re basically taking a tried-and-true Linux distro and sprinkling on your personal favorite apps and settings. Think of it as curating a playlist with your best jams, but for your operating system. You’re still using the distro’s package manager and repositories, just with a dash of your unique flavor. It’s a lot like sharing your meticulously crafted dotfiles, but instead of just the configs, it’s the whole shebang of the OS with your personalized touch.</p>
+
+
+<h3 class="relative group">BlueBuild and uBlue Differences 
+    <div id="bluebuild-and-ublue-differences" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#bluebuild-and-ublue-differences" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p><strong>Universal Blue</strong> is an open source project started by cloud developers that builds amazing custom images based on <strong>Atomic Fedora</strong> along with related experiments, while BlueBuild only builds tools for custom image creation. The project now known as BlueBuild started out as just a part of Universal Blue, but was eventually split from it due to diverging from the scope and being mostly unrelated to the project’s main maintainers.</p>
 
 
 <h3 class="relative group">Why use it? 
@@ -1691,8 +1758,8 @@
     </span>        
     
 </h3>
-<p>At first glance it looks easy enough to pull off a custom build. But after digging deeper, as I always do, it&rsquo;s not all as straightforward as I&rsquo;d hoped. You will hit a few snags, which I find natural with every relatively new <strong>FOSS</strong> project.</p>
-<p>One example being, dependencies. I keep running into this problem over and over and over. However it&rsquo;s unrelated to the project, it&rsquo;s just Fedora being Fedora. Sitll a newcomer will not be able to differentiate.</p>
+<p>I have used this project to create my very own image called <strong>XeroDora</strong> based on the <strong>uBlue Kinoite</strong> image, an at first glance it looks easy enough to pull off a custom build. But after digging deeper, as I always do, it&rsquo;s not all as straightforward as I&rsquo;d hoped. You will hit a few snags, which I find natural with every relatively new <strong>FOSS</strong> project.</p>
+<p>One example being, dependencies. I keep running into this problem over and over and over. However it&rsquo;s unrelated to the project, it&rsquo;s just Fedora being Fedora. Still a newcomer will not be able to differentiate.</p>
 <p>One idea would be to have some sort of error logs for the modules. Like, <strong>BlueBuild</strong> sees that the command failed and provides some help tips. (Thanks <strong>@tulip</strong> for suggestion) which would make it easier to debug.</p>
 <p>Bottom line is, although devs are doing their best to make the project as easy as possible to use, sometimes issues happen outside project itself that require a lot of Linux know-how to troubleshoot. So as easy as it appears to be, it really isn&rsquo;t as I first thought.</p>
 <p>Don&rsquo;t get me wrong here, I still love the project though, and so should you if you like stuff like that. That&rsquo;s why I will keep a close eye on it and see where it goes. I have super high hopes for it. As an Arch user, and ex-Distro maintainer, I see many images being born using this down the line&hellip;</p>
