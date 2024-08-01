@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tips on XeroLinux HQ</title>
+    <link>https://xerolinux.xyz/tags/tips/</link>
+    <description>Recent content in Tips on XeroLinux HQ</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 27 Jun 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://xerolinux.xyz/tags/tips/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+    <title>Flatpak Tips &amp; Tricks</title>
+      <link>https://xerolinux.xyz/posts/flatpak-tips/</link>
+        <pubDate>Thu, 27 Jun 2024 00:00:00 +0000</pubDate>
+        <guid>https://xerolinux.xyz/posts/flatpak-tips/</guid>
+        <description>&#xA;&#xA;&lt;h3 class=&#34;relative group&#34;&gt;Intro &#xA;    &lt;div id=&#34;intro&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;&#xA;    &#xA;    &lt;span&#xA;        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100&#34;&gt;&#xA;        &lt;a class=&#34;group-hover:text-primary-300 dark:group-hover:text-neutral-700&#34;&#xA;            style=&#34;text-decoration-line: none !important;&#34; href=&#34;#intro&#34; aria-label=&#34;Anchor&#34;&gt;#&lt;/a&gt;&#xA;    &lt;/span&gt;        &#xA;    &#xA;&lt;/h3&gt;&#xA;&lt;p&gt;Slowly and steadily, Flatpak has a growing acceptance in the desktop Linux world.&lt;/p&gt;&#xA;&lt;p&gt;It is well integrated into Fedora and many other distributions like Linux Mint, elementary, Solus, etc. prefer it over Ubuntu’s Snap.&lt;/p&gt;&#xA;&lt;p&gt;If you love using Flatpak applications, let me share a few tips, tools, and tweaks to make your Flatpak experience better and smoother.&lt;/p&gt;&#xA;&#xA;&#xA;    &#xA;    &lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;&#xA;      &lt;iframe allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&#34; allowfullscreen=&#34;allowfullscreen&#34; loading=&#34;eager&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; src=&#34;https://www.youtube.com/embed/jDVCITRWGgs?autoplay=0&amp;controls=1&amp;end=0&amp;loop=0&amp;mute=0&amp;start=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;YouTube video&#34;&#xA;      &gt;&lt;/iframe&gt;&#xA;    &lt;/div&gt;&#xA;&#xA;&#xA;&#xA;&lt;h3 class=&#34;relative group&#34;&gt;Use Flathub to explore new Flatpak applications &#xA;    &lt;div id=&#34;use-flathub-to-explore-new-flatpak-applications&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;&#xA;    &#xA;    &lt;span&#xA;        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100&#34;&gt;&#xA;        &lt;a class=&#34;group-hover:text-primary-300 dark:group-hover:text-neutral-700&#34;&#xA;            style=&#34;text-decoration-line: none !important;&#34; href=&#34;#use-flathub-to-explore-new-flatpak-applications&#34; aria-label=&#34;Anchor&#34;&gt;#&lt;/a&gt;&#xA;    &lt;/span&gt;        &#xA;    &#xA;&lt;/h3&gt;&#xA;&lt;p&gt;This one goes without saying.&lt;/p&gt;&#xA;&lt;p&gt;If you are looking for new applications in Flatpak packaging, browse the &lt;a href=&#34;https://flathub.org&#34; target=&#34;_blank&#34;&gt;Flathub&lt;/a&gt; website.&lt;/p&gt;&#xA;&lt;p&gt;This is the official website from the Flatpak project and it lists and distributes a huge number of Flatpak applications.&lt;/p&gt;&#xA;&lt;p&gt;You can look for recommended apps in the “Editor’s choice” section, recently updated apps, new apps and popular apps.&lt;/p&gt;&#xA;&lt;p&gt;&#xA;  &lt;figure&gt;&#xA;    &lt;img class=&#34;my-0 rounded-md&#34; loading=&#34;lazy&#34; src=&#34;https://i.imgur.com/iAHc4uB.png&#34; alt=&#34;[Image: iAHc4uB.png]&#34; /&gt;&#xA;    &#xA;  &lt;/figure&gt;&#xA;&lt;/p&gt;&#xA;&lt;p&gt;You can have the application screenshots, description, developer information, and installation instructions on the individual application webpages.&lt;/p&gt;&#xA;&#xA;&#xA;&lt;h3 class=&#34;relative group&#34;&gt;Use Flatline extension to install Flatpak from the browser &#xA;    &lt;div id=&#34;use-flatline-extension-to-install-flatpak-from-the-browser&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;&#xA;    &#xA;    &lt;span&#xA;        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100&#34;&gt;&#xA;        &lt;a class=&#34;group-hover:text-primary-300 dark:group-hover:text-neutral-700&#34;&#xA;            style=&#34;text-decoration-line: none !important;&#34; href=&#34;#use-flatline-extension-to-install-flatpak-from-the-browser&#34; aria-label=&#34;Anchor&#34;&gt;#&lt;/a&gt;&#xA;    &lt;/span&gt;        &#xA;    &#xA;&lt;/h3&gt;&#xA;&lt;p&gt;The &lt;a href=&#34;https://flathub.org&#34; target=&#34;_blank&#34;&gt;Flathub&lt;/a&gt; website provides command line instructions to install the application.&lt;/p&gt;&#xA;&lt;p&gt;There is also an Install button but it doesn’t install the application for you. It downloads a &lt;code&gt;.flatpakref&lt;/code&gt; file and then you’ll have to use the command line to install from the flatpakref file.&lt;/p&gt;&#xA;&lt;p&gt;&#xA;  &lt;figure&gt;&#xA;    &lt;img class=&#34;my-0 rounded-md&#34; loading=&#34;lazy&#34; src=&#34;https://i.imgur.com/wovEk8x.png&#34; alt=&#34;[Image: wovEk8x.png]&#34; /&gt;&#xA;    &#xA;  &lt;/figure&gt;&#xA;&lt;/p&gt;&#xA;&lt;p&gt;If you have to use the command line ultimately, it doesn’t make sense to download the flatpakref file.&lt;/p&gt;&#xA;&lt;p&gt;You can make things better by using Flatline. It’s a Browser extension and it makes that Install button useful by converting it into appstream link.&lt;/p&gt;&#xA;&lt;p&gt;This way, when you click on the Install button for any application on the &lt;a href=&#34;https://flathub.org&#34; target=&#34;_blank&#34;&gt;Flathub&lt;/a&gt; website, it will ask you to open the link in an XDG application like the Software Center.&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Grab it for Firefox -&amp;gt; &lt;a href=&#34;https://addons.mozilla.org/en-US/firefox/addon/flatline-flatpak/&#34; target=&#34;_blank&#34;&gt;Firefox Add-on&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;Grab it for Chromium Browsers -&amp;gt; &lt;a href=&#34;https://chrome.google.com/webstore/detail/flatline/cpbniogoilfagmcoipghkgnpmdglfmjm/related&#34; target=&#34;_blank&#34;&gt;Chrome Extension&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;&#xA;  &lt;figure&gt;&#xA;    &lt;img class=&#34;my-0 rounded-md&#34; loading=&#34;lazy&#34; src=&#34;https://i.imgur.com/Nsvf6WO.png&#34; alt=&#34;[Image: Nsvf6WO.png]&#34; /&gt;&#xA;    &#xA;  &lt;/figure&gt;&#xA;&lt;/p&gt;&#xA;&lt;p&gt;This also means that you should have Fltapak support integrated into the software center.&lt;/p&gt;&#xA;&#xA;&#xA;&lt;h3 class=&#34;relative group&#34;&gt;Manage Flatpak permissions graphically With Flatseal &#xA;    &lt;div id=&#34;manage-flatpak-permissions-graphically-with-flatseal&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;&#xA;    &#xA;    &lt;span&#xA;        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100&#34;&gt;&#xA;        &lt;a class=&#34;group-hover:text-primary-300 dark:group-hover:text-neutral-700&#34;&#xA;            style=&#34;text-decoration-line: none !important;&#34; href=&#34;#manage-flatpak-permissions-graphically-with-flatseal&#34; aria-label=&#34;Anchor&#34;&gt;#&lt;/a&gt;&#xA;    &lt;/span&gt;        &#xA;    &#xA;&lt;/h3&gt;&#xA;&lt;p&gt;Flatseal is a graphical utility to review and modify your Flatpak applications’ permissions. This makes things a lot easier than going through the commands.&lt;/p&gt;&#xA;&lt;p&gt;&#xA;  &lt;figure&gt;&#xA;    &lt;img class=&#34;my-0 rounded-md&#34; loading=&#34;lazy&#34; src=&#34;https://i.imgur.com/nf6PVxe.png&#34; alt=&#34;[Image: nf6PVxe.png]&#34; /&gt;&#xA;    &#xA;  &lt;/figure&gt;&#xA;&lt;/p&gt;&#xA;&lt;p&gt;It lists all the installed Flatpak applications and shows what kind of permissions the selected application has.&lt;/p&gt;&#xA;&lt;p&gt;You may enable or disable the permissions. Please bear in mind that disabling some permissions might impact the normal functioning of the application. You should know what you are doing.&lt;/p&gt;&#xA;&#xA;&#xA;&lt;h3 class=&#34;relative group&#34;&gt;Apply GTK system themes to Flatpak applications &#xA;    &lt;div id=&#34;apply-gtk-system-themes-to-flatpak-applications&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;&#xA;    &#xA;    &lt;span&#xA;        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100&#34;&gt;&#xA;        &lt;a class=&#34;group-hover:text-primary-300 dark:group-hover:text-neutral-700&#34;&#xA;            style=&#34;text-decoration-line: none !important;&#34; href=&#34;#apply-gtk-system-themes-to-flatpak-applications&#34; aria-label=&#34;Anchor&#34;&gt;#&lt;/a&gt;&#xA;    &lt;/span&gt;        &#xA;    &#xA;&lt;/h3&gt;&#xA;&lt;p&gt;You might have already noticed that most Flatpak apps don’t change their appearance as per the current system theme.&lt;/p&gt;&#xA;&lt;p&gt;Why? Because Flatpak apps run inside a ‘container’ and don’t have access to the host filesystem, network, or physical devices.&lt;/p&gt;&#xA;&lt;p&gt;You can choose to install themes as Flatpak to solve this issue. However, your favorite theme might not be available in Flatpak format.&lt;/p&gt;&#xA;&lt;p&gt;Alternatively, you can make some manual effort and force the Flatpak applications to use a given theme.  Check &lt;a href=&#34;https://forum.xerolinux.xyz/thread-152.html&#34; target=&#34;_blank&#34;&gt;This Thread&lt;/a&gt; to know more&amp;hellip;&lt;/p&gt;&#xA;&#xA;&#xA;&lt;h3 class=&#34;relative group&#34;&gt;Update Flatpak apps and clean them &#xA;    &lt;div id=&#34;update-flatpak-apps-and-clean-them&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;&#xA;    &#xA;    &lt;span&#xA;        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100&#34;&gt;&#xA;        &lt;a class=&#34;group-hover:text-primary-300 dark:group-hover:text-neutral-700&#34;&#xA;            style=&#34;text-decoration-line: none !important;&#34; href=&#34;#update-flatpak-apps-and-clean-them&#34; aria-label=&#34;Anchor&#34;&gt;#&lt;/a&gt;&#xA;    &lt;/span&gt;        &#xA;    &#xA;&lt;/h3&gt;&#xA;&lt;p&gt;This is more for Flatpak unfriendly distributions like Ubuntu. If your distro doesn’t come baked in with Flatpak and you don’t have it integrated with the Software center, your installed Flatpak apps won’t be updated with system updates.&lt;/p&gt;&#xA;&lt;p&gt;You can update all your installed Flatpak apps simultaneously with:&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;flatpak update&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&#xA;  &lt;figure&gt;&#xA;    &lt;img class=&#34;my-0 rounded-md&#34; loading=&#34;lazy&#34; src=&#34;https://i.imgur.com/M6j3R4s.png&#34; alt=&#34;[Image: M6j3R4s.png]&#34; /&gt;&#xA;    &#xA;  &lt;/figure&gt;&#xA;&lt;/p&gt;&#xA;&#xA;&#xA;&lt;h3 class=&#34;relative group&#34;&gt;Conclusion &#xA;    &lt;div id=&#34;conclusion&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;&#xA;    &#xA;    &lt;span&#xA;        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100&#34;&gt;&#xA;        &lt;a class=&#34;group-hover:text-primary-300 dark:group-hover:text-neutral-700&#34;&#xA;            style=&#34;text-decoration-line: none !important;&#34; href=&#34;#conclusion&#34; aria-label=&#34;Anchor&#34;&gt;#&lt;/a&gt;&#xA;    &lt;/span&gt;        &#xA;    &#xA;&lt;/h3&gt;&#xA;&lt;p&gt;Flatpak should be the one and only method to deliver apps. Please note I said &amp;ldquo;Apps&amp;rdquo;. There are things that can never be delivered as Flatpaks, like DEs and WMs, among many system related, like Tweaks, Themes, Kernels etc.. So as much as we want a single method for EVERYTHING, sadly that is impossible.. Still Flatpak should overtake the likes of Snaps and AppImages in my opinion&amp;hellip;&lt;/p&gt;&#xA;</description>
+        <content:encoded>&lt;![CDATA[
+
+<h3 class="relative group">Intro 
+    <div id="intro" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#intro" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p>Slowly and steadily, Flatpak has a growing acceptance in the desktop Linux world.</p>
+<p>It is well integrated into Fedora and many other distributions like Linux Mint, elementary, Solus, etc. prefer it over Ubuntu’s Snap.</p>
+<p>If you love using Flatpak applications, let me share a few tips, tools, and tweaks to make your Flatpak experience better and smoother.</p>
+
+
+    
+    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+      <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/jDVCITRWGgs?autoplay=0&controls=1&end=0&loop=0&mute=0&start=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="YouTube video"
+      ></iframe>
+    </div>
+
+
+
+<h3 class="relative group">Use Flathub to explore new Flatpak applications 
+    <div id="use-flathub-to-explore-new-flatpak-applications" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#use-flathub-to-explore-new-flatpak-applications" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p>This one goes without saying.</p>
+<p>If you are looking for new applications in Flatpak packaging, browse the <a href="https://flathub.org" target="_blank">Flathub</a> website.</p>
+<p>This is the official website from the Flatpak project and it lists and distributes a huge number of Flatpak applications.</p>
+<p>You can look for recommended apps in the “Editor’s choice” section, recently updated apps, new apps and popular apps.</p>
+<p>
+  <figure>
+    <img class="my-0 rounded-md" loading="lazy" src="https://i.imgur.com/iAHc4uB.png" alt="[Image: iAHc4uB.png]" />
+    
+  </figure>
+</p>
+<p>You can have the application screenshots, description, developer information, and installation instructions on the individual application webpages.</p>
+
+
+<h3 class="relative group">Use Flatline extension to install Flatpak from the browser 
+    <div id="use-flatline-extension-to-install-flatpak-from-the-browser" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#use-flatline-extension-to-install-flatpak-from-the-browser" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p>The <a href="https://flathub.org" target="_blank">Flathub</a> website provides command line instructions to install the application.</p>
+<p>There is also an Install button but it doesn’t install the application for you. It downloads a <code>.flatpakref</code> file and then you’ll have to use the command line to install from the flatpakref file.</p>
+<p>
+  <figure>
+    <img class="my-0 rounded-md" loading="lazy" src="https://i.imgur.com/wovEk8x.png" alt="[Image: wovEk8x.png]" />
+    
+  </figure>
+</p>
+<p>If you have to use the command line ultimately, it doesn’t make sense to download the flatpakref file.</p>
+<p>You can make things better by using Flatline. It’s a Browser extension and it makes that Install button useful by converting it into appstream link.</p>
+<p>This way, when you click on the Install button for any application on the <a href="https://flathub.org" target="_blank">Flathub</a> website, it will ask you to open the link in an XDG application like the Software Center.</p>
+<ul>
+<li>Grab it for Firefox -&gt; <a href="https://addons.mozilla.org/en-US/firefox/addon/flatline-flatpak/" target="_blank">Firefox Add-on</a></li>
+<li>Grab it for Chromium Browsers -&gt; <a href="https://chrome.google.com/webstore/detail/flatline/cpbniogoilfagmcoipghkgnpmdglfmjm/related" target="_blank">Chrome Extension</a></li>
+</ul>
+<p>
+  <figure>
+    <img class="my-0 rounded-md" loading="lazy" src="https://i.imgur.com/Nsvf6WO.png" alt="[Image: Nsvf6WO.png]" />
+    
+  </figure>
+</p>
+<p>This also means that you should have Fltapak support integrated into the software center.</p>
+
+
+<h3 class="relative group">Manage Flatpak permissions graphically With Flatseal 
+    <div id="manage-flatpak-permissions-graphically-with-flatseal" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#manage-flatpak-permissions-graphically-with-flatseal" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p>Flatseal is a graphical utility to review and modify your Flatpak applications’ permissions. This makes things a lot easier than going through the commands.</p>
+<p>
+  <figure>
+    <img class="my-0 rounded-md" loading="lazy" src="https://i.imgur.com/nf6PVxe.png" alt="[Image: nf6PVxe.png]" />
+    
+  </figure>
+</p>
+<p>It lists all the installed Flatpak applications and shows what kind of permissions the selected application has.</p>
+<p>You may enable or disable the permissions. Please bear in mind that disabling some permissions might impact the normal functioning of the application. You should know what you are doing.</p>
+
+
+<h3 class="relative group">Apply GTK system themes to Flatpak applications 
+    <div id="apply-gtk-system-themes-to-flatpak-applications" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#apply-gtk-system-themes-to-flatpak-applications" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p>You might have already noticed that most Flatpak apps don’t change their appearance as per the current system theme.</p>
+<p>Why? Because Flatpak apps run inside a ‘container’ and don’t have access to the host filesystem, network, or physical devices.</p>
+<p>You can choose to install themes as Flatpak to solve this issue. However, your favorite theme might not be available in Flatpak format.</p>
+<p>Alternatively, you can make some manual effort and force the Flatpak applications to use a given theme.  Check <a href="https://forum.xerolinux.xyz/thread-152.html" target="_blank">This Thread</a> to know more&hellip;</p>
+
+
+<h3 class="relative group">Update Flatpak apps and clean them 
+    <div id="update-flatpak-apps-and-clean-them" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#update-flatpak-apps-and-clean-them" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p>This is more for Flatpak unfriendly distributions like Ubuntu. If your distro doesn’t come baked in with Flatpak and you don’t have it integrated with the Software center, your installed Flatpak apps won’t be updated with system updates.</p>
+<p>You can update all your installed Flatpak apps simultaneously with:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Bash" data-lang="Bash"><span class="line"><span class="cl">flatpak update
+</span></span></code></pre></div><p>
+  <figure>
+    <img class="my-0 rounded-md" loading="lazy" src="https://i.imgur.com/M6j3R4s.png" alt="[Image: M6j3R4s.png]" />
+    
+  </figure>
+</p>
+
+
+<h3 class="relative group">Conclusion 
+    <div id="conclusion" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#conclusion" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p>Flatpak should be the one and only method to deliver apps. Please note I said &ldquo;Apps&rdquo;. There are things that can never be delivered as Flatpaks, like DEs and WMs, among many system related, like Tweaks, Themes, Kernels etc.. So as much as we want a single method for EVERYTHING, sadly that is impossible.. Still Flatpak should overtake the likes of Snaps and AppImages in my opinion&hellip;</p>
+]]></content:encoded>
+        <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+      </item>
+    </channel>
+  </rss>
