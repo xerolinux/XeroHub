@@ -2,7 +2,7 @@
 title: About
 date: 2024-07-12
 description: "About This Site"
-background: "img/about.png"
+featureimage: https://i.imgur.com/5JAwy3k.png
 ---
 
 {{< figure src="https://i.imgur.com/SKZO0zo.png" alt="Support" class="center-image" >}}

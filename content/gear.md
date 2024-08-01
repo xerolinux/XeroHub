@@ -1,11 +1,9 @@
 ---
-title: My Gear
+title: Our Gear
 date: 2024-07-12
-draft: false
 description: "The Gear I use"
+featureimage: https://i.imgur.com/WtDhPjY.png
 ---
-![PC](https://i.imgur.com/vucBIOv.png)
-
 ### Information
 
 Some of you out there keep calling me an **Arch** & **KDE Plasma** shill. To which I would like to reespond with, what's wrong with that ? I mean, why do you find it so strange for one to use what one likes if it works for them and stick with it ? I like what I like, never had any strange and deal breaking issues that affected my day to day.

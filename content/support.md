@@ -1,11 +1,9 @@
 ---
 title: Support
 date: 2024-06-26
-draft: false
 description: "Ways to support us"
+featureimage: https://i.imgur.com/olkiZ7o.png
 ---
-{{< figure src="https://i.imgur.com/coqI5QA.png" alt="Support" class="center-image" >}}
-
 ### Support Me / My Cause
 
 If you want to see our projects thrive and continue, please do consider supporting them. Without your support none of this would have been possible. I thank every one of you who have pleged a few pennies here n there.
