@@ -53,7 +53,7 @@ bash <(curl -s https://gitlab.com/stephan-raabe/dotfiles/-/raw/main/setup.sh)
 
 Finally, find link to the **Git Repo** below, or if you want head directly to the WiKi, click here >> [**ML4W Dots Wiki**](https://gitlab.com/stephan-raabe/dotfiles/-/wikis/Home/)
 
-{{< gitlab projectID="42798482" >}}
+{{< github repo="mylinuxforwork/dotfiles" >}}
 
 That’s it folks ..
 
