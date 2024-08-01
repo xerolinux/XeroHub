@@ -15,7 +15,9 @@ All images will be based off of **Fedora** and have **Atomic** elements. No **De
 
 ### What’s a custom image?
 
-Picture this: a custom image in the Linux world is like a gourmet pizza you can switch to without having to bake from scratch every time. So, making your own distro? Well, it’s kind of like claiming you’ve invented pizza when you’re really just adding your favorite toppings. When you’re whipping up custom images, you’re basically taking a tried-and-true Linux distro and sprinkling on your personal favorite apps and settings. Think of it as curating a playlist with your best jams, but for your operating system. You’re still using the distro’s package manager and repositories, just with a dash of your unique flavor. It’s a lot like sharing your meticulously crafted dotfiles, but instead of just the configs, it’s the whole shebang of the OS with your personalized touch.
+Picture this: a custom image in the Linux world is like a gourmet pizza you can switch to without having to bake from scratch every time. So, making your own distro? Well, it’s kind of like claiming you’ve invented pizza when you’re really just adding your favorite toppings. When you’re whipping up custom images, you’re basically taking a tried-and-true Linux distro and sprinkling on your personal favorite apps and settings.
+
+Think of it as curating a playlist with your best jams, but for your operating system. You’re still using the distro’s package manager and repositories, just with a dash of your unique flavor. It’s a lot like sharing your meticulously crafted dotfiles, but instead of just the configs, it’s the whole shebang of the OS with your personalized touch.
 
 ### BlueBuild and uBlue Differences
 
