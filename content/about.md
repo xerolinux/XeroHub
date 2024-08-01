@@ -1,5 +1,6 @@
 ---
 title: About
+date: 2024-07-12
 description: "About This Site"
 background: "img/about.png"
 ---
