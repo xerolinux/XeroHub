@@ -45,7 +45,7 @@ Bottom line is, although devs are doing their best to make the project as easy a
 
 Don't get me wrong here, I still love the project though, and so should you if you like stuff like that. That's why I will keep a close eye on it and see where it goes. I have super high hopes for it. As an Arch user, and ex-Distro maintainer, I see many images being born using this down the line...
 
-> Please do not judge it too harshly just yet. It still has a long way to go. And devs are on the right track. If you encounter any issues, I would highly recommend you join thei [**Discord**](https://discord.com/invite/MKhpfbw2) server for help.
+> Please do not judge it too harshly just yet. It still has a long way to go. And devs are on the right track. If you encounter any issues, I would highly recommend you join their [**Discord**](https://discord.com/invite/MKhpfbw2) server for help.
 
 That’s it folks ..
 
