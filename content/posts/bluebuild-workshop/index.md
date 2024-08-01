@@ -43,7 +43,7 @@ This project is still young, so it will naturally come with some growing pains. 
 
 ### My thoughts on BlueBuild
 
-I have used this project to create my very own image called **XeroDora** based on the **uBlue Kinoite** image, an at first glance it looks easy enough to pull off a custom build. But after digging deeper, as I always do, it's not all as straightforward as I'd hoped. You will hit a few snags, which I find natural with every relatively new **FOSS** project.
+I have used this project to create my very own image called **XeroDora** based on the **uBlue Kinoite** image, and at first glance it looked easy enough to pull off. But after digging deeper, as I always do, it's not all as straightforward as I'd hoped. You will hit a few snags, which I find natural with every relatively new **FOSS** project.
 
 One example being, dependencies. I keep running into this problem over and over and over. However it's unrelated to the project, it's just Fedora being Fedora. Still a newcomer will not be able to differentiate.
 
