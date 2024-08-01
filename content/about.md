@@ -1,8 +1,8 @@
 ---
-title: About
+title: About Us
 date: 2024-07-12
 description: "About This Site"
-featureimage: https://i.imgur.com/5JAwy3k.png
+featureimage: https://i.imgur.com/ac3eitk.png
 ---
 
 {{< figure src="https://i.imgur.com/SKZO0zo.png" alt="Support" class="center-image" >}}

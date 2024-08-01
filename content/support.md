@@ -1,8 +1,8 @@
 ---
-title: Support
+title: Support Us
 date: 2024-06-26
 description: "Ways to support us"
-featureimage: https://i.imgur.com/olkiZ7o.png
+featureimage: https://i.imgur.com/5yTGSEB.png
 ---
 ### Support Me / My Cause
 

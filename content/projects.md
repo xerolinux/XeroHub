@@ -1,8 +1,8 @@
 ---
-title: Projects
+title: Our Projects
 date: 2024-06-26
 description: "Links to my various Projects"
-featureimage: https://i.imgur.com/CkFHt41.png
+featureimage: https://i.imgur.com/DpiiDzj.png
 ---
 
 ### The Toolkit.
