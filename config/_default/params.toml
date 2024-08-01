@@ -15,7 +15,7 @@ enableCodeCopy = true
 mainSections = [ "posts" ]
 # robots = ""
 
-disableImageOptimization = true
+disableImageOptimization = false
 disableTextInHeader = false
 
 defaultBackgroundImage = "img/bg.webp"
