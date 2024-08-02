@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Downgrade on XeroLinux HQ</title><link>https://xerolinux.xyz/tags/downgrade/</link><description>Recent content in Downgrade on XeroLinux HQ</description><generator>Hugo</generator><language>en</language><lastBuildDate>Thu, 27 Jun 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://xerolinux.xyz/tags/downgrade/index.xml" rel="self" type="application/rss+xml"/><item><title>How To Downgrade Packages</title><link>https://xerolinux.xyz/posts/downgrade-tool/</link><pubDate>Thu, 27 Jun 2024 00:00:00 +0000</pubDate><guid>https://xerolinux.xyz/posts/downgrade-tool/</guid><description>
+
+&lt;h3 class="relative group">What is Downgrade ? 
+ &lt;div id="what-is-downgrade-" class="anchor">&lt;/div>
+ 
+ &lt;span
+ class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+ &lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+ style="text-decoration-line: none !important;" href="#what-is-downgrade-" aria-label="Anchor">#&lt;/a>
+ &lt;/span> 
+ 
+&lt;/h3>
+&lt;p>Downgrade is a Bash script that makes it easier to downgrade packages in Arch Linux to an older version. It checks both the local pacman cache and the Arch Linux Archive (ALA) for available older versions of a package and allows you to select which version to install&lt;/p>
+
+
+&lt;h3 class="relative group">Why do we need it ? 
+ &lt;div id="why-do-we-need-it-" class="anchor">&lt;/div>
+ 
+ &lt;span
+ class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+ &lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+ style="text-decoration-line: none !important;" href="#why-do-we-need-it-" aria-label="Anchor">#&lt;/a>
+ &lt;/span> 
+ 
+&lt;/h3>
+&lt;p>As you might know, Arch Linux is a rolling release and DIY (do-it-yourself) distribution. So you have to be a bit careful while updating it often, especially installing or updating packages from the third party repositories like AUR. You might be end up with broken system if you don&amp;rsquo;t know what you are doing. It is your responsibility to make Arch Linux more stable. However, we all do mistakes. It is difficult to be careful all time. Sometimes, you want to update to most bleeding edge, and you might be stuck with broken packages. Don&amp;rsquo;t panic! In such cases, you can simply rollback to the old stable packages. This short tutorial describes how to downgrade a package in Arch Linux and its variants like EndeavourOS, Manjaro Linux.&lt;/p>
+
+
+&lt;h3 class="relative group">Install Downgrade utility 
+ &lt;div id="install-downgrade-utility" class="anchor">&lt;/div>
+ 
+ &lt;span
+ class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+ &lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+ style="text-decoration-line: none !important;" href="#install-downgrade-utility" aria-label="Anchor">#&lt;/a>
+ &lt;/span> 
+ 
+&lt;/h3>
+&lt;p>The downgrade package is available in AUR, so you can install it using any AUR helper programs such as Paru or Yay.&lt;/p>
+&lt;p>Using Paru:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-Bash" data-lang="Bash">&lt;span class="line">&lt;span class="cl">paru -S downgrade
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Using Yay:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-Bash" data-lang="Bash">&lt;span class="line">&lt;span class="cl">yay -S downgrade
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
+
+&lt;h3 class="relative group">Downgrade a package 
+ &lt;div id="downgrade-a-package" class="anchor">&lt;/div>
+ 
+ &lt;span
+ class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+ &lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+ style="text-decoration-line: none !important;" href="#downgrade-a-package" aria-label="Anchor">#&lt;/a>
+ &lt;/span> 
+ 
+&lt;/h3>
+&lt;p>The typical usage of &amp;ldquo;downgrade&amp;rdquo; command is:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-Bash" data-lang="Bash">&lt;span class="line">&lt;span class="cl">sudo downgrade &lt;span class="o">[&lt;/span>PACKAGE, ...&lt;span class="o">]&lt;/span> &lt;span class="o">[&lt;/span>-- &lt;span class="o">[&lt;/span>PACMAN OPTIONS&lt;span class="o">]]&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Let us say you want to downgrade opera web browser to any available old version.&lt;/p>
+&lt;p>To do so, run:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-Bash" data-lang="Bash">&lt;span class="line">&lt;span class="cl">sudo downgrade opera
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>This command will list all available versions of opera package (both new and old) from your local cache and remote mirror.&lt;/p>
+&lt;p>Sample output:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-Bash" data-lang="Bash">&lt;span class="line">&lt;span class="cl">Available packages:
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">1&lt;span class="o">)&lt;/span> opera-37.0.2178.43-1-x86_64.pkg.tar.xz &lt;span class="o">(&lt;/span>&lt;span class="nb">local&lt;/span>&lt;span class="o">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">2&lt;span class="o">)&lt;/span> opera-37.0.2178.43-1-x86_64.pkg.tar.xz &lt;span class="o">(&lt;/span>remote&lt;span class="o">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">3&lt;span class="o">)&lt;/span> opera-37.0.2178.32-1-x86_64.pkg.tar.xz &lt;span class="o">(&lt;/span>remote&lt;span class="o">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">4&lt;span class="o">)&lt;/span> opera-36.0.2130.65-2-x86_64.pkg.tar.xz &lt;span class="o">(&lt;/span>remote&lt;span class="o">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">5&lt;span class="o">)&lt;/span> opera-36.0.2130.65-1-x86_64.pkg.tar.xz &lt;span class="o">(&lt;/span>remote&lt;span class="o">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">6&lt;span class="o">)&lt;/span> opera-36.0.2130.46-2-x86_64.pkg.tar.xz &lt;span class="o">(&lt;/span>remote&lt;span class="o">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">7&lt;span class="o">)&lt;/span> opera-36.0.2130.46-1-x86_64.pkg.tar.xz &lt;span class="o">(&lt;/span>remote&lt;span class="o">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">8&lt;span class="o">)&lt;/span> opera-36.0.2130.32-2-x86_64.pkg.tar.xz &lt;span class="o">(&lt;/span>remote&lt;span class="o">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">9&lt;span class="o">)&lt;/span> opera-36.0.2130.32-1-x86_64.pkg.tar.xz &lt;span class="o">(&lt;/span>remote&lt;span class="o">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="k">select&lt;/span> a package by number:
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Just type the package number of your choice, and hit enter to install it.&lt;/p>
+&lt;p>That&amp;rsquo;s it. The current installed package will be downgraded to the old version.&lt;/p></description><content:encoded>&lt;![CDATA[<h3 class="relative group">What is Downgrade ?<div id="what-is-downgrade-" class="anchor"/><span class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#what-is-downgrade-" aria-label="Anchor">#</a></span></h3><p>Downgrade is a Bash script that makes it easier to downgrade packages in Arch Linux to an older version. It checks both the local pacman cache and the Arch Linux Archive (ALA) for available older versions of a package and allows you to select which version to install</p><h3 class="relative group">Why do we need it ?<div id="why-do-we-need-it-" class="anchor"/><span class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#why-do-we-need-it-" aria-label="Anchor">#</a></span></h3><p>As you might know, Arch Linux is a rolling release and DIY (do-it-yourself) distribution. So you have to be a bit careful while updating it often, especially installing or updating packages from the third party repositories like AUR. You might be end up with broken system if you don&rsquo;t know what you are doing. It is your responsibility to make Arch Linux more stable. However, we all do mistakes. It is difficult to be careful all time. Sometimes, you want to update to most bleeding edge, and you might be stuck with broken packages. Don&rsquo;t panic! In such cases, you can simply rollback to the old stable packages. This short tutorial describes how to downgrade a package in Arch Linux and its variants like EndeavourOS, Manjaro Linux.</p><h3 class="relative group">Install Downgrade utility<div id="install-downgrade-utility" class="anchor"/><span class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#install-downgrade-utility" aria-label="Anchor">#</a></span></h3><p>The downgrade package is available in AUR, so you can install it using any AUR helper programs such as Paru or Yay.</p><p>Using Paru:</p><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Bash" data-lang="Bash"><span class="line"><span class="cl">paru -S downgrade</span></span></code></pre></div><p>Using Yay:</p><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Bash" data-lang="Bash"><span class="line"><span class="cl">yay -S downgrade</span></span></code></pre></div><h3 class="relative group">Downgrade a package<div id="downgrade-a-package" class="anchor"/><span class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#downgrade-a-package" aria-label="Anchor">#</a></span></h3><p>The typical usage of &ldquo;downgrade&rdquo; command is:</p><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Bash" data-lang="Bash"><span class="line"><span class="cl">sudo downgrade<span class="o">[</span>PACKAGE, ...<span class="o">]</span><span class="o">[</span>--<span class="o">[</span>PACMAN OPTIONS<span class="o">]]</span></span></span></code></pre></div><p>Let us say you want to downgrade opera web browser to any available old version.</p><p>To do so, run:</p><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Bash" data-lang="Bash"><span class="line"><span class="cl">sudo downgrade opera</span></span></code></pre></div><p>This command will list all available versions of opera package (both new and old) from your local cache and remote mirror.</p><p>Sample output:</p><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Bash" data-lang="Bash"><span class="line"><span class="cl">Available packages:</span></span><span class="line"><span class="cl"/></span><span class="line"><span class="cl">1<span class="o">)</span> opera-37.0.2178.43-1-x86_64.pkg.tar.xz<span class="o">(</span><span class="nb">local</span><span class="o">)</span></span></span><span class="line"><span class="cl">2<span class="o">)</span> opera-37.0.2178.43-1-x86_64.pkg.tar.xz<span class="o">(</span>remote<span class="o">)</span></span></span><span class="line"><span class="cl">3<span class="o">)</span> opera-37.0.2178.32-1-x86_64.pkg.tar.xz<span class="o">(</span>remote<span class="o">)</span></span></span><span class="line"><span class="cl">4<span class="o">)</span> opera-36.0.2130.65-2-x86_64.pkg.tar.xz<span class="o">(</span>remote<span class="o">)</span></span></span><span class="line"><span class="cl">5<span class="o">)</span> opera-36.0.2130.65-1-x86_64.pkg.tar.xz<span class="o">(</span>remote<span class="o">)</span></span></span><span class="line"><span class="cl">6<span class="o">)</span> opera-36.0.2130.46-2-x86_64.pkg.tar.xz<span class="o">(</span>remote<span class="o">)</span></span></span><span class="line"><span class="cl">7<span class="o">)</span> opera-36.0.2130.46-1-x86_64.pkg.tar.xz<span class="o">(</span>remote<span class="o">)</span></span></span><span class="line"><span class="cl">8<span class="o">)</span> opera-36.0.2130.32-2-x86_64.pkg.tar.xz<span class="o">(</span>remote<span class="o">)</span></span></span><span class="line"><span class="cl">9<span class="o">)</span> opera-36.0.2130.32-1-x86_64.pkg.tar.xz<span class="o">(</span>remote<span class="o">)</span></span></span><span class="line"><span class="cl"/></span><span class="line"><span class="cl"><span class="k">select</span> a package by number:</span></span></code></pre></div><p>Just type the package number of your choice, and hit enter to install it.</p><p>That&rsquo;s it. The current installed package will be downgraded to the old version.</p>
+]]></content:encoded><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"/></channel></rss>

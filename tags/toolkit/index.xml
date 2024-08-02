@@ -1,0 +1,689 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Toolkit on XeroLinux HQ</title><link>https://xerolinux.xyz/tags/toolkit/</link><description>Recent content in Toolkit on XeroLinux HQ</description><generator>Hugo</generator><language>en</language><lastBuildDate>Mon, 08 Jul 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://xerolinux.xyz/tags/toolkit/index.xml" rel="self" type="application/rss+xml"/><item><title>XeroLinux Plasma Install</title><link>https://xerolinux.xyz/news/xerolinux-plasma/</link><pubDate>Mon, 08 Jul 2024 00:00:00 +0000</pubDate><guid>https://xerolinux.xyz/news/xerolinux-plasma/</guid><description>
+
+ 
+ &lt;div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+ &lt;iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/v0UPif52i5A?autoplay=0&amp;controls=1&amp;end=0&amp;loop=0&amp;mute=0&amp;start=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="YouTube video"
+ >&lt;/iframe>
+ &lt;/div>
+
+
+
+&lt;h3 class="relative group">Introduction 
+ &lt;div id="introduction" class="anchor">&lt;/div>
+ 
+ &lt;span
+ class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+ &lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+ style="text-decoration-line: none !important;" href="#introduction" aria-label="Anchor">#&lt;/a>
+ &lt;/span> 
+ 
+&lt;/h3>
+&lt;p>I want to begin by thanking everyone who has shown the Distro all the the love. Without whom it wouldn&amp;rsquo;t have lasted as long as it did. As well as the rest of the projects present and future.&lt;/p>
+&lt;p>&lt;strong>Clarification :&lt;/strong>&lt;/p>
+&lt;blockquote>
+&lt;p>Intention of the &lt;strong>PlasmaInstall&lt;/strong> script was not to replace &lt;strong>ArchInstall&lt;/strong> but to fix its &lt;strong>Plasma&lt;/strong> profile while extending it further nothing more. If you want &lt;strong>Gnome&lt;/strong>, &lt;strong>XFCE&lt;/strong> or any other DE/WM for that matter, existing profiles are fine. The only other one that is messed up is the &lt;strong>Hyprland&lt;/strong> one but alas since I don&amp;rsquo;t use it I have no idea how to fix it. However, the Toolkit can be used on any DE or WM it&amp;rsquo;s agnostic.&lt;/p>
+&lt;/blockquote>
+&lt;p>Now, this guide complements the above video, they are to be used together, I will try not to ramble on too much. Some of you have asked the question, &amp;ldquo;is the Distro really gone ?&amp;rdquo; I would like to say, no, not really. Let me explain a bit before going ahead with written guide. Since it was nothing but &lt;strong>ArchLinux&lt;/strong> + Customized/riced &lt;strong>KDE Plasma&lt;/strong> nothing more, one could achieve the same result by using my &lt;strong>Plasma Install&lt;/strong> script.&lt;/p>
+&lt;p>Yeah we can easily get &lt;strong>XeroLinux&lt;/strong> back in all its glory, it&amp;rsquo;s just no longer an ISO with &lt;strong>Calamares&lt;/strong>. It&amp;rsquo;s still easy to install thanks in part to the &lt;em>infamous&lt;/em> &lt;strong>ArchInstall&lt;/strong> script then my own. So all is not lost.&lt;/p>
+&lt;p>In this super detailed guide I will be showing off how it can be done.&lt;/p>
+&lt;p>
+ &lt;figure>
+ &lt;img class="my-0 rounded-md" loading="lazy" src="https://i.imgur.com/VA2tycb.jpeg" alt="XeroLayan" />
+ 
+ &lt;/figure>
+&lt;/p>
+
+
+&lt;h3 class="relative group">What we need 
+ &lt;div id="what-we-need" class="anchor">&lt;/div>
+ 
+ &lt;span
+ class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+ &lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+ style="text-decoration-line: none !important;" href="#what-we-need" aria-label="Anchor">#&lt;/a>
+ &lt;/span> 
+ 
+&lt;/h3>
+&lt;p>Let&amp;rsquo;s start off by knowing what we need to get started. First off, we will need the latest version of the &amp;raquo; &lt;a href="https://archlinux.org/download/" target="_blank">&lt;strong>ArchLinux ISO&lt;/strong>&lt;/a>, a USB stick to burn ISO onto, we can either use &amp;raquo; &lt;a href="https://etcher.balena.io/#download-etcher" target="_blank">&lt;strong>Balena Etcher&lt;/strong>&lt;/a> or the highly recommended &amp;raquo; &lt;strong>Ventoy&lt;/strong> linked below.&lt;/p>
+
+&lt;section class="space-y-10 w-full">
+ 
+ 
+ 
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ &lt;a class="flex flex-wrap article border border-neutral-200 dark:border-neutral-700 border-2 rounded-md overflow-hidden" href="https://xerolinux.xyz/posts/ventoy-multi-boot/">
+ 
+ 
+ &lt;div class="w-full md:w-auto h-full thumbnail nozoom " style="background-image:url(/posts/ventoy-multi-boot/featured.webp);">&lt;/div>
+ 
+ &lt;div class=" p-4">
+ &lt;div class="items-center text-left text-xl font-semibold">
+ 
+ &lt;div class="font-bold text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral"
+ href="https://xerolinux.xyz/posts/ventoy-multi-boot/">Ventoy - Best multi-boot tool&lt;/div>
+ 
+ 
+ 
+ &lt;/div>
+ &lt;div class="text-sm text-neutral-500 dark:text-neutral-400">
+ 
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+ 
+
+
+
+ 
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+&lt;div class="flex flex-row flex-wrap items-center">
+ 
+ 
+ &lt;time datetime="2024-06-27 00:00:00 &amp;#43;0000 UTC">27 June 2024&lt;/time>&lt;span class="px-2 text-primary-500">&amp;middot;&lt;/span>&lt;span title="Reading time">3 mins&lt;/span>&lt;span class="px-2 text-primary-500">&amp;middot;&lt;/span>&lt;span>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ &lt;span id="views_posts/ventoy-multi-boot/index.md" class="animate-pulse inline-block text-transparent max-h-3 rounded-full mt-[-2px] align-middle bg-neutral-300 dark:bg-neutral-400" title="views">loading&lt;/span>
+ &lt;span class="inline-block align-text-bottom">
+
+ &lt;span class="relative block icon">
+ &lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+&lt;path fill="currentColor" d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/>&lt;/svg>
+ &lt;/span>
+
+&lt;/span>
+&lt;/span>&lt;span class="px-2 text-primary-500">&amp;middot;&lt;/span>&lt;span>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ &lt;span id="likes_posts/ventoy-multi-boot/index.md"
+ class="animate-pulse inline-block text-transparent max-h-3 rounded-full mt-[-2px] align-middle bg-neutral-300 dark:bg-neutral-400"
+ title="likes">loading&lt;/span>
+ &lt;span class="inline-block align-text-bottom">
+
+ &lt;span class="relative block icon">
+ &lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+&lt;path fill="currentColor" d="M47.6 300.4L228.3 469.1c7.5 7 17.4 10.9 27.7 10.9s20.2-3.9 27.7-10.9L464.4 300.4c30.4-28.3 47.6-68 47.6-109.5v-5.8c0-69.9-50.5-129.5-119.4-141C347 36.5 300.6 51.4 268 84L256 96 244 84c-32.6-32.6-79-47.5-124.6-39.9C50.5 55.6 0 115.2 0 185.1v5.8c0 41.5 17.2 81.2 47.6 109.5z"/>&lt;/svg>
+ &lt;/span>
+
+&lt;/span>
+&lt;/span>
+ 
+
+ 
+ 
+&lt;/div>
+
+
+&lt;div class="flex flex-row flex-wrap items-center">
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+&lt;/div>
+
+
+
+
+&lt;div class="flex flex-row flex-wrap items-center">
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ &lt;span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&amp;#34;/tags/ventoy/&amp;#34;,'_self');">
+ &lt;span class="flex" style="cursor: pointer;">
+ &lt;span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+ Ventoy
+ &lt;/span>
+&lt;/span>
+ &lt;/span>
+ 
+ &lt;span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&amp;#34;/tags/usb-boot/&amp;#34;,'_self');">
+ &lt;span class="flex" style="cursor: pointer;">
+ &lt;span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+ Usb-Boot
+ &lt;/span>
+&lt;/span>
+ &lt;/span>
+ 
+ &lt;span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&amp;#34;/tags/multi-boot/&amp;#34;,'_self');">
+ &lt;span class="flex" style="cursor: pointer;">
+ &lt;span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+ Multi-Boot
+ &lt;/span>
+&lt;/span>
+ &lt;/span>
+ 
+ &lt;span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&amp;#34;/tags/distro-hopping/&amp;#34;,'_self');">
+ &lt;span class="flex" style="cursor: pointer;">
+ &lt;span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+ Distro-Hopping
+ &lt;/span>
+&lt;/span>
+ &lt;/span>
+ 
+ &lt;span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&amp;#34;/tags/linux/&amp;#34;,'_self');">
+ &lt;span class="flex" style="cursor: pointer;">
+ &lt;span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+ Linux
+ &lt;/span>
+&lt;/span>
+ &lt;/span>
+ 
+ &lt;span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&amp;#34;/tags/opensource/&amp;#34;,'_self');">
+ &lt;span class="flex" style="cursor: pointer;">
+ &lt;span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+ Opensource
+ &lt;/span>
+&lt;/span>
+ &lt;/span>
+ 
+ 
+ 
+ 
+&lt;/div>
+
+
+
+ &lt;/div>
+ 
+ &lt;/div>
+ &lt;/a>
+
+ 
+ 
+&lt;/section>
+&lt;p>Those are the essentials. As to my &lt;strong>Plasma Install&lt;/strong> script will get to that a bit later down the line. Once we got everything, we shall begin&amp;hellip;&lt;/p>
+
+
+&lt;h3 class="relative group">Part 1 - Installing ArchLinux 
+ &lt;div id="part-1---installing-archlinux" class="anchor">&lt;/div>
+ 
+ &lt;span
+ class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+ &lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+ style="text-decoration-line: none !important;" href="#part-1---installing-archlinux" aria-label="Anchor">#&lt;/a>
+ &lt;/span> 
+ 
+&lt;/h3>
+&lt;p>Ok, so now that we have burned the ISO to the USB using either tools, boot the system we want to install it on using it. Am not gonna go through showing you how, you should know that by now lol.&lt;/p>
+&lt;p>
+ &lt;figure>
+ &lt;img class="my-0 rounded-md" loading="lazy" src="https://i.imgur.com/RO64NWD.png" alt="ArchISO" />
+ 
+ &lt;/figure>
+&lt;/p>
+&lt;p>&lt;strong>Note :&lt;/strong>&lt;/p>
+&lt;blockquote>
+&lt;p>This guide expects you to be connected to the internet via ethernet. If you aren&amp;rsquo;t and need to connect over WiFi, you can follow guide on the &lt;a href="https://wiki.archlinux.org/title/Installation_guide#Connect_to_the_internet" target="_blank">&lt;strong>ArchWiki&lt;/strong>&lt;/a>&lt;/p>
+&lt;/blockquote>
+&lt;ul>
+&lt;li>&lt;strong>Remote Install via SSH&lt;/strong>&lt;/li>
+&lt;/ul>
+&lt;p>Now, unlike other guides out there, I will be showing how we can use &lt;strong>SSH&lt;/strong> to do the installation remotely, which will make things much easier. All we need is a secondary PC running &lt;strong>Linux&lt;/strong>. If none is available, this part can be skipped.&lt;/p>
+&lt;p>Ok, first things first, we need to set a password to the &lt;em>root&lt;/em> user. We do it by typing the following command in the TTY, like this :&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-Bash" data-lang="Bash">&lt;span class="line">&lt;span class="cl">passwd
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Now we type our temporary password &amp;amp; confirm it. Once that&amp;rsquo;s done, we need to get the machine&amp;rsquo;s &lt;strong>IP Address&lt;/strong>, we do that by running this command :&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-Bash" data-lang="Bash">&lt;span class="line">&lt;span class="cl">ip a
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Once we have it, all we need to do to connect to the machine is the following command :&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-Bash" data-lang="Bash">&lt;span class="line">&lt;span class="cl">ssh root@ipaddress
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>We confirm by typing &lt;code>yes&lt;/code>. That&amp;rsquo;s it, now we are connected to the machine remotely, so we can now easily copy paste comands for a much simpler install&amp;hellip;&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>ArchInstall Script&lt;/strong>&lt;/li>
+&lt;/ul>
+&lt;p>Once connected, first thing we will have to do is, make sure we have latest version of &lt;strong>ArchInstall&lt;/strong>. We do that by running the following command :&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-Bash" data-lang="Bash">&lt;span class="line">&lt;span class="cl">pacman -Syy archinstall &lt;span class="o">&amp;amp;&amp;amp;&lt;/span> archinstall --advanced
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Now some of you might be asking me, &amp;ldquo;why the &lt;code>--advanced&lt;/code> flag ?&amp;rdquo;, to which I answer, simply because devs still hide the &lt;em>parallel downloads&lt;/em> behind it for whatever reason. It&amp;rsquo;s fine at least now you know.&lt;/p>
+&lt;p>
+ &lt;figure>
+ &lt;img class="my-0 rounded-md" loading="lazy" src="https://i.imgur.com/OVzwVYt.png" alt="ArchInstall" />
+ 
+ &lt;/figure>
+&lt;/p>
+&lt;p>Ok, now that we have the installer running, am not going to go through each and every option one by one, just the important ones. Those are explained in the video. Am also not gonna bother with &lt;em>manual partitioning&lt;/em> since the guide is intended for single OS easy install.&lt;/p>
+&lt;p>That&amp;rsquo;s why we will be using the &lt;strong>Best Guess&lt;/strong> option, carefully selecting the correct drive we want install &lt;strong>ArchLinux&lt;/strong> onto.&lt;/p>
+
+ 
+ 
+ 
+ 
+
+
+
+&lt;div
+ 
+ class="flex px-4 py-3 rounded-md"
+ style="background-color: #e63946"
+ >
+
+ &lt;span
+ 
+ class="ltr:pr-3 rtl:pl-3 flex items-center"
+ style="color: #1d3557"
+ >
+
+ 
+
+ &lt;span class="relative block icon">
+ &lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+&lt;path fill="currentColor" d="M159.3 5.4c7.8-7.3 19.9-7.2 27.7 .1c27.6 25.9 53.5 53.8 77.7 84c11-14.4 23.5-30.1 37-42.9c7.9-7.4 20.1-7.4 28 .1c34.6 33 63.9 76.6 84.5 118c20.3 40.8 33.8 82.5 33.8 111.9C448 404.2 348.2 512 224 512C98.4 512 0 404.1 0 276.5c0-38.4 17.8-85.3 45.4-131.7C73.3 97.7 112.7 48.6 159.3 5.4zM225.7 416c25.3 0 47.7-7 68.8-21c42.1-29.4 53.4-88.2 28.1-134.4c-2.8-5.6-5.6-11.2-9.8-16.8l-50.6 58.8s-81.4-103.6-87.1-110.6C133.1 243.8 112 273.2 112 306.8C112 375.4 162.6 416 225.7 416z"/>&lt;/svg>
+ &lt;/span>
+
+
+ &lt;/span>
+
+ &lt;span
+ 
+ style="color: #f1faee"
+ >I will not be held responsible for any data loss resulting from selection of the wrong drive. &lt;strong>BE VERY CAREFUL HERE&lt;/strong>.&lt;/span>
+&lt;/div>
+
+&lt;p>Anyway, let&amp;rsquo;s make sure we skip the parts I mentioned in the video, since everything will now be done &lt;strong>Post-Install&lt;/strong> via my Toolkit. Don&amp;rsquo;t forget to set parallel downloads to as many as you like for faster downloads. Also as mentioned, we do not need to enable any extra repos like &lt;em>multilib&lt;/em> since my script will do that for us later on.&lt;/p>
+&lt;p>Now once everything is configured and set, hit install, sit back, grab a cup of Tea/Coffee and watch it do its thing. Might take a while it all depends on Internet connection&amp;hellip;&lt;/p>
+
+
+&lt;h3 class="relative group">Part 2 - Installing Plasma 
+ &lt;div id="part-2---installing-plasma" class="anchor">&lt;/div>
+ 
+ &lt;span
+ class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+ &lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+ style="text-decoration-line: none !important;" href="#part-2---installing-plasma" aria-label="Anchor">#&lt;/a>
+ &lt;/span> 
+ 
+&lt;/h3>
+&lt;p>Once that&amp;rsquo;s all done, we will be prompted if we want to &lt;code>chroot&lt;/code> into our new install, we answer with yes of course since we still have no DE yet.&lt;/p>
+
+ 
+ 
+ 
+ 
+
+
+
+&lt;div
+ 
+ class="flex px-4 py-3 rounded-md"
+ style="background-color: #e63946"
+ >
+
+ &lt;span
+ 
+ class="ltr:pr-3 rtl:pl-3 flex items-center"
+ style="color: #1d3557"
+ >
+
+ 
+
+ &lt;span class="relative block icon">
+ &lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+&lt;path fill="currentColor" d="M159.3 5.4c7.8-7.3 19.9-7.2 27.7 .1c27.6 25.9 53.5 53.8 77.7 84c11-14.4 23.5-30.1 37-42.9c7.9-7.4 20.1-7.4 28 .1c34.6 33 63.9 76.6 84.5 118c20.3 40.8 33.8 82.5 33.8 111.9C448 404.2 348.2 512 224 512C98.4 512 0 404.1 0 276.5c0-38.4 17.8-85.3 45.4-131.7C73.3 97.7 112.7 48.6 159.3 5.4zM225.7 416c25.3 0 47.7-7 68.8-21c42.1-29.4 53.4-88.2 28.1-134.4c-2.8-5.6-5.6-11.2-9.8-16.8l-50.6 58.8s-81.4-103.6-87.1-110.6C133.1 243.8 112 273.2 112 306.8C112 375.4 162.6 416 225.7 416z"/>&lt;/svg>
+ &lt;/span>
+
+
+ &lt;/span>
+
+ &lt;span
+ 
+ style="color: #f1faee"
+ >&lt;strong>User Caution&lt;/strong>. We do not recommend to blindly execute scripts without inspecting them first.&lt;/span>
+&lt;/div>
+
+&lt;p>To download and inspect script, use the following command, open it in your IDE of choice and inspect it. Only run it when you trust the code.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-Bash" data-lang="Bash">&lt;span class="line">&lt;span class="cl">wget https://tinyurl.com/PlasmaInstall
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Once you trust it, you can move on. Now, depending on the method that was used, &lt;code>ssh&lt;/code> or not, we either copy paste the command below or type it manually :&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-Bash" data-lang="Bash">&lt;span class="line">&lt;span class="cl">bash -c &lt;span class="s2">&amp;#34;&lt;/span>&lt;span class="k">$(&lt;/span>curl -fsSL https://tinyurl.com/PlasmaInstall&lt;span class="k">)&lt;/span>&lt;span class="s2">&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>This will execute the script. Just go through the prompts. I would &lt;strong>Highly&lt;/strong> recommend option &lt;strong>3) Xero&amp;rsquo;s Curated Set Of Plasma Packages&lt;/strong> to avoind any future headaches. I went through all groups with a fine tooth comb as the saying goes making sure we get the best experience. But that&amp;rsquo;s not to say we cannot select any of the other options, it&amp;rsquo;s all up to you in the end.&lt;/p>
+&lt;p>
+ &lt;figure>
+ &lt;img class="my-0 rounded-md" loading="lazy" src="https://i.imgur.com/TOZNp4j.png" alt="Script" />
+ 
+ &lt;/figure>
+&lt;/p>
+&lt;p>At the end, script will prompt us if we want to enable the &lt;strong>XeroLinux Repo&lt;/strong> and install the Toolkit, to which we answer with yes, since we will be using it to set everything up later on.&lt;/p>
+&lt;p>You will notice that, the &lt;em>multilib&lt;/em> repo was enabled as well. I made sure of that since most newcomers forget to do it. It&amp;rsquo;s an essential repo required for the likes of &lt;strong>Steam&lt;/strong>, and various drivers.&lt;/p>
+&lt;p>Finally, for now at least, once script is done, we will be prompted to exit and reboot the system. We do that by typing &lt;code>exit&lt;/code> then &lt;code>reboot&lt;/code>, and that&amp;rsquo;s it for this part anyway&amp;hellip;&lt;/p>
+
+
+&lt;h3 class="relative group">Part 3 - Setting up the system 
+ &lt;div id="part-3---setting-up-the-system" class="anchor">&lt;/div>
+ 
+ &lt;span
+ class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+ &lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+ style="text-decoration-line: none !important;" href="#part-3---setting-up-the-system" aria-label="Anchor">#&lt;/a>
+ &lt;/span> 
+ 
+&lt;/h3>
+&lt;p>If all went smoothly, we should now be greeted with &lt;code>SDDM&lt;/code>, &lt;strong>KDE&lt;/strong>&amp;rsquo;s login page. I would recommend &lt;strong>Plasma X11&lt;/strong> over &lt;strong>Wayland&lt;/strong>, at least for now. Yes, my script still includes &lt;strong>X11&lt;/strong> for compatibility. I will not get rid of it any time soon, at least not until I feel that more apps are ready for &lt;strong>Wayland&lt;/strong>.&lt;/p>
+&lt;p>Once logged in, there are a few things we need to take care of first. Open Terminal, as shown in video, and update the system&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-Bash" data-lang="Bash">&lt;span class="line">&lt;span class="cl">sudo pacman -Syyu
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Then we launch the &lt;strong>XeroLinux Post Installation Toolkit&lt;/strong> from the AppMenu, under &lt;strong>System&lt;/strong>. That&amp;rsquo;s what we will be using from here on in.&lt;/p>
+&lt;p>
+ &lt;figure>
+ &lt;img class="my-0 rounded-md" loading="lazy" src="https://i.imgur.com/JuWceYE.png" alt="XLAPiT" />
+ 
+ &lt;/figure>
+&lt;/p>
+&lt;p>It&amp;rsquo;s up to you to discover all the options, that&amp;rsquo;s why I did not mention them all in video, nor will I here. The whole point of this guide is how to get &lt;strong>XeroLinux&lt;/strong> back not to set up the system from A to Z.&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>1 : System Setup&lt;/strong>&lt;/li>
+&lt;/ul>
+&lt;p>There&amp;rsquo;s nothing to do here except select &lt;strong>Install 3rd-Party GUI Package Manager(s)&lt;/strong> or &lt;strong>Add &amp;amp; Enable the ChaoticAUR Repository&lt;/strong>, since my &lt;strong>Plasma Script&lt;/strong> took care of the rest for us. Neat eh ?&lt;/p>
+&lt;p>&lt;strong>Note :&lt;/strong>&lt;/p>
+&lt;blockquote>
+&lt;p>I would highly recommend you enable the &lt;strong>Chaotic AUR&lt;/strong> repo, if you install a lot of packages from the &lt;strong>AUR&lt;/strong>, to avoid having to compile them.&lt;/p>
+&lt;/blockquote>
+&lt;ul>
+&lt;li>&lt;strong>2 : System Drivers&lt;/strong>&lt;/li>
+&lt;/ul>
+&lt;p>This is the part where you select drivers you need for our hardware. Am not going to help you here. All you need to know was mentioned in the video. Just know that selecting the wrong ones will break the system, so that&amp;rsquo;s where you need to understand what works for you.&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>4 : System Customization&lt;/strong>&lt;/li>
+&lt;/ul>
+&lt;p>Now we jump to Customization section. Just select option &lt;strong>x. XeroLinux&amp;rsquo;s Layan Plasma 6 Rice&lt;/strong>, enter your &lt;code>sudo&lt;/code> password, and watch it do its thing.. Once it&amp;rsquo;s done, we will be prompted to reboot. Use the AppMenu to do that..&lt;/p>
+&lt;p>&lt;strong>Note :&lt;/strong>&lt;/p>
+&lt;blockquote>
+&lt;p>If you have selected to enable the &lt;strong>Chaotic AUR&lt;/strong> repos, install will go fast. If not it will take a bit, while it compiles some packages from the &lt;strong>AUR&lt;/strong>.&lt;/p>
+&lt;/blockquote>
+
+
+&lt;h3 class="relative group">Final words 
+ &lt;div id="final-words" class="anchor">&lt;/div>
+ 
+ &lt;span
+ class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+ &lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+ style="text-decoration-line: none !important;" href="#final-words" aria-label="Anchor">#&lt;/a>
+ &lt;/span> 
+ 
+&lt;/h3>
+&lt;p>That&amp;rsquo;s it boys n girls. We just got &lt;strong>XeroLinux&lt;/strong> back ! The rest is up to you. Go through the toolkit see if you find anything useful. If you encounter any issues or have any questions, feel free to contact me on either &lt;strong>Fosstodon&lt;/strong> or &lt;strong>Discord&lt;/strong>, or even in the video comments section.&lt;/p>
+&lt;p>I will do my best to answer. Keep in mind that I might not have all the answers, simply because I only have the hardware I have, might be different than yours, so can&amp;rsquo;t know what works on something I do not own. Though I am and always will open to suggestions&amp;hellip;&lt;/p>
+&lt;a id="github-5e4881cc2a6cb605d9bc55c55902c65e" target="_blank" href="https://github.com/xerolinux/xero-plasma" class="cursor-pointer">
+ &lt;div
+ class="w-full md:w-auto pt-3 p-5 border border-neutral-200 dark:border-neutral-700 border rounded-md shadow-2xl">
+
+ &lt;div class="flex items-center">
+ &lt;span class="text-2xl text-neutral-800 dark:text-neutral" style="margin-right:10px;">
+ 
+
+ &lt;span class="relative block icon">
+ &lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512">&lt;path fill="currentColor" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/>&lt;/svg>
+
+ &lt;/span>
+
+
+ &lt;/span>
+ &lt;div
+ id="github-5e4881cc2a6cb605d9bc55c55902c65e-full_name"
+ class="m-0 font-bold text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral">
+ xerolinux/xero-plasma
+ &lt;/div>
+ &lt;/div>
+
+ &lt;p id="github-5e4881cc2a6cb605d9bc55c55902c65e-description" class="m-0 mt-2 text-md text-neutral-800 dark:text-neutral">
+ The XeroLinux Plasma installer script
+ &lt;/p>
+
+ &lt;div class="m-0 mt-2 flex items-center">
+
+ &lt;span class="mr-1 inline-block h-3 w-3 rounded-full"
+ style="background-color: #89e051">&lt;/span>
+ &lt;div class="m-0 mr-5 text-md text-neutral-800 dark:text-neutral">
+ Shell 
+ &lt;/div>
+
+ &lt;span class="text-md mr-1 text-neutral-800 dark:text-neutral">
+ 
+
+ &lt;span class="relative block icon">
+ &lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">&lt;path fill="currentColor" d="M287.9 0C297.1 0 305.5 5.25 309.5 13.52L378.1 154.8L531.4 177.5C540.4 178.8 547.8 185.1 550.7 193.7C553.5 202.4 551.2 211.9 544.8 218.2L433.6 328.4L459.9 483.9C461.4 492.9 457.7 502.1 450.2 507.4C442.8 512.7 432.1 513.4 424.9 509.1L287.9 435.9L150.1 509.1C142.9 513.4 133.1 512.7 125.6 507.4C118.2 502.1 114.5 492.9 115.1 483.9L142.2 328.4L31.11 218.2C24.65 211.9 22.36 202.4 25.2 193.7C28.03 185.1 35.5 178.8 44.49 177.5L197.7 154.8L266.3 13.52C270.4 5.249 278.7 0 287.9 0L287.9 0zM287.9 78.95L235.4 187.2C231.9 194.3 225.1 199.3 217.3 200.5L98.98 217.9L184.9 303C190.4 308.5 192.9 316.4 191.6 324.1L171.4 443.7L276.6 387.5C283.7 383.7 292.2 383.7 299.2 387.5L404.4 443.7L384.2 324.1C382.9 316.4 385.5 308.5 391 303L476.9 217.9L358.6 200.5C350.7 199.3 343.9 194.3 340.5 187.2L287.9 78.95z"/>&lt;/svg>
+ &lt;/span>
+
+
+ &lt;/span>
+ &lt;div id="github-5e4881cc2a6cb605d9bc55c55902c65e-stargazers" class="m-0 mr-5 text-md text-neutral-800 dark:text-neutral">
+ 5
+ &lt;/div>
+
+ &lt;span class="text-md mr-1 text-neutral-800 dark:text-neutral">
+ 
+
+ &lt;span class="relative block icon">
+ &lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">&lt;path fill="currentColor" d="M80 104c13.3 0 24-10.7 24-24s-10.7-24-24-24S56 66.7 56 80s10.7 24 24 24zm80-24c0 32.8-19.7 61-48 73.3V192c0 17.7 14.3 32 32 32H304c17.7 0 32-14.3 32-32V153.3C307.7 141 288 112.8 288 80c0-44.2 35.8-80 80-80s80 35.8 80 80c0 32.8-19.7 61-48 73.3V192c0 53-43 96-96 96H256v70.7c28.3 12.3 48 40.5 48 73.3c0 44.2-35.8 80-80 80s-80-35.8-80-80c0-32.8 19.7-61 48-73.3V288H144c-53 0-96-43-96-96V153.3C19.7 141 0 112.8 0 80C0 35.8 35.8 0 80 0s80 35.8 80 80zm208 24c13.3 0 24-10.7 24-24s-10.7-24-24-24s-24 10.7-24 24s10.7 24 24 24zM248 432c0-13.3-10.7-24-24-24s-24 10.7-24 24s10.7 24 24 24s24-10.7 24-24z"/>&lt;/svg>
+ &lt;/span>
+
+
+ &lt;/span>
+ &lt;div id="github-5e4881cc2a6cb605d9bc55c55902c65e-forks" class="m-0 mr-5 text-md text-neutral-800 dark:text-neutral">
+ 3
+ &lt;/div>
+
+ &lt;/div>
+
+ &lt;/div>
+ &lt;script>
+ fetch("https://api.github.com/repos/xerolinux/xero-plasma", {
+ headers: new Headers({
+ 'User-agent': 'Mozilla/4.0 Custom User Agent'
+ })
+ })
+ .then(response => response.json())
+ .then(data => {
+ document.getElementById('github-5e4881cc2a6cb605d9bc55c55902c65e-full_name').innerHTML = data.full_name;
+ document.getElementById('github-5e4881cc2a6cb605d9bc55c55902c65e-description').innerHTML = data.description;
+ document.getElementById('github-5e4881cc2a6cb605d9bc55c55902c65e-stargazers').innerHTML = data.stargazers_count;
+ document.getElementById('github-5e4881cc2a6cb605d9bc55c55902c65e-forks').innerHTML = data.forks;
+ })
+ .catch(error => console.error(error))
+ &lt;/script>
+&lt;/a>
+&lt;p>Use the repo above to report any issues with &lt;strong>PlasmaInstall&lt;/strong>, and I will get to them as soon as I can. You can also request features to be added there too..&lt;/p>
+&lt;p>If you want features to be added to the Toolkit, or have any issues to report, feel free to do so on the repo below. I will do my best to get to them&amp;hellip;&lt;/p>
+&lt;a id="github-4f74f18636560c73418bfb6009c54d8b" target="_blank" href="https://github.com/xerolinux/xlapit-cli" class="cursor-pointer">
+ &lt;div
+ class="w-full md:w-auto pt-3 p-5 border border-neutral-200 dark:border-neutral-700 border rounded-md shadow-2xl">
+
+ &lt;div class="flex items-center">
+ &lt;span class="text-2xl text-neutral-800 dark:text-neutral" style="margin-right:10px;">
+ 
+
+ &lt;span class="relative block icon">
+ &lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512">&lt;path fill="currentColor" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/>&lt;/svg>
+
+ &lt;/span>
+
+
+ &lt;/span>
+ &lt;div
+ id="github-4f74f18636560c73418bfb6009c54d8b-full_name"
+ class="m-0 font-bold text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral">
+ xerolinux/xlapit-cli
+ &lt;/div>
+ &lt;/div>
+
+ &lt;p id="github-4f74f18636560c73418bfb6009c54d8b-description" class="m-0 mt-2 text-md text-neutral-800 dark:text-neutral">
+ XeroLinux Arch Post Install Toolkit Package Source Code
+ &lt;/p>
+
+ &lt;div class="m-0 mt-2 flex items-center">
+
+ &lt;span class="mr-1 inline-block h-3 w-3 rounded-full"
+ style="background-color: #89e051">&lt;/span>
+ &lt;div class="m-0 mr-5 text-md text-neutral-800 dark:text-neutral">
+ Shell 
+ &lt;/div>
+
+ &lt;span class="text-md mr-1 text-neutral-800 dark:text-neutral">
+ 
+
+ &lt;span class="relative block icon">
+ &lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">&lt;path fill="currentColor" d="M287.9 0C297.1 0 305.5 5.25 309.5 13.52L378.1 154.8L531.4 177.5C540.4 178.8 547.8 185.1 550.7 193.7C553.5 202.4 551.2 211.9 544.8 218.2L433.6 328.4L459.9 483.9C461.4 492.9 457.7 502.1 450.2 507.4C442.8 512.7 432.1 513.4 424.9 509.1L287.9 435.9L150.1 509.1C142.9 513.4 133.1 512.7 125.6 507.4C118.2 502.1 114.5 492.9 115.1 483.9L142.2 328.4L31.11 218.2C24.65 211.9 22.36 202.4 25.2 193.7C28.03 185.1 35.5 178.8 44.49 177.5L197.7 154.8L266.3 13.52C270.4 5.249 278.7 0 287.9 0L287.9 0zM287.9 78.95L235.4 187.2C231.9 194.3 225.1 199.3 217.3 200.5L98.98 217.9L184.9 303C190.4 308.5 192.9 316.4 191.6 324.1L171.4 443.7L276.6 387.5C283.7 383.7 292.2 383.7 299.2 387.5L404.4 443.7L384.2 324.1C382.9 316.4 385.5 308.5 391 303L476.9 217.9L358.6 200.5C350.7 199.3 343.9 194.3 340.5 187.2L287.9 78.95z"/>&lt;/svg>
+ &lt;/span>
+
+
+ &lt;/span>
+ &lt;div id="github-4f74f18636560c73418bfb6009c54d8b-stargazers" class="m-0 mr-5 text-md text-neutral-800 dark:text-neutral">
+ 40
+ &lt;/div>
+
+ &lt;span class="text-md mr-1 text-neutral-800 dark:text-neutral">
+ 
+
+ &lt;span class="relative block icon">
+ &lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">&lt;path fill="currentColor" d="M80 104c13.3 0 24-10.7 24-24s-10.7-24-24-24S56 66.7 56 80s10.7 24 24 24zm80-24c0 32.8-19.7 61-48 73.3V192c0 17.7 14.3 32 32 32H304c17.7 0 32-14.3 32-32V153.3C307.7 141 288 112.8 288 80c0-44.2 35.8-80 80-80s80 35.8 80 80c0 32.8-19.7 61-48 73.3V192c0 53-43 96-96 96H256v70.7c28.3 12.3 48 40.5 48 73.3c0 44.2-35.8 80-80 80s-80-35.8-80-80c0-32.8 19.7-61 48-73.3V288H144c-53 0-96-43-96-96V153.3C19.7 141 0 112.8 0 80C0 35.8 35.8 0 80 0s80 35.8 80 80zm208 24c13.3 0 24-10.7 24-24s-10.7-24-24-24s-24 10.7-24 24s10.7 24 24 24zM248 432c0-13.3-10.7-24-24-24s-24 10.7-24 24s10.7 24 24 24s24-10.7 24-24z"/>&lt;/svg>
+ &lt;/span>
+
+
+ &lt;/span>
+ &lt;div id="github-4f74f18636560c73418bfb6009c54d8b-forks" class="m-0 mr-5 text-md text-neutral-800 dark:text-neutral">
+ 8
+ &lt;/div>
+
+ &lt;/div>
+
+ &lt;/div>
+ &lt;script>
+ fetch("https://api.github.com/repos/xerolinux/xlapit-cli", {
+ headers: new Headers({
+ 'User-agent': 'Mozilla/4.0 Custom User Agent'
+ })
+ })
+ .then(response => response.json())
+ .then(data => {
+ document.getElementById('github-4f74f18636560c73418bfb6009c54d8b-full_name').innerHTML = data.full_name;
+ document.getElementById('github-4f74f18636560c73418bfb6009c54d8b-description').innerHTML = data.description;
+ document.getElementById('github-4f74f18636560c73418bfb6009c54d8b-stargazers').innerHTML = data.stargazers_count;
+ document.getElementById('github-4f74f18636560c73418bfb6009c54d8b-forks').innerHTML = data.forks;
+ })
+ .catch(error => console.error(error))
+ &lt;/script>
+&lt;/a>
+&lt;p>Best of luck !!!!&lt;/p></description><content:encoded>&lt;![CDATA[<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;"><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/v0UPif52i5A?autoplay=0&controls=1&end=0&loop=0&mute=0&start=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="YouTube video"/></div><h3 class="relative group">Introduction<div id="introduction" class="anchor"/><span class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#introduction" aria-label="Anchor">#</a></span></h3><p>I want to begin by thanking everyone who has shown the Distro all the the love. Without whom it wouldn&rsquo;t have lasted as long as it did. As well as the rest of the projects present and future.</p><p><strong>Clarification :</strong></p><blockquote><p>Intention of the<strong>PlasmaInstall</strong> script was not to replace<strong>ArchInstall</strong> but to fix its<strong>Plasma</strong> profile while extending it further nothing more. If you want<strong>Gnome</strong>,<strong>XFCE</strong> or any other DE/WM for that matter, existing profiles are fine. The only other one that is messed up is the<strong>Hyprland</strong> one but alas since I don&rsquo;t use it I have no idea how to fix it. However, the Toolkit can be used on any DE or WM it&rsquo;s agnostic.</p></blockquote><p>Now, this guide complements the above video, they are to be used together, I will try not to ramble on too much. Some of you have asked the question, &ldquo;is the Distro really gone ?&rdquo; I would like to say, no, not really. Let me explain a bit before going ahead with written guide. Since it was nothing but<strong>ArchLinux</strong> + Customized/riced<strong>KDE Plasma</strong> nothing more, one could achieve the same result by using my<strong>Plasma Install</strong> script.</p><p>Yeah we can easily get<strong>XeroLinux</strong> back in all its glory, it&rsquo;s just no longer an ISO with<strong>Calamares</strong>. It&rsquo;s still easy to install thanks in part to the<em>infamous</em><strong>ArchInstall</strong> script then my own. So all is not lost.</p><p>In this super detailed guide I will be showing off how it can be done.</p><p><figure><img class="my-0 rounded-md" loading="lazy" src="https://i.imgur.com/VA2tycb.jpeg" alt="XeroLayan"/></figure></p><h3 class="relative group">What we need<div id="what-we-need" class="anchor"/><span class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#what-we-need" aria-label="Anchor">#</a></span></h3><p>Let&rsquo;s start off by knowing what we need to get started. First off, we will need the latest version of the &raquo;<a href="https://archlinux.org/download/" target="_blank"><strong>ArchLinux ISO</strong></a>, a USB stick to burn ISO onto, we can either use &raquo;<a href="https://etcher.balena.io/#download-etcher" target="_blank"><strong>Balena Etcher</strong></a> or the highly recommended &raquo;<strong>Ventoy</strong> linked below.</p><section class="space-y-10 w-full"><a class="flex flex-wrap article border border-neutral-200 dark:border-neutral-700 border-2 rounded-md overflow-hidden" href="/posts/ventoy-multi-boot/"><div class="w-full md:w-auto h-full thumbnail nozoom " style="background-image:url(/posts/ventoy-multi-boot/featured.webp);"/><div class=" p-4"><div class="items-center text-left text-xl font-semibold"><div class="font-bold text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral" href="/posts/ventoy-multi-boot/">Ventoy - Best multi-boot tool</div></div><div class="text-sm text-neutral-500 dark:text-neutral-400"><div class="flex flex-row flex-wrap items-center"><time datetime="2024-06-27 00:00:00 +0000 UTC">27 June 2024</time><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">3 mins</span><span class="px-2 text-primary-500">&middot;</span><span><span id="views_posts/ventoy-multi-boot/index.md" class="animate-pulse inline-block text-transparent max-h-3 rounded-full mt-[-2px] align-middle bg-neutral-300 dark:bg-neutral-400" title="views">loading</span><span class="inline-block align-text-bottom"><span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path fill="currentColor" d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></span></span><span class="px-2 text-primary-500">&middot;</span><span><span id="likes_posts/ventoy-multi-boot/index.md" class="animate-pulse inline-block text-transparent max-h-3 rounded-full mt-[-2px] align-middle bg-neutral-300 dark:bg-neutral-400" title="likes">loading</span><span class="inline-block align-text-bottom"><span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M47.6 300.4L228.3 469.1c7.5 7 17.4 10.9 27.7 10.9s20.2-3.9 27.7-10.9L464.4 300.4c30.4-28.3 47.6-68 47.6-109.5v-5.8c0-69.9-50.5-129.5-119.4-141C347 36.5 300.6 51.4 268 84L256 96 244 84c-32.6-32.6-79-47.5-124.6-39.9C50.5 55.6 0 115.2 0 185.1v5.8c0 41.5 17.2 81.2 47.6 109.5z"/></svg></span></span></span></div><div class="flex flex-row flex-wrap items-center"/><div class="flex flex-row flex-wrap items-center"><span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/ventoy/&#34;,'_self');"><span class="flex" style="cursor: pointer;"><span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+Ventoy</span></span></span><span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/usb-boot/&#34;,'_self');"><span class="flex" style="cursor: pointer;"><span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+Usb-Boot</span></span></span><span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/multi-boot/&#34;,'_self');"><span class="flex" style="cursor: pointer;"><span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+Multi-Boot</span></span></span><span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/distro-hopping/&#34;,'_self');"><span class="flex" style="cursor: pointer;"><span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+Distro-Hopping</span></span></span><span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/linux/&#34;,'_self');"><span class="flex" style="cursor: pointer;"><span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+Linux</span></span></span><span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/opensource/&#34;,'_self');"><span class="flex" style="cursor: pointer;"><span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+Opensource</span></span></span></div></div></div></a></section><p>Those are the essentials. As to my<strong>Plasma Install</strong> script will get to that a bit later down the line. Once we got everything, we shall begin&hellip;</p><h3 class="relative group">Part 1 - Installing ArchLinux<div id="part-1---installing-archlinux" class="anchor"/><span class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#part-1---installing-archlinux" aria-label="Anchor">#</a></span></h3><p>Ok, so now that we have burned the ISO to the USB using either tools, boot the system we want to install it on using it. Am not gonna go through showing you how, you should know that by now lol.</p><p><figure><img class="my-0 rounded-md" loading="lazy" src="https://i.imgur.com/RO64NWD.png" alt="ArchISO"/></figure></p><p><strong>Note :</strong></p><blockquote><p>This guide expects you to be connected to the internet via ethernet. If you aren&rsquo;t and need to connect over WiFi, you can follow guide on the<a href="https://wiki.archlinux.org/title/Installation_guide#Connect_to_the_internet" target="_blank"><strong>ArchWiki</strong></a></p></blockquote><ul><li><strong>Remote Install via SSH</strong></li></ul><p>Now, unlike other guides out there, I will be showing how we can use<strong>SSH</strong> to do the installation remotely, which will make things much easier. All we need is a secondary PC running<strong>Linux</strong>. If none is available, this part can be skipped.</p><p>Ok, first things first, we need to set a password to the<em>root</em> user. We do it by typing the following command in the TTY, like this :</p><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Bash" data-lang="Bash"><span class="line"><span class="cl">passwd</span></span></code></pre></div><p>Now we type our temporary password &amp; confirm it. Once that&rsquo;s done, we need to get the machine&rsquo;s<strong>IP Address</strong>, we do that by running this command :</p><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Bash" data-lang="Bash"><span class="line"><span class="cl">ip a</span></span></code></pre></div><p>Once we have it, all we need to do to connect to the machine is the following command :</p><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Bash" data-lang="Bash"><span class="line"><span class="cl">ssh root@ipaddress</span></span></code></pre></div><p>We confirm by typing<code>yes</code>. That&rsquo;s it, now we are connected to the machine remotely, so we can now easily copy paste comands for a much simpler install&hellip;</p><ul><li><strong>ArchInstall Script</strong></li></ul><p>Once connected, first thing we will have to do is, make sure we have latest version of<strong>ArchInstall</strong>. We do that by running the following command :</p><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Bash" data-lang="Bash"><span class="line"><span class="cl">pacman -Syy archinstall<span class="o">&amp;&amp;</span> archinstall --advanced</span></span></code></pre></div><p>Now some of you might be asking me, &ldquo;why the<code>--advanced</code> flag ?&rdquo;, to which I answer, simply because devs still hide the<em>parallel downloads</em> behind it for whatever reason. It&rsquo;s fine at least now you know.</p><p><figure><img class="my-0 rounded-md" loading="lazy" src="https://i.imgur.com/OVzwVYt.png" alt="ArchInstall"/></figure></p><p>Ok, now that we have the installer running, am not going to go through each and every option one by one, just the important ones. Those are explained in the video. Am also not gonna bother with<em>manual partitioning</em> since the guide is intended for single OS easy install.</p><p>That&rsquo;s why we will be using the<strong>Best Guess</strong> option, carefully selecting the correct drive we want install<strong>ArchLinux</strong> onto.</p><div class="flex px-4 py-3 rounded-md" style="background-color: #e63946"><span class="ltr:pr-3 rtl:pl-3 flex items-center" style="color: #1d3557"><span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M159.3 5.4c7.8-7.3 19.9-7.2 27.7 .1c27.6 25.9 53.5 53.8 77.7 84c11-14.4 23.5-30.1 37-42.9c7.9-7.4 20.1-7.4 28 .1c34.6 33 63.9 76.6 84.5 118c20.3 40.8 33.8 82.5 33.8 111.9C448 404.2 348.2 512 224 512C98.4 512 0 404.1 0 276.5c0-38.4 17.8-85.3 45.4-131.7C73.3 97.7 112.7 48.6 159.3 5.4zM225.7 416c25.3 0 47.7-7 68.8-21c42.1-29.4 53.4-88.2 28.1-134.4c-2.8-5.6-5.6-11.2-9.8-16.8l-50.6 58.8s-81.4-103.6-87.1-110.6C133.1 243.8 112 273.2 112 306.8C112 375.4 162.6 416 225.7 416z"/></svg></span></span><span style="color: #f1faee">I will not be held responsible for any data loss resulting from selection of the wrong drive.<strong>BE VERY CAREFUL HERE</strong>.</span></div><p>Anyway, let&rsquo;s make sure we skip the parts I mentioned in the video, since everything will now be done<strong>Post-Install</strong> via my Toolkit. Don&rsquo;t forget to set parallel downloads to as many as you like for faster downloads. Also as mentioned, we do not need to enable any extra repos like<em>multilib</em> since my script will do that for us later on.</p><p>Now once everything is configured and set, hit install, sit back, grab a cup of Tea/Coffee and watch it do its thing. Might take a while it all depends on Internet connection&hellip;</p><h3 class="relative group">Part 2 - Installing Plasma<div id="part-2---installing-plasma" class="anchor"/><span class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#part-2---installing-plasma" aria-label="Anchor">#</a></span></h3><p>Once that&rsquo;s all done, we will be prompted if we want to<code>chroot</code> into our new install, we answer with yes of course since we still have no DE yet.</p><div class="flex px-4 py-3 rounded-md" style="background-color: #e63946"><span class="ltr:pr-3 rtl:pl-3 flex items-center" style="color: #1d3557"><span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M159.3 5.4c7.8-7.3 19.9-7.2 27.7 .1c27.6 25.9 53.5 53.8 77.7 84c11-14.4 23.5-30.1 37-42.9c7.9-7.4 20.1-7.4 28 .1c34.6 33 63.9 76.6 84.5 118c20.3 40.8 33.8 82.5 33.8 111.9C448 404.2 348.2 512 224 512C98.4 512 0 404.1 0 276.5c0-38.4 17.8-85.3 45.4-131.7C73.3 97.7 112.7 48.6 159.3 5.4zM225.7 416c25.3 0 47.7-7 68.8-21c42.1-29.4 53.4-88.2 28.1-134.4c-2.8-5.6-5.6-11.2-9.8-16.8l-50.6 58.8s-81.4-103.6-87.1-110.6C133.1 243.8 112 273.2 112 306.8C112 375.4 162.6 416 225.7 416z"/></svg></span></span><span style="color: #f1faee"><strong>User Caution</strong>. We do not recommend to blindly execute scripts without inspecting them first.</span></div><p>To download and inspect script, use the following command, open it in your IDE of choice and inspect it. Only run it when you trust the code.</p><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Bash" data-lang="Bash"><span class="line"><span class="cl">wget https://tinyurl.com/PlasmaInstall</span></span></code></pre></div><p>Once you trust it, you can move on. Now, depending on the method that was used,<code>ssh</code> or not, we either copy paste the command below or type it manually :</p><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Bash" data-lang="Bash"><span class="line"><span class="cl">bash -c<span class="s2">"</span><span class="k">$(</span>curl -fsSL https://tinyurl.com/PlasmaInstall<span class="k">)</span><span class="s2">"</span></span></span></code></pre></div><p>This will execute the script. Just go through the prompts. I would<strong>Highly</strong> recommend option<strong>3) Xero&rsquo;s Curated Set Of Plasma Packages</strong> to avoind any future headaches. I went through all groups with a fine tooth comb as the saying goes making sure we get the best experience. But that&rsquo;s not to say we cannot select any of the other options, it&rsquo;s all up to you in the end.</p><p><figure><img class="my-0 rounded-md" loading="lazy" src="https://i.imgur.com/TOZNp4j.png" alt="Script"/></figure></p><p>At the end, script will prompt us if we want to enable the<strong>XeroLinux Repo</strong> and install the Toolkit, to which we answer with yes, since we will be using it to set everything up later on.</p><p>You will notice that, the<em>multilib</em> repo was enabled as well. I made sure of that since most newcomers forget to do it. It&rsquo;s an essential repo required for the likes of<strong>Steam</strong>, and various drivers.</p><p>Finally, for now at least, once script is done, we will be prompted to exit and reboot the system. We do that by typing<code>exit</code> then<code>reboot</code>, and that&rsquo;s it for this part anyway&hellip;</p><h3 class="relative group">Part 3 - Setting up the system<div id="part-3---setting-up-the-system" class="anchor"/><span class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#part-3---setting-up-the-system" aria-label="Anchor">#</a></span></h3><p>If all went smoothly, we should now be greeted with<code>SDDM</code>,<strong>KDE</strong>&rsquo;s login page. I would recommend<strong>Plasma X11</strong> over<strong>Wayland</strong>, at least for now. Yes, my script still includes<strong>X11</strong> for compatibility. I will not get rid of it any time soon, at least not until I feel that more apps are ready for<strong>Wayland</strong>.</p><p>Once logged in, there are a few things we need to take care of first. Open Terminal, as shown in video, and update the system</p><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Bash" data-lang="Bash"><span class="line"><span class="cl">sudo pacman -Syyu</span></span></code></pre></div><p>Then we launch the<strong>XeroLinux Post Installation Toolkit</strong> from the AppMenu, under<strong>System</strong>. That&rsquo;s what we will be using from here on in.</p><p><figure><img class="my-0 rounded-md" loading="lazy" src="https://i.imgur.com/JuWceYE.png" alt="XLAPiT"/></figure></p><p>It&rsquo;s up to you to discover all the options, that&rsquo;s why I did not mention them all in video, nor will I here. The whole point of this guide is how to get<strong>XeroLinux</strong> back not to set up the system from A to Z.</p><ul><li><strong>1 : System Setup</strong></li></ul><p>There&rsquo;s nothing to do here except select<strong>Install 3rd-Party GUI Package Manager(s)</strong> or<strong>Add &amp; Enable the ChaoticAUR Repository</strong>, since my<strong>Plasma Script</strong> took care of the rest for us. Neat eh ?</p><p><strong>Note :</strong></p><blockquote><p>I would highly recommend you enable the<strong>Chaotic AUR</strong> repo, if you install a lot of packages from the<strong>AUR</strong>, to avoid having to compile them.</p></blockquote><ul><li><strong>2 : System Drivers</strong></li></ul><p>This is the part where you select drivers you need for our hardware. Am not going to help you here. All you need to know was mentioned in the video. Just know that selecting the wrong ones will break the system, so that&rsquo;s where you need to understand what works for you.</p><ul><li><strong>4 : System Customization</strong></li></ul><p>Now we jump to Customization section. Just select option<strong>x. XeroLinux&rsquo;s Layan Plasma 6 Rice</strong>, enter your<code>sudo</code> password, and watch it do its thing.. Once it&rsquo;s done, we will be prompted to reboot. Use the AppMenu to do that..</p><p><strong>Note :</strong></p><blockquote><p>If you have selected to enable the<strong>Chaotic AUR</strong> repos, install will go fast. If not it will take a bit, while it compiles some packages from the<strong>AUR</strong>.</p></blockquote><h3 class="relative group">Final words<div id="final-words" class="anchor"/><span class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#final-words" aria-label="Anchor">#</a></span></h3><p>That&rsquo;s it boys n girls. We just got<strong>XeroLinux</strong> back ! The rest is up to you. Go through the toolkit see if you find anything useful. If you encounter any issues or have any questions, feel free to contact me on either<strong>Fosstodon</strong> or<strong>Discord</strong>, or even in the video comments section.</p><p>I will do my best to answer. Keep in mind that I might not have all the answers, simply because I only have the hardware I have, might be different than yours, so can&rsquo;t know what works on something I do not own. Though I am and always will open to suggestions&hellip;</p><a id="github-5e4881cc2a6cb605d9bc55c55902c65e" target="_blank" href="https://github.com/xerolinux/xero-plasma" class="cursor-pointer"><div class="w-full md:w-auto pt-3 p-5 border border-neutral-200 dark:border-neutral-700 border rounded-md shadow-2xl"><div class="flex items-center"><span class="text-2xl text-neutral-800 dark:text-neutral" style="margin-right:10px;"><span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path fill="currentColor" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg></span></span><div id="github-5e4881cc2a6cb605d9bc55c55902c65e-full_name" class="m-0 font-bold text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral">
+xerolinux/xero-plasma</div></div><p id="github-5e4881cc2a6cb605d9bc55c55902c65e-description" class="m-0 mt-2 text-md text-neutral-800 dark:text-neutral">
+The XeroLinux Plasma installer script</p><div class="m-0 mt-2 flex items-center"><span class="mr-1 inline-block h-3 w-3 rounded-full" style="background-color: #89e051"/><div class="m-0 mr-5 text-md text-neutral-800 dark:text-neutral">
+Shell</div><span class="text-md mr-1 text-neutral-800 dark:text-neutral"><span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path fill="currentColor" d="M287.9 0C297.1 0 305.5 5.25 309.5 13.52L378.1 154.8L531.4 177.5C540.4 178.8 547.8 185.1 550.7 193.7C553.5 202.4 551.2 211.9 544.8 218.2L433.6 328.4L459.9 483.9C461.4 492.9 457.7 502.1 450.2 507.4C442.8 512.7 432.1 513.4 424.9 509.1L287.9 435.9L150.1 509.1C142.9 513.4 133.1 512.7 125.6 507.4C118.2 502.1 114.5 492.9 115.1 483.9L142.2 328.4L31.11 218.2C24.65 211.9 22.36 202.4 25.2 193.7C28.03 185.1 35.5 178.8 44.49 177.5L197.7 154.8L266.3 13.52C270.4 5.249 278.7 0 287.9 0L287.9 0zM287.9 78.95L235.4 187.2C231.9 194.3 225.1 199.3 217.3 200.5L98.98 217.9L184.9 303C190.4 308.5 192.9 316.4 191.6 324.1L171.4 443.7L276.6 387.5C283.7 383.7 292.2 383.7 299.2 387.5L404.4 443.7L384.2 324.1C382.9 316.4 385.5 308.5 391 303L476.9 217.9L358.6 200.5C350.7 199.3 343.9 194.3 340.5 187.2L287.9 78.95z"/></svg></span></span><div id="github-5e4881cc2a6cb605d9bc55c55902c65e-stargazers" class="m-0 mr-5 text-md text-neutral-800 dark:text-neutral">
+5</div><span class="text-md mr-1 text-neutral-800 dark:text-neutral"><span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M80 104c13.3 0 24-10.7 24-24s-10.7-24-24-24S56 66.7 56 80s10.7 24 24 24zm80-24c0 32.8-19.7 61-48 73.3V192c0 17.7 14.3 32 32 32H304c17.7 0 32-14.3 32-32V153.3C307.7 141 288 112.8 288 80c0-44.2 35.8-80 80-80s80 35.8 80 80c0 32.8-19.7 61-48 73.3V192c0 53-43 96-96 96H256v70.7c28.3 12.3 48 40.5 48 73.3c0 44.2-35.8 80-80 80s-80-35.8-80-80c0-32.8 19.7-61 48-73.3V288H144c-53 0-96-43-96-96V153.3C19.7 141 0 112.8 0 80C0 35.8 35.8 0 80 0s80 35.8 80 80zm208 24c13.3 0 24-10.7 24-24s-10.7-24-24-24s-24 10.7-24 24s10.7 24 24 24zM248 432c0-13.3-10.7-24-24-24s-24 10.7-24 24s10.7 24 24 24s24-10.7 24-24z"/></svg></span></span><div id="github-5e4881cc2a6cb605d9bc55c55902c65e-forks" class="m-0 mr-5 text-md text-neutral-800 dark:text-neutral">
+3</div></div></div><script>
+fetch("https://api.github.com/repos/xerolinux/xero-plasma", {
+headers: new Headers({
+'User-agent': 'Mozilla/4.0 Custom User Agent'
+})
+})
+.then(response => response.json())
+.then(data => {
+document.getElementById('github-5e4881cc2a6cb605d9bc55c55902c65e-full_name').innerHTML = data.full_name;
+document.getElementById('github-5e4881cc2a6cb605d9bc55c55902c65e-description').innerHTML = data.description;
+document.getElementById('github-5e4881cc2a6cb605d9bc55c55902c65e-stargazers').innerHTML = data.stargazers_count;
+document.getElementById('github-5e4881cc2a6cb605d9bc55c55902c65e-forks').innerHTML = data.forks;
+})
+.catch(error => console.error(error))</script></a><p>Use the repo above to report any issues with<strong>PlasmaInstall</strong>, and I will get to them as soon as I can. You can also request features to be added there too..</p><p>If you want features to be added to the Toolkit, or have any issues to report, feel free to do so on the repo below. I will do my best to get to them&hellip;</p><a id="github-4f74f18636560c73418bfb6009c54d8b" target="_blank" href="https://github.com/xerolinux/xlapit-cli" class="cursor-pointer"><div class="w-full md:w-auto pt-3 p-5 border border-neutral-200 dark:border-neutral-700 border rounded-md shadow-2xl"><div class="flex items-center"><span class="text-2xl text-neutral-800 dark:text-neutral" style="margin-right:10px;"><span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path fill="currentColor" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg></span></span><div id="github-4f74f18636560c73418bfb6009c54d8b-full_name" class="m-0 font-bold text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral">
+xerolinux/xlapit-cli</div></div><p id="github-4f74f18636560c73418bfb6009c54d8b-description" class="m-0 mt-2 text-md text-neutral-800 dark:text-neutral">
+XeroLinux Arch Post Install Toolkit Package Source Code</p><div class="m-0 mt-2 flex items-center"><span class="mr-1 inline-block h-3 w-3 rounded-full" style="background-color: #89e051"/><div class="m-0 mr-5 text-md text-neutral-800 dark:text-neutral">
+Shell</div><span class="text-md mr-1 text-neutral-800 dark:text-neutral"><span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path fill="currentColor" d="M287.9 0C297.1 0 305.5 5.25 309.5 13.52L378.1 154.8L531.4 177.5C540.4 178.8 547.8 185.1 550.7 193.7C553.5 202.4 551.2 211.9 544.8 218.2L433.6 328.4L459.9 483.9C461.4 492.9 457.7 502.1 450.2 507.4C442.8 512.7 432.1 513.4 424.9 509.1L287.9 435.9L150.1 509.1C142.9 513.4 133.1 512.7 125.6 507.4C118.2 502.1 114.5 492.9 115.1 483.9L142.2 328.4L31.11 218.2C24.65 211.9 22.36 202.4 25.2 193.7C28.03 185.1 35.5 178.8 44.49 177.5L197.7 154.8L266.3 13.52C270.4 5.249 278.7 0 287.9 0L287.9 0zM287.9 78.95L235.4 187.2C231.9 194.3 225.1 199.3 217.3 200.5L98.98 217.9L184.9 303C190.4 308.5 192.9 316.4 191.6 324.1L171.4 443.7L276.6 387.5C283.7 383.7 292.2 383.7 299.2 387.5L404.4 443.7L384.2 324.1C382.9 316.4 385.5 308.5 391 303L476.9 217.9L358.6 200.5C350.7 199.3 343.9 194.3 340.5 187.2L287.9 78.95z"/></svg></span></span><div id="github-4f74f18636560c73418bfb6009c54d8b-stargazers" class="m-0 mr-5 text-md text-neutral-800 dark:text-neutral">
+40</div><span class="text-md mr-1 text-neutral-800 dark:text-neutral"><span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M80 104c13.3 0 24-10.7 24-24s-10.7-24-24-24S56 66.7 56 80s10.7 24 24 24zm80-24c0 32.8-19.7 61-48 73.3V192c0 17.7 14.3 32 32 32H304c17.7 0 32-14.3 32-32V153.3C307.7 141 288 112.8 288 80c0-44.2 35.8-80 80-80s80 35.8 80 80c0 32.8-19.7 61-48 73.3V192c0 53-43 96-96 96H256v70.7c28.3 12.3 48 40.5 48 73.3c0 44.2-35.8 80-80 80s-80-35.8-80-80c0-32.8 19.7-61 48-73.3V288H144c-53 0-96-43-96-96V153.3C19.7 141 0 112.8 0 80C0 35.8 35.8 0 80 0s80 35.8 80 80zm208 24c13.3 0 24-10.7 24-24s-10.7-24-24-24s-24 10.7-24 24s10.7 24 24 24zM248 432c0-13.3-10.7-24-24-24s-24 10.7-24 24s10.7 24 24 24s24-10.7 24-24z"/></svg></span></span><div id="github-4f74f18636560c73418bfb6009c54d8b-forks" class="m-0 mr-5 text-md text-neutral-800 dark:text-neutral">
+8</div></div></div><script>
+fetch("https://api.github.com/repos/xerolinux/xlapit-cli", {
+headers: new Headers({
+'User-agent': 'Mozilla/4.0 Custom User Agent'
+})
+})
+.then(response => response.json())
+.then(data => {
+document.getElementById('github-4f74f18636560c73418bfb6009c54d8b-full_name').innerHTML = data.full_name;
+document.getElementById('github-4f74f18636560c73418bfb6009c54d8b-description').innerHTML = data.description;
+document.getElementById('github-4f74f18636560c73418bfb6009c54d8b-stargazers').innerHTML = data.stargazers_count;
+document.getElementById('github-4f74f18636560c73418bfb6009c54d8b-forks').innerHTML = data.forks;
+})
+.catch(error => console.error(error))</script></a><p>Best of luck !!!!</p>
+]]></content:encoded><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"/></channel></rss>

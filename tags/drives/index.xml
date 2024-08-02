@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Drives on XeroLinux HQ</title><link>https://xerolinux.xyz/tags/drives/</link><description>Recent content in Drives on XeroLinux HQ</description><generator>Hugo</generator><language>en</language><lastBuildDate>Fri, 28 Jun 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://xerolinux.xyz/tags/drives/index.xml" rel="self" type="application/rss+xml"/><item><title>Automount Drives in Linux</title><link>https://xerolinux.xyz/posts/automount-drives/</link><pubDate>Fri, 28 Jun 2024 00:00:00 +0000</pubDate><guid>https://xerolinux.xyz/posts/automount-drives/</guid><description>
+
+&lt;h3 class="relative group">Intro 
+ &lt;div id="intro" class="anchor">&lt;/div>
+ 
+ &lt;span
+ class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+ &lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+ style="text-decoration-line: none !important;" href="#intro" aria-label="Anchor">#&lt;/a>
+ &lt;/span> 
+ 
+&lt;/h3>
+&lt;p>This keeps being asked on social. So I decided to post it here.. It&amp;rsquo;s all over the net but I guess either no one knows how to search or too lazy, in any case here it is&amp;hellip;&lt;/p>
+
+
+&lt;h3 class="relative group">Gnome Disks 
+ &lt;div id="gnome-disks" class="anchor">&lt;/div>
+ 
+ &lt;span
+ class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+ &lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+ style="text-decoration-line: none !important;" href="#gnome-disks" aria-label="Anchor">#&lt;/a>
+ &lt;/span> 
+ 
+&lt;/h3>
+&lt;p>&lt;a href="https://wiki.gnome.org/Apps/Disks" target="_blank">Gnome Disks&lt;/a> has many features, like S.M.A.R.T. monitoring, partition management, benchmarking, and more, including one that might not be obvious, but is very useful: it can set drives to mount automatically at startup.&lt;/p>
+&lt;p>Use it to automount your new hard disk that uses Ext4, your Windows NTFS / exFAT partition, etc.&lt;/p>
+&lt;p>
+ &lt;figure>
+ &lt;img class="my-0 rounded-md" loading="lazy" src="https://i.imgur.com/jsnRZUU.png" alt="[Image: jsnRZUU.png]" />
+ 
+ &lt;/figure>
+&lt;/p>
+&lt;p>Disks, or Gnome Disk Utility, is installed by default in many Linux distributions, including Ubuntu, Fedora, both Linux Mint Cinnamon and MATE, Xubuntu, and so on. If it&amp;rsquo;s not installed, use your Linux distribution&amp;rsquo;s package manager to install it - search / install gnome-disk-utility.&lt;/p>
+&lt;p>For each partition you set to mount automatically on startup, Gnome Disks adds an entry in your /etc/fstab file, useful for those who are not very familiar with editing /etc/fstab. That means each partition mounted on startup through Disks is available system-wide, and not just for your user.&lt;/p>
+
+
+&lt;h3 class="relative group">How to automount Disks on startup 
+ &lt;div id="how-to-automount-disks-on-startup" class="anchor">&lt;/div>
+ 
+ &lt;span
+ class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+ &lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+ style="text-decoration-line: none !important;" href="#how-to-automount-disks-on-startup" aria-label="Anchor">#&lt;/a>
+ &lt;/span> 
+ 
+&lt;/h3>
+&lt;p>Start by launching &amp;ldquo;Disks&amp;rdquo; from your applications menu. Choose the hard disk from the left Disks sidebar, select the partition you want to auto mount on startup, then click the button with the gears icon under it, and click &lt;code>Edit Mount Options&lt;/code>:&lt;/p>
+&lt;p>
+ &lt;figure>
+ &lt;img class="my-0 rounded-md" loading="lazy" src="https://i.imgur.com/27YPYEC.png" alt="[Image: 27YPYEC.png]" />
+ 
+ &lt;/figure>
+&lt;/p>
+&lt;p>In the mount options, toggle the &lt;code>User Session Defaults&lt;/code> option (this may be called &lt;code>Automatic Mount Options&lt;/code> on older versions) to enable the options below it, and make sure &lt;code>Mount at system startup&lt;/code> is enabled. You can enter a name under &lt;code>Display Name&lt;/code>. The defaults should be enough for most users, so you don&amp;rsquo;t have to change anything here. After you&amp;rsquo;re done, click &lt;code>OK&lt;/code> :&lt;/p>
+&lt;p>
+ &lt;figure>
+ &lt;img class="my-0 rounded-md" loading="lazy" src="https://i.imgur.com/HzloKaO.png" alt="[Image: HzloKaO.png]" />
+ 
+ &lt;/figure>
+&lt;/p>
+&lt;p>To test the changes, you can reboot your system or type the following command to mount all filesystems mentioned in &lt;code>fstab&lt;/code> (since Disks sets partitions to automount on startup by adding them to &lt;code>/etc/fstab&lt;/code>) :&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-Bash" data-lang="Bash">&lt;span class="line">&lt;span class="cl">sudo mount --all
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Hope this answers that question&amp;hellip;.&lt;/p></description><content:encoded>&lt;![CDATA[<h3 class="relative group">Intro<div id="intro" class="anchor"/><span class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#intro" aria-label="Anchor">#</a></span></h3><p>This keeps being asked on social. So I decided to post it here.. It&rsquo;s all over the net but I guess either no one knows how to search or too lazy, in any case here it is&hellip;</p><h3 class="relative group">Gnome Disks<div id="gnome-disks" class="anchor"/><span class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#gnome-disks" aria-label="Anchor">#</a></span></h3><p><a href="https://wiki.gnome.org/Apps/Disks" target="_blank">Gnome Disks</a> has many features, like S.M.A.R.T. monitoring, partition management, benchmarking, and more, including one that might not be obvious, but is very useful: it can set drives to mount automatically at startup.</p><p>Use it to automount your new hard disk that uses Ext4, your Windows NTFS / exFAT partition, etc.</p><p><figure><img class="my-0 rounded-md" loading="lazy" src="https://i.imgur.com/jsnRZUU.png" alt="[Image: jsnRZUU.png]"/></figure></p><p>Disks, or Gnome Disk Utility, is installed by default in many Linux distributions, including Ubuntu, Fedora, both Linux Mint Cinnamon and MATE, Xubuntu, and so on. If it&rsquo;s not installed, use your Linux distribution&rsquo;s package manager to install it - search / install gnome-disk-utility.</p><p>For each partition you set to mount automatically on startup, Gnome Disks adds an entry in your /etc/fstab file, useful for those who are not very familiar with editing /etc/fstab. That means each partition mounted on startup through Disks is available system-wide, and not just for your user.</p><h3 class="relative group">How to automount Disks on startup<div id="how-to-automount-disks-on-startup" class="anchor"/><span class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#how-to-automount-disks-on-startup" aria-label="Anchor">#</a></span></h3><p>Start by launching &ldquo;Disks&rdquo; from your applications menu. Choose the hard disk from the left Disks sidebar, select the partition you want to auto mount on startup, then click the button with the gears icon under it, and click<code>Edit Mount Options</code>:</p><p><figure><img class="my-0 rounded-md" loading="lazy" src="https://i.imgur.com/27YPYEC.png" alt="[Image: 27YPYEC.png]"/></figure></p><p>In the mount options, toggle the<code>User Session Defaults</code> option (this may be called<code>Automatic Mount Options</code> on older versions) to enable the options below it, and make sure<code>Mount at system startup</code> is enabled. You can enter a name under<code>Display Name</code>. The defaults should be enough for most users, so you don&rsquo;t have to change anything here. After you&rsquo;re done, click<code>OK</code> :</p><p><figure><img class="my-0 rounded-md" loading="lazy" src="https://i.imgur.com/HzloKaO.png" alt="[Image: HzloKaO.png]"/></figure></p><p>To test the changes, you can reboot your system or type the following command to mount all filesystems mentioned in<code>fstab</code> (since Disks sets partitions to automount on startup by adding them to<code>/etc/fstab</code>) :</p><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Bash" data-lang="Bash"><span class="line"><span class="cl">sudo mount --all</span></span></code></pre></div><p>Hope this answers that question&hellip;.</p>
+]]></content:encoded><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"/></channel></rss>

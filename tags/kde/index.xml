@@ -1,0 +1,1576 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Kde on XeroLinux HQ</title><link>https://xerolinux.xyz/tags/kde/</link><description>Recent content in Kde on XeroLinux HQ</description><generator>Hugo</generator><language>en</language><lastBuildDate>Mon, 29 Jul 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://xerolinux.xyz/tags/kde/index.xml" rel="self" type="application/rss+xml"/><item><title>Ricing KDE Plasma</title><link>https://xerolinux.xyz/posts/ricing-plasma/</link><pubDate>Mon, 29 Jul 2024 00:00:00 +0000</pubDate><guid>https://xerolinux.xyz/posts/ricing-plasma/</guid><description>
+
+&lt;h3 class="relative group">Intro 
+ &lt;div id="intro" class="anchor">&lt;/div>
+ 
+ &lt;span
+ class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+ &lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+ style="text-decoration-line: none !important;" href="#intro" aria-label="Anchor">#&lt;/a>
+ &lt;/span> 
+ 
+&lt;/h3>
+&lt;p>Before we begin, here&amp;rsquo;s brief intro as to why I care about ricing.&lt;/p>
+&lt;p>In case you didn&amp;rsquo;t know it, I began my &lt;strong>Linux&lt;/strong> journey with &lt;strong>KDE Plasma&lt;/strong> because of the freedom of customization. I love ricing my setups. I hated that &lt;strong>macOS&lt;/strong> &amp;amp; &lt;strong>Windows&lt;/strong> did not allow this.&lt;/p>
+&lt;p>And if you want to see what I have managed to do, well, hop on over to my &lt;strong>Layan&lt;/strong> rice&amp;rsquo;s &lt;strong>Githup&lt;/strong> repository, you will get blown away.&lt;/p>
+&lt;a id="github-a3d14a4a10f892b0bde0c7d2dcb03e5f" target="_blank" href="https://github.com/xerolinux/xero-layan-git" class="cursor-pointer">
+ &lt;div
+ class="w-full md:w-auto pt-3 p-5 border border-neutral-200 dark:border-neutral-700 border rounded-md shadow-2xl">
+
+ &lt;div class="flex items-center">
+ &lt;span class="text-2xl text-neutral-800 dark:text-neutral" style="margin-right:10px;">
+ 
+
+ &lt;span class="relative block icon">
+ &lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512">&lt;path fill="currentColor" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/>&lt;/svg>
+
+ &lt;/span>
+
+
+ &lt;/span>
+ &lt;div
+ id="github-a3d14a4a10f892b0bde0c7d2dcb03e5f-full_name"
+ class="m-0 font-bold text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral">
+ xerolinux/xero-layan-git
+ &lt;/div>
+ &lt;/div>
+
+ &lt;p id="github-a3d14a4a10f892b0bde0c7d2dcb03e5f-description" class="m-0 mt-2 text-md text-neutral-800 dark:text-neutral">
+ XeroLinux Layan Rice
+ &lt;/p>
+
+ &lt;div class="m-0 mt-2 flex items-center">
+
+ &lt;span class="mr-1 inline-block h-3 w-3 rounded-full"
+ style="background-color: #44a51c">&lt;/span>
+ &lt;div class="m-0 mr-5 text-md text-neutral-800 dark:text-neutral">
+ QML 
+ &lt;/div>
+
+ &lt;span class="text-md mr-1 text-neutral-800 dark:text-neutral">
+ 
+
+ &lt;span class="relative block icon">
+ &lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">&lt;path fill="currentColor" d="M287.9 0C297.1 0 305.5 5.25 309.5 13.52L378.1 154.8L531.4 177.5C540.4 178.8 547.8 185.1 550.7 193.7C553.5 202.4 551.2 211.9 544.8 218.2L433.6 328.4L459.9 483.9C461.4 492.9 457.7 502.1 450.2 507.4C442.8 512.7 432.1 513.4 424.9 509.1L287.9 435.9L150.1 509.1C142.9 513.4 133.1 512.7 125.6 507.4C118.2 502.1 114.5 492.9 115.1 483.9L142.2 328.4L31.11 218.2C24.65 211.9 22.36 202.4 25.2 193.7C28.03 185.1 35.5 178.8 44.49 177.5L197.7 154.8L266.3 13.52C270.4 5.249 278.7 0 287.9 0L287.9 0zM287.9 78.95L235.4 187.2C231.9 194.3 225.1 199.3 217.3 200.5L98.98 217.9L184.9 303C190.4 308.5 192.9 316.4 191.6 324.1L171.4 443.7L276.6 387.5C283.7 383.7 292.2 383.7 299.2 387.5L404.4 443.7L384.2 324.1C382.9 316.4 385.5 308.5 391 303L476.9 217.9L358.6 200.5C350.7 199.3 343.9 194.3 340.5 187.2L287.9 78.95z"/>&lt;/svg>
+ &lt;/span>
+
+
+ &lt;/span>
+ &lt;div id="github-a3d14a4a10f892b0bde0c7d2dcb03e5f-stargazers" class="m-0 mr-5 text-md text-neutral-800 dark:text-neutral">
+ 78
+ &lt;/div>
+
+ &lt;span class="text-md mr-1 text-neutral-800 dark:text-neutral">
+ 
+
+ &lt;span class="relative block icon">
+ &lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">&lt;path fill="currentColor" d="M80 104c13.3 0 24-10.7 24-24s-10.7-24-24-24S56 66.7 56 80s10.7 24 24 24zm80-24c0 32.8-19.7 61-48 73.3V192c0 17.7 14.3 32 32 32H304c17.7 0 32-14.3 32-32V153.3C307.7 141 288 112.8 288 80c0-44.2 35.8-80 80-80s80 35.8 80 80c0 32.8-19.7 61-48 73.3V192c0 53-43 96-96 96H256v70.7c28.3 12.3 48 40.5 48 73.3c0 44.2-35.8 80-80 80s-80-35.8-80-80c0-32.8 19.7-61 48-73.3V288H144c-53 0-96-43-96-96V153.3C19.7 141 0 112.8 0 80C0 35.8 35.8 0 80 0s80 35.8 80 80zm208 24c13.3 0 24-10.7 24-24s-10.7-24-24-24s-24 10.7-24 24s10.7 24 24 24zM248 432c0-13.3-10.7-24-24-24s-24 10.7-24 24s10.7 24 24 24s24-10.7 24-24z"/>&lt;/svg>
+ &lt;/span>
+
+
+ &lt;/span>
+ &lt;div id="github-a3d14a4a10f892b0bde0c7d2dcb03e5f-forks" class="m-0 mr-5 text-md text-neutral-800 dark:text-neutral">
+ 11
+ &lt;/div>
+
+ &lt;/div>
+
+ &lt;/div>
+ &lt;script>
+ fetch("https://api.github.com/repos/xerolinux/xero-layan-git", {
+ headers: new Headers({
+ 'User-agent': 'Mozilla/4.0 Custom User Agent'
+ })
+ })
+ .then(response => response.json())
+ .then(data => {
+ document.getElementById('github-a3d14a4a10f892b0bde0c7d2dcb03e5f-full_name').innerHTML = data.full_name;
+ document.getElementById('github-a3d14a4a10f892b0bde0c7d2dcb03e5f-description').innerHTML = data.description;
+ document.getElementById('github-a3d14a4a10f892b0bde0c7d2dcb03e5f-stargazers').innerHTML = data.stargazers_count;
+ document.getElementById('github-a3d14a4a10f892b0bde0c7d2dcb03e5f-forks').innerHTML = data.forks;
+ })
+ .catch(error => console.error(error))
+ &lt;/script>
+&lt;/a>
+
+
+&lt;h3 class="relative group">A bit of understanding 
+ &lt;div id="a-bit-of-understanding" class="anchor">&lt;/div>
+ 
+ &lt;span
+ class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+ &lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+ style="text-decoration-line: none !important;" href="#a-bit-of-understanding" aria-label="Anchor">#&lt;/a>
+ &lt;/span> 
+ 
+&lt;/h3>
+&lt;p>Ricing can be a bit invloved. At least if you are like me, and care about consistency. It&amp;rsquo;s not about just slapping a desktop theme and calling it a day. That&amp;rsquo;s just lazy. Please don&amp;rsquo;t do that.&lt;/p>
+&lt;p>
+ &lt;figure>
+ &lt;img class="my-0 rounded-md" loading="lazy" src="https://i.imgur.com/irOECxY.jpeg" alt="Rice" />
+ 
+ &lt;/figure>
+&lt;/p>
+&lt;p>&lt;strong>KDE Plasma&lt;/strong> is a ricing a beast, no doubt about that. That&amp;rsquo;s one of its biggest selling points. So it&amp;rsquo;s normal when I say, it can be very, very intricate. You can rice everything in it.&lt;/p>
+&lt;p>We need to also know what library the system uses. &lt;strong>KDE&lt;/strong> uses a library called &lt;strong>Qt&lt;/strong>, pronounced like &lt;em>cute&lt;/em>. But you might encounter apps that use the &lt;strong>GTK2/3/4&lt;/strong> library, typically ones created for &lt;strong>Gnome&lt;/strong> or &lt;strong>XFCE&lt;/strong>.&lt;/p>
+&lt;blockquote>
+&lt;p>Keep in mind though, to successfully theme &lt;strong>GTK4&lt;/strong> or, as it&amp;rsquo;s called now &lt;strong>LibAdwaita&lt;/strong>, we need to make sure the necessary &lt;em>Hacks&lt;/em> are included in the theme we have chosen, simply because, as we all know, &lt;strong>Gnome&lt;/strong> devs despise the whole idea of theming for whatever reason.&lt;/p>
+&lt;/blockquote>
+&lt;p>So it will be up to you, the user, to find all theme elements required for a complete and consistent look. Whay do I say this you may ask? Well, quite simply because, and it saddens me to say this, very few themes come complete, allowing such consistency. But it can be done.&lt;/p>
+&lt;p>With that out of the way, let&amp;rsquo;s get to it shall we ?&lt;/p>
+
+
+&lt;h3 class="relative group">KDE Plasma pieces 
+ &lt;div id="kde-plasma-pieces" class="anchor">&lt;/div>
+ 
+ &lt;span
+ class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+ &lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+ style="text-decoration-line: none !important;" href="#kde-plasma-pieces" aria-label="Anchor">#&lt;/a>
+ &lt;/span> 
+ 
+&lt;/h3>
+&lt;p>As I said earlier in the post, &lt;strong>KDE Plasma&lt;/strong> is made of many elements that can be themed or riced. So here, I will be explaining what they are and the tools we need to theme them.&lt;/p>
+
+ 
+ 
+ 
+ 
+
+
+
+&lt;div
+ 
+ class="flex px-4 py-3 rounded-md"
+ style="background-color: #e63946"
+ >
+
+ &lt;span
+ 
+ class="ltr:pr-3 rtl:pl-3 flex items-center"
+ style="color: #1d3557"
+ >
+
+ 
+
+ &lt;span class="relative block icon">
+ &lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+&lt;path fill="currentColor" d="M159.3 5.4c7.8-7.3 19.9-7.2 27.7 .1c27.6 25.9 53.5 53.8 77.7 84c11-14.4 23.5-30.1 37-42.9c7.9-7.4 20.1-7.4 28 .1c34.6 33 63.9 76.6 84.5 118c20.3 40.8 33.8 82.5 33.8 111.9C448 404.2 348.2 512 224 512C98.4 512 0 404.1 0 276.5c0-38.4 17.8-85.3 45.4-131.7C73.3 97.7 112.7 48.6 159.3 5.4zM225.7 416c25.3 0 47.7-7 68.8-21c42.1-29.4 53.4-88.2 28.1-134.4c-2.8-5.6-5.6-11.2-9.8-16.8l-50.6 58.8s-81.4-103.6-87.1-110.6C133.1 243.8 112 273.2 112 306.8C112 375.4 162.6 416 225.7 416z"/>&lt;/svg>
+ &lt;/span>
+
+
+ &lt;/span>
+
+ &lt;span
+ 
+ style="color: #f1faee"
+ >&lt;strong>Friendly Advice :&lt;/strong> Never install themes from any repos or the &lt;strong>AUR&lt;/strong>. Always grab them from source, after you have inspected the code. For your own sanity. And make sure they are compatible with &lt;strong>Plasma 6&lt;/strong>.&lt;/span>
+&lt;/div>
+
+&lt;p>Please read the above warning, ignoring it will result in nothing but headaches. Trust me, I made that mistake and wasted more time than I can count trying to solve the resulting issues.&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>Kvantum Manager&lt;/strong>&lt;/li>
+&lt;/ul>
+&lt;p>First, we will need and app that I highly recommend to have on hand, called &lt;strong>Kvantum&lt;/strong>. I consider it an essantial tool for every ricer out there.&lt;/p>
+&lt;p>
+ &lt;figure>
+ &lt;img class="my-0 rounded-md" loading="lazy" src="https://i.imgur.com/DNfv0aG.png" alt="Kvantum" />
+ 
+ &lt;/figure>
+&lt;/p>
+&lt;a id="github-674857d8b75e800e4bcc0955b60eca86" target="_blank" href="https://github.com/tsujan/Kvantum" class="cursor-pointer">
+ &lt;div
+ class="w-full md:w-auto pt-3 p-5 border border-neutral-200 dark:border-neutral-700 border rounded-md shadow-2xl">
+
+ &lt;div class="flex items-center">
+ &lt;span class="text-2xl text-neutral-800 dark:text-neutral" style="margin-right:10px;">
+ 
+
+ &lt;span class="relative block icon">
+ &lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512">&lt;path fill="currentColor" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/>&lt;/svg>
+
+ &lt;/span>
+
+
+ &lt;/span>
+ &lt;div
+ id="github-674857d8b75e800e4bcc0955b60eca86-full_name"
+ class="m-0 font-bold text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral">
+ tsujan/Kvantum
+ &lt;/div>
+ &lt;/div>
+
+ &lt;p id="github-674857d8b75e800e4bcc0955b60eca86-description" class="m-0 mt-2 text-md text-neutral-800 dark:text-neutral">
+ A Linux SVG-based theme engine for Qt and KDE
+ &lt;/p>
+
+ &lt;div class="m-0 mt-2 flex items-center">
+
+ &lt;span class="mr-1 inline-block h-3 w-3 rounded-full"
+ style="background-color: #f34b7d">&lt;/span>
+ &lt;div class="m-0 mr-5 text-md text-neutral-800 dark:text-neutral">
+ C&amp;#43;&amp;#43; 
+ &lt;/div>
+
+ &lt;span class="text-md mr-1 text-neutral-800 dark:text-neutral">
+ 
+
+ &lt;span class="relative block icon">
+ &lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">&lt;path fill="currentColor" d="M287.9 0C297.1 0 305.5 5.25 309.5 13.52L378.1 154.8L531.4 177.5C540.4 178.8 547.8 185.1 550.7 193.7C553.5 202.4 551.2 211.9 544.8 218.2L433.6 328.4L459.9 483.9C461.4 492.9 457.7 502.1 450.2 507.4C442.8 512.7 432.1 513.4 424.9 509.1L287.9 435.9L150.1 509.1C142.9 513.4 133.1 512.7 125.6 507.4C118.2 502.1 114.5 492.9 115.1 483.9L142.2 328.4L31.11 218.2C24.65 211.9 22.36 202.4 25.2 193.7C28.03 185.1 35.5 178.8 44.49 177.5L197.7 154.8L266.3 13.52C270.4 5.249 278.7 0 287.9 0L287.9 0zM287.9 78.95L235.4 187.2C231.9 194.3 225.1 199.3 217.3 200.5L98.98 217.9L184.9 303C190.4 308.5 192.9 316.4 191.6 324.1L171.4 443.7L276.6 387.5C283.7 383.7 292.2 383.7 299.2 387.5L404.4 443.7L384.2 324.1C382.9 316.4 385.5 308.5 391 303L476.9 217.9L358.6 200.5C350.7 199.3 343.9 194.3 340.5 187.2L287.9 78.95z"/>&lt;/svg>
+ &lt;/span>
+
+
+ &lt;/span>
+ &lt;div id="github-674857d8b75e800e4bcc0955b60eca86-stargazers" class="m-0 mr-5 text-md text-neutral-800 dark:text-neutral">
+ 1543
+ &lt;/div>
+
+ &lt;span class="text-md mr-1 text-neutral-800 dark:text-neutral">
+ 
+
+ &lt;span class="relative block icon">
+ &lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">&lt;path fill="currentColor" d="M80 104c13.3 0 24-10.7 24-24s-10.7-24-24-24S56 66.7 56 80s10.7 24 24 24zm80-24c0 32.8-19.7 61-48 73.3V192c0 17.7 14.3 32 32 32H304c17.7 0 32-14.3 32-32V153.3C307.7 141 288 112.8 288 80c0-44.2 35.8-80 80-80s80 35.8 80 80c0 32.8-19.7 61-48 73.3V192c0 53-43 96-96 96H256v70.7c28.3 12.3 48 40.5 48 73.3c0 44.2-35.8 80-80 80s-80-35.8-80-80c0-32.8 19.7-61 48-73.3V288H144c-53 0-96-43-96-96V153.3C19.7 141 0 112.8 0 80C0 35.8 35.8 0 80 0s80 35.8 80 80zm208 24c13.3 0 24-10.7 24-24s-10.7-24-24-24s-24 10.7-24 24s10.7 24 24 24zM248 432c0-13.3-10.7-24-24-24s-24 10.7-24 24s10.7 24 24 24s24-10.7 24-24z"/>&lt;/svg>
+ &lt;/span>
+
+
+ &lt;/span>
+ &lt;div id="github-674857d8b75e800e4bcc0955b60eca86-forks" class="m-0 mr-5 text-md text-neutral-800 dark:text-neutral">
+ 145
+ &lt;/div>
+
+ &lt;/div>
+
+ &lt;/div>
+ &lt;script>
+ fetch("https://api.github.com/repos/tsujan/Kvantum", {
+ headers: new Headers({
+ 'User-agent': 'Mozilla/4.0 Custom User Agent'
+ })
+ })
+ .then(response => response.json())
+ .then(data => {
+ document.getElementById('github-674857d8b75e800e4bcc0955b60eca86-full_name').innerHTML = data.full_name;
+ document.getElementById('github-674857d8b75e800e4bcc0955b60eca86-description').innerHTML = data.description;
+ document.getElementById('github-674857d8b75e800e4bcc0955b60eca86-stargazers').innerHTML = data.stargazers_count;
+ document.getElementById('github-674857d8b75e800e4bcc0955b60eca86-forks').innerHTML = data.forks;
+ })
+ .catch(error => console.error(error))
+ &lt;/script>
+&lt;/a>
+&lt;p>This will take care of the awesome window blur and transparency effects for all &lt;strong>Qt&lt;/strong> based apps. It will not work on anything else, keep that in mind.&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>SDDM Login Manager&lt;/strong>&lt;/li>
+&lt;/ul>
+&lt;p>Another element &lt;strong>KDE Plasma&lt;/strong> uses, is &lt;a href="https://wiki.archlinux.org/title/SDDM" target="_blank">&lt;strong>SDDM&lt;/strong>&lt;/a> for its &lt;strong>Display Manager/Login&lt;/strong>.&lt;/p>
+&lt;p>
+ &lt;figure>
+ &lt;img class="my-0 rounded-md" loading="lazy" src="https://i.imgur.com/hLBbJvF.jpeg" alt="SDDM" />
+ 
+ &lt;/figure>
+&lt;/p>
+&lt;p>It too can be themed.&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>Grub Bootloader&lt;/strong>&lt;/li>
+&lt;/ul>
+&lt;p>Now, I can already hear you say that this is unrelated to &lt;strong>KDE Plasma&lt;/strong>, to which I will say, yes I agree. Also, not everyone will be using &lt;a href="https://wiki.archlinux.org/title/GRUB" target="_blank">&lt;strong>Grub&lt;/strong>&lt;/a>. Also true.&lt;/p>
+&lt;p>
+ &lt;figure>
+ &lt;img class="my-0 rounded-md" loading="lazy" src="https://i.imgur.com/tyoOZV1.png" alt="Grub" />
+ 
+ &lt;/figure>
+&lt;/p>
+&lt;p>But for the sake of completeness, I do like to theme it as well.&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>Konsole Terminal Emulator&lt;/strong>&lt;/li>
+&lt;/ul>
+&lt;p>&lt;a href="https://konsole.kde.org/" target="_blank">&lt;strong>Konsole&lt;/strong>&lt;/a> is the &lt;em>Terminal Emulator&lt;/em> that &lt;strong>Plasma&lt;/strong> ships. I know most of you switch to &lt;strong>Alacritty&lt;/strong> or even &lt;strong>Kitty&lt;/strong>. But I prefer to stick with what ships with the DE I use.&lt;/p>
+&lt;p>
+ &lt;figure>
+ &lt;img class="my-0 rounded-md" loading="lazy" src="https://i.imgur.com/pXDM5ZM.png" alt="Konsole" />
+ 
+ &lt;/figure>
+&lt;/p>
+&lt;p>That too can be themed.&lt;/p>
+
+
+&lt;h3 class="relative group">The more complete the better 
+ &lt;div id="the-more-complete-the-better" class="anchor">&lt;/div>
+ 
+ &lt;span
+ class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+ &lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+ style="text-decoration-line: none !important;" href="#the-more-complete-the-better" aria-label="Anchor">#&lt;/a>
+ &lt;/span> 
+ 
+&lt;/h3>
+&lt;p>Now that we have an understanding of the various elements that make for a more complete experience, here&amp;rsquo;s what themes we choose need to have before using them.&lt;/p>
+&lt;p>Not all of them contain all the elements. Sadly there are some out there that are incomplete making it harder to get a cohesive look. So I would avoid those if I were you.&lt;/p>
+&lt;p>Once we have found a noce theme, we need to make sure it applies to the following parts of &lt;strong>Plasma&lt;/strong> :&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>Colors&lt;/strong> : Resposible for accent and window colors.&lt;/li>
+&lt;li>&lt;strong>Application Style&lt;/strong> : Theme specific Kvantum style.&lt;/li>
+&lt;li>&lt;strong>Plasma Style&lt;/strong> : Light/Dark window style.&lt;/li>
+&lt;li>&lt;strong>Window Decorations&lt;/strong> : The top window minimize/close/maximize bar.&lt;/li>
+&lt;li>&lt;strong>Cursors&lt;/strong> : Cursor theme (Optional)&lt;/li>
+&lt;li>&lt;strong>Icons&lt;/strong> : A fitting icon theme. (Optional)&lt;/li>
+&lt;li>&lt;strong>SDDM&lt;/strong> : Login theme.&lt;/li>
+&lt;/ul>
+&lt;p>
+ &lt;figure>
+ &lt;img class="my-0 rounded-md" loading="lazy" src="https://i.imgur.com/ggNKZYO.png" alt="Settings" />
+ 
+ &lt;/figure>
+&lt;/p>
+&lt;p>That&amp;rsquo;s it really. In case you do not find a theme that contains all these elements, it&amp;rsquo;s not a huge issue, you can always hunt for one that fits the &lt;strong>Global Theme&lt;/strong>. It&amp;rsquo;s hard to find one I know, but who knows you might get lucky lol.&lt;/p>
+
+
+&lt;h3 class="relative group">Applying our themes 
+ &lt;div id="applying-our-themes" class="anchor">&lt;/div>
+ 
+ &lt;span
+ class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+ &lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+ style="text-decoration-line: none !important;" href="#applying-our-themes" aria-label="Anchor">#&lt;/a>
+ &lt;/span> 
+ 
+&lt;/h3>
+&lt;p>Once you have downloaded your chosen theme and theme elements from their sources (Github/Gitlab), follow their respective guides to install them, then head on over to the &lt;strong>KDE Settings&lt;/strong> to apply them.&lt;/p>
+&lt;p>For &lt;strong>Kvantum&lt;/strong>, just launch it, select the theme from the drop down and hit apply. Then select it as the &lt;strong>Application Style&lt;/strong>.&lt;/p>
+&lt;p>As for &lt;strong>Konsole&lt;/strong>, launch it, make sure you have moved its theme file into &lt;code>~/.local/share/konsole/&lt;/code> folder, right click inside its window, select &lt;em>create new profile&lt;/em> from the context menu, give it a name, one that you recognize, on the left click on &lt;em>appearance&lt;/em>, select your theme, if you want to enable transparency with blur, click on edit, this is where you do that. Confirm, done.&lt;/p>
+&lt;p>Now I will not talk about &lt;strong>Grub&lt;/strong> here since all themes for it will come with their own instructions and/or install scripts.&lt;/p>
+
+
+&lt;h3 class="relative group">Panel &amp;amp; Widgets 
+ &lt;div id="panel--widgets" class="anchor">&lt;/div>
+ 
+ &lt;span
+ class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+ &lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+ style="text-decoration-line: none !important;" href="#panel--widgets" aria-label="Anchor">#&lt;/a>
+ &lt;/span> 
+ 
+&lt;/h3>
+&lt;p>Oh boy, the reason I will not be talking about those is is simple, it&amp;rsquo;s your rice you do with those as you please. &lt;strong>KDE Plasma&lt;/strong> comes with some awesome widgets, use those to get started, if you want more, well, you will find them on the &lt;a href="https://store.kde.org" target="_blank">&lt;strong>KDE Store&lt;/strong>&lt;/a>.&lt;/p>
+
+ 
+ 
+ 
+ 
+
+
+
+&lt;div
+ 
+ class="flex px-4 py-3 rounded-md"
+ style="background-color: #e63946"
+ >
+
+ &lt;span
+ 
+ class="ltr:pr-3 rtl:pl-3 flex items-center"
+ style="color: #1d3557"
+ >
+
+ 
+
+ &lt;span class="relative block icon">
+ &lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+&lt;path fill="currentColor" d="M159.3 5.4c7.8-7.3 19.9-7.2 27.7 .1c27.6 25.9 53.5 53.8 77.7 84c11-14.4 23.5-30.1 37-42.9c7.9-7.4 20.1-7.4 28 .1c34.6 33 63.9 76.6 84.5 118c20.3 40.8 33.8 82.5 33.8 111.9C448 404.2 348.2 512 224 512C98.4 512 0 404.1 0 276.5c0-38.4 17.8-85.3 45.4-131.7C73.3 97.7 112.7 48.6 159.3 5.4zM225.7 416c25.3 0 47.7-7 68.8-21c42.1-29.4 53.4-88.2 28.1-134.4c-2.8-5.6-5.6-11.2-9.8-16.8l-50.6 58.8s-81.4-103.6-87.1-110.6C133.1 243.8 112 273.2 112 306.8C112 375.4 162.6 416 225.7 416z"/>&lt;/svg>
+ &lt;/span>
+
+
+ &lt;/span>
+
+ &lt;span
+ 
+ style="color: #f1faee"
+ >&lt;strong>Warning :&lt;/strong> Please make sure they are compatible with &lt;strong>Plasma 6&lt;/strong>.&lt;/span>
+&lt;/div>
+
+&lt;p>
+ &lt;figure>
+ &lt;img class="my-0 rounded-md" loading="lazy" src="https://i.imgur.com/VA2tycb.jpeg" alt="XeroLayan" />
+ 
+ &lt;/figure>
+&lt;/p>
+&lt;p>As for the panel, position it wherever your heart desires. Top, bottom, left or right. It&amp;rsquo;s all up to you. You can even use it as a Dock. Above is the end result of my very own rice I call the &lt;strong>XeroLayan&lt;/strong> rice.&lt;/p>
+
+
+&lt;h3 class="relative group">Bonus for the G33ks 
+ &lt;div id="bonus-for-the-g33ks" class="anchor">&lt;/div>
+ 
+ &lt;span
+ class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+ &lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+ style="text-decoration-line: none !important;" href="#bonus-for-the-g33ks" aria-label="Anchor">#&lt;/a>
+ &lt;/span> 
+ 
+&lt;/h3>
+&lt;p>As a bonus, for all the G33ks out there, I would like to include a nice find. Some of us would love to make our rices reproduce-able without having to apply every element over and over, others just want to have a backup.&lt;/p>
+&lt;p>That&amp;rsquo;s where this &lt;strong>Github Repo&lt;/strong> comes in handy. It shows us what files are affected by the various theme elements. So have at it and enjoy !&lt;/p>
+&lt;a id="github-35acb2467e8c5b7be245dd5d8ae6184d" target="_blank" href="https://github.com/shalva97/kde-configuration-files" class="cursor-pointer">
+ &lt;div
+ class="w-full md:w-auto pt-3 p-5 border border-neutral-200 dark:border-neutral-700 border rounded-md shadow-2xl">
+
+ &lt;div class="flex items-center">
+ &lt;span class="text-2xl text-neutral-800 dark:text-neutral" style="margin-right:10px;">
+ 
+
+ &lt;span class="relative block icon">
+ &lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512">&lt;path fill="currentColor" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/>&lt;/svg>
+
+ &lt;/span>
+
+
+ &lt;/span>
+ &lt;div
+ id="github-35acb2467e8c5b7be245dd5d8ae6184d-full_name"
+ class="m-0 font-bold text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral">
+ shalva97/kde-configuration-files
+ &lt;/div>
+ &lt;/div>
+
+ &lt;p id="github-35acb2467e8c5b7be245dd5d8ae6184d-description" class="m-0 mt-2 text-md text-neutral-800 dark:text-neutral">
+ KDE plasma configuration files
+ &lt;/p>
+
+ &lt;div class="m-0 mt-2 flex items-center">
+
+ &lt;span class="mr-1 inline-block h-3 w-3 rounded-full"
+ style="background-color: #89e051">&lt;/span>
+ &lt;div class="m-0 mr-5 text-md text-neutral-800 dark:text-neutral">
+ Shell 
+ &lt;/div>
+
+ &lt;span class="text-md mr-1 text-neutral-800 dark:text-neutral">
+ 
+
+ &lt;span class="relative block icon">
+ &lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">&lt;path fill="currentColor" d="M287.9 0C297.1 0 305.5 5.25 309.5 13.52L378.1 154.8L531.4 177.5C540.4 178.8 547.8 185.1 550.7 193.7C553.5 202.4 551.2 211.9 544.8 218.2L433.6 328.4L459.9 483.9C461.4 492.9 457.7 502.1 450.2 507.4C442.8 512.7 432.1 513.4 424.9 509.1L287.9 435.9L150.1 509.1C142.9 513.4 133.1 512.7 125.6 507.4C118.2 502.1 114.5 492.9 115.1 483.9L142.2 328.4L31.11 218.2C24.65 211.9 22.36 202.4 25.2 193.7C28.03 185.1 35.5 178.8 44.49 177.5L197.7 154.8L266.3 13.52C270.4 5.249 278.7 0 287.9 0L287.9 0zM287.9 78.95L235.4 187.2C231.9 194.3 225.1 199.3 217.3 200.5L98.98 217.9L184.9 303C190.4 308.5 192.9 316.4 191.6 324.1L171.4 443.7L276.6 387.5C283.7 383.7 292.2 383.7 299.2 387.5L404.4 443.7L384.2 324.1C382.9 316.4 385.5 308.5 391 303L476.9 217.9L358.6 200.5C350.7 199.3 343.9 194.3 340.5 187.2L287.9 78.95z"/>&lt;/svg>
+ &lt;/span>
+
+
+ &lt;/span>
+ &lt;div id="github-35acb2467e8c5b7be245dd5d8ae6184d-stargazers" class="m-0 mr-5 text-md text-neutral-800 dark:text-neutral">
+ 766
+ &lt;/div>
+
+ &lt;span class="text-md mr-1 text-neutral-800 dark:text-neutral">
+ 
+
+ &lt;span class="relative block icon">
+ &lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">&lt;path fill="currentColor" d="M80 104c13.3 0 24-10.7 24-24s-10.7-24-24-24S56 66.7 56 80s10.7 24 24 24zm80-24c0 32.8-19.7 61-48 73.3V192c0 17.7 14.3 32 32 32H304c17.7 0 32-14.3 32-32V153.3C307.7 141 288 112.8 288 80c0-44.2 35.8-80 80-80s80 35.8 80 80c0 32.8-19.7 61-48 73.3V192c0 53-43 96-96 96H256v70.7c28.3 12.3 48 40.5 48 73.3c0 44.2-35.8 80-80 80s-80-35.8-80-80c0-32.8 19.7-61 48-73.3V288H144c-53 0-96-43-96-96V153.3C19.7 141 0 112.8 0 80C0 35.8 35.8 0 80 0s80 35.8 80 80zm208 24c13.3 0 24-10.7 24-24s-10.7-24-24-24s-24 10.7-24 24s10.7 24 24 24zM248 432c0-13.3-10.7-24-24-24s-24 10.7-24 24s10.7 24 24 24s24-10.7 24-24z"/>&lt;/svg>
+ &lt;/span>
+
+
+ &lt;/span>
+ &lt;div id="github-35acb2467e8c5b7be245dd5d8ae6184d-forks" class="m-0 mr-5 text-md text-neutral-800 dark:text-neutral">
+ 52
+ &lt;/div>
+
+ &lt;/div>
+
+ &lt;/div>
+ &lt;script>
+ fetch("https://api.github.com/repos/shalva97/kde-configuration-files", {
+ headers: new Headers({
+ 'User-agent': 'Mozilla/4.0 Custom User Agent'
+ })
+ })
+ .then(response => response.json())
+ .then(data => {
+ document.getElementById('github-35acb2467e8c5b7be245dd5d8ae6184d-full_name').innerHTML = data.full_name;
+ document.getElementById('github-35acb2467e8c5b7be245dd5d8ae6184d-description').innerHTML = data.description;
+ document.getElementById('github-35acb2467e8c5b7be245dd5d8ae6184d-stargazers').innerHTML = data.stargazers_count;
+ document.getElementById('github-35acb2467e8c5b7be245dd5d8ae6184d-forks').innerHTML = data.forks;
+ })
+ .catch(error => console.error(error))
+ &lt;/script>
+&lt;/a>
+&lt;p>Don&amp;rsquo;t forget about &lt;strong>Konsave&lt;/strong> the GUI tool that does exactly that, just in a much simpler way. Article attached below.&lt;/p>
+
+&lt;section class="space-y-10 w-full">
+ 
+ 
+ 
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ &lt;a class="flex flex-wrap article border border-neutral-200 dark:border-neutral-700 border-2 rounded-md overflow-hidden" href="https://xerolinux.xyz/posts/konsave-tool/">
+ 
+ 
+ &lt;div class="w-full md:w-auto h-full thumbnail nozoom " style="background-image:url(/posts/konsave-tool/featured.webp);">&lt;/div>
+ 
+ &lt;div class=" p-4">
+ &lt;div class="items-center text-left text-xl font-semibold">
+ 
+ &lt;div class="font-bold text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral"
+ href="https://xerolinux.xyz/posts/konsave-tool/">Konsave TUI&lt;/div>
+ 
+ 
+ 
+ &lt;/div>
+ &lt;div class="text-sm text-neutral-500 dark:text-neutral-400">
+ 
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+ 
+
+
+
+ 
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+&lt;div class="flex flex-row flex-wrap items-center">
+ 
+ 
+ &lt;time datetime="2024-06-27 00:00:00 &amp;#43;0000 UTC">27 June 2024&lt;/time>&lt;span class="px-2 text-primary-500">&amp;middot;&lt;/span>&lt;span title="Reading time">2 mins&lt;/span>&lt;span class="px-2 text-primary-500">&amp;middot;&lt;/span>&lt;span>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ &lt;span id="views_posts/konsave-tool/index.md" class="animate-pulse inline-block text-transparent max-h-3 rounded-full mt-[-2px] align-middle bg-neutral-300 dark:bg-neutral-400" title="views">loading&lt;/span>
+ &lt;span class="inline-block align-text-bottom">
+
+ &lt;span class="relative block icon">
+ &lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+&lt;path fill="currentColor" d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/>&lt;/svg>
+ &lt;/span>
+
+&lt;/span>
+&lt;/span>&lt;span class="px-2 text-primary-500">&amp;middot;&lt;/span>&lt;span>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ &lt;span id="likes_posts/konsave-tool/index.md"
+ class="animate-pulse inline-block text-transparent max-h-3 rounded-full mt-[-2px] align-middle bg-neutral-300 dark:bg-neutral-400"
+ title="likes">loading&lt;/span>
+ &lt;span class="inline-block align-text-bottom">
+
+ &lt;span class="relative block icon">
+ &lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+&lt;path fill="currentColor" d="M47.6 300.4L228.3 469.1c7.5 7 17.4 10.9 27.7 10.9s20.2-3.9 27.7-10.9L464.4 300.4c30.4-28.3 47.6-68 47.6-109.5v-5.8c0-69.9-50.5-129.5-119.4-141C347 36.5 300.6 51.4 268 84L256 96 244 84c-32.6-32.6-79-47.5-124.6-39.9C50.5 55.6 0 115.2 0 185.1v5.8c0 41.5 17.2 81.2 47.6 109.5z"/>&lt;/svg>
+ &lt;/span>
+
+&lt;/span>
+&lt;/span>
+ 
+
+ 
+ 
+&lt;/div>
+
+
+&lt;div class="flex flex-row flex-wrap items-center">
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+&lt;/div>
+
+
+
+
+&lt;div class="flex flex-row flex-wrap items-center">
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ &lt;span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&amp;#34;/tags/themes/&amp;#34;,'_self');">
+ &lt;span class="flex" style="cursor: pointer;">
+ &lt;span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+ Themes
+ &lt;/span>
+&lt;/span>
+ &lt;/span>
+ 
+ &lt;span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&amp;#34;/tags/plasma/&amp;#34;,'_self');">
+ &lt;span class="flex" style="cursor: pointer;">
+ &lt;span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+ Plasma
+ &lt;/span>
+&lt;/span>
+ &lt;/span>
+ 
+ &lt;span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&amp;#34;/tags/kde/&amp;#34;,'_self');">
+ &lt;span class="flex" style="cursor: pointer;">
+ &lt;span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+ Kde
+ &lt;/span>
+&lt;/span>
+ &lt;/span>
+ 
+ &lt;span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&amp;#34;/tags/tools/&amp;#34;,'_self');">
+ &lt;span class="flex" style="cursor: pointer;">
+ &lt;span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+ Tools
+ &lt;/span>
+&lt;/span>
+ &lt;/span>
+ 
+ &lt;span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&amp;#34;/tags/linux/&amp;#34;,'_self');">
+ &lt;span class="flex" style="cursor: pointer;">
+ &lt;span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+ Linux
+ &lt;/span>
+&lt;/span>
+ &lt;/span>
+ 
+ 
+ 
+ 
+&lt;/div>
+
+
+
+ &lt;/div>
+ 
+ &lt;/div>
+ &lt;/a>
+
+ 
+ 
+&lt;/section>
+&lt;p>That&amp;rsquo;s all se wrote folks. I hope this has helped you understand more of what ricing &lt;strong>KDE Plasma&lt;/strong> is all about.&lt;/p>
+&lt;p>Cheers !&lt;/p></description><content:encoded>&lt;![CDATA[<h3 class="relative group">Intro<div id="intro" class="anchor"/><span class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#intro" aria-label="Anchor">#</a></span></h3><p>Before we begin, here&rsquo;s brief intro as to why I care about ricing.</p><p>In case you didn&rsquo;t know it, I began my<strong>Linux</strong> journey with<strong>KDE Plasma</strong> because of the freedom of customization. I love ricing my setups. I hated that<strong>macOS</strong> &amp;<strong>Windows</strong> did not allow this.</p><p>And if you want to see what I have managed to do, well, hop on over to my<strong>Layan</strong> rice&rsquo;s<strong>Githup</strong> repository, you will get blown away.</p><a id="github-a3d14a4a10f892b0bde0c7d2dcb03e5f" target="_blank" href="https://github.com/xerolinux/xero-layan-git" class="cursor-pointer"><div class="w-full md:w-auto pt-3 p-5 border border-neutral-200 dark:border-neutral-700 border rounded-md shadow-2xl"><div class="flex items-center"><span class="text-2xl text-neutral-800 dark:text-neutral" style="margin-right:10px;"><span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path fill="currentColor" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg></span></span><div id="github-a3d14a4a10f892b0bde0c7d2dcb03e5f-full_name" class="m-0 font-bold text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral">
+xerolinux/xero-layan-git</div></div><p id="github-a3d14a4a10f892b0bde0c7d2dcb03e5f-description" class="m-0 mt-2 text-md text-neutral-800 dark:text-neutral">
+XeroLinux Layan Rice</p><div class="m-0 mt-2 flex items-center"><span class="mr-1 inline-block h-3 w-3 rounded-full" style="background-color: #44a51c"/><div class="m-0 mr-5 text-md text-neutral-800 dark:text-neutral">
+QML</div><span class="text-md mr-1 text-neutral-800 dark:text-neutral"><span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path fill="currentColor" d="M287.9 0C297.1 0 305.5 5.25 309.5 13.52L378.1 154.8L531.4 177.5C540.4 178.8 547.8 185.1 550.7 193.7C553.5 202.4 551.2 211.9 544.8 218.2L433.6 328.4L459.9 483.9C461.4 492.9 457.7 502.1 450.2 507.4C442.8 512.7 432.1 513.4 424.9 509.1L287.9 435.9L150.1 509.1C142.9 513.4 133.1 512.7 125.6 507.4C118.2 502.1 114.5 492.9 115.1 483.9L142.2 328.4L31.11 218.2C24.65 211.9 22.36 202.4 25.2 193.7C28.03 185.1 35.5 178.8 44.49 177.5L197.7 154.8L266.3 13.52C270.4 5.249 278.7 0 287.9 0L287.9 0zM287.9 78.95L235.4 187.2C231.9 194.3 225.1 199.3 217.3 200.5L98.98 217.9L184.9 303C190.4 308.5 192.9 316.4 191.6 324.1L171.4 443.7L276.6 387.5C283.7 383.7 292.2 383.7 299.2 387.5L404.4 443.7L384.2 324.1C382.9 316.4 385.5 308.5 391 303L476.9 217.9L358.6 200.5C350.7 199.3 343.9 194.3 340.5 187.2L287.9 78.95z"/></svg></span></span><div id="github-a3d14a4a10f892b0bde0c7d2dcb03e5f-stargazers" class="m-0 mr-5 text-md text-neutral-800 dark:text-neutral">
+78</div><span class="text-md mr-1 text-neutral-800 dark:text-neutral"><span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M80 104c13.3 0 24-10.7 24-24s-10.7-24-24-24S56 66.7 56 80s10.7 24 24 24zm80-24c0 32.8-19.7 61-48 73.3V192c0 17.7 14.3 32 32 32H304c17.7 0 32-14.3 32-32V153.3C307.7 141 288 112.8 288 80c0-44.2 35.8-80 80-80s80 35.8 80 80c0 32.8-19.7 61-48 73.3V192c0 53-43 96-96 96H256v70.7c28.3 12.3 48 40.5 48 73.3c0 44.2-35.8 80-80 80s-80-35.8-80-80c0-32.8 19.7-61 48-73.3V288H144c-53 0-96-43-96-96V153.3C19.7 141 0 112.8 0 80C0 35.8 35.8 0 80 0s80 35.8 80 80zm208 24c13.3 0 24-10.7 24-24s-10.7-24-24-24s-24 10.7-24 24s10.7 24 24 24zM248 432c0-13.3-10.7-24-24-24s-24 10.7-24 24s10.7 24 24 24s24-10.7 24-24z"/></svg></span></span><div id="github-a3d14a4a10f892b0bde0c7d2dcb03e5f-forks" class="m-0 mr-5 text-md text-neutral-800 dark:text-neutral">
+11</div></div></div><script>
+fetch("https://api.github.com/repos/xerolinux/xero-layan-git", {
+headers: new Headers({
+'User-agent': 'Mozilla/4.0 Custom User Agent'
+})
+})
+.then(response => response.json())
+.then(data => {
+document.getElementById('github-a3d14a4a10f892b0bde0c7d2dcb03e5f-full_name').innerHTML = data.full_name;
+document.getElementById('github-a3d14a4a10f892b0bde0c7d2dcb03e5f-description').innerHTML = data.description;
+document.getElementById('github-a3d14a4a10f892b0bde0c7d2dcb03e5f-stargazers').innerHTML = data.stargazers_count;
+document.getElementById('github-a3d14a4a10f892b0bde0c7d2dcb03e5f-forks').innerHTML = data.forks;
+})
+.catch(error => console.error(error))</script></a><h3 class="relative group">A bit of understanding<div id="a-bit-of-understanding" class="anchor"/><span class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#a-bit-of-understanding" aria-label="Anchor">#</a></span></h3><p>Ricing can be a bit invloved. At least if you are like me, and care about consistency. It&rsquo;s not about just slapping a desktop theme and calling it a day. That&rsquo;s just lazy. Please don&rsquo;t do that.</p><p><figure><img class="my-0 rounded-md" loading="lazy" src="https://i.imgur.com/irOECxY.jpeg" alt="Rice"/></figure></p><p><strong>KDE Plasma</strong> is a ricing a beast, no doubt about that. That&rsquo;s one of its biggest selling points. So it&rsquo;s normal when I say, it can be very, very intricate. You can rice everything in it.</p><p>We need to also know what library the system uses.<strong>KDE</strong> uses a library called<strong>Qt</strong>, pronounced like<em>cute</em>. But you might encounter apps that use the<strong>GTK2/3/4</strong> library, typically ones created for<strong>Gnome</strong> or<strong>XFCE</strong>.</p><blockquote><p>Keep in mind though, to successfully theme<strong>GTK4</strong> or, as it&rsquo;s called now<strong>LibAdwaita</strong>, we need to make sure the necessary<em>Hacks</em> are included in the theme we have chosen, simply because, as we all know,<strong>Gnome</strong> devs despise the whole idea of theming for whatever reason.</p></blockquote><p>So it will be up to you, the user, to find all theme elements required for a complete and consistent look. Whay do I say this you may ask? Well, quite simply because, and it saddens me to say this, very few themes come complete, allowing such consistency. But it can be done.</p><p>With that out of the way, let&rsquo;s get to it shall we ?</p><h3 class="relative group">KDE Plasma pieces<div id="kde-plasma-pieces" class="anchor"/><span class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#kde-plasma-pieces" aria-label="Anchor">#</a></span></h3><p>As I said earlier in the post,<strong>KDE Plasma</strong> is made of many elements that can be themed or riced. So here, I will be explaining what they are and the tools we need to theme them.</p><div class="flex px-4 py-3 rounded-md" style="background-color: #e63946"><span class="ltr:pr-3 rtl:pl-3 flex items-center" style="color: #1d3557"><span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M159.3 5.4c7.8-7.3 19.9-7.2 27.7 .1c27.6 25.9 53.5 53.8 77.7 84c11-14.4 23.5-30.1 37-42.9c7.9-7.4 20.1-7.4 28 .1c34.6 33 63.9 76.6 84.5 118c20.3 40.8 33.8 82.5 33.8 111.9C448 404.2 348.2 512 224 512C98.4 512 0 404.1 0 276.5c0-38.4 17.8-85.3 45.4-131.7C73.3 97.7 112.7 48.6 159.3 5.4zM225.7 416c25.3 0 47.7-7 68.8-21c42.1-29.4 53.4-88.2 28.1-134.4c-2.8-5.6-5.6-11.2-9.8-16.8l-50.6 58.8s-81.4-103.6-87.1-110.6C133.1 243.8 112 273.2 112 306.8C112 375.4 162.6 416 225.7 416z"/></svg></span></span><span style="color: #f1faee"><strong>Friendly Advice :</strong> Never install themes from any repos or the<strong>AUR</strong>. Always grab them from source, after you have inspected the code. For your own sanity. And make sure they are compatible with<strong>Plasma 6</strong>.</span></div><p>Please read the above warning, ignoring it will result in nothing but headaches. Trust me, I made that mistake and wasted more time than I can count trying to solve the resulting issues.</p><ul><li><strong>Kvantum Manager</strong></li></ul><p>First, we will need and app that I highly recommend to have on hand, called<strong>Kvantum</strong>. I consider it an essantial tool for every ricer out there.</p><p><figure><img class="my-0 rounded-md" loading="lazy" src="https://i.imgur.com/DNfv0aG.png" alt="Kvantum"/></figure></p><a id="github-674857d8b75e800e4bcc0955b60eca86" target="_blank" href="https://github.com/tsujan/Kvantum" class="cursor-pointer"><div class="w-full md:w-auto pt-3 p-5 border border-neutral-200 dark:border-neutral-700 border rounded-md shadow-2xl"><div class="flex items-center"><span class="text-2xl text-neutral-800 dark:text-neutral" style="margin-right:10px;"><span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path fill="currentColor" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg></span></span><div id="github-674857d8b75e800e4bcc0955b60eca86-full_name" class="m-0 font-bold text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral">
+tsujan/Kvantum</div></div><p id="github-674857d8b75e800e4bcc0955b60eca86-description" class="m-0 mt-2 text-md text-neutral-800 dark:text-neutral">
+A Linux SVG-based theme engine for Qt and KDE</p><div class="m-0 mt-2 flex items-center"><span class="mr-1 inline-block h-3 w-3 rounded-full" style="background-color: #f34b7d"/><div class="m-0 mr-5 text-md text-neutral-800 dark:text-neutral">
+C++</div><span class="text-md mr-1 text-neutral-800 dark:text-neutral"><span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path fill="currentColor" d="M287.9 0C297.1 0 305.5 5.25 309.5 13.52L378.1 154.8L531.4 177.5C540.4 178.8 547.8 185.1 550.7 193.7C553.5 202.4 551.2 211.9 544.8 218.2L433.6 328.4L459.9 483.9C461.4 492.9 457.7 502.1 450.2 507.4C442.8 512.7 432.1 513.4 424.9 509.1L287.9 435.9L150.1 509.1C142.9 513.4 133.1 512.7 125.6 507.4C118.2 502.1 114.5 492.9 115.1 483.9L142.2 328.4L31.11 218.2C24.65 211.9 22.36 202.4 25.2 193.7C28.03 185.1 35.5 178.8 44.49 177.5L197.7 154.8L266.3 13.52C270.4 5.249 278.7 0 287.9 0L287.9 0zM287.9 78.95L235.4 187.2C231.9 194.3 225.1 199.3 217.3 200.5L98.98 217.9L184.9 303C190.4 308.5 192.9 316.4 191.6 324.1L171.4 443.7L276.6 387.5C283.7 383.7 292.2 383.7 299.2 387.5L404.4 443.7L384.2 324.1C382.9 316.4 385.5 308.5 391 303L476.9 217.9L358.6 200.5C350.7 199.3 343.9 194.3 340.5 187.2L287.9 78.95z"/></svg></span></span><div id="github-674857d8b75e800e4bcc0955b60eca86-stargazers" class="m-0 mr-5 text-md text-neutral-800 dark:text-neutral">
+1543</div><span class="text-md mr-1 text-neutral-800 dark:text-neutral"><span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M80 104c13.3 0 24-10.7 24-24s-10.7-24-24-24S56 66.7 56 80s10.7 24 24 24zm80-24c0 32.8-19.7 61-48 73.3V192c0 17.7 14.3 32 32 32H304c17.7 0 32-14.3 32-32V153.3C307.7 141 288 112.8 288 80c0-44.2 35.8-80 80-80s80 35.8 80 80c0 32.8-19.7 61-48 73.3V192c0 53-43 96-96 96H256v70.7c28.3 12.3 48 40.5 48 73.3c0 44.2-35.8 80-80 80s-80-35.8-80-80c0-32.8 19.7-61 48-73.3V288H144c-53 0-96-43-96-96V153.3C19.7 141 0 112.8 0 80C0 35.8 35.8 0 80 0s80 35.8 80 80zm208 24c13.3 0 24-10.7 24-24s-10.7-24-24-24s-24 10.7-24 24s10.7 24 24 24zM248 432c0-13.3-10.7-24-24-24s-24 10.7-24 24s10.7 24 24 24s24-10.7 24-24z"/></svg></span></span><div id="github-674857d8b75e800e4bcc0955b60eca86-forks" class="m-0 mr-5 text-md text-neutral-800 dark:text-neutral">
+145</div></div></div><script>
+fetch("https://api.github.com/repos/tsujan/Kvantum", {
+headers: new Headers({
+'User-agent': 'Mozilla/4.0 Custom User Agent'
+})
+})
+.then(response => response.json())
+.then(data => {
+document.getElementById('github-674857d8b75e800e4bcc0955b60eca86-full_name').innerHTML = data.full_name;
+document.getElementById('github-674857d8b75e800e4bcc0955b60eca86-description').innerHTML = data.description;
+document.getElementById('github-674857d8b75e800e4bcc0955b60eca86-stargazers').innerHTML = data.stargazers_count;
+document.getElementById('github-674857d8b75e800e4bcc0955b60eca86-forks').innerHTML = data.forks;
+})
+.catch(error => console.error(error))</script></a><p>This will take care of the awesome window blur and transparency effects for all<strong>Qt</strong> based apps. It will not work on anything else, keep that in mind.</p><ul><li><strong>SDDM Login Manager</strong></li></ul><p>Another element<strong>KDE Plasma</strong> uses, is<a href="https://wiki.archlinux.org/title/SDDM" target="_blank"><strong>SDDM</strong></a> for its<strong>Display Manager/Login</strong>.</p><p><figure><img class="my-0 rounded-md" loading="lazy" src="https://i.imgur.com/hLBbJvF.jpeg" alt="SDDM"/></figure></p><p>It too can be themed.</p><ul><li><strong>Grub Bootloader</strong></li></ul><p>Now, I can already hear you say that this is unrelated to<strong>KDE Plasma</strong>, to which I will say, yes I agree. Also, not everyone will be using<a href="https://wiki.archlinux.org/title/GRUB" target="_blank"><strong>Grub</strong></a>. Also true.</p><p><figure><img class="my-0 rounded-md" loading="lazy" src="https://i.imgur.com/tyoOZV1.png" alt="Grub"/></figure></p><p>But for the sake of completeness, I do like to theme it as well.</p><ul><li><strong>Konsole Terminal Emulator</strong></li></ul><p><a href="https://konsole.kde.org/" target="_blank"><strong>Konsole</strong></a> is the<em>Terminal Emulator</em> that<strong>Plasma</strong> ships. I know most of you switch to<strong>Alacritty</strong> or even<strong>Kitty</strong>. But I prefer to stick with what ships with the DE I use.</p><p><figure><img class="my-0 rounded-md" loading="lazy" src="https://i.imgur.com/pXDM5ZM.png" alt="Konsole"/></figure></p><p>That too can be themed.</p><h3 class="relative group">The more complete the better<div id="the-more-complete-the-better" class="anchor"/><span class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#the-more-complete-the-better" aria-label="Anchor">#</a></span></h3><p>Now that we have an understanding of the various elements that make for a more complete experience, here&rsquo;s what themes we choose need to have before using them.</p><p>Not all of them contain all the elements. Sadly there are some out there that are incomplete making it harder to get a cohesive look. So I would avoid those if I were you.</p><p>Once we have found a noce theme, we need to make sure it applies to the following parts of<strong>Plasma</strong> :</p><ul><li><strong>Colors</strong> : Resposible for accent and window colors.</li><li><strong>Application Style</strong> : Theme specific Kvantum style.</li><li><strong>Plasma Style</strong> : Light/Dark window style.</li><li><strong>Window Decorations</strong> : The top window minimize/close/maximize bar.</li><li><strong>Cursors</strong> : Cursor theme (Optional)</li><li><strong>Icons</strong> : A fitting icon theme. (Optional)</li><li><strong>SDDM</strong> : Login theme.</li></ul><p><figure><img class="my-0 rounded-md" loading="lazy" src="https://i.imgur.com/ggNKZYO.png" alt="Settings"/></figure></p><p>That&rsquo;s it really. In case you do not find a theme that contains all these elements, it&rsquo;s not a huge issue, you can always hunt for one that fits the<strong>Global Theme</strong>. It&rsquo;s hard to find one I know, but who knows you might get lucky lol.</p><h3 class="relative group">Applying our themes<div id="applying-our-themes" class="anchor"/><span class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#applying-our-themes" aria-label="Anchor">#</a></span></h3><p>Once you have downloaded your chosen theme and theme elements from their sources (Github/Gitlab), follow their respective guides to install them, then head on over to the<strong>KDE Settings</strong> to apply them.</p><p>For<strong>Kvantum</strong>, just launch it, select the theme from the drop down and hit apply. Then select it as the<strong>Application Style</strong>.</p><p>As for<strong>Konsole</strong>, launch it, make sure you have moved its theme file into<code>~/.local/share/konsole/</code> folder, right click inside its window, select<em>create new profile</em> from the context menu, give it a name, one that you recognize, on the left click on<em>appearance</em>, select your theme, if you want to enable transparency with blur, click on edit, this is where you do that. Confirm, done.</p><p>Now I will not talk about<strong>Grub</strong> here since all themes for it will come with their own instructions and/or install scripts.</p><h3 class="relative group">Panel &amp; Widgets<div id="panel--widgets" class="anchor"/><span class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#panel--widgets" aria-label="Anchor">#</a></span></h3><p>Oh boy, the reason I will not be talking about those is is simple, it&rsquo;s your rice you do with those as you please.<strong>KDE Plasma</strong> comes with some awesome widgets, use those to get started, if you want more, well, you will find them on the<a href="https://store.kde.org" target="_blank"><strong>KDE Store</strong></a>.</p><div class="flex px-4 py-3 rounded-md" style="background-color: #e63946"><span class="ltr:pr-3 rtl:pl-3 flex items-center" style="color: #1d3557"><span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M159.3 5.4c7.8-7.3 19.9-7.2 27.7 .1c27.6 25.9 53.5 53.8 77.7 84c11-14.4 23.5-30.1 37-42.9c7.9-7.4 20.1-7.4 28 .1c34.6 33 63.9 76.6 84.5 118c20.3 40.8 33.8 82.5 33.8 111.9C448 404.2 348.2 512 224 512C98.4 512 0 404.1 0 276.5c0-38.4 17.8-85.3 45.4-131.7C73.3 97.7 112.7 48.6 159.3 5.4zM225.7 416c25.3 0 47.7-7 68.8-21c42.1-29.4 53.4-88.2 28.1-134.4c-2.8-5.6-5.6-11.2-9.8-16.8l-50.6 58.8s-81.4-103.6-87.1-110.6C133.1 243.8 112 273.2 112 306.8C112 375.4 162.6 416 225.7 416z"/></svg></span></span><span style="color: #f1faee"><strong>Warning :</strong> Please make sure they are compatible with<strong>Plasma 6</strong>.</span></div><p><figure><img class="my-0 rounded-md" loading="lazy" src="https://i.imgur.com/VA2tycb.jpeg" alt="XeroLayan"/></figure></p><p>As for the panel, position it wherever your heart desires. Top, bottom, left or right. It&rsquo;s all up to you. You can even use it as a Dock. Above is the end result of my very own rice I call the<strong>XeroLayan</strong> rice.</p><h3 class="relative group">Bonus for the G33ks<div id="bonus-for-the-g33ks" class="anchor"/><span class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#bonus-for-the-g33ks" aria-label="Anchor">#</a></span></h3><p>As a bonus, for all the G33ks out there, I would like to include a nice find. Some of us would love to make our rices reproduce-able without having to apply every element over and over, others just want to have a backup.</p><p>That&rsquo;s where this<strong>Github Repo</strong> comes in handy. It shows us what files are affected by the various theme elements. So have at it and enjoy !</p><a id="github-35acb2467e8c5b7be245dd5d8ae6184d" target="_blank" href="https://github.com/shalva97/kde-configuration-files" class="cursor-pointer"><div class="w-full md:w-auto pt-3 p-5 border border-neutral-200 dark:border-neutral-700 border rounded-md shadow-2xl"><div class="flex items-center"><span class="text-2xl text-neutral-800 dark:text-neutral" style="margin-right:10px;"><span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path fill="currentColor" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg></span></span><div id="github-35acb2467e8c5b7be245dd5d8ae6184d-full_name" class="m-0 font-bold text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral">
+shalva97/kde-configuration-files</div></div><p id="github-35acb2467e8c5b7be245dd5d8ae6184d-description" class="m-0 mt-2 text-md text-neutral-800 dark:text-neutral">
+KDE plasma configuration files</p><div class="m-0 mt-2 flex items-center"><span class="mr-1 inline-block h-3 w-3 rounded-full" style="background-color: #89e051"/><div class="m-0 mr-5 text-md text-neutral-800 dark:text-neutral">
+Shell</div><span class="text-md mr-1 text-neutral-800 dark:text-neutral"><span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path fill="currentColor" d="M287.9 0C297.1 0 305.5 5.25 309.5 13.52L378.1 154.8L531.4 177.5C540.4 178.8 547.8 185.1 550.7 193.7C553.5 202.4 551.2 211.9 544.8 218.2L433.6 328.4L459.9 483.9C461.4 492.9 457.7 502.1 450.2 507.4C442.8 512.7 432.1 513.4 424.9 509.1L287.9 435.9L150.1 509.1C142.9 513.4 133.1 512.7 125.6 507.4C118.2 502.1 114.5 492.9 115.1 483.9L142.2 328.4L31.11 218.2C24.65 211.9 22.36 202.4 25.2 193.7C28.03 185.1 35.5 178.8 44.49 177.5L197.7 154.8L266.3 13.52C270.4 5.249 278.7 0 287.9 0L287.9 0zM287.9 78.95L235.4 187.2C231.9 194.3 225.1 199.3 217.3 200.5L98.98 217.9L184.9 303C190.4 308.5 192.9 316.4 191.6 324.1L171.4 443.7L276.6 387.5C283.7 383.7 292.2 383.7 299.2 387.5L404.4 443.7L384.2 324.1C382.9 316.4 385.5 308.5 391 303L476.9 217.9L358.6 200.5C350.7 199.3 343.9 194.3 340.5 187.2L287.9 78.95z"/></svg></span></span><div id="github-35acb2467e8c5b7be245dd5d8ae6184d-stargazers" class="m-0 mr-5 text-md text-neutral-800 dark:text-neutral">
+766</div><span class="text-md mr-1 text-neutral-800 dark:text-neutral"><span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M80 104c13.3 0 24-10.7 24-24s-10.7-24-24-24S56 66.7 56 80s10.7 24 24 24zm80-24c0 32.8-19.7 61-48 73.3V192c0 17.7 14.3 32 32 32H304c17.7 0 32-14.3 32-32V153.3C307.7 141 288 112.8 288 80c0-44.2 35.8-80 80-80s80 35.8 80 80c0 32.8-19.7 61-48 73.3V192c0 53-43 96-96 96H256v70.7c28.3 12.3 48 40.5 48 73.3c0 44.2-35.8 80-80 80s-80-35.8-80-80c0-32.8 19.7-61 48-73.3V288H144c-53 0-96-43-96-96V153.3C19.7 141 0 112.8 0 80C0 35.8 35.8 0 80 0s80 35.8 80 80zm208 24c13.3 0 24-10.7 24-24s-10.7-24-24-24s-24 10.7-24 24s10.7 24 24 24zM248 432c0-13.3-10.7-24-24-24s-24 10.7-24 24s10.7 24 24 24s24-10.7 24-24z"/></svg></span></span><div id="github-35acb2467e8c5b7be245dd5d8ae6184d-forks" class="m-0 mr-5 text-md text-neutral-800 dark:text-neutral">
+52</div></div></div><script>
+fetch("https://api.github.com/repos/shalva97/kde-configuration-files", {
+headers: new Headers({
+'User-agent': 'Mozilla/4.0 Custom User Agent'
+})
+})
+.then(response => response.json())
+.then(data => {
+document.getElementById('github-35acb2467e8c5b7be245dd5d8ae6184d-full_name').innerHTML = data.full_name;
+document.getElementById('github-35acb2467e8c5b7be245dd5d8ae6184d-description').innerHTML = data.description;
+document.getElementById('github-35acb2467e8c5b7be245dd5d8ae6184d-stargazers').innerHTML = data.stargazers_count;
+document.getElementById('github-35acb2467e8c5b7be245dd5d8ae6184d-forks').innerHTML = data.forks;
+})
+.catch(error => console.error(error))</script></a><p>Don&rsquo;t forget about<strong>Konsave</strong> the GUI tool that does exactly that, just in a much simpler way. Article attached below.</p><section class="space-y-10 w-full"><a class="flex flex-wrap article border border-neutral-200 dark:border-neutral-700 border-2 rounded-md overflow-hidden" href="/posts/konsave-tool/"><div class="w-full md:w-auto h-full thumbnail nozoom " style="background-image:url(/posts/konsave-tool/featured.webp);"/><div class=" p-4"><div class="items-center text-left text-xl font-semibold"><div class="font-bold text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral" href="/posts/konsave-tool/">Konsave TUI</div></div><div class="text-sm text-neutral-500 dark:text-neutral-400"><div class="flex flex-row flex-wrap items-center"><time datetime="2024-06-27 00:00:00 +0000 UTC">27 June 2024</time><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">2 mins</span><span class="px-2 text-primary-500">&middot;</span><span><span id="views_posts/konsave-tool/index.md" class="animate-pulse inline-block text-transparent max-h-3 rounded-full mt-[-2px] align-middle bg-neutral-300 dark:bg-neutral-400" title="views">loading</span><span class="inline-block align-text-bottom"><span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path fill="currentColor" d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></span></span><span class="px-2 text-primary-500">&middot;</span><span><span id="likes_posts/konsave-tool/index.md" class="animate-pulse inline-block text-transparent max-h-3 rounded-full mt-[-2px] align-middle bg-neutral-300 dark:bg-neutral-400" title="likes">loading</span><span class="inline-block align-text-bottom"><span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M47.6 300.4L228.3 469.1c7.5 7 17.4 10.9 27.7 10.9s20.2-3.9 27.7-10.9L464.4 300.4c30.4-28.3 47.6-68 47.6-109.5v-5.8c0-69.9-50.5-129.5-119.4-141C347 36.5 300.6 51.4 268 84L256 96 244 84c-32.6-32.6-79-47.5-124.6-39.9C50.5 55.6 0 115.2 0 185.1v5.8c0 41.5 17.2 81.2 47.6 109.5z"/></svg></span></span></span></div><div class="flex flex-row flex-wrap items-center"/><div class="flex flex-row flex-wrap items-center"><span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/themes/&#34;,'_self');"><span class="flex" style="cursor: pointer;"><span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+Themes</span></span></span><span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/plasma/&#34;,'_self');"><span class="flex" style="cursor: pointer;"><span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+Plasma</span></span></span><span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/kde/&#34;,'_self');"><span class="flex" style="cursor: pointer;"><span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+Kde</span></span></span><span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/tools/&#34;,'_self');"><span class="flex" style="cursor: pointer;"><span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+Tools</span></span></span><span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/linux/&#34;,'_self');"><span class="flex" style="cursor: pointer;"><span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+Linux</span></span></span></div></div></div></a></section><p>That&rsquo;s all se wrote folks. I hope this has helped you understand more of what ricing<strong>KDE Plasma</strong> is all about.</p><p>Cheers !</p>
+]]></content:encoded><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"/><item><title>Konsave TUI</title><link>https://xerolinux.xyz/posts/konsave-tool/</link><pubDate>Thu, 27 Jun 2024 00:00:00 +0000</pubDate><guid>https://xerolinux.xyz/posts/konsave-tool/</guid><description>
+
+&lt;h3 class="relative group">Intro 
+ &lt;div id="intro" class="anchor">&lt;/div>
+ 
+ &lt;span
+ class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+ &lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+ style="text-decoration-line: none !important;" href="#intro" aria-label="Anchor">#&lt;/a>
+ &lt;/span> 
+ 
+&lt;/h3>
+&lt;p>I have recently stumbled upon a handy little tool for us who love customizing KDE but hate the work of switching between rices&amp;hellip; It&amp;rsquo;s called Konsave.&lt;/p>
+
+
+ 
+ &lt;div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+ &lt;iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/c54iZyEXlas?autoplay=0&amp;controls=1&amp;end=0&amp;loop=0&amp;mute=0&amp;start=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="YouTube video"
+ >&lt;/iframe>
+ &lt;/div>
+
+&lt;p>As you can see from above video, tool is very useful. What I love about it is the fact that we can export &amp;amp; share our configs. I have been having so much fun with it, it made my ricing life so much easier now&amp;hellip;&lt;/p>
+
+
+&lt;h3 class="relative group">Something to note 
+ &lt;div id="something-to-note" class="anchor">&lt;/div>
+ 
+ &lt;span
+ class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+ &lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+ style="text-decoration-line: none !important;" href="#something-to-note" aria-label="Anchor">#&lt;/a>
+ &lt;/span> 
+ 
+&lt;/h3>
+&lt;p>Just something the author forgot to mention is that the tool will not save anything from outside the $HOME directory. You can only include directories under &lt;em>$HOME&lt;/em> to the tool&amp;rsquo;s config file, since anything coming from outside there will require root which isn&amp;rsquo;t supported. What this means, is, that any themes you install from any repo or AUR that are applied system wide &lt;code>/usr/share/themes&lt;/code> will not be included in your exports, only in local saves.. Just keep that in mind.&lt;/p>
+&lt;p>
+ &lt;figure>
+ &lt;img class="my-0 rounded-md" loading="lazy" src="https://user-images.githubusercontent.com/39525869/109611033-a6732c80-7b53-11eb-9ece-ffd9cef49047.gif" alt="Image" />
+ 
+ &lt;/figure>
+&lt;/p>
+
+
+&lt;h3 class="relative group">How to get it ? 
+ &lt;div id="how-to-get-it-" class="anchor">&lt;/div>
+ 
+ &lt;span
+ class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+ &lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+ style="text-decoration-line: none !important;" href="#how-to-get-it-" aria-label="Anchor">#&lt;/a>
+ &lt;/span> 
+ 
+&lt;/h3>
+&lt;p>It&amp;rsquo;s available on the AUR. Otherwise, below is a link to tool&amp;rsquo;s GitHub.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-Bash" data-lang="Bash">&lt;span class="line">&lt;span class="cl">paru -S konsave
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;a id="github-332ee8afae17adb75781b84a058a1d54" target="_blank" href="https://github.com/Prayag2/konsave" class="cursor-pointer">
+ &lt;div
+ class="w-full md:w-auto pt-3 p-5 border border-neutral-200 dark:border-neutral-700 border rounded-md shadow-2xl">
+
+ &lt;div class="flex items-center">
+ &lt;span class="text-2xl text-neutral-800 dark:text-neutral" style="margin-right:10px;">
+ 
+
+ &lt;span class="relative block icon">
+ &lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512">&lt;path fill="currentColor" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/>&lt;/svg>
+
+ &lt;/span>
+
+
+ &lt;/span>
+ &lt;div
+ id="github-332ee8afae17adb75781b84a058a1d54-full_name"
+ class="m-0 font-bold text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral">
+ Prayag2/konsave
+ &lt;/div>
+ &lt;/div>
+
+ &lt;p id="github-332ee8afae17adb75781b84a058a1d54-description" class="m-0 mt-2 text-md text-neutral-800 dark:text-neutral">
+ A command line program written in Python to let you backup your dotfiles and switch to other ones in an instant. Works out-of-the box on KDE Plasma!
+ &lt;/p>
+
+ &lt;div class="m-0 mt-2 flex items-center">
+
+ &lt;span class="mr-1 inline-block h-3 w-3 rounded-full"
+ style="background-color: #3572A5">&lt;/span>
+ &lt;div class="m-0 mr-5 text-md text-neutral-800 dark:text-neutral">
+ Python 
+ &lt;/div>
+
+ &lt;span class="text-md mr-1 text-neutral-800 dark:text-neutral">
+ 
+
+ &lt;span class="relative block icon">
+ &lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">&lt;path fill="currentColor" d="M287.9 0C297.1 0 305.5 5.25 309.5 13.52L378.1 154.8L531.4 177.5C540.4 178.8 547.8 185.1 550.7 193.7C553.5 202.4 551.2 211.9 544.8 218.2L433.6 328.4L459.9 483.9C461.4 492.9 457.7 502.1 450.2 507.4C442.8 512.7 432.1 513.4 424.9 509.1L287.9 435.9L150.1 509.1C142.9 513.4 133.1 512.7 125.6 507.4C118.2 502.1 114.5 492.9 115.1 483.9L142.2 328.4L31.11 218.2C24.65 211.9 22.36 202.4 25.2 193.7C28.03 185.1 35.5 178.8 44.49 177.5L197.7 154.8L266.3 13.52C270.4 5.249 278.7 0 287.9 0L287.9 0zM287.9 78.95L235.4 187.2C231.9 194.3 225.1 199.3 217.3 200.5L98.98 217.9L184.9 303C190.4 308.5 192.9 316.4 191.6 324.1L171.4 443.7L276.6 387.5C283.7 383.7 292.2 383.7 299.2 387.5L404.4 443.7L384.2 324.1C382.9 316.4 385.5 308.5 391 303L476.9 217.9L358.6 200.5C350.7 199.3 343.9 194.3 340.5 187.2L287.9 78.95z"/>&lt;/svg>
+ &lt;/span>
+
+
+ &lt;/span>
+ &lt;div id="github-332ee8afae17adb75781b84a058a1d54-stargazers" class="m-0 mr-5 text-md text-neutral-800 dark:text-neutral">
+ 906
+ &lt;/div>
+
+ &lt;span class="text-md mr-1 text-neutral-800 dark:text-neutral">
+ 
+
+ &lt;span class="relative block icon">
+ &lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">&lt;path fill="currentColor" d="M80 104c13.3 0 24-10.7 24-24s-10.7-24-24-24S56 66.7 56 80s10.7 24 24 24zm80-24c0 32.8-19.7 61-48 73.3V192c0 17.7 14.3 32 32 32H304c17.7 0 32-14.3 32-32V153.3C307.7 141 288 112.8 288 80c0-44.2 35.8-80 80-80s80 35.8 80 80c0 32.8-19.7 61-48 73.3V192c0 53-43 96-96 96H256v70.7c28.3 12.3 48 40.5 48 73.3c0 44.2-35.8 80-80 80s-80-35.8-80-80c0-32.8 19.7-61 48-73.3V288H144c-53 0-96-43-96-96V153.3C19.7 141 0 112.8 0 80C0 35.8 35.8 0 80 0s80 35.8 80 80zm208 24c13.3 0 24-10.7 24-24s-10.7-24-24-24s-24 10.7-24 24s10.7 24 24 24zM248 432c0-13.3-10.7-24-24-24s-24 10.7-24 24s10.7 24 24 24s24-10.7 24-24z"/>&lt;/svg>
+ &lt;/span>
+
+
+ &lt;/span>
+ &lt;div id="github-332ee8afae17adb75781b84a058a1d54-forks" class="m-0 mr-5 text-md text-neutral-800 dark:text-neutral">
+ 35
+ &lt;/div>
+
+ &lt;/div>
+
+ &lt;/div>
+ &lt;script>
+ fetch("https://api.github.com/repos/Prayag2/konsave", {
+ headers: new Headers({
+ 'User-agent': 'Mozilla/4.0 Custom User Agent'
+ })
+ })
+ .then(response => response.json())
+ .then(data => {
+ document.getElementById('github-332ee8afae17adb75781b84a058a1d54-full_name').innerHTML = data.full_name;
+ document.getElementById('github-332ee8afae17adb75781b84a058a1d54-description').innerHTML = data.description;
+ document.getElementById('github-332ee8afae17adb75781b84a058a1d54-stargazers').innerHTML = data.stargazers_count;
+ document.getElementById('github-332ee8afae17adb75781b84a058a1d54-forks').innerHTML = data.forks;
+ })
+ .catch(error => console.error(error))
+ &lt;/script>
+&lt;/a>
+&lt;p>Have fun and start sharing your configs&lt;/p></description><content:encoded>&lt;![CDATA[<h3 class="relative group">Intro<div id="intro" class="anchor"/><span class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#intro" aria-label="Anchor">#</a></span></h3><p>I have recently stumbled upon a handy little tool for us who love customizing KDE but hate the work of switching between rices&hellip; It&rsquo;s called Konsave.</p><div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;"><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/c54iZyEXlas?autoplay=0&controls=1&end=0&loop=0&mute=0&start=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="YouTube video"/></div><p>As you can see from above video, tool is very useful. What I love about it is the fact that we can export &amp; share our configs. I have been having so much fun with it, it made my ricing life so much easier now&hellip;</p><h3 class="relative group">Something to note<div id="something-to-note" class="anchor"/><span class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#something-to-note" aria-label="Anchor">#</a></span></h3><p>Just something the author forgot to mention is that the tool will not save anything from outside the $HOME directory. You can only include directories under<em>$HOME</em> to the tool&rsquo;s config file, since anything coming from outside there will require root which isn&rsquo;t supported. What this means, is, that any themes you install from any repo or AUR that are applied system wide<code>/usr/share/themes</code> will not be included in your exports, only in local saves.. Just keep that in mind.</p><p><figure><img class="my-0 rounded-md" loading="lazy" src="https://user-images.githubusercontent.com/39525869/109611033-a6732c80-7b53-11eb-9ece-ffd9cef49047.gif" alt="Image"/></figure></p><h3 class="relative group">How to get it ?<div id="how-to-get-it-" class="anchor"/><span class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#how-to-get-it-" aria-label="Anchor">#</a></span></h3><p>It&rsquo;s available on the AUR. Otherwise, below is a link to tool&rsquo;s GitHub.</p><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Bash" data-lang="Bash"><span class="line"><span class="cl">paru -S konsave</span></span></code></pre></div><a id="github-332ee8afae17adb75781b84a058a1d54" target="_blank" href="https://github.com/Prayag2/konsave" class="cursor-pointer"><div class="w-full md:w-auto pt-3 p-5 border border-neutral-200 dark:border-neutral-700 border rounded-md shadow-2xl"><div class="flex items-center"><span class="text-2xl text-neutral-800 dark:text-neutral" style="margin-right:10px;"><span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path fill="currentColor" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg></span></span><div id="github-332ee8afae17adb75781b84a058a1d54-full_name" class="m-0 font-bold text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral">
+Prayag2/konsave</div></div><p id="github-332ee8afae17adb75781b84a058a1d54-description" class="m-0 mt-2 text-md text-neutral-800 dark:text-neutral">
+A command line program written in Python to let you backup your dotfiles and switch to other ones in an instant. Works out-of-the box on KDE Plasma!</p><div class="m-0 mt-2 flex items-center"><span class="mr-1 inline-block h-3 w-3 rounded-full" style="background-color: #3572A5"/><div class="m-0 mr-5 text-md text-neutral-800 dark:text-neutral">
+Python</div><span class="text-md mr-1 text-neutral-800 dark:text-neutral"><span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path fill="currentColor" d="M287.9 0C297.1 0 305.5 5.25 309.5 13.52L378.1 154.8L531.4 177.5C540.4 178.8 547.8 185.1 550.7 193.7C553.5 202.4 551.2 211.9 544.8 218.2L433.6 328.4L459.9 483.9C461.4 492.9 457.7 502.1 450.2 507.4C442.8 512.7 432.1 513.4 424.9 509.1L287.9 435.9L150.1 509.1C142.9 513.4 133.1 512.7 125.6 507.4C118.2 502.1 114.5 492.9 115.1 483.9L142.2 328.4L31.11 218.2C24.65 211.9 22.36 202.4 25.2 193.7C28.03 185.1 35.5 178.8 44.49 177.5L197.7 154.8L266.3 13.52C270.4 5.249 278.7 0 287.9 0L287.9 0zM287.9 78.95L235.4 187.2C231.9 194.3 225.1 199.3 217.3 200.5L98.98 217.9L184.9 303C190.4 308.5 192.9 316.4 191.6 324.1L171.4 443.7L276.6 387.5C283.7 383.7 292.2 383.7 299.2 387.5L404.4 443.7L384.2 324.1C382.9 316.4 385.5 308.5 391 303L476.9 217.9L358.6 200.5C350.7 199.3 343.9 194.3 340.5 187.2L287.9 78.95z"/></svg></span></span><div id="github-332ee8afae17adb75781b84a058a1d54-stargazers" class="m-0 mr-5 text-md text-neutral-800 dark:text-neutral">
+906</div><span class="text-md mr-1 text-neutral-800 dark:text-neutral"><span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M80 104c13.3 0 24-10.7 24-24s-10.7-24-24-24S56 66.7 56 80s10.7 24 24 24zm80-24c0 32.8-19.7 61-48 73.3V192c0 17.7 14.3 32 32 32H304c17.7 0 32-14.3 32-32V153.3C307.7 141 288 112.8 288 80c0-44.2 35.8-80 80-80s80 35.8 80 80c0 32.8-19.7 61-48 73.3V192c0 53-43 96-96 96H256v70.7c28.3 12.3 48 40.5 48 73.3c0 44.2-35.8 80-80 80s-80-35.8-80-80c0-32.8 19.7-61 48-73.3V288H144c-53 0-96-43-96-96V153.3C19.7 141 0 112.8 0 80C0 35.8 35.8 0 80 0s80 35.8 80 80zm208 24c13.3 0 24-10.7 24-24s-10.7-24-24-24s-24 10.7-24 24s10.7 24 24 24zM248 432c0-13.3-10.7-24-24-24s-24 10.7-24 24s10.7 24 24 24s24-10.7 24-24z"/></svg></span></span><div id="github-332ee8afae17adb75781b84a058a1d54-forks" class="m-0 mr-5 text-md text-neutral-800 dark:text-neutral">
+35</div></div></div><script>
+fetch("https://api.github.com/repos/Prayag2/konsave", {
+headers: new Headers({
+'User-agent': 'Mozilla/4.0 Custom User Agent'
+})
+})
+.then(response => response.json())
+.then(data => {
+document.getElementById('github-332ee8afae17adb75781b84a058a1d54-full_name').innerHTML = data.full_name;
+document.getElementById('github-332ee8afae17adb75781b84a058a1d54-description').innerHTML = data.description;
+document.getElementById('github-332ee8afae17adb75781b84a058a1d54-stargazers').innerHTML = data.stargazers_count;
+document.getElementById('github-332ee8afae17adb75781b84a058a1d54-forks').innerHTML = data.forks;
+})
+.catch(error => console.error(error))</script></a><p>Have fun and start sharing your configs</p>
+]]></content:encoded><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"/><item><title>LightlyShaders Effects</title><link>https://xerolinux.xyz/posts/lightly-shaders/</link><pubDate>Thu, 27 Jun 2024 00:00:00 +0000</pubDate><guid>https://xerolinux.xyz/posts/lightly-shaders/</guid><description>
+
+&lt;h3 class="relative group">What is it ? 
+ &lt;div id="what-is-it-" class="anchor">&lt;/div>
+ 
+ &lt;span
+ class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+ &lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+ style="text-decoration-line: none !important;" href="#what-is-it-" aria-label="Anchor">#&lt;/a>
+ &lt;/span> 
+ 
+&lt;/h3>
+&lt;p>I would like to share a neat little &amp;ldquo;Effect&amp;rdquo; if you will, called LightlyShaders which is a fork of another project that is a simple KWin/5 effect that simply rounds corners of windows, to do this it uses an opengl shader and is able to round any window, like mpv video for example will have rounded corners.&lt;/p>
+&lt;p>
+ &lt;figure>
+ &lt;img class="my-0 rounded-md" loading="lazy" src="https://i.imgur.com/ngDtR0J.jpeg" alt="[Image: ngDtR0J.jpeg]" />
+ 
+ &lt;/figure>
+&lt;/p>
+
+ 
+
+
+
+&lt;div
+ 
+ class="flex px-4 py-3 rounded-md bg-primary-100 dark:bg-primary-900"
+ >
+
+ &lt;span
+ 
+ class="text-primary-400 ltr:pr-3 rtl:pl-3 flex items-center"
+ >
+
+ 
+
+
+ &lt;/span>
+
+ &lt;span
+ 
+ class="dark:text-neutral-300"
+ >&lt;ol>
+&lt;li>This effect is basically a hack!&lt;/li>
+&lt;/ol>
+&lt;p>Due to the changes introduced in Plasma 5.x there is no way to draw original shadows under rounded corners any more. In order to work around that, this fork uses a hack that tries to restore the shadow in the cut out regions based on the data from the closest regions with shadows.&lt;/p>
+&lt;p>Because of this it may work differently with different themes, corner radiuses or shadow settings. Your mileage may vary.&lt;/p>
+&lt;ol start="2">
+&lt;li>This effect can be resource-hungry!&lt;/li>
+&lt;/ol>
+&lt;p>Thanks to recent changes the performance of this plugin has improved. But depending on your hardware, you still can have performance hit.&lt;/p>
+&lt;/span>
+&lt;/div>
+
+
+
+&lt;h3 class="relative group">Where to get it ? 
+ &lt;div id="where-to-get-it-" class="anchor">&lt;/div>
+ 
+ &lt;span
+ class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+ &lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+ style="text-decoration-line: none !important;" href="#where-to-get-it-" aria-label="Anchor">#&lt;/a>
+ &lt;/span> 
+ 
+&lt;/h3>
+&lt;p>1- Install Dependencies :&lt;/p>
+&lt;pre tabindex="0">&lt;code>sudo pacman -S git make cmake gcc gettext extra-cmake-modules qt5-tools qt5-x11extras kcrash kglobalaccel kde-dev-utils kio knotifications kinit kwin
+&lt;/code>&lt;/pre>&lt;p>2- Git Clone Repo &amp;amp; Build :&lt;/p>
+&lt;pre tabindex="0">&lt;code>git clone https://github.com/a-parhom/LightlyShaders
+cd LightlyShaders; mkdir qt5build; cd qt5build; cmake ../ -DCMAKE_INSTALL_PREFIX=/usr &amp;amp;&amp;amp; make &amp;amp;&amp;amp; sudo make install &amp;amp;&amp;amp; (kwin_x11 --replace &amp;amp;)
+&lt;/code>&lt;/pre>&lt;p>3- Enable the Effect :&lt;/p>
+&lt;p>It&amp;rsquo;s highly recommended to reboot after install. Once that&amp;rsquo;s done head on over to &lt;code>Settings &amp;gt; Workspace Behavior &amp;gt; Desktop Effects&lt;/code> and Enable it. Press the Gear if you want to increase/decrease radius&amp;hellip;&lt;/p>
+&lt;p>
+ &lt;figure>
+ &lt;img class="my-0 rounded-md" loading="lazy" src="https://i.imgur.com/HmT5hnm.png" alt="[Image: HmT5hnm.png]" />
+ 
+ &lt;/figure>
+&lt;/p>
+&lt;p>Note :&lt;/p>
+&lt;blockquote>
+&lt;p>After some updates of Plasma this plugin may need to be recompiled in order to work with changes introduced to KWin.&lt;/p>
+&lt;/blockquote>
+&lt;a id="github-9035e4604f09af91fb89685b1e617483" target="_blank" href="https://github.com/a-parhom/LightlyShaders" class="cursor-pointer">
+ &lt;div
+ class="w-full md:w-auto pt-3 p-5 border border-neutral-200 dark:border-neutral-700 border rounded-md shadow-2xl">
+
+ &lt;div class="flex items-center">
+ &lt;span class="text-2xl text-neutral-800 dark:text-neutral" style="margin-right:10px;">
+ 
+
+ &lt;span class="relative block icon">
+ &lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512">&lt;path fill="currentColor" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/>&lt;/svg>
+
+ &lt;/span>
+
+
+ &lt;/span>
+ &lt;div
+ id="github-9035e4604f09af91fb89685b1e617483-full_name"
+ class="m-0 font-bold text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral">
+ a-parhom/LightlyShaders
+ &lt;/div>
+ &lt;/div>
+
+ &lt;p id="github-9035e4604f09af91fb89685b1e617483-description" class="m-0 mt-2 text-md text-neutral-800 dark:text-neutral">
+ Rounded window corners and outline effect for KWin.
+ &lt;/p>
+
+ &lt;div class="m-0 mt-2 flex items-center">
+
+ &lt;span class="mr-1 inline-block h-3 w-3 rounded-full"
+ style="background-color: #f34b7d">&lt;/span>
+ &lt;div class="m-0 mr-5 text-md text-neutral-800 dark:text-neutral">
+ C&amp;#43;&amp;#43; 
+ &lt;/div>
+
+ &lt;span class="text-md mr-1 text-neutral-800 dark:text-neutral">
+ 
+
+ &lt;span class="relative block icon">
+ &lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">&lt;path fill="currentColor" d="M287.9 0C297.1 0 305.5 5.25 309.5 13.52L378.1 154.8L531.4 177.5C540.4 178.8 547.8 185.1 550.7 193.7C553.5 202.4 551.2 211.9 544.8 218.2L433.6 328.4L459.9 483.9C461.4 492.9 457.7 502.1 450.2 507.4C442.8 512.7 432.1 513.4 424.9 509.1L287.9 435.9L150.1 509.1C142.9 513.4 133.1 512.7 125.6 507.4C118.2 502.1 114.5 492.9 115.1 483.9L142.2 328.4L31.11 218.2C24.65 211.9 22.36 202.4 25.2 193.7C28.03 185.1 35.5 178.8 44.49 177.5L197.7 154.8L266.3 13.52C270.4 5.249 278.7 0 287.9 0L287.9 0zM287.9 78.95L235.4 187.2C231.9 194.3 225.1 199.3 217.3 200.5L98.98 217.9L184.9 303C190.4 308.5 192.9 316.4 191.6 324.1L171.4 443.7L276.6 387.5C283.7 383.7 292.2 383.7 299.2 387.5L404.4 443.7L384.2 324.1C382.9 316.4 385.5 308.5 391 303L476.9 217.9L358.6 200.5C350.7 199.3 343.9 194.3 340.5 187.2L287.9 78.95z"/>&lt;/svg>
+ &lt;/span>
+
+
+ &lt;/span>
+ &lt;div id="github-9035e4604f09af91fb89685b1e617483-stargazers" class="m-0 mr-5 text-md text-neutral-800 dark:text-neutral">
+ 352
+ &lt;/div>
+
+ &lt;span class="text-md mr-1 text-neutral-800 dark:text-neutral">
+ 
+
+ &lt;span class="relative block icon">
+ &lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">&lt;path fill="currentColor" d="M80 104c13.3 0 24-10.7 24-24s-10.7-24-24-24S56 66.7 56 80s10.7 24 24 24zm80-24c0 32.8-19.7 61-48 73.3V192c0 17.7 14.3 32 32 32H304c17.7 0 32-14.3 32-32V153.3C307.7 141 288 112.8 288 80c0-44.2 35.8-80 80-80s80 35.8 80 80c0 32.8-19.7 61-48 73.3V192c0 53-43 96-96 96H256v70.7c28.3 12.3 48 40.5 48 73.3c0 44.2-35.8 80-80 80s-80-35.8-80-80c0-32.8 19.7-61 48-73.3V288H144c-53 0-96-43-96-96V153.3C19.7 141 0 112.8 0 80C0 35.8 35.8 0 80 0s80 35.8 80 80zm208 24c13.3 0 24-10.7 24-24s-10.7-24-24-24s-24 10.7-24 24s10.7 24 24 24zM248 432c0-13.3-10.7-24-24-24s-24 10.7-24 24s10.7 24 24 24s24-10.7 24-24z"/>&lt;/svg>
+ &lt;/span>
+
+
+ &lt;/span>
+ &lt;div id="github-9035e4604f09af91fb89685b1e617483-forks" class="m-0 mr-5 text-md text-neutral-800 dark:text-neutral">
+ 23
+ &lt;/div>
+
+ &lt;/div>
+
+ &lt;/div>
+ &lt;script>
+ fetch("https://api.github.com/repos/a-parhom/LightlyShaders", {
+ headers: new Headers({
+ 'User-agent': 'Mozilla/4.0 Custom User Agent'
+ })
+ })
+ .then(response => response.json())
+ .then(data => {
+ document.getElementById('github-9035e4604f09af91fb89685b1e617483-full_name').innerHTML = data.full_name;
+ document.getElementById('github-9035e4604f09af91fb89685b1e617483-description').innerHTML = data.description;
+ document.getElementById('github-9035e4604f09af91fb89685b1e617483-stargazers').innerHTML = data.stargazers_count;
+ document.getElementById('github-9035e4604f09af91fb89685b1e617483-forks').innerHTML = data.forks;
+ })
+ .catch(error => console.error(error))
+ &lt;/script>
+&lt;/a></description><content:encoded>&lt;![CDATA[<h3 class="relative group">What is it ?<div id="what-is-it-" class="anchor"/><span class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#what-is-it-" aria-label="Anchor">#</a></span></h3><p>I would like to share a neat little &ldquo;Effect&rdquo; if you will, called LightlyShaders which is a fork of another project that is a simple KWin/5 effect that simply rounds corners of windows, to do this it uses an opengl shader and is able to round any window, like mpv video for example will have rounded corners.</p><p><figure><img class="my-0 rounded-md" loading="lazy" src="https://i.imgur.com/ngDtR0J.jpeg" alt="[Image: ngDtR0J.jpeg]"/></figure></p><div class="flex px-4 py-3 rounded-md bg-primary-100 dark:bg-primary-900"><span class="text-primary-400 ltr:pr-3 rtl:pl-3 flex items-center"/><span class="dark:text-neutral-300"><ol><li>This effect is basically a hack!</li></ol><p>Due to the changes introduced in Plasma 5.x there is no way to draw original shadows under rounded corners any more. In order to work around that, this fork uses a hack that tries to restore the shadow in the cut out regions based on the data from the closest regions with shadows.</p><p>Because of this it may work differently with different themes, corner radiuses or shadow settings. Your mileage may vary.</p><ol start="2"><li>This effect can be resource-hungry!</li></ol><p>Thanks to recent changes the performance of this plugin has improved. But depending on your hardware, you still can have performance hit.</p></span></div><h3 class="relative group">Where to get it ?<div id="where-to-get-it-" class="anchor"/><span class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#where-to-get-it-" aria-label="Anchor">#</a></span></h3><p>1- Install Dependencies :</p><pre tabindex="0"><code>sudo pacman -S git make cmake gcc gettext extra-cmake-modules qt5-tools qt5-x11extras kcrash kglobalaccel kde-dev-utils kio knotifications kinit kwin</code></pre><p>2- Git Clone Repo &amp; Build :</p><pre tabindex="0"><code>git clone https://github.com/a-parhom/LightlyShaders
+cd LightlyShaders; mkdir qt5build; cd qt5build; cmake ../ -DCMAKE_INSTALL_PREFIX=/usr &amp;&amp; make &amp;&amp; sudo make install &amp;&amp; (kwin_x11 --replace &amp;)</code></pre><p>3- Enable the Effect :</p><p>It&rsquo;s highly recommended to reboot after install. Once that&rsquo;s done head on over to<code>Settings > Workspace Behavior > Desktop Effects</code> and Enable it. Press the Gear if you want to increase/decrease radius&hellip;</p><p><figure><img class="my-0 rounded-md" loading="lazy" src="https://i.imgur.com/HmT5hnm.png" alt="[Image: HmT5hnm.png]"/></figure></p><p>Note :</p><blockquote><p>After some updates of Plasma this plugin may need to be recompiled in order to work with changes introduced to KWin.</p></blockquote><a id="github-9035e4604f09af91fb89685b1e617483" target="_blank" href="https://github.com/a-parhom/LightlyShaders" class="cursor-pointer"><div class="w-full md:w-auto pt-3 p-5 border border-neutral-200 dark:border-neutral-700 border rounded-md shadow-2xl"><div class="flex items-center"><span class="text-2xl text-neutral-800 dark:text-neutral" style="margin-right:10px;"><span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path fill="currentColor" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg></span></span><div id="github-9035e4604f09af91fb89685b1e617483-full_name" class="m-0 font-bold text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral">
+a-parhom/LightlyShaders</div></div><p id="github-9035e4604f09af91fb89685b1e617483-description" class="m-0 mt-2 text-md text-neutral-800 dark:text-neutral">
+Rounded window corners and outline effect for KWin.</p><div class="m-0 mt-2 flex items-center"><span class="mr-1 inline-block h-3 w-3 rounded-full" style="background-color: #f34b7d"/><div class="m-0 mr-5 text-md text-neutral-800 dark:text-neutral">
+C++</div><span class="text-md mr-1 text-neutral-800 dark:text-neutral"><span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path fill="currentColor" d="M287.9 0C297.1 0 305.5 5.25 309.5 13.52L378.1 154.8L531.4 177.5C540.4 178.8 547.8 185.1 550.7 193.7C553.5 202.4 551.2 211.9 544.8 218.2L433.6 328.4L459.9 483.9C461.4 492.9 457.7 502.1 450.2 507.4C442.8 512.7 432.1 513.4 424.9 509.1L287.9 435.9L150.1 509.1C142.9 513.4 133.1 512.7 125.6 507.4C118.2 502.1 114.5 492.9 115.1 483.9L142.2 328.4L31.11 218.2C24.65 211.9 22.36 202.4 25.2 193.7C28.03 185.1 35.5 178.8 44.49 177.5L197.7 154.8L266.3 13.52C270.4 5.249 278.7 0 287.9 0L287.9 0zM287.9 78.95L235.4 187.2C231.9 194.3 225.1 199.3 217.3 200.5L98.98 217.9L184.9 303C190.4 308.5 192.9 316.4 191.6 324.1L171.4 443.7L276.6 387.5C283.7 383.7 292.2 383.7 299.2 387.5L404.4 443.7L384.2 324.1C382.9 316.4 385.5 308.5 391 303L476.9 217.9L358.6 200.5C350.7 199.3 343.9 194.3 340.5 187.2L287.9 78.95z"/></svg></span></span><div id="github-9035e4604f09af91fb89685b1e617483-stargazers" class="m-0 mr-5 text-md text-neutral-800 dark:text-neutral">
+352</div><span class="text-md mr-1 text-neutral-800 dark:text-neutral"><span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M80 104c13.3 0 24-10.7 24-24s-10.7-24-24-24S56 66.7 56 80s10.7 24 24 24zm80-24c0 32.8-19.7 61-48 73.3V192c0 17.7 14.3 32 32 32H304c17.7 0 32-14.3 32-32V153.3C307.7 141 288 112.8 288 80c0-44.2 35.8-80 80-80s80 35.8 80 80c0 32.8-19.7 61-48 73.3V192c0 53-43 96-96 96H256v70.7c28.3 12.3 48 40.5 48 73.3c0 44.2-35.8 80-80 80s-80-35.8-80-80c0-32.8 19.7-61 48-73.3V288H144c-53 0-96-43-96-96V153.3C19.7 141 0 112.8 0 80C0 35.8 35.8 0 80 0s80 35.8 80 80zm208 24c13.3 0 24-10.7 24-24s-10.7-24-24-24s-24 10.7-24 24s10.7 24 24 24zM248 432c0-13.3-10.7-24-24-24s-24 10.7-24 24s10.7 24 24 24s24-10.7 24-24z"/></svg></span></span><div id="github-9035e4604f09af91fb89685b1e617483-forks" class="m-0 mr-5 text-md text-neutral-800 dark:text-neutral">
+23</div></div></div><script>
+fetch("https://api.github.com/repos/a-parhom/LightlyShaders", {
+headers: new Headers({
+'User-agent': 'Mozilla/4.0 Custom User Agent'
+})
+})
+.then(response => response.json())
+.then(data => {
+document.getElementById('github-9035e4604f09af91fb89685b1e617483-full_name').innerHTML = data.full_name;
+document.getElementById('github-9035e4604f09af91fb89685b1e617483-description').innerHTML = data.description;
+document.getElementById('github-9035e4604f09af91fb89685b1e617483-stargazers').innerHTML = data.stargazers_count;
+document.getElementById('github-9035e4604f09af91fb89685b1e617483-forks').innerHTML = data.forks;
+})
+.catch(error => console.error(error))</script></a>
+]]></content:encoded><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"/><item><title>Make KDE apps use System theme in XFCE/Gnome</title><link>https://xerolinux.xyz/posts/fix-grub/</link><pubDate>Thu, 27 Jun 2024 00:00:00 +0000</pubDate><guid>https://xerolinux.xyz/posts/fix-grub/</guid><description>&lt;p>
+ &lt;figure>
+ &lt;img class="my-0 rounded-md" loading="lazy" src="https://i.imgur.com/FlfFJ0o.png" alt="[Image: FlfFJ0o.png]" />
+ 
+ &lt;/figure>
+&lt;/p>
+
+
+&lt;h3 class="relative group">Info 
+ &lt;div id="info" class="anchor">&lt;/div>
+ 
+ &lt;span
+ class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+ &lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+ style="text-decoration-line: none !important;" href="#info" aria-label="Anchor">#&lt;/a>
+ &lt;/span> 
+ 
+&lt;/h3>
+&lt;p>In case you are one of the affected people, below is how you can fix the issue. I have tested it and it works fine. And keep in mind that XeroLinux is basically ArchLinux so below fix will work on Arch as well as any Arch-Based distros with the exception of Manjaro that is NOT Arch. Read more on that &amp;raquo; &lt;a href="https://wiki.manjaro.org/index.php/Manjaro:A_Different_Kind_of_Beast#:~:text=Manjaro%20is%20developed%20independently%20from,from%20its%20own%20independent%20repositories" target="_blank">Here&lt;/a> &amp;laquo;&lt;/p>
+
+
+&lt;h3 class="relative group">Disclaimer : 
+ &lt;div id="disclaimer-" class="anchor">&lt;/div>
+ 
+ &lt;span
+ class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+ &lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+ style="text-decoration-line: none !important;" href="#disclaimer-" aria-label="Anchor">#&lt;/a>
+ &lt;/span> 
+ 
+&lt;/h3>
+&lt;p>Below guide covers EXT4/XFS/BTRFS Unencrypted Filesystems, for Encrypted Drives, you will have to either &amp;ldquo;Google it&amp;rdquo; lol, or check at the bottom of this guide where I posted a link to EndeavourOS&amp;rsquo; more advanced guide for Chrooting into your system&amp;hellip; There are 2 options if first one works no need for the rest, and so on&amp;hellip;&lt;/p>
+&lt;p>Anyway here&amp;rsquo;s what to do&amp;hellip;&lt;/p>
+
+
+&lt;h3 class="relative group">Mount your system to work in.. 
+ &lt;div id="mount-your-system-to-work-in" class="anchor">&lt;/div>
+ 
+ &lt;span
+ class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+ &lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+ style="text-decoration-line: none !important;" href="#mount-your-system-to-work-in" aria-label="Anchor">#&lt;/a>
+ &lt;/span> 
+ 
+&lt;/h3>
+&lt;p>First of all; boot using Arch or XeroLinux Live boot USB and follow the steps below&amp;hellip;&lt;/p>
+&lt;p>The device or partition with your Linux system on it will need to be mounted. To discover the kernel name of the storage device name, type:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-Bash" data-lang="Bash">&lt;span class="line">&lt;span class="cl">sudo fdisk -l
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Mount the device or partition : (replace &amp;ldquo;sdXn&amp;rdquo; with your Actual partition name)&lt;/p>
+&lt;p>
+ &lt;figure>
+ &lt;img class="my-0 rounded-md" loading="lazy" src="https://i.imgur.com/SZO4qw0.png" alt="[Image: SZO4qw0.png]" />
+ 
+ &lt;/figure>
+&lt;/p>
+&lt;p>For EXT4 &amp;amp; XFS&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-Bash" data-lang="Bash">&lt;span class="line">&lt;span class="cl">sudo mount /dev/sdXn /mnt &lt;span class="o">(&lt;/span>Linux Filesystem&lt;span class="o">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">sudo mount /dev/sdXn /mnt/boot/efi &lt;span class="o">(&lt;/span>EFI System&lt;span class="o">)&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>For BTRFS&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-Bash" data-lang="Bash">&lt;span class="line">&lt;span class="cl">sudo mount -o &lt;span class="nv">subvol&lt;/span>&lt;span class="o">=&lt;/span>@ /dev/sdXn /mnt &lt;span class="o">(&lt;/span>Linux Filesystem&lt;span class="o">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">sudo mount -o &lt;span class="nv">subvol&lt;/span>&lt;span class="o">=&lt;/span>@ /dev/sdXn /mnt/boot/efi &lt;span class="o">(&lt;/span>EFI System&lt;span class="o">)&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
+
+&lt;h3 class="relative group">Chroot into your system : 
+ &lt;div id="chroot-into-your-system-" class="anchor">&lt;/div>
+ 
+ &lt;span
+ class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+ &lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+ style="text-decoration-line: none !important;" href="#chroot-into-your-system-" aria-label="Anchor">#&lt;/a>
+ &lt;/span> 
+ 
+&lt;/h3>
+&lt;p>With this information, you are able to arch-chroot, and to be able to do that you need to have root permissions, so type the following command:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-Bash" data-lang="Bash">&lt;span class="line">&lt;span class="cl">sudo arch-chroot /mnt
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
+
+&lt;h3 class="relative group">Fix Grub boot loop issue : 
+ &lt;div id="fix-grub-boot-loop-issue-" class="anchor">&lt;/div>
+ 
+ &lt;span
+ class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+ &lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+ style="text-decoration-line: none !important;" href="#fix-grub-boot-loop-issue-" aria-label="Anchor">#&lt;/a>
+ &lt;/span> 
+ 
+&lt;/h3>
+&lt;p>Now you’ve chrooted into your installed system, and you are able to access your files, install packages, or alter scripts to rescue your system. to fix Grub run this in chroot&amp;hellip;&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-Bash" data-lang="Bash">&lt;span class="line">&lt;span class="cl">sudo grub-install --removable --target&lt;span class="o">=&lt;/span>x86_64-efi --efi-directory&lt;span class="o">=&lt;/span>/boot/efi --disable-shim-lock
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>
+ &lt;figure>
+ &lt;img class="my-0 rounded-md" loading="lazy" src="https://i.imgur.com/dfBQw4X.jpeg" alt="[Image: dfBQw4X.jpeg]" />
+ 
+ &lt;/figure>
+&lt;/p>
+&lt;p>This will install grub on persistent memory as opposed to volatile one&amp;hellip; By default Grub will sit on volatile memory, I dunno why, and since when devs decided to do that, suffice it to say that whatever the reason behind this was below command will fix you right up&amp;hellip;&lt;/p>
+&lt;p>then update grub via below command&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-Bash" data-lang="Bash">&lt;span class="line">&lt;span class="cl">sudo grub-mkconfig -o /boot/grub/grub.cfg
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Exit arch-chroot via &lt;code>exit&lt;/code> command then unmount your system n boot&amp;hellip; &lt;a href="https://discovery.endeavouros.com/system-rescue/arch-chroot/2022/12/" target="_blank">Advanced Chroot Guide&lt;/a>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-Bash" data-lang="Bash">&lt;span class="line">&lt;span class="cl">sudo umount /mnt/boot/efi
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">sudo umount /mnt
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description><content:encoded>&lt;![CDATA[<p><figure><img class="my-0 rounded-md" loading="lazy" src="https://i.imgur.com/FlfFJ0o.png" alt="[Image: FlfFJ0o.png]"/></figure></p><h3 class="relative group">Info<div id="info" class="anchor"/><span class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#info" aria-label="Anchor">#</a></span></h3><p>In case you are one of the affected people, below is how you can fix the issue. I have tested it and it works fine. And keep in mind that XeroLinux is basically ArchLinux so below fix will work on Arch as well as any Arch-Based distros with the exception of Manjaro that is NOT Arch. Read more on that &raquo;<a href="https://wiki.manjaro.org/index.php/Manjaro:A_Different_Kind_of_Beast#:~:text=Manjaro%20is%20developed%20independently%20from,from%20its%20own%20independent%20repositories" target="_blank">Here</a> &laquo;</p><h3 class="relative group">Disclaimer :<div id="disclaimer-" class="anchor"/><span class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#disclaimer-" aria-label="Anchor">#</a></span></h3><p>Below guide covers EXT4/XFS/BTRFS Unencrypted Filesystems, for Encrypted Drives, you will have to either &ldquo;Google it&rdquo; lol, or check at the bottom of this guide where I posted a link to EndeavourOS&rsquo; more advanced guide for Chrooting into your system&hellip; There are 2 options if first one works no need for the rest, and so on&hellip;</p><p>Anyway here&rsquo;s what to do&hellip;</p><h3 class="relative group">Mount your system to work in..<div id="mount-your-system-to-work-in" class="anchor"/><span class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#mount-your-system-to-work-in" aria-label="Anchor">#</a></span></h3><p>First of all; boot using Arch or XeroLinux Live boot USB and follow the steps below&hellip;</p><p>The device or partition with your Linux system on it will need to be mounted. To discover the kernel name of the storage device name, type:</p><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Bash" data-lang="Bash"><span class="line"><span class="cl">sudo fdisk -l</span></span></code></pre></div><p>Mount the device or partition : (replace &ldquo;sdXn&rdquo; with your Actual partition name)</p><p><figure><img class="my-0 rounded-md" loading="lazy" src="https://i.imgur.com/SZO4qw0.png" alt="[Image: SZO4qw0.png]"/></figure></p><p>For EXT4 &amp; XFS</p><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Bash" data-lang="Bash"><span class="line"><span class="cl">sudo mount /dev/sdXn /mnt<span class="o">(</span>Linux Filesystem<span class="o">)</span></span></span><span class="line"><span class="cl">sudo mount /dev/sdXn /mnt/boot/efi<span class="o">(</span>EFI System<span class="o">)</span></span></span></code></pre></div><p>For BTRFS</p><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Bash" data-lang="Bash"><span class="line"><span class="cl">sudo mount -o<span class="nv">subvol</span><span class="o">=</span>@ /dev/sdXn /mnt<span class="o">(</span>Linux Filesystem<span class="o">)</span></span></span><span class="line"><span class="cl">sudo mount -o<span class="nv">subvol</span><span class="o">=</span>@ /dev/sdXn /mnt/boot/efi<span class="o">(</span>EFI System<span class="o">)</span></span></span></code></pre></div><h3 class="relative group">Chroot into your system :<div id="chroot-into-your-system-" class="anchor"/><span class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#chroot-into-your-system-" aria-label="Anchor">#</a></span></h3><p>With this information, you are able to arch-chroot, and to be able to do that you need to have root permissions, so type the following command:</p><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Bash" data-lang="Bash"><span class="line"><span class="cl">sudo arch-chroot /mnt</span></span></code></pre></div><h3 class="relative group">Fix Grub boot loop issue :<div id="fix-grub-boot-loop-issue-" class="anchor"/><span class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#fix-grub-boot-loop-issue-" aria-label="Anchor">#</a></span></h3><p>Now you’ve chrooted into your installed system, and you are able to access your files, install packages, or alter scripts to rescue your system. to fix Grub run this in chroot&hellip;</p><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Bash" data-lang="Bash"><span class="line"><span class="cl">sudo grub-install --removable --target<span class="o">=</span>x86_64-efi --efi-directory<span class="o">=</span>/boot/efi --disable-shim-lock</span></span></code></pre></div><p><figure><img class="my-0 rounded-md" loading="lazy" src="https://i.imgur.com/dfBQw4X.jpeg" alt="[Image: dfBQw4X.jpeg]"/></figure></p><p>This will install grub on persistent memory as opposed to volatile one&hellip; By default Grub will sit on volatile memory, I dunno why, and since when devs decided to do that, suffice it to say that whatever the reason behind this was below command will fix you right up&hellip;</p><p>then update grub via below command</p><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Bash" data-lang="Bash"><span class="line"><span class="cl">sudo grub-mkconfig -o /boot/grub/grub.cfg</span></span></code></pre></div><p>Exit arch-chroot via<code>exit</code> command then unmount your system n boot&hellip;<a href="https://discovery.endeavouros.com/system-rescue/arch-chroot/2022/12/" target="_blank">Advanced Chroot Guide</a></p><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Bash" data-lang="Bash"><span class="line"><span class="cl">sudo umount /mnt/boot/efi</span></span><span class="line"><span class="cl">sudo umount /mnt</span></span></code></pre></div>]]></content:encoded><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"/><item><title>Make KDE apps use System theme in XFCE/Gnome</title><link>https://xerolinux.xyz/posts/theme-qt-apps-on-gtk-de/</link><pubDate>Thu, 27 Jun 2024 00:00:00 +0000</pubDate><guid>https://xerolinux.xyz/posts/theme-qt-apps-on-gtk-de/</guid><description>
+
+&lt;h3 class="relative group">Intro 
+ &lt;div id="intro" class="anchor">&lt;/div>
+ 
+ &lt;span
+ class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+ &lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+ style="text-decoration-line: none !important;" href="#intro" aria-label="Anchor">#&lt;/a>
+ &lt;/span> 
+ 
+&lt;/h3>
+&lt;p>As I was working on &lt;strong>XFCE&lt;/strong> &amp;amp; &lt;strong>Gnome&lt;/strong>, I noticed that since they both use &lt;strong>GTK3/4&lt;/strong>, some &lt;strong>Qt&lt;/strong> apps made for &lt;strong>KDE&lt;/strong> like &lt;strong>KdenLive&lt;/strong> did not follow the system theme. I found a guide that I will be sharing with you all&amp;hellip;&lt;/p>
+&lt;p>Apps built with Q (aka KDE apps) do not look great on the XFCE4 &amp;amp; GNOME desktop because they don’t respect the default theme. The way to fix this is to use &lt;strong>Kvantum&lt;/strong>. With it, you can set &lt;strong>KDE&lt;/strong> app themes to use a similar theme to what you use.&lt;/p>
+&lt;p>
+ &lt;figure>
+ &lt;img class="my-0 rounded-md" loading="lazy" src="https://i.imgur.com/UK5MPRI.png" alt="Shot1" />
+ 
+ &lt;/figure>
+&lt;/p>
+
+
+&lt;h3 class="relative group">Before we begin&amp;hellip; 
+ &lt;div id="before-we-begin" class="anchor">&lt;/div>
+ 
+ &lt;span
+ class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+ &lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+ style="text-decoration-line: none !important;" href="#before-we-begin" aria-label="Anchor">#&lt;/a>
+ &lt;/span> 
+ 
+&lt;/h3>
+&lt;p>In this guide, we’ll be using the &lt;strong>Adapta GTK&lt;/strong> theme for &lt;strong>XFCE&lt;/strong>. We’re focusing on Adapta because it has a &lt;strong>Kvantum&lt;/strong> theme that is widely available and helps blend &lt;strong>KDE&lt;/strong> apps in with &lt;strong>XFCE4&lt;/strong> quite well.&lt;/p>
+&lt;p>Before starting this guide, we highly recommend installing the &lt;strong>Adapta GTK&lt;/strong> theme onto your Linux PC and enabling it as the default theme in &lt;strong>XFCE&lt;/strong>.&lt;/p>
+
+
+&lt;h3 class="relative group">Installing Kvantum on Linux 
+ &lt;div id="installing-kvantum-on-linux" class="anchor">&lt;/div>
+ 
+ &lt;span
+ class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+ &lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+ style="text-decoration-line: none !important;" href="#installing-kvantum-on-linux" aria-label="Anchor">#&lt;/a>
+ &lt;/span> 
+ 
+&lt;/h3>
+&lt;p>To get &lt;strong>Kvantum&lt;/strong> working on your Linux PC, you will need to install it alongside the management tool. To get started, open up a terminal window and install the Kvantum manager, as well as everything else necessary to use it.&lt;/p>
+&lt;p>&lt;strong>Arch Linux&lt;/strong>&lt;/p>
+&lt;p>&lt;strong>Kvantum&lt;/strong> is available to Arch Linux users and has been for a very long time. There is an &lt;strong>&lt;a href="https://aur.archlinux.org/packages/kvantum-qt5-git/" target="_blank">AUR package&lt;/a>&lt;/strong>. There’s also a package in the official Arch Linux software sources, which we recommend.&lt;/p>
+&lt;p>To get the latest Kvantum on your Arch Linux PC, enter the following terminal command.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-Bash" data-lang="Bash">&lt;span class="line">&lt;span class="cl">sudo pacman -S kvantum
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;strong>Downloading Kvantum themes&lt;/strong>&lt;/p>
+&lt;p>In this guide, we’re focusing on the &lt;strong>Kvantum Adapta&lt;/strong> theme. However, if you want to use a different GTK theme and need a matching Kvantum theme to go with it, the best place to go is the KDE Store.&lt;/p>
+&lt;p>The KDE Store has tons of stuff to download, including Kvantum theme engine themes. To download a Kvantum theme, head over to the &lt;strong>&lt;a href="https://store.kde.org/browse/cat/123/order/latest/" target="_blank">Kvantum page&lt;/a>&lt;/strong> on the KDE store. From there, look through the latest themes to download.&lt;/p>
+&lt;p>Once you’ve downloaded a theme, launch Kvantum Manager, select “Install/Update Theme,” and install it. Then, select “Change/Delete Theme” to start using it on your system.&lt;/p>
+
+
+&lt;h3 class="relative group">Using Kvantum to make KDE apps look better 
+ &lt;div id="using-kvantum-to-make-kde-apps-look-better" class="anchor">&lt;/div>
+ 
+ &lt;span
+ class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+ &lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+ style="text-decoration-line: none !important;" href="#using-kvantum-to-make-kde-apps-look-better" aria-label="Anchor">#&lt;/a>
+ &lt;/span> 
+ 
+&lt;/h3>
+&lt;p>To make your KDE apps look better on the XFCE4 desktop, start by launching “Kvantum Manager” from the app menu. If you cannot find it in the app menu, open up the XFCE4 quick launcher with Alt + F2, and enter “kvantummanager” in the launch box.&lt;/p>
+&lt;p>Once the Kvantum Manager app is open on the XFCE4 desktop, follow the step-by-step instructions outlined below.&lt;/p>
+&lt;p>&lt;strong>- Step 1:&lt;/strong> Locate the “Change/Delete Theme” option in the Kvantum Manager. If you cannot find it, it is directly below the “Install/Update Theme.”&lt;/p>
+&lt;p>After selecting the “Change/Delete Theme” button, you will see a menu that says “Select a theme,” followed by a blank text box. Change it to “Kvdapta.”&lt;/p>
+&lt;p>
+ &lt;figure>
+ &lt;img class="my-0 rounded-md" loading="lazy" src="https://i.imgur.com/JVEudZ1.png" alt="Shot2" />
+ 
+ &lt;/figure>
+&lt;/p>
+&lt;p>&lt;strong>- Step 2:&lt;/strong> Open up a terminal window and install the Qt5ct app.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-Bash" data-lang="Bash">&lt;span class="line">&lt;span class="cl">sudo pacman -S qt5ct
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;strong>- Step 3:&lt;/strong> Open up a terminal window and use the &lt;strong>echo&lt;/strong> command to edit the profile file to add the environmental variable.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-Bash" data-lang="Bash">&lt;span class="line">&lt;span class="cl">&lt;span class="nb">echo&lt;/span> &lt;span class="s2">&amp;#34;export QT_QPA_PLATFORMTHEME=qt5ct&amp;#34;&lt;/span> &amp;gt;&amp;gt; ~/.profile
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;strong>- Step 4:&lt;/strong> Log out of your XFCE 4 session and log back in.&lt;/p>
+&lt;p>&lt;strong>- Step 5:&lt;/strong> Open up Qt5ct via the app menu. Or, launch it via the terminal with the &lt;strong>qt5ct&lt;/strong> command.&lt;/p>
+&lt;p>
+ &lt;figure>
+ &lt;img class="my-0 rounded-md" loading="lazy" src="https://i.imgur.com/v261wDF.png" alt="Shot3" />
+ 
+ &lt;/figure>
+&lt;/p>
+&lt;p>&lt;strong>Step 6:&lt;/strong> Locate the “Appearance” tab. Then, find the “Style” menu. In the menu, select “kvantum.” Then, select “Apply” to apply changes.&lt;/p>
+&lt;p>
+ &lt;figure>
+ &lt;img class="my-0 rounded-md" loading="lazy" src="https://i.imgur.com/EKMmXrF.png" alt="Shot4" />
+ 
+ &lt;/figure>
+&lt;/p>
+&lt;p>Upon applying your changes, KDE applications on XFCE 4 should be using the Kvantum theme set up earlier. This method works the same way on both &lt;strong>XFCE &amp;amp; GNOME&lt;/strong>.&lt;/p>
+&lt;p>Guide by: &lt;strong>&lt;a href="https://www.addictivetips.com/ubuntu-linux-tips/make-kde-apps-look-better/" target="_blank">AddictiveTips.com&lt;/a>&lt;/strong>&lt;/p></description><content:encoded>&lt;![CDATA[<h3 class="relative group">Intro<div id="intro" class="anchor"/><span class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#intro" aria-label="Anchor">#</a></span></h3><p>As I was working on<strong>XFCE</strong> &amp;<strong>Gnome</strong>, I noticed that since they both use<strong>GTK3/4</strong>, some<strong>Qt</strong> apps made for<strong>KDE</strong> like<strong>KdenLive</strong> did not follow the system theme. I found a guide that I will be sharing with you all&hellip;</p><p>Apps built with Q (aka KDE apps) do not look great on the XFCE4 &amp; GNOME desktop because they don’t respect the default theme. The way to fix this is to use<strong>Kvantum</strong>. With it, you can set<strong>KDE</strong> app themes to use a similar theme to what you use.</p><p><figure><img class="my-0 rounded-md" loading="lazy" src="https://i.imgur.com/UK5MPRI.png" alt="Shot1"/></figure></p><h3 class="relative group">Before we begin&hellip;<div id="before-we-begin" class="anchor"/><span class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#before-we-begin" aria-label="Anchor">#</a></span></h3><p>In this guide, we’ll be using the<strong>Adapta GTK</strong> theme for<strong>XFCE</strong>. We’re focusing on Adapta because it has a<strong>Kvantum</strong> theme that is widely available and helps blend<strong>KDE</strong> apps in with<strong>XFCE4</strong> quite well.</p><p>Before starting this guide, we highly recommend installing the<strong>Adapta GTK</strong> theme onto your Linux PC and enabling it as the default theme in<strong>XFCE</strong>.</p><h3 class="relative group">Installing Kvantum on Linux<div id="installing-kvantum-on-linux" class="anchor"/><span class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#installing-kvantum-on-linux" aria-label="Anchor">#</a></span></h3><p>To get<strong>Kvantum</strong> working on your Linux PC, you will need to install it alongside the management tool. To get started, open up a terminal window and install the Kvantum manager, as well as everything else necessary to use it.</p><p><strong>Arch Linux</strong></p><p><strong>Kvantum</strong> is available to Arch Linux users and has been for a very long time. There is an<strong><a href="https://aur.archlinux.org/packages/kvantum-qt5-git/" target="_blank">AUR package</a></strong>. There’s also a package in the official Arch Linux software sources, which we recommend.</p><p>To get the latest Kvantum on your Arch Linux PC, enter the following terminal command.</p><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Bash" data-lang="Bash"><span class="line"><span class="cl">sudo pacman -S kvantum</span></span></code></pre></div><p><strong>Downloading Kvantum themes</strong></p><p>In this guide, we’re focusing on the<strong>Kvantum Adapta</strong> theme. However, if you want to use a different GTK theme and need a matching Kvantum theme to go with it, the best place to go is the KDE Store.</p><p>The KDE Store has tons of stuff to download, including Kvantum theme engine themes. To download a Kvantum theme, head over to the<strong><a href="https://store.kde.org/browse/cat/123/order/latest/" target="_blank">Kvantum page</a></strong> on the KDE store. From there, look through the latest themes to download.</p><p>Once you’ve downloaded a theme, launch Kvantum Manager, select “Install/Update Theme,” and install it. Then, select “Change/Delete Theme” to start using it on your system.</p><h3 class="relative group">Using Kvantum to make KDE apps look better<div id="using-kvantum-to-make-kde-apps-look-better" class="anchor"/><span class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#using-kvantum-to-make-kde-apps-look-better" aria-label="Anchor">#</a></span></h3><p>To make your KDE apps look better on the XFCE4 desktop, start by launching “Kvantum Manager” from the app menu. If you cannot find it in the app menu, open up the XFCE4 quick launcher with Alt + F2, and enter “kvantummanager” in the launch box.</p><p>Once the Kvantum Manager app is open on the XFCE4 desktop, follow the step-by-step instructions outlined below.</p><p><strong>- Step 1:</strong> Locate the “Change/Delete Theme” option in the Kvantum Manager. If you cannot find it, it is directly below the “Install/Update Theme.”</p><p>After selecting the “Change/Delete Theme” button, you will see a menu that says “Select a theme,” followed by a blank text box. Change it to “Kvdapta.”</p><p><figure><img class="my-0 rounded-md" loading="lazy" src="https://i.imgur.com/JVEudZ1.png" alt="Shot2"/></figure></p><p><strong>- Step 2:</strong> Open up a terminal window and install the Qt5ct app.</p><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Bash" data-lang="Bash"><span class="line"><span class="cl">sudo pacman -S qt5ct</span></span></code></pre></div><p><strong>- Step 3:</strong> Open up a terminal window and use the<strong>echo</strong> command to edit the profile file to add the environmental variable.</p><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Bash" data-lang="Bash"><span class="line"><span class="cl"><span class="nb">echo</span><span class="s2">"export QT_QPA_PLATFORMTHEME=qt5ct"</span> >> ~/.profile</span></span></code></pre></div><p><strong>- Step 4:</strong> Log out of your XFCE 4 session and log back in.</p><p><strong>- Step 5:</strong> Open up Qt5ct via the app menu. Or, launch it via the terminal with the<strong>qt5ct</strong> command.</p><p><figure><img class="my-0 rounded-md" loading="lazy" src="https://i.imgur.com/v261wDF.png" alt="Shot3"/></figure></p><p><strong>Step 6:</strong> Locate the “Appearance” tab. Then, find the “Style” menu. In the menu, select “kvantum.” Then, select “Apply” to apply changes.</p><p><figure><img class="my-0 rounded-md" loading="lazy" src="https://i.imgur.com/EKMmXrF.png" alt="Shot4"/></figure></p><p>Upon applying your changes, KDE applications on XFCE 4 should be using the Kvantum theme set up earlier. This method works the same way on both<strong>XFCE &amp; GNOME</strong>.</p><p>Guide by:<strong><a href="https://www.addictivetips.com/ubuntu-linux-tips/make-kde-apps-look-better/" target="_blank">AddictiveTips.com</a></strong></p>
+]]></content:encoded><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"/><item><title>ML4W Plasma + Hyprland side-by-side</title><link>https://xerolinux.xyz/posts/ml4w-hyprland-plasma/</link><pubDate>Thu, 27 Jun 2024 00:00:00 +0000</pubDate><guid>https://xerolinux.xyz/posts/ml4w-hyprland-plasma/</guid><description>
+
+&lt;h3 class="relative group">What is it? 
+ &lt;div id="what-is-it" class="anchor">&lt;/div>
+ 
+ &lt;span
+ class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+ &lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+ style="text-decoration-line: none !important;" href="#what-is-it" aria-label="Anchor">#&lt;/a>
+ &lt;/span> 
+ 
+&lt;/h3>
+&lt;p>Our good friend from &lt;a href="https://gitlab.com/stephan-raabe" target="_blank">&lt;strong>ML4W&lt;/strong>&lt;/a> just posted a video showing us how to have both &lt;strong>Plasma 6&lt;/strong> and &lt;strong>Hyprland&lt;/strong> side-by-side with his awesome dotfiles.. Check it out below with links to his repositories&amp;hellip;&lt;/p>
+
+
+ 
+ &lt;div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+ &lt;iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/n6Yg232bCOU?autoplay=0&amp;controls=1&amp;end=0&amp;loop=0&amp;mute=0&amp;start=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="YouTube video"
+ >&lt;/iframe>
+ &lt;/div>
+
+
+
+&lt;h3 class="relative group">Where to get it ? 
+ &lt;div id="where-to-get-it-" class="anchor">&lt;/div>
+ 
+ &lt;span
+ class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+ &lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+ style="text-decoration-line: none !important;" href="#where-to-get-it-" aria-label="Anchor">#&lt;/a>
+ &lt;/span> 
+ 
+&lt;/h3>
+&lt;p>Project is hosted over on &lt;strong>Gitlab&lt;/strong>. View card below. But please all I ask is for you not to report any issues to me as I do not use nor will I ever use &lt;strong>Hyprland&lt;/strong>. Please do so directly to author, by opening issues. Keep in mind that you will need an account for that.&lt;/p>
+&lt;a id="gitlab-0d0a434e1fe710b26526a44305bad7a0" target="_blank" href="https://gitlab.com/stephan-raabe/dotfiles" class="cursor-pointer">
+ &lt;div class="w-full md:w-auto pt-3 p-5 border border-neutral-200 dark:border-neutral-700 border rounded-md shadow-2xl">
+
+ &lt;div class="flex items-center">
+ &lt;span class="text-2xl text-neutral-800 dark:text-neutral" style="margin-right:10px;">
+ 
+
+ &lt;span class="relative block icon">
+ &lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">&lt;path fill="currentColor" d="M510.486,284.482l-27.262-83.963c.012.038.016.077.028.115-.013-.044-.021-.088-.033-.132v-.01L429.1,33.871a21.328,21.328,0,0,0-20.445-14.6A21.038,21.038,0,0,0,388.466,34L337.094,192.154H175L123.533,33.989A21.033,21.033,0,0,0,103.35,19.274h-.113A21.467,21.467,0,0,0,82.86,34L28.888,200.475l-.008.021v0c-.013.042-.019.084-.033.127.012-.038.017-.077.029-.115L1.514,284.482a30.6,30.6,0,0,0,11.117,34.283L248.893,490.427c.035.026.074.041.109.067.1.072.2.146.3.214-.1-.065-.187-.136-.282-.2l0,0c.015.012.033.02.05.031s.027.015.041.024l.006,0a11.992,11.992,0,0,0,1.137.7c.054.03.1.068.157.1l0,0c.033.016.064.038.1.054s.053.02.077.032.038.015.056.023c.044.021.092.034.136.057.205.1.421.178.633.264.2.082.389.177.592.248l.025.011c.034.012.064.028.1.04s.083.032.125.046l.05.012c.053.016.11.024.163.039.019.006.042.009.063.015.284.086.579.148.872.213.115.026.225.062.341.083.017,0,.032.009.05.012.038.008.073.021.112.027.062.011.122.031.186.04.049.007.1,0,.151.012h.033a11.918,11.918,0,0,0,1.7.136h.019a11.971,11.971,0,0,0,1.7-.136h.033c.05-.008.1,0,.153-.012s.124-.029.187-.04c.038-.006.073-.019.11-.027.017,0,.032-.009.049-.012.118-.023.231-.059.349-.084.288-.064.578-.126.861-.21.019-.006.039-.008.059-.014.055-.017.113-.024.169-.041.016-.006.035-.007.051-.012.044-.013.086-.032.129-.047s.063-.028.1-.041l.026-.01c.214-.076.417-.175.627-.261s.394-.154.584-.245c.047-.023.1-.036.142-.059.018-.009.04-.015.058-.024s.053-.02.078-.033.068-.04.1-.056l0,0c.056-.028.106-.069.161-.1a12.341,12.341,0,0,0,1.132-.695c.029-.02.062-.035.092-.056.008-.006.017-.009.024-.015.035-.026.076-.043.11-.068l236.3-171.666A30.6,30.6,0,0,0,510.486,284.482ZM408.8,49.48l46.342,142.674H362.46Zm-305.6,0,46.428,142.675H56.948ZM26.817,299.251a6.526,6.526,0,0,1-2.361-7.308l20.34-62.42L193.835,420.6Zm38.245-82.972h92.411L223.354,419.22Zm183.416,273.83c-.047-.038-.092-.079-.138-.118-.009-.008-.018-.018-.028-.026-.091-.075-.18-.152-.268-.231-.172-.15-.341-.3-.5-.462.014.012.029.022.043.035l.055.046a12.191,12.191,0,0,0,1.091.929l.012.011c.018.013.033.03.051.045C248.689,490.263,248.58,490.19,248.478,490.109Zm7.514-48.482L217.226,322.21,182.839,216.279H329.253Zm7.935,48.107c-.091.079-.178.157-.27.233l-.032.028c-.047.038-.091.079-.136.117-.1.08-.209.152-.313.229.018-.013.033-.032.053-.044l.009-.009a11.69,11.69,0,0,0,1.086-.926c.014-.013.03-.024.044-.036s.038-.03.054-.047C264.262,489.435,264.1,489.586,263.927,489.734Zm90.7-273.455h92.4l-18.91,24.23-139.468,178.7Zm130.567,82.967L318.2,420.563,467.284,229.538l20.258,62.393A6.528,6.528,0,0,1,485.189,299.246Z"/>&lt;/svg>
+
+ &lt;/span>
+
+
+ &lt;/span>
+ &lt;div id="gitlab-0d0a434e1fe710b26526a44305bad7a0-name_with_namespace" class="m-0 font-bold text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral">
+ Stephan Raabe / ML4W Hyprland Dotfiles
+ &lt;/div>
+ &lt;/div>
+
+ &lt;p id="gitlab-0d0a434e1fe710b26526a44305bad7a0-description" class="m-0 mt-2 text-md text-neutral-800 dark:text-neutral">
+ Full desktop environment based on dynamic tiling window manager Hyprland for Arch Linux based distributions.
+ &lt;/p>
+
+ &lt;div class="m-0 mt-2 flex items-center">
+ &lt;span class="text-md mr-1 text-neutral-800 dark:text-neutral">
+ 
+
+ &lt;span class="relative block icon">
+ &lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">&lt;path fill="currentColor" d="M287.9 0C297.1 0 305.5 5.25 309.5 13.52L378.1 154.8L531.4 177.5C540.4 178.8 547.8 185.1 550.7 193.7C553.5 202.4 551.2 211.9 544.8 218.2L433.6 328.4L459.9 483.9C461.4 492.9 457.7 502.1 450.2 507.4C442.8 512.7 432.1 513.4 424.9 509.1L287.9 435.9L150.1 509.1C142.9 513.4 133.1 512.7 125.6 507.4C118.2 502.1 114.5 492.9 115.1 483.9L142.2 328.4L31.11 218.2C24.65 211.9 22.36 202.4 25.2 193.7C28.03 185.1 35.5 178.8 44.49 177.5L197.7 154.8L266.3 13.52C270.4 5.249 278.7 0 287.9 0L287.9 0zM287.9 78.95L235.4 187.2C231.9 194.3 225.1 199.3 217.3 200.5L98.98 217.9L184.9 303C190.4 308.5 192.9 316.4 191.6 324.1L171.4 443.7L276.6 387.5C283.7 383.7 292.2 383.7 299.2 387.5L404.4 443.7L384.2 324.1C382.9 316.4 385.5 308.5 391 303L476.9 217.9L358.6 200.5C350.7 199.3 343.9 194.3 340.5 187.2L287.9 78.95z"/>&lt;/svg>
+ &lt;/span>
+
+
+ &lt;/span>
+ &lt;div id="gitlab-0d0a434e1fe710b26526a44305bad7a0-star_count" class="m-0 mr-5 text-md text-neutral-800 dark:text-neutral">
+ 318
+ &lt;/div>
+
+ &lt;span class="text-md mr-1 text-neutral-800 dark:text-neutral">
+ 
+
+ &lt;span class="relative block icon">
+ &lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">&lt;path fill="currentColor" d="M80 104c13.3 0 24-10.7 24-24s-10.7-24-24-24S56 66.7 56 80s10.7 24 24 24zm80-24c0 32.8-19.7 61-48 73.3V192c0 17.7 14.3 32 32 32H304c17.7 0 32-14.3 32-32V153.3C307.7 141 288 112.8 288 80c0-44.2 35.8-80 80-80s80 35.8 80 80c0 32.8-19.7 61-48 73.3V192c0 53-43 96-96 96H256v70.7c28.3 12.3 48 40.5 48 73.3c0 44.2-35.8 80-80 80s-80-35.8-80-80c0-32.8 19.7-61 48-73.3V288H144c-53 0-96-43-96-96V153.3C19.7 141 0 112.8 0 80C0 35.8 35.8 0 80 0s80 35.8 80 80zm208 24c13.3 0 24-10.7 24-24s-10.7-24-24-24s-24 10.7-24 24s10.7 24 24 24zM248 432c0-13.3-10.7-24-24-24s-24 10.7-24 24s10.7 24 24 24s24-10.7 24-24z"/>&lt;/svg>
+ &lt;/span>
+
+
+ &lt;/span>
+ &lt;div id="gitlab-0d0a434e1fe710b26526a44305bad7a0-forks_count" class="m-0 mr-5 text-md text-neutral-800 dark:text-neutral">
+ 92
+ &lt;/div>
+
+ &lt;/div>
+
+ &lt;/div>
+ &lt;script>
+ fetch("https://gitlab.com/api/v4/projects/42798482", {
+ headers: new Headers({
+ 'User-agent': 'Mozilla/4.0 Custom User Agent'
+ })
+ })
+ .then(response => response.json())
+ .then(data => {
+ document.getElementById('gitlab-0d0a434e1fe710b26526a44305bad7a0-name_with_namespace').innerHTML = data.name_with_namespace;
+ document.getElementById('gitlab-0d0a434e1fe710b26526a44305bad7a0-description').innerHTML = data.description;
+ document.getElementById('gitlab-0d0a434e1fe710b26526a44305bad7a0-star_count').innerHTML = data.star_count;
+ document.getElementById('gitlab-0d0a434e1fe710b26526a44305bad7a0-forks_count').innerHTML = data.forks_count;
+ })
+ .catch(error => console.error(error))
+ &lt;/script>
+&lt;/a></description><content:encoded>&lt;![CDATA[<h3 class="relative group">What is it?<div id="what-is-it" class="anchor"/><span class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#what-is-it" aria-label="Anchor">#</a></span></h3><p>Our good friend from<a href="https://gitlab.com/stephan-raabe" target="_blank"><strong>ML4W</strong></a> just posted a video showing us how to have both<strong>Plasma 6</strong> and<strong>Hyprland</strong> side-by-side with his awesome dotfiles.. Check it out below with links to his repositories&hellip;</p><div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;"><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/n6Yg232bCOU?autoplay=0&controls=1&end=0&loop=0&mute=0&start=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="YouTube video"/></div><h3 class="relative group">Where to get it ?<div id="where-to-get-it-" class="anchor"/><span class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#where-to-get-it-" aria-label="Anchor">#</a></span></h3><p>Project is hosted over on<strong>Gitlab</strong>. View card below. But please all I ask is for you not to report any issues to me as I do not use nor will I ever use<strong>Hyprland</strong>. Please do so directly to author, by opening issues. Keep in mind that you will need an account for that.</p><a id="gitlab-0d0a434e1fe710b26526a44305bad7a0" target="_blank" href="https://gitlab.com/stephan-raabe/dotfiles" class="cursor-pointer"><div class="w-full md:w-auto pt-3 p-5 border border-neutral-200 dark:border-neutral-700 border rounded-md shadow-2xl"><div class="flex items-center"><span class="text-2xl text-neutral-800 dark:text-neutral" style="margin-right:10px;"><span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M510.486,284.482l-27.262-83.963c.012.038.016.077.028.115-.013-.044-.021-.088-.033-.132v-.01L429.1,33.871a21.328,21.328,0,0,0-20.445-14.6A21.038,21.038,0,0,0,388.466,34L337.094,192.154H175L123.533,33.989A21.033,21.033,0,0,0,103.35,19.274h-.113A21.467,21.467,0,0,0,82.86,34L28.888,200.475l-.008.021v0c-.013.042-.019.084-.033.127.012-.038.017-.077.029-.115L1.514,284.482a30.6,30.6,0,0,0,11.117,34.283L248.893,490.427c.035.026.074.041.109.067.1.072.2.146.3.214-.1-.065-.187-.136-.282-.2l0,0c.015.012.033.02.05.031s.027.015.041.024l.006,0a11.992,11.992,0,0,0,1.137.7c.054.03.1.068.157.1l0,0c.033.016.064.038.1.054s.053.02.077.032.038.015.056.023c.044.021.092.034.136.057.205.1.421.178.633.264.2.082.389.177.592.248l.025.011c.034.012.064.028.1.04s.083.032.125.046l.05.012c.053.016.11.024.163.039.019.006.042.009.063.015.284.086.579.148.872.213.115.026.225.062.341.083.017,0,.032.009.05.012.038.008.073.021.112.027.062.011.122.031.186.04.049.007.1,0,.151.012h.033a11.918,11.918,0,0,0,1.7.136h.019a11.971,11.971,0,0,0,1.7-.136h.033c.05-.008.1,0,.153-.012s.124-.029.187-.04c.038-.006.073-.019.11-.027.017,0,.032-.009.049-.012.118-.023.231-.059.349-.084.288-.064.578-.126.861-.21.019-.006.039-.008.059-.014.055-.017.113-.024.169-.041.016-.006.035-.007.051-.012.044-.013.086-.032.129-.047s.063-.028.1-.041l.026-.01c.214-.076.417-.175.627-.261s.394-.154.584-.245c.047-.023.1-.036.142-.059.018-.009.04-.015.058-.024s.053-.02.078-.033.068-.04.1-.056l0,0c.056-.028.106-.069.161-.1a12.341,12.341,0,0,0,1.132-.695c.029-.02.062-.035.092-.056.008-.006.017-.009.024-.015.035-.026.076-.043.11-.068l236.3-171.666A30.6,30.6,0,0,0,510.486,284.482ZM408.8,49.48l46.342,142.674H362.46Zm-305.6,0,46.428,142.675H56.948ZM26.817,299.251a6.526,6.526,0,0,1-2.361-7.308l20.34-62.42L193.835,420.6Zm38.245-82.972h92.411L223.354,419.22Zm183.416,273.83c-.047-.038-.092-.079-.138-.118-.009-.008-.018-.018-.028-.026-.091-.075-.18-.152-.268-.231-.172-.15-.341-.3-.5-.462.014.012.029.022.043.035l.055.046a12.191,12.191,0,0,0,1.091.929l.012.011c.018.013.033.03.051.045C248.689,490.263,248.58,490.19,248.478,490.109Zm7.514-48.482L217.226,322.21,182.839,216.279H329.253Zm7.935,48.107c-.091.079-.178.157-.27.233l-.032.028c-.047.038-.091.079-.136.117-.1.08-.209.152-.313.229.018-.013.033-.032.053-.044l.009-.009a11.69,11.69,0,0,0,1.086-.926c.014-.013.03-.024.044-.036s.038-.03.054-.047C264.262,489.435,264.1,489.586,263.927,489.734Zm90.7-273.455h92.4l-18.91,24.23-139.468,178.7Zm130.567,82.967L318.2,420.563,467.284,229.538l20.258,62.393A6.528,6.528,0,0,1,485.189,299.246Z"/></svg></span></span><div id="gitlab-0d0a434e1fe710b26526a44305bad7a0-name_with_namespace" class="m-0 font-bold text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral">
+Stephan Raabe / ML4W Hyprland Dotfiles</div></div><p id="gitlab-0d0a434e1fe710b26526a44305bad7a0-description" class="m-0 mt-2 text-md text-neutral-800 dark:text-neutral">
+Full desktop environment based on dynamic tiling window manager Hyprland for Arch Linux based distributions.</p><div class="m-0 mt-2 flex items-center"><span class="text-md mr-1 text-neutral-800 dark:text-neutral"><span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path fill="currentColor" d="M287.9 0C297.1 0 305.5 5.25 309.5 13.52L378.1 154.8L531.4 177.5C540.4 178.8 547.8 185.1 550.7 193.7C553.5 202.4 551.2 211.9 544.8 218.2L433.6 328.4L459.9 483.9C461.4 492.9 457.7 502.1 450.2 507.4C442.8 512.7 432.1 513.4 424.9 509.1L287.9 435.9L150.1 509.1C142.9 513.4 133.1 512.7 125.6 507.4C118.2 502.1 114.5 492.9 115.1 483.9L142.2 328.4L31.11 218.2C24.65 211.9 22.36 202.4 25.2 193.7C28.03 185.1 35.5 178.8 44.49 177.5L197.7 154.8L266.3 13.52C270.4 5.249 278.7 0 287.9 0L287.9 0zM287.9 78.95L235.4 187.2C231.9 194.3 225.1 199.3 217.3 200.5L98.98 217.9L184.9 303C190.4 308.5 192.9 316.4 191.6 324.1L171.4 443.7L276.6 387.5C283.7 383.7 292.2 383.7 299.2 387.5L404.4 443.7L384.2 324.1C382.9 316.4 385.5 308.5 391 303L476.9 217.9L358.6 200.5C350.7 199.3 343.9 194.3 340.5 187.2L287.9 78.95z"/></svg></span></span><div id="gitlab-0d0a434e1fe710b26526a44305bad7a0-star_count" class="m-0 mr-5 text-md text-neutral-800 dark:text-neutral">
+318</div><span class="text-md mr-1 text-neutral-800 dark:text-neutral"><span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M80 104c13.3 0 24-10.7 24-24s-10.7-24-24-24S56 66.7 56 80s10.7 24 24 24zm80-24c0 32.8-19.7 61-48 73.3V192c0 17.7 14.3 32 32 32H304c17.7 0 32-14.3 32-32V153.3C307.7 141 288 112.8 288 80c0-44.2 35.8-80 80-80s80 35.8 80 80c0 32.8-19.7 61-48 73.3V192c0 53-43 96-96 96H256v70.7c28.3 12.3 48 40.5 48 73.3c0 44.2-35.8 80-80 80s-80-35.8-80-80c0-32.8 19.7-61 48-73.3V288H144c-53 0-96-43-96-96V153.3C19.7 141 0 112.8 0 80C0 35.8 35.8 0 80 0s80 35.8 80 80zm208 24c13.3 0 24-10.7 24-24s-10.7-24-24-24s-24 10.7-24 24s10.7 24 24 24zM248 432c0-13.3-10.7-24-24-24s-24 10.7-24 24s10.7 24 24 24s24-10.7 24-24z"/></svg></span></span><div id="gitlab-0d0a434e1fe710b26526a44305bad7a0-forks_count" class="m-0 mr-5 text-md text-neutral-800 dark:text-neutral">
+92</div></div></div><script>
+fetch("https://gitlab.com/api/v4/projects/42798482", {
+headers: new Headers({
+'User-agent': 'Mozilla/4.0 Custom User Agent'
+})
+})
+.then(response => response.json())
+.then(data => {
+document.getElementById('gitlab-0d0a434e1fe710b26526a44305bad7a0-name_with_namespace').innerHTML = data.name_with_namespace;
+document.getElementById('gitlab-0d0a434e1fe710b26526a44305bad7a0-description').innerHTML = data.description;
+document.getElementById('gitlab-0d0a434e1fe710b26526a44305bad7a0-star_count').innerHTML = data.star_count;
+document.getElementById('gitlab-0d0a434e1fe710b26526a44305bad7a0-forks_count').innerHTML = data.forks_count;
+})
+.catch(error => console.error(error))</script></a>
+]]></content:encoded><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"/><item><title>Wallpaper Engine for Plasma</title><link>https://xerolinux.xyz/posts/wallpaper-engine/</link><pubDate>Thu, 27 Jun 2024 00:00:00 +0000</pubDate><guid>https://xerolinux.xyz/posts/wallpaper-engine/</guid><description>
+
+&lt;h3 class="relative group">Intro 
+ &lt;div id="intro" class="anchor">&lt;/div>
+ 
+ &lt;span
+ class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+ &lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+ style="text-decoration-line: none !important;" href="#intro" aria-label="Anchor">#&lt;/a>
+ &lt;/span> 
+ 
+&lt;/h3>
+&lt;p>I have always wanted to use cool animated wallpapers on Linux. Found many free ways, but nothing rivaled the awesome features of &lt;a href="https://www.wallpaperengine.io/en" target="_blank">Wallpaper Engine&lt;/a> found on steam for the low price of $5.. Only problem was that it only ran on Windows, nothing else. But someone awesome took it upon him/herself to port it over to Linux.&lt;/p>
+&lt;p>Below is a video on how to get it running on KDE Plasma via that plugin&amp;hellip; Just note that, as it&amp;rsquo;s mentioned in the video, not all animated wallpapers will work, test it and see. Oh and any Audio Spectrum ones that are supposed to react to music will absolutely not work as it has no way to hook to players. Besides that it should work.&lt;/p>
+
+
+ 
+ &lt;div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+ &lt;iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/mH5OtpHRIMI?autoplay=0&amp;controls=1&amp;end=0&amp;loop=0&amp;mute=0&amp;start=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="YouTube video"
+ >&lt;/iframe>
+ &lt;/div>
+
+
+
+&lt;h3 class="relative group">Installation 
+ &lt;div id="installation" class="anchor">&lt;/div>
+ 
+ &lt;span
+ class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+ &lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+ style="text-decoration-line: none !important;" href="#installation" aria-label="Anchor">#&lt;/a>
+ &lt;/span> 
+ 
+&lt;/h3>
+&lt;p>I recommend that you grab it from the &lt;strong>AUR&lt;/strong> if you don&amp;rsquo;t want to have any headaches, but I will also include a link to their &lt;strong>Github&lt;/strong> as well if you prefer building it from source, choice is yours as usual.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-Bash" data-lang="Bash">&lt;span class="line">&lt;span class="cl">paru -S plasma6-wallpapers-wallpaper-engine-git
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Build from Source :&lt;/p>
+&lt;a id="github-ca71a5e83707668542a12e863d6e8215" target="_blank" href="https://github.com/catsout/wallpaper-engine-kde-plugin" class="cursor-pointer">
+ &lt;div
+ class="w-full md:w-auto pt-3 p-5 border border-neutral-200 dark:border-neutral-700 border rounded-md shadow-2xl">
+
+ &lt;div class="flex items-center">
+ &lt;span class="text-2xl text-neutral-800 dark:text-neutral" style="margin-right:10px;">
+ 
+
+ &lt;span class="relative block icon">
+ &lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512">&lt;path fill="currentColor" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/>&lt;/svg>
+
+ &lt;/span>
+
+
+ &lt;/span>
+ &lt;div
+ id="github-ca71a5e83707668542a12e863d6e8215-full_name"
+ class="m-0 font-bold text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral">
+ catsout/wallpaper-engine-kde-plugin
+ &lt;/div>
+ &lt;/div>
+
+ &lt;p id="github-ca71a5e83707668542a12e863d6e8215-description" class="m-0 mt-2 text-md text-neutral-800 dark:text-neutral">
+ A kde wallpaper plugin integrating wallpaper engine
+ &lt;/p>
+
+ &lt;div class="m-0 mt-2 flex items-center">
+
+ &lt;span class="mr-1 inline-block h-3 w-3 rounded-full"
+ style="background-color: #f34b7d">&lt;/span>
+ &lt;div class="m-0 mr-5 text-md text-neutral-800 dark:text-neutral">
+ C&amp;#43;&amp;#43; 
+ &lt;/div>
+
+ &lt;span class="text-md mr-1 text-neutral-800 dark:text-neutral">
+ 
+
+ &lt;span class="relative block icon">
+ &lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">&lt;path fill="currentColor" d="M287.9 0C297.1 0 305.5 5.25 309.5 13.52L378.1 154.8L531.4 177.5C540.4 178.8 547.8 185.1 550.7 193.7C553.5 202.4 551.2 211.9 544.8 218.2L433.6 328.4L459.9 483.9C461.4 492.9 457.7 502.1 450.2 507.4C442.8 512.7 432.1 513.4 424.9 509.1L287.9 435.9L150.1 509.1C142.9 513.4 133.1 512.7 125.6 507.4C118.2 502.1 114.5 492.9 115.1 483.9L142.2 328.4L31.11 218.2C24.65 211.9 22.36 202.4 25.2 193.7C28.03 185.1 35.5 178.8 44.49 177.5L197.7 154.8L266.3 13.52C270.4 5.249 278.7 0 287.9 0L287.9 0zM287.9 78.95L235.4 187.2C231.9 194.3 225.1 199.3 217.3 200.5L98.98 217.9L184.9 303C190.4 308.5 192.9 316.4 191.6 324.1L171.4 443.7L276.6 387.5C283.7 383.7 292.2 383.7 299.2 387.5L404.4 443.7L384.2 324.1C382.9 316.4 385.5 308.5 391 303L476.9 217.9L358.6 200.5C350.7 199.3 343.9 194.3 340.5 187.2L287.9 78.95z"/>&lt;/svg>
+ &lt;/span>
+
+
+ &lt;/span>
+ &lt;div id="github-ca71a5e83707668542a12e863d6e8215-stargazers" class="m-0 mr-5 text-md text-neutral-800 dark:text-neutral">
+ 1650
+ &lt;/div>
+
+ &lt;span class="text-md mr-1 text-neutral-800 dark:text-neutral">
+ 
+
+ &lt;span class="relative block icon">
+ &lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">&lt;path fill="currentColor" d="M80 104c13.3 0 24-10.7 24-24s-10.7-24-24-24S56 66.7 56 80s10.7 24 24 24zm80-24c0 32.8-19.7 61-48 73.3V192c0 17.7 14.3 32 32 32H304c17.7 0 32-14.3 32-32V153.3C307.7 141 288 112.8 288 80c0-44.2 35.8-80 80-80s80 35.8 80 80c0 32.8-19.7 61-48 73.3V192c0 53-43 96-96 96H256v70.7c28.3 12.3 48 40.5 48 73.3c0 44.2-35.8 80-80 80s-80-35.8-80-80c0-32.8 19.7-61 48-73.3V288H144c-53 0-96-43-96-96V153.3C19.7 141 0 112.8 0 80C0 35.8 35.8 0 80 0s80 35.8 80 80zm208 24c13.3 0 24-10.7 24-24s-10.7-24-24-24s-24 10.7-24 24s10.7 24 24 24zM248 432c0-13.3-10.7-24-24-24s-24 10.7-24 24s10.7 24 24 24s24-10.7 24-24z"/>&lt;/svg>
+ &lt;/span>
+
+
+ &lt;/span>
+ &lt;div id="github-ca71a5e83707668542a12e863d6e8215-forks" class="m-0 mr-5 text-md text-neutral-800 dark:text-neutral">
+ 66
+ &lt;/div>
+
+ &lt;/div>
+
+ &lt;/div>
+ &lt;script>
+ fetch("https://api.github.com/repos/catsout/wallpaper-engine-kde-plugin", {
+ headers: new Headers({
+ 'User-agent': 'Mozilla/4.0 Custom User Agent'
+ })
+ })
+ .then(response => response.json())
+ .then(data => {
+ document.getElementById('github-ca71a5e83707668542a12e863d6e8215-full_name').innerHTML = data.full_name;
+ document.getElementById('github-ca71a5e83707668542a12e863d6e8215-description').innerHTML = data.description;
+ document.getElementById('github-ca71a5e83707668542a12e863d6e8215-stargazers').innerHTML = data.stargazers_count;
+ document.getElementById('github-ca71a5e83707668542a12e863d6e8215-forks').innerHTML = data.forks;
+ })
+ .catch(error => console.error(error))
+ &lt;/script>
+&lt;/a>
+
+
+&lt;h3 class="relative group">Wayland ? 
+ &lt;div id="wayland-" class="anchor">&lt;/div>
+ 
+ &lt;span
+ class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+ &lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+ style="text-decoration-line: none !important;" href="#wayland-" aria-label="Anchor">#&lt;/a>
+ &lt;/span> 
+ 
+&lt;/h3>
+&lt;p>Well I do not and cannot use &lt;strong>Wayland&lt;/strong> due to my aging GPU. But if you do use it, then there&amp;rsquo;s another tool based on &lt;strong>Wallpaper Engine&lt;/strong> for it. Try it out..&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-Bash" data-lang="Bash">&lt;span class="line">&lt;span class="cl">paru -S waywe
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description><content:encoded>&lt;![CDATA[<h3 class="relative group">Intro<div id="intro" class="anchor"/><span class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#intro" aria-label="Anchor">#</a></span></h3><p>I have always wanted to use cool animated wallpapers on Linux. Found many free ways, but nothing rivaled the awesome features of<a href="https://www.wallpaperengine.io/en" target="_blank">Wallpaper Engine</a> found on steam for the low price of $5.. Only problem was that it only ran on Windows, nothing else. But someone awesome took it upon him/herself to port it over to Linux.</p><p>Below is a video on how to get it running on KDE Plasma via that plugin&hellip; Just note that, as it&rsquo;s mentioned in the video, not all animated wallpapers will work, test it and see. Oh and any Audio Spectrum ones that are supposed to react to music will absolutely not work as it has no way to hook to players. Besides that it should work.</p><div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;"><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/mH5OtpHRIMI?autoplay=0&controls=1&end=0&loop=0&mute=0&start=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="YouTube video"/></div><h3 class="relative group">Installation<div id="installation" class="anchor"/><span class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#installation" aria-label="Anchor">#</a></span></h3><p>I recommend that you grab it from the<strong>AUR</strong> if you don&rsquo;t want to have any headaches, but I will also include a link to their<strong>Github</strong> as well if you prefer building it from source, choice is yours as usual.</p><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Bash" data-lang="Bash"><span class="line"><span class="cl">paru -S plasma6-wallpapers-wallpaper-engine-git</span></span></code></pre></div><p>Build from Source :</p><a id="github-ca71a5e83707668542a12e863d6e8215" target="_blank" href="https://github.com/catsout/wallpaper-engine-kde-plugin" class="cursor-pointer"><div class="w-full md:w-auto pt-3 p-5 border border-neutral-200 dark:border-neutral-700 border rounded-md shadow-2xl"><div class="flex items-center"><span class="text-2xl text-neutral-800 dark:text-neutral" style="margin-right:10px;"><span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path fill="currentColor" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg></span></span><div id="github-ca71a5e83707668542a12e863d6e8215-full_name" class="m-0 font-bold text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral">
+catsout/wallpaper-engine-kde-plugin</div></div><p id="github-ca71a5e83707668542a12e863d6e8215-description" class="m-0 mt-2 text-md text-neutral-800 dark:text-neutral">
+A kde wallpaper plugin integrating wallpaper engine</p><div class="m-0 mt-2 flex items-center"><span class="mr-1 inline-block h-3 w-3 rounded-full" style="background-color: #f34b7d"/><div class="m-0 mr-5 text-md text-neutral-800 dark:text-neutral">
+C++</div><span class="text-md mr-1 text-neutral-800 dark:text-neutral"><span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path fill="currentColor" d="M287.9 0C297.1 0 305.5 5.25 309.5 13.52L378.1 154.8L531.4 177.5C540.4 178.8 547.8 185.1 550.7 193.7C553.5 202.4 551.2 211.9 544.8 218.2L433.6 328.4L459.9 483.9C461.4 492.9 457.7 502.1 450.2 507.4C442.8 512.7 432.1 513.4 424.9 509.1L287.9 435.9L150.1 509.1C142.9 513.4 133.1 512.7 125.6 507.4C118.2 502.1 114.5 492.9 115.1 483.9L142.2 328.4L31.11 218.2C24.65 211.9 22.36 202.4 25.2 193.7C28.03 185.1 35.5 178.8 44.49 177.5L197.7 154.8L266.3 13.52C270.4 5.249 278.7 0 287.9 0L287.9 0zM287.9 78.95L235.4 187.2C231.9 194.3 225.1 199.3 217.3 200.5L98.98 217.9L184.9 303C190.4 308.5 192.9 316.4 191.6 324.1L171.4 443.7L276.6 387.5C283.7 383.7 292.2 383.7 299.2 387.5L404.4 443.7L384.2 324.1C382.9 316.4 385.5 308.5 391 303L476.9 217.9L358.6 200.5C350.7 199.3 343.9 194.3 340.5 187.2L287.9 78.95z"/></svg></span></span><div id="github-ca71a5e83707668542a12e863d6e8215-stargazers" class="m-0 mr-5 text-md text-neutral-800 dark:text-neutral">
+1650</div><span class="text-md mr-1 text-neutral-800 dark:text-neutral"><span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M80 104c13.3 0 24-10.7 24-24s-10.7-24-24-24S56 66.7 56 80s10.7 24 24 24zm80-24c0 32.8-19.7 61-48 73.3V192c0 17.7 14.3 32 32 32H304c17.7 0 32-14.3 32-32V153.3C307.7 141 288 112.8 288 80c0-44.2 35.8-80 80-80s80 35.8 80 80c0 32.8-19.7 61-48 73.3V192c0 53-43 96-96 96H256v70.7c28.3 12.3 48 40.5 48 73.3c0 44.2-35.8 80-80 80s-80-35.8-80-80c0-32.8 19.7-61 48-73.3V288H144c-53 0-96-43-96-96V153.3C19.7 141 0 112.8 0 80C0 35.8 35.8 0 80 0s80 35.8 80 80zm208 24c13.3 0 24-10.7 24-24s-10.7-24-24-24s-24 10.7-24 24s10.7 24 24 24zM248 432c0-13.3-10.7-24-24-24s-24 10.7-24 24s10.7 24 24 24s24-10.7 24-24z"/></svg></span></span><div id="github-ca71a5e83707668542a12e863d6e8215-forks" class="m-0 mr-5 text-md text-neutral-800 dark:text-neutral">
+66</div></div></div><script>
+fetch("https://api.github.com/repos/catsout/wallpaper-engine-kde-plugin", {
+headers: new Headers({
+'User-agent': 'Mozilla/4.0 Custom User Agent'
+})
+})
+.then(response => response.json())
+.then(data => {
+document.getElementById('github-ca71a5e83707668542a12e863d6e8215-full_name').innerHTML = data.full_name;
+document.getElementById('github-ca71a5e83707668542a12e863d6e8215-description').innerHTML = data.description;
+document.getElementById('github-ca71a5e83707668542a12e863d6e8215-stargazers').innerHTML = data.stargazers_count;
+document.getElementById('github-ca71a5e83707668542a12e863d6e8215-forks').innerHTML = data.forks;
+})
+.catch(error => console.error(error))</script></a><h3 class="relative group">Wayland ?<div id="wayland-" class="anchor"/><span class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#wayland-" aria-label="Anchor">#</a></span></h3><p>Well I do not and cannot use<strong>Wayland</strong> due to my aging GPU. But if you do use it, then there&rsquo;s another tool based on<strong>Wallpaper Engine</strong> for it. Try it out..</p><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Bash" data-lang="Bash"><span class="line"><span class="cl">paru -S waywe</span></span></code></pre></div>]]></content:encoded><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"/></channel></rss>

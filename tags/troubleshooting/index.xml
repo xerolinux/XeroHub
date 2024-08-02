@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Troubleshooting on XeroLinux HQ</title><link>https://xerolinux.xyz/tags/troubleshooting/</link><description>Recent content in Troubleshooting on XeroLinux HQ</description><generator>Hugo</generator><language>en</language><lastBuildDate>Thu, 27 Jun 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://xerolinux.xyz/tags/troubleshooting/index.xml" rel="self" type="application/rss+xml"/><item><title>Chroot Guide</title><link>https://xerolinux.xyz/posts/chroot-guide/</link><pubDate>Thu, 27 Jun 2024 00:00:00 +0000</pubDate><guid>https://xerolinux.xyz/posts/chroot-guide/</guid><description>
+
+&lt;h3 class="relative group">Info 
+ &lt;div id="info" class="anchor">&lt;/div>
+ 
+ &lt;span
+ class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+ &lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+ style="text-decoration-line: none !important;" href="#info" aria-label="Anchor">#&lt;/a>
+ &lt;/span> 
+ 
+&lt;/h3>
+&lt;p>
+ &lt;figure>
+ &lt;img class="my-0 rounded-md" loading="lazy" src="https://i.imgur.com/jll2heu.png" alt="[Image: jll2heu.png]" />
+ 
+ &lt;/figure>
+&lt;/p>
+&lt;p>Changing Root (Chroot) is the process of changing of the apparent disk root directory (and the current running process and its children) to another root directory. When you change root to another directory you cannot access files and commands outside that directory. This directory is called a “chroot jail”. Changing root is commonly done for system maintenance for such tasks as reinstalling GRUB or resetting a forgotten password. Changing root is often done from a LiveCD or LiveUSB into a mounted partition that contains an installed system.&lt;/p>
+
+
+&lt;h3 class="relative group">Requirements 
+ &lt;div id="requirements" class="anchor">&lt;/div>
+ 
+ &lt;span
+ class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+ &lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+ style="text-decoration-line: none !important;" href="#requirements" aria-label="Anchor">#&lt;/a>
+ &lt;/span> 
+ 
+&lt;/h3>
+&lt;ul>
+&lt;li>You’ll need to boot to another working Linux environment (for example, to a LiveCD or USB flash disk).&lt;/li>
+&lt;li>Root privileges are required in order to chroot.&lt;/li>
+&lt;li>Be sure that the architectures of the Linux environment you have booted into matches the architecture of the root directory you wish to enter (i.e. i686, x86_64). You can find the architecture of your current environment by: &lt;code>uname -m&lt;/code>&lt;/li>
+&lt;li>If you need any kernel modules loaded in the chroot environment, load them before chrooting. It may also be useful to initialize your swap (&lt;code>swapon /dev/&amp;lt;device-or-partition-name&amp;gt;&lt;/code>) and to connect to your network before chrooting.&lt;/li>
+&lt;/ul>
+
+
+&lt;h3 class="relative group">Mounting the device 
+ &lt;div id="mounting-the-device" class="anchor">&lt;/div>
+ 
+ &lt;span
+ class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+ &lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+ style="text-decoration-line: none !important;" href="#mounting-the-device" aria-label="Anchor">#&lt;/a>
+ &lt;/span> 
+ 
+&lt;/h3>
+&lt;p>The device or partition with the Linux system on it will need to be mounted. To discover the kernel name of the storage device name, type:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-Bash" data-lang="Bash">&lt;span class="line">&lt;span class="cl">fdisk -l
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Create a directory where you would like to mount the device or partition, then mount it:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-Bash" data-lang="Bash">&lt;span class="line">&lt;span class="cl">sudo mkdir /mnt/xero
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">sudo mount /dev/device_or_partition_name /mnt/xero
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>For LUKS encrypted devices, mount won’t work, use &lt;code>udisksctl&lt;/code> instead, first unlock the device (all commands as regular user):&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-Bash" data-lang="Bash">&lt;span class="line">&lt;span class="cl">sudo udisksctl unlock -b /dev/device_or_partition_name
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Get the device mapper name:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-Bash" data-lang="Bash">&lt;span class="line">&lt;span class="cl">ls - la /dev/mapper
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>then mount the returned mapper:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-Bash" data-lang="Bash">&lt;span class="line">&lt;span class="cl">udiskctl mount -b /dev/mapper/mapper_name
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
+
+&lt;h3 class="relative group">Changing Root 
+ &lt;div id="changing-root" class="anchor">&lt;/div>
+ 
+ &lt;span
+ class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+ &lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+ style="text-decoration-line: none !important;" href="#changing-root" aria-label="Anchor">#&lt;/a>
+ &lt;/span> 
+ 
+&lt;/h3>
+&lt;p>Mount the temporary filesystems:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-Bash" data-lang="Bash">&lt;span class="line">&lt;span class="cl">&lt;span class="nb">cd&lt;/span> /mnt/xero
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">sudo mount -t proc proc proc/
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">sudo mount -t sysfs sys sys/
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">sudo mount -o &lt;span class="nb">bind&lt;/span> /dev dev/
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Mount other parts of your filesystem (e.g. /boot, /var, /usr…) that reside on separate partitions but which you need access to. For example:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-Bash" data-lang="Bash">&lt;span class="line">&lt;span class="cl">sudo mount /dev/device_or_partition_name boot/
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>It’s possible to mount filesystems after you’ve chrooted, but it’s more convenient to do so beforehand. The reasoning for this is you’ll have to unmount the temporary filesystems after you exit a chroot so this lets you unmount all the filesystems in a single command. This also allows a safer shutdown. Because the external Linux environment knows all mounted partitions it can safely unmount them during shutdown.&lt;/p>
+&lt;p>If you’ve setup your network and want to use it in the chroot environment, copy over your DNS servers so that you will be connected to the network:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-Bash" data-lang="Bash">&lt;span class="line">&lt;span class="cl">cp -L /etc/resolv.conf etc/resolv.conf
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Now chroot to your installed device or partition and define your shell:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-Bash" data-lang="Bash">&lt;span class="line">&lt;span class="cl">sudo chroot . /bin/bash
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>If you see the error, &lt;code>chroot: cannot run command '/bin/bash': Exec format&lt;/code> error it is likely the two architectures do not match.&lt;/p>
+&lt;p>If you’ll be doing anything with GRUB inside the chroot environment, you’ll need to be sure your /etc/mtab is up-to-date:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-Bash" data-lang="Bash">&lt;span class="line">&lt;span class="cl">sudo rm /etc/mtab &lt;span class="o">&amp;amp;&amp;amp;&lt;/span> grep -v rootfs /proc/mounts &amp;gt; /etc/mtab
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>If you use bash, your root $HOME/.bashrc will be sourced on login provided your ~/.bash_profile specifies it (source ~/.bashrc). To source your chrooted, global bash configuration do:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-Bash" data-lang="Bash">&lt;span class="line">&lt;span class="cl">&lt;span class="nb">source&lt;/span> /etc/profile
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>If your bash configuration doesn’t use a unique prompt, consider creating one to be able to differentiate your chroot environment:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-Bash" data-lang="Bash">&lt;span class="line">&lt;span class="cl">&lt;span class="nb">export&lt;/span> &lt;span class="nv">PS1&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s2">&amp;#34;(chroot) &lt;/span>&lt;span class="nv">$PS1&lt;/span>&lt;span class="s2">&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
+
+&lt;h3 class="relative group">Perform System Maintenance 
+ &lt;div id="perform-system-maintenance" class="anchor">&lt;/div>
+ 
+ &lt;span
+ class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+ &lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+ style="text-decoration-line: none !important;" href="#perform-system-maintenance" aria-label="Anchor">#&lt;/a>
+ &lt;/span> 
+ 
+&lt;/h3>
+&lt;p>At this point you can perform whatever system maintenance you require inside the chroot environment, some common examples being:&lt;/p>
+&lt;ul>
+&lt;li>Upgrade or downgrade packages&lt;/li>
+&lt;li>Rebuild your initcpio image&lt;/li>
+&lt;li>Reset a forgotten password&lt;/li>
+&lt;li>Fix your /etc/fstab&lt;/li>
+&lt;li>Reinstall GRUB&lt;/li>
+&lt;/ul>
+&lt;p>With this information, you are able to arch-chroot, and to be able to do that you need to have root permissions, so type the following command:&lt;/p>
+&lt;p>Then type the following:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-Bash" data-lang="Bash">&lt;span class="line">&lt;span class="cl">sudo arch-chroot /mnt/xero
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Now you’ve chrooted into your installed system, and you are able to access your files, install packages, or alter scripts to rescue your system.&lt;/p>
+&lt;p>To make sure &lt;code>arch-chroot&lt;/code> is working check after your users home folder ls &lt;code>/home&lt;/code> that should give your username from the installed system.&lt;/p>
+
+
+&lt;h3 class="relative group">Exiting chroot 
+ &lt;div id="exiting-chroot" class="anchor">&lt;/div>
+ 
+ &lt;span
+ class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+ &lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+ style="text-decoration-line: none !important;" href="#exiting-chroot" aria-label="Anchor">#&lt;/a>
+ &lt;/span> 
+ 
+&lt;/h3>
+&lt;p>When you’re finished with system maintenance, exit the chroot shell:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-Bash" data-lang="Bash">&lt;span class="line">&lt;span class="cl">&lt;span class="nb">exit&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Then unmount the temporary filesystems and any mounted devices:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-Bash" data-lang="Bash">&lt;span class="line">&lt;span class="cl">umount &lt;span class="o">{&lt;/span>proc,sys,dev,boot...&lt;span class="o">}&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Finally attempt to unmount your hard drive:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-Bash" data-lang="Bash">&lt;span class="line">&lt;span class="cl">&lt;span class="nb">cd&lt;/span> ..umount xero/
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>If you get an error saying that &amp;lsquo;/mnt&amp;rsquo; (or any other partition) is busy, this can mean one of two things:&lt;/p>
+&lt;ul>
+&lt;li>A program was left running inside of the chroot.&lt;/li>
+&lt;li>Or more frequently: a sub-mount still exists. For example, &lt;code>/mnt/xero/usr&lt;/code> within &lt;code>/mnt/xero&lt;/code>.&lt;/li>
+&lt;/ul>
+&lt;p>In the latter case, unmount the sub-mount mount point first. To get a reminder of all the current mount points, run mount with no parameters. If you still are unable to unmount a partition, use the force option:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-Bash" data-lang="Bash">&lt;span class="line">&lt;span class="cl">umount -f /mnt
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>After this you will be able to safely reboot.&lt;/p></description><content:encoded>&lt;![CDATA[<h3 class="relative group">Info<div id="info" class="anchor"/><span class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#info" aria-label="Anchor">#</a></span></h3><p><figure><img class="my-0 rounded-md" loading="lazy" src="https://i.imgur.com/jll2heu.png" alt="[Image: jll2heu.png]"/></figure></p><p>Changing Root (Chroot) is the process of changing of the apparent disk root directory (and the current running process and its children) to another root directory. When you change root to another directory you cannot access files and commands outside that directory. This directory is called a “chroot jail”. Changing root is commonly done for system maintenance for such tasks as reinstalling GRUB or resetting a forgotten password. Changing root is often done from a LiveCD or LiveUSB into a mounted partition that contains an installed system.</p><h3 class="relative group">Requirements<div id="requirements" class="anchor"/><span class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#requirements" aria-label="Anchor">#</a></span></h3><ul><li>You’ll need to boot to another working Linux environment (for example, to a LiveCD or USB flash disk).</li><li>Root privileges are required in order to chroot.</li><li>Be sure that the architectures of the Linux environment you have booted into matches the architecture of the root directory you wish to enter (i.e. i686, x86_64). You can find the architecture of your current environment by:<code>uname -m</code></li><li>If you need any kernel modules loaded in the chroot environment, load them before chrooting. It may also be useful to initialize your swap (<code>swapon /dev/&lt;device-or-partition-name></code>) and to connect to your network before chrooting.</li></ul><h3 class="relative group">Mounting the device<div id="mounting-the-device" class="anchor"/><span class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#mounting-the-device" aria-label="Anchor">#</a></span></h3><p>The device or partition with the Linux system on it will need to be mounted. To discover the kernel name of the storage device name, type:</p><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Bash" data-lang="Bash"><span class="line"><span class="cl">fdisk -l</span></span></code></pre></div><p>Create a directory where you would like to mount the device or partition, then mount it:</p><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Bash" data-lang="Bash"><span class="line"><span class="cl">sudo mkdir /mnt/xero</span></span><span class="line"><span class="cl">sudo mount /dev/device_or_partition_name /mnt/xero</span></span></code></pre></div><p>For LUKS encrypted devices, mount won’t work, use<code>udisksctl</code> instead, first unlock the device (all commands as regular user):</p><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Bash" data-lang="Bash"><span class="line"><span class="cl">sudo udisksctl unlock -b /dev/device_or_partition_name</span></span></code></pre></div><p>Get the device mapper name:</p><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Bash" data-lang="Bash"><span class="line"><span class="cl">ls - la /dev/mapper</span></span></code></pre></div><p>then mount the returned mapper:</p><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Bash" data-lang="Bash"><span class="line"><span class="cl">udiskctl mount -b /dev/mapper/mapper_name</span></span></code></pre></div><h3 class="relative group">Changing Root<div id="changing-root" class="anchor"/><span class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#changing-root" aria-label="Anchor">#</a></span></h3><p>Mount the temporary filesystems:</p><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Bash" data-lang="Bash"><span class="line"><span class="cl"><span class="nb">cd</span> /mnt/xero</span></span><span class="line"><span class="cl">sudo mount -t proc proc proc/</span></span><span class="line"><span class="cl">sudo mount -t sysfs sys sys/</span></span><span class="line"><span class="cl">sudo mount -o<span class="nb">bind</span> /dev dev/</span></span></code></pre></div><p>Mount other parts of your filesystem (e.g. /boot, /var, /usr…) that reside on separate partitions but which you need access to. For example:</p><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Bash" data-lang="Bash"><span class="line"><span class="cl">sudo mount /dev/device_or_partition_name boot/</span></span></code></pre></div><p>It’s possible to mount filesystems after you’ve chrooted, but it’s more convenient to do so beforehand. The reasoning for this is you’ll have to unmount the temporary filesystems after you exit a chroot so this lets you unmount all the filesystems in a single command. This also allows a safer shutdown. Because the external Linux environment knows all mounted partitions it can safely unmount them during shutdown.</p><p>If you’ve setup your network and want to use it in the chroot environment, copy over your DNS servers so that you will be connected to the network:</p><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Bash" data-lang="Bash"><span class="line"><span class="cl">cp -L /etc/resolv.conf etc/resolv.conf</span></span></code></pre></div><p>Now chroot to your installed device or partition and define your shell:</p><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Bash" data-lang="Bash"><span class="line"><span class="cl">sudo chroot . /bin/bash</span></span></code></pre></div><p>If you see the error,<code>chroot: cannot run command '/bin/bash': Exec format</code> error it is likely the two architectures do not match.</p><p>If you’ll be doing anything with GRUB inside the chroot environment, you’ll need to be sure your /etc/mtab is up-to-date:</p><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Bash" data-lang="Bash"><span class="line"><span class="cl">sudo rm /etc/mtab<span class="o">&amp;&amp;</span> grep -v rootfs /proc/mounts > /etc/mtab</span></span></code></pre></div><p>If you use bash, your root $HOME/.bashrc will be sourced on login provided your ~/.bash_profile specifies it (source ~/.bashrc). To source your chrooted, global bash configuration do:</p><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Bash" data-lang="Bash"><span class="line"><span class="cl"><span class="nb">source</span> /etc/profile</span></span></code></pre></div><p>If your bash configuration doesn’t use a unique prompt, consider creating one to be able to differentiate your chroot environment:</p><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Bash" data-lang="Bash"><span class="line"><span class="cl"><span class="nb">export</span><span class="nv">PS1</span><span class="o">=</span><span class="s2">"(chroot)</span><span class="nv">$PS1</span><span class="s2">"</span></span></span></code></pre></div><h3 class="relative group">Perform System Maintenance<div id="perform-system-maintenance" class="anchor"/><span class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#perform-system-maintenance" aria-label="Anchor">#</a></span></h3><p>At this point you can perform whatever system maintenance you require inside the chroot environment, some common examples being:</p><ul><li>Upgrade or downgrade packages</li><li>Rebuild your initcpio image</li><li>Reset a forgotten password</li><li>Fix your /etc/fstab</li><li>Reinstall GRUB</li></ul><p>With this information, you are able to arch-chroot, and to be able to do that you need to have root permissions, so type the following command:</p><p>Then type the following:</p><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Bash" data-lang="Bash"><span class="line"><span class="cl">sudo arch-chroot /mnt/xero</span></span></code></pre></div><p>Now you’ve chrooted into your installed system, and you are able to access your files, install packages, or alter scripts to rescue your system.</p><p>To make sure<code>arch-chroot</code> is working check after your users home folder ls<code>/home</code> that should give your username from the installed system.</p><h3 class="relative group">Exiting chroot<div id="exiting-chroot" class="anchor"/><span class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#exiting-chroot" aria-label="Anchor">#</a></span></h3><p>When you’re finished with system maintenance, exit the chroot shell:</p><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Bash" data-lang="Bash"><span class="line"><span class="cl"><span class="nb">exit</span></span></span></code></pre></div><p>Then unmount the temporary filesystems and any mounted devices:</p><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Bash" data-lang="Bash"><span class="line"><span class="cl">umount<span class="o">{</span>proc,sys,dev,boot...<span class="o">}</span></span></span></code></pre></div><p>Finally attempt to unmount your hard drive:</p><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Bash" data-lang="Bash"><span class="line"><span class="cl"><span class="nb">cd</span> ..umount xero/</span></span></code></pre></div><p>If you get an error saying that &lsquo;/mnt&rsquo; (or any other partition) is busy, this can mean one of two things:</p><ul><li>A program was left running inside of the chroot.</li><li>Or more frequently: a sub-mount still exists. For example,<code>/mnt/xero/usr</code> within<code>/mnt/xero</code>.</li></ul><p>In the latter case, unmount the sub-mount mount point first. To get a reminder of all the current mount points, run mount with no parameters. If you still are unable to unmount a partition, use the force option:</p><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Bash" data-lang="Bash"><span class="line"><span class="cl">umount -f /mnt</span></span></code></pre></div><p>After this you will be able to safely reboot.</p>
+]]></content:encoded><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"/><item><title>Pacman Issues</title><link>https://xerolinux.xyz/posts/pacman-issues/</link><pubDate>Thu, 27 Jun 2024 00:00:00 +0000</pubDate><guid>https://xerolinux.xyz/posts/pacman-issues/</guid><description>
+
+&lt;h3 class="relative group">Info 
+ &lt;div id="info" class="anchor">&lt;/div>
+ 
+ &lt;span
+ class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+ &lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+ style="text-decoration-line: none !important;" href="#info" aria-label="Anchor">#&lt;/a>
+ &lt;/span> 
+ 
+&lt;/h3>
+&lt;p>This will be a short one. I noticed lately that &lt;strong>Pacman&lt;/strong> has been behaving badly.. I decided to attach all the videos that cover how to handle them.. DT made some very useful ones.. Watch below..&lt;/p>
+
+
+ 
+ &lt;div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+ &lt;iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/RN0pIuE6ZmU?autoplay=0&amp;controls=1&amp;end=0&amp;loop=0&amp;mute=0&amp;start=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="YouTube video"
+ >&lt;/iframe>
+ &lt;/div>
+
+&lt;p>Have fun :heart:&lt;/p></description><content:encoded>&lt;![CDATA[<h3 class="relative group">Info<div id="info" class="anchor"/><span class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#info" aria-label="Anchor">#</a></span></h3><p>This will be a short one. I noticed lately that<strong>Pacman</strong> has been behaving badly.. I decided to attach all the videos that cover how to handle them.. DT made some very useful ones.. Watch below..</p><div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;"><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/RN0pIuE6ZmU?autoplay=0&controls=1&end=0&loop=0&mute=0&start=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="YouTube video"/></div><p>Have fun :heart:</p>
+]]></content:encoded><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"/></channel></rss>

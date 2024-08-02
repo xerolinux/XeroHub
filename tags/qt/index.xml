@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Qt on XeroLinux HQ</title><link>https://xerolinux.xyz/tags/qt/</link><description>Recent content in Qt on XeroLinux HQ</description><generator>Hugo</generator><language>en</language><lastBuildDate>Thu, 27 Jun 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://xerolinux.xyz/tags/qt/index.xml" rel="self" type="application/rss+xml"/><item><title>Make KDE apps use System theme in XFCE/Gnome</title><link>https://xerolinux.xyz/posts/fix-grub/</link><pubDate>Thu, 27 Jun 2024 00:00:00 +0000</pubDate><guid>https://xerolinux.xyz/posts/fix-grub/</guid><description>&lt;p>
+ &lt;figure>
+ &lt;img class="my-0 rounded-md" loading="lazy" src="https://i.imgur.com/FlfFJ0o.png" alt="[Image: FlfFJ0o.png]" />
+ 
+ &lt;/figure>
+&lt;/p>
+
+
+&lt;h3 class="relative group">Info 
+ &lt;div id="info" class="anchor">&lt;/div>
+ 
+ &lt;span
+ class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+ &lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+ style="text-decoration-line: none !important;" href="#info" aria-label="Anchor">#&lt;/a>
+ &lt;/span> 
+ 
+&lt;/h3>
+&lt;p>In case you are one of the affected people, below is how you can fix the issue. I have tested it and it works fine. And keep in mind that XeroLinux is basically ArchLinux so below fix will work on Arch as well as any Arch-Based distros with the exception of Manjaro that is NOT Arch. Read more on that &amp;raquo; &lt;a href="https://wiki.manjaro.org/index.php/Manjaro:A_Different_Kind_of_Beast#:~:text=Manjaro%20is%20developed%20independently%20from,from%20its%20own%20independent%20repositories" target="_blank">Here&lt;/a> &amp;laquo;&lt;/p>
+
+
+&lt;h3 class="relative group">Disclaimer : 
+ &lt;div id="disclaimer-" class="anchor">&lt;/div>
+ 
+ &lt;span
+ class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+ &lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+ style="text-decoration-line: none !important;" href="#disclaimer-" aria-label="Anchor">#&lt;/a>
+ &lt;/span> 
+ 
+&lt;/h3>
+&lt;p>Below guide covers EXT4/XFS/BTRFS Unencrypted Filesystems, for Encrypted Drives, you will have to either &amp;ldquo;Google it&amp;rdquo; lol, or check at the bottom of this guide where I posted a link to EndeavourOS&amp;rsquo; more advanced guide for Chrooting into your system&amp;hellip; There are 2 options if first one works no need for the rest, and so on&amp;hellip;&lt;/p>
+&lt;p>Anyway here&amp;rsquo;s what to do&amp;hellip;&lt;/p>
+
+
+&lt;h3 class="relative group">Mount your system to work in.. 
+ &lt;div id="mount-your-system-to-work-in" class="anchor">&lt;/div>
+ 
+ &lt;span
+ class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+ &lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+ style="text-decoration-line: none !important;" href="#mount-your-system-to-work-in" aria-label="Anchor">#&lt;/a>
+ &lt;/span> 
+ 
+&lt;/h3>
+&lt;p>First of all; boot using Arch or XeroLinux Live boot USB and follow the steps below&amp;hellip;&lt;/p>
+&lt;p>The device or partition with your Linux system on it will need to be mounted. To discover the kernel name of the storage device name, type:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-Bash" data-lang="Bash">&lt;span class="line">&lt;span class="cl">sudo fdisk -l
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Mount the device or partition : (replace &amp;ldquo;sdXn&amp;rdquo; with your Actual partition name)&lt;/p>
+&lt;p>
+ &lt;figure>
+ &lt;img class="my-0 rounded-md" loading="lazy" src="https://i.imgur.com/SZO4qw0.png" alt="[Image: SZO4qw0.png]" />
+ 
+ &lt;/figure>
+&lt;/p>
+&lt;p>For EXT4 &amp;amp; XFS&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-Bash" data-lang="Bash">&lt;span class="line">&lt;span class="cl">sudo mount /dev/sdXn /mnt &lt;span class="o">(&lt;/span>Linux Filesystem&lt;span class="o">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">sudo mount /dev/sdXn /mnt/boot/efi &lt;span class="o">(&lt;/span>EFI System&lt;span class="o">)&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>For BTRFS&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-Bash" data-lang="Bash">&lt;span class="line">&lt;span class="cl">sudo mount -o &lt;span class="nv">subvol&lt;/span>&lt;span class="o">=&lt;/span>@ /dev/sdXn /mnt &lt;span class="o">(&lt;/span>Linux Filesystem&lt;span class="o">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">sudo mount -o &lt;span class="nv">subvol&lt;/span>&lt;span class="o">=&lt;/span>@ /dev/sdXn /mnt/boot/efi &lt;span class="o">(&lt;/span>EFI System&lt;span class="o">)&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
+
+&lt;h3 class="relative group">Chroot into your system : 
+ &lt;div id="chroot-into-your-system-" class="anchor">&lt;/div>
+ 
+ &lt;span
+ class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+ &lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+ style="text-decoration-line: none !important;" href="#chroot-into-your-system-" aria-label="Anchor">#&lt;/a>
+ &lt;/span> 
+ 
+&lt;/h3>
+&lt;p>With this information, you are able to arch-chroot, and to be able to do that you need to have root permissions, so type the following command:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-Bash" data-lang="Bash">&lt;span class="line">&lt;span class="cl">sudo arch-chroot /mnt
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
+
+&lt;h3 class="relative group">Fix Grub boot loop issue : 
+ &lt;div id="fix-grub-boot-loop-issue-" class="anchor">&lt;/div>
+ 
+ &lt;span
+ class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+ &lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+ style="text-decoration-line: none !important;" href="#fix-grub-boot-loop-issue-" aria-label="Anchor">#&lt;/a>
+ &lt;/span> 
+ 
+&lt;/h3>
+&lt;p>Now you’ve chrooted into your installed system, and you are able to access your files, install packages, or alter scripts to rescue your system. to fix Grub run this in chroot&amp;hellip;&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-Bash" data-lang="Bash">&lt;span class="line">&lt;span class="cl">sudo grub-install --removable --target&lt;span class="o">=&lt;/span>x86_64-efi --efi-directory&lt;span class="o">=&lt;/span>/boot/efi --disable-shim-lock
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>
+ &lt;figure>
+ &lt;img class="my-0 rounded-md" loading="lazy" src="https://i.imgur.com/dfBQw4X.jpeg" alt="[Image: dfBQw4X.jpeg]" />
+ 
+ &lt;/figure>
+&lt;/p>
+&lt;p>This will install grub on persistent memory as opposed to volatile one&amp;hellip; By default Grub will sit on volatile memory, I dunno why, and since when devs decided to do that, suffice it to say that whatever the reason behind this was below command will fix you right up&amp;hellip;&lt;/p>
+&lt;p>then update grub via below command&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-Bash" data-lang="Bash">&lt;span class="line">&lt;span class="cl">sudo grub-mkconfig -o /boot/grub/grub.cfg
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Exit arch-chroot via &lt;code>exit&lt;/code> command then unmount your system n boot&amp;hellip; &lt;a href="https://discovery.endeavouros.com/system-rescue/arch-chroot/2022/12/" target="_blank">Advanced Chroot Guide&lt;/a>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-Bash" data-lang="Bash">&lt;span class="line">&lt;span class="cl">sudo umount /mnt/boot/efi
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">sudo umount /mnt
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description><content:encoded>&lt;![CDATA[<p><figure><img class="my-0 rounded-md" loading="lazy" src="https://i.imgur.com/FlfFJ0o.png" alt="[Image: FlfFJ0o.png]"/></figure></p><h3 class="relative group">Info<div id="info" class="anchor"/><span class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#info" aria-label="Anchor">#</a></span></h3><p>In case you are one of the affected people, below is how you can fix the issue. I have tested it and it works fine. And keep in mind that XeroLinux is basically ArchLinux so below fix will work on Arch as well as any Arch-Based distros with the exception of Manjaro that is NOT Arch. Read more on that &raquo;<a href="https://wiki.manjaro.org/index.php/Manjaro:A_Different_Kind_of_Beast#:~:text=Manjaro%20is%20developed%20independently%20from,from%20its%20own%20independent%20repositories" target="_blank">Here</a> &laquo;</p><h3 class="relative group">Disclaimer :<div id="disclaimer-" class="anchor"/><span class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#disclaimer-" aria-label="Anchor">#</a></span></h3><p>Below guide covers EXT4/XFS/BTRFS Unencrypted Filesystems, for Encrypted Drives, you will have to either &ldquo;Google it&rdquo; lol, or check at the bottom of this guide where I posted a link to EndeavourOS&rsquo; more advanced guide for Chrooting into your system&hellip; There are 2 options if first one works no need for the rest, and so on&hellip;</p><p>Anyway here&rsquo;s what to do&hellip;</p><h3 class="relative group">Mount your system to work in..<div id="mount-your-system-to-work-in" class="anchor"/><span class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#mount-your-system-to-work-in" aria-label="Anchor">#</a></span></h3><p>First of all; boot using Arch or XeroLinux Live boot USB and follow the steps below&hellip;</p><p>The device or partition with your Linux system on it will need to be mounted. To discover the kernel name of the storage device name, type:</p><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Bash" data-lang="Bash"><span class="line"><span class="cl">sudo fdisk -l</span></span></code></pre></div><p>Mount the device or partition : (replace &ldquo;sdXn&rdquo; with your Actual partition name)</p><p><figure><img class="my-0 rounded-md" loading="lazy" src="https://i.imgur.com/SZO4qw0.png" alt="[Image: SZO4qw0.png]"/></figure></p><p>For EXT4 &amp; XFS</p><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Bash" data-lang="Bash"><span class="line"><span class="cl">sudo mount /dev/sdXn /mnt<span class="o">(</span>Linux Filesystem<span class="o">)</span></span></span><span class="line"><span class="cl">sudo mount /dev/sdXn /mnt/boot/efi<span class="o">(</span>EFI System<span class="o">)</span></span></span></code></pre></div><p>For BTRFS</p><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Bash" data-lang="Bash"><span class="line"><span class="cl">sudo mount -o<span class="nv">subvol</span><span class="o">=</span>@ /dev/sdXn /mnt<span class="o">(</span>Linux Filesystem<span class="o">)</span></span></span><span class="line"><span class="cl">sudo mount -o<span class="nv">subvol</span><span class="o">=</span>@ /dev/sdXn /mnt/boot/efi<span class="o">(</span>EFI System<span class="o">)</span></span></span></code></pre></div><h3 class="relative group">Chroot into your system :<div id="chroot-into-your-system-" class="anchor"/><span class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#chroot-into-your-system-" aria-label="Anchor">#</a></span></h3><p>With this information, you are able to arch-chroot, and to be able to do that you need to have root permissions, so type the following command:</p><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Bash" data-lang="Bash"><span class="line"><span class="cl">sudo arch-chroot /mnt</span></span></code></pre></div><h3 class="relative group">Fix Grub boot loop issue :<div id="fix-grub-boot-loop-issue-" class="anchor"/><span class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#fix-grub-boot-loop-issue-" aria-label="Anchor">#</a></span></h3><p>Now you’ve chrooted into your installed system, and you are able to access your files, install packages, or alter scripts to rescue your system. to fix Grub run this in chroot&hellip;</p><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Bash" data-lang="Bash"><span class="line"><span class="cl">sudo grub-install --removable --target<span class="o">=</span>x86_64-efi --efi-directory<span class="o">=</span>/boot/efi --disable-shim-lock</span></span></code></pre></div><p><figure><img class="my-0 rounded-md" loading="lazy" src="https://i.imgur.com/dfBQw4X.jpeg" alt="[Image: dfBQw4X.jpeg]"/></figure></p><p>This will install grub on persistent memory as opposed to volatile one&hellip; By default Grub will sit on volatile memory, I dunno why, and since when devs decided to do that, suffice it to say that whatever the reason behind this was below command will fix you right up&hellip;</p><p>then update grub via below command</p><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Bash" data-lang="Bash"><span class="line"><span class="cl">sudo grub-mkconfig -o /boot/grub/grub.cfg</span></span></code></pre></div><p>Exit arch-chroot via<code>exit</code> command then unmount your system n boot&hellip;<a href="https://discovery.endeavouros.com/system-rescue/arch-chroot/2022/12/" target="_blank">Advanced Chroot Guide</a></p><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Bash" data-lang="Bash"><span class="line"><span class="cl">sudo umount /mnt/boot/efi</span></span><span class="line"><span class="cl">sudo umount /mnt</span></span></code></pre></div>]]></content:encoded><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"/><item><title>Make KDE apps use System theme in XFCE/Gnome</title><link>https://xerolinux.xyz/posts/theme-qt-apps-on-gtk-de/</link><pubDate>Thu, 27 Jun 2024 00:00:00 +0000</pubDate><guid>https://xerolinux.xyz/posts/theme-qt-apps-on-gtk-de/</guid><description>
+
+&lt;h3 class="relative group">Intro 
+ &lt;div id="intro" class="anchor">&lt;/div>
+ 
+ &lt;span
+ class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+ &lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+ style="text-decoration-line: none !important;" href="#intro" aria-label="Anchor">#&lt;/a>
+ &lt;/span> 
+ 
+&lt;/h3>
+&lt;p>As I was working on &lt;strong>XFCE&lt;/strong> &amp;amp; &lt;strong>Gnome&lt;/strong>, I noticed that since they both use &lt;strong>GTK3/4&lt;/strong>, some &lt;strong>Qt&lt;/strong> apps made for &lt;strong>KDE&lt;/strong> like &lt;strong>KdenLive&lt;/strong> did not follow the system theme. I found a guide that I will be sharing with you all&amp;hellip;&lt;/p>
+&lt;p>Apps built with Q (aka KDE apps) do not look great on the XFCE4 &amp;amp; GNOME desktop because they don’t respect the default theme. The way to fix this is to use &lt;strong>Kvantum&lt;/strong>. With it, you can set &lt;strong>KDE&lt;/strong> app themes to use a similar theme to what you use.&lt;/p>
+&lt;p>
+ &lt;figure>
+ &lt;img class="my-0 rounded-md" loading="lazy" src="https://i.imgur.com/UK5MPRI.png" alt="Shot1" />
+ 
+ &lt;/figure>
+&lt;/p>
+
+
+&lt;h3 class="relative group">Before we begin&amp;hellip; 
+ &lt;div id="before-we-begin" class="anchor">&lt;/div>
+ 
+ &lt;span
+ class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+ &lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+ style="text-decoration-line: none !important;" href="#before-we-begin" aria-label="Anchor">#&lt;/a>
+ &lt;/span> 
+ 
+&lt;/h3>
+&lt;p>In this guide, we’ll be using the &lt;strong>Adapta GTK&lt;/strong> theme for &lt;strong>XFCE&lt;/strong>. We’re focusing on Adapta because it has a &lt;strong>Kvantum&lt;/strong> theme that is widely available and helps blend &lt;strong>KDE&lt;/strong> apps in with &lt;strong>XFCE4&lt;/strong> quite well.&lt;/p>
+&lt;p>Before starting this guide, we highly recommend installing the &lt;strong>Adapta GTK&lt;/strong> theme onto your Linux PC and enabling it as the default theme in &lt;strong>XFCE&lt;/strong>.&lt;/p>
+
+
+&lt;h3 class="relative group">Installing Kvantum on Linux 
+ &lt;div id="installing-kvantum-on-linux" class="anchor">&lt;/div>
+ 
+ &lt;span
+ class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+ &lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+ style="text-decoration-line: none !important;" href="#installing-kvantum-on-linux" aria-label="Anchor">#&lt;/a>
+ &lt;/span> 
+ 
+&lt;/h3>
+&lt;p>To get &lt;strong>Kvantum&lt;/strong> working on your Linux PC, you will need to install it alongside the management tool. To get started, open up a terminal window and install the Kvantum manager, as well as everything else necessary to use it.&lt;/p>
+&lt;p>&lt;strong>Arch Linux&lt;/strong>&lt;/p>
+&lt;p>&lt;strong>Kvantum&lt;/strong> is available to Arch Linux users and has been for a very long time. There is an &lt;strong>&lt;a href="https://aur.archlinux.org/packages/kvantum-qt5-git/" target="_blank">AUR package&lt;/a>&lt;/strong>. There’s also a package in the official Arch Linux software sources, which we recommend.&lt;/p>
+&lt;p>To get the latest Kvantum on your Arch Linux PC, enter the following terminal command.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-Bash" data-lang="Bash">&lt;span class="line">&lt;span class="cl">sudo pacman -S kvantum
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;strong>Downloading Kvantum themes&lt;/strong>&lt;/p>
+&lt;p>In this guide, we’re focusing on the &lt;strong>Kvantum Adapta&lt;/strong> theme. However, if you want to use a different GTK theme and need a matching Kvantum theme to go with it, the best place to go is the KDE Store.&lt;/p>
+&lt;p>The KDE Store has tons of stuff to download, including Kvantum theme engine themes. To download a Kvantum theme, head over to the &lt;strong>&lt;a href="https://store.kde.org/browse/cat/123/order/latest/" target="_blank">Kvantum page&lt;/a>&lt;/strong> on the KDE store. From there, look through the latest themes to download.&lt;/p>
+&lt;p>Once you’ve downloaded a theme, launch Kvantum Manager, select “Install/Update Theme,” and install it. Then, select “Change/Delete Theme” to start using it on your system.&lt;/p>
+
+
+&lt;h3 class="relative group">Using Kvantum to make KDE apps look better 
+ &lt;div id="using-kvantum-to-make-kde-apps-look-better" class="anchor">&lt;/div>
+ 
+ &lt;span
+ class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+ &lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+ style="text-decoration-line: none !important;" href="#using-kvantum-to-make-kde-apps-look-better" aria-label="Anchor">#&lt;/a>
+ &lt;/span> 
+ 
+&lt;/h3>
+&lt;p>To make your KDE apps look better on the XFCE4 desktop, start by launching “Kvantum Manager” from the app menu. If you cannot find it in the app menu, open up the XFCE4 quick launcher with Alt + F2, and enter “kvantummanager” in the launch box.&lt;/p>
+&lt;p>Once the Kvantum Manager app is open on the XFCE4 desktop, follow the step-by-step instructions outlined below.&lt;/p>
+&lt;p>&lt;strong>- Step 1:&lt;/strong> Locate the “Change/Delete Theme” option in the Kvantum Manager. If you cannot find it, it is directly below the “Install/Update Theme.”&lt;/p>
+&lt;p>After selecting the “Change/Delete Theme” button, you will see a menu that says “Select a theme,” followed by a blank text box. Change it to “Kvdapta.”&lt;/p>
+&lt;p>
+ &lt;figure>
+ &lt;img class="my-0 rounded-md" loading="lazy" src="https://i.imgur.com/JVEudZ1.png" alt="Shot2" />
+ 
+ &lt;/figure>
+&lt;/p>
+&lt;p>&lt;strong>- Step 2:&lt;/strong> Open up a terminal window and install the Qt5ct app.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-Bash" data-lang="Bash">&lt;span class="line">&lt;span class="cl">sudo pacman -S qt5ct
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;strong>- Step 3:&lt;/strong> Open up a terminal window and use the &lt;strong>echo&lt;/strong> command to edit the profile file to add the environmental variable.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-Bash" data-lang="Bash">&lt;span class="line">&lt;span class="cl">&lt;span class="nb">echo&lt;/span> &lt;span class="s2">&amp;#34;export QT_QPA_PLATFORMTHEME=qt5ct&amp;#34;&lt;/span> &amp;gt;&amp;gt; ~/.profile
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;strong>- Step 4:&lt;/strong> Log out of your XFCE 4 session and log back in.&lt;/p>
+&lt;p>&lt;strong>- Step 5:&lt;/strong> Open up Qt5ct via the app menu. Or, launch it via the terminal with the &lt;strong>qt5ct&lt;/strong> command.&lt;/p>
+&lt;p>
+ &lt;figure>
+ &lt;img class="my-0 rounded-md" loading="lazy" src="https://i.imgur.com/v261wDF.png" alt="Shot3" />
+ 
+ &lt;/figure>
+&lt;/p>
+&lt;p>&lt;strong>Step 6:&lt;/strong> Locate the “Appearance” tab. Then, find the “Style” menu. In the menu, select “kvantum.” Then, select “Apply” to apply changes.&lt;/p>
+&lt;p>
+ &lt;figure>
+ &lt;img class="my-0 rounded-md" loading="lazy" src="https://i.imgur.com/EKMmXrF.png" alt="Shot4" />
+ 
+ &lt;/figure>
+&lt;/p>
+&lt;p>Upon applying your changes, KDE applications on XFCE 4 should be using the Kvantum theme set up earlier. This method works the same way on both &lt;strong>XFCE &amp;amp; GNOME&lt;/strong>.&lt;/p>
+&lt;p>Guide by: &lt;strong>&lt;a href="https://www.addictivetips.com/ubuntu-linux-tips/make-kde-apps-look-better/" target="_blank">AddictiveTips.com&lt;/a>&lt;/strong>&lt;/p></description><content:encoded>&lt;![CDATA[<h3 class="relative group">Intro<div id="intro" class="anchor"/><span class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#intro" aria-label="Anchor">#</a></span></h3><p>As I was working on<strong>XFCE</strong> &amp;<strong>Gnome</strong>, I noticed that since they both use<strong>GTK3/4</strong>, some<strong>Qt</strong> apps made for<strong>KDE</strong> like<strong>KdenLive</strong> did not follow the system theme. I found a guide that I will be sharing with you all&hellip;</p><p>Apps built with Q (aka KDE apps) do not look great on the XFCE4 &amp; GNOME desktop because they don’t respect the default theme. The way to fix this is to use<strong>Kvantum</strong>. With it, you can set<strong>KDE</strong> app themes to use a similar theme to what you use.</p><p><figure><img class="my-0 rounded-md" loading="lazy" src="https://i.imgur.com/UK5MPRI.png" alt="Shot1"/></figure></p><h3 class="relative group">Before we begin&hellip;<div id="before-we-begin" class="anchor"/><span class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#before-we-begin" aria-label="Anchor">#</a></span></h3><p>In this guide, we’ll be using the<strong>Adapta GTK</strong> theme for<strong>XFCE</strong>. We’re focusing on Adapta because it has a<strong>Kvantum</strong> theme that is widely available and helps blend<strong>KDE</strong> apps in with<strong>XFCE4</strong> quite well.</p><p>Before starting this guide, we highly recommend installing the<strong>Adapta GTK</strong> theme onto your Linux PC and enabling it as the default theme in<strong>XFCE</strong>.</p><h3 class="relative group">Installing Kvantum on Linux<div id="installing-kvantum-on-linux" class="anchor"/><span class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#installing-kvantum-on-linux" aria-label="Anchor">#</a></span></h3><p>To get<strong>Kvantum</strong> working on your Linux PC, you will need to install it alongside the management tool. To get started, open up a terminal window and install the Kvantum manager, as well as everything else necessary to use it.</p><p><strong>Arch Linux</strong></p><p><strong>Kvantum</strong> is available to Arch Linux users and has been for a very long time. There is an<strong><a href="https://aur.archlinux.org/packages/kvantum-qt5-git/" target="_blank">AUR package</a></strong>. There’s also a package in the official Arch Linux software sources, which we recommend.</p><p>To get the latest Kvantum on your Arch Linux PC, enter the following terminal command.</p><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Bash" data-lang="Bash"><span class="line"><span class="cl">sudo pacman -S kvantum</span></span></code></pre></div><p><strong>Downloading Kvantum themes</strong></p><p>In this guide, we’re focusing on the<strong>Kvantum Adapta</strong> theme. However, if you want to use a different GTK theme and need a matching Kvantum theme to go with it, the best place to go is the KDE Store.</p><p>The KDE Store has tons of stuff to download, including Kvantum theme engine themes. To download a Kvantum theme, head over to the<strong><a href="https://store.kde.org/browse/cat/123/order/latest/" target="_blank">Kvantum page</a></strong> on the KDE store. From there, look through the latest themes to download.</p><p>Once you’ve downloaded a theme, launch Kvantum Manager, select “Install/Update Theme,” and install it. Then, select “Change/Delete Theme” to start using it on your system.</p><h3 class="relative group">Using Kvantum to make KDE apps look better<div id="using-kvantum-to-make-kde-apps-look-better" class="anchor"/><span class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#using-kvantum-to-make-kde-apps-look-better" aria-label="Anchor">#</a></span></h3><p>To make your KDE apps look better on the XFCE4 desktop, start by launching “Kvantum Manager” from the app menu. If you cannot find it in the app menu, open up the XFCE4 quick launcher with Alt + F2, and enter “kvantummanager” in the launch box.</p><p>Once the Kvantum Manager app is open on the XFCE4 desktop, follow the step-by-step instructions outlined below.</p><p><strong>- Step 1:</strong> Locate the “Change/Delete Theme” option in the Kvantum Manager. If you cannot find it, it is directly below the “Install/Update Theme.”</p><p>After selecting the “Change/Delete Theme” button, you will see a menu that says “Select a theme,” followed by a blank text box. Change it to “Kvdapta.”</p><p><figure><img class="my-0 rounded-md" loading="lazy" src="https://i.imgur.com/JVEudZ1.png" alt="Shot2"/></figure></p><p><strong>- Step 2:</strong> Open up a terminal window and install the Qt5ct app.</p><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Bash" data-lang="Bash"><span class="line"><span class="cl">sudo pacman -S qt5ct</span></span></code></pre></div><p><strong>- Step 3:</strong> Open up a terminal window and use the<strong>echo</strong> command to edit the profile file to add the environmental variable.</p><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Bash" data-lang="Bash"><span class="line"><span class="cl"><span class="nb">echo</span><span class="s2">"export QT_QPA_PLATFORMTHEME=qt5ct"</span> >> ~/.profile</span></span></code></pre></div><p><strong>- Step 4:</strong> Log out of your XFCE 4 session and log back in.</p><p><strong>- Step 5:</strong> Open up Qt5ct via the app menu. Or, launch it via the terminal with the<strong>qt5ct</strong> command.</p><p><figure><img class="my-0 rounded-md" loading="lazy" src="https://i.imgur.com/v261wDF.png" alt="Shot3"/></figure></p><p><strong>Step 6:</strong> Locate the “Appearance” tab. Then, find the “Style” menu. In the menu, select “kvantum.” Then, select “Apply” to apply changes.</p><p><figure><img class="my-0 rounded-md" loading="lazy" src="https://i.imgur.com/EKMmXrF.png" alt="Shot4"/></figure></p><p>Upon applying your changes, KDE applications on XFCE 4 should be using the Kvantum theme set up earlier. This method works the same way on both<strong>XFCE &amp; GNOME</strong>.</p><p>Guide by:<strong><a href="https://www.addictivetips.com/ubuntu-linux-tips/make-kde-apps-look-better/" target="_blank">AddictiveTips.com</a></strong></p>
+]]></content:encoded><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"/></channel></rss>

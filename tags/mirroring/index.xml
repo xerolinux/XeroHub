@@ -1,0 +1,364 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Mirroring on XeroLinux HQ</title><link>https://xerolinux.xyz/tags/mirroring/</link><description>Recent content in Mirroring on XeroLinux HQ</description><generator>Hugo</generator><language>en</language><lastBuildDate>Fri, 05 Jul 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://xerolinux.xyz/tags/mirroring/index.xml" rel="self" type="application/rss+xml"/><item><title>Scrcpy Android screen mirroring tool</title><link>https://xerolinux.xyz/posts/scrcpy-android-screen-mirroring/</link><pubDate>Fri, 05 Jul 2024 00:00:00 +0000</pubDate><guid>https://xerolinux.xyz/posts/scrcpy-android-screen-mirroring/</guid><description>
+ 
+
+
+
+&lt;div
+ 
+ class="flex px-4 py-3 rounded-md bg-primary-100 dark:bg-primary-900"
+ >
+
+ &lt;span
+ 
+ class="text-primary-400 ltr:pr-3 rtl:pl-3 flex items-center"
+ >
+
+ 
+
+ &lt;span class="relative block icon">
+ &lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">&lt;path fill="currentColor" d="M433 179.11c0-97.2-63.71-125.7-63.71-125.7-62.52-28.7-228.56-28.4-290.48 0 0 0-63.72 28.5-63.72 125.7 0 115.7-6.6 259.4 105.63 289.1 40.51 10.7 75.32 13 103.33 11.4 50.81-2.8 79.32-18.1 79.32-18.1l-1.7-36.9s-36.31 11.4-77.12 10.1c-40.41-1.4-83-4.4-89.63-54a102.54 102.54 0 0 1-.9-13.9c85.63 20.9 158.65 9.1 178.75 6.7 56.12-6.7 105-41.3 111.23-72.9 9.8-49.8 9-121.5 9-121.5zm-75.12 125.2h-46.63v-114.2c0-49.7-64-51.6-64 6.9v62.5h-46.33V197c0-58.5-64-56.6-64-6.9v114.2H90.19c0-122.1-5.2-147.9 18.41-175 25.9-28.9 79.82-30.8 103.83 6.1l11.6 19.5 11.6-19.5c24.11-37.1 78.12-34.8 103.83-6.1 23.71 27.3 18.4 53 18.4 175z"/>&lt;/svg>
+
+ &lt;/span>
+
+
+ &lt;/span>
+
+ &lt;span
+ 
+ class="dark:text-neutral-300"
+ >This article was graciously contributed by &lt;a href="https://fosstodon.org/@Cylis@mas.to" target="_blank">&lt;strong>Cylis&lt;/strong>&lt;/a>.&lt;/span>
+&lt;/div>
+
+
+
+&lt;h3 class="relative group">What is it? 
+ &lt;div id="what-is-it" class="anchor">&lt;/div>
+ 
+ &lt;span
+ class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+ &lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+ style="text-decoration-line: none !important;" href="#what-is-it" aria-label="Anchor">#&lt;/a>
+ &lt;/span> 
+ 
+&lt;/h3>
+&lt;p>Scrcpy is free, open-source &lt;strong>Android screen-mirroring&lt;/strong> application that lets you use your Android with Scrcpy for Windows, macOS, or even Linux. But it&amp;rsquo;s not the only one. Many software and applications let you control your phone or view your phone&amp;rsquo;s content on other devices. However, every tool has its own flaws and shortcomings.&lt;/p>
+&lt;p>There is no need to root your devices since it&amp;rsquo;s an open-source application. Whether you want to run Scrcpy on multiple devices, use applications on your phone, or even share files across two phones, Scrcpy is a perfect solution.&lt;/p>
+
+
+ 
+ &lt;div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+ &lt;iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/TDnQa_-fK4s?autoplay=0&amp;controls=1&amp;end=0&amp;loop=0&amp;mute=0&amp;start=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="YouTube video"
+ >&lt;/iframe>
+ &lt;/div>
+
+&lt;p>It uses &lt;strong>ADB&lt;/strong> to do things like:&lt;/p>
+&lt;p>🖥️ Mirror the screen wired and wirelessly&lt;br>
+📂 Copy files to your mobile with drag &amp;amp; drop&lt;br>
+⌨️ Control playback using your keyboard or even play games&lt;br>
+🎵 Audio forwarding&lt;br>
+📷 Mirroring as a WebCam only on Linux&lt;/p>
+
+
+&lt;h3 class="relative group">How Does Scrcpy Work? 
+ &lt;div id="how-does-scrcpy-work" class="anchor">&lt;/div>
+ 
+ &lt;span
+ class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+ &lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+ style="text-decoration-line: none !important;" href="#how-does-scrcpy-work" aria-label="Anchor">#&lt;/a>
+ &lt;/span> 
+ 
+&lt;/h3>
+&lt;p>It&amp;rsquo;s a question of many.&lt;/p>
+&lt;p>How does &lt;strong>Scrcpy&lt;/strong> work, or how to use Scrcpy on Android?&lt;/p>
+&lt;p>It&amp;rsquo;s important to understand the working of the software. When you connect devices via Scrcpy, it will execute a server on the connected devices. As a result, the client and server will communicate over a specific protocol to run the video on the connected device screen. The client(your computer/laptop) instantly decodes the video frames and shows them as your Android&amp;rsquo;s HD mirror. Whether you&amp;rsquo;re using Android with a mouse or keyboard, the client and server communicate to give you an uninterrupted session.&lt;/p>
+
+
+&lt;h3 class="relative group">How To Set Up Scrcpy On Android 
+ &lt;div id="how-to-set-up-scrcpy-on-android" class="anchor">&lt;/div>
+ 
+ &lt;span
+ class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+ &lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+ style="text-decoration-line: none !important;" href="#how-to-set-up-scrcpy-on-android" aria-label="Anchor">#&lt;/a>
+ &lt;/span> 
+ 
+&lt;/h3>
+&lt;p>Software that requires rooting your Android device before installation is always tiring. With the open-source software of Scrcpy, you don&amp;rsquo;t have to root your device. Although a complicated start-up process once you know it, it&amp;rsquo;s very easy to install and run Scrcpy.&lt;/p>
+&lt;p>&lt;strong>Requirements :&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>Android 5.0+&lt;/li>
+&lt;li>For Audio Forwarding Android 11.0+&lt;/li>
+&lt;li>Enable USB debugging in Developer settings.&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>Installing it :&lt;/strong>&lt;/p>
+&lt;p>Install it using &lt;strong>Pacman&lt;/strong> :&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-Bash" data-lang="Bash">&lt;span class="line">&lt;span class="cl">sudo pacman -S scrcpy
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
+
+&lt;h3 class="relative group">Display &amp;amp; Control Android On PC With Scrcpy 
+ &lt;div id="display--control-android-on-pc-with-scrcpy" class="anchor">&lt;/div>
+ 
+ &lt;span
+ class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+ &lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+ style="text-decoration-line: none !important;" href="#display--control-android-on-pc-with-scrcpy" aria-label="Anchor">#&lt;/a>
+ &lt;/span> 
+ 
+&lt;/h3>
+&lt;p>You can display your Android on a PC and use Scrcpy on Android with two methods: USB and Wireless. Let&amp;rsquo;s discuss each.&lt;/p>
+&lt;p>&lt;strong>With USB&lt;/strong>&lt;/p>
+&lt;p>Whether you&amp;rsquo;re using Scrcpy for Windows 10, Linux, or macOS, here is what you need to do:&lt;/p>
+&lt;p>With &lt;a href="https://www.microfocus.com/documentation/silk-test/200/en/silk4j-help-en/GUID-BE1EA2BA-EFF2-4B2D-8F09-4BEE0947DFB2.html" target="_blank">&lt;strong>USB Debugging&lt;/strong>&lt;/a> enabled, follow these steps:&lt;/p>
+&lt;ul>
+&lt;li>Connect your phone to your PC via USB cable.&lt;/li>
+&lt;li>Confirm USB Debugging via pop-up on Device.&lt;/li>
+&lt;li>Run &lt;code>scrcpy&lt;/code> in the Terminal.&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>Wireless&lt;/strong>&lt;/p>
+&lt;p>To use Scrcpy on Android wirelessly :&lt;/p>
+&lt;ul>
+&lt;li>Connect Phone to PC and confirm USB debugging by running the &lt;code>adb services&lt;/code> command.&lt;/li>
+&lt;li>Run the &lt;code>adb tcpip 5555&lt;/code> command to enable WiFi Debug mode then unplug the USB.&lt;/li>
+&lt;li>Run the &lt;code>adb connect &amp;lt;device IP address&amp;gt;&lt;/code> command. (The IP address can be found in settings &amp;gt; About Phone &amp;gt; IP Address)&lt;/li>
+&lt;li>Run &lt;code>scrcpy&lt;/code> in the Terminal.&lt;/li>
+&lt;/ul>
+
+
+&lt;h3 class="relative group">Explore Scrcpy Features Using Commands 
+ &lt;div id="explore-scrcpy-features-using-commands" class="anchor">&lt;/div>
+ 
+ &lt;span
+ class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+ &lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+ style="text-decoration-line: none !important;" href="#explore-scrcpy-features-using-commands" aria-label="Anchor">#&lt;/a>
+ &lt;/span> 
+ 
+&lt;/h3>
+&lt;p>Screen mirroring is not the only feature of Scrcpy, but there is a lot more you can do with it. We will share Scrcpy commands for running other features of Scrcpy on your PC as well.&lt;/p>
+&lt;ul>
+&lt;li>Recording&lt;/li>
+&lt;/ul>
+&lt;p>If you want to record the screen of Android via Scrcpy, run the following command:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-Bash" data-lang="Bash">&lt;span class="line">&lt;span class="cl">scrcpy --record myrecording.mp4
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ul>
+&lt;li>Change Resolution&lt;/li>
+&lt;/ul>
+&lt;p>You can also change Scrcpy resolution when mirroring the Android screen by running the following command:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-Bash" data-lang="Bash">&lt;span class="line">&lt;span class="cl">scrcpy --max-size &lt;span class="m">720&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>There are more, but am not gonna put them all here. Just head on over to the project &lt;strong>Git Repo&lt;/strong> below to see them all, report issues and even share some ideas you might have with them&amp;hellip;&lt;/p>
+&lt;a id="github-2ef9a4269d317def170edabf1a7ec947" target="_blank" href="https://github.com/Genymobile/scrcpy" class="cursor-pointer">
+ &lt;div
+ class="w-full md:w-auto pt-3 p-5 border border-neutral-200 dark:border-neutral-700 border rounded-md shadow-2xl">
+
+ &lt;div class="flex items-center">
+ &lt;span class="text-2xl text-neutral-800 dark:text-neutral" style="margin-right:10px;">
+ 
+
+ &lt;span class="relative block icon">
+ &lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512">&lt;path fill="currentColor" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/>&lt;/svg>
+
+ &lt;/span>
+
+
+ &lt;/span>
+ &lt;div
+ id="github-2ef9a4269d317def170edabf1a7ec947-full_name"
+ class="m-0 font-bold text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral">
+ Genymobile/scrcpy
+ &lt;/div>
+ &lt;/div>
+
+ &lt;p id="github-2ef9a4269d317def170edabf1a7ec947-description" class="m-0 mt-2 text-md text-neutral-800 dark:text-neutral">
+ Display and control your Android device
+ &lt;/p>
+
+ &lt;div class="m-0 mt-2 flex items-center">
+
+ &lt;span class="mr-1 inline-block h-3 w-3 rounded-full"
+ style="background-color: #555555">&lt;/span>
+ &lt;div class="m-0 mr-5 text-md text-neutral-800 dark:text-neutral">
+ C 
+ &lt;/div>
+
+ &lt;span class="text-md mr-1 text-neutral-800 dark:text-neutral">
+ 
+
+ &lt;span class="relative block icon">
+ &lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">&lt;path fill="currentColor" d="M287.9 0C297.1 0 305.5 5.25 309.5 13.52L378.1 154.8L531.4 177.5C540.4 178.8 547.8 185.1 550.7 193.7C553.5 202.4 551.2 211.9 544.8 218.2L433.6 328.4L459.9 483.9C461.4 492.9 457.7 502.1 450.2 507.4C442.8 512.7 432.1 513.4 424.9 509.1L287.9 435.9L150.1 509.1C142.9 513.4 133.1 512.7 125.6 507.4C118.2 502.1 114.5 492.9 115.1 483.9L142.2 328.4L31.11 218.2C24.65 211.9 22.36 202.4 25.2 193.7C28.03 185.1 35.5 178.8 44.49 177.5L197.7 154.8L266.3 13.52C270.4 5.249 278.7 0 287.9 0L287.9 0zM287.9 78.95L235.4 187.2C231.9 194.3 225.1 199.3 217.3 200.5L98.98 217.9L184.9 303C190.4 308.5 192.9 316.4 191.6 324.1L171.4 443.7L276.6 387.5C283.7 383.7 292.2 383.7 299.2 387.5L404.4 443.7L384.2 324.1C382.9 316.4 385.5 308.5 391 303L476.9 217.9L358.6 200.5C350.7 199.3 343.9 194.3 340.5 187.2L287.9 78.95z"/>&lt;/svg>
+ &lt;/span>
+
+
+ &lt;/span>
+ &lt;div id="github-2ef9a4269d317def170edabf1a7ec947-stargazers" class="m-0 mr-5 text-md text-neutral-800 dark:text-neutral">
+ 106662
+ &lt;/div>
+
+ &lt;span class="text-md mr-1 text-neutral-800 dark:text-neutral">
+ 
+
+ &lt;span class="relative block icon">
+ &lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">&lt;path fill="currentColor" d="M80 104c13.3 0 24-10.7 24-24s-10.7-24-24-24S56 66.7 56 80s10.7 24 24 24zm80-24c0 32.8-19.7 61-48 73.3V192c0 17.7 14.3 32 32 32H304c17.7 0 32-14.3 32-32V153.3C307.7 141 288 112.8 288 80c0-44.2 35.8-80 80-80s80 35.8 80 80c0 32.8-19.7 61-48 73.3V192c0 53-43 96-96 96H256v70.7c28.3 12.3 48 40.5 48 73.3c0 44.2-35.8 80-80 80s-80-35.8-80-80c0-32.8 19.7-61 48-73.3V288H144c-53 0-96-43-96-96V153.3C19.7 141 0 112.8 0 80C0 35.8 35.8 0 80 0s80 35.8 80 80zm208 24c13.3 0 24-10.7 24-24s-10.7-24-24-24s-24 10.7-24 24s10.7 24 24 24zM248 432c0-13.3-10.7-24-24-24s-24 10.7-24 24s10.7 24 24 24s24-10.7 24-24z"/>&lt;/svg>
+ &lt;/span>
+
+
+ &lt;/span>
+ &lt;div id="github-2ef9a4269d317def170edabf1a7ec947-forks" class="m-0 mr-5 text-md text-neutral-800 dark:text-neutral">
+ 10320
+ &lt;/div>
+
+ &lt;/div>
+
+ &lt;/div>
+ &lt;script>
+ fetch("https://api.github.com/repos/Genymobile/scrcpy", {
+ headers: new Headers({
+ 'User-agent': 'Mozilla/4.0 Custom User Agent'
+ })
+ })
+ .then(response => response.json())
+ .then(data => {
+ document.getElementById('github-2ef9a4269d317def170edabf1a7ec947-full_name').innerHTML = data.full_name;
+ document.getElementById('github-2ef9a4269d317def170edabf1a7ec947-description').innerHTML = data.description;
+ document.getElementById('github-2ef9a4269d317def170edabf1a7ec947-stargazers').innerHTML = data.stargazers_count;
+ document.getElementById('github-2ef9a4269d317def170edabf1a7ec947-forks').innerHTML = data.forks;
+ })
+ .catch(error => console.error(error))
+ &lt;/script>
+&lt;/a>
+
+
+&lt;h3 class="relative group">Bonus : GUI Version of SCRCPY 
+ &lt;div id="bonus--gui-version-of-scrcpy" class="anchor">&lt;/div>
+ 
+ &lt;span
+ class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+ &lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+ style="text-decoration-line: none !important;" href="#bonus--gui-version-of-scrcpy" aria-label="Anchor">#&lt;/a>
+ &lt;/span> 
+ 
+&lt;/h3>
+&lt;p>If you prefer a GUI based version of SCRCPY, there is one. However it&amp;rsquo;s not as maintained as the official version. It uses &lt;code>QT&lt;/code> so it works best on those types of DEs, like &lt;strong>KDE Plasma&lt;/strong>, &lt;strong>LXQT&lt;/strong> and so on. To install it from the AUR&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-Bash" data-lang="Bash">&lt;span class="line">&lt;span class="cl">paru -S qtscrcpy
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>For more info and issues visit the project &lt;strong>Git Repo&lt;/strong>&lt;/p>
+&lt;a id="github-1305ea58e76e685e1b7863bc394c207f" target="_blank" href="https://github.com/barry-ran/QtScrcpy" class="cursor-pointer">
+ &lt;div
+ class="w-full md:w-auto pt-3 p-5 border border-neutral-200 dark:border-neutral-700 border rounded-md shadow-2xl">
+
+ &lt;div class="flex items-center">
+ &lt;span class="text-2xl text-neutral-800 dark:text-neutral" style="margin-right:10px;">
+ 
+
+ &lt;span class="relative block icon">
+ &lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512">&lt;path fill="currentColor" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/>&lt;/svg>
+
+ &lt;/span>
+
+
+ &lt;/span>
+ &lt;div
+ id="github-1305ea58e76e685e1b7863bc394c207f-full_name"
+ class="m-0 font-bold text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral">
+ barry-ran/QtScrcpy
+ &lt;/div>
+ &lt;/div>
+
+ &lt;p id="github-1305ea58e76e685e1b7863bc394c207f-description" class="m-0 mt-2 text-md text-neutral-800 dark:text-neutral">
+ Android real-time display control software
+ &lt;/p>
+
+ &lt;div class="m-0 mt-2 flex items-center">
+
+ &lt;span class="mr-1 inline-block h-3 w-3 rounded-full"
+ style="background-color: #f34b7d">&lt;/span>
+ &lt;div class="m-0 mr-5 text-md text-neutral-800 dark:text-neutral">
+ C&amp;#43;&amp;#43; 
+ &lt;/div>
+
+ &lt;span class="text-md mr-1 text-neutral-800 dark:text-neutral">
+ 
+
+ &lt;span class="relative block icon">
+ &lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">&lt;path fill="currentColor" d="M287.9 0C297.1 0 305.5 5.25 309.5 13.52L378.1 154.8L531.4 177.5C540.4 178.8 547.8 185.1 550.7 193.7C553.5 202.4 551.2 211.9 544.8 218.2L433.6 328.4L459.9 483.9C461.4 492.9 457.7 502.1 450.2 507.4C442.8 512.7 432.1 513.4 424.9 509.1L287.9 435.9L150.1 509.1C142.9 513.4 133.1 512.7 125.6 507.4C118.2 502.1 114.5 492.9 115.1 483.9L142.2 328.4L31.11 218.2C24.65 211.9 22.36 202.4 25.2 193.7C28.03 185.1 35.5 178.8 44.49 177.5L197.7 154.8L266.3 13.52C270.4 5.249 278.7 0 287.9 0L287.9 0zM287.9 78.95L235.4 187.2C231.9 194.3 225.1 199.3 217.3 200.5L98.98 217.9L184.9 303C190.4 308.5 192.9 316.4 191.6 324.1L171.4 443.7L276.6 387.5C283.7 383.7 292.2 383.7 299.2 387.5L404.4 443.7L384.2 324.1C382.9 316.4 385.5 308.5 391 303L476.9 217.9L358.6 200.5C350.7 199.3 343.9 194.3 340.5 187.2L287.9 78.95z"/>&lt;/svg>
+ &lt;/span>
+
+
+ &lt;/span>
+ &lt;div id="github-1305ea58e76e685e1b7863bc394c207f-stargazers" class="m-0 mr-5 text-md text-neutral-800 dark:text-neutral">
+ 18190
+ &lt;/div>
+
+ &lt;span class="text-md mr-1 text-neutral-800 dark:text-neutral">
+ 
+
+ &lt;span class="relative block icon">
+ &lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">&lt;path fill="currentColor" d="M80 104c13.3 0 24-10.7 24-24s-10.7-24-24-24S56 66.7 56 80s10.7 24 24 24zm80-24c0 32.8-19.7 61-48 73.3V192c0 17.7 14.3 32 32 32H304c17.7 0 32-14.3 32-32V153.3C307.7 141 288 112.8 288 80c0-44.2 35.8-80 80-80s80 35.8 80 80c0 32.8-19.7 61-48 73.3V192c0 53-43 96-96 96H256v70.7c28.3 12.3 48 40.5 48 73.3c0 44.2-35.8 80-80 80s-80-35.8-80-80c0-32.8 19.7-61 48-73.3V288H144c-53 0-96-43-96-96V153.3C19.7 141 0 112.8 0 80C0 35.8 35.8 0 80 0s80 35.8 80 80zm208 24c13.3 0 24-10.7 24-24s-10.7-24-24-24s-24 10.7-24 24s10.7 24 24 24zM248 432c0-13.3-10.7-24-24-24s-24 10.7-24 24s10.7 24 24 24s24-10.7 24-24z"/>&lt;/svg>
+ &lt;/span>
+
+
+ &lt;/span>
+ &lt;div id="github-1305ea58e76e685e1b7863bc394c207f-forks" class="m-0 mr-5 text-md text-neutral-800 dark:text-neutral">
+ 2465
+ &lt;/div>
+
+ &lt;/div>
+
+ &lt;/div>
+ &lt;script>
+ fetch("https://api.github.com/repos/barry-ran/QtScrcpy", {
+ headers: new Headers({
+ 'User-agent': 'Mozilla/4.0 Custom User Agent'
+ })
+ })
+ .then(response => response.json())
+ .then(data => {
+ document.getElementById('github-1305ea58e76e685e1b7863bc394c207f-full_name').innerHTML = data.full_name;
+ document.getElementById('github-1305ea58e76e685e1b7863bc394c207f-description').innerHTML = data.description;
+ document.getElementById('github-1305ea58e76e685e1b7863bc394c207f-stargazers').innerHTML = data.stargazers_count;
+ document.getElementById('github-1305ea58e76e685e1b7863bc394c207f-forks').innerHTML = data.forks;
+ })
+ .catch(error => console.error(error))
+ &lt;/script>
+&lt;/a>
+&lt;p>That&amp;rsquo;s it, enjoy and let us know how it works for you&amp;hellip;&lt;/p></description><content:encoded>&lt;![CDATA[<div class="flex px-4 py-3 rounded-md bg-primary-100 dark:bg-primary-900"><span class="text-primary-400 ltr:pr-3 rtl:pl-3 flex items-center"><span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M433 179.11c0-97.2-63.71-125.7-63.71-125.7-62.52-28.7-228.56-28.4-290.48 0 0 0-63.72 28.5-63.72 125.7 0 115.7-6.6 259.4 105.63 289.1 40.51 10.7 75.32 13 103.33 11.4 50.81-2.8 79.32-18.1 79.32-18.1l-1.7-36.9s-36.31 11.4-77.12 10.1c-40.41-1.4-83-4.4-89.63-54a102.54 102.54 0 0 1-.9-13.9c85.63 20.9 158.65 9.1 178.75 6.7 56.12-6.7 105-41.3 111.23-72.9 9.8-49.8 9-121.5 9-121.5zm-75.12 125.2h-46.63v-114.2c0-49.7-64-51.6-64 6.9v62.5h-46.33V197c0-58.5-64-56.6-64-6.9v114.2H90.19c0-122.1-5.2-147.9 18.41-175 25.9-28.9 79.82-30.8 103.83 6.1l11.6 19.5 11.6-19.5c24.11-37.1 78.12-34.8 103.83-6.1 23.71 27.3 18.4 53 18.4 175z"/></svg></span></span><span class="dark:text-neutral-300">This article was graciously contributed by<a href="https://fosstodon.org/@Cylis@mas.to" target="_blank"><strong>Cylis</strong></a>.</span></div><h3 class="relative group">What is it?<div id="what-is-it" class="anchor"/><span class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#what-is-it" aria-label="Anchor">#</a></span></h3><p>Scrcpy is free, open-source<strong>Android screen-mirroring</strong> application that lets you use your Android with Scrcpy for Windows, macOS, or even Linux. But it&rsquo;s not the only one. Many software and applications let you control your phone or view your phone&rsquo;s content on other devices. However, every tool has its own flaws and shortcomings.</p><p>There is no need to root your devices since it&rsquo;s an open-source application. Whether you want to run Scrcpy on multiple devices, use applications on your phone, or even share files across two phones, Scrcpy is a perfect solution.</p><div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;"><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/TDnQa_-fK4s?autoplay=0&controls=1&end=0&loop=0&mute=0&start=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="YouTube video"/></div><p>It uses<strong>ADB</strong> to do things like:</p><p>🖥️ Mirror the screen wired and wirelessly<br>
+📂 Copy files to your mobile with drag &amp; drop<br>
+⌨️ Control playback using your keyboard or even play games<br>
+🎵 Audio forwarding<br>
+📷 Mirroring as a WebCam only on Linux</p><h3 class="relative group">How Does Scrcpy Work?<div id="how-does-scrcpy-work" class="anchor"/><span class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#how-does-scrcpy-work" aria-label="Anchor">#</a></span></h3><p>It&rsquo;s a question of many.</p><p>How does<strong>Scrcpy</strong> work, or how to use Scrcpy on Android?</p><p>It&rsquo;s important to understand the working of the software. When you connect devices via Scrcpy, it will execute a server on the connected devices. As a result, the client and server will communicate over a specific protocol to run the video on the connected device screen. The client(your computer/laptop) instantly decodes the video frames and shows them as your Android&rsquo;s HD mirror. Whether you&rsquo;re using Android with a mouse or keyboard, the client and server communicate to give you an uninterrupted session.</p><h3 class="relative group">How To Set Up Scrcpy On Android<div id="how-to-set-up-scrcpy-on-android" class="anchor"/><span class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#how-to-set-up-scrcpy-on-android" aria-label="Anchor">#</a></span></h3><p>Software that requires rooting your Android device before installation is always tiring. With the open-source software of Scrcpy, you don&rsquo;t have to root your device. Although a complicated start-up process once you know it, it&rsquo;s very easy to install and run Scrcpy.</p><p><strong>Requirements :</strong></p><ul><li>Android 5.0+</li><li>For Audio Forwarding Android 11.0+</li><li>Enable USB debugging in Developer settings.</li></ul><p><strong>Installing it :</strong></p><p>Install it using<strong>Pacman</strong> :</p><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Bash" data-lang="Bash"><span class="line"><span class="cl">sudo pacman -S scrcpy</span></span></code></pre></div><h3 class="relative group">Display &amp; Control Android On PC With Scrcpy<div id="display--control-android-on-pc-with-scrcpy" class="anchor"/><span class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#display--control-android-on-pc-with-scrcpy" aria-label="Anchor">#</a></span></h3><p>You can display your Android on a PC and use Scrcpy on Android with two methods: USB and Wireless. Let&rsquo;s discuss each.</p><p><strong>With USB</strong></p><p>Whether you&rsquo;re using Scrcpy for Windows 10, Linux, or macOS, here is what you need to do:</p><p>With<a href="https://www.microfocus.com/documentation/silk-test/200/en/silk4j-help-en/GUID-BE1EA2BA-EFF2-4B2D-8F09-4BEE0947DFB2.html" target="_blank"><strong>USB Debugging</strong></a> enabled, follow these steps:</p><ul><li>Connect your phone to your PC via USB cable.</li><li>Confirm USB Debugging via pop-up on Device.</li><li>Run<code>scrcpy</code> in the Terminal.</li></ul><p><strong>Wireless</strong></p><p>To use Scrcpy on Android wirelessly :</p><ul><li>Connect Phone to PC and confirm USB debugging by running the<code>adb services</code> command.</li><li>Run the<code>adb tcpip 5555</code> command to enable WiFi Debug mode then unplug the USB.</li><li>Run the<code>adb connect &lt;device IP address></code> command. (The IP address can be found in settings > About Phone > IP Address)</li><li>Run<code>scrcpy</code> in the Terminal.</li></ul><h3 class="relative group">Explore Scrcpy Features Using Commands<div id="explore-scrcpy-features-using-commands" class="anchor"/><span class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#explore-scrcpy-features-using-commands" aria-label="Anchor">#</a></span></h3><p>Screen mirroring is not the only feature of Scrcpy, but there is a lot more you can do with it. We will share Scrcpy commands for running other features of Scrcpy on your PC as well.</p><ul><li>Recording</li></ul><p>If you want to record the screen of Android via Scrcpy, run the following command:</p><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Bash" data-lang="Bash"><span class="line"><span class="cl">scrcpy --record myrecording.mp4</span></span></code></pre></div><ul><li>Change Resolution</li></ul><p>You can also change Scrcpy resolution when mirroring the Android screen by running the following command:</p><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Bash" data-lang="Bash"><span class="line"><span class="cl">scrcpy --max-size<span class="m">720</span></span></span></code></pre></div><p>There are more, but am not gonna put them all here. Just head on over to the project<strong>Git Repo</strong> below to see them all, report issues and even share some ideas you might have with them&hellip;</p><a id="github-2ef9a4269d317def170edabf1a7ec947" target="_blank" href="https://github.com/Genymobile/scrcpy" class="cursor-pointer"><div class="w-full md:w-auto pt-3 p-5 border border-neutral-200 dark:border-neutral-700 border rounded-md shadow-2xl"><div class="flex items-center"><span class="text-2xl text-neutral-800 dark:text-neutral" style="margin-right:10px;"><span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path fill="currentColor" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg></span></span><div id="github-2ef9a4269d317def170edabf1a7ec947-full_name" class="m-0 font-bold text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral">
+Genymobile/scrcpy</div></div><p id="github-2ef9a4269d317def170edabf1a7ec947-description" class="m-0 mt-2 text-md text-neutral-800 dark:text-neutral">
+Display and control your Android device</p><div class="m-0 mt-2 flex items-center"><span class="mr-1 inline-block h-3 w-3 rounded-full" style="background-color: #555555"/><div class="m-0 mr-5 text-md text-neutral-800 dark:text-neutral">
+C</div><span class="text-md mr-1 text-neutral-800 dark:text-neutral"><span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path fill="currentColor" d="M287.9 0C297.1 0 305.5 5.25 309.5 13.52L378.1 154.8L531.4 177.5C540.4 178.8 547.8 185.1 550.7 193.7C553.5 202.4 551.2 211.9 544.8 218.2L433.6 328.4L459.9 483.9C461.4 492.9 457.7 502.1 450.2 507.4C442.8 512.7 432.1 513.4 424.9 509.1L287.9 435.9L150.1 509.1C142.9 513.4 133.1 512.7 125.6 507.4C118.2 502.1 114.5 492.9 115.1 483.9L142.2 328.4L31.11 218.2C24.65 211.9 22.36 202.4 25.2 193.7C28.03 185.1 35.5 178.8 44.49 177.5L197.7 154.8L266.3 13.52C270.4 5.249 278.7 0 287.9 0L287.9 0zM287.9 78.95L235.4 187.2C231.9 194.3 225.1 199.3 217.3 200.5L98.98 217.9L184.9 303C190.4 308.5 192.9 316.4 191.6 324.1L171.4 443.7L276.6 387.5C283.7 383.7 292.2 383.7 299.2 387.5L404.4 443.7L384.2 324.1C382.9 316.4 385.5 308.5 391 303L476.9 217.9L358.6 200.5C350.7 199.3 343.9 194.3 340.5 187.2L287.9 78.95z"/></svg></span></span><div id="github-2ef9a4269d317def170edabf1a7ec947-stargazers" class="m-0 mr-5 text-md text-neutral-800 dark:text-neutral">
+106662</div><span class="text-md mr-1 text-neutral-800 dark:text-neutral"><span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M80 104c13.3 0 24-10.7 24-24s-10.7-24-24-24S56 66.7 56 80s10.7 24 24 24zm80-24c0 32.8-19.7 61-48 73.3V192c0 17.7 14.3 32 32 32H304c17.7 0 32-14.3 32-32V153.3C307.7 141 288 112.8 288 80c0-44.2 35.8-80 80-80s80 35.8 80 80c0 32.8-19.7 61-48 73.3V192c0 53-43 96-96 96H256v70.7c28.3 12.3 48 40.5 48 73.3c0 44.2-35.8 80-80 80s-80-35.8-80-80c0-32.8 19.7-61 48-73.3V288H144c-53 0-96-43-96-96V153.3C19.7 141 0 112.8 0 80C0 35.8 35.8 0 80 0s80 35.8 80 80zm208 24c13.3 0 24-10.7 24-24s-10.7-24-24-24s-24 10.7-24 24s10.7 24 24 24zM248 432c0-13.3-10.7-24-24-24s-24 10.7-24 24s10.7 24 24 24s24-10.7 24-24z"/></svg></span></span><div id="github-2ef9a4269d317def170edabf1a7ec947-forks" class="m-0 mr-5 text-md text-neutral-800 dark:text-neutral">
+10320</div></div></div><script>
+fetch("https://api.github.com/repos/Genymobile/scrcpy", {
+headers: new Headers({
+'User-agent': 'Mozilla/4.0 Custom User Agent'
+})
+})
+.then(response => response.json())
+.then(data => {
+document.getElementById('github-2ef9a4269d317def170edabf1a7ec947-full_name').innerHTML = data.full_name;
+document.getElementById('github-2ef9a4269d317def170edabf1a7ec947-description').innerHTML = data.description;
+document.getElementById('github-2ef9a4269d317def170edabf1a7ec947-stargazers').innerHTML = data.stargazers_count;
+document.getElementById('github-2ef9a4269d317def170edabf1a7ec947-forks').innerHTML = data.forks;
+})
+.catch(error => console.error(error))</script></a><h3 class="relative group">Bonus : GUI Version of SCRCPY<div id="bonus--gui-version-of-scrcpy" class="anchor"/><span class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#bonus--gui-version-of-scrcpy" aria-label="Anchor">#</a></span></h3><p>If you prefer a GUI based version of SCRCPY, there is one. However it&rsquo;s not as maintained as the official version. It uses<code>QT</code> so it works best on those types of DEs, like<strong>KDE Plasma</strong>,<strong>LXQT</strong> and so on. To install it from the AUR</p><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Bash" data-lang="Bash"><span class="line"><span class="cl">paru -S qtscrcpy</span></span></code></pre></div><p>For more info and issues visit the project<strong>Git Repo</strong></p><a id="github-1305ea58e76e685e1b7863bc394c207f" target="_blank" href="https://github.com/barry-ran/QtScrcpy" class="cursor-pointer"><div class="w-full md:w-auto pt-3 p-5 border border-neutral-200 dark:border-neutral-700 border rounded-md shadow-2xl"><div class="flex items-center"><span class="text-2xl text-neutral-800 dark:text-neutral" style="margin-right:10px;"><span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path fill="currentColor" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg></span></span><div id="github-1305ea58e76e685e1b7863bc394c207f-full_name" class="m-0 font-bold text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral">
+barry-ran/QtScrcpy</div></div><p id="github-1305ea58e76e685e1b7863bc394c207f-description" class="m-0 mt-2 text-md text-neutral-800 dark:text-neutral">
+Android real-time display control software</p><div class="m-0 mt-2 flex items-center"><span class="mr-1 inline-block h-3 w-3 rounded-full" style="background-color: #f34b7d"/><div class="m-0 mr-5 text-md text-neutral-800 dark:text-neutral">
+C++</div><span class="text-md mr-1 text-neutral-800 dark:text-neutral"><span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path fill="currentColor" d="M287.9 0C297.1 0 305.5 5.25 309.5 13.52L378.1 154.8L531.4 177.5C540.4 178.8 547.8 185.1 550.7 193.7C553.5 202.4 551.2 211.9 544.8 218.2L433.6 328.4L459.9 483.9C461.4 492.9 457.7 502.1 450.2 507.4C442.8 512.7 432.1 513.4 424.9 509.1L287.9 435.9L150.1 509.1C142.9 513.4 133.1 512.7 125.6 507.4C118.2 502.1 114.5 492.9 115.1 483.9L142.2 328.4L31.11 218.2C24.65 211.9 22.36 202.4 25.2 193.7C28.03 185.1 35.5 178.8 44.49 177.5L197.7 154.8L266.3 13.52C270.4 5.249 278.7 0 287.9 0L287.9 0zM287.9 78.95L235.4 187.2C231.9 194.3 225.1 199.3 217.3 200.5L98.98 217.9L184.9 303C190.4 308.5 192.9 316.4 191.6 324.1L171.4 443.7L276.6 387.5C283.7 383.7 292.2 383.7 299.2 387.5L404.4 443.7L384.2 324.1C382.9 316.4 385.5 308.5 391 303L476.9 217.9L358.6 200.5C350.7 199.3 343.9 194.3 340.5 187.2L287.9 78.95z"/></svg></span></span><div id="github-1305ea58e76e685e1b7863bc394c207f-stargazers" class="m-0 mr-5 text-md text-neutral-800 dark:text-neutral">
+18190</div><span class="text-md mr-1 text-neutral-800 dark:text-neutral"><span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M80 104c13.3 0 24-10.7 24-24s-10.7-24-24-24S56 66.7 56 80s10.7 24 24 24zm80-24c0 32.8-19.7 61-48 73.3V192c0 17.7 14.3 32 32 32H304c17.7 0 32-14.3 32-32V153.3C307.7 141 288 112.8 288 80c0-44.2 35.8-80 80-80s80 35.8 80 80c0 32.8-19.7 61-48 73.3V192c0 53-43 96-96 96H256v70.7c28.3 12.3 48 40.5 48 73.3c0 44.2-35.8 80-80 80s-80-35.8-80-80c0-32.8 19.7-61 48-73.3V288H144c-53 0-96-43-96-96V153.3C19.7 141 0 112.8 0 80C0 35.8 35.8 0 80 0s80 35.8 80 80zm208 24c13.3 0 24-10.7 24-24s-10.7-24-24-24s-24 10.7-24 24s10.7 24 24 24zM248 432c0-13.3-10.7-24-24-24s-24 10.7-24 24s10.7 24 24 24s24-10.7 24-24z"/></svg></span></span><div id="github-1305ea58e76e685e1b7863bc394c207f-forks" class="m-0 mr-5 text-md text-neutral-800 dark:text-neutral">
+2465</div></div></div><script>
+fetch("https://api.github.com/repos/barry-ran/QtScrcpy", {
+headers: new Headers({
+'User-agent': 'Mozilla/4.0 Custom User Agent'
+})
+})
+.then(response => response.json())
+.then(data => {
+document.getElementById('github-1305ea58e76e685e1b7863bc394c207f-full_name').innerHTML = data.full_name;
+document.getElementById('github-1305ea58e76e685e1b7863bc394c207f-description').innerHTML = data.description;
+document.getElementById('github-1305ea58e76e685e1b7863bc394c207f-stargazers').innerHTML = data.stargazers_count;
+document.getElementById('github-1305ea58e76e685e1b7863bc394c207f-forks').innerHTML = data.forks;
+})
+.catch(error => console.error(error))</script></a><p>That&rsquo;s it, enjoy and let us know how it works for you&hellip;</p>
+]]></content:encoded><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"/></channel></rss>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Pacman on XeroLinux HQ</title><link>https://xerolinux.xyz/tags/pacman/</link><description>Recent content in Pacman on XeroLinux HQ</description><generator>Hugo</generator><language>en</language><lastBuildDate>Thu, 27 Jun 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://xerolinux.xyz/tags/pacman/index.xml" rel="self" type="application/rss+xml"/><item><title>Pacman Issues</title><link>https://xerolinux.xyz/posts/pacman-issues/</link><pubDate>Thu, 27 Jun 2024 00:00:00 +0000</pubDate><guid>https://xerolinux.xyz/posts/pacman-issues/</guid><description>
+
+&lt;h3 class="relative group">Info 
+ &lt;div id="info" class="anchor">&lt;/div>
+ 
+ &lt;span
+ class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+ &lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+ style="text-decoration-line: none !important;" href="#info" aria-label="Anchor">#&lt;/a>
+ &lt;/span> 
+ 
+&lt;/h3>
+&lt;p>This will be a short one. I noticed lately that &lt;strong>Pacman&lt;/strong> has been behaving badly.. I decided to attach all the videos that cover how to handle them.. DT made some very useful ones.. Watch below..&lt;/p>
+
+
+ 
+ &lt;div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+ &lt;iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/RN0pIuE6ZmU?autoplay=0&amp;controls=1&amp;end=0&amp;loop=0&amp;mute=0&amp;start=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="YouTube video"
+ >&lt;/iframe>
+ &lt;/div>
+
+&lt;p>Have fun :heart:&lt;/p></description><content:encoded>&lt;![CDATA[<h3 class="relative group">Info<div id="info" class="anchor"/><span class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#info" aria-label="Anchor">#</a></span></h3><p>This will be a short one. I noticed lately that<strong>Pacman</strong> has been behaving badly.. I decided to attach all the videos that cover how to handle them.. DT made some very useful ones.. Watch below..</p><div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;"><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/RN0pIuE6ZmU?autoplay=0&controls=1&end=0&loop=0&mute=0&start=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="YouTube video"/></div><p>Have fun :heart:</p>
+]]></content:encoded><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"/></channel></rss>

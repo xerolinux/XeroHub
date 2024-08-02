@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Kernel on XeroLinux HQ</title><link>https://xerolinux.xyz/tags/kernel/</link><description>Recent content in Kernel on XeroLinux HQ</description><generator>Hugo</generator><language>en</language><lastBuildDate>Fri, 28 Jun 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://xerolinux.xyz/tags/kernel/index.xml" rel="self" type="application/rss+xml"/><item><title>Fix Unbootable System</title><link>https://xerolinux.xyz/posts/fix-boot/</link><pubDate>Fri, 28 Jun 2024 00:00:00 +0000</pubDate><guid>https://xerolinux.xyz/posts/fix-boot/</guid><description>
+
+&lt;h3 class="relative group">Preface 
+ &lt;div id="preface" class="anchor">&lt;/div>
+ 
+ &lt;span
+ class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+ &lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+ style="text-decoration-line: none !important;" href="#preface" aria-label="Anchor">#&lt;/a>
+ &lt;/span> 
+ 
+&lt;/h3>
+&lt;p>Are you having an issue after updating your system with the message &lt;code>vmlinuz-linux not found&lt;/code>? Watch the video below by Erik Dubois, should help you get out of that predicament &amp;hellip;&lt;/p>
+
+
+ 
+ &lt;div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+ &lt;iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/NfMbs9zzkDw?autoplay=0&amp;controls=1&amp;end=0&amp;loop=0&amp;mute=0&amp;start=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="YouTube video"
+ >&lt;/iframe>
+ &lt;/div>
+
+
+
+&lt;h3 class="relative group">Disclaimer : 
+ &lt;div id="disclaimer-" class="anchor">&lt;/div>
+ 
+ &lt;span
+ class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+ &lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+ style="text-decoration-line: none !important;" href="#disclaimer-" aria-label="Anchor">#&lt;/a>
+ &lt;/span> 
+ 
+&lt;/h3>
+&lt;p>Below guide covers EXT4/XFS/Unencrypted Filesystems, for Encrypted Drives, you will have to &amp;ldquo;Google it&amp;rdquo; lol,&lt;/p>
+&lt;p>Anyway here&amp;rsquo;s what to do&amp;hellip;&lt;/p>
+
+
+&lt;h3 class="relative group">Mount your system to work in.. 
+ &lt;div id="mount-your-system-to-work-in" class="anchor">&lt;/div>
+ 
+ &lt;span
+ class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+ &lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+ style="text-decoration-line: none !important;" href="#mount-your-system-to-work-in" aria-label="Anchor">#&lt;/a>
+ &lt;/span> 
+ 
+&lt;/h3>
+&lt;p>First of all boot using your XeroLinux Live boot USB and follow the steps below&amp;hellip;&lt;/p>
+&lt;p>The device or partition with your Linux system on it will need to be mounted. To discover the kernel name of the storage device name, type:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-Bash" data-lang="Bash">&lt;span class="line">&lt;span class="cl">sudo fdisk -l
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Mount the device or partition : (replace &amp;ldquo;sdXn&amp;rdquo; with your actual partition name)&lt;/p>
+&lt;p>
+ &lt;figure>
+ &lt;img class="my-0 rounded-md" loading="lazy" src="https://i.imgur.com/SZO4qw0.png" alt="[Image: SZO4qw0.png]" />
+ 
+ &lt;/figure>
+&lt;/p>
+&lt;p>For EXT4 &amp;amp; XFS&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-Bash" data-lang="Bash">&lt;span class="line">&lt;span class="cl">mount /dev/sdXn /mnt &lt;span class="o">(&lt;/span>Linux Filesystem&lt;span class="o">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">mount /dev/sdXn /mnt/boot/efi &lt;span class="o">(&lt;/span>EFI System&lt;span class="o">)&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
+
+&lt;h3 class="relative group">Chroot into your system : 
+ &lt;div id="chroot-into-your-system-" class="anchor">&lt;/div>
+ 
+ &lt;span
+ class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+ &lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+ style="text-decoration-line: none !important;" href="#chroot-into-your-system-" aria-label="Anchor">#&lt;/a>
+ &lt;/span> 
+ 
+&lt;/h3>
+&lt;p>With this information, you are able to arch-chroot, and to be able to do that you need to have root permissions, so type the following command:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-Bash" data-lang="Bash">&lt;span class="line">&lt;span class="cl">arch-chroot /mnt
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
+
+&lt;h3 class="relative group">Reinstall missing Kernel : 
+ &lt;div id="reinstall-missing-kernel-" class="anchor">&lt;/div>
+ 
+ &lt;span
+ class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+ &lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+ style="text-decoration-line: none !important;" href="#reinstall-missing-kernel-" aria-label="Anchor">#&lt;/a>
+ &lt;/span> 
+ 
+&lt;/h3>
+&lt;p>Now it&amp;rsquo;s time to get the Kernel back in order to get the system to boot once again.. Do this now&amp;hellip;&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-Bash" data-lang="Bash">&lt;span class="line">&lt;span class="cl">pacman -S linux linux-headers
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Finally update the system if needed&amp;hellip;&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-Bash" data-lang="Bash">&lt;span class="line">&lt;span class="cl">pacman -Syyu
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Exit arch-chroot via &lt;code>exit&lt;/code> command then unmount your system&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-Bash" data-lang="Bash">&lt;span class="line">&lt;span class="cl">umount /mnt/boot/efi
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">umount /mnt
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Now reboot all should be good&amp;hellip;&lt;/p>
+&lt;p>Hope this helps&lt;/p></description><content:encoded>&lt;![CDATA[<h3 class="relative group">Preface<div id="preface" class="anchor"/><span class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#preface" aria-label="Anchor">#</a></span></h3><p>Are you having an issue after updating your system with the message<code>vmlinuz-linux not found</code>? Watch the video below by Erik Dubois, should help you get out of that predicament &hellip;</p><div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;"><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/NfMbs9zzkDw?autoplay=0&controls=1&end=0&loop=0&mute=0&start=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="YouTube video"/></div><h3 class="relative group">Disclaimer :<div id="disclaimer-" class="anchor"/><span class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#disclaimer-" aria-label="Anchor">#</a></span></h3><p>Below guide covers EXT4/XFS/Unencrypted Filesystems, for Encrypted Drives, you will have to &ldquo;Google it&rdquo; lol,</p><p>Anyway here&rsquo;s what to do&hellip;</p><h3 class="relative group">Mount your system to work in..<div id="mount-your-system-to-work-in" class="anchor"/><span class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#mount-your-system-to-work-in" aria-label="Anchor">#</a></span></h3><p>First of all boot using your XeroLinux Live boot USB and follow the steps below&hellip;</p><p>The device or partition with your Linux system on it will need to be mounted. To discover the kernel name of the storage device name, type:</p><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Bash" data-lang="Bash"><span class="line"><span class="cl">sudo fdisk -l</span></span></code></pre></div><p>Mount the device or partition : (replace &ldquo;sdXn&rdquo; with your actual partition name)</p><p><figure><img class="my-0 rounded-md" loading="lazy" src="https://i.imgur.com/SZO4qw0.png" alt="[Image: SZO4qw0.png]"/></figure></p><p>For EXT4 &amp; XFS</p><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Bash" data-lang="Bash"><span class="line"><span class="cl">mount /dev/sdXn /mnt<span class="o">(</span>Linux Filesystem<span class="o">)</span></span></span><span class="line"><span class="cl">mount /dev/sdXn /mnt/boot/efi<span class="o">(</span>EFI System<span class="o">)</span></span></span></code></pre></div><h3 class="relative group">Chroot into your system :<div id="chroot-into-your-system-" class="anchor"/><span class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#chroot-into-your-system-" aria-label="Anchor">#</a></span></h3><p>With this information, you are able to arch-chroot, and to be able to do that you need to have root permissions, so type the following command:</p><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Bash" data-lang="Bash"><span class="line"><span class="cl">arch-chroot /mnt</span></span></code></pre></div><h3 class="relative group">Reinstall missing Kernel :<div id="reinstall-missing-kernel-" class="anchor"/><span class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#reinstall-missing-kernel-" aria-label="Anchor">#</a></span></h3><p>Now it&rsquo;s time to get the Kernel back in order to get the system to boot once again.. Do this now&hellip;</p><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Bash" data-lang="Bash"><span class="line"><span class="cl">pacman -S linux linux-headers</span></span></code></pre></div><p>Finally update the system if needed&hellip;</p><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Bash" data-lang="Bash"><span class="line"><span class="cl">pacman -Syyu</span></span></code></pre></div><p>Exit arch-chroot via<code>exit</code> command then unmount your system</p><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Bash" data-lang="Bash"><span class="line"><span class="cl">umount /mnt/boot/efi</span></span><span class="line"><span class="cl">umount /mnt</span></span></code></pre></div><p>Now reboot all should be good&hellip;</p><p>Hope this helps</p>
+]]></content:encoded><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"/></channel></rss>

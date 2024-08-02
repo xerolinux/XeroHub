@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Content on XeroLinux HQ</title><link>https://xerolinux.xyz/tags/content/</link><description>Recent content in Content on XeroLinux HQ</description><generator>Hugo</generator><language>en</language><lastBuildDate>Fri, 28 Jun 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://xerolinux.xyz/tags/content/index.xml" rel="self" type="application/rss+xml"/><item><title>Submit Site Content</title><link>https://xerolinux.xyz/news/submit-content/</link><pubDate>Fri, 28 Jun 2024 00:00:00 +0000</pubDate><guid>https://xerolinux.xyz/news/submit-content/</guid><description>
+
+&lt;h3 class="relative group">Intro 
+ &lt;div id="intro" class="anchor">&lt;/div>
+ 
+ &lt;span
+ class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+ &lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+ style="text-decoration-line: none !important;" href="#intro" aria-label="Anchor">#&lt;/a>
+ &lt;/span> 
+ 
+&lt;/h3>
+&lt;p>So, I was thinking, why be the only one submitting content for the site ? This site is now a place to post &lt;strong>Linux&lt;/strong> news, guides, and tools among other stuff. It&amp;rsquo;s all for sharing our love for &lt;strong>FOSS&lt;/strong>.&lt;/p>
+
+
+&lt;h3 class="relative group">How to create content 
+ &lt;div id="how-to-create-content" class="anchor">&lt;/div>
+ 
+ &lt;span
+ class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+ &lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+ style="text-decoration-line: none !important;" href="#how-to-create-content" aria-label="Anchor">#&lt;/a>
+ &lt;/span> 
+ 
+&lt;/h3>
+&lt;p>In case you feel like doing a write up that you think would be useful to others, you can do that, and guess what, it&amp;rsquo;s super easy&amp;hellip; It&amp;rsquo;s just a single &lt;em>markdown&lt;/em> file called &lt;code>index.md&lt;/code> which contains the text and an image called &lt;code>featured.png&lt;/code> inside a folder named &lt;code>post-title&lt;/code>. That&amp;rsquo;s it ! Once that&amp;rsquo;s done you zip them n send my way when I will go through it clean it up n publish&amp;hellip;&lt;/p>
+&lt;p>&lt;strong>- Folder contents&lt;/strong>&lt;/p>
+&lt;p>
+ &lt;figure>
+ &lt;img class="my-0 rounded-md" loading="lazy" src="https://i.imgur.com/nBUbAZg.png" alt="Image1" />
+ 
+ &lt;/figure>
+&lt;/p>
+&lt;p>&lt;strong>- Markdown contents&lt;/strong>&lt;/p>
+&lt;p>
+ &lt;figure>
+ &lt;img class="my-0 rounded-md" loading="lazy" src="https://i.imgur.com/sdCCPtn.png" alt="Image2" />
+ 
+ &lt;/figure>
+&lt;/p>
+&lt;p>Don&amp;rsquo;t forget to update the date of the post in &lt;code>date:&lt;/code>, also give it a short descriptive &lt;code>title:&lt;/code> with a good &lt;code>description&lt;/code>. Finally use the right &lt;code>tags:&lt;/code> as shown in the screenshot. If in doubt click this to check &amp;raquo; &lt;a href="https://github.com/xerolinux/XeroHub/tree/main/content/posts/spotube-for-spotify" target="_blank">&lt;strong>Template&lt;/strong>&lt;/a>&lt;/p>
+&lt;p>With that out of the way, for more information about the various supported &lt;strong>Shortcodes&lt;/strong> you can use, you can find them here &amp;raquo; &lt;a href="https://blowfish.page/docs/shortcodes/" target="_blank">&lt;strong>BlowFish Shortcodes&lt;/strong>&lt;/a>.&lt;/p>
+&lt;p>Thanks again &amp;amp; Cheers :heart:&lt;/p></description><content:encoded>&lt;![CDATA[<h3 class="relative group">Intro<div id="intro" class="anchor"/><span class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#intro" aria-label="Anchor">#</a></span></h3><p>So, I was thinking, why be the only one submitting content for the site ? This site is now a place to post<strong>Linux</strong> news, guides, and tools among other stuff. It&rsquo;s all for sharing our love for<strong>FOSS</strong>.</p><h3 class="relative group">How to create content<div id="how-to-create-content" class="anchor"/><span class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#how-to-create-content" aria-label="Anchor">#</a></span></h3><p>In case you feel like doing a write up that you think would be useful to others, you can do that, and guess what, it&rsquo;s super easy&hellip; It&rsquo;s just a single<em>markdown</em> file called<code>index.md</code> which contains the text and an image called<code>featured.png</code> inside a folder named<code>post-title</code>. That&rsquo;s it ! Once that&rsquo;s done you zip them n send my way when I will go through it clean it up n publish&hellip;</p><p><strong>- Folder contents</strong></p><p><figure><img class="my-0 rounded-md" loading="lazy" src="https://i.imgur.com/nBUbAZg.png" alt="Image1"/></figure></p><p><strong>- Markdown contents</strong></p><p><figure><img class="my-0 rounded-md" loading="lazy" src="https://i.imgur.com/sdCCPtn.png" alt="Image2"/></figure></p><p>Don&rsquo;t forget to update the date of the post in<code>date:</code>, also give it a short descriptive<code>title:</code> with a good<code>description</code>. Finally use the right<code>tags:</code> as shown in the screenshot. If in doubt click this to check &raquo;<a href="https://github.com/xerolinux/XeroHub/tree/main/content/posts/spotube-for-spotify" target="_blank"><strong>Template</strong></a></p><p>With that out of the way, for more information about the various supported<strong>Shortcodes</strong> you can use, you can find them here &raquo;<a href="https://blowfish.page/docs/shortcodes/" target="_blank"><strong>BlowFish Shortcodes</strong></a>.</p><p>Thanks again &amp; Cheers :heart:</p>
+]]></content:encoded><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"/></channel></rss>

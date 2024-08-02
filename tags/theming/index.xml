@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Theming on XeroLinux HQ</title><link>https://xerolinux.xyz/tags/theming/</link><description>Recent content in Theming on XeroLinux HQ</description><generator>Hugo</generator><language>en</language><lastBuildDate>Fri, 05 Jul 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://xerolinux.xyz/tags/theming/index.xml" rel="self" type="application/rss+xml"/><item><title>M4LW Hyprland Dots</title><link>https://xerolinux.xyz/posts/ml4w-hyprland-dots/</link><pubDate>Fri, 05 Jul 2024 00:00:00 +0000</pubDate><guid>https://xerolinux.xyz/posts/ml4w-hyprland-dots/</guid><description>
+
+&lt;h3 class="relative group">What is Hyprland? 
+ &lt;div id="what-is-hyprland" class="anchor">&lt;/div>
+ 
+ &lt;span
+ class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+ &lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+ style="text-decoration-line: none !important;" href="#what-is-hyprland" aria-label="Anchor">#&lt;/a>
+ &lt;/span> 
+ 
+&lt;/h3>
+&lt;p>In a nutshell, &lt;strong>Hyprland&lt;/strong> is a dynamic tiling &lt;strong>Wayland&lt;/strong> compositor based on &lt;em>wlroots&lt;/em> that doesn&amp;rsquo;t sacrifice on its looks. It provides the latest Wayland features, is highly customizable, has all the eyecandy, the most powerful plugins, easy IPC, much more QoL stuff than other wlr-based compositors and more&amp;hellip;&lt;/p>
+
+
+&lt;h3 class="relative group">The ML4W Dot Files 
+ &lt;div id="the-ml4w-dot-files" class="anchor">&lt;/div>
+ 
+ &lt;span
+ class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+ &lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+ style="text-decoration-line: none !important;" href="#the-ml4w-dot-files" aria-label="Anchor">#&lt;/a>
+ &lt;/span> 
+ 
+&lt;/h3>
+&lt;p>Before getting to it, I would like to say that, while I, myself do not and will not ever be using WMs since my workflow is tailored around DEs, that doesn&amp;rsquo;t mean I do not appreciate the hard work others put into making them more approachable, and pretty to both look at and use.&lt;/p>
+&lt;p>That being said, I have been following Hyprland&amp;rsquo;s growth as time went on, especially all the rices being created for it. I have seen so many awesome ones, but the one that caught my eye, which we will be talking about, is the one by a guy named &lt;a href="https://gitlab.com/stephan-raabe" target="_blank">&lt;strong>@Stephan Raabe&lt;/strong>&lt;/a>.&lt;/p>
+
+
+ 
+ &lt;div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+ &lt;iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/GHYk1Iv4GkY?autoplay=0&amp;controls=1&amp;end=0&amp;loop=0&amp;mute=0&amp;start=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="YouTube video"
+ >&lt;/iframe>
+ &lt;/div>
+
+&lt;p>As you can see from the video above, he has gone above and beyond the natural limits, making &lt;strong>Hyprland&lt;/strong> all that more fun and easy to use by creating &lt;em>GUI Config Tools&lt;/em> written in &lt;strong>GTK&lt;/strong> not only for his dots but you can effortlessly configure almost every aspect of &lt;strong>Hyprland&lt;/strong> making it truly your own. It&amp;rsquo;s truly amazing !!!!&lt;/p>
+&lt;p>Here&amp;rsquo;s a quote from the dev :&lt;/p>
+&lt;blockquote>
+&lt;p>&lt;strong>PLEASE NOTE:&lt;/strong> Every Linux distribution and setup can be different. Therefore, I cannot guarantee that the installation will work everywhere. Installation on your own risk.&lt;/p>
+&lt;/blockquote>
+
+
+&lt;h3 class="relative group">How to Install them 
+ &lt;div id="how-to-install-them" class="anchor">&lt;/div>
+ 
+ &lt;span
+ class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+ &lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+ style="text-decoration-line: none !important;" href="#how-to-install-them" aria-label="Anchor">#&lt;/a>
+ &lt;/span> 
+ 
+&lt;/h3>
+&lt;p>Before we start, just know that the &lt;strong>ML4W&lt;/strong> Dotfiles should work on all Arch Linux based distributions, though they have been only tested with the following ones. Support for other Distros like &lt;strong>Fedora&lt;/strong> and so on are slowly being added according to Dev.&lt;/p>
+&lt;ul>
+&lt;li>Arch Linux (recommended)&lt;/li>
+&lt;li>EndeavourOS&lt;/li>
+&lt;li>Manjaro Linux&lt;/li>
+&lt;li>Garuda Linux&lt;/li>
+&lt;li>Arco Linux&lt;/li>
+&lt;/ul>
+&lt;blockquote>
+&lt;p>For &lt;strong>Manjaro&lt;/strong> users: Hyprland and required packages are under ongoing development. That&amp;rsquo;s why it could be possible that some packages are not immediately available on Manjaro. But usually, the packages will be published later. Maybe you can install required packages manually.&lt;/p>
+&lt;/blockquote>
+&lt;blockquote>
+&lt;p>For &lt;strong>ArcoLinux&lt;/strong> users: Please reinstall/force the installation of all packages during the installation/update process of the install script. The script will also offer to remove ttf-ms-fonts if installed to avoid issues with icons on waybar.&lt;/p>
+&lt;/blockquote>
+&lt;p>
+ &lt;figure>
+ &lt;img class="my-0 rounded-md" loading="lazy" src="https://i.imgur.com/amMcyTO.jpeg" alt="ML4W" />
+ 
+ &lt;/figure>
+&lt;/p>
+&lt;p>The installation script will create a backups from configurations of your .config folder that will be overwritten from the installation procedure and previous ML4W Dotfiles installation.&lt;/p>
+&lt;p>If possible, please create a snapshot of your current system if snapper or Timeshift is installed and available.&lt;/p>
+&lt;p>With main points out of the way, he made installation so simple, as simple as running a script and following prompts. The script will download all files from GitLab and start the installation.&lt;/p>
+&lt;p>Just copy/enter the following command into your terminal.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-Bash" data-lang="Bash">&lt;span class="line">&lt;span class="cl">bash &amp;lt;&lt;span class="o">(&lt;/span>curl -s https://gitlab.com/stephan-raabe/dotfiles/-/raw/main/setup.sh&lt;span class="o">)&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Finally, find link to the &lt;strong>Git Repo&lt;/strong> below, or if you want head directly to the WiKi, click here &amp;raquo; &lt;a href="https://gitlab.com/stephan-raabe/dotfiles/-/wikis/Home/" target="_blank">&lt;strong>ML4W Dots Wiki&lt;/strong>&lt;/a>&lt;/p>
+&lt;a id="github-335bc09a11197591f1ac4202a70da0ba" target="_blank" href="https://github.com/mylinuxforwork/dotfiles" class="cursor-pointer">
+ &lt;div
+ class="w-full md:w-auto pt-3 p-5 border border-neutral-200 dark:border-neutral-700 border rounded-md shadow-2xl">
+
+ &lt;div class="flex items-center">
+ &lt;span class="text-2xl text-neutral-800 dark:text-neutral" style="margin-right:10px;">
+ 
+
+ &lt;span class="relative block icon">
+ &lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512">&lt;path fill="currentColor" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/>&lt;/svg>
+
+ &lt;/span>
+
+
+ &lt;/span>
+ &lt;div
+ id="github-335bc09a11197591f1ac4202a70da0ba-full_name"
+ class="m-0 font-bold text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral">
+ mylinuxforwork/dotfiles
+ &lt;/div>
+ &lt;/div>
+
+ &lt;p id="github-335bc09a11197591f1ac4202a70da0ba-description" class="m-0 mt-2 text-md text-neutral-800 dark:text-neutral">
+ The ML4W Dotfiles for Hyprland - An advanced and full-featured configuration for the dynamic tiling window manager Hyprland including an easy to use installation script for Arch based Linux distributions.
+ &lt;/p>
+
+ &lt;div class="m-0 mt-2 flex items-center">
+
+ &lt;span class="mr-1 inline-block h-3 w-3 rounded-full"
+ style="background-color: #89e051">&lt;/span>
+ &lt;div class="m-0 mr-5 text-md text-neutral-800 dark:text-neutral">
+ Shell 
+ &lt;/div>
+
+ &lt;span class="text-md mr-1 text-neutral-800 dark:text-neutral">
+ 
+
+ &lt;span class="relative block icon">
+ &lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">&lt;path fill="currentColor" d="M287.9 0C297.1 0 305.5 5.25 309.5 13.52L378.1 154.8L531.4 177.5C540.4 178.8 547.8 185.1 550.7 193.7C553.5 202.4 551.2 211.9 544.8 218.2L433.6 328.4L459.9 483.9C461.4 492.9 457.7 502.1 450.2 507.4C442.8 512.7 432.1 513.4 424.9 509.1L287.9 435.9L150.1 509.1C142.9 513.4 133.1 512.7 125.6 507.4C118.2 502.1 114.5 492.9 115.1 483.9L142.2 328.4L31.11 218.2C24.65 211.9 22.36 202.4 25.2 193.7C28.03 185.1 35.5 178.8 44.49 177.5L197.7 154.8L266.3 13.52C270.4 5.249 278.7 0 287.9 0L287.9 0zM287.9 78.95L235.4 187.2C231.9 194.3 225.1 199.3 217.3 200.5L98.98 217.9L184.9 303C190.4 308.5 192.9 316.4 191.6 324.1L171.4 443.7L276.6 387.5C283.7 383.7 292.2 383.7 299.2 387.5L404.4 443.7L384.2 324.1C382.9 316.4 385.5 308.5 391 303L476.9 217.9L358.6 200.5C350.7 199.3 343.9 194.3 340.5 187.2L287.9 78.95z"/>&lt;/svg>
+ &lt;/span>
+
+
+ &lt;/span>
+ &lt;div id="github-335bc09a11197591f1ac4202a70da0ba-stargazers" class="m-0 mr-5 text-md text-neutral-800 dark:text-neutral">
+ 207
+ &lt;/div>
+
+ &lt;span class="text-md mr-1 text-neutral-800 dark:text-neutral">
+ 
+
+ &lt;span class="relative block icon">
+ &lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">&lt;path fill="currentColor" d="M80 104c13.3 0 24-10.7 24-24s-10.7-24-24-24S56 66.7 56 80s10.7 24 24 24zm80-24c0 32.8-19.7 61-48 73.3V192c0 17.7 14.3 32 32 32H304c17.7 0 32-14.3 32-32V153.3C307.7 141 288 112.8 288 80c0-44.2 35.8-80 80-80s80 35.8 80 80c0 32.8-19.7 61-48 73.3V192c0 53-43 96-96 96H256v70.7c28.3 12.3 48 40.5 48 73.3c0 44.2-35.8 80-80 80s-80-35.8-80-80c0-32.8 19.7-61 48-73.3V288H144c-53 0-96-43-96-96V153.3C19.7 141 0 112.8 0 80C0 35.8 35.8 0 80 0s80 35.8 80 80zm208 24c13.3 0 24-10.7 24-24s-10.7-24-24-24s-24 10.7-24 24s10.7 24 24 24zM248 432c0-13.3-10.7-24-24-24s-24 10.7-24 24s10.7 24 24 24s24-10.7 24-24z"/>&lt;/svg>
+ &lt;/span>
+
+
+ &lt;/span>
+ &lt;div id="github-335bc09a11197591f1ac4202a70da0ba-forks" class="m-0 mr-5 text-md text-neutral-800 dark:text-neutral">
+ 19
+ &lt;/div>
+
+ &lt;/div>
+
+ &lt;/div>
+ &lt;script>
+ fetch("https://api.github.com/repos/mylinuxforwork/dotfiles", {
+ headers: new Headers({
+ 'User-agent': 'Mozilla/4.0 Custom User Agent'
+ })
+ })
+ .then(response => response.json())
+ .then(data => {
+ document.getElementById('github-335bc09a11197591f1ac4202a70da0ba-full_name').innerHTML = data.full_name;
+ document.getElementById('github-335bc09a11197591f1ac4202a70da0ba-description').innerHTML = data.description;
+ document.getElementById('github-335bc09a11197591f1ac4202a70da0ba-stargazers').innerHTML = data.stargazers_count;
+ document.getElementById('github-335bc09a11197591f1ac4202a70da0ba-forks').innerHTML = data.forks;
+ })
+ .catch(error => console.error(error))
+ &lt;/script>
+&lt;/a>
+&lt;p>That’s it folks ..&lt;/p>
+&lt;p>Cheers !&lt;/p></description><content:encoded>&lt;![CDATA[<h3 class="relative group">What is Hyprland?<div id="what-is-hyprland" class="anchor"/><span class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#what-is-hyprland" aria-label="Anchor">#</a></span></h3><p>In a nutshell,<strong>Hyprland</strong> is a dynamic tiling<strong>Wayland</strong> compositor based on<em>wlroots</em> that doesn&rsquo;t sacrifice on its looks. It provides the latest Wayland features, is highly customizable, has all the eyecandy, the most powerful plugins, easy IPC, much more QoL stuff than other wlr-based compositors and more&hellip;</p><h3 class="relative group">The ML4W Dot Files<div id="the-ml4w-dot-files" class="anchor"/><span class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#the-ml4w-dot-files" aria-label="Anchor">#</a></span></h3><p>Before getting to it, I would like to say that, while I, myself do not and will not ever be using WMs since my workflow is tailored around DEs, that doesn&rsquo;t mean I do not appreciate the hard work others put into making them more approachable, and pretty to both look at and use.</p><p>That being said, I have been following Hyprland&rsquo;s growth as time went on, especially all the rices being created for it. I have seen so many awesome ones, but the one that caught my eye, which we will be talking about, is the one by a guy named<a href="https://gitlab.com/stephan-raabe" target="_blank"><strong>@Stephan Raabe</strong></a>.</p><div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;"><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/GHYk1Iv4GkY?autoplay=0&controls=1&end=0&loop=0&mute=0&start=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="YouTube video"/></div><p>As you can see from the video above, he has gone above and beyond the natural limits, making<strong>Hyprland</strong> all that more fun and easy to use by creating<em>GUI Config Tools</em> written in<strong>GTK</strong> not only for his dots but you can effortlessly configure almost every aspect of<strong>Hyprland</strong> making it truly your own. It&rsquo;s truly amazing !!!!</p><p>Here&rsquo;s a quote from the dev :</p><blockquote><p><strong>PLEASE NOTE:</strong> Every Linux distribution and setup can be different. Therefore, I cannot guarantee that the installation will work everywhere. Installation on your own risk.</p></blockquote><h3 class="relative group">How to Install them<div id="how-to-install-them" class="anchor"/><span class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#how-to-install-them" aria-label="Anchor">#</a></span></h3><p>Before we start, just know that the<strong>ML4W</strong> Dotfiles should work on all Arch Linux based distributions, though they have been only tested with the following ones. Support for other Distros like<strong>Fedora</strong> and so on are slowly being added according to Dev.</p><ul><li>Arch Linux (recommended)</li><li>EndeavourOS</li><li>Manjaro Linux</li><li>Garuda Linux</li><li>Arco Linux</li></ul><blockquote><p>For<strong>Manjaro</strong> users: Hyprland and required packages are under ongoing development. That&rsquo;s why it could be possible that some packages are not immediately available on Manjaro. But usually, the packages will be published later. Maybe you can install required packages manually.</p></blockquote><blockquote><p>For<strong>ArcoLinux</strong> users: Please reinstall/force the installation of all packages during the installation/update process of the install script. The script will also offer to remove ttf-ms-fonts if installed to avoid issues with icons on waybar.</p></blockquote><p><figure><img class="my-0 rounded-md" loading="lazy" src="https://i.imgur.com/amMcyTO.jpeg" alt="ML4W"/></figure></p><p>The installation script will create a backups from configurations of your .config folder that will be overwritten from the installation procedure and previous ML4W Dotfiles installation.</p><p>If possible, please create a snapshot of your current system if snapper or Timeshift is installed and available.</p><p>With main points out of the way, he made installation so simple, as simple as running a script and following prompts. The script will download all files from GitLab and start the installation.</p><p>Just copy/enter the following command into your terminal.</p><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Bash" data-lang="Bash"><span class="line"><span class="cl">bash &lt;<span class="o">(</span>curl -s https://gitlab.com/stephan-raabe/dotfiles/-/raw/main/setup.sh<span class="o">)</span></span></span></code></pre></div><p>Finally, find link to the<strong>Git Repo</strong> below, or if you want head directly to the WiKi, click here &raquo;<a href="https://gitlab.com/stephan-raabe/dotfiles/-/wikis/Home/" target="_blank"><strong>ML4W Dots Wiki</strong></a></p><a id="github-335bc09a11197591f1ac4202a70da0ba" target="_blank" href="https://github.com/mylinuxforwork/dotfiles" class="cursor-pointer"><div class="w-full md:w-auto pt-3 p-5 border border-neutral-200 dark:border-neutral-700 border rounded-md shadow-2xl"><div class="flex items-center"><span class="text-2xl text-neutral-800 dark:text-neutral" style="margin-right:10px;"><span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path fill="currentColor" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg></span></span><div id="github-335bc09a11197591f1ac4202a70da0ba-full_name" class="m-0 font-bold text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral">
+mylinuxforwork/dotfiles</div></div><p id="github-335bc09a11197591f1ac4202a70da0ba-description" class="m-0 mt-2 text-md text-neutral-800 dark:text-neutral">
+The ML4W Dotfiles for Hyprland - An advanced and full-featured configuration for the dynamic tiling window manager Hyprland including an easy to use installation script for Arch based Linux distributions.</p><div class="m-0 mt-2 flex items-center"><span class="mr-1 inline-block h-3 w-3 rounded-full" style="background-color: #89e051"/><div class="m-0 mr-5 text-md text-neutral-800 dark:text-neutral">
+Shell</div><span class="text-md mr-1 text-neutral-800 dark:text-neutral"><span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path fill="currentColor" d="M287.9 0C297.1 0 305.5 5.25 309.5 13.52L378.1 154.8L531.4 177.5C540.4 178.8 547.8 185.1 550.7 193.7C553.5 202.4 551.2 211.9 544.8 218.2L433.6 328.4L459.9 483.9C461.4 492.9 457.7 502.1 450.2 507.4C442.8 512.7 432.1 513.4 424.9 509.1L287.9 435.9L150.1 509.1C142.9 513.4 133.1 512.7 125.6 507.4C118.2 502.1 114.5 492.9 115.1 483.9L142.2 328.4L31.11 218.2C24.65 211.9 22.36 202.4 25.2 193.7C28.03 185.1 35.5 178.8 44.49 177.5L197.7 154.8L266.3 13.52C270.4 5.249 278.7 0 287.9 0L287.9 0zM287.9 78.95L235.4 187.2C231.9 194.3 225.1 199.3 217.3 200.5L98.98 217.9L184.9 303C190.4 308.5 192.9 316.4 191.6 324.1L171.4 443.7L276.6 387.5C283.7 383.7 292.2 383.7 299.2 387.5L404.4 443.7L384.2 324.1C382.9 316.4 385.5 308.5 391 303L476.9 217.9L358.6 200.5C350.7 199.3 343.9 194.3 340.5 187.2L287.9 78.95z"/></svg></span></span><div id="github-335bc09a11197591f1ac4202a70da0ba-stargazers" class="m-0 mr-5 text-md text-neutral-800 dark:text-neutral">
+207</div><span class="text-md mr-1 text-neutral-800 dark:text-neutral"><span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M80 104c13.3 0 24-10.7 24-24s-10.7-24-24-24S56 66.7 56 80s10.7 24 24 24zm80-24c0 32.8-19.7 61-48 73.3V192c0 17.7 14.3 32 32 32H304c17.7 0 32-14.3 32-32V153.3C307.7 141 288 112.8 288 80c0-44.2 35.8-80 80-80s80 35.8 80 80c0 32.8-19.7 61-48 73.3V192c0 53-43 96-96 96H256v70.7c28.3 12.3 48 40.5 48 73.3c0 44.2-35.8 80-80 80s-80-35.8-80-80c0-32.8 19.7-61 48-73.3V288H144c-53 0-96-43-96-96V153.3C19.7 141 0 112.8 0 80C0 35.8 35.8 0 80 0s80 35.8 80 80zm208 24c13.3 0 24-10.7 24-24s-10.7-24-24-24s-24 10.7-24 24s10.7 24 24 24zM248 432c0-13.3-10.7-24-24-24s-24 10.7-24 24s10.7 24 24 24s24-10.7 24-24z"/></svg></span></span><div id="github-335bc09a11197591f1ac4202a70da0ba-forks" class="m-0 mr-5 text-md text-neutral-800 dark:text-neutral">
+19</div></div></div><script>
+fetch("https://api.github.com/repos/mylinuxforwork/dotfiles", {
+headers: new Headers({
+'User-agent': 'Mozilla/4.0 Custom User Agent'
+})
+})
+.then(response => response.json())
+.then(data => {
+document.getElementById('github-335bc09a11197591f1ac4202a70da0ba-full_name').innerHTML = data.full_name;
+document.getElementById('github-335bc09a11197591f1ac4202a70da0ba-description').innerHTML = data.description;
+document.getElementById('github-335bc09a11197591f1ac4202a70da0ba-stargazers').innerHTML = data.stargazers_count;
+document.getElementById('github-335bc09a11197591f1ac4202a70da0ba-forks').innerHTML = data.forks;
+})
+.catch(error => console.error(error))</script></a><p>That’s it folks ..</p><p>Cheers !</p>
+]]></content:encoded><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"/><item><title>Theming Flatpaks</title><link>https://xerolinux.xyz/posts/flatpak-theming/</link><pubDate>Thu, 27 Jun 2024 00:00:00 +0000</pubDate><guid>https://xerolinux.xyz/posts/flatpak-theming/</guid><description>
+
+&lt;h3 class="relative group">Intro 
+ &lt;div id="intro" class="anchor">&lt;/div>
+ 
+ &lt;span
+ class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+ &lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+ style="text-decoration-line: none !important;" href="#intro" aria-label="Anchor">#&lt;/a>
+ &lt;/span> 
+ 
+&lt;/h3>
+&lt;p>One of the reasons why some users avoid installing Flatpak apps is that most Flatpak apps don’t change their appearance as per the current system theme. This makes the applications look out of the place in your otherwise beautiful set up.&lt;/p>
+&lt;p>The official way to apply GTK themes to Flatpak apps is by &lt;a href="https://docs.flatpak.org/en/latest/desktop-integration.html#theming" target="_blank">installing the desired theme as a flatpak&lt;/a>. However, there are only a few GTK themes that can be installed as Flatpak.&lt;/p>
+&lt;p>This means that if you found a beautiful GTK theme, your Flatpak applications will still be using their default appearance. But wait! There is a workaround.&lt;/p>
+
+
+ 
+ &lt;div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+ &lt;iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/IYXlgzrZRIE?autoplay=0&amp;controls=1&amp;end=0&amp;loop=0&amp;mute=0&amp;start=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="YouTube video"
+ >&lt;/iframe>
+ &lt;/div>
+
+
+
+&lt;h2 class="relative group">Tutorial 
+ &lt;div id="tutorial" class="anchor">&lt;/div>
+ 
+ &lt;span
+ class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+ &lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+ style="text-decoration-line: none !important;" href="#tutorial" aria-label="Anchor">#&lt;/a>
+ &lt;/span> 
+ 
+&lt;/h2>
+&lt;p>In this tutorial, I am going to introduce you a way to make Flatpak apps aware of external GTK themes.&lt;/p>
+&lt;p>To enable this functionality, users need to install the GTK themes similar to the one used in KDE (as for other distros) but also run these commands:&lt;/p>
+&lt;p>&lt;strong>- Step 1:&lt;/strong> Give Flatpak apps access to GTK themes location&lt;/p>
+&lt;p>GTK themes are located in &lt;code>/usr/share/themes&lt;/code> for all users, and in &lt;code>~/.themes&lt;/code> for a specific user. Notice that you can’t give access to &lt;code>/usr/share/themes&lt;/code> because according to &lt;a href="https://docs.flatpak.org/en/latest/sandbox-permissions.html#filesystem-access" target="_blank">Flatpak Documentation&lt;/a> they are blacklisted.&lt;/p>
+&lt;p>So, since all included GTK Themes in XeroLinux  are located under &lt;code>/usr/share/themes&lt;/code> which Flatpaks cannot access we need to copy them to &lt;code>~/.themes&lt;/code> .&lt;/p>
+&lt;p>Once that is done, to give all flatpak packages permission to access &lt;code>~/.themes&lt;/code> run the following command:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-Bash" data-lang="Bash">&lt;span class="line">&lt;span class="cl">sudo flatpak override --filesystem&lt;span class="o">=&lt;/span>&lt;span class="nv">$HOME&lt;/span>/.themes
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;strong>- Step 2:&lt;/strong> Enable System-Wide Flatpak Override&lt;/p>
+&lt;p>Now we need to apply a system-wide override telling Flatpaks to use whatever GTK theme system is using, it will be applied by default on next release of XeroLinux if it hasn&amp;rsquo;t been already..&lt;/p>
+&lt;p>Commands :&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-Bash" data-lang="Bash">&lt;span class="line">&lt;span class="cl">sudo flatpak override --filesystem&lt;span class="o">=&lt;/span>xdg-config/gtk-3.0:ro
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">sudo flatpak override --filesystem&lt;span class="o">=&lt;/span>xdg-config/gtk-4.0:ro
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Also sometimes that alone might not work, so you will need to set specific theme via&amp;hellip;&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-Bash" data-lang="Bash">&lt;span class="line">&lt;span class="cl">sudo flatpak override org.gnome.Calculator --env&lt;span class="o">=&lt;/span>&lt;span class="nv">GTK_THEME&lt;/span>&lt;span class="o">=&lt;/span>name-of-gtk-theme
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Once that&amp;rsquo;s done you will end up with a file in the system that includes those values. Seemingly enough there is some info about that exact issue on the &lt;a href="https://github.com/flatpak/flatpak/issues/4633" target="_blank">Flathub iisue reporter&lt;/a>..&lt;/p>
+&lt;p>As you can see in the screenshot below, there is two themes available, Ant-Bloody and Orchis-dark. Copy and paste the exact theme name in the above command:&lt;/p>
+&lt;p>
+ &lt;figure>
+ &lt;img class="my-0 rounded-md" loading="lazy" src="https://i.imgur.com/uT6brUj.png" alt="[Image: uT6brUj.png]" />
+ 
+ &lt;/figure>
+&lt;/p>
+&lt;p>This only applies to GTK3/4 based packages, for QT in most cases nothing needs to be done 
+ &lt;figure>
+ &lt;img class="my-0 rounded-md" loading="lazy" src="https://forum.xerolinux.xyz/images/smilies/wink.png" alt="Wink" />
+ &lt;figcaption>Wink&lt;/figcaption>
+ &lt;/figure>
+&lt;/p>
+&lt;p>Here&amp;rsquo;s the Original Thread on &lt;a href="https://forum.manjaro.org/t/add-out-of-the-box-flatpak-gtk-application-themes-for-kde-plasma-users/117103" target="_blank">Manjaro Forums&lt;/a>&amp;hellip; Oh and &lt;a href="https://itsfoss.com/flatpak-app-apply-theme/" target="_blank">This Thread&lt;/a> Too&amp;hellip;.&lt;/p></description><content:encoded>&lt;![CDATA[<h3 class="relative group">Intro<div id="intro" class="anchor"/><span class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#intro" aria-label="Anchor">#</a></span></h3><p>One of the reasons why some users avoid installing Flatpak apps is that most Flatpak apps don’t change their appearance as per the current system theme. This makes the applications look out of the place in your otherwise beautiful set up.</p><p>The official way to apply GTK themes to Flatpak apps is by<a href="https://docs.flatpak.org/en/latest/desktop-integration.html#theming" target="_blank">installing the desired theme as a flatpak</a>. However, there are only a few GTK themes that can be installed as Flatpak.</p><p>This means that if you found a beautiful GTK theme, your Flatpak applications will still be using their default appearance. But wait! There is a workaround.</p><div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;"><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/IYXlgzrZRIE?autoplay=0&controls=1&end=0&loop=0&mute=0&start=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="YouTube video"/></div><h2 class="relative group">Tutorial<div id="tutorial" class="anchor"/><span class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#tutorial" aria-label="Anchor">#</a></span></h2><p>In this tutorial, I am going to introduce you a way to make Flatpak apps aware of external GTK themes.</p><p>To enable this functionality, users need to install the GTK themes similar to the one used in KDE (as for other distros) but also run these commands:</p><p><strong>- Step 1:</strong> Give Flatpak apps access to GTK themes location</p><p>GTK themes are located in<code>/usr/share/themes</code> for all users, and in<code>~/.themes</code> for a specific user. Notice that you can’t give access to<code>/usr/share/themes</code> because according to<a href="https://docs.flatpak.org/en/latest/sandbox-permissions.html#filesystem-access" target="_blank">Flatpak Documentation</a> they are blacklisted.</p><p>So, since all included GTK Themes in XeroLinux  are located under<code>/usr/share/themes</code> which Flatpaks cannot access we need to copy them to<code>~/.themes</code> .</p><p>Once that is done, to give all flatpak packages permission to access<code>~/.themes</code> run the following command:</p><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Bash" data-lang="Bash"><span class="line"><span class="cl">sudo flatpak override --filesystem<span class="o">=</span><span class="nv">$HOME</span>/.themes</span></span></code></pre></div><p><strong>- Step 2:</strong> Enable System-Wide Flatpak Override</p><p>Now we need to apply a system-wide override telling Flatpaks to use whatever GTK theme system is using, it will be applied by default on next release of XeroLinux if it hasn&rsquo;t been already..</p><p>Commands :</p><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Bash" data-lang="Bash"><span class="line"><span class="cl">sudo flatpak override --filesystem<span class="o">=</span>xdg-config/gtk-3.0:ro</span></span><span class="line"><span class="cl">sudo flatpak override --filesystem<span class="o">=</span>xdg-config/gtk-4.0:ro</span></span></code></pre></div><p>Also sometimes that alone might not work, so you will need to set specific theme via&hellip;</p><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Bash" data-lang="Bash"><span class="line"><span class="cl">sudo flatpak override org.gnome.Calculator --env<span class="o">=</span><span class="nv">GTK_THEME</span><span class="o">=</span>name-of-gtk-theme</span></span></code></pre></div><p>Once that&rsquo;s done you will end up with a file in the system that includes those values. Seemingly enough there is some info about that exact issue on the<a href="https://github.com/flatpak/flatpak/issues/4633" target="_blank">Flathub iisue reporter</a>..</p><p>As you can see in the screenshot below, there is two themes available, Ant-Bloody and Orchis-dark. Copy and paste the exact theme name in the above command:</p><p><figure><img class="my-0 rounded-md" loading="lazy" src="https://i.imgur.com/uT6brUj.png" alt="[Image: uT6brUj.png]"/></figure></p><p>This only applies to GTK3/4 based packages, for QT in most cases nothing needs to be done<figure><img class="my-0 rounded-md" loading="lazy" src="https://forum.xerolinux.xyz/images/smilies/wink.png" alt="Wink"/><figcaption>Wink</figcaption></figure></p><p>Here&rsquo;s the Original Thread on<a href="https://forum.manjaro.org/t/add-out-of-the-box-flatpak-gtk-application-themes-for-kde-plasma-users/117103" target="_blank">Manjaro Forums</a>&hellip; Oh and<a href="https://itsfoss.com/flatpak-app-apply-theme/" target="_blank">This Thread</a> Too&hellip;.</p>
+]]></content:encoded><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"/></channel></rss>

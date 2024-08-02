@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Paru on XeroLinux HQ</title><link>https://xerolinux.xyz/tags/paru/</link><description>Recent content in Paru on XeroLinux HQ</description><generator>Hugo</generator><language>en</language><lastBuildDate>Thu, 27 Jun 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://xerolinux.xyz/tags/paru/index.xml" rel="self" type="application/rss+xml"/><item><title>Install Yay or Paru</title><link>https://xerolinux.xyz/posts/install-yay-paru/</link><pubDate>Thu, 27 Jun 2024 00:00:00 +0000</pubDate><guid>https://xerolinux.xyz/posts/install-yay-paru/</guid><description>
+
+&lt;h3 class="relative group">What Are Those? 
+ &lt;div id="what-are-those" class="anchor">&lt;/div>
+ 
+ &lt;span
+ class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+ &lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+ style="text-decoration-line: none !important;" href="#what-are-those" aria-label="Anchor">#&lt;/a>
+ &lt;/span> 
+ 
+&lt;/h3>
+&lt;p>Yay &amp;amp; Paru are &lt;strong>AUR&lt;/strong> Helpers. What&amp;rsquo;s that ? Well, an &lt;strong>AUR&lt;/strong> helper is a tool that automates the process of installing and managing packages from the Arch User Repository (AUR) on Arch Linux. The main purpose of AUR helpers is to simplify the installation and updating of AUR packages, which are not available in the official Arch Linux repositories&lt;/p>
+&lt;p>
+ &lt;figure>
+ &lt;img class="my-0 rounded-md" loading="lazy" src="https://i.imgur.com/l2MiVr0.jpeg" alt="[Image: l2MiVr0.jpeg]" />
+ 
+ &lt;/figure>
+&lt;/p>
+
+
+&lt;h3 class="relative group">What is the difference between the two ? 
+ &lt;div id="what-is-the-difference-between-the-two-" class="anchor">&lt;/div>
+ 
+ &lt;span
+ class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+ &lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+ style="text-decoration-line: none !important;" href="#what-is-the-difference-between-the-two-" aria-label="Anchor">#&lt;/a>
+ &lt;/span> 
+ 
+&lt;/h3>
+&lt;p>The primary differences between the AUR helpers Yay and Paru lie in their underlying programming languages and some of their default settings and features. &lt;strong>Yay&lt;/strong> is written in &lt;strong>Go&lt;/strong>, while &lt;strong>Paru&lt;/strong> is implemented in the more efficient &lt;strong>Rust&lt;/strong> language, resulting in better performance. Additionally, Paru has some saner default settings, such as requiring users to review the PKGBUILD before installing a package, which is an important security consideration when working with the Arch User Repository. Yay, on the other hand, offers a unique &amp;ldquo;&amp;ndash;combinedupgrade&amp;rdquo; flag that provides a color-coded output to distinguish between repository and AUR package upgrades, a feature not present in Paru. In terms of active development, Paru is currently more actively maintained than Yay, though both continue to receive updates and improvements. The choice between the two ultimately comes down to personal preference and specific needs when managing packages from the AUR..&lt;/p>
+
+
+&lt;h3 class="relative group">Yay Installation : 
+ &lt;div id="yay-installation-" class="anchor">&lt;/div>
+ 
+ &lt;span
+ class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+ &lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+ style="text-decoration-line: none !important;" href="#yay-installation-" aria-label="Anchor">#&lt;/a>
+ &lt;/span> 
+ 
+&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-Bash" data-lang="Bash">&lt;span class="line">&lt;span class="cl">&lt;span class="nb">cd&lt;/span> ~ &lt;span class="o">&amp;amp;&amp;amp;&lt;/span> git clone https://aur.archlinux.org/yay-bin.git
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nb">cd&lt;/span> ~/yay-bin/ &lt;span class="o">&amp;amp;&amp;amp;&lt;/span> makepkg -rsi --noconfirm
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nb">cd&lt;/span> ~ &lt;span class="o">&amp;amp;&amp;amp;&lt;/span> rm -Rf ~/yay-bin/
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
+
+&lt;h3 class="relative group">Yay Configuration : 
+ &lt;div id="yay-configuration-" class="anchor">&lt;/div>
+ 
+ &lt;span
+ class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+ &lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+ style="text-decoration-line: none !important;" href="#yay-configuration-" aria-label="Anchor">#&lt;/a>
+ &lt;/span> 
+ 
+&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-Bash" data-lang="Bash">&lt;span class="line">&lt;span class="cl">yay -Y --devel --save &lt;span class="o">&amp;amp;&amp;amp;&lt;/span> yay -Y --gendb
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">sed -i &lt;span class="s1">&amp;#39;s/&amp;#34;sudoloop&amp;#34;: false/&amp;#34;sudoloop&amp;#34;: true/&amp;#39;&lt;/span> ~/.config/yay/config.json&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Anyway here&amp;rsquo;s how to proceed for Paru&amp;hellip;&lt;/p>
+
+
+&lt;h3 class="relative group">Paru Installation : 
+ &lt;div id="paru-installation-" class="anchor">&lt;/div>
+ 
+ &lt;span
+ class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+ &lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+ style="text-decoration-line: none !important;" href="#paru-installation-" aria-label="Anchor">#&lt;/a>
+ &lt;/span> 
+ 
+&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-Bash" data-lang="Bash">&lt;span class="line">&lt;span class="cl">&lt;span class="nb">cd&lt;/span> ~ &lt;span class="o">&amp;amp;&amp;amp;&lt;/span> git clone https://aur.archlinux.org/paru-bin.git
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nb">cd&lt;/span> ~/paru-bin/ &lt;span class="o">&amp;amp;&amp;amp;&lt;/span> makepkg -rsi --noconfirm
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nb">cd&lt;/span> ~ &lt;span class="o">&amp;amp;&amp;amp;&lt;/span> rm -Rf ~/paru-bin/
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
+
+&lt;h3 class="relative group">Paru Configuration : 
+ &lt;div id="paru-configuration-" class="anchor">&lt;/div>
+ 
+ &lt;span
+ class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+ &lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+ style="text-decoration-line: none !important;" href="#paru-configuration-" aria-label="Anchor">#&lt;/a>
+ &lt;/span> 
+ 
+&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-Bash" data-lang="Bash">&lt;span class="line">&lt;span class="cl">sudo sed -i -e &lt;span class="s1">&amp;#39;s/^#BottomUp/BottomUp/&amp;#39;&lt;/span> -e &lt;span class="s1">&amp;#39;s/^#SudoLoop/SudoLoop/&amp;#39;&lt;/span> -e &lt;span class="s1">&amp;#39;s/^#CombinedUpgrade/CombinedUpgrade/&amp;#39;&lt;/span> -e &lt;span class="s1">&amp;#39;s/^#UpgradeMenu/UpgradeMenu/&amp;#39;&lt;/span> -e &lt;span class="s1">&amp;#39;s/^#NewsOnUpgrade/NewsOnUpgrade/&amp;#39;&lt;/span> /etc/paru.conf
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nb">echo&lt;/span> &lt;span class="s2">&amp;#34;SkipReview&amp;#34;&lt;/span> &lt;span class="p">|&lt;/span> sudo tee -a /etc/paru.conf &amp;gt; /dev/null
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">paru --gendb&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
+
+&lt;h3 class="relative group">Closing 
+ &lt;div id="closing" class="anchor">&lt;/div>
+ 
+ &lt;span
+ class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+ &lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+ style="text-decoration-line: none !important;" href="#closing" aria-label="Anchor">#&lt;/a>
+ &lt;/span> 
+ 
+&lt;/h3>
+&lt;p>Once that is done, you can use it to start installing packages from the &lt;a href="https://aur.archlinux.org" target="_blank">AUR&lt;/a>. Keep in mind that you do not need to install both; just select the one you prefer, either one works.. I would recommend YaY myself though.. &lt;a href="https://wiki.archlinux.org/title/AUR_helpers" target="_blank">ArchWiki Page&lt;/a>&lt;/p></description><content:encoded>&lt;![CDATA[<h3 class="relative group">What Are Those?<div id="what-are-those" class="anchor"/><span class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#what-are-those" aria-label="Anchor">#</a></span></h3><p>Yay &amp; Paru are<strong>AUR</strong> Helpers. What&rsquo;s that ? Well, an<strong>AUR</strong> helper is a tool that automates the process of installing and managing packages from the Arch User Repository (AUR) on Arch Linux. The main purpose of AUR helpers is to simplify the installation and updating of AUR packages, which are not available in the official Arch Linux repositories</p><p><figure><img class="my-0 rounded-md" loading="lazy" src="https://i.imgur.com/l2MiVr0.jpeg" alt="[Image: l2MiVr0.jpeg]"/></figure></p><h3 class="relative group">What is the difference between the two ?<div id="what-is-the-difference-between-the-two-" class="anchor"/><span class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#what-is-the-difference-between-the-two-" aria-label="Anchor">#</a></span></h3><p>The primary differences between the AUR helpers Yay and Paru lie in their underlying programming languages and some of their default settings and features.<strong>Yay</strong> is written in<strong>Go</strong>, while<strong>Paru</strong> is implemented in the more efficient<strong>Rust</strong> language, resulting in better performance. Additionally, Paru has some saner default settings, such as requiring users to review the PKGBUILD before installing a package, which is an important security consideration when working with the Arch User Repository. Yay, on the other hand, offers a unique &ldquo;&ndash;combinedupgrade&rdquo; flag that provides a color-coded output to distinguish between repository and AUR package upgrades, a feature not present in Paru. In terms of active development, Paru is currently more actively maintained than Yay, though both continue to receive updates and improvements. The choice between the two ultimately comes down to personal preference and specific needs when managing packages from the AUR..</p><h3 class="relative group">Yay Installation :<div id="yay-installation-" class="anchor"/><span class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#yay-installation-" aria-label="Anchor">#</a></span></h3><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Bash" data-lang="Bash"><span class="line"><span class="cl"><span class="nb">cd</span> ~<span class="o">&amp;&amp;</span> git clone https://aur.archlinux.org/yay-bin.git</span></span><span class="line"><span class="cl"><span class="nb">cd</span> ~/yay-bin/<span class="o">&amp;&amp;</span> makepkg -rsi --noconfirm</span></span><span class="line"><span class="cl"><span class="nb">cd</span> ~<span class="o">&amp;&amp;</span> rm -Rf ~/yay-bin/</span></span></code></pre></div><h3 class="relative group">Yay Configuration :<div id="yay-configuration-" class="anchor"/><span class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#yay-configuration-" aria-label="Anchor">#</a></span></h3><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Bash" data-lang="Bash"><span class="line"><span class="cl">yay -Y --devel --save<span class="o">&amp;&amp;</span> yay -Y --gendb</span></span><span class="line"><span class="cl">sed -i<span class="s1">'s/"sudoloop": false/"sudoloop": true/'</span> ~/.config/yay/config.json<span class="p">;</span></span></span></code></pre></div><p>Anyway here&rsquo;s how to proceed for Paru&hellip;</p><h3 class="relative group">Paru Installation :<div id="paru-installation-" class="anchor"/><span class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#paru-installation-" aria-label="Anchor">#</a></span></h3><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Bash" data-lang="Bash"><span class="line"><span class="cl"><span class="nb">cd</span> ~<span class="o">&amp;&amp;</span> git clone https://aur.archlinux.org/paru-bin.git</span></span><span class="line"><span class="cl"><span class="nb">cd</span> ~/paru-bin/<span class="o">&amp;&amp;</span> makepkg -rsi --noconfirm</span></span><span class="line"><span class="cl"><span class="nb">cd</span> ~<span class="o">&amp;&amp;</span> rm -Rf ~/paru-bin/</span></span></code></pre></div><h3 class="relative group">Paru Configuration :<div id="paru-configuration-" class="anchor"/><span class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#paru-configuration-" aria-label="Anchor">#</a></span></h3><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Bash" data-lang="Bash"><span class="line"><span class="cl">sudo sed -i -e<span class="s1">'s/^#BottomUp/BottomUp/'</span> -e<span class="s1">'s/^#SudoLoop/SudoLoop/'</span> -e<span class="s1">'s/^#CombinedUpgrade/CombinedUpgrade/'</span> -e<span class="s1">'s/^#UpgradeMenu/UpgradeMenu/'</span> -e<span class="s1">'s/^#NewsOnUpgrade/NewsOnUpgrade/'</span> /etc/paru.conf</span></span><span class="line"><span class="cl"><span class="nb">echo</span><span class="s2">"SkipReview"</span><span class="p">|</span> sudo tee -a /etc/paru.conf > /dev/null</span></span><span class="line"><span class="cl">paru --gendb<span class="p">;</span></span></span></code></pre></div><h3 class="relative group">Closing<div id="closing" class="anchor"/><span class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#closing" aria-label="Anchor">#</a></span></h3><p>Once that is done, you can use it to start installing packages from the<a href="https://aur.archlinux.org" target="_blank">AUR</a>. Keep in mind that you do not need to install both; just select the one you prefer, either one works.. I would recommend YaY myself though..<a href="https://wiki.archlinux.org/title/AUR_helpers" target="_blank">ArchWiki Page</a></p>
+]]></content:encoded><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"/></channel></rss>

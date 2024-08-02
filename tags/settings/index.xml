@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Settings on XeroLinux HQ</title><link>https://xerolinux.xyz/tags/settings/</link><description>Recent content in Settings on XeroLinux HQ</description><generator>Hugo</generator><language>en</language><lastBuildDate>Thu, 27 Jun 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://xerolinux.xyz/tags/settings/index.xml" rel="self" type="application/rss+xml"/><item><title>DConf Editor Gnome</title><link>https://xerolinux.xyz/posts/dconf-editor/</link><pubDate>Thu, 27 Jun 2024 00:00:00 +0000</pubDate><guid>https://xerolinux.xyz/posts/dconf-editor/</guid><description>
+
+&lt;h3 class="relative group">What is it? 
+ &lt;div id="what-is-it" class="anchor">&lt;/div>
+ 
+ &lt;span
+ class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+ &lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+ style="text-decoration-line: none !important;" href="#what-is-it" aria-label="Anchor">#&lt;/a>
+ &lt;/span> 
+ 
+&lt;/h3>
+&lt;p>Dconf Editor is a graphical tool used to configure settings in Linux, particularly on GNOME desktop environments. It allows users to navigate and modify system options stored in the dconf database, which is a key-value store that manages different aspects of the system.&lt;/p>
+
+
+ 
+ &lt;div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+ &lt;iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/b5qVOeyFqKk?autoplay=0&amp;controls=1&amp;end=0&amp;loop=0&amp;mute=0&amp;start=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="YouTube video"
+ >&lt;/iframe>
+ &lt;/div>
+
+
+
+&lt;h3 class="relative group">Install Dconf On Linux 
+ &lt;div id="install-dconf-on-linux" class="anchor">&lt;/div>
+ 
+ &lt;span
+ class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+ &lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+ style="text-decoration-line: none !important;" href="#install-dconf-on-linux" aria-label="Anchor">#&lt;/a>
+ &lt;/span> 
+ 
+&lt;/h3>
+&lt;p>Dconf comes pre-installed in many Linux distributions. If it is not installed already, you can install it using the distribution&amp;rsquo;s default package manager depending upon the distribution you use.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-Bash" data-lang="Bash">&lt;span class="line">&lt;span class="cl">sudo pacman -S dconf
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
+
+&lt;h3 class="relative group">Backup/Restore &amp;amp; Reset GNOME Settings With Dconf 
+ &lt;div id="backuprestore--reset-gnome-settings-with-dconf" class="anchor">&lt;/div>
+ 
+ &lt;span
+ class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+ &lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+ style="text-decoration-line: none !important;" href="#backuprestore--reset-gnome-settings-with-dconf" aria-label="Anchor">#&lt;/a>
+ &lt;/span> 
+ 
+&lt;/h3>
+&lt;p>Believe it or not, this is one of the easiest way to backup and restore system settings with a just single command. To backup your current Linux desktop settings using dconf, do run this command:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-Bash" data-lang="Bash">&lt;span class="line">&lt;span class="cl">dconf dump /org/gnome/ &amp;gt; gnome-desktop.conf
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>The above command will save all customization and tweaks you made in your system, including the pinned applications in the Dock or Unity launcher, desktop panel applets, desktop indicators, your system fonts, GTK themes, Icon themes, monitor resolution, keyboard shortcuts, window button placement, menu and launcher behaviour etc., in a text file named gnome-desktop.conf.&lt;/p>
+&lt;p>Please note that this command will only backup the system settings. It won’t save settings of other applications that doesn’t use dconf. Also, it won’t backup your personal data either.&lt;/p>
+&lt;p>You can view this file using any text editors or cat command.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-Bash" data-lang="Bash">&lt;span class="line">&lt;span class="cl">cat gnome-desktop.conf
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Now reset your desktop settings to the factory defaults with command:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-Bash" data-lang="Bash">&lt;span class="line">&lt;span class="cl">dconf reset -f /org/gnome/
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>After running the above command, your Linux desktop will turn into the old state when you installed it in the first time. Don&amp;rsquo;t panic! Your personal data and installed applications will still be intact.&lt;/p>
+&lt;p>To restore the System settings, simply do:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-Bash" data-lang="Bash">&lt;span class="line">&lt;span class="cl">dconf load /org/gnome/ &amp;lt; gnome-desktop.conf
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>You can even backup more specific settings like desktop or window manager.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-Bash" data-lang="Bash">&lt;span class="line">&lt;span class="cl">dconf dump /org/gnome/desktop/wm/preferences/ &amp;gt; old_wm_settings
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Keep the backup file in a safe place to use it later after reinstalling your Linux desktop.&lt;/p>
+&lt;p>It&amp;rsquo;s that simple!!&lt;/p></description><content:encoded>&lt;![CDATA[<h3 class="relative group">What is it?<div id="what-is-it" class="anchor"/><span class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#what-is-it" aria-label="Anchor">#</a></span></h3><p>Dconf Editor is a graphical tool used to configure settings in Linux, particularly on GNOME desktop environments. It allows users to navigate and modify system options stored in the dconf database, which is a key-value store that manages different aspects of the system.</p><div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;"><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/b5qVOeyFqKk?autoplay=0&controls=1&end=0&loop=0&mute=0&start=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="YouTube video"/></div><h3 class="relative group">Install Dconf On Linux<div id="install-dconf-on-linux" class="anchor"/><span class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#install-dconf-on-linux" aria-label="Anchor">#</a></span></h3><p>Dconf comes pre-installed in many Linux distributions. If it is not installed already, you can install it using the distribution&rsquo;s default package manager depending upon the distribution you use.</p><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Bash" data-lang="Bash"><span class="line"><span class="cl">sudo pacman -S dconf</span></span></code></pre></div><h3 class="relative group">Backup/Restore &amp; Reset GNOME Settings With Dconf<div id="backuprestore--reset-gnome-settings-with-dconf" class="anchor"/><span class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#backuprestore--reset-gnome-settings-with-dconf" aria-label="Anchor">#</a></span></h3><p>Believe it or not, this is one of the easiest way to backup and restore system settings with a just single command. To backup your current Linux desktop settings using dconf, do run this command:</p><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Bash" data-lang="Bash"><span class="line"><span class="cl">dconf dump /org/gnome/ > gnome-desktop.conf</span></span></code></pre></div><p>The above command will save all customization and tweaks you made in your system, including the pinned applications in the Dock or Unity launcher, desktop panel applets, desktop indicators, your system fonts, GTK themes, Icon themes, monitor resolution, keyboard shortcuts, window button placement, menu and launcher behaviour etc., in a text file named gnome-desktop.conf.</p><p>Please note that this command will only backup the system settings. It won’t save settings of other applications that doesn’t use dconf. Also, it won’t backup your personal data either.</p><p>You can view this file using any text editors or cat command.</p><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Bash" data-lang="Bash"><span class="line"><span class="cl">cat gnome-desktop.conf</span></span></code></pre></div><p>Now reset your desktop settings to the factory defaults with command:</p><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Bash" data-lang="Bash"><span class="line"><span class="cl">dconf reset -f /org/gnome/</span></span></code></pre></div><p>After running the above command, your Linux desktop will turn into the old state when you installed it in the first time. Don&rsquo;t panic! Your personal data and installed applications will still be intact.</p><p>To restore the System settings, simply do:</p><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Bash" data-lang="Bash"><span class="line"><span class="cl">dconf load /org/gnome/ &lt; gnome-desktop.conf</span></span></code></pre></div><p>You can even backup more specific settings like desktop or window manager.</p><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Bash" data-lang="Bash"><span class="line"><span class="cl">dconf dump /org/gnome/desktop/wm/preferences/ > old_wm_settings</span></span></code></pre></div><p>Keep the backup file in a safe place to use it later after reinstalling your Linux desktop.</p><p>It&rsquo;s that simple!!</p>
+]]></content:encoded><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"/></channel></rss>
