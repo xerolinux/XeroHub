@@ -918,195 +918,10 @@
     
 
     
-
-  </header>
-  
-  <section class="flex flex-col max-w-full mt-0 prose dark:prose-invert lg:flex-row">
-    
-     <div
-      class="order-first lg:ml-auto px-0 lg:order-last ltr:lg:pl-8 rtl:lg:pr-8">
-      <div class="toc ltr:pl-5 rtl:pr-5 print:hidden lg:sticky lg:top-[140px]">
-
-         <details open id="TOCView"
-  class="toc-right mt-0 overflow-y-scroll overscroll-contain scrollbar-thin scrollbar-track-neutral-200 scrollbar-thumb-neutral-400 dark:scrollbar-track-neutral-800 dark:scrollbar-thumb-neutral-600 rounded-lg ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 hidden lg:block">
-  <summary
-    class="block py-1 text-lg font-semibold cursor-pointer bg-neutral-100 text-neutral-800 ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 dark:bg-neutral-700 dark:text-neutral-100 lg:hidden">
-    Table of Contents
-  </summary>
-  <div
-    class="min-w-[220px] py-2 border-dotted ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
-    <nav id="TableOfContents">
-  <ul>
-    <li>
-      <ul>
-        <li><a href="#intro">Intro</a></li>
-        <li><a href="#the-guide">The Guide</a></li>
-      </ul>
-    </li>
-  </ul>
-</nav>
-  </div>
-</details>
-<details class="toc-inside mt-0 overflow-hidden rounded-lg ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 lg:hidden">
-  <summary
-    class="py-1 text-lg font-semibold cursor-pointer bg-neutral-100 text-neutral-800 ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 dark:bg-neutral-700 dark:text-neutral-100 lg:hidden">
-    Table of Contents
-  </summary>
-  <div
-    class="py-2 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
-    <nav id="TableOfContents">
-  <ul>
-    <li>
-      <ul>
-        <li><a href="#intro">Intro</a></li>
-        <li><a href="#the-guide">The Guide</a></li>
-      </ul>
-    </li>
-  </ul>
-</nav>
-  </div>
-</details>
-
-<script>
-
-  var margin = 200;
-  var marginError = 50;
-
-  (function () {
-    var $window = $(window);
-    var $toc = $('#TOCView');
-    var tocHeight = $toc.height();
-
-    function onResize() {
-      var windowAndMarginHeight = $window.height() - margin;
-      if(tocHeight >= windowAndMarginHeight) {
-        $toc.css("overflow-y", "scroll")
-        $toc.css("max-height", (windowAndMarginHeight + marginError) + "px")
-      } else {
-        $toc.css("overflow-y", "hidden")
-        $toc.css("max-height", "9999999px")
-      }
-    }
-
-    $window.on('resize', onResize);
-    $(document).ready(onResize);
-  })();
-
-
-
-  (function () {
-    var $toc = $('#TableOfContents');
-    if ($toc.length > 0) {
-      var $window = $(window);
-
-      function onScroll() {
-        var currentScroll = $window.scrollTop();
-        var h = $('.anchor');
-        var id = "";
-        h.each(function (i, e) {
-          e = $(e);
-          if (e.offset().top - $(window).height()/3 <= currentScroll) {
-            id = decodeURIComponent(e.attr('id'));
-          }
-        });
-        var active = $toc.find('a.active');      
-        if (active.length == 1 && active.eq(0).attr('href') == '#' + id) return true;
-
-        active.each(function (i, e) {
-          
-            $(e).removeClass('active');
-          
-        });
-        $toc.find('a[href="#' + id + '"]').addClass('active')
-        $toc.find('a[href="#' + id + '"]').parentsUntil('#TableOfContents').each(function (i, e) {
-          $(e).children('a').parents('ul').show();          
-        });
-      }
-
-      $window.on('scroll', onScroll);
-      $(document).ready(function () {
-        
-        onScroll();
-      });
-    }
-  })();
-
-
-</script>
-   </div>
-      </div>
       
-
-      <div class="min-w-0 min-h-0 max-w-fit">
+      
         
         
-
-
-        <div class="article-content max-w-prose mb-20">
-          
-
-<h3 class="relative group">Intro 
-    <div id="intro" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#intro" aria-label="Anchor">#</a>
-    </span>        
-    
-</h3>
-<p>Most of you might already know about the amazing tool called <strong>Ventoy</strong> and how amazing it is at removing the need to have more USB drives if you want to use multiple ISOs, but you might not know about how many more amazing features it has.</p>
-<p>Today I will be showing you how to make a specific Live ISO on your Ventoy USB Drive save all the changes that you make to it.</p>
-
-
-<h3 class="relative group">The Guide 
-    <div id="the-guide" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#the-guide" aria-label="Anchor">#</a>
-    </span>        
-    
-</h3>
-<p>Starting off you would want to have <strong>Ventoy</strong> installed and copy the folder from <code>/opt/ventoy</code> to your USB Drive and renaming it to <code>ventoy_plugins</code> or anything else that you might like.</p>
-<p>
-  <figure>
-    <img class="my-0 rounded-md" loading="lazy" src="https://i.imgur.com/Hg7iIzd.png" alt="[Image: Hg7iIzd.png]" />
-    
-  </figure>
-</p>
-<p>Then go into the <code>ventoy_plugins</code> folder open a terminal and run <code>sudo sh CreatePersistenceImg.sh -s 20480 -l vtoycow</code> this will create a file called <code>persistence.dat</code> with the size of 20GB, refer to <a href="https://www.ventoy.net/en/plugin_persistence.html" target="_blank">this</a> article from Ventoy for different arguments for the command. After a while you will be granted with this confirmation, just hit <code>y</code> and <code>enter</code> and in a few seconds it should be done.</p>
-<p>
-  <figure>
-    <img class="my-0 rounded-md" loading="lazy" src="https://i.imgur.com/8rKKvT4.png" alt="[Image: 8rKKvT4.png]" />
-    
-  </figure>
-</p>
-<p>Now create a new folder called <code>persistence</code> in the root folder and move the <code>persistence.dat</code> there. Going back to the terminal run <code>sudo sh VentoyPlugson.sh /dev/sdx</code> where <code>x</code> is your USB Drive id.</p>
-<p>
-  <figure>
-    <img class="my-0 rounded-md" loading="lazy" src="https://i.imgur.com/GElDr8y.png" alt="[Image: GElDr8y.png]" />
-    
-  </figure>
-</p>
-<p>Just head over to the webaddress that you get from the terminal, there you will be granted with the Ventoy Plugson WebUI. Head over to the <code>Persistence Plugin</code> and click on add new and just enter the file paths to the ISO that you want and the <code>persistence.dat</code> file and make sure that it says <code>OK</code>.</p>
-<p>
-  <figure>
-    <img class="my-0 rounded-md" loading="lazy" src="https://i.imgur.com/PGduHPr.png" alt="[Image: PGduHPr.png]" />
-    
-  </figure>
-</p>
-<p>Now if you boot into the Xero Linux ISO any changes that you make to it should get saved.</p>
-<p>Cheers :heart:</p>
-
-        </div>
-        
-        
-
-          
-            
-            
 <div class="flex author">
   
     
@@ -1322,14 +1137,199 @@
   </div>
 </div>
 
+      
+
+      
+
+      
+      <div class="mb-5"></div>
+      
+
+    
+
+  </header>
+  
+  <section class="flex flex-col max-w-full mt-0 prose dark:prose-invert lg:flex-row">
+    
+     <div
+      class="order-first lg:ml-auto px-0 lg:order-last ltr:lg:pl-8 rtl:lg:pr-8">
+      <div class="toc ltr:pl-5 rtl:pr-5 print:hidden lg:sticky lg:top-[140px]">
+
+         <details open id="TOCView"
+  class="toc-right mt-0 overflow-y-scroll overscroll-contain scrollbar-thin scrollbar-track-neutral-200 scrollbar-thumb-neutral-400 dark:scrollbar-track-neutral-800 dark:scrollbar-thumb-neutral-600 rounded-lg ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 hidden lg:block">
+  <summary
+    class="block py-1 text-lg font-semibold cursor-pointer bg-neutral-100 text-neutral-800 ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 dark:bg-neutral-700 dark:text-neutral-100 lg:hidden">
+    Table of Contents
+  </summary>
+  <div
+    class="min-w-[220px] py-2 border-dotted ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
+    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#intro">Intro</a></li>
+        <li><a href="#the-guide">The Guide</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</details>
+<details class="toc-inside mt-0 overflow-hidden rounded-lg ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 lg:hidden">
+  <summary
+    class="py-1 text-lg font-semibold cursor-pointer bg-neutral-100 text-neutral-800 ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 dark:bg-neutral-700 dark:text-neutral-100 lg:hidden">
+    Table of Contents
+  </summary>
+  <div
+    class="py-2 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
+    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#intro">Intro</a></li>
+        <li><a href="#the-guide">The Guide</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</details>
+
+<script>
+
+  var margin = 200;
+  var marginError = 50;
+
+  (function () {
+    var $window = $(window);
+    var $toc = $('#TOCView');
+    var tocHeight = $toc.height();
+
+    function onResize() {
+      var windowAndMarginHeight = $window.height() - margin;
+      if(tocHeight >= windowAndMarginHeight) {
+        $toc.css("overflow-y", "scroll")
+        $toc.css("max-height", (windowAndMarginHeight + marginError) + "px")
+      } else {
+        $toc.css("overflow-y", "hidden")
+        $toc.css("max-height", "9999999px")
+      }
+    }
+
+    $window.on('resize', onResize);
+    $(document).ready(onResize);
+  })();
+
+
+
+  (function () {
+    var $toc = $('#TableOfContents');
+    if ($toc.length > 0) {
+      var $window = $(window);
+
+      function onScroll() {
+        var currentScroll = $window.scrollTop();
+        var h = $('.anchor');
+        var id = "";
+        h.each(function (i, e) {
+          e = $(e);
+          if (e.offset().top - $(window).height()/3 <= currentScroll) {
+            id = decodeURIComponent(e.attr('id'));
+          }
+        });
+        var active = $toc.find('a.active');      
+        if (active.length == 1 && active.eq(0).attr('href') == '#' + id) return true;
+
+        active.each(function (i, e) {
+          
+            $(e).removeClass('active');
+          
+        });
+        $toc.find('a[href="#' + id + '"]').addClass('active')
+        $toc.find('a[href="#' + id + '"]').parentsUntil('#TableOfContents').each(function (i, e) {
+          $(e).children('a').parents('ul').show();          
+        });
+      }
+
+      $window.on('scroll', onScroll);
+      $(document).ready(function () {
+        
+        onScroll();
+      });
+    }
+  })();
+
+
+</script>
+   </div>
+      </div>
+      
+
+      <div class="min-w-0 min-h-0 max-w-fit">
+        
+        
+
+
+        <div class="article-content max-w-prose mb-20">
           
 
-          
+<h3 class="relative group">Intro 
+    <div id="intro" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#intro" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p>Most of you might already know about the amazing tool called <strong>Ventoy</strong> and how amazing it is at removing the need to have more USB drives if you want to use multiple ISOs, but you might not know about how many more amazing features it has.</p>
+<p>Today I will be showing you how to make a specific Live ISO on your Ventoy USB Drive save all the changes that you make to it.</p>
 
-          
-          <div class="mb-10"></div>
-          
 
+<h3 class="relative group">The Guide 
+    <div id="the-guide" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#the-guide" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p>Starting off you would want to have <strong>Ventoy</strong> installed and copy the folder from <code>/opt/ventoy</code> to your USB Drive and renaming it to <code>ventoy_plugins</code> or anything else that you might like.</p>
+<p>
+  <figure>
+    <img class="my-0 rounded-md" loading="lazy" src="https://i.imgur.com/Hg7iIzd.png" alt="[Image: Hg7iIzd.png]" />
+    
+  </figure>
+</p>
+<p>Then go into the <code>ventoy_plugins</code> folder open a terminal and run <code>sudo sh CreatePersistenceImg.sh -s 20480 -l vtoycow</code> this will create a file called <code>persistence.dat</code> with the size of 20GB, refer to <a href="https://www.ventoy.net/en/plugin_persistence.html" target="_blank">this</a> article from Ventoy for different arguments for the command. After a while you will be granted with this confirmation, just hit <code>y</code> and <code>enter</code> and in a few seconds it should be done.</p>
+<p>
+  <figure>
+    <img class="my-0 rounded-md" loading="lazy" src="https://i.imgur.com/8rKKvT4.png" alt="[Image: 8rKKvT4.png]" />
+    
+  </figure>
+</p>
+<p>Now create a new folder called <code>persistence</code> in the root folder and move the <code>persistence.dat</code> there. Going back to the terminal run <code>sudo sh VentoyPlugson.sh /dev/sdx</code> where <code>x</code> is your USB Drive id.</p>
+<p>
+  <figure>
+    <img class="my-0 rounded-md" loading="lazy" src="https://i.imgur.com/GElDr8y.png" alt="[Image: GElDr8y.png]" />
+    
+  </figure>
+</p>
+<p>Just head over to the webaddress that you get from the terminal, there you will be granted with the Ventoy Plugson WebUI. Head over to the <code>Persistence Plugin</code> and click on add new and just enter the file paths to the ISO that you want and the <code>persistence.dat</code> file and make sure that it says <code>OK</code>.</p>
+<p>
+  <figure>
+    <img class="my-0 rounded-md" loading="lazy" src="https://i.imgur.com/PGduHPr.png" alt="[Image: PGduHPr.png]" />
+    
+  </figure>
+</p>
+<p>Now if you boot into the Xero Linux ISO any changes that you make to it should get saved.</p>
+<p>Cheers :heart:</p>
+
+        </div>
+        
         
 
         

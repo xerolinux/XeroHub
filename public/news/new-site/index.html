@@ -900,212 +900,10 @@
     
 
     
-
-  </header>
-  
-  <section class="flex flex-col max-w-full mt-0 prose dark:prose-invert lg:flex-row">
-    
-     <div
-      class="order-first lg:ml-auto px-0 lg:order-last ltr:lg:pl-8 rtl:lg:pr-8">
-      <div class="toc ltr:pl-5 rtl:pr-5 print:hidden lg:sticky lg:top-[140px]">
-
-         <details open id="TOCView"
-  class="toc-right mt-0 overflow-y-scroll overscroll-contain scrollbar-thin scrollbar-track-neutral-200 scrollbar-thumb-neutral-400 dark:scrollbar-track-neutral-800 dark:scrollbar-thumb-neutral-600 rounded-lg ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 hidden lg:block">
-  <summary
-    class="block py-1 text-lg font-semibold cursor-pointer bg-neutral-100 text-neutral-800 ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 dark:bg-neutral-700 dark:text-neutral-100 lg:hidden">
-    Table of Contents
-  </summary>
-  <div
-    class="min-w-[220px] py-2 border-dotted ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
-    <nav id="TableOfContents">
-  <ul>
-    <li>
-      <ul>
-        <li><a href="#not-again-">Not Again !</a></li>
-        <li><a href="#what-is-it-">What is it ?</a></li>
-        <li><a href="#what-about-your-other-blog-">What about your other blog ?</a></li>
-        <li><a href="#and-the-forum-">And the Forum ?</a></li>
-        <li><a href="#closing-words">Closing words</a></li>
-      </ul>
-    </li>
-  </ul>
-</nav>
-  </div>
-</details>
-<details class="toc-inside mt-0 overflow-hidden rounded-lg ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 lg:hidden">
-  <summary
-    class="py-1 text-lg font-semibold cursor-pointer bg-neutral-100 text-neutral-800 ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 dark:bg-neutral-700 dark:text-neutral-100 lg:hidden">
-    Table of Contents
-  </summary>
-  <div
-    class="py-2 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
-    <nav id="TableOfContents">
-  <ul>
-    <li>
-      <ul>
-        <li><a href="#not-again-">Not Again !</a></li>
-        <li><a href="#what-is-it-">What is it ?</a></li>
-        <li><a href="#what-about-your-other-blog-">What about your other blog ?</a></li>
-        <li><a href="#and-the-forum-">And the Forum ?</a></li>
-        <li><a href="#closing-words">Closing words</a></li>
-      </ul>
-    </li>
-  </ul>
-</nav>
-  </div>
-</details>
-
-<script>
-
-  var margin = 200;
-  var marginError = 50;
-
-  (function () {
-    var $window = $(window);
-    var $toc = $('#TOCView');
-    var tocHeight = $toc.height();
-
-    function onResize() {
-      var windowAndMarginHeight = $window.height() - margin;
-      if(tocHeight >= windowAndMarginHeight) {
-        $toc.css("overflow-y", "scroll")
-        $toc.css("max-height", (windowAndMarginHeight + marginError) + "px")
-      } else {
-        $toc.css("overflow-y", "hidden")
-        $toc.css("max-height", "9999999px")
-      }
-    }
-
-    $window.on('resize', onResize);
-    $(document).ready(onResize);
-  })();
-
-
-
-  (function () {
-    var $toc = $('#TableOfContents');
-    if ($toc.length > 0) {
-      var $window = $(window);
-
-      function onScroll() {
-        var currentScroll = $window.scrollTop();
-        var h = $('.anchor');
-        var id = "";
-        h.each(function (i, e) {
-          e = $(e);
-          if (e.offset().top - $(window).height()/3 <= currentScroll) {
-            id = decodeURIComponent(e.attr('id'));
-          }
-        });
-        var active = $toc.find('a.active');      
-        if (active.length == 1 && active.eq(0).attr('href') == '#' + id) return true;
-
-        active.each(function (i, e) {
-          
-            $(e).removeClass('active');
-          
-        });
-        $toc.find('a[href="#' + id + '"]').addClass('active')
-        $toc.find('a[href="#' + id + '"]').parentsUntil('#TableOfContents').each(function (i, e) {
-          $(e).children('a').parents('ul').show();          
-        });
-      }
-
-      $window.on('scroll', onScroll);
-      $(document).ready(function () {
-        
-        onScroll();
-      });
-    }
-  })();
-
-
-</script>
-   </div>
-      </div>
       
-
-      <div class="min-w-0 min-h-0 max-w-fit">
+      
         
         
-
-
-        <div class="article-content max-w-prose mb-20">
-          
-
-<h3 class="relative group">Not Again ! 
-    <div id="not-again-" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#not-again-" aria-label="Anchor">#</a>
-    </span>        
-    
-</h3>
-<p>Yep, again lol&hellip; I dunno what else to say. I will keep trying different designs out until I am satisfied. But if all goes well, this will be the last time, who knows ? FOr now enjoy the new look n feel. I really hope you like it. I need to thank <a href="https://zaney.org" target="_blank"><strong>Zaney</strong></a> for letting me know about this awesome theme. I am still figuring it out as I go. If you can help feel free to let me know.</p>
-
-
-<h3 class="relative group">What is it ? 
-    <div id="what-is-it-" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#what-is-it-" aria-label="Anchor">#</a>
-    </span>        
-    
-</h3>
-<p>Well, if you do not know, this site is using <a href="https://gohugo.io" target="_blank"><strong>Hugo</strong></a> with a theme called <a href="https://blowfish.page" target="_blank"><strong>Blowfish</strong></a>. Great combo if you ask me. So many features to go through. I did not even scratch the surface yet. Things will get better soon.</p>
-
-
-<h3 class="relative group">What about your other blog ? 
-    <div id="what-about-your-other-blog-" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#what-about-your-other-blog-" aria-label="Anchor">#</a>
-    </span>        
-    
-</h3>
-<p>That&rsquo;s a tricky question. Consider the other blog as my journal, where I post my thoughts and feelings about things that are happening in the <strong>FOSS</strong> world. Here I will be posting updates related to my various projects, as well as some other <strong>Open Source</strong> news/articles.</p>
-
-
-<h3 class="relative group">And the Forum ? 
-    <div id="and-the-forum-" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#and-the-forum-" aria-label="Anchor">#</a>
-    </span>        
-    
-</h3>
-<p>The XeroLinux <a href="https://forum.xerolinux.xyz" target="_blank"><strong>Forums</strong></a> will be closed down by the end of this month once I have ported over all releveant posts from it. So do not be surprised if you come looking and you don&rsquo;t find them.</p>
-
-
-<h3 class="relative group">Closing words 
-    <div id="closing-words" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#closing-words" aria-label="Anchor">#</a>
-    </span>        
-    
-</h3>
-<p>I know this might be a lot to take in. I am trying to organize things to the best of my abilities. I will be putting everything under one roof, this one. My &ldquo;Journal&rdquo; however will remain coz I do not want to tarnish this site with my ramblings.</p>
-<p>Until then let me know what you think of this new look. If you have any suggestions or ideas on how I can make it all better feel free to let me know how. Thanks for reading this. Here&rsquo;s to future posts&hellip;</p>
-<p>Cheers :heart:</p>
-
-        </div>
-        
-        
-
-          
-            
-            
 <div class="flex author">
   
     
@@ -1321,14 +1119,216 @@
   </div>
 </div>
 
+      
+
+      
+
+      
+      <div class="mb-5"></div>
+      
+
+    
+
+  </header>
+  
+  <section class="flex flex-col max-w-full mt-0 prose dark:prose-invert lg:flex-row">
+    
+     <div
+      class="order-first lg:ml-auto px-0 lg:order-last ltr:lg:pl-8 rtl:lg:pr-8">
+      <div class="toc ltr:pl-5 rtl:pr-5 print:hidden lg:sticky lg:top-[140px]">
+
+         <details open id="TOCView"
+  class="toc-right mt-0 overflow-y-scroll overscroll-contain scrollbar-thin scrollbar-track-neutral-200 scrollbar-thumb-neutral-400 dark:scrollbar-track-neutral-800 dark:scrollbar-thumb-neutral-600 rounded-lg ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 hidden lg:block">
+  <summary
+    class="block py-1 text-lg font-semibold cursor-pointer bg-neutral-100 text-neutral-800 ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 dark:bg-neutral-700 dark:text-neutral-100 lg:hidden">
+    Table of Contents
+  </summary>
+  <div
+    class="min-w-[220px] py-2 border-dotted ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
+    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#not-again-">Not Again !</a></li>
+        <li><a href="#what-is-it-">What is it ?</a></li>
+        <li><a href="#what-about-your-other-blog-">What about your other blog ?</a></li>
+        <li><a href="#and-the-forum-">And the Forum ?</a></li>
+        <li><a href="#closing-words">Closing words</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</details>
+<details class="toc-inside mt-0 overflow-hidden rounded-lg ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 lg:hidden">
+  <summary
+    class="py-1 text-lg font-semibold cursor-pointer bg-neutral-100 text-neutral-800 ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 dark:bg-neutral-700 dark:text-neutral-100 lg:hidden">
+    Table of Contents
+  </summary>
+  <div
+    class="py-2 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
+    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#not-again-">Not Again !</a></li>
+        <li><a href="#what-is-it-">What is it ?</a></li>
+        <li><a href="#what-about-your-other-blog-">What about your other blog ?</a></li>
+        <li><a href="#and-the-forum-">And the Forum ?</a></li>
+        <li><a href="#closing-words">Closing words</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</details>
+
+<script>
+
+  var margin = 200;
+  var marginError = 50;
+
+  (function () {
+    var $window = $(window);
+    var $toc = $('#TOCView');
+    var tocHeight = $toc.height();
+
+    function onResize() {
+      var windowAndMarginHeight = $window.height() - margin;
+      if(tocHeight >= windowAndMarginHeight) {
+        $toc.css("overflow-y", "scroll")
+        $toc.css("max-height", (windowAndMarginHeight + marginError) + "px")
+      } else {
+        $toc.css("overflow-y", "hidden")
+        $toc.css("max-height", "9999999px")
+      }
+    }
+
+    $window.on('resize', onResize);
+    $(document).ready(onResize);
+  })();
+
+
+
+  (function () {
+    var $toc = $('#TableOfContents');
+    if ($toc.length > 0) {
+      var $window = $(window);
+
+      function onScroll() {
+        var currentScroll = $window.scrollTop();
+        var h = $('.anchor');
+        var id = "";
+        h.each(function (i, e) {
+          e = $(e);
+          if (e.offset().top - $(window).height()/3 <= currentScroll) {
+            id = decodeURIComponent(e.attr('id'));
+          }
+        });
+        var active = $toc.find('a.active');      
+        if (active.length == 1 && active.eq(0).attr('href') == '#' + id) return true;
+
+        active.each(function (i, e) {
+          
+            $(e).removeClass('active');
+          
+        });
+        $toc.find('a[href="#' + id + '"]').addClass('active')
+        $toc.find('a[href="#' + id + '"]').parentsUntil('#TableOfContents').each(function (i, e) {
+          $(e).children('a').parents('ul').show();          
+        });
+      }
+
+      $window.on('scroll', onScroll);
+      $(document).ready(function () {
+        
+        onScroll();
+      });
+    }
+  })();
+
+
+</script>
+   </div>
+      </div>
+      
+
+      <div class="min-w-0 min-h-0 max-w-fit">
+        
+        
+
+
+        <div class="article-content max-w-prose mb-20">
           
 
-          
+<h3 class="relative group">Not Again ! 
+    <div id="not-again-" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#not-again-" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p>Yep, again lol&hellip; I dunno what else to say. I will keep trying different designs out until I am satisfied. But if all goes well, this will be the last time, who knows ? FOr now enjoy the new look n feel. I really hope you like it. I need to thank <a href="https://zaney.org" target="_blank"><strong>Zaney</strong></a> for letting me know about this awesome theme. I am still figuring it out as I go. If you can help feel free to let me know.</p>
 
-          
-          <div class="mb-10"></div>
-          
 
+<h3 class="relative group">What is it ? 
+    <div id="what-is-it-" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#what-is-it-" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p>Well, if you do not know, this site is using <a href="https://gohugo.io" target="_blank"><strong>Hugo</strong></a> with a theme called <a href="https://blowfish.page" target="_blank"><strong>Blowfish</strong></a>. Great combo if you ask me. So many features to go through. I did not even scratch the surface yet. Things will get better soon.</p>
+
+
+<h3 class="relative group">What about your other blog ? 
+    <div id="what-about-your-other-blog-" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#what-about-your-other-blog-" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p>That&rsquo;s a tricky question. Consider the other blog as my journal, where I post my thoughts and feelings about things that are happening in the <strong>FOSS</strong> world. Here I will be posting updates related to my various projects, as well as some other <strong>Open Source</strong> news/articles.</p>
+
+
+<h3 class="relative group">And the Forum ? 
+    <div id="and-the-forum-" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#and-the-forum-" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p>The XeroLinux <a href="https://forum.xerolinux.xyz" target="_blank"><strong>Forums</strong></a> will be closed down by the end of this month once I have ported over all releveant posts from it. So do not be surprised if you come looking and you don&rsquo;t find them.</p>
+
+
+<h3 class="relative group">Closing words 
+    <div id="closing-words" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#closing-words" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p>I know this might be a lot to take in. I am trying to organize things to the best of my abilities. I will be putting everything under one roof, this one. My &ldquo;Journal&rdquo; however will remain coz I do not want to tarnish this site with my ramblings.</p>
+<p>Until then let me know what you think of this new look. If you have any suggestions or ideas on how I can make it all better feel free to let me know how. Thanks for reading this. Here&rsquo;s to future posts&hellip;</p>
+<p>Cheers :heart:</p>
+
+        </div>
+        
         
 
         

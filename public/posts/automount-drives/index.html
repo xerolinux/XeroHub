@@ -927,205 +927,10 @@
     
 
     
-
-  </header>
-  
-  <section class="flex flex-col max-w-full mt-0 prose dark:prose-invert lg:flex-row">
-    
-     <div
-      class="order-first lg:ml-auto px-0 lg:order-last ltr:lg:pl-8 rtl:lg:pr-8">
-      <div class="toc ltr:pl-5 rtl:pr-5 print:hidden lg:sticky lg:top-[140px]">
-
-         <details open id="TOCView"
-  class="toc-right mt-0 overflow-y-scroll overscroll-contain scrollbar-thin scrollbar-track-neutral-200 scrollbar-thumb-neutral-400 dark:scrollbar-track-neutral-800 dark:scrollbar-thumb-neutral-600 rounded-lg ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 hidden lg:block">
-  <summary
-    class="block py-1 text-lg font-semibold cursor-pointer bg-neutral-100 text-neutral-800 ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 dark:bg-neutral-700 dark:text-neutral-100 lg:hidden">
-    Table of Contents
-  </summary>
-  <div
-    class="min-w-[220px] py-2 border-dotted ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
-    <nav id="TableOfContents">
-  <ul>
-    <li>
-      <ul>
-        <li><a href="#intro">Intro</a></li>
-        <li><a href="#gnome-disks">Gnome Disks</a></li>
-        <li><a href="#how-to-automount-disks-on-startup">How to automount Disks on startup</a></li>
-      </ul>
-    </li>
-  </ul>
-</nav>
-  </div>
-</details>
-<details class="toc-inside mt-0 overflow-hidden rounded-lg ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 lg:hidden">
-  <summary
-    class="py-1 text-lg font-semibold cursor-pointer bg-neutral-100 text-neutral-800 ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 dark:bg-neutral-700 dark:text-neutral-100 lg:hidden">
-    Table of Contents
-  </summary>
-  <div
-    class="py-2 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
-    <nav id="TableOfContents">
-  <ul>
-    <li>
-      <ul>
-        <li><a href="#intro">Intro</a></li>
-        <li><a href="#gnome-disks">Gnome Disks</a></li>
-        <li><a href="#how-to-automount-disks-on-startup">How to automount Disks on startup</a></li>
-      </ul>
-    </li>
-  </ul>
-</nav>
-  </div>
-</details>
-
-<script>
-
-  var margin = 200;
-  var marginError = 50;
-
-  (function () {
-    var $window = $(window);
-    var $toc = $('#TOCView');
-    var tocHeight = $toc.height();
-
-    function onResize() {
-      var windowAndMarginHeight = $window.height() - margin;
-      if(tocHeight >= windowAndMarginHeight) {
-        $toc.css("overflow-y", "scroll")
-        $toc.css("max-height", (windowAndMarginHeight + marginError) + "px")
-      } else {
-        $toc.css("overflow-y", "hidden")
-        $toc.css("max-height", "9999999px")
-      }
-    }
-
-    $window.on('resize', onResize);
-    $(document).ready(onResize);
-  })();
-
-
-
-  (function () {
-    var $toc = $('#TableOfContents');
-    if ($toc.length > 0) {
-      var $window = $(window);
-
-      function onScroll() {
-        var currentScroll = $window.scrollTop();
-        var h = $('.anchor');
-        var id = "";
-        h.each(function (i, e) {
-          e = $(e);
-          if (e.offset().top - $(window).height()/3 <= currentScroll) {
-            id = decodeURIComponent(e.attr('id'));
-          }
-        });
-        var active = $toc.find('a.active');      
-        if (active.length == 1 && active.eq(0).attr('href') == '#' + id) return true;
-
-        active.each(function (i, e) {
-          
-            $(e).removeClass('active');
-          
-        });
-        $toc.find('a[href="#' + id + '"]').addClass('active')
-        $toc.find('a[href="#' + id + '"]').parentsUntil('#TableOfContents').each(function (i, e) {
-          $(e).children('a').parents('ul').show();          
-        });
-      }
-
-      $window.on('scroll', onScroll);
-      $(document).ready(function () {
-        
-        onScroll();
-      });
-    }
-  })();
-
-
-</script>
-   </div>
-      </div>
       
-
-      <div class="min-w-0 min-h-0 max-w-fit">
+      
         
         
-
-
-        <div class="article-content max-w-prose mb-20">
-          
-
-<h3 class="relative group">Intro 
-    <div id="intro" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#intro" aria-label="Anchor">#</a>
-    </span>        
-    
-</h3>
-<p>This keeps being asked on social. So I decided to post it here.. It&rsquo;s all over the net but I guess either no one knows how to search or too lazy, in any case here it is&hellip;</p>
-
-
-<h3 class="relative group">Gnome Disks 
-    <div id="gnome-disks" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#gnome-disks" aria-label="Anchor">#</a>
-    </span>        
-    
-</h3>
-<p><a href="https://wiki.gnome.org/Apps/Disks" target="_blank">Gnome Disks</a> has many features, like S.M.A.R.T. monitoring, partition management, benchmarking, and more, including one that might not be obvious, but is very useful: it can set drives to mount automatically at startup.</p>
-<p>Use it to automount your new hard disk that uses Ext4, your Windows NTFS / exFAT partition, etc.</p>
-<p>
-  <figure>
-    <img class="my-0 rounded-md" loading="lazy" src="https://i.imgur.com/jsnRZUU.png" alt="[Image: jsnRZUU.png]" />
-    
-  </figure>
-</p>
-<p>Disks, or Gnome Disk Utility, is installed by default in many Linux distributions, including Ubuntu, Fedora, both Linux Mint Cinnamon and MATE, Xubuntu, and so on. If it&rsquo;s not installed, use your Linux distribution&rsquo;s package manager to install it - search / install gnome-disk-utility.</p>
-<p>For each partition you set to mount automatically on startup, Gnome Disks adds an entry in your /etc/fstab file, useful for those who are not very familiar with editing /etc/fstab. That means each partition mounted on startup through Disks is available system-wide, and not just for your user.</p>
-
-
-<h3 class="relative group">How to automount Disks on startup 
-    <div id="how-to-automount-disks-on-startup" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#how-to-automount-disks-on-startup" aria-label="Anchor">#</a>
-    </span>        
-    
-</h3>
-<p>Start by launching &ldquo;Disks&rdquo; from your applications menu. Choose the hard disk from the left Disks sidebar, select the partition you want to auto mount on startup, then click the button with the gears icon under it, and click <code>Edit Mount Options</code>:</p>
-<p>
-  <figure>
-    <img class="my-0 rounded-md" loading="lazy" src="https://i.imgur.com/27YPYEC.png" alt="[Image: 27YPYEC.png]" />
-    
-  </figure>
-</p>
-<p>In the mount options, toggle the <code>User Session Defaults</code> option (this may be called <code>Automatic Mount Options</code> on older versions) to enable the options below it, and make sure <code>Mount at system startup</code> is enabled. You can enter a name under <code>Display Name</code>. The defaults should be enough for most users, so you don&rsquo;t have to change anything here. After you&rsquo;re done, click <code>OK</code> :</p>
-<p>
-  <figure>
-    <img class="my-0 rounded-md" loading="lazy" src="https://i.imgur.com/HzloKaO.png" alt="[Image: HzloKaO.png]" />
-    
-  </figure>
-</p>
-<p>To test the changes, you can reboot your system or type the following command to mount all filesystems mentioned in <code>fstab</code> (since Disks sets partitions to automount on startup by adding them to <code>/etc/fstab</code>) :</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Bash" data-lang="Bash"><span class="line"><span class="cl">sudo mount --all
-</span></span></code></pre></div><p>Hope this answers that question&hellip;.</p>
-
-        </div>
-        
-        
-
-          
-            
-            
 <div class="flex author">
   
     
@@ -1341,14 +1146,209 @@
   </div>
 </div>
 
+      
+
+      
+
+      
+      <div class="mb-5"></div>
+      
+
+    
+
+  </header>
+  
+  <section class="flex flex-col max-w-full mt-0 prose dark:prose-invert lg:flex-row">
+    
+     <div
+      class="order-first lg:ml-auto px-0 lg:order-last ltr:lg:pl-8 rtl:lg:pr-8">
+      <div class="toc ltr:pl-5 rtl:pr-5 print:hidden lg:sticky lg:top-[140px]">
+
+         <details open id="TOCView"
+  class="toc-right mt-0 overflow-y-scroll overscroll-contain scrollbar-thin scrollbar-track-neutral-200 scrollbar-thumb-neutral-400 dark:scrollbar-track-neutral-800 dark:scrollbar-thumb-neutral-600 rounded-lg ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 hidden lg:block">
+  <summary
+    class="block py-1 text-lg font-semibold cursor-pointer bg-neutral-100 text-neutral-800 ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 dark:bg-neutral-700 dark:text-neutral-100 lg:hidden">
+    Table of Contents
+  </summary>
+  <div
+    class="min-w-[220px] py-2 border-dotted ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
+    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#intro">Intro</a></li>
+        <li><a href="#gnome-disks">Gnome Disks</a></li>
+        <li><a href="#how-to-automount-disks-on-startup">How to automount Disks on startup</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</details>
+<details class="toc-inside mt-0 overflow-hidden rounded-lg ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 lg:hidden">
+  <summary
+    class="py-1 text-lg font-semibold cursor-pointer bg-neutral-100 text-neutral-800 ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 dark:bg-neutral-700 dark:text-neutral-100 lg:hidden">
+    Table of Contents
+  </summary>
+  <div
+    class="py-2 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
+    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#intro">Intro</a></li>
+        <li><a href="#gnome-disks">Gnome Disks</a></li>
+        <li><a href="#how-to-automount-disks-on-startup">How to automount Disks on startup</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</details>
+
+<script>
+
+  var margin = 200;
+  var marginError = 50;
+
+  (function () {
+    var $window = $(window);
+    var $toc = $('#TOCView');
+    var tocHeight = $toc.height();
+
+    function onResize() {
+      var windowAndMarginHeight = $window.height() - margin;
+      if(tocHeight >= windowAndMarginHeight) {
+        $toc.css("overflow-y", "scroll")
+        $toc.css("max-height", (windowAndMarginHeight + marginError) + "px")
+      } else {
+        $toc.css("overflow-y", "hidden")
+        $toc.css("max-height", "9999999px")
+      }
+    }
+
+    $window.on('resize', onResize);
+    $(document).ready(onResize);
+  })();
+
+
+
+  (function () {
+    var $toc = $('#TableOfContents');
+    if ($toc.length > 0) {
+      var $window = $(window);
+
+      function onScroll() {
+        var currentScroll = $window.scrollTop();
+        var h = $('.anchor');
+        var id = "";
+        h.each(function (i, e) {
+          e = $(e);
+          if (e.offset().top - $(window).height()/3 <= currentScroll) {
+            id = decodeURIComponent(e.attr('id'));
+          }
+        });
+        var active = $toc.find('a.active');      
+        if (active.length == 1 && active.eq(0).attr('href') == '#' + id) return true;
+
+        active.each(function (i, e) {
+          
+            $(e).removeClass('active');
+          
+        });
+        $toc.find('a[href="#' + id + '"]').addClass('active')
+        $toc.find('a[href="#' + id + '"]').parentsUntil('#TableOfContents').each(function (i, e) {
+          $(e).children('a').parents('ul').show();          
+        });
+      }
+
+      $window.on('scroll', onScroll);
+      $(document).ready(function () {
+        
+        onScroll();
+      });
+    }
+  })();
+
+
+</script>
+   </div>
+      </div>
+      
+
+      <div class="min-w-0 min-h-0 max-w-fit">
+        
+        
+
+
+        <div class="article-content max-w-prose mb-20">
           
 
-          
+<h3 class="relative group">Intro 
+    <div id="intro" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#intro" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p>This keeps being asked on social. So I decided to post it here.. It&rsquo;s all over the net but I guess either no one knows how to search or too lazy, in any case here it is&hellip;</p>
 
-          
-          <div class="mb-10"></div>
-          
 
+<h3 class="relative group">Gnome Disks 
+    <div id="gnome-disks" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#gnome-disks" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p><a href="https://wiki.gnome.org/Apps/Disks" target="_blank">Gnome Disks</a> has many features, like S.M.A.R.T. monitoring, partition management, benchmarking, and more, including one that might not be obvious, but is very useful: it can set drives to mount automatically at startup.</p>
+<p>Use it to automount your new hard disk that uses Ext4, your Windows NTFS / exFAT partition, etc.</p>
+<p>
+  <figure>
+    <img class="my-0 rounded-md" loading="lazy" src="https://i.imgur.com/jsnRZUU.png" alt="[Image: jsnRZUU.png]" />
+    
+  </figure>
+</p>
+<p>Disks, or Gnome Disk Utility, is installed by default in many Linux distributions, including Ubuntu, Fedora, both Linux Mint Cinnamon and MATE, Xubuntu, and so on. If it&rsquo;s not installed, use your Linux distribution&rsquo;s package manager to install it - search / install gnome-disk-utility.</p>
+<p>For each partition you set to mount automatically on startup, Gnome Disks adds an entry in your /etc/fstab file, useful for those who are not very familiar with editing /etc/fstab. That means each partition mounted on startup through Disks is available system-wide, and not just for your user.</p>
+
+
+<h3 class="relative group">How to automount Disks on startup 
+    <div id="how-to-automount-disks-on-startup" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#how-to-automount-disks-on-startup" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p>Start by launching &ldquo;Disks&rdquo; from your applications menu. Choose the hard disk from the left Disks sidebar, select the partition you want to auto mount on startup, then click the button with the gears icon under it, and click <code>Edit Mount Options</code>:</p>
+<p>
+  <figure>
+    <img class="my-0 rounded-md" loading="lazy" src="https://i.imgur.com/27YPYEC.png" alt="[Image: 27YPYEC.png]" />
+    
+  </figure>
+</p>
+<p>In the mount options, toggle the <code>User Session Defaults</code> option (this may be called <code>Automatic Mount Options</code> on older versions) to enable the options below it, and make sure <code>Mount at system startup</code> is enabled. You can enter a name under <code>Display Name</code>. The defaults should be enough for most users, so you don&rsquo;t have to change anything here. After you&rsquo;re done, click <code>OK</code> :</p>
+<p>
+  <figure>
+    <img class="my-0 rounded-md" loading="lazy" src="https://i.imgur.com/HzloKaO.png" alt="[Image: HzloKaO.png]" />
+    
+  </figure>
+</p>
+<p>To test the changes, you can reboot your system or type the following command to mount all filesystems mentioned in <code>fstab</code> (since Disks sets partitions to automount on startup by adding them to <code>/etc/fstab</code>) :</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Bash" data-lang="Bash"><span class="line"><span class="cl">sudo mount --all
+</span></span></code></pre></div><p>Hope this answers that question&hellip;.</p>
+
+        </div>
+        
         
 
         

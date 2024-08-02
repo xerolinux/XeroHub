@@ -900,223 +900,10 @@
     
 
     
-
-  </header>
-  
-  <section class="flex flex-col max-w-full mt-0 prose dark:prose-invert lg:flex-row">
-    
-     <div
-      class="order-first lg:ml-auto px-0 lg:order-last ltr:lg:pl-8 rtl:lg:pr-8">
-      <div class="toc ltr:pl-5 rtl:pr-5 print:hidden lg:sticky lg:top-[140px]">
-
-         <details open id="TOCView"
-  class="toc-right mt-0 overflow-y-scroll overscroll-contain scrollbar-thin scrollbar-track-neutral-200 scrollbar-thumb-neutral-400 dark:scrollbar-track-neutral-800 dark:scrollbar-thumb-neutral-600 rounded-lg ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 hidden lg:block">
-  <summary
-    class="block py-1 text-lg font-semibold cursor-pointer bg-neutral-100 text-neutral-800 ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 dark:bg-neutral-700 dark:text-neutral-100 lg:hidden">
-    Table of Contents
-  </summary>
-  <div
-    class="min-w-[220px] py-2 border-dotted ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
-    <nav id="TableOfContents">
-  <ul>
-    <li>
-      <ul>
-        <li><a href="#back-story">Back Story</a></li>
-        <li><a href="#present--future">Present &amp; Future</a></li>
-        <li><a href="#blogging">Blogging</a></li>
-        <li><a href="#the-other-blog">The other blog</a></li>
-        <li><a href="#closing-words">Closing words</a></li>
-      </ul>
-    </li>
-  </ul>
-</nav>
-  </div>
-</details>
-<details class="toc-inside mt-0 overflow-hidden rounded-lg ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 lg:hidden">
-  <summary
-    class="py-1 text-lg font-semibold cursor-pointer bg-neutral-100 text-neutral-800 ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 dark:bg-neutral-700 dark:text-neutral-100 lg:hidden">
-    Table of Contents
-  </summary>
-  <div
-    class="py-2 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
-    <nav id="TableOfContents">
-  <ul>
-    <li>
-      <ul>
-        <li><a href="#back-story">Back Story</a></li>
-        <li><a href="#present--future">Present &amp; Future</a></li>
-        <li><a href="#blogging">Blogging</a></li>
-        <li><a href="#the-other-blog">The other blog</a></li>
-        <li><a href="#closing-words">Closing words</a></li>
-      </ul>
-    </li>
-  </ul>
-</nav>
-  </div>
-</details>
-
-<script>
-
-  var margin = 200;
-  var marginError = 50;
-
-  (function () {
-    var $window = $(window);
-    var $toc = $('#TOCView');
-    var tocHeight = $toc.height();
-
-    function onResize() {
-      var windowAndMarginHeight = $window.height() - margin;
-      if(tocHeight >= windowAndMarginHeight) {
-        $toc.css("overflow-y", "scroll")
-        $toc.css("max-height", (windowAndMarginHeight + marginError) + "px")
-      } else {
-        $toc.css("overflow-y", "hidden")
-        $toc.css("max-height", "9999999px")
-      }
-    }
-
-    $window.on('resize', onResize);
-    $(document).ready(onResize);
-  })();
-
-
-
-  (function () {
-    var $toc = $('#TableOfContents');
-    if ($toc.length > 0) {
-      var $window = $(window);
-
-      function onScroll() {
-        var currentScroll = $window.scrollTop();
-        var h = $('.anchor');
-        var id = "";
-        h.each(function (i, e) {
-          e = $(e);
-          if (e.offset().top - $(window).height()/3 <= currentScroll) {
-            id = decodeURIComponent(e.attr('id'));
-          }
-        });
-        var active = $toc.find('a.active');      
-        if (active.length == 1 && active.eq(0).attr('href') == '#' + id) return true;
-
-        active.each(function (i, e) {
-          
-            $(e).removeClass('active');
-          
-        });
-        $toc.find('a[href="#' + id + '"]').addClass('active')
-        $toc.find('a[href="#' + id + '"]').parentsUntil('#TableOfContents').each(function (i, e) {
-          $(e).children('a').parents('ul').show();          
-        });
-      }
-
-      $window.on('scroll', onScroll);
-      $(document).ready(function () {
-        
-        onScroll();
-      });
-    }
-  })();
-
-
-</script>
-   </div>
-      </div>
       
-
-      <div class="min-w-0 min-h-0 max-w-fit">
+      
         
         
-
-
-        <div class="article-content max-w-prose mb-20">
-          <p>Today I bring you a different kind of post. So sit back, grab a cup of tea/coffee and read on. It&rsquo;s under this category coz it simply isn&rsquo;t related to Linux.</p>
-
-
-<h3 class="relative group">Back Story 
-    <div id="back-story" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#back-story" aria-label="Anchor">#</a>
-    </span>        
-    
-</h3>
-<p>I want to talk about project&rsquo;s <strong>YouTube Channel</strong>. I know I talked about it a few times before, but this time it&rsquo;s not personal. Far from it, it&rsquo;s just to update everyone on the situation.</p>
-<p>Let&rsquo;s begin with how it all started. As I was working on the now discontinued <strong>XeroLinux</strong> Distro, someone asked me if I could create a channel where I documented everything. At first I hesitated, due to the lack of knowledge there, and being camera shy, which am not anymore as you saw.</p>
-<p>First few videos did not have my face, but slowly I started to appear in a few until it became the norm. I kept experimenting with a few setups still did until today. Was never satisfied.</p>
-<p>I did not know what type of content to bring you guys, and getting monetization status was hard, until I met Alex from <a href="https://www.youtube.com/@thelinuxtube/videos" target="_blank"><strong>TheLinuxTube</strong></a> channel, who introduned me to someone who helped me get there and fast. But sadly, even with that status, I wasn&rsquo;t getting enough views to profit from it.</p>
-<p>I get it, it&rsquo;s not your fault, but it was more related to the type of content I was making, mostly related to <strong>ArchLinux</strong> and my project. I even attempted to to host a podcast, and interview well-known Content Creators, which I failed miserably.</p>
-<p>I did that for a while, then stopped. I came back for a while, thinking that&rsquo;s it am on a roll now, with a video every Wednesday, and a Live at the end of every month. But alas, that did not work in my favor as much as I wanted it to&hellip;</p>
-
-
-<h3 class="relative group">Present &amp; Future 
-    <div id="present--future" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#present--future" aria-label="Anchor">#</a>
-    </span>        
-    
-</h3>
-<p>Which brings me to the present. You will no longer see any videos from me for now. That&rsquo;s it, I do apologize for that. It&rsquo;s also that creating videos has affected my mental health negatively for little gain and I wasn&rsquo;t able to recover from that. Fear not though, channel isn&rsquo;t going anywhere, I will be leaving it up, in case you find a video that helps you.</p>
-<p>As for the future of the channel, well I do not know. Maybe one day, if and when I settle down, with a decent job that actually makes me money to grab the required equipment, take care of some lingering health/appearance issues, I might consider coming back.</p>
-
-
-<h3 class="relative group">Blogging 
-    <div id="blogging" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#blogging" aria-label="Anchor">#</a>
-    </span>        
-    
-</h3>
-<p>As you might have noticed, lately I have been concentrating on written content. It brings me more joy, more freedom to express myself, and most importantly I get to share more tools and guides.</p>
-<p>The only thing you will not see from me are Distro Reviews, Vs and Bechmarking posts. Why ? Well quite simply because I lack the tools, hardware for benchmarking, and prefer not to start dramas when it comes to Distro Reviews and Vs posts, because as I have noticed lately, the <strong>FOSS</strong> community tends to be strongly opinionated, and sees <em>Favoritism</em> where there is none. I will leave those kinds of posts to those who like to do them.</p>
-<p>Also I think that written content tends to be more useful than videos, simply because in case of commands to be run, paths to be used etc, it&rsquo;s easier to copy and paste rather than pause the video and type them manually. That&rsquo;s not to say that videos are not useful, on the contrary, if it weren&rsquo;t for them, posts would be stale and boring, that&rsquo;s why in my humble opinion, they compliment written content, helping us include a showcase of the product we are talking about.</p>
-<p>Anyway, from now on, and for the foreseeable future I will be concentrating on what I love most, which is blogging. I have so much to share, so little time as the saying goes lol&hellip;</p>
-
-
-<h3 class="relative group">The other blog 
-    <div id="the-other-blog" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#the-other-blog" aria-label="Anchor">#</a>
-    </span>        
-    
-</h3>
-<p>Oh, I forgot to mention the <a href="https://blog.xerolinux.xyz" target="_blank"><strong>Other Blog</strong></a>, well, since am enjoying written content, I thought I would also start a personal <em>Journal</em>, where I document how I feel about different things in the land of <strong>FOSS</strong> and my projects.</p>
-<p>I keep it separate from this site, so as to not litter it with personal feelings as it were. That kind of content has no place here. I made it publicly available, so you can join me on my quest so to say. If you don&rsquo;t care for that kind of content, by all means don&rsquo;t go there. There&rsquo;s a lot of lows with a bit of highs.. Simply coz that&rsquo;s how I feel right now. Hoping for more positivity in the near future- (knock on wood).</p>
-
-
-<h3 class="relative group">Closing words 
-    <div id="closing-words" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#closing-words" aria-label="Anchor">#</a>
-    </span>        
-    
-</h3>
-<p>I know this might be a lot to take in. I just felt like sharing an update regarding the channel, and by extension the present and future state of affairs here at the <strong>XeroLinux HQ</strong>. I hope I did not bore you to death lol.</p>
-<p>Anywho, thanks for reading all this, looking forward to your thoughts on the matter over on <a href="https://fosstodon.org/@XeroLinux" target="_blank"><strong>Fosstodon</strong></a>.</p>
-<p>Cheers !</p>
-
-        </div>
-        
-        
-
-          
-            
-            
 <div class="flex author">
   
     
@@ -1332,14 +1119,227 @@
   </div>
 </div>
 
-          
+      
 
-          
+      
 
-          
-          <div class="mb-10"></div>
-          
+      
+      <div class="mb-5"></div>
+      
 
+    
+
+  </header>
+  
+  <section class="flex flex-col max-w-full mt-0 prose dark:prose-invert lg:flex-row">
+    
+     <div
+      class="order-first lg:ml-auto px-0 lg:order-last ltr:lg:pl-8 rtl:lg:pr-8">
+      <div class="toc ltr:pl-5 rtl:pr-5 print:hidden lg:sticky lg:top-[140px]">
+
+         <details open id="TOCView"
+  class="toc-right mt-0 overflow-y-scroll overscroll-contain scrollbar-thin scrollbar-track-neutral-200 scrollbar-thumb-neutral-400 dark:scrollbar-track-neutral-800 dark:scrollbar-thumb-neutral-600 rounded-lg ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 hidden lg:block">
+  <summary
+    class="block py-1 text-lg font-semibold cursor-pointer bg-neutral-100 text-neutral-800 ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 dark:bg-neutral-700 dark:text-neutral-100 lg:hidden">
+    Table of Contents
+  </summary>
+  <div
+    class="min-w-[220px] py-2 border-dotted ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
+    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#back-story">Back Story</a></li>
+        <li><a href="#present--future">Present &amp; Future</a></li>
+        <li><a href="#blogging">Blogging</a></li>
+        <li><a href="#the-other-blog">The other blog</a></li>
+        <li><a href="#closing-words">Closing words</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</details>
+<details class="toc-inside mt-0 overflow-hidden rounded-lg ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 lg:hidden">
+  <summary
+    class="py-1 text-lg font-semibold cursor-pointer bg-neutral-100 text-neutral-800 ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 dark:bg-neutral-700 dark:text-neutral-100 lg:hidden">
+    Table of Contents
+  </summary>
+  <div
+    class="py-2 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
+    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#back-story">Back Story</a></li>
+        <li><a href="#present--future">Present &amp; Future</a></li>
+        <li><a href="#blogging">Blogging</a></li>
+        <li><a href="#the-other-blog">The other blog</a></li>
+        <li><a href="#closing-words">Closing words</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</details>
+
+<script>
+
+  var margin = 200;
+  var marginError = 50;
+
+  (function () {
+    var $window = $(window);
+    var $toc = $('#TOCView');
+    var tocHeight = $toc.height();
+
+    function onResize() {
+      var windowAndMarginHeight = $window.height() - margin;
+      if(tocHeight >= windowAndMarginHeight) {
+        $toc.css("overflow-y", "scroll")
+        $toc.css("max-height", (windowAndMarginHeight + marginError) + "px")
+      } else {
+        $toc.css("overflow-y", "hidden")
+        $toc.css("max-height", "9999999px")
+      }
+    }
+
+    $window.on('resize', onResize);
+    $(document).ready(onResize);
+  })();
+
+
+
+  (function () {
+    var $toc = $('#TableOfContents');
+    if ($toc.length > 0) {
+      var $window = $(window);
+
+      function onScroll() {
+        var currentScroll = $window.scrollTop();
+        var h = $('.anchor');
+        var id = "";
+        h.each(function (i, e) {
+          e = $(e);
+          if (e.offset().top - $(window).height()/3 <= currentScroll) {
+            id = decodeURIComponent(e.attr('id'));
+          }
+        });
+        var active = $toc.find('a.active');      
+        if (active.length == 1 && active.eq(0).attr('href') == '#' + id) return true;
+
+        active.each(function (i, e) {
+          
+            $(e).removeClass('active');
+          
+        });
+        $toc.find('a[href="#' + id + '"]').addClass('active')
+        $toc.find('a[href="#' + id + '"]').parentsUntil('#TableOfContents').each(function (i, e) {
+          $(e).children('a').parents('ul').show();          
+        });
+      }
+
+      $window.on('scroll', onScroll);
+      $(document).ready(function () {
+        
+        onScroll();
+      });
+    }
+  })();
+
+
+</script>
+   </div>
+      </div>
+      
+
+      <div class="min-w-0 min-h-0 max-w-fit">
+        
+        
+
+
+        <div class="article-content max-w-prose mb-20">
+          <p>Today I bring you a different kind of post. So sit back, grab a cup of tea/coffee and read on. It&rsquo;s under this category coz it simply isn&rsquo;t related to Linux.</p>
+
+
+<h3 class="relative group">Back Story 
+    <div id="back-story" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#back-story" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p>I want to talk about project&rsquo;s <strong>YouTube Channel</strong>. I know I talked about it a few times before, but this time it&rsquo;s not personal. Far from it, it&rsquo;s just to update everyone on the situation.</p>
+<p>Let&rsquo;s begin with how it all started. As I was working on the now discontinued <strong>XeroLinux</strong> Distro, someone asked me if I could create a channel where I documented everything. At first I hesitated, due to the lack of knowledge there, and being camera shy, which am not anymore as you saw.</p>
+<p>First few videos did not have my face, but slowly I started to appear in a few until it became the norm. I kept experimenting with a few setups still did until today. Was never satisfied.</p>
+<p>I did not know what type of content to bring you guys, and getting monetization status was hard, until I met Alex from <a href="https://www.youtube.com/@thelinuxtube/videos" target="_blank"><strong>TheLinuxTube</strong></a> channel, who introduned me to someone who helped me get there and fast. But sadly, even with that status, I wasn&rsquo;t getting enough views to profit from it.</p>
+<p>I get it, it&rsquo;s not your fault, but it was more related to the type of content I was making, mostly related to <strong>ArchLinux</strong> and my project. I even attempted to to host a podcast, and interview well-known Content Creators, which I failed miserably.</p>
+<p>I did that for a while, then stopped. I came back for a while, thinking that&rsquo;s it am on a roll now, with a video every Wednesday, and a Live at the end of every month. But alas, that did not work in my favor as much as I wanted it to&hellip;</p>
+
+
+<h3 class="relative group">Present &amp; Future 
+    <div id="present--future" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#present--future" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p>Which brings me to the present. You will no longer see any videos from me for now. That&rsquo;s it, I do apologize for that. It&rsquo;s also that creating videos has affected my mental health negatively for little gain and I wasn&rsquo;t able to recover from that. Fear not though, channel isn&rsquo;t going anywhere, I will be leaving it up, in case you find a video that helps you.</p>
+<p>As for the future of the channel, well I do not know. Maybe one day, if and when I settle down, with a decent job that actually makes me money to grab the required equipment, take care of some lingering health/appearance issues, I might consider coming back.</p>
+
+
+<h3 class="relative group">Blogging 
+    <div id="blogging" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#blogging" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p>As you might have noticed, lately I have been concentrating on written content. It brings me more joy, more freedom to express myself, and most importantly I get to share more tools and guides.</p>
+<p>The only thing you will not see from me are Distro Reviews, Vs and Bechmarking posts. Why ? Well quite simply because I lack the tools, hardware for benchmarking, and prefer not to start dramas when it comes to Distro Reviews and Vs posts, because as I have noticed lately, the <strong>FOSS</strong> community tends to be strongly opinionated, and sees <em>Favoritism</em> where there is none. I will leave those kinds of posts to those who like to do them.</p>
+<p>Also I think that written content tends to be more useful than videos, simply because in case of commands to be run, paths to be used etc, it&rsquo;s easier to copy and paste rather than pause the video and type them manually. That&rsquo;s not to say that videos are not useful, on the contrary, if it weren&rsquo;t for them, posts would be stale and boring, that&rsquo;s why in my humble opinion, they compliment written content, helping us include a showcase of the product we are talking about.</p>
+<p>Anyway, from now on, and for the foreseeable future I will be concentrating on what I love most, which is blogging. I have so much to share, so little time as the saying goes lol&hellip;</p>
+
+
+<h3 class="relative group">The other blog 
+    <div id="the-other-blog" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#the-other-blog" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p>Oh, I forgot to mention the <a href="https://blog.xerolinux.xyz" target="_blank"><strong>Other Blog</strong></a>, well, since am enjoying written content, I thought I would also start a personal <em>Journal</em>, where I document how I feel about different things in the land of <strong>FOSS</strong> and my projects.</p>
+<p>I keep it separate from this site, so as to not litter it with personal feelings as it were. That kind of content has no place here. I made it publicly available, so you can join me on my quest so to say. If you don&rsquo;t care for that kind of content, by all means don&rsquo;t go there. There&rsquo;s a lot of lows with a bit of highs.. Simply coz that&rsquo;s how I feel right now. Hoping for more positivity in the near future- (knock on wood).</p>
+
+
+<h3 class="relative group">Closing words 
+    <div id="closing-words" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#closing-words" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p>I know this might be a lot to take in. I just felt like sharing an update regarding the channel, and by extension the present and future state of affairs here at the <strong>XeroLinux HQ</strong>. I hope I did not bore you to death lol.</p>
+<p>Anywho, thanks for reading all this, looking forward to your thoughts on the matter over on <a href="https://fosstodon.org/@XeroLinux" target="_blank"><strong>Fosstodon</strong></a>.</p>
+<p>Cheers !</p>
+
+        </div>
+        
         
 
         
