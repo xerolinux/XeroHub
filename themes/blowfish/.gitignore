@@ -3,11 +3,6 @@ public/
 resources/
 exampleSite/resources/
 
-# Dot Dirs
-.git/
-.github/
-.vscode/
-
 # Binaries for programs and plugins
 *.exe
 *.exe~
@@ -25,7 +20,6 @@ exampleSite/resources/
 # vendor/
 
 #others
-README.md
 node_modules
 .hugo_build.lock
 
