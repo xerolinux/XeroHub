@@ -4,79 +4,19 @@
     <title>SnapCraft on XeroLinux HQ</title>
     <link>https://xerolinux.xyz/tags/snapcraft/</link>
     <description>Recent content in SnapCraft on XeroLinux HQ</description>
-    <generator>Hugo</generator>
+    <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 27 Jun 2024 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://xerolinux.xyz/tags/snapcraft/index.xml" rel="self" type="application/rss+xml" />
+    <copyright>Copy, _right?_ 🫨</copyright>
+    <lastBuildDate>Thu, 27 Jun 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://xerolinux.xyz/tags/snapcraft/index.xml" rel="self" type="application/rss+xml" />
     <item>
-    <title>Enable Snaps on Arch</title>
+      <title>Enable Snaps on Arch</title>
       <link>https://xerolinux.xyz/posts/enable-snaps/</link>
-        <pubDate>Thu, 27 Jun 2024 00:00:00 +0000</pubDate>
-        <guid>https://xerolinux.xyz/posts/enable-snaps/</guid>
-        <description>&#xA;&#xA;&lt;h3 class=&#34;relative group&#34;&gt;What are Snaps ? &#xA;    &lt;div id=&#34;what-are-snaps-&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;&#xA;    &#xA;    &lt;span&#xA;        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100&#34;&gt;&#xA;        &lt;a class=&#34;group-hover:text-primary-300 dark:group-hover:text-neutral-700&#34;&#xA;            style=&#34;text-decoration-line: none !important;&#34; href=&#34;#what-are-snaps-&#34; aria-label=&#34;Anchor&#34;&gt;#&lt;/a&gt;&#xA;    &lt;/span&gt;        &#xA;    &#xA;&lt;/h3&gt;&#xA;&lt;p&gt;Snaps are an innovative packaging format for distributing applications on Linux. Developed by &lt;strong&gt;Canonical&lt;/strong&gt;, snaps are self-contained software bundles that include the app and all its dependencies. This allows snaps to work consistently across a wide range of Linux distributions, without compatibility issues. Snaps also use transactional updates, automatically rolling back if an update fails. Running in a secure sandbox, snaps have limited access to the host system, enhancing security. While some Linux users have reservations about Canonical&amp;rsquo;s involvement, the snap format provides a convenient way to package and distribute applications that &amp;ldquo;just work&amp;rdquo; on any Linux desktop or server. For users and developers seeking a reliable, cross-distro packaging solution, snaps offer a compelling option to explore.&lt;/p&gt;&#xA;&#xA;&#xA;&lt;h3 class=&#34;relative group&#34;&gt;Disclaimer : &#xA;    &lt;div id=&#34;disclaimer-&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;&#xA;    &#xA;    &lt;span&#xA;        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100&#34;&gt;&#xA;        &lt;a class=&#34;group-hover:text-primary-300 dark:group-hover:text-neutral-700&#34;&#xA;            style=&#34;text-decoration-line: none !important;&#34; href=&#34;#disclaimer-&#34; aria-label=&#34;Anchor&#34;&gt;#&lt;/a&gt;&#xA;    &lt;/span&gt;        &#xA;    &#xA;&lt;/h3&gt;&#xA;&lt;p&gt;Snap support was never intended to be used outside Ubuntu / Debian that package manager was created by Canonical for their Distribution and subsidiaries. Therefore  I will not be held responsible for any damage you incur by doing it. You will be on your own. Keep that in mind.&lt;/p&gt;&#xA;&#xA;&#xA;&lt;h3 class=&#34;relative group&#34;&gt;Installation &#xA;    &lt;div id=&#34;installation&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;&#xA;    &#xA;    &lt;span&#xA;        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100&#34;&gt;&#xA;        &lt;a class=&#34;group-hover:text-primary-300 dark:group-hover:text-neutral-700&#34;&#xA;            style=&#34;text-decoration-line: none !important;&#34; href=&#34;#installation&#34; aria-label=&#34;Anchor&#34;&gt;#&lt;/a&gt;&#xA;    &lt;/span&gt;        &#xA;    &#xA;&lt;/h3&gt;&#xA;&lt;p&gt;With that out of the way, I would recommend you look for your apps on either Arch Repos, AUR or Flathub first since those are the package managers officially supported on XeroLinux / Arch, but if you still insist on doing it, Do it at your own risk ! here&amp;rsquo;s how to do it, follow the guide step by step, if you didn&amp;rsquo;t miss anything you will be well on your way to start using Snaps.&lt;/p&gt;&#xA;&lt;p&gt;&#xA;  &lt;figure&gt;&#xA;    &lt;img class=&#34;my-0 rounded-md&#34; loading=&#34;lazy&#34; src=&#34;https://i.imgur.com/BpMGL6X.png&#34; alt=&#34;[Image: BpMGL6X.png]&#34; /&gt;&#xA;    &#xA;  &lt;/figure&gt;&#xA;&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Step 1 : Install &amp;amp; enable snapd service&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;First things first, you will need to install &lt;code&gt;snapd&lt;/code&gt; service and enable it. To do so please type the following commands in Terminal. Please report any issues to &lt;a href=&#34;https://github.com/snapcore/snapd&#34; target=&#34;_blank&#34;&gt;Snapd Upstream&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;paru -S --noconfirm snapd&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo systemctl &lt;span class=&#34;nb&#34;&gt;enable&lt;/span&gt; --now snapd.socket&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo systemctl &lt;span class=&#34;nb&#34;&gt;enable&lt;/span&gt; --now snapd.apparmor&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Make sure to reboot the system after doing that for services to start correctly.&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Step 2 : Install The Snap Store&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;Once that&amp;rsquo;s done, either start installing your snaps via &lt;code&gt;sudo snap refresh &amp;amp;&amp;amp; sudo snap install packagename&lt;/code&gt; commands or if you prefer to use a GUI App Store install the aforementioned Snap Store via command below.&lt;/p&gt;&#xA;&lt;p&gt;Install the Snap Store :&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo snap install snap-store&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;This might take a while depending on your connection since it has to populate the massive database on first install, just be patient while it does that. Finally launch the store from the App-menu..&lt;/p&gt;&#xA;&lt;p&gt;I hope this helps y&amp;rsquo;all&amp;hellip;&lt;/p&gt;&#xA;</description>
-        <content:encoded>&lt;![CDATA[
-
-<h3 class="relative group">What are Snaps ? 
-    <div id="what-are-snaps-" class="anchor"></div>
+      <pubDate>Thu, 27 Jun 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://xerolinux.xyz/posts/enable-snaps/</guid>
+      <description>What are Snaps ? # Snaps are an innovative packaging format for distributing applications on Linux. Developed by Canonical, snaps are self-contained software bundles that include the app and all its dependencies.</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/enable-snaps/featured.webp" />
+    </item>
     
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#what-are-snaps-" aria-label="Anchor">#</a>
-    </span>        
-    
-</h3>
-<p>Snaps are an innovative packaging format for distributing applications on Linux. Developed by <strong>Canonical</strong>, snaps are self-contained software bundles that include the app and all its dependencies. This allows snaps to work consistently across a wide range of Linux distributions, without compatibility issues. Snaps also use transactional updates, automatically rolling back if an update fails. Running in a secure sandbox, snaps have limited access to the host system, enhancing security. While some Linux users have reservations about Canonical&rsquo;s involvement, the snap format provides a convenient way to package and distribute applications that &ldquo;just work&rdquo; on any Linux desktop or server. For users and developers seeking a reliable, cross-distro packaging solution, snaps offer a compelling option to explore.</p>
-
-
-<h3 class="relative group">Disclaimer : 
-    <div id="disclaimer-" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#disclaimer-" aria-label="Anchor">#</a>
-    </span>        
-    
-</h3>
-<p>Snap support was never intended to be used outside Ubuntu / Debian that package manager was created by Canonical for their Distribution and subsidiaries. Therefore  I will not be held responsible for any damage you incur by doing it. You will be on your own. Keep that in mind.</p>
-
-
-<h3 class="relative group">Installation 
-    <div id="installation" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#installation" aria-label="Anchor">#</a>
-    </span>        
-    
-</h3>
-<p>With that out of the way, I would recommend you look for your apps on either Arch Repos, AUR or Flathub first since those are the package managers officially supported on XeroLinux / Arch, but if you still insist on doing it, Do it at your own risk ! here&rsquo;s how to do it, follow the guide step by step, if you didn&rsquo;t miss anything you will be well on your way to start using Snaps.</p>
-<p>
-  <figure>
-    <img class="my-0 rounded-md" loading="lazy" src="https://i.imgur.com/BpMGL6X.png" alt="[Image: BpMGL6X.png]" />
-    
-  </figure>
-</p>
-<ul>
-<li>Step 1 : Install &amp; enable snapd service</li>
-</ul>
-<p>First things first, you will need to install <code>snapd</code> service and enable it. To do so please type the following commands in Terminal. Please report any issues to <a href="https://github.com/snapcore/snapd" target="_blank">Snapd Upstream</a>.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Bash" data-lang="Bash"><span class="line"><span class="cl">paru -S --noconfirm snapd
-</span></span><span class="line"><span class="cl">sudo systemctl <span class="nb">enable</span> --now snapd.socket
-</span></span><span class="line"><span class="cl">sudo systemctl <span class="nb">enable</span> --now snapd.apparmor
-</span></span></code></pre></div><p>Make sure to reboot the system after doing that for services to start correctly.</p>
-<ul>
-<li>Step 2 : Install The Snap Store</li>
-</ul>
-<p>Once that&rsquo;s done, either start installing your snaps via <code>sudo snap refresh &amp;&amp; sudo snap install packagename</code> commands or if you prefer to use a GUI App Store install the aforementioned Snap Store via command below.</p>
-<p>Install the Snap Store :</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Bash" data-lang="Bash"><span class="line"><span class="cl">sudo snap install snap-store
-</span></span></code></pre></div><p>This might take a while depending on your connection since it has to populate the massive database on first install, just be patient while it does that. Finally launch the store from the App-menu..</p>
-<p>I hope this helps y&rsquo;all&hellip;</p>
-]]></content:encoded>
-        <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
-      </item>
-    </channel>
-  </rss>
+  </channel>
+</rss>

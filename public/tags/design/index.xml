@@ -4,85 +4,19 @@
     <title>Design on XeroLinux HQ</title>
     <link>https://xerolinux.xyz/tags/design/</link>
     <description>Recent content in Design on XeroLinux HQ</description>
-    <generator>Hugo</generator>
+    <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 27 Jun 2024 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://xerolinux.xyz/tags/design/index.xml" rel="self" type="application/rss+xml" />
+    <copyright>Copy, _right?_ 🫨</copyright>
+    <lastBuildDate>Thu, 27 Jun 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://xerolinux.xyz/tags/design/index.xml" rel="self" type="application/rss+xml" />
     <item>
-    <title>Fresh New Look</title>
+      <title>Fresh New Look</title>
       <link>https://xerolinux.xyz/news/new-site/</link>
-        <pubDate>Thu, 27 Jun 2024 00:00:00 +0000</pubDate>
-        <guid>https://xerolinux.xyz/news/new-site/</guid>
-        <description>&#xA;&#xA;&lt;h3 class=&#34;relative group&#34;&gt;Not Again ! &#xA;    &lt;div id=&#34;not-again-&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;&#xA;    &#xA;    &lt;span&#xA;        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100&#34;&gt;&#xA;        &lt;a class=&#34;group-hover:text-primary-300 dark:group-hover:text-neutral-700&#34;&#xA;            style=&#34;text-decoration-line: none !important;&#34; href=&#34;#not-again-&#34; aria-label=&#34;Anchor&#34;&gt;#&lt;/a&gt;&#xA;    &lt;/span&gt;        &#xA;    &#xA;&lt;/h3&gt;&#xA;&lt;p&gt;Yep, again lol&amp;hellip; I dunno what else to say. I will keep trying different designs out until I am satisfied. But if all goes well, this will be the last time, who knows ? FOr now enjoy the new look n feel. I really hope you like it. I need to thank &lt;a href=&#34;https://zaney.org&#34; target=&#34;_blank&#34;&gt;&lt;strong&gt;Zaney&lt;/strong&gt;&lt;/a&gt; for letting me know about this awesome theme. I am still figuring it out as I go. If you can help feel free to let me know.&lt;/p&gt;&#xA;&#xA;&#xA;&lt;h3 class=&#34;relative group&#34;&gt;What is it ? &#xA;    &lt;div id=&#34;what-is-it-&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;&#xA;    &#xA;    &lt;span&#xA;        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100&#34;&gt;&#xA;        &lt;a class=&#34;group-hover:text-primary-300 dark:group-hover:text-neutral-700&#34;&#xA;            style=&#34;text-decoration-line: none !important;&#34; href=&#34;#what-is-it-&#34; aria-label=&#34;Anchor&#34;&gt;#&lt;/a&gt;&#xA;    &lt;/span&gt;        &#xA;    &#xA;&lt;/h3&gt;&#xA;&lt;p&gt;Well, if you do not know, this site is using &lt;a href=&#34;https://gohugo.io&#34; target=&#34;_blank&#34;&gt;&lt;strong&gt;Hugo&lt;/strong&gt;&lt;/a&gt; with a theme called &lt;a href=&#34;https://blowfish.page&#34; target=&#34;_blank&#34;&gt;&lt;strong&gt;Blowfish&lt;/strong&gt;&lt;/a&gt;. Great combo if you ask me. So many features to go through. I did not even scratch the surface yet. Things will get better soon.&lt;/p&gt;&#xA;&#xA;&#xA;&lt;h3 class=&#34;relative group&#34;&gt;What about your other blog ? &#xA;    &lt;div id=&#34;what-about-your-other-blog-&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;&#xA;    &#xA;    &lt;span&#xA;        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100&#34;&gt;&#xA;        &lt;a class=&#34;group-hover:text-primary-300 dark:group-hover:text-neutral-700&#34;&#xA;            style=&#34;text-decoration-line: none !important;&#34; href=&#34;#what-about-your-other-blog-&#34; aria-label=&#34;Anchor&#34;&gt;#&lt;/a&gt;&#xA;    &lt;/span&gt;        &#xA;    &#xA;&lt;/h3&gt;&#xA;&lt;p&gt;That&amp;rsquo;s a tricky question. Consider the other blog as my journal, where I post my thoughts and feelings about things that are happening in the &lt;strong&gt;FOSS&lt;/strong&gt; world. Here I will be posting updates related to my various projects, as well as some other &lt;strong&gt;Open Source&lt;/strong&gt; news/articles.&lt;/p&gt;&#xA;&#xA;&#xA;&lt;h3 class=&#34;relative group&#34;&gt;And the Forum ? &#xA;    &lt;div id=&#34;and-the-forum-&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;&#xA;    &#xA;    &lt;span&#xA;        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100&#34;&gt;&#xA;        &lt;a class=&#34;group-hover:text-primary-300 dark:group-hover:text-neutral-700&#34;&#xA;            style=&#34;text-decoration-line: none !important;&#34; href=&#34;#and-the-forum-&#34; aria-label=&#34;Anchor&#34;&gt;#&lt;/a&gt;&#xA;    &lt;/span&gt;        &#xA;    &#xA;&lt;/h3&gt;&#xA;&lt;p&gt;The XeroLinux &lt;a href=&#34;https://forum.xerolinux.xyz&#34; target=&#34;_blank&#34;&gt;&lt;strong&gt;Forums&lt;/strong&gt;&lt;/a&gt; will be closed down by the end of this month once I have ported over all releveant posts from it. So do not be surprised if you come looking and you don&amp;rsquo;t find them.&lt;/p&gt;&#xA;&#xA;&#xA;&lt;h3 class=&#34;relative group&#34;&gt;Closing words &#xA;    &lt;div id=&#34;closing-words&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;&#xA;    &#xA;    &lt;span&#xA;        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100&#34;&gt;&#xA;        &lt;a class=&#34;group-hover:text-primary-300 dark:group-hover:text-neutral-700&#34;&#xA;            style=&#34;text-decoration-line: none !important;&#34; href=&#34;#closing-words&#34; aria-label=&#34;Anchor&#34;&gt;#&lt;/a&gt;&#xA;    &lt;/span&gt;        &#xA;    &#xA;&lt;/h3&gt;&#xA;&lt;p&gt;I know this might be a lot to take in. I am trying to organize things to the best of my abilities. I will be putting everything under one roof, this one. My &amp;ldquo;Journal&amp;rdquo; however will remain coz I do not want to tarnish this site with my ramblings.&lt;/p&gt;&#xA;&lt;p&gt;Until then let me know what you think of this new look. If you have any suggestions or ideas on how I can make it all better feel free to let me know how. Thanks for reading this. Here&amp;rsquo;s to future posts&amp;hellip;&lt;/p&gt;&#xA;&lt;p&gt;Cheers :heart:&lt;/p&gt;&#xA;</description>
-        <content:encoded>&lt;![CDATA[
-
-<h3 class="relative group">Not Again ! 
-    <div id="not-again-" class="anchor"></div>
+      <pubDate>Thu, 27 Jun 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://xerolinux.xyz/news/new-site/</guid>
+      <description>Not Again ! # Yep, again lol&amp;hellip; I dunno what else to say. I will keep trying different designs out until I am satisfied. But if all goes well, this will be the last time, who knows ?</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/news/new-site/featured.webp" />
+    </item>
     
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#not-again-" aria-label="Anchor">#</a>
-    </span>        
-    
-</h3>
-<p>Yep, again lol&hellip; I dunno what else to say. I will keep trying different designs out until I am satisfied. But if all goes well, this will be the last time, who knows ? FOr now enjoy the new look n feel. I really hope you like it. I need to thank <a href="https://zaney.org" target="_blank"><strong>Zaney</strong></a> for letting me know about this awesome theme. I am still figuring it out as I go. If you can help feel free to let me know.</p>
-
-
-<h3 class="relative group">What is it ? 
-    <div id="what-is-it-" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#what-is-it-" aria-label="Anchor">#</a>
-    </span>        
-    
-</h3>
-<p>Well, if you do not know, this site is using <a href="https://gohugo.io" target="_blank"><strong>Hugo</strong></a> with a theme called <a href="https://blowfish.page" target="_blank"><strong>Blowfish</strong></a>. Great combo if you ask me. So many features to go through. I did not even scratch the surface yet. Things will get better soon.</p>
-
-
-<h3 class="relative group">What about your other blog ? 
-    <div id="what-about-your-other-blog-" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#what-about-your-other-blog-" aria-label="Anchor">#</a>
-    </span>        
-    
-</h3>
-<p>That&rsquo;s a tricky question. Consider the other blog as my journal, where I post my thoughts and feelings about things that are happening in the <strong>FOSS</strong> world. Here I will be posting updates related to my various projects, as well as some other <strong>Open Source</strong> news/articles.</p>
-
-
-<h3 class="relative group">And the Forum ? 
-    <div id="and-the-forum-" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#and-the-forum-" aria-label="Anchor">#</a>
-    </span>        
-    
-</h3>
-<p>The XeroLinux <a href="https://forum.xerolinux.xyz" target="_blank"><strong>Forums</strong></a> will be closed down by the end of this month once I have ported over all releveant posts from it. So do not be surprised if you come looking and you don&rsquo;t find them.</p>
-
-
-<h3 class="relative group">Closing words 
-    <div id="closing-words" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#closing-words" aria-label="Anchor">#</a>
-    </span>        
-    
-</h3>
-<p>I know this might be a lot to take in. I am trying to organize things to the best of my abilities. I will be putting everything under one roof, this one. My &ldquo;Journal&rdquo; however will remain coz I do not want to tarnish this site with my ramblings.</p>
-<p>Until then let me know what you think of this new look. If you have any suggestions or ideas on how I can make it all better feel free to let me know how. Thanks for reading this. Here&rsquo;s to future posts&hellip;</p>
-<p>Cheers :heart:</p>
-]]></content:encoded>
-        <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
-      </item>
-    </channel>
-  </rss>
+  </channel>
+</rss>

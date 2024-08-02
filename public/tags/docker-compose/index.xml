@@ -4,185 +4,19 @@
     <title>Docker-Compose on XeroLinux HQ</title>
     <link>https://xerolinux.xyz/tags/docker-compose/</link>
     <description>Recent content in Docker-Compose on XeroLinux HQ</description>
-    <generator>Hugo</generator>
+    <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 27 Jun 2024 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://xerolinux.xyz/tags/docker-compose/index.xml" rel="self" type="application/rss+xml" />
+    <copyright>Copy, _right?_ 🫨</copyright>
+    <lastBuildDate>Thu, 27 Jun 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://xerolinux.xyz/tags/docker-compose/index.xml" rel="self" type="application/rss+xml" />
     <item>
-    <title>Docker &amp; Docker-Compose</title>
+      <title>Docker &amp; Docker-Compose</title>
       <link>https://xerolinux.xyz/posts/docker-usage/</link>
-        <pubDate>Thu, 27 Jun 2024 00:00:00 +0000</pubDate>
-        <guid>https://xerolinux.xyz/posts/docker-usage/</guid>
-        <description>&#xA;&#xA;&lt;h3 class=&#34;relative group&#34;&gt;Intro &#xA;    &lt;div id=&#34;intro&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;&#xA;    &#xA;    &lt;span&#xA;        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100&#34;&gt;&#xA;        &lt;a class=&#34;group-hover:text-primary-300 dark:group-hover:text-neutral-700&#34;&#xA;            style=&#34;text-decoration-line: none !important;&#34; href=&#34;#intro&#34; aria-label=&#34;Anchor&#34;&gt;#&lt;/a&gt;&#xA;    &lt;/span&gt;        &#xA;    &#xA;&lt;/h3&gt;&#xA;&lt;p&gt;After messing with &lt;a href=&#34;https://www.docker.com&#34; target=&#34;_blank&#34;&gt;Docker&lt;/a&gt; Containers for so long, I thought I would share the knowledge. Hopefully a video showing it in action soon. In this short tutorial we will be using the Docker Compose feature to deploy our containers. Just note we can do so much more, but this is just an introductory guide, you will have to discover the rest on your own. It&amp;rsquo;s so much fun trust me. To get an idea how much I love them click &lt;a href=&#34;https://blog.xerolinux.xyz/2024/06/docker-containers-a-love-story/&#34; target=&#34;_blank&#34;&gt;&lt;strong&gt;Here&lt;/strong&gt;&lt;/a&gt; to read my thoughts&amp;hellip;&lt;/p&gt;&#xA;&lt;p&gt;&#xA;  &lt;figure&gt;&#xA;    &lt;img class=&#34;my-0 rounded-md&#34; loading=&#34;lazy&#34; src=&#34;https://i.imgur.com/bbD4JDy.png&#34; alt=&#34;[Image: bbD4JDy.png]&#34; /&gt;&#xA;    &#xA;  &lt;/figure&gt;&#xA;&lt;/p&gt;&#xA;&lt;p&gt;So without further delay let&amp;rsquo;s gooooooooo&amp;hellip;&lt;/p&gt;&#xA;&#xA;&#xA;&lt;h3 class=&#34;relative group&#34;&gt;What are Docker containers ? &#xA;    &lt;div id=&#34;what-are-docker-containers-&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;&#xA;    &#xA;    &lt;span&#xA;        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100&#34;&gt;&#xA;        &lt;a class=&#34;group-hover:text-primary-300 dark:group-hover:text-neutral-700&#34;&#xA;            style=&#34;text-decoration-line: none !important;&#34; href=&#34;#what-are-docker-containers-&#34; aria-label=&#34;Anchor&#34;&gt;#&lt;/a&gt;&#xA;    &lt;/span&gt;        &#xA;    &#xA;&lt;/h3&gt;&#xA;&lt;p&gt;Docker containers are lightweight, portable units that package an application and its dependencies, ensuring consistent performance across different environments. Unlike virtual machines, containers share the host OS kernel, making them more efficient and faster to start.&lt;/p&gt;&#xA;&#xA;&#xA;&lt;h3 class=&#34;relative group&#34;&gt;Key Points: &#xA;    &lt;div id=&#34;key-points&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;&#xA;    &#xA;    &lt;span&#xA;        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100&#34;&gt;&#xA;        &lt;a class=&#34;group-hover:text-primary-300 dark:group-hover:text-neutral-700&#34;&#xA;            style=&#34;text-decoration-line: none !important;&#34; href=&#34;#key-points&#34; aria-label=&#34;Anchor&#34;&gt;#&lt;/a&gt;&#xA;    &lt;/span&gt;        &#xA;    &#xA;&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Isolation: Containers run in isolated environments, using the host system’s resources without interference.&lt;/li&gt;&#xA;&lt;li&gt;Portability: Containers can be run anywhere with Docker installed, solving the &amp;ldquo;it works on my machine&amp;rdquo; issue.&lt;/li&gt;&#xA;&lt;li&gt;Efficiency: They use fewer resources than VMs since they don’t need a full OS for each instance.&lt;/li&gt;&#xA;&lt;li&gt;Consistency: Ensures the same environment across development, testing, and production.&lt;/li&gt;&#xA;&lt;li&gt;Scalability: Easily scalable with tools like Kubernetes, perfect for microservices.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&#xA;&#xA;&lt;h3 class=&#34;relative group&#34;&gt;How It Works: &#xA;    &lt;div id=&#34;how-it-works&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;&#xA;    &#xA;    &lt;span&#xA;        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100&#34;&gt;&#xA;        &lt;a class=&#34;group-hover:text-primary-300 dark:group-hover:text-neutral-700&#34;&#xA;            style=&#34;text-decoration-line: none !important;&#34; href=&#34;#how-it-works&#34; aria-label=&#34;Anchor&#34;&gt;#&lt;/a&gt;&#xA;    &lt;/span&gt;        &#xA;    &#xA;&lt;/h3&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;Dockerfile: Script defining how to build a Docker image.&lt;/li&gt;&#xA;&lt;li&gt;Build: Create an image from the Dockerfile.&lt;/li&gt;&#xA;&lt;li&gt;Run: Start a container from the image.&lt;/li&gt;&#xA;&lt;li&gt;Manage: Use Docker commands to handle the container lifecycle.&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;p&gt;Docker containers streamline development, improve resource utilization, and simplify deployment, making them ideal for modern application development.&lt;/p&gt;&#xA;&#xA;&#xA;&lt;h3 class=&#34;relative group&#34;&gt;Install Docker Package &#xA;    &lt;div id=&#34;install-docker-package&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;&#xA;    &#xA;    &lt;span&#xA;        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100&#34;&gt;&#xA;        &lt;a class=&#34;group-hover:text-primary-300 dark:group-hover:text-neutral-700&#34;&#xA;            style=&#34;text-decoration-line: none !important;&#34; href=&#34;#install-docker-package&#34; aria-label=&#34;Anchor&#34;&gt;#&lt;/a&gt;&#xA;    &lt;/span&gt;        &#xA;    &#xA;&lt;/h3&gt;&#xA;&lt;p&gt;Before we can deploy our container(s) we will need to install docker and its dependencies then enable the service. To do so type this in terminal (ArchLinux) :&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo pacman -S docker docker-compose&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Now that we have Docker installed we will need to add ourselves to the Docker group and start the service. Do it like this :&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo usermod -aG docker &lt;span class=&#34;nv&#34;&gt;$USER&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo systemctl &lt;span class=&#34;nb&#34;&gt;enable&lt;/span&gt; --now docker&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&#xA;&#xA;&lt;h3 class=&#34;relative group&#34;&gt;Docker Compose file (Stack) &#xA;    &lt;div id=&#34;docker-compose-file-stack&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;&#xA;    &#xA;    &lt;span&#xA;        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100&#34;&gt;&#xA;        &lt;a class=&#34;group-hover:text-primary-300 dark:group-hover:text-neutral-700&#34;&#xA;            style=&#34;text-decoration-line: none !important;&#34; href=&#34;#docker-compose-file-stack&#34; aria-label=&#34;Anchor&#34;&gt;#&lt;/a&gt;&#xA;    &lt;/span&gt;        &#xA;    &#xA;&lt;/h3&gt;&#xA;&lt;p&gt;Ok, now that everything&amp;rsquo;s set, we can go container hunting&amp;hellip; I would highly recommend sites like, &lt;a href=&#34;https://selfh.st/apps/&#34; target=&#34;_blank&#34;&gt;SelfH&lt;/a&gt; or &lt;a href=&#34;https://awesome-selfhosted.net&#34; target=&#34;_blank&#34;&gt;AwesomeSelfHosted&lt;/a&gt;. But for the sake of this tutorial, I will be showing you an example docker compose file from one of the services found there. I have selected &lt;a href=&#34;https://demo.filebrowser.org/&#34; target=&#34;_blank&#34;&gt;FileBrowser&lt;/a&gt; (User : demo / Pass : demo)&lt;/p&gt;&#xA;&lt;p&gt;Here&amp;rsquo;s the docker compose file contents. Just create a folder called &amp;ldquo;FileBrowser&amp;rdquo;, then inside it a file called &amp;ldquo;compose.yml&amp;rdquo; inside it paste the following :&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Yaml&#34; data-lang=&#34;Yaml&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nt&#34;&gt;services&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;filebrowser&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;image&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;l&#34;&gt;hurlenko/filebrowser&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;user&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;1000:1000&amp;#34;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;ports&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;      &lt;/span&gt;- &lt;span class=&#34;m&#34;&gt;443&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;m&#34;&gt;8080&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;volumes&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;      &lt;/span&gt;- &lt;span class=&#34;l&#34;&gt;/&amp;lt;path-to-shared-folder&amp;gt;:/data&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;      &lt;/span&gt;- &lt;span class=&#34;l&#34;&gt;./config:/config&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;environment&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;      &lt;/span&gt;- &lt;span class=&#34;l&#34;&gt;FB_BASEURL=/&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;restart&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;l&#34;&gt;always&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Just make sure to change the &amp;ldquo;443&amp;rdquo; port to one you prefer without touching part to the right which is the internal Docker one. Also in the &amp;ldquo;Volumes&amp;rdquo; section change the &amp;ldquo;- /&lt;path-to-shared-folder&gt;:/data&amp;rdquo; part, do not modify right side just the left, before the &amp;ldquo;:&amp;rdquo;, and set it to what you want to share between your machines. DO NOT SHARE ROOT ! At least if you are going to make it public. If you want to keep it internal like me, do it if you so wish it&amp;rsquo;s up to you.&lt;/p&gt;&#xA;&lt;p&gt;Now save the file, and open Terminal inside the folder and run the following command to start it as a Daemon :&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;docker compose up -d&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;If all was done correctly, you will now be able to access your newly created container via following URLs :&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;http://localhost:443 &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;Same machine container is on&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;http://&amp;lt;server-ip&amp;gt;:443 &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;From other machines on same network&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&#xA;&#xA;&lt;h3 class=&#34;relative group&#34;&gt;Updating Docker Images &#xA;    &lt;div id=&#34;updating-docker-images&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;&#xA;    &#xA;    &lt;span&#xA;        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100&#34;&gt;&#xA;        &lt;a class=&#34;group-hover:text-primary-300 dark:group-hover:text-neutral-700&#34;&#xA;            style=&#34;text-decoration-line: none !important;&#34; href=&#34;#updating-docker-images&#34; aria-label=&#34;Anchor&#34;&gt;#&lt;/a&gt;&#xA;    &lt;/span&gt;        &#xA;    &#xA;&lt;/h3&gt;&#xA;&lt;p&gt;Deploying them images (containers) is nice and all, but now we need to maintain them, as in make sure they are up-to-date. In order to do so, we need to navigate to their respective folders, open terminal there, and run the following commands (FileBrowser) :&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;docker compose down &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;Stop Container&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;docker compose pull &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;Pull in latest version&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;docker compose up -d &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;Start it up again&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Note :&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;Keep in mind that some containers might require us to delete them before grabbing new version. Make sure to read their instructions on that before going forward. I just used what works for our example. Not all Containers function the same way&amp;hellip;&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&#xA;&#xA;&lt;h3 class=&#34;relative group&#34;&gt;Other tools&amp;hellip; &#xA;    &lt;div id=&#34;other-tools&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;&#xA;    &#xA;    &lt;span&#xA;        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100&#34;&gt;&#xA;        &lt;a class=&#34;group-hover:text-primary-300 dark:group-hover:text-neutral-700&#34;&#xA;            style=&#34;text-decoration-line: none !important;&#34; href=&#34;#other-tools&#34; aria-label=&#34;Anchor&#34;&gt;#&lt;/a&gt;&#xA;    &lt;/span&gt;        &#xA;    &#xA;&lt;/h3&gt;&#xA;&lt;p&gt;Kindly note that there are other tools we could use to make deployment much simpler. I just haven&amp;rsquo;t used them in this guide so you can see how it all works. Tools that can be used are, &lt;a href=&#34;https://www.portainer.io&#34; target=&#34;_blank&#34;&gt;Portainer&lt;/a&gt; and &lt;a href=&#34;https://dockge.kuma.pet&#34; target=&#34;_blank&#34;&gt;Dockge&lt;/a&gt;, among many others&amp;hellip;&lt;/p&gt;&#xA;&#xA;&#xA;&lt;h3 class=&#34;relative group&#34;&gt;Nginx Proxy &amp;amp; More&amp;hellip; &#xA;    &lt;div id=&#34;nginx-proxy--more&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;&#xA;    &#xA;    &lt;span&#xA;        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100&#34;&gt;&#xA;        &lt;a class=&#34;group-hover:text-primary-300 dark:group-hover:text-neutral-700&#34;&#xA;            style=&#34;text-decoration-line: none !important;&#34; href=&#34;#nginx-proxy--more&#34; aria-label=&#34;Anchor&#34;&gt;#&lt;/a&gt;&#xA;    &lt;/span&gt;        &#xA;    &#xA;&lt;/h3&gt;&#xA;&lt;p&gt;So far what we have done here, is deploy container for local access. If you want to access it outside your Network, well, for this you will have to own your own Domain name, set up Nginx Proxy manager, use Cloudflare and so on. But that&amp;rsquo;s for another day. This guide was to get your appetite wet, lol..&lt;/p&gt;&#xA;&lt;p&gt;I hope you enjoy, and will see you in the next part.&lt;/p&gt;&#xA;</description>
-        <content:encoded>&lt;![CDATA[
-
-<h3 class="relative group">Intro 
-    <div id="intro" class="anchor"></div>
+      <pubDate>Thu, 27 Jun 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://xerolinux.xyz/posts/docker-usage/</guid>
+      <description>Intro # After messing with Docker Containers for so long, I thought I would share the knowledge. Hopefully a video showing it in action soon. In this short tutorial we will be using the Docker Compose feature to deploy our containers.</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/docker-usage/featured.webp" />
+    </item>
     
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#intro" aria-label="Anchor">#</a>
-    </span>        
-    
-</h3>
-<p>After messing with <a href="https://www.docker.com" target="_blank">Docker</a> Containers for so long, I thought I would share the knowledge. Hopefully a video showing it in action soon. In this short tutorial we will be using the Docker Compose feature to deploy our containers. Just note we can do so much more, but this is just an introductory guide, you will have to discover the rest on your own. It&rsquo;s so much fun trust me. To get an idea how much I love them click <a href="https://blog.xerolinux.xyz/2024/06/docker-containers-a-love-story/" target="_blank"><strong>Here</strong></a> to read my thoughts&hellip;</p>
-<p>
-  <figure>
-    <img class="my-0 rounded-md" loading="lazy" src="https://i.imgur.com/bbD4JDy.png" alt="[Image: bbD4JDy.png]" />
-    
-  </figure>
-</p>
-<p>So without further delay let&rsquo;s gooooooooo&hellip;</p>
-
-
-<h3 class="relative group">What are Docker containers ? 
-    <div id="what-are-docker-containers-" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#what-are-docker-containers-" aria-label="Anchor">#</a>
-    </span>        
-    
-</h3>
-<p>Docker containers are lightweight, portable units that package an application and its dependencies, ensuring consistent performance across different environments. Unlike virtual machines, containers share the host OS kernel, making them more efficient and faster to start.</p>
-
-
-<h3 class="relative group">Key Points: 
-    <div id="key-points" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#key-points" aria-label="Anchor">#</a>
-    </span>        
-    
-</h3>
-<ul>
-<li>Isolation: Containers run in isolated environments, using the host system’s resources without interference.</li>
-<li>Portability: Containers can be run anywhere with Docker installed, solving the &ldquo;it works on my machine&rdquo; issue.</li>
-<li>Efficiency: They use fewer resources than VMs since they don’t need a full OS for each instance.</li>
-<li>Consistency: Ensures the same environment across development, testing, and production.</li>
-<li>Scalability: Easily scalable with tools like Kubernetes, perfect for microservices.</li>
-</ul>
-
-
-<h3 class="relative group">How It Works: 
-    <div id="how-it-works" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#how-it-works" aria-label="Anchor">#</a>
-    </span>        
-    
-</h3>
-<ol>
-<li>Dockerfile: Script defining how to build a Docker image.</li>
-<li>Build: Create an image from the Dockerfile.</li>
-<li>Run: Start a container from the image.</li>
-<li>Manage: Use Docker commands to handle the container lifecycle.</li>
-</ol>
-<p>Docker containers streamline development, improve resource utilization, and simplify deployment, making them ideal for modern application development.</p>
-
-
-<h3 class="relative group">Install Docker Package 
-    <div id="install-docker-package" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#install-docker-package" aria-label="Anchor">#</a>
-    </span>        
-    
-</h3>
-<p>Before we can deploy our container(s) we will need to install docker and its dependencies then enable the service. To do so type this in terminal (ArchLinux) :</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Bash" data-lang="Bash"><span class="line"><span class="cl">sudo pacman -S docker docker-compose
-</span></span></code></pre></div><p>Now that we have Docker installed we will need to add ourselves to the Docker group and start the service. Do it like this :</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Bash" data-lang="Bash"><span class="line"><span class="cl">sudo usermod -aG docker <span class="nv">$USER</span>
-</span></span><span class="line"><span class="cl">sudo systemctl <span class="nb">enable</span> --now docker
-</span></span></code></pre></div>
-
-<h3 class="relative group">Docker Compose file (Stack) 
-    <div id="docker-compose-file-stack" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#docker-compose-file-stack" aria-label="Anchor">#</a>
-    </span>        
-    
-</h3>
-<p>Ok, now that everything&rsquo;s set, we can go container hunting&hellip; I would highly recommend sites like, <a href="https://selfh.st/apps/" target="_blank">SelfH</a> or <a href="https://awesome-selfhosted.net" target="_blank">AwesomeSelfHosted</a>. But for the sake of this tutorial, I will be showing you an example docker compose file from one of the services found there. I have selected <a href="https://demo.filebrowser.org/" target="_blank">FileBrowser</a> (User : demo / Pass : demo)</p>
-<p>Here&rsquo;s the docker compose file contents. Just create a folder called &ldquo;FileBrowser&rdquo;, then inside it a file called &ldquo;compose.yml&rdquo; inside it paste the following :</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Yaml" data-lang="Yaml"><span class="line"><span class="cl"><span class="nt">services</span><span class="p">:</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">filebrowser</span><span class="p">:</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l">hurlenko/filebrowser</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">user</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;1000:1000&#34;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">ports</span><span class="p">:</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="m">443</span><span class="p">:</span><span class="m">8080</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">volumes</span><span class="p">:</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="l">/&lt;path-to-shared-folder&gt;:/data</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="l">./config:/config</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">environment</span><span class="p">:</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="l">FB_BASEURL=/</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">restart</span><span class="p">:</span><span class="w"> </span><span class="l">always</span><span class="w">
-</span></span></span></code></pre></div><p>Just make sure to change the &ldquo;443&rdquo; port to one you prefer without touching part to the right which is the internal Docker one. Also in the &ldquo;Volumes&rdquo; section change the &ldquo;- /<path-to-shared-folder>:/data&rdquo; part, do not modify right side just the left, before the &ldquo;:&rdquo;, and set it to what you want to share between your machines. DO NOT SHARE ROOT ! At least if you are going to make it public. If you want to keep it internal like me, do it if you so wish it&rsquo;s up to you.</p>
-<p>Now save the file, and open Terminal inside the folder and run the following command to start it as a Daemon :</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Bash" data-lang="Bash"><span class="line"><span class="cl">docker compose up -d
-</span></span></code></pre></div><p>If all was done correctly, you will now be able to access your newly created container via following URLs :</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Bash" data-lang="Bash"><span class="line"><span class="cl">http://localhost:443 <span class="o">(</span>Same machine container is on<span class="o">)</span>
-</span></span><span class="line"><span class="cl">http://&lt;server-ip&gt;:443 <span class="o">(</span>From other machines on same network<span class="o">)</span>
-</span></span></code></pre></div>
-
-<h3 class="relative group">Updating Docker Images 
-    <div id="updating-docker-images" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#updating-docker-images" aria-label="Anchor">#</a>
-    </span>        
-    
-</h3>
-<p>Deploying them images (containers) is nice and all, but now we need to maintain them, as in make sure they are up-to-date. In order to do so, we need to navigate to their respective folders, open terminal there, and run the following commands (FileBrowser) :</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Bash" data-lang="Bash"><span class="line"><span class="cl">docker compose down <span class="o">(</span>Stop Container<span class="o">)</span>
-</span></span><span class="line"><span class="cl">docker compose pull <span class="o">(</span>Pull in latest version<span class="o">)</span>
-</span></span><span class="line"><span class="cl">docker compose up -d <span class="o">(</span>Start it up again<span class="o">)</span>
-</span></span></code></pre></div><p>Note :</p>
-<blockquote>
-<p>Keep in mind that some containers might require us to delete them before grabbing new version. Make sure to read their instructions on that before going forward. I just used what works for our example. Not all Containers function the same way&hellip;</p>
-</blockquote>
-
-
-<h3 class="relative group">Other tools&hellip; 
-    <div id="other-tools" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#other-tools" aria-label="Anchor">#</a>
-    </span>        
-    
-</h3>
-<p>Kindly note that there are other tools we could use to make deployment much simpler. I just haven&rsquo;t used them in this guide so you can see how it all works. Tools that can be used are, <a href="https://www.portainer.io" target="_blank">Portainer</a> and <a href="https://dockge.kuma.pet" target="_blank">Dockge</a>, among many others&hellip;</p>
-
-
-<h3 class="relative group">Nginx Proxy &amp; More&hellip; 
-    <div id="nginx-proxy--more" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#nginx-proxy--more" aria-label="Anchor">#</a>
-    </span>        
-    
-</h3>
-<p>So far what we have done here, is deploy container for local access. If you want to access it outside your Network, well, for this you will have to own your own Domain name, set up Nginx Proxy manager, use Cloudflare and so on. But that&rsquo;s for another day. This guide was to get your appetite wet, lol..</p>
-<p>I hope you enjoy, and will see you in the next part.</p>
-]]></content:encoded>
-        <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
-      </item>
-    </channel>
-  </rss>
+  </channel>
+</rss>

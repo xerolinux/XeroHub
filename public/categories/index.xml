@@ -4,8 +4,9 @@
     <title>Categories on XeroLinux HQ</title>
     <link>https://xerolinux.xyz/categories/</link>
     <description>Recent content in Categories on XeroLinux HQ</description>
-    <generator>Hugo</generator>
+    <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
+    <copyright>Copy, _right?_ 🫨</copyright>
     <atom:link href="https://xerolinux.xyz/categories/index.xml" rel="self" type="application/rss+xml" />
-    </channel>
-  </rss>
+  </channel>
+</rss>
