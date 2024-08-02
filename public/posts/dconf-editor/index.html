@@ -659,78 +659,8 @@
 
 <article>
   
-  
-  
-  
-  
-  
-
-
-<div class="w-full rounded-md h-36 md:h-56 lg:h-72 single_hero_basic nozoom" style="background-image:url(/posts/dconf-editor/featured.webp);"></div>
-
-
-
-<div class="fixed inset-x-0 top-0 h-[800px] single_hero_background nozoom"
-    style="background-image:url(/img/bg.webp);">
-    <div class="absolute inset-0 bg-gradient-to-t from-neutral dark:from-neutral-800 to-transparent mix-blend-normal">
-    </div>
-    <div
-        class="absolute inset-0 opacity-30 dark:opacity-60 bg-gradient-to-t from-neutral dark:from-neutral-800 to-neutral dark:to-neutral-800 mix-blend-normal">
-    </div>
-</div>
-
-<div id="background-blur" class="fixed opacity-0 inset-x-0 top-0 h-full single_hero_background nozoom backdrop-blur-2xl"></div>
-<script>
-    window.addEventListener('scroll', function (e) {
-        var scroll = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
-        var background_blur = document.getElementById('background-blur');
-        background_blur.style.opacity = (scroll / 300)
-    });
-</script>
-
-
-
-  
-  
 
   <header id="single_header" class="mt-5 max-w-prose">
-    
-    <ol class="text-sm text-neutral-500 dark:text-neutral-400 print:hidden">
-  
-  
-    
-  
-    
-  
-  <li class="inline hidden">
-    <a
-      class="hover:underline decoration-neutral-300 dark:underline-neutral-600"
-      href="/"
-      ></a
-    ><span class="px-1 text-primary-500">/</span>
-  </li>
-
-  
-  <li class="inline ">
-    <a
-      class="hover:underline decoration-neutral-300 dark:underline-neutral-600"
-      href="/posts/"
-      >FOSS Posts</a
-    ><span class="px-1 text-primary-500">/</span>
-  </li>
-
-  
-  <li class="inline hidden">
-    <a
-      class="hover:underline decoration-neutral-300 dark:underline-neutral-600"
-      href="/posts/dconf-editor/"
-      >DConf Editor Gnome</a
-    ><span class="px-1 text-primary-500">/</span>
-  </li>
-
-</ol>
-
-
     
     <h1 class="mt-0 text-4xl font-extrabold text-neutral-900 dark:text-neutral">
       DConf Editor Gnome
@@ -774,6 +704,8 @@
   
 
 
+
+  
 
 
 
@@ -852,6 +784,27 @@
 </span>
         <span id="button_likes_text">&nbsp;Like</span>
     </button>
+</span><span class="px-2 text-primary-500">&middot;</span>
+
+
+  
+  
+
+<span class="mb-[2px]">
+  <a
+    href="https://github.com/xerolinux/xerohub/posts/dconf-editor/index.md"
+    class="text-lg hover:text-primary-500"
+    rel="noopener noreferrer"
+    target="_blank"
+    title="Edit content"
+    ><span class="inline-block align-text-bottom">
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512"><path fill="currentColor" d="M441 58.9L453.1 71c9.4 9.4 9.4 24.6 0 33.9L424 134.1 377.9 88 407 58.9c9.4-9.4 24.6-9.4 33.9 0zM209.8 256.2L344 121.9 390.1 168 255.8 302.2c-2.9 2.9-6.5 5-10.4 6.1l-58.5 16.7 16.7-58.5c1.1-3.9 3.2-7.5 6.1-10.4zM373.1 25L175.8 222.2c-8.7 8.7-15 19.4-18.3 31.1l-28.6 100c-2.4 8.4-.1 17.4 6.1 23.6s15.2 8.5 23.6 6.1l100-28.6c11.8-3.4 22.5-9.7 31.1-18.3L487 138.9c28.1-28.1 28.1-73.7 0-101.8L474.9 25C446.8-3.1 401.2-3.1 373.1 25zM88 64C39.4 64 0 103.4 0 152V424c0 48.6 39.4 88 88 88H360c48.6 0 88-39.4 88-88V312c0-13.3-10.7-24-24-24s-24 10.7-24 24V424c0 22.1-17.9 40-40 40H88c-22.1 0-40-17.9-40-40V152c0-22.1 17.9-40 40-40H200c13.3 0 24-10.7 24-24s-10.7-24-24-24H88z"/></svg>
+  </span>
+
+</span></a
+  >
 </span><span class="px-2 text-primary-500">&middot;</span>
 
 
@@ -977,10 +930,203 @@
     
 
     
+
+  </header>
+  
+  <section class="flex flex-col max-w-full mt-0 prose dark:prose-invert lg:flex-row">
+    
+     <div
+      class="order-first lg:ml-auto px-0 lg:order-last ltr:lg:pl-8 rtl:lg:pr-8">
+      <div class="toc ltr:pl-5 rtl:pr-5 print:hidden lg:sticky lg:top-[140px]">
+
+         <details open id="TOCView"
+  class="toc-right mt-0 overflow-y-scroll overscroll-contain scrollbar-thin scrollbar-track-neutral-200 scrollbar-thumb-neutral-400 dark:scrollbar-track-neutral-800 dark:scrollbar-thumb-neutral-600 rounded-lg ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 hidden lg:block">
+  <summary
+    class="block py-1 text-lg font-semibold cursor-pointer bg-neutral-100 text-neutral-800 ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 dark:bg-neutral-700 dark:text-neutral-100 lg:hidden">
+    Table of Contents
+  </summary>
+  <div
+    class="min-w-[220px] py-2 border-dotted ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
+    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#what-is-it">What is it?</a></li>
+        <li><a href="#install-dconf-on-linux">Install Dconf On Linux</a></li>
+        <li><a href="#backuprestore--reset-gnome-settings-with-dconf">Backup/Restore &amp; Reset GNOME Settings With Dconf</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</details>
+<details class="toc-inside mt-0 overflow-hidden rounded-lg ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 lg:hidden">
+  <summary
+    class="py-1 text-lg font-semibold cursor-pointer bg-neutral-100 text-neutral-800 ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 dark:bg-neutral-700 dark:text-neutral-100 lg:hidden">
+    Table of Contents
+  </summary>
+  <div
+    class="py-2 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
+    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#what-is-it">What is it?</a></li>
+        <li><a href="#install-dconf-on-linux">Install Dconf On Linux</a></li>
+        <li><a href="#backuprestore--reset-gnome-settings-with-dconf">Backup/Restore &amp; Reset GNOME Settings With Dconf</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</details>
+
+<script>
+
+  var margin = 200;
+  var marginError = 50;
+
+  (function () {
+    var $window = $(window);
+    var $toc = $('#TOCView');
+    var tocHeight = $toc.height();
+
+    function onResize() {
+      var windowAndMarginHeight = $window.height() - margin;
+      if(tocHeight >= windowAndMarginHeight) {
+        $toc.css("overflow-y", "scroll")
+        $toc.css("max-height", (windowAndMarginHeight + marginError) + "px")
+      } else {
+        $toc.css("overflow-y", "hidden")
+        $toc.css("max-height", "9999999px")
+      }
+    }
+
+    $window.on('resize', onResize);
+    $(document).ready(onResize);
+  })();
+
+
+
+  (function () {
+    var $toc = $('#TableOfContents');
+    if ($toc.length > 0) {
+      var $window = $(window);
+
+      function onScroll() {
+        var currentScroll = $window.scrollTop();
+        var h = $('.anchor');
+        var id = "";
+        h.each(function (i, e) {
+          e = $(e);
+          if (e.offset().top - $(window).height()/3 <= currentScroll) {
+            id = decodeURIComponent(e.attr('id'));
+          }
+        });
+        var active = $toc.find('a.active');      
+        if (active.length == 1 && active.eq(0).attr('href') == '#' + id) return true;
+
+        active.each(function (i, e) {
+          
+            $(e).removeClass('active');
+          
+        });
+        $toc.find('a[href="#' + id + '"]').addClass('active')
+        $toc.find('a[href="#' + id + '"]').parentsUntil('#TableOfContents').each(function (i, e) {
+          $(e).children('a').parents('ul').show();          
+        });
+      }
+
+      $window.on('scroll', onScroll);
+      $(document).ready(function () {
+        
+        onScroll();
+      });
+    }
+  })();
+
+
+</script>
+   </div>
+      </div>
       
-      
+
+      <div class="min-w-0 min-h-0 max-w-fit">
         
         
+
+
+        <div class="article-content max-w-prose mb-20">
+          
+
+<h3 class="relative group">What is it? 
+    <div id="what-is-it" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#what-is-it" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p>Dconf Editor is a graphical tool used to configure settings in Linux, particularly on GNOME desktop environments. It allows users to navigate and modify system options stored in the dconf database, which is a key-value store that manages different aspects of the system.</p>
+
+
+    
+    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+      <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/b5qVOeyFqKk?autoplay=0&controls=1&end=0&loop=0&mute=0&start=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="YouTube video"
+      ></iframe>
+    </div>
+
+
+
+<h3 class="relative group">Install Dconf On Linux 
+    <div id="install-dconf-on-linux" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#install-dconf-on-linux" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p>Dconf comes pre-installed in many Linux distributions. If it is not installed already, you can install it using the distribution&rsquo;s default package manager depending upon the distribution you use.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Bash" data-lang="Bash"><span class="line"><span class="cl">sudo pacman -S dconf
+</span></span></code></pre></div>
+
+<h3 class="relative group">Backup/Restore &amp; Reset GNOME Settings With Dconf 
+    <div id="backuprestore--reset-gnome-settings-with-dconf" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#backuprestore--reset-gnome-settings-with-dconf" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p>Believe it or not, this is one of the easiest way to backup and restore system settings with a just single command. To backup your current Linux desktop settings using dconf, do run this command:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Bash" data-lang="Bash"><span class="line"><span class="cl">dconf dump /org/gnome/ &gt; gnome-desktop.conf
+</span></span></code></pre></div><p>The above command will save all customization and tweaks you made in your system, including the pinned applications in the Dock or Unity launcher, desktop panel applets, desktop indicators, your system fonts, GTK themes, Icon themes, monitor resolution, keyboard shortcuts, window button placement, menu and launcher behaviour etc., in a text file named gnome-desktop.conf.</p>
+<p>Please note that this command will only backup the system settings. It won’t save settings of other applications that doesn’t use dconf. Also, it won’t backup your personal data either.</p>
+<p>You can view this file using any text editors or cat command.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Bash" data-lang="Bash"><span class="line"><span class="cl">cat gnome-desktop.conf
+</span></span></code></pre></div><p>Now reset your desktop settings to the factory defaults with command:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Bash" data-lang="Bash"><span class="line"><span class="cl">dconf reset -f /org/gnome/
+</span></span></code></pre></div><p>After running the above command, your Linux desktop will turn into the old state when you installed it in the first time. Don&rsquo;t panic! Your personal data and installed applications will still be intact.</p>
+<p>To restore the System settings, simply do:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Bash" data-lang="Bash"><span class="line"><span class="cl">dconf load /org/gnome/ &lt; gnome-desktop.conf
+</span></span></code></pre></div><p>You can even backup more specific settings like desktop or window manager.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Bash" data-lang="Bash"><span class="line"><span class="cl">dconf dump /org/gnome/desktop/wm/preferences/ &gt; old_wm_settings
+</span></span></code></pre></div><p>Keep the backup file in a safe place to use it later after reinstalling your Linux desktop.</p>
+<p>It&rsquo;s that simple!!</p>
+
+        </div>
+        
+        
+
+          
+            
+            
 <div class="flex author">
   
     
@@ -1196,207 +1342,14 @@
   </div>
 </div>
 
-      
-
-      
-
-      
-      <div class="mb-5"></div>
-      
-
-    
-
-  </header>
-  
-  <section class="flex flex-col max-w-full mt-0 prose dark:prose-invert lg:flex-row">
-    
-     <div
-      class="order-first lg:ml-auto px-0 lg:order-last ltr:lg:pl-8 rtl:lg:pr-8">
-      <div class="toc ltr:pl-5 rtl:pr-5 print:hidden lg:sticky lg:top-[140px]">
-
-         <details open id="TOCView"
-  class="toc-right mt-0 overflow-y-scroll overscroll-contain scrollbar-thin scrollbar-track-neutral-200 scrollbar-thumb-neutral-400 dark:scrollbar-track-neutral-800 dark:scrollbar-thumb-neutral-600 rounded-lg ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 hidden lg:block">
-  <summary
-    class="block py-1 text-lg font-semibold cursor-pointer bg-neutral-100 text-neutral-800 ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 dark:bg-neutral-700 dark:text-neutral-100 lg:hidden">
-    Table of Contents
-  </summary>
-  <div
-    class="min-w-[220px] py-2 border-dotted ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
-    <nav id="TableOfContents">
-  <ul>
-    <li>
-      <ul>
-        <li><a href="#what-is-it">What is it?</a></li>
-        <li><a href="#install-dconf-on-linux">Install Dconf On Linux</a></li>
-        <li><a href="#backuprestore--reset-gnome-settings-with-dconf">Backup/Restore &amp; Reset GNOME Settings With Dconf</a></li>
-      </ul>
-    </li>
-  </ul>
-</nav>
-  </div>
-</details>
-<details class="toc-inside mt-0 overflow-hidden rounded-lg ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 lg:hidden">
-  <summary
-    class="py-1 text-lg font-semibold cursor-pointer bg-neutral-100 text-neutral-800 ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 dark:bg-neutral-700 dark:text-neutral-100 lg:hidden">
-    Table of Contents
-  </summary>
-  <div
-    class="py-2 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
-    <nav id="TableOfContents">
-  <ul>
-    <li>
-      <ul>
-        <li><a href="#what-is-it">What is it?</a></li>
-        <li><a href="#install-dconf-on-linux">Install Dconf On Linux</a></li>
-        <li><a href="#backuprestore--reset-gnome-settings-with-dconf">Backup/Restore &amp; Reset GNOME Settings With Dconf</a></li>
-      </ul>
-    </li>
-  </ul>
-</nav>
-  </div>
-</details>
-
-<script>
-
-  var margin = 200;
-  var marginError = 50;
-
-  (function () {
-    var $window = $(window);
-    var $toc = $('#TOCView');
-    var tocHeight = $toc.height();
-
-    function onResize() {
-      var windowAndMarginHeight = $window.height() - margin;
-      if(tocHeight >= windowAndMarginHeight) {
-        $toc.css("overflow-y", "scroll")
-        $toc.css("max-height", (windowAndMarginHeight + marginError) + "px")
-      } else {
-        $toc.css("overflow-y", "hidden")
-        $toc.css("max-height", "9999999px")
-      }
-    }
-
-    $window.on('resize', onResize);
-    $(document).ready(onResize);
-  })();
-
-
-
-  (function () {
-    var $toc = $('#TableOfContents');
-    if ($toc.length > 0) {
-      var $window = $(window);
-
-      function onScroll() {
-        var currentScroll = $window.scrollTop();
-        var h = $('.anchor');
-        var id = "";
-        h.each(function (i, e) {
-          e = $(e);
-          if (e.offset().top - $(window).height()/3 <= currentScroll) {
-            id = decodeURIComponent(e.attr('id'));
-          }
-        });
-        var active = $toc.find('a.active');      
-        if (active.length == 1 && active.eq(0).attr('href') == '#' + id) return true;
-
-        active.each(function (i, e) {
-          
-            $(e).removeClass('active');
-          
-        });
-        $toc.find('a[href="#' + id + '"]').addClass('active')
-        $toc.find('a[href="#' + id + '"]').parentsUntil('#TableOfContents').each(function (i, e) {
-          $(e).children('a').parents('ul').show();          
-        });
-      }
-
-      $window.on('scroll', onScroll);
-      $(document).ready(function () {
-        
-        onScroll();
-      });
-    }
-  })();
-
-
-</script>
-   </div>
-      </div>
-      
-
-      <div class="min-w-0 min-h-0 max-w-fit">
-        
-        
-
-
-        <div class="article-content max-w-prose mb-20">
           
 
-<h3 class="relative group">What is it? 
-    <div id="what-is-it" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#what-is-it" aria-label="Anchor">#</a>
-    </span>        
-    
-</h3>
-<p>Dconf Editor is a graphical tool used to configure settings in Linux, particularly on GNOME desktop environments. It allows users to navigate and modify system options stored in the dconf database, which is a key-value store that manages different aspects of the system.</p>
+          
 
+          
+          <div class="mb-10"></div>
+          
 
-    
-    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-      <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/b5qVOeyFqKk?autoplay=0&controls=1&end=0&loop=0&mute=0&start=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="YouTube video"
-      ></iframe>
-    </div>
-
-
-
-<h3 class="relative group">Install Dconf On Linux 
-    <div id="install-dconf-on-linux" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#install-dconf-on-linux" aria-label="Anchor">#</a>
-    </span>        
-    
-</h3>
-<p>Dconf comes pre-installed in many Linux distributions. If it is not installed already, you can install it using the distribution&rsquo;s default package manager depending upon the distribution you use.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Bash" data-lang="Bash"><span class="line"><span class="cl">sudo pacman -S dconf
-</span></span></code></pre></div>
-
-<h3 class="relative group">Backup/Restore &amp; Reset GNOME Settings With Dconf 
-    <div id="backuprestore--reset-gnome-settings-with-dconf" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#backuprestore--reset-gnome-settings-with-dconf" aria-label="Anchor">#</a>
-    </span>        
-    
-</h3>
-<p>Believe it or not, this is one of the easiest way to backup and restore system settings with a just single command. To backup your current Linux desktop settings using dconf, do run this command:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Bash" data-lang="Bash"><span class="line"><span class="cl">dconf dump /org/gnome/ &gt; gnome-desktop.conf
-</span></span></code></pre></div><p>The above command will save all customization and tweaks you made in your system, including the pinned applications in the Dock or Unity launcher, desktop panel applets, desktop indicators, your system fonts, GTK themes, Icon themes, monitor resolution, keyboard shortcuts, window button placement, menu and launcher behaviour etc., in a text file named gnome-desktop.conf.</p>
-<p>Please note that this command will only backup the system settings. It won’t save settings of other applications that doesn’t use dconf. Also, it won’t backup your personal data either.</p>
-<p>You can view this file using any text editors or cat command.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Bash" data-lang="Bash"><span class="line"><span class="cl">cat gnome-desktop.conf
-</span></span></code></pre></div><p>Now reset your desktop settings to the factory defaults with command:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Bash" data-lang="Bash"><span class="line"><span class="cl">dconf reset -f /org/gnome/
-</span></span></code></pre></div><p>After running the above command, your Linux desktop will turn into the old state when you installed it in the first time. Don&rsquo;t panic! Your personal data and installed applications will still be intact.</p>
-<p>To restore the System settings, simply do:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Bash" data-lang="Bash"><span class="line"><span class="cl">dconf load /org/gnome/ &lt; gnome-desktop.conf
-</span></span></code></pre></div><p>You can even backup more specific settings like desktop or window manager.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Bash" data-lang="Bash"><span class="line"><span class="cl">dconf dump /org/gnome/desktop/wm/preferences/ &gt; old_wm_settings
-</span></span></code></pre></div><p>Keep the backup file in a safe place to use it later after reinstalling your Linux desktop.</p>
-<p>It&rsquo;s that simple!!</p>
-
-        </div>
-        
         
 
         

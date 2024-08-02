@@ -657,78 +657,8 @@
 
 <article>
   
-  
-  
-  
-  
-  
-
-
-<div class="w-full rounded-md h-36 md:h-56 lg:h-72 single_hero_basic nozoom" style="background-image:url(/posts/downgrade-tool/featured.webp);"></div>
-
-
-
-<div class="fixed inset-x-0 top-0 h-[800px] single_hero_background nozoom"
-    style="background-image:url(/img/bg.webp);">
-    <div class="absolute inset-0 bg-gradient-to-t from-neutral dark:from-neutral-800 to-transparent mix-blend-normal">
-    </div>
-    <div
-        class="absolute inset-0 opacity-30 dark:opacity-60 bg-gradient-to-t from-neutral dark:from-neutral-800 to-neutral dark:to-neutral-800 mix-blend-normal">
-    </div>
-</div>
-
-<div id="background-blur" class="fixed opacity-0 inset-x-0 top-0 h-full single_hero_background nozoom backdrop-blur-2xl"></div>
-<script>
-    window.addEventListener('scroll', function (e) {
-        var scroll = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
-        var background_blur = document.getElementById('background-blur');
-        background_blur.style.opacity = (scroll / 300)
-    });
-</script>
-
-
-
-  
-  
 
   <header id="single_header" class="mt-5 max-w-prose">
-    
-    <ol class="text-sm text-neutral-500 dark:text-neutral-400 print:hidden">
-  
-  
-    
-  
-    
-  
-  <li class="inline hidden">
-    <a
-      class="hover:underline decoration-neutral-300 dark:underline-neutral-600"
-      href="/"
-      ></a
-    ><span class="px-1 text-primary-500">/</span>
-  </li>
-
-  
-  <li class="inline ">
-    <a
-      class="hover:underline decoration-neutral-300 dark:underline-neutral-600"
-      href="/posts/"
-      >FOSS Posts</a
-    ><span class="px-1 text-primary-500">/</span>
-  </li>
-
-  
-  <li class="inline hidden">
-    <a
-      class="hover:underline decoration-neutral-300 dark:underline-neutral-600"
-      href="/posts/downgrade-tool/"
-      >How To Downgrade Packages</a
-    ><span class="px-1 text-primary-500">/</span>
-  </li>
-
-</ol>
-
-
     
     <h1 class="mt-0 text-4xl font-extrabold text-neutral-900 dark:text-neutral">
       How To Downgrade Packages
@@ -772,6 +702,8 @@
   
 
 
+
+  
 
 
 
@@ -850,6 +782,27 @@
 </span>
         <span id="button_likes_text">&nbsp;Like</span>
     </button>
+</span><span class="px-2 text-primary-500">&middot;</span>
+
+
+  
+  
+
+<span class="mb-[2px]">
+  <a
+    href="https://github.com/xerolinux/xerohub/posts/downgrade-tool/index.md"
+    class="text-lg hover:text-primary-500"
+    rel="noopener noreferrer"
+    target="_blank"
+    title="Edit content"
+    ><span class="inline-block align-text-bottom">
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512"><path fill="currentColor" d="M441 58.9L453.1 71c9.4 9.4 9.4 24.6 0 33.9L424 134.1 377.9 88 407 58.9c9.4-9.4 24.6-9.4 33.9 0zM209.8 256.2L344 121.9 390.1 168 255.8 302.2c-2.9 2.9-6.5 5-10.4 6.1l-58.5 16.7 16.7-58.5c1.1-3.9 3.2-7.5 6.1-10.4zM373.1 25L175.8 222.2c-8.7 8.7-15 19.4-18.3 31.1l-28.6 100c-2.4 8.4-.1 17.4 6.1 23.6s15.2 8.5 23.6 6.1l100-28.6c11.8-3.4 22.5-9.7 31.1-18.3L487 138.9c28.1-28.1 28.1-73.7 0-101.8L474.9 25C446.8-3.1 401.2-3.1 373.1 25zM88 64C39.4 64 0 103.4 0 152V424c0 48.6 39.4 88 88 88H360c48.6 0 88-39.4 88-88V312c0-13.3-10.7-24-24-24s-24 10.7-24 24V424c0 22.1-17.9 40-40 40H88c-22.1 0-40-17.9-40-40V152c0-22.1 17.9-40 40-40H200c13.3 0 24-10.7 24-24s-10.7-24-24-24H88z"/></svg>
+  </span>
+
+</span></a
+  >
 </span><span class="px-2 text-primary-500">&middot;</span>
 
 
@@ -959,10 +912,220 @@
     
 
     
+
+  </header>
+  
+  <section class="flex flex-col max-w-full mt-0 prose dark:prose-invert lg:flex-row">
+    
+     <div
+      class="order-first lg:ml-auto px-0 lg:order-last ltr:lg:pl-8 rtl:lg:pr-8">
+      <div class="toc ltr:pl-5 rtl:pr-5 print:hidden lg:sticky lg:top-[140px]">
+
+         <details open id="TOCView"
+  class="toc-right mt-0 overflow-y-scroll overscroll-contain scrollbar-thin scrollbar-track-neutral-200 scrollbar-thumb-neutral-400 dark:scrollbar-track-neutral-800 dark:scrollbar-thumb-neutral-600 rounded-lg ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 hidden lg:block">
+  <summary
+    class="block py-1 text-lg font-semibold cursor-pointer bg-neutral-100 text-neutral-800 ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 dark:bg-neutral-700 dark:text-neutral-100 lg:hidden">
+    Table of Contents
+  </summary>
+  <div
+    class="min-w-[220px] py-2 border-dotted ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
+    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#what-is-downgrade-">What is Downgrade ?</a></li>
+        <li><a href="#why-do-we-need-it-">Why do we need it ?</a></li>
+        <li><a href="#install-downgrade-utility">Install Downgrade utility</a></li>
+        <li><a href="#downgrade-a-package">Downgrade a package</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</details>
+<details class="toc-inside mt-0 overflow-hidden rounded-lg ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 lg:hidden">
+  <summary
+    class="py-1 text-lg font-semibold cursor-pointer bg-neutral-100 text-neutral-800 ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 dark:bg-neutral-700 dark:text-neutral-100 lg:hidden">
+    Table of Contents
+  </summary>
+  <div
+    class="py-2 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
+    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#what-is-downgrade-">What is Downgrade ?</a></li>
+        <li><a href="#why-do-we-need-it-">Why do we need it ?</a></li>
+        <li><a href="#install-downgrade-utility">Install Downgrade utility</a></li>
+        <li><a href="#downgrade-a-package">Downgrade a package</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</details>
+
+<script>
+
+  var margin = 200;
+  var marginError = 50;
+
+  (function () {
+    var $window = $(window);
+    var $toc = $('#TOCView');
+    var tocHeight = $toc.height();
+
+    function onResize() {
+      var windowAndMarginHeight = $window.height() - margin;
+      if(tocHeight >= windowAndMarginHeight) {
+        $toc.css("overflow-y", "scroll")
+        $toc.css("max-height", (windowAndMarginHeight + marginError) + "px")
+      } else {
+        $toc.css("overflow-y", "hidden")
+        $toc.css("max-height", "9999999px")
+      }
+    }
+
+    $window.on('resize', onResize);
+    $(document).ready(onResize);
+  })();
+
+
+
+  (function () {
+    var $toc = $('#TableOfContents');
+    if ($toc.length > 0) {
+      var $window = $(window);
+
+      function onScroll() {
+        var currentScroll = $window.scrollTop();
+        var h = $('.anchor');
+        var id = "";
+        h.each(function (i, e) {
+          e = $(e);
+          if (e.offset().top - $(window).height()/3 <= currentScroll) {
+            id = decodeURIComponent(e.attr('id'));
+          }
+        });
+        var active = $toc.find('a.active');      
+        if (active.length == 1 && active.eq(0).attr('href') == '#' + id) return true;
+
+        active.each(function (i, e) {
+          
+            $(e).removeClass('active');
+          
+        });
+        $toc.find('a[href="#' + id + '"]').addClass('active')
+        $toc.find('a[href="#' + id + '"]').parentsUntil('#TableOfContents').each(function (i, e) {
+          $(e).children('a').parents('ul').show();          
+        });
+      }
+
+      $window.on('scroll', onScroll);
+      $(document).ready(function () {
+        
+        onScroll();
+      });
+    }
+  })();
+
+
+</script>
+   </div>
+      </div>
       
-      
+
+      <div class="min-w-0 min-h-0 max-w-fit">
         
         
+
+
+        <div class="article-content max-w-prose mb-20">
+          
+
+<h3 class="relative group">What is Downgrade ? 
+    <div id="what-is-downgrade-" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#what-is-downgrade-" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p>Downgrade is a Bash script that makes it easier to downgrade packages in Arch Linux to an older version. It checks both the local pacman cache and the Arch Linux Archive (ALA) for available older versions of a package and allows you to select which version to install</p>
+
+
+<h3 class="relative group">Why do we need it ? 
+    <div id="why-do-we-need-it-" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#why-do-we-need-it-" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p>As you might know, Arch Linux is a rolling release and DIY (do-it-yourself) distribution. So you have to be a bit careful while updating it often, especially installing or updating packages from the third party repositories like AUR. You might be end up with broken system if you don&rsquo;t know what you are doing. It is your responsibility to make Arch Linux more stable. However, we all do mistakes. It is difficult to be careful all time. Sometimes, you want to update to most bleeding edge, and you might be stuck with broken packages. Don&rsquo;t panic! In such cases, you can simply rollback to the old stable packages. This short tutorial describes how to downgrade a package in Arch Linux and its variants like EndeavourOS, Manjaro Linux.</p>
+
+
+<h3 class="relative group">Install Downgrade utility 
+    <div id="install-downgrade-utility" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#install-downgrade-utility" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p>The downgrade package is available in AUR, so you can install it using any AUR helper programs such as Paru or Yay.</p>
+<p>Using Paru:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Bash" data-lang="Bash"><span class="line"><span class="cl">paru -S downgrade
+</span></span></code></pre></div><p>Using Yay:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Bash" data-lang="Bash"><span class="line"><span class="cl">yay -S downgrade
+</span></span></code></pre></div>
+
+<h3 class="relative group">Downgrade a package 
+    <div id="downgrade-a-package" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#downgrade-a-package" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p>The typical usage of &ldquo;downgrade&rdquo; command is:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Bash" data-lang="Bash"><span class="line"><span class="cl">sudo downgrade <span class="o">[</span>PACKAGE, ...<span class="o">]</span> <span class="o">[</span>-- <span class="o">[</span>PACMAN OPTIONS<span class="o">]]</span>
+</span></span></code></pre></div><p>Let us say you want to downgrade opera web browser to any available old version.</p>
+<p>To do so, run:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Bash" data-lang="Bash"><span class="line"><span class="cl">sudo downgrade opera
+</span></span></code></pre></div><p>This command will list all available versions of opera package (both new and old) from your local cache and remote mirror.</p>
+<p>Sample output:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Bash" data-lang="Bash"><span class="line"><span class="cl">Available packages:
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">1<span class="o">)</span> opera-37.0.2178.43-1-x86_64.pkg.tar.xz <span class="o">(</span><span class="nb">local</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl">2<span class="o">)</span> opera-37.0.2178.43-1-x86_64.pkg.tar.xz <span class="o">(</span>remote<span class="o">)</span>
+</span></span><span class="line"><span class="cl">3<span class="o">)</span> opera-37.0.2178.32-1-x86_64.pkg.tar.xz <span class="o">(</span>remote<span class="o">)</span>
+</span></span><span class="line"><span class="cl">4<span class="o">)</span> opera-36.0.2130.65-2-x86_64.pkg.tar.xz <span class="o">(</span>remote<span class="o">)</span>
+</span></span><span class="line"><span class="cl">5<span class="o">)</span> opera-36.0.2130.65-1-x86_64.pkg.tar.xz <span class="o">(</span>remote<span class="o">)</span>
+</span></span><span class="line"><span class="cl">6<span class="o">)</span> opera-36.0.2130.46-2-x86_64.pkg.tar.xz <span class="o">(</span>remote<span class="o">)</span>
+</span></span><span class="line"><span class="cl">7<span class="o">)</span> opera-36.0.2130.46-1-x86_64.pkg.tar.xz <span class="o">(</span>remote<span class="o">)</span>
+</span></span><span class="line"><span class="cl">8<span class="o">)</span> opera-36.0.2130.32-2-x86_64.pkg.tar.xz <span class="o">(</span>remote<span class="o">)</span>
+</span></span><span class="line"><span class="cl">9<span class="o">)</span> opera-36.0.2130.32-1-x86_64.pkg.tar.xz <span class="o">(</span>remote<span class="o">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">select</span> a package by number:
+</span></span></code></pre></div><p>Just type the package number of your choice, and hit enter to install it.</p>
+<p>That&rsquo;s it. The current installed package will be downgraded to the old version.</p>
+
+        </div>
+        
+        
+
+          
+            
+            
 <div class="flex author">
   
     
@@ -1178,224 +1341,14 @@
   </div>
 </div>
 
-      
-
-      
-
-      
-      <div class="mb-5"></div>
-      
-
-    
-
-  </header>
-  
-  <section class="flex flex-col max-w-full mt-0 prose dark:prose-invert lg:flex-row">
-    
-     <div
-      class="order-first lg:ml-auto px-0 lg:order-last ltr:lg:pl-8 rtl:lg:pr-8">
-      <div class="toc ltr:pl-5 rtl:pr-5 print:hidden lg:sticky lg:top-[140px]">
-
-         <details open id="TOCView"
-  class="toc-right mt-0 overflow-y-scroll overscroll-contain scrollbar-thin scrollbar-track-neutral-200 scrollbar-thumb-neutral-400 dark:scrollbar-track-neutral-800 dark:scrollbar-thumb-neutral-600 rounded-lg ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 hidden lg:block">
-  <summary
-    class="block py-1 text-lg font-semibold cursor-pointer bg-neutral-100 text-neutral-800 ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 dark:bg-neutral-700 dark:text-neutral-100 lg:hidden">
-    Table of Contents
-  </summary>
-  <div
-    class="min-w-[220px] py-2 border-dotted ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
-    <nav id="TableOfContents">
-  <ul>
-    <li>
-      <ul>
-        <li><a href="#what-is-downgrade-">What is Downgrade ?</a></li>
-        <li><a href="#why-do-we-need-it-">Why do we need it ?</a></li>
-        <li><a href="#install-downgrade-utility">Install Downgrade utility</a></li>
-        <li><a href="#downgrade-a-package">Downgrade a package</a></li>
-      </ul>
-    </li>
-  </ul>
-</nav>
-  </div>
-</details>
-<details class="toc-inside mt-0 overflow-hidden rounded-lg ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 lg:hidden">
-  <summary
-    class="py-1 text-lg font-semibold cursor-pointer bg-neutral-100 text-neutral-800 ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 dark:bg-neutral-700 dark:text-neutral-100 lg:hidden">
-    Table of Contents
-  </summary>
-  <div
-    class="py-2 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
-    <nav id="TableOfContents">
-  <ul>
-    <li>
-      <ul>
-        <li><a href="#what-is-downgrade-">What is Downgrade ?</a></li>
-        <li><a href="#why-do-we-need-it-">Why do we need it ?</a></li>
-        <li><a href="#install-downgrade-utility">Install Downgrade utility</a></li>
-        <li><a href="#downgrade-a-package">Downgrade a package</a></li>
-      </ul>
-    </li>
-  </ul>
-</nav>
-  </div>
-</details>
-
-<script>
-
-  var margin = 200;
-  var marginError = 50;
-
-  (function () {
-    var $window = $(window);
-    var $toc = $('#TOCView');
-    var tocHeight = $toc.height();
-
-    function onResize() {
-      var windowAndMarginHeight = $window.height() - margin;
-      if(tocHeight >= windowAndMarginHeight) {
-        $toc.css("overflow-y", "scroll")
-        $toc.css("max-height", (windowAndMarginHeight + marginError) + "px")
-      } else {
-        $toc.css("overflow-y", "hidden")
-        $toc.css("max-height", "9999999px")
-      }
-    }
-
-    $window.on('resize', onResize);
-    $(document).ready(onResize);
-  })();
-
-
-
-  (function () {
-    var $toc = $('#TableOfContents');
-    if ($toc.length > 0) {
-      var $window = $(window);
-
-      function onScroll() {
-        var currentScroll = $window.scrollTop();
-        var h = $('.anchor');
-        var id = "";
-        h.each(function (i, e) {
-          e = $(e);
-          if (e.offset().top - $(window).height()/3 <= currentScroll) {
-            id = decodeURIComponent(e.attr('id'));
-          }
-        });
-        var active = $toc.find('a.active');      
-        if (active.length == 1 && active.eq(0).attr('href') == '#' + id) return true;
-
-        active.each(function (i, e) {
-          
-            $(e).removeClass('active');
-          
-        });
-        $toc.find('a[href="#' + id + '"]').addClass('active')
-        $toc.find('a[href="#' + id + '"]').parentsUntil('#TableOfContents').each(function (i, e) {
-          $(e).children('a').parents('ul').show();          
-        });
-      }
-
-      $window.on('scroll', onScroll);
-      $(document).ready(function () {
-        
-        onScroll();
-      });
-    }
-  })();
-
-
-</script>
-   </div>
-      </div>
-      
-
-      <div class="min-w-0 min-h-0 max-w-fit">
-        
-        
-
-
-        <div class="article-content max-w-prose mb-20">
           
 
-<h3 class="relative group">What is Downgrade ? 
-    <div id="what-is-downgrade-" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#what-is-downgrade-" aria-label="Anchor">#</a>
-    </span>        
-    
-</h3>
-<p>Downgrade is a Bash script that makes it easier to downgrade packages in Arch Linux to an older version. It checks both the local pacman cache and the Arch Linux Archive (ALA) for available older versions of a package and allows you to select which version to install</p>
+          
 
+          
+          <div class="mb-10"></div>
+          
 
-<h3 class="relative group">Why do we need it ? 
-    <div id="why-do-we-need-it-" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#why-do-we-need-it-" aria-label="Anchor">#</a>
-    </span>        
-    
-</h3>
-<p>As you might know, Arch Linux is a rolling release and DIY (do-it-yourself) distribution. So you have to be a bit careful while updating it often, especially installing or updating packages from the third party repositories like AUR. You might be end up with broken system if you don&rsquo;t know what you are doing. It is your responsibility to make Arch Linux more stable. However, we all do mistakes. It is difficult to be careful all time. Sometimes, you want to update to most bleeding edge, and you might be stuck with broken packages. Don&rsquo;t panic! In such cases, you can simply rollback to the old stable packages. This short tutorial describes how to downgrade a package in Arch Linux and its variants like EndeavourOS, Manjaro Linux.</p>
-
-
-<h3 class="relative group">Install Downgrade utility 
-    <div id="install-downgrade-utility" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#install-downgrade-utility" aria-label="Anchor">#</a>
-    </span>        
-    
-</h3>
-<p>The downgrade package is available in AUR, so you can install it using any AUR helper programs such as Paru or Yay.</p>
-<p>Using Paru:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Bash" data-lang="Bash"><span class="line"><span class="cl">paru -S downgrade
-</span></span></code></pre></div><p>Using Yay:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Bash" data-lang="Bash"><span class="line"><span class="cl">yay -S downgrade
-</span></span></code></pre></div>
-
-<h3 class="relative group">Downgrade a package 
-    <div id="downgrade-a-package" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#downgrade-a-package" aria-label="Anchor">#</a>
-    </span>        
-    
-</h3>
-<p>The typical usage of &ldquo;downgrade&rdquo; command is:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Bash" data-lang="Bash"><span class="line"><span class="cl">sudo downgrade <span class="o">[</span>PACKAGE, ...<span class="o">]</span> <span class="o">[</span>-- <span class="o">[</span>PACMAN OPTIONS<span class="o">]]</span>
-</span></span></code></pre></div><p>Let us say you want to downgrade opera web browser to any available old version.</p>
-<p>To do so, run:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Bash" data-lang="Bash"><span class="line"><span class="cl">sudo downgrade opera
-</span></span></code></pre></div><p>This command will list all available versions of opera package (both new and old) from your local cache and remote mirror.</p>
-<p>Sample output:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Bash" data-lang="Bash"><span class="line"><span class="cl">Available packages:
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">1<span class="o">)</span> opera-37.0.2178.43-1-x86_64.pkg.tar.xz <span class="o">(</span><span class="nb">local</span><span class="o">)</span>
-</span></span><span class="line"><span class="cl">2<span class="o">)</span> opera-37.0.2178.43-1-x86_64.pkg.tar.xz <span class="o">(</span>remote<span class="o">)</span>
-</span></span><span class="line"><span class="cl">3<span class="o">)</span> opera-37.0.2178.32-1-x86_64.pkg.tar.xz <span class="o">(</span>remote<span class="o">)</span>
-</span></span><span class="line"><span class="cl">4<span class="o">)</span> opera-36.0.2130.65-2-x86_64.pkg.tar.xz <span class="o">(</span>remote<span class="o">)</span>
-</span></span><span class="line"><span class="cl">5<span class="o">)</span> opera-36.0.2130.65-1-x86_64.pkg.tar.xz <span class="o">(</span>remote<span class="o">)</span>
-</span></span><span class="line"><span class="cl">6<span class="o">)</span> opera-36.0.2130.46-2-x86_64.pkg.tar.xz <span class="o">(</span>remote<span class="o">)</span>
-</span></span><span class="line"><span class="cl">7<span class="o">)</span> opera-36.0.2130.46-1-x86_64.pkg.tar.xz <span class="o">(</span>remote<span class="o">)</span>
-</span></span><span class="line"><span class="cl">8<span class="o">)</span> opera-36.0.2130.32-2-x86_64.pkg.tar.xz <span class="o">(</span>remote<span class="o">)</span>
-</span></span><span class="line"><span class="cl">9<span class="o">)</span> opera-36.0.2130.32-1-x86_64.pkg.tar.xz <span class="o">(</span>remote<span class="o">)</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="k">select</span> a package by number:
-</span></span></code></pre></div><p>Just type the package number of your choice, and hit enter to install it.</p>
-<p>That&rsquo;s it. The current installed package will be downgraded to the old version.</p>
-
-        </div>
-        
         
 
         
