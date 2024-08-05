@@ -20,14 +20,14 @@ disableImageOptimization = true
 disableTextInHeader = false
 
 defaultBackgroundImage = "img/bg.webp"
-defaultFeaturedImage = "img/bg.webp"
+defaultFeaturedImage = "img/defaultf.png"
 
 highlightCurrentMenuArea = true
 smartTOC = true
 smartTOCHideUnfocusedChildren = false
 
 [header]
-  layout = "fixed-fill-blur" # valid options: basic, fixed, fixed-fill, fixed-gradient, fixed-fill-blur
+  layout = "fixed-gradient" # valid options: basic, fixed, fixed-fill, fixed-gradient, fixed-fill-blur
 
 [footer]
   showMenu = false
@@ -38,40 +38,40 @@ smartTOCHideUnfocusedChildren = false
 
 [homepage]
   layout = "background" # valid options: page, profile, hero, card, background, custom
-  homepageImage = "img/bg.webp" # used in: hero, and card
+  background = "img/bg.webp" # used in: hero, and card
   showRecent = true
-  showRecentItems = 6
+  showRecentItems = 10
   showMoreLink = true
   showMoreLinkDest = "/posts"
   cardView = true
-  cardViewScreenWidth = false
+  cardViewScreenWidth = true
   layoutBackgroundBlur = true # only used when layout equals background
 
 [article]
-  showDate = false
+  showDate = true
   showViews = true
   showLikes = true
   showDateOnlyInArticle = false
   showDateUpdated = true
   showAuthor = true
   showAuthorBottom = false
-  showHero = true
+  showHero = false
   heroStyle = "background" # valid options: basic, big, background, thumbAndBackground
   layoutBackgroundBlur = true # only used when heroStyle equals background or thumbAndBackground
   layoutBackgroundHeaderSpace = true # only used when heroStyle equals background
   showBreadcrumbs = false
   showDraftLabel = false
   showEdit = false
-  editURL = "https://github.com/xerolinux/xerohub/"
-  editAppendPath = false
+  # editURL = "https://github.com/xerolinux/xerohub/"
+  # editAppendPath = false
   seriesOpened = false
-  showHeadingAnchors = true
+  showHeadingAnchors = false
   showPagination = true
   invertPagination = false
   showReadingTime = true
   showTableOfContents = true
-  showRelatedContent = false
-  # relatedContentLimit = 3
+  showRelatedContent = true
+  relatedContentLimit = 3
   showTaxonomies = true
   showAuthorsBadges = true
   showWordCount = false
@@ -88,11 +88,11 @@ smartTOCHideUnfocusedChildren = false
   showViews = false
   showLikes = false
   showTableOfContents = false
-  showCards = true
+  showCards = false
   orderByWeight = false
   groupByYear = false
   cardView = true
-  cardViewScreenWidth = false
+  cardViewScreenWidth = true
   constrainItemsWidth = false
 
 [sitemap]
@@ -106,7 +106,7 @@ smartTOCHideUnfocusedChildren = false
   showViews = false
   showLikes = false
   showTableOfContents = false
-  cardView = false
+  cardView = true
 
 [term]
   showHero = true
@@ -116,8 +116,8 @@ smartTOCHideUnfocusedChildren = false
   showLikes = false
   showTableOfContents = false
   groupByYear = false
-  cardView = false
-  cardViewScreenWidth = false
+  cardView = true
+  cardViewScreenWidth = true
 
 [firebase]
   apiKey = "AIzaSyDT_MJQFqPiRXwqJzRJN_VdNR9qF-1ki_s"

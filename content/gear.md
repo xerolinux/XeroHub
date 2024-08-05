@@ -2,7 +2,7 @@
 title: Our Gear
 date: 2024-07-12
 description: "The Gear I use"
-featureimage: https://i.imgur.com/w0pXM7W.png
+#featureimage: https://i.imgur.com/w0pXM7W.png
 ---
 ### Information
 

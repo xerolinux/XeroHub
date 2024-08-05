@@ -14,7 +14,7 @@
       <pubDate>Sat, 29 Jun 2024 00:00:00 +0000</pubDate>
       
       <guid>https://xerolinux.xyz/posts/zellij-terminal/</guid>
-      <description>What is Zellij? # Another day another Terminal utility. Zellij is a terminal workspace. It has the base functionality of a terminal multiplexer (similar to tmux or screen) but includes many built-in features that would allow users to extend it and create their own personalized environment.</description>
+      <description>What is Zellij? Another day another Terminal utility.</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/zellij-terminal/featured.webp" />
     </item>
     
@@ -24,8 +24,7 @@
       <pubDate>Fri, 28 Jun 2024 00:00:00 +0000</pubDate>
       
       <guid>https://xerolinux.xyz/posts/nix-package-manager/</guid>
-      <description>Intro # Yet again my good friend and Linux enthusiast ChriTitus has brought another cool Package Manager this time called #Nix.
-Seems to be cool and easy to Install and use.</description>
+      <description>Intro Yet again my good friend and Linux enthusiast ChriTitus has brought another cool Package Manager this time called #Nix.</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/nix-package-manager/featured.webp" />
     </item>
     
@@ -35,7 +34,7 @@ Seems to be cool and easy to Install and use.</description>
       <pubDate>Thu, 27 Jun 2024 00:00:00 +0000</pubDate>
       
       <guid>https://xerolinux.xyz/posts/tabby-terminal/</guid>
-      <description>Intro # I just ran across a video by @MattTLC from TheLinuxCast about a neat fully-featured Terminal Emulator called Tabby. I kinda like it, and I will be adding it to our package manager as an option.</description>
+      <description>Intro I just ran across a video by @MattTLC from TheLinuxCast about a neat fully-featured Terminal Emulator called Tabby.</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/tabby-terminal/featured.webp" />
     </item>
     
@@ -45,7 +44,7 @@ Seems to be cool and easy to Install and use.</description>
       <pubDate>Thu, 27 Jun 2024 00:00:00 +0000</pubDate>
       
       <guid>https://xerolinux.xyz/posts/terminal-aliases/</guid>
-      <description>A quick one today, a video by DistroTube popped up that explains shell aliases and how to create your very own. He does it in Ubuntu but you can do the same thing in Arch&amp;hellip;</description>
+      <description>A quick one today, a video by DistroTube popped up that explains shell aliases and how to create your very own.</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/terminal-aliases/featured.webp" />
     </item>
     
@@ -55,7 +54,7 @@ Seems to be cool and easy to Install and use.</description>
       <pubDate>Thu, 27 Jun 2024 00:00:00 +0000</pubDate>
       
       <guid>https://xerolinux.xyz/posts/zoxide-cd/</guid>
-      <description>Intro # While browsing YouTube I stumbled upon a video showing off a neat little tool called Zoxide. It&amp;rsquo;s touted to be a smarter cd command, inspired by z and autojump.</description>
+      <description>Intro While browsing YouTube I stumbled upon a video showing off a neat little tool called Zoxide.</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/zoxide-cd/featured.webp" />
     </item>
     
@@ -65,7 +64,7 @@ Seems to be cool and easy to Install and use.</description>
       <pubDate>Wed, 26 Jun 2024 00:00:00 +0000</pubDate>
       
       <guid>https://xerolinux.xyz/posts/topgrade-updater/</guid>
-      <description>Intro # Upgrading Linux has gotten much easier than it used to be. In the old days, you might upgrade certain pieces of software, but mostly you would wait until you bought the next version of your distro of choice.</description>
+      <description>Intro Upgrading Linux has gotten much easier than it used to be.</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/topgrade-updater/featured.webp" />
     </item>
     

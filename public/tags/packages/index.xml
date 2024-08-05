@@ -14,8 +14,7 @@
       <pubDate>Fri, 28 Jun 2024 00:00:00 +0000</pubDate>
       
       <guid>https://xerolinux.xyz/posts/nix-package-manager/</guid>
-      <description>Intro # Yet again my good friend and Linux enthusiast ChriTitus has brought another cool Package Manager this time called #Nix.
-Seems to be cool and easy to Install and use.</description>
+      <description>Intro Yet again my good friend and Linux enthusiast ChriTitus has brought another cool Package Manager this time called #Nix.</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/nix-package-manager/featured.webp" />
     </item>
     
@@ -25,7 +24,7 @@ Seems to be cool and easy to Install and use.</description>
       <pubDate>Thu, 27 Jun 2024 00:00:00 +0000</pubDate>
       
       <guid>https://xerolinux.xyz/posts/pacman-issues/</guid>
-      <description>Info # This will be a short one. I noticed lately that Pacman has been behaving badly.. I decided to attach all the videos that cover how to handle them.</description>
+      <description>Info This will be a short one.</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/pacman-issues/featured.webp" />
     </item>
     

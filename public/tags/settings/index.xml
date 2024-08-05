@@ -14,7 +14,7 @@
       <pubDate>Thu, 27 Jun 2024 00:00:00 +0000</pubDate>
       
       <guid>https://xerolinux.xyz/posts/dconf-editor/</guid>
-      <description>What is it? # Dconf Editor is a graphical tool used to configure settings in Linux, particularly on GNOME desktop environments. It allows users to navigate and modify system options stored in the dconf database, which is a key-value store that manages different aspects of the system.</description>
+      <description>What is it? Dconf Editor is a graphical tool used to configure settings in Linux, particularly on GNOME desktop environments.</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/dconf-editor/featured.webp" />
     </item>
     

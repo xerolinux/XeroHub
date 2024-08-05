@@ -14,8 +14,7 @@
       <pubDate>Mon, 29 Jul 2024 00:00:00 +0000</pubDate>
       
       <guid>https://xerolinux.xyz/posts/ricing-plasma/</guid>
-      <description>Intro # Before we begin, here&amp;rsquo;s brief intro as to why I care about ricing.
-In case you didn&amp;rsquo;t know it, I began my Linux journey with KDE Plasma because of the freedom of customization.</description>
+      <description>Intro Before we begin, here&amp;rsquo;s brief intro as to why I care about ricing.</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/ricing-plasma/featured.webp" />
     </item>
     
@@ -25,7 +24,7 @@ In case you didn&amp;rsquo;t know it, I began my Linux journey with KDE Plasma b
       <pubDate>Fri, 05 Jul 2024 00:00:00 +0000</pubDate>
       
       <guid>https://xerolinux.xyz/posts/ml4w-hyprland-dots/</guid>
-      <description>What is Hyprland? # In a nutshell, Hyprland is a dynamic tiling Wayland compositor based on wlroots that doesn&amp;rsquo;t sacrifice on its looks. It provides the latest Wayland features, is highly customizable, has all the eyecandy, the most powerful plugins, easy IPC, much more QoL stuff than other wlr-based compositors and more&amp;hellip;</description>
+      <description>What is Hyprland? In a nutshell, Hyprland is a dynamic tiling Wayland compositor based on wlroots that doesn&amp;rsquo;t sacrifice on its looks.</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/ml4w-hyprland-dots/featured.webp" />
     </item>
     
@@ -35,7 +34,7 @@ In case you didn&amp;rsquo;t know it, I began my Linux journey with KDE Plasma b
       <pubDate>Thu, 27 Jun 2024 00:00:00 +0000</pubDate>
       
       <guid>https://xerolinux.xyz/posts/lightly-shaders/</guid>
-      <description>What is it ? # I would like to share a neat little &amp;ldquo;Effect&amp;rdquo; if you will, called LightlyShaders which is a fork of another project that is a simple KWin/5 effect that simply rounds corners of windows, to do this it uses an opengl shader and is able to round any window, like mpv video for example will have rounded corners.</description>
+      <description>What is it ? I would like to share a neat little &amp;ldquo;Effect&amp;rdquo; if you will, called LightlyShaders which is a fork of another project that is a simple KWin/5 effect that simply rounds corners of windows, to do this it uses an opengl shader and is able to round any window, like mpv video for example will have rounded corners.</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/lightly-shaders/featured.webp" />
     </item>
     
@@ -45,7 +44,7 @@ In case you didn&amp;rsquo;t know it, I began my Linux journey with KDE Plasma b
       <pubDate>Thu, 27 Jun 2024 00:00:00 +0000</pubDate>
       
       <guid>https://xerolinux.xyz/posts/fix-grub/</guid>
-      <description>Info # In case you are one of the affected people, below is how you can fix the issue. I have tested it and it works fine. And keep in mind that XeroLinux is basically ArchLinux so below fix will work on Arch as well as any Arch-Based distros with the exception of Manjaro that is NOT Arch.</description>
+      <description>Info In case you are one of the affected people, below is how you can fix the issue.</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/fix-grub/featured.webp" />
     </item>
     
@@ -55,7 +54,7 @@ In case you didn&amp;rsquo;t know it, I began my Linux journey with KDE Plasma b
       <pubDate>Thu, 27 Jun 2024 00:00:00 +0000</pubDate>
       
       <guid>https://xerolinux.xyz/posts/theme-qt-apps-on-gtk-de/</guid>
-      <description>Intro # As I was working on XFCE &amp;amp; Gnome, I noticed that since they both use GTK3/4, some Qt apps made for KDE like KdenLive did not follow the system theme.</description>
+      <description>Intro As I was working on XFCE &amp;amp; Gnome, I noticed that since they both use GTK3/4, some Qt apps made for KDE like KdenLive did not follow the system theme.</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/theme-qt-apps-on-gtk-de/featured.webp" />
     </item>
     
@@ -65,7 +64,7 @@ In case you didn&amp;rsquo;t know it, I began my Linux journey with KDE Plasma b
       <pubDate>Thu, 27 Jun 2024 00:00:00 +0000</pubDate>
       
       <guid>https://xerolinux.xyz/posts/ml4w-hyprland-plasma/</guid>
-      <description>What is it? # Our good friend from ML4W just posted a video showing us how to have both Plasma 6 and Hyprland side-by-side with his awesome dotfiles.. Check it out below with links to his repositories&amp;hellip;</description>
+      <description>What is it? Our good friend from ML4W just posted a video showing us how to have both Plasma 6 and Hyprland side-by-side with his awesome dotfiles.</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/ml4w-hyprland-plasma/featured.webp" />
     </item>
     
@@ -75,7 +74,7 @@ In case you didn&amp;rsquo;t know it, I began my Linux journey with KDE Plasma b
       <pubDate>Thu, 27 Jun 2024 00:00:00 +0000</pubDate>
       
       <guid>https://xerolinux.xyz/posts/flatpak-theming/</guid>
-      <description>Intro # One of the reasons why some users avoid installing Flatpak apps is that most Flatpak apps don’t change their appearance as per the current system theme. This makes the applications look out of the place in your otherwise beautiful set up.</description>
+      <description>Intro One of the reasons why some users avoid installing Flatpak apps is that most Flatpak apps don’t change their appearance as per the current system theme.</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/flatpak-theming/featured.webp" />
     </item>
     
@@ -85,7 +84,7 @@ In case you didn&amp;rsquo;t know it, I began my Linux journey with KDE Plasma b
       <pubDate>Thu, 27 Jun 2024 00:00:00 +0000</pubDate>
       
       <guid>https://xerolinux.xyz/posts/wallpaper-engine/</guid>
-      <description>Intro # I have always wanted to use cool animated wallpapers on Linux. Found many free ways, but nothing rivaled the awesome features of Wallpaper Engine found on steam for the low price of $5.</description>
+      <description>Intro I have always wanted to use cool animated wallpapers on Linux.</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/wallpaper-engine/featured.webp" />
     </item>
     

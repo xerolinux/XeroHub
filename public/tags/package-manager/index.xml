@@ -14,8 +14,7 @@
       <pubDate>Thu, 27 Jun 2024 00:00:00 +0000</pubDate>
       
       <guid>https://xerolinux.xyz/posts/pacseek-tui/</guid>
-      <description>Intro # I just found a neat little tool called &amp;ldquo;Pacseek&amp;rdquo; which is a terminal user interface for searching and installing Arch Linux packages&amp;hellip;
-What is it? # Pacseek is terminal user interface, written in Rust which allows you to browse and search through the Arch Linux package databases as well as the Arch User Repository.</description>
+      <description>Intro I just found a neat little tool called &amp;ldquo;Pacseek&amp;rdquo; which is a terminal user interface for searching and installing Arch Linux packages&amp;hellip;</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/pacseek-tui/featured.webp" />
     </item>
     

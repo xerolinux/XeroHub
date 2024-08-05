@@ -14,7 +14,7 @@
       <pubDate>Mon, 08 Jul 2024 00:00:00 +0000</pubDate>
       
       <guid>https://xerolinux.xyz/news/xerolinux-plasma/</guid>
-      <description>Introduction # I want to begin by thanking everyone who has shown the Distro all the the love. Without whom it wouldn&amp;rsquo;t have lasted as long as it did. As well as the rest of the projects present and future.</description>
+      <description>Introduction I want to begin by thanking everyone who has shown the Distro all the the love.</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/news/xerolinux-plasma/featured.webp" />
     </item>
     
@@ -24,7 +24,7 @@
       <pubDate>Sun, 07 Jul 2024 00:00:00 +0000</pubDate>
       
       <guid>https://xerolinux.xyz/posts/amelia-automated-archinstall/</guid>
-      <description>Overview # Meet Amelia – your new best friend for installing ArchLinux! This Bash script is all about automation and ease, bringing you through the installation process with a slick TUI interface that’s both stylish and user-friendly.</description>
+      <description>Overview Meet Amelia – your new best friend for installing ArchLinux!</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/amelia-automated-archinstall/featured.webp" />
     </item>
     
@@ -34,7 +34,7 @@
       <pubDate>Wed, 03 Jul 2024 00:00:00 +0000</pubDate>
       
       <guid>https://xerolinux.xyz/posts/chaotic-aur/</guid>
-      <description>A bit of information # Chaotic-AUR is an unofficial package repository that contains pre-built packages from the Arch User Repository (AUR) . It is an automated building service that compiles AUR packages so users don&amp;rsquo;t have to build them themselves.</description>
+      <description>A bit of information Chaotic-AUR is an unofficial package repository that contains pre-built packages from the Arch User Repository (AUR) .</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/chaotic-aur/featured.webp" />
     </item>
     
@@ -45,7 +45,7 @@
       
       <guid>https://xerolinux.xyz/news/add-our-repo/</guid>
       <description>Hey there&amp;hellip;
-I was recently asked if my Repo can be added to other Arch-Based Distros, short answer is yes of course you can. I will be showing you how below.</description>
+I was recently asked if my Repo can be added to other Arch-Based Distros, short answer is yes of course you can.</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/news/add-our-repo/featured.webp" />
     </item>
     
@@ -55,7 +55,7 @@ I was recently asked if my Repo can be added to other Arch-Based Distros, short 
       <pubDate>Fri, 28 Jun 2024 00:00:00 +0000</pubDate>
       
       <guid>https://xerolinux.xyz/news/keep-xerolinux-alive/</guid>
-      <description>Intro # With the Distro is now gone, you have two choices, either back up your data and move on to another one. I would recommend you install Vanilla Arch using the ArchInstall script via the official Arch ISO if you want to benefit from the XeroCLI.</description>
+      <description>Intro With the Distro is now gone, you have two choices, either back up your data and move on to another one.</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/news/keep-xerolinux-alive/featured.webp" />
     </item>
     
@@ -65,7 +65,7 @@ I was recently asked if my Repo can be added to other Arch-Based Distros, short 
       <pubDate>Thu, 27 Jun 2024 00:00:00 +0000</pubDate>
       
       <guid>https://xerolinux.xyz/posts/chroot-guide/</guid>
-      <description>Info # Changing Root (Chroot) is the process of changing of the apparent disk root directory (and the current running process and its children) to another root directory. When you change root to another directory you cannot access files and commands outside that directory.</description>
+      <description>Info Changing Root (Chroot) is the process of changing of the apparent disk root directory (and the current running process and its children) to another root directory.</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/chroot-guide/featured.webp" />
     </item>
     
@@ -75,7 +75,7 @@ I was recently asked if my Repo can be added to other Arch-Based Distros, short 
       <pubDate>Thu, 27 Jun 2024 00:00:00 +0000</pubDate>
       
       <guid>https://xerolinux.xyz/posts/coverseen-img-convert/</guid>
-      <description>This one such a time saver.. # Converseen can do batch image conversion, apply similar alteration like rotation, resize, remove image metadata, let you ignore specific files if you import a collection.</description>
+      <description>This one such a time saver.</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/coverseen-img-convert/featured.webp" />
     </item>
     
@@ -85,7 +85,7 @@ I was recently asked if my Repo can be added to other Arch-Based Distros, short 
       <pubDate>Thu, 27 Jun 2024 00:00:00 +0000</pubDate>
       
       <guid>https://xerolinux.xyz/posts/enable-snaps/</guid>
-      <description>What are Snaps ? # Snaps are an innovative packaging format for distributing applications on Linux. Developed by Canonical, snaps are self-contained software bundles that include the app and all its dependencies.</description>
+      <description>What are Snaps ? Snaps are an innovative packaging format for distributing applications on Linux.</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/enable-snaps/featured.webp" />
     </item>
     
@@ -95,7 +95,7 @@ I was recently asked if my Repo can be added to other Arch-Based Distros, short 
       <pubDate>Thu, 27 Jun 2024 00:00:00 +0000</pubDate>
       
       <guid>https://xerolinux.xyz/posts/install-yay-paru/</guid>
-      <description>What Are Those? # Yay &amp;amp; Paru are AUR Helpers. What&amp;rsquo;s that ? Well, an AUR helper is a tool that automates the process of installing and managing packages from the Arch User Repository (AUR) on Arch Linux.</description>
+      <description>What Are Those? Yay &amp;amp; Paru are AUR Helpers.</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/install-yay-paru/featured.webp" />
     </item>
     
@@ -105,7 +105,7 @@ I was recently asked if my Repo can be added to other Arch-Based Distros, short 
       <pubDate>Thu, 27 Jun 2024 00:00:00 +0000</pubDate>
       
       <guid>https://xerolinux.xyz/posts/pacman-issues/</guid>
-      <description>Info # This will be a short one. I noticed lately that Pacman has been behaving badly.. I decided to attach all the videos that cover how to handle them.</description>
+      <description>Info This will be a short one.</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/pacman-issues/featured.webp" />
     </item>
     
@@ -115,8 +115,7 @@ I was recently asked if my Repo can be added to other Arch-Based Distros, short 
       <pubDate>Thu, 27 Jun 2024 00:00:00 +0000</pubDate>
       
       <guid>https://xerolinux.xyz/posts/pacseek-tui/</guid>
-      <description>Intro # I just found a neat little tool called &amp;ldquo;Pacseek&amp;rdquo; which is a terminal user interface for searching and installing Arch Linux packages&amp;hellip;
-What is it? # Pacseek is terminal user interface, written in Rust which allows you to browse and search through the Arch Linux package databases as well as the Arch User Repository.</description>
+      <description>Intro I just found a neat little tool called &amp;ldquo;Pacseek&amp;rdquo; which is a terminal user interface for searching and installing Arch Linux packages&amp;hellip;</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/pacseek-tui/featured.webp" />
     </item>
     
@@ -126,7 +125,7 @@ What is it? # Pacseek is terminal user interface, written in Rust which allows y
       <pubDate>Thu, 27 Jun 2024 00:00:00 +0000</pubDate>
       
       <guid>https://xerolinux.xyz/posts/terminal-aliases/</guid>
-      <description>A quick one today, a video by DistroTube popped up that explains shell aliases and how to create your very own. He does it in Ubuntu but you can do the same thing in Arch&amp;hellip;</description>
+      <description>A quick one today, a video by DistroTube popped up that explains shell aliases and how to create your very own.</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/terminal-aliases/featured.webp" />
     </item>
     
@@ -136,7 +135,7 @@ What is it? # Pacseek is terminal user interface, written in Rust which allows y
       <pubDate>Thu, 27 Jun 2024 00:00:00 +0000</pubDate>
       
       <guid>https://xerolinux.xyz/posts/zoxide-cd/</guid>
-      <description>Intro # While browsing YouTube I stumbled upon a video showing off a neat little tool called Zoxide. It&amp;rsquo;s touted to be a smarter cd command, inspired by z and autojump.</description>
+      <description>Intro While browsing YouTube I stumbled upon a video showing off a neat little tool called Zoxide.</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/zoxide-cd/featured.webp" />
     </item>
     

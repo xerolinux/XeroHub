@@ -14,7 +14,7 @@
       <pubDate>Thu, 27 Jun 2024 00:00:00 +0000</pubDate>
       
       <guid>https://xerolinux.xyz/posts/chroot-guide/</guid>
-      <description>Info # Changing Root (Chroot) is the process of changing of the apparent disk root directory (and the current running process and its children) to another root directory. When you change root to another directory you cannot access files and commands outside that directory.</description>
+      <description>Info Changing Root (Chroot) is the process of changing of the apparent disk root directory (and the current running process and its children) to another root directory.</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/chroot-guide/featured.webp" />
     </item>
     
@@ -24,7 +24,7 @@
       <pubDate>Thu, 27 Jun 2024 00:00:00 +0000</pubDate>
       
       <guid>https://xerolinux.xyz/posts/pacman-issues/</guid>
-      <description>Info # This will be a short one. I noticed lately that Pacman has been behaving badly.. I decided to attach all the videos that cover how to handle them.</description>
+      <description>Info This will be a short one.</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/pacman-issues/featured.webp" />
     </item>
     

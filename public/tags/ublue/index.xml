@@ -14,7 +14,7 @@
       <pubDate>Thu, 01 Aug 2024 00:00:00 +0000</pubDate>
       
       <guid>https://xerolinux.xyz/posts/bluebuild-workshop/</guid>
-      <description>What is BlueBuild Workshop? # BlueBuild is a nifty toolkit for creating custom images of Linux distributions, similar to Bluefin. It simplifies the process by allowing you to tweak configurations in a straightforward recipe.</description>
+      <description>What is BlueBuild Workshop? BlueBuild is a nifty toolkit for creating custom images of Linux distributions, similar to Bluefin.</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/bluebuild-workshop/featured.webp" />
     </item>
     
@@ -24,7 +24,7 @@
       <pubDate>Mon, 01 Jul 2024 00:00:00 +0000</pubDate>
       
       <guid>https://xerolinux.xyz/posts/aurora-atomic/</guid>
-      <description>What is uBlue Atomic? # uBlue is a project which produces images based on Fedora Atomic distros. You can use one of the presupplied images like Bazzite (gaming-focused image), Bluefin (general use zero-manitenance image), Aurora or their base images with minimal customizations to vanilla kinoite/silverblue/etc.</description>
+      <description>What is uBlue Atomic? uBlue is a project which produces images based on Fedora Atomic distros.</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/aurora-atomic/featured.webp" />
     </item>
     

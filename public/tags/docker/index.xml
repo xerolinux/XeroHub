@@ -14,7 +14,7 @@
       <pubDate>Sun, 28 Jul 2024 00:00:00 +0000</pubDate>
       
       <guid>https://xerolinux.xyz/news/immich-news/</guid>
-      <description>I know I previously said no news on this site as they get old. But I thought this one requires your attention, so there you go. It&amp;rsquo;s not news as much as it is an awareness post, letting you know more about what&amp;rsquo;s going on in Immich land.</description>
+      <description>I know I previously said no news on this site as they get old.</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/news/immich-news/featured.webp" />
     </item>
     
@@ -24,7 +24,7 @@
       <pubDate>Mon, 22 Jul 2024 00:00:00 +0000</pubDate>
       
       <guid>https://xerolinux.xyz/posts/docmost-notes/</guid>
-      <description>Discover Docmost # Ever dreamt of a magical realm where creating, collaborating, and sharing knowledge is as smooth as casting a spell? Welcome to Docmost, the open-source documentation software that&amp;rsquo;s like Hogwarts for your inner nerd.</description>
+      <description>Discover Docmost Ever dreamt of a magical realm where creating, collaborating, and sharing knowledge is as smooth as casting a spell?</description>
       
     </item>
     
@@ -34,7 +34,7 @@
       <pubDate>Thu, 27 Jun 2024 00:00:00 +0000</pubDate>
       
       <guid>https://xerolinux.xyz/posts/docker-usage/</guid>
-      <description>Intro # After messing with Docker Containers for so long, I thought I would share the knowledge. Hopefully a video showing it in action soon. In this short tutorial we will be using the Docker Compose feature to deploy our containers.</description>
+      <description>Intro After messing with Docker Containers for so long, I thought I would share the knowledge.</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/docker-usage/featured.webp" />
     </item>
     

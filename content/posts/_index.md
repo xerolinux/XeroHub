@@ -1,19 +1,7 @@
 ---
-title: "FOSS Posts"
+#title: "All Posts"
 description: "FOSS Tools & Guides"
-background: "img/bg.png"
 logo: "logos/logo.png"
-
-showDate : false
-showDateUpdated : false
-showHeadingAnchors : false
-showPagination : false
-showReadingTime : false
-showTableOfContents : true
-showTaxonomies : false 
-showWordCount : false
-showSummary : false
-sharingLinks : false
 ---
 
 <script src='https://storage.ko-fi.com/cdn/scripts/overlay-widget.js'></script>

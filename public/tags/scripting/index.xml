@@ -14,8 +14,7 @@
       <pubDate>Thu, 04 Jul 2024 00:00:00 +0000</pubDate>
       
       <guid>https://xerolinux.xyz/posts/proxmoxve-scripts/</guid>
-      <description>This is a short one. Just letting you all know of a recent discovery of mine while I was looking into Proxmox VE
-What are they? # Proxmox Helper Scripts empower users to create a Linux container or virtual machine interactively, providing choices for both simple and advanced configurations.</description>
+      <description>This is a short one. Just letting you all know of a recent discovery of mine while I was looking into Proxmox VE</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/proxmoxve-scripts/featured.webp" />
     </item>
     
@@ -25,7 +24,7 @@ What are they? # Proxmox Helper Scripts empower users to create a Linux containe
       <pubDate>Thu, 27 Jun 2024 00:00:00 +0000</pubDate>
       
       <guid>https://xerolinux.xyz/posts/caps-lock/</guid>
-      <description>What is it ? # I just discovered a niche of users who prefer using CAPS Lock instead of Shift while typing.. Very weird, but hey.. Anyway, one of those users shared a neat little script that solves an age-old issue with CAPS Delay on Linux.</description>
+      <description>What is it ? I just discovered a niche of users who prefer using CAPS Lock instead of Shift while typing.</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/caps-lock/featured.webp" />
     </item>
     
@@ -35,7 +34,7 @@ What are they? # Proxmox Helper Scripts empower users to create a Linux containe
       <pubDate>Thu, 27 Jun 2024 00:00:00 +0000</pubDate>
       
       <guid>https://xerolinux.xyz/posts/first-python-script/</guid>
-      <description>What prompted me ? # Well, as I was porting all relevant forum posts to this site in markdown, I needed a better way to do so. Someone on Mastodon gave me the idea of writing a python script that does it for me.</description>
+      <description>What prompted me ? Well, as I was porting all relevant forum posts to this site in markdown, I needed a better way to do so.</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/first-python-script/featured.webp" />
     </item>
     

@@ -14,7 +14,7 @@
       <pubDate>Thu, 01 Aug 2024 00:00:00 +0000</pubDate>
       
       <guid>https://xerolinux.xyz/posts/bluebuild-workshop/</guid>
-      <description>What is BlueBuild Workshop? # BlueBuild is a nifty toolkit for creating custom images of Linux distributions, similar to Bluefin. It simplifies the process by allowing you to tweak configurations in a straightforward recipe.</description>
+      <description>What is BlueBuild Workshop? BlueBuild is a nifty toolkit for creating custom images of Linux distributions, similar to Bluefin.</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/bluebuild-workshop/featured.webp" />
     </item>
     

@@ -14,7 +14,7 @@
       <pubDate>Mon, 08 Jul 2024 00:00:00 +0000</pubDate>
       
       <guid>https://xerolinux.xyz/news/xerolinux-plasma/</guid>
-      <description>Introduction # I want to begin by thanking everyone who has shown the Distro all the the love. Without whom it wouldn&amp;rsquo;t have lasted as long as it did. As well as the rest of the projects present and future.</description>
+      <description>Introduction I want to begin by thanking everyone who has shown the Distro all the the love.</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/news/xerolinux-plasma/featured.webp" />
     </item>
     
@@ -24,7 +24,7 @@
       <pubDate>Sun, 07 Jul 2024 00:00:00 +0000</pubDate>
       
       <guid>https://xerolinux.xyz/posts/amelia-automated-archinstall/</guid>
-      <description>Overview # Meet Amelia – your new best friend for installing ArchLinux! This Bash script is all about automation and ease, bringing you through the installation process with a slick TUI interface that’s both stylish and user-friendly.</description>
+      <description>Overview Meet Amelia – your new best friend for installing ArchLinux!</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/amelia-automated-archinstall/featured.webp" />
     </item>
     
@@ -34,7 +34,7 @@
       <pubDate>Thu, 27 Jun 2024 00:00:00 +0000</pubDate>
       
       <guid>https://xerolinux.xyz/posts/first-python-script/</guid>
-      <description>What prompted me ? # Well, as I was porting all relevant forum posts to this site in markdown, I needed a better way to do so. Someone on Mastodon gave me the idea of writing a python script that does it for me.</description>
+      <description>What prompted me ? Well, as I was porting all relevant forum posts to this site in markdown, I needed a better way to do so.</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/first-python-script/featured.webp" />
     </item>
     
@@ -44,7 +44,7 @@
       <pubDate>Thu, 27 Jun 2024 00:00:00 +0000</pubDate>
       
       <guid>https://xerolinux.xyz/posts/tkg-nvidia-all/</guid>
-      <description>Introduction # In this post I will be telling you about a very useful tool/script that might help all of you out there having issues with the infamous nVidia GPU on Linux&amp;hellip;</description>
+      <description>Introduction In this post I will be telling you about a very useful tool/script that might help all of you out there having issues with the infamous nVidia GPU on Linux&amp;hellip;</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/tkg-nvidia-all/featured.webp" />
     </item>
     

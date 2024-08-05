@@ -14,7 +14,7 @@
       <pubDate>Wed, 17 Jul 2024 00:00:00 +0000</pubDate>
       
       <guid>https://xerolinux.xyz/posts/tiling-shell/</guid>
-      <description>A quick one for today. I do not use Gnome myself, but I keep a close eye on what&amp;rsquo;s going on. Recently @DistroTube made a video about an extension that most of you out there might like, so I thought, why not post about it here&amp;hellip;</description>
+      <description>A quick one for today. I do not use Gnome myself, but I keep a close eye on what&amp;rsquo;s going on.</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/tiling-shell/featured.webp" />
     </item>
     
@@ -24,7 +24,7 @@
       <pubDate>Sat, 29 Jun 2024 00:00:00 +0000</pubDate>
       
       <guid>https://xerolinux.xyz/posts/zellij-terminal/</guid>
-      <description>What is Zellij? # Another day another Terminal utility. Zellij is a terminal workspace. It has the base functionality of a terminal multiplexer (similar to tmux or screen) but includes many built-in features that would allow users to extend it and create their own personalized environment.</description>
+      <description>What is Zellij? Another day another Terminal utility.</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/zellij-terminal/featured.webp" />
     </item>
     

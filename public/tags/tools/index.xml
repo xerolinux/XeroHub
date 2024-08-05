@@ -14,7 +14,7 @@
       <pubDate>Fri, 05 Jul 2024 00:00:00 +0000</pubDate>
       
       <guid>https://xerolinux.xyz/posts/scrcpy-android-screen-mirroring/</guid>
-      <description>This article was graciously contributed by Cylis. What is it? # Scrcpy is free, open-source Android screen-mirroring application that lets you use your Android with Scrcpy for Windows, macOS, or even Linux.</description>
+      <description>This article was graciously contributed by Cylis.</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/scrcpy-android-screen-mirroring/featured.webp" />
     </item>
     
@@ -24,7 +24,7 @@
       <pubDate>Sun, 30 Jun 2024 00:00:00 +0000</pubDate>
       
       <guid>https://xerolinux.xyz/posts/burn-my-windows/</guid>
-      <description>What is it? # Burn-My-Windows is a desktop effect extension that adds a variety of visually striking window closing animations to Linux desktop environments like GNOME and KDE Plasma.</description>
+      <description>What is it? Burn-My-Windows is a desktop effect extension that adds a variety of visually striking window closing animations to Linux desktop environments like GNOME and KDE Plasma.</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/burn-my-windows/featured.webp" />
     </item>
     
@@ -34,7 +34,7 @@
       <pubDate>Sat, 29 Jun 2024 00:00:00 +0000</pubDate>
       
       <guid>https://xerolinux.xyz/posts/zellij-terminal/</guid>
-      <description>What is Zellij? # Another day another Terminal utility. Zellij is a terminal workspace. It has the base functionality of a terminal multiplexer (similar to tmux or screen) but includes many built-in features that would allow users to extend it and create their own personalized environment.</description>
+      <description>What is Zellij? Another day another Terminal utility.</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/zellij-terminal/featured.webp" />
     </item>
     
@@ -44,8 +44,7 @@
       <pubDate>Fri, 28 Jun 2024 00:00:00 +0000</pubDate>
       
       <guid>https://xerolinux.xyz/posts/spotube-for-spotify/</guid>
-      <description>What is it ? # It&amp;rsquo;s an Open Source Spotify client that doesn&amp;rsquo;t require Premium nor uses Electron! Available for both desktop &amp;amp; mobile!
-Following are the features that currently Spotube offers:</description>
+      <description>What is it ? It&amp;rsquo;s an Open Source Spotify client that doesn&amp;rsquo;t require Premium nor uses Electron!</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/spotube-for-spotify/featured.webp" />
     </item>
     
@@ -55,7 +54,7 @@ Following are the features that currently Spotube offers:</description>
       <pubDate>Thu, 27 Jun 2024 00:00:00 +0000</pubDate>
       
       <guid>https://xerolinux.xyz/posts/caps-lock/</guid>
-      <description>What is it ? # I just discovered a niche of users who prefer using CAPS Lock instead of Shift while typing.. Very weird, but hey.. Anyway, one of those users shared a neat little script that solves an age-old issue with CAPS Delay on Linux.</description>
+      <description>What is it ? I just discovered a niche of users who prefer using CAPS Lock instead of Shift while typing.</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/caps-lock/featured.webp" />
     </item>
     
@@ -65,7 +64,7 @@ Following are the features that currently Spotube offers:</description>
       <pubDate>Thu, 27 Jun 2024 00:00:00 +0000</pubDate>
       
       <guid>https://xerolinux.xyz/posts/coverseen-img-convert/</guid>
-      <description>This one such a time saver.. # Converseen can do batch image conversion, apply similar alteration like rotation, resize, remove image metadata, let you ignore specific files if you import a collection.</description>
+      <description>This one such a time saver.</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/coverseen-img-convert/featured.webp" />
     </item>
     
@@ -75,7 +74,7 @@ Following are the features that currently Spotube offers:</description>
       <pubDate>Thu, 27 Jun 2024 00:00:00 +0000</pubDate>
       
       <guid>https://xerolinux.xyz/posts/dconf-editor/</guid>
-      <description>What is it? # Dconf Editor is a graphical tool used to configure settings in Linux, particularly on GNOME desktop environments. It allows users to navigate and modify system options stored in the dconf database, which is a key-value store that manages different aspects of the system.</description>
+      <description>What is it? Dconf Editor is a graphical tool used to configure settings in Linux, particularly on GNOME desktop environments.</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/dconf-editor/featured.webp" />
     </item>
     
@@ -85,7 +84,7 @@ Following are the features that currently Spotube offers:</description>
       <pubDate>Thu, 27 Jun 2024 00:00:00 +0000</pubDate>
       
       <guid>https://xerolinux.xyz/posts/docker-usage/</guid>
-      <description>Intro # After messing with Docker Containers for so long, I thought I would share the knowledge. Hopefully a video showing it in action soon. In this short tutorial we will be using the Docker Compose feature to deploy our containers.</description>
+      <description>Intro After messing with Docker Containers for so long, I thought I would share the knowledge.</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/docker-usage/featured.webp" />
     </item>
     
@@ -95,7 +94,7 @@ Following are the features that currently Spotube offers:</description>
       <pubDate>Thu, 27 Jun 2024 00:00:00 +0000</pubDate>
       
       <guid>https://xerolinux.xyz/posts/ferdium-web/</guid>
-      <description>What is it? # Ferdium is a desktop app that helps you organize how you use your favourite apps by combining them into one application. It is based on Franz - a software already used by thousands of people - with the difference that Ferdium gives you many additional features and doesn&amp;rsquo;t restrict its usage!</description>
+      <description>What is it? Ferdium is a desktop app that helps you organize how you use your favourite apps by combining them into one application.</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/ferdium-web/featured.webp" />
     </item>
     
@@ -105,8 +104,7 @@ Following are the features that currently Spotube offers:</description>
       <pubDate>Thu, 27 Jun 2024 00:00:00 +0000</pubDate>
       
       <guid>https://xerolinux.xyz/posts/konsave-tool/</guid>
-      <description>Intro # I have recently stumbled upon a handy little tool for us who love customizing KDE but hate the work of switching between rices&amp;hellip; It&amp;rsquo;s called Konsave.
-As you can see from above video, tool is very useful.</description>
+      <description>Intro I have recently stumbled upon a handy little tool for us who love customizing KDE but hate the work of switching between rices&amp;hellip; It&amp;rsquo;s called Konsave.</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/konsave-tool/featured.webp" />
     </item>
     
@@ -116,7 +114,7 @@ As you can see from above video, tool is very useful.</description>
       <pubDate>Thu, 27 Jun 2024 00:00:00 +0000</pubDate>
       
       <guid>https://xerolinux.xyz/posts/obs-official/</guid>
-      <description>What is OBS Studio? # OBS Studio is a free and open-source, cross-platform screencasting and streaming app. It is available for Windows, macOS, Linux distributions, and BSD. The OBS Project raises funds on Open Collective and Patreon.</description>
+      <description>What is OBS Studio? OBS Studio is a free and open-source, cross-platform screencasting and streaming app.</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/obs-official/featured.webp" />
     </item>
     
@@ -126,8 +124,7 @@ As you can see from above video, tool is very useful.</description>
       <pubDate>Thu, 27 Jun 2024 00:00:00 +0000</pubDate>
       
       <guid>https://xerolinux.xyz/posts/pacseek-tui/</guid>
-      <description>Intro # I just found a neat little tool called &amp;ldquo;Pacseek&amp;rdquo; which is a terminal user interface for searching and installing Arch Linux packages&amp;hellip;
-What is it? # Pacseek is terminal user interface, written in Rust which allows you to browse and search through the Arch Linux package databases as well as the Arch User Repository.</description>
+      <description>Intro I just found a neat little tool called &amp;ldquo;Pacseek&amp;rdquo; which is a terminal user interface for searching and installing Arch Linux packages&amp;hellip;</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/pacseek-tui/featured.webp" />
     </item>
     
@@ -137,7 +134,7 @@ What is it? # Pacseek is terminal user interface, written in Rust which allows y
       <pubDate>Thu, 27 Jun 2024 00:00:00 +0000</pubDate>
       
       <guid>https://xerolinux.xyz/posts/stremio-tool/</guid>
-      <description>What is Stremio? # Stremio is a one-stop hub for video content aggregation. Discover, organize and watch video from all kinds of sources on any device that you own. Movies, TV shows, series, live television or web channels like YouTube and Twitch.</description>
+      <description>What is Stremio? Stremio is a one-stop hub for video content aggregation.</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/stremio-tool/featured.webp" />
     </item>
     
@@ -147,7 +144,7 @@ What is it? # Pacseek is terminal user interface, written in Rust which allows y
       <pubDate>Thu, 27 Jun 2024 00:00:00 +0000</pubDate>
       
       <guid>https://xerolinux.xyz/posts/tabby-terminal/</guid>
-      <description>Intro # I just ran across a video by @MattTLC from TheLinuxCast about a neat fully-featured Terminal Emulator called Tabby. I kinda like it, and I will be adding it to our package manager as an option.</description>
+      <description>Intro I just ran across a video by @MattTLC from TheLinuxCast about a neat fully-featured Terminal Emulator called Tabby.</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/tabby-terminal/featured.webp" />
     </item>
     
@@ -157,9 +154,7 @@ What is it? # Pacseek is terminal user interface, written in Rust which allows y
       <pubDate>Thu, 27 Jun 2024 00:00:00 +0000</pubDate>
       
       <guid>https://xerolinux.xyz/posts/warehouse-flatpak/</guid>
-      <description>What is it? # Warehouse is a versatile toolbox for managing Flatpak user data, viewing Flatpak app info, and batch managing installed Flatpaks.
-Main Features :
-- Viewing Flatpak Info: 📋 Warehouse can display all the information provided by the Flatpak list command in a user-friendly graphical window.</description>
+      <description>What is it? Warehouse is a versatile toolbox for managing Flatpak user data, viewing Flatpak app info, and batch managing installed Flatpaks.</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/warehouse-flatpak/featured.webp" />
     </item>
     
@@ -169,7 +164,7 @@ Main Features :
       <pubDate>Thu, 27 Jun 2024 00:00:00 +0000</pubDate>
       
       <guid>https://xerolinux.xyz/posts/zoxide-cd/</guid>
-      <description>Intro # While browsing YouTube I stumbled upon a video showing off a neat little tool called Zoxide. It&amp;rsquo;s touted to be a smarter cd command, inspired by z and autojump.</description>
+      <description>Intro While browsing YouTube I stumbled upon a video showing off a neat little tool called Zoxide.</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/zoxide-cd/featured.webp" />
     </item>
     
@@ -179,7 +174,7 @@ Main Features :
       <pubDate>Wed, 26 Jun 2024 00:00:00 +0000</pubDate>
       
       <guid>https://xerolinux.xyz/posts/homebrew-linux/</guid>
-      <description>Intro # @ChrisTitus brought to my attention HomeBrew or Brew for short, the so called &amp;ldquo;Forgotten Package Manager&amp;rdquo; usually used on macOS&amp;hellip; It&amp;rsquo;s Distro agnostic so it can be installed and enabled on any of your choice.</description>
+      <description>Intro @ChrisTitus brought to my attention HomeBrew or Brew for short, the so called &amp;ldquo;Forgotten Package Manager&amp;rdquo; usually used on macOS&amp;hellip; It&amp;rsquo;s Distro agnostic so it can be installed and enabled on any of your choice.</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/homebrew-linux/featured.webp" />
     </item>
     
@@ -189,7 +184,7 @@ Main Features :
       <pubDate>Wed, 26 Jun 2024 00:00:00 +0000</pubDate>
       
       <guid>https://xerolinux.xyz/posts/topgrade-updater/</guid>
-      <description>Intro # Upgrading Linux has gotten much easier than it used to be. In the old days, you might upgrade certain pieces of software, but mostly you would wait until you bought the next version of your distro of choice.</description>
+      <description>Intro Upgrading Linux has gotten much easier than it used to be.</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/topgrade-updater/featured.webp" />
     </item>
     
@@ -199,7 +194,7 @@ Main Features :
       <pubDate>Wed, 26 Jun 2024 00:00:00 +0000</pubDate>
       
       <guid>https://xerolinux.xyz/posts/ventoy-persistence/</guid>
-      <description>Intro # Most of you might already know about the amazing tool called Ventoy and how amazing it is at removing the need to have more USB drives if you want to use multiple ISOs, but you might not know about how many more amazing features it has.</description>
+      <description>Intro Most of you might already know about the amazing tool called Ventoy and how amazing it is at removing the need to have more USB drives if you want to use multiple ISOs, but you might not know about how many more amazing features it has.</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/ventoy-persistence/featured.webp" />
     </item>
     

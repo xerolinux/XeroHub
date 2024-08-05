@@ -14,8 +14,7 @@
       <pubDate>Thu, 04 Jul 2024 00:00:00 +0000</pubDate>
       
       <guid>https://xerolinux.xyz/posts/proxmoxve-scripts/</guid>
-      <description>This is a short one. Just letting you all know of a recent discovery of mine while I was looking into Proxmox VE
-What are they? # Proxmox Helper Scripts empower users to create a Linux container or virtual machine interactively, providing choices for both simple and advanced configurations.</description>
+      <description>This is a short one. Just letting you all know of a recent discovery of mine while I was looking into Proxmox VE</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/proxmoxve-scripts/featured.webp" />
     </item>
     
@@ -25,7 +24,7 @@ What are they? # Proxmox Helper Scripts empower users to create a Linux containe
       <pubDate>Wed, 26 Jun 2024 00:00:00 +0000</pubDate>
       
       <guid>https://xerolinux.xyz/posts/homebrew-linux/</guid>
-      <description>Intro # @ChrisTitus brought to my attention HomeBrew or Brew for short, the so called &amp;ldquo;Forgotten Package Manager&amp;rdquo; usually used on macOS&amp;hellip; It&amp;rsquo;s Distro agnostic so it can be installed and enabled on any of your choice.</description>
+      <description>Intro @ChrisTitus brought to my attention HomeBrew or Brew for short, the so called &amp;ldquo;Forgotten Package Manager&amp;rdquo; usually used on macOS&amp;hellip; It&amp;rsquo;s Distro agnostic so it can be installed and enabled on any of your choice.</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/homebrew-linux/featured.webp" />
     </item>
     
