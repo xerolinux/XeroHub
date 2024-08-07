@@ -98,8 +98,8 @@ But those methods are for the more *Linux-Savvy* users out there, not for everyo
 
 **Addendum :**
 
-From what I can see on **ArchLinux** repos `nvidia-dkms` will be the ones that will contain the **Proprietary** blobs with `nvidia-open-dkms` containing the **Open Kernel Modules** moving forward, ending up with 2 Driver versions.
+From what I can see on **ArchLinux** repos `nvidia-dkms` will be the ones that will contain the **Proprietary** blobs with `nvidia-open-dkms` will contain the **Open Kernel Modules** moving forward, ending up with 2 Driver editions.
 
-If that's the case you are safe to keep using the former for `Pascal` and older cards with latter only being required if you are on `Turing` or above.
+If that's the case, you are safe to keep using the former for `Pascal` and older cards with latter only being required if you are on `Turing` or above.
 
 Cheers !
