@@ -5,6 +5,10 @@ draft: false
 description: "Prepare for the nVidia R560 Drivers"
 tags: ["nVidia", "R560", "Drivers", "GPU", "Pin", "Linux"]
 ---
+**This post is only for affected users**
+
+Please read the entire post before you start worrying. I have included a short addendum towards the end, make sure to read it. If you are not affected, then you can ignore this.
+
 ### What is happening?
 
 **nVidia** just released the **R560** version of its drivers; which drops support for all GPUs that use the **Pascal** architecture or *SOC*. That includes all **900 & 10** series cards, with exception of the **1650ti** and **1660ti**.
