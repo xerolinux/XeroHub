@@ -100,6 +100,6 @@ But those methods are for the more *Linux-Savvy* users out there, not for everyo
 
 From what I can see on **ArchLinux** repos `nvidia-dkms` will be the ones that will contain the **Proprietary** blobs with `nvidia-open-dkms` will have the **Open Kernel Modules** moving forward, ending up with 2 Driver editions.
 
-If that's the case, you are safe to keep using the former for `Pascal` and older cards with latter only being required if you are on `Turing` or above. I must admit this can be a bit confusing for some newcomers to **Linux**. Such is life I guess.
+If that's the case, you are safe to keep using the former for `Pascal` and older cards with latter only being required if you are on `Turing` or above. I must admit this can be a bit confusing for some newcomers to **Linux**. Such is the life of a Linux user I guess.
 
 Cheers !
