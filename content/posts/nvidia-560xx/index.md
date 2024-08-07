@@ -3,7 +3,7 @@ title: "Pin nVidia Drivers"
 date: 2024-08-07
 draft: false
 description: "Prepare for the nVidia R560 Drivers"
-tags: ["nVidia", "R560", "R555", "Drivers", "GPU", "Pin", "Linux"]
+tags: ["nVidia", "R560", "Drivers", "GPU", "Pin", "Linux"]
 ---
 ### What is happening?
 
@@ -59,7 +59,7 @@ This, in my opinion is the most likely scenario to happen to most users who are 
 
 {{< article link="/posts/downgrade-tool/" >}}
 
-Since you are stuck on a black screen, with no way to get to the desktop, all you can do in this case is switch to the **TTY** via `CTRL+ALT+F3`. Once there we need to downgrade drivers to R555.
+Since you are stuck on a black screen, with no way to get to the desktop, all you can do in this case is switch to the **TTY** via `CTRL+ALT+F3`. Once there we need to downgrade drivers to whatever previous working ones were.
 
 - **Install Downgrade :**
 
@@ -80,7 +80,7 @@ Now we can downgrade the drivers. To do that just run the following in Terminal 
 sudo downgrade nvidia-dkms nvidia-settings nvidia-utils opencl-nvidia libxnvctrl lib32-opencl-nvidia lib32-nvidia-utils
 ```
 
-Make sure to select **R555** from the list for each of the packages being downgraded. Could be from your local cache if you did not clear it or will be downloaded. Once that's done, you will be prompted if you want to add the affected packages to *pacman*'s ignore list, please make sure you answer with `y` to all, otherwise drivers will get upgraded next time there's an update.
+Make sure to select whatever previous working ones were from the list for each of the packages being downgraded. Could be from your local cache if you did not clear it or will be downloaded. Once that's done, you will be prompted if you want to add the affected packages to *pacman*'s ignore list, please make sure you answer with `y` to all, otherwise drivers will get upgraded next time there's an update.
 
 ### Wrapping up
 
@@ -95,5 +95,9 @@ Another way would be to find a repo like **Chaotic-AUR** enable it and install o
 {{< article link="/posts/chaotic-aur/" >}}
 
 But those methods are for the more *Linux-Savvy* users out there, not for everyone. Anyway I hope this guide has helped you avoid any headaches.
+
+**Addendum :**
+
+> From what I can see on **ArchLinux** repos `nvidia-dkms` will only contain **Proprietary** blobs with `nvidia-open-dkms` containing the **Open Kernel Modules** moving forward. If that's the case you are safe to keep using the former for older `Pascal` cards with latter only being required if you are on `Turing` or above.
 
 Cheers !

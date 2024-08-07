@@ -12,7 +12,7 @@
   <meta name="title" content="Pin nVidia Drivers &middot; XeroLinux HQ" />
   
   <meta name="description" content="Prepare for the nVidia R560 Drivers" />
-  <meta name="keywords" content="nVidia, R560, R555, Drivers, GPU, Pin, Linux, " />
+  <meta name="keywords" content="nVidia, R560, Drivers, GPU, Pin, Linux, " />
   
   
   <link rel="canonical" href="https://xerolinux.xyz/posts/nvidia-560xx/" />
@@ -72,10 +72,10 @@
     <meta property="article:modified_time" content="2024-08-07T00:00:00+00:00">
     <meta property="article:tag" content="Nvidia">
     <meta property="article:tag" content="R560">
-    <meta property="article:tag" content="R555">
     <meta property="article:tag" content="Drivers">
     <meta property="article:tag" content="Gpu">
     <meta property="article:tag" content="Pin">
+    <meta property="article:tag" content="Linux">
     <meta property="og:image" content="https://xerolinux.xyz/posts/nvidia-560xx/featured.webp">
 
   
@@ -106,10 +106,10 @@
     
     "dateModified": "2024-08-07T00:00:00\u002b00:00",
     
-    "keywords": ["nVidia","R560","R555","Drivers","GPU","Pin","Linux"],
+    "keywords": ["nVidia","R560","Drivers","GPU","Pin","Linux"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "918"
+    "wordCount": "979"
   }]
   </script>
 
@@ -852,14 +852,6 @@
     <span class="flex" style="cursor: pointer;">
   <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
     R560
-  </span>
-</span>
-  </span>
-  
-  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/r555/&#34;,'_self');">
-    <span class="flex" style="cursor: pointer;">
-  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    R555
   </span>
 </span>
   </span>
@@ -1766,7 +1758,7 @@
         
     
 </section>
-<p>Since you are stuck on a black screen, with no way to get to the desktop, all you can do in this case is switch to the <strong>TTY</strong> via <code>CTRL+ALT+F3</code>. Once there we need to downgrade drivers to R555.</p>
+<p>Since you are stuck on a black screen, with no way to get to the desktop, all you can do in this case is switch to the <strong>TTY</strong> via <code>CTRL+ALT+F3</code>. Once there we need to downgrade drivers to whatever previous working ones were.</p>
 <ul>
 <li><strong>Install Downgrade :</strong></li>
 </ul>
@@ -2014,7 +2006,7 @@
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Bash" data-lang="Bash"><span class="line"><span class="cl">paru -S --noconfirm --needed downgrade
 </span></span></code></pre></div><p>Now we can downgrade the drivers. To do that just run the following in Terminal :</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Bash" data-lang="Bash"><span class="line"><span class="cl">sudo downgrade nvidia-dkms nvidia-settings nvidia-utils opencl-nvidia libxnvctrl lib32-opencl-nvidia lib32-nvidia-utils
-</span></span></code></pre></div><p>Make sure to select <strong>R555</strong> from the list for each of the packages being downgraded. Could be from your local cache if you did not clear it or will be downloaded. Once that&rsquo;s done, you will be prompted if you want to add the affected packages to <em>pacman</em>&rsquo;s ignore list, please make sure you answer with <code>y</code> to all, otherwise drivers will get upgraded next time there&rsquo;s an update.</p>
+</span></span></code></pre></div><p>Make sure to select whatever previous working ones were from the list for each of the packages being downgraded. Could be from your local cache if you did not clear it or will be downloaded. Once that&rsquo;s done, you will be prompted if you want to add the affected packages to <em>pacman</em>&rsquo;s ignore list, please make sure you answer with <code>y</code> to all, otherwise drivers will get upgraded next time there&rsquo;s an update.</p>
 
 
 <h3 class="relative group">Wrapping up 
@@ -2511,6 +2503,10 @@
     
 </section>
 <p>But those methods are for the more <em>Linux-Savvy</em> users out there, not for everyone. Anyway I hope this guide has helped you avoid any headaches.</p>
+<p><strong>Addendum :</strong></p>
+<blockquote>
+<p>From what I can see on <strong>ArchLinux</strong> repos <code>nvidia-dkms</code> will only contain <strong>Proprietary</strong> blobs with <code>nvidia-open-dkms</code> containing the <strong>Open Kernel Modules</strong> moving forward. If that&rsquo;s the case you are safe to keep using the former for older <code>Pascal</code> cards with latter only being required if you are on <code>Turing</code> or above.</p>
+</blockquote>
 <p>Cheers !</p>
 
         </div>
