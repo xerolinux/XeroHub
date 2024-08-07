@@ -19,7 +19,7 @@ That's why, we have to get ready and *Pin* our drivers to current working releas
 
 ### Pin/Hold nVidia Drivers
 
-Before we begin, I need to say that I will be showing you how to "Pin" drivers on **ArchLinux** & **Flatpak**, if you run something else like **Fedora**, **Nix** or **Gentoo**, you will have to find a guide to do just on their support forums. Sorry but I do not use any of those so I have no clue.
+Before we begin, I need to say that I will be showing you how to "Pin" drivers on **ArchLinux** & **Flatpak**, if you run something else like **Fedora**, **Nix** or **Gentoo**, you will have to find a guide to do just that on their support forums. Sorry but I do not use any of those so I have no clue.
 
 Anyway, with that being said, here's how you can "Pin" them...
 
