@@ -7,7 +7,77 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>Copy, _right?_ 🫨</copyright>
-    <lastBuildDate>Fri, 02 Aug 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://xerolinux.xyz/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 07 Aug 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://xerolinux.xyz/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Drivers</title>
+      <link>https://xerolinux.xyz/tags/drivers/</link>
+      <pubDate>Wed, 07 Aug 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://xerolinux.xyz/tags/drivers/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Gpu</title>
+      <link>https://xerolinux.xyz/tags/gpu/</link>
+      <pubDate>Wed, 07 Aug 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://xerolinux.xyz/tags/gpu/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Linux</title>
+      <link>https://xerolinux.xyz/tags/linux/</link>
+      <pubDate>Wed, 07 Aug 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://xerolinux.xyz/tags/linux/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Nvidia</title>
+      <link>https://xerolinux.xyz/tags/nvidia/</link>
+      <pubDate>Wed, 07 Aug 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://xerolinux.xyz/tags/nvidia/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Pin</title>
+      <link>https://xerolinux.xyz/tags/pin/</link>
+      <pubDate>Wed, 07 Aug 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://xerolinux.xyz/tags/pin/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>R555</title>
+      <link>https://xerolinux.xyz/tags/r555/</link>
+      <pubDate>Wed, 07 Aug 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://xerolinux.xyz/tags/r555/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>R560</title>
+      <link>https://xerolinux.xyz/tags/r560/</link>
+      <pubDate>Wed, 07 Aug 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://xerolinux.xyz/tags/r560/</guid>
+      <description></description>
+      
+    </item>
+    
     <item>
       <title>Elden Ring</title>
       <link>https://xerolinux.xyz/tags/elden-ring/</link>
@@ -44,16 +114,6 @@
       <pubDate>Fri, 02 Aug 2024 00:00:00 +0000</pubDate>
       
       <guid>https://xerolinux.xyz/tags/gaming/</guid>
-      <description></description>
-      
-    </item>
-    
-    <item>
-      <title>Linux</title>
-      <link>https://xerolinux.xyz/tags/linux/</link>
-      <pubDate>Fri, 02 Aug 2024 00:00:00 +0000</pubDate>
-      
-      <guid>https://xerolinux.xyz/tags/linux/</guid>
       <description></description>
       
     </item>
@@ -899,16 +959,6 @@
     </item>
     
     <item>
-      <title>Nvidia</title>
-      <link>https://xerolinux.xyz/tags/nvidia/</link>
-      <pubDate>Sun, 30 Jun 2024 00:00:00 +0000</pubDate>
-      
-      <guid>https://xerolinux.xyz/tags/nvidia/</guid>
-      <description></description>
-      
-    </item>
-    
-    <item>
       <title>Helper</title>
       <link>https://xerolinux.xyz/tags/helper/</link>
       <pubDate>Sat, 29 Jun 2024 00:00:00 +0000</pubDate>
@@ -1229,16 +1279,6 @@
     </item>
     
     <item>
-      <title>Drivers</title>
-      <link>https://xerolinux.xyz/tags/drivers/</link>
-      <pubDate>Thu, 27 Jun 2024 00:00:00 +0000</pubDate>
-      
-      <guid>https://xerolinux.xyz/tags/drivers/</guid>
-      <description></description>
-      
-    </item>
-    
-    <item>
       <title>Electron</title>
       <link>https://xerolinux.xyz/tags/electron/</link>
       <pubDate>Thu, 27 Jun 2024 00:00:00 +0000</pubDate>
@@ -1254,16 +1294,6 @@
       <pubDate>Thu, 27 Jun 2024 00:00:00 +0000</pubDate>
       
       <guid>https://xerolinux.xyz/tags/ferdium/</guid>
-      <description></description>
-      
-    </item>
-    
-    <item>
-      <title>Gpu</title>
-      <link>https://xerolinux.xyz/tags/gpu/</link>
-      <pubDate>Thu, 27 Jun 2024 00:00:00 +0000</pubDate>
-      
-      <guid>https://xerolinux.xyz/tags/gpu/</guid>
       <description></description>
       
     </item>

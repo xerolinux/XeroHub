@@ -4,11 +4,15 @@
 
   <url>
     <loc>https://xerolinux.xyz/</loc>
-    <lastmod>2024-08-02T00:00:00+00:00</lastmod>
+    <lastmod>2024-08-07T00:00:00+00:00</lastmod>
   </url>
   <url>
     <loc>https://xerolinux.xyz/posts/</loc>
-    <lastmod>2024-08-02T00:00:00+00:00</lastmod>
+    <lastmod>2024-08-07T00:00:00+00:00</lastmod>
+  </url>
+  <url>
+    <loc>https://xerolinux.xyz/posts/nvidia-560xx/</loc>
+    <lastmod>2024-08-07T00:00:00+00:00</lastmod>
   </url>
   <url>
     <loc>https://xerolinux.xyz/posts/eldenring-patcher/</loc>
