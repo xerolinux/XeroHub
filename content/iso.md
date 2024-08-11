@@ -4,10 +4,11 @@ date: 2024-08-11
 description: "Download The XeroLinux ISO"
 featureimage: https://i.imgur.com/ejZ1ZQv.png
 ---
-![XeroISO](https://i.imgur.com/ejZ1ZQv.png)
-### What is it?
+As you can see, after thinking long and hard about, I have decided to revive the Distro. Only this time it's a bit different. Read on to know more.
 
-As you can see, I have decided to revive the Distro. Only this time it's a bit different. Read on to know more.
+![XeroISO](https://i.imgur.com/ejZ1ZQv.png)
+
+### What is it?
 
 In short, it's just an alternative to the **XeroLinux Plasma Install** script, making it easier to install **Arch**, bypassing the need for **ArchInstall**. The ISO includes my toolkit as well as my famous **XeroLayan** rice all-in-one shot.
 
