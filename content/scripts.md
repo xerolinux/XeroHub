@@ -1,5 +1,5 @@
 ---
-title: Our Projects
+title: Our Scripts
 date: 2024-06-26
 description: "Links to my various Projects"
 #featureimage: https://i.imgur.com/DpiiDzj.png

@@ -1,37 +1,38 @@
 [[main]]
 name = "About"
-pre = "eye"
 pageRef = "about"
-identifier = "Aoxiwtse7L"
-weight = 1
+weight = 10
 
 [[main]]
 name = "Projects"
-pre = "lock"
-pageRef = "projects"
-identifier = "yjhEZtlj41"
-weight = 2
+weight = 20
 
 [[main]]
-name = "The Gear"
-pre = "fire"
+name = "Scripts"
+parent = "Projects"
+pageRef = "scripts"
+weight = 25
+
+[[main]]
+name = "The ISO"
+parent = "Projects"
+pageRef = "iso"
+weight = 30
+
+[[main]]
+name = "My Gear"
 pageRef = "Gear"
-identifier = "ZFozXYGy5E"
-weight = 3
+weight = 35
 
 [[main]]
 name = "Support"
-pre = "ko-fi"
 pageRef = "support"
-identifier = "lCg1v3VPgs"
-weight = 4
+weight = 40
 
 [[main]]
 name = "News"
-pre = "globe"
 pageRef = "news"
-identifier = "WmM3BrLWvc"
-weight = 5
+weight = 45
 
 [[footer]]
 none = "none"
