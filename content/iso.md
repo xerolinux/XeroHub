@@ -43,8 +43,10 @@ All I ask for is for you not to share it with anyone. Otherwise you will be hurt
 
 This project depends on you now. The more support I get, the longer it will live for. I cannot, due to my situation, keep maintaining something like this for free, it costs money. Hosting, Internet, and so on. I hope you understand.
 
-You know how to flash it to a USB, if not, just use either [**Etcher**](https://etcher.balena.io) ot **Ventoy** and off to the races you go. The choice is yours. ISO boots using **Grub** not **Systemd-Boot**, simply coz I prefer it lol. I had to make some choices that would be fine for everyone.
+You know how to flash it to a USB, if not, just use either [**Etcher**](https://etcher.balena.io) ot **Ventoy** and off to the races you go. The choice is yours.
 
 {{< article link="/posts/ventoy-multi-boot/" >}}
+
+ISO boots using **Grub** not **Systemd-Boot**, simply coz I prefer it lol. I had to make some hard choices. It's hard to satisfy everyone. I hope the ones I made aren't too bad for you. Hehe ;)
 
 I sure hope you enjoy it, and let me know how it goes. For support feel free to join my personal and free [**Discord Server**](https://discord.gg/5sqxTSuKZu). I will do my best to help.
