@@ -25,7 +25,7 @@ It will be a bit more complex, but in this case it will never cost you anything 
 
 ### How can I get it?
 
-In order to get it, please click the button below to get redirected to the **Ko-Fi Store** page where you will be able to donate however much you want starting from $6 onwards, and you will receive a confirmation e-mail, with a link to a special directory containing the ISO and the necessary credentials to access it.
+In order to get it, please click the button below to get redirected to the **Ko-Fi Store** page where you will be able to donate however much you want starting from $6 onwards, and you will receive a confirmation e-mail, with a link to a special directory containing the ISO with the necessary credentials to access it.
 
 <div align="center">
 
@@ -42,5 +42,9 @@ All I ask for is for you not to share it with anyone. Otherwise you will be hurt
 ### Wrapping up
 
 This project depends on you now. The more support I get, the longer it will live for. I cannot, due to my situation, keep maintaining something like this for free, it costs money. Hosting, Internet, and so on. I hope you understand.
+
+You know how to flash it to a USB, if not, just use either [**Etcher**](https://etcher.balena.io) ot **Ventoy** and off to the races you go. The choice is yours. ISO boots using **Grub** not **Systemd-Boot**, simply coz I prefer it lol. I had to make some choices that would be fine for everyone.
+
+{{< article link="/posts/ventoy-multi-boot/" >}}
 
 I sure hope you enjoy it, and let me know how it goes. For support feel free to join my personal and free [**Discord Server**](https://discord.gg/5sqxTSuKZu). I will do my best to help.
