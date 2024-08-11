@@ -12,7 +12,7 @@ I have always wanted to use cool animated wallpapers on Linux. Found many free w
 
 Below is a video on how to get it running on KDE Plasma via that plugin... Just note that, as it's mentioned in the video, not all animated wallpapers will work, test it and see. Oh and any Audio Spectrum ones that are supposed to react to music will absolutely not work as it has no way to hook to players. Besides that it should work.
 
-{{< youtube mH5OtpHRIMI >}}
+{{< youtube irDqraC0K6g >}}
 
 ### Installation
 

@@ -20,7 +20,7 @@ Features
 
 This package is available on Flathub so just install from there, best part of Flatpaks is that they are Distro-Agnostic can install on any Distro no matter what it might be as long as it has them enabled.
 
-{{< youtube q7qLqpLdyc0 >}}
+{{< youtube eMUqBl3xK2o >}}
 
 ### Install it
 
