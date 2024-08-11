@@ -4,7 +4,7 @@ date: 2024-08-11
 description: "Download The XeroLinux ISO"
 featureimage: https://i.imgur.com/ejZ1ZQv.png
 ---
-As you can see, after thinking long and hard about, I have decided to revive the Distro. Only this time it's a bit different. Read on to know more.
+As you can see, after thinking long and hard, I have decided to revive the Distro. Only this time it's a bit different. Read on to know more.
 
 ![XeroISO](https://i.imgur.com/ejZ1ZQv.png)
 
