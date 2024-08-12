@@ -28,6 +28,24 @@ It's for all of you out there who prefer an easier way to install **Arch** and *
 
 It will be a bit more complex, but in this case it will never cost you anything and the code will forever be made available to fork and modify to your liking.
 
+### Included Features
+
+As mentioned earlier in the post, some fetures available via the toolkit were already applied on the ISO. Find the list of what has already been applied below, just so you do not apply them again :
+
+- PipeWire/Bluetooth
+- Flatpak + Overrides
+- Multithread Compiling
+- Chaotic-AUR Enabled
+- Printer Driver/Tools
+- Samba Tools and configs
+- Scanner Driver/Tools
+- Fastfetch/OhMyPosh
+- XeroLinux Layan Rice
+
+**Theming Issue :**
+
+There might be a small issue with **GTK4** app theming, I couldn't find a workaround, in case you use those, you will have to Launch my toolkt from the dock, head on over to **4. Customization** select option `g` to apply the fix. It only works for the included **Layan Theme**, if you use another well, you will have to ask its dev for patch, not all themes work for **GTK4/LibAdwaita** apps.
+
 ### How can I get it?
 
 In order to get it, please click the button below to get redirected to the **Ko-Fi Store** page where you will be able to donate however much you want starting from $6 onwards, and you will receive a confirmation e-mail, with a link to a special directory containing the ISO with the necessary credentials to access it.
