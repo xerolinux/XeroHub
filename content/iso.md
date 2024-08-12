@@ -30,7 +30,7 @@ It will be a bit more complex, but in this case it will never cost you anything 
 
 ### Included Features
 
-As mentioned earlier in the post, some fetures available via the toolkit were already applied on the ISO. Find the list of what has already been applied below :
+As mentioned earlier in the post, some fetures available via the toolkit were already applied on the ISO, since it was initially created for *Vanilla Arch*. Find the list of what has already been applied below :
 
 ✅ PipeWire/Bluetooth<br>
 ✅ Flatpak + Overrides<br>
@@ -44,7 +44,7 @@ As mentioned earlier in the post, some fetures available via the toolkit were al
 
 **Theming Issue :**
 
-There might be a small issue with **GTK4** app theming, I couldn't find a workaround, in case you use those, you will have to Launch my toolkt from the dock, head on over to **4. Customization** select option `g` to apply the fix. It only works for the included **Layan Theme**, if you use another well, you will have to ask its dev for patch, not all themes work for **GTK4/LibAdwaita** apps.
+There might be a small issue with **GTK4** app theming, I couldn't find a workaround, in case you use those, you will have to Launch the toolkt from the dock, head on over to **4. Customization** select option `g` and apply the fix. It only works for the included **Layan Theme**, if you use another well, you will have to ask its dev for patch, not all themes work for **GTK4/LibAdwaita** apps.
 
 ### How can I get it?
 
