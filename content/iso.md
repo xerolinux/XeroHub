@@ -7,7 +7,7 @@ featureimage: https://i.imgur.com/ejZ1ZQv.png
 As you can see, after thinking long and hard, I have decided to revive the Distro. Only this time it's a bit different.
 
 {{< alert icon="fire" cardColor="#e63946" iconColor="#1d3557" textColor="#f1faee" >}}
-**Read Full Post** This time around it's not what you think. Make sure to go through the entire post before requesting ISO. Everything is explained here in detail, especially how to get it. Read on...
+**Read Full Post**. I did my best to explain everything here. Don't skip anything !
 {{< /alert >}}
 
 ![XeroISO](https://i.imgur.com/ejZ1ZQv.png)
@@ -22,15 +22,15 @@ You can use the included **Post-Install Toolkit**, 1st icon with my logo in the 
 
 ### Who ist it for?
 
-It's for all of you out there who prefer an easier way to install **Arch** and **KDE**, and feel like supporting my work financially while getting something in return. If you don't feel like, or can't do that, you can always use **ArchInstall** in combination with my **PlasmaInstall** scripts to achieve the same result.
+It's for all of you out there, who prefer an easier way to install **Arch** and **KDE**, and feel like supporting my work financially while getting something in return. If you prefer not to, or can't, you can always use **ArchInstall** in combination with my **PlasmaInstall** scripts to achieve a similar result.
 
 {{< github repo="xerolinux/xero-plasma" >}}
 
-It will be a bit more complex, but in this case it will never cost you anything and the code will forever be made available to fork and modify to your liking.
+It will be a bit more complex, but will never cost you anything and the code will forever be made available to fork and modify to your liking.
 
 ### Included Features
 
-As mentioned earlier in the post, some fetures available via the toolkit were already applied on the ISO, since it was initially created for *Vanilla Arch*. Find the list of what has already been applied below :
+As mentioned earlier in the post, some features available via the toolkit were already applied on the ISO, since it was initially created for *Vanilla Arch*. Find the list of what has already been applied below :
 
 ✅ PipeWire/Bluetooth<br>
 ✅ Flatpak + Overrides<br>
@@ -44,7 +44,9 @@ As mentioned earlier in the post, some fetures available via the toolkit were al
 
 **Theming Issue :**
 
-There might be a small issue with **GTK4** app theming, I couldn't find a workaround, in case you use those, you will have to Launch the toolkt from the dock, head on over to **4. Customization** select option `g` and apply the fix. It only works for the included **Layan Theme**, if you use another well, you will have to ask its dev for patch, not all themes work for **GTK4/LibAdwaita** apps.
+There might be a small issue with **GTK4/LibAdwaita** app theming, I couldn't find a workaround. In case you use those, you will have to Launch the toolkit from the dock, head on over to **4. Customization** select option `g` to apply the fix.
+
+The included fix only works for the default **Layan Theme**, if you use another, well, you will have to ask its dev for patch, not all themes work for **GTK4/LibAdwaita** apps since Devs are mostly anti-theming.
 
 ### How can I get it?
 
@@ -60,7 +62,7 @@ XeroLinux ISO Access
 
 The ISO will forever be offered **AS IS**, no further features will be added, simply because I still strongly believe in freedom of choice. Nothing will be forced on you no matter what. You are free to shape the Distro however you want making it truly yours.
 
-All I ask for is for you not to share it with anyone. Otherwise you will be hurting the project making it harder for me to maintin. I am only one man doing all this for you, not a team. Thanks you for being supportive.
+All I ask for, is for you not to share it with anyone. Otherwise you will be hurting the project making it harder for me to maintain. I am only one man doing all this for you, not a team. Thank you for being supportive.
 
 ### Wrapping up
 
@@ -70,6 +72,6 @@ You know how to flash it to a USB, if not, just use either [**Etcher**](https://
 
 {{< article link="/posts/ventoy-multi-boot/" >}}
 
-ISO boots using **Grub** not **Systemd-Boot**, simply coz I prefer it lol. I had to make some hard choices. It's hard to satisfy everyone. I hope the ones I made aren't too bad for you. Hehe ;)
+ISO boots using **Grub** not **Systemd-Boot**, simply coz I prefer it lol. I had to make a few choices. It's hard to satisfy everyone. I hope the ones I made aren't too bad. Hehe ;)
 
 I sure hope you enjoy it, and let me know how it goes. For support feel free to join my personal and free [**Discord Server**](https://discord.gg/5sqxTSuKZu). I will do my best to help.
