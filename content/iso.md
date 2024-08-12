@@ -52,9 +52,9 @@ In order to get it, please click the button below to get redirected to the **Ko-
 
 <div align="center">
 
-👉 {{< button href="https://ko-fi.com/s/cf9def9630" target="_blank" >}}
+🔐 👉 {{< button href="https://ko-fi.com/s/cf9def9630" target="_blank" >}}
 XeroLinux ISO Access
-{{< /button >}} 👈
+{{< /button >}} 👈 🔐
 
 </div>
 
