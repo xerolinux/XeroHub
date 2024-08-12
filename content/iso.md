@@ -30,17 +30,17 @@ It will be a bit more complex, but in this case it will never cost you anything 
 
 ### Included Features
 
-As mentioned earlier in the post, some fetures available via the toolkit were already applied on the ISO. Find the list of what has already been applied below, just so you do not apply them again :
+As mentioned earlier in the post, some fetures available via the toolkit were already applied on the ISO. Find the list of what has already been applied below :
 
-- PipeWire/Bluetooth
-- Flatpak + Overrides
-- Multithread Compiling
-- Chaotic-AUR Enabled
-- Printer Driver/Tools
-- Samba Tools and configs
-- Scanner Driver/Tools
-- Fastfetch/OhMyPosh
-- XeroLinux Layan Rice
+✅ PipeWire/Bluetooth<br>
+✅ Flatpak + Overrides<br>
+✅ Multithread Compiling<br>
+✅ Chaotic-AUR Enabled<br>
+✅ Printer Driver/Tools<br>
+✅ Samba Tools and configs<br>
+✅ Scanner Driver/Tools<br>
+✅ Fastfetch/OhMyPosh<br>
+✅ XeroLinux Layan Rice
 
 **Theming Issue :**
 
@@ -52,9 +52,9 @@ In order to get it, please click the button below to get redirected to the **Ko-
 
 <div align="center">
 
-{{< button href="https://ko-fi.com/s/cf9def9630" target="_blank" >}}
+👉 {{< button href="https://ko-fi.com/s/cf9def9630" target="_blank" >}}
 XeroLinux ISO Access
-{{< /button >}}
+{{< /button >}} 👈
 
 </div>
 
