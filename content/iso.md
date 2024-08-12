@@ -48,7 +48,7 @@ There might be a small issue with **GTK4** app theming, I couldn't find a workar
 
 ### How can I get it?
 
-In order to get it, please click the button below to get redirected to the **Ko-Fi Store** page where you will be able to donate however much you want starting from $6 onwards, and you will receive a confirmation e-mail, with a link to a special directory containing the ISO on [**Mega,nz**](mega.nz) with the Decryption key required to access it.
+In order to get it, please click the button below to get redirected to the **Ko-Fi Store** page where you will be able to donate however much you want starting from $6 onwards, and you will receive a confirmation e-mail, with a link to a special directory containing the ISO on [**Mega.nz**](https://mega.nz) with the Decryption key required to access it.
 
 <div align="center">
 
