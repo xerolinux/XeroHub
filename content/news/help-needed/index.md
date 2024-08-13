@@ -31,6 +31,6 @@ Well, since I am based in Lebanon, it will be very difficult for me to pay you d
 
 ### Wrapping up
 
-So now that you know what we are looking for, and are interested, feel free to contact me either on [**Fosstodon**](https://fosstodon.org/@XeroLinux) or by emailing me directly via this [**E-mail**](mailto:info@techxero.com?subject=XeroLinux%20Merch%20Design). I am looking forward to our collab should it happen.
+So now that you know what we are looking for, and are interested, feel free to contact me either on [**Fosstodon**](https://fosstodon.org/@XeroLinux) or by emailing me directly via this [**E-mail**](mailto:techxero@vivaldi.net?subject=XeroLinux%20Merch%20Design). I am looking forward to our collab should it happen.
 
 Cheers !
