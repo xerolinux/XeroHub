@@ -4,7 +4,15 @@
 
   <url>
     <loc>https://xerolinux.xyz/</loc>
-    <lastmod>2024-08-11T00:00:00+00:00</lastmod>
+    <lastmod>2024-08-13T00:00:00+00:00</lastmod>
+  </url>
+  <url>
+    <loc>https://xerolinux.xyz/news/help-needed/</loc>
+    <lastmod>2024-08-13T00:00:00+00:00</lastmod>
+  </url>
+  <url>
+    <loc>https://xerolinux.xyz/news/</loc>
+    <lastmod>2024-08-13T00:00:00+00:00</lastmod>
   </url>
   <url>
     <loc>https://xerolinux.xyz/iso/</loc>
@@ -32,10 +40,6 @@
   </url>
   <url>
     <loc>https://xerolinux.xyz/news/immich-news/</loc>
-    <lastmod>2024-07-28T00:00:00+00:00</lastmod>
-  </url>
-  <url>
-    <loc>https://xerolinux.xyz/news/</loc>
     <lastmod>2024-07-28T00:00:00+00:00</lastmod>
   </url>
   <url>

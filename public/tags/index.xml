@@ -7,7 +7,67 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>Copy, _right?_ 🫨</copyright>
-    <lastBuildDate>Wed, 07 Aug 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://xerolinux.xyz/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 13 Aug 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://xerolinux.xyz/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>ArchLinux</title>
+      <link>https://xerolinux.xyz/tags/archlinux/</link>
+      <pubDate>Tue, 13 Aug 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://xerolinux.xyz/tags/archlinux/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Design</title>
+      <link>https://xerolinux.xyz/tags/design/</link>
+      <pubDate>Tue, 13 Aug 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://xerolinux.xyz/tags/design/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Help</title>
+      <link>https://xerolinux.xyz/tags/help/</link>
+      <pubDate>Tue, 13 Aug 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://xerolinux.xyz/tags/help/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Linux</title>
+      <link>https://xerolinux.xyz/tags/linux/</link>
+      <pubDate>Tue, 13 Aug 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://xerolinux.xyz/tags/linux/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Merch</title>
+      <link>https://xerolinux.xyz/tags/merch/</link>
+      <pubDate>Tue, 13 Aug 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://xerolinux.xyz/tags/merch/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>XeroLinux</title>
+      <link>https://xerolinux.xyz/tags/xerolinux/</link>
+      <pubDate>Tue, 13 Aug 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://xerolinux.xyz/tags/xerolinux/</guid>
+      <description></description>
+      
+    </item>
+    
     <item>
       <title>Drivers</title>
       <link>https://xerolinux.xyz/tags/drivers/</link>
@@ -24,16 +84,6 @@
       <pubDate>Wed, 07 Aug 2024 00:00:00 +0000</pubDate>
       
       <guid>https://xerolinux.xyz/tags/gpu/</guid>
-      <description></description>
-      
-    </item>
-    
-    <item>
-      <title>Linux</title>
-      <link>https://xerolinux.xyz/tags/linux/</link>
-      <pubDate>Wed, 07 Aug 2024 00:00:00 +0000</pubDate>
-      
-      <guid>https://xerolinux.xyz/tags/linux/</guid>
       <description></description>
       
     </item>
@@ -619,16 +669,6 @@
     </item>
     
     <item>
-      <title>XeroLinux</title>
-      <link>https://xerolinux.xyz/tags/xerolinux/</link>
-      <pubDate>Mon, 08 Jul 2024 00:00:00 +0000</pubDate>
-      
-      <guid>https://xerolinux.xyz/tags/xerolinux/</guid>
-      <description></description>
-      
-    </item>
-    
-    <item>
       <title>ZSH</title>
       <link>https://xerolinux.xyz/tags/zsh/</link>
       <pubDate>Mon, 08 Jul 2024 00:00:00 +0000</pubDate>
@@ -644,16 +684,6 @@
       <pubDate>Sun, 07 Jul 2024 00:00:00 +0000</pubDate>
       
       <guid>https://xerolinux.xyz/tags/amelia/</guid>
-      <description></description>
-      
-    </item>
-    
-    <item>
-      <title>ArchLinux</title>
-      <link>https://xerolinux.xyz/tags/archlinux/</link>
-      <pubDate>Sun, 07 Jul 2024 00:00:00 +0000</pubDate>
-      
-      <guid>https://xerolinux.xyz/tags/archlinux/</guid>
       <description></description>
       
     </item>
@@ -1224,16 +1254,6 @@
       <pubDate>Thu, 27 Jun 2024 00:00:00 +0000</pubDate>
       
       <guid>https://xerolinux.xyz/tags/dconf/</guid>
-      <description></description>
-      
-    </item>
-    
-    <item>
-      <title>Design</title>
-      <link>https://xerolinux.xyz/tags/design/</link>
-      <pubDate>Thu, 27 Jun 2024 00:00:00 +0000</pubDate>
-      
-      <guid>https://xerolinux.xyz/tags/design/</guid>
       <description></description>
       
     </item>

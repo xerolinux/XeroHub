@@ -7,7 +7,18 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>Copy, _right?_ 🫨</copyright>
-    <lastBuildDate>Thu, 27 Jun 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://xerolinux.xyz/tags/design/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 13 Aug 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://xerolinux.xyz/tags/design/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Help Needed</title>
+      <link>https://xerolinux.xyz/news/help-needed/</link>
+      <pubDate>Tue, 13 Aug 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://xerolinux.xyz/news/help-needed/</guid>
+      <description>Hey there&amp;hellip;
+This is a new type of post.</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/news/help-needed/featured.webp" />
+    </item>
+    
     <item>
       <title>Fresh New Look</title>
       <link>https://xerolinux.xyz/news/new-site/</link>
