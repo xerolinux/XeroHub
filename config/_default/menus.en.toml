@@ -14,7 +14,7 @@ pageRef = "scripts"
 weight = 25
 
 [[main]]
-name = "The ISO"
+name = "Distro"
 parent = "Projects"
 pageRef = "iso"
 weight = 30
@@ -25,8 +25,8 @@ pageRef = "Gear"
 weight = 35
 
 [[main]]
-name = "Support"
-pageRef = "support"
+name = "Merch"
+url = "https://darkxero-shop.fourthwall.com/"
 weight = 40
 
 [[main]]
