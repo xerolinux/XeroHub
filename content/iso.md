@@ -62,7 +62,7 @@ XeroLinux ISO Access
 
 </div>
 
-The ISO will forever be offered **AS IS**, no further features will be added, simply because I still strongly believe in freedom of choice. Nothing will be forced on you no matter what. You are free to shape the Distro however you want making it truly yours.
+The ISO will always be offered **AS IS**, no further *Major* features will be added, maybe some quality of life ones, without overwhelming you, simply because I still strongly believe in freedom of choice. Nothing will be forced on you ever. You are free to shape the Distro however you want making it truly yours. If you have any ideas on how we can make it better, or extend the toolkit functionality, I am willing to listen. Feel free to share them with me.
 
 All I ask for, is for you not to share it with anyone. Otherwise you will be hurting the project making it harder for me to maintain. I am only one man doing all this for you, not a team. Thank you for being supportive.
 
