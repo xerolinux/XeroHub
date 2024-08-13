@@ -23,7 +23,7 @@ The service I have chosen is [**FourthWall**](https://darkxero-shop.fourthwall.c
 
 ![Image](https://i.imgur.com/Ho4o9GK.png)
 
-I know of many other services out there, I just don't know which offers the most gains when it comes to such things. If we choose another service than the one I have already chosen, mayeb we can set it up together. let's do it step-by-step. I already have so many things I am working on right now lol.
+I know of many other services out there, I just don't know which one offers the most value when it comes to such things. If we choose another one, maybe we can set it up together. let's do it step-by-step. I already have so many things I am working on right now lol.
 
 ### Compensation
 
