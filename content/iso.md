@@ -62,13 +62,19 @@ XeroLinux ISO Access
 
 </div>
 
-The ISO will always be offered **AS IS**, no further *Major* features will be added, maybe some quality of life ones, without overwhelming you, simply because I still strongly believe in freedom of choice. Nothing will be forced on you ever. You are free to shape the Distro however you want making it truly yours. If you have any ideas on how we can make it better, or extend the toolkit functionality, I am willing to listen. Feel free to share them with me.
-
 All I ask for, is for you not to share it with anyone. Otherwise you will be hurting the project making it harder for me to maintain. I am only one man doing all this for you, not a team. Thank you for being supportive.
+
+### Collaboration
+
+While the ISO will always be offered **AS IS**, with no further major features planned, we may introduce some quality-of-life improvements along the way. The goal is to give you total freedom, allowing you to shape the Distro into something uniquely yours.
+
+If you have any ideas on how to enhance the Distro or extend the toolkit's functionality, I'm all ears. After all, a static Distro can become stale over time. However, I’m committed to ensuring it remains versatile and not limited to a single purpose.
+
+Let's collaborate and take this project to new heights while keeping it simple and user-friendly. Your input can make a big difference!
 
 ### Wrapping up
 
-This project depends on you now. The more support I get, the longer it will live for. I cannot, due to my situation, keep maintaining something like this for free, it costs money. Hosting, Internet, and so on. I hope you understand.
+This project depends on you. The more support I get, the longer it will live for. I cannot, due to my situation, keep maintaining something like this for free, it costs money. Hosting, Internet, and so on. I hope you understand.
 
 You know how to flash it to a USB, if not, just use either [**Etcher**](https://etcher.balena.io) ot **Ventoy** and off to the races you go. The choice is yours.
 
