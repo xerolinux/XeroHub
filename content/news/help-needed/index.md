@@ -21,7 +21,7 @@ The service I have chosen is [**FourthWall**](https://fourthwall.com). I chose t
 
 ![Image](https://i.imgur.com/Ho4o9GK.png)
 
-I have already set up the domain, and *"Coming Soon"* page, so now all that's missing is the actual merch lol. I have no clue where to begin. let's do it step-by-step. I already have so many things I am working on right now lol.
+I have already set up the domain, and added a few basic items with my logo, so now all that's missing is more high quality merch lol. However it's a good start I guess. So if you can help add more and have some cool FOSS meme ideas we can print, let me know.
 
 ### Compensation
 
