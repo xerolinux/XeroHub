@@ -19,11 +19,11 @@ We can discuss the text that will be used in the logo and on the various designs
 
 ### Service Chosen
 
-The service I have chosen is [**FourthWall**](https://darkxero-shop.fourthwall.com). Unless you know of a better one that offers a way to embed here on the site, and that supports [**Stripe**](https://stripe.com/). I am new to all this, so I have idea what am doing. That's why your help is needed.
+The service I have chosen is [**FourthWall**](https://fourthwall.com). I chose this one because Matt from [**TheLinuxCast**](https://thelinuxcast.org) recommended it, and I trust his choice. I am new to all this, so I have idea what am doing. That's why your help is needed.
 
 ![Image](https://i.imgur.com/Ho4o9GK.png)
 
-I know of many other services out there, I just don't know which one offers the most value when it comes to such things. If we choose another one, maybe we can set it up together. let's do it step-by-step. I already have so many things I am working on right now lol.
+I know of many other services out there, I just don't know which one offers the most value when it comes to such things. I have already set up the domain, and paghe design, so now all that's missing is the actual merch. I have no clue where to begin. let's do it step-by-step. I already have so many things I am working on right now lol.
 
 ### Compensation
 
