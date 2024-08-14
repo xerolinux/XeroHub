@@ -22,7 +22,7 @@ You can use the included **Post-Install Toolkit**, 1st icon with my logo in the 
 
 ### Who ist it for?
 
-It's for all of you out there, who prefer an easier way to install **Arch** and **KDE**, and feel like supporting my work financially while getting something in return. If you prefer not to, or can't, you can always use **ArchInstall** in combination with my **PlasmaInstall** scripts to achieve a similar result.
+It's for all of you out there, who prefer an easier way to install **Arch** and are fans of the **KDE** Desktop Environment, and feel like supporting my work financially while getting something in return. If you prefer not to, or can't, you can always use **ArchInstall** in combination with my **PlasmaInstall** scripts to achieve a similar result.
 
 {{< github repo="xerolinux/xero-plasma" >}}
 
