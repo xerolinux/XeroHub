@@ -16,15 +16,9 @@ tags: ["XeroLinux", "Distro", "Script", "Toolkit", "Plasma", "Guide", "Arch", "L
 
 I want to begin by thanking everyone who has shown the Distro all the the love. Without whom it wouldn't have lasted as long as it did. As well as the rest of the projects present and future.
 
-**Clarification :**
+The intention of the **PlasmaInstall** script is not to replace **ArchInstall** but to fix its **KDE Plasma** profile while extending it further nothing more. If you want **Gnome**, **XFCE** or any other DE/WM for that matter, existing profiles are fine. However, the Toolkit can be used on any DE or WM it's agnostic.
 
-Intention of the **PlasmaInstall** script was not to replace **ArchInstall** but to fix its **Plasma** profile while extending it further nothing more. If you want **Gnome**, **XFCE** or any other DE/WM for that matter, existing profiles are fine. The only other one that is messed up is the **Hyprland** one but alas since I don't use it I have no idea how to fix it. However, the Toolkit can be used on any DE or WM it's agnostic.
-
-Now, this guide complements the above video, they are to be used together, I will try not to ramble on too much. Some of you have asked the question, "is the Distro really gone ?" I would like to say, no, not really. Let me explain a bit before going ahead with written guide. Since it was nothing but **ArchLinux** + Customized/riced **KDE Plasma** nothing more, one could achieve the same result by using my **Plasma Install** script.
-
-Yeah we can easily get **XeroLinux** back in all its glory, it's just no longer an ISO with **Calamares**. It's still easy to install thanks in part to the *infamous* **ArchInstall** script then my own. So all is not lost.
-
-In this super detailed guide I will be showing off how it can be done.
+In this super detailed guide I will be showing off how we can easily replicate the **XeroLinux** setup using **ArchInstall**.
 
 ![XeroLayan](https://i.imgur.com/VA2tycb.jpeg)
 
@@ -114,7 +108,7 @@ Once you trust it, you can move on. Now, depending on the method that was used, 
 bash -c "$(curl -fsSL https://tinyurl.com/PlasmaInstall)"
 ```
 
-This will execute the script. Just go through the prompts. I would **Highly** recommend option **3) Xero's Curated Set Of Plasma Packages** to avoind any future headaches. I went through all groups with a fine tooth comb as the saying goes making sure we get the best experience. But that's not to say we cannot select any of the other options, it's all up to you in the end.
+This will execute the script. Just go through the prompts. I would **Highly** recommend option **3) Xero's Curated Set Of Plasma Packages** to avoid any future headaches. I went through all groups with a fine tooth comb as the saying goes making sure we get the best experience. But that's not to say we cannot select any of the other options, it's all up to you in the end.
 
 ![Script](https://i.imgur.com/TOZNp4j.png)
 
@@ -126,9 +120,7 @@ Finally, for now at least, once script is done, we will be prompted to exit and 
 
 ### Part 3 - Setting up the system
 
-If all went smoothly, we should now be greeted with `SDDM`, **KDE**'s login page. I would recommend **Plasma X11** over **Wayland**, at least for now. Yes, my script still includes **X11** for compatibility. I will not get rid of it any time soon, at least not until I feel that more apps are ready for **Wayland**.
-
-Once logged in, there are a few things we need to take care of first. Open Terminal, as shown in video, and update the system
+If all went smoothly, we should now be greeted with `SDDM`, **KDE**'s login page. Once logged in, there are a few things we need to take care of first. Open Terminal, as shown in video, and update the system
 
 ```Bash
 sudo pacman -Syyu
@@ -165,13 +157,5 @@ Now we jump to Customization section. Just select option **x. XeroLinux's Layan 
 That's it boys n girls. We just got **XeroLinux** back ! The rest is up to you. Go through the toolkit see if you find anything useful. If you encounter any issues or have any questions, feel free to contact me on either **Fosstodon** or **Discord**, or even in the video comments section.
 
 I will do my best to answer. Keep in mind that I might not have all the answers, simply because I only have the hardware I have, might be different than yours, so can't know what works on something I do not own. Though I am and always will open to suggestions...
-
-{{< github repo="xerolinux/xero-plasma" >}}
-
-Use the repo above to report any issues with **PlasmaInstall**, and I will get to them as soon as I can. You can also request features to be added there too..
-
-If you want features to be added to the Toolkit, or have any issues to report, feel free to do so on the repo below. I will do my best to get to them...
-
-{{< github repo="xerolinux/xlapit-cli" >}}
 
 Best of luck !!!!

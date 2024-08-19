@@ -109,7 +109,7 @@
     "keywords": ["XeroLinux","Distro","Script","Toolkit","Plasma","Guide","Arch","Linux"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "1701"
+    "wordCount": "1433"
   }]
   </script>
 
@@ -653,7 +653,7 @@
 <div class="flex flex-row flex-wrap items-center">
   
   
-  <time datetime="2024-07-08 00:00:00 &#43;0000 UTC">8 July 2024</time><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">8 mins</span><span class="px-2 text-primary-500">&middot;</span><span>
+  <time datetime="2024-07-08 00:00:00 &#43;0000 UTC">8 July 2024</time><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">7 mins</span><span class="px-2 text-primary-500">&middot;</span><span>
   
   
     
@@ -1275,11 +1275,8 @@
     
 </h3>
 <p>I want to begin by thanking everyone who has shown the Distro all the the love. Without whom it wouldn&rsquo;t have lasted as long as it did. As well as the rest of the projects present and future.</p>
-<p><strong>Clarification :</strong></p>
-<p>Intention of the <strong>PlasmaInstall</strong> script was not to replace <strong>ArchInstall</strong> but to fix its <strong>Plasma</strong> profile while extending it further nothing more. If you want <strong>Gnome</strong>, <strong>XFCE</strong> or any other DE/WM for that matter, existing profiles are fine. The only other one that is messed up is the <strong>Hyprland</strong> one but alas since I don&rsquo;t use it I have no idea how to fix it. However, the Toolkit can be used on any DE or WM it&rsquo;s agnostic.</p>
-<p>Now, this guide complements the above video, they are to be used together, I will try not to ramble on too much. Some of you have asked the question, &ldquo;is the Distro really gone ?&rdquo; I would like to say, no, not really. Let me explain a bit before going ahead with written guide. Since it was nothing but <strong>ArchLinux</strong> + Customized/riced <strong>KDE Plasma</strong> nothing more, one could achieve the same result by using my <strong>Plasma Install</strong> script.</p>
-<p>Yeah we can easily get <strong>XeroLinux</strong> back in all its glory, it&rsquo;s just no longer an ISO with <strong>Calamares</strong>. It&rsquo;s still easy to install thanks in part to the <em>infamous</em> <strong>ArchInstall</strong> script then my own. So all is not lost.</p>
-<p>In this super detailed guide I will be showing off how it can be done.</p>
+<p>The intention of the <strong>PlasmaInstall</strong> script is not to replace <strong>ArchInstall</strong> but to fix its <strong>KDE Plasma</strong> profile while extending it further nothing more. If you want <strong>Gnome</strong>, <strong>XFCE</strong> or any other DE/WM for that matter, existing profiles are fine. However, the Toolkit can be used on any DE or WM it&rsquo;s agnostic.</p>
+<p>In this super detailed guide I will be showing off how we can easily replicate the <strong>XeroLinux</strong> setup using <strong>ArchInstall</strong>.</p>
 <p>
   <figure>
     <img class="my-0 rounded-md" loading="lazy" src="https://i.imgur.com/VA2tycb.jpeg" alt="XeroLayan" />
@@ -1652,7 +1649,7 @@
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Bash" data-lang="Bash"><span class="line"><span class="cl">wget https://tinyurl.com/PlasmaInstall
 </span></span></code></pre></div><p>Once you trust it, you can move on. Now, depending on the method that was used, <code>ssh</code> or not, we either copy paste the command below or type it manually :</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Bash" data-lang="Bash"><span class="line"><span class="cl">bash -c <span class="s2">&#34;</span><span class="k">$(</span>curl -fsSL https://tinyurl.com/PlasmaInstall<span class="k">)</span><span class="s2">&#34;</span>
-</span></span></code></pre></div><p>This will execute the script. Just go through the prompts. I would <strong>Highly</strong> recommend option <strong>3) Xero&rsquo;s Curated Set Of Plasma Packages</strong> to avoind any future headaches. I went through all groups with a fine tooth comb as the saying goes making sure we get the best experience. But that&rsquo;s not to say we cannot select any of the other options, it&rsquo;s all up to you in the end.</p>
+</span></span></code></pre></div><p>This will execute the script. Just go through the prompts. I would <strong>Highly</strong> recommend option <strong>3) Xero&rsquo;s Curated Set Of Plasma Packages</strong> to avoid any future headaches. I went through all groups with a fine tooth comb as the saying goes making sure we get the best experience. But that&rsquo;s not to say we cannot select any of the other options, it&rsquo;s all up to you in the end.</p>
 <p>
   <figure>
     <img class="my-0 rounded-md" loading="lazy" src="https://i.imgur.com/TOZNp4j.png" alt="Script" />
@@ -1668,8 +1665,7 @@
     <div id="part-3---setting-up-the-system" class="anchor"></div>
     
 </h3>
-<p>If all went smoothly, we should now be greeted with <code>SDDM</code>, <strong>KDE</strong>&rsquo;s login page. I would recommend <strong>Plasma X11</strong> over <strong>Wayland</strong>, at least for now. Yes, my script still includes <strong>X11</strong> for compatibility. I will not get rid of it any time soon, at least not until I feel that more apps are ready for <strong>Wayland</strong>.</p>
-<p>Once logged in, there are a few things we need to take care of first. Open Terminal, as shown in video, and update the system</p>
+<p>If all went smoothly, we should now be greeted with <code>SDDM</code>, <strong>KDE</strong>&rsquo;s login page. Once logged in, there are a few things we need to take care of first. Open Terminal, as shown in video, and update the system</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Bash" data-lang="Bash"><span class="line"><span class="cl">sudo pacman -Syyu
 </span></span></code></pre></div><p>Then we launch the <strong>XeroLinux Post Installation Toolkit</strong> from the AppMenu, under <strong>System</strong>. That&rsquo;s what we will be using from here on in.</p>
 <p>
@@ -1707,166 +1703,6 @@
 </h3>
 <p>That&rsquo;s it boys n girls. We just got <strong>XeroLinux</strong> back ! The rest is up to you. Go through the toolkit see if you find anything useful. If you encounter any issues or have any questions, feel free to contact me on either <strong>Fosstodon</strong> or <strong>Discord</strong>, or even in the video comments section.</p>
 <p>I will do my best to answer. Keep in mind that I might not have all the answers, simply because I only have the hardware I have, might be different than yours, so can&rsquo;t know what works on something I do not own. Though I am and always will open to suggestions&hellip;</p>
-<a id="github-4f74f18636560c73418bfb6009c54d8b" target="_blank" href="https://github.com/xerolinux/xero-plasma" class="cursor-pointer">
-  <div
-    class="w-full md:w-auto pt-3 p-5 border border-neutral-200 dark:border-neutral-700 border rounded-md shadow-2xl">
-
-    <div class="flex items-center">
-      <span class="text-2xl text-neutral-800 dark:text-neutral" style="margin-right:10px;">
-        
-
-  <span class="relative block icon">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path fill="currentColor" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
-
-  </span>
-
-
-      </span>
-      <div
-        id="github-4f74f18636560c73418bfb6009c54d8b-full_name"
-        class="m-0 font-bold text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral">
-        xerolinux/xero-plasma
-      </div>
-    </div>
-
-    <p id="github-4f74f18636560c73418bfb6009c54d8b-description" class="m-0 mt-2 text-md text-neutral-800 dark:text-neutral">
-      The XeroLinux Plasma installer script
-    </p>
-
-    <div class="m-0 mt-2 flex items-center">
-
-      <span class="mr-1 inline-block h-3 w-3 rounded-full"
-        style="background-color: #89e051"></span>
-      <div class="m-0 mr-5 text-md text-neutral-800 dark:text-neutral">
-         Shell 
-      </div>
-
-      <span class="text-md mr-1 text-neutral-800 dark:text-neutral">
-        
-
-  <span class="relative block icon">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path fill="currentColor" d="M287.9 0C297.1 0 305.5 5.25 309.5 13.52L378.1 154.8L531.4 177.5C540.4 178.8 547.8 185.1 550.7 193.7C553.5 202.4 551.2 211.9 544.8 218.2L433.6 328.4L459.9 483.9C461.4 492.9 457.7 502.1 450.2 507.4C442.8 512.7 432.1 513.4 424.9 509.1L287.9 435.9L150.1 509.1C142.9 513.4 133.1 512.7 125.6 507.4C118.2 502.1 114.5 492.9 115.1 483.9L142.2 328.4L31.11 218.2C24.65 211.9 22.36 202.4 25.2 193.7C28.03 185.1 35.5 178.8 44.49 177.5L197.7 154.8L266.3 13.52C270.4 5.249 278.7 0 287.9 0L287.9 0zM287.9 78.95L235.4 187.2C231.9 194.3 225.1 199.3 217.3 200.5L98.98 217.9L184.9 303C190.4 308.5 192.9 316.4 191.6 324.1L171.4 443.7L276.6 387.5C283.7 383.7 292.2 383.7 299.2 387.5L404.4 443.7L384.2 324.1C382.9 316.4 385.5 308.5 391 303L476.9 217.9L358.6 200.5C350.7 199.3 343.9 194.3 340.5 187.2L287.9 78.95z"/></svg>
-  </span>
-
-
-      </span>
-      <div id="github-4f74f18636560c73418bfb6009c54d8b-stargazers" class="m-0 mr-5 text-md text-neutral-800 dark:text-neutral">
-        8
-      </div>
-
-      <span class="text-md mr-1 text-neutral-800 dark:text-neutral">
-        
-
-  <span class="relative block icon">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M80 104c13.3 0 24-10.7 24-24s-10.7-24-24-24S56 66.7 56 80s10.7 24 24 24zm80-24c0 32.8-19.7 61-48 73.3V192c0 17.7 14.3 32 32 32H304c17.7 0 32-14.3 32-32V153.3C307.7 141 288 112.8 288 80c0-44.2 35.8-80 80-80s80 35.8 80 80c0 32.8-19.7 61-48 73.3V192c0 53-43 96-96 96H256v70.7c28.3 12.3 48 40.5 48 73.3c0 44.2-35.8 80-80 80s-80-35.8-80-80c0-32.8 19.7-61 48-73.3V288H144c-53 0-96-43-96-96V153.3C19.7 141 0 112.8 0 80C0 35.8 35.8 0 80 0s80 35.8 80 80zm208 24c13.3 0 24-10.7 24-24s-10.7-24-24-24s-24 10.7-24 24s10.7 24 24 24zM248 432c0-13.3-10.7-24-24-24s-24 10.7-24 24s10.7 24 24 24s24-10.7 24-24z"/></svg>
-  </span>
-
-
-      </span>
-      <div id="github-4f74f18636560c73418bfb6009c54d8b-forks" class="m-0 mr-5 text-md text-neutral-800 dark:text-neutral">
-        3
-      </div>
-
-    </div>
-
-  </div>
-  <script>
-    fetch("https://api.github.com/repos/xerolinux/xero-plasma", {
-      headers: new Headers({
-        'User-agent': 'Mozilla/4.0 Custom User Agent'
-      })
-    })
-      .then(response => response.json())
-      .then(data => {
-        document.getElementById('github-4f74f18636560c73418bfb6009c54d8b-full_name').innerHTML = data.full_name;
-        document.getElementById('github-4f74f18636560c73418bfb6009c54d8b-description').innerHTML = data.description;
-        document.getElementById('github-4f74f18636560c73418bfb6009c54d8b-stargazers').innerHTML = data.stargazers_count;
-        document.getElementById('github-4f74f18636560c73418bfb6009c54d8b-forks').innerHTML = data.forks;
-      })
-      .catch(error => console.error(error))
-  </script>
-</a>
-<p>Use the repo above to report any issues with <strong>PlasmaInstall</strong>, and I will get to them as soon as I can. You can also request features to be added there too..</p>
-<p>If you want features to be added to the Toolkit, or have any issues to report, feel free to do so on the repo below. I will do my best to get to them&hellip;</p>
-<a id="github-3f089d8c45d12224510bb5b0ac0bd18b" target="_blank" href="https://github.com/xerolinux/xlapit-cli" class="cursor-pointer">
-  <div
-    class="w-full md:w-auto pt-3 p-5 border border-neutral-200 dark:border-neutral-700 border rounded-md shadow-2xl">
-
-    <div class="flex items-center">
-      <span class="text-2xl text-neutral-800 dark:text-neutral" style="margin-right:10px;">
-        
-
-  <span class="relative block icon">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path fill="currentColor" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
-
-  </span>
-
-
-      </span>
-      <div
-        id="github-3f089d8c45d12224510bb5b0ac0bd18b-full_name"
-        class="m-0 font-bold text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral">
-        xerolinux/xlapit-cli
-      </div>
-    </div>
-
-    <p id="github-3f089d8c45d12224510bb5b0ac0bd18b-description" class="m-0 mt-2 text-md text-neutral-800 dark:text-neutral">
-      XeroLinux Arch Post Install Toolkit Package Source Code
-    </p>
-
-    <div class="m-0 mt-2 flex items-center">
-
-      <span class="mr-1 inline-block h-3 w-3 rounded-full"
-        style="background-color: #89e051"></span>
-      <div class="m-0 mr-5 text-md text-neutral-800 dark:text-neutral">
-         Shell 
-      </div>
-
-      <span class="text-md mr-1 text-neutral-800 dark:text-neutral">
-        
-
-  <span class="relative block icon">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path fill="currentColor" d="M287.9 0C297.1 0 305.5 5.25 309.5 13.52L378.1 154.8L531.4 177.5C540.4 178.8 547.8 185.1 550.7 193.7C553.5 202.4 551.2 211.9 544.8 218.2L433.6 328.4L459.9 483.9C461.4 492.9 457.7 502.1 450.2 507.4C442.8 512.7 432.1 513.4 424.9 509.1L287.9 435.9L150.1 509.1C142.9 513.4 133.1 512.7 125.6 507.4C118.2 502.1 114.5 492.9 115.1 483.9L142.2 328.4L31.11 218.2C24.65 211.9 22.36 202.4 25.2 193.7C28.03 185.1 35.5 178.8 44.49 177.5L197.7 154.8L266.3 13.52C270.4 5.249 278.7 0 287.9 0L287.9 0zM287.9 78.95L235.4 187.2C231.9 194.3 225.1 199.3 217.3 200.5L98.98 217.9L184.9 303C190.4 308.5 192.9 316.4 191.6 324.1L171.4 443.7L276.6 387.5C283.7 383.7 292.2 383.7 299.2 387.5L404.4 443.7L384.2 324.1C382.9 316.4 385.5 308.5 391 303L476.9 217.9L358.6 200.5C350.7 199.3 343.9 194.3 340.5 187.2L287.9 78.95z"/></svg>
-  </span>
-
-
-      </span>
-      <div id="github-3f089d8c45d12224510bb5b0ac0bd18b-stargazers" class="m-0 mr-5 text-md text-neutral-800 dark:text-neutral">
-        43
-      </div>
-
-      <span class="text-md mr-1 text-neutral-800 dark:text-neutral">
-        
-
-  <span class="relative block icon">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M80 104c13.3 0 24-10.7 24-24s-10.7-24-24-24S56 66.7 56 80s10.7 24 24 24zm80-24c0 32.8-19.7 61-48 73.3V192c0 17.7 14.3 32 32 32H304c17.7 0 32-14.3 32-32V153.3C307.7 141 288 112.8 288 80c0-44.2 35.8-80 80-80s80 35.8 80 80c0 32.8-19.7 61-48 73.3V192c0 53-43 96-96 96H256v70.7c28.3 12.3 48 40.5 48 73.3c0 44.2-35.8 80-80 80s-80-35.8-80-80c0-32.8 19.7-61 48-73.3V288H144c-53 0-96-43-96-96V153.3C19.7 141 0 112.8 0 80C0 35.8 35.8 0 80 0s80 35.8 80 80zm208 24c13.3 0 24-10.7 24-24s-10.7-24-24-24s-24 10.7-24 24s10.7 24 24 24zM248 432c0-13.3-10.7-24-24-24s-24 10.7-24 24s10.7 24 24 24s24-10.7 24-24z"/></svg>
-  </span>
-
-
-      </span>
-      <div id="github-3f089d8c45d12224510bb5b0ac0bd18b-forks" class="m-0 mr-5 text-md text-neutral-800 dark:text-neutral">
-        8
-      </div>
-
-    </div>
-
-  </div>
-  <script>
-    fetch("https://api.github.com/repos/xerolinux/xlapit-cli", {
-      headers: new Headers({
-        'User-agent': 'Mozilla/4.0 Custom User Agent'
-      })
-    })
-      .then(response => response.json())
-      .then(data => {
-        document.getElementById('github-3f089d8c45d12224510bb5b0ac0bd18b-full_name').innerHTML = data.full_name;
-        document.getElementById('github-3f089d8c45d12224510bb5b0ac0bd18b-description').innerHTML = data.description;
-        document.getElementById('github-3f089d8c45d12224510bb5b0ac0bd18b-stargazers').innerHTML = data.stargazers_count;
-        document.getElementById('github-3f089d8c45d12224510bb5b0ac0bd18b-forks').innerHTML = data.forks;
-      })
-      .catch(error => console.error(error))
-  </script>
-</a>
 <p>Best of luck !!!!</p>
 
           
