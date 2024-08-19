@@ -6,6 +6,11 @@ description: "Get XeroLinux Back With Our Tool"
 tags: ["XeroLinux", "Distro", "Script", "Toolkit", "Plasma", "Guide", "Arch", "Linux"]
 ---
 {{< youtube v0UPif52i5A >}}
+<br />
+
+{{< alert icon="fire" cardColor="#993350" iconColor="#1d3557" textColor="#f1faee" >}}
+**Distro is Back** : If you want to skip all this, you can just *Donate* and grab the **XeroLinux** pre-built ISO from 👉 [**Re-Release Post**](https://xerolinux.xyz/iso/).
+{{< /alert >}}
 
 ### Introduction
 
@@ -13,7 +18,7 @@ I want to begin by thanking everyone who has shown the Distro all the the love. 
 
 **Clarification :**
 
-> Intention of the **PlasmaInstall** script was not to replace **ArchInstall** but to fix its **Plasma** profile while extending it further nothing more. If you want **Gnome**, **XFCE** or any other DE/WM for that matter, existing profiles are fine. The only other one that is messed up is the **Hyprland** one but alas since I don't use it I have no idea how to fix it. However, the Toolkit can be used on any DE or WM it's agnostic.
+Intention of the **PlasmaInstall** script was not to replace **ArchInstall** but to fix its **Plasma** profile while extending it further nothing more. If you want **Gnome**, **XFCE** or any other DE/WM for that matter, existing profiles are fine. The only other one that is messed up is the **Hyprland** one but alas since I don't use it I have no idea how to fix it. However, the Toolkit can be used on any DE or WM it's agnostic.
 
 Now, this guide complements the above video, they are to be used together, I will try not to ramble on too much. Some of you have asked the question, "is the Distro really gone ?" I would like to say, no, not really. Let me explain a bit before going ahead with written guide. Since it was nothing but **ArchLinux** + Customized/riced **KDE Plasma** nothing more, one could achieve the same result by using my **Plasma Install** script.
 
@@ -81,7 +86,7 @@ Ok, now that we have the installer running, am not going to go through each and 
 
 That's why we will be using the **Best Guess** option, carefully selecting the correct drive we want install **ArchLinux** onto.
 
-{{< alert icon="fire" cardColor="#e63946" iconColor="#1d3557" textColor="#f1faee" >}}
+{{< alert icon="fire" cardColor="#993350" iconColor="#1d3557" textColor="#f1faee" >}}
 I will not be held responsible for any data loss resulting from selection of the wrong drive. **BE VERY CAREFUL HERE**.
 {{< /alert >}}
 
@@ -93,7 +98,7 @@ Now once everything is configured and set, hit install, sit back, grab a cup of 
 
 Once that's all done, we will be prompted if we want to `chroot` into our new install, we answer with yes of course since we still have no DE yet.
 
-{{< alert icon="fire" cardColor="#e63946" iconColor="#1d3557" textColor="#f1faee" >}}
+{{< alert icon="fire" cardColor="#993350" iconColor="#1d3557" textColor="#f1faee" >}}
 **User Caution**. We do not recommend to blindly execute scripts without inspecting them first.
 {{< /alert >}}
 
