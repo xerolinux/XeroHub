@@ -7,7 +7,7 @@ featureimage: https://i.imgur.com/ejZ1ZQv.png
 As you can see, after thinking long and hard, I have decided to revive the Distro. Only this time it's a bit different.
 
 {{< alert icon="fire" cardColor="#993350" iconColor="#1d3557" textColor="#f1faee" >}}
-**Notice :** ISO is **EFI** only for now, will not boot on **Bios** systems. Project source code can be found here 👉 [**XeroLinuxDev**](https://github.com/XeroLinuxDev)
+**Notice :** ISO is currently **EFI** only, will not boot on **Legacy Bios** systems. Support will be re-added soon. Project source code can be found here 👉 [**XeroLinuxDev**](https://github.com/XeroLinuxDev)
 {{< /alert >}}
 
 ![XeroISO](https://i.imgur.com/ejZ1ZQv.png)
