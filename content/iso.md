@@ -7,7 +7,7 @@ featureimage: https://i.imgur.com/ejZ1ZQv.png
 As you can see, after thinking long and hard, I have decided to revive the Distro. Only this time it's a bit different.
 
 {{< alert icon="fire" cardColor="#993350" iconColor="#1d3557" textColor="#f1faee" >}}
-**Notice :** ISO is currently **EFI** only, will not boot on **Legacy Bios** systems. For updates please consult the [**Changelog**](https://github.com/XeroLinuxDev/xero-build/blob/main/Changelog.md). To access project's source code, head on over to 👉 [**XeroLinuxDev**](https://github.com/XeroLinuxDev).
+**Notice :** ISO is currently **EFI** only, will not boot on **Legacy Bios** systems. For updates please consult this project's [**Changelog**](https://github.com/XeroLinuxDev/xero-build/blob/main/Changelog.md). To access project's source code, head on over to 👉 [**XeroLinuxDev**](https://github.com/XeroLinuxDev).
 {{< /alert >}}
 
 ![XeroISO](https://i.imgur.com/ejZ1ZQv.png)
@@ -86,7 +86,7 @@ Let's collaborate and take this project to new heights while keeping it simple a
 
 This project depends on you. The more support I get, the longer it will live for. I cannot, due to my situation, keep maintaining something like this for free, it costs money. Hosting, Internet, and so on. I hope you understand.
 
-ISO will boot using **SystemD-Boot** for Live Environment soon, however it will still be using **Grub** on the installed system.And we highly recommend the use of **Ventoy** to boot, so you have **Grub** as fallback in case **SystemD-Boot** fails. If you burn using **Etcher** or similar tools there will be nothing to fall back to. Just an FYI.
+ISO will boot using **SystemD-Boot** for Live Environment soon, however it will still be using **Grub** on the installed system. And we highly recommend the use of **Ventoy** to boot, so you have **Grub** as fallback in case **SystemD-Boot** fails. If you burn using **Etcher** or similar tools there will be nothing to fall back to. Just an FYI.
 
 {{< article link="/posts/ventoy-multi-boot/" >}}
 
