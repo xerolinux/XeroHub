@@ -7,7 +7,7 @@ featureimage: https://i.imgur.com/ejZ1ZQv.png
 As you can see, after thinking long and hard, I have decided to revive the Distro. Only this time it's a bit different.
 
 {{< alert icon="fire" cardColor="#993350" iconColor="#1d3557" textColor="#f1faee" >}}
-**Notice :** ISO is currently **EFI** only, will not boot on **Legacy Bios** systems. Support will be re-added soon. Project source code can be found here 👉 [**XeroLinuxDev**](https://github.com/XeroLinuxDev)
+**Notice :** ISO is currently **EFI** only, will not boot on **Legacy Bios** systems. Support will be re-added next month. Project source code can be found here 👉 [**XeroLinuxDev**](https://github.com/XeroLinuxDev). For updates please consult the 👉 [**Changelog**](https://github.com/XeroLinuxDev/xero-build/blob/main/Changelog.md).
 {{< /alert >}}
 
 ![XeroISO](https://i.imgur.com/ejZ1ZQv.png)
@@ -86,10 +86,8 @@ Let's collaborate and take this project to new heights while keeping it simple a
 
 This project depends on you. The more support I get, the longer it will live for. I cannot, due to my situation, keep maintaining something like this for free, it costs money. Hosting, Internet, and so on. I hope you understand.
 
-You know how to flash it to a USB, if not, just use either [**Etcher**](https://etcher.balena.io) ot **Ventoy** and off to the races you go. The choice is yours.
+Even though ISO will boot using **SystemD-Boot** starting September for Live Environment, it will still be using **Grub** for installed system. Change had to be done to fix issue with *Legacy Bios* boot. Also that's what **Arch** uses by default now. Oh and we highly recommend the use of **Ventoy** to boot, so you have **Grub** as fallback in case **SystemD-Boot** fails. If you burn using **Etcher** or similar tools there will be nothing to fall back to. Just an FYI.
 
 {{< article link="/posts/ventoy-multi-boot/" >}}
 
-ISO boots using **Grub** not **Systemd-Boot**, simply coz I prefer it lol. I had to make a few choices. It's hard to satisfy everyone. I hope the ones I made aren't too bad. Hehe ;)
-
-I sure hope you enjoy it, and let me know how it goes. For support feel free to join my personal and free [**Discord Server**](https://discord.gg/5sqxTSuKZu). I will do my best to help.
+With that, I sure hope you enjoy it, and let me know how it goes. For support feel free to join my personal and free [**Discord Server**](https://discord.gg/5sqxTSuKZu). I will do my best to help.
