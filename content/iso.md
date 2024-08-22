@@ -86,7 +86,7 @@ Let's collaborate and take this project to new heights while keeping it simple a
 
 This project depends on you. The more support I get, the longer it will live for. I cannot, due to my situation, keep maintaining something like this for free, it costs money. Hosting, Internet, and so on. I hope you understand.
 
-ISO will boot using **SystemD-Boot** for Live Environment soon, however it will still be using **Grub** on the installed system. And we highly recommend the use of **Ventoy** to boot, so you have **Grub** as fallback in case **SystemD-Boot** fails. If you burn using **Etcher** or similar tools there will be nothing to fall back to. Just an FYI.
+We highly recommend the use of **Ventoy** to boot, so you have **Grub** as fallback in case **SystemD-Boot** fails. If you burn using **Etcher** or similar tools there will be nothing to fall back to. Just an FYI.
 
 {{< article link="/posts/ventoy-multi-boot/" >}}
 
