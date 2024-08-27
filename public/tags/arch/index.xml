@@ -110,16 +110,6 @@ I was recently asked if my Repo can be added to other Arch-Based Distros, short 
     </item>
     
     <item>
-      <title>Terminal Aliases</title>
-      <link>https://xerolinux.xyz/posts/terminal-aliases/</link>
-      <pubDate>Thu, 27 Jun 2024 00:00:00 +0000</pubDate>
-      
-      <guid>https://xerolinux.xyz/posts/terminal-aliases/</guid>
-      <description>A quick one today, a video by DistroTube popped up that explains shell aliases and how to create your very own.</description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/terminal-aliases/featured.webp" />
-    </item>
-    
-    <item>
       <title>Zoxide the smarter cd command</title>
       <link>https://xerolinux.xyz/posts/zoxide-cd/</link>
       <pubDate>Thu, 27 Jun 2024 00:00:00 +0000</pubDate>

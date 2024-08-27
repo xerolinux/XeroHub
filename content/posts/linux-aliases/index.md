@@ -13,6 +13,8 @@ Are you sick and tired of having to type the lengthy update commands in terminal
 
 Basically, they are custom user created commands, by you, that execute various actions. However, I would highly recommend you check if you have any tools installed that have similar ones, and avoid replicating or replacing them.
 
+{{< youtube 4v4Mcncvsac >}}
+
 ### How to create Aliases
 
 First, before you start, you will have to know what shell you are using, as different ones use different config files. In case of **Bash** you will have to edit the `.bashrc` file found in your home directory's root. And in the case of **ZSH**, it will be the `.zshrc` file found at that same location and so on.
@@ -30,7 +32,7 @@ alias shortcmd="actualcmd"
 Update Example (Arch) :
 
 ```Bash
-alias update="sudo pacman -Syu"
+alias up="sudo pacman -Syu"
 ```
 
 Update Example (Debian) :
@@ -39,7 +41,23 @@ Update Example (Debian) :
 alias update="sudo apt update && sudo apt upgrade"
 ```
 
-Now save your file, restart your terminal and test them out. The sky's the limit as how many you can create. I use a ton of them in **XeroLinux**. To check them out visit this link >> [**XeroLinux Aliases**](https://github.com/xerolinux/xero-fixes/blob/main/conf/.bashrc).
+You can also use aliases to execute scripts and edit files among many many many other things. They are amazing. I use a ton of them in **XeroLinux**. To check them out visit this link >> [**XeroLinux Aliases**](https://github.com/xerolinux/xero-fixes/blob/main/conf/.bashrc).
+
+Quick examples :
+
+- Edit Pacman.conf
+
+```Bash
+alias npcm="sudo nano /etc/pacman.conf"
+```
+
+- Execute script :
+
+```Bash
+alias cmd="/path/to/script/sript.sh"
+```
+
+You get the idea. Now save your file, restart your terminal and test them out. The sky's the limit as how many you can create.
 
 ### Wrapping up
 
