@@ -29,16 +29,22 @@ Here's how aliases are structured :
 alias shortcmd="actualcmd"
 ```
 
-Update Example (Arch) :
+- Update System (Arch) :
 
 ```Bash
 alias up="sudo pacman -Syu"
 ```
 
-Update Example (Debian) :
+- Install Package :
 
 ```Bash
-alias update="sudo apt update && sudo apt upgrade"
+alias in="sudo pacman -S --needed "
+```
+
+- Search for Package :
+
+```Bash
+alias search="pacman -Ss "
 ```
 
 You can also use aliases to execute scripts and edit files among many many many other things. They are amazing. I use a ton of them in **XeroLinux**. To check them out visit this link >> [**XeroLinux Aliases**](https://github.com/xerolinux/xero-fixes/blob/main/conf/.bashrc).

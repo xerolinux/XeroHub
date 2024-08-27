@@ -106,7 +106,7 @@
     "keywords": ["Terminal","Alias","Linux"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "357"
+    "wordCount": "362"
   }]
   </script>
 
@@ -1214,10 +1214,18 @@
 </p>
 <p>Here&rsquo;s how aliases are structured :</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Bash" data-lang="Bash"><span class="line"><span class="cl"><span class="nb">alias</span> <span class="nv">shortcmd</span><span class="o">=</span><span class="s2">&#34;actualcmd&#34;</span>
-</span></span></code></pre></div><p>Update Example (Arch) :</p>
+</span></span></code></pre></div><ul>
+<li>Update System (Arch) :</li>
+</ul>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Bash" data-lang="Bash"><span class="line"><span class="cl"><span class="nb">alias</span> <span class="nv">up</span><span class="o">=</span><span class="s2">&#34;sudo pacman -Syu&#34;</span>
-</span></span></code></pre></div><p>Update Example (Debian) :</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Bash" data-lang="Bash"><span class="line"><span class="cl"><span class="nb">alias</span> <span class="nv">update</span><span class="o">=</span><span class="s2">&#34;sudo apt update &amp;&amp; sudo apt upgrade&#34;</span>
+</span></span></code></pre></div><ul>
+<li>Install Package :</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Bash" data-lang="Bash"><span class="line"><span class="cl"><span class="nb">alias</span> <span class="nv">in</span><span class="o">=</span><span class="s2">&#34;sudo pacman -S --needed &#34;</span>
+</span></span></code></pre></div><ul>
+<li>Search for Package :</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Bash" data-lang="Bash"><span class="line"><span class="cl"><span class="nb">alias</span> <span class="nv">search</span><span class="o">=</span><span class="s2">&#34;pacman -Ss &#34;</span>
 </span></span></code></pre></div><p>You can also use aliases to execute scripts and edit files among many many many other things. They are amazing. I use a ton of them in <strong>XeroLinux</strong>. To check them out visit this link &raquo; <a href="https://github.com/xerolinux/xero-fixes/blob/main/conf/.bashrc" target="_blank"><strong>XeroLinux Aliases</strong></a>.</p>
 <p>Quick examples :</p>
 <ul>
