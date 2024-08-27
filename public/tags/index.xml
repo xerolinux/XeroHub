@@ -7,7 +7,37 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>Copy, _right?_ 🫨</copyright>
-    <lastBuildDate>Tue, 13 Aug 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://xerolinux.xyz/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 27 Aug 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://xerolinux.xyz/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Alias</title>
+      <link>https://xerolinux.xyz/tags/alias/</link>
+      <pubDate>Tue, 27 Aug 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://xerolinux.xyz/tags/alias/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Linux</title>
+      <link>https://xerolinux.xyz/tags/linux/</link>
+      <pubDate>Tue, 27 Aug 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://xerolinux.xyz/tags/linux/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Terminal</title>
+      <link>https://xerolinux.xyz/tags/terminal/</link>
+      <pubDate>Tue, 27 Aug 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://xerolinux.xyz/tags/terminal/</guid>
+      <description></description>
+      
+    </item>
+    
     <item>
       <title>ArchLinux</title>
       <link>https://xerolinux.xyz/tags/archlinux/</link>
@@ -34,16 +64,6 @@
       <pubDate>Tue, 13 Aug 2024 00:00:00 +0000</pubDate>
       
       <guid>https://xerolinux.xyz/tags/help/</guid>
-      <description></description>
-      
-    </item>
-    
-    <item>
-      <title>Linux</title>
-      <link>https://xerolinux.xyz/tags/linux/</link>
-      <pubDate>Tue, 13 Aug 2024 00:00:00 +0000</pubDate>
-      
-      <guid>https://xerolinux.xyz/tags/linux/</guid>
       <description></description>
       
     </item>
@@ -989,16 +1009,6 @@
     </item>
     
     <item>
-      <title>Terminal</title>
-      <link>https://xerolinux.xyz/tags/terminal/</link>
-      <pubDate>Sat, 29 Jun 2024 00:00:00 +0000</pubDate>
-      
-      <guid>https://xerolinux.xyz/tags/terminal/</guid>
-      <description></description>
-      
-    </item>
-    
-    <item>
       <title>Automount</title>
       <link>https://xerolinux.xyz/tags/automount/</link>
       <pubDate>Fri, 28 Jun 2024 00:00:00 +0000</pubDate>
@@ -1174,16 +1184,6 @@
       <pubDate>Fri, 28 Jun 2024 00:00:00 +0000</pubDate>
       
       <guid>https://xerolinux.xyz/tags/streaming/</guid>
-      <description></description>
-      
-    </item>
-    
-    <item>
-      <title>Alias</title>
-      <link>https://xerolinux.xyz/tags/alias/</link>
-      <pubDate>Thu, 27 Jun 2024 00:00:00 +0000</pubDate>
-      
-      <guid>https://xerolinux.xyz/tags/alias/</guid>
       <description></description>
       
     </item>

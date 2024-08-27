@@ -7,7 +7,17 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>Copy, _right?_ 🫨</copyright>
-    <lastBuildDate>Thu, 27 Jun 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://xerolinux.xyz/tags/alias/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 27 Aug 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://xerolinux.xyz/tags/alias/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Linux Aliases</title>
+      <link>https://xerolinux.xyz/posts/linux-aliases/</link>
+      <pubDate>Tue, 27 Aug 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://xerolinux.xyz/posts/linux-aliases/</guid>
+      <description>Intro Are you sick and tired of having to type the lengthy update commands in terminal like I am ?</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/linux-aliases/featured.webp" />
+    </item>
+    
     <item>
       <title>Terminal Aliases</title>
       <link>https://xerolinux.xyz/posts/terminal-aliases/</link>

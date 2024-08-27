@@ -4,7 +4,15 @@
 
   <url>
     <loc>https://xerolinux.xyz/</loc>
-    <lastmod>2024-08-13T00:00:00+00:00</lastmod>
+    <lastmod>2024-08-27T00:00:00+00:00</lastmod>
+  </url>
+  <url>
+    <loc>https://xerolinux.xyz/posts/</loc>
+    <lastmod>2024-08-27T00:00:00+00:00</lastmod>
+  </url>
+  <url>
+    <loc>https://xerolinux.xyz/posts/linux-aliases/</loc>
+    <lastmod>2024-08-27T00:00:00+00:00</lastmod>
   </url>
   <url>
     <loc>https://xerolinux.xyz/news/help-needed/</loc>
@@ -17,10 +25,6 @@
   <url>
     <loc>https://xerolinux.xyz/iso/</loc>
     <lastmod>2024-08-12T00:00:00+00:00</lastmod>
-  </url>
-  <url>
-    <loc>https://xerolinux.xyz/posts/</loc>
-    <lastmod>2024-08-07T00:00:00+00:00</lastmod>
   </url>
   <url>
     <loc>https://xerolinux.xyz/posts/nvidia-560xx/</loc>
@@ -132,10 +136,6 @@
   </url>
   <url>
     <loc>https://xerolinux.xyz/posts/automount-drives/</loc>
-    <lastmod>2024-06-28T00:00:00+00:00</lastmod>
-  </url>
-  <url>
-    <loc>https://xerolinux.xyz/news/keep-xerolinux-alive/</loc>
     <lastmod>2024-06-28T00:00:00+00:00</lastmod>
   </url>
   <url>
