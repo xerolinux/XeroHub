@@ -100,7 +100,7 @@
     
     
     "mainEntityOfPage": "true",
-    "wordCount": "888"
+    "wordCount": "610"
   }]
   </script>
 
@@ -644,7 +644,7 @@
 <div class="flex flex-row flex-wrap items-center">
   
   
-  <time datetime="2024-08-12T00:00:00&#43;00:00">12 August 2024</time><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">5 mins</span><span class="px-2 text-primary-500">&middot;</span><span>
+  <time datetime="2024-08-12T00:00:00&#43;00:00">12 August 2024</time><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">3 mins</span><span class="px-2 text-primary-500">&middot;</span><span>
   
   
     
@@ -1039,8 +1039,6 @@
       <ul>
         <li><a href="#what-is-it">What is it?</a></li>
         <li><a href="#who-ist-it-for">Who ist it for?</a></li>
-        <li><a href="#included-features">Included Features</a></li>
-        <li><a href="#issues--fixes">Issues + Fixes</a></li>
         <li><a href="#how-can-i-get-it">How can I get it?</a></li>
         <li><a href="#collaboration">Collaboration</a></li>
         <li><a href="#wrapping-up">Wrapping up</a></li>
@@ -1063,8 +1061,6 @@
       <ul>
         <li><a href="#what-is-it">What is it?</a></li>
         <li><a href="#who-ist-it-for">Who ist it for?</a></li>
-        <li><a href="#included-features">Included Features</a></li>
-        <li><a href="#issues--fixes">Issues + Fixes</a></li>
         <li><a href="#how-can-i-get-it">How can I get it?</a></li>
         <li><a href="#collaboration">Collaboration</a></li>
         <li><a href="#wrapping-up">Wrapping up</a></li>
@@ -1185,7 +1181,7 @@
   <span
     
       style="color: #f1faee"
-    ><strong>Notice :</strong> ISO is currently <strong>EFI</strong> only, will not boot on <strong>Legacy Bios</strong> systems. For updates please consult this project&rsquo;s <a href="https://github.com/XeroLinuxDev/xero-build/blob/main/Changelog.md" target="_blank"><strong>Changelog</strong></a>. To access source code, head on over to 👉 <a href="https://github.com/XeroLinuxDev" target="_blank"><strong>XeroLinuxDev</strong></a>.</span>
+    ><strong>Notice :</strong> Check out the release notes and issues &raquo; <a href="https://github.com/XeroLinuxDev/xero-build/blob/main/Changelog.md" target="_blank"><strong>Here</strong></a>. To access source code, head on over to the <a href="https://github.com/XeroLinuxDev" target="_blank"><strong>XeroLinuxDev</strong></a> Org.</span>
 </div>
 
 <p>
@@ -1466,50 +1462,6 @@
     
 </section>
 <p>It will be a bit more complex, but will never cost you anything and the code will forever be made available to fork and modify to your liking.</p>
-
-
-<h3 class="relative group">Included Features 
-    <div id="included-features" class="anchor"></div>
-    
-</h3>
-<p>As mentioned earlier in the post, some features available via the toolkit were already applied on the ISO, since it was initially created for <em>Vanilla Arch</em>. Find the list of what has already been applied below :</p>
-<p>✅ PipeWire/Bluetooth<br>
-✅ Flatpak + Overrides<br>
-✅ Multithread Compiling<br>
-✅ Chaotic-AUR Enabled<br>
-✅ Printer Driver/Tools<br>
-✅ Samba Tools and configs<br>
-✅ Scanner Driver/Tools<br>
-✅ Fastfetch/OhMyPosh<br>
-✅ XeroLinux Layan Rice</p>
-
-
-<h3 class="relative group">Issues + Fixes 
-    <div id="issues--fixes" class="anchor"></div>
-    
-</h3>
-<ul>
-<li>⚠️ <strong>Theming Issue</strong> ⚠️</li>
-</ul>
-<p>There might be a small issue with <strong>GTK4/LibAdwaita</strong> app theming, I couldn&rsquo;t find a workaround. In case you use those, you will have to Launch the toolkit from the dock, head on over to <strong>4. Customization</strong> select option <code>u</code> to apply the fix &amp; update both GTK as well as KDE themes to latest versions from source.</p>
-<p>
-  <figure>
-    <img class="my-0 rounded-md" loading="lazy" src="https://i.imgur.com/cBVO4ki.png" alt="Fix" />
-    
-  </figure>
-</p>
-<p>The included fix only works for the default 🎨<strong>Layan Theme</strong>🎨, if you use another, well, you will have to ask its dev for patch, not all themes work for <strong>GTK4/LibAdwaita</strong> apps since Devs are mostly anti-theming.</p>
-<ul>
-<li>⚠️ <strong>Tailscale Issue</strong> ⚠️</li>
-</ul>
-<p>If you use <a href="https://tailscale.com" target="_blank"><strong>Tailscale</strong></a>, you will need to install it via the toolkit as well. Issue is that since this is a custom distro, official installer will not be able to recognize it unless devs add it.</p>
-<p>
-  <figure>
-    <img class="my-0 rounded-md" loading="lazy" src="https://i.imgur.com/ZFbFfsL.png" alt="TSFix" />
-    
-  </figure>
-</p>
-<p>While I have requested this, in the meantime, you will need to launch toolkit, choose option <strong>2. System Drivers</strong> then &raquo; <strong>5. Tailscale w/XeroLinux fix</strong> (name might change) as seen in the image above and install it from there. That&rsquo;s it, <strong>Tailscale</strong> will successfully install. Just make sure you reboot the system once it&rsquo;s done for the service to run.</p>
 
 
 <h3 class="relative group">How can I get it? 

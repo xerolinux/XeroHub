@@ -7,7 +7,7 @@ featureimage: https://i.imgur.com/ejZ1ZQv.png
 As you can see, after thinking long and hard, I have decided to revive the Distro. Only this time it's a bit different.
 
 {{< alert icon="fire" cardColor="#993350" iconColor="#1d3557" textColor="#f1faee" >}}
-**Notice :** ISO is currently **EFI** only, will not boot on **Legacy Bios** systems. For updates please consult this project's [**Changelog**](https://github.com/XeroLinuxDev/xero-build/blob/main/Changelog.md). To access source code, head on over to 👉 [**XeroLinuxDev**](https://github.com/XeroLinuxDev).
+**Notice :** Check out the release notes and issues >> [**Here**](https://github.com/XeroLinuxDev/xero-build/blob/main/Changelog.md). To access source code, head on over to the [**XeroLinuxDev**](https://github.com/XeroLinuxDev) Org.
 {{< /alert >}}
 
 ![XeroISO](https://i.imgur.com/ejZ1ZQv.png)
@@ -27,38 +27,6 @@ It's for all of you out there, who prefer an easier way to install **Arch** and 
 {{< article link="/news/xerolinux-plasma/" >}}
 
 It will be a bit more complex, but will never cost you anything and the code will forever be made available to fork and modify to your liking.
-
-### Included Features
-
-As mentioned earlier in the post, some features available via the toolkit were already applied on the ISO, since it was initially created for *Vanilla Arch*. Find the list of what has already been applied below :
-
-✅ PipeWire/Bluetooth<br>
-✅ Flatpak + Overrides<br>
-✅ Multithread Compiling<br>
-✅ Chaotic-AUR Enabled<br>
-✅ Printer Driver/Tools<br>
-✅ Samba Tools and configs<br>
-✅ Scanner Driver/Tools<br>
-✅ Fastfetch/OhMyPosh<br>
-✅ XeroLinux Layan Rice
-
-### Issues + Fixes
-
-- ⚠️ **Theming Issue** ⚠️
-
-There might be a small issue with **GTK4/LibAdwaita** app theming, I couldn't find a workaround. In case you use those, you will have to Launch the toolkit from the dock, head on over to **4. Customization** select option `u` to apply the fix & update both GTK as well as KDE themes to latest versions from source.
-
-![Fix](https://i.imgur.com/cBVO4ki.png)
-
-The included fix only works for the default 🎨**Layan Theme**🎨, if you use another, well, you will have to ask its dev for patch, not all themes work for **GTK4/LibAdwaita** apps since Devs are mostly anti-theming.
-
-- ⚠️ **Tailscale Issue** ⚠️
-
-If you use [**Tailscale**](https://tailscale.com), you will need to install it via the toolkit as well. Issue is that since this is a custom distro, official installer will not be able to recognize it unless devs add it.
-
-![TSFix](https://i.imgur.com/ZFbFfsL.png)
-
-While I have requested this, in the meantime, you will need to launch toolkit, choose option **2. System Drivers** then >> **5. Tailscale w/XeroLinux fix** (name might change) as seen in the image above and install it from there. That's it, **Tailscale** will successfully install. Just make sure you reboot the system once it's done for the service to run.
 
 ### How can I get it?
 
