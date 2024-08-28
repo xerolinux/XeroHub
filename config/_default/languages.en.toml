@@ -13,7 +13,7 @@ title = "XeroLinux HQ"
   description = "Our Base Of Operations..."
   copyright = "Copy, _right?_ 🫨"
 
-[author]
+[params.author]
   name = "DarkXero"
   image = "logos/Avvy.gif"
   headline = "Tech/FOSS Enthusiast & All Around Fun Guy. 🤔"
