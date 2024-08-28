@@ -18,6 +18,7 @@ mainSections = [ "posts" ]
 disableImageZoom = true
 disableImageOptimization = true
 disableTextInHeader = false
+# backgroundImageWidth = 1200
 
 defaultBackgroundImage = "img/bg.webp"
 defaultFeaturedImage = "img/defaultf.png"
@@ -135,6 +136,12 @@ smartTOCHideUnfocusedChildren = false
 [umamiAnalytics]
   # websiteid = "ABC12345"
   # domain = "llama.yoursite.com"
+  # dataDomains = "yoursite.com,yoursite2.com"
+  # enableTrackEvent = true
+
+[selineAnalytics]
+  # token = "XXXXXX"
+  # enableTrackEvent = true
 
 [buymeacoffee]
   # identifier = ""
