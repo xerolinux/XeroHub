@@ -5,16 +5,13 @@ description: "Download The XeroLinux ISO"
 featureimage: https://i.imgur.com/ejZ1ZQv.png
 ---
 
-{{< youtube lsYg6-wUWXw >}}
-
-
 As you can see, after thinking long and hard, I have decided to revive the Distro. Only this time it's a bit different.
 
 {{< alert icon="fire" cardColor="#993350" iconColor="#1d3557" textColor="#f1faee" >}}
 **Notice :** Check out the release notes and issues >> [**Here**](https://github.com/XeroLinuxDev/xero-build/blob/main/Changelog.md). To access source code, head on over to the >> [**XeroLinuxDev**](https://github.com/XeroLinuxDev) Org.
 {{< /alert >}}
 
-![XeroISO](https://i.imgur.com/ejZ1ZQv.png)
+{{< youtube lsYg6-wUWXw >}}
 
 ### What is it?
 
