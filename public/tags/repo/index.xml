@@ -8,5 +8,21 @@
     <language>en</language>
     <copyright>Copy, _right?_ 🫨</copyright>
     <lastBuildDate>Fri, 28 Jun 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://xerolinux.xyz/tags/repo/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Add XeroLinux Repo</title>
+      <link>https://xerolinux.xyz/news/add-our-repo/</link>
+      <pubDate>Fri, 28 Jun 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://xerolinux.xyz/news/add-our-repo/</guid>
+      <description>&lt;p&gt;Hey there&amp;hellip;&lt;/p&gt;
+&lt;p&gt;I was recently asked if my Repo can be added to other Arch-Based Distros, short answer is yes of course you can. I will be showing you how below. Just note that my repo usually contains stuff I deem necessary, but in case you find some stuff that can be useful to you on ArchLinux feel free to add it.&lt;/p&gt;
+&lt;p&gt;Run below command :&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;echo&lt;/span&gt; -e &lt;span class=&#34;s1&#34;&gt;&amp;#39;\n[xerolinux]\nSigLevel = Optional TrustAll\nServer = https://repos.xerolinux.xyz/$repo/$arch&amp;#39;&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; sudo tee -a /etc/pacman.conf
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;That&amp;rsquo;s basically it, now update database with &lt;code&gt;sudo pacman -Syyu&lt;/code&gt; and you will notice my repo part of the update.&lt;/p&gt;
+&lt;p&gt;Cheers :heart:&lt;/p&gt;
+</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/news/add-our-repo/featured.webp" />
+    </item>
+    
   </channel>
 </rss>

@@ -8,5 +8,93 @@
     <language>en</language>
     <copyright>Copy, _right?_ 🫨</copyright>
     <lastBuildDate>Fri, 28 Jun 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://xerolinux.xyz/tags/site/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Submit Site Content</title>
+      <link>https://xerolinux.xyz/news/submit-content/</link>
+      <pubDate>Fri, 28 Jun 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://xerolinux.xyz/news/submit-content/</guid>
+      <description>
+
+&lt;h3 class=&#34;relative group&#34;&gt;Intro 
+    &lt;div id=&#34;intro&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+    
+&lt;/h3&gt;
+&lt;p&gt;So, I was thinking, why be the only one submitting content for the site ? This site is now a place to post &lt;strong&gt;Linux&lt;/strong&gt; news, guides, and tools among other stuff. It&amp;rsquo;s all for sharing our love for &lt;strong&gt;FOSS&lt;/strong&gt;.&lt;/p&gt;
+
+
+&lt;h3 class=&#34;relative group&#34;&gt;How to create content 
+    &lt;div id=&#34;how-to-create-content&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+    
+&lt;/h3&gt;
+&lt;p&gt;In case you feel like doing a write up that you think would be useful to others, you can do that, and guess what, it&amp;rsquo;s super easy&amp;hellip; It&amp;rsquo;s just a single &lt;em&gt;markdown&lt;/em&gt; file called &lt;code&gt;index.md&lt;/code&gt; which contains the text and an image called &lt;code&gt;featured.png&lt;/code&gt; inside a folder named &lt;code&gt;post-title&lt;/code&gt;. That&amp;rsquo;s it ! Once that&amp;rsquo;s done you zip them n send my way when I will go through it clean it up n publish&amp;hellip;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;- Folder contents&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;
+  &lt;figure&gt;
+    &lt;img class=&#34;my-0 rounded-md&#34; loading=&#34;lazy&#34; src=&#34;https://i.imgur.com/nBUbAZg.png&#34; alt=&#34;Image1&#34; /&gt;
+    
+  &lt;/figure&gt;
+&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;- Markdown contents&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;
+  &lt;figure&gt;
+    &lt;img class=&#34;my-0 rounded-md&#34; loading=&#34;lazy&#34; src=&#34;https://i.imgur.com/sdCCPtn.png&#34; alt=&#34;Image2&#34; /&gt;
+    
+  &lt;/figure&gt;
+&lt;/p&gt;
+&lt;p&gt;Don&amp;rsquo;t forget to update the date of the post in &lt;code&gt;date:&lt;/code&gt;, also give it a short descriptive &lt;code&gt;title:&lt;/code&gt; with a good &lt;code&gt;description&lt;/code&gt;. Finally use the right &lt;code&gt;tags:&lt;/code&gt; as shown in the screenshot. If in doubt click this  to check &amp;raquo; &lt;a href=&#34;https://github.com/xerolinux/XeroHub/tree/main/content/posts/spotube-for-spotify&#34; target=&#34;_blank&#34;&gt;&lt;strong&gt;Template&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;With that out of the way, for more information about the various supported &lt;strong&gt;Shortcodes&lt;/strong&gt; you can use, you can find them here &amp;raquo; &lt;a href=&#34;https://blowfish.page/docs/shortcodes/&#34; target=&#34;_blank&#34;&gt;&lt;strong&gt;BlowFish Shortcodes&lt;/strong&gt;&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Thanks again &amp;amp; Cheers :heart:&lt;/p&gt;
+</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/news/submit-content/featured.webp" />
+    </item>
+    
+    <item>
+      <title>Fresh New Look</title>
+      <link>https://xerolinux.xyz/news/new-site/</link>
+      <pubDate>Thu, 27 Jun 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://xerolinux.xyz/news/new-site/</guid>
+      <description>
+
+&lt;h3 class=&#34;relative group&#34;&gt;Not Again ! 
+    &lt;div id=&#34;not-again-&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+    
+&lt;/h3&gt;
+&lt;p&gt;Yep, again lol&amp;hellip; I dunno what else to say. I will keep trying different designs out until I am satisfied. But if all goes well, this will be the last time, who knows ? FOr now enjoy the new look n feel. I really hope you like it. I need to thank &lt;a href=&#34;https://zaney.org&#34; target=&#34;_blank&#34;&gt;&lt;strong&gt;Zaney&lt;/strong&gt;&lt;/a&gt; for letting me know about this awesome theme. I am still figuring it out as I go. If you can help feel free to let me know.&lt;/p&gt;
+
+
+&lt;h3 class=&#34;relative group&#34;&gt;What is it ? 
+    &lt;div id=&#34;what-is-it-&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+    
+&lt;/h3&gt;
+&lt;p&gt;Well, if you do not know, this site is using &lt;a href=&#34;https://gohugo.io&#34; target=&#34;_blank&#34;&gt;&lt;strong&gt;Hugo&lt;/strong&gt;&lt;/a&gt; with a theme called &lt;a href=&#34;https://blowfish.page&#34; target=&#34;_blank&#34;&gt;&lt;strong&gt;Blowfish&lt;/strong&gt;&lt;/a&gt;. Great combo if you ask me. So many features to go through. I did not even scratch the surface yet. Things will get better soon.&lt;/p&gt;
+
+
+&lt;h3 class=&#34;relative group&#34;&gt;What about your other blog ? 
+    &lt;div id=&#34;what-about-your-other-blog-&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+    
+&lt;/h3&gt;
+&lt;p&gt;That&amp;rsquo;s a tricky question. Consider the other blog as my journal, where I post my thoughts and feelings about things that are happening in the &lt;strong&gt;FOSS&lt;/strong&gt; world. Here I will be posting updates related to my various projects, as well as some other &lt;strong&gt;Open Source&lt;/strong&gt; news/articles.&lt;/p&gt;
+
+
+&lt;h3 class=&#34;relative group&#34;&gt;And the Forum ? 
+    &lt;div id=&#34;and-the-forum-&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+    
+&lt;/h3&gt;
+&lt;p&gt;The XeroLinux &lt;a href=&#34;https://forum.xerolinux.xyz&#34; target=&#34;_blank&#34;&gt;&lt;strong&gt;Forums&lt;/strong&gt;&lt;/a&gt; will be closed down by the end of this month once I have ported over all releveant posts from it. So do not be surprised if you come looking and you don&amp;rsquo;t find them.&lt;/p&gt;
+
+
+&lt;h3 class=&#34;relative group&#34;&gt;Closing words 
+    &lt;div id=&#34;closing-words&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+    
+&lt;/h3&gt;
+&lt;p&gt;I know this might be a lot to take in. I am trying to organize things to the best of my abilities. I will be putting everything under one roof, this one. My &amp;ldquo;Journal&amp;rdquo; however will remain coz I do not want to tarnish this site with my ramblings.&lt;/p&gt;
+&lt;p&gt;Until then let me know what you think of this new look. If you have any suggestions or ideas on how I can make it all better feel free to let me know how. Thanks for reading this. Here&amp;rsquo;s to future posts&amp;hellip;&lt;/p&gt;
+&lt;p&gt;Cheers :heart:&lt;/p&gt;
+</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/news/new-site/featured.webp" />
+    </item>
+    
   </channel>
 </rss>

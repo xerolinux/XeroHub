@@ -8,5 +8,46 @@
     <language>en</language>
     <copyright>Copy, _right?_ 🫨</copyright>
     <lastBuildDate>Fri, 28 Jun 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://xerolinux.xyz/tags/content/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Submit Site Content</title>
+      <link>https://xerolinux.xyz/news/submit-content/</link>
+      <pubDate>Fri, 28 Jun 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://xerolinux.xyz/news/submit-content/</guid>
+      <description>
+
+&lt;h3 class=&#34;relative group&#34;&gt;Intro 
+    &lt;div id=&#34;intro&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+    
+&lt;/h3&gt;
+&lt;p&gt;So, I was thinking, why be the only one submitting content for the site ? This site is now a place to post &lt;strong&gt;Linux&lt;/strong&gt; news, guides, and tools among other stuff. It&amp;rsquo;s all for sharing our love for &lt;strong&gt;FOSS&lt;/strong&gt;.&lt;/p&gt;
+
+
+&lt;h3 class=&#34;relative group&#34;&gt;How to create content 
+    &lt;div id=&#34;how-to-create-content&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+    
+&lt;/h3&gt;
+&lt;p&gt;In case you feel like doing a write up that you think would be useful to others, you can do that, and guess what, it&amp;rsquo;s super easy&amp;hellip; It&amp;rsquo;s just a single &lt;em&gt;markdown&lt;/em&gt; file called &lt;code&gt;index.md&lt;/code&gt; which contains the text and an image called &lt;code&gt;featured.png&lt;/code&gt; inside a folder named &lt;code&gt;post-title&lt;/code&gt;. That&amp;rsquo;s it ! Once that&amp;rsquo;s done you zip them n send my way when I will go through it clean it up n publish&amp;hellip;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;- Folder contents&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;
+  &lt;figure&gt;
+    &lt;img class=&#34;my-0 rounded-md&#34; loading=&#34;lazy&#34; src=&#34;https://i.imgur.com/nBUbAZg.png&#34; alt=&#34;Image1&#34; /&gt;
+    
+  &lt;/figure&gt;
+&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;- Markdown contents&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;
+  &lt;figure&gt;
+    &lt;img class=&#34;my-0 rounded-md&#34; loading=&#34;lazy&#34; src=&#34;https://i.imgur.com/sdCCPtn.png&#34; alt=&#34;Image2&#34; /&gt;
+    
+  &lt;/figure&gt;
+&lt;/p&gt;
+&lt;p&gt;Don&amp;rsquo;t forget to update the date of the post in &lt;code&gt;date:&lt;/code&gt;, also give it a short descriptive &lt;code&gt;title:&lt;/code&gt; with a good &lt;code&gt;description&lt;/code&gt;. Finally use the right &lt;code&gt;tags:&lt;/code&gt; as shown in the screenshot. If in doubt click this  to check &amp;raquo; &lt;a href=&#34;https://github.com/xerolinux/XeroHub/tree/main/content/posts/spotube-for-spotify&#34; target=&#34;_blank&#34;&gt;&lt;strong&gt;Template&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;With that out of the way, for more information about the various supported &lt;strong&gt;Shortcodes&lt;/strong&gt; you can use, you can find them here &amp;raquo; &lt;a href=&#34;https://blowfish.page/docs/shortcodes/&#34; target=&#34;_blank&#34;&gt;&lt;strong&gt;BlowFish Shortcodes&lt;/strong&gt;&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Thanks again &amp;amp; Cheers :heart:&lt;/p&gt;
+</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/news/submit-content/featured.webp" />
+    </item>
+    
   </channel>
 </rss>

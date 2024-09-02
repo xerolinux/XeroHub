@@ -405,6 +405,498 @@
     </item>
     
     <item>
+      <title>XeroLinux Plasma Install</title>
+      <link>https://xerolinux.xyz/news/xerolinux-plasma/</link>
+      <pubDate>Mon, 08 Jul 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://xerolinux.xyz/news/xerolinux-plasma/</guid>
+      <description>&lt;p&gt;
+
+    
+    &lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+      &lt;iframe allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&#34; allowfullscreen=&#34;allowfullscreen&#34; loading=&#34;eager&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; src=&#34;https://www.youtube.com/embed/v0UPif52i5A?autoplay=0&amp;controls=1&amp;end=0&amp;loop=0&amp;mute=0&amp;start=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;YouTube video&#34;
+      &gt;&lt;/iframe&gt;
+    &lt;/div&gt;
+
+&lt;br /&gt;&lt;/p&gt;
+
+  
+  
+  
+  
+
+
+
+&lt;div
+  
+    class=&#34;flex px-4 py-3 rounded-md&#34;
+    style=&#34;background-color: #993350&#34;
+  &gt;
+
+  &lt;span
+    
+      class=&#34;ltr:pr-3 rtl:pl-3 flex items-center&#34;
+      style=&#34;color: #1d3557&#34;
+    &gt;
+
+    
+
+  &lt;span class=&#34;relative block icon&#34;&gt;
+    &lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 448 512&#34;&gt;
+&lt;path fill=&#34;currentColor&#34;  d=&#34;M159.3 5.4c7.8-7.3 19.9-7.2 27.7 .1c27.6 25.9 53.5 53.8 77.7 84c11-14.4 23.5-30.1 37-42.9c7.9-7.4 20.1-7.4 28 .1c34.6 33 63.9 76.6 84.5 118c20.3 40.8 33.8 82.5 33.8 111.9C448 404.2 348.2 512 224 512C98.4 512 0 404.1 0 276.5c0-38.4 17.8-85.3 45.4-131.7C73.3 97.7 112.7 48.6 159.3 5.4zM225.7 416c25.3 0 47.7-7 68.8-21c42.1-29.4 53.4-88.2 28.1-134.4c-2.8-5.6-5.6-11.2-9.8-16.8l-50.6 58.8s-81.4-103.6-87.1-110.6C133.1 243.8 112 273.2 112 306.8C112 375.4 162.6 416 225.7 416z&#34;/&gt;&lt;/svg&gt;
+  &lt;/span&gt;
+
+
+  &lt;/span&gt;
+
+  &lt;span
+    
+      style=&#34;color: #f1faee&#34;
+    &gt;&lt;strong&gt;Distro is Back&lt;/strong&gt; : If you want to skip all this, you can just &lt;em&gt;Donate&lt;/em&gt; and grab the &lt;strong&gt;XeroLinux&lt;/strong&gt; pre-built ISO from 👉 &lt;a href=&#34;https://xerolinux.xyz/iso/&#34; target=&#34;_blank&#34;&gt;&lt;strong&gt;Re-Release Post&lt;/strong&gt;&lt;/a&gt;.&lt;/span&gt;
+&lt;/div&gt;
+
+
+
+&lt;h3 class=&#34;relative group&#34;&gt;Introduction 
+    &lt;div id=&#34;introduction&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+    
+&lt;/h3&gt;
+&lt;p&gt;I want to begin by thanking everyone who has shown the Distro all the the love. Without whom it wouldn&amp;rsquo;t have lasted as long as it did. As well as the rest of the projects present and future.&lt;/p&gt;
+&lt;p&gt;The intention of the &lt;strong&gt;PlasmaInstall&lt;/strong&gt; script is not to replace &lt;strong&gt;ArchInstall&lt;/strong&gt; but to fix its &lt;strong&gt;KDE Plasma&lt;/strong&gt; profile while extending it further nothing more. If you want &lt;strong&gt;Gnome&lt;/strong&gt;, &lt;strong&gt;XFCE&lt;/strong&gt; or any other DE/WM for that matter, existing profiles are fine. However, the Toolkit can be used on any DE or WM it&amp;rsquo;s agnostic.&lt;/p&gt;
+&lt;p&gt;In this super detailed guide I will be showing off how we can easily replicate the &lt;strong&gt;XeroLinux&lt;/strong&gt; setup using &lt;strong&gt;ArchInstall&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;
+  &lt;figure&gt;
+    &lt;img class=&#34;my-0 rounded-md&#34; loading=&#34;lazy&#34; src=&#34;https://i.imgur.com/VA2tycb.jpeg&#34; alt=&#34;XeroLayan&#34; /&gt;
+    
+  &lt;/figure&gt;
+&lt;/p&gt;
+
+
+&lt;h3 class=&#34;relative group&#34;&gt;What we need 
+    &lt;div id=&#34;what-we-need&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+    
+&lt;/h3&gt;
+&lt;p&gt;Let&amp;rsquo;s start off by knowing what we need to get started. First off, we will need the latest version of the &amp;raquo; &lt;a href=&#34;https://archlinux.org/download/&#34; target=&#34;_blank&#34;&gt;&lt;strong&gt;ArchLinux ISO&lt;/strong&gt;&lt;/a&gt;, a USB stick to burn ISO onto, we can either use &amp;raquo; &lt;a href=&#34;https://etcher.balena.io/#download-etcher&#34; target=&#34;_blank&#34;&gt;&lt;strong&gt;Balena Etcher&lt;/strong&gt;&lt;/a&gt; or the highly recommended &amp;raquo; &lt;strong&gt;Ventoy&lt;/strong&gt; linked below.&lt;/p&gt;
+
+&lt;section class=&#34;space-y-10 w-full&#34;&gt;
+    
+    
+        
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  &lt;a class=&#34;flex flex-wrap article &#34; href=&#34;https://xerolinux.xyz/posts/ventoy-multi-boot/&#34;&gt;
+    
+        
+        &lt;div class=&#34;w-full md:w-auto h-full thumbnail nozoom thumbnailshadow md:mr-7&#34; style=&#34;background-image:url(/posts/ventoy-multi-boot/featured.webp);&#34;&gt;&lt;/div&gt;
+        
+      &lt;div class=&#34; mt-3 md:mt-0&#34;&gt;
+      &lt;div class=&#34;items-center text-left text-xl font-semibold&#34;&gt;
+        
+        &lt;div class=&#34;font-bold text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral&#34;
+          href=&#34;https://xerolinux.xyz/posts/ventoy-multi-boot/&#34;&gt;Ventoy - Best multi-boot tool&lt;/div&gt;
+        
+        
+        
+      &lt;/div&gt;
+      &lt;div class=&#34;text-sm text-neutral-500 dark:text-neutral-400&#34;&gt;
+        
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+&lt;div class=&#34;flex flex-row flex-wrap items-center&#34;&gt;
+  
+  
+  &lt;time datetime=&#34;2024-06-27T00:00:00&amp;#43;00:00&#34;&gt;27 June 2024&lt;/time&gt;&lt;span class=&#34;px-2 text-primary-500&#34;&gt;&amp;middot;&lt;/span&gt;&lt;span title=&#34;Reading time&#34;&gt;3 mins&lt;/span&gt;&lt;span class=&#34;px-2 text-primary-500&#34;&gt;&amp;middot;&lt;/span&gt;&lt;span&gt;
+  
+  
+    
+    
+      
+      
+        
+        
+      
+      
+    
+  
+  &lt;span id=&#34;views_posts/ventoy-multi-boot/index.md&#34; class=&#34;animate-pulse inline-block text-transparent max-h-3 rounded-full mt-[-2px] align-middle bg-neutral-300 dark:bg-neutral-400&#34; title=&#34;views&#34;&gt;loading&lt;/span&gt;
+  &lt;span class=&#34;inline-block align-text-bottom&#34;&gt;
+
+  &lt;span class=&#34;relative block icon&#34;&gt;
+    &lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 576 512&#34;&gt;
+&lt;path fill=&#34;currentColor&#34; d=&#34;M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z&#34;/&gt;&lt;/svg&gt;
+  &lt;/span&gt;
+
+&lt;/span&gt;
+&lt;/span&gt;&lt;span class=&#34;px-2 text-primary-500&#34;&gt;&amp;middot;&lt;/span&gt;&lt;span&gt;
+  
+  
+    
+    
+      
+      
+        
+        
+      
+      
+    
+  
+  &lt;span id=&#34;likes_posts/ventoy-multi-boot/index.md&#34;
+    class=&#34;animate-pulse inline-block text-transparent max-h-3 rounded-full mt-[-2px] align-middle bg-neutral-300 dark:bg-neutral-400&#34;
+    title=&#34;likes&#34;&gt;loading&lt;/span&gt;
+  &lt;span class=&#34;inline-block align-text-bottom&#34;&gt;
+
+  &lt;span class=&#34;relative block icon&#34;&gt;
+    &lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 512 512&#34;&gt;
+&lt;path fill=&#34;currentColor&#34; d=&#34;M47.6 300.4L228.3 469.1c7.5 7 17.4 10.9 27.7 10.9s20.2-3.9 27.7-10.9L464.4 300.4c30.4-28.3 47.6-68 47.6-109.5v-5.8c0-69.9-50.5-129.5-119.4-141C347 36.5 300.6 51.4 268 84L256 96 244 84c-32.6-32.6-79-47.5-124.6-39.9C50.5 55.6 0 115.2 0 185.1v5.8c0 41.5 17.2 81.2 47.6 109.5z&#34;/&gt;&lt;/svg&gt;
+  &lt;/span&gt;
+
+&lt;/span&gt;
+&lt;/span&gt;
+  
+
+  
+  
+&lt;/div&gt;
+
+
+&lt;div class=&#34;flex flex-row flex-wrap items-center&#34;&gt;
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+&lt;/div&gt;
+
+
+
+
+&lt;div class=&#34;flex flex-row flex-wrap items-center&#34;&gt;
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  &lt;span style=&#34;margin-top:0.5rem&#34; class=&#34;mr-2&#34; onclick=&#34;window.open(&amp;#34;/tags/ventoy/&amp;#34;,&#39;_self&#39;);&#34;&gt;
+    &lt;span class=&#34;flex&#34; style=&#34;cursor: pointer;&#34;&gt;
+  &lt;span class=&#34;rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400&#34;&gt;
+    Ventoy
+  &lt;/span&gt;
+&lt;/span&gt;
+  &lt;/span&gt;
+  
+  &lt;span style=&#34;margin-top:0.5rem&#34; class=&#34;mr-2&#34; onclick=&#34;window.open(&amp;#34;/tags/usb-boot/&amp;#34;,&#39;_self&#39;);&#34;&gt;
+    &lt;span class=&#34;flex&#34; style=&#34;cursor: pointer;&#34;&gt;
+  &lt;span class=&#34;rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400&#34;&gt;
+    Usb-Boot
+  &lt;/span&gt;
+&lt;/span&gt;
+  &lt;/span&gt;
+  
+  &lt;span style=&#34;margin-top:0.5rem&#34; class=&#34;mr-2&#34; onclick=&#34;window.open(&amp;#34;/tags/multi-boot/&amp;#34;,&#39;_self&#39;);&#34;&gt;
+    &lt;span class=&#34;flex&#34; style=&#34;cursor: pointer;&#34;&gt;
+  &lt;span class=&#34;rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400&#34;&gt;
+    Multi-Boot
+  &lt;/span&gt;
+&lt;/span&gt;
+  &lt;/span&gt;
+  
+  &lt;span style=&#34;margin-top:0.5rem&#34; class=&#34;mr-2&#34; onclick=&#34;window.open(&amp;#34;/tags/distro-hopping/&amp;#34;,&#39;_self&#39;);&#34;&gt;
+    &lt;span class=&#34;flex&#34; style=&#34;cursor: pointer;&#34;&gt;
+  &lt;span class=&#34;rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400&#34;&gt;
+    Distro-Hopping
+  &lt;/span&gt;
+&lt;/span&gt;
+  &lt;/span&gt;
+  
+  &lt;span style=&#34;margin-top:0.5rem&#34; class=&#34;mr-2&#34; onclick=&#34;window.open(&amp;#34;/tags/linux/&amp;#34;,&#39;_self&#39;);&#34;&gt;
+    &lt;span class=&#34;flex&#34; style=&#34;cursor: pointer;&#34;&gt;
+  &lt;span class=&#34;rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400&#34;&gt;
+    Linux
+  &lt;/span&gt;
+&lt;/span&gt;
+  &lt;/span&gt;
+  
+  &lt;span style=&#34;margin-top:0.5rem&#34; class=&#34;mr-2&#34; onclick=&#34;window.open(&amp;#34;/tags/opensource/&amp;#34;,&#39;_self&#39;);&#34;&gt;
+    &lt;span class=&#34;flex&#34; style=&#34;cursor: pointer;&#34;&gt;
+  &lt;span class=&#34;rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400&#34;&gt;
+    Opensource
+  &lt;/span&gt;
+&lt;/span&gt;
+  &lt;/span&gt;
+  
+  
+  
+  
+&lt;/div&gt;
+
+
+
+
+      &lt;/div&gt;
+      
+    &lt;/div&gt;
+  &lt;/a&gt;
+
+        
+    
+&lt;/section&gt;
+&lt;p&gt;Those are the essentials. As to my &lt;strong&gt;Plasma Install&lt;/strong&gt; script will get to that a bit later down the line. Once we got everything, we shall begin&amp;hellip;&lt;/p&gt;
+
+
+&lt;h3 class=&#34;relative group&#34;&gt;Part 1 - Installing ArchLinux 
+    &lt;div id=&#34;part-1---installing-archlinux&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+    
+&lt;/h3&gt;
+&lt;p&gt;Ok, so now that we have burned the ISO to the USB using either tools, boot the system we want to install it on using it. Am not gonna go through showing you how, you should know that by now lol.&lt;/p&gt;
+&lt;p&gt;
+  &lt;figure&gt;
+    &lt;img class=&#34;my-0 rounded-md&#34; loading=&#34;lazy&#34; src=&#34;https://i.imgur.com/RO64NWD.png&#34; alt=&#34;ArchISO&#34; /&gt;
+    
+  &lt;/figure&gt;
+&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Note :&lt;/strong&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;This guide expects you to be connected to the internet via ethernet. If you aren&amp;rsquo;t and need to connect over WiFi, you can follow guide on the &lt;a href=&#34;https://wiki.archlinux.org/title/Installation_guide#Connect_to_the_internet&#34; target=&#34;_blank&#34;&gt;&lt;strong&gt;ArchWiki&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Remote Install via SSH&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Now, unlike other guides out there, I will be showing how we can use &lt;strong&gt;SSH&lt;/strong&gt; to do the installation remotely, which will make things much easier. All we need is a secondary PC running &lt;strong&gt;Linux&lt;/strong&gt;. If none is available, this part can be skipped.&lt;/p&gt;
+&lt;p&gt;Ok, first things first, we need to set a password to the &lt;em&gt;root&lt;/em&gt; user. We do it by typing the following command in the TTY, like this :&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;passwd
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Now we type our temporary password &amp;amp; confirm it. Once that&amp;rsquo;s done, we need to get the machine&amp;rsquo;s &lt;strong&gt;IP Address&lt;/strong&gt;, we do that by running this command :&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ip a
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Once we have it, all we need to do to connect to the machine is the following command :&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ssh root@ipaddress
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;We confirm by typing &lt;code&gt;yes&lt;/code&gt;. That&amp;rsquo;s it, now we are connected to the machine remotely, so we can now easily copy paste comands for a much simpler install&amp;hellip;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;ArchInstall Script&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Once connected, first thing we will have to do is, make sure we have latest version of &lt;strong&gt;ArchInstall&lt;/strong&gt;. We do that by running the following command :&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;pacman -Syy archinstall &lt;span class=&#34;o&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; archinstall --advanced
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Now some of you might be asking me, &amp;ldquo;why the &lt;code&gt;--advanced&lt;/code&gt; flag ?&amp;rdquo;, to which I answer, simply because devs still hide the &lt;em&gt;parallel downloads&lt;/em&gt; behind it for whatever reason. It&amp;rsquo;s fine at least now you know.&lt;/p&gt;
+&lt;p&gt;
+  &lt;figure&gt;
+    &lt;img class=&#34;my-0 rounded-md&#34; loading=&#34;lazy&#34; src=&#34;https://i.imgur.com/OVzwVYt.png&#34; alt=&#34;ArchInstall&#34; /&gt;
+    
+  &lt;/figure&gt;
+&lt;/p&gt;
+&lt;p&gt;Ok, now that we have the installer running, am not going to go through each and every option one by one, just the important ones. Those are explained in the video. Am also not gonna bother with &lt;em&gt;manual partitioning&lt;/em&gt; since the guide is intended for single OS easy install.&lt;/p&gt;
+&lt;p&gt;That&amp;rsquo;s why we will be using the &lt;strong&gt;Best Guess&lt;/strong&gt; option, carefully selecting the correct drive we want install &lt;strong&gt;ArchLinux&lt;/strong&gt; onto.&lt;/p&gt;
+
+  
+  
+  
+  
+
+
+
+&lt;div
+  
+    class=&#34;flex px-4 py-3 rounded-md&#34;
+    style=&#34;background-color: #993350&#34;
+  &gt;
+
+  &lt;span
+    
+      class=&#34;ltr:pr-3 rtl:pl-3 flex items-center&#34;
+      style=&#34;color: #1d3557&#34;
+    &gt;
+
+    
+
+  &lt;span class=&#34;relative block icon&#34;&gt;
+    &lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 448 512&#34;&gt;
+&lt;path fill=&#34;currentColor&#34;  d=&#34;M159.3 5.4c7.8-7.3 19.9-7.2 27.7 .1c27.6 25.9 53.5 53.8 77.7 84c11-14.4 23.5-30.1 37-42.9c7.9-7.4 20.1-7.4 28 .1c34.6 33 63.9 76.6 84.5 118c20.3 40.8 33.8 82.5 33.8 111.9C448 404.2 348.2 512 224 512C98.4 512 0 404.1 0 276.5c0-38.4 17.8-85.3 45.4-131.7C73.3 97.7 112.7 48.6 159.3 5.4zM225.7 416c25.3 0 47.7-7 68.8-21c42.1-29.4 53.4-88.2 28.1-134.4c-2.8-5.6-5.6-11.2-9.8-16.8l-50.6 58.8s-81.4-103.6-87.1-110.6C133.1 243.8 112 273.2 112 306.8C112 375.4 162.6 416 225.7 416z&#34;/&gt;&lt;/svg&gt;
+  &lt;/span&gt;
+
+
+  &lt;/span&gt;
+
+  &lt;span
+    
+      style=&#34;color: #f1faee&#34;
+    &gt;I will not be held responsible for any data loss resulting from selection of the wrong drive. &lt;strong&gt;BE VERY CAREFUL HERE&lt;/strong&gt;.&lt;/span&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Anyway, let&amp;rsquo;s make sure we skip the parts I mentioned in the video, since everything will now be done &lt;strong&gt;Post-Install&lt;/strong&gt; via my Toolkit. Don&amp;rsquo;t forget to set parallel downloads to as many as you like for faster downloads. Also as mentioned, we do not need to enable any extra repos like &lt;em&gt;multilib&lt;/em&gt; since my script will do that for us later on.&lt;/p&gt;
+&lt;p&gt;Now once everything is configured and set, hit install, sit back, grab a cup of Tea/Coffee and watch it do its thing. Might take a while it all depends on Internet connection&amp;hellip;&lt;/p&gt;
+
+
+&lt;h3 class=&#34;relative group&#34;&gt;Part 2 - Installing Plasma 
+    &lt;div id=&#34;part-2---installing-plasma&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+    
+&lt;/h3&gt;
+&lt;p&gt;Once that&amp;rsquo;s all done, we will be prompted if we want to &lt;code&gt;chroot&lt;/code&gt; into our new install, we answer with yes of course since we still have no DE yet.&lt;/p&gt;
+
+  
+  
+  
+  
+
+
+
+&lt;div
+  
+    class=&#34;flex px-4 py-3 rounded-md&#34;
+    style=&#34;background-color: #993350&#34;
+  &gt;
+
+  &lt;span
+    
+      class=&#34;ltr:pr-3 rtl:pl-3 flex items-center&#34;
+      style=&#34;color: #1d3557&#34;
+    &gt;
+
+    
+
+  &lt;span class=&#34;relative block icon&#34;&gt;
+    &lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 448 512&#34;&gt;
+&lt;path fill=&#34;currentColor&#34;  d=&#34;M159.3 5.4c7.8-7.3 19.9-7.2 27.7 .1c27.6 25.9 53.5 53.8 77.7 84c11-14.4 23.5-30.1 37-42.9c7.9-7.4 20.1-7.4 28 .1c34.6 33 63.9 76.6 84.5 118c20.3 40.8 33.8 82.5 33.8 111.9C448 404.2 348.2 512 224 512C98.4 512 0 404.1 0 276.5c0-38.4 17.8-85.3 45.4-131.7C73.3 97.7 112.7 48.6 159.3 5.4zM225.7 416c25.3 0 47.7-7 68.8-21c42.1-29.4 53.4-88.2 28.1-134.4c-2.8-5.6-5.6-11.2-9.8-16.8l-50.6 58.8s-81.4-103.6-87.1-110.6C133.1 243.8 112 273.2 112 306.8C112 375.4 162.6 416 225.7 416z&#34;/&gt;&lt;/svg&gt;
+  &lt;/span&gt;
+
+
+  &lt;/span&gt;
+
+  &lt;span
+    
+      style=&#34;color: #f1faee&#34;
+    &gt;&lt;strong&gt;User Caution&lt;/strong&gt;. We do not recommend to blindly execute scripts without inspecting them first.&lt;/span&gt;
+&lt;/div&gt;
+
+&lt;p&gt;To download and inspect script, use the following command, open it in your IDE of choice and inspect it. Only run it when you trust the code.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;wget https://tinyurl.com/PlasmaInstall
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Once you trust it, you can move on. Now, depending on the method that was used, &lt;code&gt;ssh&lt;/code&gt; or not, we either copy paste the command below or type it manually :&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;bash -c &lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;$(&lt;/span&gt;curl -fsSL https://tinyurl.com/PlasmaInstall&lt;span class=&#34;k&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;This will execute the script. Just go through the prompts. I would &lt;strong&gt;Highly&lt;/strong&gt; recommend option &lt;strong&gt;3) Xero&amp;rsquo;s Curated Set Of Plasma Packages&lt;/strong&gt; to avoid any future headaches. I went through all groups with a fine tooth comb as the saying goes making sure we get the best experience. But that&amp;rsquo;s not to say we cannot select any of the other options, it&amp;rsquo;s all up to you in the end.&lt;/p&gt;
+&lt;p&gt;
+  &lt;figure&gt;
+    &lt;img class=&#34;my-0 rounded-md&#34; loading=&#34;lazy&#34; src=&#34;https://i.imgur.com/TOZNp4j.png&#34; alt=&#34;Script&#34; /&gt;
+    
+  &lt;/figure&gt;
+&lt;/p&gt;
+&lt;p&gt;At the end, script will prompt us if we want to enable the &lt;strong&gt;XeroLinux Repo&lt;/strong&gt; and install the Toolkit, to which we answer with yes, since we will be using it to set everything up later on.&lt;/p&gt;
+&lt;p&gt;You will notice that, the &lt;em&gt;multilib&lt;/em&gt; repo was enabled as well. I made sure of that since most newcomers forget to do it. It&amp;rsquo;s an essential repo required for the likes of &lt;strong&gt;Steam&lt;/strong&gt;, and various drivers.&lt;/p&gt;
+&lt;p&gt;Finally, for now at least, once script is done, we will be prompted to exit and reboot the system. We do that by typing &lt;code&gt;exit&lt;/code&gt; then &lt;code&gt;reboot&lt;/code&gt;, and that&amp;rsquo;s it for this part anyway&amp;hellip;&lt;/p&gt;
+
+
+&lt;h3 class=&#34;relative group&#34;&gt;Part 3 - Setting up the system 
+    &lt;div id=&#34;part-3---setting-up-the-system&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+    
+&lt;/h3&gt;
+&lt;p&gt;If all went smoothly, we should now be greeted with &lt;code&gt;SDDM&lt;/code&gt;, &lt;strong&gt;KDE&lt;/strong&gt;&amp;rsquo;s login page. Once logged in, there are a few things we need to take care of first. Open Terminal, as shown in video, and update the system&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo pacman -Syyu
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Then we launch the &lt;strong&gt;XeroLinux Post Installation Toolkit&lt;/strong&gt; from the AppMenu, under &lt;strong&gt;System&lt;/strong&gt;. That&amp;rsquo;s what we will be using from here on in.&lt;/p&gt;
+&lt;p&gt;
+  &lt;figure&gt;
+    &lt;img class=&#34;my-0 rounded-md&#34; loading=&#34;lazy&#34; src=&#34;https://i.imgur.com/JuWceYE.png&#34; alt=&#34;XLAPiT&#34; /&gt;
+    
+  &lt;/figure&gt;
+&lt;/p&gt;
+&lt;p&gt;It&amp;rsquo;s up to you to discover all the options, that&amp;rsquo;s why I did not mention them all in video, nor will I here. The whole point of this guide is how to get &lt;strong&gt;XeroLinux&lt;/strong&gt; back not to set up the system from A to Z.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;1 : System Setup&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;There&amp;rsquo;s nothing to do here except select &lt;strong&gt;Install 3rd-Party GUI Package Manager(s)&lt;/strong&gt; or &lt;strong&gt;Add &amp;amp; Enable the ChaoticAUR Repository&lt;/strong&gt;, since my &lt;strong&gt;Plasma Script&lt;/strong&gt; took care of the rest for us. Neat eh ?&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Note :&lt;/strong&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;I would highly recommend you enable the &lt;strong&gt;Chaotic AUR&lt;/strong&gt; repo, if you install a lot of packages from the &lt;strong&gt;AUR&lt;/strong&gt;, to avoid having to compile them.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;2 : System Drivers&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;This is the part where you select drivers you need for our hardware. Am not going to help you here. All you need to know was mentioned in the video. Just know that selecting the wrong ones will break the system, so that&amp;rsquo;s where you need to understand what works for you.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;4 : System Customization&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Now we jump to Customization section. Just select option &lt;strong&gt;x. XeroLinux&amp;rsquo;s Layan Plasma 6 Rice&lt;/strong&gt;, enter your &lt;code&gt;sudo&lt;/code&gt; password, and watch it do its thing.. Once it&amp;rsquo;s done, we will be prompted to reboot. Use the AppMenu to do that..&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Note :&lt;/strong&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;If you have selected to enable the &lt;strong&gt;Chaotic AUR&lt;/strong&gt; repos, install will go fast. If not it will take a bit, while it compiles some packages from the &lt;strong&gt;AUR&lt;/strong&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+
+&lt;h3 class=&#34;relative group&#34;&gt;Final words 
+    &lt;div id=&#34;final-words&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+    
+&lt;/h3&gt;
+&lt;p&gt;That&amp;rsquo;s it boys n girls. We just got &lt;strong&gt;XeroLinux&lt;/strong&gt; back ! The rest is up to you. Go through the toolkit see if you find anything useful. If you encounter any issues or have any questions, feel free to contact me on either &lt;strong&gt;Fosstodon&lt;/strong&gt; or &lt;strong&gt;Discord&lt;/strong&gt;, or even in the video comments section.&lt;/p&gt;
+&lt;p&gt;I will do my best to answer. Keep in mind that I might not have all the answers, simply because I only have the hardware I have, might be different than yours, so can&amp;rsquo;t know what works on something I do not own. Though I am and always will open to suggestions&amp;hellip;&lt;/p&gt;
+&lt;p&gt;Best of luck !!!!&lt;/p&gt;
+</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/news/xerolinux-plasma/featured.webp" />
+    </item>
+    
+    <item>
       <title>Bluefin Aurora</title>
       <link>https://xerolinux.xyz/posts/aurora-atomic/</link>
       <pubDate>Mon, 01 Jul 2024 00:00:00 +0000</pubDate>
