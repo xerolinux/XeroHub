@@ -34,5 +34,10 @@ name = "News"
 pageRef = "news"
 weight = 45
 
+[[main]]
+pre = "rss"
+url = "/index.xml"
+weight = 50
+
 [[footer]]
 none = "none"

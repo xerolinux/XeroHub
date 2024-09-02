@@ -8,15 +8,5 @@
     <language>en</language>
     <copyright>Copy, _right?_ 🫨</copyright>
     <lastBuildDate>Thu, 04 Jul 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://xerolinux.xyz/tags/channel/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>XeroLinux YouTube</title>
-      <link>https://xerolinux.xyz/news/youtube-status/</link>
-      <pubDate>Thu, 04 Jul 2024 00:00:00 +0000</pubDate>
-      
-      <guid>https://xerolinux.xyz/news/youtube-status/</guid>
-      <description>Today I bring you a different kind of post.</description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/news/youtube-status/featured.webp" />
-    </item>
-    
   </channel>
 </rss>

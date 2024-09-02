@@ -9,23 +9,146 @@
     <copyright>Copy, _right?_ 🫨</copyright>
     <lastBuildDate>Tue, 13 Aug 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://xerolinux.xyz/tags/archlinux/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Help Needed</title>
-      <link>https://xerolinux.xyz/news/help-needed/</link>
-      <pubDate>Tue, 13 Aug 2024 00:00:00 +0000</pubDate>
-      
-      <guid>https://xerolinux.xyz/news/help-needed/</guid>
-      <description>Hey there&amp;hellip;
-This is a new type of post.</description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/news/help-needed/featured.webp" />
-    </item>
-    
-    <item>
       <title>Amelia Automated Archinstall</title>
       <link>https://xerolinux.xyz/posts/amelia-automated-archinstall/</link>
       <pubDate>Sun, 07 Jul 2024 00:00:00 +0000</pubDate>
       
       <guid>https://xerolinux.xyz/posts/amelia-automated-archinstall/</guid>
-      <description>Overview Meet Amelia – your new best friend for installing ArchLinux!</description>
+      <description>
+
+&lt;h3 class=&#34;relative group&#34;&gt;Overview 
+    &lt;div id=&#34;overview&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+    
+&lt;/h3&gt;
+&lt;p&gt;Meet &lt;strong&gt;Amelia&lt;/strong&gt; – your new best friend for installing ArchLinux! This Bash script is all about automation and ease, bringing you through the installation process with a slick &lt;strong&gt;TUI&lt;/strong&gt; interface that’s both stylish and user-friendly.&lt;/p&gt;
+&lt;p&gt;Arch Linux is legendary for its flexibility and simplicity, but let’s face it, installing it can be a bit of a headache. That’s where &lt;strong&gt;Amelia&lt;/strong&gt; comes in. This nifty tool mixes automation with interactivity, making the installation process a breeze without taking away any control from you, the user.&lt;/p&gt;
+
+
+&lt;h3 class=&#34;relative group&#34;&gt;Features 
+    &lt;div id=&#34;features&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+    
+&lt;/h3&gt;
+&lt;p&gt;Clocking in at almost 6,000 lines of Bash brilliance, Amelia is designed for modern GPT systems. It uses the &lt;strong&gt;Discoverable Partitions Specification&lt;/strong&gt; to automatically detect and manage partitions, saving you from the dreaded fstab editing. Seriously, who wants to manually edit fstab?&lt;/p&gt;
+&lt;p&gt;Amelia is on the cutting edge with its approach to file systems and initialization. For instance, if you’re using &lt;code&gt;ext4&lt;/code&gt;, it bypasses the old &lt;code&gt;genfstab&lt;/code&gt; command and lets systemd handle the necessary setup. The same goes for initramfs – systemd takes over from the old base and udev combo, streamlining everything.&lt;/p&gt;
+&lt;p&gt;But don’t worry, control freaks! Amelia keeps you in the driver’s seat with interactive, menu-driven prompts that guide you through every step.&lt;/p&gt;
+&lt;p&gt;
+  &lt;figure&gt;
+    &lt;img class=&#34;my-0 rounded-md&#34; loading=&#34;lazy&#34; src=&#34;https://i.imgur.com/IJqFrXI.jpeg&#34; alt=&#34;Amelia&#34; /&gt;
+    
+  &lt;/figure&gt;
+&lt;/p&gt;
+
+
+&lt;h3 class=&#34;relative group&#34;&gt;Disk Management 
+    &lt;div id=&#34;disk-management&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+    
+&lt;/h3&gt;
+&lt;p&gt;For handling disks, &lt;strong&gt;Amelia&lt;/strong&gt; uses &lt;code&gt;cgdisk&lt;/code&gt;, which provides a &lt;code&gt;pseudo-GUI&lt;/code&gt; that’s both powerful and easy to use. It makes partition management safe and straightforward.&lt;/p&gt;
+&lt;p&gt;Amelia lets you make all the important decisions, asking for confirmation at each critical juncture. This ensures you’re always informed and in control, minimizing the risk of any unwanted surprises.&lt;/p&gt;
+&lt;p&gt;With a detailed menu system, you can personalize, configure your system, and manage disks with ease. Pick your locale, keyboard layout, and optimize your system for different desktop environments like &lt;strong&gt;KDE Plasma&lt;/strong&gt;, &lt;strong&gt;GNOME&lt;/strong&gt;, or &lt;strong&gt;Xfce&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;Advanced users will appreciate options for kernel selection and EFI boot management. Before kicking off the installation, Amelia checks for UEFI mode, internet connectivity, and updates the system clock to keep everything in sync.&lt;/p&gt;
+&lt;p&gt;For the pros, Amelia offers features like LUKS encryption for disk partitions and customization of the pacstrap process. Depending on your level of expertise and preferences, you can choose between automatic or manual partitioning and installation modes.&lt;/p&gt;
+
+
+&lt;h3 class=&#34;relative group&#34;&gt;Getting Started with Amelia 
+    &lt;div id=&#34;getting-started-with-amelia&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+    
+&lt;/h3&gt;
+&lt;p&gt;Ready to dive in ? First, boot up from the &lt;strong&gt;Arch&lt;/strong&gt; live ISO image. Once you see the shell prompt, download Amelia with this simple Curl command:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;curl -O https://gitlab.com/prism7/archery/-/raw/main/Amelia.sh
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Make sure you’ve got a working internet connection. Then, fire up the script and follow the prompts:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sh Amelia.sh
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;When the installation wraps up, you’ll get a confirmation screen. Reboot your computer, and voila – your shiny new Arch Linux system is ready to roll.&lt;/p&gt;
+&lt;p&gt;
+  &lt;figure&gt;
+    &lt;img class=&#34;my-0 rounded-md&#34; loading=&#34;lazy&#34; src=&#34;https://i.imgur.com/21bSdkY.jpeg&#34; alt=&#34;[AmeliaMain]&#34; /&gt;
+    
+  &lt;/figure&gt;
+&lt;/p&gt;
+
+
+&lt;h3 class=&#34;relative group&#34;&gt;Final Thoughts 
+    &lt;div id=&#34;final-thoughts&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+    
+&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;Amelia&lt;/strong&gt; is a powerhouse when it comes to installing Arch Linux. But let’s set expectations – this tool is geared towards experienced users, not beginners. Its main goal is to save time for those who already know their way around an Arch installation.&lt;/p&gt;
+&lt;p&gt;If you’re expecting a step-by-step hand-holding experience, you might be disappointed. A solid understanding of partition types and manual setup is still required, especially for disk partitioning.&lt;/p&gt;
+&lt;p&gt;I managed to set up &lt;strong&gt;Arch&lt;/strong&gt; with a &lt;strong&gt;KDE Plasma&lt;/strong&gt; desktop in just 20 minutes, thanks to &lt;strong&gt;Amelia&lt;/strong&gt;. However, there were a few hiccups. We ran into issues with missing Plasma packages, with unnecessary ones being installed.&lt;/p&gt;
+&lt;p&gt;Another thing we did not like so much that we feel that might push new users away is the fact that when we selected the &lt;em&gt;regular&lt;/em&gt; &lt;strong&gt;Plasma&lt;/strong&gt; profile, it offered a selective install for every group, which we feel might overwhelm users, especially ones who have no idea what each package does.&lt;/p&gt;
+&lt;p&gt;One cool feature, however, is that &lt;strong&gt;Amelia&lt;/strong&gt; includes ViM/NeoViM that most Devs out there might appreciate.&lt;/p&gt;
+&lt;p&gt;In summary, &lt;strong&gt;Amelia&lt;/strong&gt; is a fantastic tool for streamlining the Arch Linux installation process. It’s a huge time-saver for seasoned users, handling much of the manual setup automatically.&lt;/p&gt;
+&lt;p&gt;For those of you still nervous about installing Arch, don’t fret – this script comes to the rescue.&lt;/p&gt;
+&lt;p&gt;For more details on Amelia, check out its &lt;strong&gt;GitLab&lt;/strong&gt; page.&lt;/p&gt;
+&lt;a id=&#34;gitlab-b5993c5970e77657baffddc647ed112c&#34; target=&#34;_blank&#34; href=&#34;https://gitlab.com/prism7/archery&#34; class=&#34;cursor-pointer&#34;&gt;
+  &lt;div class=&#34;w-full md:w-auto pt-3 p-5 border border-neutral-200 dark:border-neutral-700 border rounded-md shadow-2xl&#34;&gt;
+
+    &lt;div class=&#34;flex items-center&#34;&gt;
+      &lt;span class=&#34;text-2xl text-neutral-800 dark:text-neutral&#34; style=&#34;margin-right:10px;&#34;&gt;
+        
+
+  &lt;span class=&#34;relative block icon&#34;&gt;
+    &lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 512 512&#34;&gt;&lt;path fill=&#34;currentColor&#34; d=&#34;M510.486,284.482l-27.262-83.963c.012.038.016.077.028.115-.013-.044-.021-.088-.033-.132v-.01L429.1,33.871a21.328,21.328,0,0,0-20.445-14.6A21.038,21.038,0,0,0,388.466,34L337.094,192.154H175L123.533,33.989A21.033,21.033,0,0,0,103.35,19.274h-.113A21.467,21.467,0,0,0,82.86,34L28.888,200.475l-.008.021v0c-.013.042-.019.084-.033.127.012-.038.017-.077.029-.115L1.514,284.482a30.6,30.6,0,0,0,11.117,34.283L248.893,490.427c.035.026.074.041.109.067.1.072.2.146.3.214-.1-.065-.187-.136-.282-.2l0,0c.015.012.033.02.05.031s.027.015.041.024l.006,0a11.992,11.992,0,0,0,1.137.7c.054.03.1.068.157.1l0,0c.033.016.064.038.1.054s.053.02.077.032.038.015.056.023c.044.021.092.034.136.057.205.1.421.178.633.264.2.082.389.177.592.248l.025.011c.034.012.064.028.1.04s.083.032.125.046l.05.012c.053.016.11.024.163.039.019.006.042.009.063.015.284.086.579.148.872.213.115.026.225.062.341.083.017,0,.032.009.05.012.038.008.073.021.112.027.062.011.122.031.186.04.049.007.1,0,.151.012h.033a11.918,11.918,0,0,0,1.7.136h.019a11.971,11.971,0,0,0,1.7-.136h.033c.05-.008.1,0,.153-.012s.124-.029.187-.04c.038-.006.073-.019.11-.027.017,0,.032-.009.049-.012.118-.023.231-.059.349-.084.288-.064.578-.126.861-.21.019-.006.039-.008.059-.014.055-.017.113-.024.169-.041.016-.006.035-.007.051-.012.044-.013.086-.032.129-.047s.063-.028.1-.041l.026-.01c.214-.076.417-.175.627-.261s.394-.154.584-.245c.047-.023.1-.036.142-.059.018-.009.04-.015.058-.024s.053-.02.078-.033.068-.04.1-.056l0,0c.056-.028.106-.069.161-.1a12.341,12.341,0,0,0,1.132-.695c.029-.02.062-.035.092-.056.008-.006.017-.009.024-.015.035-.026.076-.043.11-.068l236.3-171.666A30.6,30.6,0,0,0,510.486,284.482ZM408.8,49.48l46.342,142.674H362.46Zm-305.6,0,46.428,142.675H56.948ZM26.817,299.251a6.526,6.526,0,0,1-2.361-7.308l20.34-62.42L193.835,420.6Zm38.245-82.972h92.411L223.354,419.22Zm183.416,273.83c-.047-.038-.092-.079-.138-.118-.009-.008-.018-.018-.028-.026-.091-.075-.18-.152-.268-.231-.172-.15-.341-.3-.5-.462.014.012.029.022.043.035l.055.046a12.191,12.191,0,0,0,1.091.929l.012.011c.018.013.033.03.051.045C248.689,490.263,248.58,490.19,248.478,490.109Zm7.514-48.482L217.226,322.21,182.839,216.279H329.253Zm7.935,48.107c-.091.079-.178.157-.27.233l-.032.028c-.047.038-.091.079-.136.117-.1.08-.209.152-.313.229.018-.013.033-.032.053-.044l.009-.009a11.69,11.69,0,0,0,1.086-.926c.014-.013.03-.024.044-.036s.038-.03.054-.047C264.262,489.435,264.1,489.586,263.927,489.734Zm90.7-273.455h92.4l-18.91,24.23-139.468,178.7Zm130.567,82.967L318.2,420.563,467.284,229.538l20.258,62.393A6.528,6.528,0,0,1,485.189,299.246Z&#34;/&gt;&lt;/svg&gt;
+
+  &lt;/span&gt;
+
+
+      &lt;/span&gt;
+      &lt;div id=&#34;gitlab-b5993c5970e77657baffddc647ed112c-name_with_namespace&#34; class=&#34;m-0 font-bold text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral&#34;&gt;
+        Prism7 / archery
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;p id=&#34;gitlab-b5993c5970e77657baffddc647ed112c-description&#34; class=&#34;m-0 mt-2 text-md text-neutral-800 dark:text-neutral&#34;&gt;
+      
+    &lt;/p&gt;
+
+    &lt;div class=&#34;m-0 mt-2 flex items-center&#34;&gt;
+      &lt;span class=&#34;text-md mr-1 text-neutral-800 dark:text-neutral&#34;&gt;
+        
+
+  &lt;span class=&#34;relative block icon&#34;&gt;
+    &lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 576 512&#34;&gt;&lt;path fill=&#34;currentColor&#34; d=&#34;M287.9 0C297.1 0 305.5 5.25 309.5 13.52L378.1 154.8L531.4 177.5C540.4 178.8 547.8 185.1 550.7 193.7C553.5 202.4 551.2 211.9 544.8 218.2L433.6 328.4L459.9 483.9C461.4 492.9 457.7 502.1 450.2 507.4C442.8 512.7 432.1 513.4 424.9 509.1L287.9 435.9L150.1 509.1C142.9 513.4 133.1 512.7 125.6 507.4C118.2 502.1 114.5 492.9 115.1 483.9L142.2 328.4L31.11 218.2C24.65 211.9 22.36 202.4 25.2 193.7C28.03 185.1 35.5 178.8 44.49 177.5L197.7 154.8L266.3 13.52C270.4 5.249 278.7 0 287.9 0L287.9 0zM287.9 78.95L235.4 187.2C231.9 194.3 225.1 199.3 217.3 200.5L98.98 217.9L184.9 303C190.4 308.5 192.9 316.4 191.6 324.1L171.4 443.7L276.6 387.5C283.7 383.7 292.2 383.7 299.2 387.5L404.4 443.7L384.2 324.1C382.9 316.4 385.5 308.5 391 303L476.9 217.9L358.6 200.5C350.7 199.3 343.9 194.3 340.5 187.2L287.9 78.95z&#34;/&gt;&lt;/svg&gt;
+  &lt;/span&gt;
+
+
+      &lt;/span&gt;
+      &lt;div id=&#34;gitlab-b5993c5970e77657baffddc647ed112c-star_count&#34; class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
+        26
+      &lt;/div&gt;
+
+      &lt;span class=&#34;text-md mr-1 text-neutral-800 dark:text-neutral&#34;&gt;
+        
+
+  &lt;span class=&#34;relative block icon&#34;&gt;
+    &lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 448 512&#34;&gt;&lt;path fill=&#34;currentColor&#34; d=&#34;M80 104c13.3 0 24-10.7 24-24s-10.7-24-24-24S56 66.7 56 80s10.7 24 24 24zm80-24c0 32.8-19.7 61-48 73.3V192c0 17.7 14.3 32 32 32H304c17.7 0 32-14.3 32-32V153.3C307.7 141 288 112.8 288 80c0-44.2 35.8-80 80-80s80 35.8 80 80c0 32.8-19.7 61-48 73.3V192c0 53-43 96-96 96H256v70.7c28.3 12.3 48 40.5 48 73.3c0 44.2-35.8 80-80 80s-80-35.8-80-80c0-32.8 19.7-61 48-73.3V288H144c-53 0-96-43-96-96V153.3C19.7 141 0 112.8 0 80C0 35.8 35.8 0 80 0s80 35.8 80 80zm208 24c13.3 0 24-10.7 24-24s-10.7-24-24-24s-24 10.7-24 24s10.7 24 24 24zM248 432c0-13.3-10.7-24-24-24s-24 10.7-24 24s10.7 24 24 24s24-10.7 24-24z&#34;/&gt;&lt;/svg&gt;
+  &lt;/span&gt;
+
+
+      &lt;/span&gt;
+      &lt;div id=&#34;gitlab-b5993c5970e77657baffddc647ed112c-forks_count&#34; class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
+        1
+      &lt;/div&gt;
+
+    &lt;/div&gt;
+
+  &lt;/div&gt;
+  &lt;script&gt;
+    fetch(&#34;https://gitlab.com/api/v4/projects/53809674&#34;, {
+      headers: new Headers({
+        &#39;User-agent&#39;: &#39;Mozilla/4.0 Custom User Agent&#39;
+      })
+    })
+      .then(response =&gt; response.json())
+      .then(data =&gt; {
+        document.getElementById(&#39;gitlab-b5993c5970e77657baffddc647ed112c-name_with_namespace&#39;).innerHTML = data.name_with_namespace;
+        document.getElementById(&#39;gitlab-b5993c5970e77657baffddc647ed112c-description&#39;).innerHTML = data.description;
+        document.getElementById(&#39;gitlab-b5993c5970e77657baffddc647ed112c-star_count&#39;).innerHTML = data.star_count;
+        document.getElementById(&#39;gitlab-b5993c5970e77657baffddc647ed112c-forks_count&#39;).innerHTML = data.forks_count;
+      })
+      .catch(error =&gt; console.error(error))
+  &lt;/script&gt;
+&lt;/a&gt;
+</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/amelia-automated-archinstall/featured.webp" />
     </item>
     
@@ -35,19 +158,207 @@ This is a new type of post.</description>
       <pubDate>Wed, 03 Jul 2024 00:00:00 +0000</pubDate>
       
       <guid>https://xerolinux.xyz/posts/chaotic-aur/</guid>
-      <description>A bit of information Chaotic-AUR is an unofficial package repository that contains pre-built packages from the Arch User Repository (AUR) .</description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/chaotic-aur/featured.webp" />
-    </item>
+      <description>
+
+&lt;h3 class=&#34;relative group&#34;&gt;A bit of information 
+    &lt;div id=&#34;a-bit-of-information&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
     
-    <item>
-      <title>Add XeroLinux Repo</title>
-      <link>https://xerolinux.xyz/news/add-our-repo/</link>
-      <pubDate>Fri, 28 Jun 2024 00:00:00 +0000</pubDate>
-      
-      <guid>https://xerolinux.xyz/news/add-our-repo/</guid>
-      <description>Hey there&amp;hellip;
-I was recently asked if my Repo can be added to other Arch-Based Distros, short answer is yes of course you can.</description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/news/add-our-repo/featured.webp" />
+&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;https://aur.chaotic.cx&#34; target=&#34;_blank&#34;&gt;&lt;strong&gt;Chaotic-AUR&lt;/strong&gt;&lt;/a&gt; is an unofficial package repository that contains pre-built packages from the &lt;strong&gt;Arch User Repository&lt;/strong&gt; (AUR) . It is an automated building service that compiles AUR packages so users don&amp;rsquo;t have to build them themselves.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Chaotic-AUR&lt;/strong&gt; is a convenient way to access AUR packages without having to build them yourself, but users should still exercise caution and verify the packages, as it is an unofficial repository&lt;/p&gt;
+
+
+    
+    &lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+      &lt;iframe allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&#34; allowfullscreen=&#34;allowfullscreen&#34; loading=&#34;eager&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; src=&#34;https://www.youtube.com/embed/0XR0chZU3vY?autoplay=0&amp;controls=1&amp;end=0&amp;loop=0&amp;mute=0&amp;start=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;YouTube video&#34;
+      &gt;&lt;/iframe&gt;
+    &lt;/div&gt;
+
+
+
+&lt;h3 class=&#34;relative group&#34;&gt;Activate Chaotic-AUR Repos 
+    &lt;div id=&#34;activate-chaotic-aur-repos&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+    
+&lt;/h3&gt;
+&lt;p&gt;If you want to start using the &lt;strong&gt;Chaotic-AUR&lt;/strong&gt; or just need to copy the setup commands, this is the right place for you.&lt;/p&gt;
+&lt;p&gt;Before we begin, I would like to remind everyone that if you are using the &lt;strong&gt;XeroLinux Toolkit&lt;/strong&gt; it has an option that automates everything for you. Check it out on &lt;strong&gt;Github&lt;/strong&gt; below.&lt;/p&gt;
+&lt;a id=&#34;github-33a752733b7cf7935c163efcf04a96c1&#34; target=&#34;_blank&#34; href=&#34;https://github.com/xerolinux/xlapit-cli&#34; class=&#34;cursor-pointer&#34;&gt;
+  &lt;div
+    class=&#34;w-full md:w-auto pt-3 p-5 border border-neutral-200 dark:border-neutral-700 border rounded-md shadow-2xl&#34;&gt;
+
+    &lt;div class=&#34;flex items-center&#34;&gt;
+      &lt;span class=&#34;text-2xl text-neutral-800 dark:text-neutral&#34; style=&#34;margin-right:10px;&#34;&gt;
+        
+
+  &lt;span class=&#34;relative block icon&#34;&gt;
+    &lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 496 512&#34;&gt;&lt;path fill=&#34;currentColor&#34; d=&#34;M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z&#34;/&gt;&lt;/svg&gt;
+
+  &lt;/span&gt;
+
+
+      &lt;/span&gt;
+      &lt;div
+        id=&#34;github-33a752733b7cf7935c163efcf04a96c1-full_name&#34;
+        class=&#34;m-0 font-bold text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral&#34;&gt;
+        xerolinux/xlapit-cli
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;p id=&#34;github-33a752733b7cf7935c163efcf04a96c1-description&#34; class=&#34;m-0 mt-2 text-md text-neutral-800 dark:text-neutral&#34;&gt;
+      XeroLinux Arch Post Install Toolkit Package Source Code
+    &lt;/p&gt;
+
+    &lt;div class=&#34;m-0 mt-2 flex items-center&#34;&gt;
+
+      &lt;span class=&#34;mr-1 inline-block h-3 w-3 rounded-full&#34;
+        style=&#34;background-color: #89e051&#34;&gt;&lt;/span&gt;
+      &lt;div class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
+         Shell 
+      &lt;/div&gt;
+
+      &lt;span class=&#34;text-md mr-1 text-neutral-800 dark:text-neutral&#34;&gt;
+        
+
+  &lt;span class=&#34;relative block icon&#34;&gt;
+    &lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 576 512&#34;&gt;&lt;path fill=&#34;currentColor&#34; d=&#34;M287.9 0C297.1 0 305.5 5.25 309.5 13.52L378.1 154.8L531.4 177.5C540.4 178.8 547.8 185.1 550.7 193.7C553.5 202.4 551.2 211.9 544.8 218.2L433.6 328.4L459.9 483.9C461.4 492.9 457.7 502.1 450.2 507.4C442.8 512.7 432.1 513.4 424.9 509.1L287.9 435.9L150.1 509.1C142.9 513.4 133.1 512.7 125.6 507.4C118.2 502.1 114.5 492.9 115.1 483.9L142.2 328.4L31.11 218.2C24.65 211.9 22.36 202.4 25.2 193.7C28.03 185.1 35.5 178.8 44.49 177.5L197.7 154.8L266.3 13.52C270.4 5.249 278.7 0 287.9 0L287.9 0zM287.9 78.95L235.4 187.2C231.9 194.3 225.1 199.3 217.3 200.5L98.98 217.9L184.9 303C190.4 308.5 192.9 316.4 191.6 324.1L171.4 443.7L276.6 387.5C283.7 383.7 292.2 383.7 299.2 387.5L404.4 443.7L384.2 324.1C382.9 316.4 385.5 308.5 391 303L476.9 217.9L358.6 200.5C350.7 199.3 343.9 194.3 340.5 187.2L287.9 78.95z&#34;/&gt;&lt;/svg&gt;
+  &lt;/span&gt;
+
+
+      &lt;/span&gt;
+      &lt;div id=&#34;github-33a752733b7cf7935c163efcf04a96c1-stargazers&#34; class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
+        44
+      &lt;/div&gt;
+
+      &lt;span class=&#34;text-md mr-1 text-neutral-800 dark:text-neutral&#34;&gt;
+        
+
+  &lt;span class=&#34;relative block icon&#34;&gt;
+    &lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 448 512&#34;&gt;&lt;path fill=&#34;currentColor&#34; d=&#34;M80 104c13.3 0 24-10.7 24-24s-10.7-24-24-24S56 66.7 56 80s10.7 24 24 24zm80-24c0 32.8-19.7 61-48 73.3V192c0 17.7 14.3 32 32 32H304c17.7 0 32-14.3 32-32V153.3C307.7 141 288 112.8 288 80c0-44.2 35.8-80 80-80s80 35.8 80 80c0 32.8-19.7 61-48 73.3V192c0 53-43 96-96 96H256v70.7c28.3 12.3 48 40.5 48 73.3c0 44.2-35.8 80-80 80s-80-35.8-80-80c0-32.8 19.7-61 48-73.3V288H144c-53 0-96-43-96-96V153.3C19.7 141 0 112.8 0 80C0 35.8 35.8 0 80 0s80 35.8 80 80zm208 24c13.3 0 24-10.7 24-24s-10.7-24-24-24s-24 10.7-24 24s10.7 24 24 24zM248 432c0-13.3-10.7-24-24-24s-24 10.7-24 24s10.7 24 24 24s24-10.7 24-24z&#34;/&gt;&lt;/svg&gt;
+  &lt;/span&gt;
+
+
+      &lt;/span&gt;
+      &lt;div id=&#34;github-33a752733b7cf7935c163efcf04a96c1-forks&#34; class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
+        8
+      &lt;/div&gt;
+
+    &lt;/div&gt;
+
+  &lt;/div&gt;
+  &lt;script&gt;
+    fetch(&#34;https://api.github.com/repos/xerolinux/xlapit-cli&#34;, {
+      headers: new Headers({
+        &#39;User-agent&#39;: &#39;Mozilla/4.0 Custom User Agent&#39;
+      })
+    })
+      .then(response =&gt; response.json())
+      .then(data =&gt; {
+        document.getElementById(&#39;github-33a752733b7cf7935c163efcf04a96c1-full_name&#39;).innerHTML = data.full_name;
+        document.getElementById(&#39;github-33a752733b7cf7935c163efcf04a96c1-description&#39;).innerHTML = data.description;
+        document.getElementById(&#39;github-33a752733b7cf7935c163efcf04a96c1-stargazers&#39;).innerHTML = data.stargazers_count;
+        document.getElementById(&#39;github-33a752733b7cf7935c163efcf04a96c1-forks&#39;).innerHTML = data.forks;
+      })
+      .catch(error =&gt; console.error(error))
+  &lt;/script&gt;
+&lt;/a&gt;
+&lt;p&gt;If you prefer to do it manually, then we start by retrieving the primary key to enable the installation of our keyring and mirror list:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;pacman-key --recv-key 3056513887B78AEB --keyserver keyserver.ubuntu.com
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;pacman-key --lsign-key 3056513887B78AEB
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;pacman -U &lt;span class=&#34;s1&#34;&gt;&amp;#39;https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-keyring.pkg.tar.zst&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;pacman -U &lt;span class=&#34;s1&#34;&gt;&amp;#39;https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-mirrorlist.pkg.tar.zst&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Then, we append (adding at the end) the following to &lt;code&gt;/etc/pacman.conf&lt;/code&gt;:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;echo&lt;/span&gt; -e &lt;span class=&#34;s1&#34;&gt;&amp;#39;\n[chaotic-aur]\nInclude = /etc/pacman.d/chaotic-mirrorlist&amp;#39;&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; sudo tee -a /etc/pacman.conf
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h3 class=&#34;relative group&#34;&gt;The benefits 
+    &lt;div id=&#34;the-benefits&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+    
+&lt;/h3&gt;
+&lt;p&gt;Only one benefit comes from using the &lt;strong&gt;Chaotic-AUR&lt;/strong&gt;. And that&amp;rsquo;s the fact that packages are most often if not always screened by the maintainers before being added, saving us the headache of being the guinea pigs.&lt;/p&gt;
+&lt;p&gt;Did I mention that you can request packages to be added there ? Oh yes, that&amp;rsquo;s a side-benefit to all this. If you want to do that head on over to their &lt;strong&gt;Github Repo&lt;/strong&gt; linked below and use the issues tab to either report an issue with a package, request a new package to be added or a &lt;strong&gt;PKGBUILD&lt;/strong&gt; to be updated.&lt;/p&gt;
+&lt;a id=&#34;github-5eeb2e27b9916ae7df6a93a2a1b42a89&#34; target=&#34;_blank&#34; href=&#34;https://github.com/chaotic-aur/packages&#34; class=&#34;cursor-pointer&#34;&gt;
+  &lt;div
+    class=&#34;w-full md:w-auto pt-3 p-5 border border-neutral-200 dark:border-neutral-700 border rounded-md shadow-2xl&#34;&gt;
+
+    &lt;div class=&#34;flex items-center&#34;&gt;
+      &lt;span class=&#34;text-2xl text-neutral-800 dark:text-neutral&#34; style=&#34;margin-right:10px;&#34;&gt;
+        
+
+  &lt;span class=&#34;relative block icon&#34;&gt;
+    &lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 496 512&#34;&gt;&lt;path fill=&#34;currentColor&#34; d=&#34;M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z&#34;/&gt;&lt;/svg&gt;
+
+  &lt;/span&gt;
+
+
+      &lt;/span&gt;
+      &lt;div
+        id=&#34;github-5eeb2e27b9916ae7df6a93a2a1b42a89-full_name&#34;
+        class=&#34;m-0 font-bold text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral&#34;&gt;
+        chaotic-aur/packages
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;p id=&#34;github-5eeb2e27b9916ae7df6a93a2a1b42a89-description&#34; class=&#34;m-0 mt-2 text-md text-neutral-800 dark:text-neutral&#34;&gt;
+      The packages Mason, what do they mean? (Package requests and bug reports here) 📑
+    &lt;/p&gt;
+
+    &lt;div class=&#34;m-0 mt-2 flex items-center&#34;&gt;
+
+      &lt;span class=&#34;mr-1 inline-block h-3 w-3 rounded-full&#34;
+        style=&#34;background-color:  #0077b6 &#34;&gt;&lt;/span&gt;
+      &lt;div class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
+         null 
+      &lt;/div&gt;
+
+      &lt;span class=&#34;text-md mr-1 text-neutral-800 dark:text-neutral&#34;&gt;
+        
+
+  &lt;span class=&#34;relative block icon&#34;&gt;
+    &lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 576 512&#34;&gt;&lt;path fill=&#34;currentColor&#34; d=&#34;M287.9 0C297.1 0 305.5 5.25 309.5 13.52L378.1 154.8L531.4 177.5C540.4 178.8 547.8 185.1 550.7 193.7C553.5 202.4 551.2 211.9 544.8 218.2L433.6 328.4L459.9 483.9C461.4 492.9 457.7 502.1 450.2 507.4C442.8 512.7 432.1 513.4 424.9 509.1L287.9 435.9L150.1 509.1C142.9 513.4 133.1 512.7 125.6 507.4C118.2 502.1 114.5 492.9 115.1 483.9L142.2 328.4L31.11 218.2C24.65 211.9 22.36 202.4 25.2 193.7C28.03 185.1 35.5 178.8 44.49 177.5L197.7 154.8L266.3 13.52C270.4 5.249 278.7 0 287.9 0L287.9 0zM287.9 78.95L235.4 187.2C231.9 194.3 225.1 199.3 217.3 200.5L98.98 217.9L184.9 303C190.4 308.5 192.9 316.4 191.6 324.1L171.4 443.7L276.6 387.5C283.7 383.7 292.2 383.7 299.2 387.5L404.4 443.7L384.2 324.1C382.9 316.4 385.5 308.5 391 303L476.9 217.9L358.6 200.5C350.7 199.3 343.9 194.3 340.5 187.2L287.9 78.95z&#34;/&gt;&lt;/svg&gt;
+  &lt;/span&gt;
+
+
+      &lt;/span&gt;
+      &lt;div id=&#34;github-5eeb2e27b9916ae7df6a93a2a1b42a89-stargazers&#34; class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
+        321
+      &lt;/div&gt;
+
+      &lt;span class=&#34;text-md mr-1 text-neutral-800 dark:text-neutral&#34;&gt;
+        
+
+  &lt;span class=&#34;relative block icon&#34;&gt;
+    &lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 448 512&#34;&gt;&lt;path fill=&#34;currentColor&#34; d=&#34;M80 104c13.3 0 24-10.7 24-24s-10.7-24-24-24S56 66.7 56 80s10.7 24 24 24zm80-24c0 32.8-19.7 61-48 73.3V192c0 17.7 14.3 32 32 32H304c17.7 0 32-14.3 32-32V153.3C307.7 141 288 112.8 288 80c0-44.2 35.8-80 80-80s80 35.8 80 80c0 32.8-19.7 61-48 73.3V192c0 53-43 96-96 96H256v70.7c28.3 12.3 48 40.5 48 73.3c0 44.2-35.8 80-80 80s-80-35.8-80-80c0-32.8 19.7-61 48-73.3V288H144c-53 0-96-43-96-96V153.3C19.7 141 0 112.8 0 80C0 35.8 35.8 0 80 0s80 35.8 80 80zm208 24c13.3 0 24-10.7 24-24s-10.7-24-24-24s-24 10.7-24 24s10.7 24 24 24zM248 432c0-13.3-10.7-24-24-24s-24 10.7-24 24s10.7 24 24 24s24-10.7 24-24z&#34;/&gt;&lt;/svg&gt;
+  &lt;/span&gt;
+
+
+      &lt;/span&gt;
+      &lt;div id=&#34;github-5eeb2e27b9916ae7df6a93a2a1b42a89-forks&#34; class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
+        20
+      &lt;/div&gt;
+
+    &lt;/div&gt;
+
+  &lt;/div&gt;
+  &lt;script&gt;
+    fetch(&#34;https://api.github.com/repos/chaotic-aur/packages&#34;, {
+      headers: new Headers({
+        &#39;User-agent&#39;: &#39;Mozilla/4.0 Custom User Agent&#39;
+      })
+    })
+      .then(response =&gt; response.json())
+      .then(data =&gt; {
+        document.getElementById(&#39;github-5eeb2e27b9916ae7df6a93a2a1b42a89-full_name&#39;).innerHTML = data.full_name;
+        document.getElementById(&#39;github-5eeb2e27b9916ae7df6a93a2a1b42a89-description&#39;).innerHTML = data.description;
+        document.getElementById(&#39;github-5eeb2e27b9916ae7df6a93a2a1b42a89-stargazers&#39;).innerHTML = data.stargazers_count;
+        document.getElementById(&#39;github-5eeb2e27b9916ae7df6a93a2a1b42a89-forks&#39;).innerHTML = data.forks;
+      })
+      .catch(error =&gt; console.error(error))
+  &lt;/script&gt;
+&lt;/a&gt;
+&lt;p&gt;That’s it folks ..&lt;/p&gt;
+&lt;p&gt;Cheers !&lt;/p&gt;
+</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/chaotic-aur/featured.webp" />
     </item>
     
     <item>
@@ -56,7 +367,60 @@ I was recently asked if my Repo can be added to other Arch-Based Distros, short 
       <pubDate>Thu, 27 Jun 2024 00:00:00 +0000</pubDate>
       
       <guid>https://xerolinux.xyz/posts/downgrade-tool/</guid>
-      <description>What is Downgrade ? Downgrade is a Bash script that makes it easier to downgrade packages in Arch Linux to an older version.</description>
+      <description>
+
+&lt;h3 class=&#34;relative group&#34;&gt;What is Downgrade ? 
+    &lt;div id=&#34;what-is-downgrade-&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+    
+&lt;/h3&gt;
+&lt;p&gt;Downgrade is a Bash script that makes it easier to downgrade packages in Arch Linux to an older version. It checks both the local pacman cache and the Arch Linux Archive (ALA) for available older versions of a package and allows you to select which version to install&lt;/p&gt;
+
+
+&lt;h3 class=&#34;relative group&#34;&gt;Why do we need it ? 
+    &lt;div id=&#34;why-do-we-need-it-&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+    
+&lt;/h3&gt;
+&lt;p&gt;As you might know, Arch Linux is a rolling release and DIY (do-it-yourself) distribution. So you have to be a bit careful while updating it often, especially installing or updating packages from the third party repositories like AUR. You might be end up with broken system if you don&amp;rsquo;t know what you are doing. It is your responsibility to make Arch Linux more stable. However, we all do mistakes. It is difficult to be careful all time. Sometimes, you want to update to most bleeding edge, and you might be stuck with broken packages. Don&amp;rsquo;t panic! In such cases, you can simply rollback to the old stable packages. This short tutorial describes how to downgrade a package in Arch Linux and its variants like EndeavourOS, Manjaro Linux.&lt;/p&gt;
+
+
+&lt;h3 class=&#34;relative group&#34;&gt;Install Downgrade utility 
+    &lt;div id=&#34;install-downgrade-utility&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+    
+&lt;/h3&gt;
+&lt;p&gt;The downgrade package is available in AUR, so you can install it using any AUR helper programs such as Paru or Yay.&lt;/p&gt;
+&lt;p&gt;Using Paru:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;paru -S downgrade
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Using Yay:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;yay -S downgrade
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h3 class=&#34;relative group&#34;&gt;Downgrade a package 
+    &lt;div id=&#34;downgrade-a-package&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+    
+&lt;/h3&gt;
+&lt;p&gt;The typical usage of &amp;ldquo;downgrade&amp;rdquo; command is:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo downgrade &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;PACKAGE, ...&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;-- &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;PACMAN OPTIONS&lt;span class=&#34;o&#34;&gt;]]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Let us say you want to downgrade opera web browser to any available old version.&lt;/p&gt;
+&lt;p&gt;To do so, run:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo downgrade opera
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;This command will list all available versions of opera package (both new and old) from your local cache and remote mirror.&lt;/p&gt;
+&lt;p&gt;Sample output:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Available packages:
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;1&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt; opera-37.0.2178.43-1-x86_64.pkg.tar.xz &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;local&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;2&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt; opera-37.0.2178.43-1-x86_64.pkg.tar.xz &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;remote&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;3&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt; opera-37.0.2178.32-1-x86_64.pkg.tar.xz &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;remote&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;4&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt; opera-36.0.2130.65-2-x86_64.pkg.tar.xz &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;remote&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;5&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt; opera-36.0.2130.65-1-x86_64.pkg.tar.xz &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;remote&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;6&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt; opera-36.0.2130.46-2-x86_64.pkg.tar.xz &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;remote&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;7&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt; opera-36.0.2130.46-1-x86_64.pkg.tar.xz &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;remote&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;8&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt; opera-36.0.2130.32-2-x86_64.pkg.tar.xz &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;remote&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;9&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt; opera-36.0.2130.32-1-x86_64.pkg.tar.xz &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;remote&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;select&lt;/span&gt; a package by number:
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Just type the package number of your choice, and hit enter to install it.&lt;/p&gt;
+&lt;p&gt;That&amp;rsquo;s it. The current installed package will be downgraded to the old version.&lt;/p&gt;
+</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/downgrade-tool/featured.webp" />
     </item>
     
@@ -66,7 +430,70 @@ I was recently asked if my Repo can be added to other Arch-Based Distros, short 
       <pubDate>Thu, 27 Jun 2024 00:00:00 +0000</pubDate>
       
       <guid>https://xerolinux.xyz/posts/install-yay-paru/</guid>
-      <description>What Are Those? Yay &amp;amp; Paru are AUR Helpers.</description>
+      <description>
+
+&lt;h3 class=&#34;relative group&#34;&gt;What Are Those? 
+    &lt;div id=&#34;what-are-those&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+    
+&lt;/h3&gt;
+&lt;p&gt;Yay &amp;amp; Paru are &lt;strong&gt;AUR&lt;/strong&gt; Helpers. What&amp;rsquo;s that ? Well, an &lt;strong&gt;AUR&lt;/strong&gt; helper is a tool that automates the process of installing and managing packages from the Arch User Repository (AUR) on Arch Linux. The main purpose of AUR helpers is to simplify the installation and updating of AUR packages, which are not available in the official Arch Linux repositories&lt;/p&gt;
+&lt;p&gt;
+  &lt;figure&gt;
+    &lt;img class=&#34;my-0 rounded-md&#34; loading=&#34;lazy&#34; src=&#34;https://i.imgur.com/l2MiVr0.jpeg&#34; alt=&#34;[Image: l2MiVr0.jpeg]&#34; /&gt;
+    
+  &lt;/figure&gt;
+&lt;/p&gt;
+
+
+&lt;h3 class=&#34;relative group&#34;&gt;What is the difference between the two ? 
+    &lt;div id=&#34;what-is-the-difference-between-the-two-&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+    
+&lt;/h3&gt;
+&lt;p&gt;The primary differences between the AUR helpers Yay and Paru lie in their underlying programming languages and some of their default settings and features. &lt;strong&gt;Yay&lt;/strong&gt; is written in &lt;strong&gt;Go&lt;/strong&gt;, while &lt;strong&gt;Paru&lt;/strong&gt; is implemented in the more efficient &lt;strong&gt;Rust&lt;/strong&gt; language, resulting in better performance. Additionally, Paru has some saner default settings, such as requiring users to review the PKGBUILD before installing a package, which is an important security consideration when working with the Arch User Repository. Yay, on the other hand, offers a unique &amp;ldquo;&amp;ndash;combinedupgrade&amp;rdquo; flag that provides a color-coded output to distinguish between repository and AUR package upgrades, a feature not present in Paru. In terms of active development, Paru is currently more actively maintained than Yay, though both continue to receive updates and improvements. The choice between the two ultimately comes down to personal preference and specific needs when managing packages from the AUR..&lt;/p&gt;
+
+
+&lt;h3 class=&#34;relative group&#34;&gt;Yay Installation : 
+    &lt;div id=&#34;yay-installation-&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+    
+&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;cd&lt;/span&gt; ~ &lt;span class=&#34;o&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; git clone https://aur.archlinux.org/yay-bin.git
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;cd&lt;/span&gt; ~/yay-bin/ &lt;span class=&#34;o&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; makepkg -rsi --noconfirm
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;cd&lt;/span&gt; ~ &lt;span class=&#34;o&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; rm -Rf ~/yay-bin/
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h3 class=&#34;relative group&#34;&gt;Yay Configuration : 
+    &lt;div id=&#34;yay-configuration-&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+    
+&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;yay -Y --devel --save &lt;span class=&#34;o&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; yay -Y --gendb
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sed -i &lt;span class=&#34;s1&#34;&gt;&amp;#39;s/&amp;#34;sudoloop&amp;#34;: false/&amp;#34;sudoloop&amp;#34;: true/&amp;#39;&lt;/span&gt; ~/.config/yay/config.json&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Anyway here&amp;rsquo;s how to proceed for Paru&amp;hellip;&lt;/p&gt;
+
+
+&lt;h3 class=&#34;relative group&#34;&gt;Paru Installation : 
+    &lt;div id=&#34;paru-installation-&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+    
+&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;cd&lt;/span&gt; ~ &lt;span class=&#34;o&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; git clone https://aur.archlinux.org/paru-bin.git
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;cd&lt;/span&gt; ~/paru-bin/ &lt;span class=&#34;o&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; makepkg -rsi --noconfirm
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;cd&lt;/span&gt; ~ &lt;span class=&#34;o&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; rm -Rf ~/paru-bin/
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h3 class=&#34;relative group&#34;&gt;Paru Configuration : 
+    &lt;div id=&#34;paru-configuration-&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+    
+&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo sed -i -e &lt;span class=&#34;s1&#34;&gt;&amp;#39;s/^#BottomUp/BottomUp/&amp;#39;&lt;/span&gt; -e &lt;span class=&#34;s1&#34;&gt;&amp;#39;s/^#SudoLoop/SudoLoop/&amp;#39;&lt;/span&gt; -e &lt;span class=&#34;s1&#34;&gt;&amp;#39;s/^#CombinedUpgrade/CombinedUpgrade/&amp;#39;&lt;/span&gt; -e &lt;span class=&#34;s1&#34;&gt;&amp;#39;s/^#UpgradeMenu/UpgradeMenu/&amp;#39;&lt;/span&gt; -e &lt;span class=&#34;s1&#34;&gt;&amp;#39;s/^#NewsOnUpgrade/NewsOnUpgrade/&amp;#39;&lt;/span&gt; /etc/paru.conf
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;SkipReview&amp;#34;&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; sudo tee -a /etc/paru.conf &amp;gt; /dev/null
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;paru --gendb&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h3 class=&#34;relative group&#34;&gt;Closing 
+    &lt;div id=&#34;closing&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+    
+&lt;/h3&gt;
+&lt;p&gt;Once that is done, you can use it to start installing packages from the &lt;a href=&#34;https://aur.archlinux.org&#34; target=&#34;_blank&#34;&gt;AUR&lt;/a&gt;. Keep in mind that you do not need to install both; just select the one you prefer, either one works.. I would recommend YaY myself though.. &lt;a href=&#34;https://wiki.archlinux.org/title/AUR_helpers&#34; target=&#34;_blank&#34;&gt;ArchWiki Page&lt;/a&gt;&lt;/p&gt;
+</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/install-yay-paru/featured.webp" />
     </item>
     

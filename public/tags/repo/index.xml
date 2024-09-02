@@ -8,16 +8,5 @@
     <language>en</language>
     <copyright>Copy, _right?_ 🫨</copyright>
     <lastBuildDate>Fri, 28 Jun 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://xerolinux.xyz/tags/repo/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Add XeroLinux Repo</title>
-      <link>https://xerolinux.xyz/news/add-our-repo/</link>
-      <pubDate>Fri, 28 Jun 2024 00:00:00 +0000</pubDate>
-      
-      <guid>https://xerolinux.xyz/news/add-our-repo/</guid>
-      <description>Hey there&amp;hellip;
-I was recently asked if my Repo can be added to other Arch-Based Distros, short answer is yes of course you can.</description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/news/add-our-repo/featured.webp" />
-    </item>
-    
   </channel>
 </rss>
