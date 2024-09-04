@@ -9,7 +9,7 @@ tags: ["Cosmic", "Arch", "ArchLinux", "ArchInstall", "Linux"]
 
 The [**Cosmic DE**](https://blog.system76.com/post/cosmic-the-road-to-alpha/) is a new desktop environment being developed by the team behind **Pop!_OS**, a popular Linux distribution. Unlike their previous efforts, which built upon **GNOME**, the **Cosmic DE** is a ground-up development using **Rust** and a custom compositor built on **Smithay**, aiming for a lightweight, responsive, and customizable user interface.
 
-It focuses on a keyboard-centric workflow, tiling window management, and a more integrated experience with the **Pop!_OS** ecosystem, enhancing performance and user control. It aims to offer a modern alternative to existing desktop environments, designed specifically for Linux users' needs.
+Its most notable feature is, tiling window management with stacking, and a more integrated experience with the **Pop!_OS** ecosystem, enhancing performance and user control. It aims to offer a modern alternative to existing desktop environments, designed specifically for Linux users' needs.
 
 ### Installing Cosmic on Arch
 
