@@ -39,7 +39,9 @@ If you are an **Arch** power user and prefer to do it the *manual way*, you can.
 
 ### Customization
 
-As we know, **Cosmic DE** will be highly customizable out of the box. It comes between **Gnome** and **KDE Plasma**. Meaning we can modify it more than the former but less than the latter. Still in my opinion that's awesome. There are some caveat however, those being that **Qt** apps are still not fully supported eg. **Kvantum**, especially if you are used to the tried and true **Global Menu**. Also the Blur effect not yet there. Maybe in the future someone will add it ? I dunno about **LibAdwaita** though, from what I have heard, support coming not yet there.
+As we know, **Cosmic DE** will be highly customizable out of the box. It comes between **Gnome** and **KDE Plasma**. Meaning we can modify it more than the former but less than the latter. Still in my opinion that's awesome.
+
+There are some caveat however, those being that **Qt** apps are still not fully supported eg. **Kvantum**, especially if you are used to the tried and true **Global Menu**. Also the Blur effect not yet there. Maybe in the future someone will add it ? I dunno about **LibAdwaita** though, from what I have heard, support coming not yet there.
 
 ![CosmicThemes](https://i.imgur.com/R8Io5eQ.png)
 
