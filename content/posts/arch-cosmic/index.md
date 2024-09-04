@@ -45,7 +45,7 @@ There are some caveats however, those being that **Qt** apps are still not fully
 
 ![CosmicThemes](https://i.imgur.com/R8Io5eQ.png)
 
-So if you are looking for consistency, it will be a long while before we can achieve it. Still, this did not stop some theme developers from porting their themes over to it. So ff you would like to try them out, just head on over to the >> [**Cosmic-Themes**](https://cosmic-themes.org) site and grab the one(s) you like. Keep in mind that they are work in progress...
+So if you are looking for consistency, it will be a long while before we can achieve it. Still, this did not stop some theme developers from porting their themes over to it. So if you would like to try them out, just head on over to the >> [**Cosmic-Themes**](https://cosmic-themes.org) "store" and grab the one(s) you like.
 
 ### Wrapping up
 
