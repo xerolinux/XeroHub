@@ -37,6 +37,14 @@ Also, note the issue with the *Cosmic Greeter*, it could be that the maintainer 
 
 If you are an **Arch** power user and prefer to do it the *manual way*, you can. Just head on over to the wonderful [**ArchWiki**](https://wiki.archlinux.org/title/COSMIC) and follow the instructions there. I would recommend it over **ArchInstall** as you can do more and have more flexibility.
 
+### Customization
+
+As we know, **Cosmic DE** will be highly customizable out of the box. It comes between **Gnome** and **KDE Plasma**. Meaning we can modify it more than the former but less than the latter. Still in my opinion that's awesome. There are some caveat however, those being that **Qt** apps are still not fully supported eg. **Kvantum**, especially if you are used to the tried and true **Global Menu**. Also the Blur effect not yet there. Maybe in the future someone will add it ? I dunno about **LibAdwaita** though, from what I have heard, support coming not yet there.
+
+![CosmicThemes](https://i.imgur.com/R8Io5eQ.png)
+
+So if you are looking for consistency, it will be a long while before we can achieve it. Still, this did not stop some theme developers from porting their themes to it. If you want to try them, just head on over to the >> [**Cosmic-Themes**](https://cosmic-themes.org) site and grab the one(s) you like. Keep in mind that they are work in progress...
+
 ### Wrapping up
 
 As mentioned, I would highly recommend you install **Cosmic DE** on a spare non-essential device since it's still Alpha 1 software. And you will need modern enough hardware that has full support for **Wayland** since it doesn't nor will it ever have **X11** support.

@@ -87,6 +87,20 @@
 &lt;p&gt;If you are an &lt;strong&gt;Arch&lt;/strong&gt; power user and prefer to do it the &lt;em&gt;manual way&lt;/em&gt;, you can. Just head on over to the wonderful &lt;a href=&#34;https://wiki.archlinux.org/title/COSMIC&#34; target=&#34;_blank&#34;&gt;&lt;strong&gt;ArchWiki&lt;/strong&gt;&lt;/a&gt; and follow the instructions there. I would recommend it over &lt;strong&gt;ArchInstall&lt;/strong&gt; as you can do more and have more flexibility.&lt;/p&gt;
 
 
+&lt;h3 class=&#34;relative group&#34;&gt;Customization 
+    &lt;div id=&#34;customization&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+    
+&lt;/h3&gt;
+&lt;p&gt;As we know, &lt;strong&gt;Cosmic DE&lt;/strong&gt; will be highly customizable out of the box. It comes between &lt;strong&gt;Gnome&lt;/strong&gt; and &lt;strong&gt;KDE Plasma&lt;/strong&gt;. Meaning we can modify it more than the former but less than the latter. Still in my opinion that&amp;rsquo;s awesome. There are some caveat however, those being that &lt;strong&gt;Qt&lt;/strong&gt; apps are still not fully supported eg. &lt;strong&gt;Kvantum&lt;/strong&gt;, especially if you are used to the tried and true &lt;strong&gt;Global Menu&lt;/strong&gt;. Also the Blur effect not yet there. Maybe in the future someone will add it ? I dunno about &lt;strong&gt;LibAdwaita&lt;/strong&gt; though, from what I have heard, support coming not yet there.&lt;/p&gt;
+&lt;p&gt;
+  &lt;figure&gt;
+    &lt;img class=&#34;my-0 rounded-md&#34; loading=&#34;lazy&#34; src=&#34;https://i.imgur.com/R8Io5eQ.png&#34; alt=&#34;CosmicThemes&#34; /&gt;
+    
+  &lt;/figure&gt;
+&lt;/p&gt;
+&lt;p&gt;So if you are looking for consistency, it will be a long while before we can achieve it. Still, this did not stop some theme developers from porting their themes to it. If you want to try them, just head on over to the &amp;raquo; &lt;a href=&#34;https://cosmic-themes.org&#34; target=&#34;_blank&#34;&gt;&lt;strong&gt;Cosmic-Themes&lt;/strong&gt;&lt;/a&gt; site and grab the one(s) you like. Keep in mind that they are work in progress&amp;hellip;&lt;/p&gt;
+
+
 &lt;h3 class=&#34;relative group&#34;&gt;Wrapping up 
     &lt;div id=&#34;wrapping-up&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
     
