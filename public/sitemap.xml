@@ -4,13 +4,19 @@
 
   <url>
     <loc>https://xerolinux.xyz/</loc>
-    <lastmod>2024-08-27T00:00:00+00:00</lastmod>
+    <lastmod>2024-09-04T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://xerolinux.xyz/posts/</loc>
-    <lastmod>2024-08-27T00:00:00+00:00</lastmod>
+    <lastmod>2024-09-04T00:00:00+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://xerolinux.xyz/posts/arch-cosmic/</loc>
+    <lastmod>2024-09-04T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>

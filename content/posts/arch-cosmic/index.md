@@ -1,0 +1,50 @@
+---
+title: "Cosmic Arch"
+date: 2024-09-04
+draft: false
+description: "Install Cosmic DE on ArchLinux"
+tags: ["Cosmic", "Arch", "ArchLinux", "ArchInstall", "Linux"]
+---
+### What is Cosmic DE?
+
+The [**Cosmic DE**](https://blog.system76.com/post/cosmic-the-road-to-alpha/) is a new desktop environment being developed by the team behind **Pop!_OS**, a popular Linux distribution. Unlike their previous efforts, which built upon **GNOME**, the **Cosmic DE** is a ground-up development using **Rust** and a custom compositor built on **Smithay**, aiming for a lightweight, responsive, and customizable user interface.
+
+It focuses on a keyboard-centric workflow, tiling window management, and a more integrated experience with the **Pop!_OS** ecosystem, enhancing performance and user control. It aims to offer a modern alternative to existing desktop environments, designed specifically for Linux users' needs.
+
+### Installing Cosmic on Arch
+
+{{< alert icon="fire" cardColor="#993350" iconColor="#1d3557" textColor="#f1faee" >}}
+**Notice :** Project is still in **Alpha 1** stages, please don't use as a daily driver. It's still missing a ton of features. Install at your own risk !
+{{< /alert >}}
+
+When it comes to installing **Cosmic DE**, it has now become as easy as ever thanks to the **ArchInstall** script included on every *Arch ISO* starting v2.8.5. Yes, even though it's still in **Alpha** stages, for whatever reason, it has now made its way to the *Extra* repo on **Arch**.
+
+Now I will not be going through how to use the **ArchInstall** script here, just watch the included video which covers it all. If you chose this Distro, then you should know how to use it by now lol.
+
+{{< youtube dhqQjMQznSo >}}
+
+As you can see from the video above, all you have to do it grab the latest [**Arch ISO**](https://archlinux.org/download/), boot into it and launch the **ArchInstall** then go through the motions as usual. I would change up the command a bit like so, making sure we are always running the latest version of the script :
+
+```Bash
+pacman -Syy archinstall && archinstall --advanced
+```
+
+As mentioned in the video the `--advanced` flag is required to unlock the **Cosmic DE** desktop profile. The reason it's hidden should be clear enough, in case it's not, well it's because it's in Alpha and no one sane enough who requires any kind of stability should install it.
+
+![CosmicDE](https://i.imgur.com/MY5yecT.png)
+
+Also, note the issue with the *Cosmic Greeter*, it could be that the maintainer of the packages on **Arch** forgot to include it or something else. If you are trying it way after this was written, maybe it's been fixed, if not then do as the video says, after reboot once in the TTY install the Display/Login Manager of your choice, could be **LightDM**, **SDDM** or even **GDM** it's all up to you..
+
+If you are an **Arch** power user and prefer to do it the *manual way*, you can. Just head on over to the wonderful [**ArchWiki**](https://wiki.archlinux.org/title/COSMIC) and follow the instructions there. I would recommend it over **ArchInstall** as you can do more and have more flexibility.
+
+### Wrapping up
+
+As mentioned, I would highly recommend you install **Cosmic DE** on a spare non-essential device since it's still Alpha 1 software. And you will need modern enough hardware that has full support for **Wayland** since it doesn't nor will it ever have **X11** support.
+
+That said, now that you have it installed, have fun, and don't forget to report issues upstream to the devs. The more you do, the faster they will get fixed.
+
+Finally if you don't want to use it on **Arch**, you can grab their Official **Pop!_OS 24.04 LTS alpha** ISO from >> [**Cosmic Downloads**](https://system76.com/cosmic). They also have instructions for other Distros like **Fedora**, **NixOS** and more...
+
+I hope this post has proven to be useful.
+
+Cheers !
