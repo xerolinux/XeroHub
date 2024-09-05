@@ -7,7 +7,53 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>Copy, _right?_ 🫨</copyright>
-    <lastBuildDate>Wed, 04 Sep 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://xerolinux.xyz/tags/arch/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 05 Sep 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://xerolinux.xyz/tags/arch/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Build a Fresh Arch ISO</title>
+      <link>https://xerolinux.xyz/posts/build-archiso/</link>
+      <pubDate>Thu, 05 Sep 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://xerolinux.xyz/posts/build-archiso/</guid>
+      <description>
+
+&lt;h3 class=&#34;relative group&#34;&gt;Information 
+    &lt;div id=&#34;information&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+    
+&lt;/h3&gt;
+&lt;p&gt;This we can build a fresh &lt;strong&gt;Arch ISO&lt;/strong&gt; without having to wait for one every month. I mean we can always do that n grab it from &lt;a href=&#34;https://archlinux.org/download/&#34; target=&#34;_blank&#34;&gt;&lt;strong&gt;ArchLinux&lt;/strong&gt;&lt;/a&gt;{:target=&amp;quot;_blank&amp;quot;}. Still knowing how to build a fresh one will always prove to be useful in a bind, am I right ?&lt;/p&gt;
+&lt;p align=&#34;center&#34;&gt;
+    &lt;img width=&#34;500&#34; src=&#34;https://i.imgur.com/QWqMIsr.png&#34; alt=&#34;logo&#34;&gt;
+&lt;/p&gt;
+
+
+&lt;h3 class=&#34;relative group&#34;&gt;Let&amp;rsquo;s do this 🚀 
+    &lt;div id=&#34;lets-do-this-&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+    
+&lt;/h3&gt;
+&lt;p&gt;First off we need to grab a few packages in order to be able to build the ISO.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo pacman -S archiso
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Create a &lt;code&gt;MyArch&lt;/code&gt; folder anywhere, in my case I did it in &lt;code&gt;Documents&lt;/code&gt;, then copy over &lt;code&gt;releng&lt;/code&gt; folder from &lt;code&gt;/usr/share/archiso/configs&lt;/code&gt; then &lt;code&gt;cd&lt;/code&gt; into it like so :&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;mkdir -p ~/Documents/MyArch
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;cp -rf /usr/share/archiso/configs/releng ~/Documents/MyArch/
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;cd&lt;/span&gt; ~/Documents/MyArch/
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Now we need create two folders in our home directory or anywhere else, up to you, one called &lt;code&gt;work&lt;/code&gt; for placing extracted files, another called &lt;code&gt;out&lt;/code&gt; where final ISO will be located.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;mkdir ~/work &lt;span class=&#34;o&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; mkdir ~/out
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Now that it&amp;rsquo;s all done we can proceed to building a fresh new &amp;amp; updated &lt;strong&gt;ArchISO&lt;/strong&gt;. Just use the command below and watch the magic happen.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo mkarchiso -v -w ~/work -o ~/out releng
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Finally we can delete the work directory to save space. just do &lt;code&gt;sudo rm -rf ~/work/&lt;/code&gt;.&lt;/p&gt;
+
+
+&lt;h3 class=&#34;relative group&#34;&gt;Wrapping up 
+    &lt;div id=&#34;wrapping-up&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+    
+&lt;/h3&gt;
+&lt;p&gt;Now that we have an idea on how to build the &lt;strong&gt;Arch ISO&lt;/strong&gt;, we can take it to another level. Yes, this is where most &lt;em&gt;Arch-Based&lt;/em&gt; distros like &lt;strong&gt;XeroLinux&lt;/strong&gt; begin. We can start modifying the &lt;code&gt;packages.x86_64&lt;/code&gt; file inside &lt;code&gt;releng&lt;/code&gt; folder adding more and more packages we might need to be included on the ISO out the box.&lt;/p&gt;
+&lt;p&gt;Just keep in mind that in order to get the &lt;code&gt;DE/WM&lt;/code&gt; you want on the ISO a lot more work is involved. But now you get the idea. Have fun, I know I will 🚀&lt;/p&gt;
+&lt;p&gt;That&amp;rsquo;s it !&lt;/p&gt;
+</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/build-archiso/featured.webp" />
+    </item>
+    
     <item>
       <title>Cosmic Arch</title>
       <link>https://xerolinux.xyz/posts/arch-cosmic/</link>
