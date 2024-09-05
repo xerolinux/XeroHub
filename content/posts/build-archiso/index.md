@@ -7,7 +7,7 @@ tags: ["Arch", "ArchLinux", "ArchISO", "Linux"]
 ---
 ### Information
 
-This we can build a fresh **Arch ISO** without having to wait for one every month. I mean we can always do that n grab it from [**ArchLinux**](https://archlinux.org/download/). Still knowing how to build a fresh one will always prove to be useful in a bind, am I right ?
+Sick & Tired of waiting a whole month before you can grab a fresh copy of the **Arch** ISO ?Well fear not coz with this guide you will be able to build a fresh one. I mean we can always do that n grab it from [**ArchLinux**](https://archlinux.org/download/). Still knowing how to build a fresh one will always prove to be useful in a bind, am I right ?
 
 <p align="center">
     <img width="500" src="https://i.imgur.com/QWqMIsr.png" alt="logo">
