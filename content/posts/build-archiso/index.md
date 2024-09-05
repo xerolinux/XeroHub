@@ -13,7 +13,7 @@ This we can build a fresh **Arch ISO** without having to wait for one every mont
     <img width="500" src="https://i.imgur.com/QWqMIsr.png" alt="logo">
 </p>
 
-### Let's do this 🚀
+### Let's do this
 
 First off we need to grab a few packages in order to be able to build the ISO.
 

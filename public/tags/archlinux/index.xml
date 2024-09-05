@@ -26,8 +26,8 @@
 &lt;/p&gt;
 
 
-&lt;h3 class=&#34;relative group&#34;&gt;Let&amp;rsquo;s do this 🚀 
-    &lt;div id=&#34;lets-do-this-&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+&lt;h3 class=&#34;relative group&#34;&gt;Let&amp;rsquo;s do this 
+    &lt;div id=&#34;lets-do-this&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
     
 &lt;/h3&gt;
 &lt;p&gt;First off we need to grab a few packages in order to be able to build the ISO.&lt;/p&gt;
