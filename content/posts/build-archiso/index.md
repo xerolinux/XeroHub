@@ -15,7 +15,7 @@ Sick & Tired of waiting a whole month before you can grab a fresh copy of the **
 
 ### Let's do this
 
-First off we need to grab a few packages in order to be able to build the ISO.
+First off we need to grab a few packages in order to be able to build the ISO. Keep in mind that in order to do this you must be on **Arch**. In case you aren't, that's where [**Distrobox**](https://distrobox.it/compatibility/) comes in really handy.
 
 ```Bash
 sudo pacman -S archiso
