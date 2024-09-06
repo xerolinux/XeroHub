@@ -37,7 +37,7 @@ Finally we can delete the work directory to save space. just do `sudo rm -rf ~/w
 
 ### Wrapping up
 
-In case you are using the **XeroLinux** toolkit or Distro, make sure to update, coz as is my nature, I added the option to all that with a single click, for convenience. Test it out and as is the norm by now, if you encounter any issues report them on **Github**.
+In case you are using the **XeroLinux** toolkit or Distro, make sure to update, coz as is my nature, I added the option to all that with a single click. Test it out and as is the norm by now, if you encounter any issues report them on **Github**.
 
 <p align="center">
     <img width="100%" src="https://i.imgur.com/FcsiONm.png" alt="logo">
