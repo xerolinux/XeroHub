@@ -109,7 +109,7 @@
     "keywords": ["Arch","ArchLinux","ArchISO","Linux"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "340"
+    "wordCount": "304"
   }]
   </script>
 
@@ -1249,14 +1249,10 @@
 </h3>
 <p>First off we need to grab a few packages in order to be able to build the ISO. Keep in mind that in order to do this you must be on <strong>Arch</strong>. In case you aren&rsquo;t, that&rsquo;s where <a href="https://distrobox.it/compatibility/" target="_blank"><strong>Distrobox</strong></a> comes in really handy.</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Bash" data-lang="Bash"><span class="line"><span class="cl">sudo pacman -S archiso
-</span></span></code></pre></div><p>Create a <code>MyArch</code> folder anywhere, in my case I did it in <code>Documents</code>, then copy over <code>releng</code> folder from <code>/usr/share/archiso/configs</code> then <code>cd</code> into it like so :</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Bash" data-lang="Bash"><span class="line"><span class="cl">mkdir -p ~/Documents/MyArch
-</span></span><span class="line"><span class="cl">cp -rf /usr/share/archiso/configs/releng ~/Documents/MyArch/
-</span></span><span class="line"><span class="cl"><span class="nb">cd</span> ~/Documents/MyArch/
-</span></span></code></pre></div><p>Now we need create two folders in our home directory or anywhere else, up to you, one called <code>work</code> for placing extracted files, another called <code>out</code> where final ISO will be located.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Bash" data-lang="Bash"><span class="line"><span class="cl">mkdir ~/work <span class="o">&amp;&amp;</span> mkdir ~/out
+</span></span></code></pre></div><p>Now we need create two folders in our home directory or anywhere else, up to you, one called <code>ArchWork</code> for placing extracted files, another called <code>ArchOut</code> where final ISO will be located.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Bash" data-lang="Bash"><span class="line"><span class="cl">mkdir ~/ArchWork <span class="o">&amp;&amp;</span> mkdir ~/ArchOut
 </span></span></code></pre></div><p>Now that it&rsquo;s all done we can proceed to building a fresh new &amp; updated <strong>ArchISO</strong>. Just use the command below and watch the magic happen.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Bash" data-lang="Bash"><span class="line"><span class="cl">sudo mkarchiso -v -w ~/work -o ~/out releng
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Bash" data-lang="Bash"><span class="line"><span class="cl">sudo mkarchiso -v -w ~/ArchWork -o ~/ArchOut /usr/share/archiso/configs/releng
 </span></span></code></pre></div><p>Finally we can delete the work directory to save space. just do <code>sudo rm -rf ~/work/</code>.</p>
 
 

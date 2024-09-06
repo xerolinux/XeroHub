@@ -21,24 +21,16 @@ First off we need to grab a few packages in order to be able to build the ISO. K
 sudo pacman -S archiso
 ```
 
-Create a `MyArch` folder anywhere, in my case I did it in `Documents`, then copy over `releng` folder from `/usr/share/archiso/configs` then `cd` into it like so :
+Now we need create two folders in our home directory or anywhere else, up to you, one called `ArchWork` for placing extracted files, another called `ArchOut` where final ISO will be located.
 
 ```Bash
-mkdir -p ~/Documents/MyArch
-cp -rf /usr/share/archiso/configs/releng ~/Documents/MyArch/
-cd ~/Documents/MyArch/
-```
-
-Now we need create two folders in our home directory or anywhere else, up to you, one called `work` for placing extracted files, another called `out` where final ISO will be located.
-
-```Bash
-mkdir ~/work && mkdir ~/out
+mkdir ~/ArchWork && mkdir ~/ArchOut
 ```
 
 Now that it's all done we can proceed to building a fresh new & updated **ArchISO**. Just use the command below and watch the magic happen.
 
 ```Bash
-sudo mkarchiso -v -w ~/work -o ~/out releng
+sudo mkarchiso -v -w ~/ArchWork -o ~/ArchOut /usr/share/archiso/configs/releng
 ```
 
 Finally we can delete the work directory to save space. just do `sudo rm -rf ~/work/`.
