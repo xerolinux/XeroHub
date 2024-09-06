@@ -37,8 +37,12 @@ Finally we can delete the work directory to save space. just do `sudo rm -rf ~/w
 
 ### Wrapping up
 
-Now that we have an idea on how to build the **Arch ISO**, we can take it to another level. Yes, this is where most *Arch-Based* distros like **XeroLinux** begin. We can start modifying the `packages.x86_64` file inside `releng` folder adding more and more packages we might need to be included on the ISO out the box.
+In case you are using the **XeroLinux** toolkit or Distro, make sure to update, coz as is my nature, I added the option to all that with a single click, for convenience. Test it out and as is the norm by now, if you encounter any issues report them on **Github**.
 
-Just keep in mind that in order to get the `DE/WM` you want on the ISO a lot more work is involved. But now you get the idea. Have fun, I know I will 🚀
+<p align="center">
+    <img width="100%" src="https://i.imgur.com/FcsiONm.png" alt="logo">
+</p>
 
-That's it !
+Now that we have an idea on how to build the **Arch ISO**, You can take it to another level. Yes, this is how most *Arch-Based* distros like **XeroLinux** began. Just keep in mind that getting the `DE/WM` you want on the ISO requires a lot more work.
+
+Have fun, I know I will 🚀
