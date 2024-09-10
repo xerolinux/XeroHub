@@ -31,11 +31,25 @@ pacman -Syy archinstall && archinstall --advanced
 
 As mentioned in the video the `--advanced` flag is required to unlock the **Cosmic DE** desktop profile. The reason it's hidden should be clear enough, in case it's not, well it's because it's in Alpha and no one sane enough who requires any kind of stability should install it.
 
-![CosmicDE](https://i.imgur.com/MY5yecT.png)
+![CosmicDE](https://i.imgur.com/Fvl9uRU.png)
 
-Also, note the issue with the *Cosmic Greeter*, it could be that the maintainer of the packages on **Arch** forgot to include it or something else. If you are trying it way after this was written, maybe it's been fixed, if not then do as the video says, after reboot once in the TTY install the Display/Login Manager of your choice, could be **LightDM**, **SDDM** or even **GDM** it's all up to you..
+Also, note the issue with the *Cosmic Greeter*, it could be that the maintainer of the packages on **Arch** forgot to include it or something else. If you are trying it way after this was written, maybe it's been fixed, if not then do as shown below to fix it.
 
-If you are an **Arch** power user and prefer to do it the *manual way*, you can. Just head on over to the wonderful [**ArchWiki**](https://wiki.archlinux.org/title/COSMIC) and follow the instructions there. I would recommend it over **ArchInstall** as you can do more and have more flexibility.
+Once all packages are installed, **Before** you exit *chroot* n reboot use this command :
+
+```Bash
+pacman -Syy cosmic-greeter
+systemctl enable cosmic-greeter.service
+```
+
+Now that this is fixed, I would like to take this oportunity to mention that there's 2 more missing packages that **ArchInstall** failed to include, those are `xdg-user-dirs-update` which is resonsible for creating you user folders, like `Dicuments, Pictures, Videos...`, and finally the `power-daemon` tool that allows you to switch power profiles, so to fix those do this...
+
+```Bash
+pacman -Syy xdg-user-dirs-update power-profiles-daemon
+xdg-user-dirs-update && systemctl enable power-profiles-daemon.service
+```
+
+Done ! All missing essential features fixed. Keep in mind that it's only natural for them to exist, project is still in Alpha stages, a lot of things need to be addressed. Give it time to mature before judging it, and more importantly report all the bugs related to it or any feature requests you might have upstream, to the [**Cosmic Bug Tracker**](https://github.com/pop-os)
 
 ### Customization
 
@@ -51,7 +65,7 @@ So if you are looking for consistency, it will be a long while before we can ach
 
 As mentioned, I would highly recommend you install **Cosmic DE** on a spare non-essential device since it's still Alpha 1 software. And you will need modern enough hardware that has full support for **Wayland** since it doesn't nor will it ever have **X11** support.
 
-That said, now that you have it installed, have fun, and don't forget to report issues upstream to the devs. The more you do, the faster they will get fixed.
+However, if you are an **Arch** power user and prefer to do it the *manual way*, you can. Just head on over to the wonderful [**ArchWiki**](https://wiki.archlinux.org/title/COSMIC) and follow the instructions there. I would recommend it over **ArchInstall** as you can do more and have more flexibility.
 
 Finally if you don't want to use it on **Arch**, you can grab their Official **Pop!_OS 24.04 LTS alpha** ISO from >> [**Cosmic Downloads**](https://system76.com/cosmic). They also have instructions for other Distros like **Fedora**, **NixOS** and more...
 

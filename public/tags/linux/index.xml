@@ -124,12 +124,18 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;As mentioned in the video the &lt;code&gt;--advanced&lt;/code&gt; flag is required to unlock the &lt;strong&gt;Cosmic DE&lt;/strong&gt; desktop profile. The reason it&amp;rsquo;s hidden should be clear enough, in case it&amp;rsquo;s not, well it&amp;rsquo;s because it&amp;rsquo;s in Alpha and no one sane enough who requires any kind of stability should install it.&lt;/p&gt;
 &lt;p&gt;
   &lt;figure&gt;
-    &lt;img class=&#34;my-0 rounded-md&#34; loading=&#34;lazy&#34; src=&#34;https://i.imgur.com/MY5yecT.png&#34; alt=&#34;CosmicDE&#34; /&gt;
+    &lt;img class=&#34;my-0 rounded-md&#34; loading=&#34;lazy&#34; src=&#34;https://i.imgur.com/Fvl9uRU.png&#34; alt=&#34;CosmicDE&#34; /&gt;
     
   &lt;/figure&gt;
 &lt;/p&gt;
-&lt;p&gt;Also, note the issue with the &lt;em&gt;Cosmic Greeter&lt;/em&gt;, it could be that the maintainer of the packages on &lt;strong&gt;Arch&lt;/strong&gt; forgot to include it or something else. If you are trying it way after this was written, maybe it&amp;rsquo;s been fixed, if not then do as the video says, after reboot once in the TTY install the Display/Login Manager of your choice, could be &lt;strong&gt;LightDM&lt;/strong&gt;, &lt;strong&gt;SDDM&lt;/strong&gt; or even &lt;strong&gt;GDM&lt;/strong&gt; it&amp;rsquo;s all up to you..&lt;/p&gt;
-&lt;p&gt;If you are an &lt;strong&gt;Arch&lt;/strong&gt; power user and prefer to do it the &lt;em&gt;manual way&lt;/em&gt;, you can. Just head on over to the wonderful &lt;a href=&#34;https://wiki.archlinux.org/title/COSMIC&#34; target=&#34;_blank&#34;&gt;&lt;strong&gt;ArchWiki&lt;/strong&gt;&lt;/a&gt; and follow the instructions there. I would recommend it over &lt;strong&gt;ArchInstall&lt;/strong&gt; as you can do more and have more flexibility.&lt;/p&gt;
+&lt;p&gt;Also, note the issue with the &lt;em&gt;Cosmic Greeter&lt;/em&gt;, it could be that the maintainer of the packages on &lt;strong&gt;Arch&lt;/strong&gt; forgot to include it or something else. If you are trying it way after this was written, maybe it&amp;rsquo;s been fixed, if not then do as shown below to fix it.&lt;/p&gt;
+&lt;p&gt;Once all packages are installed, &lt;strong&gt;Before&lt;/strong&gt; you exit &lt;em&gt;chroot&lt;/em&gt; n reboot use this command :&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;pacman -Syy cosmic-greeter
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;systemctl &lt;span class=&#34;nb&#34;&gt;enable&lt;/span&gt; cosmic-greeter.service
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Now that this is fixed, I would like to take this oportunity to mention that there&amp;rsquo;s 2 more missing packages that &lt;strong&gt;ArchInstall&lt;/strong&gt; failed to include, those are &lt;code&gt;xdg-user-dirs-update&lt;/code&gt; which is resonsible for creating you user folders, like &lt;code&gt;Dicuments, Pictures, Videos...&lt;/code&gt;, and finally the &lt;code&gt;power-daemon&lt;/code&gt; tool that allows you to switch power profiles, so to fix those do this&amp;hellip;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;pacman -Syy xdg-user-dirs-update power-profiles-daemon
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;xdg-user-dirs-update &lt;span class=&#34;o&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; systemctl &lt;span class=&#34;nb&#34;&gt;enable&lt;/span&gt; power-profiles-daemon.service
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Done ! All missing essential features fixed. Keep in mind that it&amp;rsquo;s only natural for them to exist, project is still in Alpha stages, a lot of things need to be addressed. Give it time to mature before judging it, and more importantly report all the bugs related to it or any feature requests you might have upstream, to the &lt;a href=&#34;https://github.com/pop-os&#34; target=&#34;_blank&#34;&gt;&lt;strong&gt;Cosmic Bug Tracker&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
 
 
 &lt;h3 class=&#34;relative group&#34;&gt;Customization 
@@ -152,7 +158,7 @@
     
 &lt;/h3&gt;
 &lt;p&gt;As mentioned, I would highly recommend you install &lt;strong&gt;Cosmic DE&lt;/strong&gt; on a spare non-essential device since it&amp;rsquo;s still Alpha 1 software. And you will need modern enough hardware that has full support for &lt;strong&gt;Wayland&lt;/strong&gt; since it doesn&amp;rsquo;t nor will it ever have &lt;strong&gt;X11&lt;/strong&gt; support.&lt;/p&gt;
-&lt;p&gt;That said, now that you have it installed, have fun, and don&amp;rsquo;t forget to report issues upstream to the devs. The more you do, the faster they will get fixed.&lt;/p&gt;
+&lt;p&gt;However, if you are an &lt;strong&gt;Arch&lt;/strong&gt; power user and prefer to do it the &lt;em&gt;manual way&lt;/em&gt;, you can. Just head on over to the wonderful &lt;a href=&#34;https://wiki.archlinux.org/title/COSMIC&#34; target=&#34;_blank&#34;&gt;&lt;strong&gt;ArchWiki&lt;/strong&gt;&lt;/a&gt; and follow the instructions there. I would recommend it over &lt;strong&gt;ArchInstall&lt;/strong&gt; as you can do more and have more flexibility.&lt;/p&gt;
 &lt;p&gt;Finally if you don&amp;rsquo;t want to use it on &lt;strong&gt;Arch&lt;/strong&gt;, you can grab their Official &lt;strong&gt;Pop!_OS 24.04 LTS alpha&lt;/strong&gt; ISO from &amp;raquo; &lt;a href=&#34;https://system76.com/cosmic&#34; target=&#34;_blank&#34;&gt;&lt;strong&gt;Cosmic Downloads&lt;/strong&gt;&lt;/a&gt;. They also have instructions for other Distros like &lt;strong&gt;Fedora&lt;/strong&gt;, &lt;strong&gt;NixOS&lt;/strong&gt; and more&amp;hellip;&lt;/p&gt;
 &lt;p&gt;I hope this post has proven to be useful.&lt;/p&gt;
 &lt;p&gt;Cheers !&lt;/p&gt;
@@ -1686,7 +1692,7 @@
 
       &lt;/span&gt;
       &lt;div id=&#34;github-8e299a5487c47095e16d57805c99878e-stargazers&#34; class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
-        295
+        296
       &lt;/div&gt;
 
       &lt;span class=&#34;text-md mr-1 text-neutral-800 dark:text-neutral&#34;&gt;
@@ -2551,7 +2557,7 @@
 
       &lt;/span&gt;
       &lt;div id=&#34;github-35acb2467e8c5b7be245dd5d8ae6184d-stargazers&#34; class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
-        770
+        772
       &lt;/div&gt;
 
       &lt;span class=&#34;text-md mr-1 text-neutral-800 dark:text-neutral&#34;&gt;
@@ -2944,7 +2950,7 @@
 
       &lt;/span&gt;
       &lt;div id=&#34;github-dd438b669639d3054eea6835139e9c68-stargazers&#34; class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
-        41840
+        41893
       &lt;/div&gt;
 
       &lt;span class=&#34;text-md mr-1 text-neutral-800 dark:text-neutral&#34;&gt;
@@ -2957,7 +2963,7 @@
 
       &lt;/span&gt;
       &lt;div id=&#34;github-dd438b669639d3054eea6835139e9c68-forks&#34; class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
-        2048
+        2052
       &lt;/div&gt;
 
     &lt;/div&gt;
@@ -3616,7 +3622,7 @@ Shaders: Enhance your gaming experience with graphical shaders. Find them in the
 
       &lt;/span&gt;
       &lt;div id=&#34;github-1892c8fc467600df127ce836daf86e2a-stargazers&#34; class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
-        3679
+        3702
       &lt;/div&gt;
 
       &lt;span class=&#34;text-md mr-1 text-neutral-800 dark:text-neutral&#34;&gt;
@@ -4004,7 +4010,7 @@ Shaders: Enhance your gaming experience with graphical shaders. Find them in the
 
       &lt;/span&gt;
       &lt;div id=&#34;github-83f7d6739486881e48a315f6ff62190e-stargazers&#34; class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
-        43
+        44
       &lt;/div&gt;
 
       &lt;span class=&#34;text-md mr-1 text-neutral-800 dark:text-neutral&#34;&gt;
@@ -4137,7 +4143,7 @@ Shaders: Enhance your gaming experience with graphical shaders. Find them in the
 
       &lt;/span&gt;
       &lt;div id=&#34;github-960f7422cbeadeb866eb2380db36e9a2-stargazers&#34; class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
-        357
+        366
       &lt;/div&gt;
 
       &lt;span class=&#34;text-md mr-1 text-neutral-800 dark:text-neutral&#34;&gt;
@@ -4675,7 +4681,7 @@ Shaders: Enhance your gaming experience with graphical shaders. Find them in the
 
       &lt;/span&gt;
       &lt;div id=&#34;github-048d83c2c4c5d1181ccc6b118c336300-stargazers&#34; class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
-        43605
+        43647
       &lt;/div&gt;
 
       &lt;span class=&#34;text-md mr-1 text-neutral-800 dark:text-neutral&#34;&gt;
@@ -4688,7 +4694,7 @@ Shaders: Enhance your gaming experience with graphical shaders. Find them in the
 
       &lt;/span&gt;
       &lt;div id=&#34;github-048d83c2c4c5d1181ccc6b118c336300-forks&#34; class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
-        2333
+        2338
       &lt;/div&gt;
 
     &lt;/div&gt;
@@ -5095,7 +5101,7 @@ Shaders: Enhance your gaming experience with graphical shaders. Find them in the
 
       &lt;/span&gt;
       &lt;div id=&#34;github-ba49e4e5b503b677aa818e3c0fe87165-stargazers&#34; class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
-        43
+        44
       &lt;/div&gt;
 
       &lt;span class=&#34;text-md mr-1 text-neutral-800 dark:text-neutral&#34;&gt;
@@ -5175,7 +5181,7 @@ Shaders: Enhance your gaming experience with graphical shaders. Find them in the
 
       &lt;/span&gt;
       &lt;div id=&#34;github-4b2b060cb46e0a0142c2701566b5e2c2-stargazers&#34; class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
-        16335
+        16347
       &lt;/div&gt;
 
       &lt;span class=&#34;text-md mr-1 text-neutral-800 dark:text-neutral&#34;&gt;
@@ -5188,7 +5194,7 @@ Shaders: Enhance your gaming experience with graphical shaders. Find them in the
 
       &lt;/span&gt;
       &lt;div id=&#34;github-4b2b060cb46e0a0142c2701566b5e2c2-forks&#34; class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
-        2309
+        2310
       &lt;/div&gt;
 
     &lt;/div&gt;
@@ -5962,7 +5968,7 @@ Shaders: Enhance your gaming experience with graphical shaders. Find them in the
 
       &lt;/span&gt;
       &lt;div id=&#34;github-335bc09a11197591f1ac4202a70da0ba-stargazers&#34; class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
-        262
+        276
       &lt;/div&gt;
 
       &lt;span class=&#34;text-md mr-1 text-neutral-800 dark:text-neutral&#34;&gt;
@@ -5975,7 +5981,7 @@ Shaders: Enhance your gaming experience with graphical shaders. Find them in the
 
       &lt;/span&gt;
       &lt;div id=&#34;github-335bc09a11197591f1ac4202a70da0ba-forks&#34; class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
-        25
+        26
       &lt;/div&gt;
 
     &lt;/div&gt;
@@ -6172,7 +6178,7 @@ Shaders: Enhance your gaming experience with graphical shaders. Find them in the
 
       &lt;/span&gt;
       &lt;div id=&#34;github-2ef9a4269d317def170edabf1a7ec947-stargazers&#34; class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
-        107152
+        107209
       &lt;/div&gt;
 
       &lt;span class=&#34;text-md mr-1 text-neutral-800 dark:text-neutral&#34;&gt;
@@ -6185,7 +6191,7 @@ Shaders: Enhance your gaming experience with graphical shaders. Find them in the
 
       &lt;/span&gt;
       &lt;div id=&#34;github-2ef9a4269d317def170edabf1a7ec947-forks&#34; class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
-        10350
+        10354
       &lt;/div&gt;
 
     &lt;/div&gt;
@@ -6260,7 +6266,7 @@ Shaders: Enhance your gaming experience with graphical shaders. Find them in the
 
       &lt;/span&gt;
       &lt;div id=&#34;github-1305ea58e76e685e1b7863bc394c207f-stargazers&#34; class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
-        18293
+        18310
       &lt;/div&gt;
 
       &lt;span class=&#34;text-md mr-1 text-neutral-800 dark:text-neutral&#34;&gt;
@@ -6273,7 +6279,7 @@ Shaders: Enhance your gaming experience with graphical shaders. Find them in the
 
       &lt;/span&gt;
       &lt;div id=&#34;github-1305ea58e76e685e1b7863bc394c207f-forks&#34; class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
-        2475
+        2477
       &lt;/div&gt;
 
     &lt;/div&gt;
@@ -6403,7 +6409,7 @@ Shaders: Enhance your gaming experience with graphical shaders. Find them in the
 
       &lt;/span&gt;
       &lt;div id=&#34;github-12a0460d02150c7a086dac10a56b80ed-stargazers&#34; class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
-        12333
+        12351
       &lt;/div&gt;
 
       &lt;span class=&#34;text-md mr-1 text-neutral-800 dark:text-neutral&#34;&gt;
@@ -6416,7 +6422,7 @@ Shaders: Enhance your gaming experience with graphical shaders. Find them in the
 
       &lt;/span&gt;
       &lt;div id=&#34;github-12a0460d02150c7a086dac10a56b80ed-forks&#34; class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
-        1912
+        1916
       &lt;/div&gt;
 
     &lt;/div&gt;
@@ -6555,7 +6561,7 @@ Proxmox VE Helper-Scripts Database
 
       &lt;/span&gt;
       &lt;div id=&#34;github-33a752733b7cf7935c163efcf04a96c1-stargazers&#34; class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
-        43
+        44
       &lt;/div&gt;
 
       &lt;span class=&#34;text-md mr-1 text-neutral-800 dark:text-neutral&#34;&gt;
@@ -6755,7 +6761,7 @@ Proxmox VE Helper-Scripts Database
 
       &lt;/span&gt;
       &lt;div id=&#34;github-04244ad6c9c1dac42dbc9e0df83f85c4-stargazers&#34; class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
-        935
+        940
       &lt;/div&gt;
 
       &lt;span class=&#34;text-md mr-1 text-neutral-800 dark:text-neutral&#34;&gt;
@@ -7163,7 +7169,7 @@ Download Bluefin Aurora
 
       &lt;/span&gt;
       &lt;div id=&#34;github-e2697052f914cf610b2b9d5d5e94a310-stargazers&#34; class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
-        7433
+        7438
       &lt;/div&gt;
 
       &lt;span class=&#34;text-md mr-1 text-neutral-800 dark:text-neutral&#34;&gt;
@@ -7345,7 +7351,7 @@ Download Bluefin Aurora
 
       &lt;/span&gt;
       &lt;div id=&#34;github-8c5f7cf4ebc6a27cc9dd18c133eaf67b-stargazers&#34; class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
-        2629
+        2631
       &lt;/div&gt;
 
       &lt;span class=&#34;text-md mr-1 text-neutral-800 dark:text-neutral&#34;&gt;
@@ -7615,7 +7621,7 @@ Download Bluefin Aurora
 
       &lt;/span&gt;
       &lt;div id=&#34;github-d4629d5be933fe5b06f61e7e2b4973ce-stargazers&#34; class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
-        20039
+        20057
       &lt;/div&gt;
 
       &lt;span class=&#34;text-md mr-1 text-neutral-800 dark:text-neutral&#34;&gt;
@@ -7877,7 +7883,7 @@ Download Bluefin Aurora
 
       &lt;/span&gt;
       &lt;div id=&#34;github-359c471407630108af16a9bf1612d622-stargazers&#34; class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
-        11730
+        11734
       &lt;/div&gt;
 
       &lt;span class=&#34;text-md mr-1 text-neutral-800 dark:text-neutral&#34;&gt;
@@ -8033,7 +8039,7 @@ Download Bluefin Aurora
 
       &lt;/span&gt;
       &lt;div id=&#34;github-95784f9db36c1bd48c66366504913f55-stargazers&#34; class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
-        27067
+        27345
       &lt;/div&gt;
 
       &lt;span class=&#34;text-md mr-1 text-neutral-800 dark:text-neutral&#34;&gt;
@@ -8046,7 +8052,7 @@ Download Bluefin Aurora
 
       &lt;/span&gt;
       &lt;div id=&#34;github-95784f9db36c1bd48c66366504913f55-forks&#34; class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
-        1112
+        1126
       &lt;/div&gt;
 
     &lt;/div&gt;
@@ -8738,7 +8744,7 @@ Download Bluefin Aurora
 
       &lt;/span&gt;
       &lt;div id=&#34;github-3779791f9be93f712e396768a672133d-stargazers&#34; class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
-        2724
+        2727
       &lt;/div&gt;
 
       &lt;span class=&#34;text-md mr-1 text-neutral-800 dark:text-neutral&#34;&gt;
@@ -9120,7 +9126,7 @@ Download Bluefin Aurora
 
       &lt;/span&gt;
       &lt;div id=&#34;github-332ee8afae17adb75781b84a058a1d54-stargazers&#34; class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
-        918
+        919
       &lt;/div&gt;
 
       &lt;span class=&#34;text-md mr-1 text-neutral-800 dark:text-neutral&#34;&gt;
@@ -9281,7 +9287,7 @@ cd LightlyShaders; mkdir qt5build; cd qt5build; cmake ../ -DCMAKE_INSTALL_PREFIX
 
       &lt;/span&gt;
       &lt;div id=&#34;github-9035e4604f09af91fb89685b1e617483-stargazers&#34; class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
-        352
+        353
       &lt;/div&gt;
 
       &lt;span class=&#34;text-md mr-1 text-neutral-800 dark:text-neutral&#34;&gt;
@@ -9673,7 +9679,7 @@ cd LightlyShaders; mkdir qt5build; cd qt5build; cmake ../ -DCMAKE_INSTALL_PREFIX
 
       &lt;/span&gt;
       &lt;div id=&#34;github-2294faaf2680cd82062f8e3f92431994-stargazers&#34; class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
-        58122
+        58135
       &lt;/div&gt;
 
       &lt;span class=&#34;text-md mr-1 text-neutral-800 dark:text-neutral&#34;&gt;
@@ -9686,7 +9692,7 @@ cd LightlyShaders; mkdir qt5build; cd qt5build; cmake ../ -DCMAKE_INSTALL_PREFIX
 
       &lt;/span&gt;
       &lt;div id=&#34;github-2294faaf2680cd82062f8e3f92431994-forks&#34; class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
-        7773
+        7775
       &lt;/div&gt;
 
     &lt;/div&gt;
@@ -10107,7 +10113,7 @@ cd LightlyShaders; mkdir qt5build; cd qt5build; cmake ../ -DCMAKE_INSTALL_PREFIX
 
       &lt;/span&gt;
       &lt;div id=&#34;github-a5700e013dc098745bec4694622c84c6-stargazers&#34; class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
-        57593
+        57619
       &lt;/div&gt;
 
       &lt;span class=&#34;text-md mr-1 text-neutral-800 dark:text-neutral&#34;&gt;
@@ -10120,7 +10126,7 @@ cd LightlyShaders; mkdir qt5build; cd qt5build; cmake ../ -DCMAKE_INSTALL_PREFIX
 
       &lt;/span&gt;
       &lt;div id=&#34;github-a5700e013dc098745bec4694622c84c6-forks&#34; class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
-        3322
+        3323
       &lt;/div&gt;
 
     &lt;/div&gt;
@@ -10305,7 +10311,7 @@ cd LightlyShaders; mkdir qt5build; cd qt5build; cmake ../ -DCMAKE_INSTALL_PREFIX
 
       &lt;/span&gt;
       &lt;div id=&#34;github-44462de8c3180e34167cb64f269723f5-stargazers&#34; class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
-        754
+        755
       &lt;/div&gt;
 
       &lt;span class=&#34;text-md mr-1 text-neutral-800 dark:text-neutral&#34;&gt;
@@ -10451,7 +10457,7 @@ cd LightlyShaders; mkdir qt5build; cd qt5build; cmake ../ -DCMAKE_INSTALL_PREFIX
 
       &lt;/span&gt;
       &lt;div id=&#34;github-bf42297933615c069f3c01c1cac3521b-stargazers&#34; class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
-        60940
+        60955
       &lt;/div&gt;
 
       &lt;span class=&#34;text-md mr-1 text-neutral-800 dark:text-neutral&#34;&gt;
@@ -10568,7 +10574,7 @@ cd LightlyShaders; mkdir qt5build; cd qt5build; cmake ../ -DCMAKE_INSTALL_PREFIX
 
       &lt;/span&gt;
       &lt;div id=&#34;github-ca71a5e83707668542a12e863d6e8215-stargazers&#34; class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
-        1659
+        1661
       &lt;/div&gt;
 
       &lt;span class=&#34;text-md mr-1 text-neutral-800 dark:text-neutral&#34;&gt;
@@ -10581,7 +10587,7 @@ cd LightlyShaders; mkdir qt5build; cd qt5build; cmake ../ -DCMAKE_INSTALL_PREFIX
 
       &lt;/span&gt;
       &lt;div id=&#34;github-ca71a5e83707668542a12e863d6e8215-forks&#34; class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
-        67
+        68
       &lt;/div&gt;
 
     &lt;/div&gt;
@@ -10810,7 +10816,7 @@ cd LightlyShaders; mkdir qt5build; cd qt5build; cmake ../ -DCMAKE_INSTALL_PREFIX
 
       &lt;/span&gt;
       &lt;div id=&#34;github-c287f82a6cb05c4745ec17da4ed0bd20-stargazers&#34; class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
-        21061
+        21083
       &lt;/div&gt;
 
       &lt;span class=&#34;text-md mr-1 text-neutral-800 dark:text-neutral&#34;&gt;
@@ -10921,7 +10927,7 @@ cd LightlyShaders; mkdir qt5build; cd qt5build; cmake ../ -DCMAKE_INSTALL_PREFIX
 
       &lt;/span&gt;
       &lt;div id=&#34;github-24de194c1b5897d8548ff331996da98e-stargazers&#34; class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
-        40442
+        40449
       &lt;/div&gt;
 
       &lt;span class=&#34;text-md mr-1 text-neutral-800 dark:text-neutral&#34;&gt;
@@ -10934,7 +10940,7 @@ cd LightlyShaders; mkdir qt5build; cd qt5build; cmake ../ -DCMAKE_INSTALL_PREFIX
 
       &lt;/span&gt;
       &lt;div id=&#34;github-24de194c1b5897d8548ff331996da98e-forks&#34; class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
-        9481
+        9479
       &lt;/div&gt;
 
     &lt;/div&gt;
@@ -11124,7 +11130,7 @@ cd LightlyShaders; mkdir qt5build; cd qt5build; cmake ../ -DCMAKE_INSTALL_PREFIX
 
       &lt;/span&gt;
       &lt;div id=&#34;github-2e819999535d48069af66a73f2eb0246-forks&#34; class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
-        120
+        121
       &lt;/div&gt;
 
     &lt;/div&gt;

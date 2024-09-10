@@ -110,7 +110,7 @@
     "keywords": ["Cosmic","Arch","ArchLinux","ArchInstall","Linux"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "770"
+    "wordCount": "869"
   }]
   </script>
 
@@ -725,7 +725,7 @@
 <div class="flex flex-row flex-wrap items-center">
   
   
-  <time datetime="2024-09-04T00:00:00&#43;00:00">4 September 2024</time><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">4 mins</span><span class="px-2 text-primary-500">&middot;</span><span>
+  <time datetime="2024-09-04T00:00:00&#43;00:00">4 September 2024</time><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">5 mins</span><span class="px-2 text-primary-500">&middot;</span><span>
   
   
     
@@ -1333,12 +1333,18 @@
 </span></span></code></pre></div><p>As mentioned in the video the <code>--advanced</code> flag is required to unlock the <strong>Cosmic DE</strong> desktop profile. The reason it&rsquo;s hidden should be clear enough, in case it&rsquo;s not, well it&rsquo;s because it&rsquo;s in Alpha and no one sane enough who requires any kind of stability should install it.</p>
 <p>
   <figure>
-    <img class="my-0 rounded-md" loading="lazy" src="https://i.imgur.com/MY5yecT.png" alt="CosmicDE" />
+    <img class="my-0 rounded-md" loading="lazy" src="https://i.imgur.com/Fvl9uRU.png" alt="CosmicDE" />
     
   </figure>
 </p>
-<p>Also, note the issue with the <em>Cosmic Greeter</em>, it could be that the maintainer of the packages on <strong>Arch</strong> forgot to include it or something else. If you are trying it way after this was written, maybe it&rsquo;s been fixed, if not then do as the video says, after reboot once in the TTY install the Display/Login Manager of your choice, could be <strong>LightDM</strong>, <strong>SDDM</strong> or even <strong>GDM</strong> it&rsquo;s all up to you..</p>
-<p>If you are an <strong>Arch</strong> power user and prefer to do it the <em>manual way</em>, you can. Just head on over to the wonderful <a href="https://wiki.archlinux.org/title/COSMIC" target="_blank"><strong>ArchWiki</strong></a> and follow the instructions there. I would recommend it over <strong>ArchInstall</strong> as you can do more and have more flexibility.</p>
+<p>Also, note the issue with the <em>Cosmic Greeter</em>, it could be that the maintainer of the packages on <strong>Arch</strong> forgot to include it or something else. If you are trying it way after this was written, maybe it&rsquo;s been fixed, if not then do as shown below to fix it.</p>
+<p>Once all packages are installed, <strong>Before</strong> you exit <em>chroot</em> n reboot use this command :</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Bash" data-lang="Bash"><span class="line"><span class="cl">pacman -Syy cosmic-greeter
+</span></span><span class="line"><span class="cl">systemctl <span class="nb">enable</span> cosmic-greeter.service
+</span></span></code></pre></div><p>Now that this is fixed, I would like to take this oportunity to mention that there&rsquo;s 2 more missing packages that <strong>ArchInstall</strong> failed to include, those are <code>xdg-user-dirs-update</code> which is resonsible for creating you user folders, like <code>Dicuments, Pictures, Videos...</code>, and finally the <code>power-daemon</code> tool that allows you to switch power profiles, so to fix those do this&hellip;</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Bash" data-lang="Bash"><span class="line"><span class="cl">pacman -Syy xdg-user-dirs-update power-profiles-daemon
+</span></span><span class="line"><span class="cl">xdg-user-dirs-update <span class="o">&amp;&amp;</span> systemctl <span class="nb">enable</span> power-profiles-daemon.service
+</span></span></code></pre></div><p>Done ! All missing essential features fixed. Keep in mind that it&rsquo;s only natural for them to exist, project is still in Alpha stages, a lot of things need to be addressed. Give it time to mature before judging it, and more importantly report all the bugs related to it or any feature requests you might have upstream, to the <a href="https://github.com/pop-os" target="_blank"><strong>Cosmic Bug Tracker</strong></a></p>
 
 
 <h3 class="relative group">Customization 
@@ -1361,7 +1367,7 @@
     
 </h3>
 <p>As mentioned, I would highly recommend you install <strong>Cosmic DE</strong> on a spare non-essential device since it&rsquo;s still Alpha 1 software. And you will need modern enough hardware that has full support for <strong>Wayland</strong> since it doesn&rsquo;t nor will it ever have <strong>X11</strong> support.</p>
-<p>That said, now that you have it installed, have fun, and don&rsquo;t forget to report issues upstream to the devs. The more you do, the faster they will get fixed.</p>
+<p>However, if you are an <strong>Arch</strong> power user and prefer to do it the <em>manual way</em>, you can. Just head on over to the wonderful <a href="https://wiki.archlinux.org/title/COSMIC" target="_blank"><strong>ArchWiki</strong></a> and follow the instructions there. I would recommend it over <strong>ArchInstall</strong> as you can do more and have more flexibility.</p>
 <p>Finally if you don&rsquo;t want to use it on <strong>Arch</strong>, you can grab their Official <strong>Pop!_OS 24.04 LTS alpha</strong> ISO from &raquo; <a href="https://system76.com/cosmic" target="_blank"><strong>Cosmic Downloads</strong></a>. They also have instructions for other Distros like <strong>Fedora</strong>, <strong>NixOS</strong> and more&hellip;</p>
 <p>I hope this post has proven to be useful.</p>
 <p>Cheers !</p>

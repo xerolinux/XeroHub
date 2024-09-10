@@ -79,12 +79,18 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;As mentioned in the video the &lt;code&gt;--advanced&lt;/code&gt; flag is required to unlock the &lt;strong&gt;Cosmic DE&lt;/strong&gt; desktop profile. The reason it&amp;rsquo;s hidden should be clear enough, in case it&amp;rsquo;s not, well it&amp;rsquo;s because it&amp;rsquo;s in Alpha and no one sane enough who requires any kind of stability should install it.&lt;/p&gt;
 &lt;p&gt;
   &lt;figure&gt;
-    &lt;img class=&#34;my-0 rounded-md&#34; loading=&#34;lazy&#34; src=&#34;https://i.imgur.com/MY5yecT.png&#34; alt=&#34;CosmicDE&#34; /&gt;
+    &lt;img class=&#34;my-0 rounded-md&#34; loading=&#34;lazy&#34; src=&#34;https://i.imgur.com/Fvl9uRU.png&#34; alt=&#34;CosmicDE&#34; /&gt;
     
   &lt;/figure&gt;
 &lt;/p&gt;
-&lt;p&gt;Also, note the issue with the &lt;em&gt;Cosmic Greeter&lt;/em&gt;, it could be that the maintainer of the packages on &lt;strong&gt;Arch&lt;/strong&gt; forgot to include it or something else. If you are trying it way after this was written, maybe it&amp;rsquo;s been fixed, if not then do as the video says, after reboot once in the TTY install the Display/Login Manager of your choice, could be &lt;strong&gt;LightDM&lt;/strong&gt;, &lt;strong&gt;SDDM&lt;/strong&gt; or even &lt;strong&gt;GDM&lt;/strong&gt; it&amp;rsquo;s all up to you..&lt;/p&gt;
-&lt;p&gt;If you are an &lt;strong&gt;Arch&lt;/strong&gt; power user and prefer to do it the &lt;em&gt;manual way&lt;/em&gt;, you can. Just head on over to the wonderful &lt;a href=&#34;https://wiki.archlinux.org/title/COSMIC&#34; target=&#34;_blank&#34;&gt;&lt;strong&gt;ArchWiki&lt;/strong&gt;&lt;/a&gt; and follow the instructions there. I would recommend it over &lt;strong&gt;ArchInstall&lt;/strong&gt; as you can do more and have more flexibility.&lt;/p&gt;
+&lt;p&gt;Also, note the issue with the &lt;em&gt;Cosmic Greeter&lt;/em&gt;, it could be that the maintainer of the packages on &lt;strong&gt;Arch&lt;/strong&gt; forgot to include it or something else. If you are trying it way after this was written, maybe it&amp;rsquo;s been fixed, if not then do as shown below to fix it.&lt;/p&gt;
+&lt;p&gt;Once all packages are installed, &lt;strong&gt;Before&lt;/strong&gt; you exit &lt;em&gt;chroot&lt;/em&gt; n reboot use this command :&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;pacman -Syy cosmic-greeter
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;systemctl &lt;span class=&#34;nb&#34;&gt;enable&lt;/span&gt; cosmic-greeter.service
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Now that this is fixed, I would like to take this oportunity to mention that there&amp;rsquo;s 2 more missing packages that &lt;strong&gt;ArchInstall&lt;/strong&gt; failed to include, those are &lt;code&gt;xdg-user-dirs-update&lt;/code&gt; which is resonsible for creating you user folders, like &lt;code&gt;Dicuments, Pictures, Videos...&lt;/code&gt;, and finally the &lt;code&gt;power-daemon&lt;/code&gt; tool that allows you to switch power profiles, so to fix those do this&amp;hellip;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;pacman -Syy xdg-user-dirs-update power-profiles-daemon
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;xdg-user-dirs-update &lt;span class=&#34;o&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; systemctl &lt;span class=&#34;nb&#34;&gt;enable&lt;/span&gt; power-profiles-daemon.service
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Done ! All missing essential features fixed. Keep in mind that it&amp;rsquo;s only natural for them to exist, project is still in Alpha stages, a lot of things need to be addressed. Give it time to mature before judging it, and more importantly report all the bugs related to it or any feature requests you might have upstream, to the &lt;a href=&#34;https://github.com/pop-os&#34; target=&#34;_blank&#34;&gt;&lt;strong&gt;Cosmic Bug Tracker&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
 
 
 &lt;h3 class=&#34;relative group&#34;&gt;Customization 
@@ -107,7 +113,7 @@
     
 &lt;/h3&gt;
 &lt;p&gt;As mentioned, I would highly recommend you install &lt;strong&gt;Cosmic DE&lt;/strong&gt; on a spare non-essential device since it&amp;rsquo;s still Alpha 1 software. And you will need modern enough hardware that has full support for &lt;strong&gt;Wayland&lt;/strong&gt; since it doesn&amp;rsquo;t nor will it ever have &lt;strong&gt;X11&lt;/strong&gt; support.&lt;/p&gt;
-&lt;p&gt;That said, now that you have it installed, have fun, and don&amp;rsquo;t forget to report issues upstream to the devs. The more you do, the faster they will get fixed.&lt;/p&gt;
+&lt;p&gt;However, if you are an &lt;strong&gt;Arch&lt;/strong&gt; power user and prefer to do it the &lt;em&gt;manual way&lt;/em&gt;, you can. Just head on over to the wonderful &lt;a href=&#34;https://wiki.archlinux.org/title/COSMIC&#34; target=&#34;_blank&#34;&gt;&lt;strong&gt;ArchWiki&lt;/strong&gt;&lt;/a&gt; and follow the instructions there. I would recommend it over &lt;strong&gt;ArchInstall&lt;/strong&gt; as you can do more and have more flexibility.&lt;/p&gt;
 &lt;p&gt;Finally if you don&amp;rsquo;t want to use it on &lt;strong&gt;Arch&lt;/strong&gt;, you can grab their Official &lt;strong&gt;Pop!_OS 24.04 LTS alpha&lt;/strong&gt; ISO from &amp;raquo; &lt;a href=&#34;https://system76.com/cosmic&#34; target=&#34;_blank&#34;&gt;&lt;strong&gt;Cosmic Downloads&lt;/strong&gt;&lt;/a&gt;. They also have instructions for other Distros like &lt;strong&gt;Fedora&lt;/strong&gt;, &lt;strong&gt;NixOS&lt;/strong&gt; and more&amp;hellip;&lt;/p&gt;
 &lt;p&gt;I hope this post has proven to be useful.&lt;/p&gt;
 &lt;p&gt;Cheers !&lt;/p&gt;
