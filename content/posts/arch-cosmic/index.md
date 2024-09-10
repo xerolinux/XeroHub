@@ -42,7 +42,7 @@ pacman -Syy cosmic-greeter
 systemctl enable cosmic-greeter.service
 ```
 
-Now that this is fixed, I would like to take this oportunity to mention that there's 2 more missing packages that **ArchInstall** failed to include, those are `xdg-user-dirs-update` which is resonsible for creating you user folders, like `Dicuments, Pictures, Videos...`, and finally the `power-daemon` tool that allows you to switch power profiles, so to fix those do this...
+Now that this is fixed, I would like to take this oportunity to mention that there's 2 more missing packages that **ArchInstall** failed to include, those are `xdg-user-dirs` which is resonsible for creating you user folders, like `Dicuments, Pictures, Videos...`, and finally the `power-profiles-daemon` tool that allows you to switch power profiles, so to fix those do this...
 
 ```Bash
 pacman -Syy xdg-user-dirs-update power-profiles-daemon
