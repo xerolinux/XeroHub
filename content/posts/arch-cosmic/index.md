@@ -5,6 +5,11 @@ draft: false
 description: "Install Cosmic DE on ArchLinux"
 tags: ["Cosmic", "Arch", "ArchLinux", "ArchInstall", "Linux"]
 ---
+
+{{< alert icon="fire" cardColor="#993350" iconColor="#1d3557" textColor="#f1faee" >}}
+**Experience :** If you want to know what I think of this DE, and read how my experience with it went, check this post on >> [**DarkXero's Bytes**](https://bytes.xerolinux.xyz/tech/cosmic-experience/)
+{{< /alert >}}
+
 ### What is Cosmic DE?
 
 The [**Cosmic DE**](https://blog.system76.com/post/cosmic-the-road-to-alpha/) is a new desktop environment being developed by the team behind **Pop!_OS**, a popular Linux distribution. Unlike their previous efforts, which built upon **GNOME**, the **Cosmic DE** is a ground-up development using **Rust** and a custom compositor built on **Smithay**, aiming for a lightweight, responsive, and customizable user interface.
