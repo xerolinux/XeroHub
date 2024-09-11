@@ -5,6 +5,7 @@ draft: false
 description: "Install Cosmic DE on ArchLinux"
 tags: ["Cosmic", "Arch", "ArchLinux", "ArchInstall", "Linux"]
 ---
+<br />
 
 {{< alert icon="fire" cardColor="#993350" iconColor="#1d3557" textColor="#f1faee" >}}
 **Experience :** If you want to know what I think of this DE, and read how my experience with it went, check this post on >> [**DarkXero's Bytes**](https://bytes.xerolinux.xyz/tech/cosmic-experience/)
