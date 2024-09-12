@@ -10,7 +10,7 @@ As you can see, after thinking long and hard, I have decided to revive the Distr
 {{< youtube lsYg6-wUWXw >}}<br />
 
 {{< alert icon="fire" cardColor="#993350" iconColor="#1d3557" textColor="#f1faee" >}}
-**Notice :** Check out the release notes and issues >> [**Here**](https://github.com/XeroLinuxDev/xero-build/#-release-notes-). To access source code, head on over to the >> [**XeroLinuxDev**](https://github.com/XeroLinuxDev) Org.
+**Notice :** Check out the release notes and issues >> [**Here**](https://github.com/XeroLinuxDev/xero-build/#-release-notes-). To access source code, head on over to the >> [**XeroLinuxDev**](https://github.com/XeroLinuxDev) Org. For Install guide check out the >> [**WiKi**](https://wiki.xerolinux.xyz/distro/)
 {{< /alert >}}
 
 ### What is it?
