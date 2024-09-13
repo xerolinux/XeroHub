@@ -17,9 +17,11 @@ As you can see, after thinking long and hard, I have decided to revive the Distr
 
 In short, it's just an alternative to the **XeroLinux Plasma Install** script, making it easier to install **Arch**, bypassing the need for **ArchInstall**. The ISO includes my toolkit as well as my famous **XeroLayan** rice all-in-one shot.
 
-{{< youtube bEFBO2QRN8E >}}
+![SS](https://i.imgur.com/ejZ1ZQv.png)
 
 You can use the included **Post-Install Toolkit**, 1st icon with my logo in the Dock, to configure it, keeping in mind that some of the features were already applied to the ISO. I have also taken the liberty of including the [**Chaotic-AUR**](https://aur.chaotic.cx) repository so it's easier for you to install **AUR** packages rather from having to compile them.
+
+{{< youtube bEFBO2QRN8E >}}
 
 ### Who ist it for?
 
