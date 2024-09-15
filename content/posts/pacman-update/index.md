@@ -88,7 +88,14 @@ Last file to be affected, is `rust.conf` under `/etc/makepkg.conf.d/`. To merge 
 
 ### Wrapping up
 
-**Pacman** doesn't get updated very often and when it does, there will always be some manual intervention of sorts. Also since **AUR Helpers** kinda rely on it, if you can't wait for maintainers to update *stable* version, install `-git` one, not always the best recourse as those can break at any moment.
+**Pacman** doesn't get updated very often and when it does, there will always be some manual intervention of sorts. Also since **AUR Helpers** kinda rely on it, if you can't wait for maintainers to update *stable* version, install `-git` one, not always the best recourse as those can break at any moment. Instead, I would highly recommend, if you really want to install packages from the **AUR**, to do it without the use of a helper, like so:
+
+```Bash
+git clone https://aur.archlinux.org/packagename.git
+cd packagename/ && makepkg -si
+```
+
+The less we rely on a helper the better. No headaches, breakages or risk of harming your systems.
 
 Also if you are using any **GUI Packages Managers** you will also need to either recompile them or wait for them to get updated. It's the nature of Rolling release Distros.
 
