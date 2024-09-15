@@ -42,7 +42,7 @@ sudo chown :alpm -R /path/to/local/repo
 
 This command changes the group ownership of your local repository files to `alpm` group, allowing the Pacman’s download user to access them appropriately.
 
-Additionally, you will need to merge any “.pacnew” files generated during the update. These files contain new default configurations introduced with **Pacman 7.0**. Merging them ensures you’re using the latest settings and helps prevent potential conflicts.
+Additionally, you will need to merge any `.pacnew` files generated during the update. These files contain new default configurations introduced with **Pacman 7.0**. Merging them ensures you’re using the latest settings and helps prevent potential conflicts.
 
 Now, I have written a simple command that will do that quickly and efficiantly, while enabling some hidden features if you haven't enabled them yet.
 
@@ -64,11 +64,11 @@ Consequently, you might need to update the checksums in your `PKGBUILD` files th
 paru/yay: error while loading shared libraries: libalpm.so.14: cannot open shared object file: No such file or directory
 ```
 
-Just in case you use an **AUR** helper, you will need to either recompile it since `libalpm.so` was updated to version 15. If you are using the `-git` version, otherwise if you are using the normal or `-bin` versions you will need to wait for them to get updated. Or switch to `-git` up to you.
+Just in case you use an **AUR** helper, you will need to either recompile it since `libalpm.so` was updated to version 15. If you are using the `-git` version, otherwise if you are using the normal or `-bin` versions you will need to wait for them to get updated. Or switch to `-git` (not very recommended), up to you.
 
 ### Makepkg / Rust
 
-A few other changes were introduced with this update, especially if you compile your own packages. One of the affected files is `makepkg.conf` which contains the flags anf packager info.
+A few other changes were introduced with this update, especially if you compile your own packages. One of the affected files is `makepkg.conf` which contains the flags and packager info.
 
 Here's how you can merge the changes :
 
@@ -76,7 +76,7 @@ Here's how you can merge the changes :
 diff -u /etc/makepkg.conf /etc/makepkgconf.pacnew > diff.patch
 ```
 
-This creates a file called “diff.patch” with the differences in a unified format, which is more readable and suitable for merging.
+This creates a file called `diff.patch` with the differences in a unified format, which is more readable and suitable for merging.
 
 Apply the patch (diff) to the `makepkg.conf` file using the `patch` command:
 
@@ -88,7 +88,7 @@ Last file to be affected, is `rust.conf` under `/etc/makepkg.conf.d/`. To merge 
 
 ### Wrapping up
 
-**Pacman** doesn't get updated very often and when it does, there will always be some manual intervention of sorts. Also since **AUR Helpers** kinda rely on it, it's always a great idea to install `-git` version of those IMO.
+**Pacman** doesn't get updated very often and when it does, there will always be some manual intervention of sorts. Also since **AUR Helpers** kinda rely on it, if you can't wait for maintainers to update *stable* version, install `-git` one, not always the best recourse as those can break at any moment.
 
 Also if you are using any **GUI Packages Managers** you will also need to either recompile them or wait for them to get updated. It's the nature of Rolling release Distros.
 

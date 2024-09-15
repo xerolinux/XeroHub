@@ -82,7 +82,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Here’s how you can do it:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo chown :alpm -R /path/to/local/repo
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;This command changes the group ownership of your local repository files to &lt;code&gt;alpm&lt;/code&gt; group, allowing the Pacman’s download user to access them appropriately.&lt;/p&gt;
-&lt;p&gt;Additionally, you will need to merge any “.pacnew” files generated during the update. These files contain new default configurations introduced with &lt;strong&gt;Pacman 7.0&lt;/strong&gt;. Merging them ensures you’re using the latest settings and helps prevent potential conflicts.&lt;/p&gt;
+&lt;p&gt;Additionally, you will need to merge any &lt;code&gt;.pacnew&lt;/code&gt; files generated during the update. These files contain new default configurations introduced with &lt;strong&gt;Pacman 7.0&lt;/strong&gt;. Merging them ensures you’re using the latest settings and helps prevent potential conflicts.&lt;/p&gt;
 &lt;p&gt;Now, I have written a simple command that will do that quickly and efficiantly, while enabling some hidden features if you haven&amp;rsquo;t enabled them yet.&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo sed -i &lt;span class=&#34;s1&#34;&gt;&amp;#39;/^# Misc options/,/ParallelDownloads = [0-9]*/c\# Misc options\nColor\nILoveCandy\nCheckSpace\n#DisableSandbox\nDownloadUser = alpm\nDisableDownloadTimeout\nParallelDownloads = 10&amp;#39;&lt;/span&gt; /etc/pacman.conf
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;We are done with &lt;code&gt;pacman.conf&lt;/code&gt;. Furthermore, &lt;strong&gt;Pacman 7.0&lt;/strong&gt; also introduces changes to improve checksum stability for Git repositories that use &lt;code&gt;.gitattributes&lt;/code&gt; files.&lt;/p&gt;
@@ -130,17 +130,17 @@
 &lt;/div&gt;
 
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;paru/yay: error &lt;span class=&#34;k&#34;&gt;while&lt;/span&gt; loading shared libraries: libalpm.so.14: cannot open shared object file: No such file or directory
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Just in case you use an &lt;strong&gt;AUR&lt;/strong&gt; helper, you will need to either recompile it since &lt;code&gt;libalpm.so&lt;/code&gt; was updated to version 15. If you are using the &lt;code&gt;-git&lt;/code&gt; version, otherwise if you are using the normal or &lt;code&gt;-bin&lt;/code&gt; versions you will need to wait for them to get updated. Or switch to &lt;code&gt;-git&lt;/code&gt; up to you.&lt;/p&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Just in case you use an &lt;strong&gt;AUR&lt;/strong&gt; helper, you will need to either recompile it since &lt;code&gt;libalpm.so&lt;/code&gt; was updated to version 15. If you are using the &lt;code&gt;-git&lt;/code&gt; version, otherwise if you are using the normal or &lt;code&gt;-bin&lt;/code&gt; versions you will need to wait for them to get updated. Or switch to &lt;code&gt;-git&lt;/code&gt; (not very recommended), up to you.&lt;/p&gt;
 
 
 &lt;h3 class=&#34;relative group&#34;&gt;Makepkg / Rust 
     &lt;div id=&#34;makepkg--rust&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
     
 &lt;/h3&gt;
-&lt;p&gt;A few other changes were introduced with this update, especially if you compile your own packages. One of the affected files is &lt;code&gt;makepkg.conf&lt;/code&gt; which contains the flags anf packager info.&lt;/p&gt;
+&lt;p&gt;A few other changes were introduced with this update, especially if you compile your own packages. One of the affected files is &lt;code&gt;makepkg.conf&lt;/code&gt; which contains the flags and packager info.&lt;/p&gt;
 &lt;p&gt;Here&amp;rsquo;s how you can merge the changes :&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;diff -u /etc/makepkg.conf /etc/makepkgconf.pacnew &amp;gt; diff.patch
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;This creates a file called “diff.patch” with the differences in a unified format, which is more readable and suitable for merging.&lt;/p&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;This creates a file called &lt;code&gt;diff.patch&lt;/code&gt; with the differences in a unified format, which is more readable and suitable for merging.&lt;/p&gt;
 &lt;p&gt;Apply the patch (diff) to the &lt;code&gt;makepkg.conf&lt;/code&gt; file using the &lt;code&gt;patch&lt;/code&gt; command:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo patch /etc/makepkg.conf &amp;lt; diff.patch
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Last file to be affected, is &lt;code&gt;rust.conf&lt;/code&gt; under &lt;code&gt;/etc/makepkg.conf.d/&lt;/code&gt;. To merge changes, follow the same steps mentioned earlier for &lt;code&gt;makepkg.conf&lt;/code&gt; replacing the file path and name to the ones of &lt;code&gt;rust.conf&lt;/code&gt;.&lt;/p&gt;
@@ -150,7 +150,7 @@
     &lt;div id=&#34;wrapping-up&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
     
 &lt;/h3&gt;
-&lt;p&gt;&lt;strong&gt;Pacman&lt;/strong&gt; doesn&amp;rsquo;t get updated very often and when it does, there will always be some manual intervention of sorts. Also since &lt;strong&gt;AUR Helpers&lt;/strong&gt; kinda rely on it, it&amp;rsquo;s always a great idea to install &lt;code&gt;-git&lt;/code&gt; version of those IMO.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Pacman&lt;/strong&gt; doesn&amp;rsquo;t get updated very often and when it does, there will always be some manual intervention of sorts. Also since &lt;strong&gt;AUR Helpers&lt;/strong&gt; kinda rely on it, if you can&amp;rsquo;t wait for maintainers to update &lt;em&gt;stable&lt;/em&gt; version, install &lt;code&gt;-git&lt;/code&gt; one, not always the best recourse as those can break at any moment.&lt;/p&gt;
 &lt;p&gt;Also if you are using any &lt;strong&gt;GUI Packages Managers&lt;/strong&gt; you will also need to either recompile them or wait for them to get updated. It&amp;rsquo;s the nature of Rolling release Distros.&lt;/p&gt;
 &lt;p&gt;If you want to learn more about how to use &lt;strong&gt;Pacman&lt;/strong&gt; and become a pro, I would highly recommend &lt;a href=&#34;https://linuxiac.com/how-to-use-pacman-to-manage-software-on-arch-linux/&#34; target=&#34;_blank&#34;&gt;&lt;strong&gt;This Awesome Guide&lt;/strong&gt;&lt;/a&gt; by &lt;a href=&#34;https://linuxiac.com&#34; target=&#34;_blank&#34;&gt;&lt;strong&gt;@Linuxiac&lt;/strong&gt;&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;I hope this helps y&amp;rsquo;all&amp;hellip;&lt;/p&gt;
