@@ -95,8 +95,6 @@ git clone https://aur.archlinux.org/packagename.git
 cd packagename/ && makepkg -si
 ```
 
-The less we rely on a helper the better. No headaches, breakages or risk of harming your systems.
-
 Also if you are using any **GUI Packages Managers** you will also need to either recompile them or wait for them to get updated. It's the nature of Rolling release Distros.
 
 If you want to learn more about how to use **Pacman** and become a pro, I would highly recommend [**This Awesome Guide**](https://linuxiac.com/how-to-use-pacman-to-manage-software-on-arch-linux/) by [**@Linuxiac**](https://linuxiac.com).
