@@ -48,7 +48,7 @@
   &lt;span
     
       style=&#34;color: #f1faee&#34;
-    &gt;&lt;strong&gt;Experience :&lt;/strong&gt; If you want to know what I think of this DE, and read how my experience with it went, check this post on &amp;raquo; &lt;a href=&#34;https://bytes.xerolinux.xyz/tech/cosmic-experience/&#34; target=&#34;_blank&#34;&gt;&lt;strong&gt;DarkXero&amp;rsquo;s Bytes&lt;/strong&gt;&lt;/a&gt;&lt;/span&gt;
+    &gt;&lt;strong&gt;Cosmic Script :&lt;/strong&gt; I have gone ahead and written a script that will help you do all this and more in one swoop. If you care to give it a whirl, keeping in mind the status of the project, you can grab it from the &lt;a href=&#34;https://wiki.xerolinux.xyz/cosmic/&#34; target=&#34;_blank&#34;&gt;&lt;strong&gt;XeroLinux Wiki&lt;/strong&gt;&lt;/a&gt;.&lt;/span&gt;
 &lt;/div&gt;
 
 
@@ -150,9 +150,9 @@
     
 &lt;/h3&gt;
 &lt;p&gt;As mentioned, I would highly recommend you install &lt;strong&gt;Cosmic DE&lt;/strong&gt; on a spare non-essential device since it&amp;rsquo;s still Alpha 1 software. And you will need modern enough hardware that has full support for &lt;strong&gt;Wayland&lt;/strong&gt; since it doesn&amp;rsquo;t nor will it ever have &lt;strong&gt;X11&lt;/strong&gt; support.&lt;/p&gt;
-&lt;p&gt;I have also gone ahead and written a script that will help you do all this and more in one swoop. If you care to give it a whirl, keeping in mind the status of the project, you can grab it from the &lt;a href=&#34;https://wiki.xerolinux.xyz/cosmic/&#34; target=&#34;_blank&#34;&gt;&lt;strong&gt;XeroLinux Wiki&lt;/strong&gt;&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;However, if you are an &lt;strong&gt;Arch&lt;/strong&gt; power user and prefer to do it the &lt;em&gt;manual way&lt;/em&gt;, you can. Just head on over to the wonderful &lt;a href=&#34;https://wiki.archlinux.org/title/COSMIC&#34; target=&#34;_blank&#34;&gt;&lt;strong&gt;ArchWiki&lt;/strong&gt;&lt;/a&gt; and follow the instructions there. I would recommend it over &lt;strong&gt;ArchInstall&lt;/strong&gt; as you can do more and have more flexibility.&lt;/p&gt;
 &lt;p&gt;Finally if you don&amp;rsquo;t want to use it on &lt;strong&gt;Arch&lt;/strong&gt;, you can grab their Official &lt;strong&gt;Pop!_OS 24.04 LTS alpha&lt;/strong&gt; ISO from &amp;raquo; &lt;a href=&#34;https://system76.com/cosmic&#34; target=&#34;_blank&#34;&gt;&lt;strong&gt;Cosmic Downloads&lt;/strong&gt;&lt;/a&gt;. They also have instructions for other Distros like &lt;strong&gt;Fedora&lt;/strong&gt;, &lt;strong&gt;NixOS&lt;/strong&gt; and more&amp;hellip;&lt;/p&gt;
+&lt;p&gt;If you want to know what I think of this DE, and read how my experience with it went, check this post on &amp;raquo; &lt;a href=&#34;https://bytes.xerolinux.xyz/tech/cosmic-experience/&#34; target=&#34;_blank&#34;&gt;&lt;strong&gt;DarkXero&amp;rsquo;s Bytes&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;I hope this post has proven to be useful.&lt;/p&gt;
 &lt;p&gt;Cheers !&lt;/p&gt;
 </description>
