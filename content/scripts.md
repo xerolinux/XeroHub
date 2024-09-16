@@ -2,12 +2,11 @@
 title: Our Scripts
 date: 2024-06-26
 description: "Links to my various Projects"
-#featureimage: https://i.imgur.com/DpiiDzj.png
 ---
 
 ### The Toolkit.
 
-This toolkit aims to be an _all-in-one_ solution for post-installation, expediting your Arch setup. Please head on over to toolkit's **Github** linked below and check out the [**Wiki**](https://github.com/xerolinux/xlapit-cli/wiki) for more detailed information.
+This toolkit aims to be an _all-in-one_ solution for post-installation, expediting your Arch setup. Please head on over to toolkit's **Github** linked below and check out the [**Wiki**](https://wiki.xerolinux.xyz/xlapit/) for more detailed information.
 
 {{< figure src="https://i.imgur.com/JuWceYE.png" alt="specs" class="center-image" >}}
 
@@ -17,7 +16,7 @@ This toolkit aims to be an _all-in-one_ solution for post-installation, expediti
 
 ### Xero-Layan Rice
 
-It's the best **KDE** rice I have ever created, in my opinion. If you want to enjoy said rice on your system, feel free to teleport to **Github** linked below and have fun. 😀
+It's the best **KDE** rice I have ever created, in my opinion. If you want to enjoy said rice on your system, feel free to teleport to **Github** linked below and have fun. Or check out the [**Wiki**](https://wiki.xerolinux.xyz/rice/) 😀
 
 {{< figure src="https://i.imgur.com/VA2tycb.jpeg" alt="specs" class="center-image" >}}
 
@@ -27,7 +26,7 @@ It's the best **KDE** rice I have ever created, in my opinion. If you want to en
 
 ### Xero-Plasma Install Script
 
-With the help of this script you will be able to install **Plasma** in one of 4 methods as you can see in the image below. So feel free to teleport to **Github** linked below to see how use this script. And let me know what you think.
+With the help of this script you will be able to install **Plasma** in one of 4 methods as you can see in the image below. So feel free to teleport to **Github** linked below to see how use this script. And let me know what you think. Check out the [**Wiki**](https://wiki.xerolinux.xyz/plasma/)
 
 {{< figure src="https://i.imgur.com/rVvTimG.png" alt="Tech" class="center-image" >}}
 
