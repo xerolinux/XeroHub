@@ -71,6 +71,8 @@ So if you are looking for consistency, it will be a long while before we can ach
 
 As mentioned, I would highly recommend you install **Cosmic DE** on a spare non-essential device since it's still Alpha 1 software. And you will need modern enough hardware that has full support for **Wayland** since it doesn't nor will it ever have **X11** support.
 
+I have also gone ahead and written a script that will help you do all this and more in one swoop. If you care to give it a whirl, keeping in mind the status of the project, you can grab it from the [**XeroLinux Wiki**](https://wiki.xerolinux.xyz/cosmic/).
+
 However, if you are an **Arch** power user and prefer to do it the *manual way*, you can. Just head on over to the wonderful [**ArchWiki**](https://wiki.archlinux.org/title/COSMIC) and follow the instructions there. I would recommend it over **ArchInstall** as you can do more and have more flexibility.
 
 Finally if you don't want to use it on **Arch**, you can grab their Official **Pop!_OS 24.04 LTS alpha** ISO from >> [**Cosmic Downloads**](https://system76.com/cosmic). They also have instructions for other Distros like **Fedora**, **NixOS** and more...
