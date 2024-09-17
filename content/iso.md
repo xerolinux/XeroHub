@@ -13,7 +13,7 @@ As you can see, after thinking long and hard, I have decided to revive the Distr
 **Notice :** Check out the release notes and issues >> [**Here**](https://github.com/XeroLinuxDev/xero-build/#-release-notes-). To access source code, head on over to the >> [**XeroLinuxDev**](https://github.com/XeroLinuxDev) Org. For Install guide check out the >> [**WiKi**](https://wiki.xerolinux.xyz/distro/)
 {{< /alert >}}
 
-### What is it?
+### What is XeroLinux
 
 In short, it's just an alternative to the **XeroLinux Plasma Install** script, making it easier to install **Arch**, bypassing the need for **ArchInstall**. The ISO includes my toolkit as well as my famous **XeroLayan** rice all-in-one shot.
 
