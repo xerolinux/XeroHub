@@ -1,157 +1,203 @@
-#!/bin/bash
-#set -e
-##################################################################################################################
-# Written to be used on 64 bits computers
-# Author 	: 	DarkXero
-# Website 	: 	http://xerolinux.xyz
-##################################################################################################################
-clear
-tput setaf 3
-echo "##############################################################"
-echo "#        XeroLinux Distrobox/Docker/Virt-Manager Tool        #"
-echo "##############################################################"
-tput sgr0
-echo
-echo "Hello $USER, what would you like to do today ?"
-echo
-echo "################## Distrobox & Docker Setup ##################"
-echo
-echo "d. Install/Configure Docker."
-echo "b. Install/Configure Distrobox."
-echo
-echo "################### Top 5 Distrobox Images ###################"
-echo "#### Both Options d and b are required for below to work. ####"
-echo
-echo "1. Debian."
-echo "2. Fedora."
-echo "3. Void Linux."
-echo "4. Tumbleweed."
-echo
-echo "u. Update all Containers (Might take a while)."
-echo
-echo "Type Your Selection. Or type q to return to main menu."
-echo
+#!/usr/bin/env bash
+set -e
 
-while :; do
+# Add this at the start of the script, right after the shebang
+trap 'clear && exec "$0"' INT
 
-read CHOICE
+# Check if being run from xero-cli
+if [ -z "$AUR_HELPER" ]; then
+    echo
+    gum style --border double --align center --width 70 --margin "1 2" --padding "1 2" --border-foreground 196 "$(gum style --foreground 196 'ERROR: This script must be run through the toolkit.')"
+    echo
+    gum style --border normal --align center --width 70 --margin "1 2" --padding "1 2" --border-foreground 33 "$(gum style --foreground 33 'Or use this command instead:') $(gum style --bold --foreground 47 'clear && xero-cli -m')"
+    echo
+    exit 1
+fi
 
-case $CHOICE in
+# Function to display header
+display_header() {
+  clear
+  gum style --foreground 212 --border double --padding "1 1" --margin "1 1" --align center "XeroLinux Distrobox/Docker/Podman Tool"
+  echo
+  gum style --foreground 33 "Hello $USER, what would you like to do? Press 'i' for the Wiki."
+  echo
+}
 
-    d )
-      echo
-      sleep 2
-      echo "Installing & Srtting up Docker..."
-      echo
-      sudo pacman -S --noconfirm docker docker-compose docker-buildx
-      sleep 2
-      echo
-      echo "Enabling Services & Adding you to group"
-      echo
-      sudo systemctl enable --now docker
-      sudo usermod -aG docker $USER
-      sleep 2
-      echo
-      # Prompt the user to reboot
-        tput setaf 1
-        read -p "All done. Reboot is required. Reboot now? (y/n): " reboot_response
-        tput setaf 0
-      echo
-        # Check the user's response
-        if [[ $reboot_response == "y" || $reboot_response == "yes" ]]; then
-          sudo reboot
-        else
-          echo
-          tput setaf 2
-          echo "Please manually reboot your system before using Docker."
-          sleep 3
-          clear && sh $0
-          tput sgr0
-        fi
+# Function to display options
+display_options() {
+  gum style --foreground 215 "=== Docker/DistroBox/Podman ==="
+  echo
+  gum style --foreground 7 "1. Install Docker."
+  gum style --foreground 7 "2. Install Podman."
+  gum style --foreground 7 "3. Install Distrobox."
+  echo
+  gum style --foreground 200 "====== DistroBox Images ======"
+  echo
+  gum style --foreground 7 "4. Pull Latest Debian Image."
+  gum style --foreground 7 "5. Pull Latest Fedora Image."
+  gum style --foreground 7 "6. Pull Latest Tumbleweed Image."
+  echo
+  gum style --foreground 196 "u. Update all Containers (Might take a while)."
+}
 
-      ;;
+# Add this before process_choice function
+# Determine AUR helper
+if command -v yay >/dev/null 2>&1; then
+    AUR_HELPER="yay"
+elif command -v paru >/dev/null 2>&1; then
+    AUR_HELPER="paru"
+else
+    gum style --foreground 196 "Error: No supported AUR helper (yay or paru) found"
+    exit 1
+fi
 
-    b )
-      echo
-      sleep 2
-      echo "Installing Dostrobox..."
-      echo
-      sudo pacman -S --noconfirm distrobox
-      sleep 3
-      echo
-      clear && sh $0
+# Function to process user choice
+process_choice() {
+  # Check if AUR_HELPER is set
+  if [ -z "$AUR_HELPER" ]; then
+    gum style --foreground 196 "Error: AUR_HELPER variable is not set"
+    sleep 3
+    exit 1
+  fi
 
-      ;;
+  while :; do
+    echo
+    read -rp "Enter your choice, 'r' to reboot or 'q' for main menu : " CHOICE
+    echo
 
-    1 )
-      echo
-      sleep 2
-      echo "Pulling Latest Debian Image with label Debian, Please Wait..."
-      echo
-      distrobox create -i quay.io/toolbx-images/debian-toolbox:latest -n "Debian"
-      sleep 10
-      echo
-      clear && sh $0
+    case $CHOICE in
+      i)
+        gum style --foreground 33 "Opening Wiki..."
+        sleep 3
+        xdg-open "https://wiki.xerolinux.xyz/xlapit/#distrobox-docker" > /dev/null 2>&1
+        clear && exec "$0"
+        ;;
+      1)
+        gum style --foreground 7 "Installing & Setting up Docker..."
+        sleep 2
+        echo
+        sudo pacman -S --noconfirm --needed docker docker-compose docker-buildx || handle_error
+        $AUR_HELPER -S --noconfirm --needed lazydocker-bin || handle_error
+        # Prompt the user
+        echo
+        gum confirm "Do you want to install Podman Desktop ?" && \
+            flatpak install io.podman_desktop.PodmanDesktop -y || \
+            echo "Podman Desktop installation skipped."
+        sleep 2
+        echo
+        sudo systemctl enable --now docker || handle_error
+        sudo usermod -aG docker "$USER" || handle_error
+        sleep 2
+        gum style --foreground 7 "Docker setup complete!"
+        sleep 3
+        clear && exec "$0"
+        ;;
+      2)
+        # Define error handling function
+        handle_error() {
+            echo "An error occurred. Exiting..."
+            exit 1
+        }
 
-      ;;
+        gum style --foreground 7 "Installing & Setting up Podman..."
+        sleep 2
+        echo
+        # Install Podman and related packages
+        sudo pacman -S --noconfirm --needed podman podman-docker || handle_error
+        
+        # Enable and start required services
+        sudo systemctl enable --now podman.socket || handle_error
+        
+        # Note: Removed usermod command as Podman doesn't require a special group
+        # on most systems for rootless containers
+        
+        # Install Podman Desktop from Flathub
+        echo
+        gum confirm "Do you want to install Podman Desktop?" && \
+            flatpak install flathub io.podman_desktop.PodmanDesktop -y || \
+            echo "Podman Desktop installation skipped."
+        
+        sleep 2
+        gum style --foreground 7 "Podman setup complete!"
+        sleep 3
+        clear && exec "$0"
+        ;;
+      3)
+        gum style --foreground 7 "Installing Distrobox..."
+        sleep 2
+        echo
+        sudo pacman -S --noconfirm --needed distrobox || handle_error
+        flatpak install -y io.github.dvlv.boxbuddyrs
+        echo
+        gum style --foreground 7 "Distrobox installation complete!"
+        sleep 3
+        clear && exec "$0"
+        ;;
+      4)
+        gum style --foreground 7 "Pulling Latest Debian Image with label 'Debian'..."
+        sleep 2
+        echo
+        distrobox create -i quay.io/toolbx-images/debian-toolbox:latest -n "Debian" || handle_error
+        sleep 10
+        gum style --foreground 7 "Debian image pulled successfully!"
+        sleep 3
+        clear && exec "$0"
+        ;;
+      5)
+        gum style --foreground 7 "Pulling Latest Fedora Image with label 'Fedora'..."
+        sleep 2
+        echo
+        distrobox create -i registry.fedoraproject.org/fedora-toolbox:latest -n "Fedora" || handle_error
+        sleep 10
+        gum style --foreground 7 "Fedora image pulled successfully!"
+        sleep 3
+        clear && exec "$0"
+        ;;
+      6)
+        gum style --foreground 7 "Pulling Latest Tumbleweed Image with label 'OpenSuse'..."
+        sleep 2
+        echo
+        distrobox create -i registry.opensuse.org/opensuse/tumbleweed:latest -n "OpenSuse" || handle_error
+        sleep 10
+        gum style --foreground 7 "Tumbleweed image pulled successfully!"
+        sleep 3
+        clear && exec "$0"
+        ;;
+      u)
+        gum style --foreground 7 "Upgrading all Containers..."
+        sleep 2
+        echo
+        distrobox upgrade --all || handle_error
+        gum style --foreground 7 "All containers upgraded successfully!"
+        sleep 3
+        clear && exec "$0"
+        ;;
+      r)
+        gum style --foreground 33 "Rebooting System..."
+        sleep 3
+        # Countdown from 5 to 1
+        for i in {5..1}; do
+            dialog --infobox "Rebooting in $i seconds..." 3 30
+            sleep 1
+        done
 
-    2 )
-      echo
-      sleep 2
-      echo "Pulling Latest Fedora Image with label Fedora, Please Wait..."
-      echo
-      distrobox create -i registry.fedoraproject.org/fedora-toolbox:latest -n "Fedora"
-      sleep 10
-      echo
-      clear && sh $0
+        # Reboot after the countdown
+        reboot
+        sleep 3
+        ;;
+      q)
+        clear && exec xero-cli -m
+        ;;
+      *)
+        gum style --foreground 31 "Invalid choice. Please select a valid option."
+        echo
+        ;;
+    esac
+    sleep 3
+  done
+}
 
-      ;;
-
-    3 )
-      echo
-      sleep 2
-      echo "Pulling Latest Void Linux Image with label VoidLinux, Please Wait..."
-      echo
-      distrobox create -i ghcr.io/void-linux/void-linux:latest-full-x86_64 -n "VoidLinux"
-      sleep 10
-      echo
-      clear && sh $0
-
-      ;;
-    
-    4 )
-      echo
-      sleep 2
-      echo "Pulling Latest Tumbleweed Image with label OpenSuse..."
-      echo
-      distrobox create -i registry.opensuse.org/opensuse/tumbleweed:latest -n "OpenSuse"
-      sleep 10
-      echo
-      clear && sh $0
-
-      ;;
-
-    u )
-      echo
-      sleep 2
-      echo "Upgrading all Containers Please Wait..."
-      echo
-      distrobox-upgrade --all
-      sleep 3
-      echo
-      clear && sh $0
-
-      ;;
-
-    q )
-      clear && exec ~/.local/bin/xero-cli
-
-      ;;
-
-    * )
-      echo "#################################"
-      echo "    Choose the correct number    "
-      echo "#################################"
-      ;;
-esac
-done
+# Main execution
+display_header
+display_options
+process_choice
