@@ -40,7 +40,11 @@ XeroLinux on Ko-Fi
 
 The distribution also provides pre-configured environments that serve as an elegant, functional starting point for you. Unlike more heavily modified, and single purpose distributions, **XeroLinux** provides a basic framework that allows you to configure and learn about your system, encouraging you to understand and shape your system's configuration.
 
-<h3 align="center">📺 <a href="https://www.youtube.com/watch?v=lsYg6-wUWXw" target="_blank"><strong>Preview Video</strong></a> 📺</h3>
+<div align="center">
+
+{{< youtube lsYg6-wUWXw >}}
+
+</div>
 
 #### Designed for Your Unique Needs
 
