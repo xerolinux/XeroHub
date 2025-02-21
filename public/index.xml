@@ -17,87 +17,107 @@
       <description>&lt;br /&gt;
 
 
-&lt;h1 class=&#34;relative group&#34;&gt;Cursor AI: Your New Coding Companion 
-    &lt;div id=&#34;cursor-ai-your-new-coding-companion&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+&lt;h1 class=&#34;relative group&#34;&gt;Cursor AI: The Code Editor That Writes Itself (Almost) 
+    &lt;div id=&#34;cursor-ai-the-code-editor-that-writes-itself-almost&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
     
 &lt;/h1&gt;
-&lt;p&gt;Cursor AI is not just another code editor; it&amp;rsquo;s a revolution in the way we write code. Imagine having a coding buddy who never sleeps, never complains, and always knows what you need before you even type it. That&amp;rsquo;s Cursor AI for you! Built on the sturdy framework of Visual Studio Code, this AI-powered editor is designed to make coding as smooth as butter on a hot Linux kernel. Let’s dive into the geeky goodness that Cursor AI offers!&lt;/p&gt;
+&lt;p&gt;Ever wished your code editor could do more than just sit there like a glorified notepad? What if it could actually help you write code, debug it, and even suggest improvements like that one senior dev who always has the right answer (but without the judgmental sighs)? Enter &lt;strong&gt;Cursor AI&lt;/strong&gt;—the code editor that’s so smart, it might just pass the Turing test while you’re still debugging your &lt;code&gt;for&lt;/code&gt; loop.&lt;/p&gt;
+&lt;p&gt;Built on the solid foundation of &lt;strong&gt;Visual Studio Code&lt;/strong&gt;, Cursor AI is here to make coding faster, smarter, and dare I say, &lt;em&gt;fun&lt;/em&gt;. Think of it as your new pair-programming buddy—except this one doesn’t hog the keyboard or insist on using Vim keybindings. Let’s dive in and see why Cursor AI is the editor you didn’t know you needed.&lt;/p&gt;
+&lt;hr&gt;
 
 
-&lt;h2 class=&#34;relative group&#34;&gt;What Makes Cursor AI Stand Out? 
-    &lt;div id=&#34;what-makes-cursor-ai-stand-out&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+&lt;h2 class=&#34;relative group&#34;&gt;Why Cursor AI Is Cooler Than Your Bash Aliases 
+    &lt;div id=&#34;why-cursor-ai-is-cooler-than-your-bash-aliases&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
     
 &lt;/h2&gt;
 
 
-&lt;h3 class=&#34;relative group&#34;&gt;&lt;strong&gt;AI Code Completion: Your New Best Friend&lt;/strong&gt; 
-    &lt;div id=&#34;ai-code-completion-your-new-best-friend&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+&lt;h3 class=&#34;relative group&#34;&gt;&lt;strong&gt;1. AI Code Completion: Tab-Complete on Steroids&lt;/strong&gt; 
+    &lt;div id=&#34;1-ai-code-completion-tab-complete-on-steroids&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
     
 &lt;/h3&gt;
-&lt;p&gt;Cursor AI uses advanced models like GPT-4 and Claude to predict your next line of code faster than you can say &amp;ldquo;sudo apt-get install.&amp;rdquo; Whether you&amp;rsquo;re working in Python, JavaScript, or TypeScript, it anticipates your needs and completes your code with uncanny accuracy. No more staring at the screen wondering how to implement that pesky function!&lt;/p&gt;
+&lt;p&gt;Remember when tab-completion felt like magic? Cursor AI takes that feeling and cranks it up to 11. Powered by &lt;strong&gt;GPT-4&lt;/strong&gt; and &lt;strong&gt;Claude&lt;/strong&gt;, this editor predicts your next line of code faster than you can type &lt;code&gt;git commit -m &amp;quot;fix stuff&amp;quot;&lt;/code&gt;. Whether you&amp;rsquo;re wrangling Python dictionaries or taming JavaScript promises, Cursor has your back.&lt;/p&gt;
+&lt;p&gt;Here’s an example: You start typing a function to fetch API data, and boom—Cursor finishes your thought like a mind-reading wizard:&lt;/p&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;def get_api_data(url, params=None):
 response = requests.get(url, params=params)
 response.raise_for_status()
 return response.json()
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 class=&#34;relative group&#34;&gt;&lt;strong&gt;Smart Code Improvement: Refactor Like a Pro&lt;/strong&gt; 
-    &lt;div id=&#34;smart-code-improvement-refactor-like-a-pro&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
-    
-&lt;/h3&gt;
-&lt;p&gt;Why write clean code when Cursor can do it for you? With features like converting loops to list comprehensions and simplifying complex conditionals, this tool helps keep your codebase cleaner than a freshly installed Debian system.&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;It’s like having autocomplete on caffeine. No more Googling “how to fetch data in Python” for the hundredth time.&lt;/p&gt;
 &lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
       &lt;iframe allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&#34; allowfullscreen=&#34;allowfullscreen&#34; loading=&#34;eager&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; src=&#34;https://www.youtube.com/embed/ocMOZpuAMw4?autoplay=0&amp;amp;controls=1&amp;amp;end=0&amp;amp;loop=0&amp;amp;mute=0&amp;amp;start=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;YouTube video&#34;&gt;&lt;/iframe&gt;
     &lt;/div&gt;
 
 
 
-&lt;h3 class=&#34;relative group&#34;&gt;&lt;strong&gt;Plain Language Commands: Talk Nerdy to Me&lt;/strong&gt; 
-    &lt;div id=&#34;plain-language-commands-talk-nerdy-to-me&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+&lt;h3 class=&#34;relative group&#34;&gt;&lt;strong&gt;2. Smart Code Refactoring: Because Your Codebase Deserves Better&lt;/strong&gt; 
+    &lt;div id=&#34;2-smart-code-refactoring-because-your-codebase-deserves-better&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
     
 &lt;/h3&gt;
-&lt;p&gt;Forget about cryptic syntax! Just type what you want in plain English, and Cursor will translate it into functional code. For example, typing “Create a function to calculate the Fibonacci sequence up to n terms” will yield:&lt;/p&gt;
+&lt;p&gt;Let’s face it: we’ve all written code that looks like it was designed by a committee of sleep-deprived interns. Cursor AI steps in to clean up your mess with surgical precision. It can refactor your code faster than you can say “technical debt,” turning ugly loops into sleek list comprehensions and simplifying conditionals that look like they escaped from a C++ textbook.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Before:&lt;/strong&gt;&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;result = []
+for item in items:
+if item.is_valid():
+result.append(item.process())
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;After (thanks to Cursor):&lt;/strong&gt;&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;result = [item.process() for item in items if item.is_valid()]
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;It’s like running &lt;code&gt;sudo pacman -Syyu&lt;/code&gt; on your entire codebase.&lt;/p&gt;
+&lt;hr&gt;
+
+
+&lt;h3 class=&#34;relative group&#34;&gt;&lt;strong&gt;3. Plain Language Commands: Talk Nerdy to Me&lt;/strong&gt; 
+    &lt;div id=&#34;3-plain-language-commands-talk-nerdy-to-me&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+    
+&lt;/h3&gt;
+&lt;p&gt;Ever wished you could just &lt;em&gt;tell&lt;/em&gt; your editor what you want instead of wrestling with syntax? With Cursor AI, you can. Just type something like “Write a function to calculate Fibonacci numbers up to n terms,” and watch as Cursor conjures up:&lt;/p&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;def fibonacci(n):
 sequence =
 while len(sequence) &amp;lt; n:
 sequence.append(sequence[-1] + sequence[-2])
 return sequence[:n]
-&lt;/code&gt;&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;It’s basically Stack Overflow without the snarky comments.&lt;/p&gt;
+&lt;hr&gt;
 
-&lt;h3 class=&#34;relative group&#34;&gt;&lt;strong&gt;In-Context Help: Your Personal Debugging Guru&lt;/strong&gt; 
-    &lt;div id=&#34;in-context-help-your-personal-debugging-guru&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+
+&lt;h3 class=&#34;relative group&#34;&gt;&lt;strong&gt;4. Debugging Assistance: Your Personal Rubber Duck (But Smarter)&lt;/strong&gt; 
+    &lt;div id=&#34;4-debugging-assistance-your-personal-rubber-duck-but-smarter&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
     
 &lt;/h3&gt;
-&lt;p&gt;Cursor doesn’t just stop at writing code; it also helps debug it! It provides real-time suggestions and highlights issues like a hawk eyeing its prey. It’s like having an experienced developer looking over your shoulder—without the awkwardness of sharing your screen.&lt;/p&gt;
+&lt;p&gt;Cursor doesn’t just help you write code—it also helps you fix it when things inevitably go sideways. It highlights bugs, suggests fixes, and even explains what went wrong in plain English (or as plain as programming errors can get). It’s like having an always-available senior dev who doesn’t judge you for forgetting to close your parentheses.&lt;/p&gt;
+&lt;hr&gt;
 
 
 &lt;h2 class=&#34;relative group&#34;&gt;How to Get Started with Cursor AI 
     &lt;div id=&#34;how-to-get-started-with-cursor-ai&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
     
 &lt;/h2&gt;
-&lt;p&gt;Installing Cursor AI is as easy as pie—Linux pie, that is! Download the appropriate version for your operating system from their website. For Linux users, just remember to make the AppImage executable:&lt;/p&gt;
+&lt;p&gt;Installing Cursor AI is so easy even a junior dev could do it without breaking production (probably). Head over to &lt;a href=&#34;https://www.cursor.com&#34; target=&#34;_blank&#34;&gt;cursor.com&lt;/a&gt; and grab the installer for your OS of choice. For my fellow Linux nerds out there, here’s how you can get up and running:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;chmod a+x cursor-0.40.3x86_64.AppImage
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;./cursor-0.40.3x86_64.AppImage
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Or if you are on &lt;strong&gt;ArchLinux&lt;/strong&gt; you can install directly from the &lt;strong&gt;A.U.R&lt;/strong&gt; like so :&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;yay/paru -S --noconfirm cursor-extracted
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Once installed, set up your environment and get ready to unleash the power of AI on your coding tasks.&lt;/p&gt;
+&lt;p&gt;Now you can summon Cursor faster than you can type &lt;code&gt;ls&lt;/code&gt;.&lt;/p&gt;
+&lt;hr&gt;
 
 
 &lt;h2 class=&#34;relative group&#34;&gt;The Future of Coding with Cursor AI 
     &lt;div id=&#34;the-future-of-coding-with-cursor-ai&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
     
 &lt;/h2&gt;
-&lt;p&gt;Cursor AI is not just about today; it’s paving the way for tomorrow’s coding practices. With plans for multi-file editing and improved bug detection on the horizon, developers can expect even more robust features soon. It’s like upgrading from a floppy disk to an SSD—once you experience it, there’s no going back!&lt;/p&gt;
+&lt;p&gt;Cursor isn’t just about making today’s coding easier—it’s about shaping the future of development itself. With features like multi-file editing and advanced bug detection on the horizon, this tool is evolving faster than the Linux kernel on release day.&lt;/p&gt;
+&lt;p&gt;Imagine a world where debugging feels less like defusing a bomb and more like solving a Sudoku puzzle with hints enabled. That’s where we’re headed with Cursor AI.&lt;/p&gt;
+&lt;hr&gt;
 
 
-&lt;h2 class=&#34;relative group&#34;&gt;Conclusion: Code Like a Jedi 
-    &lt;div id=&#34;conclusion-code-like-a-jedi&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+&lt;h2 class=&#34;relative group&#34;&gt;Conclusion: Embrace the Future (and Stop Writing Bad Code) 
+    &lt;div id=&#34;conclusion-embrace-the-future-and-stop-writing-bad-code&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
     
 &lt;/h2&gt;
-&lt;p&gt;In a world where coding can sometimes feel like deciphering ancient runes, Cursor AI emerges as a beacon of hope—an intelligent companion that enhances productivity and creativity. With its ability to understand context and generate code based on simple commands, it&amp;rsquo;s transforming how developers interact with their codebases.&lt;/p&gt;
-&lt;p&gt;So why not give Cursor AI a shot? After all, life’s too short for bad code (or bad puns). Embrace the future of coding and let Cursor be your guide through the vast universe of programming!&lt;/p&gt;
-&lt;p&gt;Remember, in the realm of coding, it’s not just about writing lines; it&amp;rsquo;s about writing &lt;em&gt;smart&lt;/em&gt; lines. Happy coding!&lt;/p&gt;
-&lt;p&gt;Cheers !&lt;/p&gt;
+&lt;p&gt;In the grand scheme of things, coding is already hard enough without fighting your tools. Cursor AI flips the script by becoming an extension of your brain—a co-pilot that helps you navigate through the spaghetti code jungle with ease.&lt;/p&gt;
+&lt;p&gt;So why not give it a try? Download Cursor AI today and let it revolutionize how you write code. After all, life’s too short for bad commits, poorly named variables, or unclosed tags.&lt;/p&gt;
+&lt;p&gt;Remember: great developers don’t just write code—they write &lt;em&gt;smart&lt;/em&gt; code. And now, with Cursor AI by your side, you’ll be coding smarter than ever before.&lt;/p&gt;
+&lt;p&gt;Happy hacking! 🚀&lt;/p&gt;
 </description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/cursor-code-editor/featured.jpg" />
     </item>
@@ -178,7 +198,7 @@ return sequence[:n]
 
       &lt;/span&gt;
       &lt;div id=&#34;github-55a7e247f2f2b6f3753f13b4f04d7b27-stargazers&#34; class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
-        14
+        30
       &lt;/div&gt;
 
       &lt;span class=&#34;text-md mr-1 text-neutral-800 dark:text-neutral&#34;&gt;
@@ -191,11 +211,7 @@ return sequence[:n]
 
       &lt;/span&gt;
       &lt;div id=&#34;github-55a7e247f2f2b6f3753f13b4f04d7b27-forks&#34; class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
-<<<<<<< HEAD
         6
-=======
-        2
->>>>>>> a9bf7f74b9df3f07d0e74e79a2de68647eb7faf6
       &lt;/div&gt;
 
     &lt;/div&gt;
@@ -343,11 +359,7 @@ return sequence[:n]
     &lt;/div&gt;
 
     &lt;p id=&#34;github-56f532714b2f7c9707f9dc8d689abff4-description&#34; class=&#34;m-0 mt-2 text-md text-neutral-800 dark:text-neutral&#34;&gt;
-<<<<<<< HEAD
       Get up and running with Llama 3.1, Mistral, Gemma 2, and other large language models.
-=======
-      Get up and running with Llama 3.2, Mistral, Gemma 2, and other large language models.
->>>>>>> a9bf7f74b9df3f07d0e74e79a2de68647eb7faf6
     &lt;/p&gt;
 
     &lt;div class=&#34;m-0 mt-2 flex items-center&#34;&gt;
@@ -368,11 +380,7 @@ return sequence[:n]
 
       &lt;/span&gt;
       &lt;div id=&#34;github-56f532714b2f7c9707f9dc8d689abff4-stargazers&#34; class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
-<<<<<<< HEAD
         89952
-=======
-        97925
->>>>>>> a9bf7f74b9df3f07d0e74e79a2de68647eb7faf6
       &lt;/div&gt;
 
       &lt;span class=&#34;text-md mr-1 text-neutral-800 dark:text-neutral&#34;&gt;
@@ -385,11 +393,7 @@ return sequence[:n]
 
       &lt;/span&gt;
       &lt;div id=&#34;github-56f532714b2f7c9707f9dc8d689abff4-forks&#34; class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
-<<<<<<< HEAD
         7062
-=======
-        7794
->>>>>>> a9bf7f74b9df3f07d0e74e79a2de68647eb7faf6
       &lt;/div&gt;
 
     &lt;/div&gt;
@@ -2283,11 +2287,7 @@ return sequence[:n]
 
       &lt;/span&gt;
       &lt;div id=&#34;github-8e299a5487c47095e16d57805c99878e-stargazers&#34; class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
-<<<<<<< HEAD
         295
-=======
-        314
->>>>>>> a9bf7f74b9df3f07d0e74e79a2de68647eb7faf6
       &lt;/div&gt;
 
       &lt;span class=&#34;text-md mr-1 text-neutral-800 dark:text-neutral&#34;&gt;
@@ -2395,11 +2395,7 @@ return sequence[:n]
 
       &lt;/span&gt;
       &lt;div id=&#34;github-688cf059465b90f349917970b2a2ff9e-stargazers&#34; class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
-<<<<<<< HEAD
         1
-=======
-        4
->>>>>>> a9bf7f74b9df3f07d0e74e79a2de68647eb7faf6
       &lt;/div&gt;
 
       &lt;span class=&#34;text-md mr-1 text-neutral-800 dark:text-neutral&#34;&gt;
@@ -2412,11 +2408,7 @@ return sequence[:n]
 
       &lt;/span&gt;
       &lt;div id=&#34;github-688cf059465b90f349917970b2a2ff9e-forks&#34; class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
-<<<<<<< HEAD
         0
-=======
-        2
->>>>>>> a9bf7f74b9df3f07d0e74e79a2de68647eb7faf6
       &lt;/div&gt;
 
     &lt;/div&gt;
@@ -2800,11 +2792,7 @@ return sequence[:n]
 
       &lt;/span&gt;
       &lt;div id=&#34;github-a3d14a4a10f892b0bde0c7d2dcb03e5f-stargazers&#34; class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
-<<<<<<< HEAD
         82
-=======
-        101
->>>>>>> a9bf7f74b9df3f07d0e74e79a2de68647eb7faf6
       &lt;/div&gt;
 
       &lt;span class=&#34;text-md mr-1 text-neutral-800 dark:text-neutral&#34;&gt;
@@ -2956,11 +2944,7 @@ return sequence[:n]
 
       &lt;/span&gt;
       &lt;div id=&#34;github-674857d8b75e800e4bcc0955b60eca86-stargazers&#34; class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
-<<<<<<< HEAD
         1545
-=======
-        1590
->>>>>>> a9bf7f74b9df3f07d0e74e79a2de68647eb7faf6
       &lt;/div&gt;
 
       &lt;span class=&#34;text-md mr-1 text-neutral-800 dark:text-neutral&#34;&gt;
@@ -2973,11 +2957,7 @@ return sequence[:n]
 
       &lt;/span&gt;
       &lt;div id=&#34;github-674857d8b75e800e4bcc0955b60eca86-forks&#34; class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
-<<<<<<< HEAD
         145
-=======
-        149
->>>>>>> a9bf7f74b9df3f07d0e74e79a2de68647eb7faf6
       &lt;/div&gt;
 
     &lt;/div&gt;
@@ -3170,11 +3150,7 @@ return sequence[:n]
 
       &lt;/span&gt;
       &lt;div id=&#34;github-35acb2467e8c5b7be245dd5d8ae6184d-stargazers&#34; class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
-<<<<<<< HEAD
         770
-=======
-        811
->>>>>>> a9bf7f74b9df3f07d0e74e79a2de68647eb7faf6
       &lt;/div&gt;
 
       &lt;span class=&#34;text-md mr-1 text-neutral-800 dark:text-neutral&#34;&gt;
@@ -3187,11 +3163,7 @@ return sequence[:n]
 
       &lt;/span&gt;
       &lt;div id=&#34;github-35acb2467e8c5b7be245dd5d8ae6184d-forks&#34; class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
-<<<<<<< HEAD
         51
-=======
-        54
->>>>>>> a9bf7f74b9df3f07d0e74e79a2de68647eb7faf6
       &lt;/div&gt;
 
     &lt;/div&gt;
@@ -3571,11 +3543,7 @@ return sequence[:n]
 
       &lt;/span&gt;
       &lt;div id=&#34;github-dd438b669639d3054eea6835139e9c68-stargazers&#34; class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
-<<<<<<< HEAD
         41840
-=======
-        51911
->>>>>>> a9bf7f74b9df3f07d0e74e79a2de68647eb7faf6
       &lt;/div&gt;
 
       &lt;span class=&#34;text-md mr-1 text-neutral-800 dark:text-neutral&#34;&gt;
@@ -3588,11 +3556,7 @@ return sequence[:n]
 
       &lt;/span&gt;
       &lt;div id=&#34;github-dd438b669639d3054eea6835139e9c68-forks&#34; class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
-<<<<<<< HEAD
         2048
-=======
-        2748
->>>>>>> a9bf7f74b9df3f07d0e74e79a2de68647eb7faf6
       &lt;/div&gt;
 
     &lt;/div&gt;
@@ -3677,11 +3641,7 @@ return sequence[:n]
 
       &lt;/span&gt;
       &lt;div id=&#34;github-f27d1586c5573e28a0769a8586d76e5d-stargazers&#34; class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
-<<<<<<< HEAD
         1875
-=======
-        2023
->>>>>>> a9bf7f74b9df3f07d0e74e79a2de68647eb7faf6
       &lt;/div&gt;
 
       &lt;span class=&#34;text-md mr-1 text-neutral-800 dark:text-neutral&#34;&gt;
@@ -3694,11 +3654,7 @@ return sequence[:n]
 
       &lt;/span&gt;
       &lt;div id=&#34;github-f27d1586c5573e28a0769a8586d76e5d-forks&#34; class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
-<<<<<<< HEAD
         487
-=======
-        523
->>>>>>> a9bf7f74b9df3f07d0e74e79a2de68647eb7faf6
       &lt;/div&gt;
 
     &lt;/div&gt;
@@ -4254,11 +4210,7 @@ Shaders: Enhance your gaming experience with graphical shaders. Find them in the
 
       &lt;/span&gt;
       &lt;div id=&#34;github-1892c8fc467600df127ce836daf86e2a-stargazers&#34; class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
-<<<<<<< HEAD
         3679
-=======
-        6503
->>>>>>> a9bf7f74b9df3f07d0e74e79a2de68647eb7faf6
       &lt;/div&gt;
 
       &lt;span class=&#34;text-md mr-1 text-neutral-800 dark:text-neutral&#34;&gt;
@@ -4271,11 +4223,7 @@ Shaders: Enhance your gaming experience with graphical shaders. Find them in the
 
       &lt;/span&gt;
       &lt;div id=&#34;github-1892c8fc467600df127ce836daf86e2a-forks&#34; class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
-<<<<<<< HEAD
         115
-=======
-        275
->>>>>>> a9bf7f74b9df3f07d0e74e79a2de68647eb7faf6
       &lt;/div&gt;
 
     &lt;/div&gt;
@@ -4645,11 +4593,7 @@ Shaders: Enhance your gaming experience with graphical shaders. Find them in the
 
       &lt;/span&gt;
       &lt;div id=&#34;github-83f7d6739486881e48a315f6ff62190e-stargazers&#34; class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
-<<<<<<< HEAD
         43
-=======
-        55
->>>>>>> a9bf7f74b9df3f07d0e74e79a2de68647eb7faf6
       &lt;/div&gt;
 
       &lt;span class=&#34;text-md mr-1 text-neutral-800 dark:text-neutral&#34;&gt;
@@ -4780,11 +4724,7 @@ Shaders: Enhance your gaming experience with graphical shaders. Find them in the
 
       &lt;/span&gt;
       &lt;div id=&#34;github-960f7422cbeadeb866eb2380db36e9a2-stargazers&#34; class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
-<<<<<<< HEAD
         357
-=======
-        625
->>>>>>> a9bf7f74b9df3f07d0e74e79a2de68647eb7faf6
       &lt;/div&gt;
 
       &lt;span class=&#34;text-md mr-1 text-neutral-800 dark:text-neutral&#34;&gt;
@@ -4797,11 +4737,7 @@ Shaders: Enhance your gaming experience with graphical shaders. Find them in the
 
       &lt;/span&gt;
       &lt;div id=&#34;github-960f7422cbeadeb866eb2380db36e9a2-forks&#34; class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
-<<<<<<< HEAD
         5
-=======
-        18
->>>>>>> a9bf7f74b9df3f07d0e74e79a2de68647eb7faf6
       &lt;/div&gt;
 
     &lt;/div&gt;
@@ -4884,11 +4820,7 @@ Shaders: Enhance your gaming experience with graphical shaders. Find them in the
 
       &lt;/span&gt;
       &lt;div id=&#34;github-759ccb72510e521a6d6a62d8e54d138b-stargazers&#34; class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
-<<<<<<< HEAD
         877
-=======
-        930
->>>>>>> a9bf7f74b9df3f07d0e74e79a2de68647eb7faf6
       &lt;/div&gt;
 
       &lt;span class=&#34;text-md mr-1 text-neutral-800 dark:text-neutral&#34;&gt;
@@ -4901,11 +4833,7 @@ Shaders: Enhance your gaming experience with graphical shaders. Find them in the
 
       &lt;/span&gt;
       &lt;div id=&#34;github-759ccb72510e521a6d6a62d8e54d138b-forks&#34; class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
-<<<<<<< HEAD
         43
-=======
-        49
->>>>>>> a9bf7f74b9df3f07d0e74e79a2de68647eb7faf6
       &lt;/div&gt;
 
     &lt;/div&gt;
@@ -4991,11 +4919,7 @@ Shaders: Enhance your gaming experience with graphical shaders. Find them in the
 
       &lt;/span&gt;
       &lt;div id=&#34;github-9301afab42662d82090e070c3e3c31f0-stargazers&#34; class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
-<<<<<<< HEAD
         1875
-=======
-        2023
->>>>>>> a9bf7f74b9df3f07d0e74e79a2de68647eb7faf6
       &lt;/div&gt;
 
       &lt;span class=&#34;text-md mr-1 text-neutral-800 dark:text-neutral&#34;&gt;
@@ -5008,11 +4932,7 @@ Shaders: Enhance your gaming experience with graphical shaders. Find them in the
 
       &lt;/span&gt;
       &lt;div id=&#34;github-9301afab42662d82090e070c3e3c31f0-forks&#34; class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
-<<<<<<< HEAD
         487
-=======
-        523
->>>>>>> a9bf7f74b9df3f07d0e74e79a2de68647eb7faf6
       &lt;/div&gt;
 
     &lt;/div&gt;
@@ -5334,11 +5254,7 @@ Shaders: Enhance your gaming experience with graphical shaders. Find them in the
 
       &lt;/span&gt;
       &lt;div id=&#34;github-048d83c2c4c5d1181ccc6b118c336300-stargazers&#34; class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
-<<<<<<< HEAD
         43605
-=======
-        50031
->>>>>>> a9bf7f74b9df3f07d0e74e79a2de68647eb7faf6
       &lt;/div&gt;
 
       &lt;span class=&#34;text-md mr-1 text-neutral-800 dark:text-neutral&#34;&gt;
@@ -5351,11 +5267,7 @@ Shaders: Enhance your gaming experience with graphical shaders. Find them in the
 
       &lt;/span&gt;
       &lt;div id=&#34;github-048d83c2c4c5d1181ccc6b118c336300-forks&#34; class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
-<<<<<<< HEAD
         2333
-=======
-        3064
->>>>>>> a9bf7f74b9df3f07d0e74e79a2de68647eb7faf6
       &lt;/div&gt;
 
     &lt;/div&gt;
@@ -5757,11 +5669,7 @@ Shaders: Enhance your gaming experience with graphical shaders. Find them in the
 
       &lt;/span&gt;
       &lt;div id=&#34;github-ba49e4e5b503b677aa818e3c0fe87165-stargazers&#34; class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
-<<<<<<< HEAD
         43
-=======
-        55
->>>>>>> a9bf7f74b9df3f07d0e74e79a2de68647eb7faf6
       &lt;/div&gt;
 
       &lt;span class=&#34;text-md mr-1 text-neutral-800 dark:text-neutral&#34;&gt;
@@ -5841,11 +5749,7 @@ Shaders: Enhance your gaming experience with graphical shaders. Find them in the
 
       &lt;/span&gt;
       &lt;div id=&#34;github-4b2b060cb46e0a0142c2701566b5e2c2-stargazers&#34; class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
-<<<<<<< HEAD
         16335
-=======
-        17425
->>>>>>> a9bf7f74b9df3f07d0e74e79a2de68647eb7faf6
       &lt;/div&gt;
 
       &lt;span class=&#34;text-md mr-1 text-neutral-800 dark:text-neutral&#34;&gt;
@@ -5858,11 +5762,7 @@ Shaders: Enhance your gaming experience with graphical shaders. Find them in the
 
       &lt;/span&gt;
       &lt;div id=&#34;github-4b2b060cb46e0a0142c2701566b5e2c2-forks&#34; class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
-<<<<<<< HEAD
         2309
-=======
-        2386
->>>>>>> a9bf7f74b9df3f07d0e74e79a2de68647eb7faf6
       &lt;/div&gt;
 
     &lt;/div&gt;
@@ -5995,11 +5895,7 @@ Shaders: Enhance your gaming experience with graphical shaders. Find them in the
 
       &lt;/span&gt;
       &lt;div id=&#34;gitlab-b5993c5970e77657baffddc647ed112c-star_count&#34; class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
-<<<<<<< HEAD
         26
-=======
-        34
->>>>>>> a9bf7f74b9df3f07d0e74e79a2de68647eb7faf6
       &lt;/div&gt;
 
       &lt;span class=&#34;text-md mr-1 text-neutral-800 dark:text-neutral&#34;&gt;
@@ -6012,7 +5908,7 @@ Shaders: Enhance your gaming experience with graphical shaders. Find them in the
 
       &lt;/span&gt;
       &lt;div id=&#34;gitlab-b5993c5970e77657baffddc647ed112c-forks_count&#34; class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
-        0
+        1
       &lt;/div&gt;
 
     &lt;/div&gt;
@@ -6144,11 +6040,7 @@ Shaders: Enhance your gaming experience with graphical shaders. Find them in the
 
       &lt;/span&gt;
       &lt;div id=&#34;github-335bc09a11197591f1ac4202a70da0ba-stargazers&#34; class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
-<<<<<<< HEAD
         262
-=======
-        1071
->>>>>>> a9bf7f74b9df3f07d0e74e79a2de68647eb7faf6
       &lt;/div&gt;
 
       &lt;span class=&#34;text-md mr-1 text-neutral-800 dark:text-neutral&#34;&gt;
@@ -6161,11 +6053,7 @@ Shaders: Enhance your gaming experience with graphical shaders. Find them in the
 
       &lt;/span&gt;
       &lt;div id=&#34;github-335bc09a11197591f1ac4202a70da0ba-forks&#34; class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
-<<<<<<< HEAD
         25
-=======
-        80
->>>>>>> a9bf7f74b9df3f07d0e74e79a2de68647eb7faf6
       &lt;/div&gt;
 
     &lt;/div&gt;
@@ -6358,11 +6246,7 @@ Shaders: Enhance your gaming experience with graphical shaders. Find them in the
 
       &lt;/span&gt;
       &lt;div id=&#34;github-2ef9a4269d317def170edabf1a7ec947-stargazers&#34; class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
-<<<<<<< HEAD
         107152
-=======
-        112130
->>>>>>> a9bf7f74b9df3f07d0e74e79a2de68647eb7faf6
       &lt;/div&gt;
 
       &lt;span class=&#34;text-md mr-1 text-neutral-800 dark:text-neutral&#34;&gt;
@@ -6375,11 +6259,7 @@ Shaders: Enhance your gaming experience with graphical shaders. Find them in the
 
       &lt;/span&gt;
       &lt;div id=&#34;github-2ef9a4269d317def170edabf1a7ec947-forks&#34; class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
-<<<<<<< HEAD
         10350
-=======
-        10724
->>>>>>> a9bf7f74b9df3f07d0e74e79a2de68647eb7faf6
       &lt;/div&gt;
 
     &lt;/div&gt;
@@ -6454,11 +6334,7 @@ Shaders: Enhance your gaming experience with graphical shaders. Find them in the
 
       &lt;/span&gt;
       &lt;div id=&#34;github-1305ea58e76e685e1b7863bc394c207f-stargazers&#34; class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
-<<<<<<< HEAD
         18293
-=======
-        20211
->>>>>>> a9bf7f74b9df3f07d0e74e79a2de68647eb7faf6
       &lt;/div&gt;
 
       &lt;span class=&#34;text-md mr-1 text-neutral-800 dark:text-neutral&#34;&gt;
@@ -6471,11 +6347,7 @@ Shaders: Enhance your gaming experience with graphical shaders. Find them in the
 
       &lt;/span&gt;
       &lt;div id=&#34;github-1305ea58e76e685e1b7863bc394c207f-forks&#34; class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
-<<<<<<< HEAD
         2475
-=======
-        2667
->>>>>>> a9bf7f74b9df3f07d0e74e79a2de68647eb7faf6
       &lt;/div&gt;
 
     &lt;/div&gt;
@@ -6601,11 +6473,7 @@ Shaders: Enhance your gaming experience with graphical shaders. Find them in the
 
       &lt;/span&gt;
       &lt;div id=&#34;github-12a0460d02150c7a086dac10a56b80ed-stargazers&#34; class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
-<<<<<<< HEAD
         12333
-=======
-        14390
->>>>>>> a9bf7f74b9df3f07d0e74e79a2de68647eb7faf6
       &lt;/div&gt;
 
       &lt;span class=&#34;text-md mr-1 text-neutral-800 dark:text-neutral&#34;&gt;
@@ -6618,11 +6486,7 @@ Shaders: Enhance your gaming experience with graphical shaders. Find them in the
 
       &lt;/span&gt;
       &lt;div id=&#34;github-12a0460d02150c7a086dac10a56b80ed-forks&#34; class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
-<<<<<<< HEAD
         1912
-=======
-        2362
->>>>>>> a9bf7f74b9df3f07d0e74e79a2de68647eb7faf6
       &lt;/div&gt;
 
     &lt;/div&gt;
@@ -6815,11 +6679,7 @@ Proxmox VE Helper-Scripts Database
 
       &lt;/span&gt;
       &lt;div id=&#34;github-33a752733b7cf7935c163efcf04a96c1-stargazers&#34; class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
-<<<<<<< HEAD
         43
-=======
-        55
->>>>>>> a9bf7f74b9df3f07d0e74e79a2de68647eb7faf6
       &lt;/div&gt;
 
       &lt;span class=&#34;text-md mr-1 text-neutral-800 dark:text-neutral&#34;&gt;
@@ -6913,11 +6773,7 @@ Proxmox VE Helper-Scripts Database
 
       &lt;/span&gt;
       &lt;div id=&#34;github-5eeb2e27b9916ae7df6a93a2a1b42a89-stargazers&#34; class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
-<<<<<<< HEAD
         321
-=======
-        335
->>>>>>> a9bf7f74b9df3f07d0e74e79a2de68647eb7faf6
       &lt;/div&gt;
 
       &lt;span class=&#34;text-md mr-1 text-neutral-800 dark:text-neutral&#34;&gt;
@@ -7023,11 +6879,7 @@ Proxmox VE Helper-Scripts Database
 
       &lt;/span&gt;
       &lt;div id=&#34;github-04244ad6c9c1dac42dbc9e0df83f85c4-stargazers&#34; class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
-<<<<<<< HEAD
         935
-=======
-        1234
->>>>>>> a9bf7f74b9df3f07d0e74e79a2de68647eb7faf6
       &lt;/div&gt;
 
       &lt;span class=&#34;text-md mr-1 text-neutral-800 dark:text-neutral&#34;&gt;
@@ -7040,11 +6892,7 @@ Proxmox VE Helper-Scripts Database
 
       &lt;/span&gt;
       &lt;div id=&#34;github-04244ad6c9c1dac42dbc9e0df83f85c4-forks&#34; class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
-<<<<<<< HEAD
         142
-=======
-        161
->>>>>>> a9bf7f74b9df3f07d0e74e79a2de68647eb7faf6
       &lt;/div&gt;
 
     &lt;/div&gt;
@@ -7435,11 +7283,7 @@ Download Bluefin Aurora
 
       &lt;/span&gt;
       &lt;div id=&#34;github-e2697052f914cf610b2b9d5d5e94a310-stargazers&#34; class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
-<<<<<<< HEAD
         7433
-=======
-        8010
->>>>>>> a9bf7f74b9df3f07d0e74e79a2de68647eb7faf6
       &lt;/div&gt;
 
       &lt;span class=&#34;text-md mr-1 text-neutral-800 dark:text-neutral&#34;&gt;
@@ -7452,11 +7296,7 @@ Download Bluefin Aurora
 
       &lt;/span&gt;
       &lt;div id=&#34;github-e2697052f914cf610b2b9d5d5e94a310-forks&#34; class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
-<<<<<<< HEAD
         306
-=======
-        332
->>>>>>> a9bf7f74b9df3f07d0e74e79a2de68647eb7faf6
       &lt;/div&gt;
 
     &lt;/div&gt;
@@ -7621,11 +7461,7 @@ Download Bluefin Aurora
 
       &lt;/span&gt;
       &lt;div id=&#34;github-8c5f7cf4ebc6a27cc9dd18c133eaf67b-stargazers&#34; class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
-<<<<<<< HEAD
         2629
-=======
-        2694
->>>>>>> a9bf7f74b9df3f07d0e74e79a2de68647eb7faf6
       &lt;/div&gt;
 
       &lt;span class=&#34;text-md mr-1 text-neutral-800 dark:text-neutral&#34;&gt;
@@ -7638,11 +7474,7 @@ Download Bluefin Aurora
 
       &lt;/span&gt;
       &lt;div id=&#34;github-8c5f7cf4ebc6a27cc9dd18c133eaf67b-forks&#34; class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
-<<<<<<< HEAD
         75
-=======
-        78
->>>>>>> a9bf7f74b9df3f07d0e74e79a2de68647eb7faf6
       &lt;/div&gt;
 
     &lt;/div&gt;
@@ -7890,11 +7722,7 @@ Download Bluefin Aurora
 
       &lt;/span&gt;
       &lt;div id=&#34;github-d4629d5be933fe5b06f61e7e2b4973ce-stargazers&#34; class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
-<<<<<<< HEAD
         20039
-=======
-        21743
->>>>>>> a9bf7f74b9df3f07d0e74e79a2de68647eb7faf6
       &lt;/div&gt;
 
       &lt;span class=&#34;text-md mr-1 text-neutral-800 dark:text-neutral&#34;&gt;
@@ -7907,11 +7735,7 @@ Download Bluefin Aurora
 
       &lt;/span&gt;
       &lt;div id=&#34;github-d4629d5be933fe5b06f61e7e2b4973ce-forks&#34; class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
-<<<<<<< HEAD
         626
-=======
-        658
->>>>>>> a9bf7f74b9df3f07d0e74e79a2de68647eb7faf6
       &lt;/div&gt;
 
     &lt;/div&gt;
@@ -8152,11 +7976,7 @@ Download Bluefin Aurora
 
       &lt;/span&gt;
       &lt;div id=&#34;github-359c471407630108af16a9bf1612d622-stargazers&#34; class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
-<<<<<<< HEAD
         11730
-=======
-        12792
->>>>>>> a9bf7f74b9df3f07d0e74e79a2de68647eb7faf6
       &lt;/div&gt;
 
       &lt;span class=&#34;text-md mr-1 text-neutral-800 dark:text-neutral&#34;&gt;
@@ -8169,11 +7989,7 @@ Download Bluefin Aurora
 
       &lt;/span&gt;
       &lt;div id=&#34;github-359c471407630108af16a9bf1612d622-forks&#34; class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
-<<<<<<< HEAD
         1450
-=======
-        1518
->>>>>>> a9bf7f74b9df3f07d0e74e79a2de68647eb7faf6
       &lt;/div&gt;
 
     &lt;/div&gt;
@@ -8312,11 +8128,7 @@ Download Bluefin Aurora
 
       &lt;/span&gt;
       &lt;div id=&#34;github-95784f9db36c1bd48c66366504913f55-stargazers&#34; class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
-<<<<<<< HEAD
         27067
-=======
-        30678
->>>>>>> a9bf7f74b9df3f07d0e74e79a2de68647eb7faf6
       &lt;/div&gt;
 
       &lt;span class=&#34;text-md mr-1 text-neutral-800 dark:text-neutral&#34;&gt;
@@ -8329,11 +8141,7 @@ Download Bluefin Aurora
 
       &lt;/span&gt;
       &lt;div id=&#34;github-95784f9db36c1bd48c66366504913f55-forks&#34; class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
-<<<<<<< HEAD
         1112
-=======
-        1267
->>>>>>> a9bf7f74b9df3f07d0e74e79a2de68647eb7faf6
       &lt;/div&gt;
 
     &lt;/div&gt;
@@ -8461,11 +8269,7 @@ Download Bluefin Aurora
 
       &lt;/span&gt;
       &lt;div id=&#34;github-18e693ebc65096b5df283f30dd37163c-stargazers&#34; class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
-<<<<<<< HEAD
         241
-=======
-        253
->>>>>>> a9bf7f74b9df3f07d0e74e79a2de68647eb7faf6
       &lt;/div&gt;
 
       &lt;span class=&#34;text-md mr-1 text-neutral-800 dark:text-neutral&#34;&gt;
@@ -8704,11 +8508,7 @@ Download Bluefin Aurora
 
       &lt;/span&gt;
       &lt;div id=&#34;github-bcb0d2da5009533c2e74cc81533f73ad-stargazers&#34; class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
-<<<<<<< HEAD
         404
-=======
-        435
->>>>>>> a9bf7f74b9df3f07d0e74e79a2de68647eb7faf6
       &lt;/div&gt;
 
       &lt;span class=&#34;text-md mr-1 text-neutral-800 dark:text-neutral&#34;&gt;
@@ -8721,11 +8521,7 @@ Download Bluefin Aurora
 
       &lt;/span&gt;
       &lt;div id=&#34;github-bcb0d2da5009533c2e74cc81533f73ad-forks&#34; class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
-<<<<<<< HEAD
         33
-=======
-        35
->>>>>>> a9bf7f74b9df3f07d0e74e79a2de68647eb7faf6
       &lt;/div&gt;
 
     &lt;/div&gt;
@@ -9061,11 +8857,7 @@ Download Bluefin Aurora
 
       &lt;/span&gt;
       &lt;div id=&#34;github-3779791f9be93f712e396768a672133d-stargazers&#34; class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
-<<<<<<< HEAD
         2724
-=======
-        2952
->>>>>>> a9bf7f74b9df3f07d0e74e79a2de68647eb7faf6
       &lt;/div&gt;
 
       &lt;span class=&#34;text-md mr-1 text-neutral-800 dark:text-neutral&#34;&gt;
@@ -9078,11 +8870,7 @@ Download Bluefin Aurora
 
       &lt;/span&gt;
       &lt;div id=&#34;github-3779791f9be93f712e396768a672133d-forks&#34; class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
-<<<<<<< HEAD
         164
-=======
-        176
->>>>>>> a9bf7f74b9df3f07d0e74e79a2de68647eb7faf6
       &lt;/div&gt;
 
     &lt;/div&gt;
@@ -9571,11 +9359,7 @@ Download Bluefin Aurora
 
       &lt;/span&gt;
       &lt;div id=&#34;github-332ee8afae17adb75781b84a058a1d54-stargazers&#34; class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
-<<<<<<< HEAD
         918
-=======
-        992
->>>>>>> a9bf7f74b9df3f07d0e74e79a2de68647eb7faf6
       &lt;/div&gt;
 
       &lt;span class=&#34;text-md mr-1 text-neutral-800 dark:text-neutral&#34;&gt;
@@ -9588,11 +9372,7 @@ Download Bluefin Aurora
 
       &lt;/span&gt;
       &lt;div id=&#34;github-332ee8afae17adb75781b84a058a1d54-forks&#34; class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
-<<<<<<< HEAD
         35
-=======
-        37
->>>>>>> a9bf7f74b9df3f07d0e74e79a2de68647eb7faf6
       &lt;/div&gt;
 
     &lt;/div&gt;
@@ -9739,11 +9519,7 @@ cd LightlyShaders; mkdir qt5build; cd qt5build; cmake ../ -DCMAKE_INSTALL_PREFIX
 
       &lt;/span&gt;
       &lt;div id=&#34;github-9035e4604f09af91fb89685b1e617483-stargazers&#34; class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
-<<<<<<< HEAD
         352
-=======
-        365
->>>>>>> a9bf7f74b9df3f07d0e74e79a2de68647eb7faf6
       &lt;/div&gt;
 
       &lt;span class=&#34;text-md mr-1 text-neutral-800 dark:text-neutral&#34;&gt;
@@ -10157,11 +9933,7 @@ cd LightlyShaders; mkdir qt5build; cd qt5build; cmake ../ -DCMAKE_INSTALL_PREFIX
 
       &lt;/span&gt;
       &lt;div id=&#34;github-2294faaf2680cd82062f8e3f92431994-stargazers&#34; class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
-<<<<<<< HEAD
         58122
-=======
-        60336
->>>>>>> a9bf7f74b9df3f07d0e74e79a2de68647eb7faf6
       &lt;/div&gt;
 
       &lt;span class=&#34;text-md mr-1 text-neutral-800 dark:text-neutral&#34;&gt;
@@ -10174,11 +9946,7 @@ cd LightlyShaders; mkdir qt5build; cd qt5build; cmake ../ -DCMAKE_INSTALL_PREFIX
 
       &lt;/span&gt;
       &lt;div id=&#34;github-2294faaf2680cd82062f8e3f92431994-forks&#34; class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
-<<<<<<< HEAD
         7773
-=======
-        7991
->>>>>>> a9bf7f74b9df3f07d0e74e79a2de68647eb7faf6
       &lt;/div&gt;
 
     &lt;/div&gt;
@@ -10316,11 +10084,7 @@ cd LightlyShaders; mkdir qt5build; cd qt5build; cmake ../ -DCMAKE_INSTALL_PREFIX
 
       &lt;/span&gt;
       &lt;div id=&#34;github-18f534e30ec2cbc3930543c1d437b458-stargazers&#34; class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
-<<<<<<< HEAD
         318
-=======
-        353
->>>>>>> a9bf7f74b9df3f07d0e74e79a2de68647eb7faf6
       &lt;/div&gt;
 
       &lt;span class=&#34;text-md mr-1 text-neutral-800 dark:text-neutral&#34;&gt;
@@ -10333,7 +10097,7 @@ cd LightlyShaders; mkdir qt5build; cd qt5build; cmake ../ -DCMAKE_INSTALL_PREFIX
 
       &lt;/span&gt;
       &lt;div id=&#34;github-18f534e30ec2cbc3930543c1d437b458-forks&#34; class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
-        9
+        8
       &lt;/div&gt;
 
     &lt;/div&gt;
@@ -10474,11 +10238,7 @@ cd LightlyShaders; mkdir qt5build; cd qt5build; cmake ../ -DCMAKE_INSTALL_PREFIX
 
       &lt;/span&gt;
       &lt;div id=&#34;github-27f63cdc343184aeff1cee1e4fc50afa-stargazers&#34; class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
-<<<<<<< HEAD
         228
-=======
-        294
->>>>>>> a9bf7f74b9df3f07d0e74e79a2de68647eb7faf6
       &lt;/div&gt;
 
       &lt;span class=&#34;text-md mr-1 text-neutral-800 dark:text-neutral&#34;&gt;
@@ -10491,11 +10251,7 @@ cd LightlyShaders; mkdir qt5build; cd qt5build; cmake ../ -DCMAKE_INSTALL_PREFIX
 
       &lt;/span&gt;
       &lt;div id=&#34;github-27f63cdc343184aeff1cee1e4fc50afa-forks&#34; class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
-<<<<<<< HEAD
         26
-=======
-        30
->>>>>>> a9bf7f74b9df3f07d0e74e79a2de68647eb7faf6
       &lt;/div&gt;
 
     &lt;/div&gt;
@@ -10591,11 +10347,7 @@ cd LightlyShaders; mkdir qt5build; cd qt5build; cmake ../ -DCMAKE_INSTALL_PREFIX
 
       &lt;/span&gt;
       &lt;div id=&#34;github-a5700e013dc098745bec4694622c84c6-stargazers&#34; class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
-<<<<<<< HEAD
         57593
-=======
-        59371
->>>>>>> a9bf7f74b9df3f07d0e74e79a2de68647eb7faf6
       &lt;/div&gt;
 
       &lt;span class=&#34;text-md mr-1 text-neutral-800 dark:text-neutral&#34;&gt;
@@ -10608,11 +10360,7 @@ cd LightlyShaders; mkdir qt5build; cd qt5build; cmake ../ -DCMAKE_INSTALL_PREFIX
 
       &lt;/span&gt;
       &lt;div id=&#34;github-a5700e013dc098745bec4694622c84c6-forks&#34; class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
-<<<<<<< HEAD
         3322
-=======
-        3393
->>>>>>> a9bf7f74b9df3f07d0e74e79a2de68647eb7faf6
       &lt;/div&gt;
 
     &lt;/div&gt;
@@ -10787,11 +10535,7 @@ cd LightlyShaders; mkdir qt5build; cd qt5build; cmake ../ -DCMAKE_INSTALL_PREFIX
 
       &lt;/span&gt;
       &lt;div id=&#34;github-44462de8c3180e34167cb64f269723f5-stargazers&#34; class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
-<<<<<<< HEAD
         754
-=======
-        808
->>>>>>> a9bf7f74b9df3f07d0e74e79a2de68647eb7faf6
       &lt;/div&gt;
 
       &lt;span class=&#34;text-md mr-1 text-neutral-800 dark:text-neutral&#34;&gt;
@@ -10804,11 +10548,7 @@ cd LightlyShaders; mkdir qt5build; cd qt5build; cmake ../ -DCMAKE_INSTALL_PREFIX
 
       &lt;/span&gt;
       &lt;div id=&#34;github-44462de8c3180e34167cb64f269723f5-forks&#34; class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
-<<<<<<< HEAD
         67
-=======
-        71
->>>>>>> a9bf7f74b9df3f07d0e74e79a2de68647eb7faf6
       &lt;/div&gt;
 
     &lt;/div&gt;
@@ -10936,11 +10676,7 @@ cd LightlyShaders; mkdir qt5build; cd qt5build; cmake ../ -DCMAKE_INSTALL_PREFIX
 
       &lt;/span&gt;
       &lt;div id=&#34;github-bf42297933615c069f3c01c1cac3521b-stargazers&#34; class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
-<<<<<<< HEAD
         60940
-=======
-        62936
->>>>>>> a9bf7f74b9df3f07d0e74e79a2de68647eb7faf6
       &lt;/div&gt;
 
       &lt;span class=&#34;text-md mr-1 text-neutral-800 dark:text-neutral&#34;&gt;
@@ -10953,11 +10689,7 @@ cd LightlyShaders; mkdir qt5build; cd qt5build; cmake ../ -DCMAKE_INSTALL_PREFIX
 
       &lt;/span&gt;
       &lt;div id=&#34;github-bf42297933615c069f3c01c1cac3521b-forks&#34; class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
-<<<<<<< HEAD
         3974
-=======
-        4097
->>>>>>> a9bf7f74b9df3f07d0e74e79a2de68647eb7faf6
       &lt;/div&gt;
 
     &lt;/div&gt;
@@ -11057,11 +10789,7 @@ cd LightlyShaders; mkdir qt5build; cd qt5build; cmake ../ -DCMAKE_INSTALL_PREFIX
 
       &lt;/span&gt;
       &lt;div id=&#34;github-ca71a5e83707668542a12e863d6e8215-stargazers&#34; class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
-<<<<<<< HEAD
         1659
-=======
-        1805
->>>>>>> a9bf7f74b9df3f07d0e74e79a2de68647eb7faf6
       &lt;/div&gt;
 
       &lt;span class=&#34;text-md mr-1 text-neutral-800 dark:text-neutral&#34;&gt;
@@ -11074,11 +10802,7 @@ cd LightlyShaders; mkdir qt5build; cd qt5build; cmake ../ -DCMAKE_INSTALL_PREFIX
 
       &lt;/span&gt;
       &lt;div id=&#34;github-ca71a5e83707668542a12e863d6e8215-forks&#34; class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
-<<<<<<< HEAD
         67
-=======
-        79
->>>>>>> a9bf7f74b9df3f07d0e74e79a2de68647eb7faf6
       &lt;/div&gt;
 
     &lt;/div&gt;
@@ -11187,11 +10911,7 @@ cd LightlyShaders; mkdir qt5build; cd qt5build; cmake ../ -DCMAKE_INSTALL_PREFIX
 
       &lt;/span&gt;
       &lt;div id=&#34;github-ceed8b24e6b3fdf44892e309c880fd50-stargazers&#34; class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
-<<<<<<< HEAD
         228
-=======
-        294
->>>>>>> a9bf7f74b9df3f07d0e74e79a2de68647eb7faf6
       &lt;/div&gt;
 
       &lt;span class=&#34;text-md mr-1 text-neutral-800 dark:text-neutral&#34;&gt;
@@ -11204,11 +10924,7 @@ cd LightlyShaders; mkdir qt5build; cd qt5build; cmake ../ -DCMAKE_INSTALL_PREFIX
 
       &lt;/span&gt;
       &lt;div id=&#34;github-ceed8b24e6b3fdf44892e309c880fd50-forks&#34; class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
-<<<<<<< HEAD
         26
-=======
-        30
->>>>>>> a9bf7f74b9df3f07d0e74e79a2de68647eb7faf6
       &lt;/div&gt;
 
     &lt;/div&gt;
@@ -11307,11 +11023,7 @@ cd LightlyShaders; mkdir qt5build; cd qt5build; cmake ../ -DCMAKE_INSTALL_PREFIX
 
       &lt;/span&gt;
       &lt;div id=&#34;github-c287f82a6cb05c4745ec17da4ed0bd20-stargazers&#34; class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
-<<<<<<< HEAD
         21061
-=======
-        22836
->>>>>>> a9bf7f74b9df3f07d0e74e79a2de68647eb7faf6
       &lt;/div&gt;
 
       &lt;span class=&#34;text-md mr-1 text-neutral-800 dark:text-neutral&#34;&gt;
@@ -11324,11 +11036,7 @@ cd LightlyShaders; mkdir qt5build; cd qt5build; cmake ../ -DCMAKE_INSTALL_PREFIX
 
       &lt;/span&gt;
       &lt;div id=&#34;github-c287f82a6cb05c4745ec17da4ed0bd20-forks&#34; class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
-<<<<<<< HEAD
         527
-=======
-        557
->>>>>>> a9bf7f74b9df3f07d0e74e79a2de68647eb7faf6
       &lt;/div&gt;
 
     &lt;/div&gt;
@@ -11422,11 +11130,7 @@ cd LightlyShaders; mkdir qt5build; cd qt5build; cmake ../ -DCMAKE_INSTALL_PREFIX
 
       &lt;/span&gt;
       &lt;div id=&#34;github-24de194c1b5897d8548ff331996da98e-stargazers&#34; class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
-<<<<<<< HEAD
         40442
-=======
-        41402
->>>>>>> a9bf7f74b9df3f07d0e74e79a2de68647eb7faf6
       &lt;/div&gt;
 
       &lt;span class=&#34;text-md mr-1 text-neutral-800 dark:text-neutral&#34;&gt;
@@ -11439,11 +11143,7 @@ cd LightlyShaders; mkdir qt5build; cd qt5build; cmake ../ -DCMAKE_INSTALL_PREFIX
 
       &lt;/span&gt;
       &lt;div id=&#34;github-24de194c1b5897d8548ff331996da98e-forks&#34; class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
-<<<<<<< HEAD
         9481
-=======
-        9739
->>>>>>> a9bf7f74b9df3f07d0e74e79a2de68647eb7faf6
       &lt;/div&gt;
 
     &lt;/div&gt;
@@ -11616,11 +11316,7 @@ cd LightlyShaders; mkdir qt5build; cd qt5build; cmake ../ -DCMAKE_INSTALL_PREFIX
 
       &lt;/span&gt;
       &lt;div id=&#34;github-2e819999535d48069af66a73f2eb0246-stargazers&#34; class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
-<<<<<<< HEAD
         1815
-=======
-        2053
->>>>>>> a9bf7f74b9df3f07d0e74e79a2de68647eb7faf6
       &lt;/div&gt;
 
       &lt;span class=&#34;text-md mr-1 text-neutral-800 dark:text-neutral&#34;&gt;
@@ -11633,11 +11329,7 @@ cd LightlyShaders; mkdir qt5build; cd qt5build; cmake ../ -DCMAKE_INSTALL_PREFIX
 
       &lt;/span&gt;
       &lt;div id=&#34;github-2e819999535d48069af66a73f2eb0246-forks&#34; class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
-<<<<<<< HEAD
         120
-=======
-        139
->>>>>>> a9bf7f74b9df3f07d0e74e79a2de68647eb7faf6
       &lt;/div&gt;
 
     &lt;/div&gt;
