@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ArchISO on XeroLinux HQ</title>
+    <link>https://xerolinux.xyz/tags/archiso/</link>
+    <description>Recent content in ArchISO on XeroLinux HQ</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>Proudly made in Lebanon &lt;img src=&#39;https://xerolinux.xyz/logos/lb.png&#39; alt=&#39;🇱🇧&#39; width=&#39;18&#39; height=&#39;18&#39; style=&#39;margin: 0; display: inline; vertical-align: middle;&#39;&gt;</copyright>
+    <lastBuildDate>Thu, 05 Sep 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://xerolinux.xyz/tags/archiso/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Build a Fresh Arch ISO</title>
+      <link>https://xerolinux.xyz/posts/build-archiso/</link>
+      <pubDate>Thu, 05 Sep 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://xerolinux.xyz/posts/build-archiso/</guid>
+      <description>
+
+&lt;h3 class=&#34;relative group&#34;&gt;Information 
+    &lt;div id=&#34;information&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+    
+&lt;/h3&gt;
+&lt;p&gt;Sick &amp;amp; Tired of waiting a whole month before you can grab a fresh copy of the &lt;strong&gt;Arch&lt;/strong&gt; ISO ? Well fear not coz this guide will help you build a fresh one. I mean we can always grab the ISO  from the &lt;a href=&#34;https://archlinux.org/download/&#34; target=&#34;_blank&#34;&gt;&lt;strong&gt;ArchLinux&lt;/strong&gt;&lt;/a&gt; site as outdated as it can be. Still knowing how to build a fresh one can be useful in a bind, am I right ?&lt;/p&gt;
+&lt;p align=&#34;center&#34;&gt;
+    &lt;img width=&#34;500&#34; src=&#34;https://i.imgur.com/QWqMIsr.png&#34; alt=&#34;logo&#34;&gt;
+&lt;/p&gt;
+
+
+&lt;h3 class=&#34;relative group&#34;&gt;Let&amp;rsquo;s do this 
+    &lt;div id=&#34;lets-do-this&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+    
+&lt;/h3&gt;
+&lt;p&gt;First off we need to grab a few packages in order to be able to build the ISO. Keep in mind that in order to do this you must be on &lt;strong&gt;Arch&lt;/strong&gt;. In case you aren&amp;rsquo;t, that&amp;rsquo;s where &lt;a href=&#34;https://distrobox.it/compatibility/&#34; target=&#34;_blank&#34;&gt;&lt;strong&gt;Distrobox&lt;/strong&gt;&lt;/a&gt; comes in really handy.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo pacman -S archiso
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Now we need create two folders in our home directory or anywhere else, up to you, one called &lt;code&gt;ArchWork&lt;/code&gt; for placing extracted files, another called &lt;code&gt;ArchOut&lt;/code&gt; where final ISO will be located.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;mkdir ~/ArchWork &lt;span class=&#34;o&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; mkdir ~/ArchOut
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Now that it&amp;rsquo;s all done we can proceed to building a fresh new &amp;amp; updated &lt;strong&gt;ArchISO&lt;/strong&gt;. Just use the command below and watch the magic happen.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo mkarchiso -v -w ~/ArchWork -o ~/ArchOut /usr/share/archiso/configs/releng
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Finally we can delete the work directory to save space. just do &lt;code&gt;sudo rm -rf ~/work/&lt;/code&gt;.&lt;/p&gt;
+
+
+&lt;h3 class=&#34;relative group&#34;&gt;Wrapping up 
+    &lt;div id=&#34;wrapping-up&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+    
+&lt;/h3&gt;
+&lt;p&gt;In case you are using the &lt;strong&gt;XeroLinux&lt;/strong&gt; toolkit or Distro, make sure to update, coz as is my nature, I added the option to do that with a single click. Test it out and as is the norm by now, if you encounter any issues report them on &lt;strong&gt;Github&lt;/strong&gt;.&lt;/p&gt;
+&lt;p align=&#34;center&#34;&gt;
+    &lt;img width=&#34;100%&#34; src=&#34;https://i.imgur.com/FcsiONm.png&#34; alt=&#34;logo&#34;&gt;
+&lt;/p&gt;
+&lt;p&gt;Now that we have an idea on how to build the &lt;strong&gt;Arch ISO&lt;/strong&gt;, You can take it to another level. Yes, this is how most &lt;em&gt;Arch-Based&lt;/em&gt; distros like &lt;strong&gt;XeroLinux&lt;/strong&gt; began. Just keep in mind that getting the &lt;code&gt;DE/WM&lt;/code&gt; you want on the ISO requires a lot more work.&lt;/p&gt;
+&lt;p&gt;Have fun, I know I will 🚀&lt;/p&gt;
+</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/build-archiso/featured.webp" />
+    </item>
+    
+  </channel>
+</rss>

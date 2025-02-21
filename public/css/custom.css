@@ -1,0 +1,119 @@
+/* Complete CSS with a diagonal gradient featuring enhanced blue tones and softened pink */
+body {
+    background:
+    linear-gradient(to bottom right, rgba(30, 30, 100, 0.9), rgba(60, 60, 150, 0.9), rgba(200, 100, 160, 0.7)), /* Diagonal gradient with more blue and softened pink */
+    url('/img/traces.png'); /* Correct image path */
+    background-size: cover; /* Ensures the image covers the entire background */
+    background-position: center;
+    background-attachment: fixed; /* Keeps it in place when scrolling */
+    min-height: 100vh;
+    margin: 0;
+    overflow-y: auto; /* Ensure scrolling works */
+    position: relative;
+}
+
+/* Add a blurred effect to soften the image slightly */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: inherit;
+    filter: blur(4px); /* Subtle blur */
+    z-index: -1; /* Ensures it remains in the background */
+}
+
+/* Optional: Add a slightly darker overlay for better text readability */
+body::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.25); /* Slightly darker overlay */
+    z-index: -1;
+    pointer-events: none; /* Prevent overlay from interfering with interactions */
+}
+
+/* Add a subtle animation to the main content */
+.main-content {
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Add a hover effect to buttons or links for interactivity */
+a:hover, button:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+}
+
+/* Custom CSS for post boxes in Blowfish theme */
+.article-list .article {
+    border: 2px solid rgba(255, 255, 255, 0.75); /* Semi-transparent white outline */
+    border-radius: 12px; /* Rounded corners */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Strong shadow */
+    padding: 1.5rem; /* Padding inside the box */
+    margin-bottom: 2rem; /* Space between posts */
+    background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white background */
+    backdrop-filter: blur(10px); /* Blur effect for glassmorphism */
+    transition: all 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.article-list .article:hover {
+    border: 2px solid rgba(255, 255, 255, 1); /* Solid white outline on hover */
+    background-color: rgba(255, 255, 255, 0.95); /* More opaque background on hover */
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3); /* Stronger shadow on hover */
+    transform: translateY(-5px); /* Slight lift effect on hover */
+}
+
+/* Ensure stacking context for backdrop-filter */
+.article-list {
+    position: relative;
+    z-index: 1;
+}
+
+/* Wrap a single box around the first heading and ALL following h4s and paragraphs */
+article > section h4.relative.group:first-of-type,
+article > section h4.relative.group:first-of-type ~ h4,
+article > section h4.relative.group:first-of-type ~ p {
+    background: rgba(0, 0, 0, 0.25); /* Semi-transparent black background */
+    border: 2px solid rgba(255, 255, 255, 0.3); /* Subtle border */
+    border-radius: 12px; /* Rounded corners */
+    padding: 20px; /* Internal spacing */
+    margin: 20px auto; /* Space around the box */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Shadow for depth */
+    color: white; /* Ensure readability */
+}
+
+/* Update text fields to cover the entire width of the viewport */
+input[type="text"], textarea {
+    display: block; /* Ensure fields behave as block elements */
+    width: 100%; /* Cover the full width of the viewport */
+    padding: 10px; /* Add padding for a comfortable typing area */
+    margin: 10px 0; /* Add vertical spacing between fields */
+    border: 1px solid rgba(0, 0, 0, 0.2); /* Subtle border */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow */
+    background-color: rgba(255, 255, 255, 0.9); /* Light background for clarity */
+    transition: all 0.3s ease; /* Smooth focus transition */
+}
+
+input[type="text"]:focus, textarea:focus {
+    border-color: rgba(60, 60, 150, 0.8); /* Highlight border on focus */
+    box-shadow: 0 6px 12px rgba(60, 60, 150, 0.2); /* Enhanced shadow on focus */
+    outline: none; /* Remove default focus outline */
+}
+

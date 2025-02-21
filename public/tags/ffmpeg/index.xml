@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>FFmpeg on XeroLinux HQ</title>
+    <link>https://xerolinux.xyz/tags/ffmpeg/</link>
+    <description>Recent content in FFmpeg on XeroLinux HQ</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>Proudly made in Lebanon &lt;img src=&#39;https://xerolinux.xyz/logos/lb.png&#39; alt=&#39;🇱🇧&#39; width=&#39;18&#39; height=&#39;18&#39; style=&#39;margin: 0; display: inline; vertical-align: middle;&#39;&gt;</copyright>
+    <lastBuildDate>Sat, 20 Jul 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://xerolinux.xyz/tags/ffmpeg/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>FFmpeg cheat sheet</title>
+      <link>https://xerolinux.xyz/posts/ffmpeg-cheat-sheet/</link>
+      <pubDate>Sat, 20 Jul 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://xerolinux.xyz/posts/ffmpeg-cheat-sheet/</guid>
+      <description>&lt;p&gt;This will come in useful to all of you Content Creators out there, who like doing things the G33ky &amp;amp; Nerdy way. I use it a lot. This is a a list of useful commands for the &lt;strong&gt;FFmpeg&lt;/strong&gt; command line tool.&lt;/p&gt;
+&lt;p&gt;I would highly recommend you bookmark this page for later use.&lt;/p&gt;
+
+
+&lt;h1 class=&#34;relative group&#34;&gt;FFmpeg cheat sheet 
+    &lt;div id=&#34;ffmpeg-cheat-sheet&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+    
+&lt;/h1&gt;
+&lt;p&gt;A list of useful commands for the FFmpeg command line tool.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Download FFmpeg &amp;raquo; &lt;a href=&#34;https://www.ffmpeg.org/download.html&#34; target=&#34;_blank&#34;&gt;&lt;strong&gt;Over Here&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Full documentation &amp;raquo; &lt;a href=&#34;https://www.ffmpeg.org/ffmpeg.html&#34; target=&#34;_blank&#34;&gt;&lt;strong&gt;Over Here&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;h2 class=&#34;relative group&#34;&gt;Basic conversion 
+    &lt;div id=&#34;basic-conversion&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+    
+&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ffmpeg -i in.mp4 out.avi
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h3 class=&#34;relative group&#34;&gt;Remux an MKV file into MP4 
+    &lt;div id=&#34;remux-an-mkv-file-into-mp4&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+    
+&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ffmpeg -i in.mkv -c:v copy -c:a copy out.mp4
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h3 class=&#34;relative group&#34;&gt;High-quality encoding 
+    &lt;div id=&#34;high-quality-encoding&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+    
+&lt;/h3&gt;
+&lt;p&gt;Use the &lt;code&gt;crf&lt;/code&gt; (Constant Rate Factor) parameter to control the output quality. The lower crf, the higher the quality (range: 0-51). The default value is 23, and visually lossless compression corresponds to &lt;code&gt;-crf 18&lt;/code&gt;. Use the &lt;code&gt;preset&lt;/code&gt; parameter to control the speed of the compression process. Additional info &amp;raquo; &lt;a href=&#34;https://trac.ffmpeg.org/wiki/Encode/H.264&#34; target=&#34;_blank&#34;&gt;&lt;strong&gt;Over Here&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ffmpeg -i in.mp4 -preset slower -crf &lt;span class=&#34;m&#34;&gt;18&lt;/span&gt; out.mp4
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h2 class=&#34;relative group&#34;&gt;Trimming 
+    &lt;div id=&#34;trimming&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+    
+&lt;/h2&gt;
+&lt;p&gt;Without re-encoding:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ffmpeg -ss &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;start&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt; -i in.mp4 -t &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;duration&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt; -c copy out.mp4
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://ffmpeg.org/ffmpeg-all.html#Main-options&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;-ss&lt;/code&gt;&lt;/a&gt; specifies the start time, e.g. &lt;code&gt;00:01:23.000&lt;/code&gt; or &lt;code&gt;83&lt;/code&gt; (in seconds)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://ffmpeg.org/ffmpeg-all.html#Main-options&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;-t&lt;/code&gt;&lt;/a&gt; specifies the duration of the clip (same format).&lt;/li&gt;
+&lt;li&gt;Recent &lt;code&gt;ffmpeg&lt;/code&gt; also has a flag to supply the end time with &lt;code&gt;-to&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://ffmpeg.org/ffmpeg-all.html#Main-options&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;-c&lt;/code&gt;&lt;/a&gt; copy copies the first video, audio, and subtitle bitstream from the input to the output file without re-encoding them. This won&amp;rsquo;t harm the quality and make the command run within seconds.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;With re-encoding:&lt;/p&gt;
+&lt;p&gt;If you leave out the &lt;code&gt;-c copy&lt;/code&gt; option, &lt;code&gt;ffmpeg&lt;/code&gt; will automatically re-encode the output video and audio according to the format you chose. For high quality video and audio, read the &lt;a href=&#34;https://ffmpeg.org/trac/ffmpeg/wiki/x264EncodingGuide&#34; target=&#34;_blank&#34;&gt;x264 Encoding Guide&lt;/a&gt; and the &lt;a href=&#34;http://ffmpeg.org/trac/ffmpeg/wiki/AACEncodingGuide&#34; target=&#34;_blank&#34;&gt;AAC Encoding Guide&lt;/a&gt;, respectively.&lt;/p&gt;
+&lt;p&gt;For example:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ffmpeg -ss &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;start&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt; -i in.mp4 -t &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;duration&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt; -c:v libx264 -c:a aac -strict experimental -b:a 128k out.mp4
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h2 class=&#34;relative group&#34;&gt;Mux video and audio from another video 
+    &lt;div id=&#34;mux-video-and-audio-from-another-video&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+    
+&lt;/h2&gt;
+&lt;p&gt;To copy the video from in0.mp4 and audio from in1.mp4:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ffmpeg -i in0.mp4 -i in1.mp4 -c copy -map 0:0 -map 1:1 -shortest out.mp4
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;With &lt;a href=&#34;http://ffmpeg.org/ffmpeg.html#Stream-copy&#34; target=&#34;_blank&#34;&gt;-c copy&lt;/a&gt; the streams will be &lt;code&gt;stream copied&lt;/code&gt;, not re-encoded, so there will be no quality loss. If you want to re-encode, see &lt;a href=&#34;https://trac.ffmpeg.org/wiki/Encode/H.264&#34; target=&#34;_blank&#34;&gt;FFmpeg Wiki: H.264 Encoding Guide&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;The &lt;code&gt;-shortest&lt;/code&gt; option will cause the output duration to match the duration of the shortest input stream.&lt;/li&gt;
+&lt;li&gt;See the &lt;a href=&#34;http://ffmpeg.org/ffmpeg.html#Advanced-options&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;-map&lt;/code&gt; option documentation&lt;/a&gt; for more info.&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;h2 class=&#34;relative group&#34;&gt;Concat demuxer 
+    &lt;div id=&#34;concat-demuxer&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+    
+&lt;/h2&gt;
+&lt;p&gt;First, make a text file.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;file &lt;span class=&#34;s1&#34;&gt;&amp;#39;in1.mp4&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;file &lt;span class=&#34;s1&#34;&gt;&amp;#39;in2.mp4&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;file &lt;span class=&#34;s1&#34;&gt;&amp;#39;in3.mp4&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;file &lt;span class=&#34;s1&#34;&gt;&amp;#39;in4.mp4&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Then, run &lt;code&gt;ffmpeg&lt;/code&gt;:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ffmpeg -f concat -i list.txt -c copy out.mp4
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h2 class=&#34;relative group&#34;&gt;Delay audio/video 
+    &lt;div id=&#34;delay-audiovideo&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+    
+&lt;/h2&gt;
+&lt;p&gt;Delay video by 3.84 seconds:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ffmpeg -i in.mp4 -itsoffset 3.84 -i in.mp4 -map 1:v -map 0:a -vcodec copy -acodec copy out.mp4
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Delay audio by 3.84 seconds:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ffmpeg -i in.mp4 -itsoffset 3.84 -i in.mp4 -map 0:v -map 1:a -vcodec copy -acodec copy out.mp4
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h2 class=&#34;relative group&#34;&gt;Burn subtitles 
+    &lt;div id=&#34;burn-subtitles&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+    
+&lt;/h2&gt;
+&lt;p&gt;Use the &lt;a href=&#34;http://ffmpeg.org/ffmpeg.html#ass&#34; target=&#34;_blank&#34;&gt;libass&lt;/a&gt; library (make sure your ffmpeg install has the library in the configuration &lt;code&gt;--enable-libass&lt;/code&gt;).&lt;/p&gt;
+&lt;p&gt;First convert the subtitles to .ass format:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ffmpeg -i sub.srt sub.ass
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Then add them using a video filter:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ffmpeg -i in.mp4 -vf &lt;span class=&#34;nv&#34;&gt;ass&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;sub.ass out.mp4
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h2 class=&#34;relative group&#34;&gt;Extract the frames from a video 
+    &lt;div id=&#34;extract-the-frames-from-a-video&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+    
+&lt;/h2&gt;
+&lt;p&gt;To extract all frames from between 1 and 5 seconds, and also between 11 and 15 seconds:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ffmpeg -i in.mp4 -vf &lt;span class=&#34;k&#34;&gt;select&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;between(t,1,5)+between(t,11,15)&amp;#39;&lt;/span&gt; -vsync &lt;span class=&#34;m&#34;&gt;0&lt;/span&gt; out%d.png
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;To extract one frame per second only:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ffmpeg -i in.mp4 -fps&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;m&#34;&gt;1&lt;/span&gt; -vsync &lt;span class=&#34;m&#34;&gt;0&lt;/span&gt; out%d.png
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h2 class=&#34;relative group&#34;&gt;Rotate a video 
+    &lt;div id=&#34;rotate-a-video&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+    
+&lt;/h2&gt;
+&lt;p&gt;Rotate 90 clockwise:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ffmpeg -i in.mov -vf &lt;span class=&#34;s2&#34;&gt;&amp;#34;transpose=1&amp;#34;&lt;/span&gt; out.mov
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;For the transpose parameter you can pass:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;0&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; 90CounterCLockwise and Vertical Flip &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;default&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;1&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; 90Clockwise
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;2&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; 90CounterClockwise
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;3&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; 90Clockwise and Vertical Flip
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Use &lt;code&gt;-vf &amp;quot;transpose=2,transpose=2&amp;quot;&lt;/code&gt; for 180 degrees.&lt;/p&gt;
+
+
+&lt;h2 class=&#34;relative group&#34;&gt;Download &amp;ldquo;Transport Stream&amp;rdquo; video streams 
+    &lt;div id=&#34;download-transport-stream-video-streams&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+    
+&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;Locate the playlist file, e.g. using Chrome &amp;gt; F12 &amp;gt; Network &amp;gt; Filter: m3u8&lt;/li&gt;
+&lt;li&gt;Download and concatenate the video fragments:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ffmpeg -i &lt;span class=&#34;s2&#34;&gt;&amp;#34;path_to_playlist.m3u8&amp;#34;&lt;/span&gt; -c copy -bsf:a aac_adtstoasc out.mp4
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;If you get a &amp;ldquo;Protocol &amp;lsquo;https not on whitelist &amp;lsquo;file,crypto&amp;rsquo;!&amp;rdquo; error, add the &lt;code&gt;protocol_whitelist&lt;/code&gt; option:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ffmpeg -protocol_whitelist &lt;span class=&#34;s2&#34;&gt;&amp;#34;file,http,https,tcp,tls&amp;#34;&lt;/span&gt; -i &lt;span class=&#34;s2&#34;&gt;&amp;#34;path_to_playlist.m3u8&amp;#34;&lt;/span&gt; -c copy -bsf:a aac_adtstoasc out.mp4
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h2 class=&#34;relative group&#34;&gt;Mute some of the audio 
+    &lt;div id=&#34;mute-some-of-the-audio&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+    
+&lt;/h2&gt;
+&lt;p&gt;To replace the first 90 seconds of audio with silence:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ffmpeg -i in.mp4 -vcodec copy -af &lt;span class=&#34;s2&#34;&gt;&amp;#34;volume=enable=&amp;#39;lte(t,90)&amp;#39;:volume=0&amp;#34;&lt;/span&gt; out.mp4
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;To replace all audio between 1&#39;20&amp;quot; and 1&#39;30&amp;quot; with silence:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ffmpeg -i in.mp4 -vcodec copy -af &lt;span class=&#34;s2&#34;&gt;&amp;#34;volume=enable=&amp;#39;between(t,80,90)&amp;#39;:volume=0&amp;#34;&lt;/span&gt; out.mp4
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h2 class=&#34;relative group&#34;&gt;Deinterlace 
+    &lt;div id=&#34;deinterlace&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+    
+&lt;/h2&gt;
+&lt;p&gt;Deinterlacing using &amp;ldquo;yet another deinterlacing filter&amp;rdquo;.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ffmpeg -i in.mp4 -vf yadif out.mp4
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h2 class=&#34;relative group&#34;&gt;Create a video slideshow from images 
+    &lt;div id=&#34;create-a-video-slideshow-from-images&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+    
+&lt;/h2&gt;
+&lt;p&gt;Parameters: &lt;code&gt;-r&lt;/code&gt; marks the image framerate (inverse time of each image); &lt;code&gt;-vf fps=25&lt;/code&gt; marks the true framerate of the output.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ffmpeg -r 1/5 -i img%03d.png -c:v libx264 -vf &lt;span class=&#34;nv&#34;&gt;fps&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;m&#34;&gt;25&lt;/span&gt; -pix_fmt yuv420p out.mp4
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h2 class=&#34;relative group&#34;&gt;Extract images from a video 
+    &lt;div id=&#34;extract-images-from-a-video&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+    
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Extract all frames: &lt;code&gt;ffmpeg -i input.mp4 thumb%04d.jpg -hide_banner&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Extract a frame each second: &lt;code&gt;ffmpeg -i input.mp4 -vf fps=1 thumb%04d.jpg -hide_banner&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Extract only one frame: &lt;code&gt;ffmpeg -i input.mp4 -ss 00:00:10.000 -vframes 1 thumb.jpg&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;h2 class=&#34;relative group&#34;&gt;Display the frame number on each frame 
+    &lt;div id=&#34;display-the-frame-number-on-each-frame&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+    
+&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ffmpeg -i in.mov -vf &lt;span class=&#34;s2&#34;&gt;&amp;#34;drawtext=fontfile=arial.ttf: text=%{n}: x=(w-tw)/2: y=h-(2*lh): fontcolor=white: box=1: boxcolor=0x00000099: fontsize=72&amp;#34;&lt;/span&gt; -y out.mov
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h2 class=&#34;relative group&#34;&gt;Metadata: Change the title 
+    &lt;div id=&#34;metadata-change-the-title&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+    
+&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ffmpeg -i in.mp4 -map_metadata -1 -metadata &lt;span class=&#34;nv&#34;&gt;title&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;My Title&amp;#34;&lt;/span&gt; -c:v copy -c:a copy out.mp4
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Hope this helps anyone out there&amp;hellip;&lt;/p&gt;
+</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/ffmpeg-cheat-sheet/featured.webp" />
+    </item>
+    
+  </channel>
+</rss>

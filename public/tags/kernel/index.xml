@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Kernel on XeroLinux HQ</title>
+    <link>https://xerolinux.xyz/tags/kernel/</link>
+    <description>Recent content in Kernel on XeroLinux HQ</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>Proudly made in Lebanon &lt;img src=&#39;https://xerolinux.xyz/logos/lb.png&#39; alt=&#39;🇱🇧&#39; width=&#39;18&#39; height=&#39;18&#39; style=&#39;margin: 0; display: inline; vertical-align: middle;&#39;&gt;</copyright>
+    <lastBuildDate>Fri, 28 Jun 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://xerolinux.xyz/tags/kernel/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Fix Unbootable System</title>
+      <link>https://xerolinux.xyz/posts/fix-boot/</link>
+      <pubDate>Fri, 28 Jun 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://xerolinux.xyz/posts/fix-boot/</guid>
+      <description>
+
+&lt;h3 class=&#34;relative group&#34;&gt;Preface 
+    &lt;div id=&#34;preface&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+    
+&lt;/h3&gt;
+&lt;p&gt;Are you having an issue after updating your system with the message &lt;code&gt;vmlinuz-linux not found&lt;/code&gt;? Watch the video below by Erik Dubois, should help you get out of that predicament &amp;hellip;&lt;/p&gt;
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+      &lt;iframe allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&#34; allowfullscreen=&#34;allowfullscreen&#34; loading=&#34;eager&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; src=&#34;https://www.youtube.com/embed/NfMbs9zzkDw?autoplay=0&amp;amp;controls=1&amp;amp;end=0&amp;amp;loop=0&amp;amp;mute=0&amp;amp;start=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;YouTube video&#34;&gt;&lt;/iframe&gt;
+    &lt;/div&gt;
+
+
+
+&lt;h3 class=&#34;relative group&#34;&gt;Disclaimer : 
+    &lt;div id=&#34;disclaimer-&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+    
+&lt;/h3&gt;
+&lt;p&gt;Below guide covers EXT4/XFS/Unencrypted Filesystems, for Encrypted Drives, you will have to &amp;ldquo;Google it&amp;rdquo; lol,&lt;/p&gt;
+&lt;p&gt;Anyway here&amp;rsquo;s what to do&amp;hellip;&lt;/p&gt;
+
+
+&lt;h3 class=&#34;relative group&#34;&gt;Mount your system to work in.. 
+    &lt;div id=&#34;mount-your-system-to-work-in&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+    
+&lt;/h3&gt;
+&lt;p&gt;First of all boot using your XeroLinux Live boot USB and follow the steps below&amp;hellip;&lt;/p&gt;
+&lt;p&gt;The device or partition with your Linux system on it will need to be mounted. To discover the kernel name of the storage device name, type:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo fdisk -l
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Mount the device or partition : (replace &amp;ldquo;sdXn&amp;rdquo; with your actual partition name)&lt;/p&gt;
+&lt;p&gt;
+  &lt;figure&gt;
+    &lt;img class=&#34;my-0 rounded-md&#34; loading=&#34;lazy&#34; src=&#34;https://i.imgur.com/SZO4qw0.png&#34; alt=&#34;[Image: SZO4qw0.png]&#34; /&gt;
+    
+  &lt;/figure&gt;
+&lt;/p&gt;
+&lt;p&gt;For EXT4 &amp;amp; XFS&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;mount /dev/sdXn /mnt &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;Linux Filesystem&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;mount /dev/sdXn /mnt/boot/efi &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;EFI System&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h3 class=&#34;relative group&#34;&gt;Chroot into your system : 
+    &lt;div id=&#34;chroot-into-your-system-&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+    
+&lt;/h3&gt;
+&lt;p&gt;With this information, you are able to arch-chroot, and to be able to do that you need to have root permissions, so type the following command:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;arch-chroot /mnt
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h3 class=&#34;relative group&#34;&gt;Reinstall missing Kernel : 
+    &lt;div id=&#34;reinstall-missing-kernel-&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+    
+&lt;/h3&gt;
+&lt;p&gt;Now it&amp;rsquo;s time to get the Kernel back in order to get the system to boot once again.. Do this now&amp;hellip;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;pacman -S linux linux-headers
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Finally update the system if needed&amp;hellip;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;pacman -Syyu
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Exit arch-chroot via &lt;code&gt;exit&lt;/code&gt; command then unmount your system&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;umount /mnt/boot/efi
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;umount /mnt
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Now reboot all should be good&amp;hellip;&lt;/p&gt;
+&lt;p&gt;Hope this helps&lt;/p&gt;
+</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/fix-boot/featured.webp" />
+    </item>
+    
+  </channel>
+</rss>

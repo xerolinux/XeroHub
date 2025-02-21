@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ArchInstall on XeroLinux HQ</title>
+    <link>https://xerolinux.xyz/tags/archinstall/</link>
+    <description>Recent content in ArchInstall on XeroLinux HQ</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>Proudly made in Lebanon &lt;img src=&#39;https://xerolinux.xyz/logos/lb.png&#39; alt=&#39;🇱🇧&#39; width=&#39;18&#39; height=&#39;18&#39; style=&#39;margin: 0; display: inline; vertical-align: middle;&#39;&gt;</copyright>
+    <lastBuildDate>Wed, 04 Sep 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://xerolinux.xyz/tags/archinstall/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Cosmic Arch</title>
+      <link>https://xerolinux.xyz/posts/arch-cosmic/</link>
+      <pubDate>Wed, 04 Sep 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://xerolinux.xyz/posts/arch-cosmic/</guid>
+      <description>&lt;br /&gt;
+
+  
+  
+  
+  
+
+
+
+&lt;div
+  
+    class=&#34;flex px-4 py-3 rounded-md&#34;
+    style=&#34;background-color: #993350&#34;
+  &gt;
+
+  &lt;span
+    
+      class=&#34;ltr:pr-3 rtl:pl-3 flex items-center&#34;
+      style=&#34;color: #1d3557&#34;
+    &gt;
+
+    
+
+  &lt;span class=&#34;relative block icon&#34;&gt;
+    &lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 448 512&#34;&gt;
+&lt;path fill=&#34;currentColor&#34;  d=&#34;M159.3 5.4c7.8-7.3 19.9-7.2 27.7 .1c27.6 25.9 53.5 53.8 77.7 84c11-14.4 23.5-30.1 37-42.9c7.9-7.4 20.1-7.4 28 .1c34.6 33 63.9 76.6 84.5 118c20.3 40.8 33.8 82.5 33.8 111.9C448 404.2 348.2 512 224 512C98.4 512 0 404.1 0 276.5c0-38.4 17.8-85.3 45.4-131.7C73.3 97.7 112.7 48.6 159.3 5.4zM225.7 416c25.3 0 47.7-7 68.8-21c42.1-29.4 53.4-88.2 28.1-134.4c-2.8-5.6-5.6-11.2-9.8-16.8l-50.6 58.8s-81.4-103.6-87.1-110.6C133.1 243.8 112 273.2 112 306.8C112 375.4 162.6 416 225.7 416z&#34;/&gt;&lt;/svg&gt;
+  &lt;/span&gt;
+
+
+  &lt;/span&gt;
+
+  &lt;span
+    
+      style=&#34;color: #f1faee&#34;
+    &gt;&lt;strong&gt;Cosmic Script :&lt;/strong&gt; I have gone ahead and written a script that will help you do all this and more in one swoop. If you care to give it a whirl, keeping in mind the status of the project, you can grab it from the &lt;a href=&#34;https://wiki.xerolinux.xyz/scripts/#cosmic-alpha&#34; target=&#34;_blank&#34;&gt;&lt;strong&gt;XeroLinux Wiki&lt;/strong&gt;&lt;/a&gt;.&lt;/span&gt;
+&lt;/div&gt;
+
+
+
+&lt;h3 class=&#34;relative group&#34;&gt;What is Cosmic DE? 
+    &lt;div id=&#34;what-is-cosmic-de&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+    
+&lt;/h3&gt;
+&lt;p&gt;The &lt;a href=&#34;https://blog.system76.com/post/cosmic-the-road-to-alpha/&#34; target=&#34;_blank&#34;&gt;&lt;strong&gt;Cosmic DE&lt;/strong&gt;&lt;/a&gt; is a new desktop environment being developed by the team behind &lt;strong&gt;Pop!_OS&lt;/strong&gt;, a popular Linux distribution. Unlike their previous efforts, which built upon &lt;strong&gt;GNOME&lt;/strong&gt;, the &lt;strong&gt;Cosmic DE&lt;/strong&gt; is a ground-up development using &lt;strong&gt;Rust&lt;/strong&gt; and a custom compositor built on &lt;strong&gt;Smithay&lt;/strong&gt;, aiming for a lightweight, responsive, and customizable user interface.&lt;/p&gt;
+&lt;p&gt;Its most notable feature is, tiling window management with stacking, and a more integrated experience with the &lt;strong&gt;Pop!_OS&lt;/strong&gt; ecosystem, enhancing performance and user control. It aims to offer a modern alternative to existing desktop environments, designed specifically for Linux users&amp;rsquo; needs.&lt;/p&gt;
+
+
+&lt;h3 class=&#34;relative group&#34;&gt;Installing Cosmic on Arch 
+    &lt;div id=&#34;installing-cosmic-on-arch&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+    
+&lt;/h3&gt;
+
+  
+  
+  
+  
+
+
+
+&lt;div
+  
+    class=&#34;flex px-4 py-3 rounded-md&#34;
+    style=&#34;background-color: #993350&#34;
+  &gt;
+
+  &lt;span
+    
+      class=&#34;ltr:pr-3 rtl:pl-3 flex items-center&#34;
+      style=&#34;color: #1d3557&#34;
+    &gt;
+
+    
+
+  &lt;span class=&#34;relative block icon&#34;&gt;
+    &lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 448 512&#34;&gt;
+&lt;path fill=&#34;currentColor&#34;  d=&#34;M159.3 5.4c7.8-7.3 19.9-7.2 27.7 .1c27.6 25.9 53.5 53.8 77.7 84c11-14.4 23.5-30.1 37-42.9c7.9-7.4 20.1-7.4 28 .1c34.6 33 63.9 76.6 84.5 118c20.3 40.8 33.8 82.5 33.8 111.9C448 404.2 348.2 512 224 512C98.4 512 0 404.1 0 276.5c0-38.4 17.8-85.3 45.4-131.7C73.3 97.7 112.7 48.6 159.3 5.4zM225.7 416c25.3 0 47.7-7 68.8-21c42.1-29.4 53.4-88.2 28.1-134.4c-2.8-5.6-5.6-11.2-9.8-16.8l-50.6 58.8s-81.4-103.6-87.1-110.6C133.1 243.8 112 273.2 112 306.8C112 375.4 162.6 416 225.7 416z&#34;/&gt;&lt;/svg&gt;
+  &lt;/span&gt;
+
+
+  &lt;/span&gt;
+
+  &lt;span
+    
+      style=&#34;color: #f1faee&#34;
+    &gt;&lt;strong&gt;Notice :&lt;/strong&gt; Project is still in &lt;strong&gt;Alpha 1&lt;/strong&gt; stages, please don&amp;rsquo;t use as a daily driver. It&amp;rsquo;s still missing a ton of features. Install at your own risk !&lt;/span&gt;
+&lt;/div&gt;
+
+&lt;p&gt;When it comes to installing &lt;strong&gt;Cosmic DE&lt;/strong&gt;, it has now become as easy as ever thanks to the &lt;strong&gt;ArchInstall&lt;/strong&gt; script included on every &lt;em&gt;Arch ISO&lt;/em&gt; starting v2.8.5. Yes, even though it&amp;rsquo;s still in &lt;strong&gt;Alpha&lt;/strong&gt; stages, for whatever reason, it has now made its way to the &lt;em&gt;Extra&lt;/em&gt; repo on &lt;strong&gt;Arch&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;Now I will not be going through how to use the &lt;strong&gt;ArchInstall&lt;/strong&gt; script here, just watch the included video which covers it all. If you chose this Distro, then you should know how to use it by now lol.&lt;/p&gt;
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+      &lt;iframe allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&#34; allowfullscreen=&#34;allowfullscreen&#34; loading=&#34;eager&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; src=&#34;https://www.youtube.com/embed/dhqQjMQznSo?autoplay=0&amp;amp;controls=1&amp;amp;end=0&amp;amp;loop=0&amp;amp;mute=0&amp;amp;start=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;YouTube video&#34;&gt;&lt;/iframe&gt;
+    &lt;/div&gt;
+
+&lt;p&gt;As you can see from the video above, all you have to do it grab the latest &lt;a href=&#34;https://archlinux.org/download/&#34; target=&#34;_blank&#34;&gt;&lt;strong&gt;Arch ISO&lt;/strong&gt;&lt;/a&gt;, boot into it and launch the &lt;strong&gt;ArchInstall&lt;/strong&gt; then go through the motions as usual. I would change up the command a bit like so, making sure we are always running the latest version of the script :&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;pacman -Syy archinstall &lt;span class=&#34;o&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; archinstall --advanced
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;As mentioned in the video the &lt;code&gt;--advanced&lt;/code&gt; flag is required to unlock the &lt;strong&gt;Cosmic DE&lt;/strong&gt; desktop profile. The reason it&amp;rsquo;s hidden should be clear enough, in case it&amp;rsquo;s not, well it&amp;rsquo;s because it&amp;rsquo;s in Alpha and no one sane enough who requires any kind of stability should install it.&lt;/p&gt;
+&lt;p&gt;
+  &lt;figure&gt;
+    &lt;img class=&#34;my-0 rounded-md&#34; loading=&#34;lazy&#34; src=&#34;https://i.imgur.com/Fvl9uRU.png&#34; alt=&#34;CosmicDE&#34; /&gt;
+    
+  &lt;/figure&gt;
+&lt;/p&gt;
+&lt;p&gt;Also, note the issue with the &lt;em&gt;Cosmic Greeter&lt;/em&gt;, it could be that the maintainer of the packages on &lt;strong&gt;Arch&lt;/strong&gt; forgot to include it or something else. If you are trying it way after this was written, maybe it&amp;rsquo;s been fixed, if not then do as shown below to fix it.&lt;/p&gt;
+&lt;p&gt;Once all packages are installed, &lt;strong&gt;Before&lt;/strong&gt; you exit &lt;em&gt;chroot&lt;/em&gt; n reboot use this command :&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;pacman -Syy cosmic-greeter
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;systemctl &lt;span class=&#34;nb&#34;&gt;enable&lt;/span&gt; cosmic-greeter.service
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Now that this is fixed, I would like to take this oportunity to mention that there&amp;rsquo;s 2 more missing packages that &lt;strong&gt;ArchInstall&lt;/strong&gt; failed to include, those are &lt;code&gt;xdg-user-dirs&lt;/code&gt; which is resonsible for creating you user folders, like &lt;code&gt;Dicuments, Pictures, Videos...&lt;/code&gt;, and finally the &lt;code&gt;power-profiles-daemon&lt;/code&gt; tool that allows you to switch power profiles, so to fix those do this&amp;hellip;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;pacman -Syy xdg-user-dirs power-profiles-daemon
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;xdg-user-dirs-update &lt;span class=&#34;o&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; systemctl &lt;span class=&#34;nb&#34;&gt;enable&lt;/span&gt; power-profiles-daemon.service
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Done ! All missing essential features fixed. Keep in mind that it&amp;rsquo;s only natural for them to exist, project is still in Alpha stages, a lot of things need to be addressed. Give it time to mature before judging it, and more importantly report all the bugs related to it or any feature requests you might have upstream, to the &lt;a href=&#34;https://github.com/pop-os&#34; target=&#34;_blank&#34;&gt;&lt;strong&gt;Cosmic Bug Tracker&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
+
+
+&lt;h3 class=&#34;relative group&#34;&gt;Customization 
+    &lt;div id=&#34;customization&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+    
+&lt;/h3&gt;
+&lt;p&gt;As we know, &lt;strong&gt;Cosmic DE&lt;/strong&gt; will be highly customizable out of the box. It comes between &lt;strong&gt;Gnome&lt;/strong&gt; and &lt;strong&gt;KDE Plasma&lt;/strong&gt;. Meaning we can modify it more than the former but less than the latter. Still in my opinion that&amp;rsquo;s awesome.&lt;/p&gt;
+&lt;p&gt;There are some caveats however, those being that &lt;strong&gt;Qt&lt;/strong&gt; apps are still not fully supported eg. &lt;strong&gt;Kvantum&lt;/strong&gt;, especially if you are used to the tried and true &lt;strong&gt;Global Menu&lt;/strong&gt; which will not be officially supported as it&amp;rsquo;s way too complex according to the devs. Also the Blur effect not there yet. Maybe in the future someone will port it over ? I dunno about &lt;strong&gt;LibAdwaita&lt;/strong&gt; though, from what I have heard, support coming not yet there.&lt;/p&gt;
+&lt;p&gt;
+  &lt;figure&gt;
+    &lt;img class=&#34;my-0 rounded-md&#34; loading=&#34;lazy&#34; src=&#34;https://i.imgur.com/R8Io5eQ.png&#34; alt=&#34;CosmicThemes&#34; /&gt;
+    
+  &lt;/figure&gt;
+&lt;/p&gt;
+&lt;p&gt;So if you are looking for consistency, it will be a long while before we can achieve it. Still, this did not stop some theme developers from porting their themes over to it. So if you would like to try them out, just head on over to the &amp;raquo; &lt;a href=&#34;https://cosmic-themes.org&#34; target=&#34;_blank&#34;&gt;&lt;strong&gt;Cosmic-Themes&lt;/strong&gt;&lt;/a&gt; &amp;ldquo;store&amp;rdquo; and grab the one(s) you like. Importing the &lt;code&gt;.ron&lt;/code&gt; files is easy just open Settings &amp;gt; Desktop &amp;gt; Desktop &amp;amp; Panel &amp;gt; Import, then select file n see it apply immediately.&lt;/p&gt;
+
+
+&lt;h3 class=&#34;relative group&#34;&gt;Wrapping up 
+    &lt;div id=&#34;wrapping-up&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+    
+&lt;/h3&gt;
+&lt;p&gt;As mentioned, I would highly recommend you install &lt;strong&gt;Cosmic DE&lt;/strong&gt; on a spare non-essential device since it&amp;rsquo;s still Alpha 1 software. And you will need modern enough hardware that has full support for &lt;strong&gt;Wayland&lt;/strong&gt; since it doesn&amp;rsquo;t nor will it ever have &lt;strong&gt;X11&lt;/strong&gt; support.&lt;/p&gt;
+&lt;p&gt;However, if you are an &lt;strong&gt;Arch&lt;/strong&gt; power user and prefer to do it the &lt;em&gt;manual way&lt;/em&gt;, you can. Just head on over to the wonderful &lt;a href=&#34;https://wiki.archlinux.org/title/COSMIC&#34; target=&#34;_blank&#34;&gt;&lt;strong&gt;ArchWiki&lt;/strong&gt;&lt;/a&gt; and follow the instructions there. I would recommend it over &lt;strong&gt;ArchInstall&lt;/strong&gt; as you can do more and have more flexibility.&lt;/p&gt;
+&lt;p&gt;Finally if you don&amp;rsquo;t want to use it on &lt;strong&gt;Arch&lt;/strong&gt;, you can grab their Official &lt;strong&gt;Pop!_OS 24.04 LTS alpha&lt;/strong&gt; ISO from &amp;raquo; &lt;a href=&#34;https://system76.com/cosmic&#34; target=&#34;_blank&#34;&gt;&lt;strong&gt;Cosmic Downloads&lt;/strong&gt;&lt;/a&gt;. They also have instructions for other Distros like &lt;strong&gt;Fedora&lt;/strong&gt;, &lt;strong&gt;NixOS&lt;/strong&gt; and more&amp;hellip;&lt;/p&gt;
+&lt;p&gt;If you want to know what I think of this DE, and read how my experience with it went, check this post on &amp;raquo; &lt;a href=&#34;https://bytes.xerolinux.xyz/tech/cosmic-experience/&#34; target=&#34;_blank&#34;&gt;&lt;strong&gt;DarkXero&amp;rsquo;s Bytes&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;I hope this post has proven to be useful.&lt;/p&gt;
+&lt;p&gt;Cheers !&lt;/p&gt;
+</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/arch-cosmic/featured.webp" />
+    </item>
+    
+  </channel>
+</rss>

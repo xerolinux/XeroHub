@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Series on XeroLinux HQ</title>
+    <link>https://xerolinux.xyz/series/</link>
+    <description>Recent content in Series on XeroLinux HQ</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>Proudly made in Lebanon &lt;img src=&#39;https://xerolinux.xyz/logos/lb.png&#39; alt=&#39;🇱🇧&#39; width=&#39;18&#39; height=&#39;18&#39; style=&#39;margin: 0; display: inline; vertical-align: middle;&#39;&gt;</copyright>
+    <atom:link href="https://xerolinux.xyz/series/index.xml" rel="self" type="application/rss+xml" />
+  </channel>
+</rss>

@@ -1,0 +1,1928 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Guide on XeroLinux HQ</title>
+    <link>https://xerolinux.xyz/tags/guide/</link>
+    <description>Recent content in Guide on XeroLinux HQ</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>Proudly made in Lebanon &lt;img src=&#39;https://xerolinux.xyz/logos/lb.png&#39; alt=&#39;🇱🇧&#39; width=&#39;18&#39; height=&#39;18&#39; style=&#39;margin: 0; display: inline; vertical-align: middle;&#39;&gt;</copyright>
+    <lastBuildDate>Sun, 15 Sep 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://xerolinux.xyz/tags/guide/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Pacman R7.0 Update</title>
+      <link>https://xerolinux.xyz/posts/pacman-update/</link>
+      <pubDate>Sun, 15 Sep 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://xerolinux.xyz/posts/pacman-update/</guid>
+      <description>&lt;br /&gt;
+
+  
+  
+  
+  
+
+
+
+&lt;div
+  
+    class=&#34;flex px-4 py-3 rounded-md&#34;
+    style=&#34;background-color: #993350&#34;
+  &gt;
+
+  &lt;span
+    
+      class=&#34;ltr:pr-3 rtl:pl-3 flex items-center&#34;
+      style=&#34;color: #1d3557&#34;
+    &gt;
+
+    
+
+  &lt;span class=&#34;relative block icon&#34;&gt;
+    &lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 448 512&#34;&gt;
+&lt;path fill=&#34;currentColor&#34;  d=&#34;M159.3 5.4c7.8-7.3 19.9-7.2 27.7 .1c27.6 25.9 53.5 53.8 77.7 84c11-14.4 23.5-30.1 37-42.9c7.9-7.4 20.1-7.4 28 .1c34.6 33 63.9 76.6 84.5 118c20.3 40.8 33.8 82.5 33.8 111.9C448 404.2 348.2 512 224 512C98.4 512 0 404.1 0 276.5c0-38.4 17.8-85.3 45.4-131.7C73.3 97.7 112.7 48.6 159.3 5.4zM225.7 416c25.3 0 47.7-7 68.8-21c42.1-29.4 53.4-88.2 28.1-134.4c-2.8-5.6-5.6-11.2-9.8-16.8l-50.6 58.8s-81.4-103.6-87.1-110.6C133.1 243.8 112 273.2 112 306.8C112 375.4 162.6 416 225.7 416z&#34;/&gt;&lt;/svg&gt;
+  &lt;/span&gt;
+
+
+  &lt;/span&gt;
+
+  &lt;span
+    
+      style=&#34;color: #f1faee&#34;
+    &gt;&lt;strong&gt;Notice :&lt;/strong&gt; Attention Arch users, Pacman 7.0 has just landed in stable Arch&amp;rsquo;s repos. However, if you use local ones, you must manually intervene.&lt;/span&gt;
+&lt;/div&gt;
+
+
+
+&lt;h3 class=&#34;relative group&#34;&gt;What&amp;rsquo;s going on ? 
+    &lt;div id=&#34;whats-going-on-&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+    
+&lt;/h3&gt;
+&lt;p&gt;Recently &lt;a href=&#34;https://wiki.archlinux.org/title/Pacman&#34; target=&#34;_blank&#34;&gt;&lt;strong&gt;Pacman&lt;/strong&gt;&lt;/a&gt;, &lt;strong&gt;Arch&lt;/strong&gt;&amp;rsquo;s package manager recieved a major upgrade to R7.0, which brought with it a ton of changes, some of which will require &lt;a href=&#34;https://wiki.archlinux.org/title/Pacman&#34; target=&#34;_blank&#34;&gt;&lt;em&gt;manual intervention&lt;/em&gt;&lt;/a&gt;.&lt;/p&gt;
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+      &lt;iframe allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&#34; allowfullscreen=&#34;allowfullscreen&#34; loading=&#34;eager&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; src=&#34;https://www.youtube.com/embed/DD8d8ciqkFk?autoplay=0&amp;amp;controls=1&amp;amp;end=0&amp;amp;loop=0&amp;amp;mute=0&amp;amp;start=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;YouTube video&#34;&gt;&lt;/iframe&gt;
+    &lt;/div&gt;
+
+
+
+&lt;h3 class=&#34;relative group&#34;&gt;The Changes 
+    &lt;div id=&#34;the-changes&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+    
+&lt;/h3&gt;
+&lt;p&gt;The new major version brings many new features, including introducing support for downloading packages as a &lt;em&gt;separate user&lt;/em&gt; with reduced privileges.&lt;/p&gt;
+&lt;p&gt;While this enhancement improves security, users with local repositories may need to perform manual interventions to ensure seamless operation. Here’s what it’s all about.&lt;/p&gt;
+&lt;p&gt;For those utilizing &lt;em&gt;local&lt;/em&gt; repositories, the new download user might not have the necessary access permissions to the repository files. This can prevent packages from downloading correctly.&lt;/p&gt;
+&lt;p&gt;To resolve this issue, you should assign the repository files and folders to the “alpm” group and ensure that the executable bit (“+x“) is set on the directories in question.&lt;/p&gt;
+&lt;p&gt;The group (and the user) are automatically set up during the upgrade to Pacman 7.0, so if you follow the terminal’s output, you will see the following messages:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Creating group &lt;span class=&#34;s1&#34;&gt;&amp;#39;alpm&amp;#39;&lt;/span&gt; with GID 946.
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Creating user &lt;span class=&#34;s1&#34;&gt;&amp;#39;alpm&amp;#39;&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;Arch Linux Package Management&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt; with UID &lt;span class=&#34;m&#34;&gt;946&lt;/span&gt; and GID 946.
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Here’s how you can do it:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo chown :alpm -R /path/to/local/repo
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;This command changes the group ownership of your local repository files to &lt;code&gt;alpm&lt;/code&gt; group, allowing the Pacman’s download user to access them appropriately.&lt;/p&gt;
+&lt;p&gt;Additionally, you will need to merge any &lt;code&gt;.pacnew&lt;/code&gt; files generated during the update. These files contain new default configurations introduced with &lt;strong&gt;Pacman 7.0&lt;/strong&gt;. Merging them ensures you’re using the latest settings and helps prevent potential conflicts.&lt;/p&gt;
+&lt;p&gt;Now, I have written a simple command that will do that quickly and efficiantly, while enabling some hidden features if you haven&amp;rsquo;t enabled them yet. &lt;strong&gt;This also avoids the need to re-add any additional repos you might have had in there&lt;/strong&gt;.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo sed -i &lt;span class=&#34;s1&#34;&gt;&amp;#39;/^# Misc options/,/ParallelDownloads = [0-9]*/c\# Misc options\nColor\nILoveCandy\nCheckSpace\n#DisableSandbox\nDownloadUser = alpm\nDisableDownloadTimeout\nParallelDownloads = 10&amp;#39;&lt;/span&gt; /etc/pacman.conf
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;We are done with &lt;code&gt;pacman.conf&lt;/code&gt;. Furthermore, &lt;strong&gt;Pacman 7.0&lt;/strong&gt; also introduces changes to improve checksum stability for Git repositories that use &lt;code&gt;.gitattributes&lt;/code&gt; files.&lt;/p&gt;
+&lt;p&gt;Consequently, you might need to update the checksums in your &lt;code&gt;PKGBUILD&lt;/code&gt; files that source from Git repositories. This is a one-time adjustment to accommodate the new checksum calculation method.&lt;/p&gt;
+
+
+&lt;h3 class=&#34;relative group&#34;&gt;AUR Helpers 
+    &lt;div id=&#34;aur-helpers&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+    
+&lt;/h3&gt;
+
+  
+  
+  
+  
+
+
+
+&lt;div
+  
+    class=&#34;flex px-4 py-3 rounded-md&#34;
+    style=&#34;background-color: #993350&#34;
+  &gt;
+
+  &lt;span
+    
+      class=&#34;ltr:pr-3 rtl:pl-3 flex items-center&#34;
+      style=&#34;color: #1d3557&#34;
+    &gt;
+
+    
+
+  &lt;span class=&#34;relative block icon&#34;&gt;
+    &lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 448 512&#34;&gt;
+&lt;path fill=&#34;currentColor&#34;  d=&#34;M159.3 5.4c7.8-7.3 19.9-7.2 27.7 .1c27.6 25.9 53.5 53.8 77.7 84c11-14.4 23.5-30.1 37-42.9c7.9-7.4 20.1-7.4 28 .1c34.6 33 63.9 76.6 84.5 118c20.3 40.8 33.8 82.5 33.8 111.9C448 404.2 348.2 512 224 512C98.4 512 0 404.1 0 276.5c0-38.4 17.8-85.3 45.4-131.7C73.3 97.7 112.7 48.6 159.3 5.4zM225.7 416c25.3 0 47.7-7 68.8-21c42.1-29.4 53.4-88.2 28.1-134.4c-2.8-5.6-5.6-11.2-9.8-16.8l-50.6 58.8s-81.4-103.6-87.1-110.6C133.1 243.8 112 273.2 112 306.8C112 375.4 162.6 416 225.7 416z&#34;/&gt;&lt;/svg&gt;
+  &lt;/span&gt;
+
+
+  &lt;/span&gt;
+
+  &lt;span
+    
+      style=&#34;color: #f1faee&#34;
+    &gt;&lt;strong&gt;Heads Up :&lt;/strong&gt; If you use yay to install packages from AUR, be aware that after upgrading to Pacman 7.0, you’ll see an error message when trying to use it.&lt;/span&gt;
+&lt;/div&gt;
+
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;paru/yay: error &lt;span class=&#34;k&#34;&gt;while&lt;/span&gt; loading shared libraries: libalpm.so.14: cannot open shared object file: No such file or directory
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Just in case you use an &lt;strong&gt;AUR&lt;/strong&gt; helper, you will need to either recompile it since &lt;code&gt;libalpm.so&lt;/code&gt; was updated to version 15. If you are using the &lt;code&gt;-git&lt;/code&gt; version, otherwise if you are using the normal or &lt;code&gt;-bin&lt;/code&gt; versions you will need to wait for them to get updated. Or switch to &lt;code&gt;-git&lt;/code&gt; (not very recommended), up to you.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo pacman -S paru-git
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Agree and replace one with the other. Have fun ;)&lt;/p&gt;
+
+
+&lt;h3 class=&#34;relative group&#34;&gt;Makepkg / Rust 
+    &lt;div id=&#34;makepkg--rust&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+    
+&lt;/h3&gt;
+&lt;p&gt;A few other changes were introduced with this update, especially if you compile your own packages. One of the affected files is &lt;code&gt;makepkg.conf&lt;/code&gt; which contains the flags and packager info. &lt;strong&gt;Do this only if you are a package maintainer&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;Here&amp;rsquo;s how you can merge the changes :&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;diff -u /etc/makepkg.conf /etc/makepkg.conf.pacnew &amp;gt; diff.patch
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;This creates a file called &lt;code&gt;diff.patch&lt;/code&gt; with the differences in a unified format, which is more readable and suitable for merging.&lt;/p&gt;
+&lt;p&gt;Apply the patch (diff) to the &lt;code&gt;makepkg.conf&lt;/code&gt; file using the &lt;code&gt;patch&lt;/code&gt; command:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo patch /etc/makepkg.conf &amp;lt; diff.patch
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Last file to be affected, is &lt;code&gt;rust.conf&lt;/code&gt; under &lt;code&gt;/etc/makepkg.conf.d/&lt;/code&gt;. To merge changes, follow the same steps mentioned earlier for &lt;code&gt;makepkg.conf&lt;/code&gt; replacing the file path and name to the ones of &lt;code&gt;rust.conf&lt;/code&gt;.&lt;/p&gt;
+
+
+&lt;h3 class=&#34;relative group&#34;&gt;Wrapping up 
+    &lt;div id=&#34;wrapping-up&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+    
+&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;Pacman&lt;/strong&gt; doesn&amp;rsquo;t get updated very often and when it does, there will always be some manual intervention of sorts. Also since &lt;strong&gt;AUR Helpers&lt;/strong&gt; kinda rely on it, if you can&amp;rsquo;t wait for maintainers to update &lt;em&gt;stable&lt;/em&gt; version, install &lt;code&gt;-git&lt;/code&gt; one, not always the best recourse as those can break at any moment. Instead, I would highly recommend, if you really want to install packages from the &lt;strong&gt;AUR&lt;/strong&gt;, to do it without the use of a helper, like so:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git clone https://aur.archlinux.org/packagename.git
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;cd&lt;/span&gt; packagename/ &lt;span class=&#34;o&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; makepkg -si
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Also if you are using any &lt;strong&gt;GUI Packages Managers&lt;/strong&gt; you will also need to either recompile them or wait for them to get updated. It&amp;rsquo;s the nature of Rolling release Distros.&lt;/p&gt;
+&lt;p&gt;If you want to learn more about how to use &lt;strong&gt;Pacman&lt;/strong&gt; and become a pro, I would highly recommend &lt;a href=&#34;https://linuxiac.com/how-to-use-pacman-to-manage-software-on-arch-linux/&#34; target=&#34;_blank&#34;&gt;&lt;strong&gt;This Awesome Guide&lt;/strong&gt;&lt;/a&gt; by &lt;a href=&#34;https://linuxiac.com&#34; target=&#34;_blank&#34;&gt;&lt;strong&gt;@Linuxiac&lt;/strong&gt;&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;I hope this helps y&amp;rsquo;all&amp;hellip;&lt;/p&gt;
+</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/pacman-update/featured.webp" />
+    </item>
+    
+    <item>
+      <title>Ricing KDE Plasma</title>
+      <link>https://xerolinux.xyz/posts/ricing-plasma/</link>
+      <pubDate>Mon, 29 Jul 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://xerolinux.xyz/posts/ricing-plasma/</guid>
+      <description>
+
+&lt;h3 class=&#34;relative group&#34;&gt;Intro 
+    &lt;div id=&#34;intro&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+    
+&lt;/h3&gt;
+&lt;p&gt;Before we begin, here&amp;rsquo;s brief intro as to why I care about ricing.&lt;/p&gt;
+&lt;p&gt;In case you didn&amp;rsquo;t know it, I began my &lt;strong&gt;Linux&lt;/strong&gt; journey with &lt;strong&gt;KDE Plasma&lt;/strong&gt; because of the freedom of customization. I love ricing my setups. I hated that &lt;strong&gt;macOS&lt;/strong&gt; &amp;amp; &lt;strong&gt;Windows&lt;/strong&gt; did not allow this.&lt;/p&gt;
+&lt;p&gt;And if you want to see what I have managed to do, well, hop on over to my &lt;strong&gt;Layan&lt;/strong&gt; rice&amp;rsquo;s &lt;strong&gt;Githup&lt;/strong&gt; repository, you will get blown away.&lt;/p&gt;
+&lt;a id=&#34;github-a3d14a4a10f892b0bde0c7d2dcb03e5f&#34; target=&#34;_blank&#34; href=&#34;https://github.com/xerolinux/xero-layan-git&#34; class=&#34;cursor-pointer&#34;&gt;
+  &lt;div
+    class=&#34;w-full md:w-auto pt-3 p-5 border border-neutral-200 dark:border-neutral-700 border rounded-md shadow-2xl&#34;&gt;
+
+    &lt;div class=&#34;flex items-center&#34;&gt;
+      &lt;span class=&#34;text-2xl text-neutral-800 dark:text-neutral&#34; style=&#34;margin-right:10px;&#34;&gt;
+        
+
+  &lt;span class=&#34;relative block icon&#34;&gt;
+    &lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 496 512&#34;&gt;&lt;path fill=&#34;currentColor&#34; d=&#34;M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z&#34;/&gt;&lt;/svg&gt;
+
+  &lt;/span&gt;
+
+
+      &lt;/span&gt;
+      &lt;div
+        id=&#34;github-a3d14a4a10f892b0bde0c7d2dcb03e5f-full_name&#34;
+        class=&#34;m-0 font-bold text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral&#34;&gt;
+        xerolinux/xero-layan-git
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;p id=&#34;github-a3d14a4a10f892b0bde0c7d2dcb03e5f-description&#34; class=&#34;m-0 mt-2 text-md text-neutral-800 dark:text-neutral&#34;&gt;
+      XeroLinux Layan Rice
+    &lt;/p&gt;
+
+    &lt;div class=&#34;m-0 mt-2 flex items-center&#34;&gt;
+
+      &lt;span class=&#34;mr-1 inline-block h-3 w-3 rounded-full&#34;
+        style=&#34;background-color: #44a51c&#34;&gt;&lt;/span&gt;
+      &lt;div class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
+         QML 
+      &lt;/div&gt;
+
+      &lt;span class=&#34;text-md mr-1 text-neutral-800 dark:text-neutral&#34;&gt;
+        
+
+  &lt;span class=&#34;relative block icon&#34;&gt;
+    &lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 576 512&#34;&gt;&lt;path fill=&#34;currentColor&#34; d=&#34;M287.9 0C297.1 0 305.5 5.25 309.5 13.52L378.1 154.8L531.4 177.5C540.4 178.8 547.8 185.1 550.7 193.7C553.5 202.4 551.2 211.9 544.8 218.2L433.6 328.4L459.9 483.9C461.4 492.9 457.7 502.1 450.2 507.4C442.8 512.7 432.1 513.4 424.9 509.1L287.9 435.9L150.1 509.1C142.9 513.4 133.1 512.7 125.6 507.4C118.2 502.1 114.5 492.9 115.1 483.9L142.2 328.4L31.11 218.2C24.65 211.9 22.36 202.4 25.2 193.7C28.03 185.1 35.5 178.8 44.49 177.5L197.7 154.8L266.3 13.52C270.4 5.249 278.7 0 287.9 0L287.9 0zM287.9 78.95L235.4 187.2C231.9 194.3 225.1 199.3 217.3 200.5L98.98 217.9L184.9 303C190.4 308.5 192.9 316.4 191.6 324.1L171.4 443.7L276.6 387.5C283.7 383.7 292.2 383.7 299.2 387.5L404.4 443.7L384.2 324.1C382.9 316.4 385.5 308.5 391 303L476.9 217.9L358.6 200.5C350.7 199.3 343.9 194.3 340.5 187.2L287.9 78.95z&#34;/&gt;&lt;/svg&gt;
+  &lt;/span&gt;
+
+
+      &lt;/span&gt;
+      &lt;div id=&#34;github-a3d14a4a10f892b0bde0c7d2dcb03e5f-stargazers&#34; class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
+<<<<<<< HEAD
+        82
+=======
+        101
+>>>>>>> a9bf7f74b9df3f07d0e74e79a2de68647eb7faf6
+      &lt;/div&gt;
+
+      &lt;span class=&#34;text-md mr-1 text-neutral-800 dark:text-neutral&#34;&gt;
+        
+
+  &lt;span class=&#34;relative block icon&#34;&gt;
+    &lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 448 512&#34;&gt;&lt;path fill=&#34;currentColor&#34; d=&#34;M80 104c13.3 0 24-10.7 24-24s-10.7-24-24-24S56 66.7 56 80s10.7 24 24 24zm80-24c0 32.8-19.7 61-48 73.3V192c0 17.7 14.3 32 32 32H304c17.7 0 32-14.3 32-32V153.3C307.7 141 288 112.8 288 80c0-44.2 35.8-80 80-80s80 35.8 80 80c0 32.8-19.7 61-48 73.3V192c0 53-43 96-96 96H256v70.7c28.3 12.3 48 40.5 48 73.3c0 44.2-35.8 80-80 80s-80-35.8-80-80c0-32.8 19.7-61 48-73.3V288H144c-53 0-96-43-96-96V153.3C19.7 141 0 112.8 0 80C0 35.8 35.8 0 80 0s80 35.8 80 80zm208 24c13.3 0 24-10.7 24-24s-10.7-24-24-24s-24 10.7-24 24s10.7 24 24 24zM248 432c0-13.3-10.7-24-24-24s-24 10.7-24 24s10.7 24 24 24s24-10.7 24-24z&#34;/&gt;&lt;/svg&gt;
+  &lt;/span&gt;
+
+
+      &lt;/span&gt;
+      &lt;div id=&#34;github-a3d14a4a10f892b0bde0c7d2dcb03e5f-forks&#34; class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
+        11
+      &lt;/div&gt;
+
+    &lt;/div&gt;
+
+  &lt;/div&gt;
+  &lt;script&gt;
+    fetch(&#34;https://api.github.com/repos/xerolinux/xero-layan-git&#34;, {
+      headers: new Headers({
+        &#39;User-agent&#39;: &#39;Mozilla/4.0 Custom User Agent&#39;
+      })
+    })
+      .then(response =&gt; response.json())
+      .then(data =&gt; {
+        document.getElementById(&#39;github-a3d14a4a10f892b0bde0c7d2dcb03e5f-full_name&#39;).innerHTML = data.full_name;
+        document.getElementById(&#39;github-a3d14a4a10f892b0bde0c7d2dcb03e5f-description&#39;).innerHTML = data.description;
+        document.getElementById(&#39;github-a3d14a4a10f892b0bde0c7d2dcb03e5f-stargazers&#39;).innerHTML = data.stargazers_count;
+        document.getElementById(&#39;github-a3d14a4a10f892b0bde0c7d2dcb03e5f-forks&#39;).innerHTML = data.forks;
+      })
+      .catch(error =&gt; console.error(error))
+  &lt;/script&gt;
+&lt;/a&gt;
+
+
+&lt;h3 class=&#34;relative group&#34;&gt;A bit of understanding 
+    &lt;div id=&#34;a-bit-of-understanding&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+    
+&lt;/h3&gt;
+&lt;p&gt;Ricing can be a bit invloved. At least if you are like me, and care about consistency. It&amp;rsquo;s not about just slapping a desktop theme and calling it a day. That&amp;rsquo;s just lazy. Please don&amp;rsquo;t do that.&lt;/p&gt;
+&lt;p&gt;
+  &lt;figure&gt;
+    &lt;img class=&#34;my-0 rounded-md&#34; loading=&#34;lazy&#34; src=&#34;https://i.imgur.com/irOECxY.jpeg&#34; alt=&#34;Rice&#34; /&gt;
+    
+  &lt;/figure&gt;
+&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;KDE Plasma&lt;/strong&gt; is a ricing a beast, no doubt about that. That&amp;rsquo;s one of its biggest selling points. So it&amp;rsquo;s normal when I say, it can be very, very intricate. You can rice everything in it.&lt;/p&gt;
+&lt;p&gt;We need to also know what library the system uses. &lt;strong&gt;KDE&lt;/strong&gt; uses a library called &lt;strong&gt;Qt&lt;/strong&gt;, pronounced like &lt;em&gt;cute&lt;/em&gt;. But you might encounter apps that use the &lt;strong&gt;GTK2/3/4&lt;/strong&gt; library, typically ones created for &lt;strong&gt;Gnome&lt;/strong&gt; or &lt;strong&gt;XFCE&lt;/strong&gt;.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Keep in mind though, to successfully theme &lt;strong&gt;GTK4&lt;/strong&gt; or, as it&amp;rsquo;s called now &lt;strong&gt;LibAdwaita&lt;/strong&gt;, we need to make sure the necessary &lt;em&gt;Hacks&lt;/em&gt; are included in the theme we have chosen, simply because, as we all know, &lt;strong&gt;Gnome&lt;/strong&gt; devs despise the whole idea of theming for whatever reason.&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;So it will be up to you, the user, to find all theme elements required for a complete and consistent look. Whay do I say this you may ask? Well, quite simply because, and it saddens me to say this, very few themes come complete, allowing such consistency. But it can be done.&lt;/p&gt;
+&lt;p&gt;With that out of the way, let&amp;rsquo;s get to it shall we ?&lt;/p&gt;
+
+
+&lt;h3 class=&#34;relative group&#34;&gt;KDE Plasma pieces 
+    &lt;div id=&#34;kde-plasma-pieces&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+    
+&lt;/h3&gt;
+&lt;p&gt;As I said earlier in the post, &lt;strong&gt;KDE Plasma&lt;/strong&gt; is made of many elements that can be themed or riced. So here, I will be explaining what they are and the tools we need to theme them.&lt;/p&gt;
+
+  
+  
+  
+  
+
+
+
+&lt;div
+  
+    class=&#34;flex px-4 py-3 rounded-md&#34;
+    style=&#34;background-color: #e63946&#34;
+  &gt;
+
+  &lt;span
+    
+      class=&#34;ltr:pr-3 rtl:pl-3 flex items-center&#34;
+      style=&#34;color: #1d3557&#34;
+    &gt;
+
+    
+
+  &lt;span class=&#34;relative block icon&#34;&gt;
+    &lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 448 512&#34;&gt;
+&lt;path fill=&#34;currentColor&#34;  d=&#34;M159.3 5.4c7.8-7.3 19.9-7.2 27.7 .1c27.6 25.9 53.5 53.8 77.7 84c11-14.4 23.5-30.1 37-42.9c7.9-7.4 20.1-7.4 28 .1c34.6 33 63.9 76.6 84.5 118c20.3 40.8 33.8 82.5 33.8 111.9C448 404.2 348.2 512 224 512C98.4 512 0 404.1 0 276.5c0-38.4 17.8-85.3 45.4-131.7C73.3 97.7 112.7 48.6 159.3 5.4zM225.7 416c25.3 0 47.7-7 68.8-21c42.1-29.4 53.4-88.2 28.1-134.4c-2.8-5.6-5.6-11.2-9.8-16.8l-50.6 58.8s-81.4-103.6-87.1-110.6C133.1 243.8 112 273.2 112 306.8C112 375.4 162.6 416 225.7 416z&#34;/&gt;&lt;/svg&gt;
+  &lt;/span&gt;
+
+
+  &lt;/span&gt;
+
+  &lt;span
+    
+      style=&#34;color: #f1faee&#34;
+    &gt;&lt;strong&gt;Friendly Advice :&lt;/strong&gt; Never install themes from any repos or the &lt;strong&gt;AUR&lt;/strong&gt;. Always grab them from source, after you have inspected the code. For your own sanity. And make sure they are compatible with &lt;strong&gt;Plasma 6&lt;/strong&gt;.&lt;/span&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Please read the above warning, ignoring it will result in nothing but headaches. Trust me, I made that mistake and wasted more time than I can count trying to solve the resulting issues.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Kvantum Manager&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;First, we will need and app that I highly recommend to have on hand, called &lt;strong&gt;Kvantum&lt;/strong&gt;. I consider it an essantial tool for every ricer out there.&lt;/p&gt;
+&lt;p&gt;
+  &lt;figure&gt;
+    &lt;img class=&#34;my-0 rounded-md&#34; loading=&#34;lazy&#34; src=&#34;https://i.imgur.com/DNfv0aG.png&#34; alt=&#34;Kvantum&#34; /&gt;
+    
+  &lt;/figure&gt;
+&lt;/p&gt;
+&lt;a id=&#34;github-674857d8b75e800e4bcc0955b60eca86&#34; target=&#34;_blank&#34; href=&#34;https://github.com/tsujan/Kvantum&#34; class=&#34;cursor-pointer&#34;&gt;
+  &lt;div
+    class=&#34;w-full md:w-auto pt-3 p-5 border border-neutral-200 dark:border-neutral-700 border rounded-md shadow-2xl&#34;&gt;
+
+    &lt;div class=&#34;flex items-center&#34;&gt;
+      &lt;span class=&#34;text-2xl text-neutral-800 dark:text-neutral&#34; style=&#34;margin-right:10px;&#34;&gt;
+        
+
+  &lt;span class=&#34;relative block icon&#34;&gt;
+    &lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 496 512&#34;&gt;&lt;path fill=&#34;currentColor&#34; d=&#34;M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z&#34;/&gt;&lt;/svg&gt;
+
+  &lt;/span&gt;
+
+
+      &lt;/span&gt;
+      &lt;div
+        id=&#34;github-674857d8b75e800e4bcc0955b60eca86-full_name&#34;
+        class=&#34;m-0 font-bold text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral&#34;&gt;
+        tsujan/Kvantum
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;p id=&#34;github-674857d8b75e800e4bcc0955b60eca86-description&#34; class=&#34;m-0 mt-2 text-md text-neutral-800 dark:text-neutral&#34;&gt;
+      A Linux SVG-based theme engine for Qt and KDE
+    &lt;/p&gt;
+
+    &lt;div class=&#34;m-0 mt-2 flex items-center&#34;&gt;
+
+      &lt;span class=&#34;mr-1 inline-block h-3 w-3 rounded-full&#34;
+        style=&#34;background-color: #f34b7d&#34;&gt;&lt;/span&gt;
+      &lt;div class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
+         C&amp;#43;&amp;#43; 
+      &lt;/div&gt;
+
+      &lt;span class=&#34;text-md mr-1 text-neutral-800 dark:text-neutral&#34;&gt;
+        
+
+  &lt;span class=&#34;relative block icon&#34;&gt;
+    &lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 576 512&#34;&gt;&lt;path fill=&#34;currentColor&#34; d=&#34;M287.9 0C297.1 0 305.5 5.25 309.5 13.52L378.1 154.8L531.4 177.5C540.4 178.8 547.8 185.1 550.7 193.7C553.5 202.4 551.2 211.9 544.8 218.2L433.6 328.4L459.9 483.9C461.4 492.9 457.7 502.1 450.2 507.4C442.8 512.7 432.1 513.4 424.9 509.1L287.9 435.9L150.1 509.1C142.9 513.4 133.1 512.7 125.6 507.4C118.2 502.1 114.5 492.9 115.1 483.9L142.2 328.4L31.11 218.2C24.65 211.9 22.36 202.4 25.2 193.7C28.03 185.1 35.5 178.8 44.49 177.5L197.7 154.8L266.3 13.52C270.4 5.249 278.7 0 287.9 0L287.9 0zM287.9 78.95L235.4 187.2C231.9 194.3 225.1 199.3 217.3 200.5L98.98 217.9L184.9 303C190.4 308.5 192.9 316.4 191.6 324.1L171.4 443.7L276.6 387.5C283.7 383.7 292.2 383.7 299.2 387.5L404.4 443.7L384.2 324.1C382.9 316.4 385.5 308.5 391 303L476.9 217.9L358.6 200.5C350.7 199.3 343.9 194.3 340.5 187.2L287.9 78.95z&#34;/&gt;&lt;/svg&gt;
+  &lt;/span&gt;
+
+
+      &lt;/span&gt;
+      &lt;div id=&#34;github-674857d8b75e800e4bcc0955b60eca86-stargazers&#34; class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
+<<<<<<< HEAD
+        1545
+=======
+        1590
+>>>>>>> a9bf7f74b9df3f07d0e74e79a2de68647eb7faf6
+      &lt;/div&gt;
+
+      &lt;span class=&#34;text-md mr-1 text-neutral-800 dark:text-neutral&#34;&gt;
+        
+
+  &lt;span class=&#34;relative block icon&#34;&gt;
+    &lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 448 512&#34;&gt;&lt;path fill=&#34;currentColor&#34; d=&#34;M80 104c13.3 0 24-10.7 24-24s-10.7-24-24-24S56 66.7 56 80s10.7 24 24 24zm80-24c0 32.8-19.7 61-48 73.3V192c0 17.7 14.3 32 32 32H304c17.7 0 32-14.3 32-32V153.3C307.7 141 288 112.8 288 80c0-44.2 35.8-80 80-80s80 35.8 80 80c0 32.8-19.7 61-48 73.3V192c0 53-43 96-96 96H256v70.7c28.3 12.3 48 40.5 48 73.3c0 44.2-35.8 80-80 80s-80-35.8-80-80c0-32.8 19.7-61 48-73.3V288H144c-53 0-96-43-96-96V153.3C19.7 141 0 112.8 0 80C0 35.8 35.8 0 80 0s80 35.8 80 80zm208 24c13.3 0 24-10.7 24-24s-10.7-24-24-24s-24 10.7-24 24s10.7 24 24 24zM248 432c0-13.3-10.7-24-24-24s-24 10.7-24 24s10.7 24 24 24s24-10.7 24-24z&#34;/&gt;&lt;/svg&gt;
+  &lt;/span&gt;
+
+
+      &lt;/span&gt;
+      &lt;div id=&#34;github-674857d8b75e800e4bcc0955b60eca86-forks&#34; class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
+<<<<<<< HEAD
+        145
+=======
+        149
+>>>>>>> a9bf7f74b9df3f07d0e74e79a2de68647eb7faf6
+      &lt;/div&gt;
+
+    &lt;/div&gt;
+
+  &lt;/div&gt;
+  &lt;script&gt;
+    fetch(&#34;https://api.github.com/repos/tsujan/Kvantum&#34;, {
+      headers: new Headers({
+        &#39;User-agent&#39;: &#39;Mozilla/4.0 Custom User Agent&#39;
+      })
+    })
+      .then(response =&gt; response.json())
+      .then(data =&gt; {
+        document.getElementById(&#39;github-674857d8b75e800e4bcc0955b60eca86-full_name&#39;).innerHTML = data.full_name;
+        document.getElementById(&#39;github-674857d8b75e800e4bcc0955b60eca86-description&#39;).innerHTML = data.description;
+        document.getElementById(&#39;github-674857d8b75e800e4bcc0955b60eca86-stargazers&#39;).innerHTML = data.stargazers_count;
+        document.getElementById(&#39;github-674857d8b75e800e4bcc0955b60eca86-forks&#39;).innerHTML = data.forks;
+      })
+      .catch(error =&gt; console.error(error))
+  &lt;/script&gt;
+&lt;/a&gt;
+&lt;p&gt;This will take care of the awesome window blur and transparency effects for all &lt;strong&gt;Qt&lt;/strong&gt; based apps. It will not work on anything else, keep that in mind.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;SDDM Login Manager&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Another element &lt;strong&gt;KDE Plasma&lt;/strong&gt; uses, is &lt;a href=&#34;https://wiki.archlinux.org/title/SDDM&#34; target=&#34;_blank&#34;&gt;&lt;strong&gt;SDDM&lt;/strong&gt;&lt;/a&gt; for its &lt;strong&gt;Display Manager/Login&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;
+  &lt;figure&gt;
+    &lt;img class=&#34;my-0 rounded-md&#34; loading=&#34;lazy&#34; src=&#34;https://i.imgur.com/hLBbJvF.jpeg&#34; alt=&#34;SDDM&#34; /&gt;
+    
+  &lt;/figure&gt;
+&lt;/p&gt;
+&lt;p&gt;It too can be themed.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Grub Bootloader&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Now, I can already hear you say that this is unrelated to &lt;strong&gt;KDE Plasma&lt;/strong&gt;, to which I will say, yes I agree. Also, not everyone will be using &lt;a href=&#34;https://wiki.archlinux.org/title/GRUB&#34; target=&#34;_blank&#34;&gt;&lt;strong&gt;Grub&lt;/strong&gt;&lt;/a&gt;. Also true.&lt;/p&gt;
+&lt;p&gt;
+  &lt;figure&gt;
+    &lt;img class=&#34;my-0 rounded-md&#34; loading=&#34;lazy&#34; src=&#34;https://i.imgur.com/tyoOZV1.png&#34; alt=&#34;Grub&#34; /&gt;
+    
+  &lt;/figure&gt;
+&lt;/p&gt;
+&lt;p&gt;But for the sake of completeness, I do like to theme it as well.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Konsole Terminal Emulator&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;a href=&#34;https://konsole.kde.org/&#34; target=&#34;_blank&#34;&gt;&lt;strong&gt;Konsole&lt;/strong&gt;&lt;/a&gt; is the &lt;em&gt;Terminal Emulator&lt;/em&gt; that &lt;strong&gt;Plasma&lt;/strong&gt; ships. I know most of you switch to &lt;strong&gt;Alacritty&lt;/strong&gt; or even &lt;strong&gt;Kitty&lt;/strong&gt;. But I prefer to stick with what ships with the DE I use.&lt;/p&gt;
+&lt;p&gt;
+  &lt;figure&gt;
+    &lt;img class=&#34;my-0 rounded-md&#34; loading=&#34;lazy&#34; src=&#34;https://i.imgur.com/pXDM5ZM.png&#34; alt=&#34;Konsole&#34; /&gt;
+    
+  &lt;/figure&gt;
+&lt;/p&gt;
+&lt;p&gt;That too can be themed.&lt;/p&gt;
+
+
+&lt;h3 class=&#34;relative group&#34;&gt;The more complete the better 
+    &lt;div id=&#34;the-more-complete-the-better&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+    
+&lt;/h3&gt;
+&lt;p&gt;Now that we have an understanding of the various elements that make for a more complete experience, here&amp;rsquo;s what themes we choose need to have before using them.&lt;/p&gt;
+&lt;p&gt;Not all of them contain all the elements. Sadly there are some out there that are incomplete making it harder to get a cohesive look. So I would avoid those if I were you.&lt;/p&gt;
+&lt;p&gt;Once we have found a noce theme, we need to make sure it applies to the following parts of &lt;strong&gt;Plasma&lt;/strong&gt; :&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Colors&lt;/strong&gt; : Resposible for accent and window colors.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Application Style&lt;/strong&gt; : Theme specific Kvantum style.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Plasma Style&lt;/strong&gt; : Light/Dark window style.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Window Decorations&lt;/strong&gt; : The top window minimize/close/maximize bar.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Cursors&lt;/strong&gt; : Cursor theme (Optional)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Icons&lt;/strong&gt; : A fitting icon theme. (Optional)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;SDDM&lt;/strong&gt; : Login theme.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;
+  &lt;figure&gt;
+    &lt;img class=&#34;my-0 rounded-md&#34; loading=&#34;lazy&#34; src=&#34;https://i.imgur.com/ggNKZYO.png&#34; alt=&#34;Settings&#34; /&gt;
+    
+  &lt;/figure&gt;
+&lt;/p&gt;
+&lt;p&gt;That&amp;rsquo;s it really. In case you do not find a theme that contains all these elements, it&amp;rsquo;s not a huge issue, you can always hunt for one that fits the &lt;strong&gt;Global Theme&lt;/strong&gt;. It&amp;rsquo;s hard to find one I know, but who knows you might get lucky lol.&lt;/p&gt;
+
+
+&lt;h3 class=&#34;relative group&#34;&gt;Applying our themes 
+    &lt;div id=&#34;applying-our-themes&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+    
+&lt;/h3&gt;
+&lt;p&gt;Once you have downloaded your chosen theme and theme elements from their sources (Github/Gitlab), follow their respective guides to install them, then head on over to the &lt;strong&gt;KDE Settings&lt;/strong&gt; to apply them.&lt;/p&gt;
+&lt;p&gt;For &lt;strong&gt;Kvantum&lt;/strong&gt;, just launch it, select the theme from the drop down and hit apply. Then select it as the &lt;strong&gt;Application Style&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;As for &lt;strong&gt;Konsole&lt;/strong&gt;, launch it, make sure you have moved its theme file into &lt;code&gt;~/.local/share/konsole/&lt;/code&gt; folder, right click inside its window, select &lt;em&gt;create new profile&lt;/em&gt; from the context menu, give it a name, one that you recognize, on the left click on &lt;em&gt;appearance&lt;/em&gt;, select your theme, if you want to enable transparency with blur, click on edit, this is where you do that. Confirm, done.&lt;/p&gt;
+&lt;p&gt;Now I will not talk about &lt;strong&gt;Grub&lt;/strong&gt; here since all themes for it will come with their own instructions and/or install scripts.&lt;/p&gt;
+
+
+&lt;h3 class=&#34;relative group&#34;&gt;Panel &amp;amp; Widgets 
+    &lt;div id=&#34;panel--widgets&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+    
+&lt;/h3&gt;
+&lt;p&gt;Oh boy, the reason I will not be talking about those is is simple, it&amp;rsquo;s your rice you do with those as you please. &lt;strong&gt;KDE Plasma&lt;/strong&gt; comes with some awesome widgets, use those to get started, if you want more, well, you will find them on the &lt;a href=&#34;https://store.kde.org&#34; target=&#34;_blank&#34;&gt;&lt;strong&gt;KDE Store&lt;/strong&gt;&lt;/a&gt;.&lt;/p&gt;
+
+  
+  
+  
+  
+
+
+
+&lt;div
+  
+    class=&#34;flex px-4 py-3 rounded-md&#34;
+    style=&#34;background-color: #e63946&#34;
+  &gt;
+
+  &lt;span
+    
+      class=&#34;ltr:pr-3 rtl:pl-3 flex items-center&#34;
+      style=&#34;color: #1d3557&#34;
+    &gt;
+
+    
+
+  &lt;span class=&#34;relative block icon&#34;&gt;
+    &lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 448 512&#34;&gt;
+&lt;path fill=&#34;currentColor&#34;  d=&#34;M159.3 5.4c7.8-7.3 19.9-7.2 27.7 .1c27.6 25.9 53.5 53.8 77.7 84c11-14.4 23.5-30.1 37-42.9c7.9-7.4 20.1-7.4 28 .1c34.6 33 63.9 76.6 84.5 118c20.3 40.8 33.8 82.5 33.8 111.9C448 404.2 348.2 512 224 512C98.4 512 0 404.1 0 276.5c0-38.4 17.8-85.3 45.4-131.7C73.3 97.7 112.7 48.6 159.3 5.4zM225.7 416c25.3 0 47.7-7 68.8-21c42.1-29.4 53.4-88.2 28.1-134.4c-2.8-5.6-5.6-11.2-9.8-16.8l-50.6 58.8s-81.4-103.6-87.1-110.6C133.1 243.8 112 273.2 112 306.8C112 375.4 162.6 416 225.7 416z&#34;/&gt;&lt;/svg&gt;
+  &lt;/span&gt;
+
+
+  &lt;/span&gt;
+
+  &lt;span
+    
+      style=&#34;color: #f1faee&#34;
+    &gt;&lt;strong&gt;Warning :&lt;/strong&gt; Please make sure they are compatible with &lt;strong&gt;Plasma 6&lt;/strong&gt;.&lt;/span&gt;
+&lt;/div&gt;
+
+&lt;p&gt;
+  &lt;figure&gt;
+    &lt;img class=&#34;my-0 rounded-md&#34; loading=&#34;lazy&#34; src=&#34;https://i.imgur.com/VA2tycb.jpeg&#34; alt=&#34;XeroLayan&#34; /&gt;
+    
+  &lt;/figure&gt;
+&lt;/p&gt;
+&lt;p&gt;As for the panel, position it wherever your heart desires. Top, bottom, left or right. It&amp;rsquo;s all up to you. You can even use it as a Dock. Above is the end result of my very own rice I call the &lt;strong&gt;XeroLayan&lt;/strong&gt; rice.&lt;/p&gt;
+
+
+&lt;h3 class=&#34;relative group&#34;&gt;Bonus for the G33ks 
+    &lt;div id=&#34;bonus-for-the-g33ks&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+    
+&lt;/h3&gt;
+&lt;p&gt;As a bonus, for all the G33ks out there, I would like to include a nice find. Some of us would love to make our rices reproduce-able without having to apply every element over and over, others just want to have a backup.&lt;/p&gt;
+&lt;p&gt;That&amp;rsquo;s where this &lt;strong&gt;Github Repo&lt;/strong&gt; comes in handy. It shows us what files are affected by the various theme elements. So have at it and enjoy !&lt;/p&gt;
+&lt;a id=&#34;github-35acb2467e8c5b7be245dd5d8ae6184d&#34; target=&#34;_blank&#34; href=&#34;https://github.com/shalva97/kde-configuration-files&#34; class=&#34;cursor-pointer&#34;&gt;
+  &lt;div
+    class=&#34;w-full md:w-auto pt-3 p-5 border border-neutral-200 dark:border-neutral-700 border rounded-md shadow-2xl&#34;&gt;
+
+    &lt;div class=&#34;flex items-center&#34;&gt;
+      &lt;span class=&#34;text-2xl text-neutral-800 dark:text-neutral&#34; style=&#34;margin-right:10px;&#34;&gt;
+        
+
+  &lt;span class=&#34;relative block icon&#34;&gt;
+    &lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 496 512&#34;&gt;&lt;path fill=&#34;currentColor&#34; d=&#34;M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z&#34;/&gt;&lt;/svg&gt;
+
+  &lt;/span&gt;
+
+
+      &lt;/span&gt;
+      &lt;div
+        id=&#34;github-35acb2467e8c5b7be245dd5d8ae6184d-full_name&#34;
+        class=&#34;m-0 font-bold text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral&#34;&gt;
+        shalva97/kde-configuration-files
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;p id=&#34;github-35acb2467e8c5b7be245dd5d8ae6184d-description&#34; class=&#34;m-0 mt-2 text-md text-neutral-800 dark:text-neutral&#34;&gt;
+      KDE plasma configuration files
+    &lt;/p&gt;
+
+    &lt;div class=&#34;m-0 mt-2 flex items-center&#34;&gt;
+
+      &lt;span class=&#34;mr-1 inline-block h-3 w-3 rounded-full&#34;
+        style=&#34;background-color: #89e051&#34;&gt;&lt;/span&gt;
+      &lt;div class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
+         Shell 
+      &lt;/div&gt;
+
+      &lt;span class=&#34;text-md mr-1 text-neutral-800 dark:text-neutral&#34;&gt;
+        
+
+  &lt;span class=&#34;relative block icon&#34;&gt;
+    &lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 576 512&#34;&gt;&lt;path fill=&#34;currentColor&#34; d=&#34;M287.9 0C297.1 0 305.5 5.25 309.5 13.52L378.1 154.8L531.4 177.5C540.4 178.8 547.8 185.1 550.7 193.7C553.5 202.4 551.2 211.9 544.8 218.2L433.6 328.4L459.9 483.9C461.4 492.9 457.7 502.1 450.2 507.4C442.8 512.7 432.1 513.4 424.9 509.1L287.9 435.9L150.1 509.1C142.9 513.4 133.1 512.7 125.6 507.4C118.2 502.1 114.5 492.9 115.1 483.9L142.2 328.4L31.11 218.2C24.65 211.9 22.36 202.4 25.2 193.7C28.03 185.1 35.5 178.8 44.49 177.5L197.7 154.8L266.3 13.52C270.4 5.249 278.7 0 287.9 0L287.9 0zM287.9 78.95L235.4 187.2C231.9 194.3 225.1 199.3 217.3 200.5L98.98 217.9L184.9 303C190.4 308.5 192.9 316.4 191.6 324.1L171.4 443.7L276.6 387.5C283.7 383.7 292.2 383.7 299.2 387.5L404.4 443.7L384.2 324.1C382.9 316.4 385.5 308.5 391 303L476.9 217.9L358.6 200.5C350.7 199.3 343.9 194.3 340.5 187.2L287.9 78.95z&#34;/&gt;&lt;/svg&gt;
+  &lt;/span&gt;
+
+
+      &lt;/span&gt;
+      &lt;div id=&#34;github-35acb2467e8c5b7be245dd5d8ae6184d-stargazers&#34; class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
+<<<<<<< HEAD
+        770
+=======
+        811
+>>>>>>> a9bf7f74b9df3f07d0e74e79a2de68647eb7faf6
+      &lt;/div&gt;
+
+      &lt;span class=&#34;text-md mr-1 text-neutral-800 dark:text-neutral&#34;&gt;
+        
+
+  &lt;span class=&#34;relative block icon&#34;&gt;
+    &lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 448 512&#34;&gt;&lt;path fill=&#34;currentColor&#34; d=&#34;M80 104c13.3 0 24-10.7 24-24s-10.7-24-24-24S56 66.7 56 80s10.7 24 24 24zm80-24c0 32.8-19.7 61-48 73.3V192c0 17.7 14.3 32 32 32H304c17.7 0 32-14.3 32-32V153.3C307.7 141 288 112.8 288 80c0-44.2 35.8-80 80-80s80 35.8 80 80c0 32.8-19.7 61-48 73.3V192c0 53-43 96-96 96H256v70.7c28.3 12.3 48 40.5 48 73.3c0 44.2-35.8 80-80 80s-80-35.8-80-80c0-32.8 19.7-61 48-73.3V288H144c-53 0-96-43-96-96V153.3C19.7 141 0 112.8 0 80C0 35.8 35.8 0 80 0s80 35.8 80 80zm208 24c13.3 0 24-10.7 24-24s-10.7-24-24-24s-24 10.7-24 24s10.7 24 24 24zM248 432c0-13.3-10.7-24-24-24s-24 10.7-24 24s10.7 24 24 24s24-10.7 24-24z&#34;/&gt;&lt;/svg&gt;
+  &lt;/span&gt;
+
+
+      &lt;/span&gt;
+      &lt;div id=&#34;github-35acb2467e8c5b7be245dd5d8ae6184d-forks&#34; class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
+<<<<<<< HEAD
+        51
+=======
+        54
+>>>>>>> a9bf7f74b9df3f07d0e74e79a2de68647eb7faf6
+      &lt;/div&gt;
+
+    &lt;/div&gt;
+
+  &lt;/div&gt;
+  &lt;script&gt;
+    fetch(&#34;https://api.github.com/repos/shalva97/kde-configuration-files&#34;, {
+      headers: new Headers({
+        &#39;User-agent&#39;: &#39;Mozilla/4.0 Custom User Agent&#39;
+      })
+    })
+      .then(response =&gt; response.json())
+      .then(data =&gt; {
+        document.getElementById(&#39;github-35acb2467e8c5b7be245dd5d8ae6184d-full_name&#39;).innerHTML = data.full_name;
+        document.getElementById(&#39;github-35acb2467e8c5b7be245dd5d8ae6184d-description&#39;).innerHTML = data.description;
+        document.getElementById(&#39;github-35acb2467e8c5b7be245dd5d8ae6184d-stargazers&#39;).innerHTML = data.stargazers_count;
+        document.getElementById(&#39;github-35acb2467e8c5b7be245dd5d8ae6184d-forks&#39;).innerHTML = data.forks;
+      })
+      .catch(error =&gt; console.error(error))
+  &lt;/script&gt;
+&lt;/a&gt;
+&lt;p&gt;Don&amp;rsquo;t forget about &lt;strong&gt;Konsave&lt;/strong&gt; the GUI tool that does exactly that, just in a much simpler way. Article attached below.&lt;/p&gt;
+
+&lt;section class=&#34;space-y-10 w-full&#34;&gt;
+    
+    
+        
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  &lt;a class=&#34;flex flex-wrap article &#34; href=&#34;https://xerolinux.xyz/posts/konsave-tool/&#34;&gt;
+    
+        
+        &lt;div class=&#34;w-full md:w-auto h-full thumbnail nozoom thumbnailshadow md:mr-7&#34; style=&#34;background-image:url(/posts/konsave-tool/featured.webp);&#34;&gt;&lt;/div&gt;
+        
+      &lt;div class=&#34; mt-3 md:mt-0&#34;&gt;
+      &lt;div class=&#34;items-center text-left text-xl font-semibold&#34;&gt;
+        
+        &lt;div class=&#34;font-bold text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral&#34;
+          href=&#34;https://xerolinux.xyz/posts/konsave-tool/&#34;&gt;Konsave TUI&lt;/div&gt;
+        
+        
+        
+      &lt;/div&gt;
+      &lt;div class=&#34;text-sm text-neutral-500 dark:text-neutral-400&#34;&gt;
+        
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+&lt;div class=&#34;flex flex-row flex-wrap items-center&#34;&gt;
+  
+  
+  &lt;time datetime=&#34;2024-06-27T00:00:00&amp;#43;00:00&#34;&gt;27 June 2024&lt;/time&gt;&lt;span class=&#34;px-2 text-primary-500&#34;&gt;&amp;middot;&lt;/span&gt;&lt;span title=&#34;Reading time&#34;&gt;2 mins&lt;/span&gt;&lt;span class=&#34;px-2 text-primary-500&#34;&gt;&amp;middot;&lt;/span&gt;&lt;span&gt;
+  
+  
+    
+    
+      
+      
+        
+        
+      
+      
+    
+  
+  &lt;span id=&#34;views_posts/konsave-tool/index.md&#34; class=&#34;animate-pulse inline-block text-transparent max-h-3 rounded-full mt-[-2px] align-middle bg-neutral-300 dark:bg-neutral-400&#34; title=&#34;views&#34;&gt;loading&lt;/span&gt;
+  &lt;span class=&#34;inline-block align-text-bottom&#34;&gt;
+
+  &lt;span class=&#34;relative block icon&#34;&gt;
+    &lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 576 512&#34;&gt;
+&lt;path fill=&#34;currentColor&#34; d=&#34;M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z&#34;/&gt;&lt;/svg&gt;
+  &lt;/span&gt;
+
+&lt;/span&gt;
+&lt;/span&gt;&lt;span class=&#34;px-2 text-primary-500&#34;&gt;&amp;middot;&lt;/span&gt;&lt;span&gt;
+  
+  
+    
+    
+      
+      
+        
+        
+      
+      
+    
+  
+  &lt;span id=&#34;likes_posts/konsave-tool/index.md&#34;
+    class=&#34;animate-pulse inline-block text-transparent max-h-3 rounded-full mt-[-2px] align-middle bg-neutral-300 dark:bg-neutral-400&#34;
+    title=&#34;likes&#34;&gt;loading&lt;/span&gt;
+  &lt;span class=&#34;inline-block align-text-bottom&#34;&gt;
+
+  &lt;span class=&#34;relative block icon&#34;&gt;
+    &lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 512 512&#34;&gt;
+&lt;path fill=&#34;currentColor&#34; d=&#34;M47.6 300.4L228.3 469.1c7.5 7 17.4 10.9 27.7 10.9s20.2-3.9 27.7-10.9L464.4 300.4c30.4-28.3 47.6-68 47.6-109.5v-5.8c0-69.9-50.5-129.5-119.4-141C347 36.5 300.6 51.4 268 84L256 96 244 84c-32.6-32.6-79-47.5-124.6-39.9C50.5 55.6 0 115.2 0 185.1v5.8c0 41.5 17.2 81.2 47.6 109.5z&#34;/&gt;&lt;/svg&gt;
+  &lt;/span&gt;
+
+&lt;/span&gt;
+&lt;/span&gt;
+  
+
+  
+  
+&lt;/div&gt;
+
+
+&lt;div class=&#34;flex flex-row flex-wrap items-center&#34;&gt;
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+&lt;/div&gt;
+
+
+
+
+&lt;div class=&#34;flex flex-row flex-wrap items-center&#34;&gt;
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  &lt;span style=&#34;margin-top:0.5rem&#34; class=&#34;mr-2&#34; onclick=&#34;window.open(&amp;#34;/tags/themes/&amp;#34;,&#39;_self&#39;);return false;&#34;&gt;
+    &lt;span class=&#34;flex&#34; style=&#34;cursor: pointer;&#34;&gt;
+  &lt;span class=&#34;rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400&#34;&gt;
+    Themes
+  &lt;/span&gt;
+&lt;/span&gt;
+  &lt;/span&gt;
+  
+  &lt;span style=&#34;margin-top:0.5rem&#34; class=&#34;mr-2&#34; onclick=&#34;window.open(&amp;#34;/tags/plasma/&amp;#34;,&#39;_self&#39;);return false;&#34;&gt;
+    &lt;span class=&#34;flex&#34; style=&#34;cursor: pointer;&#34;&gt;
+  &lt;span class=&#34;rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400&#34;&gt;
+    Plasma
+  &lt;/span&gt;
+&lt;/span&gt;
+  &lt;/span&gt;
+  
+  &lt;span style=&#34;margin-top:0.5rem&#34; class=&#34;mr-2&#34; onclick=&#34;window.open(&amp;#34;/tags/kde/&amp;#34;,&#39;_self&#39;);return false;&#34;&gt;
+    &lt;span class=&#34;flex&#34; style=&#34;cursor: pointer;&#34;&gt;
+  &lt;span class=&#34;rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400&#34;&gt;
+    Kde
+  &lt;/span&gt;
+&lt;/span&gt;
+  &lt;/span&gt;
+  
+  &lt;span style=&#34;margin-top:0.5rem&#34; class=&#34;mr-2&#34; onclick=&#34;window.open(&amp;#34;/tags/tools/&amp;#34;,&#39;_self&#39;);return false;&#34;&gt;
+    &lt;span class=&#34;flex&#34; style=&#34;cursor: pointer;&#34;&gt;
+  &lt;span class=&#34;rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400&#34;&gt;
+    Tools
+  &lt;/span&gt;
+&lt;/span&gt;
+  &lt;/span&gt;
+  
+  &lt;span style=&#34;margin-top:0.5rem&#34; class=&#34;mr-2&#34; onclick=&#34;window.open(&amp;#34;/tags/linux/&amp;#34;,&#39;_self&#39;);return false;&#34;&gt;
+    &lt;span class=&#34;flex&#34; style=&#34;cursor: pointer;&#34;&gt;
+  &lt;span class=&#34;rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400&#34;&gt;
+    Linux
+  &lt;/span&gt;
+&lt;/span&gt;
+  &lt;/span&gt;
+  
+  
+  
+  
+&lt;/div&gt;
+
+
+
+
+      &lt;/div&gt;
+      
+    &lt;/div&gt;
+  &lt;/a&gt;
+
+        
+    
+&lt;/section&gt;
+&lt;p&gt;That&amp;rsquo;s all se wrote folks. I hope this has helped you understand more of what ricing &lt;strong&gt;KDE Plasma&lt;/strong&gt; is all about.&lt;/p&gt;
+&lt;p&gt;Cheers !&lt;/p&gt;
+</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/ricing-plasma/featured.webp" />
+    </item>
+    
+    <item>
+      <title>FFmpeg cheat sheet</title>
+      <link>https://xerolinux.xyz/posts/ffmpeg-cheat-sheet/</link>
+      <pubDate>Sat, 20 Jul 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://xerolinux.xyz/posts/ffmpeg-cheat-sheet/</guid>
+      <description>&lt;p&gt;This will come in useful to all of you Content Creators out there, who like doing things the G33ky &amp;amp; Nerdy way. I use it a lot. This is a a list of useful commands for the &lt;strong&gt;FFmpeg&lt;/strong&gt; command line tool.&lt;/p&gt;
+&lt;p&gt;I would highly recommend you bookmark this page for later use.&lt;/p&gt;
+
+
+&lt;h1 class=&#34;relative group&#34;&gt;FFmpeg cheat sheet 
+    &lt;div id=&#34;ffmpeg-cheat-sheet&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+    
+&lt;/h1&gt;
+&lt;p&gt;A list of useful commands for the FFmpeg command line tool.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Download FFmpeg &amp;raquo; &lt;a href=&#34;https://www.ffmpeg.org/download.html&#34; target=&#34;_blank&#34;&gt;&lt;strong&gt;Over Here&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Full documentation &amp;raquo; &lt;a href=&#34;https://www.ffmpeg.org/ffmpeg.html&#34; target=&#34;_blank&#34;&gt;&lt;strong&gt;Over Here&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;h2 class=&#34;relative group&#34;&gt;Basic conversion 
+    &lt;div id=&#34;basic-conversion&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+    
+&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ffmpeg -i in.mp4 out.avi
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h3 class=&#34;relative group&#34;&gt;Remux an MKV file into MP4 
+    &lt;div id=&#34;remux-an-mkv-file-into-mp4&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+    
+&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ffmpeg -i in.mkv -c:v copy -c:a copy out.mp4
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h3 class=&#34;relative group&#34;&gt;High-quality encoding 
+    &lt;div id=&#34;high-quality-encoding&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+    
+&lt;/h3&gt;
+&lt;p&gt;Use the &lt;code&gt;crf&lt;/code&gt; (Constant Rate Factor) parameter to control the output quality. The lower crf, the higher the quality (range: 0-51). The default value is 23, and visually lossless compression corresponds to &lt;code&gt;-crf 18&lt;/code&gt;. Use the &lt;code&gt;preset&lt;/code&gt; parameter to control the speed of the compression process. Additional info &amp;raquo; &lt;a href=&#34;https://trac.ffmpeg.org/wiki/Encode/H.264&#34; target=&#34;_blank&#34;&gt;&lt;strong&gt;Over Here&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ffmpeg -i in.mp4 -preset slower -crf &lt;span class=&#34;m&#34;&gt;18&lt;/span&gt; out.mp4
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h2 class=&#34;relative group&#34;&gt;Trimming 
+    &lt;div id=&#34;trimming&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+    
+&lt;/h2&gt;
+&lt;p&gt;Without re-encoding:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ffmpeg -ss &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;start&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt; -i in.mp4 -t &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;duration&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt; -c copy out.mp4
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://ffmpeg.org/ffmpeg-all.html#Main-options&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;-ss&lt;/code&gt;&lt;/a&gt; specifies the start time, e.g. &lt;code&gt;00:01:23.000&lt;/code&gt; or &lt;code&gt;83&lt;/code&gt; (in seconds)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://ffmpeg.org/ffmpeg-all.html#Main-options&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;-t&lt;/code&gt;&lt;/a&gt; specifies the duration of the clip (same format).&lt;/li&gt;
+&lt;li&gt;Recent &lt;code&gt;ffmpeg&lt;/code&gt; also has a flag to supply the end time with &lt;code&gt;-to&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://ffmpeg.org/ffmpeg-all.html#Main-options&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;-c&lt;/code&gt;&lt;/a&gt; copy copies the first video, audio, and subtitle bitstream from the input to the output file without re-encoding them. This won&amp;rsquo;t harm the quality and make the command run within seconds.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;With re-encoding:&lt;/p&gt;
+&lt;p&gt;If you leave out the &lt;code&gt;-c copy&lt;/code&gt; option, &lt;code&gt;ffmpeg&lt;/code&gt; will automatically re-encode the output video and audio according to the format you chose. For high quality video and audio, read the &lt;a href=&#34;https://ffmpeg.org/trac/ffmpeg/wiki/x264EncodingGuide&#34; target=&#34;_blank&#34;&gt;x264 Encoding Guide&lt;/a&gt; and the &lt;a href=&#34;http://ffmpeg.org/trac/ffmpeg/wiki/AACEncodingGuide&#34; target=&#34;_blank&#34;&gt;AAC Encoding Guide&lt;/a&gt;, respectively.&lt;/p&gt;
+&lt;p&gt;For example:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ffmpeg -ss &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;start&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt; -i in.mp4 -t &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;duration&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt; -c:v libx264 -c:a aac -strict experimental -b:a 128k out.mp4
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h2 class=&#34;relative group&#34;&gt;Mux video and audio from another video 
+    &lt;div id=&#34;mux-video-and-audio-from-another-video&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+    
+&lt;/h2&gt;
+&lt;p&gt;To copy the video from in0.mp4 and audio from in1.mp4:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ffmpeg -i in0.mp4 -i in1.mp4 -c copy -map 0:0 -map 1:1 -shortest out.mp4
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;With &lt;a href=&#34;http://ffmpeg.org/ffmpeg.html#Stream-copy&#34; target=&#34;_blank&#34;&gt;-c copy&lt;/a&gt; the streams will be &lt;code&gt;stream copied&lt;/code&gt;, not re-encoded, so there will be no quality loss. If you want to re-encode, see &lt;a href=&#34;https://trac.ffmpeg.org/wiki/Encode/H.264&#34; target=&#34;_blank&#34;&gt;FFmpeg Wiki: H.264 Encoding Guide&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;The &lt;code&gt;-shortest&lt;/code&gt; option will cause the output duration to match the duration of the shortest input stream.&lt;/li&gt;
+&lt;li&gt;See the &lt;a href=&#34;http://ffmpeg.org/ffmpeg.html#Advanced-options&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;-map&lt;/code&gt; option documentation&lt;/a&gt; for more info.&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;h2 class=&#34;relative group&#34;&gt;Concat demuxer 
+    &lt;div id=&#34;concat-demuxer&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+    
+&lt;/h2&gt;
+&lt;p&gt;First, make a text file.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;file &lt;span class=&#34;s1&#34;&gt;&amp;#39;in1.mp4&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;file &lt;span class=&#34;s1&#34;&gt;&amp;#39;in2.mp4&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;file &lt;span class=&#34;s1&#34;&gt;&amp;#39;in3.mp4&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;file &lt;span class=&#34;s1&#34;&gt;&amp;#39;in4.mp4&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Then, run &lt;code&gt;ffmpeg&lt;/code&gt;:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ffmpeg -f concat -i list.txt -c copy out.mp4
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h2 class=&#34;relative group&#34;&gt;Delay audio/video 
+    &lt;div id=&#34;delay-audiovideo&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+    
+&lt;/h2&gt;
+&lt;p&gt;Delay video by 3.84 seconds:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ffmpeg -i in.mp4 -itsoffset 3.84 -i in.mp4 -map 1:v -map 0:a -vcodec copy -acodec copy out.mp4
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Delay audio by 3.84 seconds:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ffmpeg -i in.mp4 -itsoffset 3.84 -i in.mp4 -map 0:v -map 1:a -vcodec copy -acodec copy out.mp4
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h2 class=&#34;relative group&#34;&gt;Burn subtitles 
+    &lt;div id=&#34;burn-subtitles&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+    
+&lt;/h2&gt;
+&lt;p&gt;Use the &lt;a href=&#34;http://ffmpeg.org/ffmpeg.html#ass&#34; target=&#34;_blank&#34;&gt;libass&lt;/a&gt; library (make sure your ffmpeg install has the library in the configuration &lt;code&gt;--enable-libass&lt;/code&gt;).&lt;/p&gt;
+&lt;p&gt;First convert the subtitles to .ass format:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ffmpeg -i sub.srt sub.ass
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Then add them using a video filter:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ffmpeg -i in.mp4 -vf &lt;span class=&#34;nv&#34;&gt;ass&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;sub.ass out.mp4
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h2 class=&#34;relative group&#34;&gt;Extract the frames from a video 
+    &lt;div id=&#34;extract-the-frames-from-a-video&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+    
+&lt;/h2&gt;
+&lt;p&gt;To extract all frames from between 1 and 5 seconds, and also between 11 and 15 seconds:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ffmpeg -i in.mp4 -vf &lt;span class=&#34;k&#34;&gt;select&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;between(t,1,5)+between(t,11,15)&amp;#39;&lt;/span&gt; -vsync &lt;span class=&#34;m&#34;&gt;0&lt;/span&gt; out%d.png
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;To extract one frame per second only:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ffmpeg -i in.mp4 -fps&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;m&#34;&gt;1&lt;/span&gt; -vsync &lt;span class=&#34;m&#34;&gt;0&lt;/span&gt; out%d.png
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h2 class=&#34;relative group&#34;&gt;Rotate a video 
+    &lt;div id=&#34;rotate-a-video&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+    
+&lt;/h2&gt;
+&lt;p&gt;Rotate 90 clockwise:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ffmpeg -i in.mov -vf &lt;span class=&#34;s2&#34;&gt;&amp;#34;transpose=1&amp;#34;&lt;/span&gt; out.mov
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;For the transpose parameter you can pass:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;0&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; 90CounterCLockwise and Vertical Flip &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;default&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;1&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; 90Clockwise
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;2&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; 90CounterClockwise
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;3&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; 90Clockwise and Vertical Flip
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Use &lt;code&gt;-vf &amp;quot;transpose=2,transpose=2&amp;quot;&lt;/code&gt; for 180 degrees.&lt;/p&gt;
+
+
+&lt;h2 class=&#34;relative group&#34;&gt;Download &amp;ldquo;Transport Stream&amp;rdquo; video streams 
+    &lt;div id=&#34;download-transport-stream-video-streams&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+    
+&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;Locate the playlist file, e.g. using Chrome &amp;gt; F12 &amp;gt; Network &amp;gt; Filter: m3u8&lt;/li&gt;
+&lt;li&gt;Download and concatenate the video fragments:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ffmpeg -i &lt;span class=&#34;s2&#34;&gt;&amp;#34;path_to_playlist.m3u8&amp;#34;&lt;/span&gt; -c copy -bsf:a aac_adtstoasc out.mp4
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;If you get a &amp;ldquo;Protocol &amp;lsquo;https not on whitelist &amp;lsquo;file,crypto&amp;rsquo;!&amp;rdquo; error, add the &lt;code&gt;protocol_whitelist&lt;/code&gt; option:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ffmpeg -protocol_whitelist &lt;span class=&#34;s2&#34;&gt;&amp;#34;file,http,https,tcp,tls&amp;#34;&lt;/span&gt; -i &lt;span class=&#34;s2&#34;&gt;&amp;#34;path_to_playlist.m3u8&amp;#34;&lt;/span&gt; -c copy -bsf:a aac_adtstoasc out.mp4
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h2 class=&#34;relative group&#34;&gt;Mute some of the audio 
+    &lt;div id=&#34;mute-some-of-the-audio&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+    
+&lt;/h2&gt;
+&lt;p&gt;To replace the first 90 seconds of audio with silence:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ffmpeg -i in.mp4 -vcodec copy -af &lt;span class=&#34;s2&#34;&gt;&amp;#34;volume=enable=&amp;#39;lte(t,90)&amp;#39;:volume=0&amp;#34;&lt;/span&gt; out.mp4
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;To replace all audio between 1&#39;20&amp;quot; and 1&#39;30&amp;quot; with silence:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ffmpeg -i in.mp4 -vcodec copy -af &lt;span class=&#34;s2&#34;&gt;&amp;#34;volume=enable=&amp;#39;between(t,80,90)&amp;#39;:volume=0&amp;#34;&lt;/span&gt; out.mp4
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h2 class=&#34;relative group&#34;&gt;Deinterlace 
+    &lt;div id=&#34;deinterlace&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+    
+&lt;/h2&gt;
+&lt;p&gt;Deinterlacing using &amp;ldquo;yet another deinterlacing filter&amp;rdquo;.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ffmpeg -i in.mp4 -vf yadif out.mp4
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h2 class=&#34;relative group&#34;&gt;Create a video slideshow from images 
+    &lt;div id=&#34;create-a-video-slideshow-from-images&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+    
+&lt;/h2&gt;
+&lt;p&gt;Parameters: &lt;code&gt;-r&lt;/code&gt; marks the image framerate (inverse time of each image); &lt;code&gt;-vf fps=25&lt;/code&gt; marks the true framerate of the output.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ffmpeg -r 1/5 -i img%03d.png -c:v libx264 -vf &lt;span class=&#34;nv&#34;&gt;fps&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;m&#34;&gt;25&lt;/span&gt; -pix_fmt yuv420p out.mp4
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h2 class=&#34;relative group&#34;&gt;Extract images from a video 
+    &lt;div id=&#34;extract-images-from-a-video&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+    
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Extract all frames: &lt;code&gt;ffmpeg -i input.mp4 thumb%04d.jpg -hide_banner&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Extract a frame each second: &lt;code&gt;ffmpeg -i input.mp4 -vf fps=1 thumb%04d.jpg -hide_banner&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Extract only one frame: &lt;code&gt;ffmpeg -i input.mp4 -ss 00:00:10.000 -vframes 1 thumb.jpg&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;h2 class=&#34;relative group&#34;&gt;Display the frame number on each frame 
+    &lt;div id=&#34;display-the-frame-number-on-each-frame&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+    
+&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ffmpeg -i in.mov -vf &lt;span class=&#34;s2&#34;&gt;&amp;#34;drawtext=fontfile=arial.ttf: text=%{n}: x=(w-tw)/2: y=h-(2*lh): fontcolor=white: box=1: boxcolor=0x00000099: fontsize=72&amp;#34;&lt;/span&gt; -y out.mov
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h2 class=&#34;relative group&#34;&gt;Metadata: Change the title 
+    &lt;div id=&#34;metadata-change-the-title&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+    
+&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ffmpeg -i in.mp4 -map_metadata -1 -metadata &lt;span class=&#34;nv&#34;&gt;title&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;My Title&amp;#34;&lt;/span&gt; -c:v copy -c:a copy out.mp4
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Hope this helps anyone out there&amp;hellip;&lt;/p&gt;
+</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/ffmpeg-cheat-sheet/featured.webp" />
+    </item>
+    
+    <item>
+      <title>WayDroid Setup Guide</title>
+      <link>https://xerolinux.xyz/posts/waydroid-guide/</link>
+      <pubDate>Mon, 01 Jul 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://xerolinux.xyz/posts/waydroid-guide/</guid>
+      <description>
+
+&lt;h3 class=&#34;relative group&#34;&gt;WayDroid in a nutshell 
+    &lt;div id=&#34;waydroid-in-a-nutshell&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+    
+&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;https://waydro.id/&#34; target=&#34;_blank&#34;&gt;&lt;strong&gt;WayDroid&lt;/strong&gt;&lt;/a&gt; is a container-based tool that allows for launching a complete &lt;strong&gt;Android&lt;/strong&gt; system within the Linux desktop. It does this with Linux namespaces, effectively utilizing the Linux kernel. In simple terms, namespaces are a feature that helps isolate and separate parts of a computer so that it is possible to run each part independently as if it is the only one on the computer.&lt;/p&gt;
+&lt;p&gt;If you&amp;rsquo;re trying to run Android apps on Linux, WayDroid is the way to do it, and former &amp;ldquo;Android on Linux&amp;rdquo; tools like Anbox recommend it. WayDroid is compatible with a wide variety of Linux distributions and CPU architectures. Additionally, it harnesses Android&amp;rsquo;s Mesa technology to enable efficient GPU pass-through from the container to the host system, which enhances the performance of graphical applications, ensuring a smooth user experience.&lt;/p&gt;
+&lt;a id=&#34;github-e2697052f914cf610b2b9d5d5e94a310&#34; target=&#34;_blank&#34; href=&#34;https://github.com/waydroid/waydroid&#34; class=&#34;cursor-pointer&#34;&gt;
+  &lt;div
+    class=&#34;w-full md:w-auto pt-3 p-5 border border-neutral-200 dark:border-neutral-700 border rounded-md shadow-2xl&#34;&gt;
+
+    &lt;div class=&#34;flex items-center&#34;&gt;
+      &lt;span class=&#34;text-2xl text-neutral-800 dark:text-neutral&#34; style=&#34;margin-right:10px;&#34;&gt;
+        
+
+  &lt;span class=&#34;relative block icon&#34;&gt;
+    &lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 496 512&#34;&gt;&lt;path fill=&#34;currentColor&#34; d=&#34;M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z&#34;/&gt;&lt;/svg&gt;
+
+  &lt;/span&gt;
+
+
+      &lt;/span&gt;
+      &lt;div
+        id=&#34;github-e2697052f914cf610b2b9d5d5e94a310-full_name&#34;
+        class=&#34;m-0 font-bold text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral&#34;&gt;
+        waydroid/waydroid
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;p id=&#34;github-e2697052f914cf610b2b9d5d5e94a310-description&#34; class=&#34;m-0 mt-2 text-md text-neutral-800 dark:text-neutral&#34;&gt;
+      Waydroid uses a container-based approach to boot a full Android system on a regular GNU/Linux system like Ubuntu.
+    &lt;/p&gt;
+
+    &lt;div class=&#34;m-0 mt-2 flex items-center&#34;&gt;
+
+      &lt;span class=&#34;mr-1 inline-block h-3 w-3 rounded-full&#34;
+        style=&#34;background-color: #3572A5&#34;&gt;&lt;/span&gt;
+      &lt;div class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
+         Python 
+      &lt;/div&gt;
+
+      &lt;span class=&#34;text-md mr-1 text-neutral-800 dark:text-neutral&#34;&gt;
+        
+
+  &lt;span class=&#34;relative block icon&#34;&gt;
+    &lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 576 512&#34;&gt;&lt;path fill=&#34;currentColor&#34; d=&#34;M287.9 0C297.1 0 305.5 5.25 309.5 13.52L378.1 154.8L531.4 177.5C540.4 178.8 547.8 185.1 550.7 193.7C553.5 202.4 551.2 211.9 544.8 218.2L433.6 328.4L459.9 483.9C461.4 492.9 457.7 502.1 450.2 507.4C442.8 512.7 432.1 513.4 424.9 509.1L287.9 435.9L150.1 509.1C142.9 513.4 133.1 512.7 125.6 507.4C118.2 502.1 114.5 492.9 115.1 483.9L142.2 328.4L31.11 218.2C24.65 211.9 22.36 202.4 25.2 193.7C28.03 185.1 35.5 178.8 44.49 177.5L197.7 154.8L266.3 13.52C270.4 5.249 278.7 0 287.9 0L287.9 0zM287.9 78.95L235.4 187.2C231.9 194.3 225.1 199.3 217.3 200.5L98.98 217.9L184.9 303C190.4 308.5 192.9 316.4 191.6 324.1L171.4 443.7L276.6 387.5C283.7 383.7 292.2 383.7 299.2 387.5L404.4 443.7L384.2 324.1C382.9 316.4 385.5 308.5 391 303L476.9 217.9L358.6 200.5C350.7 199.3 343.9 194.3 340.5 187.2L287.9 78.95z&#34;/&gt;&lt;/svg&gt;
+  &lt;/span&gt;
+
+
+      &lt;/span&gt;
+      &lt;div id=&#34;github-e2697052f914cf610b2b9d5d5e94a310-stargazers&#34; class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
+<<<<<<< HEAD
+        7433
+=======
+        8010
+>>>>>>> a9bf7f74b9df3f07d0e74e79a2de68647eb7faf6
+      &lt;/div&gt;
+
+      &lt;span class=&#34;text-md mr-1 text-neutral-800 dark:text-neutral&#34;&gt;
+        
+
+  &lt;span class=&#34;relative block icon&#34;&gt;
+    &lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 448 512&#34;&gt;&lt;path fill=&#34;currentColor&#34; d=&#34;M80 104c13.3 0 24-10.7 24-24s-10.7-24-24-24S56 66.7 56 80s10.7 24 24 24zm80-24c0 32.8-19.7 61-48 73.3V192c0 17.7 14.3 32 32 32H304c17.7 0 32-14.3 32-32V153.3C307.7 141 288 112.8 288 80c0-44.2 35.8-80 80-80s80 35.8 80 80c0 32.8-19.7 61-48 73.3V192c0 53-43 96-96 96H256v70.7c28.3 12.3 48 40.5 48 73.3c0 44.2-35.8 80-80 80s-80-35.8-80-80c0-32.8 19.7-61 48-73.3V288H144c-53 0-96-43-96-96V153.3C19.7 141 0 112.8 0 80C0 35.8 35.8 0 80 0s80 35.8 80 80zm208 24c13.3 0 24-10.7 24-24s-10.7-24-24-24s-24 10.7-24 24s10.7 24 24 24zM248 432c0-13.3-10.7-24-24-24s-24 10.7-24 24s10.7 24 24 24s24-10.7 24-24z&#34;/&gt;&lt;/svg&gt;
+  &lt;/span&gt;
+
+
+      &lt;/span&gt;
+      &lt;div id=&#34;github-e2697052f914cf610b2b9d5d5e94a310-forks&#34; class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
+<<<<<<< HEAD
+        306
+=======
+        332
+>>>>>>> a9bf7f74b9df3f07d0e74e79a2de68647eb7faf6
+      &lt;/div&gt;
+
+    &lt;/div&gt;
+
+  &lt;/div&gt;
+  &lt;script&gt;
+    fetch(&#34;https://api.github.com/repos/waydroid/waydroid&#34;, {
+      headers: new Headers({
+        &#39;User-agent&#39;: &#39;Mozilla/4.0 Custom User Agent&#39;
+      })
+    })
+      .then(response =&gt; response.json())
+      .then(data =&gt; {
+        document.getElementById(&#39;github-e2697052f914cf610b2b9d5d5e94a310-full_name&#39;).innerHTML = data.full_name;
+        document.getElementById(&#39;github-e2697052f914cf610b2b9d5d5e94a310-description&#39;).innerHTML = data.description;
+        document.getElementById(&#39;github-e2697052f914cf610b2b9d5d5e94a310-stargazers&#39;).innerHTML = data.stargazers_count;
+        document.getElementById(&#39;github-e2697052f914cf610b2b9d5d5e94a310-forks&#39;).innerHTML = data.forks;
+      })
+      .catch(error =&gt; console.error(error))
+  &lt;/script&gt;
+&lt;/a&gt;
+
+
+&lt;h3 class=&#34;relative group&#34;&gt;Setting Up WayDroid in No Time 
+    &lt;div id=&#34;setting-up-waydroid-in-no-time&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+    
+&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;Supported Hardware&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;I) Supported CPUs :&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Waydroid supports most of the common architectures (ARM, ARM64, x86 &amp;amp; x86_64 CPUs).&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;II) Supported GPUs :&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Waydroid uses Android’s mesa integration for passthrough, and that enables support to most ARM/ARM64 SOCs on the mobile side, and Intel/AMD GPUs for the PC side.&lt;/p&gt;
+&lt;p&gt;[If you have Nvidia dedicated GPU and an integrated AMD/Intel GPU, you can choose to pass Waydroid graphics only through your integrated one.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Waydroid only works in a Wayland session manager, so make sure you are in that session.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Second you will need the necessary binder modules&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;paru -S binder_linux-dkms
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;Installing Waydroid:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;paru -S waydroid
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Now Reboot !&lt;/p&gt;
+&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;Setting up Waydroid:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo waydroid init -s GAPPS -f
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;(You might have to reboot again.)&lt;/p&gt;
+&lt;ol start=&#34;5&#34;&gt;
+&lt;li&gt;Enable and start the waydroid-container service:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo systemctl &lt;span class=&#34;nb&#34;&gt;enable&lt;/span&gt; --now waydroid-container
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Then launch Waydroid from the applications menu. For network in your Waydroid container, please check this out &amp;raquo; &lt;a href=&#34;https://wiki.archlinux.org/title/Waydroid#Network&#34; target=&#34;_blank&#34;&gt;&lt;strong&gt;Network in WayDroid&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;ol start=&#34;6&#34;&gt;
+&lt;li&gt;To Sideload an application:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;waydroid app install &lt;span class=&#34;nv&#34;&gt;$path_to_apk&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h3 class=&#34;relative group&#34;&gt;Register your WayDroid with Google 
+    &lt;div id=&#34;register-your-waydroid-with-google&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+    
+&lt;/h3&gt;
+&lt;p&gt;Run &lt;code&gt;sudo waydroid-extras&lt;/code&gt;, and select &lt;strong&gt;Android 11&lt;/strong&gt;, then the &lt;strong&gt;Get Google Device ID&lt;/strong&gt; option, &lt;strong&gt;make sure Waydroid is running and Gapps has been installed!&lt;/strong&gt; Copy the returned numeric ID open &amp;raquo; &lt;a href=&#34;https://google.com/android/uncertified/&#34; target=&#34;_blank&#34;&gt;&lt;strong&gt;Device Registration Page&lt;/strong&gt;&lt;/a&gt;, enter the ID and register it, you may need to wait up to 10-20 minutes for device to get registered, then clear Google Play Service’s cache and try logging in!&lt;/p&gt;
+&lt;p&gt;To update WayDroid all you have to do is run the following command, keep in mind that image is well over 800MB in size&amp;hellip;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo waydroid upgrade
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h3 class=&#34;relative group&#34;&gt;Troubleshooting WayDroid 
+    &lt;div id=&#34;troubleshooting-waydroid&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+    
+&lt;/h3&gt;
+&lt;p&gt;To fix unusable rotated apps, since some rotated for phones rather than tablets. As for other troubleshooting tips visit this link on the &amp;raquo; &lt;a href=&#34;https://wiki.archlinux.org/title/Waydroid#Troubleshooting&#34; target=&#34;_blank&#34;&gt;&lt;strong&gt;ArchWiki&lt;/strong&gt;&lt;/a&gt;.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo waydroid shell wm set-fix-to-user-rotation enabled
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Hope this answers that question&amp;hellip;.&lt;/p&gt;
+</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/waydroid-guide/featured.webp" />
+    </item>
+    
+    <item>
+      <title>Automount Drives in Linux</title>
+      <link>https://xerolinux.xyz/posts/automount-drives/</link>
+      <pubDate>Fri, 28 Jun 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://xerolinux.xyz/posts/automount-drives/</guid>
+      <description>
+
+&lt;h3 class=&#34;relative group&#34;&gt;Intro 
+    &lt;div id=&#34;intro&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+    
+&lt;/h3&gt;
+&lt;p&gt;This keeps being asked on social. So I decided to post it here.. It&amp;rsquo;s all over the net but I guess either no one knows how to search or too lazy, in any case here it is&amp;hellip;&lt;/p&gt;
+
+
+&lt;h3 class=&#34;relative group&#34;&gt;Gnome Disks 
+    &lt;div id=&#34;gnome-disks&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+    
+&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;https://wiki.gnome.org/Apps/Disks&#34; target=&#34;_blank&#34;&gt;Gnome Disks&lt;/a&gt; has many features, like S.M.A.R.T. monitoring, partition management, benchmarking, and more, including one that might not be obvious, but is very useful: it can set drives to mount automatically at startup.&lt;/p&gt;
+&lt;p&gt;Use it to automount your new hard disk that uses Ext4, your Windows NTFS / exFAT partition, etc.&lt;/p&gt;
+&lt;p&gt;
+  &lt;figure&gt;
+    &lt;img class=&#34;my-0 rounded-md&#34; loading=&#34;lazy&#34; src=&#34;https://i.imgur.com/jsnRZUU.png&#34; alt=&#34;[Image: jsnRZUU.png]&#34; /&gt;
+    
+  &lt;/figure&gt;
+&lt;/p&gt;
+&lt;p&gt;Disks, or Gnome Disk Utility, is installed by default in many Linux distributions, including Ubuntu, Fedora, both Linux Mint Cinnamon and MATE, Xubuntu, and so on. If it&amp;rsquo;s not installed, use your Linux distribution&amp;rsquo;s package manager to install it - search / install gnome-disk-utility.&lt;/p&gt;
+&lt;p&gt;For each partition you set to mount automatically on startup, Gnome Disks adds an entry in your /etc/fstab file, useful for those who are not very familiar with editing /etc/fstab. That means each partition mounted on startup through Disks is available system-wide, and not just for your user.&lt;/p&gt;
+
+
+&lt;h3 class=&#34;relative group&#34;&gt;How to automount Disks on startup 
+    &lt;div id=&#34;how-to-automount-disks-on-startup&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+    
+&lt;/h3&gt;
+&lt;p&gt;Start by launching &amp;ldquo;Disks&amp;rdquo; from your applications menu. Choose the hard disk from the left Disks sidebar, select the partition you want to auto mount on startup, then click the button with the gears icon under it, and click &lt;code&gt;Edit Mount Options&lt;/code&gt;:&lt;/p&gt;
+&lt;p&gt;
+  &lt;figure&gt;
+    &lt;img class=&#34;my-0 rounded-md&#34; loading=&#34;lazy&#34; src=&#34;https://i.imgur.com/27YPYEC.png&#34; alt=&#34;[Image: 27YPYEC.png]&#34; /&gt;
+    
+  &lt;/figure&gt;
+&lt;/p&gt;
+&lt;p&gt;In the mount options, toggle the &lt;code&gt;User Session Defaults&lt;/code&gt; option (this may be called &lt;code&gt;Automatic Mount Options&lt;/code&gt; on older versions) to enable the options below it, and make sure &lt;code&gt;Mount at system startup&lt;/code&gt; is enabled. You can enter a name under &lt;code&gt;Display Name&lt;/code&gt;. The defaults should be enough for most users, so you don&amp;rsquo;t have to change anything here. After you&amp;rsquo;re done, click &lt;code&gt;OK&lt;/code&gt; :&lt;/p&gt;
+&lt;p&gt;
+  &lt;figure&gt;
+    &lt;img class=&#34;my-0 rounded-md&#34; loading=&#34;lazy&#34; src=&#34;https://i.imgur.com/HzloKaO.png&#34; alt=&#34;[Image: HzloKaO.png]&#34; /&gt;
+    
+  &lt;/figure&gt;
+&lt;/p&gt;
+&lt;p&gt;To test the changes, you can reboot your system or type the following command to mount all filesystems mentioned in &lt;code&gt;fstab&lt;/code&gt; (since Disks sets partitions to automount on startup by adding them to &lt;code&gt;/etc/fstab&lt;/code&gt;) :&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo mount --all
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Hope this answers that question&amp;hellip;.&lt;/p&gt;
+</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/automount-drives/featured.webp" />
+    </item>
+    
+    <item>
+      <title>Fix Unbootable System</title>
+      <link>https://xerolinux.xyz/posts/fix-boot/</link>
+      <pubDate>Fri, 28 Jun 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://xerolinux.xyz/posts/fix-boot/</guid>
+      <description>
+
+&lt;h3 class=&#34;relative group&#34;&gt;Preface 
+    &lt;div id=&#34;preface&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+    
+&lt;/h3&gt;
+&lt;p&gt;Are you having an issue after updating your system with the message &lt;code&gt;vmlinuz-linux not found&lt;/code&gt;? Watch the video below by Erik Dubois, should help you get out of that predicament &amp;hellip;&lt;/p&gt;
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+      &lt;iframe allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&#34; allowfullscreen=&#34;allowfullscreen&#34; loading=&#34;eager&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; src=&#34;https://www.youtube.com/embed/NfMbs9zzkDw?autoplay=0&amp;amp;controls=1&amp;amp;end=0&amp;amp;loop=0&amp;amp;mute=0&amp;amp;start=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;YouTube video&#34;&gt;&lt;/iframe&gt;
+    &lt;/div&gt;
+
+
+
+&lt;h3 class=&#34;relative group&#34;&gt;Disclaimer : 
+    &lt;div id=&#34;disclaimer-&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+    
+&lt;/h3&gt;
+&lt;p&gt;Below guide covers EXT4/XFS/Unencrypted Filesystems, for Encrypted Drives, you will have to &amp;ldquo;Google it&amp;rdquo; lol,&lt;/p&gt;
+&lt;p&gt;Anyway here&amp;rsquo;s what to do&amp;hellip;&lt;/p&gt;
+
+
+&lt;h3 class=&#34;relative group&#34;&gt;Mount your system to work in.. 
+    &lt;div id=&#34;mount-your-system-to-work-in&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+    
+&lt;/h3&gt;
+&lt;p&gt;First of all boot using your XeroLinux Live boot USB and follow the steps below&amp;hellip;&lt;/p&gt;
+&lt;p&gt;The device or partition with your Linux system on it will need to be mounted. To discover the kernel name of the storage device name, type:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo fdisk -l
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Mount the device or partition : (replace &amp;ldquo;sdXn&amp;rdquo; with your actual partition name)&lt;/p&gt;
+&lt;p&gt;
+  &lt;figure&gt;
+    &lt;img class=&#34;my-0 rounded-md&#34; loading=&#34;lazy&#34; src=&#34;https://i.imgur.com/SZO4qw0.png&#34; alt=&#34;[Image: SZO4qw0.png]&#34; /&gt;
+    
+  &lt;/figure&gt;
+&lt;/p&gt;
+&lt;p&gt;For EXT4 &amp;amp; XFS&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;mount /dev/sdXn /mnt &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;Linux Filesystem&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;mount /dev/sdXn /mnt/boot/efi &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;EFI System&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h3 class=&#34;relative group&#34;&gt;Chroot into your system : 
+    &lt;div id=&#34;chroot-into-your-system-&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+    
+&lt;/h3&gt;
+&lt;p&gt;With this information, you are able to arch-chroot, and to be able to do that you need to have root permissions, so type the following command:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;arch-chroot /mnt
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h3 class=&#34;relative group&#34;&gt;Reinstall missing Kernel : 
+    &lt;div id=&#34;reinstall-missing-kernel-&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+    
+&lt;/h3&gt;
+&lt;p&gt;Now it&amp;rsquo;s time to get the Kernel back in order to get the system to boot once again.. Do this now&amp;hellip;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;pacman -S linux linux-headers
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Finally update the system if needed&amp;hellip;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;pacman -Syyu
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Exit arch-chroot via &lt;code&gt;exit&lt;/code&gt; command then unmount your system&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;umount /mnt/boot/efi
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;umount /mnt
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Now reboot all should be good&amp;hellip;&lt;/p&gt;
+&lt;p&gt;Hope this helps&lt;/p&gt;
+</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/fix-boot/featured.webp" />
+    </item>
+    
+    <item>
+      <title>Chroot Guide</title>
+      <link>https://xerolinux.xyz/posts/chroot-guide/</link>
+      <pubDate>Thu, 27 Jun 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://xerolinux.xyz/posts/chroot-guide/</guid>
+      <description>
+
+&lt;h3 class=&#34;relative group&#34;&gt;Info 
+    &lt;div id=&#34;info&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+    
+&lt;/h3&gt;
+&lt;p&gt;
+  &lt;figure&gt;
+    &lt;img class=&#34;my-0 rounded-md&#34; loading=&#34;lazy&#34; src=&#34;https://i.imgur.com/jll2heu.png&#34; alt=&#34;[Image: jll2heu.png]&#34; /&gt;
+    
+  &lt;/figure&gt;
+&lt;/p&gt;
+&lt;p&gt;Changing Root (Chroot) is the process of changing of the apparent disk root directory (and the current running process and its children) to another root directory. When you change root to another directory you cannot access files and commands outside that directory. This directory is called a “chroot jail”. Changing root is commonly done for system maintenance for such tasks as reinstalling GRUB or resetting a forgotten password. Changing root is often done from a LiveCD or LiveUSB into a mounted partition that contains an installed system.&lt;/p&gt;
+
+
+&lt;h3 class=&#34;relative group&#34;&gt;Requirements 
+    &lt;div id=&#34;requirements&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+    
+&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;You’ll need to boot to another working Linux environment (for example, to a LiveCD or USB flash disk).&lt;/li&gt;
+&lt;li&gt;Root privileges are required in order to chroot.&lt;/li&gt;
+&lt;li&gt;Be sure that the architectures of the Linux environment you have booted into matches the architecture of the root directory you wish to enter (i.e. i686, x86_64). You can find the architecture of your current environment by: &lt;code&gt;uname -m&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;If you need any kernel modules loaded in the chroot environment, load them before chrooting. It may also be useful to initialize your swap (&lt;code&gt;swapon /dev/&amp;lt;device-or-partition-name&amp;gt;&lt;/code&gt;) and to connect to your network before chrooting.&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;h3 class=&#34;relative group&#34;&gt;Mounting the device 
+    &lt;div id=&#34;mounting-the-device&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+    
+&lt;/h3&gt;
+&lt;p&gt;The device or partition with the Linux system on it will need to be mounted. To discover the kernel name of the storage device name, type:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;fdisk -l
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Create a directory where you would like to mount the device or partition, then mount it:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo mkdir /mnt/xero
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo mount /dev/device_or_partition_name /mnt/xero
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;For LUKS encrypted devices, mount won’t work, use &lt;code&gt;udisksctl&lt;/code&gt; instead, first unlock the device (all commands as regular user):&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo udisksctl unlock -b /dev/device_or_partition_name
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Get the device mapper name:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ls - la /dev/mapper
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;then mount the returned mapper:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;udiskctl mount -b /dev/mapper/mapper_name
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h3 class=&#34;relative group&#34;&gt;Changing Root 
+    &lt;div id=&#34;changing-root&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+    
+&lt;/h3&gt;
+&lt;p&gt;Mount the temporary filesystems:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;cd&lt;/span&gt; /mnt/xero
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo mount -t proc proc proc/
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo mount -t sysfs sys sys/
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo mount -o &lt;span class=&#34;nb&#34;&gt;bind&lt;/span&gt; /dev dev/
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Mount other parts of your filesystem (e.g. /boot, /var, /usr…) that reside on separate partitions but which you need access to. For example:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo mount /dev/device_or_partition_name boot/
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;It’s possible to mount filesystems after you’ve chrooted, but it’s more convenient to do so beforehand. The reasoning for this is you’ll have to unmount the temporary filesystems after you exit a chroot so this lets you unmount all the filesystems in a single command. This also allows a safer shutdown. Because the external Linux environment knows all mounted partitions it can safely unmount them during shutdown.&lt;/p&gt;
+&lt;p&gt;If you’ve setup your network and want to use it in the chroot environment, copy over your DNS servers so that you will be connected to the network:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;cp -L /etc/resolv.conf etc/resolv.conf
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Now chroot to your installed device or partition and define your shell:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo chroot . /bin/bash
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;If you see the error, &lt;code&gt;chroot: cannot run command &#39;/bin/bash&#39;: Exec format&lt;/code&gt; error it is likely the two architectures do not match.&lt;/p&gt;
+&lt;p&gt;If you’ll be doing anything with GRUB inside the chroot environment, you’ll need to be sure your /etc/mtab is up-to-date:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo rm /etc/mtab &lt;span class=&#34;o&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; grep -v rootfs /proc/mounts &amp;gt; /etc/mtab
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;If you use bash, your root $HOME/.bashrc will be sourced on login provided your ~/.bash_profile specifies it (source ~/.bashrc). To source your chrooted, global bash configuration do:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;source&lt;/span&gt; /etc/profile
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;If your bash configuration doesn’t use a unique prompt, consider creating one to be able to differentiate your chroot environment:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;export&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;PS1&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;(chroot) &lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$PS1&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h3 class=&#34;relative group&#34;&gt;Perform System Maintenance 
+    &lt;div id=&#34;perform-system-maintenance&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+    
+&lt;/h3&gt;
+&lt;p&gt;At this point you can perform whatever system maintenance you require inside the chroot environment, some common examples being:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Upgrade or downgrade packages&lt;/li&gt;
+&lt;li&gt;Rebuild your initcpio image&lt;/li&gt;
+&lt;li&gt;Reset a forgotten password&lt;/li&gt;
+&lt;li&gt;Fix your /etc/fstab&lt;/li&gt;
+&lt;li&gt;Reinstall GRUB&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;With this information, you are able to arch-chroot, and to be able to do that you need to have root permissions, so type the following command:&lt;/p&gt;
+&lt;p&gt;Then type the following:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo arch-chroot /mnt/xero
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Now you’ve chrooted into your installed system, and you are able to access your files, install packages, or alter scripts to rescue your system.&lt;/p&gt;
+&lt;p&gt;To make sure &lt;code&gt;arch-chroot&lt;/code&gt; is working check after your users home folder ls &lt;code&gt;/home&lt;/code&gt; that should give your username from the installed system.&lt;/p&gt;
+
+
+&lt;h3 class=&#34;relative group&#34;&gt;Exiting chroot 
+    &lt;div id=&#34;exiting-chroot&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+    
+&lt;/h3&gt;
+&lt;p&gt;When you’re finished with system maintenance, exit the chroot shell:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;exit&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Then unmount the temporary filesystems and any mounted devices:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;umount &lt;span class=&#34;o&#34;&gt;{&lt;/span&gt;proc,sys,dev,boot...&lt;span class=&#34;o&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Finally attempt to unmount your hard drive:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;cd&lt;/span&gt; ..umount xero/
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;If you get an error saying that &amp;lsquo;/mnt&amp;rsquo; (or any other partition) is busy, this can mean one of two things:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;A program was left running inside of the chroot.&lt;/li&gt;
+&lt;li&gt;Or more frequently: a sub-mount still exists. For example, &lt;code&gt;/mnt/xero/usr&lt;/code&gt; within &lt;code&gt;/mnt/xero&lt;/code&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;In the latter case, unmount the sub-mount mount point first. To get a reminder of all the current mount points, run mount with no parameters. If you still are unable to unmount a partition, use the force option:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;umount -f /mnt
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;After this you will be able to safely reboot.&lt;/p&gt;
+</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/chroot-guide/featured.webp" />
+    </item>
+    
+    <item>
+      <title>DConf Editor Gnome</title>
+      <link>https://xerolinux.xyz/posts/dconf-editor/</link>
+      <pubDate>Thu, 27 Jun 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://xerolinux.xyz/posts/dconf-editor/</guid>
+      <description>
+
+&lt;h3 class=&#34;relative group&#34;&gt;What is it? 
+    &lt;div id=&#34;what-is-it&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+    
+&lt;/h3&gt;
+&lt;p&gt;Dconf Editor is a graphical tool used to configure settings in Linux, particularly on GNOME desktop environments. It allows users to navigate and modify system options stored in the dconf database, which is a key-value store that manages different aspects of the system.&lt;/p&gt;
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+      &lt;iframe allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&#34; allowfullscreen=&#34;allowfullscreen&#34; loading=&#34;eager&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; src=&#34;https://www.youtube.com/embed/b5qVOeyFqKk?autoplay=0&amp;amp;controls=1&amp;amp;end=0&amp;amp;loop=0&amp;amp;mute=0&amp;amp;start=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;YouTube video&#34;&gt;&lt;/iframe&gt;
+    &lt;/div&gt;
+
+
+
+&lt;h3 class=&#34;relative group&#34;&gt;Install Dconf On Linux 
+    &lt;div id=&#34;install-dconf-on-linux&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+    
+&lt;/h3&gt;
+&lt;p&gt;Dconf comes pre-installed in many Linux distributions. If it is not installed already, you can install it using the distribution&amp;rsquo;s default package manager depending upon the distribution you use.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo pacman -S dconf
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h3 class=&#34;relative group&#34;&gt;Backup/Restore &amp;amp; Reset GNOME Settings With Dconf 
+    &lt;div id=&#34;backuprestore--reset-gnome-settings-with-dconf&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+    
+&lt;/h3&gt;
+&lt;p&gt;Believe it or not, this is one of the easiest way to backup and restore system settings with a just single command. To backup your current Linux desktop settings using dconf, do run this command:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;dconf dump /org/gnome/ &amp;gt; gnome-desktop.conf
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;The above command will save all customization and tweaks you made in your system, including the pinned applications in the Dock or Unity launcher, desktop panel applets, desktop indicators, your system fonts, GTK themes, Icon themes, monitor resolution, keyboard shortcuts, window button placement, menu and launcher behaviour etc., in a text file named gnome-desktop.conf.&lt;/p&gt;
+&lt;p&gt;Please note that this command will only backup the system settings. It won’t save settings of other applications that doesn’t use dconf. Also, it won’t backup your personal data either.&lt;/p&gt;
+&lt;p&gt;You can view this file using any text editors or cat command.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;cat gnome-desktop.conf
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Now reset your desktop settings to the factory defaults with command:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;dconf reset -f /org/gnome/
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;After running the above command, your Linux desktop will turn into the old state when you installed it in the first time. Don&amp;rsquo;t panic! Your personal data and installed applications will still be intact.&lt;/p&gt;
+&lt;p&gt;To restore the System settings, simply do:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;dconf load /org/gnome/ &amp;lt; gnome-desktop.conf
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;You can even backup more specific settings like desktop or window manager.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;dconf dump /org/gnome/desktop/wm/preferences/ &amp;gt; old_wm_settings
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Keep the backup file in a safe place to use it later after reinstalling your Linux desktop.&lt;/p&gt;
+&lt;p&gt;It&amp;rsquo;s that simple!!&lt;/p&gt;
+</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/dconf-editor/featured.webp" />
+    </item>
+    
+    <item>
+      <title>Docker &amp; Docker-Compose</title>
+      <link>https://xerolinux.xyz/posts/docker-usage/</link>
+      <pubDate>Thu, 27 Jun 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://xerolinux.xyz/posts/docker-usage/</guid>
+      <description>
+
+&lt;h3 class=&#34;relative group&#34;&gt;Intro 
+    &lt;div id=&#34;intro&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+    
+&lt;/h3&gt;
+&lt;p&gt;After messing with &lt;a href=&#34;https://www.docker.com&#34; target=&#34;_blank&#34;&gt;Docker&lt;/a&gt; Containers for so long, I thought I would share the knowledge. Hopefully a video showing it in action soon. In this short tutorial we will be using the Docker Compose feature to deploy our containers. Just note we can do so much more, but this is just an introductory guide, you will have to discover the rest on your own. It&amp;rsquo;s so much fun trust me. To get an idea how much I love them click &lt;a href=&#34;https://blog.xerolinux.xyz/2024/06/docker-containers-a-love-story/&#34; target=&#34;_blank&#34;&gt;&lt;strong&gt;Here&lt;/strong&gt;&lt;/a&gt; to read my thoughts&amp;hellip;&lt;/p&gt;
+&lt;p&gt;
+  &lt;figure&gt;
+    &lt;img class=&#34;my-0 rounded-md&#34; loading=&#34;lazy&#34; src=&#34;https://i.imgur.com/bbD4JDy.png&#34; alt=&#34;[Image: bbD4JDy.png]&#34; /&gt;
+    
+  &lt;/figure&gt;
+&lt;/p&gt;
+&lt;p&gt;So without further delay let&amp;rsquo;s gooooooooo&amp;hellip;&lt;/p&gt;
+
+
+&lt;h3 class=&#34;relative group&#34;&gt;What are Docker containers ? 
+    &lt;div id=&#34;what-are-docker-containers-&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+    
+&lt;/h3&gt;
+&lt;p&gt;Docker containers are lightweight, portable units that package an application and its dependencies, ensuring consistent performance across different environments. Unlike virtual machines, containers share the host OS kernel, making them more efficient and faster to start.&lt;/p&gt;
+
+
+&lt;h3 class=&#34;relative group&#34;&gt;Key Points: 
+    &lt;div id=&#34;key-points&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+    
+&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Isolation: Containers run in isolated environments, using the host system’s resources without interference.&lt;/li&gt;
+&lt;li&gt;Portability: Containers can be run anywhere with Docker installed, solving the &amp;ldquo;it works on my machine&amp;rdquo; issue.&lt;/li&gt;
+&lt;li&gt;Efficiency: They use fewer resources than VMs since they don’t need a full OS for each instance.&lt;/li&gt;
+&lt;li&gt;Consistency: Ensures the same environment across development, testing, and production.&lt;/li&gt;
+&lt;li&gt;Scalability: Easily scalable with tools like Kubernetes, perfect for microservices.&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;h3 class=&#34;relative group&#34;&gt;How It Works: 
+    &lt;div id=&#34;how-it-works&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+    
+&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Dockerfile: Script defining how to build a Docker image.&lt;/li&gt;
+&lt;li&gt;Build: Create an image from the Dockerfile.&lt;/li&gt;
+&lt;li&gt;Run: Start a container from the image.&lt;/li&gt;
+&lt;li&gt;Manage: Use Docker commands to handle the container lifecycle.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Docker containers streamline development, improve resource utilization, and simplify deployment, making them ideal for modern application development.&lt;/p&gt;
+
+
+&lt;h3 class=&#34;relative group&#34;&gt;Install Docker Package 
+    &lt;div id=&#34;install-docker-package&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+    
+&lt;/h3&gt;
+&lt;p&gt;Before we can deploy our container(s) we will need to install docker and its dependencies then enable the service. To do so type this in terminal (ArchLinux) :&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo pacman -S docker docker-compose
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Now that we have Docker installed we will need to add ourselves to the Docker group and start the service. Do it like this :&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo usermod -aG docker &lt;span class=&#34;nv&#34;&gt;$USER&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo systemctl &lt;span class=&#34;nb&#34;&gt;enable&lt;/span&gt; --now docker
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h3 class=&#34;relative group&#34;&gt;Docker Compose file (Stack) 
+    &lt;div id=&#34;docker-compose-file-stack&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+    
+&lt;/h3&gt;
+&lt;p&gt;Ok, now that everything&amp;rsquo;s set, we can go container hunting&amp;hellip; I would highly recommend sites like, &lt;a href=&#34;https://selfh.st/apps/&#34; target=&#34;_blank&#34;&gt;SelfH&lt;/a&gt; or &lt;a href=&#34;https://awesome-selfhosted.net&#34; target=&#34;_blank&#34;&gt;AwesomeSelfHosted&lt;/a&gt;. But for the sake of this tutorial, I will be showing you an example docker compose file from one of the services found there. I have selected &lt;a href=&#34;https://demo.filebrowser.org/&#34; target=&#34;_blank&#34;&gt;FileBrowser&lt;/a&gt; (User : demo / Pass : demo)&lt;/p&gt;
+&lt;p&gt;Here&amp;rsquo;s the docker compose file contents. Just create a folder called &amp;ldquo;FileBrowser&amp;rdquo;, then inside it a file called &amp;ldquo;compose.yml&amp;rdquo; inside it paste the following :&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Yaml&#34; data-lang=&#34;Yaml&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nt&#34;&gt;services&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;filebrowser&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;image&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;l&#34;&gt;hurlenko/filebrowser&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;user&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;1000:1000&amp;#34;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;ports&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;      &lt;/span&gt;- &lt;span class=&#34;m&#34;&gt;443&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;m&#34;&gt;8080&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;volumes&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;      &lt;/span&gt;- &lt;span class=&#34;l&#34;&gt;/&amp;lt;path-to-shared-folder&amp;gt;:/data&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;      &lt;/span&gt;- &lt;span class=&#34;l&#34;&gt;./config:/config&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;environment&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;      &lt;/span&gt;- &lt;span class=&#34;l&#34;&gt;FB_BASEURL=/&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;restart&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;l&#34;&gt;always&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Just make sure to change the &amp;ldquo;443&amp;rdquo; port to one you prefer without touching part to the right which is the internal Docker one. Also in the &amp;ldquo;Volumes&amp;rdquo; section change the &amp;ldquo;- /&lt;path-to-shared-folder&gt;:/data&amp;rdquo; part, do not modify right side just the left, before the &amp;ldquo;:&amp;rdquo;, and set it to what you want to share between your machines. DO NOT SHARE ROOT ! At least if you are going to make it public. If you want to keep it internal like me, do it if you so wish it&amp;rsquo;s up to you.&lt;/p&gt;
+&lt;p&gt;Now save the file, and open Terminal inside the folder and run the following command to start it as a Daemon :&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;docker compose up -d
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;If all was done correctly, you will now be able to access your newly created container via following URLs :&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;http://localhost:443 &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;Same machine container is on&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;http://&amp;lt;server-ip&amp;gt;:443 &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;From other machines on same network&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h3 class=&#34;relative group&#34;&gt;Updating Docker Images 
+    &lt;div id=&#34;updating-docker-images&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+    
+&lt;/h3&gt;
+&lt;p&gt;Deploying them images (containers) is nice and all, but now we need to maintain them, as in make sure they are up-to-date. In order to do so, we need to navigate to their respective folders, open terminal there, and run the following commands (FileBrowser) :&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;docker compose down &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;Stop Container&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;docker compose pull &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;Pull in latest version&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;docker compose up -d &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;Start it up again&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Note :&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Keep in mind that some containers might require us to delete them before grabbing new version. Make sure to read their instructions on that before going forward. I just used what works for our example. Not all Containers function the same way&amp;hellip;&lt;/p&gt;&lt;/blockquote&gt;
+
+
+&lt;h3 class=&#34;relative group&#34;&gt;Other tools&amp;hellip; 
+    &lt;div id=&#34;other-tools&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+    
+&lt;/h3&gt;
+&lt;p&gt;Kindly note that there are other tools we could use to make deployment much simpler. I just haven&amp;rsquo;t used them in this guide so you can see how it all works. Tools that can be used are, &lt;a href=&#34;https://www.portainer.io&#34; target=&#34;_blank&#34;&gt;Portainer&lt;/a&gt; and &lt;a href=&#34;https://dockge.kuma.pet&#34; target=&#34;_blank&#34;&gt;Dockge&lt;/a&gt;, among many others&amp;hellip;&lt;/p&gt;
+
+
+&lt;h3 class=&#34;relative group&#34;&gt;Nginx Proxy &amp;amp; More&amp;hellip; 
+    &lt;div id=&#34;nginx-proxy--more&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+    
+&lt;/h3&gt;
+&lt;p&gt;So far what we have done here, is deploy container for local access. If you want to access it outside your Network, well, for this you will have to own your own Domain name, set up Nginx Proxy manager, use Cloudflare and so on. But that&amp;rsquo;s for another day. This guide was to get your appetite wet, lol..&lt;/p&gt;
+&lt;p&gt;I hope you enjoy, and will see you in the next part.&lt;/p&gt;
+</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/docker-usage/featured.webp" />
+    </item>
+    
+    <item>
+      <title>Enable Snaps on Arch</title>
+      <link>https://xerolinux.xyz/posts/enable-snaps/</link>
+      <pubDate>Thu, 27 Jun 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://xerolinux.xyz/posts/enable-snaps/</guid>
+      <description>
+
+&lt;h3 class=&#34;relative group&#34;&gt;What are Snaps ? 
+    &lt;div id=&#34;what-are-snaps-&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+    
+&lt;/h3&gt;
+&lt;p&gt;Snaps are an innovative packaging format for distributing applications on Linux. Developed by &lt;strong&gt;Canonical&lt;/strong&gt;, snaps are self-contained software bundles that include the app and all its dependencies. This allows snaps to work consistently across a wide range of Linux distributions, without compatibility issues. Snaps also use transactional updates, automatically rolling back if an update fails. Running in a secure sandbox, snaps have limited access to the host system, enhancing security. While some Linux users have reservations about Canonical&amp;rsquo;s involvement, the snap format provides a convenient way to package and distribute applications that &amp;ldquo;just work&amp;rdquo; on any Linux desktop or server. For users and developers seeking a reliable, cross-distro packaging solution, snaps offer a compelling option to explore.&lt;/p&gt;
+
+
+&lt;h3 class=&#34;relative group&#34;&gt;Disclaimer : 
+    &lt;div id=&#34;disclaimer-&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+    
+&lt;/h3&gt;
+&lt;p&gt;Snap support was never intended to be used outside Ubuntu / Debian that package manager was created by Canonical for their Distribution and subsidiaries. Therefore  I will not be held responsible for any damage you incur by doing it. You will be on your own. Keep that in mind.&lt;/p&gt;
+
+
+&lt;h3 class=&#34;relative group&#34;&gt;Installation 
+    &lt;div id=&#34;installation&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+    
+&lt;/h3&gt;
+&lt;p&gt;With that out of the way, I would recommend you look for your apps on either Arch Repos, AUR or Flathub first since those are the package managers officially supported on XeroLinux / Arch, but if you still insist on doing it, Do it at your own risk ! here&amp;rsquo;s how to do it, follow the guide step by step, if you didn&amp;rsquo;t miss anything you will be well on your way to start using Snaps.&lt;/p&gt;
+&lt;p&gt;
+  &lt;figure&gt;
+    &lt;img class=&#34;my-0 rounded-md&#34; loading=&#34;lazy&#34; src=&#34;https://i.imgur.com/BpMGL6X.png&#34; alt=&#34;[Image: BpMGL6X.png]&#34; /&gt;
+    
+  &lt;/figure&gt;
+&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Step 1 : Install &amp;amp; enable snapd service&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;First things first, you will need to install &lt;code&gt;snapd&lt;/code&gt; service and enable it. To do so please type the following commands in Terminal. Please report any issues to &lt;a href=&#34;https://github.com/snapcore/snapd&#34; target=&#34;_blank&#34;&gt;Snapd Upstream&lt;/a&gt;.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;paru -S --noconfirm snapd
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo systemctl &lt;span class=&#34;nb&#34;&gt;enable&lt;/span&gt; --now snapd.socket
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo systemctl &lt;span class=&#34;nb&#34;&gt;enable&lt;/span&gt; --now snapd.apparmor
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Make sure to reboot the system after doing that for services to start correctly.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Step 2 : Install The Snap Store&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Once that&amp;rsquo;s done, either start installing your snaps via &lt;code&gt;sudo snap refresh &amp;amp;&amp;amp; sudo snap install packagename&lt;/code&gt; commands or if you prefer to use a GUI App Store install the aforementioned Snap Store via command below.&lt;/p&gt;
+&lt;p&gt;Install the Snap Store :&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo snap install snap-store
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;This might take a while depending on your connection since it has to populate the massive database on first install, just be patient while it does that. Finally launch the store from the App-menu..&lt;/p&gt;
+&lt;p&gt;I hope this helps y&amp;rsquo;all&amp;hellip;&lt;/p&gt;
+</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/enable-snaps/featured.webp" />
+    </item>
+    
+    <item>
+      <title>How To Downgrade Packages</title>
+      <link>https://xerolinux.xyz/posts/downgrade-tool/</link>
+      <pubDate>Thu, 27 Jun 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://xerolinux.xyz/posts/downgrade-tool/</guid>
+      <description>
+
+&lt;h3 class=&#34;relative group&#34;&gt;What is Downgrade ? 
+    &lt;div id=&#34;what-is-downgrade-&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+    
+&lt;/h3&gt;
+&lt;p&gt;Downgrade is a Bash script that makes it easier to downgrade packages in Arch Linux to an older version. It checks both the local pacman cache and the Arch Linux Archive (ALA) for available older versions of a package and allows you to select which version to install&lt;/p&gt;
+
+
+&lt;h3 class=&#34;relative group&#34;&gt;Why do we need it ? 
+    &lt;div id=&#34;why-do-we-need-it-&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+    
+&lt;/h3&gt;
+&lt;p&gt;As you might know, Arch Linux is a rolling release and DIY (do-it-yourself) distribution. So you have to be a bit careful while updating it often, especially installing or updating packages from the third party repositories like AUR. You might be end up with broken system if you don&amp;rsquo;t know what you are doing. It is your responsibility to make Arch Linux more stable. However, we all do mistakes. It is difficult to be careful all time. Sometimes, you want to update to most bleeding edge, and you might be stuck with broken packages. Don&amp;rsquo;t panic! In such cases, you can simply rollback to the old stable packages. This short tutorial describes how to downgrade a package in Arch Linux and its variants like EndeavourOS, Manjaro Linux.&lt;/p&gt;
+
+
+&lt;h3 class=&#34;relative group&#34;&gt;Install Downgrade utility 
+    &lt;div id=&#34;install-downgrade-utility&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+    
+&lt;/h3&gt;
+&lt;p&gt;The downgrade package is available in AUR, so you can install it using any AUR helper programs such as Paru or Yay.&lt;/p&gt;
+&lt;p&gt;Using Paru:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;paru -S downgrade
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Using Yay:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;yay -S downgrade
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h3 class=&#34;relative group&#34;&gt;Downgrade a package 
+    &lt;div id=&#34;downgrade-a-package&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+    
+&lt;/h3&gt;
+&lt;p&gt;The typical usage of &amp;ldquo;downgrade&amp;rdquo; command is:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo downgrade &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;PACKAGE, ...&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;-- &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;PACMAN OPTIONS&lt;span class=&#34;o&#34;&gt;]]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Let us say you want to downgrade opera web browser to any available old version.&lt;/p&gt;
+&lt;p&gt;To do so, run:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo downgrade opera
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;This command will list all available versions of opera package (both new and old) from your local cache and remote mirror.&lt;/p&gt;
+&lt;p&gt;Sample output:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Available packages:
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;1&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt; opera-37.0.2178.43-1-x86_64.pkg.tar.xz &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;local&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;2&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt; opera-37.0.2178.43-1-x86_64.pkg.tar.xz &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;remote&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;3&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt; opera-37.0.2178.32-1-x86_64.pkg.tar.xz &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;remote&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;4&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt; opera-36.0.2130.65-2-x86_64.pkg.tar.xz &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;remote&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;5&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt; opera-36.0.2130.65-1-x86_64.pkg.tar.xz &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;remote&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;6&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt; opera-36.0.2130.46-2-x86_64.pkg.tar.xz &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;remote&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;7&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt; opera-36.0.2130.46-1-x86_64.pkg.tar.xz &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;remote&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;8&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt; opera-36.0.2130.32-2-x86_64.pkg.tar.xz &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;remote&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;9&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt; opera-36.0.2130.32-1-x86_64.pkg.tar.xz &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;remote&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;select&lt;/span&gt; a package by number:
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Just type the package number of your choice, and hit enter to install it.&lt;/p&gt;
+&lt;p&gt;That&amp;rsquo;s it. The current installed package will be downgraded to the old version.&lt;/p&gt;
+</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/downgrade-tool/featured.webp" />
+    </item>
+    
+    <item>
+      <title>Install Yay or Paru</title>
+      <link>https://xerolinux.xyz/posts/install-yay-paru/</link>
+      <pubDate>Thu, 27 Jun 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://xerolinux.xyz/posts/install-yay-paru/</guid>
+      <description>
+
+&lt;h3 class=&#34;relative group&#34;&gt;What Are Those? 
+    &lt;div id=&#34;what-are-those&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+    
+&lt;/h3&gt;
+&lt;p&gt;Yay &amp;amp; Paru are &lt;strong&gt;AUR&lt;/strong&gt; Helpers. What&amp;rsquo;s that ? Well, an &lt;strong&gt;AUR&lt;/strong&gt; helper is a tool that automates the process of installing and managing packages from the Arch User Repository (AUR) on Arch Linux. The main purpose of AUR helpers is to simplify the installation and updating of AUR packages, which are not available in the official Arch Linux repositories&lt;/p&gt;
+&lt;p&gt;
+  &lt;figure&gt;
+    &lt;img class=&#34;my-0 rounded-md&#34; loading=&#34;lazy&#34; src=&#34;https://i.imgur.com/l2MiVr0.jpeg&#34; alt=&#34;[Image: l2MiVr0.jpeg]&#34; /&gt;
+    
+  &lt;/figure&gt;
+&lt;/p&gt;
+
+
+&lt;h3 class=&#34;relative group&#34;&gt;What is the difference between the two ? 
+    &lt;div id=&#34;what-is-the-difference-between-the-two-&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+    
+&lt;/h3&gt;
+&lt;p&gt;The primary differences between the AUR helpers Yay and Paru lie in their underlying programming languages and some of their default settings and features. &lt;strong&gt;Yay&lt;/strong&gt; is written in &lt;strong&gt;Go&lt;/strong&gt;, while &lt;strong&gt;Paru&lt;/strong&gt; is implemented in the more efficient &lt;strong&gt;Rust&lt;/strong&gt; language, resulting in better performance. Additionally, Paru has some saner default settings, such as requiring users to review the PKGBUILD before installing a package, which is an important security consideration when working with the Arch User Repository. Yay, on the other hand, offers a unique &amp;ldquo;&amp;ndash;combinedupgrade&amp;rdquo; flag that provides a color-coded output to distinguish between repository and AUR package upgrades, a feature not present in Paru. In terms of active development, Paru is currently more actively maintained than Yay, though both continue to receive updates and improvements. The choice between the two ultimately comes down to personal preference and specific needs when managing packages from the AUR..&lt;/p&gt;
+
+
+&lt;h3 class=&#34;relative group&#34;&gt;Yay Installation : 
+    &lt;div id=&#34;yay-installation-&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+    
+&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;cd&lt;/span&gt; ~ &lt;span class=&#34;o&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; git clone https://aur.archlinux.org/yay-bin.git
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;cd&lt;/span&gt; ~/yay-bin/ &lt;span class=&#34;o&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; makepkg -rsi --noconfirm
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;cd&lt;/span&gt; ~ &lt;span class=&#34;o&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; rm -Rf ~/yay-bin/
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h3 class=&#34;relative group&#34;&gt;Yay Configuration : 
+    &lt;div id=&#34;yay-configuration-&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+    
+&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;yay -Y --devel --save &lt;span class=&#34;o&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; yay -Y --gendb
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sed -i &lt;span class=&#34;s1&#34;&gt;&amp;#39;s/&amp;#34;sudoloop&amp;#34;: false/&amp;#34;sudoloop&amp;#34;: true/&amp;#39;&lt;/span&gt; ~/.config/yay/config.json&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Anyway here&amp;rsquo;s how to proceed for Paru&amp;hellip;&lt;/p&gt;
+
+
+&lt;h3 class=&#34;relative group&#34;&gt;Paru Installation : 
+    &lt;div id=&#34;paru-installation-&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+    
+&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;cd&lt;/span&gt; ~ &lt;span class=&#34;o&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; git clone https://aur.archlinux.org/paru-bin.git
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;cd&lt;/span&gt; ~/paru-bin/ &lt;span class=&#34;o&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; makepkg -rsi --noconfirm
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;cd&lt;/span&gt; ~ &lt;span class=&#34;o&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; rm -Rf ~/paru-bin/
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h3 class=&#34;relative group&#34;&gt;Paru Configuration : 
+    &lt;div id=&#34;paru-configuration-&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+    
+&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo sed -i -e &lt;span class=&#34;s1&#34;&gt;&amp;#39;s/^#BottomUp/BottomUp/&amp;#39;&lt;/span&gt; -e &lt;span class=&#34;s1&#34;&gt;&amp;#39;s/^#SudoLoop/SudoLoop/&amp;#39;&lt;/span&gt; -e &lt;span class=&#34;s1&#34;&gt;&amp;#39;s/^#CombinedUpgrade/CombinedUpgrade/&amp;#39;&lt;/span&gt; -e &lt;span class=&#34;s1&#34;&gt;&amp;#39;s/^#UpgradeMenu/UpgradeMenu/&amp;#39;&lt;/span&gt; -e &lt;span class=&#34;s1&#34;&gt;&amp;#39;s/^#NewsOnUpgrade/NewsOnUpgrade/&amp;#39;&lt;/span&gt; /etc/paru.conf
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;SkipReview&amp;#34;&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; sudo tee -a /etc/paru.conf &amp;gt; /dev/null
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;paru --gendb&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h3 class=&#34;relative group&#34;&gt;Closing 
+    &lt;div id=&#34;closing&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+    
+&lt;/h3&gt;
+&lt;p&gt;Once that is done, you can use it to start installing packages from the &lt;a href=&#34;https://aur.archlinux.org&#34; target=&#34;_blank&#34;&gt;AUR&lt;/a&gt;. Keep in mind that you do not need to install both; just select the one you prefer, either one works.. I would recommend YaY myself though.. &lt;a href=&#34;https://wiki.archlinux.org/title/AUR_helpers&#34; target=&#34;_blank&#34;&gt;ArchWiki Page&lt;/a&gt;&lt;/p&gt;
+</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/install-yay-paru/featured.webp" />
+    </item>
+    
+    <item>
+      <title>Recover deleted files in Linux</title>
+      <link>https://xerolinux.xyz/posts/recover-deleted-files/</link>
+      <pubDate>Thu, 27 Jun 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://xerolinux.xyz/posts/recover-deleted-files/</guid>
+      <description>
+
+&lt;h3 class=&#34;relative group&#34;&gt;Introduction 
+    &lt;div id=&#34;introduction&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+    
+&lt;/h3&gt;
+&lt;p&gt;I have recently decided to make the switch to Linux as my main daily OS, leaving Windows behind just for occasional gaming. But since I am new to Linux, everything requires me to do research. New things to learn I guess.&lt;/p&gt;
+
+
+&lt;h3 class=&#34;relative group&#34;&gt;What Happened? 
+    &lt;div id=&#34;what-happened&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+    
+&lt;/h3&gt;
+&lt;p&gt;Today something lame happened to me, I deleted my entire TV Shows folder while trying to move them LoL … DERP … Which prompted me to look for a way to recover them. Now on Windows it’s super easy I have a tool that does that 2 clicks. On Linux I had to do some research, a lot of it.&lt;/p&gt;
+
+
+&lt;h3 class=&#34;relative group&#34;&gt;What I did 
+    &lt;div id=&#34;what-i-did&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+    
+&lt;/h3&gt;
+&lt;p&gt;I found the tool that did the job and all my Shows were successfully recovered. The only thing is you have to do it immediately after deleting files or with drive Unmounted otherwise if drive has new files written on it recovery will become more difficult. That said, watch the video below then click button underneath to get teleported to full guide on It’s FOSS…&lt;/p&gt;
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+      &lt;iframe allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&#34; allowfullscreen=&#34;allowfullscreen&#34; loading=&#34;eager&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; src=&#34;https://www.youtube.com/embed/Kkt1-QeS9Qs?autoplay=0&amp;amp;controls=1&amp;amp;end=0&amp;amp;loop=0&amp;amp;mute=0&amp;amp;start=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;YouTube video&#34;&gt;&lt;/iframe&gt;
+    &lt;/div&gt;
+
+</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/recover-deleted-files/featured.webp" />
+    </item>
+    
+    <item>
+      <title>Theming Flatpaks</title>
+      <link>https://xerolinux.xyz/posts/flatpak-theming/</link>
+      <pubDate>Thu, 27 Jun 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://xerolinux.xyz/posts/flatpak-theming/</guid>
+      <description>
+
+&lt;h3 class=&#34;relative group&#34;&gt;Intro 
+    &lt;div id=&#34;intro&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+    
+&lt;/h3&gt;
+&lt;p&gt;One of the reasons why some users avoid installing Flatpak apps is that most Flatpak apps don’t change their appearance as per the current system theme. This makes the applications look out of the place in your otherwise beautiful set up.&lt;/p&gt;
+&lt;p&gt;The official way to apply GTK themes to Flatpak apps is by &lt;a href=&#34;https://docs.flatpak.org/en/latest/desktop-integration.html#theming&#34; target=&#34;_blank&#34;&gt;installing the desired theme as a flatpak&lt;/a&gt;. However, there are only a few GTK themes that can be installed as Flatpak.&lt;/p&gt;
+&lt;p&gt;This means that if you found a beautiful GTK theme, your Flatpak applications will still be using their default appearance. But wait! There is a workaround.&lt;/p&gt;
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+      &lt;iframe allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&#34; allowfullscreen=&#34;allowfullscreen&#34; loading=&#34;eager&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; src=&#34;https://www.youtube.com/embed/IYXlgzrZRIE?autoplay=0&amp;amp;controls=1&amp;amp;end=0&amp;amp;loop=0&amp;amp;mute=0&amp;amp;start=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;YouTube video&#34;&gt;&lt;/iframe&gt;
+    &lt;/div&gt;
+
+
+
+&lt;h2 class=&#34;relative group&#34;&gt;Tutorial 
+    &lt;div id=&#34;tutorial&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+    
+&lt;/h2&gt;
+&lt;p&gt;In this tutorial, I am going to introduce you a way to make Flatpak apps aware of external GTK themes.&lt;/p&gt;
+&lt;p&gt;To enable this functionality, users need to install the GTK themes similar to the one used in KDE (as for other distros) but also run these commands:&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;- Step 1:&lt;/strong&gt; Give Flatpak apps access to GTK themes location&lt;/p&gt;
+&lt;p&gt;GTK themes are located in &lt;code&gt;/usr/share/themes&lt;/code&gt; for all users, and in &lt;code&gt;~/.themes&lt;/code&gt; for a specific user. Notice that you can’t give access to &lt;code&gt;/usr/share/themes&lt;/code&gt; because according to &lt;a href=&#34;https://docs.flatpak.org/en/latest/sandbox-permissions.html#filesystem-access&#34; target=&#34;_blank&#34;&gt;Flatpak Documentation&lt;/a&gt; they are blacklisted.&lt;/p&gt;
+&lt;p&gt;So, since all included GTK Themes in XeroLinux  are located under &lt;code&gt;/usr/share/themes&lt;/code&gt; which Flatpaks cannot access we need to copy them to &lt;code&gt;~/.themes&lt;/code&gt; .&lt;/p&gt;
+&lt;p&gt;Once that is done, to give all flatpak packages permission to access &lt;code&gt;~/.themes&lt;/code&gt; run the following command:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo flatpak override --filesystem&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$HOME&lt;/span&gt;/.themes
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;- Step 2:&lt;/strong&gt; Enable System-Wide Flatpak Override&lt;/p&gt;
+&lt;p&gt;Now we need to apply a system-wide override telling Flatpaks to use whatever GTK theme system is using, it will be applied by default on next release of XeroLinux if it hasn&amp;rsquo;t been already..&lt;/p&gt;
+&lt;p&gt;Commands :&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo flatpak override --filesystem&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;xdg-config/gtk-3.0:ro
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo flatpak override --filesystem&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;xdg-config/gtk-4.0:ro
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Also sometimes that alone might not work, so you will need to set specific theme via&amp;hellip;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo flatpak override org.gnome.Calculator --env&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;GTK_THEME&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;name-of-gtk-theme
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Once that&amp;rsquo;s done you will end up with a file in the system that includes those values. Seemingly enough there is some info about that exact issue on the &lt;a href=&#34;https://github.com/flatpak/flatpak/issues/4633&#34; target=&#34;_blank&#34;&gt;Flathub iisue reporter&lt;/a&gt;..&lt;/p&gt;
+&lt;p&gt;As you can see in the screenshot below, there is two themes available, Ant-Bloody and Orchis-dark. Copy and paste the exact theme name in the above command:&lt;/p&gt;
+&lt;p&gt;
+  &lt;figure&gt;
+    &lt;img class=&#34;my-0 rounded-md&#34; loading=&#34;lazy&#34; src=&#34;https://i.imgur.com/uT6brUj.png&#34; alt=&#34;[Image: uT6brUj.png]&#34; /&gt;
+    
+  &lt;/figure&gt;
+&lt;/p&gt;
+&lt;p&gt;This only applies to GTK3/4 based packages, for QT in most cases nothing needs to be done 
+  &lt;figure&gt;
+    &lt;img class=&#34;my-0 rounded-md&#34; loading=&#34;lazy&#34; src=&#34;https://forum.xerolinux.xyz/images/smilies/wink.png&#34; alt=&#34;Wink&#34; /&gt;
+    &lt;figcaption&gt;Wink&lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/p&gt;
+&lt;p&gt;Here&amp;rsquo;s the Original Thread on &lt;a href=&#34;https://forum.manjaro.org/t/add-out-of-the-box-flatpak-gtk-application-themes-for-kde-plasma-users/117103&#34; target=&#34;_blank&#34;&gt;Manjaro Forums&lt;/a&gt;&amp;hellip; Oh and &lt;a href=&#34;https://itsfoss.com/flatpak-app-apply-theme/&#34; target=&#34;_blank&#34;&gt;This Thread&lt;/a&gt; Too&amp;hellip;.&lt;/p&gt;
+</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/flatpak-theming/featured.webp" />
+    </item>
+    
+  </channel>
+</rss>

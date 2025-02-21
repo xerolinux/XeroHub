@@ -1,0 +1,1273 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>R560 on XeroLinux HQ</title>
+    <link>https://xerolinux.xyz/tags/r560/</link>
+    <description>Recent content in R560 on XeroLinux HQ</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>Proudly made in Lebanon &lt;img src=&#39;https://xerolinux.xyz/logos/lb.png&#39; alt=&#39;🇱🇧&#39; width=&#39;18&#39; height=&#39;18&#39; style=&#39;margin: 0; display: inline; vertical-align: middle;&#39;&gt;</copyright>
+    <lastBuildDate>Wed, 07 Aug 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://xerolinux.xyz/tags/r560/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Pin nVidia Drivers</title>
+      <link>https://xerolinux.xyz/posts/nvidia-560xx/</link>
+      <pubDate>Wed, 07 Aug 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://xerolinux.xyz/posts/nvidia-560xx/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;This post is only for affected users&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Please read the entire post before you start worrying. I have included a short addendum towards the end, make sure to read it. If you are not affected, then you can ignore this.&lt;/p&gt;
+
+
+&lt;h3 class=&#34;relative group&#34;&gt;What is happening? 
+    &lt;div id=&#34;what-is-happening&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+    
+&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;nVidia&lt;/strong&gt; just released the &lt;strong&gt;R560&lt;/strong&gt; version of its drivers; which drops support for all GPUs that use the &lt;strong&gt;Pascal&lt;/strong&gt; architecture or &lt;em&gt;SOC&lt;/em&gt;. That includes all &lt;strong&gt;900 &amp;amp; 10&lt;/strong&gt; series cards, with exception of the &lt;strong&gt;1650ti&lt;/strong&gt; and &lt;strong&gt;1660ti&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;New drivers will default to using the &lt;a href=&#34;https://developer.nvidia.com/blog/nvidia-transitions-fully-towards-open-source-gpu-kernel-modules/&#34; target=&#34;_blank&#34;&gt;&lt;strong&gt;Open GPU Kernel Modules&lt;/strong&gt;&lt;/a&gt; which only support cards using the &lt;strong&gt;Turing&lt;/strong&gt; architecture and above moving forward.&lt;/p&gt;
+&lt;p&gt;
+  &lt;figure&gt;
+    &lt;img class=&#34;my-0 rounded-md&#34; loading=&#34;lazy&#34; src=&#34;https://i.imgur.com/kFNHP1d.png&#34; alt=&#34;OpenKMS&#34; /&gt;
+    
+  &lt;/figure&gt;
+&lt;/p&gt;
+&lt;p&gt;They have been preparing us for a while now, so we cannot complain too much in my honest opinion. So we knew this day would come eventually. If you are like me and own one of them older GPUs and want to preserve your sanity, this post is for you.&lt;/p&gt;
+&lt;p&gt;That&amp;rsquo;s why, we have to get ready and &lt;em&gt;Pin&lt;/em&gt; our drivers to current working release before new ones drop so we do not suffer the infamous &lt;strong&gt;Black Screen Of Death&lt;/strong&gt; resulting from unsupported drivers.&lt;/p&gt;
+
+
+&lt;h3 class=&#34;relative group&#34;&gt;Pin/Hold nVidia Drivers 
+    &lt;div id=&#34;pinhold-nvidia-drivers&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+    
+&lt;/h3&gt;
+&lt;p&gt;Before we begin, I need to say that I will be showing you how to &amp;ldquo;Pin&amp;rdquo; drivers on &lt;strong&gt;ArchLinux&lt;/strong&gt; &amp;amp; &lt;strong&gt;Flatpak&lt;/strong&gt;, if you run something else like &lt;strong&gt;Fedora&lt;/strong&gt;, &lt;strong&gt;Nix&lt;/strong&gt; or &lt;strong&gt;Gentoo&lt;/strong&gt;, you will have to find a guide to do just that on their support forums. Sorry but I do not use any of those so I have no clue.&lt;/p&gt;
+&lt;p&gt;Anyway, with that being said, here&amp;rsquo;s how you can &amp;ldquo;Pin&amp;rdquo; them&amp;hellip;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Pacman.conf :&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Usually to block packages from being updated on &lt;strong&gt;Arch&lt;/strong&gt;, we have to add them to &lt;em&gt;Pacman&lt;/em&gt;&amp;rsquo;s &lt;code&gt;IgnorePKG&lt;/code&gt;. To do so please run the following command in terminal :&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo nano /etc/pacman.conf
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Scroll down a bit until you see the &lt;code&gt;# IgnorePKG =&lt;/code&gt; line, remove the &lt;code&gt;#&lt;/code&gt; from the beginning of the line to activate it, then after the &lt;code&gt;=&lt;/code&gt; add the following packages&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;nvidia-dkms nvidia-settings nvidia-utils opencl-nvidia libxnvctrl lib32-opencl-nvidia lib32-nvidia-utils
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;
+  &lt;figure&gt;
+    &lt;img class=&#34;my-0 rounded-md&#34; loading=&#34;lazy&#34; src=&#34;https://i.imgur.com/PzpOTPx.png&#34; alt=&#34;Pacman&#34; /&gt;
+    
+  &lt;/figure&gt;
+&lt;/p&gt;
+&lt;p&gt;Save and quit. Now with that being done, your &lt;strong&gt;nVidia&lt;/strong&gt; drivers will never get updated ever again. You will see a message every time you run an update that those packages will be ignored.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Flatpak :&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Now comes the turn of &lt;strong&gt;Flatpaks&lt;/strong&gt;. To avoid them from being updated, especially if you use something like &lt;strong&gt;OBS-Studio&lt;/strong&gt;, we will need to use a tool called &lt;strong&gt;Warehouse&lt;/strong&gt; making it easy. If you don&amp;rsquo;t know what it is look at the article below.&lt;/p&gt;
+
+&lt;section class=&#34;space-y-10 w-full&#34;&gt;
+    
+    
+        
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  &lt;a class=&#34;flex flex-wrap article &#34; href=&#34;https://xerolinux.xyz/posts/warehouse-flatpak/&#34;&gt;
+    
+        
+        &lt;div class=&#34;w-full md:w-auto h-full thumbnail nozoom thumbnailshadow md:mr-7&#34; style=&#34;background-image:url(/posts/warehouse-flatpak/featured.webp);&#34;&gt;&lt;/div&gt;
+        
+      &lt;div class=&#34; mt-3 md:mt-0&#34;&gt;
+      &lt;div class=&#34;items-center text-left text-xl font-semibold&#34;&gt;
+        
+        &lt;div class=&#34;font-bold text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral&#34;
+          href=&#34;https://xerolinux.xyz/posts/warehouse-flatpak/&#34;&gt;Warehouse Flatpak Toolbox&lt;/div&gt;
+        
+        
+        
+      &lt;/div&gt;
+      &lt;div class=&#34;text-sm text-neutral-500 dark:text-neutral-400&#34;&gt;
+        
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+&lt;div class=&#34;flex flex-row flex-wrap items-center&#34;&gt;
+  
+  
+  &lt;time datetime=&#34;2024-06-27T00:00:00&amp;#43;00:00&#34;&gt;27 June 2024&lt;/time&gt;&lt;span class=&#34;px-2 text-primary-500&#34;&gt;&amp;middot;&lt;/span&gt;&lt;span title=&#34;Reading time&#34;&gt;2 mins&lt;/span&gt;&lt;span class=&#34;px-2 text-primary-500&#34;&gt;&amp;middot;&lt;/span&gt;&lt;span&gt;
+  
+  
+    
+    
+      
+      
+        
+        
+      
+      
+    
+  
+  &lt;span id=&#34;views_posts/warehouse-flatpak/index.md&#34; class=&#34;animate-pulse inline-block text-transparent max-h-3 rounded-full mt-[-2px] align-middle bg-neutral-300 dark:bg-neutral-400&#34; title=&#34;views&#34;&gt;loading&lt;/span&gt;
+  &lt;span class=&#34;inline-block align-text-bottom&#34;&gt;
+
+  &lt;span class=&#34;relative block icon&#34;&gt;
+    &lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 576 512&#34;&gt;
+&lt;path fill=&#34;currentColor&#34; d=&#34;M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z&#34;/&gt;&lt;/svg&gt;
+  &lt;/span&gt;
+
+&lt;/span&gt;
+&lt;/span&gt;&lt;span class=&#34;px-2 text-primary-500&#34;&gt;&amp;middot;&lt;/span&gt;&lt;span&gt;
+  
+  
+    
+    
+      
+      
+        
+        
+      
+      
+    
+  
+  &lt;span id=&#34;likes_posts/warehouse-flatpak/index.md&#34;
+    class=&#34;animate-pulse inline-block text-transparent max-h-3 rounded-full mt-[-2px] align-middle bg-neutral-300 dark:bg-neutral-400&#34;
+    title=&#34;likes&#34;&gt;loading&lt;/span&gt;
+  &lt;span class=&#34;inline-block align-text-bottom&#34;&gt;
+
+  &lt;span class=&#34;relative block icon&#34;&gt;
+    &lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 512 512&#34;&gt;
+&lt;path fill=&#34;currentColor&#34; d=&#34;M47.6 300.4L228.3 469.1c7.5 7 17.4 10.9 27.7 10.9s20.2-3.9 27.7-10.9L464.4 300.4c30.4-28.3 47.6-68 47.6-109.5v-5.8c0-69.9-50.5-129.5-119.4-141C347 36.5 300.6 51.4 268 84L256 96 244 84c-32.6-32.6-79-47.5-124.6-39.9C50.5 55.6 0 115.2 0 185.1v5.8c0 41.5 17.2 81.2 47.6 109.5z&#34;/&gt;&lt;/svg&gt;
+  &lt;/span&gt;
+
+&lt;/span&gt;
+&lt;/span&gt;
+  
+
+  
+  
+&lt;/div&gt;
+
+
+&lt;div class=&#34;flex flex-row flex-wrap items-center&#34;&gt;
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+&lt;/div&gt;
+
+
+
+
+&lt;div class=&#34;flex flex-row flex-wrap items-center&#34;&gt;
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  &lt;span style=&#34;margin-top:0.5rem&#34; class=&#34;mr-2&#34; onclick=&#34;window.open(&amp;#34;/tags/flatpak/&amp;#34;,&#39;_self&#39;);return false;&#34;&gt;
+    &lt;span class=&#34;flex&#34; style=&#34;cursor: pointer;&#34;&gt;
+  &lt;span class=&#34;rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400&#34;&gt;
+    Flatpak
+  &lt;/span&gt;
+&lt;/span&gt;
+  &lt;/span&gt;
+  
+  &lt;span style=&#34;margin-top:0.5rem&#34; class=&#34;mr-2&#34; onclick=&#34;window.open(&amp;#34;/tags/manager/&amp;#34;,&#39;_self&#39;);return false;&#34;&gt;
+    &lt;span class=&#34;flex&#34; style=&#34;cursor: pointer;&#34;&gt;
+  &lt;span class=&#34;rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400&#34;&gt;
+    Manager
+  &lt;/span&gt;
+&lt;/span&gt;
+  &lt;/span&gt;
+  
+  &lt;span style=&#34;margin-top:0.5rem&#34; class=&#34;mr-2&#34; onclick=&#34;window.open(&amp;#34;/tags/tools/&amp;#34;,&#39;_self&#39;);return false;&#34;&gt;
+    &lt;span class=&#34;flex&#34; style=&#34;cursor: pointer;&#34;&gt;
+  &lt;span class=&#34;rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400&#34;&gt;
+    Tools
+  &lt;/span&gt;
+&lt;/span&gt;
+  &lt;/span&gt;
+  
+  &lt;span style=&#34;margin-top:0.5rem&#34; class=&#34;mr-2&#34; onclick=&#34;window.open(&amp;#34;/tags/flathub/&amp;#34;,&#39;_self&#39;);return false;&#34;&gt;
+    &lt;span class=&#34;flex&#34; style=&#34;cursor: pointer;&#34;&gt;
+  &lt;span class=&#34;rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400&#34;&gt;
+    Flathub
+  &lt;/span&gt;
+&lt;/span&gt;
+  &lt;/span&gt;
+  
+  &lt;span style=&#34;margin-top:0.5rem&#34; class=&#34;mr-2&#34; onclick=&#34;window.open(&amp;#34;/tags/linux/&amp;#34;,&#39;_self&#39;);return false;&#34;&gt;
+    &lt;span class=&#34;flex&#34; style=&#34;cursor: pointer;&#34;&gt;
+  &lt;span class=&#34;rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400&#34;&gt;
+    Linux
+  &lt;/span&gt;
+&lt;/span&gt;
+  &lt;/span&gt;
+  
+  
+  
+  
+&lt;/div&gt;
+
+
+
+
+      &lt;/div&gt;
+      
+    &lt;/div&gt;
+  &lt;/a&gt;
+
+        
+    
+&lt;/section&gt;
+&lt;p&gt;Now, launch it, click on the filter icon and enable the &lt;code&gt;Show Runtimes&lt;/code&gt; option in order to see the drivers currently installed on your system.&lt;/p&gt;
+&lt;p&gt;
+  &lt;figure&gt;
+    &lt;img class=&#34;my-0 rounded-md&#34; loading=&#34;lazy&#34; src=&#34;https://i.imgur.com/s7aEmPu.png&#34; alt=&#34;Warehouse&#34; /&gt;
+    
+  &lt;/figure&gt;
+&lt;/p&gt;
+&lt;p&gt;Once that&amp;rsquo;s done, close filter window, scroll down the list until you see the &lt;strong&gt;nVidia&lt;/strong&gt; drivers, click on the 3 vertical dots and select the &lt;strong&gt;Disable Updates&lt;/strong&gt; option. That&amp;rsquo;s it ! Now they will never be updated.&lt;/p&gt;
+
+
+&lt;h3 class=&#34;relative group&#34;&gt;Downgrade Drivers 
+    &lt;div id=&#34;downgrade-drivers&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+    
+&lt;/h3&gt;
+&lt;p&gt;This, in my opinion is the most likely scenario to happen to most users who are new to &lt;strong&gt;Linux&lt;/strong&gt; as a whole. It&amp;rsquo;s the one where drivers get updated without previously having &amp;ldquo;Pinned&amp;rdquo; them. If that happens to you, and you end up with a black screen, fear not there is a solution. It&amp;rsquo;s called &lt;em&gt;Downgrading&lt;/em&gt;. We will be using a tool called, you guessed it, &lt;strong&gt;Downgrade&lt;/strong&gt;. More info in article below.&lt;/p&gt;
+
+&lt;section class=&#34;space-y-10 w-full&#34;&gt;
+    
+    
+        
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  &lt;a class=&#34;flex flex-wrap article &#34; href=&#34;https://xerolinux.xyz/posts/downgrade-tool/&#34;&gt;
+    
+        
+        &lt;div class=&#34;w-full md:w-auto h-full thumbnail nozoom thumbnailshadow md:mr-7&#34; style=&#34;background-image:url(/posts/downgrade-tool/featured.webp);&#34;&gt;&lt;/div&gt;
+        
+      &lt;div class=&#34; mt-3 md:mt-0&#34;&gt;
+      &lt;div class=&#34;items-center text-left text-xl font-semibold&#34;&gt;
+        
+        &lt;div class=&#34;font-bold text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral&#34;
+          href=&#34;https://xerolinux.xyz/posts/downgrade-tool/&#34;&gt;How To Downgrade Packages&lt;/div&gt;
+        
+        
+        
+      &lt;/div&gt;
+      &lt;div class=&#34;text-sm text-neutral-500 dark:text-neutral-400&#34;&gt;
+        
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+&lt;div class=&#34;flex flex-row flex-wrap items-center&#34;&gt;
+  
+  
+  &lt;time datetime=&#34;2024-06-27T00:00:00&amp;#43;00:00&#34;&gt;27 June 2024&lt;/time&gt;&lt;span class=&#34;px-2 text-primary-500&#34;&gt;&amp;middot;&lt;/span&gt;&lt;span title=&#34;Reading time&#34;&gt;2 mins&lt;/span&gt;&lt;span class=&#34;px-2 text-primary-500&#34;&gt;&amp;middot;&lt;/span&gt;&lt;span&gt;
+  
+  
+    
+    
+      
+      
+        
+        
+      
+      
+    
+  
+  &lt;span id=&#34;views_posts/downgrade-tool/index.md&#34; class=&#34;animate-pulse inline-block text-transparent max-h-3 rounded-full mt-[-2px] align-middle bg-neutral-300 dark:bg-neutral-400&#34; title=&#34;views&#34;&gt;loading&lt;/span&gt;
+  &lt;span class=&#34;inline-block align-text-bottom&#34;&gt;
+
+  &lt;span class=&#34;relative block icon&#34;&gt;
+    &lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 576 512&#34;&gt;
+&lt;path fill=&#34;currentColor&#34; d=&#34;M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z&#34;/&gt;&lt;/svg&gt;
+  &lt;/span&gt;
+
+&lt;/span&gt;
+&lt;/span&gt;&lt;span class=&#34;px-2 text-primary-500&#34;&gt;&amp;middot;&lt;/span&gt;&lt;span&gt;
+  
+  
+    
+    
+      
+      
+        
+        
+      
+      
+    
+  
+  &lt;span id=&#34;likes_posts/downgrade-tool/index.md&#34;
+    class=&#34;animate-pulse inline-block text-transparent max-h-3 rounded-full mt-[-2px] align-middle bg-neutral-300 dark:bg-neutral-400&#34;
+    title=&#34;likes&#34;&gt;loading&lt;/span&gt;
+  &lt;span class=&#34;inline-block align-text-bottom&#34;&gt;
+
+  &lt;span class=&#34;relative block icon&#34;&gt;
+    &lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 512 512&#34;&gt;
+&lt;path fill=&#34;currentColor&#34; d=&#34;M47.6 300.4L228.3 469.1c7.5 7 17.4 10.9 27.7 10.9s20.2-3.9 27.7-10.9L464.4 300.4c30.4-28.3 47.6-68 47.6-109.5v-5.8c0-69.9-50.5-129.5-119.4-141C347 36.5 300.6 51.4 268 84L256 96 244 84c-32.6-32.6-79-47.5-124.6-39.9C50.5 55.6 0 115.2 0 185.1v5.8c0 41.5 17.2 81.2 47.6 109.5z&#34;/&gt;&lt;/svg&gt;
+  &lt;/span&gt;
+
+&lt;/span&gt;
+&lt;/span&gt;
+  
+
+  
+  
+&lt;/div&gt;
+
+
+&lt;div class=&#34;flex flex-row flex-wrap items-center&#34;&gt;
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+&lt;/div&gt;
+
+
+
+
+&lt;div class=&#34;flex flex-row flex-wrap items-center&#34;&gt;
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  &lt;span style=&#34;margin-top:0.5rem&#34; class=&#34;mr-2&#34; onclick=&#34;window.open(&amp;#34;/tags/downgrade/&amp;#34;,&#39;_self&#39;);return false;&#34;&gt;
+    &lt;span class=&#34;flex&#34; style=&#34;cursor: pointer;&#34;&gt;
+  &lt;span class=&#34;rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400&#34;&gt;
+    Downgrade
+  &lt;/span&gt;
+&lt;/span&gt;
+  &lt;/span&gt;
+  
+  &lt;span style=&#34;margin-top:0.5rem&#34; class=&#34;mr-2&#34; onclick=&#34;window.open(&amp;#34;/tags/archlinux/&amp;#34;,&#39;_self&#39;);return false;&#34;&gt;
+    &lt;span class=&#34;flex&#34; style=&#34;cursor: pointer;&#34;&gt;
+  &lt;span class=&#34;rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400&#34;&gt;
+    ArchLinux
+  &lt;/span&gt;
+&lt;/span&gt;
+  &lt;/span&gt;
+  
+  &lt;span style=&#34;margin-top:0.5rem&#34; class=&#34;mr-2&#34; onclick=&#34;window.open(&amp;#34;/tags/guide/&amp;#34;,&#39;_self&#39;);return false;&#34;&gt;
+    &lt;span class=&#34;flex&#34; style=&#34;cursor: pointer;&#34;&gt;
+  &lt;span class=&#34;rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400&#34;&gt;
+    Guide
+  &lt;/span&gt;
+&lt;/span&gt;
+  &lt;/span&gt;
+  
+  &lt;span style=&#34;margin-top:0.5rem&#34; class=&#34;mr-2&#34; onclick=&#34;window.open(&amp;#34;/tags/linux/&amp;#34;,&#39;_self&#39;);return false;&#34;&gt;
+    &lt;span class=&#34;flex&#34; style=&#34;cursor: pointer;&#34;&gt;
+  &lt;span class=&#34;rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400&#34;&gt;
+    Linux
+  &lt;/span&gt;
+&lt;/span&gt;
+  &lt;/span&gt;
+  
+  
+  
+  
+&lt;/div&gt;
+
+
+
+
+      &lt;/div&gt;
+      
+    &lt;/div&gt;
+  &lt;/a&gt;
+
+        
+    
+&lt;/section&gt;
+&lt;p&gt;Since you are stuck on a black screen, with no way to get to the desktop, all you can do in this case is switch to the &lt;strong&gt;TTY&lt;/strong&gt; via &lt;code&gt;CTRL+ALT+F3&lt;/code&gt;. Once there we need to downgrade drivers to whatever previous working ones were.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Install Downgrade :&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;If you do not already have it, well you will need to install it, you can either use &lt;code&gt;yay&lt;/code&gt; or &lt;code&gt;paru&lt;/code&gt; whichever AUR helper you got, if you don&amp;rsquo;t have one check article below :&lt;/p&gt;
+
+&lt;section class=&#34;space-y-10 w-full&#34;&gt;
+    
+    
+        
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  &lt;a class=&#34;flex flex-wrap article &#34; href=&#34;https://xerolinux.xyz/posts/install-yay-paru/&#34;&gt;
+    
+        
+        &lt;div class=&#34;w-full md:w-auto h-full thumbnail nozoom thumbnailshadow md:mr-7&#34; style=&#34;background-image:url(/posts/install-yay-paru/featured.webp);&#34;&gt;&lt;/div&gt;
+        
+      &lt;div class=&#34; mt-3 md:mt-0&#34;&gt;
+      &lt;div class=&#34;items-center text-left text-xl font-semibold&#34;&gt;
+        
+        &lt;div class=&#34;font-bold text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral&#34;
+          href=&#34;https://xerolinux.xyz/posts/install-yay-paru/&#34;&gt;Install Yay or Paru&lt;/div&gt;
+        
+        
+        
+      &lt;/div&gt;
+      &lt;div class=&#34;text-sm text-neutral-500 dark:text-neutral-400&#34;&gt;
+        
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+&lt;div class=&#34;flex flex-row flex-wrap items-center&#34;&gt;
+  
+  
+  &lt;time datetime=&#34;2024-06-27T00:00:00&amp;#43;00:00&#34;&gt;27 June 2024&lt;/time&gt;&lt;span class=&#34;px-2 text-primary-500&#34;&gt;&amp;middot;&lt;/span&gt;&lt;span title=&#34;Reading time&#34;&gt;2 mins&lt;/span&gt;&lt;span class=&#34;px-2 text-primary-500&#34;&gt;&amp;middot;&lt;/span&gt;&lt;span&gt;
+  
+  
+    
+    
+      
+      
+        
+        
+      
+      
+    
+  
+  &lt;span id=&#34;views_posts/install-yay-paru/index.md&#34; class=&#34;animate-pulse inline-block text-transparent max-h-3 rounded-full mt-[-2px] align-middle bg-neutral-300 dark:bg-neutral-400&#34; title=&#34;views&#34;&gt;loading&lt;/span&gt;
+  &lt;span class=&#34;inline-block align-text-bottom&#34;&gt;
+
+  &lt;span class=&#34;relative block icon&#34;&gt;
+    &lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 576 512&#34;&gt;
+&lt;path fill=&#34;currentColor&#34; d=&#34;M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z&#34;/&gt;&lt;/svg&gt;
+  &lt;/span&gt;
+
+&lt;/span&gt;
+&lt;/span&gt;&lt;span class=&#34;px-2 text-primary-500&#34;&gt;&amp;middot;&lt;/span&gt;&lt;span&gt;
+  
+  
+    
+    
+      
+      
+        
+        
+      
+      
+    
+  
+  &lt;span id=&#34;likes_posts/install-yay-paru/index.md&#34;
+    class=&#34;animate-pulse inline-block text-transparent max-h-3 rounded-full mt-[-2px] align-middle bg-neutral-300 dark:bg-neutral-400&#34;
+    title=&#34;likes&#34;&gt;loading&lt;/span&gt;
+  &lt;span class=&#34;inline-block align-text-bottom&#34;&gt;
+
+  &lt;span class=&#34;relative block icon&#34;&gt;
+    &lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 512 512&#34;&gt;
+&lt;path fill=&#34;currentColor&#34; d=&#34;M47.6 300.4L228.3 469.1c7.5 7 17.4 10.9 27.7 10.9s20.2-3.9 27.7-10.9L464.4 300.4c30.4-28.3 47.6-68 47.6-109.5v-5.8c0-69.9-50.5-129.5-119.4-141C347 36.5 300.6 51.4 268 84L256 96 244 84c-32.6-32.6-79-47.5-124.6-39.9C50.5 55.6 0 115.2 0 185.1v5.8c0 41.5 17.2 81.2 47.6 109.5z&#34;/&gt;&lt;/svg&gt;
+  &lt;/span&gt;
+
+&lt;/span&gt;
+&lt;/span&gt;
+  
+
+  
+  
+&lt;/div&gt;
+
+
+&lt;div class=&#34;flex flex-row flex-wrap items-center&#34;&gt;
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+&lt;/div&gt;
+
+
+
+
+&lt;div class=&#34;flex flex-row flex-wrap items-center&#34;&gt;
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  &lt;span style=&#34;margin-top:0.5rem&#34; class=&#34;mr-2&#34; onclick=&#34;window.open(&amp;#34;/tags/yay/&amp;#34;,&#39;_self&#39;);return false;&#34;&gt;
+    &lt;span class=&#34;flex&#34; style=&#34;cursor: pointer;&#34;&gt;
+  &lt;span class=&#34;rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400&#34;&gt;
+    Yay
+  &lt;/span&gt;
+&lt;/span&gt;
+  &lt;/span&gt;
+  
+  &lt;span style=&#34;margin-top:0.5rem&#34; class=&#34;mr-2&#34; onclick=&#34;window.open(&amp;#34;/tags/paru/&amp;#34;,&#39;_self&#39;);return false;&#34;&gt;
+    &lt;span class=&#34;flex&#34; style=&#34;cursor: pointer;&#34;&gt;
+  &lt;span class=&#34;rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400&#34;&gt;
+    Paru
+  &lt;/span&gt;
+&lt;/span&gt;
+  &lt;/span&gt;
+  
+  &lt;span style=&#34;margin-top:0.5rem&#34; class=&#34;mr-2&#34; onclick=&#34;window.open(&amp;#34;/tags/aur/&amp;#34;,&#39;_self&#39;);return false;&#34;&gt;
+    &lt;span class=&#34;flex&#34; style=&#34;cursor: pointer;&#34;&gt;
+  &lt;span class=&#34;rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400&#34;&gt;
+    AUR
+  &lt;/span&gt;
+&lt;/span&gt;
+  &lt;/span&gt;
+  
+  &lt;span style=&#34;margin-top:0.5rem&#34; class=&#34;mr-2&#34; onclick=&#34;window.open(&amp;#34;/tags/guide/&amp;#34;,&#39;_self&#39;);return false;&#34;&gt;
+    &lt;span class=&#34;flex&#34; style=&#34;cursor: pointer;&#34;&gt;
+  &lt;span class=&#34;rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400&#34;&gt;
+    Guide
+  &lt;/span&gt;
+&lt;/span&gt;
+  &lt;/span&gt;
+  
+  &lt;span style=&#34;margin-top:0.5rem&#34; class=&#34;mr-2&#34; onclick=&#34;window.open(&amp;#34;/tags/linux/&amp;#34;,&#39;_self&#39;);return false;&#34;&gt;
+    &lt;span class=&#34;flex&#34; style=&#34;cursor: pointer;&#34;&gt;
+  &lt;span class=&#34;rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400&#34;&gt;
+    Linux
+  &lt;/span&gt;
+&lt;/span&gt;
+  &lt;/span&gt;
+  
+  &lt;span style=&#34;margin-top:0.5rem&#34; class=&#34;mr-2&#34; onclick=&#34;window.open(&amp;#34;/tags/arch/&amp;#34;,&#39;_self&#39;);return false;&#34;&gt;
+    &lt;span class=&#34;flex&#34; style=&#34;cursor: pointer;&#34;&gt;
+  &lt;span class=&#34;rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400&#34;&gt;
+    Arch
+  &lt;/span&gt;
+&lt;/span&gt;
+  &lt;/span&gt;
+  
+  &lt;span style=&#34;margin-top:0.5rem&#34; class=&#34;mr-2&#34; onclick=&#34;window.open(&amp;#34;/tags/archlinux/&amp;#34;,&#39;_self&#39;);return false;&#34;&gt;
+    &lt;span class=&#34;flex&#34; style=&#34;cursor: pointer;&#34;&gt;
+  &lt;span class=&#34;rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400&#34;&gt;
+    ArchLinux
+  &lt;/span&gt;
+&lt;/span&gt;
+  &lt;/span&gt;
+  
+  
+  
+  
+&lt;/div&gt;
+
+
+
+
+      &lt;/div&gt;
+      
+    &lt;/div&gt;
+  &lt;/a&gt;
+
+        
+    
+&lt;/section&gt;
+&lt;p&gt;Once you have your &lt;strong&gt;AUR Helper&lt;/strong&gt; of choice, time to install &lt;strong&gt;Downgrade&lt;/strong&gt; :&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;paru -S --noconfirm --needed downgrade
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Now we can downgrade the drivers. To do that just run the following in Terminal :&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo downgrade nvidia-dkms nvidia-settings nvidia-utils opencl-nvidia libxnvctrl lib32-opencl-nvidia lib32-nvidia-utils
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Make sure to select whatever previous working ones were from the list for each of the packages being downgraded. Could be from your local cache if you did not clear it or will be downloaded. Once that&amp;rsquo;s done, you will be prompted if you want to add the affected packages to &lt;em&gt;pacman&lt;/em&gt;&amp;rsquo;s ignore list, please make sure you answer with &lt;code&gt;y&lt;/code&gt; to all, otherwise drivers will get upgraded next time there&amp;rsquo;s an update.&lt;/p&gt;
+
+
+&lt;h3 class=&#34;relative group&#34;&gt;Wrapping up 
+    &lt;div id=&#34;wrapping-up&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+    
+&lt;/h3&gt;
+&lt;p&gt;That covers all the &lt;em&gt;Official&lt;/em&gt; scenarios on &lt;strong&gt;Arch&lt;/strong&gt;. If you are on something else I would highly recommend you consult relevant documentation. I know it sucks, but drivers can&amp;rsquo;t be supported forever. There will always be a time where aging hardware will be dropped. It is what it is.&lt;/p&gt;
+&lt;p&gt;Note how I said &lt;em&gt;Official&lt;/em&gt;, because there are many &lt;em&gt;Unofficial&lt;/em&gt; ways to keep using older drivers. One of them being the &lt;strong&gt;TKG nVidia-All&lt;/strong&gt; script. To know more check article below.&lt;/p&gt;
+
+&lt;section class=&#34;space-y-10 w-full&#34;&gt;
+    
+    
+        
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  &lt;a class=&#34;flex flex-wrap article &#34; href=&#34;https://xerolinux.xyz/posts/tkg-nvidia-all/&#34;&gt;
+    
+        
+        &lt;div class=&#34;w-full md:w-auto h-full thumbnail nozoom thumbnailshadow md:mr-7&#34; style=&#34;background-image:url(/posts/tkg-nvidia-all/featured.webp);&#34;&gt;&lt;/div&gt;
+        
+      &lt;div class=&#34; mt-3 md:mt-0&#34;&gt;
+      &lt;div class=&#34;items-center text-left text-xl font-semibold&#34;&gt;
+        
+        &lt;div class=&#34;font-bold text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral&#34;
+          href=&#34;https://xerolinux.xyz/posts/tkg-nvidia-all/&#34;&gt;TKG nVidia-AiO Installer&lt;/div&gt;
+        
+        
+        
+      &lt;/div&gt;
+      &lt;div class=&#34;text-sm text-neutral-500 dark:text-neutral-400&#34;&gt;
+        
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+&lt;div class=&#34;flex flex-row flex-wrap items-center&#34;&gt;
+  
+  
+  &lt;time datetime=&#34;2024-06-27T00:00:00&amp;#43;00:00&#34;&gt;27 June 2024&lt;/time&gt;&lt;span class=&#34;px-2 text-primary-500&#34;&gt;&amp;middot;&lt;/span&gt;&lt;span title=&#34;Reading time&#34;&gt;2 mins&lt;/span&gt;&lt;span class=&#34;px-2 text-primary-500&#34;&gt;&amp;middot;&lt;/span&gt;&lt;span&gt;
+  
+  
+    
+    
+      
+      
+        
+        
+      
+      
+    
+  
+  &lt;span id=&#34;views_posts/tkg-nvidia-all/index.md&#34; class=&#34;animate-pulse inline-block text-transparent max-h-3 rounded-full mt-[-2px] align-middle bg-neutral-300 dark:bg-neutral-400&#34; title=&#34;views&#34;&gt;loading&lt;/span&gt;
+  &lt;span class=&#34;inline-block align-text-bottom&#34;&gt;
+
+  &lt;span class=&#34;relative block icon&#34;&gt;
+    &lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 576 512&#34;&gt;
+&lt;path fill=&#34;currentColor&#34; d=&#34;M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z&#34;/&gt;&lt;/svg&gt;
+  &lt;/span&gt;
+
+&lt;/span&gt;
+&lt;/span&gt;&lt;span class=&#34;px-2 text-primary-500&#34;&gt;&amp;middot;&lt;/span&gt;&lt;span&gt;
+  
+  
+    
+    
+      
+      
+        
+        
+      
+      
+    
+  
+  &lt;span id=&#34;likes_posts/tkg-nvidia-all/index.md&#34;
+    class=&#34;animate-pulse inline-block text-transparent max-h-3 rounded-full mt-[-2px] align-middle bg-neutral-300 dark:bg-neutral-400&#34;
+    title=&#34;likes&#34;&gt;loading&lt;/span&gt;
+  &lt;span class=&#34;inline-block align-text-bottom&#34;&gt;
+
+  &lt;span class=&#34;relative block icon&#34;&gt;
+    &lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 512 512&#34;&gt;
+&lt;path fill=&#34;currentColor&#34; d=&#34;M47.6 300.4L228.3 469.1c7.5 7 17.4 10.9 27.7 10.9s20.2-3.9 27.7-10.9L464.4 300.4c30.4-28.3 47.6-68 47.6-109.5v-5.8c0-69.9-50.5-129.5-119.4-141C347 36.5 300.6 51.4 268 84L256 96 244 84c-32.6-32.6-79-47.5-124.6-39.9C50.5 55.6 0 115.2 0 185.1v5.8c0 41.5 17.2 81.2 47.6 109.5z&#34;/&gt;&lt;/svg&gt;
+  &lt;/span&gt;
+
+&lt;/span&gt;
+&lt;/span&gt;
+  
+
+  
+  
+&lt;/div&gt;
+
+
+&lt;div class=&#34;flex flex-row flex-wrap items-center&#34;&gt;
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+&lt;/div&gt;
+
+
+
+
+&lt;div class=&#34;flex flex-row flex-wrap items-center&#34;&gt;
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  &lt;span style=&#34;margin-top:0.5rem&#34; class=&#34;mr-2&#34; onclick=&#34;window.open(&amp;#34;/tags/nvidia/&amp;#34;,&#39;_self&#39;);return false;&#34;&gt;
+    &lt;span class=&#34;flex&#34; style=&#34;cursor: pointer;&#34;&gt;
+  &lt;span class=&#34;rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400&#34;&gt;
+    Nvidia
+  &lt;/span&gt;
+&lt;/span&gt;
+  &lt;/span&gt;
+  
+  &lt;span style=&#34;margin-top:0.5rem&#34; class=&#34;mr-2&#34; onclick=&#34;window.open(&amp;#34;/tags/drivers/&amp;#34;,&#39;_self&#39;);return false;&#34;&gt;
+    &lt;span class=&#34;flex&#34; style=&#34;cursor: pointer;&#34;&gt;
+  &lt;span class=&#34;rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400&#34;&gt;
+    Drivers
+  &lt;/span&gt;
+&lt;/span&gt;
+  &lt;/span&gt;
+  
+  &lt;span style=&#34;margin-top:0.5rem&#34; class=&#34;mr-2&#34; onclick=&#34;window.open(&amp;#34;/tags/gpu/&amp;#34;,&#39;_self&#39;);return false;&#34;&gt;
+    &lt;span class=&#34;flex&#34; style=&#34;cursor: pointer;&#34;&gt;
+  &lt;span class=&#34;rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400&#34;&gt;
+    Gpu
+  &lt;/span&gt;
+&lt;/span&gt;
+  &lt;/span&gt;
+  
+  &lt;span style=&#34;margin-top:0.5rem&#34; class=&#34;mr-2&#34; onclick=&#34;window.open(&amp;#34;/tags/legacy/&amp;#34;,&#39;_self&#39;);return false;&#34;&gt;
+    &lt;span class=&#34;flex&#34; style=&#34;cursor: pointer;&#34;&gt;
+  &lt;span class=&#34;rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400&#34;&gt;
+    Legacy
+  &lt;/span&gt;
+&lt;/span&gt;
+  &lt;/span&gt;
+  
+  &lt;span style=&#34;margin-top:0.5rem&#34; class=&#34;mr-2&#34; onclick=&#34;window.open(&amp;#34;/tags/linux/&amp;#34;,&#39;_self&#39;);return false;&#34;&gt;
+    &lt;span class=&#34;flex&#34; style=&#34;cursor: pointer;&#34;&gt;
+  &lt;span class=&#34;rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400&#34;&gt;
+    Linux
+  &lt;/span&gt;
+&lt;/span&gt;
+  &lt;/span&gt;
+  
+  &lt;span style=&#34;margin-top:0.5rem&#34; class=&#34;mr-2&#34; onclick=&#34;window.open(&amp;#34;/tags/opensource/&amp;#34;,&#39;_self&#39;);return false;&#34;&gt;
+    &lt;span class=&#34;flex&#34; style=&#34;cursor: pointer;&#34;&gt;
+  &lt;span class=&#34;rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400&#34;&gt;
+    Opensource
+  &lt;/span&gt;
+&lt;/span&gt;
+  &lt;/span&gt;
+  
+  &lt;span style=&#34;margin-top:0.5rem&#34; class=&#34;mr-2&#34; onclick=&#34;window.open(&amp;#34;/tags/bash/&amp;#34;,&#39;_self&#39;);return false;&#34;&gt;
+    &lt;span class=&#34;flex&#34; style=&#34;cursor: pointer;&#34;&gt;
+  &lt;span class=&#34;rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400&#34;&gt;
+    Bash
+  &lt;/span&gt;
+&lt;/span&gt;
+  &lt;/span&gt;
+  
+  &lt;span style=&#34;margin-top:0.5rem&#34; class=&#34;mr-2&#34; onclick=&#34;window.open(&amp;#34;/tags/script/&amp;#34;,&#39;_self&#39;);return false;&#34;&gt;
+    &lt;span class=&#34;flex&#34; style=&#34;cursor: pointer;&#34;&gt;
+  &lt;span class=&#34;rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400&#34;&gt;
+    Script
+  &lt;/span&gt;
+&lt;/span&gt;
+  &lt;/span&gt;
+  
+  
+  
+  
+&lt;/div&gt;
+
+
+
+
+      &lt;/div&gt;
+      
+    &lt;/div&gt;
+  &lt;/a&gt;
+
+        
+    
+&lt;/section&gt;
+&lt;p&gt;Another way would be to find a repo like &lt;strong&gt;Chaotic-AUR&lt;/strong&gt; enable it and install older drivers from there should they have them if you do not want to compile them yourself.&lt;/p&gt;
+
+&lt;section class=&#34;space-y-10 w-full&#34;&gt;
+    
+    
+        
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  &lt;a class=&#34;flex flex-wrap article &#34; href=&#34;https://xerolinux.xyz/posts/chaotic-aur/&#34;&gt;
+    
+        
+        &lt;div class=&#34;w-full md:w-auto h-full thumbnail nozoom thumbnailshadow md:mr-7&#34; style=&#34;background-image:url(/posts/chaotic-aur/featured.webp);&#34;&gt;&lt;/div&gt;
+        
+      &lt;div class=&#34; mt-3 md:mt-0&#34;&gt;
+      &lt;div class=&#34;items-center text-left text-xl font-semibold&#34;&gt;
+        
+        &lt;div class=&#34;font-bold text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral&#34;
+          href=&#34;https://xerolinux.xyz/posts/chaotic-aur/&#34;&gt;The Chaotic-AUR&lt;/div&gt;
+        
+        
+        
+      &lt;/div&gt;
+      &lt;div class=&#34;text-sm text-neutral-500 dark:text-neutral-400&#34;&gt;
+        
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+&lt;div class=&#34;flex flex-row flex-wrap items-center&#34;&gt;
+  
+  
+  &lt;time datetime=&#34;2024-07-03T00:00:00&amp;#43;00:00&#34;&gt;3 July 2024&lt;/time&gt;&lt;span class=&#34;px-2 text-primary-500&#34;&gt;&amp;middot;&lt;/span&gt;&lt;span title=&#34;Reading time&#34;&gt;2 mins&lt;/span&gt;&lt;span class=&#34;px-2 text-primary-500&#34;&gt;&amp;middot;&lt;/span&gt;&lt;span&gt;
+  
+  
+    
+    
+      
+      
+        
+        
+      
+      
+    
+  
+  &lt;span id=&#34;views_posts/chaotic-aur/index.md&#34; class=&#34;animate-pulse inline-block text-transparent max-h-3 rounded-full mt-[-2px] align-middle bg-neutral-300 dark:bg-neutral-400&#34; title=&#34;views&#34;&gt;loading&lt;/span&gt;
+  &lt;span class=&#34;inline-block align-text-bottom&#34;&gt;
+
+  &lt;span class=&#34;relative block icon&#34;&gt;
+    &lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 576 512&#34;&gt;
+&lt;path fill=&#34;currentColor&#34; d=&#34;M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z&#34;/&gt;&lt;/svg&gt;
+  &lt;/span&gt;
+
+&lt;/span&gt;
+&lt;/span&gt;&lt;span class=&#34;px-2 text-primary-500&#34;&gt;&amp;middot;&lt;/span&gt;&lt;span&gt;
+  
+  
+    
+    
+      
+      
+        
+        
+      
+      
+    
+  
+  &lt;span id=&#34;likes_posts/chaotic-aur/index.md&#34;
+    class=&#34;animate-pulse inline-block text-transparent max-h-3 rounded-full mt-[-2px] align-middle bg-neutral-300 dark:bg-neutral-400&#34;
+    title=&#34;likes&#34;&gt;loading&lt;/span&gt;
+  &lt;span class=&#34;inline-block align-text-bottom&#34;&gt;
+
+  &lt;span class=&#34;relative block icon&#34;&gt;
+    &lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 512 512&#34;&gt;
+&lt;path fill=&#34;currentColor&#34; d=&#34;M47.6 300.4L228.3 469.1c7.5 7 17.4 10.9 27.7 10.9s20.2-3.9 27.7-10.9L464.4 300.4c30.4-28.3 47.6-68 47.6-109.5v-5.8c0-69.9-50.5-129.5-119.4-141C347 36.5 300.6 51.4 268 84L256 96 244 84c-32.6-32.6-79-47.5-124.6-39.9C50.5 55.6 0 115.2 0 185.1v5.8c0 41.5 17.2 81.2 47.6 109.5z&#34;/&gt;&lt;/svg&gt;
+  &lt;/span&gt;
+
+&lt;/span&gt;
+&lt;/span&gt;
+  
+
+  
+  
+&lt;/div&gt;
+
+
+&lt;div class=&#34;flex flex-row flex-wrap items-center&#34;&gt;
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+&lt;/div&gt;
+
+
+
+
+&lt;div class=&#34;flex flex-row flex-wrap items-center&#34;&gt;
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  &lt;span style=&#34;margin-top:0.5rem&#34; class=&#34;mr-2&#34; onclick=&#34;window.open(&amp;#34;/tags/aur/&amp;#34;,&#39;_self&#39;);return false;&#34;&gt;
+    &lt;span class=&#34;flex&#34; style=&#34;cursor: pointer;&#34;&gt;
+  &lt;span class=&#34;rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400&#34;&gt;
+    AUR
+  &lt;/span&gt;
+&lt;/span&gt;
+  &lt;/span&gt;
+  
+  &lt;span style=&#34;margin-top:0.5rem&#34; class=&#34;mr-2&#34; onclick=&#34;window.open(&amp;#34;/tags/chaotic-aur/&amp;#34;,&#39;_self&#39;);return false;&#34;&gt;
+    &lt;span class=&#34;flex&#34; style=&#34;cursor: pointer;&#34;&gt;
+  &lt;span class=&#34;rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400&#34;&gt;
+    Chaotic-AUR
+  &lt;/span&gt;
+&lt;/span&gt;
+  &lt;/span&gt;
+  
+  &lt;span style=&#34;margin-top:0.5rem&#34; class=&#34;mr-2&#34; onclick=&#34;window.open(&amp;#34;/tags/repos/&amp;#34;,&#39;_self&#39;);return false;&#34;&gt;
+    &lt;span class=&#34;flex&#34; style=&#34;cursor: pointer;&#34;&gt;
+  &lt;span class=&#34;rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400&#34;&gt;
+    Repos
+  &lt;/span&gt;
+&lt;/span&gt;
+  &lt;/span&gt;
+  
+  &lt;span style=&#34;margin-top:0.5rem&#34; class=&#34;mr-2&#34; onclick=&#34;window.open(&amp;#34;/tags/repository/&amp;#34;,&#39;_self&#39;);return false;&#34;&gt;
+    &lt;span class=&#34;flex&#34; style=&#34;cursor: pointer;&#34;&gt;
+  &lt;span class=&#34;rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400&#34;&gt;
+    Repository
+  &lt;/span&gt;
+&lt;/span&gt;
+  &lt;/span&gt;
+  
+  &lt;span style=&#34;margin-top:0.5rem&#34; class=&#34;mr-2&#34; onclick=&#34;window.open(&amp;#34;/tags/archlinux/&amp;#34;,&#39;_self&#39;);return false;&#34;&gt;
+    &lt;span class=&#34;flex&#34; style=&#34;cursor: pointer;&#34;&gt;
+  &lt;span class=&#34;rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400&#34;&gt;
+    ArchLinux
+  &lt;/span&gt;
+&lt;/span&gt;
+  &lt;/span&gt;
+  
+  &lt;span style=&#34;margin-top:0.5rem&#34; class=&#34;mr-2&#34; onclick=&#34;window.open(&amp;#34;/tags/arch/&amp;#34;,&#39;_self&#39;);return false;&#34;&gt;
+    &lt;span class=&#34;flex&#34; style=&#34;cursor: pointer;&#34;&gt;
+  &lt;span class=&#34;rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400&#34;&gt;
+    Arch
+  &lt;/span&gt;
+&lt;/span&gt;
+  &lt;/span&gt;
+  
+  &lt;span style=&#34;margin-top:0.5rem&#34; class=&#34;mr-2&#34; onclick=&#34;window.open(&amp;#34;/tags/linux/&amp;#34;,&#39;_self&#39;);return false;&#34;&gt;
+    &lt;span class=&#34;flex&#34; style=&#34;cursor: pointer;&#34;&gt;
+  &lt;span class=&#34;rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400&#34;&gt;
+    Linux
+  &lt;/span&gt;
+&lt;/span&gt;
+  &lt;/span&gt;
+  
+  
+  
+  
+&lt;/div&gt;
+
+
+
+
+      &lt;/div&gt;
+      
+    &lt;/div&gt;
+  &lt;/a&gt;
+
+        
+    
+&lt;/section&gt;
+&lt;p&gt;But those methods are for the more &lt;em&gt;Linux-Savvy&lt;/em&gt; users out there, not for everyone. Anyway I hope this guide has helped you avoid any headaches.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Addendum :&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;From what I can see on &lt;strong&gt;ArchLinux&lt;/strong&gt; repos &lt;code&gt;nvidia-dkms&lt;/code&gt; will be the ones that will contain the &lt;strong&gt;Proprietary&lt;/strong&gt; blobs where &lt;code&gt;nvidia-open-dkms&lt;/code&gt; will have the &lt;strong&gt;Open Kernel Modules&lt;/strong&gt; moving forward, with us ending up with 2 Driver editions.&lt;/p&gt;
+&lt;p&gt;If that&amp;rsquo;s the case, you are safe to keep using the former for &lt;code&gt;Pascal&lt;/code&gt; and older cards with latter only being required if you are on &lt;code&gt;Turing&lt;/code&gt; or above. I must admit this can be a bit confusing for some newcomers to &lt;strong&gt;Linux&lt;/strong&gt;. Such is the life of a Linux user I guess.&lt;/p&gt;
+&lt;p&gt;Cheers !&lt;/p&gt;
+</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/nvidia-560xx/featured.webp" />
+    </item>
+    
+  </channel>
+</rss>

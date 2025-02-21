@@ -1,0 +1,548 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tiling on XeroLinux HQ</title>
+    <link>https://xerolinux.xyz/tags/tiling/</link>
+    <description>Recent content in Tiling on XeroLinux HQ</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>Proudly made in Lebanon &lt;img src=&#39;https://xerolinux.xyz/logos/lb.png&#39; alt=&#39;🇱🇧&#39; width=&#39;18&#39; height=&#39;18&#39; style=&#39;margin: 0; display: inline; vertical-align: middle;&#39;&gt;</copyright>
+    <lastBuildDate>Wed, 17 Jul 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://xerolinux.xyz/tags/tiling/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Gnome Tiling Shell</title>
+      <link>https://xerolinux.xyz/posts/tiling-shell/</link>
+      <pubDate>Wed, 17 Jul 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://xerolinux.xyz/posts/tiling-shell/</guid>
+      <description>&lt;p&gt;A quick one for today. I do not use &lt;strong&gt;Gnome&lt;/strong&gt; myself, but I keep a close eye on what&amp;rsquo;s going on. Recently &lt;a href=&#34;https://www.youtube.com/@DistroTube/videos&#34; target=&#34;_blank&#34;&gt;&lt;strong&gt;@DistroTube&lt;/strong&gt;&lt;/a&gt; made a video about an extension that most of you out there might like, so I thought, why not post about it here&amp;hellip;&lt;/p&gt;
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+      &lt;iframe allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&#34; allowfullscreen=&#34;allowfullscreen&#34; loading=&#34;eager&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; src=&#34;https://www.youtube.com/embed/zEe1CqlWKZ0?autoplay=0&amp;amp;controls=1&amp;amp;end=0&amp;amp;loop=0&amp;amp;mute=0&amp;amp;start=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;YouTube video&#34;&gt;&lt;/iframe&gt;
+    &lt;/div&gt;
+
+
+
+&lt;h3 class=&#34;relative group&#34;&gt;Tiling Shell Information 
+    &lt;div id=&#34;tiling-shell-information&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+    
+&lt;/h3&gt;
+&lt;p&gt;This is a Gnome Shell extension implementing modern windows tiling system by extending GNOME&amp;rsquo;s default 2 columns to any layout you want! Can be installed on Gnome Shells from 40 to 46 on X11 and Wayland: the most recent GNOME Shell is supported, and older releases will include all the features and bug fixes!&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;🤩 First and only extension that provides Windows 11&amp;rsquo;s snap assistant&lt;/li&gt;
+&lt;li&gt;🖥️🖥️ multiple monitors support, even with different scaling factors!&lt;/li&gt;
+&lt;li&gt;⚙️ Manage, edit, create and delete layouts with a built-in editor&lt;/li&gt;
+&lt;li&gt;💡 Layouts are not strict, you can span multiple tiles if you want&lt;/li&gt;
+&lt;li&gt;🚀 Automatically sets the same UI of your GNOME theme, for a seamless integration!&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;
+  &lt;figure&gt;
+    &lt;img class=&#34;my-0 rounded-md&#34; loading=&#34;lazy&#34; src=&#34;https://i.imgur.com/a7O9ITP.jpeg&#34; alt=&#34;TilingShell&#34; /&gt;
+    
+  &lt;/figure&gt;
+&lt;/p&gt;
+
+
+&lt;h3 class=&#34;relative group&#34;&gt;Tiling Shell Installation 
+    &lt;div id=&#34;tiling-shell-installation&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+    
+&lt;/h3&gt;
+&lt;p&gt;Before I tell you how to grab it, let me caution you with this&amp;hellip;&lt;/p&gt;
+
+  
+  
+  
+  
+
+
+
+&lt;div
+  
+    class=&#34;flex px-4 py-3 rounded-md&#34;
+    style=&#34;background-color: #6600FF&#34;
+  &gt;
+
+  &lt;span
+    
+      class=&#34;ltr:pr-3 rtl:pl-3 flex items-center&#34;
+      style=&#34;color: #66ffff&#34;
+    &gt;
+
+    
+
+  &lt;span class=&#34;relative block icon&#34;&gt;
+    &lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 448 512&#34;&gt;
+&lt;path fill=&#34;currentColor&#34;  d=&#34;M159.3 5.4c7.8-7.3 19.9-7.2 27.7 .1c27.6 25.9 53.5 53.8 77.7 84c11-14.4 23.5-30.1 37-42.9c7.9-7.4 20.1-7.4 28 .1c34.6 33 63.9 76.6 84.5 118c20.3 40.8 33.8 82.5 33.8 111.9C448 404.2 348.2 512 224 512C98.4 512 0 404.1 0 276.5c0-38.4 17.8-85.3 45.4-131.7C73.3 97.7 112.7 48.6 159.3 5.4zM225.7 416c25.3 0 47.7-7 68.8-21c42.1-29.4 53.4-88.2 28.1-134.4c-2.8-5.6-5.6-11.2-9.8-16.8l-50.6 58.8s-81.4-103.6-87.1-110.6C133.1 243.8 112 273.2 112 306.8C112 375.4 162.6 416 225.7 416z&#34;/&gt;&lt;/svg&gt;
+  &lt;/span&gt;
+
+
+  &lt;/span&gt;
+
+  &lt;span
+    
+      style=&#34;color: #f1faee&#34;
+    &gt;Grab it either from the &lt;a href=&#34;https://extensions.gnome.org/extension/7065/tiling-shell/&#34; target=&#34;_blank&#34;&gt;&lt;strong&gt;Gnome Extenstions&lt;/strong&gt;&lt;/a&gt; site or via the &lt;a href=&#34;https://flathub.org/apps/com.mattjakeman.ExtensionManager&#34; target=&#34;_blank&#34;&gt;&lt;strong&gt;Extension Manager&lt;/strong&gt;&lt;/a&gt; app &lt;em&gt;Not&lt;/em&gt; the &lt;strong&gt;A.U.R&lt;/strong&gt; or any repos.&lt;/span&gt;
+&lt;/div&gt;
+
+&lt;p&gt;With that out of the way, I say this coz many have tried grabbing it from the &lt;strong&gt;AUR&lt;/strong&gt; only to suffer maintainers lagging behind on updates. It&amp;rsquo;s better to get it straight from source rather than rely on a 3rd party maintainer (man in the middle).&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;If you are using the &lt;strong&gt;XeroLinux&lt;/strong&gt; toolkit, I added an option that will install everything you need to start customizing your &lt;strong&gt;Gnome&lt;/strong&gt; experience. Which includes the &lt;strong&gt;Extension Manager&lt;/strong&gt; application, that can be found under the &lt;strong&gt;4 : System Customization&lt;/strong&gt; menu.&lt;/p&gt;&lt;/blockquote&gt;
+&lt;a id=&#34;github-83f7d6739486881e48a315f6ff62190e&#34; target=&#34;_blank&#34; href=&#34;https://github.com/xerolinux/xlapit-cli&#34; class=&#34;cursor-pointer&#34;&gt;
+  &lt;div
+    class=&#34;w-full md:w-auto pt-3 p-5 border border-neutral-200 dark:border-neutral-700 border rounded-md shadow-2xl&#34;&gt;
+
+    &lt;div class=&#34;flex items-center&#34;&gt;
+      &lt;span class=&#34;text-2xl text-neutral-800 dark:text-neutral&#34; style=&#34;margin-right:10px;&#34;&gt;
+        
+
+  &lt;span class=&#34;relative block icon&#34;&gt;
+    &lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 496 512&#34;&gt;&lt;path fill=&#34;currentColor&#34; d=&#34;M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z&#34;/&gt;&lt;/svg&gt;
+
+  &lt;/span&gt;
+
+
+      &lt;/span&gt;
+      &lt;div
+        id=&#34;github-83f7d6739486881e48a315f6ff62190e-full_name&#34;
+        class=&#34;m-0 font-bold text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral&#34;&gt;
+        xerolinux/xlapit-cli
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;p id=&#34;github-83f7d6739486881e48a315f6ff62190e-description&#34; class=&#34;m-0 mt-2 text-md text-neutral-800 dark:text-neutral&#34;&gt;
+      XeroLinux Arch Post Install Toolkit Package Source Code
+    &lt;/p&gt;
+
+    &lt;div class=&#34;m-0 mt-2 flex items-center&#34;&gt;
+
+      &lt;span class=&#34;mr-1 inline-block h-3 w-3 rounded-full&#34;
+        style=&#34;background-color: #89e051&#34;&gt;&lt;/span&gt;
+      &lt;div class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
+         Shell 
+      &lt;/div&gt;
+
+      &lt;span class=&#34;text-md mr-1 text-neutral-800 dark:text-neutral&#34;&gt;
+        
+
+  &lt;span class=&#34;relative block icon&#34;&gt;
+    &lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 576 512&#34;&gt;&lt;path fill=&#34;currentColor&#34; d=&#34;M287.9 0C297.1 0 305.5 5.25 309.5 13.52L378.1 154.8L531.4 177.5C540.4 178.8 547.8 185.1 550.7 193.7C553.5 202.4 551.2 211.9 544.8 218.2L433.6 328.4L459.9 483.9C461.4 492.9 457.7 502.1 450.2 507.4C442.8 512.7 432.1 513.4 424.9 509.1L287.9 435.9L150.1 509.1C142.9 513.4 133.1 512.7 125.6 507.4C118.2 502.1 114.5 492.9 115.1 483.9L142.2 328.4L31.11 218.2C24.65 211.9 22.36 202.4 25.2 193.7C28.03 185.1 35.5 178.8 44.49 177.5L197.7 154.8L266.3 13.52C270.4 5.249 278.7 0 287.9 0L287.9 0zM287.9 78.95L235.4 187.2C231.9 194.3 225.1 199.3 217.3 200.5L98.98 217.9L184.9 303C190.4 308.5 192.9 316.4 191.6 324.1L171.4 443.7L276.6 387.5C283.7 383.7 292.2 383.7 299.2 387.5L404.4 443.7L384.2 324.1C382.9 316.4 385.5 308.5 391 303L476.9 217.9L358.6 200.5C350.7 199.3 343.9 194.3 340.5 187.2L287.9 78.95z&#34;/&gt;&lt;/svg&gt;
+  &lt;/span&gt;
+
+
+      &lt;/span&gt;
+      &lt;div id=&#34;github-83f7d6739486881e48a315f6ff62190e-stargazers&#34; class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
+<<<<<<< HEAD
+        43
+=======
+        55
+>>>>>>> a9bf7f74b9df3f07d0e74e79a2de68647eb7faf6
+      &lt;/div&gt;
+
+      &lt;span class=&#34;text-md mr-1 text-neutral-800 dark:text-neutral&#34;&gt;
+        
+
+  &lt;span class=&#34;relative block icon&#34;&gt;
+    &lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 448 512&#34;&gt;&lt;path fill=&#34;currentColor&#34; d=&#34;M80 104c13.3 0 24-10.7 24-24s-10.7-24-24-24S56 66.7 56 80s10.7 24 24 24zm80-24c0 32.8-19.7 61-48 73.3V192c0 17.7 14.3 32 32 32H304c17.7 0 32-14.3 32-32V153.3C307.7 141 288 112.8 288 80c0-44.2 35.8-80 80-80s80 35.8 80 80c0 32.8-19.7 61-48 73.3V192c0 53-43 96-96 96H256v70.7c28.3 12.3 48 40.5 48 73.3c0 44.2-35.8 80-80 80s-80-35.8-80-80c0-32.8 19.7-61 48-73.3V288H144c-53 0-96-43-96-96V153.3C19.7 141 0 112.8 0 80C0 35.8 35.8 0 80 0s80 35.8 80 80zm208 24c13.3 0 24-10.7 24-24s-10.7-24-24-24s-24 10.7-24 24s10.7 24 24 24zM248 432c0-13.3-10.7-24-24-24s-24 10.7-24 24s10.7 24 24 24s24-10.7 24-24z&#34;/&gt;&lt;/svg&gt;
+  &lt;/span&gt;
+
+
+      &lt;/span&gt;
+      &lt;div id=&#34;github-83f7d6739486881e48a315f6ff62190e-forks&#34; class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
+        8
+      &lt;/div&gt;
+
+    &lt;/div&gt;
+
+  &lt;/div&gt;
+  &lt;script&gt;
+    fetch(&#34;https://api.github.com/repos/xerolinux/xlapit-cli&#34;, {
+      headers: new Headers({
+        &#39;User-agent&#39;: &#39;Mozilla/4.0 Custom User Agent&#39;
+      })
+    })
+      .then(response =&gt; response.json())
+      .then(data =&gt; {
+        document.getElementById(&#39;github-83f7d6739486881e48a315f6ff62190e-full_name&#39;).innerHTML = data.full_name;
+        document.getElementById(&#39;github-83f7d6739486881e48a315f6ff62190e-description&#39;).innerHTML = data.description;
+        document.getElementById(&#39;github-83f7d6739486881e48a315f6ff62190e-stargazers&#39;).innerHTML = data.stargazers_count;
+        document.getElementById(&#39;github-83f7d6739486881e48a315f6ff62190e-forks&#39;).innerHTML = data.forks;
+      })
+      .catch(error =&gt; console.error(error))
+  &lt;/script&gt;
+&lt;/a&gt;
+&lt;p&gt;Now that you got the extension installed, here&amp;rsquo;s some usage tips.&lt;/p&gt;
+
+
+&lt;h3 class=&#34;relative group&#34;&gt;Tiling Shell Usage 
+    &lt;div id=&#34;tiling-shell-usage&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+    
+&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Tiling System&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;When grabbing and moving a window, press &lt;code&gt;CTRL&lt;/code&gt; key to show the tiling layout (you can choose another key from the preferences). When moving on a tile, it will highlight. Ungrab the window to place that window on the highlighted tile.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;This extension and the tiling system also implements Windows PowerToys FancyZones!&lt;/p&gt;&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Snap Assistant&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;When grabbing and moving a window, the snap assistant will be available on top of the screen. Move the window near it to activate the snap assistant. While still grabbing the window, move your mouse to the tile you are interested in. By stopping grabbing the window will be tiled to the selected tile!&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Select a layout&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Click on Tiling Shell&amp;rsquo;s panel indicator and the available layouts will be shown. Select the one you prefer by clicking on it. That layout will be applied to every monitor in case you have more than one.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Select multiple tiles&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The layout is not strict. You can select multiple tiles too! Just hold ALT while using the tiling system (you can choose another key from the preferences).&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Split a tile : &lt;code&gt;LEFT CLICK&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Split a tile vertically : &lt;code&gt;LEFT CLICK&lt;/code&gt; + &lt;code&gt;CTRL&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Delete a tile : &lt;code&gt;RIGHT CLICK&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Save, or open the menu : Click the tray icon&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Smart resize&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;You can resize adjacent tiled windows together!&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;It can be enabled/disabled from the preferences&lt;/p&gt;&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Tile using Keyboard&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Move window through the tiles using keyboard shortcuts &lt;code&gt;(SUPER+←/↑/↓/→)&lt;/code&gt;. They can be customized from the preferences!&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Edge Tiling&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;You can tile a window by moving it to the edge.&lt;/p&gt;
+
+
+&lt;h3 class=&#34;relative group&#34;&gt;Wrapping up 
+    &lt;div id=&#34;wrapping-up&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+    
+&lt;/h3&gt;
+&lt;p&gt;That covers the basics. Now I just copy pasted from project &lt;strong&gt;Git&lt;/strong&gt;, where you will find much more info, and can report issues should you encounter any. Here, I linked it below..&lt;/p&gt;
+&lt;a id=&#34;github-960f7422cbeadeb866eb2380db36e9a2&#34; target=&#34;_blank&#34; href=&#34;https://github.com/domferr/tilingshell&#34; class=&#34;cursor-pointer&#34;&gt;
+  &lt;div
+    class=&#34;w-full md:w-auto pt-3 p-5 border border-neutral-200 dark:border-neutral-700 border rounded-md shadow-2xl&#34;&gt;
+
+    &lt;div class=&#34;flex items-center&#34;&gt;
+      &lt;span class=&#34;text-2xl text-neutral-800 dark:text-neutral&#34; style=&#34;margin-right:10px;&#34;&gt;
+        
+
+  &lt;span class=&#34;relative block icon&#34;&gt;
+    &lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 496 512&#34;&gt;&lt;path fill=&#34;currentColor&#34; d=&#34;M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z&#34;/&gt;&lt;/svg&gt;
+
+  &lt;/span&gt;
+
+
+      &lt;/span&gt;
+      &lt;div
+        id=&#34;github-960f7422cbeadeb866eb2380db36e9a2-full_name&#34;
+        class=&#34;m-0 font-bold text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral&#34;&gt;
+        domferr/tilingshell
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;p id=&#34;github-960f7422cbeadeb866eb2380db36e9a2-description&#34; class=&#34;m-0 mt-2 text-md text-neutral-800 dark:text-neutral&#34;&gt;
+      Extend Gnome Shell with advanced tiling window management. Supports multiple monitors, Windows 11 Snap Assistant, Fancy Zones, customised tiling layouts and more.
+    &lt;/p&gt;
+
+    &lt;div class=&#34;m-0 mt-2 flex items-center&#34;&gt;
+
+      &lt;span class=&#34;mr-1 inline-block h-3 w-3 rounded-full&#34;
+        style=&#34;background-color: #2b7489&#34;&gt;&lt;/span&gt;
+      &lt;div class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
+         TypeScript 
+      &lt;/div&gt;
+
+      &lt;span class=&#34;text-md mr-1 text-neutral-800 dark:text-neutral&#34;&gt;
+        
+
+  &lt;span class=&#34;relative block icon&#34;&gt;
+    &lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 576 512&#34;&gt;&lt;path fill=&#34;currentColor&#34; d=&#34;M287.9 0C297.1 0 305.5 5.25 309.5 13.52L378.1 154.8L531.4 177.5C540.4 178.8 547.8 185.1 550.7 193.7C553.5 202.4 551.2 211.9 544.8 218.2L433.6 328.4L459.9 483.9C461.4 492.9 457.7 502.1 450.2 507.4C442.8 512.7 432.1 513.4 424.9 509.1L287.9 435.9L150.1 509.1C142.9 513.4 133.1 512.7 125.6 507.4C118.2 502.1 114.5 492.9 115.1 483.9L142.2 328.4L31.11 218.2C24.65 211.9 22.36 202.4 25.2 193.7C28.03 185.1 35.5 178.8 44.49 177.5L197.7 154.8L266.3 13.52C270.4 5.249 278.7 0 287.9 0L287.9 0zM287.9 78.95L235.4 187.2C231.9 194.3 225.1 199.3 217.3 200.5L98.98 217.9L184.9 303C190.4 308.5 192.9 316.4 191.6 324.1L171.4 443.7L276.6 387.5C283.7 383.7 292.2 383.7 299.2 387.5L404.4 443.7L384.2 324.1C382.9 316.4 385.5 308.5 391 303L476.9 217.9L358.6 200.5C350.7 199.3 343.9 194.3 340.5 187.2L287.9 78.95z&#34;/&gt;&lt;/svg&gt;
+  &lt;/span&gt;
+
+
+      &lt;/span&gt;
+      &lt;div id=&#34;github-960f7422cbeadeb866eb2380db36e9a2-stargazers&#34; class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
+<<<<<<< HEAD
+        357
+=======
+        625
+>>>>>>> a9bf7f74b9df3f07d0e74e79a2de68647eb7faf6
+      &lt;/div&gt;
+
+      &lt;span class=&#34;text-md mr-1 text-neutral-800 dark:text-neutral&#34;&gt;
+        
+
+  &lt;span class=&#34;relative block icon&#34;&gt;
+    &lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 448 512&#34;&gt;&lt;path fill=&#34;currentColor&#34; d=&#34;M80 104c13.3 0 24-10.7 24-24s-10.7-24-24-24S56 66.7 56 80s10.7 24 24 24zm80-24c0 32.8-19.7 61-48 73.3V192c0 17.7 14.3 32 32 32H304c17.7 0 32-14.3 32-32V153.3C307.7 141 288 112.8 288 80c0-44.2 35.8-80 80-80s80 35.8 80 80c0 32.8-19.7 61-48 73.3V192c0 53-43 96-96 96H256v70.7c28.3 12.3 48 40.5 48 73.3c0 44.2-35.8 80-80 80s-80-35.8-80-80c0-32.8 19.7-61 48-73.3V288H144c-53 0-96-43-96-96V153.3C19.7 141 0 112.8 0 80C0 35.8 35.8 0 80 0s80 35.8 80 80zm208 24c13.3 0 24-10.7 24-24s-10.7-24-24-24s-24 10.7-24 24s10.7 24 24 24zM248 432c0-13.3-10.7-24-24-24s-24 10.7-24 24s10.7 24 24 24s24-10.7 24-24z&#34;/&gt;&lt;/svg&gt;
+  &lt;/span&gt;
+
+
+      &lt;/span&gt;
+      &lt;div id=&#34;github-960f7422cbeadeb866eb2380db36e9a2-forks&#34; class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
+<<<<<<< HEAD
+        5
+=======
+        18
+>>>>>>> a9bf7f74b9df3f07d0e74e79a2de68647eb7faf6
+      &lt;/div&gt;
+
+    &lt;/div&gt;
+
+  &lt;/div&gt;
+  &lt;script&gt;
+    fetch(&#34;https://api.github.com/repos/domferr/tilingshell&#34;, {
+      headers: new Headers({
+        &#39;User-agent&#39;: &#39;Mozilla/4.0 Custom User Agent&#39;
+      })
+    })
+      .then(response =&gt; response.json())
+      .then(data =&gt; {
+        document.getElementById(&#39;github-960f7422cbeadeb866eb2380db36e9a2-full_name&#39;).innerHTML = data.full_name;
+        document.getElementById(&#39;github-960f7422cbeadeb866eb2380db36e9a2-description&#39;).innerHTML = data.description;
+        document.getElementById(&#39;github-960f7422cbeadeb866eb2380db36e9a2-stargazers&#39;).innerHTML = data.stargazers_count;
+        document.getElementById(&#39;github-960f7422cbeadeb866eb2380db36e9a2-forks&#39;).innerHTML = data.forks;
+      })
+      .catch(error =&gt; console.error(error))
+  &lt;/script&gt;
+&lt;/a&gt;
+&lt;p&gt;Even though I do not like or use &lt;strong&gt;Window Tiling&lt;/strong&gt; myself, I think the developer behind this extension was heavily &lt;em&gt;inspired&lt;/em&gt; by Windows&amp;rsquo; &lt;a href=&#34;https://learn.microsoft.com/en-us/windows/powertoys/fancyzones&#34; target=&#34;_blank&#34;&gt;&lt;strong&gt;PowerToys Fancy Zones&lt;/strong&gt;&lt;/a&gt;. I do not find this wrong in the slightest, on the contrary, it&amp;rsquo;s one of Windows&amp;rsquo; best features IMO. It&amp;rsquo;s nice to see it make its way to &lt;strong&gt;Linux&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;With Windows constantly shooting itself in the foot, it&amp;rsquo;s fun to see its most useful parts being cherry picked and ported to &lt;strong&gt;Linux&lt;/strong&gt;. Windows&amp;rsquo; loss is &lt;strong&gt;Liinux&lt;/strong&gt;&amp;rsquo;s gain lol. Well, I hope you enjoy this neat little extension&amp;hellip;&lt;/p&gt;
+
+
+&lt;h3 class=&#34;relative group&#34;&gt;Honorable mention 
+    &lt;div id=&#34;honorable-mention&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+    
+&lt;/h3&gt;
+&lt;p&gt;As a bonus, I would like to mention another &lt;em&gt;Tiling&lt;/em&gt; extension. But before I mention which, I want you to keep in mind that sometimes this extension, like many others tends to lag behind major &lt;strong&gt;Gnome&lt;/strong&gt; releases, so for example when &lt;strong&gt;Gnome 47&lt;/strong&gt; lands, you will have to disable it and wait a while before it&amp;rsquo;s updated adding in support.&lt;/p&gt;
+&lt;p&gt;Now, with &lt;strong&gt;TilingShell&lt;/strong&gt; covering newcomers from Windows, the extension am talking about here, is none other than &lt;a href=&#34;https://extensions.gnome.org/extension/4481/forge/&#34; target=&#34;_blank&#34;&gt;&lt;strong&gt;Forge&lt;/strong&gt;&lt;/a&gt;, specifically targeted to those coming from a &lt;em&gt;Tiling Window Manager&lt;/em&gt;, who prefer that way of doing things.&lt;/p&gt;
+&lt;p&gt;
+  &lt;figure&gt;
+    &lt;img class=&#34;my-0 rounded-md&#34; loading=&#34;lazy&#34; src=&#34;https://i.imgur.com/ncyrt2L.png&#34; alt=&#34;Forge&#34; /&gt;
+    
+  &lt;/figure&gt;
+&lt;/p&gt;
+&lt;p&gt;To install it use the aforementioned &lt;strong&gt;Extension Manager&lt;/strong&gt; app. For more information about its features and how to use it, link to project&amp;rsquo;s &lt;strong&gt;Git&lt;/strong&gt; found below. Enjoy your experience on &lt;strong&gt;Gnome&lt;/strong&gt; my fellow &lt;strong&gt;FOSS G33ks&lt;/strong&gt;&amp;hellip;&lt;/p&gt;
+&lt;a id=&#34;github-759ccb72510e521a6d6a62d8e54d138b&#34; target=&#34;_blank&#34; href=&#34;https://github.com/forge-ext/forge&#34; class=&#34;cursor-pointer&#34;&gt;
+  &lt;div
+    class=&#34;w-full md:w-auto pt-3 p-5 border border-neutral-200 dark:border-neutral-700 border rounded-md shadow-2xl&#34;&gt;
+
+    &lt;div class=&#34;flex items-center&#34;&gt;
+      &lt;span class=&#34;text-2xl text-neutral-800 dark:text-neutral&#34; style=&#34;margin-right:10px;&#34;&gt;
+        
+
+  &lt;span class=&#34;relative block icon&#34;&gt;
+    &lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 496 512&#34;&gt;&lt;path fill=&#34;currentColor&#34; d=&#34;M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z&#34;/&gt;&lt;/svg&gt;
+
+  &lt;/span&gt;
+
+
+      &lt;/span&gt;
+      &lt;div
+        id=&#34;github-759ccb72510e521a6d6a62d8e54d138b-full_name&#34;
+        class=&#34;m-0 font-bold text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral&#34;&gt;
+        forge-ext/forge
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;p id=&#34;github-759ccb72510e521a6d6a62d8e54d138b-description&#34; class=&#34;m-0 mt-2 text-md text-neutral-800 dark:text-neutral&#34;&gt;
+      Forge - Tiling and Window Manager for Gnome-Shell
+    &lt;/p&gt;
+
+    &lt;div class=&#34;m-0 mt-2 flex items-center&#34;&gt;
+
+      &lt;span class=&#34;mr-1 inline-block h-3 w-3 rounded-full&#34;
+        style=&#34;background-color: #f1e05a&#34;&gt;&lt;/span&gt;
+      &lt;div class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
+         JavaScript 
+      &lt;/div&gt;
+
+      &lt;span class=&#34;text-md mr-1 text-neutral-800 dark:text-neutral&#34;&gt;
+        
+
+  &lt;span class=&#34;relative block icon&#34;&gt;
+    &lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 576 512&#34;&gt;&lt;path fill=&#34;currentColor&#34; d=&#34;M287.9 0C297.1 0 305.5 5.25 309.5 13.52L378.1 154.8L531.4 177.5C540.4 178.8 547.8 185.1 550.7 193.7C553.5 202.4 551.2 211.9 544.8 218.2L433.6 328.4L459.9 483.9C461.4 492.9 457.7 502.1 450.2 507.4C442.8 512.7 432.1 513.4 424.9 509.1L287.9 435.9L150.1 509.1C142.9 513.4 133.1 512.7 125.6 507.4C118.2 502.1 114.5 492.9 115.1 483.9L142.2 328.4L31.11 218.2C24.65 211.9 22.36 202.4 25.2 193.7C28.03 185.1 35.5 178.8 44.49 177.5L197.7 154.8L266.3 13.52C270.4 5.249 278.7 0 287.9 0L287.9 0zM287.9 78.95L235.4 187.2C231.9 194.3 225.1 199.3 217.3 200.5L98.98 217.9L184.9 303C190.4 308.5 192.9 316.4 191.6 324.1L171.4 443.7L276.6 387.5C283.7 383.7 292.2 383.7 299.2 387.5L404.4 443.7L384.2 324.1C382.9 316.4 385.5 308.5 391 303L476.9 217.9L358.6 200.5C350.7 199.3 343.9 194.3 340.5 187.2L287.9 78.95z&#34;/&gt;&lt;/svg&gt;
+  &lt;/span&gt;
+
+
+      &lt;/span&gt;
+      &lt;div id=&#34;github-759ccb72510e521a6d6a62d8e54d138b-stargazers&#34; class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
+<<<<<<< HEAD
+        877
+=======
+        930
+>>>>>>> a9bf7f74b9df3f07d0e74e79a2de68647eb7faf6
+      &lt;/div&gt;
+
+      &lt;span class=&#34;text-md mr-1 text-neutral-800 dark:text-neutral&#34;&gt;
+        
+
+  &lt;span class=&#34;relative block icon&#34;&gt;
+    &lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 448 512&#34;&gt;&lt;path fill=&#34;currentColor&#34; d=&#34;M80 104c13.3 0 24-10.7 24-24s-10.7-24-24-24S56 66.7 56 80s10.7 24 24 24zm80-24c0 32.8-19.7 61-48 73.3V192c0 17.7 14.3 32 32 32H304c17.7 0 32-14.3 32-32V153.3C307.7 141 288 112.8 288 80c0-44.2 35.8-80 80-80s80 35.8 80 80c0 32.8-19.7 61-48 73.3V192c0 53-43 96-96 96H256v70.7c28.3 12.3 48 40.5 48 73.3c0 44.2-35.8 80-80 80s-80-35.8-80-80c0-32.8 19.7-61 48-73.3V288H144c-53 0-96-43-96-96V153.3C19.7 141 0 112.8 0 80C0 35.8 35.8 0 80 0s80 35.8 80 80zm208 24c13.3 0 24-10.7 24-24s-10.7-24-24-24s-24 10.7-24 24s10.7 24 24 24zM248 432c0-13.3-10.7-24-24-24s-24 10.7-24 24s10.7 24 24 24s24-10.7 24-24z&#34;/&gt;&lt;/svg&gt;
+  &lt;/span&gt;
+
+
+      &lt;/span&gt;
+      &lt;div id=&#34;github-759ccb72510e521a6d6a62d8e54d138b-forks&#34; class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
+<<<<<<< HEAD
+        43
+=======
+        49
+>>>>>>> a9bf7f74b9df3f07d0e74e79a2de68647eb7faf6
+      &lt;/div&gt;
+
+    &lt;/div&gt;
+
+  &lt;/div&gt;
+  &lt;script&gt;
+    fetch(&#34;https://api.github.com/repos/forge-ext/forge&#34;, {
+      headers: new Headers({
+        &#39;User-agent&#39;: &#39;Mozilla/4.0 Custom User Agent&#39;
+      })
+    })
+      .then(response =&gt; response.json())
+      .then(data =&gt; {
+        document.getElementById(&#39;github-759ccb72510e521a6d6a62d8e54d138b-full_name&#39;).innerHTML = data.full_name;
+        document.getElementById(&#39;github-759ccb72510e521a6d6a62d8e54d138b-description&#39;).innerHTML = data.description;
+        document.getElementById(&#39;github-759ccb72510e521a6d6a62d8e54d138b-stargazers&#39;).innerHTML = data.stargazers_count;
+        document.getElementById(&#39;github-759ccb72510e521a6d6a62d8e54d138b-forks&#39;).innerHTML = data.forks;
+      })
+      .catch(error =&gt; console.error(error))
+  &lt;/script&gt;
+&lt;/a&gt;
+&lt;p&gt;That’s it folks&amp;hellip;&lt;/p&gt;
+&lt;p&gt;Cheers !&lt;/p&gt;
+</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/tiling-shell/featured.webp" />
+    </item>
+    
+    <item>
+      <title>Zellij Dev&#39;s Best Friend</title>
+      <link>https://xerolinux.xyz/posts/zellij-terminal/</link>
+      <pubDate>Sat, 29 Jun 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://xerolinux.xyz/posts/zellij-terminal/</guid>
+      <description>
+
+&lt;h3 class=&#34;relative group&#34;&gt;What is Zellij? 
+    &lt;div id=&#34;what-is-zellij&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+    
+&lt;/h3&gt;
+&lt;p&gt;Another day another Terminal utility. &lt;strong&gt;Zellij&lt;/strong&gt; is a terminal workspace. It has the base functionality of a terminal multiplexer (similar to &lt;code&gt;tmux&lt;/code&gt; or &lt;code&gt;screen&lt;/code&gt;) but includes many built-in features that would allow users to extend it and create their own personalized environment. Visit &lt;a href=&#34;https://zellij.dev&#34; target=&#34;_blank&#34;&gt;&lt;strong&gt;Official Site&lt;/strong&gt;&lt;/a&gt; for more. Or watch video below.&lt;/p&gt;
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+      &lt;iframe allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&#34; allowfullscreen=&#34;allowfullscreen&#34; loading=&#34;eager&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; src=&#34;https://www.youtube.com/embed/ZPfQS5FHNYQ?autoplay=0&amp;amp;controls=1&amp;amp;end=0&amp;amp;loop=0&amp;amp;mute=0&amp;amp;start=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;YouTube video&#34;&gt;&lt;/iframe&gt;
+    &lt;/div&gt;
+
+
+
+&lt;h3 class=&#34;relative group&#34;&gt;How to get it? 
+    &lt;div id=&#34;how-to-get-it&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+    
+&lt;/h3&gt;
+&lt;p&gt;There are 2 ways to get it, either via your Arch package manager or a CURL command. However the devs recommend the latter. I will post both below.&lt;/p&gt;
+&lt;p&gt;
+  &lt;figure&gt;
+    &lt;img class=&#34;my-0 rounded-md&#34; loading=&#34;lazy&#34; src=&#34;https://raw.githubusercontent.com/zellij-org/zellij/main/assets/demo.gif&#34; alt=&#34;Zellij&#34; /&gt;
+    
+  &lt;/figure&gt;
+&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;- Arch&amp;rsquo;s Pacman&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo pacman -S --noconfirm zellij
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;- Recommended CURL command&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;bash &amp;lt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;curl -L zellij.dev/launch&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;However you choose to get it is up to you. Anyway here&amp;rsquo;s a link to their &lt;strong&gt;Github&lt;/strong&gt; page below.&lt;/p&gt;
+&lt;a id=&#34;github-d4629d5be933fe5b06f61e7e2b4973ce&#34; target=&#34;_blank&#34; href=&#34;https://github.com/zellij-org/zellij&#34; class=&#34;cursor-pointer&#34;&gt;
+  &lt;div
+    class=&#34;w-full md:w-auto pt-3 p-5 border border-neutral-200 dark:border-neutral-700 border rounded-md shadow-2xl&#34;&gt;
+
+    &lt;div class=&#34;flex items-center&#34;&gt;
+      &lt;span class=&#34;text-2xl text-neutral-800 dark:text-neutral&#34; style=&#34;margin-right:10px;&#34;&gt;
+        
+
+  &lt;span class=&#34;relative block icon&#34;&gt;
+    &lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 496 512&#34;&gt;&lt;path fill=&#34;currentColor&#34; d=&#34;M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z&#34;/&gt;&lt;/svg&gt;
+
+  &lt;/span&gt;
+
+
+      &lt;/span&gt;
+      &lt;div
+        id=&#34;github-d4629d5be933fe5b06f61e7e2b4973ce-full_name&#34;
+        class=&#34;m-0 font-bold text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral&#34;&gt;
+        zellij-org/zellij
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;p id=&#34;github-d4629d5be933fe5b06f61e7e2b4973ce-description&#34; class=&#34;m-0 mt-2 text-md text-neutral-800 dark:text-neutral&#34;&gt;
+      A terminal workspace with batteries included
+    &lt;/p&gt;
+
+    &lt;div class=&#34;m-0 mt-2 flex items-center&#34;&gt;
+
+      &lt;span class=&#34;mr-1 inline-block h-3 w-3 rounded-full&#34;
+        style=&#34;background-color: #dea584&#34;&gt;&lt;/span&gt;
+      &lt;div class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
+         Rust 
+      &lt;/div&gt;
+
+      &lt;span class=&#34;text-md mr-1 text-neutral-800 dark:text-neutral&#34;&gt;
+        
+
+  &lt;span class=&#34;relative block icon&#34;&gt;
+    &lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 576 512&#34;&gt;&lt;path fill=&#34;currentColor&#34; d=&#34;M287.9 0C297.1 0 305.5 5.25 309.5 13.52L378.1 154.8L531.4 177.5C540.4 178.8 547.8 185.1 550.7 193.7C553.5 202.4 551.2 211.9 544.8 218.2L433.6 328.4L459.9 483.9C461.4 492.9 457.7 502.1 450.2 507.4C442.8 512.7 432.1 513.4 424.9 509.1L287.9 435.9L150.1 509.1C142.9 513.4 133.1 512.7 125.6 507.4C118.2 502.1 114.5 492.9 115.1 483.9L142.2 328.4L31.11 218.2C24.65 211.9 22.36 202.4 25.2 193.7C28.03 185.1 35.5 178.8 44.49 177.5L197.7 154.8L266.3 13.52C270.4 5.249 278.7 0 287.9 0L287.9 0zM287.9 78.95L235.4 187.2C231.9 194.3 225.1 199.3 217.3 200.5L98.98 217.9L184.9 303C190.4 308.5 192.9 316.4 191.6 324.1L171.4 443.7L276.6 387.5C283.7 383.7 292.2 383.7 299.2 387.5L404.4 443.7L384.2 324.1C382.9 316.4 385.5 308.5 391 303L476.9 217.9L358.6 200.5C350.7 199.3 343.9 194.3 340.5 187.2L287.9 78.95z&#34;/&gt;&lt;/svg&gt;
+  &lt;/span&gt;
+
+
+      &lt;/span&gt;
+      &lt;div id=&#34;github-d4629d5be933fe5b06f61e7e2b4973ce-stargazers&#34; class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
+<<<<<<< HEAD
+        20039
+=======
+        21743
+>>>>>>> a9bf7f74b9df3f07d0e74e79a2de68647eb7faf6
+      &lt;/div&gt;
+
+      &lt;span class=&#34;text-md mr-1 text-neutral-800 dark:text-neutral&#34;&gt;
+        
+
+  &lt;span class=&#34;relative block icon&#34;&gt;
+    &lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 448 512&#34;&gt;&lt;path fill=&#34;currentColor&#34; d=&#34;M80 104c13.3 0 24-10.7 24-24s-10.7-24-24-24S56 66.7 56 80s10.7 24 24 24zm80-24c0 32.8-19.7 61-48 73.3V192c0 17.7 14.3 32 32 32H304c17.7 0 32-14.3 32-32V153.3C307.7 141 288 112.8 288 80c0-44.2 35.8-80 80-80s80 35.8 80 80c0 32.8-19.7 61-48 73.3V192c0 53-43 96-96 96H256v70.7c28.3 12.3 48 40.5 48 73.3c0 44.2-35.8 80-80 80s-80-35.8-80-80c0-32.8 19.7-61 48-73.3V288H144c-53 0-96-43-96-96V153.3C19.7 141 0 112.8 0 80C0 35.8 35.8 0 80 0s80 35.8 80 80zm208 24c13.3 0 24-10.7 24-24s-10.7-24-24-24s-24 10.7-24 24s10.7 24 24 24zM248 432c0-13.3-10.7-24-24-24s-24 10.7-24 24s10.7 24 24 24s24-10.7 24-24z&#34;/&gt;&lt;/svg&gt;
+  &lt;/span&gt;
+
+
+      &lt;/span&gt;
+      &lt;div id=&#34;github-d4629d5be933fe5b06f61e7e2b4973ce-forks&#34; class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
+<<<<<<< HEAD
+        626
+=======
+        658
+>>>>>>> a9bf7f74b9df3f07d0e74e79a2de68647eb7faf6
+      &lt;/div&gt;
+
+    &lt;/div&gt;
+
+  &lt;/div&gt;
+  &lt;script&gt;
+    fetch(&#34;https://api.github.com/repos/zellij-org/zellij&#34;, {
+      headers: new Headers({
+        &#39;User-agent&#39;: &#39;Mozilla/4.0 Custom User Agent&#39;
+      })
+    })
+      .then(response =&gt; response.json())
+      .then(data =&gt; {
+        document.getElementById(&#39;github-d4629d5be933fe5b06f61e7e2b4973ce-full_name&#39;).innerHTML = data.full_name;
+        document.getElementById(&#39;github-d4629d5be933fe5b06f61e7e2b4973ce-description&#39;).innerHTML = data.description;
+        document.getElementById(&#39;github-d4629d5be933fe5b06f61e7e2b4973ce-stargazers&#39;).innerHTML = data.stargazers_count;
+        document.getElementById(&#39;github-d4629d5be933fe5b06f61e7e2b4973ce-forks&#39;).innerHTML = data.forks;
+      })
+      .catch(error =&gt; console.error(error))
+  &lt;/script&gt;
+&lt;/a&gt;
+&lt;p&gt;Enjoy :heart:&lt;/p&gt;
+</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/zellij-terminal/featured.webp" />
+    </item>
+    
+  </channel>
+</rss>

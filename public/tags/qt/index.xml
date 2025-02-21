@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Qt on XeroLinux HQ</title>
+    <link>https://xerolinux.xyz/tags/qt/</link>
+    <description>Recent content in Qt on XeroLinux HQ</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>Proudly made in Lebanon &lt;img src=&#39;https://xerolinux.xyz/logos/lb.png&#39; alt=&#39;🇱🇧&#39; width=&#39;18&#39; height=&#39;18&#39; style=&#39;margin: 0; display: inline; vertical-align: middle;&#39;&gt;</copyright>
+    <lastBuildDate>Thu, 27 Jun 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://xerolinux.xyz/tags/qt/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Make KDE apps use System theme in XFCE/Gnome</title>
+      <link>https://xerolinux.xyz/posts/theme-qt-apps-on-gtk-de/</link>
+      <pubDate>Thu, 27 Jun 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://xerolinux.xyz/posts/theme-qt-apps-on-gtk-de/</guid>
+      <description>
+
+&lt;h3 class=&#34;relative group&#34;&gt;Intro 
+    &lt;div id=&#34;intro&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+    
+&lt;/h3&gt;
+&lt;p&gt;As I was working on &lt;strong&gt;XFCE&lt;/strong&gt; &amp;amp; &lt;strong&gt;Gnome&lt;/strong&gt;, I noticed that since they both use &lt;strong&gt;GTK3/4&lt;/strong&gt;, some &lt;strong&gt;Qt&lt;/strong&gt; apps made for &lt;strong&gt;KDE&lt;/strong&gt; like &lt;strong&gt;KdenLive&lt;/strong&gt; did not follow the system theme. I found a guide that I will be sharing with you all&amp;hellip;&lt;/p&gt;
+&lt;p&gt;Apps built with Q (aka KDE apps) do not look great on the XFCE4 &amp;amp; GNOME desktop because they don’t respect the default theme. The way to fix this is to use &lt;strong&gt;Kvantum&lt;/strong&gt;. With it, you can set &lt;strong&gt;KDE&lt;/strong&gt; app themes to use a similar theme to what you use.&lt;/p&gt;
+&lt;p&gt;
+  &lt;figure&gt;
+    &lt;img class=&#34;my-0 rounded-md&#34; loading=&#34;lazy&#34; src=&#34;https://i.imgur.com/UK5MPRI.png&#34; alt=&#34;Shot1&#34; /&gt;
+    
+  &lt;/figure&gt;
+&lt;/p&gt;
+
+
+&lt;h3 class=&#34;relative group&#34;&gt;Before we begin&amp;hellip; 
+    &lt;div id=&#34;before-we-begin&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+    
+&lt;/h3&gt;
+&lt;p&gt;In this guide, we’ll be using the &lt;strong&gt;Adapta GTK&lt;/strong&gt; theme for &lt;strong&gt;XFCE&lt;/strong&gt;. We’re focusing on Adapta because it has a &lt;strong&gt;Kvantum&lt;/strong&gt; theme that is widely available and helps blend &lt;strong&gt;KDE&lt;/strong&gt; apps in with &lt;strong&gt;XFCE4&lt;/strong&gt; quite well.&lt;/p&gt;
+&lt;p&gt;Before starting this guide, we highly recommend installing the &lt;strong&gt;Adapta GTK&lt;/strong&gt; theme onto your Linux PC and enabling it as the default theme in &lt;strong&gt;XFCE&lt;/strong&gt;.&lt;/p&gt;
+
+
+&lt;h3 class=&#34;relative group&#34;&gt;Installing Kvantum on Linux 
+    &lt;div id=&#34;installing-kvantum-on-linux&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+    
+&lt;/h3&gt;
+&lt;p&gt;To get &lt;strong&gt;Kvantum&lt;/strong&gt; working on your Linux PC, you will need to install it alongside the management tool. To get started, open up a terminal window and install the Kvantum manager, as well as everything else necessary to use it.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Arch Linux&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Kvantum&lt;/strong&gt; is available to Arch Linux users and has been for a very long time. There is an &lt;strong&gt;&lt;a href=&#34;https://aur.archlinux.org/packages/kvantum-qt5-git/&#34; target=&#34;_blank&#34;&gt;AUR package&lt;/a&gt;&lt;/strong&gt;. There’s also a package in the official Arch Linux software sources, which we recommend.&lt;/p&gt;
+&lt;p&gt;To get the latest Kvantum on your Arch Linux PC, enter the following terminal command.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo pacman -S kvantum
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;Downloading Kvantum themes&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;In this guide, we’re focusing on the &lt;strong&gt;Kvantum Adapta&lt;/strong&gt; theme. However, if you want to use a different GTK theme and need a matching Kvantum theme to go with it, the best place to go is the KDE Store.&lt;/p&gt;
+&lt;p&gt;The KDE Store has tons of stuff to download, including Kvantum theme engine themes. To download a Kvantum theme, head over to the &lt;strong&gt;&lt;a href=&#34;https://store.kde.org/browse/cat/123/order/latest/&#34; target=&#34;_blank&#34;&gt;Kvantum page&lt;/a&gt;&lt;/strong&gt; on the KDE store. From there, look through the latest themes to download.&lt;/p&gt;
+&lt;p&gt;Once you’ve downloaded a theme, launch Kvantum Manager, select “Install/Update Theme,” and install it. Then, select “Change/Delete Theme” to start using it on your system.&lt;/p&gt;
+
+
+&lt;h3 class=&#34;relative group&#34;&gt;Using Kvantum to make KDE apps look better 
+    &lt;div id=&#34;using-kvantum-to-make-kde-apps-look-better&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+    
+&lt;/h3&gt;
+&lt;p&gt;To make your KDE apps look better on the XFCE4 desktop, start by launching “Kvantum Manager” from the app menu. If you cannot find it in the app menu, open up the XFCE4 quick launcher with Alt + F2, and enter “kvantummanager” in the launch box.&lt;/p&gt;
+&lt;p&gt;Once the Kvantum Manager app is open on the XFCE4 desktop, follow the step-by-step instructions outlined below.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;- Step 1:&lt;/strong&gt; Locate the “Change/Delete Theme” option in the Kvantum Manager. If you cannot find it, it is directly below the “Install/Update Theme.”&lt;/p&gt;
+&lt;p&gt;After selecting the “Change/Delete Theme” button, you will see a menu that says “Select a theme,” followed by a blank text box. Change it to “Kvdapta.”&lt;/p&gt;
+&lt;p&gt;
+  &lt;figure&gt;
+    &lt;img class=&#34;my-0 rounded-md&#34; loading=&#34;lazy&#34; src=&#34;https://i.imgur.com/JVEudZ1.png&#34; alt=&#34;Shot2&#34; /&gt;
+    
+  &lt;/figure&gt;
+&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;- Step 2:&lt;/strong&gt; Open up a terminal window and install the Qt5ct app.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo pacman -S qt5ct
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;- Step 3:&lt;/strong&gt; Open up a terminal window and use the &lt;strong&gt;echo&lt;/strong&gt; command to edit the profile file to add the environmental variable.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;export QT_QPA_PLATFORMTHEME=qt5ct&amp;#34;&lt;/span&gt; &amp;gt;&amp;gt; ~/.profile
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;- Step 4:&lt;/strong&gt; Log out of your XFCE 4 session and log back in.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;- Step 5:&lt;/strong&gt; Open up Qt5ct via the app menu. Or, launch it via the terminal with the &lt;strong&gt;qt5ct&lt;/strong&gt; command.&lt;/p&gt;
+&lt;p&gt;
+  &lt;figure&gt;
+    &lt;img class=&#34;my-0 rounded-md&#34; loading=&#34;lazy&#34; src=&#34;https://i.imgur.com/v261wDF.png&#34; alt=&#34;Shot3&#34; /&gt;
+    
+  &lt;/figure&gt;
+&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Step 6:&lt;/strong&gt; Locate the “Appearance” tab. Then, find the “Style” menu. In the menu, select “kvantum.” Then, select “Apply” to apply changes.&lt;/p&gt;
+&lt;p&gt;
+  &lt;figure&gt;
+    &lt;img class=&#34;my-0 rounded-md&#34; loading=&#34;lazy&#34; src=&#34;https://i.imgur.com/EKMmXrF.png&#34; alt=&#34;Shot4&#34; /&gt;
+    
+  &lt;/figure&gt;
+&lt;/p&gt;
+&lt;p&gt;Upon applying your changes, KDE applications on XFCE 4 should be using the Kvantum theme set up earlier. This method works the same way on both &lt;strong&gt;XFCE &amp;amp; GNOME&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;Guide by: &lt;strong&gt;&lt;a href=&#34;https://www.addictivetips.com/ubuntu-linux-tips/make-kde-apps-look-better/&#34; target=&#34;_blank&#34;&gt;AddictiveTips.com&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/theme-qt-apps-on-gtk-de/featured.webp" />
+    </item>
+    
+  </channel>
+</rss>

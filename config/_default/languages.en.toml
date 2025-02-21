@@ -1,0 +1,33 @@
+languageCode = "en"
+languageName = "English"
+weight = 1
+title = "XeroLinux HQ"
+
+[params]
+  displayName = "EN"
+  isoCode = "en"
+  rtl = false
+  dateFormat = "2 January 2006"
+  logo = "logos/logo.png"
+  # secondaryLogo = "img/secondary-logo.png"
+  description = "Our Base Of Operations..."
+  copyright = "Proudly made in Lebanon <img src='/logos/lb.png' alt='🇱🇧' width='18' height='18' style='margin: 0; display: inline; vertical-align: middle;'>"
+
+[params.author]
+  name = "DarkXero"
+  image = "logos/Avvy.gif"
+  headline = "FOSS Enthusiast & All Around Fun Guy. 🤔"
+  bio = "I create Distros, Scripts and content about Linux & FOSS software. 😎"
+  links = [
+    { stack-overflow = "https://wiki.xerolinux.xyz" },
+    { discord = "https://discord.gg/5sqxTSuKZu" },
+    { github = "https://github.com/xerolinux" },
+    { ko-fi = "https://ko-fi.com/XeroLinux" },
+    { link = "https://techxero.com" },
+    { linkedin = "https://linkedin.com/in/schaanine" },
+    { link = "https://bytes.xerolinux.xyz" },
+    { mastodon = "https://fosstodon.org/@XeroLinux" },
+    { youtube = "https://youtube.com/@XeroLinux" },
+    { twitter = "https://x.com/XeroLinuxOP" },
+    { facebook = "https://facebook.com/XeroLinux" },
+  ]

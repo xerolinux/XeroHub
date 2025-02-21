@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Gtk on XeroLinux HQ</title>
+    <link>https://xerolinux.xyz/tags/gtk/</link>
+    <description>Recent content in Gtk on XeroLinux HQ</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>Proudly made in Lebanon &lt;img src=&#39;https://xerolinux.xyz/logos/lb.png&#39; alt=&#39;🇱🇧&#39; width=&#39;18&#39; height=&#39;18&#39; style=&#39;margin: 0; display: inline; vertical-align: middle;&#39;&gt;</copyright>
+    <lastBuildDate>Fri, 05 Jul 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://xerolinux.xyz/tags/gtk/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>M4LW Hyprland Dots</title>
+      <link>https://xerolinux.xyz/posts/ml4w-hyprland-dots/</link>
+      <pubDate>Fri, 05 Jul 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://xerolinux.xyz/posts/ml4w-hyprland-dots/</guid>
+      <description>
+
+&lt;h3 class=&#34;relative group&#34;&gt;What is Hyprland? 
+    &lt;div id=&#34;what-is-hyprland&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+    
+&lt;/h3&gt;
+&lt;p&gt;In a nutshell, &lt;strong&gt;Hyprland&lt;/strong&gt; is a dynamic tiling &lt;strong&gt;Wayland&lt;/strong&gt; compositor based on &lt;em&gt;wlroots&lt;/em&gt; that doesn&amp;rsquo;t sacrifice on its looks. It provides the latest Wayland features, is highly customizable, has all the eyecandy, the most powerful plugins, easy IPC, much more QoL stuff than other wlr-based compositors and more&amp;hellip;&lt;/p&gt;
+
+
+&lt;h3 class=&#34;relative group&#34;&gt;The ML4W Dot Files 
+    &lt;div id=&#34;the-ml4w-dot-files&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+    
+&lt;/h3&gt;
+&lt;p&gt;Before getting to it, I would like to say that, while I, myself do not and will not ever be using WMs since my workflow is tailored around DEs, that doesn&amp;rsquo;t mean I do not appreciate the hard work others put into making them more approachable, and pretty to both look at and use.&lt;/p&gt;
+&lt;p&gt;That being said, I have been following Hyprland&amp;rsquo;s growth as time went on, especially all the rices being created for it. I have seen so many awesome ones, but the one that caught my eye, which we will be talking about, is the one by a guy named &lt;a href=&#34;https://gitlab.com/stephan-raabe&#34; target=&#34;_blank&#34;&gt;&lt;strong&gt;@Stephan Raabe&lt;/strong&gt;&lt;/a&gt;.&lt;/p&gt;
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+      &lt;iframe allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&#34; allowfullscreen=&#34;allowfullscreen&#34; loading=&#34;eager&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; src=&#34;https://www.youtube.com/embed/sVFnd5LAYAc?autoplay=0&amp;amp;controls=1&amp;amp;end=0&amp;amp;loop=0&amp;amp;mute=0&amp;amp;start=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;YouTube video&#34;&gt;&lt;/iframe&gt;
+    &lt;/div&gt;
+
+&lt;p&gt;As you can see from the video above, he has gone above and beyond the natural limits, making &lt;strong&gt;Hyprland&lt;/strong&gt; all that more fun and easy to use by creating &lt;em&gt;GUI Config Tools&lt;/em&gt; written in &lt;strong&gt;GTK&lt;/strong&gt; not only for his dots but you can effortlessly configure almost every aspect of &lt;strong&gt;Hyprland&lt;/strong&gt; making it truly your own. It&amp;rsquo;s truly amazing !!!!&lt;/p&gt;
+&lt;p&gt;Here&amp;rsquo;s a quote from the dev :&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;PLEASE NOTE:&lt;/strong&gt; Every Linux distribution and setup can be different. Therefore, I cannot guarantee that the installation will work everywhere. Installation on your own risk.&lt;/p&gt;&lt;/blockquote&gt;
+
+
+&lt;h3 class=&#34;relative group&#34;&gt;How to Install them 
+    &lt;div id=&#34;how-to-install-them&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+    
+&lt;/h3&gt;
+&lt;p&gt;Before we start, just know that the &lt;strong&gt;ML4W&lt;/strong&gt; Dotfiles should work on all Arch Linux based distributions, though they have been only tested with the following ones. Support for other Distros like &lt;strong&gt;Fedora&lt;/strong&gt; and so on are slowly being added according to Dev.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Arch Linux (recommended)&lt;/li&gt;
+&lt;li&gt;EndeavourOS&lt;/li&gt;
+&lt;li&gt;Manjaro Linux&lt;/li&gt;
+&lt;li&gt;Garuda Linux&lt;/li&gt;
+&lt;li&gt;Arco Linux&lt;/li&gt;
+&lt;li&gt;XeroLinux w/Hyprland&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;For &lt;strong&gt;Manjaro&lt;/strong&gt; users: Hyprland and required packages are under ongoing development. That&amp;rsquo;s why it could be possible that some packages are not immediately available on Manjaro. But usually, the packages will be published later. Maybe you can install required packages manually.&lt;/p&gt;&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;For &lt;strong&gt;ArcoLinux&lt;/strong&gt; users: Please reinstall/force the installation of all packages during the installation/update process of the install script. The script will also offer to remove ttf-ms-fonts if installed to avoid issues with icons on waybar.&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;
+  &lt;figure&gt;
+    &lt;img class=&#34;my-0 rounded-md&#34; loading=&#34;lazy&#34; src=&#34;https://i.imgur.com/amMcyTO.jpeg&#34; alt=&#34;ML4W&#34; /&gt;
+    
+  &lt;/figure&gt;
+&lt;/p&gt;
+&lt;p&gt;The installation script will create a backups from configurations of your .config folder that will be overwritten from the installation procedure and previous ML4W Dotfiles installation.&lt;/p&gt;
+&lt;p&gt;If possible, please create a snapshot of your current system if snapper or Timeshift is installed and available.&lt;/p&gt;
+&lt;p&gt;With main points out of the way, he made installation so simple, as simple as running a script and following prompts. The script will download all files from GitLab and start the installation.&lt;/p&gt;
+&lt;p&gt;Just copy/enter the following command into your terminal.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;bash &amp;lt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;curl -s https://gitlab.com/stephan-raabe/dotfiles/-/raw/main/setup.sh&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Or from the &lt;strong&gt;AUR&lt;/strong&gt; using either &lt;code&gt;yay&lt;/code&gt; or &lt;code&gt;paru&lt;/code&gt; up to you.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;yay/paru -S --noconfirm --needed ml4w-hyprland &lt;span class=&#34;o&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; ml4w-hyprland-setup
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Finally, find link to the &lt;strong&gt;Git Repo&lt;/strong&gt; below, or if you want head directly to the project website, click here &amp;raquo; &lt;a href=&#34;https://www.ml4w.com&#34; target=&#34;_blank&#34;&gt;&lt;strong&gt;MyLinuxForWork&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;a id=&#34;github-335bc09a11197591f1ac4202a70da0ba&#34; target=&#34;_blank&#34; href=&#34;https://github.com/mylinuxforwork/dotfiles&#34; class=&#34;cursor-pointer&#34;&gt;
+  &lt;div
+    class=&#34;w-full md:w-auto pt-3 p-5 border border-neutral-200 dark:border-neutral-700 border rounded-md shadow-2xl&#34;&gt;
+
+    &lt;div class=&#34;flex items-center&#34;&gt;
+      &lt;span class=&#34;text-2xl text-neutral-800 dark:text-neutral&#34; style=&#34;margin-right:10px;&#34;&gt;
+        
+
+  &lt;span class=&#34;relative block icon&#34;&gt;
+    &lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 496 512&#34;&gt;&lt;path fill=&#34;currentColor&#34; d=&#34;M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z&#34;/&gt;&lt;/svg&gt;
+
+  &lt;/span&gt;
+
+
+      &lt;/span&gt;
+      &lt;div
+        id=&#34;github-335bc09a11197591f1ac4202a70da0ba-full_name&#34;
+        class=&#34;m-0 font-bold text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral&#34;&gt;
+        mylinuxforwork/dotfiles
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;p id=&#34;github-335bc09a11197591f1ac4202a70da0ba-description&#34; class=&#34;m-0 mt-2 text-md text-neutral-800 dark:text-neutral&#34;&gt;
+      The ML4W Dotfiles for Hyprland - An advanced and full-featured configuration for the dynamic tiling window manager Hyprland including an easy to use installation script for Arch based Linux distributions.
+    &lt;/p&gt;
+
+    &lt;div class=&#34;m-0 mt-2 flex items-center&#34;&gt;
+
+      &lt;span class=&#34;mr-1 inline-block h-3 w-3 rounded-full&#34;
+        style=&#34;background-color: #89e051&#34;&gt;&lt;/span&gt;
+      &lt;div class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
+         Shell 
+      &lt;/div&gt;
+
+      &lt;span class=&#34;text-md mr-1 text-neutral-800 dark:text-neutral&#34;&gt;
+        
+
+  &lt;span class=&#34;relative block icon&#34;&gt;
+    &lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 576 512&#34;&gt;&lt;path fill=&#34;currentColor&#34; d=&#34;M287.9 0C297.1 0 305.5 5.25 309.5 13.52L378.1 154.8L531.4 177.5C540.4 178.8 547.8 185.1 550.7 193.7C553.5 202.4 551.2 211.9 544.8 218.2L433.6 328.4L459.9 483.9C461.4 492.9 457.7 502.1 450.2 507.4C442.8 512.7 432.1 513.4 424.9 509.1L287.9 435.9L150.1 509.1C142.9 513.4 133.1 512.7 125.6 507.4C118.2 502.1 114.5 492.9 115.1 483.9L142.2 328.4L31.11 218.2C24.65 211.9 22.36 202.4 25.2 193.7C28.03 185.1 35.5 178.8 44.49 177.5L197.7 154.8L266.3 13.52C270.4 5.249 278.7 0 287.9 0L287.9 0zM287.9 78.95L235.4 187.2C231.9 194.3 225.1 199.3 217.3 200.5L98.98 217.9L184.9 303C190.4 308.5 192.9 316.4 191.6 324.1L171.4 443.7L276.6 387.5C283.7 383.7 292.2 383.7 299.2 387.5L404.4 443.7L384.2 324.1C382.9 316.4 385.5 308.5 391 303L476.9 217.9L358.6 200.5C350.7 199.3 343.9 194.3 340.5 187.2L287.9 78.95z&#34;/&gt;&lt;/svg&gt;
+  &lt;/span&gt;
+
+
+      &lt;/span&gt;
+      &lt;div id=&#34;github-335bc09a11197591f1ac4202a70da0ba-stargazers&#34; class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
+<<<<<<< HEAD
+        262
+=======
+        1071
+>>>>>>> a9bf7f74b9df3f07d0e74e79a2de68647eb7faf6
+      &lt;/div&gt;
+
+      &lt;span class=&#34;text-md mr-1 text-neutral-800 dark:text-neutral&#34;&gt;
+        
+
+  &lt;span class=&#34;relative block icon&#34;&gt;
+    &lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 448 512&#34;&gt;&lt;path fill=&#34;currentColor&#34; d=&#34;M80 104c13.3 0 24-10.7 24-24s-10.7-24-24-24S56 66.7 56 80s10.7 24 24 24zm80-24c0 32.8-19.7 61-48 73.3V192c0 17.7 14.3 32 32 32H304c17.7 0 32-14.3 32-32V153.3C307.7 141 288 112.8 288 80c0-44.2 35.8-80 80-80s80 35.8 80 80c0 32.8-19.7 61-48 73.3V192c0 53-43 96-96 96H256v70.7c28.3 12.3 48 40.5 48 73.3c0 44.2-35.8 80-80 80s-80-35.8-80-80c0-32.8 19.7-61 48-73.3V288H144c-53 0-96-43-96-96V153.3C19.7 141 0 112.8 0 80C0 35.8 35.8 0 80 0s80 35.8 80 80zm208 24c13.3 0 24-10.7 24-24s-10.7-24-24-24s-24 10.7-24 24s10.7 24 24 24zM248 432c0-13.3-10.7-24-24-24s-24 10.7-24 24s10.7 24 24 24s24-10.7 24-24z&#34;/&gt;&lt;/svg&gt;
+  &lt;/span&gt;
+
+
+      &lt;/span&gt;
+      &lt;div id=&#34;github-335bc09a11197591f1ac4202a70da0ba-forks&#34; class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
+<<<<<<< HEAD
+        25
+=======
+        80
+>>>>>>> a9bf7f74b9df3f07d0e74e79a2de68647eb7faf6
+      &lt;/div&gt;
+
+    &lt;/div&gt;
+
+  &lt;/div&gt;
+  &lt;script&gt;
+    fetch(&#34;https://api.github.com/repos/mylinuxforwork/dotfiles&#34;, {
+      headers: new Headers({
+        &#39;User-agent&#39;: &#39;Mozilla/4.0 Custom User Agent&#39;
+      })
+    })
+      .then(response =&gt; response.json())
+      .then(data =&gt; {
+        document.getElementById(&#39;github-335bc09a11197591f1ac4202a70da0ba-full_name&#39;).innerHTML = data.full_name;
+        document.getElementById(&#39;github-335bc09a11197591f1ac4202a70da0ba-description&#39;).innerHTML = data.description;
+        document.getElementById(&#39;github-335bc09a11197591f1ac4202a70da0ba-stargazers&#39;).innerHTML = data.stargazers_count;
+        document.getElementById(&#39;github-335bc09a11197591f1ac4202a70da0ba-forks&#39;).innerHTML = data.forks;
+      })
+      .catch(error =&gt; console.error(error))
+  &lt;/script&gt;
+&lt;/a&gt;
+&lt;p&gt;That’s it folks ..&lt;/p&gt;
+&lt;p&gt;Cheers !&lt;/p&gt;
+</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/ml4w-hyprland-dots/featured.webp" />
+    </item>
+    
+    <item>
+      <title>Make KDE apps use System theme in XFCE/Gnome</title>
+      <link>https://xerolinux.xyz/posts/theme-qt-apps-on-gtk-de/</link>
+      <pubDate>Thu, 27 Jun 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://xerolinux.xyz/posts/theme-qt-apps-on-gtk-de/</guid>
+      <description>
+
+&lt;h3 class=&#34;relative group&#34;&gt;Intro 
+    &lt;div id=&#34;intro&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+    
+&lt;/h3&gt;
+&lt;p&gt;As I was working on &lt;strong&gt;XFCE&lt;/strong&gt; &amp;amp; &lt;strong&gt;Gnome&lt;/strong&gt;, I noticed that since they both use &lt;strong&gt;GTK3/4&lt;/strong&gt;, some &lt;strong&gt;Qt&lt;/strong&gt; apps made for &lt;strong&gt;KDE&lt;/strong&gt; like &lt;strong&gt;KdenLive&lt;/strong&gt; did not follow the system theme. I found a guide that I will be sharing with you all&amp;hellip;&lt;/p&gt;
+&lt;p&gt;Apps built with Q (aka KDE apps) do not look great on the XFCE4 &amp;amp; GNOME desktop because they don’t respect the default theme. The way to fix this is to use &lt;strong&gt;Kvantum&lt;/strong&gt;. With it, you can set &lt;strong&gt;KDE&lt;/strong&gt; app themes to use a similar theme to what you use.&lt;/p&gt;
+&lt;p&gt;
+  &lt;figure&gt;
+    &lt;img class=&#34;my-0 rounded-md&#34; loading=&#34;lazy&#34; src=&#34;https://i.imgur.com/UK5MPRI.png&#34; alt=&#34;Shot1&#34; /&gt;
+    
+  &lt;/figure&gt;
+&lt;/p&gt;
+
+
+&lt;h3 class=&#34;relative group&#34;&gt;Before we begin&amp;hellip; 
+    &lt;div id=&#34;before-we-begin&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+    
+&lt;/h3&gt;
+&lt;p&gt;In this guide, we’ll be using the &lt;strong&gt;Adapta GTK&lt;/strong&gt; theme for &lt;strong&gt;XFCE&lt;/strong&gt;. We’re focusing on Adapta because it has a &lt;strong&gt;Kvantum&lt;/strong&gt; theme that is widely available and helps blend &lt;strong&gt;KDE&lt;/strong&gt; apps in with &lt;strong&gt;XFCE4&lt;/strong&gt; quite well.&lt;/p&gt;
+&lt;p&gt;Before starting this guide, we highly recommend installing the &lt;strong&gt;Adapta GTK&lt;/strong&gt; theme onto your Linux PC and enabling it as the default theme in &lt;strong&gt;XFCE&lt;/strong&gt;.&lt;/p&gt;
+
+
+&lt;h3 class=&#34;relative group&#34;&gt;Installing Kvantum on Linux 
+    &lt;div id=&#34;installing-kvantum-on-linux&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+    
+&lt;/h3&gt;
+&lt;p&gt;To get &lt;strong&gt;Kvantum&lt;/strong&gt; working on your Linux PC, you will need to install it alongside the management tool. To get started, open up a terminal window and install the Kvantum manager, as well as everything else necessary to use it.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Arch Linux&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Kvantum&lt;/strong&gt; is available to Arch Linux users and has been for a very long time. There is an &lt;strong&gt;&lt;a href=&#34;https://aur.archlinux.org/packages/kvantum-qt5-git/&#34; target=&#34;_blank&#34;&gt;AUR package&lt;/a&gt;&lt;/strong&gt;. There’s also a package in the official Arch Linux software sources, which we recommend.&lt;/p&gt;
+&lt;p&gt;To get the latest Kvantum on your Arch Linux PC, enter the following terminal command.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo pacman -S kvantum
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;Downloading Kvantum themes&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;In this guide, we’re focusing on the &lt;strong&gt;Kvantum Adapta&lt;/strong&gt; theme. However, if you want to use a different GTK theme and need a matching Kvantum theme to go with it, the best place to go is the KDE Store.&lt;/p&gt;
+&lt;p&gt;The KDE Store has tons of stuff to download, including Kvantum theme engine themes. To download a Kvantum theme, head over to the &lt;strong&gt;&lt;a href=&#34;https://store.kde.org/browse/cat/123/order/latest/&#34; target=&#34;_blank&#34;&gt;Kvantum page&lt;/a&gt;&lt;/strong&gt; on the KDE store. From there, look through the latest themes to download.&lt;/p&gt;
+&lt;p&gt;Once you’ve downloaded a theme, launch Kvantum Manager, select “Install/Update Theme,” and install it. Then, select “Change/Delete Theme” to start using it on your system.&lt;/p&gt;
+
+
+&lt;h3 class=&#34;relative group&#34;&gt;Using Kvantum to make KDE apps look better 
+    &lt;div id=&#34;using-kvantum-to-make-kde-apps-look-better&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+    
+&lt;/h3&gt;
+&lt;p&gt;To make your KDE apps look better on the XFCE4 desktop, start by launching “Kvantum Manager” from the app menu. If you cannot find it in the app menu, open up the XFCE4 quick launcher with Alt + F2, and enter “kvantummanager” in the launch box.&lt;/p&gt;
+&lt;p&gt;Once the Kvantum Manager app is open on the XFCE4 desktop, follow the step-by-step instructions outlined below.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;- Step 1:&lt;/strong&gt; Locate the “Change/Delete Theme” option in the Kvantum Manager. If you cannot find it, it is directly below the “Install/Update Theme.”&lt;/p&gt;
+&lt;p&gt;After selecting the “Change/Delete Theme” button, you will see a menu that says “Select a theme,” followed by a blank text box. Change it to “Kvdapta.”&lt;/p&gt;
+&lt;p&gt;
+  &lt;figure&gt;
+    &lt;img class=&#34;my-0 rounded-md&#34; loading=&#34;lazy&#34; src=&#34;https://i.imgur.com/JVEudZ1.png&#34; alt=&#34;Shot2&#34; /&gt;
+    
+  &lt;/figure&gt;
+&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;- Step 2:&lt;/strong&gt; Open up a terminal window and install the Qt5ct app.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo pacman -S qt5ct
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;- Step 3:&lt;/strong&gt; Open up a terminal window and use the &lt;strong&gt;echo&lt;/strong&gt; command to edit the profile file to add the environmental variable.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;export QT_QPA_PLATFORMTHEME=qt5ct&amp;#34;&lt;/span&gt; &amp;gt;&amp;gt; ~/.profile
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;- Step 4:&lt;/strong&gt; Log out of your XFCE 4 session and log back in.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;- Step 5:&lt;/strong&gt; Open up Qt5ct via the app menu. Or, launch it via the terminal with the &lt;strong&gt;qt5ct&lt;/strong&gt; command.&lt;/p&gt;
+&lt;p&gt;
+  &lt;figure&gt;
+    &lt;img class=&#34;my-0 rounded-md&#34; loading=&#34;lazy&#34; src=&#34;https://i.imgur.com/v261wDF.png&#34; alt=&#34;Shot3&#34; /&gt;
+    
+  &lt;/figure&gt;
+&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Step 6:&lt;/strong&gt; Locate the “Appearance” tab. Then, find the “Style” menu. In the menu, select “kvantum.” Then, select “Apply” to apply changes.&lt;/p&gt;
+&lt;p&gt;
+  &lt;figure&gt;
+    &lt;img class=&#34;my-0 rounded-md&#34; loading=&#34;lazy&#34; src=&#34;https://i.imgur.com/EKMmXrF.png&#34; alt=&#34;Shot4&#34; /&gt;
+    
+  &lt;/figure&gt;
+&lt;/p&gt;
+&lt;p&gt;Upon applying your changes, KDE applications on XFCE 4 should be using the Kvantum theme set up earlier. This method works the same way on both &lt;strong&gt;XFCE &amp;amp; GNOME&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;Guide by: &lt;strong&gt;&lt;a href=&#34;https://www.addictivetips.com/ubuntu-linux-tips/make-kde-apps-look-better/&#34; target=&#34;_blank&#34;&gt;AddictiveTips.com&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/theme-qt-apps-on-gtk-de/featured.webp" />
+    </item>
+    
+  </channel>
+</rss>
