@@ -177,50 +177,6 @@
     </item>
     
     <item>
-      <title>XeroLinux Goes Quarterly</title>
-      <link>https://xerolinux.xyz/news/iso-releases/</link>
-      <pubDate>Sat, 22 Feb 2025 00:00:00 +0000</pubDate>
-      
-      <guid>https://xerolinux.xyz/news/iso-releases/</guid>
-      <description>
-
-&lt;h1 class=&#34;relative group&#34;&gt;Breaking News: XeroLinux Goes Quarterly! 
-    &lt;div id=&#34;breaking-news-xerolinux-goes-quarterly&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
-    
-&lt;/h1&gt;
-&lt;p&gt;Hey there, fellow tech wizards and Linux enthusiasts!&lt;/p&gt;
-&lt;p&gt;It&amp;rsquo;s time for a major update (pun intended) on the &lt;strong&gt;XeroLinux&lt;/strong&gt; front. Due to the lack of earth-shattering new features and major upgrades from both &lt;strong&gt;KDE&lt;/strong&gt; &amp;amp; &lt;strong&gt;Gnome&lt;/strong&gt;, we&amp;rsquo;ve decided to switch gears and adopt a quarterly release schedule. That&amp;rsquo;s right; you&amp;rsquo;ll get your hands on bigger and more awesome updates every three months unless something revolutionary comes along (and let&amp;rsquo;s be honest, who doesn&amp;rsquo;t love a good surprise?).&lt;/p&gt;
-
-
-&lt;h2 class=&#34;relative group&#34;&gt;The New Plan 
-    &lt;div id=&#34;the-new-plan&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
-    
-&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;Stability First&lt;/strong&gt;: To keep things as smooth as possible, we&amp;rsquo;re putting the brakes on major tweaks for now, while we do more stability testing. However, smaller but super useful changes/tweaks will continue to sneak their way into future releases.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;Toolkit Time&lt;/strong&gt;: We&amp;rsquo;re shifting focus to our toolkit—making it an ultimate sidekick for both Vanilla ArchLinux users (regardless of your DE or WM preferences) and XeroLinux fans. This was always the plan: creating something versatile that works beautifully across different setups.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Important Note&lt;/strong&gt;: Our toolkit is designed to play nicely with Vanilla ArchLinux and XeroLinux itself. However, if you&amp;rsquo;re using any derivatives outside these two, things might get a bit complicated due to potential conflicts with existing modifications.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;Quarterly Releases Ahead&lt;/strong&gt;: Both &lt;strong&gt;KDE Plasma&lt;/strong&gt; and &lt;strong&gt;Gnome&lt;/strong&gt; versions of &lt;strong&gt;XeroLinux&lt;/strong&gt; will follow this new quarterly schedule. You can still expect the same level of quality and stability that has become synonymous with our distro.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-
-
-&lt;h2 class=&#34;relative group&#34;&gt;A Big Thank You 
-    &lt;div id=&#34;a-big-thank-you&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
-    
-&lt;/h2&gt;
-&lt;p&gt;We appreciate your understanding in this shift towards more strategic development. Your loyalty and support mean everything! Stick around; exciting times are ahead!&lt;/p&gt;
-&lt;p&gt;Stay geeky y&amp;rsquo;all&amp;hellip;&lt;/p&gt;
-</description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/news/iso-releases/featured.webp" />
-    </item>
-    
-    <item>
       <title>Cursor AI Code Editor</title>
       <link>https://xerolinux.xyz/posts/cursor-code-editor/</link>
       <pubDate>Fri, 21 Feb 2025 00:00:00 +0000</pubDate>
@@ -524,55 +480,6 @@ return sequence[:n]
 &lt;p&gt;Cheers !&lt;/p&gt;
 </description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/arch-cosmic/featured.webp" />
-    </item>
-    
-    <item>
-      <title>Help Needed</title>
-      <link>https://xerolinux.xyz/news/help-needed/</link>
-      <pubDate>Tue, 13 Aug 2024 00:00:00 +0000</pubDate>
-      
-      <guid>https://xerolinux.xyz/news/help-needed/</guid>
-      <description>&lt;p&gt;Hey there&amp;hellip;&lt;/p&gt;
-&lt;p&gt;This is a new type of post. Please read on to understand what it&amp;rsquo;s all about. &lt;strong&gt;XeroLinux&lt;/strong&gt; urgently needs your help.&lt;/p&gt;
-
-
-&lt;h3 class=&#34;relative group&#34;&gt;Designers needed 
-    &lt;div id=&#34;designers-needed&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
-    
-&lt;/h3&gt;
-&lt;p&gt;We here, at the &lt;strong&gt;XeroLinux HQ&lt;/strong&gt; are looking for designers who will help us bring life to our upcoming &lt;strong&gt;Merch Store&lt;/strong&gt;. Yes, you read this right, we are looking to expand our portfolio, adding cool merch that everyone can purchase, as an alternative or additional way to support the project.&lt;/p&gt;
-&lt;p&gt;I am no designer, nor do I have a high quality logo to start with, just a very low quality one, maybe it can be used for inspiration. Also I am not looking at offering every type of item under the sun, just a few that might be interesting to the &lt;strong&gt;FOSS&lt;/strong&gt; oriented crowd.&lt;/p&gt;
-
-
-&lt;h3 class=&#34;relative group&#34;&gt;Service Chosen 
-    &lt;div id=&#34;service-chosen&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
-    
-&lt;/h3&gt;
-&lt;p&gt;The service I have chosen is &lt;a href=&#34;https://fourthwall.com&#34; target=&#34;_blank&#34;&gt;&lt;strong&gt;FourthWall&lt;/strong&gt;&lt;/a&gt;. I chose this one because Matt from &lt;a href=&#34;https://thelinuxcast.org&#34; target=&#34;_blank&#34;&gt;&lt;strong&gt;TheLinuxCast&lt;/strong&gt;&lt;/a&gt; recommended it, and I trust his choice. I am new to all this, so I have &lt;strong&gt;NO&lt;/strong&gt; idea what am doing. That&amp;rsquo;s why your help is needed.&lt;/p&gt;
-&lt;p&gt;
-  &lt;figure&gt;
-    &lt;img class=&#34;my-0 rounded-md&#34; loading=&#34;lazy&#34; src=&#34;https://i.imgur.com/Ho4o9GK.png&#34; alt=&#34;Image&#34; /&gt;
-    
-  &lt;/figure&gt;
-&lt;/p&gt;
-&lt;p&gt;I have already set up the domain, and added a few basic items with my logo, so now all that&amp;rsquo;s missing is more high quality merch lol. However it&amp;rsquo;s a good start I guess. So if you can help add more and have some cool FOSS meme ideas we can print, let me know.&lt;/p&gt;
-
-
-&lt;h3 class=&#34;relative group&#34;&gt;Compensation 
-    &lt;div id=&#34;compensation&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
-    
-&lt;/h3&gt;
-&lt;p&gt;Well, since I am based in Lebanon, it will be very difficult for me to compensate you directly for any services rendered. However we can always reach some sort of understading. We will dicuss this behind the scenes.&lt;/p&gt;
-
-
-&lt;h3 class=&#34;relative group&#34;&gt;Wrapping up 
-    &lt;div id=&#34;wrapping-up&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
-    
-&lt;/h3&gt;
-&lt;p&gt;So now that you know what I am looking for, and are interested, feel free to contact me either on &lt;a href=&#34;https://fosstodon.org/@XeroLinux&#34; target=&#34;_blank&#34;&gt;&lt;strong&gt;Fosstodon&lt;/strong&gt;&lt;/a&gt; or by emailing me directly via this &lt;a href=&#34;mailto:techxero@vivaldi.net?subject=XeroLinux%20Merch%20Design&#34;&gt;&lt;strong&gt;E-mail&lt;/strong&gt;&lt;/a&gt;. I am looking forward to our collab should it happen.&lt;/p&gt;
-&lt;p&gt;Cheers !&lt;/p&gt;
-</description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/news/help-needed/featured.webp" />
     </item>
     
     <item>
@@ -922,22 +829,6 @@ return sequence[:n]
 &lt;p&gt;Cheers !&lt;/p&gt;
 </description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/chaotic-aur/featured.webp" />
-    </item>
-    
-    <item>
-      <title>Add XeroLinux Repo</title>
-      <link>https://xerolinux.xyz/news/add-our-repo/</link>
-      <pubDate>Fri, 28 Jun 2024 00:00:00 +0000</pubDate>
-      
-      <guid>https://xerolinux.xyz/news/add-our-repo/</guid>
-      <description>&lt;p&gt;Hey there&amp;hellip;&lt;/p&gt;
-&lt;p&gt;I was recently asked if my Repo can be added to other Arch-Based Distros, short answer is yes of course you can. I will be showing you how below. Just note that my repo usually contains stuff I deem necessary, but in case you find some stuff that can be useful to you on ArchLinux feel free to add it.&lt;/p&gt;
-&lt;p&gt;Run below command :&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;echo&lt;/span&gt; -e &lt;span class=&#34;s1&#34;&gt;&amp;#39;\n[xerolinux]\nSigLevel = Optional TrustAll\nServer = https://repos.xerolinux.xyz/$repo/$arch&amp;#39;&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; sudo tee -a /etc/pacman.conf
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;That&amp;rsquo;s basically it, now update database with &lt;code&gt;sudo pacman -Syyu&lt;/code&gt; and you will notice my repo part of the update.&lt;/p&gt;
-&lt;p&gt;Cheers :heart:&lt;/p&gt;
-</description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/news/add-our-repo/featured.webp" />
     </item>
     
     <item>

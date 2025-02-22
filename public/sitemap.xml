@@ -21,13 +21,13 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://xerolinux.xyz/news/iso-releases/</loc>
+    <loc>https://xerolinux.xyz/updates/iso-releases/</loc>
     <lastmod>2025-02-22T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://xerolinux.xyz/news/</loc>
+    <loc>https://xerolinux.xyz/updates/</loc>
     <lastmod>2025-02-22T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
@@ -81,19 +81,7 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://xerolinux.xyz/news/help-needed/</loc>
-    <lastmod>2024-08-13T00:00:00+00:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://xerolinux.xyz/updates/help-needed/</loc>
-    <lastmod>2024-08-13T00:00:00+00:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://xerolinux.xyz/updates/</loc>
     <lastmod>2024-08-13T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
@@ -119,12 +107,6 @@
   <url>
     <loc>https://xerolinux.xyz/posts/ricing-plasma/</loc>
     <lastmod>2024-07-29T00:00:00+00:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://xerolinux.xyz/news/immich-news/</loc>
-    <lastmod>2024-07-28T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
@@ -213,12 +195,6 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://xerolinux.xyz/news/youtube-status/</loc>
-    <lastmod>2024-07-04T00:00:00+00:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://xerolinux.xyz/updates/youtube-status/</loc>
     <lastmod>2024-07-04T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
@@ -261,12 +237,6 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://xerolinux.xyz/news/add-our-repo/</loc>
-    <lastmod>2024-06-28T00:00:00+00:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://xerolinux.xyz/updates/add-our-repo/</loc>
     <lastmod>2024-06-28T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
@@ -292,12 +262,6 @@
   </url>
   <url>
     <loc>https://xerolinux.xyz/posts/spotube-for-spotify/</loc>
-    <lastmod>2024-06-28T00:00:00+00:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://xerolinux.xyz/news/submit-content/</loc>
     <lastmod>2024-06-28T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
@@ -352,12 +316,6 @@
   </url>
   <url>
     <loc>https://xerolinux.xyz/posts/flatpak-tips/</loc>
-    <lastmod>2024-06-27T00:00:00+00:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://xerolinux.xyz/news/new-site/</loc>
     <lastmod>2024-06-27T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
