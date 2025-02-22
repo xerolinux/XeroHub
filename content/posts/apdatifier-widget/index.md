@@ -9,7 +9,7 @@ tags: ["Apdatifier", "Arch", "ArchLinux", "Plasmoid", "Widget", "Update", "Updat
 
 ![Header](https://i.imgur.com/BFrI7wf.png)
 
-## Apdatifier: Your Plasma Desktop’s New Best Friend.
+### Apdatifier: Your Plasma Desktop’s New Best Friend.
 
 Okay fellow Linux nerds let’s talk about something truly important: staying updated, I know I know, you’re thinking “Ugh updates? That’s what happens when I finally get my system configured just right, and then BAM! Something breaks.” But hear me out, what if staying updated was… dare say… enjoyable?
 
@@ -42,7 +42,7 @@ Outdated software = box chocolates—you never know vulnerabilities inside ! apd
 <video src="https://repos.xerolinux.xyz/files/Apdatifier.mp4" controls></video>
 </div>
 
-## Okay How Do I Get This Magic ?
+### Okay How Do I Get This Magic ?
 
 Easy peasy lemon squeezy...
 
