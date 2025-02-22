@@ -15,7 +15,7 @@ It's time for a major update (pun intended) on the **XeroLinux** front. Due to t
 
 - **Stability First**: To keep things as smooth as possible, we're putting the brakes on major tweaks for now, while we do more stability testing. However, smaller but super useful changes/tweaks will continue to sneak their way into future releases.
   
-- **Toolkit Time**: We're shifting focus to our toolkit—making it an ultimate sidekick for both Vanilla ArchLinux users (regardless of your DE or WM preferences) and XeroLinux fans. This was always the plan: creating something versatile that works beautifully across different setups.
+- **Toolkit Time**: We're shifting focus to our toolkit, making it the ultimate sidekick for both **Vanilla ArchLinux** (regardless of your DE or WM preferences) and **XeroLinux** fans. This was always the plan: creating something versatile that works beautifully across different setups.
 
   **Important Note**: Our toolkit is designed to play nicely with *Vanilla* **ArchLinux** and **XeroLinux** itself. However, if you're using any derivatives outside these two, things might get a bit complicated due to potential conflicts with existing modifications.
 
