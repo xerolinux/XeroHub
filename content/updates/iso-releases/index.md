@@ -17,7 +17,7 @@ It's time for a major update (pun intended) on the **XeroLinux** front. Due to t
   
 - **Toolkit Time**: We're shifting focus to our toolkit—making it an ultimate sidekick for both Vanilla ArchLinux users (regardless of your DE or WM preferences) and XeroLinux fans. This was always the plan: creating something versatile that works beautifully across different setups.
 
-  **Important Note**: Our toolkit is designed to play nicely with Vanilla ArchLinux and XeroLinux itself. However, if you're using any derivatives outside these two, things might get a bit complicated due to potential conflicts with existing modifications.
+  **Important Note**: Our toolkit is designed to play nicely with *Vanilla* **ArchLinux** and **XeroLinux** itself. However, if you're using any derivatives outside these two, things might get a bit complicated due to potential conflicts with existing modifications.
 
 - **Quarterly Releases Ahead**: Both **KDE Plasma** and **Gnome** versions of **XeroLinux** will follow this new quarterly schedule. You can still expect the same level of quality and stability that has become synonymous with our distro.
 
