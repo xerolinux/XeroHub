@@ -9,7 +9,7 @@ tags: ["Apdatifier", "Arch", "ArchLinux", "Plasmoid", "Widget", "Update", "Updat
 
 ![Header](https://i.imgur.com/BFrI7wf.png)
 
-# Apdatifier: Your Plasma Desktop’s New Best Friend.
+## Apdatifier: Your Plasma Desktop’s New Best Friend.
 
 Okay fellow Linux nerds let’s talk about something truly important: staying updated, I know I know, you’re thinking “Ugh updates? That’s what happens when I finally get my system configured just right, and then BAM! Something breaks.” But hear me out, what if staying updated was… dare say… enjoyable?
 
@@ -17,7 +17,7 @@ Enter **Apdatifier** the plasma widget that’s going to become either best frie
 
 {{< github repo="exequtic/apdatifier" >}}
 
-## What in Tux Is This Thing?
+### What in Tux Is This Thing?
 
 **Apdatefier** is essentially designed as personal update concierge minus annoying small-talk—it supports following systems
 
@@ -34,7 +34,7 @@ But wait theres more ! apdatefier isn’t passive observer—it also offers :
 
 ![Apdatifier](https://i.imgur.com/U3958eZ.png)
 
-## Why Should You Care ?
+### Why Should You Care ?
 
 Outdated software = box chocolates—you never know vulnerabilities inside ! apdatefier keeps secure latest features rolling 
 
@@ -59,7 +59,7 @@ systemctl --user restart plasma-plasmashell.service
 
 This command refreshes plasmashell after installing/updating any widgets
 
-## Pro Tips For Max Awesomeness 
+### Pro Tips For Max Awesomeness 
 
 Install `pacman-contrib` and all the required dependencies, if you don't already have them. Seriously do this both **Apdatifier** & pacman will thank u !
 
@@ -71,7 +71,7 @@ Pick fave terminal choose from several popular ones supported by **Apdatifier** 
 
 Upgrading/Installing ? Either run above service restart cmd or simply logout/login again !
 
-# In Conclusion
+### In Conclusion
 
 And thats wrap folks ! While **Apdatifier** wont magically turn updates into party, but hey now keeping upto date wont feel pulling teeth anymore With sleek interface robust features tailored specifically arch users among others,it def worth giving little tool some real estate beautiful kde setup yours !
 

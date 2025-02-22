@@ -23,10 +23,10 @@
 &lt;/p&gt;
 
 
-&lt;h1 class=&#34;relative group&#34;&gt;Apdatifier: Your Plasma Desktop’s New Best Friend. 
+&lt;h2 class=&#34;relative group&#34;&gt;Apdatifier: Your Plasma Desktop’s New Best Friend. 
     &lt;div id=&#34;apdatifier-your-plasma-desktops-new-best-friend&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
     
-&lt;/h1&gt;
+&lt;/h2&gt;
 &lt;p&gt;Okay fellow Linux nerds let’s talk about something truly important: staying updated, I know I know, you’re thinking “Ugh updates? That’s what happens when I finally get my system configured just right, and then BAM! Something breaks.” But hear me out, what if staying updated was… dare say… enjoyable?&lt;/p&gt;
 &lt;p&gt;Enter &lt;strong&gt;Apdatifier&lt;/strong&gt; the plasma widget that’s going to become either best friend—or useful acquaintance—to our beloved &lt;strong&gt;KDE&lt;/strong&gt; setup!&lt;/p&gt;
 &lt;a id=&#34;github-329f800914aa592a2115ef31194b1362&#34; target=&#34;_blank&#34; href=&#34;https://github.com/exequtic/apdatifier&#34; class=&#34;cursor-pointer&#34;&gt;
@@ -110,10 +110,10 @@
 &lt;/a&gt;
 
 
-&lt;h2 class=&#34;relative group&#34;&gt;What in Tux Is This Thing? 
+&lt;h3 class=&#34;relative group&#34;&gt;What in Tux Is This Thing? 
     &lt;div id=&#34;what-in-tux-is-this-thing&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
     
-&lt;/h2&gt;
+&lt;/h3&gt;
 &lt;p&gt;&lt;strong&gt;Apdatefier&lt;/strong&gt; is essentially designed as personal update concierge minus annoying small-talk—it supports following systems&lt;/p&gt;
 &lt;p&gt;1. &lt;strong&gt;ArchLinux &amp;amp; AUR&lt;/strong&gt; : because lets admit most are running Arch LoL.&lt;br&gt;
 2. &lt;strong&gt;Plasma Widgets&lt;/strong&gt; : keeps those fresh n’ bug-free.&lt;br&gt;
@@ -131,10 +131,10 @@
 &lt;/p&gt;
 
 
-&lt;h2 class=&#34;relative group&#34;&gt;Why Should You Care ? 
+&lt;h3 class=&#34;relative group&#34;&gt;Why Should You Care ? 
     &lt;div id=&#34;why-should-you-care-&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
     
-&lt;/h2&gt;
+&lt;/h3&gt;
 &lt;p&gt;Outdated software = box chocolates—you never know vulnerabilities inside ! apdatefier keeps secure latest features rolling&lt;/p&gt;
 &lt;div align=&#34;center&#34;&gt;
 &lt;video src=&#34;https://repos.xerolinux.xyz/files/Apdatifier.mp4&#34; controls&gt;&lt;/video&gt;
@@ -155,20 +155,20 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;This command refreshes plasmashell after installing/updating any widgets&lt;/p&gt;
 
 
-&lt;h2 class=&#34;relative group&#34;&gt;Pro Tips For Max Awesomeness 
+&lt;h3 class=&#34;relative group&#34;&gt;Pro Tips For Max Awesomeness 
     &lt;div id=&#34;pro-tips-for-max-awesomeness&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
     
-&lt;/h2&gt;
+&lt;/h3&gt;
 &lt;p&gt;Install &lt;code&gt;pacman-contrib&lt;/code&gt; and all the required dependencies, if you don&amp;rsquo;t already have them. Seriously do this both &lt;strong&gt;Apdatifier&lt;/strong&gt; &amp;amp; pacman will thank u !&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo pacman -S pacman-contrib curl jq unzip tar fzf
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Pick fave terminal choose from several popular ones supported by &lt;strong&gt;Apdatifier&lt;/strong&gt; ! Embrace command line dont fear diving into bash scripts, tweak away !&lt;/p&gt;
 &lt;p&gt;Upgrading/Installing ? Either run above service restart cmd or simply logout/login again !&lt;/p&gt;
 
 
-&lt;h1 class=&#34;relative group&#34;&gt;In Conclusion 
+&lt;h3 class=&#34;relative group&#34;&gt;In Conclusion 
     &lt;div id=&#34;in-conclusion&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
     
-&lt;/h1&gt;
+&lt;/h3&gt;
 &lt;p&gt;And thats wrap folks ! While &lt;strong&gt;Apdatifier&lt;/strong&gt; wont magically turn updates into party, but hey now keeping upto date wont feel pulling teeth anymore With sleek interface robust features tailored specifically arch users among others,it def worth giving little tool some real estate beautiful kde setup yours !&lt;/p&gt;
 &lt;p&gt;Cheers !&lt;/p&gt;
 </description>
