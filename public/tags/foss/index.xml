@@ -7,7 +7,51 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>Proudly made in Lebanon &lt;img src=&#39;https://xerolinux.xyz/logos/lb.png&#39; alt=&#39;🇱🇧&#39; width=&#39;18&#39; height=&#39;18&#39; style=&#39;margin: 0; display: inline; vertical-align: middle;&#39;&gt;</copyright>
-    <lastBuildDate>Fri, 05 Jul 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://xerolinux.xyz/tags/foss/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 22 Feb 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://xerolinux.xyz/tags/foss/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>XeroLinux Goes Quarterly</title>
+      <link>https://xerolinux.xyz/news/iso-releases/</link>
+      <pubDate>Sat, 22 Feb 2025 00:00:00 +0000</pubDate>
+      
+      <guid>https://xerolinux.xyz/news/iso-releases/</guid>
+      <description>
+
+&lt;h1 class=&#34;relative group&#34;&gt;Breaking News: XeroLinux Goes Quarterly! 
+    &lt;div id=&#34;breaking-news-xerolinux-goes-quarterly&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+    
+&lt;/h1&gt;
+&lt;p&gt;Hey there, fellow tech wizards and Linux enthusiasts!&lt;/p&gt;
+&lt;p&gt;It&amp;rsquo;s time for a major update (pun intended) on the &lt;strong&gt;XeroLinux&lt;/strong&gt; front. Due to the lack of earth-shattering new features and major upgrades from both &lt;strong&gt;KDE&lt;/strong&gt; &amp;amp; &lt;strong&gt;Gnome&lt;/strong&gt;, we&amp;rsquo;ve decided to switch gears and adopt a quarterly release schedule. That&amp;rsquo;s right; you&amp;rsquo;ll get your hands on bigger and more awesome updates every three months unless something revolutionary comes along (and let&amp;rsquo;s be honest, who doesn&amp;rsquo;t love a good surprise?).&lt;/p&gt;
+
+
+&lt;h2 class=&#34;relative group&#34;&gt;The New Plan 
+    &lt;div id=&#34;the-new-plan&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+    
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Stability First&lt;/strong&gt;: To keep things as smooth as possible, we&amp;rsquo;re putting the brakes on major tweaks for now, while we do more stability testing. However, smaller but super useful changes/tweaks will continue to sneak their way into future releases.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Toolkit Time&lt;/strong&gt;: We&amp;rsquo;re shifting focus to our toolkit—making it an ultimate sidekick for both Vanilla ArchLinux users (regardless of your DE or WM preferences) and XeroLinux fans. This was always the plan: creating something versatile that works beautifully across different setups.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Important Note&lt;/strong&gt;: Our toolkit is designed to play nicely with Vanilla ArchLinux and XeroLinux itself. However, if you&amp;rsquo;re using any derivatives outside these two, things might get a bit complicated due to potential conflicts with existing modifications.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Quarterly Releases Ahead&lt;/strong&gt;: Both &lt;strong&gt;KDE Plasma&lt;/strong&gt; and &lt;strong&gt;Gnome&lt;/strong&gt; versions of &lt;strong&gt;XeroLinux&lt;/strong&gt; will follow this new quarterly schedule. You can still expect the same level of quality and stability that has become synonymous with our distro.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;h2 class=&#34;relative group&#34;&gt;A Big Thank You 
+    &lt;div id=&#34;a-big-thank-you&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+    
+&lt;/h2&gt;
+&lt;p&gt;We appreciate your understanding in this shift towards more strategic development. Your loyalty and support mean everything! Stick around; exciting times are ahead!&lt;/p&gt;
+&lt;p&gt;Stay geeky y&amp;rsquo;all&amp;hellip;&lt;/p&gt;
+</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/news/iso-releases/featured.webp" />
+    </item>
+    
     <item>
       <title>Scrcpy Android screen mirroring tool</title>
       <link>https://xerolinux.xyz/posts/scrcpy-android-screen-mirroring/</link>

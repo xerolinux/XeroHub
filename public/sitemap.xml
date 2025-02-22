@@ -21,6 +21,18 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://xerolinux.xyz/news/iso-releases/</loc>
+    <lastmod>2025-02-22T00:00:00+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://xerolinux.xyz/news/</loc>
+    <lastmod>2025-02-22T00:00:00+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://xerolinux.xyz/posts/cursor-code-editor/</loc>
     <lastmod>2025-02-21T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
@@ -76,12 +88,6 @@
   </url>
   <url>
     <loc>https://xerolinux.xyz/updates/help-needed/</loc>
-    <lastmod>2024-08-13T00:00:00+00:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://xerolinux.xyz/news/</loc>
     <lastmod>2024-08-13T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
