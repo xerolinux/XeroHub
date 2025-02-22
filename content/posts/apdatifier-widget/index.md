@@ -19,7 +19,7 @@ Enter **Apdatifier** the plasma widget that’s going to become either best frie
 
 ### What in Tux Is This Thing?
 
-**Apdatefier** is essentially designed as personal update concierge minus annoying small-talk—it supports following systems
+**Apdatefier** is essentially designed as personal update concierge minus annoying small-talk, it supports following systems
 
 1\. **ArchLinux & AUR** : because lets admit most are running Arch LoL.<br>
 2\. **Plasma Widgets** : keeps those fresh n’ bug-free.<br>
