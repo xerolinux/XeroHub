@@ -21,6 +21,10 @@ It's time for a major update (pun intended) on the **XeroLinux** front. Due to t
 
 - **Quarterly Releases Ahead**: Both **KDE Plasma** and **Gnome** versions of **XeroLinux** will follow this new quarterly schedule. You can still expect the same level of quality and stability that has become synonymous with our distro.
 
+## No Need to Panic
+
+Worry not though! As long as you're rocking **XeroLinux** like a pro, keeping those updates flowing when they arrive, and using our snazzy "**Apply latest XeroLinux specific changes/updates**" option, you won't be missing out on much action! This change mainly affects newcomers looking for ISOs after **March**; current users are all set.
+
 ## A Big Thank You
 
 We appreciate your understanding in this shift towards more strategic development. Your loyalty and support mean everything! Stick around; exciting times are ahead!
