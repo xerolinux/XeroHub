@@ -11,21 +11,21 @@ tags: ["Apdatifier", "Arch", "ArchLinux", "Plasmoid", "Widget", "Update", "Updat
 
 # Apdatifier: Your Plasma Desktop’s New Best Friend.
 
-Okay fellow Linux nerds let’s talk about something truly important: staying updated, I know I know, you’re thinking “Ugh updates? That’s what happens when I finally get my system configured just right, and then BAM! Something breaks.” But hear me out, what if staying updated was… dare say… enjoyable?
+Okay fellow Linux nerds let’s talk about something truly important: staying updated, I know I know, you’re thinking “Ugh updates? That’s what happens when I finally get my system configured just right, and then BAM! Something breaks.” But hear me out, what if staying updated was… dare I say… enjoyable?
 
-Enter **Apdatifier** the plasma widget that’s going to become either best friend, or useful acquaintance to our beloved **KDE** setup!
+Enter **Apdatifier** the plasma widget that’s going to become either best friend, or a useful acquaintance to our beloved **KDE** setup!
 
 {{< github repo="exequtic/apdatifier" >}}
 
 ### What in Tux Is This Thing?
 
-**Apdatefier** is essentially designed as personal update concierge minus annoying small-talk, it supports following systems
+**Apdatefier** is essentially designed as a personal update concierge minus the annoying small-talk, it supports the following systems :
 
 1\. **ArchLinux & AUR** : because lets admit most are running Arch LoL.<br>
 2\. **Plasma Widgets** : keeps those fresh n’ bug-free.<br>
 3\. **Flatpak** : containerized apps galore.
 
-But wait theres more ! apdatefier isn’t passive observer, it also offers :
+But wait theres more ! Apdatefier isn’t a passive observer, it also offers :
 
 1\. Update Notifications.<br>
 2\. Package Management via bash script.<br>
@@ -36,7 +36,7 @@ But wait theres more ! apdatefier isn’t passive observer, it also offers :
 
 ### Why Should You Care ?
 
-Outdated software = box chocolates, you never know vulnerabilities inside ! apdatefier keeps secure latest features rolling 
+Outdated software = box of chocolates, you never know the vulnerabilities inside ! Apdatefier keeps latest features secure 
 
 <div align="center">
 <video src="https://repos.xerolinux.xyz/files/Apdatifier.mp4" controls></video>
@@ -57,7 +57,7 @@ Ensure smooth sailing post-installation :
 systemctl --user restart plasma-plasmashell.service
 ```
 
-This command refreshes plasmashell after installing/updating any widgets
+This command refreshes `plasmashell` after installing/updating any widgets
 
 ### Pro Tips For Max Awesomeness 
 
@@ -67,12 +67,16 @@ Install `pacman-contrib` and all the required dependencies, if you don't already
 sudo pacman -S pacman-contrib curl jq unzip tar fzf
 ```
 
-Pick fave terminal choose from several popular ones supported by **Apdatifier** ! Embrace command line dont fear diving into bash scripts, tweak away !
+Pick your fave terminal choose from several popular ones supported by **Apdatifier** (below) ! Embrace the command line dont fear diving into bash scripts, and tweak away !
+
+```
+alacritty, foot, gnome-terminal, ghostty, konsole, kitty, lxterminal, ptyxis, terminator, tilix, xterm, yakuake & wezterm
+```
 
 Upgrading/Installing ? Either run above service restart cmd or simply logout/login again !
 
 ### In Conclusion
 
-And thats wrap folks ! While **Apdatifier** wont magically turn updates into party, but hey now keeping upto date wont feel pulling teeth anymore With sleek interface robust features tailored specifically arch users among others,it def worth giving little tool some real estate beautiful kde setup yours !
+And that's a wrap folks ! While **Apdatifier** wont magically turn updates into a party, but hey now, staying up-to date won't make you feel like pulling your teeth anymore With a sleek interface, robust features tailored specifically to Arch users among others,it's def worth giving this little tool some real estate on your beautiful KDE setup !
 
 Cheers !

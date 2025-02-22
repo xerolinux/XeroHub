@@ -27,8 +27,8 @@
     &lt;div id=&#34;apdatifier-your-plasma-desktops-new-best-friend&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
     
 &lt;/h1&gt;
-&lt;p&gt;Okay fellow Linux nerds let’s talk about something truly important: staying updated, I know I know, you’re thinking “Ugh updates? That’s what happens when I finally get my system configured just right, and then BAM! Something breaks.” But hear me out, what if staying updated was… dare say… enjoyable?&lt;/p&gt;
-&lt;p&gt;Enter &lt;strong&gt;Apdatifier&lt;/strong&gt; the plasma widget that’s going to become either best friend, or useful acquaintance to our beloved &lt;strong&gt;KDE&lt;/strong&gt; setup!&lt;/p&gt;
+&lt;p&gt;Okay fellow Linux nerds let’s talk about something truly important: staying updated, I know I know, you’re thinking “Ugh updates? That’s what happens when I finally get my system configured just right, and then BAM! Something breaks.” But hear me out, what if staying updated was… dare I say… enjoyable?&lt;/p&gt;
+&lt;p&gt;Enter &lt;strong&gt;Apdatifier&lt;/strong&gt; the plasma widget that’s going to become either best friend, or a useful acquaintance to our beloved &lt;strong&gt;KDE&lt;/strong&gt; setup!&lt;/p&gt;
 &lt;a id=&#34;github-329f800914aa592a2115ef31194b1362&#34; target=&#34;_blank&#34; href=&#34;https://github.com/exequtic/apdatifier&#34; class=&#34;cursor-pointer&#34;&gt;
   &lt;div
     class=&#34;w-full md:w-auto pt-3 p-5 border border-neutral-200 dark:border-neutral-700 border rounded-md shadow-2xl&#34;&gt;
@@ -114,11 +114,11 @@
     &lt;div id=&#34;what-in-tux-is-this-thing&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
     
 &lt;/h3&gt;
-&lt;p&gt;&lt;strong&gt;Apdatefier&lt;/strong&gt; is essentially designed as personal update concierge minus annoying small-talk, it supports following systems&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Apdatefier&lt;/strong&gt; is essentially designed as a personal update concierge minus the annoying small-talk, it supports the following systems :&lt;/p&gt;
 &lt;p&gt;1. &lt;strong&gt;ArchLinux &amp;amp; AUR&lt;/strong&gt; : because lets admit most are running Arch LoL.&lt;br&gt;
 2. &lt;strong&gt;Plasma Widgets&lt;/strong&gt; : keeps those fresh n’ bug-free.&lt;br&gt;
 3. &lt;strong&gt;Flatpak&lt;/strong&gt; : containerized apps galore.&lt;/p&gt;
-&lt;p&gt;But wait theres more ! apdatefier isn’t passive observer, it also offers :&lt;/p&gt;
+&lt;p&gt;But wait theres more ! Apdatefier isn’t a passive observer, it also offers :&lt;/p&gt;
 &lt;p&gt;1. Update Notifications.&lt;br&gt;
 2. Package Management via bash script.&lt;br&gt;
 3. Mirrorlist refreshing for blazing fast downloads.&lt;br&gt;
@@ -135,7 +135,7 @@
     &lt;div id=&#34;why-should-you-care-&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
     
 &lt;/h3&gt;
-&lt;p&gt;Outdated software = box chocolates, you never know vulnerabilities inside ! apdatefier keeps secure latest features rolling&lt;/p&gt;
+&lt;p&gt;Outdated software = box of chocolates, you never know the vulnerabilities inside ! Apdatefier keeps latest features secure&lt;/p&gt;
 &lt;div align=&#34;center&#34;&gt;
 &lt;video src=&#34;https://repos.xerolinux.xyz/files/Apdatifier.mp4&#34; controls&gt;&lt;/video&gt;
 &lt;/div&gt;
@@ -152,7 +152,7 @@
 4.Search install “&lt;strong&gt;Apdatifier&lt;/strong&gt;”&lt;/p&gt;
 &lt;p&gt;Ensure smooth sailing post-installation :&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;systemctl --user restart plasma-plasmashell.service
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;This command refreshes plasmashell after installing/updating any widgets&lt;/p&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;This command refreshes &lt;code&gt;plasmashell&lt;/code&gt; after installing/updating any widgets&lt;/p&gt;
 
 
 &lt;h3 class=&#34;relative group&#34;&gt;Pro Tips For Max Awesomeness 
@@ -161,15 +161,16 @@
 &lt;/h3&gt;
 &lt;p&gt;Install &lt;code&gt;pacman-contrib&lt;/code&gt; and all the required dependencies, if you don&amp;rsquo;t already have them. Seriously do this both &lt;strong&gt;Apdatifier&lt;/strong&gt; &amp;amp; pacman will thank u !&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo pacman -S pacman-contrib curl jq unzip tar fzf
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Pick fave terminal choose from several popular ones supported by &lt;strong&gt;Apdatifier&lt;/strong&gt; ! Embrace command line dont fear diving into bash scripts, tweak away !&lt;/p&gt;
-&lt;p&gt;Upgrading/Installing ? Either run above service restart cmd or simply logout/login again !&lt;/p&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Pick your fave terminal choose from several popular ones supported by &lt;strong&gt;Apdatifier&lt;/strong&gt; (below) ! Embrace the command line dont fear diving into bash scripts, and tweak away !&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;alacritty, foot, gnome-terminal, ghostty, konsole, kitty, lxterminal, ptyxis, terminator, tilix, xterm, yakuake &amp;amp; wezterm
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Upgrading/Installing ? Either run above service restart cmd or simply logout/login again !&lt;/p&gt;
 
 
 &lt;h3 class=&#34;relative group&#34;&gt;In Conclusion 
     &lt;div id=&#34;in-conclusion&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
     
 &lt;/h3&gt;
-&lt;p&gt;And thats wrap folks ! While &lt;strong&gt;Apdatifier&lt;/strong&gt; wont magically turn updates into party, but hey now keeping upto date wont feel pulling teeth anymore With sleek interface robust features tailored specifically arch users among others,it def worth giving little tool some real estate beautiful kde setup yours !&lt;/p&gt;
+&lt;p&gt;And that&amp;rsquo;s a wrap folks ! While &lt;strong&gt;Apdatifier&lt;/strong&gt; wont magically turn updates into a party, but hey now, staying up-to date won&amp;rsquo;t make you feel like pulling your teeth anymore With a sleek interface, robust features tailored specifically to Arch users among others,it&amp;rsquo;s def worth giving this little tool some real estate on your beautiful KDE setup !&lt;/p&gt;
 &lt;p&gt;Cheers !&lt;/p&gt;
 </description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/apdatifier-widget/featured.webp" />
@@ -293,7 +294,7 @@
 
       &lt;/span&gt;
       &lt;div id=&#34;github-2e819999535d48069af66a73f2eb0246-stargazers&#34; class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
-        1815
+        2053
       &lt;/div&gt;
 
       &lt;span class=&#34;text-md mr-1 text-neutral-800 dark:text-neutral&#34;&gt;
@@ -306,7 +307,7 @@
 
       &lt;/span&gt;
       &lt;div id=&#34;github-2e819999535d48069af66a73f2eb0246-forks&#34; class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
-        120
+        139
       &lt;/div&gt;
 
     &lt;/div&gt;
