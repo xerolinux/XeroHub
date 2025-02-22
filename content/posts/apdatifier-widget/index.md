@@ -9,11 +9,11 @@ tags: ["Apdatifier", "Arch", "ArchLinux", "Plasmoid", "Widget", "Update", "Updat
 
 ![Header](https://i.imgur.com/BFrI7wf.png)
 
-### Apdatifier: Your Plasma Desktop’s New Best Friend.
+# Apdatifier: Your Plasma Desktop’s New Best Friend.
 
 Okay fellow Linux nerds let’s talk about something truly important: staying updated, I know I know, you’re thinking “Ugh updates? That’s what happens when I finally get my system configured just right, and then BAM! Something breaks.” But hear me out, what if staying updated was… dare say… enjoyable?
 
-Enter **Apdatifier** the plasma widget that’s going to become either best friend—or useful acquaintance—to our beloved **KDE** setup!
+Enter **Apdatifier** the plasma widget that’s going to become either best friend, or useful acquaintance to our beloved **KDE** setup!
 
 {{< github repo="exequtic/apdatifier" >}}
 
@@ -25,7 +25,7 @@ Enter **Apdatifier** the plasma widget that’s going to become either best frie
 2\. **Plasma Widgets** : keeps those fresh n’ bug-free.<br>
 3\. **Flatpak** : containerized apps galore.
 
-But wait theres more ! apdatefier isn’t passive observer—it also offers :
+But wait theres more ! apdatefier isn’t passive observer, it also offers :
 
 1\. Update Notifications.<br>
 2\. Package Management via bash script.<br>
@@ -36,7 +36,7 @@ But wait theres more ! apdatefier isn’t passive observer—it also offers :
 
 ### Why Should You Care ?
 
-Outdated software = box chocolates—you never know vulnerabilities inside ! apdatefier keeps secure latest features rolling 
+Outdated software = box chocolates, you never know vulnerabilities inside ! apdatefier keeps secure latest features rolling 
 
 <div align="center">
 <video src="https://repos.xerolinux.xyz/files/Apdatifier.mp4" controls></video>
