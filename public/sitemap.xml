@@ -189,12 +189,6 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://xerolinux.xyz/updates/youtube-status/</loc>
-    <lastmod>2024-07-04T00:00:00+00:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://xerolinux.xyz/posts/chaotic-aur/</loc>
     <lastmod>2024-07-03T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
