@@ -23,7 +23,7 @@ It's time for a major update (pun intended) on the **XeroLinux** front. Due to t
 
 ## No Need to Panic
 
-Worry not though! As long as you're rocking **XeroLinux** like a pro, keeping those updates flowing when they arrive, and using our snazzy "**Apply latest XeroLinux specific changes/updates**" option, you won't be missing out on much action! This change mainly affects newcomers looking for ISOs after **March**; current users are all set.
+Worry not though! As long as you're rocking **XeroLinux** like a pro, keeping those updates flowing when they arrive, and using our snazzy "**Apply latest XeroLinux specific changes/updates**" option, you won't be missing out on much action! This change will take place after **March**.
 
 ## A Big Thank You
 
