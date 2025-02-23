@@ -23,7 +23,7 @@ It's time for a major update (pun intended) on the **XeroLinux** front. Due to t
 
 ## No Need to Panic
 
-Worry not though! As long as you're rocking **XeroLinux** like a pro, keeping those updates flowing when they arrive, and using our snazzy "**Apply latest XeroLinux specific changes/updates**" option, you won't be missing out on much action! This change will take place after **March**. ISOs will continue to be available for new users. Just make sure to update post-install. (You don't want to be behid the rest now, do you?)
+Worry not though! As long as you're rocking **XeroLinux** like a pro, keeping those updates flowing when they arrive, and using our snazzy "**Apply latest XeroLinux specific changes/updates**" option, you won't be missing out on much action! This change will take place after **March**. 
 
 <div align="center">
 
@@ -32,6 +32,8 @@ XeroLinux on Ko-Fi
 {{< /button >}}
 
 </div>
+
+ISOs will continue to be available for new users in the mean-time, just make sure first thing you do post-install is update and reboot your PC in order to benefit from latest features. (You don't want to be behid the rest now, do you?)
 
 ## A Big Thank You
 
