@@ -5,33 +5,9 @@ description: "The Gear I use"
 ---
 ### Information
 
-Some of you out there keep calling me an **Arch** & **KDE Plasma** shill. To which I would like to reespond with, what's wrong with that ? I mean, why do you find it so strange for one to use what one likes if it works for them and stick with it ? I like what I like, never had any strange and deal breaking issues that affected my day to day.
-
-![Issues](https://i.imgur.com/6L7eG23.jpeg)
-
-That's not to say that issues do not exist, oh they do. But, in my case, for my specific usage, none of them were severe enough to cause me to move away. Annoying, yes, but not deal breaking. I did try many other DEs, like **Gnome**, **XFCE**, **Cinnamon**, even **Hyprland**, none of which worked for me. I found myself having to force myself to adapt to them, while with **KDE Plasma** not so much, it reflects my personality.
-
-I also tried many other Distros, like **Fedora** and many of its spins, **Debian Sid**, **OpenSuse**, **uBlue Aurora**, all with **Plasma**, none of which I could adapt to. **Arch** just works for me, it's super easy to fix when issues do happen.
-
-Oh, I forgot to mention that I am not much of a gamer, so there's that too. If I do play games I have never experienced `120fps` or higher, am used `60fps`, so am fine with that. My current hardware cannot do any better anyway...
+Some people call me an **Arch** & **KDE Plasma** shill, and I don't see the problem with that. I use what works for me, and **Arch** has been great. Sure, there are issues, but none have been deal-breakers for my use case. I've tried other distros, but **Arch** is the one I can easily adapt to and fix when problems arise. 
 
 Just wanted to cover these facts before moving on with the Hardware & Software I use...
-
-### The Software
-
-- **Linux Distro :**
-
-I love working with **ArchLinux** in all its forms. It's the most flexible Distro I have ever had the pleasure to work with. Allowing me to build things from the ground up without it being too complex, or getting in my way. That's why all my systems run it or one of its spins.
-
-![Arch](https://i.imgur.com/UgV9kRn.png)
-
-- **Desktop Environment :**
-
-As for the Desktop Environment I love working with, it's none other than **KDE Plasma**, simply because it's so damn beautiful, and easy to work with. And since I am more of a visual old geezer, it fits my needs so well it ain't a joke. That's why I don't see myself using anything else for a long time to come.
-
-**Note :**
-
-> I do dabble with other Non-Arch Distros and other DEs from time to time to keep my knowledge fresh, and to post about them on this here site.
 
 ### The Hardware
 
@@ -43,7 +19,7 @@ Main rig, the one I do all my *Development*, *Gaming* and other things on, which
 
 ![SationXero](https://i.imgur.com/oB2MDEv.png)
 
-I know the `GTX 1080` is an aging GPU, trust me I am trying to raise money to replace it with at least an `RTX 3080/3090`. I could use better **Wayland** support. Am not really a gamer though, so that part I do not perticularly care about.
+I know the `GTX 1080` is an aging GPU, trust me I am trying to raise money to replace it with at least an `RX 7800XT`. I could use better **Wayland** support. Am not really a gamer though, so that part I do not perticularly care about.
 
 **Home-Lab/Proxmox Server :**
 
