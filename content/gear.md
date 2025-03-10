@@ -49,10 +49,6 @@ Main rig, the one I do all my *Development*, *Gaming* and other things on, which
 
 I know the `GTX 1080` is an aging GPU, trust me I am trying to raise money to replace it with at least an `RTX 3080/3090`. I could use better **Wayland** support. Am not really a gamer though, so that part I do not perticularly care about.
 
-{{< alert icon="link" cardColor="#9900ff" iconColor="#0000FF" textColor="#f1faee" >}}
-GPU &/or CPU Upgrade Fund. More info >> [**Here**](https://blog.xerolinux.xyz/2024/06/new-gpu-cpu-fund/)
-{{< /alert >}}
-
 **Home-Lab/Proxmox Server :**
 
 This Mini PC I call **XeroLab**, as the name implies, is my **Home-Lab** PC, it runs all my **Docker Containers** as well as my **Proxmox** server. It has `16GB RAM` with a `Ryzen 5 7530U`.
