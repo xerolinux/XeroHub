@@ -7,42 +7,41 @@ tags: ["XeroLinux", "Browser", "Firefox", "ArchLinux", "FOSS", "Linux"]
 ---
 Hey there...
 
-This is a new type of post. Please read on to understand what it's all about. **XeroLinux** will be changing the browser included out the box.
+Alright, buckle up, fellow tech enthusiasts! Let's dive into the rollercoaster that XeroLinux has been riding with its browser choice.
 
-### Current situation
+### Current Glitch
 
-In February 2025, **Mozilla** introduced Terms of Use for **Firefox** for the first time, accompanied by an updated Privacy Notice, aiming to provide users more transparency regarding data practices. The initial terms sparked confusion and criticism due to phrasing that seemingly granted Mozilla broad rights over user data, including a "nonexclusive, royalty-free, worldwide license" to use information entered through the browser31. This raised concerns about potential access to personal information, saved passwords, and browsing history, drawing comparisons to data practices of major tech companies.
+So, **Mozilla**, in their infinite wisdom, decided to drop a new Terms of Use (TOU) for **Firefox** back in February 2025. They said it was to be more transparent, but it ended up being about as clear as mud, causing a full-blown user revolt. The original wording made it sound like Mozilla wanted a "nonexclusive, royalty-free, worldwide license" to all your precious data. Naturally, this raised eyebrows faster than you can say "privacy breach," and comparisons to other data-hungry giants were inevitable. Check out this video that pretty much sums it up:
 
 {{< youtube 95HAb5oKNOg >}}
 
-In response to community concerns, Mozilla revised the Terms of Use to clarify that the intention was to enable basic Firefox functionality, not to claim ownership of user data. The updated language emphasizes the limited scope of Mozilla's interaction with user data, stating that users give Mozilla the rights necessary to operate Firefox, including data processing as described in the Privacy Notice, and a license to fulfill user requests regarding content entered in Firefox. Mozilla also addressed concerns about selling data, explaining that while they do share some data with partners to keep Firefox commercially viable, they strive to anonymize or aggregate this data and detail these practices in their privacy notice.
+Mozilla, realizing they'd stepped in it, quickly backtracked and clarified that they just needed the necessary rights to make Firefox work, not to claim your data as their own. They updated the language to emphasize the limited scope, but the initial kerfuffle had already left a mark. Want more details?
 
-<h2 align="center"><a href="https://thehackernews.com/2025/03/mozilla-updates-firefox-terms-again.html" target="_blank"><strong>Click for more info...</strong></a></h2>
+### A Fork in the Road
 
-### Action / Results
-
-As a result of this, we, here at the **XeroLinux HQ** decided to run a poll asking you the users, to vote for a replacement. And the winner, by a huge margin was, [**LibreWolf**](https://librewolf.net), so we decided to switch to it.
+Here at the **XeroLinux HQ**, we thought, "Hey, let's let the users decide!" So, we ran a poll, and the winner was [**LibreWolf**](https://librewolf.net), a browser known for its privacy focus. Seemed like a solid choice, right?
 
 ![LibreWolf](https://i.imgur.com/xOYZ3JZ.jpeg)
 
-But alas that wasn't enough. That decision backfired on us and ignited an unwarranted argument between users who voted for it and ones who had opinions against its developer and the philosophy behind it, for various reasons I will not go into in this post...
+Wrong! This decision detonated a digital war between LibreWolf's supporters and those with concerns about its developer and philosophy. It was like watching two factions battle it out in an MMORPG, and we were caught in the crossfire.
 
-### Future plans
+### The Neutrality Patch
 
-No matter what *big name browser* we decide to move to, there will always be some people complaining, we can't win. Not including any will also cause a riot.
+Here's the thing: no matter which *big name browser* we pick, someone's going to have a problem with it. We can't win this game. But not including any browser at all? That's a recipe for a user riot.
 
-For this reason, and since we do not want to be involved in these political wars, and with the project being apolitical, as in neutral, we decided to do what we should have done since day one, which is to stick to "placeholder" ones while we keep offering a big selection of others for you to install later on. 
+So, we're hitting the reset button and sticking to "placeholder" browsers while still offering a wide selection for you to install later. Think of it as choosing a character class in a game – you get a basic one to start, but you can always switch to a more specialized one later.
 
 ![Browsers](https://i.imgur.com/k0gin7l.png)
 
-And those browsers are, [**Epiphany**](https://apps.gnome.org/Epiphany/) on the **Gnome** spin, and [**Falkon**](https://www.falkon.org) on **KDE Plasma**. We chose them because they are native to each Desktop environment, and more importantly completely neutral, thus staying true to our philosophy.
+For the **Gnome** spin, we're going with [**Epiphany**](https://apps.gnome.org/Epiphany/), and for **KDE Plasma**, it's [**Falkon**](https://www.falkon.org). These browsers are native to their respective desktop environments and, more importantly, politically neutral. This keeps us out of the browser wars and aligns with our project's philosophy.
 
-### Closing thoughts
+### The Bottom Line
 
-We hope that this will put en end to the constant backlash. As we pointed out earlier, those are just there so you have a browser to use out the box. You then install whichever one you prefer through our toolkit. We will be adding more as time goes by. 
+We're hoping this change will finally silence the peanut gallery. These placeholder browsers are just there to get you started. After that, you can grab your favorite from our toolkit. We'll keep adding more over time.
 
-However, we cannot add every single one out there, as there are way too many. If you don't find the one you like on the list, just head on over to either [**Flathub**](https://flathub.org), the [**AUR**](https://aur.archlinux.org) or the official **Arch Repos**, and install it from there.
+If you don't see your preferred browser on our list, don't panic! Just head over to [**Flathub**](https://flathub.org), the [**AUR**](https://aur.archlinux.org), or the official **Arch Repos** and install it from there.
 
-It's that easy. We apologize for this, but it had to be done to avoid any potential arguments and political discussions. Thanks for your continued support and understanding in this matter.
+It's that simple! We apologize for the drama, but this was necessary to avoid endless arguments and political debates. Thanks for sticking with us, and we appreciate your understanding.
 
-Cheers !
+Keep on hacking!
+
