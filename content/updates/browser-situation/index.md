@@ -15,7 +15,7 @@ So, **Mozilla**, in their infinite wisdom, decided to drop a new Terms of Use (T
 
 {{< youtube 95HAb5oKNOg >}}
 
-Mozilla, realizing they'd stepped in it, quickly backtracked and clarified that they just needed the necessary rights to make Firefox work, not to claim your data as their own. They updated the language to emphasize the limited scope, but the initial kerfuffle had already left a mark. Want more details?
+Mozilla, realizing they'd stepped in it, quickly backtracked and clarified that they just needed the necessary rights to make Firefox work, not to claim your data as their own. They updated the language to emphasize the limited scope, but the initial kerfuffle had already left a mark.
 
 ### A Fork in the Road
 
