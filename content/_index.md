@@ -25,7 +25,7 @@ Check out Project <a href="https://github.com/XeroLinuxDev/xero-build" target="_
 <div align="center">
 
 {{< button href="https://ko-fi.com/xerolinux/shop" target="_blank" >}}
-Get XeroLinux ISO(s)
+↪️ Get XeroLinux ↩️
 {{< /button >}}
 
 </div><br />
