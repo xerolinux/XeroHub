@@ -24,10 +24,8 @@ Check out Project <a href="https://github.com/XeroLinuxDev/xero-build" target="_
 
 <div align="center">
 
-###  🔻 Unlock Access 🔻 
-
 {{< button href="https://ko-fi.com/xerolinux/shop" target="_blank" >}}
-XeroLinux on Ko-Fi
+Get XeroLinux ISO(s)
 {{< /button >}}
 
 </div><br />
