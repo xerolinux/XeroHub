@@ -37,7 +37,7 @@ For the **Gnome** spin, we're going with [**Epiphany**](https://apps.gnome.org/E
 
 ### The Bottom Line
 
-We're hoping this change will finally silence the peanut gallery. These placeholder browsers are just there to get you started. After that, you can grab your favorite from our toolkit. We'll keep adding more over time.
+We're hoping this change will finally silence the peanut gallery. These placeholder browsers are just there to get you started. After that, you can grab your favorite from our toolkit **No Judgement !**. We'll keep adding more over time.
 
 If you don't see your preferred browser on our list, don't panic! Just head over to [**Flathub**](https://flathub.org), the [**AUR**](https://aur.archlinux.org), or the official **Arch Repos** and install it from there.
 
