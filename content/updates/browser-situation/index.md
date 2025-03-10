@@ -21,7 +21,7 @@ In response to community concerns, Mozilla revised the Terms of Use to clarify t
 
 ### Action / Results
 
-As a result of this, we, here at the **XeroLinux HQ** decided to run a poll asking you the users, to vote for a replacement browser that will be included on the Distro moving forward. And the winner, by a huge margin was, [**LibreWolf**](https://librewolf.net), so we decided to switched to it.
+As a result of this, we, here at the **XeroLinux HQ** decided to run a poll asking you the users, to vote for a replacement browser that will be included on the Distro moving forward. And the winner, by a huge margin was, [**LibreWolf**](https://librewolf.net), so we decided to switch to it.
 
 ![LibreWolf](https://i.imgur.com/xOYZ3JZ.jpeg)
 
