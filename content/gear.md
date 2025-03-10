@@ -23,7 +23,7 @@ I know the `GTX 1080` is an aging GPU, trust me I am trying to raise money to re
 
 **Home-Lab/Proxmox Server :**
 
-This Mini PC I call **XeroLab**, as the name implies, is my **Home-Lab** PC, it runs all my **Docker Containers** as well as my **Proxmox** server. It has `16GB RAM` with a `Ryzen 5 7530U`.
+This Mini PC I call **XeroLab**, as the name implies, is my **Home-Lab** PC, it runs all my **Docker Containers** as well as my **Proxmox** server. It has `32GB RAM` after upgrade, with a `Ryzen 5 7530U`.
 
 ![XeroLab](https://i.imgur.com/kmw2Heg.png)
 
