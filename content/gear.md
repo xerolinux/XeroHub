@@ -23,15 +23,13 @@ Just wanted to cover these facts before moving on with the Hardware & Software I
 
 I love working with **ArchLinux** in all its forms. It's the most flexible Distro I have ever had the pleasure to work with. Allowing me to build things from the ground up without it being too complex, or getting in my way. That's why all my systems run it or one of its spins.
 
-![Arch](https://i.imgur.com/QKCvQ7e.png)
+![Arch](https://i.imgur.com/UgV9kRn.png)
 
 To summarize, I use **Vanilla Arch** on main rig, **XeroLinux** on HomeLab and **Manjaro** on HTPC. As you can see Arch is at the core of every OS I use.
 
 - **Desktop Environment :**
 
 As for the Desktop Environment I love working with, it's none other than **KDE Plasma**, simply because it's so damn beautiful, and easy to work with. And since I am more of a visual old geezer, it fits my needs so well it ain't a joke. That's why I don't see myself using anything else for a long time to come.
-
-![KDE](https://i.imgur.com/i1wPNvb.png)
 
 **Note :**
 
@@ -61,7 +59,7 @@ That thing is not showing any signs of slowing down. It's a great little machine
 
 Another desktop I call **XeroNAS**, as the name implies, is my **NAS** PC, it stores all my personal data as well as my Linux ISOs & GOG game installers. It has `8GB RAM` with a `Ryzen 5 3600X` and an old `GT-710` GPU.
 
-![XeroLab](https://i.imgur.com/Lwr2xgR.jpeg)
+![OMV](https://i.imgur.com/7y4TZOJ.png)
 
 That thing is running [**OpenMediaVault**](https://www.openmediavault.org) for managing all the storage. I personally love it for its simplicity and ease of use. It ain't much but it works.
 
@@ -69,7 +67,7 @@ That thing is running [**OpenMediaVault**](https://www.openmediavault.org) for m
 
 Finally there's my HTPC, which has `Core-i7 6800K`, with a `GTX 650 Ti-Boost OC` (Soon my GTX1080) GPU, and `32GB RAM`. Now with it being my HTPC, it has 14 Drives of various sizes totalling `~68TB` of storage.
 
-![HTPC](https://i.imgur.com/HDlPIZi.jpeg)
+![HTPC](https://i.imgur.com/qDrszls.jpeg)
 
 The only app installed on that thing is [**Plex Server**](https://plex.tv) as a *Snap*.
 
