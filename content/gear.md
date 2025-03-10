@@ -25,8 +25,6 @@ I love working with **ArchLinux** in all its forms. It's the most flexible Distr
 
 ![Arch](https://i.imgur.com/UgV9kRn.png)
 
-To summarize, I use **Vanilla Arch** on main rig, **XeroLinux** on HomeLab and **Manjaro** on HTPC. As you can see Arch is at the core of every OS I use.
-
 - **Desktop Environment :**
 
 As for the Desktop Environment I love working with, it's none other than **KDE Plasma**, simply because it's so damn beautiful, and easy to work with. And since I am more of a visual old geezer, it fits my needs so well it ain't a joke. That's why I don't see myself using anything else for a long time to come.
