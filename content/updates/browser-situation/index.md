@@ -7,7 +7,11 @@ tags: ["XeroLinux", "Browser", "Firefox", "ArchLinux", "FOSS", "Linux"]
 ---
 Hey there...
 
-Alright, buckle up, fellow tech enthusiasts! Let's dive into the rollercoaster that XeroLinux has been riding with its browser choice.
+Alright, buckle up, fellow Linux enthusiasts! Let's dive into the rollercoaster that **XeroLinux** has been riding with its browser choice.
+
+{{< info >}}
+Please take some time to read the entire post to understand the reasoning behind our decision. And we kindly request that you refrain from turning this into a political debate. It's not. We are just a small project trying to be as neutral as possible. Thanks ;)
+{{< /alert >}}
 
 ### Current Glitch
 
@@ -25,7 +29,7 @@ Here at the **XeroLinux HQ**, we thought, "Hey, let's let the users decide!" So,
 
 Wrong! This decision detonated a digital war between LibreWolf's supporters and those with concerns about its developer and philosophy. It was like watching two factions battle it out in an MMORPG, and we were caught in the crossfire.
 
-### The Neutrality Patch
+### Neutrality Patch
 
 Here's the thing: no matter which *big name browser* we pick, someone's going to have a problem with it. We can't win this game. But not including any browser at all? That's a recipe for a user riot.
 
@@ -35,7 +39,7 @@ So, we're hitting the reset button and sticking to "placeholder" browsers while 
 
 For the **Gnome** spin, we're going with [**Epiphany**](https://apps.gnome.org/Epiphany/), and for **KDE Plasma**, it's [**Falkon**](https://www.falkon.org). These browsers are native to their respective desktop environments and, more importantly, politically neutral. This keeps us out of the browser wars and aligns with our project's philosophy.
 
-### The Bottom Line
+### Bottom Line
 
 We're hoping this change will finally calm things down for good. These placeholder browsers are just there to get you started. After that, you can grab your favorite from our toolkit **No Judgement !** We'll keep adding more over time.
 
