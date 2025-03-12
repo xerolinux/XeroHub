@@ -35,13 +35,15 @@ Here's the thing: no matter which *big name browser* we pick, someone's going to
 
 So, we're hitting the reset button and sticking to "placeholder" browsers while still offering a wide selection for you to install later. Think of it as choosing a character class in a game – you get a basic one to start, but you can always switch to a more specialized one later.
 
-![Browsers](https://i.imgur.com/k0gin7l.png)
+{{< youtube SMQc4umq3gg >}}
 
 For the **Gnome** spin, we're going with [**Epiphany**](https://apps.gnome.org/Epiphany/), and for **KDE Plasma**, it's [**Falkon**](https://www.falkon.org). These browsers are native to their respective desktop environments and, more importantly, politically neutral. This keeps us out of the browser wars and aligns with our project's philosophy.
 
 ### Bottom Line
 
 We're hoping this change will finally calm things down for good. These placeholder browsers are just there to get you started. After that, you can grab your favorite from our toolkit **No Judgement !** We'll keep adding more over time.
+
+![Browsers](https://i.imgur.com/k0gin7l.png)
 
 If you don't see your preferred browser on our list, don't panic! Just head over to [**Flathub**](https://flathub.org), the [**AUR**](https://aur.archlinux.org), or the official **Arch Repos** and install it from there.
 
