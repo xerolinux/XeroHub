@@ -9,8 +9,8 @@ Hey there...
 
 Alright, buckle up, fellow Linux enthusiasts! Let's dive into the rollercoaster that **XeroLinux** has been riding with its browser choice.
 
-{{< info >}}
-Please take some time to read the entire post to understand the reasoning behind our decision. And we kindly request that you refrain from turning this into a political debate. It's not. We are just a small project trying to be as neutral as possible. Thanks ;)
+{{< alert icon="fire" cardColor="#e63946" iconColor="#1d3557" textColor="#f1faee" >}}
+**Please** : Take some time to read the entire post to understand the reasoning behind our decision. And we kindly request that you refrain from turning this into a political debate. It's not. We are just a small project trying to be as neutral as possible. Thanks ;)
 {{< /alert >}}
 
 ### Current Glitch

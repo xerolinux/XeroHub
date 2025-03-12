@@ -587,7 +587,7 @@ return sequence[:n]
 
       &lt;/span&gt;
       &lt;div id=&#34;gitlab-b5993c5970e77657baffddc647ed112c-star_count&#34; class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
-        26
+        34
       &lt;/div&gt;
 
       &lt;span class=&#34;text-md mr-1 text-neutral-800 dark:text-neutral&#34;&gt;
@@ -600,7 +600,7 @@ return sequence[:n]
 
       &lt;/span&gt;
       &lt;div id=&#34;gitlab-b5993c5970e77657baffddc647ed112c-forks_count&#34; class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
-        1
+        0
       &lt;/div&gt;
 
     &lt;/div&gt;
@@ -696,7 +696,7 @@ return sequence[:n]
 
       &lt;/span&gt;
       &lt;div id=&#34;github-33a752733b7cf7935c163efcf04a96c1-stargazers&#34; class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
-        43
+        55
       &lt;/div&gt;
 
       &lt;span class=&#34;text-md mr-1 text-neutral-800 dark:text-neutral&#34;&gt;
@@ -709,7 +709,7 @@ return sequence[:n]
 
       &lt;/span&gt;
       &lt;div id=&#34;github-33a752733b7cf7935c163efcf04a96c1-forks&#34; class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
-        8
+        13
       &lt;/div&gt;
 
     &lt;/div&gt;
@@ -769,15 +769,15 @@ return sequence[:n]
     &lt;/div&gt;
 
     &lt;p id=&#34;github-5eeb2e27b9916ae7df6a93a2a1b42a89-description&#34; class=&#34;m-0 mt-2 text-md text-neutral-800 dark:text-neutral&#34;&gt;
-      The packages Mason, what do they mean? (Package requests and bug reports here) 📑
+      Read-only mirror of Chaotic-AUR&amp;rsquo;s main repository. Issues and bug reports welcome! 📑
     &lt;/p&gt;
 
     &lt;div class=&#34;m-0 mt-2 flex items-center&#34;&gt;
 
       &lt;span class=&#34;mr-1 inline-block h-3 w-3 rounded-full&#34;
-        style=&#34;background-color:  #0077b6 &#34;&gt;&lt;/span&gt;
+        style=&#34;background-color: #89e051&#34;&gt;&lt;/span&gt;
       &lt;div class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
-         null 
+         Shell 
       &lt;/div&gt;
 
       &lt;span class=&#34;text-md mr-1 text-neutral-800 dark:text-neutral&#34;&gt;
@@ -790,7 +790,7 @@ return sequence[:n]
 
       &lt;/span&gt;
       &lt;div id=&#34;github-5eeb2e27b9916ae7df6a93a2a1b42a89-stargazers&#34; class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
-        321
+        335
       &lt;/div&gt;
 
       &lt;span class=&#34;text-md mr-1 text-neutral-800 dark:text-neutral&#34;&gt;
