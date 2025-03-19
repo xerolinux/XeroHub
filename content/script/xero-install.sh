@@ -14,10 +14,10 @@ if [ "$EUID" -ne 0 ]; then
 fi
 
 # Check if the script is running on Arch Linux
-# if ! grep -q "Arch Linux" /etc/os-release; then
-#   dialog --title "!! Unknown Distro !!" --colors --msgbox "\nThis script must be run on \Zb\Z1Vanilla Arch\Zn. Running it on any other Distro, even \Zb\Z6Arch-Spins\Zn might cause issues.\n\nHit OK to exit." 10 60
-#   exit 1
-# fi
+if ! grep -q "Arch Linux" /etc/os-release; then
+  dialog --title "!! Unknown Distro !!" --colors --msgbox "\nThis script must be run on \Zb\Z1Vanilla Arch\Zn. Running it on any other Distro, even \Zb\Z6Arch-Spins\Zn might cause issues.\n\nHit OK to exit." 10 60
+  exit 1
+fi
 
 # Check if dialog is installed, if not, install it
 if ! command -v dialog &> /dev/null; then
