@@ -7,7 +7,98 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>Proudly made in Lebanon &lt;img src=&#39;https://xerolinux.xyz/logos/lb.png&#39; alt=&#39;🇱🇧&#39; width=&#39;18&#39; height=&#39;18&#39; style=&#39;margin: 0; display: inline; vertical-align: middle;&#39;&gt;</copyright>
-    <lastBuildDate>Mon, 10 Mar 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://xerolinux.xyz/tags/archlinux/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 23 Mar 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://xerolinux.xyz/tags/archlinux/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Arch to XeroLinux</title>
+      <link>https://xerolinux.xyz/posts/vanilla-to-xero/</link>
+      <pubDate>Sun, 23 Mar 2025 00:00:00 +0000</pubDate>
+      
+      <guid>https://xerolinux.xyz/posts/vanilla-to-xero/</guid>
+      <description>
+
+&lt;h3 class=&#34;relative group&#34;&gt;Intro 
+    &lt;div id=&#34;intro&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+    
+&lt;/h3&gt;
+&lt;p&gt;This keeps being asked on social. So I decided to answer it here.. How can you transform your Arch Install with &lt;strong&gt;Gnome&lt;/strong&gt; or &lt;strong&gt;KDE Plasma&lt;/strong&gt; to &lt;strong&gt;XeroLinux&lt;/strong&gt; without having to reinstall or donate for the ISOs. Well, it&amp;rsquo;s realtively easy, just follow this guide and you should be fine.&lt;/p&gt;
+
+
+&lt;h3 class=&#34;relative group&#34;&gt;Pre-requisits 
+    &lt;div id=&#34;pre-requisits&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+    
+&lt;/h3&gt;
+&lt;p&gt;We will need the toolkit which will enable everything you need to get started, like the &lt;strong&gt;XeroLinux&lt;/strong&gt; &amp;amp; &lt;strong&gt;Chaotic-AUR&lt;/strong&gt; repos and the &lt;strong&gt;AUR&lt;/strong&gt; Helper you prefer. Without them you will not be able to proceed.&lt;/p&gt;
+&lt;p&gt;
+  &lt;figure&gt;
+    &lt;img class=&#34;my-0 rounded-md&#34; loading=&#34;lazy&#34; src=&#34;https://i.imgur.com/JuWceYE.png&#34; alt=&#34;[Toolkit]&#34; /&gt;
+    
+  &lt;/figure&gt;
+&lt;/p&gt;
+&lt;p&gt;You will also need to be equiped with a bit of patience for some packages to compile. And please read the terminal output carefully in case of issues you will beasked for them.&lt;/p&gt;
+
+
+&lt;h3 class=&#34;relative group&#34;&gt;Installation 
+    &lt;div id=&#34;installation&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+    
+&lt;/h3&gt;
+&lt;p&gt;Ok, now that you know what we will need, let&amp;rsquo;s begin. To install the toolkit, repos n AUR helper type the following command in your favorite Terminal application :&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;bash -c &lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;$(&lt;/span&gt;curl -fsSL https://xerolinux.xyz/script/xapi.sh&lt;span class=&#34;k&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;
+  &lt;figure&gt;
+    &lt;img class=&#34;my-0 rounded-md&#34; loading=&#34;lazy&#34; src=&#34;https://i.imgur.com/5lDm8Sv.png&#34; alt=&#34;[Toolkit1]&#34; /&gt;
+    
+  &lt;/figure&gt;
+&lt;/p&gt;
+&lt;p&gt;As you can see from the image above you will be prompted to select your preferred &lt;strong&gt;AUR Helper&lt;/strong&gt;, choose one and let the script install it for you. You will also notice that it will enable &amp;amp; activate both aforemntioned repos with multilib if you forgot it too.&lt;/p&gt;
+&lt;p&gt;
+  &lt;figure&gt;
+    &lt;img class=&#34;my-0 rounded-md&#34; loading=&#34;lazy&#34; src=&#34;https://i.imgur.com/tcZ8sDC.png&#34; alt=&#34;[Toolkit2]&#34; /&gt;
+    
+  &lt;/figure&gt;
+&lt;/p&gt;
+&lt;p&gt;Now that the toolkit has been installed and repos activated all you have to do is launch it either via &lt;code&gt;xero-cli -m&lt;/code&gt; in terminal or via the shortcut found in the DE&amp;rsquo;s App Menu or Dashboard in the case of &lt;strong&gt;Gnome&lt;/strong&gt;. Once launched select option &amp;ldquo;&lt;strong&gt;4 : System Customization.&lt;/strong&gt;&amp;rdquo;.&lt;/p&gt;
+&lt;p&gt;
+  &lt;figure&gt;
+    &lt;img class=&#34;my-0 rounded-md&#34; loading=&#34;lazy&#34; src=&#34;https://i.imgur.com/aJBDnPS.png&#34; alt=&#34;[Toolkit3]&#34; /&gt;
+    
+  &lt;/figure&gt;
+&lt;/p&gt;
+&lt;p&gt;For &lt;strong&gt;KDE Plasma&lt;/strong&gt; select option &amp;ldquo;&lt;strong&gt;x. XeroLinux&amp;rsquo;s Layan Rice&lt;/strong&gt;&amp;rdquo; as for &lt;strong&gt;Gnome&lt;/strong&gt; select option &amp;ldquo;&lt;strong&gt;z. Apply XeroLinux Gnome Settings&lt;/strong&gt;&amp;rdquo;, and watch it do its thing. It will download necessary packages for settings to work. In case system is not rebooted after it&amp;rsquo;s done, please do so otherwise you will have a mess on your hands.&lt;/p&gt;
+&lt;p&gt;
+  &lt;figure&gt;
+    &lt;img class=&#34;my-0 rounded-md&#34; loading=&#34;lazy&#34; src=&#34;https://i.imgur.com/PRun3J5.jpeg&#34; alt=&#34;[Gnome]&#34; /&gt;
+    
+  &lt;/figure&gt;
+&lt;/p&gt;
+&lt;p&gt;Image above represents what you will end up with on &lt;strong&gt;Gnome&lt;/strong&gt;. If you dislike it and want to start from scratch, well that&amp;rsquo;s easy just type the follwing command in terminal and you&amp;rsquo;ll be back to to square one :&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;dconf reset -f /org/gnome/
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;
+  &lt;figure&gt;
+    &lt;img class=&#34;my-0 rounded-md&#34; loading=&#34;lazy&#34; src=&#34;https://i.imgur.com/VA2tycb.jpeg&#34; alt=&#34;[KDE]&#34; /&gt;
+    
+  &lt;/figure&gt;
+&lt;/p&gt;
+&lt;p&gt;As for &lt;strong&gt;KDE Plasma&lt;/strong&gt; above image is what you will end up with, although wallpaper might be different. Anyway that should be it. And again if you would like to start over as with &lt;strong&gt;Gnome&lt;/strong&gt;, well, in this case there&amp;rsquo;s a dedicated option in the toolkit.&lt;/p&gt;
+&lt;p&gt;
+  &lt;figure&gt;
+    &lt;img class=&#34;my-0 rounded-md&#34; loading=&#34;lazy&#34; src=&#34;https://i.imgur.com/oh2PZy0.png&#34; alt=&#34;[Service]&#34; /&gt;
+    
+  &lt;/figure&gt;
+&lt;/p&gt;
+&lt;p&gt;As you can see from above image, just return to main menu then select option &amp;ldquo;&lt;strong&gt;7 : System Troubleshooting &amp;amp; Tweaks&lt;/strong&gt;&amp;rdquo;, then &amp;ldquo;&lt;strong&gt;s. Reset KDE/Xero Layout back to Stock.&lt;/strong&gt;&amp;rdquo; finally reboot, done !&lt;/p&gt;
+
+
+&lt;h3 class=&#34;relative group&#34;&gt;Conclusion 
+    &lt;div id=&#34;conclusion&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+    
+&lt;/h3&gt;
+&lt;p&gt;I sure hope you enjoy your system with the &lt;strong&gt;XeroLinux&lt;/strong&gt; look n feel. Although these options make your system mimic &lt;strong&gt;XeroLinux&lt;/strong&gt; it&amp;rsquo;s not representative of the Distro 1 to 1. It just gets you as close as possible to it.&lt;/p&gt;
+&lt;p&gt;If you want the full experience, you will have to donate for the ISO(s). That said, don&amp;rsquo;t forget to join our Discord for any help or if you just want to chat with us.&lt;/p&gt;
+&lt;p&gt;Cheers !&lt;/p&gt;
+</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/vanilla-to-xero/featured.webp" />
+    </item>
+    
     <item>
       <title>Apdatifier Plasmoid</title>
       <link>https://xerolinux.xyz/posts/apdatifier-widget/</link>
