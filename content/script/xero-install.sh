@@ -77,6 +77,8 @@ main_menu() {
     2)
       install_packages "linux-headers evince extension-manager epiphany gdm gnome-subtitles gnac gmtk gnome-backgrounds gnome-calculator gnome-calendar gnome-characters gnome-clocks gnome-color-manager gnome-connections gnome-terminal-transparency gnome-contacts gnome-control-center gnome-disk-utility gnome-font-viewer gnome-gesture-improvements gnome-keyring gnome-logs gnome-maps gnome-menus gnome-network-displays gnome-remote-desktop gnome-session gnome-settings-daemon gnome-shell gnome-shell-extensions gnome-system-monitor gnome-text-editor gnome-themes-extra gnome-tweaks gnome-user-share gnome-weather grilo-plugins gvfs gvfs-afc gvfs-dnssd gvfs-goa gvfs-google gvfs-gphoto2 gvfs-mtp gvfs-nfs gvfs-onedrive gvfs-smb gvfs-wsdd loupe nautilus rygel power-profiles-daemon simple-scan snapshot sushi tecla totem xdg-desktop-portal-gnome xdg-user-dirs-gtk nano jq xmlstarlet unrar zip unzip 7zip libadwaita adwaita-fonts adwaita-cursors adwaita-icon-theme adwaita-icon-theme-legacy"
       sleep 2
+      pacman -Rdd --noconfirm gnome-shell-performance
+      sleep 2
       systemctl enable gdm.service && systemctl enable power-profiles-daemon.service
       ;;
     3)
@@ -126,27 +128,6 @@ if command -v grub-mkconfig &> /dev/null; then
 else
     echo "GRUB is not installed. Skipping OS-Prober support addition."
 fi
-
-echo "Detecting if you are using a VM"
-result=$(systemd-detect-virt)
-case $result in
-  oracle)
-    echo "Installing virtualbox-guest-utils..."
-    install_packages "virtualbox-guest-utils"
-    ;;
-  kvm)
-    echo "Installing qemu-guest-agent and spice-vdagent..."
-    install_packages "qemu-guest-agent spice-vdagent"
-    ;;
-  vmware)
-    echo "Installing xf86-video-vmware and open-vm-tools..."
-    install_packages "xf86-video-vmware open-vm-tools xf86-input-vmmouse"
-    systemctl enable vmtoolsd.service
-    ;;
-  *)
-    echo "You are not running in a VM."
-    ;;
-esac
 
 dialog --title "Installation Complete" --colors --msgbox "\nInstallation Complete. Now exit and reboot.\n\nFor further customization. Please find Toolkit in the \Zb\Z1App-Launcher\Zn under \Zb\Z4System\Zn or by typing \Zb\Z5xero-cli\Zn in terminal." 10 72
 
