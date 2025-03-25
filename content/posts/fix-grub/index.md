@@ -58,17 +58,21 @@ sudo arch-chroot /mnt
 Now you’ve chrooted into your installed system, and you are able to access your files, install packages, or alter scripts to rescue your system. to fix Grub run this in chroot...
 
 ```Bash
-sudo grub-install --removable --target=x86_64-efi --efi-directory=/boot/efi --disable-shim-lock
+sudo grub-install --target=x86_64-efi --efi-directory=/boot/efi --force --recheck
 ```
 
 ![[Image: dfBQw4X.jpeg]](https://i.imgur.com/dfBQw4X.jpeg)
-
-This will install grub on persistent memory as opposed to volatile one... By default Grub will sit on volatile memory, I dunno why, and since when devs decided to do that, suffice it to say that whatever the reason behind this was below command will fix you right up...
 
 then update grub via below command
 
 ```Bash
 sudo grub-mkconfig -o /boot/grub/grub.cfg
+```
+
+Or if you have `update-grub` installed
+
+```Bash
+sudo update-grub
 ```
 
 Exit arch-chroot via `exit` command then unmount your system n boot... [Advanced Chroot Guide](https://discovery.endeavouros.com/system-rescue/arch-chroot/2022/12/)
