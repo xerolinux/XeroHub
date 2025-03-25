@@ -9,9 +9,9 @@ tags: ["repar", "chroot", "grub", "arch", "archlinux", "linux"]
 
 ### Info
 
-In case you are one of the affected people, below is how you can fix the issue. I have tested it and it works fine. And keep in mind that XeroLinux is basically ArchLinux so below fix will work on Arch as well as any Arch-Based distros with the exception of Manjaro that is NOT Arch. Read more on that >> [Here](https://wiki.manjaro.org/index.php/Manjaro:A_Different_Kind_of_Beast#:~:text=Manjaro%20is%20developed%20independently%20from,from%20its%20own%20independent%20repositories) <<
+In case you are one of the affected people, below is how you can fix the issue. I have tested it and it works fine. And keep in mind that **XeroLinux** is basically **ArchLinux** so below fix will work on Arch as well as any Arch-Based distros with the exception of **Manjaro** that is *NOT* Arch. Read more on that >> [Here](https://wiki.manjaro.org/index.php/Manjaro:A_Different_Kind_of_Beast#:~:text=Manjaro%20is%20developed%20independently%20from,from%20its%20own%20independent%20repositories) <<
 
-### Disclaimer :
+### Disclaimer
 
 Below guide covers EXT4/XFS/BTRFS Unencrypted Filesystems, for Encrypted Drives, you will have to either "Google it" lol, or check at the bottom of this guide where I posted a link to EndeavourOS' more advanced guide for Chrooting into your system... There are 2 options if first one works no need for the rest, and so on...
 
@@ -29,16 +29,20 @@ sudo fdisk -l
 
 Mount the device or partition : (replace "sdXn" with your Actual partition name)
 
-![[Image: SZO4qw0.png]](https://i.imgur.com/SZO4qw0.png)
+<div align="center">
 
-For EXT4 & XFS
+  <img src="https://i.imgur.com/SZO4qw0.png" />
+  
+</div>
+
+For **EXT4** & **XFS**
 
 ```Bash
 sudo mount /dev/sdXn /mnt (Linux Filesystem)
 sudo mount /dev/sdXn /mnt/boot/efi (EFI System)
 ```
 
-For BTRFS
+For **BTRFS**
 
 ```Bash
 sudo mount -o subvol=@ /dev/sdXn /mnt (Linux Filesystem)
@@ -73,7 +77,7 @@ Or if you have `update-grub` installed
 sudo update-grub
 ```
 
-Exit arch-chroot via `exit` command then unmount your system n reboot. If you want to know more please check EndeavourOS's [Advanced Chroot Guide](https://discovery.endeavouros.com/system-rescue/arch-chroot/2022/12/), they did a great job.
+Exit arch-chroot via `exit` command then unmount your system n reboot. If you want to know more please check out EndeavourOS's [Advanced Chroot Guide](https://discovery.endeavouros.com/system-rescue/arch-chroot/2022/12/), they did a great job.
 
 ```Bash
 sudo umount /mnt/boot/efi
