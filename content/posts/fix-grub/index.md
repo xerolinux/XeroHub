@@ -17,9 +17,9 @@ Below guide covers EXT4/XFS/BTRFS Unencrypted Filesystems, for Encrypted Drives,
 
 Anyway here's what to do...
 
-### Mount your system to work in..
+### Mount Partition
 
-First of all; boot using Arch or XeroLinux Live boot USB and follow the steps below...
+First of all, boot using either **Arch** or **XeroLinux** Live boot USB and follow the steps below. Any Linux ISO would do, but I do recommend and Arch based one to avoid any potential issues. 
 
 The device or partition with your Linux system on it will need to be mounted. To discover the kernel name of the storage device name, type:
 
@@ -45,7 +45,7 @@ sudo mount -o subvol=@ /dev/sdXn /mnt (Linux Filesystem)
 sudo mount -o subvol=@ /dev/sdXn /mnt/boot/efi (EFI System)
 ```
 
-### Chroot into your system :
+### Arch-Chroot
 
 With this information, you are able to arch-chroot, and to be able to do that you need to have root permissions, so type the following command:
 
@@ -53,7 +53,7 @@ With this information, you are able to arch-chroot, and to be able to do that yo
 sudo arch-chroot /mnt
 ```
 
-### Fix Grub boot loop issue :
+### Fix Grub boot
 
 Now you’ve chrooted into your installed system, and you are able to access your files, install packages, or alter scripts to rescue your system. to fix Grub run this in chroot...
 
@@ -73,7 +73,7 @@ Or if you have `update-grub` installed
 sudo update-grub
 ```
 
-Exit arch-chroot via `exit` command then unmount your system n boot... [Advanced Chroot Guide](https://discovery.endeavouros.com/system-rescue/arch-chroot/2022/12/)
+Exit arch-chroot via `exit` command then unmount your system n reboot. If you want to know more please check EndeavourOS's [Advanced Chroot Guide](https://discovery.endeavouros.com/system-rescue/arch-chroot/2022/12/), they did a great job.
 
 ```Bash
 sudo umount /mnt/boot/efi

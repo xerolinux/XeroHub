@@ -37,11 +37,11 @@
 &lt;p&gt;Anyway here&amp;rsquo;s what to do&amp;hellip;&lt;/p&gt;
 
 
-&lt;h3 class=&#34;relative group&#34;&gt;Mount your system to work in.. 
-    &lt;div id=&#34;mount-your-system-to-work-in&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+&lt;h3 class=&#34;relative group&#34;&gt;Mount Partition 
+    &lt;div id=&#34;mount-partition&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
     
 &lt;/h3&gt;
-&lt;p&gt;First of all; boot using Arch or XeroLinux Live boot USB and follow the steps below&amp;hellip;&lt;/p&gt;
+&lt;p&gt;First of all, boot using either &lt;strong&gt;Arch&lt;/strong&gt; or &lt;strong&gt;XeroLinux&lt;/strong&gt; Live boot USB and follow the steps below. Any Linux ISO would do, but I do recommend and Arch based one to avoid any potential issues.&lt;/p&gt;
 &lt;p&gt;The device or partition with your Linux system on it will need to be mounted. To discover the kernel name of the storage device name, type:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo fdisk -l
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Mount the device or partition : (replace &amp;ldquo;sdXn&amp;rdquo; with your Actual partition name)&lt;/p&gt;
@@ -59,16 +59,16 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo mount -o &lt;span class=&#34;nv&#34;&gt;subvol&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;@ /dev/sdXn /mnt/boot/efi &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;EFI System&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;h3 class=&#34;relative group&#34;&gt;Chroot into your system : 
-    &lt;div id=&#34;chroot-into-your-system-&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+&lt;h3 class=&#34;relative group&#34;&gt;Arch-Chroot 
+    &lt;div id=&#34;arch-chroot&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
     
 &lt;/h3&gt;
 &lt;p&gt;With this information, you are able to arch-chroot, and to be able to do that you need to have root permissions, so type the following command:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo arch-chroot /mnt
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;h3 class=&#34;relative group&#34;&gt;Fix Grub boot loop issue : 
-    &lt;div id=&#34;fix-grub-boot-loop-issue-&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+&lt;h3 class=&#34;relative group&#34;&gt;Fix Grub boot 
+    &lt;div id=&#34;fix-grub-boot&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
     
 &lt;/h3&gt;
 &lt;p&gt;Now you’ve chrooted into your installed system, and you are able to access your files, install packages, or alter scripts to rescue your system. to fix Grub run this in chroot&amp;hellip;&lt;/p&gt;
@@ -77,7 +77,7 @@
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo grub-mkconfig -o /boot/grub/grub.cfg
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Or if you have &lt;code&gt;update-grub&lt;/code&gt; installed&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo update-grub
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Exit arch-chroot via &lt;code&gt;exit&lt;/code&gt; command then unmount your system n boot&amp;hellip; &lt;a href=&#34;https://discovery.endeavouros.com/system-rescue/arch-chroot/2022/12/&#34; target=&#34;_blank&#34;&gt;Advanced Chroot Guide&lt;/a&gt;&lt;/p&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Exit arch-chroot via &lt;code&gt;exit&lt;/code&gt; command then unmount your system n reboot. If you want to know more please check EndeavourOS&amp;rsquo;s &lt;a href=&#34;https://discovery.endeavouros.com/system-rescue/arch-chroot/2022/12/&#34; target=&#34;_blank&#34;&gt;Advanced Chroot Guide&lt;/a&gt;, they did a great job.&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo umount /mnt/boot/efi
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo umount /mnt
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>

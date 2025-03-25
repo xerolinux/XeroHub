@@ -114,7 +114,7 @@
     "keywords": ["repar","chroot","grub","arch","archlinux","linux"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "340"
+    "wordCount": "362"
   }]
   </script>
 
@@ -1148,9 +1148,9 @@
       <ul>
         <li><a href="#info">Info</a></li>
         <li><a href="#disclaimer-">Disclaimer :</a></li>
-        <li><a href="#mount-your-system-to-work-in">Mount your system to work in..</a></li>
-        <li><a href="#chroot-into-your-system-">Chroot into your system :</a></li>
-        <li><a href="#fix-grub-boot-loop-issue-">Fix Grub boot loop issue :</a></li>
+        <li><a href="#mount-partition">Mount Partition</a></li>
+        <li><a href="#arch-chroot">Arch-Chroot</a></li>
+        <li><a href="#fix-grub-boot">Fix Grub boot</a></li>
       </ul>
     </li>
   </ul>
@@ -1170,9 +1170,9 @@
       <ul>
         <li><a href="#info">Info</a></li>
         <li><a href="#disclaimer-">Disclaimer :</a></li>
-        <li><a href="#mount-your-system-to-work-in">Mount your system to work in..</a></li>
-        <li><a href="#chroot-into-your-system-">Chroot into your system :</a></li>
-        <li><a href="#fix-grub-boot-loop-issue-">Fix Grub boot loop issue :</a></li>
+        <li><a href="#mount-partition">Mount Partition</a></li>
+        <li><a href="#arch-chroot">Arch-Chroot</a></li>
+        <li><a href="#fix-grub-boot">Fix Grub boot</a></li>
       </ul>
     </li>
   </ul>
@@ -1279,11 +1279,11 @@
 <p>Anyway here&rsquo;s what to do&hellip;</p>
 
 
-<h3 class="relative group">Mount your system to work in.. 
-    <div id="mount-your-system-to-work-in" class="anchor"></div>
+<h3 class="relative group">Mount Partition 
+    <div id="mount-partition" class="anchor"></div>
     
 </h3>
-<p>First of all; boot using Arch or XeroLinux Live boot USB and follow the steps below&hellip;</p>
+<p>First of all, boot using either <strong>Arch</strong> or <strong>XeroLinux</strong> Live boot USB and follow the steps below. Any Linux ISO would do, but I do recommend and Arch based one to avoid any potential issues.</p>
 <p>The device or partition with your Linux system on it will need to be mounted. To discover the kernel name of the storage device name, type:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Bash" data-lang="Bash"><span class="line"><span class="cl">sudo fdisk -l
 </span></span></code></pre></div><p>Mount the device or partition : (replace &ldquo;sdXn&rdquo; with your Actual partition name)</p>
@@ -1301,16 +1301,16 @@
 </span></span><span class="line"><span class="cl">sudo mount -o <span class="nv">subvol</span><span class="o">=</span>@ /dev/sdXn /mnt/boot/efi <span class="o">(</span>EFI System<span class="o">)</span>
 </span></span></code></pre></div>
 
-<h3 class="relative group">Chroot into your system : 
-    <div id="chroot-into-your-system-" class="anchor"></div>
+<h3 class="relative group">Arch-Chroot 
+    <div id="arch-chroot" class="anchor"></div>
     
 </h3>
 <p>With this information, you are able to arch-chroot, and to be able to do that you need to have root permissions, so type the following command:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Bash" data-lang="Bash"><span class="line"><span class="cl">sudo arch-chroot /mnt
 </span></span></code></pre></div>
 
-<h3 class="relative group">Fix Grub boot loop issue : 
-    <div id="fix-grub-boot-loop-issue-" class="anchor"></div>
+<h3 class="relative group">Fix Grub boot 
+    <div id="fix-grub-boot" class="anchor"></div>
     
 </h3>
 <p>Now you’ve chrooted into your installed system, and you are able to access your files, install packages, or alter scripts to rescue your system. to fix Grub run this in chroot&hellip;</p>
@@ -1319,7 +1319,7 @@
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Bash" data-lang="Bash"><span class="line"><span class="cl">sudo grub-mkconfig -o /boot/grub/grub.cfg
 </span></span></code></pre></div><p>Or if you have <code>update-grub</code> installed</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Bash" data-lang="Bash"><span class="line"><span class="cl">sudo update-grub
-</span></span></code></pre></div><p>Exit arch-chroot via <code>exit</code> command then unmount your system n boot&hellip; <a href="https://discovery.endeavouros.com/system-rescue/arch-chroot/2022/12/" target="_blank">Advanced Chroot Guide</a></p>
+</span></span></code></pre></div><p>Exit arch-chroot via <code>exit</code> command then unmount your system n reboot. If you want to know more please check EndeavourOS&rsquo;s <a href="https://discovery.endeavouros.com/system-rescue/arch-chroot/2022/12/" target="_blank">Advanced Chroot Guide</a>, they did a great job.</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Bash" data-lang="Bash"><span class="line"><span class="cl">sudo umount /mnt/boot/efi
 </span></span><span class="line"><span class="cl">sudo umount /mnt
 </span></span></code></pre></div>
