@@ -1315,13 +1315,7 @@
 </h3>
 <p>Now you’ve chrooted into your installed system, and you are able to access your files, install packages, or alter scripts to rescue your system. to fix Grub run this in chroot&hellip;</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Bash" data-lang="Bash"><span class="line"><span class="cl">sudo grub-install --target<span class="o">=</span>x86_64-efi --efi-directory<span class="o">=</span>/boot/efi --force --recheck
-</span></span></code></pre></div><p>
-  <figure>
-    <img class="my-0 rounded-md" loading="lazy" src="https://i.imgur.com/dfBQw4X.jpeg" alt="[Image: dfBQw4X.jpeg]" />
-    
-  </figure>
-</p>
-<p>then update grub via below command</p>
+</span></span></code></pre></div><p>then update grub via below command</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Bash" data-lang="Bash"><span class="line"><span class="cl">sudo grub-mkconfig -o /boot/grub/grub.cfg
 </span></span></code></pre></div><p>Or if you have <code>update-grub</code> installed</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Bash" data-lang="Bash"><span class="line"><span class="cl">sudo update-grub

@@ -61,8 +61,6 @@ Now you’ve chrooted into your installed system, and you are able to access you
 sudo grub-install --target=x86_64-efi --efi-directory=/boot/efi --force --recheck
 ```
 
-![[Image: dfBQw4X.jpeg]](https://i.imgur.com/dfBQw4X.jpeg)
-
 then update grub via below command
 
 ```Bash
