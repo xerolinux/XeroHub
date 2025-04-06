@@ -72,7 +72,7 @@
     &lt;/div&gt;
 
     &lt;p id=&#34;github-56f532714b2f7c9707f9dc8d689abff4-description&#34; class=&#34;m-0 mt-2 text-md text-neutral-800 dark:text-neutral&#34;&gt;
-      Get up and running with Llama 3.1, Mistral, Gemma 2, and other large language models.
+      Get up and running with Llama 3.3, DeepSeek-R1, Phi-4, Gemma 3, and other large language models.
     &lt;/p&gt;
 
     &lt;div class=&#34;m-0 mt-2 flex items-center&#34;&gt;
@@ -93,7 +93,7 @@
 
       &lt;/span&gt;
       &lt;div id=&#34;github-56f532714b2f7c9707f9dc8d689abff4-stargazers&#34; class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
-        89952
+        136193
       &lt;/div&gt;
 
       &lt;span class=&#34;text-md mr-1 text-neutral-800 dark:text-neutral&#34;&gt;
@@ -106,7 +106,7 @@
 
       &lt;/span&gt;
       &lt;div id=&#34;github-56f532714b2f7c9707f9dc8d689abff4-forks&#34; class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
-        7062
+        11331
       &lt;/div&gt;
 
     &lt;/div&gt;

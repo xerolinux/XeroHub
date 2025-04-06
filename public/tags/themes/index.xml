@@ -91,7 +91,7 @@
 
       &lt;/span&gt;
       &lt;div id=&#34;github-332ee8afae17adb75781b84a058a1d54-stargazers&#34; class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
-        918
+        1103
       &lt;/div&gt;
 
       &lt;span class=&#34;text-md mr-1 text-neutral-800 dark:text-neutral&#34;&gt;
@@ -104,7 +104,7 @@
 
       &lt;/span&gt;
       &lt;div id=&#34;github-332ee8afae17adb75781b84a058a1d54-forks&#34; class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
-        35
+        40
       &lt;/div&gt;
 
     &lt;/div&gt;
@@ -251,7 +251,7 @@ cd LightlyShaders; mkdir qt5build; cd qt5build; cmake ../ -DCMAKE_INSTALL_PREFIX
 
       &lt;/span&gt;
       &lt;div id=&#34;github-9035e4604f09af91fb89685b1e617483-stargazers&#34; class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
-        352
+        388
       &lt;/div&gt;
 
       &lt;span class=&#34;text-md mr-1 text-neutral-800 dark:text-neutral&#34;&gt;
@@ -264,7 +264,7 @@ cd LightlyShaders; mkdir qt5build; cd qt5build; cmake ../ -DCMAKE_INSTALL_PREFIX
 
       &lt;/span&gt;
       &lt;div id=&#34;github-9035e4604f09af91fb89685b1e617483-forks&#34; class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
-        23
+        25
       &lt;/div&gt;
 
     &lt;/div&gt;
@@ -432,7 +432,7 @@ cd LightlyShaders; mkdir qt5build; cd qt5build; cmake ../ -DCMAKE_INSTALL_PREFIX
 
       &lt;/span&gt;
       &lt;div id=&#34;gitlab-0d0a434e1fe710b26526a44305bad7a0-star_count&#34; class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
-        319
+        322
       &lt;/div&gt;
 
       &lt;span class=&#34;text-md mr-1 text-neutral-800 dark:text-neutral&#34;&gt;
@@ -445,7 +445,7 @@ cd LightlyShaders; mkdir qt5build; cd qt5build; cmake ../ -DCMAKE_INSTALL_PREFIX
 
       &lt;/span&gt;
       &lt;div id=&#34;gitlab-0d0a434e1fe710b26526a44305bad7a0-forks_count&#34; class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
-        92
+        88
       &lt;/div&gt;
 
     &lt;/div&gt;
@@ -527,9 +527,9 @@ cd LightlyShaders; mkdir qt5build; cd qt5build; cmake ../ -DCMAKE_INSTALL_PREFIX
     &lt;div class=&#34;m-0 mt-2 flex items-center&#34;&gt;
 
       &lt;span class=&#34;mr-1 inline-block h-3 w-3 rounded-full&#34;
-        style=&#34;background-color: #f34b7d&#34;&gt;&lt;/span&gt;
+        style=&#34;background-color: #44a51c&#34;&gt;&lt;/span&gt;
       &lt;div class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
-         C&amp;#43;&amp;#43; 
+         QML 
       &lt;/div&gt;
 
       &lt;span class=&#34;text-md mr-1 text-neutral-800 dark:text-neutral&#34;&gt;
@@ -542,7 +542,7 @@ cd LightlyShaders; mkdir qt5build; cd qt5build; cmake ../ -DCMAKE_INSTALL_PREFIX
 
       &lt;/span&gt;
       &lt;div id=&#34;github-ca71a5e83707668542a12e863d6e8215-stargazers&#34; class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
-        1659
+        2068
       &lt;/div&gt;
 
       &lt;span class=&#34;text-md mr-1 text-neutral-800 dark:text-neutral&#34;&gt;
@@ -555,7 +555,7 @@ cd LightlyShaders; mkdir qt5build; cd qt5build; cmake ../ -DCMAKE_INSTALL_PREFIX
 
       &lt;/span&gt;
       &lt;div id=&#34;github-ca71a5e83707668542a12e863d6e8215-forks&#34; class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
-        67
+        86
       &lt;/div&gt;
 
     &lt;/div&gt;
