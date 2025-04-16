@@ -1,18 +1,12 @@
 /* Complete CSS with a diagonal gradient featuring enhanced blue tones and softened pink */
 body {
-    background:
-    linear-gradient(to bottom right, rgba(30, 30, 100, 0.9), rgba(60, 60, 150, 0.9), rgba(200, 100, 160, 0.7)), /* Diagonal gradient with more blue and softened pink */
-    url('/img/traces.png'); /* Correct image path */
-    background-size: cover; /* Ensures the image covers the entire background */
-    background-position: center;
-    background-attachment: fixed; /* Keeps it in place when scrolling */
     min-height: 100vh;
-    margin: 0;
-    overflow-y: auto; /* Ensure scrolling works */
-    position: relative;
+    /*margin: 0;*/
+    /*overflow-y: auto;*/
+    position: center;
 }
 
-/* Add a blurred effect to soften the image slightly */
+/* Add background gradient and image via ::before */
 body::before {
     content: '';
     position: fixed;
@@ -20,9 +14,14 @@ body::before {
     left: 0;
     width: 100%;
     height: 100%;
-    background: inherit;
-    filter: blur(4px); /* Subtle blur */
-    z-index: -1; /* Ensures it remains in the background */
+    background:
+    linear-gradient(to bottom right, rgba(30, 30, 100, 0.9), rgba(60, 60, 150, 0.9), rgba(200, 100, 160, 0.7)),
+    url('/img/traces.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    filter: blur(4px);
+    z-index: -2;
 }
 
 /* Optional: Add a slightly darker overlay for better text readability */
@@ -33,14 +32,34 @@ body::after {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.25); /* Slightly darker overlay */
+    background: rgba(0, 0, 0, 0.25);
     z-index: -1;
-    pointer-events: none; /* Prevent overlay from interfering with interactions */
+    pointer-events: none;
 }
 
-/* Add a subtle animation to the main content */
-.main-content {
-    animation: fadeIn 1.5s ease-in-out;
+/* Force full width and center inner content */
+#main-content {
+animation: fadeIn 1.5s ease-in-out;
+padding: 2rem;
+width: 100%;
+box-sizing: border-box;
+}
+
+#main-content > article {
+margin-left: auto;
+margin-right: auto;
+padding-left: 1rem;
+padding-right: 1rem;
+max-width: 1200px;
+width: 100%;
+box-sizing: border-box;
+display: block;
+float: none;
+position: relative;
+}
+
+#main-content > article.prose {
+max-width: 1200px !important;
 }
 
 @keyframes fadeIn {
@@ -62,58 +81,54 @@ a:hover, button:hover {
 
 /* Custom CSS for post boxes in Blowfish theme */
 .article-list .article {
-    border: 2px solid rgba(255, 255, 255, 0.75); /* Semi-transparent white outline */
-    border-radius: 12px; /* Rounded corners */
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Strong shadow */
-    padding: 1.5rem; /* Padding inside the box */
-    margin-bottom: 2rem; /* Space between posts */
-    background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white background */
-    backdrop-filter: blur(10px); /* Blur effect for glassmorphism */
-    transition: all 0.3s ease; /* Smooth transition for hover effect */
+    border: 2px solid rgba(255, 255, 255, 0.75);
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    background-color: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
 }
 
 .article-list .article:hover {
-    border: 2px solid rgba(255, 255, 255, 1); /* Solid white outline on hover */
-    background-color: rgba(255, 255, 255, 0.95); /* More opaque background on hover */
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3); /* Stronger shadow on hover */
-    transform: translateY(-5px); /* Slight lift effect on hover */
+    border: 2px solid rgba(255, 255, 255, 1);
+    background-color: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+    transform: translateY(-5px);
 }
 
-/* Ensure stacking context for backdrop-filter */
 .article-list {
     position: relative;
     z-index: 1;
 }
 
-/* Wrap a single box around the first heading and ALL following h4s and paragraphs */
 article > section h4.relative.group:first-of-type,
 article > section h4.relative.group:first-of-type ~ h4,
 article > section h4.relative.group:first-of-type ~ p {
-    background: rgba(0, 0, 0, 0.25); /* Semi-transparent black background */
-    border: 2px solid rgba(255, 255, 255, 0.3); /* Subtle border */
-    border-radius: 12px; /* Rounded corners */
-    padding: 20px; /* Internal spacing */
-    margin: 20px auto; /* Space around the box */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Shadow for depth */
-    color: white; /* Ensure readability */
+    background: rgba(0, 0, 0, 0.25);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 12px;
+    padding: 20px;
+    margin: 20px auto;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    color: white;
 }
 
-/* Update text fields to cover the entire width of the viewport */
 input[type="text"], textarea {
-    display: block; /* Ensure fields behave as block elements */
-    width: 100%; /* Cover the full width of the viewport */
-    padding: 10px; /* Add padding for a comfortable typing area */
-    margin: 10px 0; /* Add vertical spacing between fields */
-    border: 1px solid rgba(0, 0, 0, 0.2); /* Subtle border */
-    border-radius: 8px; /* Rounded corners */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow */
-    background-color: rgba(255, 255, 255, 0.9); /* Light background for clarity */
-    transition: all 0.3s ease; /* Smooth focus transition */
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: rgba(255, 255, 255, 0.9);
+    transition: all 0.3s ease;
 }
 
 input[type="text"]:focus, textarea:focus {
-    border-color: rgba(60, 60, 150, 0.8); /* Highlight border on focus */
-    box-shadow: 0 6px 12px rgba(60, 60, 150, 0.2); /* Enhanced shadow on focus */
-    outline: none; /* Remove default focus outline */
+    border-color: rgba(60, 60, 150, 0.8);
+    box-shadow: 0 6px 12px rgba(60, 60, 150, 0.2);
+    outline: none;
 }
-
