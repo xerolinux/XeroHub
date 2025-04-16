@@ -2,8 +2,8 @@
 body {
     min-height: 100vh;
     /*margin: 0;*/
-    /*overflow-y: auto;*/
-    position: center;
+    overflow-y: auto;
+    position: relative;
 }
 
 /* Add background gradient and image via ::before */
