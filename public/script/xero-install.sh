@@ -15,7 +15,7 @@ RESET="\e[0m"
 # Banner Functions
 print_title() {
   clear
-  echo -e "${BOLD}${YELLOW}"
+  echo -e "${BOLD}${BLUE}"
   if command -v figlet &>/dev/null; then
     figlet -f small "Xero DE Installer"
   else
