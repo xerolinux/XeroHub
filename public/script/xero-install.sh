@@ -73,7 +73,6 @@ check_vm_environment() {
   if [[ "$virt" != "none" ]]; then
     echo
     echo -e "\n${YELLOW}🖥️ VM detected — installing guest tools...${RESET}"
-    echo
     echo -e "\n${YELLOW}⚠️ 3D acceleration recommended for best performance.${RESET}\n"
     sleep 6
     case "$virt" in
