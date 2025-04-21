@@ -98,6 +98,18 @@ check_vm_environment() {
 start_point() {
   if [[ -f /tmp/.xapi_lock ]]; then return; fi
 
+  # Ensure curl and git are available
+  for cmd in curl git; do
+    if ! command -v "$cmd" &>/dev/null; then
+      echo -e "${YELLOW}⚠️ '$cmd' not found. Installing required tools...${RESET}"
+      sudo pacman -Syy --noconfirm git curl || {
+        echo -e "${RED}❌ Failed to install dependencies. Exiting.${RESET}"
+        exit 1
+      }
+      break
+    fi
+  done
+
   echo -e "${GREEN}Fetching XeroLinux Toolkit & AUR Helper...${RESET}"
 
   curl -fsSL https://xerolinux.xyz/script/xapi.sh -o /tmp/xapi.sh || {
@@ -106,10 +118,7 @@ start_point() {
   }
 
   chmod +x /tmp/xapi.sh
-
-  # Run script in interactive shell with clean stdin/stdout
   bash -i /tmp/xapi.sh
-
   touch /tmp/.xapi_lock
 }
 
