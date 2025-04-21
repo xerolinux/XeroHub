@@ -14,12 +14,15 @@ RESET="\e[0m"
 
 # Banner Functions
 print_title() {
-  echo -e "${BOLD}${BLUE}"
-  cat <<'EOF'
-╔══════════════════════════════════════════════════════╗
-║                🧩  XERO DE INSTALLER  🧩             ║
-╚══════════════════════════════════════════════════════╝
-EOF
+  clear
+  echo -e "${BOLD}${YELLOW}"
+  if command -v figlet &>/dev/null; then
+    figlet -f small "Xero DE Installer"
+  else
+    echo "╔════════════════════════════════════════════════════╗"
+    echo "║                XERO DESKTOP INSTALLER             ║"
+    echo "╚════════════════════════════════════════════════════╝"
+  fi
   echo -e "${RESET}"
 }
 
@@ -250,25 +253,31 @@ post_install() {
 
 # Menu stub
 main_menu() {
-  echo -e "${BOLD}${CYAN}Choose a Desktop Environment:${RESET}"
-  echo -e "${GREEN}"
-  echo    " 1) 🧊  Plasma"
-  echo    " 2) 🌈  GNOME"
-  echo    " 3) 🐭  XFCE"
-  echo    " 4) 💥  Hyprland"
-  echo    " 5) 🌌  Cosmic Alpha"
+  clear && print_title
+  echo -e "${BOLD}${BOLD}"
+  echo "╭────────────────────────────────────────────────────╮"
+  echo "│       Choose a Desktop Environment to Install      │"
+  echo "├────────────────────────────────────────────────────┤"
+  echo "│  [1]  Plasma        - Sleek, modern, customizable  │"
+  echo "│  [2]  GNOME         - Simple, elegant, GTK-based   │"
+  echo "│  [3]  XFCE          - Fast, light, classic UI      │"
+  echo "│  [4]  Hyprland      - Wayland-based tiling WM      │"
+  echo "│  [5]  Cosmic Alpha  - Rusty & shiny (System76)     │"
+  echo "│  [6]  Exit          - Abort installation           │"
+  echo "╰────────────────────────────────────────────────────╯"
+  echo -e "${RESET}"
   echo
-  echo    " 6) ❌  Exit"
+  read -rp "Enter your choice [1-6]: " choice
   echo
-  read -rp "Enter your choice [1-6] : " choice
+
   case "$choice" in
-    1) install_plasma ;;
-    2) install_gnome ;;
-    3) install_xfce ;;
-    4) install_hypr ;;
-    5) install_cosmic ;;
-    6) echo -e "\n${GREEN}Exiting. Have a nice day!${RESET}"; exit 0 ;;
-    *) echo -e "\n${RED}Invalid choice. Exiting.${RESET}"; exit 1 ;;
+    1) clear && figlet Plasma && install_plasma ;;
+    2) clear && figlet GNOME && install_gnome ;;
+    3) clear && figlet XFCE && install_xfce ;;
+    4) clear && figlet Hyprland && install_hypr ;;
+    5) clear && figlet Cosmic && install_cosmic ;;
+    6) echo -e "${GREEN}Bye!${RESET}"; exit 0 ;;
+    *) echo -e "${RED}Invalid choice.${RESET}"; exit 1 ;;
   esac
 }
 

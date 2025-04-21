@@ -283,8 +283,8 @@ main_menu() {
 
 main() {
   print_title
-  check_vanilla_arch
-  check_existing_de
+#   check_vanilla_arch
+#   check_existing_de
 
   # Ensure figlet is installed early for banner output
   if ! command -v figlet &>/dev/null; then
