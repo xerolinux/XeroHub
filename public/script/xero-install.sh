@@ -194,7 +194,6 @@ install_hypr() {
   xdg-user-dirs-update
   echo
   sudo systemctl enable power-profiles-daemon.service sddm.service sshd.service
-  fi
 }
 
 install_cosmic() {
