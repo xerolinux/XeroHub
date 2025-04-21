@@ -114,41 +114,42 @@ start_point() {
 }
 
 install_packages() {
-  local total=$#
-  local count=1
-  local spinner=("|" "/" "-" "\\")
   local failed_packages=()
+  local spinner=("|" "/" "-" "\\")
 
   for pkg in "$@"; do
     local i=0
+
+    echo -ne "${CYAN}[ ] Installing ${pkg}...${RESET}"
 
     # Start spinner in background
     (
       while true; do
         echo -ne "\r${CYAN}[${spinner[i]}] Installing ${pkg}...${RESET}"
-        i=$(( (i + 1) % 4 ))
+        i=$(( (i + 1 ) % 4 ))
         sleep 0.1
       done
     ) &
     SPIN_PID=$!
 
-    # Wait for a moment just to show spinner
-    sleep 0.4
+    # Run pacman silently in background
+    if sudo pacman -S --noconfirm --needed "$pkg" &> /tmp/xero-install.log; then
+      RESULT=true
+    else
+      RESULT=false
+    fi
 
-    # STOP SPINNER *before* sudo, clear line
-    kill $SPIN_PID &>/dev/null
-    wait $SPIN_PID 2>/dev/null || true
-    echo -ne "\r\033[2K"  # clear spinner line fully
+    # Stop spinner and clean up line
+    kill "$SPIN_PID" &>/dev/null
+    wait "$SPIN_PID" 2>/dev/null || true
+    echo -ne "\r\033[2K"  # clear spinner line
 
-    # Now sudo happens on clean line
-    if sudo pacman -S --noconfirm --needed "$pkg" &>/dev/null; then
+    if $RESULT; then
       echo -e "${GREEN}[✔] Installed ${pkg}${RESET}"
     else
       echo -e "${RED}[✘] Failed ${pkg}${RESET}"
       failed_packages+=("$pkg")
     fi
-
-    ((count++))
   done
 
   if [[ ${#failed_packages[@]} -gt 0 ]]; then
@@ -190,7 +191,7 @@ install_hypr() {
   check_vm_environment
   start_point
   clear && print_section "Hyprland"
-  install_packages hyprland hypridle hyprland-protocols hyprlock hyprpaper hyprpicker hyprpolkitagent hyprsunset linux-headers pacman-contrib xdg-desktop-portal-hyprland xdg-user-dirs power-profiles-daemon sddm openssh
+  install_packages hyprland hypridle hyprland-protocols hyprlock hyprpaper hyprpicker hyprpolkitagent hyprsunset kitty linux-headers pacman-contrib xdg-desktop-portal-hyprland xdg-user-dirs power-profiles-daemon sddm openssh
   xdg-user-dirs-update
   echo
   sudo systemctl enable power-profiles-daemon.service sddm.service sshd.service
@@ -216,13 +217,25 @@ post_install() {
   clear && print_section "Applications..."
   install_packages downgrade update-grub meld timeshift mpv gnome-disk-utility btop nano git rustup eza ntp most wget dnsutils logrotate gtk-update-icon-cache dex bash-completion bat bat-extras ttf-fira-code otf-libertinus tex-gyre-fonts ttf-hack-nerd ttf-ubuntu-font-family awesome-terminal-fonts ttf-jetbrains-mono-nerd adobe-source-sans-pro-fonts gtk-engines gtk-engine-murrine gnome-themes-extra ntfs-3g gvfs mtpfs udiskie udisks2 ldmtool gvfs-afc gvfs-mtp gvfs-nfs gvfs-smb gvfs-gphoto2 libgsf tumbler freetype2 libopenraw ffmpegthumbnailer python-pip python-cffi python-numpy python-docopt python-pyaudio python-pyparted python-pygments python-websockets ocs-url xmlstarlet yt-dlp wavpack unarchiver gnustep-base parallel systemdgenie gnome-keyring ark vi duf gcc yad zip xdo lzop nmon tree vala htop lshw cmake cblas expac fuse3 lhasa meson unace unrar unzip p7zip rhash sshfs vnstat nodejs cronie hwinfo arandr assimp netpbm wmctrl grsync libmtp polkit sysprof semver zenity gparted hddtemp mlocate jsoncpp fuseiso gettext node-gyp intltool graphviz pkgstats inetutils s3fs-fuse playerctl oniguruma cifs-utils lsb-release dbus-python laptop-detect perl-xml-parser appmenu-gtk-module preload
   sudo systemctl enable preload
+
     clear && print_section "GRUB Bootloader..."
-  if command -v grub-mkconfig &> /dev/null; then
-    install_packages os-prober grub-hooks update-grub
-    sudo sed -i 's/#\s*GRUB_DISABLE_OS_PROBER=false/GRUB_DISABLE_OS_PROBER=false/' /etc/default/grub
-    sudo os-prober
-    sudo grub-mkconfig -o /boot/grub/grub.cfg >/dev/null
-  fi
+
+    if command -v grub-mkconfig &> /dev/null; then
+      echo -e "${GREEN}✔ GRUB detected. Setting up bootloader...${RESET}"
+      install_packages os-prober grub-hooks update-grub
+      sudo sed -i 's/#\s*GRUB_DISABLE_OS_PROBER=false/GRUB_DISABLE_OS_PROBER=false/' /etc/default/grub
+      sudo os-prober && sudo update-grub
+    else
+      echo -e "${YELLOW}⚠️ GRUB not detected. Checking for orphan GRUB tools...${RESET}"
+      for pkg in grub-hooks update-grub; do
+        if pacman -Q "$pkg" &>/dev/null; then
+          echo
+          echo -e "${YELLOW}🧹 Removing unused package: ${pkg}${RESET}"
+          sudo pacman -Rdd --noconfirm "$pkg"
+        fi
+      done
+    fi
+
 }
 
 # Menu stub
@@ -271,7 +284,7 @@ main() {
   echo -e "${GREEN}✔ Done! You may now reboot into your desktop environment.${RESET}"
   echo
   read -rp "Press Enter to reboot now or Ctrl+C to cancel..."
-  reboot
+  sudo reboot
 }
 
 run() {
