@@ -66,12 +66,14 @@ check_existing_de() {
 }
 
 check_vm_environment() {
+  # Don't let a non-zero exit from systemd-detect-virt trigger script failure
   local virt
-  virt=$(systemd-detect-virt)
+  virt=$(systemd-detect-virt 2>/dev/null || echo "none")
 
   if [[ "$virt" != "none" ]]; then
     echo
     echo -e "\n${YELLOW}🖥️ VM detected — installing guest tools...${RESET}"
+    echo
     echo -e "\n${YELLOW}⚠️ 3D acceleration recommended for best performance.${RESET}\n"
     sleep 6
     case "$virt" in
