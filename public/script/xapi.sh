@@ -1,11 +1,14 @@
 #!/usr/bin/env bash
 
+for i in 2 30; do
+    echo -en "\033]${i};XeroLinux Toolkit\007"
+done
+
 ##################################################################################################################
 # Written to be used on 64 bits computers
 # Author   :   DarkXero
 # Website  :   http://xerolinux.xyz
 ##################################################################################################################
-
 clear
 tput setaf 5
 echo "#######################################################################"
@@ -15,75 +18,137 @@ echo "#   This will add the Required XeroLinux & Chaotic-AUR repositories   #"
 echo "#        AUR helper and more. Just CTRL+C if you do not agree.        #"
 echo "#######################################################################"
 tput sgr0
-sleep 2
 
-# AUR Helper Options
 aur_helpers=("yay" "paru")
-aur_helper="NONE"
+echo
 
-# Check if AUR helper is already installed
+# Function to add the XeroLinux repository if not already added
+add_xerolinux_repo() {
+    if ! grep -q "\[xerolinux\]" /etc/pacman.conf; then
+        echo
+        echo "Adding The Various Repositories..."
+        sleep 3
+        echo
+        echo -e '\n[xerolinux]\nSigLevel = Optional TrustAll\nServer = https://repos.xerolinux.xyz/$repo/$arch' | sudo tee -a /etc/pacman.conf
+        sudo sed -i '/^\s*#\s*\[multilib\]/,/^$/ s/^#//' /etc/pacman.conf
+        echo
+        echo "XeroLinux Repository added!"
+        sleep 3
+    else
+        echo
+        echo "XeroLinux Repository already added."
+        echo
+        sleep 3
+    fi
+}
+
+# Function to add the Chaotic-AUR repository
+add_chaotic_aur() {
+    if ! grep -q "\[chaotic-aur\]" /etc/pacman.conf; then
+        echo
+        echo "Adding The Chaotic-AUR Repository..."
+        sleep 3
+        echo
+        sudo pacman-key --recv-key 3056513887B78AEB --keyserver keyserver.ubuntu.com
+        sudo pacman-key --lsign-key 3056513887B78AEB
+        sudo pacman -U --noconfirm 'https://cdn.chaotic.cx/chaotic-aur/chaotic-keyring.pkg.tar.zst'
+        cd /etc/pacman.d/ && sudo curl https://raw.githubusercontent.com/DarkXero-dev/Storage/refs/heads/main/chaotic-mirrorlist -o chaotic-mirrorlist
+        echo -e '\n[chaotic-aur]\nInclude = /etc/pacman.d/chaotic-mirrorlist' | sudo tee -a /etc/pacman.conf
+        sudo pacman -Syy --noconfirm chaotic-mirrorlist
+        echo
+        echo "Chaotic-AUR Repository added!"
+        echo
+        sleep 3
+    else
+        echo "Chaotic-AUR Repository already added."
+        echo
+        sleep 3
+    fi
+}
+
+# Function to update pacman.conf under Misc options
+update_pacman_conf() {
+    echo
+    echo "Updating Pacman Options..."
+    echo
+    sudo sed -i '/^# Misc options/,/ParallelDownloads = [0-9]*/c\# Misc options\nColor\nILoveCandy\nCheckSpace\n#DisableSandbox\nDownloadUser = alpm\nDisableDownloadTimeout\nParallelDownloads = 10' /etc/pacman.conf
+     echo "Updated /etc/pacman.conf under # Misc options"
+     echo
+}
+
+# Function to install and start the toolkit
+install_toolkit() {
+    sudo pacman -Syy --noconfirm xlapit-cli
+}
+
+aur_helper="NONE"
 for helper in "${aur_helpers[@]}"; do
-  if command -v "$helper" &> /dev/null; then
-    aur_helper="$helper"
-    echo -e "[✔] AUR helper '${helper}' already installed. Skipping selection."
-    break
-  fi
+    if command -v "$helper" &> /dev/null; then
+        aur_helper="$helper"
+        echo
+        echo "AUR Helper detected, shall we proceed? (y/n)"
+        echo ""
+
+        read -rp "Enter your choice: " CHOICE
+
+        case $CHOICE in
+            y)
+                add_xerolinux_repo
+                add_chaotic_aur
+                update_pacman_conf
+                install_toolkit
+                ;;
+            n)
+                exit 0
+                ;;
+            *)
+                echo "Invalid choice."
+                exit 1
+                ;;
+        esac
+    fi
 done
 
-# Enable Chaotic-AUR (before trying to install yay/paru from it)
-if ! grep -q '\[chaotic-aur\]' /etc/pacman.conf; then
-  echo -e "[~] Enabling Chaotic-AUR..."
-  sudo pacman-key --recv-key 3056513887B78AEB --keyserver keyserver.ubuntu.com
-  sudo pacman-key --lsign-key 3056513887B78AEB
-  sudo pacman -U --noconfirm 'https://cdn.chaotic.cx/chaotic-aur/chaotic-keyring.pkg.tar.zst'
-  sudo pacman -U --noconfirm 'https://cdn.chaotic.cx/chaotic-aur/chaotic-mirrorlist.pkg.tar.zst'
-  echo -e "\n[chaotic-aur]\nInclude = /etc/pacman.d/chaotic-mirrorlist" | sudo tee -a /etc/pacman.conf
+if [[ $aur_helper == "NONE" ]]; then
+    echo
+    echo "No AUR-Helper detected, please choose one. Select yay for Hyprland."
+    echo ""
+    echo "1 - Yay  (Written in Go-lang)"
+    echo "2 - Paru (Written in Rust-lang)"
+    echo ""
+    read -rp "Choose your Helper: " number_chosen
+
+    case $number_chosen in
+        1)
+            echo
+            echo "###########################################"
+            echo "           You Have Selected YaY           "
+            echo "###########################################"
+            add_xerolinux_repo
+            add_chaotic_aur
+            update_pacman_conf
+            echo
+            echo "Installing YaY & Toolkit..."
+            echo
+            sudo pacman -Syy --noconfirm yay xlapit-cli && yay -Y --devel --save && yay -Y --gendb
+            install_toolkit
+            ;;
+        2)
+            echo
+            echo "###########################################"
+            echo "          You Have Selected Paru           "
+            echo "###########################################"
+            add_xerolinux_repo
+            add_chaotic_aur
+            update_pacman_conf
+            echo
+            echo "Installing Paru & Toolkit..."
+            echo
+            sudo pacman -Syy --noconfirm paru xlapit-cli && paru --gendb
+            install_toolkit
+            ;;
+        *)
+            echo "Invalid option."
+            ;;
+    esac
 fi
-
-# Add XeroLinux Repo
-if ! grep -q '\[xerolinux\]' /etc/pacman.conf; then
-  echo -e "[~] Adding XeroLinux repo..."
-  echo -e "\n[xerolinux]\nSigLevel = Optional TrustAll\nServer = https://raw.githubusercontent.com/xerolinux/xerolinux-repo/main/\$arch" | sudo tee -a /etc/pacman.conf
-fi
-
-# Set mirrorlist with Reflector
-echo -e "[~] Setting up mirrorlist with Reflector..."
-sudo pacman -S --noconfirm --needed reflector
-sudo reflector --verbose --latest 20 --sort rate --save /etc/pacman.d/mirrorlist
-
-# Sync updated pacman databases
-sudo pacman -Syy
-
-# Prompt user if no AUR helper is installed
-if [[ "$aur_helper" == "NONE" ]]; then
-  echo
-  echo "No AUR-Helper detected, please choose one. Select yay for Hyprland."
-  echo
-  echo "1 - Yay  (Written in Go-lang)"
-  echo "2 - Paru (Written in Rust-lang)"
-  echo
-
-  read -rp "Choose your Helper [1-2]: " number_chosen
-
-  case "$number_chosen" in
-    1)
-      aur_helper="yay"
-      sudo pacman -Syy --noconfirm yay xlapit-cli
-      yay -Y --devel --save
-      yay -Y --gendb
-      ;;
-    2)
-      aur_helper="paru"
-      sudo pacman -Syy --noconfirm paru xlapit-cli
-      paru --gendb
-      ;;
-    *)
-      echo -e "[✘] Invalid option. Exiting to prevent script errors."
-      exit 1
-      ;;
-  esac
-
-  echo -e "[✔] ${aur_helper} installed and configured via Chaotic-AUR."
-fi
-
-echo -e "[✔] All repositories and AUR helper are now configured."
