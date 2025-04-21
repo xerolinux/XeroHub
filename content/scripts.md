@@ -16,7 +16,7 @@ Explore the following notable Xero scripts :
 
 1. **Xero-Toolkit** => [🌐 Visit the Wiki](https://wiki.xerolinux.xyz/xlapit/)
 2. **Grub Themes** => [🌐 Visit the Wiki](https://wiki.xerolinux.xyz/grub/)
-3. **Xero Layan Rice** => [🌐 Visit the Wiki](https://wiki.xerolinux.xyz/rice/)
+3. **Xero KDE Rices** => [🌐 Visit the Wiki](https://wiki.xerolinux.xyz/rices/)
 4. **Xero DE Installer** => [🌐 Visit the Wiki](https://wiki.xerolinux.xyz/script/)
 
 ### Wrap up
