@@ -231,24 +231,23 @@ post_install() {
   install_packages downgrade update-grub meld timeshift mpv gnome-disk-utility btop nano git rustup eza ntp most wget dnsutils logrotate gtk-update-icon-cache dex bash-completion bat bat-extras ttf-fira-code otf-libertinus tex-gyre-fonts ttf-hack-nerd ttf-ubuntu-font-family awesome-terminal-fonts ttf-jetbrains-mono-nerd adobe-source-sans-pro-fonts gtk-engines gtk-engine-murrine gnome-themes-extra ntfs-3g gvfs mtpfs udiskie udisks2 ldmtool gvfs-afc gvfs-mtp gvfs-nfs gvfs-smb gvfs-gphoto2 libgsf tumbler freetype2 libopenraw ffmpegthumbnailer python-pip python-cffi python-numpy python-docopt python-pyaudio python-pyparted python-pygments python-websockets ocs-url xmlstarlet yt-dlp wavpack unarchiver gnustep-base parallel systemdgenie gnome-keyring ark vi duf gcc yad zip xdo lzop nmon tree vala htop lshw cmake cblas expac fuse3 lhasa meson unace unrar unzip p7zip rhash sshfs vnstat nodejs cronie hwinfo arandr assimp netpbm wmctrl grsync libmtp polkit sysprof semver zenity gparted hddtemp mlocate jsoncpp fuseiso gettext node-gyp intltool graphviz pkgstats inetutils s3fs-fuse playerctl oniguruma cifs-utils lsb-release dbus-python laptop-detect perl-xml-parser appmenu-gtk-module preload
   sudo systemctl enable preload
 
-    clear && print_section "GRUB Bootloader..."
+  clear && print_section "GRUB Bootloader..."
 
-    if command -v grub-mkconfig &> /dev/null; then
-      echo -e "${GREEN}✔ GRUB detected. Setting up bootloader...${RESET}"
-      install_packages os-prober grub-hooks update-grub
-      sudo sed -i 's/#\s*GRUB_DISABLE_OS_PROBER=false/GRUB_DISABLE_OS_PROBER=false/' /etc/default/grub
-      sudo os-prober && sudo update-grub
-    else
-      echo -e "${YELLOW}⚠️ GRUB not detected. Checking for orphan GRUB tools...${RESET}"
-      for pkg in grub-hooks update-grub; do
-        if pacman -Q "$pkg" &>/dev/null; then
-          echo
-          echo -e "${YELLOW}🧹 Removing unused package: ${pkg}${RESET}"
-          sudo pacman -Rdd --noconfirm "$pkg"
-        fi
-      done
-    fi
-
+  if command -v grub-mkconfig &> /dev/null; then
+    echo -e "${GREEN}✔ GRUB detected. Setting up bootloader...${RESET}"
+    install_packages os-prober grub-hooks update-grub || true
+    sudo sed -i 's/#\s*GRUB_DISABLE_OS_PROBER=false/GRUB_DISABLE_OS_PROBER=false/' /etc/default/grub || true
+    sudo os-prober && sudo update-grub || true
+  else
+    echo -e "${YELLOW}⚠️ GRUB not detected. Checking for orphan GRUB tools...${RESET}"
+    for pkg in grub-hooks update-grub; do
+      if pacman -Q "$pkg" &>/dev/null; then
+        echo
+        echo -e "${YELLOW}🧹 Removing unused package: ${pkg}${RESET}"
+        sudo pacman -Rdd --noconfirm "$pkg" || true
+      fi
+    done
+  fi
 }
 
 # Menu stub
