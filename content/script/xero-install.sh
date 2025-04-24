@@ -204,7 +204,7 @@ install_hypr() {
   check_vm_environment
   start_point
   clear && print_section "Hyprland"
-  install_packages hyprland hypridle hyprland-protocols hyprlock hyprpaper hyprpicker hyprpolkitagent hyprsunset kitty linux-headers pacman-contrib xdg-desktop-portal-hyprland xdg-user-dirs power-profiles-daemon sddm openssh
+  install_packages hyprland hypridle hyprland-protocols hyprlock hyprpaper hyprpicker hyprpolkitagent hyprsunset kitty kitty-shell-integration kitty-terminfo waypaper linux-headers pacman-contrib xdg-desktop-portal-hyprland xdg-user-dirs power-profiles-daemon thunar thunar-archive-plugin thunar-media-tags-plugin thunar-shares-plugin thunar-vcs-plugin thunar-volman sddm openssh nwg-displays mwg-look rofi grim slurp kvantum qt6ct ttf-ubuntu-nerd noto-fonts-emoji
   xdg-user-dirs-update
   echo
   sudo systemctl enable power-profiles-daemon.service sddm.service sshd.service
@@ -228,19 +228,19 @@ post_install() {
   install_packages bluez bluez-utils bluez-plugins bluez-hid2hci bluez-cups bluez-libs bluez-tools
   sudo systemctl enable bluetooth.service
   clear && print_section "Applications..."
-  install_packages downgrade update-grub meld timeshift mpv gnome-disk-utility btop nano git rustup eza ntp most wget dnsutils logrotate gtk-update-icon-cache dex bash-completion bat bat-extras ttf-fira-code otf-libertinus tex-gyre-fonts ttf-hack-nerd ttf-ubuntu-font-family awesome-terminal-fonts ttf-jetbrains-mono-nerd adobe-source-sans-pro-fonts gtk-engines gtk-engine-murrine gnome-themes-extra ntfs-3g gvfs mtpfs udiskie udisks2 ldmtool gvfs-afc gvfs-mtp gvfs-nfs gvfs-smb gvfs-gphoto2 libgsf tumbler freetype2 libopenraw ffmpegthumbnailer python-pip python-cffi python-numpy python-docopt python-pyaudio python-pyparted python-pygments python-websockets ocs-url xmlstarlet yt-dlp wavpack unarchiver gnustep-base parallel systemdgenie gnome-keyring ark vi duf gcc yad zip xdo lzop nmon tree vala htop lshw cmake cblas expac fuse3 lhasa meson unace unrar unzip p7zip rhash sshfs vnstat nodejs cronie hwinfo arandr assimp netpbm wmctrl grsync libmtp polkit sysprof semver zenity gparted hddtemp mlocate jsoncpp fuseiso gettext node-gyp intltool graphviz pkgstats inetutils s3fs-fuse playerctl oniguruma cifs-utils lsb-release dbus-python laptop-detect perl-xml-parser appmenu-gtk-module preload
-  sudo systemctl enable preload
+  install_packages update-grub linux-firmware linux-firmware-qcom linux-firmware-whence linux-firmware-marvell mkinitcpio mkinitcpio-utils mkinitcpio-archiso mkinitcpio-firmware mkinitcpio-openswap mkinitcpio-nfs-utils meld timeshift mpv gnome-disk-utility btop nano git rustup eza downgrade ntp most wget dnsutils logrotate gtk-update-icon-cache dex bash-completion bat bat-extras ttf-fira-code otf-libertinus tex-gyre-fonts ttf-hack-nerd ttf-ubuntu-font-family awesome-terminal-fonts ttf-jetbrains-mono-nerd adobe-source-sans-pro-fonts gtk-engines gtk-engine-murrine gnome-themes-extra ntfs-3g gvfs mtpfs udiskie udisks2 ldmtool gvfs-afc gvfs-mtp gvfs-nfs gvfs-smb gvfs-gphoto2 libgsf tumbler freetype2 libopenraw ffmpegthumbnailer python-pip repoctl python-cffi python-numpy python-docopt python-pyaudio python-pyparted python-pygments python-websockets ocs-url xmlstarlet yt-dlp wavpack unarchiver gnustep-base parallel gnome-keyring ark vi duf gcc yad zip xdo lzop nmon tree vala htop lshw cmake cblas expac fuse3 lhasa meson unace unrar unzip 7zip rhash sshfs vnstat nodejs cronie hwinfo arandr assimp netpbm wmctrl grsync libmtp polkit sysprof semver zenity gparted hddtemp mlocate jsoncpp fuseiso gettext node-gyp intltool graphviz pkgstats inetutils s3fs-fuse playerctl oniguruma cifs-utils lsb-release dbus-python laptop-detect perl-xml-parser appmenu-gtk-module preload
+  sudo systemctl enable bash-completion piper iwd fastfetch flatpak pacman-bintrans pacseek preload
 
   clear && print_section "GRUB Bootloader..."
 
-  if command -v grub-mkconfig &> /dev/null; then
-    echo -e "${GREEN}✔ GRUB detected. Setting up bootloader...${RESET}"
+  if pacman -Q grub &>/dev/null && [[ -d /boot/grub ]]; then
+    echo -e "${GREEN}✔ GRUB installed and appears active. Setting up bootloader...${RESET}"
     install_packages os-prober grub-hooks update-grub || true
     sudo sed -i 's/#\s*GRUB_DISABLE_OS_PROBER=false/GRUB_DISABLE_OS_PROBER=false/' /etc/default/grub || true
     sudo os-prober && sudo update-grub || true
   else
-    echo -e "${YELLOW}⚠️ GRUB not detected. Checking for orphan GRUB tools...${RESET}"
-    for pkg in grub-hooks update-grub; do
+    echo -e "${YELLOW}⚠️ GRUB not active. Checking for orphan GRUB tools...${RESET}"
+    for pkg in grub grub-hooks update-grub; do
       if pacman -Q "$pkg" &>/dev/null; then
         echo
         echo -e "${YELLOW}🧹 Removing unused package: ${pkg}${RESET}"
