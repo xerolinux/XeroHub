@@ -41,8 +41,7 @@ print_section() {
 # Pre-checks
 check_vanilla_arch() {
   if ! grep -q '^ID=arch' /etc/os-release || ! [ -f /etc/arch-release ]; then
-    echo
-    echo -e "${RED}This script is for vanilla Arch Linux only. Exiting.${RESET}"
+    echo -e "${RED}This script is for Vanilla Arch Linux only. Exiting.${RESET}"
     exit 1
   fi
 }
@@ -87,10 +86,10 @@ check_vm_environment() {
         ;;
       vmware)
         install_packages xf86-video-vmware open-vm-tools xf86-input-vmmouse
-        sudo systemctl enable vmtoolsd.service
+        sudo systemctl enable vmtoolsd
         ;;
       microsoft)
-        echo -e "${YELLOW}⚠️  WSL detected — GUI support is limited.${RESET}"
+        echo -e "${YELLOW}⚠️ WSL detected — GUI support is limited.${RESET}"
         ;;
       *)
         echo -e "${YELLOW}⚠️ Unknown VM type: ${virt}${RESET}"
@@ -179,7 +178,7 @@ install_plasma() {
   start_point
   install_packages linux-headers kf6 power-profiles-daemon jq qt6-3d qt6-5compat qt6-base qt6-charts qt6-connectivity qt6-declarative qt6-graphs qt6-grpc qt6-httpserver qt6-imageformats qt6-languageserver qt6-location qt6-lottie qt6-multimedia qt6-networkauth qt6-positioning qt6-quick3d qt6-quick3dphysics qt6-quickeffectmaker qt6-quicktimeline qt6-remoteobjects qt6-scxml qt6-sensors qt6-serialbus qt6-serialport qt6-shadertools qt6-speech qt6-svg qt6-tools qt6-translations qt6-virtualkeyboard qt6-wayland qt6-webchannel qt6-webengine qt6-websockets qt6-webview plasma-desktop packagekit-qt6 packagekit dolphin kcron khelpcenter kio-admin ksystemlog breeze plasma-workspace plasma-workspace-wallpapers powerdevil plasma-nm kaccounts-integration kdeplasma-addons plasma-pa plasma-integration plasma-browser-integration plasma-wayland-protocols plasma-systemmonitor kpipewire keysmith krecorder kweather plasmatube plasma-pass ocean-sound-theme qqc2-breeze-style plasma5-integration kdeconnect kdenetwork-filesharing kget kio-extras kio-gdrive kio-zeroconf colord-kde gwenview kamera kcolorchooser kdegraphics-thumbnailers kimagemapeditor kolourpaint okular spectacle svgpart ark kate kcalc kcharselect kdebugsettings kdf kdialog keditbookmarks kfind kgpg konsole markdownpart yakuake audiotube elisa ffmpegthumbs plasmatube dolphin-plugins pim-data-exporter pim-sieve-editor emoji-font gcc-libs glibc icu kauth kbookmarks kcmutils kcodecs kcompletion kconfig kconfigwidgets kcoreaddons kcrash kdbusaddons kdeclarative kglobalaccel kguiaddons ki18n kiconthemes kio kirigami kirigami-addons kitemmodels kitemviews kjobwidgets kmenuedit knewstuff knotifications knotifyconfig kpackage krunner kservice ksvg kwidgetsaddons kwindowsystem kxmlgui libcanberra libksysguard libplasma libx11 libxcb libxcursor libxi libxkbcommon libxkbfile plasma-activities plasma-activities-stats plasma5support polkit polkit-kde-agent qt6-5compat qt6-base qt6-declarative qt6-wayland sdl2 solid sonnet systemsettings wayland xcb-util-keysyms xdg-user-dirs scim extra-cmake-modules intltool wayland-protocols xf86-input-libinput sddm-kcm bluedevil breeze-gtk drkonqi kde-gtk-config kdeplasma-addons kinfocenter kscreen ksshaskpass oxygen oxygen-sounds xdg-desktop-portal-kde breeze-grub flatpak-kcm networkmanager-qt quota-tools qt5-x11extras gpsd pacman-contrib cmake falkon
   echo
-  sudo systemctl enable sddm.service power-profiles-daemon.service sshd.service &>/dev/null || echo -e "${YELLOW}Warning: sddm not found.${RESET}"
+  sudo systemctl enable sddm power-profiles-daemon &>/dev/null || echo -e "${YELLOW}Warning: sddm not found.${RESET}"
 }
 
 install_gnome() {
@@ -188,7 +187,7 @@ install_gnome() {
   clear && print_section "GNOME"
   install_packages linux-headers evince extension-manager epiphany gdm gnome-subtitles gnac gmtk gnome-backgrounds gnome-calculator gnome-calendar gnome-characters gnome-clocks gnome-color-manager gnome-connections gnome-terminal-transparency gnome-contacts gnome-control-center gnome-disk-utility gnome-font-viewer gnome-gesture-improvements gnome-keyring gnome-logs gnome-maps gnome-menus gnome-network-displays gnome-remote-desktop gnome-session gnome-settings-daemon gnome-shell gnome-shell-extensions gnome-system-monitor gnome-text-editor gnome-themes-extra gnome-tweaks gnome-user-share gnome-weather grilo-plugins gvfs gvfs-afc gvfs-dnssd gvfs-goa gvfs-google gvfs-gphoto2 gvfs-mtp gvfs-nfs gvfs-onedrive gvfs-smb gvfs-wsdd loupe nautilus rygel power-profiles-daemon simple-scan snapshot sushi tecla totem xdg-desktop-portal-gnome xdg-user-dirs-gtk jq libadwaita adwaita-fonts adwaita-cursors adwaita-icon-theme adwaita-icon-theme-legacy
   echo
-  sudo systemctl enable gdm.service power-profiles-daemon.service sshd.service &>/dev/null || echo -e "${YELLOW}Warning: gdm not found.${RESET}"
+  sudo systemctl enable gdm power-profiles-daemon &>/dev/null || echo -e "${YELLOW}Warning: gdm not found.${RESET}"
 }
 
 install_xfce() {
@@ -197,7 +196,7 @@ install_xfce() {
   clear && print_section "XFCE"
   install_packages linux-headers xfce4 epiphany mousepad parole ristretto thunar-archive-plugin thunar-media-tags-plugin xfburn xfce4-artwork xfce4-battery-plugin xfce4-clipman-plugin xfce4-cpufreq-plugin xfce4-cpugraph-plugin xfce4-dict xfce4-diskperf-plugin xfce4-eyes-plugin xfce4-fsguard-plugin xfce4-genmon-plugin xfce4-mailwatch-plugin xfce4-mount-plugin xfce4-mpc-plugin xfce4-netload-plugin xfce4-notes-plugin xfce4-notifyd xfce4-places-plugin xfce4-pulseaudio-plugin xfce4-screensaver xfce4-screenshooter xfce4-sensors-plugin xfce4-smartbookmark-plugin xfce4-systemload-plugin xfce4-taskmanager xfce4-time-out-plugin xfce4-timer-plugin xfce4-verve-plugin xfce4-wavelan-plugin xfce4-weather-plugin xfce4-whiskermenu-plugin xfce4-xkb-plugin lightdm lightdm-gtk-greeter power-profiles-daemon
   echo
-  sudo systemctl enable lightdm.service power-profiles-daemon.service sshd.service &>/dev/null || echo "Warning: lightdm.service not found."
+  sudo systemctl enable lightdm power-profiles-daemon &>/dev/null || echo "Warning: lightdm not found."
 }
 
 install_hypr() {
@@ -207,7 +206,7 @@ install_hypr() {
   install_packages linux-headers hyprland hypridle hyprland-protocols hyprlock hyprpaper hyprpicker hyprpolkitagent hyprsunset pyprland kitty kitty-shell-integration kitty-terminfo pacman-contrib xdg-desktop-portal-hyprland xdg-user-dirs power-profiles-daemon thunar thunar-archive-plugin thunar-media-tags-plugin thunar-shares-plugin thunar-vcs-plugin thunar-volman sddm nwg-displays nwg-look rofi grim slurp kvantum qt6ct ttf-ubuntu-nerd noto-fonts-emoji
   xdg-user-dirs-update
   echo
-  sudo systemctl enable power-profiles-daemon.service sddm.service sshd.service &>/dev/null || echo -e "${YELLOW}Warning: sddm not found.${RESET}"
+  sudo systemctl enable sddm power-profiles-daemon &>/dev/null || echo -e "${YELLOW}Warning: sddm not found.${RESET}"
 }
 
 install_cosmic() {
@@ -219,16 +218,16 @@ install_cosmic() {
   install_packages linux-headers cosmic-session-git pacman-contrib xdg-user-dirs switcheroo-control xdg-desktop-portal-cosmic-git xorg-xwayland just mold cosmic-edit-git cosmic-files-git cosmic-store-git cosmic-term-git cosmic-wallpapers-git wayland-protocols wayland-utils lib32-wayland system76-power system-config-printer clipboard-manager-git cosmic-randr-git cosmic-player-git cosmic-ext-applet-external-monitor-brightness-git cosmic-ext-forecast-git cosmic-ext-tweaks-git cosmic-screenshot-git cosmic-applet-arch
   xdg-user-dirs-update
   echo
-  sudo systemctl enable cosmic-greeter.service com.system76.PowerDaemon.service sshd.service &>/dev/null || echo -e "${YELLOW}cosmic-greeter.service not found.${RESET}"
+  sudo systemctl enable cosmic-greeter com.system76.PowerDaemon &>/dev/null || echo -e "${YELLOW}cosmic-greeter not found.${RESET}"
 }
 
 post_install() {
   clear && print_section "Bluetooth..."
   install_packages bluez bluez-utils bluez-plugins bluez-hid2hci bluez-cups bluez-libs bluez-tools
-  sudo systemctl enable bluetooth.service
+  sudo systemctl enable bluetooth
   clear && print_section "Apps & Services..."
-  install_packages linux-firmware linux-firmware-qcom linux-firmware-whence linux-firmware-marvell mkinitcpio mkinitcpio-utils mkinitcpio-archiso mkinitcpio-firmware mkinitcpio-nfs-utils meld timeshift mpv gnome-disk-utility btop nano git rustup eza downgrade ntp most wget dnsutils logrotate gtk-update-icon-cache dex bash-completion bat bat-extras ttf-fira-code otf-libertinus tex-gyre-fonts ttf-hack-nerd ttf-ubuntu-font-family awesome-terminal-fonts ttf-jetbrains-mono-nerd adobe-source-sans-pro-fonts gtk-engines gtk-engine-murrine gnome-themes-extra ntfs-3g gvfs mtpfs udiskie udisks2 ldmtool gvfs-afc gvfs-mtp gvfs-nfs gvfs-smb gvfs-gphoto2 libgsf tumbler freetype2 libopenraw ffmpegthumbnailer python-pip repoctl python-cffi python-numpy python-docopt python-pyaudio python-pyparted python-pygments python-websockets ocs-url xmlstarlet yt-dlp wavpack unarchiver gnustep-base parallel gnome-keyring ark vi duf gcc yad zip xdo lzop nmon tree vala htop lshw cmake cblas expac fuse3 lhasa meson unace unrar zip unzip 7zip rhash sshfs vnstat nodejs cronie hwinfo arandr assimp netpbm wmctrl grsync libmtp polkit sysprof semver zenity gparted hddtemp mlocate jsoncpp fuseiso gettext node-gyp intltool graphviz pkgstats inetutils s3fs-fuse playerctl oniguruma cifs-utils lsb-release dbus-python laptop-detect perl-xml-parser appmenu-gtk-module preload bash-completion piper iwd fastfetch flatpak pacman-bintrans pacseek openssh
-  sudo systemctl enable preload sshd &>/dev/null && rustup default stable &>/dev/null
+  install_packages linux-firmware linux-firmware-qcom linux-firmware-whence linux-firmware-marvell mkinitcpio mkinitcpio-utils mkinitcpio-archiso mkinitcpio-firmware mkinitcpio-nfs-utils meld timeshift mpv gnome-disk-utility btop nano git rust eza downgrade ntp most wget dnsutils logrotate gtk-update-icon-cache dex bash-completion bat bat-extras ttf-fira-code otf-libertinus tex-gyre-fonts ttf-hack-nerd ttf-ubuntu-font-family awesome-terminal-fonts ttf-jetbrains-mono-nerd adobe-source-sans-pro-fonts gtk-engines gtk-engine-murrine gnome-themes-extra ntfs-3g gvfs mtpfs udiskie udisks2 ldmtool gvfs-afc gvfs-mtp gvfs-nfs gvfs-smb gvfs-gphoto2 libgsf tumbler freetype2 libopenraw ffmpegthumbnailer python-pip repoctl python-cffi python-numpy python-docopt python-pyaudio python-pyparted python-pygments python-websockets ocs-url xmlstarlet yt-dlp wavpack unarchiver gnustep-base parallel gnome-keyring ark vi duf gcc yad zip xdo lzop nmon tree vala htop lshw cmake cblas expac fuse3 lhasa meson unace unrar zip unzip 7zip rhash sshfs vnstat nodejs cronie hwinfo arandr assimp netpbm wmctrl grsync libmtp polkit sysprof semver zenity gparted hddtemp mlocate jsoncpp fuseiso gettext node-gyp intltool graphviz pkgstats inetutils s3fs-fuse playerctl oniguruma cifs-utils lsb-release dbus-python laptop-detect perl-xml-parser appmenu-gtk-module preload bash-completion piper iwd fastfetch flatpak pacman-bintrans pacseek openssh
+  sudo systemctl enable preload sshd &>/dev/null &>/dev/null
 
   clear && print_section "GRUB Bootloader..."
 
@@ -261,6 +260,7 @@ main_menu() {
   echo "│  [3]  XFCE          - Fast, light, classic UI      │"
   echo "│  [4]  Hyprland      - Wayland-based tiling WM      │"
   echo "│  [5]  Cosmic Alpha  - Rusty & shiny (System76)     │"
+  echo "│                                                    │"
   echo "│  [6]  Exit          - Abort installation           │"
   echo "╰────────────────────────────────────────────────────╯"
   echo -e "${RESET}"
@@ -269,11 +269,11 @@ main_menu() {
   echo
 
   case "$choice" in
-    1) clear && figlet Plasma && install_plasma ;;
-    2) clear && figlet GNOME && install_gnome ;;
-    3) clear && figlet XFCE && install_xfce ;;
-    4) clear && figlet Hyprland && install_hypr ;;
-    5) clear && figlet Cosmic && install_cosmic ;;
+    1) clear && install_plasma ;;
+    2) clear && install_gnome ;;
+    3) clear && install_xfce ;;
+    4) clear && install_hypr ;;
+    5) clear && install_cosmic ;;
     6) echo -e "${GREEN}Bye!${RESET}"; exit 0 ;;
     *) echo -e "${RED}Invalid choice.${RESET}"; exit 1 ;;
   esac
