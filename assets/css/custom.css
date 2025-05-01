@@ -37,14 +37,6 @@ body::after {
     pointer-events: none;
 }
 
-/* Force full width and center inner content */
-#main-content {
-animation: fadeIn 1.5s ease-in-out;
-padding: 2rem;
-width: 100%;
-box-sizing: border-box;
-}
-
 #main-content > article {
 margin-left: auto;
 margin-right: auto;
@@ -131,4 +123,44 @@ input[type="text"]:focus, textarea:focus {
     border-color: rgba(60, 60, 150, 0.8);
     box-shadow: 0 6px 12px rgba(60, 60, 150, 0.2);
     outline: none;
+}
+
+/* --- Mobile responsiveness --- */
+@media (max-width: 768px) {
+    #main-content {
+    padding: 1rem;
+    }
+
+    #main-content > article {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    }
+
+    .article-list .article {
+        padding: 1rem;
+        margin-bottom: 1.5rem;
+    }
+
+    article > section h4.relative.group:first-of-type,
+    article > section h4.relative.group:first-of-type ~ h4,
+    article > section h4.relative.group:first-of-type ~ p {
+        padding: 1rem;
+        margin: 1rem auto;
+    }
+
+    input[type="text"],
+    textarea {
+        font-size: 1rem;
+        padding: 0.75rem;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        font-size: 0.95rem;
+    }
+
+    h1, h2, h3 {
+        font-size: 1.2rem;
+    }
 }

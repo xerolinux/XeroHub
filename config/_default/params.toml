@@ -22,7 +22,7 @@ disableImageOptimization = true
 disableTextInHeader = false
 # backgroundImageWidth = 1200
 
-defaultBackgroundImage = "img/bg.webp"
+defaultBackgroundImage = "img/gradient.png"
 defaultFeaturedImage = "img/defaultf.png"
 
 highlightCurrentMenuArea = true
@@ -41,13 +41,13 @@ smartTOCHideUnfocusedChildren = false
 
 [homepage]
   layout = "page" # valid options: page, profile, hero, card, background, custom
-  background = "img/bg.webp" # used in: hero, and card
+  background = "img/gradient.png" # used in: hero, and card
   showRecent = false
   showRecentItems = 12
   showMoreLink = true
   showMoreLinkDest = "/posts"
   cardView = true
-  cardViewScreenWidth = true
+  cardViewScreenWidth = false
   layoutBackgroundBlur = true # only used when layout equals background
 
 [article]
