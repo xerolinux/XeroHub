@@ -22,7 +22,7 @@
 &lt;/h3&gt;
 &lt;p&gt;While browsing &lt;strong&gt;YouTube&lt;/strong&gt; I stumbled upon a video showing off a neat little tool called &lt;strong&gt;Zoxide&lt;/strong&gt;. It&amp;rsquo;s touted to be a smarter &lt;code&gt;cd&lt;/code&gt; command, inspired by &lt;code&gt;z&lt;/code&gt; and &lt;code&gt;autojump&lt;/code&gt;. It remembers which directories you use most frequently, so you can &amp;ldquo;jump&amp;rdquo; to them in just a few keystrokes. &lt;strong&gt;Zoxide&lt;/strong&gt; works on all major shells.&lt;/p&gt;
 &lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
-      &lt;iframe allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&#34; allowfullscreen=&#34;allowfullscreen&#34; loading=&#34;eager&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; src=&#34;https://www.youtube.com/embed/aghxkpyRVDY?autoplay=0&amp;amp;controls=1&amp;amp;end=0&amp;amp;loop=0&amp;amp;mute=0&amp;amp;start=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;YouTube video&#34;&gt;&lt;/iframe&gt;
+      &lt;iframe allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen&#34; loading=&#34;eager&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; src=&#34;https://www.youtube.com/embed/aghxkpyRVDY?autoplay=0&amp;amp;controls=1&amp;amp;end=0&amp;amp;loop=0&amp;amp;mute=0&amp;amp;start=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;YouTube video&#34;&gt;&lt;/iframe&gt;
     &lt;/div&gt;
 
 

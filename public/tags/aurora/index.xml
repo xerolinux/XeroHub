@@ -111,7 +111,7 @@
 &lt;p&gt;It includes everything that makes &lt;strong&gt;Bluefin&lt;/strong&gt; and &lt;strong&gt;Bluefin-DX&lt;/strong&gt; so awesome, including brew on host, the bluefin-cli, the starship CLI experience, Tailscale and the container-native Ptyxis terminal. You’ll find that most of the things you’re used to in Bluefin are the same under the hood, including the just commands. Aurora is not designed to be a drastically different experience than Bluefin, which also means we (I) can keep it regularly in sync with upstream so you get the latest changes.&lt;/p&gt;
 &lt;p&gt;It is built on the &lt;strong&gt;kinoite-main&lt;/strong&gt; Images. The images feature almost no customization, aside from some quality of life features and some branding. You can expect a vanilla KDE experience with developer batteries under the hood.&lt;/p&gt;
 &lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
-      &lt;iframe allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&#34; allowfullscreen=&#34;allowfullscreen&#34; loading=&#34;eager&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; src=&#34;https://www.youtube.com/embed/ZPnV2vP_v-o?autoplay=0&amp;amp;controls=1&amp;amp;end=0&amp;amp;loop=0&amp;amp;mute=0&amp;amp;start=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;YouTube video&#34;&gt;&lt;/iframe&gt;
+      &lt;iframe allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen&#34; loading=&#34;eager&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; src=&#34;https://www.youtube.com/embed/ZPnV2vP_v-o?autoplay=0&amp;amp;controls=1&amp;amp;end=0&amp;amp;loop=0&amp;amp;mute=0&amp;amp;start=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;YouTube video&#34;&gt;&lt;/iframe&gt;
     &lt;/div&gt;
 
 
@@ -152,7 +152,7 @@
 
 
 
-  &lt;a class=&#34;flex flex-wrap article &#34; href=&#34;https://xerolinux.xyz/posts/topgrade-updater/&#34;&gt;
+  &lt;a class=&#34;flex flex-wrap md:flex-nowrap article &#34; href=&#34;https://xerolinux.xyz/posts/topgrade-updater/&#34;&gt;
     
         
         &lt;div class=&#34;w-full md:w-auto h-full thumbnail nozoom thumbnailshadow md:mr-7&#34; style=&#34;background-image:url(/posts/topgrade-updater/featured.webp);&#34;&gt;&lt;/div&gt;
