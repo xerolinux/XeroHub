@@ -268,7 +268,6 @@ main_menu() {
   echo "│  [6]  Exit          - Abort installation           │"
   echo "╰────────────────────────────────────────────────────╯"
   echo -e "${RESET}"
-  echo
   read -rp "Enter your choice [1-6]: " choice
   echo
 
