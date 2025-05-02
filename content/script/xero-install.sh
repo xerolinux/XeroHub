@@ -68,12 +68,13 @@ check_existing_de() {
 }
 
 check_vm_environment() {
-  # Run systemd-detect-virt and capture both output and exit code
+  # Safely detect VM without triggering script exit on real hardware
   local virt
-  virt=$(systemd-detect-virt 2>/dev/null)
-  local exit_code=$?
+  if ! virt=$(systemd-detect-virt 2>/dev/null); then
+    virt="none"
+  fi
 
-  if [[ $exit_code -eq 0 && "$virt" != "none" ]]; then
+  if [[ "$virt" != "none" ]]; then
     echo -e "\n${YELLOW}🖥️ VM detected — installing guest tools...${RESET}"
     sleep 6
     case "$virt" in
@@ -149,7 +150,7 @@ install_packages() {
     SPIN_PID=$!
 
     # Run pacman silently in background
-    if sudo pacman -S --noconfirm --needed "$pkg" &> /tmp/xero-install.log; then
+    if sudo pacman -Syy --noconfirm --needed "$pkg" &> /tmp/xero-install.log; then
       RESULT=true
     else
       RESULT=false
@@ -178,16 +179,12 @@ install_packages() {
 
 install_plasma() {
   clear && print_section "KDE Plasma"
-  check_vm_environment
-  start_point
   install_packages linux-headers kf6 power-profiles-daemon jq qt6-3d qt6-5compat qt6-base qt6-charts qt6-connectivity qt6-declarative qt6-graphs qt6-grpc qt6-httpserver qt6-imageformats qt6-languageserver qt6-location qt6-lottie qt6-multimedia qt6-networkauth qt6-positioning qt6-quick3d qt6-quick3dphysics qt6-quickeffectmaker qt6-quicktimeline qt6-remoteobjects qt6-scxml qt6-sensors qt6-serialbus qt6-serialport qt6-shadertools qt6-speech qt6-svg qt6-tools qt6-translations qt6-virtualkeyboard qt6-wayland qt6-webchannel qt6-webengine qt6-websockets qt6-webview plasma-desktop packagekit-qt6 packagekit dolphin kcron khelpcenter kio-admin ksystemlog breeze plasma-workspace plasma-workspace-wallpapers powerdevil plasma-nm kaccounts-integration kdeplasma-addons plasma-pa plasma-integration plasma-browser-integration plasma-wayland-protocols plasma-systemmonitor kpipewire keysmith krecorder kweather plasmatube plasma-pass ocean-sound-theme qqc2-breeze-style plasma5-integration kdeconnect kdenetwork-filesharing kget kio-extras kio-gdrive kio-zeroconf colord-kde gwenview kamera kcolorchooser kdegraphics-thumbnailers kimagemapeditor kolourpaint okular spectacle svgpart ark kate kcalc kcharselect kdebugsettings kdf kdialog keditbookmarks kfind kgpg konsole markdownpart yakuake audiotube elisa ffmpegthumbs plasmatube dolphin-plugins pim-data-exporter pim-sieve-editor emoji-font gcc-libs glibc icu kauth kbookmarks kcmutils kcodecs kcompletion kconfig kconfigwidgets kcoreaddons kcrash kdbusaddons kdeclarative kglobalaccel kguiaddons ki18n kiconthemes kio kirigami kirigami-addons kitemmodels kitemviews kjobwidgets kmenuedit knewstuff knotifications knotifyconfig kpackage krunner kservice ksvg kwidgetsaddons kwindowsystem kxmlgui libcanberra libksysguard libplasma libx11 libxcb libxcursor libxi libxkbcommon libxkbfile plasma-activities plasma-activities-stats plasma5support polkit polkit-kde-agent qt6-5compat qt6-base qt6-declarative qt6-wayland sdl2 solid sonnet systemsettings wayland xcb-util-keysyms xdg-user-dirs scim extra-cmake-modules intltool wayland-protocols xf86-input-libinput sddm-kcm bluedevil breeze-gtk drkonqi kde-gtk-config kdeplasma-addons kinfocenter kscreen ksshaskpass oxygen oxygen-sounds xdg-desktop-portal-kde breeze-grub flatpak-kcm networkmanager-qt quota-tools qt5-x11extras gpsd pacman-contrib cmake falkon
   echo
   sudo systemctl enable sddm power-profiles-daemon &>/dev/null || echo -e "${YELLOW}Warning: sddm not found.${RESET}"
 }
 
 install_gnome() {
-  check_vm_environment
-  start_point
   clear && print_section "GNOME"
   install_packages linux-headers evince extension-manager epiphany gdm gnome-subtitles gnac gmtk gnome-backgrounds gnome-calculator gnome-calendar gnome-characters gnome-clocks gnome-color-manager gnome-connections gnome-terminal-transparency gnome-contacts gnome-control-center gnome-disk-utility gnome-font-viewer gnome-gesture-improvements gnome-keyring gnome-logs gnome-maps gnome-menus gnome-network-displays gnome-remote-desktop gnome-session gnome-settings-daemon gnome-shell gnome-shell-extensions gnome-system-monitor gnome-text-editor gnome-themes-extra gnome-tweaks gnome-user-share gnome-weather grilo-plugins gvfs gvfs-afc gvfs-dnssd gvfs-goa gvfs-google gvfs-gphoto2 gvfs-mtp gvfs-nfs gvfs-onedrive gvfs-smb gvfs-wsdd loupe nautilus rygel power-profiles-daemon simple-scan snapshot sushi tecla totem xdg-desktop-portal-gnome xdg-user-dirs-gtk jq libadwaita adwaita-fonts adwaita-cursors adwaita-icon-theme adwaita-icon-theme-legacy
   echo
@@ -195,8 +192,6 @@ install_gnome() {
 }
 
 install_xfce() {
-  check_vm_environment
-  start_point
   clear && print_section "XFCE"
   install_packages linux-headers xfce4 epiphany mousepad parole ristretto thunar-archive-plugin thunar-media-tags-plugin xfburn xfce4-artwork xfce4-battery-plugin xfce4-clipman-plugin xfce4-cpufreq-plugin xfce4-cpugraph-plugin xfce4-dict xfce4-diskperf-plugin xfce4-eyes-plugin xfce4-fsguard-plugin xfce4-genmon-plugin xfce4-mailwatch-plugin xfce4-mount-plugin xfce4-mpc-plugin xfce4-netload-plugin xfce4-notes-plugin xfce4-notifyd xfce4-places-plugin xfce4-pulseaudio-plugin xfce4-screensaver xfce4-screenshooter xfce4-sensors-plugin xfce4-smartbookmark-plugin xfce4-systemload-plugin xfce4-taskmanager xfce4-time-out-plugin xfce4-timer-plugin xfce4-verve-plugin xfce4-wavelan-plugin xfce4-weather-plugin xfce4-whiskermenu-plugin xfce4-xkb-plugin lightdm lightdm-gtk-greeter power-profiles-daemon
   echo
@@ -204,8 +199,6 @@ install_xfce() {
 }
 
 install_hypr() {
-  check_vm_environment
-  start_point
   clear && print_section "Hyprland"
   install_packages linux-headers hyprland hypridle hyprland-protocols hyprlock hyprpaper hyprpicker hyprpolkitagent hyprsunset pyprland kitty kitty-shell-integration kitty-terminfo pacman-contrib xdg-desktop-portal-hyprland xdg-user-dirs power-profiles-daemon thunar thunar-archive-plugin thunar-media-tags-plugin thunar-shares-plugin thunar-vcs-plugin thunar-volman sddm nwg-displays nwg-look rofi grim slurp kvantum qt6ct ttf-ubuntu-nerd noto-fonts-emoji
   xdg-user-dirs-update
@@ -214,8 +207,6 @@ install_hypr() {
 }
 
 install_cosmic() {
-  check_vm_environment
-  start_point
   clear && print_section "Cosmic Alpha"
   warning
   sleep 6
@@ -286,6 +277,8 @@ main() {
   print_title
   check_vanilla_arch
   check_existing_de
+  check_vm_environment
+  start_point
 
   # Ensure figlet is installed early for banner output
   if ! command -v figlet &>/dev/null; then
