@@ -50,7 +50,7 @@ check_existing_de() {
   local known_de_packages=(
     plasma-desktop gnome-shell xfce4-session hyprland cosmic-session-git
     budgie-desktop cinnamon pantheon-session deepin kde-applications lxqt-session
-    sway i3-wm openbox awesome enlightenment mate-session gdm sddm lightdm
+    sway i3-wm openbox awesome enlightenment mate-session
   )
 
   for pkg in "${known_de_packages[@]}"; do
@@ -200,7 +200,7 @@ install_xfce() {
 
 install_hypr() {
   clear && print_section "Hyprland"
-  install_packages linux-headers hyprland hypridle hyprland-protocols hyprlock hyprpaper hyprpicker hyprpolkitagent hyprsunset pyprland kitty kitty-shell-integration kitty-terminfo pacman-contrib xdg-desktop-portal-hyprland xdg-user-dirs power-profiles-daemon thunar thunar-archive-plugin thunar-media-tags-plugin thunar-shares-plugin thunar-vcs-plugin thunar-volman sddm nwg-displays nwg-look rofi grim slurp kvantum qt6ct ttf-ubuntu-nerd noto-fonts-emoji
+  install_packages linux-headers hyprland hypridle hyprland-protocols hyprlock hyprpaper hyprpicker hyprpolkitagent hyprsunset pyprland kitty kitty-shell-integration kitty-terminfo pacman-contrib xdg-desktop-portal-hyprland xdg-user-dirs power-profiles-daemon thunar thunar-archive-plugin thunar-media-tags-plugin thunar-shares-plugin thunar-vcs-plugin thunar-volman sddm nwg-displays nwg-look rofi grim slurp kvantum pavucontrol qt6ct ttf-ubuntu-nerd noto-fonts-emoji
   xdg-user-dirs-update
   echo
   sudo systemctl enable sddm power-profiles-daemon &>/dev/null || echo -e "${YELLOW}Warning: sddm not found.${RESET}"
