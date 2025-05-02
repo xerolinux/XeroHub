@@ -40,7 +40,8 @@
 &lt;/h3&gt;
 &lt;p&gt;To install it use the command below, works on any distro no matter what base it uses.&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;flatpak install flathub org.dupot.easyflatpak -y
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;a id=&#34;github-55a7e247f2f2b6f3753f13b4f04d7b27&#34; target=&#34;_blank&#34; href=&#34;https://github.com/imikado/dupotEasyFlatpak&#34; class=&#34;cursor-pointer&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;github-card-wrapper&#34;&gt;
+&lt;a id=&#34;github-55a7e247f2f2b6f3753f13b4f04d7b27&#34; target=&#34;_blank&#34; href=&#34;https://github.com/imikado/dupotEasyFlatpak&#34; class=&#34;cursor-pointer&#34;&gt;
   &lt;div
     class=&#34;w-full md:w-auto pt-3 p-5 border border-neutral-200 dark:border-neutral-700 border rounded-md shadow-2xl&#34;&gt;
 
@@ -119,6 +120,7 @@
       .catch(error =&gt; console.error(error))
   &lt;/script&gt;
 &lt;/a&gt;
+&lt;/div&gt;
 
 
 &lt;h3 class=&#34;relative group&#34;&gt;Closing words 
@@ -302,6 +304,7 @@
 &lt;p&gt;You can also change Scrcpy resolution when mirroring the Android screen by running the following command:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;scrcpy --max-size &lt;span class=&#34;m&#34;&gt;720&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;There are more, but am not gonna put them all here. Just head on over to the project &lt;strong&gt;Git Repo&lt;/strong&gt; below to see them all, report issues and even share some ideas you might have with them&amp;hellip;&lt;/p&gt;
+&lt;div class=&#34;github-card-wrapper&#34;&gt;
 &lt;a id=&#34;github-2ef9a4269d317def170edabf1a7ec947&#34; target=&#34;_blank&#34; href=&#34;https://github.com/Genymobile/scrcpy&#34; class=&#34;cursor-pointer&#34;&gt;
   &lt;div
     class=&#34;w-full md:w-auto pt-3 p-5 border border-neutral-200 dark:border-neutral-700 border rounded-md shadow-2xl&#34;&gt;
@@ -381,6 +384,7 @@
       .catch(error =&gt; console.error(error))
   &lt;/script&gt;
 &lt;/a&gt;
+&lt;/div&gt;
 
 
 &lt;h3 class=&#34;relative group&#34;&gt;Bonus : GUI Version of SCRCPY 
@@ -390,6 +394,7 @@
 &lt;p&gt;If you prefer a GUI based version of SCRCPY, there is one. However it&amp;rsquo;s not as maintained as the official version. It uses &lt;code&gt;QT&lt;/code&gt; so it works best on those types of DEs, like &lt;strong&gt;KDE Plasma&lt;/strong&gt;, &lt;strong&gt;LXQT&lt;/strong&gt; and so on. To install it from the AUR&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;paru -S qtscrcpy
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;For more info and issues visit the project &lt;strong&gt;Git Repo&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;github-card-wrapper&#34;&gt;
 &lt;a id=&#34;github-1305ea58e76e685e1b7863bc394c207f&#34; target=&#34;_blank&#34; href=&#34;https://github.com/barry-ran/QtScrcpy&#34; class=&#34;cursor-pointer&#34;&gt;
   &lt;div
     class=&#34;w-full md:w-auto pt-3 p-5 border border-neutral-200 dark:border-neutral-700 border rounded-md shadow-2xl&#34;&gt;
@@ -469,6 +474,7 @@
       .catch(error =&gt; console.error(error))
   &lt;/script&gt;
 &lt;/a&gt;
+&lt;/div&gt;
 &lt;p&gt;That&amp;rsquo;s it, enjoy and let us know how it works for you&amp;hellip;&lt;/p&gt;
 </description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/scrcpy-android-screen-mirroring/featured.webp" />
@@ -507,7 +513,8 @@
 &lt;/h3&gt;
 &lt;p&gt;There are multiple ways to install this extension. One of them being from the &lt;a href=&#34;https://www.pling.com/find?search=burn-my-windows&#34; target=&#34;_blank&#34;&gt;&lt;strong&gt;KDE Store&lt;/strong&gt;&lt;/a&gt; on many distros running &lt;strong&gt;KDE Plasma&lt;/strong&gt; or the &lt;strong&gt;A.U.R&lt;/strong&gt; on &lt;strong&gt;ArchLinux&lt;/strong&gt;. Here I will be showing you the latter.&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;paru -S kwin-effects-burn-my-windows
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;a id=&#34;github-8c5f7cf4ebc6a27cc9dd18c133eaf67b&#34; target=&#34;_blank&#34; href=&#34;https://github.com/Schneegans/Burn-My-Windows&#34; class=&#34;cursor-pointer&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;github-card-wrapper&#34;&gt;
+&lt;a id=&#34;github-8c5f7cf4ebc6a27cc9dd18c133eaf67b&#34; target=&#34;_blank&#34; href=&#34;https://github.com/Schneegans/Burn-My-Windows&#34; class=&#34;cursor-pointer&#34;&gt;
   &lt;div
     class=&#34;w-full md:w-auto pt-3 p-5 border border-neutral-200 dark:border-neutral-700 border rounded-md shadow-2xl&#34;&gt;
 
@@ -586,6 +593,7 @@
       .catch(error =&gt; console.error(error))
   &lt;/script&gt;
 &lt;/a&gt;
+&lt;/div&gt;
 
 
 &lt;h3 class=&#34;relative group&#34;&gt;Closing words 
@@ -633,6 +641,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;- Recommended CURL command&lt;/strong&gt;&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;bash &amp;lt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;curl -L zellij.dev/launch&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;However you choose to get it is up to you. Anyway here&amp;rsquo;s a link to their &lt;strong&gt;Github&lt;/strong&gt; page below.&lt;/p&gt;
+&lt;div class=&#34;github-card-wrapper&#34;&gt;
 &lt;a id=&#34;github-d4629d5be933fe5b06f61e7e2b4973ce&#34; target=&#34;_blank&#34; href=&#34;https://github.com/zellij-org/zellij&#34; class=&#34;cursor-pointer&#34;&gt;
   &lt;div
     class=&#34;w-full md:w-auto pt-3 p-5 border border-neutral-200 dark:border-neutral-700 border rounded-md shadow-2xl&#34;&gt;
@@ -712,6 +721,7 @@
       .catch(error =&gt; console.error(error))
   &lt;/script&gt;
 &lt;/a&gt;
+&lt;/div&gt;
 &lt;p&gt;Enjoy :heart:&lt;/p&gt;
 </description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/zellij-terminal/featured.webp" />
@@ -753,7 +763,8 @@
 &lt;/h3&gt;
 &lt;p&gt;To install it, either do it via your favourite GUI package manager if supported or in terminal via :&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;flatpak install -y com.github.KRTirtho.Spotube
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;a id=&#34;github-95784f9db36c1bd48c66366504913f55&#34; target=&#34;_blank&#34; href=&#34;https://github.com/KRTirtho/spotube&#34; class=&#34;cursor-pointer&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;github-card-wrapper&#34;&gt;
+&lt;a id=&#34;github-95784f9db36c1bd48c66366504913f55&#34; target=&#34;_blank&#34; href=&#34;https://github.com/KRTirtho/spotube&#34; class=&#34;cursor-pointer&#34;&gt;
   &lt;div
     class=&#34;w-full md:w-auto pt-3 p-5 border border-neutral-200 dark:border-neutral-700 border rounded-md shadow-2xl&#34;&gt;
 
@@ -832,6 +843,7 @@
       .catch(error =&gt; console.error(error))
   &lt;/script&gt;
 &lt;/a&gt;
+&lt;/div&gt;
 </description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/spotube-for-spotify/featured.webp" />
     </item>
@@ -853,6 +865,7 @@
       &lt;iframe allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen&#34; loading=&#34;eager&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; src=&#34;https://www.youtube.com/embed/v7XWlCFkj4A?autoplay=0&amp;amp;controls=1&amp;amp;end=0&amp;amp;loop=0&amp;amp;mute=0&amp;amp;start=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;YouTube video&#34;&gt;&lt;/iframe&gt;
     &lt;/div&gt;
 
+&lt;div class=&#34;github-card-wrapper&#34;&gt;
 &lt;a id=&#34;github-18e693ebc65096b5df283f30dd37163c&#34; target=&#34;_blank&#34; href=&#34;https://github.com/hexvalid/Linux-CapsLock-Delay-Fixer&#34; class=&#34;cursor-pointer&#34;&gt;
   &lt;div
     class=&#34;w-full md:w-auto pt-3 p-5 border border-neutral-200 dark:border-neutral-700 border rounded-md shadow-2xl&#34;&gt;
@@ -932,6 +945,7 @@
       .catch(error =&gt; console.error(error))
   &lt;/script&gt;
 &lt;/a&gt;
+&lt;/div&gt;
 </description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/caps-lock/featured.webp" />
     </item>
@@ -976,7 +990,8 @@
 &lt;li&gt;Flathub (Flatpak)&lt;/li&gt;
 &lt;/ul&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;flatpak install net.fasterland.converseen
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;a id=&#34;github-bcb0d2da5009533c2e74cc81533f73ad&#34; target=&#34;_blank&#34; href=&#34;https://github.com/Faster3ck/Converseen&#34; class=&#34;cursor-pointer&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;github-card-wrapper&#34;&gt;
+&lt;a id=&#34;github-bcb0d2da5009533c2e74cc81533f73ad&#34; target=&#34;_blank&#34; href=&#34;https://github.com/Faster3ck/Converseen&#34; class=&#34;cursor-pointer&#34;&gt;
   &lt;div
     class=&#34;w-full md:w-auto pt-3 p-5 border border-neutral-200 dark:border-neutral-700 border rounded-md shadow-2xl&#34;&gt;
 
@@ -1055,6 +1070,7 @@
       .catch(error =&gt; console.error(error))
   &lt;/script&gt;
 &lt;/a&gt;
+&lt;/div&gt;
 &lt;p&gt;Have fun :heart:&lt;/p&gt;
 </description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/coverseen-img-convert/featured.webp" />
@@ -1272,7 +1288,8 @@
 &lt;li&gt;Flathub (Flatpak)&lt;/li&gt;
 &lt;/ul&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;flatpak install -y flathub org.ferdium.Ferdium
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;a id=&#34;github-3779791f9be93f712e396768a672133d&#34; target=&#34;_blank&#34; href=&#34;https://github.com/ferdium/ferdium-app&#34; class=&#34;cursor-pointer&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;github-card-wrapper&#34;&gt;
+&lt;a id=&#34;github-3779791f9be93f712e396768a672133d&#34; target=&#34;_blank&#34; href=&#34;https://github.com/ferdium/ferdium-app&#34; class=&#34;cursor-pointer&#34;&gt;
   &lt;div
     class=&#34;w-full md:w-auto pt-3 p-5 border border-neutral-200 dark:border-neutral-700 border rounded-md shadow-2xl&#34;&gt;
 
@@ -1351,6 +1368,7 @@
       .catch(error =&gt; console.error(error))
   &lt;/script&gt;
 &lt;/a&gt;
+&lt;/div&gt;
 &lt;p&gt;Have fun :heart:&lt;/p&gt;
 </description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/ferdium-web/featured.webp" />
@@ -1395,7 +1413,8 @@
 &lt;/h3&gt;
 &lt;p&gt;It&amp;rsquo;s available on the AUR. Otherwise, below is a link to tool&amp;rsquo;s GitHub.&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;paru -S konsave
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;a id=&#34;github-332ee8afae17adb75781b84a058a1d54&#34; target=&#34;_blank&#34; href=&#34;https://github.com/Prayag2/konsave&#34; class=&#34;cursor-pointer&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;github-card-wrapper&#34;&gt;
+&lt;a id=&#34;github-332ee8afae17adb75781b84a058a1d54&#34; target=&#34;_blank&#34; href=&#34;https://github.com/Prayag2/konsave&#34; class=&#34;cursor-pointer&#34;&gt;
   &lt;div
     class=&#34;w-full md:w-auto pt-3 p-5 border border-neutral-200 dark:border-neutral-700 border rounded-md shadow-2xl&#34;&gt;
 
@@ -1474,6 +1493,7 @@
       .catch(error =&gt; console.error(error))
   &lt;/script&gt;
 &lt;/a&gt;
+&lt;/div&gt;
 &lt;p&gt;Have fun and start sharing your configs&lt;/p&gt;
 </description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/konsave-tool/featured.webp" />
@@ -1522,7 +1542,8 @@
 &lt;li&gt;Flathub (Flatpak)&lt;/li&gt;
 &lt;/ul&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;flatpak install -y com.obsproject.Studio pluginname
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;a id=&#34;github-2294faaf2680cd82062f8e3f92431994&#34; target=&#34;_blank&#34; href=&#34;https://github.com/obsproject/obs-studio&#34; class=&#34;cursor-pointer&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;github-card-wrapper&#34;&gt;
+&lt;a id=&#34;github-2294faaf2680cd82062f8e3f92431994&#34; target=&#34;_blank&#34; href=&#34;https://github.com/obsproject/obs-studio&#34; class=&#34;cursor-pointer&#34;&gt;
   &lt;div
     class=&#34;w-full md:w-auto pt-3 p-5 border border-neutral-200 dark:border-neutral-700 border rounded-md shadow-2xl&#34;&gt;
 
@@ -1601,6 +1622,7 @@
       .catch(error =&gt; console.error(error))
   &lt;/script&gt;
 &lt;/a&gt;
+&lt;/div&gt;
 &lt;p&gt;Have fun :heart:&lt;/p&gt;
 </description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/obs-official/featured.webp" />
@@ -1651,6 +1673,7 @@
     
 &lt;/h3&gt;
 &lt;p&gt;I use this on a daily. It&amp;rsquo;s highly recommended for the &lt;em&gt;G33ks&lt;/em&gt; out there who love the terminal like I do. If you prefer &lt;strong&gt;GUIs&lt;/strong&gt; then this is not for you, instead use something you prefer. Anyway below is a link to project &lt;strong&gt;Github&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;github-card-wrapper&#34;&gt;
 &lt;a id=&#34;github-18f534e30ec2cbc3930543c1d437b458&#34; target=&#34;_blank&#34; href=&#34;https://github.com/moson-mo/pacseek&#34; class=&#34;cursor-pointer&#34;&gt;
   &lt;div
     class=&#34;w-full md:w-auto pt-3 p-5 border border-neutral-200 dark:border-neutral-700 border rounded-md shadow-2xl&#34;&gt;
@@ -1730,6 +1753,7 @@
       .catch(error =&gt; console.error(error))
   &lt;/script&gt;
 &lt;/a&gt;
+&lt;/div&gt;
 </description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/pacseek-tui/featured.webp" />
     </item>
@@ -1770,6 +1794,7 @@
 &lt;p&gt;Since it&amp;rsquo;s available on Flathub, all you need to do is run the following command in terminal or use your favorite GUI package manager if your Distro supports them.&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;flatpak install -y com.stremio.Stremio
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;The project page at GitHub:&lt;/p&gt;
+&lt;div class=&#34;github-card-wrapper&#34;&gt;
 &lt;a id=&#34;github-27f63cdc343184aeff1cee1e4fc50afa&#34; target=&#34;_blank&#34; href=&#34;https://github.com/flattool/warehouse&#34; class=&#34;cursor-pointer&#34;&gt;
   &lt;div
     class=&#34;w-full md:w-auto pt-3 p-5 border border-neutral-200 dark:border-neutral-700 border rounded-md shadow-2xl&#34;&gt;
@@ -1849,6 +1874,7 @@
       .catch(error =&gt; console.error(error))
   &lt;/script&gt;
 &lt;/a&gt;
+&lt;/div&gt;
 </description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/stremio-tool/featured.webp" />
     </item>
@@ -1879,6 +1905,7 @@
 &lt;p&gt;You can install the binary from the AUR. Keep in mind that it&amp;rsquo;s the binary it’s the binary (bin) version, not built from source. Saves time and errors. So use below command to install.&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;paru -S tabby-bin
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;This thing has so many neat features that make life so much easier, just keep in mind that I, myself don&amp;rsquo;t use it, as a result I can&amp;rsquo;t help with it. To know more use the documentation found on the Project&amp;rsquo;s &lt;strong&gt;Github&lt;/strong&gt;.&lt;/p&gt;
+&lt;div class=&#34;github-card-wrapper&#34;&gt;
 &lt;a id=&#34;github-a5700e013dc098745bec4694622c84c6&#34; target=&#34;_blank&#34; href=&#34;https://github.com/Eugeny/tabby&#34; class=&#34;cursor-pointer&#34;&gt;
   &lt;div
     class=&#34;w-full md:w-auto pt-3 p-5 border border-neutral-200 dark:border-neutral-700 border rounded-md shadow-2xl&#34;&gt;
@@ -1958,6 +1985,7 @@
       .catch(error =&gt; console.error(error))
   &lt;/script&gt;
 &lt;/a&gt;
+&lt;/div&gt;
 &lt;p&gt;Note :&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;This terminal Emulator, as awesome as it can be for some, is more resource hungry. So unless you are willing to put up with this for the convenience it provides, I recommend not using it on a low end system, it just might be too much of a lag fest there..&lt;/p&gt;&lt;/blockquote&gt;
@@ -1997,7 +2025,8 @@
 &lt;/h3&gt;
 &lt;p&gt;To install it, either do it via your favourite GUI package manager if supported or in terminal via :&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Flatpak install io.github.flattool.Warehouse
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;a id=&#34;github-ceed8b24e6b3fdf44892e309c880fd50&#34; target=&#34;_blank&#34; href=&#34;https://github.com/flattool/warehouse&#34; class=&#34;cursor-pointer&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;github-card-wrapper&#34;&gt;
+&lt;a id=&#34;github-ceed8b24e6b3fdf44892e309c880fd50&#34; target=&#34;_blank&#34; href=&#34;https://github.com/flattool/warehouse&#34; class=&#34;cursor-pointer&#34;&gt;
   &lt;div
     class=&#34;w-full md:w-auto pt-3 p-5 border border-neutral-200 dark:border-neutral-700 border rounded-md shadow-2xl&#34;&gt;
 
@@ -2076,6 +2105,7 @@
       .catch(error =&gt; console.error(error))
   &lt;/script&gt;
 &lt;/a&gt;
+&lt;/div&gt;
 </description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/warehouse-flatpak/featured.webp" />
     </item>
@@ -2109,6 +2139,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;- Recommended CURL command&lt;/strong&gt;&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;curl -sS https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; bash
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;However you choose to get it is up to you. Anyway here&amp;rsquo;s a link to their &lt;strong&gt;Github&lt;/strong&gt; page below.&lt;/p&gt;
+&lt;div class=&#34;github-card-wrapper&#34;&gt;
 &lt;a id=&#34;github-c287f82a6cb05c4745ec17da4ed0bd20&#34; target=&#34;_blank&#34; href=&#34;https://github.com/ajeetdsouza/zoxide&#34; class=&#34;cursor-pointer&#34;&gt;
   &lt;div
     class=&#34;w-full md:w-auto pt-3 p-5 border border-neutral-200 dark:border-neutral-700 border rounded-md shadow-2xl&#34;&gt;
@@ -2188,6 +2219,7 @@
       .catch(error =&gt; console.error(error))
   &lt;/script&gt;
 &lt;/a&gt;
+&lt;/div&gt;
 &lt;p&gt;Enjoy :heart:&lt;/p&gt;
 </description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/zoxide-cd/featured.webp" />
@@ -2216,6 +2248,7 @@
 &lt;li&gt;Putting the installed packages in easy spots to reference them and modify them when needed.&lt;/li&gt;
 &lt;li&gt;Using sudo can be dangerous and brew installs it to a home directory instead of systemwide without needing sudo.&lt;/li&gt;
 &lt;/ul&gt;
+&lt;div class=&#34;github-card-wrapper&#34;&gt;
 &lt;a id=&#34;github-24de194c1b5897d8548ff331996da98e&#34; target=&#34;_blank&#34; href=&#34;https://github.com/Homebrew/brew&#34; class=&#34;cursor-pointer&#34;&gt;
   &lt;div
     class=&#34;w-full md:w-auto pt-3 p-5 border border-neutral-200 dark:border-neutral-700 border rounded-md shadow-2xl&#34;&gt;
@@ -2295,6 +2328,7 @@
       .catch(error =&gt; console.error(error))
   &lt;/script&gt;
 &lt;/a&gt;
+&lt;/div&gt;
 
 
 &lt;h3 class=&#34;relative group&#34;&gt;Installing Homebrew 
@@ -2402,6 +2436,7 @@
     &amp;#34;~/my-repos/repo_name&amp;#34;,
 ]
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;For more information on tweaking the configuration file, see the Customization section on the Topgrade &lt;strong&gt;GitHub&lt;/strong&gt; page below.&lt;/p&gt;
+&lt;div class=&#34;github-card-wrapper&#34;&gt;
 &lt;a id=&#34;github-2e819999535d48069af66a73f2eb0246&#34; target=&#34;_blank&#34; href=&#34;https://github.com/topgrade-rs/topgrade&#34; class=&#34;cursor-pointer&#34;&gt;
   &lt;div
     class=&#34;w-full md:w-auto pt-3 p-5 border border-neutral-200 dark:border-neutral-700 border rounded-md shadow-2xl&#34;&gt;
@@ -2481,6 +2516,7 @@
       .catch(error =&gt; console.error(error))
   &lt;/script&gt;
 &lt;/a&gt;
+&lt;/div&gt;
 
 
 &lt;h3 class=&#34;relative group&#34;&gt;Conclusion 

@@ -68,14 +68,13 @@ check_existing_de() {
 }
 
 check_vm_environment() {
-  # Don't let a non-zero exit from systemd-detect-virt trigger script failure
+  # Run systemd-detect-virt and capture both output and exit code
   local virt
-  virt=$(systemd-detect-virt 2>/dev/null || echo "none")
+  virt=$(systemd-detect-virt 2>/dev/null)
+  local exit_code=$?
 
-  if [[ "$virt" != "none" ]]; then
-    echo
+  if [[ $exit_code -eq 0 && "$virt" != "none" ]]; then
     echo -e "\n${YELLOW}🖥️ VM detected — installing guest tools...${RESET}"
-    echo -e "\n${YELLOW}⚠️ 3D acceleration recommended for best performance.${RESET}\n"
     sleep 6
     case "$virt" in
       oracle)
@@ -89,12 +88,17 @@ check_vm_environment() {
         sudo systemctl enable vmtoolsd
         ;;
       microsoft)
+        echo
         echo -e "${YELLOW}⚠️ WSL detected — GUI support is limited.${RESET}"
         ;;
       *)
+        echo
         echo -e "${YELLOW}⚠️ Unknown VM type: ${virt}${RESET}"
         ;;
     esac
+  else
+    echo
+    echo -e "${GREEN}✅ Running on physical hardware. Skipping VM setup.${RESET}"
   fi
 }
 

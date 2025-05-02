@@ -21,6 +21,7 @@
     
 &lt;/h3&gt;
 &lt;p&gt;&lt;a href=&#34;https://blue-build.org/&#34; target=&#34;_blank&#34;&gt;&lt;strong&gt;BlueBuild&lt;/strong&gt;&lt;/a&gt; is a nifty toolkit for creating custom images of Linux distributions, similar to &lt;a href=&#34;https://projectbluefin.io&#34; target=&#34;_blank&#34;&gt;&lt;strong&gt;Bluefin&lt;/strong&gt;&lt;/a&gt;. It simplifies the process by allowing you to tweak configurations in a straightforward &lt;code&gt;recipe.yml&lt;/code&gt; file, perfect for those who want to share their personalized setups. You don&amp;rsquo;t need to be a container wizard or a GitHub guru to get started—basic git and text editor skills will do. Just follow the documentation, ask the friendly community for help, and soon you&amp;rsquo;ll be building custom Linux images like a pro.&lt;/p&gt;
+&lt;div class=&#34;github-card-wrapper&#34;&gt;
 &lt;a id=&#34;github-688cf059465b90f349917970b2a2ff9e&#34; target=&#34;_blank&#34; href=&#34;https://github.com/blue-build/workshop&#34; class=&#34;cursor-pointer&#34;&gt;
   &lt;div
     class=&#34;w-full md:w-auto pt-3 p-5 border border-neutral-200 dark:border-neutral-700 border rounded-md shadow-2xl&#34;&gt;
@@ -100,6 +101,7 @@
       .catch(error =&gt; console.error(error))
   &lt;/script&gt;
 &lt;/a&gt;
+&lt;/div&gt;
 &lt;p&gt;All images will be based off of &lt;strong&gt;Fedora&lt;/strong&gt; and have &lt;strong&gt;Atomic&lt;/strong&gt; elements. No &lt;strong&gt;Debian&lt;/strong&gt; or &lt;strong&gt;ArchLinux&lt;/strong&gt; bases as of the writing of this post. Maybe in the future? Also this project is totally unrelated to &lt;strong&gt;uBlue&lt;/strong&gt; or &lt;strong&gt;Bluefin&lt;/strong&gt;.&lt;/p&gt;
 
 
@@ -424,6 +426,7 @@
 &lt;/h3&gt;
 &lt;p&gt;Before explaining it, I would like to answer the &amp;ldquo;Why Aurora ?&amp;rdquo; question, well in case you did not know it yet, I am a &lt;strong&gt;KDE Plasma&lt;/strong&gt; shill, so why not &lt;strong&gt;Aurora&lt;/strong&gt; ? LoL. Now on to what it is&amp;hellip;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Aurora&lt;/strong&gt; is &lt;a href=&#34;https://projectbluefin.io&#34; target=&#34;_blank&#34;&gt;&lt;strong&gt;Bluefin&lt;/strong&gt;&lt;/a&gt; but with another coat of paint, the &lt;strong&gt;KDE Desktop&lt;/strong&gt;. Many people love and cherish &lt;strong&gt;GNOME&lt;/strong&gt;, but others want the customizability or the looks of a vanilla KDE experience. For those people, &lt;strong&gt;Aurora&lt;/strong&gt; is here to serve them that need!&lt;/p&gt;
+&lt;div class=&#34;github-card-wrapper&#34;&gt;
 &lt;a id=&#34;github-04244ad6c9c1dac42dbc9e0df83f85c4&#34; target=&#34;_blank&#34; href=&#34;https://github.com/ublue-os/bluefin&#34; class=&#34;cursor-pointer&#34;&gt;
   &lt;div
     class=&#34;w-full md:w-auto pt-3 p-5 border border-neutral-200 dark:border-neutral-700 border rounded-md shadow-2xl&#34;&gt;
@@ -503,6 +506,7 @@
       .catch(error =&gt; console.error(error))
   &lt;/script&gt;
 &lt;/a&gt;
+&lt;/div&gt;
 &lt;p&gt;It includes everything that makes &lt;strong&gt;Bluefin&lt;/strong&gt; and &lt;strong&gt;Bluefin-DX&lt;/strong&gt; so awesome, including brew on host, the bluefin-cli, the starship CLI experience, Tailscale and the container-native Ptyxis terminal. You’ll find that most of the things you’re used to in Bluefin are the same under the hood, including the just commands. Aurora is not designed to be a drastically different experience than Bluefin, which also means we (I) can keep it regularly in sync with upstream so you get the latest changes.&lt;/p&gt;
 &lt;p&gt;It is built on the &lt;strong&gt;kinoite-main&lt;/strong&gt; Images. The images feature almost no customization, aside from some quality of life features and some branding. You can expect a vanilla KDE experience with developer batteries under the hood.&lt;/p&gt;
 &lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;

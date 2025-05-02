@@ -120,6 +120,7 @@
 &lt;/h1&gt;
 &lt;p&gt;Okay fellow Linux nerds let’s talk about something truly important: staying updated, I know I know, you’re thinking “Ugh updates? That’s what happens when I finally get my system configured just right, and then BAM! Something breaks.” But hear me out, what if staying updated was… dare I say… enjoyable?&lt;/p&gt;
 &lt;p&gt;Enter &lt;strong&gt;Apdatifier&lt;/strong&gt; the plasma widget that’s going to become either best friend, or a useful acquaintance to our beloved &lt;strong&gt;KDE&lt;/strong&gt; setup!&lt;/p&gt;
+&lt;div class=&#34;github-card-wrapper&#34;&gt;
 &lt;a id=&#34;github-329f800914aa592a2115ef31194b1362&#34; target=&#34;_blank&#34; href=&#34;https://github.com/exequtic/apdatifier&#34; class=&#34;cursor-pointer&#34;&gt;
   &lt;div
     class=&#34;w-full md:w-auto pt-3 p-5 border border-neutral-200 dark:border-neutral-700 border rounded-md shadow-2xl&#34;&gt;
@@ -199,6 +200,7 @@
       .catch(error =&gt; console.error(error))
   &lt;/script&gt;
 &lt;/a&gt;
+&lt;/div&gt;
 
 
 &lt;h3 class=&#34;relative group&#34;&gt;What in Tux Is This Thing? 
@@ -413,7 +415,8 @@ return sequence[:n]
 &lt;/h3&gt;
 &lt;p&gt;To install it use the command below, works on any distro no matter what base it uses.&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;flatpak install flathub org.dupot.easyflatpak -y
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;a id=&#34;github-55a7e247f2f2b6f3753f13b4f04d7b27&#34; target=&#34;_blank&#34; href=&#34;https://github.com/imikado/dupotEasyFlatpak&#34; class=&#34;cursor-pointer&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;github-card-wrapper&#34;&gt;
+&lt;a id=&#34;github-55a7e247f2f2b6f3753f13b4f04d7b27&#34; target=&#34;_blank&#34; href=&#34;https://github.com/imikado/dupotEasyFlatpak&#34; class=&#34;cursor-pointer&#34;&gt;
   &lt;div
     class=&#34;w-full md:w-auto pt-3 p-5 border border-neutral-200 dark:border-neutral-700 border rounded-md shadow-2xl&#34;&gt;
 
@@ -492,6 +495,7 @@ return sequence[:n]
       .catch(error =&gt; console.error(error))
   &lt;/script&gt;
 &lt;/a&gt;
+&lt;/div&gt;
 
 
 &lt;h3 class=&#34;relative group&#34;&gt;Closing words 
@@ -595,6 +599,7 @@ return sequence[:n]
     &lt;img src=&#34;https://i.imgur.com/uIJ7AO4.png&#34; alt=&#34;shot&#34;&gt;
 &lt;/p&gt;
 &lt;p&gt;Oh and as mentioned by &lt;strong&gt;DT&lt;/strong&gt; in the video, you can take it to the next level by customizing it, making it react using different personas, like &lt;strong&gt;Mario&lt;/strong&gt; or any of the available ones. This is just a quirk not very useful. If you want to know how, check it out on project&amp;rsquo;s &lt;strong&gt;Github&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;github-card-wrapper&#34;&gt;
 &lt;a id=&#34;github-56f532714b2f7c9707f9dc8d689abff4&#34; target=&#34;_blank&#34; href=&#34;https://github.com/ollama/ollama&#34; class=&#34;cursor-pointer&#34;&gt;
   &lt;div
     class=&#34;w-full md:w-auto pt-3 p-5 border border-neutral-200 dark:border-neutral-700 border rounded-md shadow-2xl&#34;&gt;
@@ -674,6 +679,7 @@ return sequence[:n]
       .catch(error =&gt; console.error(error))
   &lt;/script&gt;
 &lt;/a&gt;
+&lt;/div&gt;
 
 
 &lt;h3 class=&#34;relative group&#34;&gt;Wrap up 
@@ -2453,6 +2459,7 @@ return sequence[:n]
     &lt;/div&gt;
 
 &lt;p&gt;&lt;strong&gt;ER-Patcher&lt;/strong&gt; transforms your &lt;strong&gt;Elden Ring&lt;/strong&gt; experience, making it smoother, more visually stunning, and more accessible, whether you are on Linux or Windows. For detailed instructions and additional configuration options, visit the project &lt;strong&gt;GitHub&lt;/strong&gt; page.&lt;/p&gt;
+&lt;div class=&#34;github-card-wrapper&#34;&gt;
 &lt;a id=&#34;github-8e299a5487c47095e16d57805c99878e&#34; target=&#34;_blank&#34; href=&#34;https://github.com/gurrgur/er-patcher&#34; class=&#34;cursor-pointer&#34;&gt;
   &lt;div
     class=&#34;w-full md:w-auto pt-3 p-5 border border-neutral-200 dark:border-neutral-700 border rounded-md shadow-2xl&#34;&gt;
@@ -2532,6 +2539,7 @@ return sequence[:n]
       .catch(error =&gt; console.error(error))
   &lt;/script&gt;
 &lt;/a&gt;
+&lt;/div&gt;
 
 
 &lt;h3 class=&#34;relative group&#34;&gt;Wrapping Up 
@@ -2561,6 +2569,7 @@ return sequence[:n]
     
 &lt;/h3&gt;
 &lt;p&gt;&lt;a href=&#34;https://blue-build.org/&#34; target=&#34;_blank&#34;&gt;&lt;strong&gt;BlueBuild&lt;/strong&gt;&lt;/a&gt; is a nifty toolkit for creating custom images of Linux distributions, similar to &lt;a href=&#34;https://projectbluefin.io&#34; target=&#34;_blank&#34;&gt;&lt;strong&gt;Bluefin&lt;/strong&gt;&lt;/a&gt;. It simplifies the process by allowing you to tweak configurations in a straightforward &lt;code&gt;recipe.yml&lt;/code&gt; file, perfect for those who want to share their personalized setups. You don&amp;rsquo;t need to be a container wizard or a GitHub guru to get started—basic git and text editor skills will do. Just follow the documentation, ask the friendly community for help, and soon you&amp;rsquo;ll be building custom Linux images like a pro.&lt;/p&gt;
+&lt;div class=&#34;github-card-wrapper&#34;&gt;
 &lt;a id=&#34;github-688cf059465b90f349917970b2a2ff9e&#34; target=&#34;_blank&#34; href=&#34;https://github.com/blue-build/workshop&#34; class=&#34;cursor-pointer&#34;&gt;
   &lt;div
     class=&#34;w-full md:w-auto pt-3 p-5 border border-neutral-200 dark:border-neutral-700 border rounded-md shadow-2xl&#34;&gt;
@@ -2640,6 +2649,7 @@ return sequence[:n]
       .catch(error =&gt; console.error(error))
   &lt;/script&gt;
 &lt;/a&gt;
+&lt;/div&gt;
 &lt;p&gt;All images will be based off of &lt;strong&gt;Fedora&lt;/strong&gt; and have &lt;strong&gt;Atomic&lt;/strong&gt; elements. No &lt;strong&gt;Debian&lt;/strong&gt; or &lt;strong&gt;ArchLinux&lt;/strong&gt; bases as of the writing of this post. Maybe in the future? Also this project is totally unrelated to &lt;strong&gt;uBlue&lt;/strong&gt; or &lt;strong&gt;Bluefin&lt;/strong&gt;.&lt;/p&gt;
 
 
@@ -2958,6 +2968,7 @@ return sequence[:n]
 &lt;p&gt;Before we begin, here&amp;rsquo;s brief intro as to why I care about ricing.&lt;/p&gt;
 &lt;p&gt;In case you didn&amp;rsquo;t know it, I began my &lt;strong&gt;Linux&lt;/strong&gt; journey with &lt;strong&gt;KDE Plasma&lt;/strong&gt; because of the freedom of customization. I love ricing my setups. I hated that &lt;strong&gt;macOS&lt;/strong&gt; &amp;amp; &lt;strong&gt;Windows&lt;/strong&gt; did not allow this.&lt;/p&gt;
 &lt;p&gt;And if you want to see what I have managed to do, well, hop on over to my &lt;strong&gt;Layan&lt;/strong&gt; rice&amp;rsquo;s &lt;strong&gt;Githup&lt;/strong&gt; repository, you will get blown away.&lt;/p&gt;
+&lt;div class=&#34;github-card-wrapper&#34;&gt;
 &lt;a id=&#34;github-a3d14a4a10f892b0bde0c7d2dcb03e5f&#34; target=&#34;_blank&#34; href=&#34;https://github.com/xerolinux/xero-layan-git&#34; class=&#34;cursor-pointer&#34;&gt;
   &lt;div
     class=&#34;w-full md:w-auto pt-3 p-5 border border-neutral-200 dark:border-neutral-700 border rounded-md shadow-2xl&#34;&gt;
@@ -3037,6 +3048,7 @@ return sequence[:n]
       .catch(error =&gt; console.error(error))
   &lt;/script&gt;
 &lt;/a&gt;
+&lt;/div&gt;
 
 
 &lt;h3 class=&#34;relative group&#34;&gt;A bit of understanding 
@@ -3110,6 +3122,7 @@ return sequence[:n]
     
   &lt;/figure&gt;
 &lt;/p&gt;
+&lt;div class=&#34;github-card-wrapper&#34;&gt;
 &lt;a id=&#34;github-674857d8b75e800e4bcc0955b60eca86&#34; target=&#34;_blank&#34; href=&#34;https://github.com/tsujan/Kvantum&#34; class=&#34;cursor-pointer&#34;&gt;
   &lt;div
     class=&#34;w-full md:w-auto pt-3 p-5 border border-neutral-200 dark:border-neutral-700 border rounded-md shadow-2xl&#34;&gt;
@@ -3189,6 +3202,7 @@ return sequence[:n]
       .catch(error =&gt; console.error(error))
   &lt;/script&gt;
 &lt;/a&gt;
+&lt;/div&gt;
 &lt;p&gt;This will take care of the awesome window blur and transparency effects for all &lt;strong&gt;Qt&lt;/strong&gt; based apps. It will not work on anything else, keep that in mind.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;SDDM Login Manager&lt;/strong&gt;&lt;/li&gt;
@@ -3316,6 +3330,7 @@ return sequence[:n]
 &lt;/h3&gt;
 &lt;p&gt;As a bonus, for all the G33ks out there, I would like to include a nice find. Some of us would love to make our rices reproduce-able without having to apply every element over and over, others just want to have a backup.&lt;/p&gt;
 &lt;p&gt;That&amp;rsquo;s where this &lt;strong&gt;Github Repo&lt;/strong&gt; comes in handy. It shows us what files are affected by the various theme elements. So have at it and enjoy !&lt;/p&gt;
+&lt;div class=&#34;github-card-wrapper&#34;&gt;
 &lt;a id=&#34;github-35acb2467e8c5b7be245dd5d8ae6184d&#34; target=&#34;_blank&#34; href=&#34;https://github.com/shalva97/kde-configuration-files&#34; class=&#34;cursor-pointer&#34;&gt;
   &lt;div
     class=&#34;w-full md:w-auto pt-3 p-5 border border-neutral-200 dark:border-neutral-700 border rounded-md shadow-2xl&#34;&gt;
@@ -3395,6 +3410,7 @@ return sequence[:n]
       .catch(error =&gt; console.error(error))
   &lt;/script&gt;
 &lt;/a&gt;
+&lt;/div&gt;
 &lt;p&gt;Don&amp;rsquo;t forget about &lt;strong&gt;Konsave&lt;/strong&gt; the GUI tool that does exactly that, just in a much simpler way. Article attached below.&lt;/p&gt;
 
 &lt;section class=&#34;space-y-10 w-full&#34;&gt;
@@ -3640,6 +3656,7 @@ return sequence[:n]
     
 &lt;/h3&gt;
 &lt;p&gt;&lt;a href=&#34;https://batocera.org&#34; target=&#34;_blank&#34;&gt;&lt;strong&gt;Batocera&lt;/strong&gt;&lt;/a&gt; is an open-source and completely free retro-gaming distribution that can be copied to a USB stick or an SD card with the aim of turning any computer/nano computer into a gaming console during a game or permanently. Batocera.linux does not require any modification on your computer. Note that you must own the games you play in order to comply with the law.&lt;/p&gt;
+&lt;div class=&#34;github-card-wrapper&#34;&gt;
 &lt;a id=&#34;github-f27d1586c5573e28a0769a8586d76e5d&#34; target=&#34;_blank&#34; href=&#34;https://github.com/batocera-linux/batocera.linux&#34; class=&#34;cursor-pointer&#34;&gt;
   &lt;div
     class=&#34;w-full md:w-auto pt-3 p-5 border border-neutral-200 dark:border-neutral-700 border rounded-md shadow-2xl&#34;&gt;
@@ -3719,6 +3736,7 @@ return sequence[:n]
       .catch(error =&gt; console.error(error))
   &lt;/script&gt;
 &lt;/a&gt;
+&lt;/div&gt;
 
 
 &lt;h3 class=&#34;relative group&#34;&gt;A few notes before we begin 
@@ -4209,6 +4227,7 @@ Shaders: Enhance your gaming experience with graphical shaders. Find them in the
 &lt;p&gt;If all is set, you should see the Docmost setup page which will enable you set up your workspace and account.&lt;/p&gt;
 &lt;p&gt;After a successful setup, you will become the workspace owner. You can then invite other users to join your workspace. Congratulations 🎉.&lt;/p&gt;
 &lt;p&gt;If you encounter any issues, feel free to create an issue or discussion on the &lt;strong&gt;GitHub&lt;/strong&gt; repo.&lt;/p&gt;
+&lt;div class=&#34;github-card-wrapper&#34;&gt;
 &lt;a id=&#34;github-1892c8fc467600df127ce836daf86e2a&#34; target=&#34;_blank&#34; href=&#34;https://github.com/docmost/docmost&#34; class=&#34;cursor-pointer&#34;&gt;
   &lt;div
     class=&#34;w-full md:w-auto pt-3 p-5 border border-neutral-200 dark:border-neutral-700 border rounded-md shadow-2xl&#34;&gt;
@@ -4288,6 +4307,7 @@ Shaders: Enhance your gaming experience with graphical shaders. Find them in the
       .catch(error =&gt; console.error(error))
   &lt;/script&gt;
 &lt;/a&gt;
+&lt;/div&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Upgrade :&lt;/strong&gt;&lt;/li&gt;
 &lt;/ul&gt;
@@ -4592,6 +4612,7 @@ Shaders: Enhance your gaming experience with graphical shaders. Find them in the
 &lt;p&gt;With that out of the way, I say this coz many have tried grabbing it from the &lt;strong&gt;AUR&lt;/strong&gt; only to suffer maintainers lagging behind on updates. It&amp;rsquo;s better to get it straight from source rather than rely on a 3rd party maintainer (man in the middle).&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;If you are using the &lt;strong&gt;XeroLinux&lt;/strong&gt; toolkit, I added an option that will install everything you need to start customizing your &lt;strong&gt;Gnome&lt;/strong&gt; experience. Which includes the &lt;strong&gt;Extension Manager&lt;/strong&gt; application, that can be found under the &lt;strong&gt;4 : System Customization&lt;/strong&gt; menu.&lt;/p&gt;&lt;/blockquote&gt;
+&lt;div class=&#34;github-card-wrapper&#34;&gt;
 &lt;a id=&#34;github-83f7d6739486881e48a315f6ff62190e&#34; target=&#34;_blank&#34; href=&#34;https://github.com/xerolinux/xlapit-cli&#34; class=&#34;cursor-pointer&#34;&gt;
   &lt;div
     class=&#34;w-full md:w-auto pt-3 p-5 border border-neutral-200 dark:border-neutral-700 border rounded-md shadow-2xl&#34;&gt;
@@ -4671,6 +4692,7 @@ Shaders: Enhance your gaming experience with graphical shaders. Find them in the
       .catch(error =&gt; console.error(error))
   &lt;/script&gt;
 &lt;/a&gt;
+&lt;/div&gt;
 &lt;p&gt;Now that you got the extension installed, here&amp;rsquo;s some usage tips.&lt;/p&gt;
 
 
@@ -4723,6 +4745,7 @@ Shaders: Enhance your gaming experience with graphical shaders. Find them in the
     
 &lt;/h3&gt;
 &lt;p&gt;That covers the basics. Now I just copy pasted from project &lt;strong&gt;Git&lt;/strong&gt;, where you will find much more info, and can report issues should you encounter any. Here, I linked it below..&lt;/p&gt;
+&lt;div class=&#34;github-card-wrapper&#34;&gt;
 &lt;a id=&#34;github-960f7422cbeadeb866eb2380db36e9a2&#34; target=&#34;_blank&#34; href=&#34;https://github.com/domferr/tilingshell&#34; class=&#34;cursor-pointer&#34;&gt;
   &lt;div
     class=&#34;w-full md:w-auto pt-3 p-5 border border-neutral-200 dark:border-neutral-700 border rounded-md shadow-2xl&#34;&gt;
@@ -4802,6 +4825,7 @@ Shaders: Enhance your gaming experience with graphical shaders. Find them in the
       .catch(error =&gt; console.error(error))
   &lt;/script&gt;
 &lt;/a&gt;
+&lt;/div&gt;
 &lt;p&gt;Even though I do not like or use &lt;strong&gt;Window Tiling&lt;/strong&gt; myself, I think the developer behind this extension was heavily &lt;em&gt;inspired&lt;/em&gt; by Windows&amp;rsquo; &lt;a href=&#34;https://learn.microsoft.com/en-us/windows/powertoys/fancyzones&#34; target=&#34;_blank&#34;&gt;&lt;strong&gt;PowerToys Fancy Zones&lt;/strong&gt;&lt;/a&gt;. I do not find this wrong in the slightest, on the contrary, it&amp;rsquo;s one of Windows&amp;rsquo; best features IMO. It&amp;rsquo;s nice to see it make its way to &lt;strong&gt;Linux&lt;/strong&gt;.&lt;/p&gt;
 &lt;p&gt;With Windows constantly shooting itself in the foot, it&amp;rsquo;s fun to see its most useful parts being cherry picked and ported to &lt;strong&gt;Linux&lt;/strong&gt;. Windows&amp;rsquo; loss is &lt;strong&gt;Liinux&lt;/strong&gt;&amp;rsquo;s gain lol. Well, I hope you enjoy this neat little extension&amp;hellip;&lt;/p&gt;
 
@@ -4819,6 +4843,7 @@ Shaders: Enhance your gaming experience with graphical shaders. Find them in the
   &lt;/figure&gt;
 &lt;/p&gt;
 &lt;p&gt;To install it use the aforementioned &lt;strong&gt;Extension Manager&lt;/strong&gt; app. For more information about its features and how to use it, link to project&amp;rsquo;s &lt;strong&gt;Git&lt;/strong&gt; found below. Enjoy your experience on &lt;strong&gt;Gnome&lt;/strong&gt; my fellow &lt;strong&gt;FOSS G33ks&lt;/strong&gt;&amp;hellip;&lt;/p&gt;
+&lt;div class=&#34;github-card-wrapper&#34;&gt;
 &lt;a id=&#34;github-759ccb72510e521a6d6a62d8e54d138b&#34; target=&#34;_blank&#34; href=&#34;https://github.com/forge-ext/forge&#34; class=&#34;cursor-pointer&#34;&gt;
   &lt;div
     class=&#34;w-full md:w-auto pt-3 p-5 border border-neutral-200 dark:border-neutral-700 border rounded-md shadow-2xl&#34;&gt;
@@ -4898,6 +4923,7 @@ Shaders: Enhance your gaming experience with graphical shaders. Find them in the
       .catch(error =&gt; console.error(error))
   &lt;/script&gt;
 &lt;/a&gt;
+&lt;/div&gt;
 &lt;p&gt;That’s it folks&amp;hellip;&lt;/p&gt;
 &lt;p&gt;Cheers !&lt;/p&gt;
 </description>
@@ -4918,6 +4944,7 @@ Shaders: Enhance your gaming experience with graphical shaders. Find them in the
     
 &lt;/h3&gt;
 &lt;p&gt;&lt;a href=&#34;https://batocera.org&#34; target=&#34;_blank&#34;&gt;&lt;strong&gt;Batocera&lt;/strong&gt;&lt;/a&gt; is an open-source and completely free retro-gaming distribution that can be copied to a USB stick or an SD card with the aim of turning any computer/nano computer into a gaming console during a game or permanently. Batocera.linux does not require any modification on your computer. Note that you must own the games you play in order to comply with the law.&lt;/p&gt;
+&lt;div class=&#34;github-card-wrapper&#34;&gt;
 &lt;a id=&#34;github-9301afab42662d82090e070c3e3c31f0&#34; target=&#34;_blank&#34; href=&#34;https://github.com/batocera-linux/batocera.linux&#34; class=&#34;cursor-pointer&#34;&gt;
   &lt;div
     class=&#34;w-full md:w-auto pt-3 p-5 border border-neutral-200 dark:border-neutral-700 border rounded-md shadow-2xl&#34;&gt;
@@ -4997,6 +5024,7 @@ Shaders: Enhance your gaming experience with graphical shaders. Find them in the
       .catch(error =&gt; console.error(error))
   &lt;/script&gt;
 &lt;/a&gt;
+&lt;/div&gt;
 
 
 &lt;h3 class=&#34;relative group&#34;&gt;Background 
@@ -5253,6 +5281,7 @@ Shaders: Enhance your gaming experience with graphical shaders. Find them in the
 &lt;p&gt;However, it already includes support for the main plugins I, myself care about, like &lt;strong&gt;Git&lt;/strong&gt;, &lt;strong&gt;Docker Compose&lt;/strong&gt;, &lt;strong&gt;Toml&lt;/strong&gt;, &lt;strong&gt;Yaml&lt;/strong&gt;, &lt;strong&gt;Make&lt;/strong&gt;, &lt;strong&gt;Java&lt;/strong&gt;, &lt;strong&gt;Bash&lt;/strong&gt;, &lt;strong&gt;Markdown&lt;/strong&gt; among others, with more in the pipeline&amp;hellip;This post was written using it BTW&amp;hellip;&lt;/p&gt;
 &lt;p&gt;And if you know me by now I love its theme engine, with the likes of &lt;strong&gt;Dracula&lt;/strong&gt;, &lt;strong&gt;Catppuccin&lt;/strong&gt;, &lt;strong&gt;Nord&lt;/strong&gt;, &lt;strong&gt;Synthwave &amp;lsquo;84&lt;/strong&gt; among others already available to install.. It&amp;rsquo;s one of the main things that attracted me to it lol. Nothing else to say about it except that I highly recommend you give it a try.&lt;/p&gt;
 &lt;p&gt;It has way more than what I mentioned here, so if you want to know more about it, either go to the &amp;raquo; &lt;a href=&#34;https://zed.dev/docs/&#34; target=&#34;_blank&#34;&gt;&lt;strong&gt;Docs/Wiki&lt;/strong&gt;&lt;/a&gt; page, or visit their &lt;strong&gt;Git Repo&lt;/strong&gt; below.&lt;/p&gt;
+&lt;div class=&#34;github-card-wrapper&#34;&gt;
 &lt;a id=&#34;github-048d83c2c4c5d1181ccc6b118c336300&#34; target=&#34;_blank&#34; href=&#34;https://github.com/zed-industries/zed&#34; class=&#34;cursor-pointer&#34;&gt;
   &lt;div
     class=&#34;w-full md:w-auto pt-3 p-5 border border-neutral-200 dark:border-neutral-700 border rounded-md shadow-2xl&#34;&gt;
@@ -5332,6 +5361,7 @@ Shaders: Enhance your gaming experience with graphical shaders. Find them in the
       .catch(error =&gt; console.error(error))
   &lt;/script&gt;
 &lt;/a&gt;
+&lt;/div&gt;
 &lt;p&gt;That’s it folks ..&lt;/p&gt;
 &lt;p&gt;Cheers !&lt;/p&gt;
 </description>
@@ -5668,6 +5698,7 @@ Shaders: Enhance your gaming experience with graphical shaders. Find them in the
 &lt;/p&gt;
 &lt;p&gt;As you can see from the image above, for those of you out there using the &lt;strong&gt;XeroLinux Post Install Toolkit&lt;/strong&gt;, we added the option that will do everything mentioned in this guide automatically for you.&lt;/p&gt;
 &lt;p&gt;Keep in mind that this only applies to &lt;strong&gt;Bash&lt;/strong&gt;, for anyone who prefers &lt;strong&gt;Fish&lt;/strong&gt; that will always be &lt;em&gt;Vanilla&lt;/em&gt; as for those of you, who, like myself love &lt;strong&gt;ZSH&lt;/strong&gt;, well it is included with option &lt;strong&gt;4. ZSH All-in-one w/OMP&lt;/strong&gt;&amp;hellip;&lt;/p&gt;
+&lt;div class=&#34;github-card-wrapper&#34;&gt;
 &lt;a id=&#34;github-ba49e4e5b503b677aa818e3c0fe87165&#34; target=&#34;_blank&#34; href=&#34;https://github.com/xerolinux/xlapit-cli&#34; class=&#34;cursor-pointer&#34;&gt;
   &lt;div
     class=&#34;w-full md:w-auto pt-3 p-5 border border-neutral-200 dark:border-neutral-700 border rounded-md shadow-2xl&#34;&gt;
@@ -5747,7 +5778,9 @@ Shaders: Enhance your gaming experience with graphical shaders. Find them in the
       .catch(error =&gt; console.error(error))
   &lt;/script&gt;
 &lt;/a&gt;
+&lt;/div&gt;
 &lt;p&gt;There&amp;rsquo;s nothing to say now, except that this project is awesome, I love it and hope it lives long an prosper. Now as mentioned earlier if you want to create your very own config, just head on over to the project&amp;rsquo;s &lt;strong&gt;Git&lt;/strong&gt; below or check out the &amp;raquo; &lt;a href=&#34;https://ohmyposh.dev/docs/&#34; target=&#34;_blank&#34;&gt;&lt;strong&gt;OMP Docs&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&#34;github-card-wrapper&#34;&gt;
 &lt;a id=&#34;github-4b2b060cb46e0a0142c2701566b5e2c2&#34; target=&#34;_blank&#34; href=&#34;https://github.com/JanDeDobbeleer/oh-my-posh&#34; class=&#34;cursor-pointer&#34;&gt;
   &lt;div
     class=&#34;w-full md:w-auto pt-3 p-5 border border-neutral-200 dark:border-neutral-700 border rounded-md shadow-2xl&#34;&gt;
@@ -5827,6 +5860,7 @@ Shaders: Enhance your gaming experience with graphical shaders. Find them in the
       .catch(error =&gt; console.error(error))
   &lt;/script&gt;
 &lt;/a&gt;
+&lt;/div&gt;
 &lt;p&gt;That’s it folks ..&lt;/p&gt;
 &lt;p&gt;Cheers !&lt;/p&gt;
 </description>
@@ -6039,6 +6073,7 @@ Shaders: Enhance your gaming experience with graphical shaders. Find them in the
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Or from the &lt;strong&gt;AUR&lt;/strong&gt; using either &lt;code&gt;yay&lt;/code&gt; or &lt;code&gt;paru&lt;/code&gt; up to you.&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;yay/paru -S --noconfirm --needed ml4w-hyprland &lt;span class=&#34;o&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; ml4w-hyprland-setup
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Finally, find link to the &lt;strong&gt;Git Repo&lt;/strong&gt; below, or if you want head directly to the project website, click here &amp;raquo; &lt;a href=&#34;https://www.ml4w.com&#34; target=&#34;_blank&#34;&gt;&lt;strong&gt;MyLinuxForWork&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&#34;github-card-wrapper&#34;&gt;
 &lt;a id=&#34;github-335bc09a11197591f1ac4202a70da0ba&#34; target=&#34;_blank&#34; href=&#34;https://github.com/mylinuxforwork/dotfiles&#34; class=&#34;cursor-pointer&#34;&gt;
   &lt;div
     class=&#34;w-full md:w-auto pt-3 p-5 border border-neutral-200 dark:border-neutral-700 border rounded-md shadow-2xl&#34;&gt;
@@ -6118,6 +6153,7 @@ Shaders: Enhance your gaming experience with graphical shaders. Find them in the
       .catch(error =&gt; console.error(error))
   &lt;/script&gt;
 &lt;/a&gt;
+&lt;/div&gt;
 &lt;p&gt;That’s it folks ..&lt;/p&gt;
 &lt;p&gt;Cheers !&lt;/p&gt;
 </description>
@@ -6245,6 +6281,7 @@ Shaders: Enhance your gaming experience with graphical shaders. Find them in the
 &lt;p&gt;You can also change Scrcpy resolution when mirroring the Android screen by running the following command:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;scrcpy --max-size &lt;span class=&#34;m&#34;&gt;720&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;There are more, but am not gonna put them all here. Just head on over to the project &lt;strong&gt;Git Repo&lt;/strong&gt; below to see them all, report issues and even share some ideas you might have with them&amp;hellip;&lt;/p&gt;
+&lt;div class=&#34;github-card-wrapper&#34;&gt;
 &lt;a id=&#34;github-2ef9a4269d317def170edabf1a7ec947&#34; target=&#34;_blank&#34; href=&#34;https://github.com/Genymobile/scrcpy&#34; class=&#34;cursor-pointer&#34;&gt;
   &lt;div
     class=&#34;w-full md:w-auto pt-3 p-5 border border-neutral-200 dark:border-neutral-700 border rounded-md shadow-2xl&#34;&gt;
@@ -6324,6 +6361,7 @@ Shaders: Enhance your gaming experience with graphical shaders. Find them in the
       .catch(error =&gt; console.error(error))
   &lt;/script&gt;
 &lt;/a&gt;
+&lt;/div&gt;
 
 
 &lt;h3 class=&#34;relative group&#34;&gt;Bonus : GUI Version of SCRCPY 
@@ -6333,6 +6371,7 @@ Shaders: Enhance your gaming experience with graphical shaders. Find them in the
 &lt;p&gt;If you prefer a GUI based version of SCRCPY, there is one. However it&amp;rsquo;s not as maintained as the official version. It uses &lt;code&gt;QT&lt;/code&gt; so it works best on those types of DEs, like &lt;strong&gt;KDE Plasma&lt;/strong&gt;, &lt;strong&gt;LXQT&lt;/strong&gt; and so on. To install it from the AUR&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;paru -S qtscrcpy
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;For more info and issues visit the project &lt;strong&gt;Git Repo&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;github-card-wrapper&#34;&gt;
 &lt;a id=&#34;github-1305ea58e76e685e1b7863bc394c207f&#34; target=&#34;_blank&#34; href=&#34;https://github.com/barry-ran/QtScrcpy&#34; class=&#34;cursor-pointer&#34;&gt;
   &lt;div
     class=&#34;w-full md:w-auto pt-3 p-5 border border-neutral-200 dark:border-neutral-700 border rounded-md shadow-2xl&#34;&gt;
@@ -6412,6 +6451,7 @@ Shaders: Enhance your gaming experience with graphical shaders. Find them in the
       .catch(error =&gt; console.error(error))
   &lt;/script&gt;
 &lt;/a&gt;
+&lt;/div&gt;
 &lt;p&gt;That&amp;rsquo;s it, enjoy and let us know how it works for you&amp;hellip;&lt;/p&gt;
 </description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/scrcpy-android-screen-mirroring/featured.webp" />
@@ -6472,6 +6512,7 @@ Shaders: Enhance your gaming experience with graphical shaders. Find them in the
     &gt;Remember to exercise caution when obtaining scripts and automation tasks from third-party sources.&lt;/span&gt;
 &lt;/div&gt;
 
+&lt;div class=&#34;github-card-wrapper&#34;&gt;
 &lt;a id=&#34;github-12a0460d02150c7a086dac10a56b80ed&#34; target=&#34;_blank&#34; href=&#34;https://github.com/tteck/Proxmox&#34; class=&#34;cursor-pointer&#34;&gt;
   &lt;div
     class=&#34;w-full md:w-auto pt-3 p-5 border border-neutral-200 dark:border-neutral-700 border rounded-md shadow-2xl&#34;&gt;
@@ -6551,6 +6592,7 @@ Shaders: Enhance your gaming experience with graphical shaders. Find them in the
       .catch(error =&gt; console.error(error))
   &lt;/script&gt;
 &lt;/a&gt;
+&lt;/div&gt;
 
 
 &lt;h3 class=&#34;relative group&#34;&gt;Why I like them 
@@ -6620,6 +6662,7 @@ Proxmox VE Helper-Scripts Database
 &lt;/h3&gt;
 &lt;p&gt;If you want to start using the &lt;strong&gt;Chaotic-AUR&lt;/strong&gt; or just need to copy the setup commands, this is the right place for you.&lt;/p&gt;
 &lt;p&gt;Before we begin, I would like to remind everyone that if you are using the &lt;strong&gt;XeroLinux Toolkit&lt;/strong&gt; it has an option that automates everything for you. Check it out on &lt;strong&gt;Github&lt;/strong&gt; below.&lt;/p&gt;
+&lt;div class=&#34;github-card-wrapper&#34;&gt;
 &lt;a id=&#34;github-33a752733b7cf7935c163efcf04a96c1&#34; target=&#34;_blank&#34; href=&#34;https://github.com/xerolinux/xlapit-cli&#34; class=&#34;cursor-pointer&#34;&gt;
   &lt;div
     class=&#34;w-full md:w-auto pt-3 p-5 border border-neutral-200 dark:border-neutral-700 border rounded-md shadow-2xl&#34;&gt;
@@ -6699,6 +6742,7 @@ Proxmox VE Helper-Scripts Database
       .catch(error =&gt; console.error(error))
   &lt;/script&gt;
 &lt;/a&gt;
+&lt;/div&gt;
 &lt;p&gt;If you prefer to do it manually, then we start by retrieving the primary key to enable the installation of our keyring and mirror list:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;pacman-key --recv-key 3056513887B78AEB --keyserver keyserver.ubuntu.com
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;pacman-key --lsign-key 3056513887B78AEB
@@ -6714,6 +6758,7 @@ Proxmox VE Helper-Scripts Database
 &lt;/h3&gt;
 &lt;p&gt;Only one benefit comes from using the &lt;strong&gt;Chaotic-AUR&lt;/strong&gt;. And that&amp;rsquo;s the fact that packages are most often if not always screened by the maintainers before being added, saving us the headache of being the guinea pigs.&lt;/p&gt;
 &lt;p&gt;Did I mention that you can request packages to be added there ? Oh yes, that&amp;rsquo;s a side-benefit to all this. If you want to do that head on over to their &lt;strong&gt;Github Repo&lt;/strong&gt; linked below and use the issues tab to either report an issue with a package, request a new package to be added or a &lt;strong&gt;PKGBUILD&lt;/strong&gt; to be updated.&lt;/p&gt;
+&lt;div class=&#34;github-card-wrapper&#34;&gt;
 &lt;a id=&#34;github-5eeb2e27b9916ae7df6a93a2a1b42a89&#34; target=&#34;_blank&#34; href=&#34;https://github.com/chaotic-aur/packages&#34; class=&#34;cursor-pointer&#34;&gt;
   &lt;div
     class=&#34;w-full md:w-auto pt-3 p-5 border border-neutral-200 dark:border-neutral-700 border rounded-md shadow-2xl&#34;&gt;
@@ -6793,6 +6838,7 @@ Proxmox VE Helper-Scripts Database
       .catch(error =&gt; console.error(error))
   &lt;/script&gt;
 &lt;/a&gt;
+&lt;/div&gt;
 &lt;p&gt;That’s it folks ..&lt;/p&gt;
 &lt;p&gt;Cheers !&lt;/p&gt;
 </description>
@@ -6820,6 +6866,7 @@ Proxmox VE Helper-Scripts Database
 &lt;/h3&gt;
 &lt;p&gt;Before explaining it, I would like to answer the &amp;ldquo;Why Aurora ?&amp;rdquo; question, well in case you did not know it yet, I am a &lt;strong&gt;KDE Plasma&lt;/strong&gt; shill, so why not &lt;strong&gt;Aurora&lt;/strong&gt; ? LoL. Now on to what it is&amp;hellip;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Aurora&lt;/strong&gt; is &lt;a href=&#34;https://projectbluefin.io&#34; target=&#34;_blank&#34;&gt;&lt;strong&gt;Bluefin&lt;/strong&gt;&lt;/a&gt; but with another coat of paint, the &lt;strong&gt;KDE Desktop&lt;/strong&gt;. Many people love and cherish &lt;strong&gt;GNOME&lt;/strong&gt;, but others want the customizability or the looks of a vanilla KDE experience. For those people, &lt;strong&gt;Aurora&lt;/strong&gt; is here to serve them that need!&lt;/p&gt;
+&lt;div class=&#34;github-card-wrapper&#34;&gt;
 &lt;a id=&#34;github-04244ad6c9c1dac42dbc9e0df83f85c4&#34; target=&#34;_blank&#34; href=&#34;https://github.com/ublue-os/bluefin&#34; class=&#34;cursor-pointer&#34;&gt;
   &lt;div
     class=&#34;w-full md:w-auto pt-3 p-5 border border-neutral-200 dark:border-neutral-700 border rounded-md shadow-2xl&#34;&gt;
@@ -6899,6 +6946,7 @@ Proxmox VE Helper-Scripts Database
       .catch(error =&gt; console.error(error))
   &lt;/script&gt;
 &lt;/a&gt;
+&lt;/div&gt;
 &lt;p&gt;It includes everything that makes &lt;strong&gt;Bluefin&lt;/strong&gt; and &lt;strong&gt;Bluefin-DX&lt;/strong&gt; so awesome, including brew on host, the bluefin-cli, the starship CLI experience, Tailscale and the container-native Ptyxis terminal. You’ll find that most of the things you’re used to in Bluefin are the same under the hood, including the just commands. Aurora is not designed to be a drastically different experience than Bluefin, which also means we (I) can keep it regularly in sync with upstream so you get the latest changes.&lt;/p&gt;
 &lt;p&gt;It is built on the &lt;strong&gt;kinoite-main&lt;/strong&gt; Images. The images feature almost no customization, aside from some quality of life features and some branding. You can expect a vanilla KDE experience with developer batteries under the hood.&lt;/p&gt;
 &lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
@@ -7224,6 +7272,7 @@ Download Bluefin Aurora
 &lt;/h3&gt;
 &lt;p&gt;&lt;a href=&#34;https://waydro.id/&#34; target=&#34;_blank&#34;&gt;&lt;strong&gt;WayDroid&lt;/strong&gt;&lt;/a&gt; is a container-based tool that allows for launching a complete &lt;strong&gt;Android&lt;/strong&gt; system within the Linux desktop. It does this with Linux namespaces, effectively utilizing the Linux kernel. In simple terms, namespaces are a feature that helps isolate and separate parts of a computer so that it is possible to run each part independently as if it is the only one on the computer.&lt;/p&gt;
 &lt;p&gt;If you&amp;rsquo;re trying to run Android apps on Linux, WayDroid is the way to do it, and former &amp;ldquo;Android on Linux&amp;rdquo; tools like Anbox recommend it. WayDroid is compatible with a wide variety of Linux distributions and CPU architectures. Additionally, it harnesses Android&amp;rsquo;s Mesa technology to enable efficient GPU pass-through from the container to the host system, which enhances the performance of graphical applications, ensuring a smooth user experience.&lt;/p&gt;
+&lt;div class=&#34;github-card-wrapper&#34;&gt;
 &lt;a id=&#34;github-e2697052f914cf610b2b9d5d5e94a310&#34; target=&#34;_blank&#34; href=&#34;https://github.com/waydroid/waydroid&#34; class=&#34;cursor-pointer&#34;&gt;
   &lt;div
     class=&#34;w-full md:w-auto pt-3 p-5 border border-neutral-200 dark:border-neutral-700 border rounded-md shadow-2xl&#34;&gt;
@@ -7303,6 +7352,7 @@ Download Bluefin Aurora
       .catch(error =&gt; console.error(error))
   &lt;/script&gt;
 &lt;/a&gt;
+&lt;/div&gt;
 
 
 &lt;h3 class=&#34;relative group&#34;&gt;Setting Up WayDroid in No Time 
@@ -7402,7 +7452,8 @@ Download Bluefin Aurora
 &lt;/h3&gt;
 &lt;p&gt;There are multiple ways to install this extension. One of them being from the &lt;a href=&#34;https://www.pling.com/find?search=burn-my-windows&#34; target=&#34;_blank&#34;&gt;&lt;strong&gt;KDE Store&lt;/strong&gt;&lt;/a&gt; on many distros running &lt;strong&gt;KDE Plasma&lt;/strong&gt; or the &lt;strong&gt;A.U.R&lt;/strong&gt; on &lt;strong&gt;ArchLinux&lt;/strong&gt;. Here I will be showing you the latter.&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;paru -S kwin-effects-burn-my-windows
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;a id=&#34;github-8c5f7cf4ebc6a27cc9dd18c133eaf67b&#34; target=&#34;_blank&#34; href=&#34;https://github.com/Schneegans/Burn-My-Windows&#34; class=&#34;cursor-pointer&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;github-card-wrapper&#34;&gt;
+&lt;a id=&#34;github-8c5f7cf4ebc6a27cc9dd18c133eaf67b&#34; target=&#34;_blank&#34; href=&#34;https://github.com/Schneegans/Burn-My-Windows&#34; class=&#34;cursor-pointer&#34;&gt;
   &lt;div
     class=&#34;w-full md:w-auto pt-3 p-5 border border-neutral-200 dark:border-neutral-700 border rounded-md shadow-2xl&#34;&gt;
 
@@ -7481,6 +7532,7 @@ Download Bluefin Aurora
       .catch(error =&gt; console.error(error))
   &lt;/script&gt;
 &lt;/a&gt;
+&lt;/div&gt;
 
 
 &lt;h3 class=&#34;relative group&#34;&gt;Closing words 
@@ -7663,6 +7715,7 @@ Download Bluefin Aurora
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;- Recommended CURL command&lt;/strong&gt;&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;bash &amp;lt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;curl -L zellij.dev/launch&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;However you choose to get it is up to you. Anyway here&amp;rsquo;s a link to their &lt;strong&gt;Github&lt;/strong&gt; page below.&lt;/p&gt;
+&lt;div class=&#34;github-card-wrapper&#34;&gt;
 &lt;a id=&#34;github-d4629d5be933fe5b06f61e7e2b4973ce&#34; target=&#34;_blank&#34; href=&#34;https://github.com/zellij-org/zellij&#34; class=&#34;cursor-pointer&#34;&gt;
   &lt;div
     class=&#34;w-full md:w-auto pt-3 p-5 border border-neutral-200 dark:border-neutral-700 border rounded-md shadow-2xl&#34;&gt;
@@ -7742,6 +7795,7 @@ Download Bluefin Aurora
       .catch(error =&gt; console.error(error))
   &lt;/script&gt;
 &lt;/a&gt;
+&lt;/div&gt;
 &lt;p&gt;Enjoy :heart:&lt;/p&gt;
 </description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/zellij-terminal/featured.webp" />
@@ -7901,6 +7955,7 @@ Download Bluefin Aurora
 &lt;p&gt;Install Nix using this curl command :&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;curl -L https://nixos.org/nix/install &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; sh
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Source&lt;/p&gt;
+&lt;div class=&#34;github-card-wrapper&#34;&gt;
 &lt;a id=&#34;github-359c471407630108af16a9bf1612d622&#34; target=&#34;_blank&#34; href=&#34;https://github.com/NixOS/nix&#34; class=&#34;cursor-pointer&#34;&gt;
   &lt;div
     class=&#34;w-full md:w-auto pt-3 p-5 border border-neutral-200 dark:border-neutral-700 border rounded-md shadow-2xl&#34;&gt;
@@ -7980,6 +8035,7 @@ Download Bluefin Aurora
       .catch(error =&gt; console.error(error))
   &lt;/script&gt;
 &lt;/a&gt;
+&lt;/div&gt;
 &lt;p&gt;Note: Recommend multi-user install if it prompts for it.&lt;/p&gt;
 
 
@@ -8053,7 +8109,8 @@ Download Bluefin Aurora
 &lt;/h3&gt;
 &lt;p&gt;To install it, either do it via your favourite GUI package manager if supported or in terminal via :&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;flatpak install -y com.github.KRTirtho.Spotube
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;a id=&#34;github-95784f9db36c1bd48c66366504913f55&#34; target=&#34;_blank&#34; href=&#34;https://github.com/KRTirtho/spotube&#34; class=&#34;cursor-pointer&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;github-card-wrapper&#34;&gt;
+&lt;a id=&#34;github-95784f9db36c1bd48c66366504913f55&#34; target=&#34;_blank&#34; href=&#34;https://github.com/KRTirtho/spotube&#34; class=&#34;cursor-pointer&#34;&gt;
   &lt;div
     class=&#34;w-full md:w-auto pt-3 p-5 border border-neutral-200 dark:border-neutral-700 border rounded-md shadow-2xl&#34;&gt;
 
@@ -8132,6 +8189,7 @@ Download Bluefin Aurora
       .catch(error =&gt; console.error(error))
   &lt;/script&gt;
 &lt;/a&gt;
+&lt;/div&gt;
 </description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/spotube-for-spotify/featured.webp" />
     </item>
@@ -8153,6 +8211,7 @@ Download Bluefin Aurora
       &lt;iframe allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen&#34; loading=&#34;eager&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; src=&#34;https://www.youtube.com/embed/v7XWlCFkj4A?autoplay=0&amp;amp;controls=1&amp;amp;end=0&amp;amp;loop=0&amp;amp;mute=0&amp;amp;start=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;YouTube video&#34;&gt;&lt;/iframe&gt;
     &lt;/div&gt;
 
+&lt;div class=&#34;github-card-wrapper&#34;&gt;
 &lt;a id=&#34;github-18e693ebc65096b5df283f30dd37163c&#34; target=&#34;_blank&#34; href=&#34;https://github.com/hexvalid/Linux-CapsLock-Delay-Fixer&#34; class=&#34;cursor-pointer&#34;&gt;
   &lt;div
     class=&#34;w-full md:w-auto pt-3 p-5 border border-neutral-200 dark:border-neutral-700 border rounded-md shadow-2xl&#34;&gt;
@@ -8232,6 +8291,7 @@ Download Bluefin Aurora
       .catch(error =&gt; console.error(error))
   &lt;/script&gt;
 &lt;/a&gt;
+&lt;/div&gt;
 </description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/caps-lock/featured.webp" />
     </item>
@@ -8392,7 +8452,8 @@ Download Bluefin Aurora
 &lt;li&gt;Flathub (Flatpak)&lt;/li&gt;
 &lt;/ul&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;flatpak install net.fasterland.converseen
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;a id=&#34;github-bcb0d2da5009533c2e74cc81533f73ad&#34; target=&#34;_blank&#34; href=&#34;https://github.com/Faster3ck/Converseen&#34; class=&#34;cursor-pointer&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;github-card-wrapper&#34;&gt;
+&lt;a id=&#34;github-bcb0d2da5009533c2e74cc81533f73ad&#34; target=&#34;_blank&#34; href=&#34;https://github.com/Faster3ck/Converseen&#34; class=&#34;cursor-pointer&#34;&gt;
   &lt;div
     class=&#34;w-full md:w-auto pt-3 p-5 border border-neutral-200 dark:border-neutral-700 border rounded-md shadow-2xl&#34;&gt;
 
@@ -8471,6 +8532,7 @@ Download Bluefin Aurora
       .catch(error =&gt; console.error(error))
   &lt;/script&gt;
 &lt;/a&gt;
+&lt;/div&gt;
 &lt;p&gt;Have fun :heart:&lt;/p&gt;
 </description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/coverseen-img-convert/featured.webp" />
@@ -8741,7 +8803,8 @@ Download Bluefin Aurora
 &lt;li&gt;Flathub (Flatpak)&lt;/li&gt;
 &lt;/ul&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;flatpak install -y flathub org.ferdium.Ferdium
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;a id=&#34;github-3779791f9be93f712e396768a672133d&#34; target=&#34;_blank&#34; href=&#34;https://github.com/ferdium/ferdium-app&#34; class=&#34;cursor-pointer&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;github-card-wrapper&#34;&gt;
+&lt;a id=&#34;github-3779791f9be93f712e396768a672133d&#34; target=&#34;_blank&#34; href=&#34;https://github.com/ferdium/ferdium-app&#34; class=&#34;cursor-pointer&#34;&gt;
   &lt;div
     class=&#34;w-full md:w-auto pt-3 p-5 border border-neutral-200 dark:border-neutral-700 border rounded-md shadow-2xl&#34;&gt;
 
@@ -8820,6 +8883,7 @@ Download Bluefin Aurora
       .catch(error =&gt; console.error(error))
   &lt;/script&gt;
 &lt;/a&gt;
+&lt;/div&gt;
 &lt;p&gt;Have fun :heart:&lt;/p&gt;
 </description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/ferdium-web/featured.webp" />
@@ -9188,7 +9252,8 @@ Download Bluefin Aurora
 &lt;/h3&gt;
 &lt;p&gt;It&amp;rsquo;s available on the AUR. Otherwise, below is a link to tool&amp;rsquo;s GitHub.&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;paru -S konsave
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;a id=&#34;github-332ee8afae17adb75781b84a058a1d54&#34; target=&#34;_blank&#34; href=&#34;https://github.com/Prayag2/konsave&#34; class=&#34;cursor-pointer&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;github-card-wrapper&#34;&gt;
+&lt;a id=&#34;github-332ee8afae17adb75781b84a058a1d54&#34; target=&#34;_blank&#34; href=&#34;https://github.com/Prayag2/konsave&#34; class=&#34;cursor-pointer&#34;&gt;
   &lt;div
     class=&#34;w-full md:w-auto pt-3 p-5 border border-neutral-200 dark:border-neutral-700 border rounded-md shadow-2xl&#34;&gt;
 
@@ -9267,6 +9332,7 @@ Download Bluefin Aurora
       .catch(error =&gt; console.error(error))
   &lt;/script&gt;
 &lt;/a&gt;
+&lt;/div&gt;
 &lt;p&gt;Have fun and start sharing your configs&lt;/p&gt;
 </description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/konsave-tool/featured.webp" />
@@ -9348,6 +9414,7 @@ cd LightlyShaders; mkdir qt5build; cd qt5build; cmake ../ -DCMAKE_INSTALL_PREFIX
 &lt;p&gt;Note :&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;After some updates of Plasma this plugin may need to be recompiled in order to work with changes introduced to KWin.&lt;/p&gt;&lt;/blockquote&gt;
+&lt;div class=&#34;github-card-wrapper&#34;&gt;
 &lt;a id=&#34;github-9035e4604f09af91fb89685b1e617483&#34; target=&#34;_blank&#34; href=&#34;https://github.com/a-parhom/LightlyShaders&#34; class=&#34;cursor-pointer&#34;&gt;
   &lt;div
     class=&#34;w-full md:w-auto pt-3 p-5 border border-neutral-200 dark:border-neutral-700 border rounded-md shadow-2xl&#34;&gt;
@@ -9427,6 +9494,7 @@ cd LightlyShaders; mkdir qt5build; cd qt5build; cmake ../ -DCMAKE_INSTALL_PREFIX
       .catch(error =&gt; console.error(error))
   &lt;/script&gt;
 &lt;/a&gt;
+&lt;/div&gt;
 </description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/lightly-shaders/featured.webp" />
     </item>
@@ -9655,7 +9723,8 @@ cd LightlyShaders; mkdir qt5build; cd qt5build; cmake ../ -DCMAKE_INSTALL_PREFIX
 &lt;li&gt;Flathub (Flatpak)&lt;/li&gt;
 &lt;/ul&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;flatpak install -y com.obsproject.Studio pluginname
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;a id=&#34;github-2294faaf2680cd82062f8e3f92431994&#34; target=&#34;_blank&#34; href=&#34;https://github.com/obsproject/obs-studio&#34; class=&#34;cursor-pointer&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;github-card-wrapper&#34;&gt;
+&lt;a id=&#34;github-2294faaf2680cd82062f8e3f92431994&#34; target=&#34;_blank&#34; href=&#34;https://github.com/obsproject/obs-studio&#34; class=&#34;cursor-pointer&#34;&gt;
   &lt;div
     class=&#34;w-full md:w-auto pt-3 p-5 border border-neutral-200 dark:border-neutral-700 border rounded-md shadow-2xl&#34;&gt;
 
@@ -9734,6 +9803,7 @@ cd LightlyShaders; mkdir qt5build; cd qt5build; cmake ../ -DCMAKE_INSTALL_PREFIX
       .catch(error =&gt; console.error(error))
   &lt;/script&gt;
 &lt;/a&gt;
+&lt;/div&gt;
 &lt;p&gt;Have fun :heart:&lt;/p&gt;
 </description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/obs-official/featured.webp" />
@@ -9806,6 +9876,7 @@ cd LightlyShaders; mkdir qt5build; cd qt5build; cmake ../ -DCMAKE_INSTALL_PREFIX
     
 &lt;/h3&gt;
 &lt;p&gt;I use this on a daily. It&amp;rsquo;s highly recommended for the &lt;em&gt;G33ks&lt;/em&gt; out there who love the terminal like I do. If you prefer &lt;strong&gt;GUIs&lt;/strong&gt; then this is not for you, instead use something you prefer. Anyway below is a link to project &lt;strong&gt;Github&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;github-card-wrapper&#34;&gt;
 &lt;a id=&#34;github-18f534e30ec2cbc3930543c1d437b458&#34; target=&#34;_blank&#34; href=&#34;https://github.com/moson-mo/pacseek&#34; class=&#34;cursor-pointer&#34;&gt;
   &lt;div
     class=&#34;w-full md:w-auto pt-3 p-5 border border-neutral-200 dark:border-neutral-700 border rounded-md shadow-2xl&#34;&gt;
@@ -9885,6 +9956,7 @@ cd LightlyShaders; mkdir qt5build; cd qt5build; cmake ../ -DCMAKE_INSTALL_PREFIX
       .catch(error =&gt; console.error(error))
   &lt;/script&gt;
 &lt;/a&gt;
+&lt;/div&gt;
 </description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/pacseek-tui/featured.webp" />
     </item>
@@ -9960,6 +10032,7 @@ cd LightlyShaders; mkdir qt5build; cd qt5build; cmake ../ -DCMAKE_INSTALL_PREFIX
 &lt;p&gt;Since it&amp;rsquo;s available on Flathub, all you need to do is run the following command in terminal or use your favorite GUI package manager if your Distro supports them.&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;flatpak install -y com.stremio.Stremio
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;The project page at GitHub:&lt;/p&gt;
+&lt;div class=&#34;github-card-wrapper&#34;&gt;
 &lt;a id=&#34;github-27f63cdc343184aeff1cee1e4fc50afa&#34; target=&#34;_blank&#34; href=&#34;https://github.com/flattool/warehouse&#34; class=&#34;cursor-pointer&#34;&gt;
   &lt;div
     class=&#34;w-full md:w-auto pt-3 p-5 border border-neutral-200 dark:border-neutral-700 border rounded-md shadow-2xl&#34;&gt;
@@ -10039,6 +10112,7 @@ cd LightlyShaders; mkdir qt5build; cd qt5build; cmake ../ -DCMAKE_INSTALL_PREFIX
       .catch(error =&gt; console.error(error))
   &lt;/script&gt;
 &lt;/a&gt;
+&lt;/div&gt;
 </description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/stremio-tool/featured.webp" />
     </item>
@@ -10069,6 +10143,7 @@ cd LightlyShaders; mkdir qt5build; cd qt5build; cmake ../ -DCMAKE_INSTALL_PREFIX
 &lt;p&gt;You can install the binary from the AUR. Keep in mind that it&amp;rsquo;s the binary it’s the binary (bin) version, not built from source. Saves time and errors. So use below command to install.&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;paru -S tabby-bin
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;This thing has so many neat features that make life so much easier, just keep in mind that I, myself don&amp;rsquo;t use it, as a result I can&amp;rsquo;t help with it. To know more use the documentation found on the Project&amp;rsquo;s &lt;strong&gt;Github&lt;/strong&gt;.&lt;/p&gt;
+&lt;div class=&#34;github-card-wrapper&#34;&gt;
 &lt;a id=&#34;github-a5700e013dc098745bec4694622c84c6&#34; target=&#34;_blank&#34; href=&#34;https://github.com/Eugeny/tabby&#34; class=&#34;cursor-pointer&#34;&gt;
   &lt;div
     class=&#34;w-full md:w-auto pt-3 p-5 border border-neutral-200 dark:border-neutral-700 border rounded-md shadow-2xl&#34;&gt;
@@ -10148,6 +10223,7 @@ cd LightlyShaders; mkdir qt5build; cd qt5build; cmake ../ -DCMAKE_INSTALL_PREFIX
       .catch(error =&gt; console.error(error))
   &lt;/script&gt;
 &lt;/a&gt;
+&lt;/div&gt;
 &lt;p&gt;Note :&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;This terminal Emulator, as awesome as it can be for some, is more resource hungry. So unless you are willing to put up with this for the convenience it provides, I recommend not using it on a low end system, it just might be too much of a lag fest there..&lt;/p&gt;&lt;/blockquote&gt;
@@ -10257,6 +10333,7 @@ cd LightlyShaders; mkdir qt5build; cd qt5build; cmake ../ -DCMAKE_INSTALL_PREFIX
     
 &lt;/h3&gt;
 &lt;p&gt;Well, now that you know more click the button below to get teleported to his GitHub where you will find more info and instructions on how to build and install the drivers.&lt;/p&gt;
+&lt;div class=&#34;github-card-wrapper&#34;&gt;
 &lt;a id=&#34;github-44462de8c3180e34167cb64f269723f5&#34; target=&#34;_blank&#34; href=&#34;https://github.com/Frogging-Family/nvidia-all&#34; class=&#34;cursor-pointer&#34;&gt;
   &lt;div
     class=&#34;w-full md:w-auto pt-3 p-5 border border-neutral-200 dark:border-neutral-700 border rounded-md shadow-2xl&#34;&gt;
@@ -10336,6 +10413,7 @@ cd LightlyShaders; mkdir qt5build; cd qt5build; cmake ../ -DCMAKE_INSTALL_PREFIX
       .catch(error =&gt; console.error(error))
   &lt;/script&gt;
 &lt;/a&gt;
+&lt;/div&gt;
 
 
 &lt;h3 class=&#34;relative group&#34;&gt;Useful or a dud? 
@@ -10398,6 +10476,7 @@ cd LightlyShaders; mkdir qt5build; cd qt5build; cmake ../ -DCMAKE_INSTALL_PREFIX
     
 &lt;/h3&gt;
 &lt;p&gt;Well, there are multiple way to grab this awesome tool, but since we mostly target &lt;strong&gt;ArchLinux&lt;/strong&gt; over here I will let you know how to get it for this specific Distro. Below is the link to their &lt;strong&gt;Github&lt;/strong&gt; page, but don&amp;rsquo;t get it from there just yet.&lt;/p&gt;
+&lt;div class=&#34;github-card-wrapper&#34;&gt;
 &lt;a id=&#34;github-bf42297933615c069f3c01c1cac3521b&#34; target=&#34;_blank&#34; href=&#34;https://github.com/ventoy/Ventoy&#34; class=&#34;cursor-pointer&#34;&gt;
   &lt;div
     class=&#34;w-full md:w-auto pt-3 p-5 border border-neutral-200 dark:border-neutral-700 border rounded-md shadow-2xl&#34;&gt;
@@ -10477,6 +10556,7 @@ cd LightlyShaders; mkdir qt5build; cd qt5build; cmake ../ -DCMAKE_INSTALL_PREFIX
       .catch(error =&gt; console.error(error))
   &lt;/script&gt;
 &lt;/a&gt;
+&lt;/div&gt;
 &lt;p&gt;To get it on &lt;strong&gt;Arch&lt;/strong&gt; you first need to have an &lt;strong&gt;AUR&lt;/strong&gt; helper installed since it&amp;rsquo;s only available there. You have a choice between &lt;a href=&#34;https://github.com/Jguer/yay&#34; target=&#34;_blank&#34;&gt;&lt;strong&gt;YaY&lt;/strong&gt;&lt;/a&gt; or &lt;a href=&#34;https://github.com/morganamilo/paru&#34; target=&#34;_blank&#34;&gt;&lt;strong&gt;Paru&lt;/strong&gt;&lt;/a&gt;. Select whichever you want, install it then we can grab &lt;strong&gt;Ventoy&lt;/strong&gt; via command below&amp;hellip;&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;yay or paru -S ventoy-bin
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;That&amp;rsquo;s it ! Enjoy your distro-hopping. Maybe you find the one that fits your needs the best :smile:&lt;/p&gt;
@@ -10511,6 +10591,7 @@ cd LightlyShaders; mkdir qt5build; cd qt5build; cmake ../ -DCMAKE_INSTALL_PREFIX
 &lt;p&gt;I recommend that you grab it from the &lt;strong&gt;AUR&lt;/strong&gt; if you don&amp;rsquo;t want to have any headaches, but I will also include a link to their &lt;strong&gt;Github&lt;/strong&gt; as well if you prefer building it from source, choice is yours as usual.&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;paru -S plasma6-wallpapers-wallpaper-engine-git
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Build from Source :&lt;/p&gt;
+&lt;div class=&#34;github-card-wrapper&#34;&gt;
 &lt;a id=&#34;github-ca71a5e83707668542a12e863d6e8215&#34; target=&#34;_blank&#34; href=&#34;https://github.com/catsout/wallpaper-engine-kde-plugin&#34; class=&#34;cursor-pointer&#34;&gt;
   &lt;div
     class=&#34;w-full md:w-auto pt-3 p-5 border border-neutral-200 dark:border-neutral-700 border rounded-md shadow-2xl&#34;&gt;
@@ -10590,6 +10671,7 @@ cd LightlyShaders; mkdir qt5build; cd qt5build; cmake ../ -DCMAKE_INSTALL_PREFIX
       .catch(error =&gt; console.error(error))
   &lt;/script&gt;
 &lt;/a&gt;
+&lt;/div&gt;
 
 
 &lt;h3 class=&#34;relative group&#34;&gt;Wayland ? 
@@ -10633,7 +10715,8 @@ cd LightlyShaders; mkdir qt5build; cd qt5build; cmake ../ -DCMAKE_INSTALL_PREFIX
 &lt;/h3&gt;
 &lt;p&gt;To install it, either do it via your favourite GUI package manager if supported or in terminal via :&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Flatpak install io.github.flattool.Warehouse
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;a id=&#34;github-ceed8b24e6b3fdf44892e309c880fd50&#34; target=&#34;_blank&#34; href=&#34;https://github.com/flattool/warehouse&#34; class=&#34;cursor-pointer&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;github-card-wrapper&#34;&gt;
+&lt;a id=&#34;github-ceed8b24e6b3fdf44892e309c880fd50&#34; target=&#34;_blank&#34; href=&#34;https://github.com/flattool/warehouse&#34; class=&#34;cursor-pointer&#34;&gt;
   &lt;div
     class=&#34;w-full md:w-auto pt-3 p-5 border border-neutral-200 dark:border-neutral-700 border rounded-md shadow-2xl&#34;&gt;
 
@@ -10712,6 +10795,7 @@ cd LightlyShaders; mkdir qt5build; cd qt5build; cmake ../ -DCMAKE_INSTALL_PREFIX
       .catch(error =&gt; console.error(error))
   &lt;/script&gt;
 &lt;/a&gt;
+&lt;/div&gt;
 </description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/warehouse-flatpak/featured.webp" />
     </item>
@@ -10745,6 +10829,7 @@ cd LightlyShaders; mkdir qt5build; cd qt5build; cmake ../ -DCMAKE_INSTALL_PREFIX
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;- Recommended CURL command&lt;/strong&gt;&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;curl -sS https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; bash
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;However you choose to get it is up to you. Anyway here&amp;rsquo;s a link to their &lt;strong&gt;Github&lt;/strong&gt; page below.&lt;/p&gt;
+&lt;div class=&#34;github-card-wrapper&#34;&gt;
 &lt;a id=&#34;github-c287f82a6cb05c4745ec17da4ed0bd20&#34; target=&#34;_blank&#34; href=&#34;https://github.com/ajeetdsouza/zoxide&#34; class=&#34;cursor-pointer&#34;&gt;
   &lt;div
     class=&#34;w-full md:w-auto pt-3 p-5 border border-neutral-200 dark:border-neutral-700 border rounded-md shadow-2xl&#34;&gt;
@@ -10824,6 +10909,7 @@ cd LightlyShaders; mkdir qt5build; cd qt5build; cmake ../ -DCMAKE_INSTALL_PREFIX
       .catch(error =&gt; console.error(error))
   &lt;/script&gt;
 &lt;/a&gt;
+&lt;/div&gt;
 &lt;p&gt;Enjoy :heart:&lt;/p&gt;
 </description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/zoxide-cd/featured.webp" />
@@ -10852,6 +10938,7 @@ cd LightlyShaders; mkdir qt5build; cd qt5build; cmake ../ -DCMAKE_INSTALL_PREFIX
 &lt;li&gt;Putting the installed packages in easy spots to reference them and modify them when needed.&lt;/li&gt;
 &lt;li&gt;Using sudo can be dangerous and brew installs it to a home directory instead of systemwide without needing sudo.&lt;/li&gt;
 &lt;/ul&gt;
+&lt;div class=&#34;github-card-wrapper&#34;&gt;
 &lt;a id=&#34;github-24de194c1b5897d8548ff331996da98e&#34; target=&#34;_blank&#34; href=&#34;https://github.com/Homebrew/brew&#34; class=&#34;cursor-pointer&#34;&gt;
   &lt;div
     class=&#34;w-full md:w-auto pt-3 p-5 border border-neutral-200 dark:border-neutral-700 border rounded-md shadow-2xl&#34;&gt;
@@ -10931,6 +11018,7 @@ cd LightlyShaders; mkdir qt5build; cd qt5build; cmake ../ -DCMAKE_INSTALL_PREFIX
       .catch(error =&gt; console.error(error))
   &lt;/script&gt;
 &lt;/a&gt;
+&lt;/div&gt;
 
 
 &lt;h3 class=&#34;relative group&#34;&gt;Installing Homebrew 
@@ -11038,6 +11126,7 @@ cd LightlyShaders; mkdir qt5build; cd qt5build; cmake ../ -DCMAKE_INSTALL_PREFIX
     &amp;#34;~/my-repos/repo_name&amp;#34;,
 ]
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;For more information on tweaking the configuration file, see the Customization section on the Topgrade &lt;strong&gt;GitHub&lt;/strong&gt; page below.&lt;/p&gt;
+&lt;div class=&#34;github-card-wrapper&#34;&gt;
 &lt;a id=&#34;github-2e819999535d48069af66a73f2eb0246&#34; target=&#34;_blank&#34; href=&#34;https://github.com/topgrade-rs/topgrade&#34; class=&#34;cursor-pointer&#34;&gt;
   &lt;div
     class=&#34;w-full md:w-auto pt-3 p-5 border border-neutral-200 dark:border-neutral-700 border rounded-md shadow-2xl&#34;&gt;
@@ -11117,6 +11206,7 @@ cd LightlyShaders; mkdir qt5build; cd qt5build; cmake ../ -DCMAKE_INSTALL_PREFIX
       .catch(error =&gt; console.error(error))
   &lt;/script&gt;
 &lt;/a&gt;
+&lt;/div&gt;
 
 
 &lt;h3 class=&#34;relative group&#34;&gt;Conclusion 

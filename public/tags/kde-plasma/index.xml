@@ -23,6 +23,7 @@
 &lt;p&gt;Before we begin, here&amp;rsquo;s brief intro as to why I care about ricing.&lt;/p&gt;
 &lt;p&gt;In case you didn&amp;rsquo;t know it, I began my &lt;strong&gt;Linux&lt;/strong&gt; journey with &lt;strong&gt;KDE Plasma&lt;/strong&gt; because of the freedom of customization. I love ricing my setups. I hated that &lt;strong&gt;macOS&lt;/strong&gt; &amp;amp; &lt;strong&gt;Windows&lt;/strong&gt; did not allow this.&lt;/p&gt;
 &lt;p&gt;And if you want to see what I have managed to do, well, hop on over to my &lt;strong&gt;Layan&lt;/strong&gt; rice&amp;rsquo;s &lt;strong&gt;Githup&lt;/strong&gt; repository, you will get blown away.&lt;/p&gt;
+&lt;div class=&#34;github-card-wrapper&#34;&gt;
 &lt;a id=&#34;github-a3d14a4a10f892b0bde0c7d2dcb03e5f&#34; target=&#34;_blank&#34; href=&#34;https://github.com/xerolinux/xero-layan-git&#34; class=&#34;cursor-pointer&#34;&gt;
   &lt;div
     class=&#34;w-full md:w-auto pt-3 p-5 border border-neutral-200 dark:border-neutral-700 border rounded-md shadow-2xl&#34;&gt;
@@ -102,6 +103,7 @@
       .catch(error =&gt; console.error(error))
   &lt;/script&gt;
 &lt;/a&gt;
+&lt;/div&gt;
 
 
 &lt;h3 class=&#34;relative group&#34;&gt;A bit of understanding 
@@ -175,6 +177,7 @@
     
   &lt;/figure&gt;
 &lt;/p&gt;
+&lt;div class=&#34;github-card-wrapper&#34;&gt;
 &lt;a id=&#34;github-674857d8b75e800e4bcc0955b60eca86&#34; target=&#34;_blank&#34; href=&#34;https://github.com/tsujan/Kvantum&#34; class=&#34;cursor-pointer&#34;&gt;
   &lt;div
     class=&#34;w-full md:w-auto pt-3 p-5 border border-neutral-200 dark:border-neutral-700 border rounded-md shadow-2xl&#34;&gt;
@@ -254,6 +257,7 @@
       .catch(error =&gt; console.error(error))
   &lt;/script&gt;
 &lt;/a&gt;
+&lt;/div&gt;
 &lt;p&gt;This will take care of the awesome window blur and transparency effects for all &lt;strong&gt;Qt&lt;/strong&gt; based apps. It will not work on anything else, keep that in mind.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;SDDM Login Manager&lt;/strong&gt;&lt;/li&gt;
@@ -381,6 +385,7 @@
 &lt;/h3&gt;
 &lt;p&gt;As a bonus, for all the G33ks out there, I would like to include a nice find. Some of us would love to make our rices reproduce-able without having to apply every element over and over, others just want to have a backup.&lt;/p&gt;
 &lt;p&gt;That&amp;rsquo;s where this &lt;strong&gt;Github Repo&lt;/strong&gt; comes in handy. It shows us what files are affected by the various theme elements. So have at it and enjoy !&lt;/p&gt;
+&lt;div class=&#34;github-card-wrapper&#34;&gt;
 &lt;a id=&#34;github-35acb2467e8c5b7be245dd5d8ae6184d&#34; target=&#34;_blank&#34; href=&#34;https://github.com/shalva97/kde-configuration-files&#34; class=&#34;cursor-pointer&#34;&gt;
   &lt;div
     class=&#34;w-full md:w-auto pt-3 p-5 border border-neutral-200 dark:border-neutral-700 border rounded-md shadow-2xl&#34;&gt;
@@ -460,6 +465,7 @@
       .catch(error =&gt; console.error(error))
   &lt;/script&gt;
 &lt;/a&gt;
+&lt;/div&gt;
 &lt;p&gt;Don&amp;rsquo;t forget about &lt;strong&gt;Konsave&lt;/strong&gt; the GUI tool that does exactly that, just in a much simpler way. Article attached below.&lt;/p&gt;
 
 &lt;section class=&#34;space-y-10 w-full&#34;&gt;

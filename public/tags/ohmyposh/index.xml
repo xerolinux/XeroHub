@@ -338,6 +338,7 @@
 &lt;/p&gt;
 &lt;p&gt;As you can see from the image above, for those of you out there using the &lt;strong&gt;XeroLinux Post Install Toolkit&lt;/strong&gt;, we added the option that will do everything mentioned in this guide automatically for you.&lt;/p&gt;
 &lt;p&gt;Keep in mind that this only applies to &lt;strong&gt;Bash&lt;/strong&gt;, for anyone who prefers &lt;strong&gt;Fish&lt;/strong&gt; that will always be &lt;em&gt;Vanilla&lt;/em&gt; as for those of you, who, like myself love &lt;strong&gt;ZSH&lt;/strong&gt;, well it is included with option &lt;strong&gt;4. ZSH All-in-one w/OMP&lt;/strong&gt;&amp;hellip;&lt;/p&gt;
+&lt;div class=&#34;github-card-wrapper&#34;&gt;
 &lt;a id=&#34;github-ba49e4e5b503b677aa818e3c0fe87165&#34; target=&#34;_blank&#34; href=&#34;https://github.com/xerolinux/xlapit-cli&#34; class=&#34;cursor-pointer&#34;&gt;
   &lt;div
     class=&#34;w-full md:w-auto pt-3 p-5 border border-neutral-200 dark:border-neutral-700 border rounded-md shadow-2xl&#34;&gt;
@@ -417,7 +418,9 @@
       .catch(error =&gt; console.error(error))
   &lt;/script&gt;
 &lt;/a&gt;
+&lt;/div&gt;
 &lt;p&gt;There&amp;rsquo;s nothing to say now, except that this project is awesome, I love it and hope it lives long an prosper. Now as mentioned earlier if you want to create your very own config, just head on over to the project&amp;rsquo;s &lt;strong&gt;Git&lt;/strong&gt; below or check out the &amp;raquo; &lt;a href=&#34;https://ohmyposh.dev/docs/&#34; target=&#34;_blank&#34;&gt;&lt;strong&gt;OMP Docs&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&#34;github-card-wrapper&#34;&gt;
 &lt;a id=&#34;github-4b2b060cb46e0a0142c2701566b5e2c2&#34; target=&#34;_blank&#34; href=&#34;https://github.com/JanDeDobbeleer/oh-my-posh&#34; class=&#34;cursor-pointer&#34;&gt;
   &lt;div
     class=&#34;w-full md:w-auto pt-3 p-5 border border-neutral-200 dark:border-neutral-700 border rounded-md shadow-2xl&#34;&gt;
@@ -497,6 +500,7 @@
       .catch(error =&gt; console.error(error))
   &lt;/script&gt;
 &lt;/a&gt;
+&lt;/div&gt;
 &lt;p&gt;That’s it folks ..&lt;/p&gt;
 &lt;p&gt;Cheers !&lt;/p&gt;
 </description>

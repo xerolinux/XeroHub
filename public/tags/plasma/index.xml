@@ -23,6 +23,7 @@
 &lt;p&gt;Before we begin, here&amp;rsquo;s brief intro as to why I care about ricing.&lt;/p&gt;
 &lt;p&gt;In case you didn&amp;rsquo;t know it, I began my &lt;strong&gt;Linux&lt;/strong&gt; journey with &lt;strong&gt;KDE Plasma&lt;/strong&gt; because of the freedom of customization. I love ricing my setups. I hated that &lt;strong&gt;macOS&lt;/strong&gt; &amp;amp; &lt;strong&gt;Windows&lt;/strong&gt; did not allow this.&lt;/p&gt;
 &lt;p&gt;And if you want to see what I have managed to do, well, hop on over to my &lt;strong&gt;Layan&lt;/strong&gt; rice&amp;rsquo;s &lt;strong&gt;Githup&lt;/strong&gt; repository, you will get blown away.&lt;/p&gt;
+&lt;div class=&#34;github-card-wrapper&#34;&gt;
 &lt;a id=&#34;github-a3d14a4a10f892b0bde0c7d2dcb03e5f&#34; target=&#34;_blank&#34; href=&#34;https://github.com/xerolinux/xero-layan-git&#34; class=&#34;cursor-pointer&#34;&gt;
   &lt;div
     class=&#34;w-full md:w-auto pt-3 p-5 border border-neutral-200 dark:border-neutral-700 border rounded-md shadow-2xl&#34;&gt;
@@ -102,6 +103,7 @@
       .catch(error =&gt; console.error(error))
   &lt;/script&gt;
 &lt;/a&gt;
+&lt;/div&gt;
 
 
 &lt;h3 class=&#34;relative group&#34;&gt;A bit of understanding 
@@ -175,6 +177,7 @@
     
   &lt;/figure&gt;
 &lt;/p&gt;
+&lt;div class=&#34;github-card-wrapper&#34;&gt;
 &lt;a id=&#34;github-674857d8b75e800e4bcc0955b60eca86&#34; target=&#34;_blank&#34; href=&#34;https://github.com/tsujan/Kvantum&#34; class=&#34;cursor-pointer&#34;&gt;
   &lt;div
     class=&#34;w-full md:w-auto pt-3 p-5 border border-neutral-200 dark:border-neutral-700 border rounded-md shadow-2xl&#34;&gt;
@@ -254,6 +257,7 @@
       .catch(error =&gt; console.error(error))
   &lt;/script&gt;
 &lt;/a&gt;
+&lt;/div&gt;
 &lt;p&gt;This will take care of the awesome window blur and transparency effects for all &lt;strong&gt;Qt&lt;/strong&gt; based apps. It will not work on anything else, keep that in mind.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;SDDM Login Manager&lt;/strong&gt;&lt;/li&gt;
@@ -381,6 +385,7 @@
 &lt;/h3&gt;
 &lt;p&gt;As a bonus, for all the G33ks out there, I would like to include a nice find. Some of us would love to make our rices reproduce-able without having to apply every element over and over, others just want to have a backup.&lt;/p&gt;
 &lt;p&gt;That&amp;rsquo;s where this &lt;strong&gt;Github Repo&lt;/strong&gt; comes in handy. It shows us what files are affected by the various theme elements. So have at it and enjoy !&lt;/p&gt;
+&lt;div class=&#34;github-card-wrapper&#34;&gt;
 &lt;a id=&#34;github-35acb2467e8c5b7be245dd5d8ae6184d&#34; target=&#34;_blank&#34; href=&#34;https://github.com/shalva97/kde-configuration-files&#34; class=&#34;cursor-pointer&#34;&gt;
   &lt;div
     class=&#34;w-full md:w-auto pt-3 p-5 border border-neutral-200 dark:border-neutral-700 border rounded-md shadow-2xl&#34;&gt;
@@ -460,6 +465,7 @@
       .catch(error =&gt; console.error(error))
   &lt;/script&gt;
 &lt;/a&gt;
+&lt;/div&gt;
 &lt;p&gt;Don&amp;rsquo;t forget about &lt;strong&gt;Konsave&lt;/strong&gt; the GUI tool that does exactly that, just in a much simpler way. Article attached below.&lt;/p&gt;
 
 &lt;section class=&#34;space-y-10 w-full&#34;&gt;
@@ -724,7 +730,8 @@
 &lt;/h3&gt;
 &lt;p&gt;There are multiple ways to install this extension. One of them being from the &lt;a href=&#34;https://www.pling.com/find?search=burn-my-windows&#34; target=&#34;_blank&#34;&gt;&lt;strong&gt;KDE Store&lt;/strong&gt;&lt;/a&gt; on many distros running &lt;strong&gt;KDE Plasma&lt;/strong&gt; or the &lt;strong&gt;A.U.R&lt;/strong&gt; on &lt;strong&gt;ArchLinux&lt;/strong&gt;. Here I will be showing you the latter.&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;paru -S kwin-effects-burn-my-windows
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;a id=&#34;github-8c5f7cf4ebc6a27cc9dd18c133eaf67b&#34; target=&#34;_blank&#34; href=&#34;https://github.com/Schneegans/Burn-My-Windows&#34; class=&#34;cursor-pointer&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;github-card-wrapper&#34;&gt;
+&lt;a id=&#34;github-8c5f7cf4ebc6a27cc9dd18c133eaf67b&#34; target=&#34;_blank&#34; href=&#34;https://github.com/Schneegans/Burn-My-Windows&#34; class=&#34;cursor-pointer&#34;&gt;
   &lt;div
     class=&#34;w-full md:w-auto pt-3 p-5 border border-neutral-200 dark:border-neutral-700 border rounded-md shadow-2xl&#34;&gt;
 
@@ -803,6 +810,7 @@
       .catch(error =&gt; console.error(error))
   &lt;/script&gt;
 &lt;/a&gt;
+&lt;/div&gt;
 
 
 &lt;h3 class=&#34;relative group&#34;&gt;Closing words 
@@ -854,7 +862,8 @@
 &lt;/h3&gt;
 &lt;p&gt;It&amp;rsquo;s available on the AUR. Otherwise, below is a link to tool&amp;rsquo;s GitHub.&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;paru -S konsave
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;a id=&#34;github-332ee8afae17adb75781b84a058a1d54&#34; target=&#34;_blank&#34; href=&#34;https://github.com/Prayag2/konsave&#34; class=&#34;cursor-pointer&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;github-card-wrapper&#34;&gt;
+&lt;a id=&#34;github-332ee8afae17adb75781b84a058a1d54&#34; target=&#34;_blank&#34; href=&#34;https://github.com/Prayag2/konsave&#34; class=&#34;cursor-pointer&#34;&gt;
   &lt;div
     class=&#34;w-full md:w-auto pt-3 p-5 border border-neutral-200 dark:border-neutral-700 border rounded-md shadow-2xl&#34;&gt;
 
@@ -933,6 +942,7 @@
       .catch(error =&gt; console.error(error))
   &lt;/script&gt;
 &lt;/a&gt;
+&lt;/div&gt;
 &lt;p&gt;Have fun and start sharing your configs&lt;/p&gt;
 </description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/konsave-tool/featured.webp" />
@@ -1014,6 +1024,7 @@ cd LightlyShaders; mkdir qt5build; cd qt5build; cmake ../ -DCMAKE_INSTALL_PREFIX
 &lt;p&gt;Note :&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;After some updates of Plasma this plugin may need to be recompiled in order to work with changes introduced to KWin.&lt;/p&gt;&lt;/blockquote&gt;
+&lt;div class=&#34;github-card-wrapper&#34;&gt;
 &lt;a id=&#34;github-9035e4604f09af91fb89685b1e617483&#34; target=&#34;_blank&#34; href=&#34;https://github.com/a-parhom/LightlyShaders&#34; class=&#34;cursor-pointer&#34;&gt;
   &lt;div
     class=&#34;w-full md:w-auto pt-3 p-5 border border-neutral-200 dark:border-neutral-700 border rounded-md shadow-2xl&#34;&gt;
@@ -1093,6 +1104,7 @@ cd LightlyShaders; mkdir qt5build; cd qt5build; cmake ../ -DCMAKE_INSTALL_PREFIX
       .catch(error =&gt; console.error(error))
   &lt;/script&gt;
 &lt;/a&gt;
+&lt;/div&gt;
 </description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/lightly-shaders/featured.webp" />
     </item>
@@ -1305,6 +1317,7 @@ cd LightlyShaders; mkdir qt5build; cd qt5build; cmake ../ -DCMAKE_INSTALL_PREFIX
 &lt;p&gt;I recommend that you grab it from the &lt;strong&gt;AUR&lt;/strong&gt; if you don&amp;rsquo;t want to have any headaches, but I will also include a link to their &lt;strong&gt;Github&lt;/strong&gt; as well if you prefer building it from source, choice is yours as usual.&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;paru -S plasma6-wallpapers-wallpaper-engine-git
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Build from Source :&lt;/p&gt;
+&lt;div class=&#34;github-card-wrapper&#34;&gt;
 &lt;a id=&#34;github-ca71a5e83707668542a12e863d6e8215&#34; target=&#34;_blank&#34; href=&#34;https://github.com/catsout/wallpaper-engine-kde-plugin&#34; class=&#34;cursor-pointer&#34;&gt;
   &lt;div
     class=&#34;w-full md:w-auto pt-3 p-5 border border-neutral-200 dark:border-neutral-700 border rounded-md shadow-2xl&#34;&gt;
@@ -1384,6 +1397,7 @@ cd LightlyShaders; mkdir qt5build; cd qt5build; cmake ../ -DCMAKE_INSTALL_PREFIX
       .catch(error =&gt; console.error(error))
   &lt;/script&gt;
 &lt;/a&gt;
+&lt;/div&gt;
 
 
 &lt;h3 class=&#34;relative group&#34;&gt;Wayland ? 

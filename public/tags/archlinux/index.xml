@@ -120,6 +120,7 @@
 &lt;/h1&gt;
 &lt;p&gt;Okay fellow Linux nerds let’s talk about something truly important: staying updated, I know I know, you’re thinking “Ugh updates? That’s what happens when I finally get my system configured just right, and then BAM! Something breaks.” But hear me out, what if staying updated was… dare I say… enjoyable?&lt;/p&gt;
 &lt;p&gt;Enter &lt;strong&gt;Apdatifier&lt;/strong&gt; the plasma widget that’s going to become either best friend, or a useful acquaintance to our beloved &lt;strong&gt;KDE&lt;/strong&gt; setup!&lt;/p&gt;
+&lt;div class=&#34;github-card-wrapper&#34;&gt;
 &lt;a id=&#34;github-329f800914aa592a2115ef31194b1362&#34; target=&#34;_blank&#34; href=&#34;https://github.com/exequtic/apdatifier&#34; class=&#34;cursor-pointer&#34;&gt;
   &lt;div
     class=&#34;w-full md:w-auto pt-3 p-5 border border-neutral-200 dark:border-neutral-700 border rounded-md shadow-2xl&#34;&gt;
@@ -199,6 +200,7 @@
       .catch(error =&gt; console.error(error))
   &lt;/script&gt;
 &lt;/a&gt;
+&lt;/div&gt;
 
 
 &lt;h3 class=&#34;relative group&#34;&gt;What in Tux Is This Thing? 
@@ -743,6 +745,7 @@ return sequence[:n]
 &lt;/h3&gt;
 &lt;p&gt;If you want to start using the &lt;strong&gt;Chaotic-AUR&lt;/strong&gt; or just need to copy the setup commands, this is the right place for you.&lt;/p&gt;
 &lt;p&gt;Before we begin, I would like to remind everyone that if you are using the &lt;strong&gt;XeroLinux Toolkit&lt;/strong&gt; it has an option that automates everything for you. Check it out on &lt;strong&gt;Github&lt;/strong&gt; below.&lt;/p&gt;
+&lt;div class=&#34;github-card-wrapper&#34;&gt;
 &lt;a id=&#34;github-33a752733b7cf7935c163efcf04a96c1&#34; target=&#34;_blank&#34; href=&#34;https://github.com/xerolinux/xlapit-cli&#34; class=&#34;cursor-pointer&#34;&gt;
   &lt;div
     class=&#34;w-full md:w-auto pt-3 p-5 border border-neutral-200 dark:border-neutral-700 border rounded-md shadow-2xl&#34;&gt;
@@ -822,6 +825,7 @@ return sequence[:n]
       .catch(error =&gt; console.error(error))
   &lt;/script&gt;
 &lt;/a&gt;
+&lt;/div&gt;
 &lt;p&gt;If you prefer to do it manually, then we start by retrieving the primary key to enable the installation of our keyring and mirror list:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;pacman-key --recv-key 3056513887B78AEB --keyserver keyserver.ubuntu.com
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;pacman-key --lsign-key 3056513887B78AEB
@@ -837,6 +841,7 @@ return sequence[:n]
 &lt;/h3&gt;
 &lt;p&gt;Only one benefit comes from using the &lt;strong&gt;Chaotic-AUR&lt;/strong&gt;. And that&amp;rsquo;s the fact that packages are most often if not always screened by the maintainers before being added, saving us the headache of being the guinea pigs.&lt;/p&gt;
 &lt;p&gt;Did I mention that you can request packages to be added there ? Oh yes, that&amp;rsquo;s a side-benefit to all this. If you want to do that head on over to their &lt;strong&gt;Github Repo&lt;/strong&gt; linked below and use the issues tab to either report an issue with a package, request a new package to be added or a &lt;strong&gt;PKGBUILD&lt;/strong&gt; to be updated.&lt;/p&gt;
+&lt;div class=&#34;github-card-wrapper&#34;&gt;
 &lt;a id=&#34;github-5eeb2e27b9916ae7df6a93a2a1b42a89&#34; target=&#34;_blank&#34; href=&#34;https://github.com/chaotic-aur/packages&#34; class=&#34;cursor-pointer&#34;&gt;
   &lt;div
     class=&#34;w-full md:w-auto pt-3 p-5 border border-neutral-200 dark:border-neutral-700 border rounded-md shadow-2xl&#34;&gt;
@@ -916,6 +921,7 @@ return sequence[:n]
       .catch(error =&gt; console.error(error))
   &lt;/script&gt;
 &lt;/a&gt;
+&lt;/div&gt;
 &lt;p&gt;That’s it folks ..&lt;/p&gt;
 &lt;p&gt;Cheers !&lt;/p&gt;
 </description>

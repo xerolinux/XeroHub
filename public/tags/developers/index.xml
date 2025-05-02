@@ -97,6 +97,7 @@
 &lt;p&gt;However, it already includes support for the main plugins I, myself care about, like &lt;strong&gt;Git&lt;/strong&gt;, &lt;strong&gt;Docker Compose&lt;/strong&gt;, &lt;strong&gt;Toml&lt;/strong&gt;, &lt;strong&gt;Yaml&lt;/strong&gt;, &lt;strong&gt;Make&lt;/strong&gt;, &lt;strong&gt;Java&lt;/strong&gt;, &lt;strong&gt;Bash&lt;/strong&gt;, &lt;strong&gt;Markdown&lt;/strong&gt; among others, with more in the pipeline&amp;hellip;This post was written using it BTW&amp;hellip;&lt;/p&gt;
 &lt;p&gt;And if you know me by now I love its theme engine, with the likes of &lt;strong&gt;Dracula&lt;/strong&gt;, &lt;strong&gt;Catppuccin&lt;/strong&gt;, &lt;strong&gt;Nord&lt;/strong&gt;, &lt;strong&gt;Synthwave &amp;lsquo;84&lt;/strong&gt; among others already available to install.. It&amp;rsquo;s one of the main things that attracted me to it lol. Nothing else to say about it except that I highly recommend you give it a try.&lt;/p&gt;
 &lt;p&gt;It has way more than what I mentioned here, so if you want to know more about it, either go to the &amp;raquo; &lt;a href=&#34;https://zed.dev/docs/&#34; target=&#34;_blank&#34;&gt;&lt;strong&gt;Docs/Wiki&lt;/strong&gt;&lt;/a&gt; page, or visit their &lt;strong&gt;Git Repo&lt;/strong&gt; below.&lt;/p&gt;
+&lt;div class=&#34;github-card-wrapper&#34;&gt;
 &lt;a id=&#34;github-048d83c2c4c5d1181ccc6b118c336300&#34; target=&#34;_blank&#34; href=&#34;https://github.com/zed-industries/zed&#34; class=&#34;cursor-pointer&#34;&gt;
   &lt;div
     class=&#34;w-full md:w-auto pt-3 p-5 border border-neutral-200 dark:border-neutral-700 border rounded-md shadow-2xl&#34;&gt;
@@ -176,6 +177,7 @@
       .catch(error =&gt; console.error(error))
   &lt;/script&gt;
 &lt;/a&gt;
+&lt;/div&gt;
 &lt;p&gt;That’s it folks ..&lt;/p&gt;
 &lt;p&gt;Cheers !&lt;/p&gt;
 </description>
