@@ -1,7 +1,7 @@
 /* Complete CSS with a diagonal gradient featuring enhanced blue tones and softened pink */
 body {
     min-height: 100vh;
-    /*margin: 0;*/
+    margin: center;
     overflow-y: auto;
     position: relative;
 }
@@ -125,42 +125,7 @@ input[type="text"]:focus, textarea:focus {
     outline: none;
 }
 
-/* --- Mobile responsiveness --- */
-@media (max-width: 768px) {
-    #main-content {
-    padding: 1rem;
-    }
-
-    #main-content > article {
-    padding-left: 1rem;
-    padding-right: 1rem;
-    }
-
-    .article-list .article {
-        padding: 1rem;
-        margin-bottom: 1.5rem;
-    }
-
-    article > section h4.relative.group:first-of-type,
-    article > section h4.relative.group:first-of-type ~ h4,
-    article > section h4.relative.group:first-of-type ~ p {
-        padding: 1rem;
-        margin: 1rem auto;
-    }
-
-    input[type="text"],
-    textarea {
-        font-size: 1rem;
-        padding: 0.75rem;
-    }
-}
-
-@media (max-width: 480px) {
-    body {
-        font-size: 0.95rem;
-    }
-
-    h1, h2, h3 {
-        font-size: 1.2rem;
-    }
+/* Modified Blowfish Carousel CSS */
+.blowfish-carousel {
+    list-style-type: none;
 }
