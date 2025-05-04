@@ -16,8 +16,8 @@
     {{ end }}
 {{ end }}
 
-<div id="{{ $id }}" class="relative mx-auto max-w-full" data-twe-carousel-init data-twe-ride="carousel">
-    <div class="absolute right-0 bottom-0 left-0 z-[2] w-full px-4 sm:px-[15%] mb-10 flex list-none justify-center p-0"
+<div id="{{ $id }}" class="relative" data-twe-carousel-init data-twe-ride="carousel">
+    <div class="absolute inset-x-0 bottom-0 z-[2] w-full px-4 sm:px-[15%] mb-10 flex list-none justify-center p-0"
         data-twe-carousel-indicators>
 
         {{ $num := 0 }}
@@ -38,8 +38,8 @@
 
         <div class="relative float-left -mr-[100%] {{ if not (eq $num 0) }} hidden {{ end }} w-full transition-transform duration-[{{ $interval }}ms] ease-in-out motion-reduce:transition-none"
             data-twe-carousel-item {{ if eq $num 0 }} data-twe-carousel-active {{ end }}>
-            <div class="relative aspect-[16/9] w-full single_hero_background">
-                <img src="{{ .RelPermalink }}" class="absolute inset-0 object-cover w-full h-full nozoom" />
+            <div class="ratio-{{ $aspect }} single_hero_background">
+                <img src="{{ .RelPermalink }}" class="block absolute top-0 object-cover w-full h-full nozoom" alt="carousel image {{$num}}"/>
             </div>
         </div>
 
