@@ -68,7 +68,7 @@
 
       &lt;/span&gt;
       &lt;div id=&#34;github-a3d14a4a10f892b0bde0c7d2dcb03e5f-stargazers&#34; class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
-        115
+        120
       &lt;/div&gt;
 
       &lt;span class=&#34;text-md mr-1 text-neutral-800 dark:text-neutral&#34;&gt;
@@ -81,7 +81,7 @@
 
       &lt;/span&gt;
       &lt;div id=&#34;github-a3d14a4a10f892b0bde0c7d2dcb03e5f-forks&#34; class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
-        14
+        13
       &lt;/div&gt;
 
     &lt;/div&gt;
@@ -222,7 +222,7 @@
 
       &lt;/span&gt;
       &lt;div id=&#34;github-674857d8b75e800e4bcc0955b60eca86-stargazers&#34; class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
-        1662
+        1681
       &lt;/div&gt;
 
       &lt;span class=&#34;text-md mr-1 text-neutral-800 dark:text-neutral&#34;&gt;
@@ -235,7 +235,7 @@
 
       &lt;/span&gt;
       &lt;div id=&#34;github-674857d8b75e800e4bcc0955b60eca86-forks&#34; class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
-        151
+        153
       &lt;/div&gt;
 
     &lt;/div&gt;
@@ -430,7 +430,7 @@
 
       &lt;/span&gt;
       &lt;div id=&#34;github-35acb2467e8c5b7be245dd5d8ae6184d-stargazers&#34; class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
-        890
+        907
       &lt;/div&gt;
 
       &lt;span class=&#34;text-md mr-1 text-neutral-800 dark:text-neutral&#34;&gt;
@@ -443,7 +443,7 @@
 
       &lt;/span&gt;
       &lt;div id=&#34;github-35acb2467e8c5b7be245dd5d8ae6184d-forks&#34; class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
-        59
+        60
       &lt;/div&gt;
 
     &lt;/div&gt;
@@ -775,7 +775,7 @@
 
       &lt;/span&gt;
       &lt;div id=&#34;github-8c5f7cf4ebc6a27cc9dd18c133eaf67b-stargazers&#34; class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
-        2769
+        2795
       &lt;/div&gt;
 
       &lt;span class=&#34;text-md mr-1 text-neutral-800 dark:text-neutral&#34;&gt;
@@ -907,7 +907,7 @@
 
       &lt;/span&gt;
       &lt;div id=&#34;github-332ee8afae17adb75781b84a058a1d54-stargazers&#34; class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
-        1103
+        1136
       &lt;/div&gt;
 
       &lt;span class=&#34;text-md mr-1 text-neutral-800 dark:text-neutral&#34;&gt;
@@ -1069,7 +1069,7 @@ cd LightlyShaders; mkdir qt5build; cd qt5build; cmake ../ -DCMAKE_INSTALL_PREFIX
 
       &lt;/span&gt;
       &lt;div id=&#34;github-9035e4604f09af91fb89685b1e617483-stargazers&#34; class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
-        388
+        394
       &lt;/div&gt;
 
       &lt;span class=&#34;text-md mr-1 text-neutral-800 dark:text-neutral&#34;&gt;
@@ -1251,7 +1251,7 @@ cd LightlyShaders; mkdir qt5build; cd qt5build; cmake ../ -DCMAKE_INSTALL_PREFIX
 
       &lt;/span&gt;
       &lt;div id=&#34;gitlab-0d0a434e1fe710b26526a44305bad7a0-star_count&#34; class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
-        322
+        323
       &lt;/div&gt;
 
       &lt;span class=&#34;text-md mr-1 text-neutral-800 dark:text-neutral&#34;&gt;
@@ -1362,7 +1362,7 @@ cd LightlyShaders; mkdir qt5build; cd qt5build; cmake ../ -DCMAKE_INSTALL_PREFIX
 
       &lt;/span&gt;
       &lt;div id=&#34;github-ca71a5e83707668542a12e863d6e8215-stargazers&#34; class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
-        2068
+        2125
       &lt;/div&gt;
 
       &lt;span class=&#34;text-md mr-1 text-neutral-800 dark:text-neutral&#34;&gt;
@@ -1375,7 +1375,7 @@ cd LightlyShaders; mkdir qt5build; cd qt5build; cmake ../ -DCMAKE_INSTALL_PREFIX
 
       &lt;/span&gt;
       &lt;div id=&#34;github-ca71a5e83707668542a12e863d6e8215-forks&#34; class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
-        86
+        92
       &lt;/div&gt;
 
     &lt;/div&gt;
