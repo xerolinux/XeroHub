@@ -21,7 +21,7 @@ First off we need to grab a few packages in order to be able to build the ISO. K
 sudo pacman -S archiso
 ```
 
-Now we need clone the repo to grab latest commits. I recommend for you to keep the folder around and `git pull` every now and again to grab latest updates, that way you can always build a fresh one if and when issues do happen...
+Now we need to clone the repo to grab latest commits. I recommend for you to keep the folder around and `git pull` every now and again to grab latest updates, that way you can always build a fresh new one if and when issues do happen...
 
 ```Bash
 git clone https://github.com/archlinux/archinstall
@@ -39,9 +39,7 @@ Time to build the new ISO using :
 sudo ./build_iso.sh
 ```
 
-Once build is done, you will find the newly created ISO under `/tmp/archlive/out/` copy it to somewhere safe before proceeding..
-
-Finally we can delete the work directory to save space and to be able to build again later on down the line.
+Once build is done, you will find the newly created ISO under `/tmp/archlive/out/` copy it to somewhere safe before proceeding. Finally we can delete the work directory to save space and to be able to build again later on down the line.
 
 ```Bash
 sudo rm -rf /tmp/archlive/
@@ -49,12 +47,8 @@ sudo rm -rf /tmp/archlive/
 
 ### Wrapping up
 
-Test it out and as is the norm by now, if you encounter any issues report them on **Github**.
+Test it out and as is the norm by now, if you encounter any issues report them on **Github**. Or if you do not want or know how to use it, they also have their very own [**Discord Server**](https://discord.gg/aDeMffrxNg).
 
-<p align="center">
-    <img width="100%" src="https://i.imgur.com/FcsiONm.png" alt="logo">
-</p>
-
-Now that we have an idea on how to build the **Arch ISO**, You can take it to another level.
+{{< github repo="archlinux/archinstall" >}}
 
 Have fun, I know I will 🚀
