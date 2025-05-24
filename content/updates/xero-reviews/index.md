@@ -1,6 +1,6 @@
 ---
 title: "XeroLinux Reviews"
-date: 2025-05-25
+date: 2025-05-24
 draft: false
 description: "Wanna Review XeroLinux ?"
 tags: ["XeroLinux", "Distro", "Review", "Overview"]
