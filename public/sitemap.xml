@@ -4,7 +4,13 @@
 
   <url>
     <loc>https://xerolinux.xyz/</loc>
-    <lastmod>2025-05-19T00:00:00+00:00</lastmod>
+    <lastmod>2025-05-25T00:00:00+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://xerolinux.xyz/updates/</loc>
+    <lastmod>2025-05-25T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
@@ -28,12 +34,6 @@
   </url>
   <url>
     <loc>https://xerolinux.xyz/updates/browser-situation/</loc>
-    <lastmod>2025-03-10T00:00:00+00:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://xerolinux.xyz/updates/</loc>
     <lastmod>2025-03-10T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
