@@ -193,16 +193,18 @@ install_gnome() {
 
 install_xfce() {
   clear && print_section "XFCE"
-  install_packages linux-headers xfce4 epiphany mousepad parole ristretto thunar-archive-plugin thunar-media-tags-plugin xfburn xfce4-artwork xfce4-battery-plugin xfce4-clipman-plugin xfce4-cpufreq-plugin xfce4-cpugraph-plugin xfce4-dict xfce4-diskperf-plugin xfce4-eyes-plugin xfce4-fsguard-plugin xfce4-genmon-plugin xfce4-mailwatch-plugin xfce4-mount-plugin xfce4-mpc-plugin xfce4-netload-plugin xfce4-notes-plugin xfce4-notifyd xfce4-places-plugin xfce4-pulseaudio-plugin xfce4-screensaver xfce4-screenshooter xfce4-sensors-plugin xfce4-smartbookmark-plugin xfce4-systemload-plugin xfce4-taskmanager xfce4-time-out-plugin xfce4-timer-plugin xfce4-verve-plugin xfce4-wavelan-plugin xfce4-weather-plugin xfce4-whiskermenu-plugin xfce4-xkb-plugin lightdm lightdm-gtk-greeter power-profiles-daemon arandr
+  install_packages linux-headers xfce4 epiphany mousepad parole ristretto thunar-archive-plugin thunar-media-tags-plugin xfburn xfce4-artwork xfce4-battery-plugin xfce4-clipman-plugin xfce4-cpufreq-plugin xfce4-cpugraph-plugin xfce4-dict xfce4-diskperf-plugin xfce4-eyes-plugin xfce4-fsguard-plugin xfce4-genmon-plugin xfce4-mailwatch-plugin xfce4-mount-plugin xfce4-mpc-plugin xfce4-netload-plugin xfce4-notes-plugin xfce4-notifyd xfce4-places-plugin xfce4-pulseaudio-plugin xfce4-screensaver xfce4-screenshooter xfce4-sensors-plugin xfce4-smartbookmark-plugin xfce4-systemload-plugin xfce4-taskmanager xfce4-time-out-plugin xfce4-timer-plugin xfce4-verve-plugin xfce4-wavelan-plugin xfce4-weather-plugin xfce4-whiskermenu-plugin xfce4-xkb-plugin lightdm lightdm-gtk-greeter power-profiles-daemon arandr xdg-user-dirs-gtk
   echo
+  xdg-user-dirs-gtk-update
   sudo systemctl enable lightdm power-profiles-daemon &>/dev/null || echo "Warning: lightdm not found."
 }
 
 install_hypr() {
   clear && print_section "Hyprland"
-  install_packages linux-headers hyprland hypridle hyprland-protocols hyprlock hyprpaper hyprpicker hyprpolkitagent hyprsunset pyprland kitty kitty-shell-integration kitty-terminfo pacman-contrib xdg-desktop-portal-hyprland xdg-user-dirs power-profiles-daemon thunar thunar-archive-plugin thunar-media-tags-plugin thunar-shares-plugin thunar-vcs-plugin thunar-volman sddm nwg-displays nwg-look rofi grim slurp kvantum pavucontrol qt6ct ttf-ubuntu-nerd noto-fonts-emoji wlr-randr
+  install_packages linux-headers hyprland hypridle hyprland-protocols hyprlock hyprpaper hyprpicker hyprpolkitagent hyprsunset pyprland kitty kitty-shell-integration kitty-terminfo pacman-contrib xdg-desktop-portal-hyprland xdg-user-dirs power-profiles-daemon thunar thunar-archive-plugin thunar-media-tags-plugin thunar-shares-plugin thunar-vcs-plugin thunar-volman sddm nwg-displays nwg-look rofi grim slurp kvantum pavucontrol qt6ct ttf-ubuntu-nerd noto-fonts-emoji wlr-randr xdg-user-dirs-gtk
   xdg-user-dirs-update
   echo
+  xdg-user-dirs-gtk-update
   sudo systemctl enable sddm power-profiles-daemon &>/dev/null || echo -e "${YELLOW}Warning: sddm not found.${RESET}"
 }
 
