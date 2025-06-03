@@ -91,7 +91,7 @@ fi
 echo
 echo "Installing common dependencies..."
 sudo pacman -S --needed --noconfirm \
-    glu gtk2 libpng12 opencl-driver \
+    glu gtk2 libpng12 \
     qt5-x11extras qt5-svg qt5-webengine qt5-websockets \
     qt5-quickcontrols2 qt5-multimedia libxcrypt-compat \
     xmlsec java-runtime ffmpeg4.4 gst-plugins-bad-libs \
