@@ -1,8 +1,8 @@
 #!/bin/bash
 
-# Check for figlet and install if missing
-if ! command -v figlet fuse2 &> /dev/null; then
-    echo "Installing figlet for a better experience..."
+# Check for figlet and fuse2, install if missing
+if ! command -v figlet &> /dev/null || ! pacman -Q fuse2 &> /dev/null; then
+    echo "Installing figlet and fuse2 if missing..."
     sudo pacman -S --noconfirm figlet fuse2
 fi
 
