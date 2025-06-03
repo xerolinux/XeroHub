@@ -40,7 +40,7 @@ cd "$DEST_DIR" || { echo "Failed to access $DEST_DIR"; exit 1; }
 if [[ -f "$ZIP_FILE" ]]; then
     echo "$ZIP_FILE already exists. Skipping download."
 else
-    echo "Downloading selected version of DaVinci Resolve..."
+    echo "Downloading selected version to ~/DaVinci/..."
     curl --progress-bar -L "$DOWNLOAD_URL" -o "$ZIP_FILE"
 fi
 
