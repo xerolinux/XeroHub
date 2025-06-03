@@ -20,10 +20,10 @@ echo
 read -rp "Enter 1 or 2: " VERSION_CHOICE
 echo
 if [[ "$VERSION_CHOICE" == "1" ]]; then
-    DOWNLOAD_URL="https://swr.cloud.blackmagicdesign.com/DaVinciResolve/v20.0/DaVinci_Resolve_20.0_Linux.zip?verify=1748979991-NORFIqF7KOvZXGhfnSS0MjcbivN63vkiLb%2BQDnJ1AMM%3D"
+    DOWNLOAD_URL="https://dvr.xerolinux.xyz/DaVinci_Resolve_20.0_Linux.zip"
     ZIP_FILE="DaVinci.zip"
 elif [[ "$VERSION_CHOICE" == "2" ]]; then
-    DOWNLOAD_URL="https://swr.cloud.blackmagicdesign.com/DaVinciResolve/v20.0/DaVinci_Resolve_Studio_20.0_Linux.zip?verify=1748979991-NORFIqF7KOvZXGhfnSS0MjcbivN63vkiLb%2BQDnJ1AMM%3D"
+    DOWNLOAD_URL="https://dvr.xerolinux.xyz/DaVinci_Resolve_Studio_20.0_Linux.zip"
     ZIP_FILE="DaVinciStudio.zip"
 else
     echo "Invalid selection. Exiting."
