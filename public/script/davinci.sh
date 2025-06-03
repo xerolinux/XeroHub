@@ -81,7 +81,7 @@ if [[ "$GPU_TYPE" == "nvidia" ]]; then
 elif [[ "$GPU_TYPE" == "amd" ]]; then
     echo
     echo "Installing OpenCL support for AMD..."
-    sudo pacman -S --needed --noconfirm opencl-amd apr apr-util libxcrypt-compat
+    sudo pacman -S --needed apr apr-util libxcrypt-compat rocm-opencl-runtime rocm-hip-runtime
 else
     echo "Unknown GPU type. Exiting."
     exit 1
