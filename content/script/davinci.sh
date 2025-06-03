@@ -18,7 +18,7 @@ echo "1) DaVinci Resolve (Free/Limited)"
 echo "2) DaVinci Resolve Studio (Commercial)"
 echo
 read -rp "Enter 1 or 2: " VERSION_CHOICE
-
+echo
 if [[ "$VERSION_CHOICE" == "1" ]]; then
     DOWNLOAD_URL="https://swr.cloud.blackmagicdesign.com/DaVinciResolve/v20.0/DaVinci_Resolve_20.0_Linux.zip?verify=1748979991-NORFIqF7KOvZXGhfnSS0MjcbivN63vkiLb%2BQDnJ1AMM%3D"
     ZIP_FILE="DaVinci.zip"
