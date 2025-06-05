@@ -19,7 +19,7 @@ Main rig, the one I do all my *Development*, *Gaming* and other things on, which
 
 ![SationXero](https://i.imgur.com/2C387dA.png)
 
-It was recently upgraded to an an `RX 7800XT` & a `Ryzen 9 5950X`. I now use **KDE Wayland** on the daily. I am enjoying it so much better now.
+It was recently upgraded to an `RX 7800XT` and a `Ryzen 9 5950X`. I now use **KDE Wayland** on the daily. I am enjoying it so much better now.
 
 **Home-Lab/Proxmox Server :**
 
@@ -47,11 +47,11 @@ The only app installed on that thing is [**Plex Server**](https://plex.tv) as a 
 
 **Laptop :**
 
-Honorable mention is my **Lenovo Thinkpad T14 Gen 1** that I use in the office, with `1Tb nVme`, a `Ryzen 5 PRO 4650U`, `16Gb RAM` and an iGPU.
+It is my **Lenovo Thinkpad T14 Gen 1** that I use in the office, with `1Tb nVme`, a `Ryzen 5 PRO 4650U`, `16Gb RAM` and an iGPU.
 
 ![ThinkPad](https://i.imgur.com/iTXrFRw.png)
 
-I mainly use this thing for testion other Distros and configs. It never stays on the same OS longer than a month or two. I love it, everything I throw at it works without any issues. It will never see **Windows** mark my words. It's the most **Linux** friendly laptop on the market today... 
+I mainly use this thing for testing other Distros and configs. It never stays on the same OS longer than a month or two. I love it, everything I throw at it works without any issues. It will never see **Windows** mark my words. It's the most **Linux** friendly laptop on the market today... 
 
 ### Other systems
 
@@ -59,7 +59,7 @@ Now I do have a few other systems that I don't use much if at all, just sitting 
 
 ![BatoDeck](https://i.imgur.com/3DBBhza.png)
 
-Finally I have the awesome **SteamDeck**, yep I managed to snag one. It's now my *Retro Gaming Console* with [**Batocera**](https://xerolinux.xyz/posts/retro-deck/)  running the show. I absolutely love it !
+Finally I have the awesome **SteamDeck**, yep I managed to snag one. It's now my *Retro Gaming Console* with [**Batocera**](https://xerolinux.xyz/posts/retro-deck/)  running the show. I absolutely love it ! Sadly I no longer have the time to use it, so it's now sitting behind my monitors teasing me lol ;)
 
 ### Thanks for reading
 
