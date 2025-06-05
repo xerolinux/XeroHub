@@ -17,9 +17,9 @@ I do own many, 3 Desktops, 2 Laptops and a Mini PC. Main, NAS, Home-Lab & HTPC. 
 
 Main rig, the one I do all my *Development*, *Gaming* and other things on, which I label as **StationXero**.
 
-![SationXero](https://i.imgur.com/oB2MDEv.png)
+![SationXero](https://i.imgur.com/2C387dA.png)
 
-I know the `GTX 1080` is an aging GPU, trust me I am trying to raise money to replace it with at least an `RX 7800XT`. I could use better **Wayland** support. Am not really a gamer though, so that part I do not perticularly care about.
+It was recently upgraded to an an `RX 7800XT` & a `Ryzen 9 5950X`. I now use **KDE Wayland** on the daily. I am enjoying it so much better now.
 
 **Home-Lab/Proxmox Server :**
 
@@ -31,23 +31,31 @@ That thing is not showing any signs of slowing down. It's a great little machine
 
 **NAS/Storage :**
 
-Another desktop I call **XeroNAS**, as the name implies, is my **NAS** PC, it stores all my personal data as well as my Linux ISOs & GOG game installers. It has `8GB RAM` with a `Ryzen 5 3600X` and an old `GT-710` GPU.
+Another desktop I call **XeroNAS**, as the name implies, is my **NAS** PC, it stores all my personal data as well as my Linux ISOs & GOG game installers. It has `8GB RAM` with a `Ryzen 5 3600X` and an old `GTX 650 Ti Boost-OC` GPU.
 
-![OMV](https://i.imgur.com/7y4TZOJ.png)
+![OMV](https://i.imgur.com/Gwidybq.jpeg)
 
 That thing is running [**OpenMediaVault**](https://www.openmediavault.org) for managing all the storage. I personally love it for its simplicity and ease of use. It ain't much but it works.
 
 **The HTPC :**
 
-Finally there's my HTPC, which has `Core-i7 6800K`, with a `GTX 650 Ti-Boost OC` (Soon my GTX1080) GPU, and `32GB RAM`. Now with it being my HTPC, it has 14 Drives of various sizes totalling `~68TB` of storage.
+Finally there's my HTPC, which has `Core-i7 6800K`, with a `GTX 1080` GPU, and `32GB RAM`. Now with it being my HTPC, it has 14 Drives of various sizes totalling `~68TB` of storage.
 
-![HTPC](https://i.imgur.com/qDrszls.jpeg)
+![HTPC](https://i.imgur.com/8K3f8rD.png)
 
 The only app installed on that thing is [**Plex Server**](https://plex.tv) as a *Snap*.
 
+**Laptop :**
+
+Honorable mention is my **Lenovo Thinkpad T14 Gen 1** that I use in the office, with `1Tb nVme`, a `Ryzen 5 PRO 4650U`, `16Gb RAM` and an iGPU.
+
+![ThinkPad](https://i.imgur.com/iTXrFRw.png)
+
+I mainly use this thing for testion other Distros and configs. It never stays on the same OS longer than a month or two. I love it, everything I throw at it works without any issues. It will never see **Windows** mark my words. It's the most **Linux** friendly laptop on the market today... 
+
 ### Other systems
 
-Now I do have a few other systems that don't do much. Mainly my **Lenovo Thinkpad T14 Gen 1** that I use in the office, with 1Tb nVme, a `Ryzen 5 PRO 4650U`, 16Gb RAM and an iGPU. As for the other laptop I have it's an old **MacBook Pro** from 2016, yeah the one with the butterfly keyboard n thouchbar. I barely use that thing relegated to a shelf somewhere.
+Now I do have a few other systems that I don't use much if at all, just sitting here collecting dust as decorative pieces. An old **MacBook Pro** from 2016, yeah the one with the faulty butterfly keyboard n thouchbar. I barely use that thing relegated to a shelf somewhere.
 
 ![BatoDeck](https://i.imgur.com/3DBBhza.png)
 
