@@ -52,7 +52,6 @@
 &lt;/div&gt;
 
 
-
 &lt;h3 class=&#34;relative group&#34;&gt;What&amp;rsquo;s going on ? 
     &lt;div id=&#34;whats-going-on-&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
     
@@ -61,7 +60,6 @@
 &lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
       &lt;iframe allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen&#34; loading=&#34;eager&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; src=&#34;https://www.youtube.com/embed/DD8d8ciqkFk?autoplay=0&amp;amp;controls=1&amp;amp;end=0&amp;amp;loop=0&amp;amp;mute=0&amp;amp;start=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;YouTube video&#34;&gt;&lt;/iframe&gt;
     &lt;/div&gt;
-
 
 
 &lt;h3 class=&#34;relative group&#34;&gt;The Changes 
@@ -83,7 +81,6 @@
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo sed -i &lt;span class=&#34;s1&#34;&gt;&amp;#39;/^# Misc options/,/ParallelDownloads = [0-9]*/c\# Misc options\nColor\nILoveCandy\nCheckSpace\n#DisableSandbox\nDownloadUser = alpm\nDisableDownloadTimeout\nParallelDownloads = 10&amp;#39;&lt;/span&gt; /etc/pacman.conf
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;We are done with &lt;code&gt;pacman.conf&lt;/code&gt;. Furthermore, &lt;strong&gt;Pacman 7.0&lt;/strong&gt; also introduces changes to improve checksum stability for Git repositories that use &lt;code&gt;.gitattributes&lt;/code&gt; files.&lt;/p&gt;
 &lt;p&gt;Consequently, you might need to update the checksums in your &lt;code&gt;PKGBUILD&lt;/code&gt; files that source from Git repositories. This is a one-time adjustment to accommodate the new checksum calculation method.&lt;/p&gt;
-
 
 &lt;h3 class=&#34;relative group&#34;&gt;AUR Helpers 
     &lt;div id=&#34;aur-helpers&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
@@ -130,7 +127,6 @@
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo pacman -S paru-git
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Agree and replace one with the other. Have fun ;)&lt;/p&gt;
 
-
 &lt;h3 class=&#34;relative group&#34;&gt;Makepkg / Rust 
     &lt;div id=&#34;makepkg--rust&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
     
@@ -142,7 +138,6 @@
 &lt;p&gt;Apply the patch (diff) to the &lt;code&gt;makepkg.conf&lt;/code&gt; file using the &lt;code&gt;patch&lt;/code&gt; command:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo patch /etc/makepkg.conf &amp;lt; diff.patch
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Last file to be affected, is &lt;code&gt;rust.conf&lt;/code&gt; under &lt;code&gt;/etc/makepkg.conf.d/&lt;/code&gt;. To merge changes, follow the same steps mentioned earlier for &lt;code&gt;makepkg.conf&lt;/code&gt; replacing the file path and name to the ones of &lt;code&gt;rust.conf&lt;/code&gt;.&lt;/p&gt;
-
 
 &lt;h3 class=&#34;relative group&#34;&gt;Wrapping up 
     &lt;div id=&#34;wrapping-up&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
@@ -165,7 +160,6 @@
       
       <guid>https://xerolinux.xyz/posts/pacman-issues/</guid>
       <description>
-
 &lt;h3 class=&#34;relative group&#34;&gt;Info 
     &lt;div id=&#34;info&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
     

@@ -15,7 +15,6 @@
       
       <guid>https://xerolinux.xyz/posts/fix-boot/</guid>
       <description>
-
 &lt;h3 class=&#34;relative group&#34;&gt;Preface 
     &lt;div id=&#34;preface&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
     
@@ -26,14 +25,12 @@
     &lt;/div&gt;
 
 
-
 &lt;h3 class=&#34;relative group&#34;&gt;Disclaimer : 
     &lt;div id=&#34;disclaimer-&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
     
 &lt;/h3&gt;
 &lt;p&gt;Below guide covers EXT4/XFS/Unencrypted Filesystems, for Encrypted Drives, you will have to &amp;ldquo;Google it&amp;rdquo; lol,&lt;/p&gt;
 &lt;p&gt;Anyway here&amp;rsquo;s what to do&amp;hellip;&lt;/p&gt;
-
 
 &lt;h3 class=&#34;relative group&#34;&gt;Mount your system to work in.. 
     &lt;div id=&#34;mount-your-system-to-work-in&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
@@ -44,16 +41,21 @@
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo fdisk -l
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Mount the device or partition : (replace &amp;ldquo;sdXn&amp;rdquo; with your actual partition name)&lt;/p&gt;
 &lt;p&gt;
-  &lt;figure&gt;
-    &lt;img class=&#34;my-0 rounded-md&#34; loading=&#34;lazy&#34; src=&#34;https://i.imgur.com/SZO4qw0.png&#34; alt=&#34;[Image: SZO4qw0.png]&#34; /&gt;
-    
-  &lt;/figure&gt;
+
+
+
+
+
+&lt;figure&gt;
+    &lt;img class=&#34;my-0 rounded-md&#34; loading=&#34;lazy&#34; alt=&#34;[Image: SZO4qw0.png]&#34; src=&#34;https://i.imgur.com/SZO4qw0.png&#34; /&gt;
+
+  
+&lt;/figure&gt;
 &lt;/p&gt;
 &lt;p&gt;For EXT4 &amp;amp; XFS&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;mount /dev/sdXn /mnt &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;Linux Filesystem&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;mount /dev/sdXn /mnt/boot/efi &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;EFI System&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
 &lt;h3 class=&#34;relative group&#34;&gt;Chroot into your system : 
     &lt;div id=&#34;chroot-into-your-system-&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
     
@@ -61,7 +63,6 @@
 &lt;p&gt;With this information, you are able to arch-chroot, and to be able to do that you need to have root permissions, so type the following command:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;arch-chroot /mnt
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
 &lt;h3 class=&#34;relative group&#34;&gt;Reinstall missing Kernel : 
     &lt;div id=&#34;reinstall-missing-kernel-&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
     

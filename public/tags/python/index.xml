@@ -15,14 +15,12 @@
       
       <guid>https://xerolinux.xyz/posts/first-python-script/</guid>
       <description>
-
 &lt;h3 class=&#34;relative group&#34;&gt;What prompted me ? 
     &lt;div id=&#34;what-prompted-me-&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
     
 &lt;/h3&gt;
 &lt;p&gt;Well, as I was porting all relevant forum posts to this site in &lt;strong&gt;markdown&lt;/strong&gt;, I needed a better way to do so. Someone on &lt;strong&gt;Mastodon&lt;/strong&gt; gave me the idea of writing a python script that does it for me. So I went on learning spree. Not really&amp;hellip;&lt;/p&gt;
 &lt;p&gt;I gotta be honest with you guys, I had to use &lt;strong&gt;ChatGPT&lt;/strong&gt;. Doing it by watching &lt;strong&gt;YouTube&lt;/strong&gt; videos, or by searching the net would have taken me ages. So I went to the thing that does things much faster. And before you say it, I am well aware that we can&amp;rsquo;t rely on it 100%, coz it&amp;rsquo;s very inaccurate and licensing is an issue. So I was careful. Anyway, I will post what I have learned so far, maybe it can be of use to you.&lt;/p&gt;
-
 
 &lt;h3 class=&#34;relative group&#34;&gt;The code 
     &lt;div id=&#34;the-code&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
@@ -85,7 +83,6 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;nb&#34;&gt;print&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;sa&#34;&gt;f&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;Saved Markdown for &lt;/span&gt;&lt;span class=&#34;si&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;url&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt; to &lt;/span&gt;&lt;span class=&#34;si&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;output_file&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
 &lt;h3 class=&#34;relative group&#34;&gt;Basic Explanation 
     &lt;div id=&#34;basic-explanation&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
     
@@ -97,7 +94,6 @@
 &lt;li&gt;&lt;strong&gt;Save to File:&lt;/strong&gt; The script saves each converted post to its own Markdown file. The filenames are derived from the thread IDs in the URLs.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Output Directory:&lt;/strong&gt; The script creates an &lt;code&gt;output_dir&lt;/code&gt; directory if it doesn&amp;rsquo;t exist and saves the Markdown files there.&lt;/li&gt;
 &lt;/ul&gt;
-
 
 &lt;h3 class=&#34;relative group&#34;&gt;How to Run the Script 
     &lt;div id=&#34;how-to-run-the-script&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;

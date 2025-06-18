@@ -15,7 +15,6 @@
       
       <guid>https://xerolinux.xyz/posts/vmware-linux/</guid>
       <description>
-
 &lt;h3 class=&#34;relative group&#34;&gt;Intro 
     &lt;div id=&#34;intro&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
     
@@ -24,7 +23,6 @@
 &lt;p align=&#34;center&#34;&gt;
     &lt;img src=&#34;https://i.imgur.com/FDUoyg6.png&#34; alt=&#34;shot&#34;&gt;
 &lt;/p&gt;
-
 
 &lt;h3 class=&#34;relative group&#34;&gt;Guide 
     &lt;div id=&#34;guide&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
@@ -46,7 +44,6 @@
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo pacman -S xf86-video-vmware open-vm-tools
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo systemctl &lt;span class=&#34;nb&#34;&gt;enable&lt;/span&gt; --now vmtoolsd
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
 &lt;h3 class=&#34;relative group&#34;&gt;Issues 
     &lt;div id=&#34;issues&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
     

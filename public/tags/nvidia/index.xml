@@ -17,7 +17,6 @@
       <description>&lt;p&gt;&lt;strong&gt;This post is only for affected users&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;Please read the entire post before you start worrying. I have included a short addendum towards the end, make sure to read it. If you are not affected, then you can ignore this.&lt;/p&gt;
 
-
 &lt;h3 class=&#34;relative group&#34;&gt;What is happening? 
     &lt;div id=&#34;what-is-happening&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
     
@@ -25,14 +24,19 @@
 &lt;p&gt;&lt;strong&gt;nVidia&lt;/strong&gt; just released the &lt;strong&gt;R560&lt;/strong&gt; version of its drivers; which drops support for all GPUs that use the &lt;strong&gt;Pascal&lt;/strong&gt; architecture or &lt;em&gt;SOC&lt;/em&gt;. That includes all &lt;strong&gt;900 &amp;amp; 10&lt;/strong&gt; series cards, with exception of the &lt;strong&gt;1650ti&lt;/strong&gt; and &lt;strong&gt;1660ti&lt;/strong&gt;.&lt;/p&gt;
 &lt;p&gt;New drivers will default to using the &lt;a href=&#34;https://developer.nvidia.com/blog/nvidia-transitions-fully-towards-open-source-gpu-kernel-modules/&#34; target=&#34;_blank&#34;&gt;&lt;strong&gt;Open GPU Kernel Modules&lt;/strong&gt;&lt;/a&gt; which only support cards using the &lt;strong&gt;Turing&lt;/strong&gt; architecture and above moving forward.&lt;/p&gt;
 &lt;p&gt;
-  &lt;figure&gt;
-    &lt;img class=&#34;my-0 rounded-md&#34; loading=&#34;lazy&#34; src=&#34;https://i.imgur.com/kFNHP1d.png&#34; alt=&#34;OpenKMS&#34; /&gt;
-    
-  &lt;/figure&gt;
+
+
+
+
+
+&lt;figure&gt;
+    &lt;img class=&#34;my-0 rounded-md&#34; loading=&#34;lazy&#34; alt=&#34;OpenKMS&#34; src=&#34;https://i.imgur.com/kFNHP1d.png&#34; /&gt;
+
+  
+&lt;/figure&gt;
 &lt;/p&gt;
 &lt;p&gt;They have been preparing us for a while now, so we cannot complain too much in my honest opinion. So we knew this day would come eventually. If you are like me and own one of them older GPUs and want to preserve your sanity, this post is for you.&lt;/p&gt;
 &lt;p&gt;That&amp;rsquo;s why, we have to get ready and &lt;em&gt;Pin&lt;/em&gt; our drivers to current working release before new ones drop so we do not suffer the infamous &lt;strong&gt;Black Screen Of Death&lt;/strong&gt; resulting from unsupported drivers.&lt;/p&gt;
-
 
 &lt;h3 class=&#34;relative group&#34;&gt;Pin/Hold nVidia Drivers 
     &lt;div id=&#34;pinhold-nvidia-drivers&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
@@ -48,10 +52,16 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Scroll down a bit until you see the &lt;code&gt;# IgnorePKG =&lt;/code&gt; line, remove the &lt;code&gt;#&lt;/code&gt; from the beginning of the line to activate it, then after the &lt;code&gt;=&lt;/code&gt; add the following packages&lt;/p&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;nvidia-dkms nvidia-settings nvidia-utils opencl-nvidia libxnvctrl lib32-opencl-nvidia lib32-nvidia-utils
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;
-  &lt;figure&gt;
-    &lt;img class=&#34;my-0 rounded-md&#34; loading=&#34;lazy&#34; src=&#34;https://i.imgur.com/PzpOTPx.png&#34; alt=&#34;Pacman&#34; /&gt;
-    
-  &lt;/figure&gt;
+
+
+
+
+
+&lt;figure&gt;
+    &lt;img class=&#34;my-0 rounded-md&#34; loading=&#34;lazy&#34; alt=&#34;Pacman&#34; src=&#34;https://i.imgur.com/PzpOTPx.png&#34; /&gt;
+
+  
+&lt;/figure&gt;
 &lt;/p&gt;
 &lt;p&gt;Save and quit. Now with that being done, your &lt;strong&gt;nVidia&lt;/strong&gt; drivers will never get updated ever again. You will see a message every time you run an update that those packages will be ignored.&lt;/p&gt;
 &lt;ul&gt;
@@ -59,11 +69,13 @@
 &lt;/ul&gt;
 &lt;p&gt;Now comes the turn of &lt;strong&gt;Flatpaks&lt;/strong&gt;. To avoid them from being updated, especially if you use something like &lt;strong&gt;OBS-Studio&lt;/strong&gt;, we will need to use a tool called &lt;strong&gt;Warehouse&lt;/strong&gt; making it easy. If you don&amp;rsquo;t know what it is look at the article below.&lt;/p&gt;
 
-&lt;section class=&#34;space-y-10 w-full&#34;&gt;
+
+
+  
+
+
+  &lt;section class=&#34;space-y-10 w-full&#34;&gt;
     
-    
-        
-            
 
 
 
@@ -274,23 +286,31 @@
 
 
 
+
+
+
       &lt;/div&gt;
       
     &lt;/div&gt;
   &lt;/a&gt;
 
-        
-    
-&lt;/section&gt;
+  &lt;/section&gt;
+
+
 &lt;p&gt;Now, launch it, click on the filter icon and enable the &lt;code&gt;Show Runtimes&lt;/code&gt; option in order to see the drivers currently installed on your system.&lt;/p&gt;
 &lt;p&gt;
-  &lt;figure&gt;
-    &lt;img class=&#34;my-0 rounded-md&#34; loading=&#34;lazy&#34; src=&#34;https://i.imgur.com/s7aEmPu.png&#34; alt=&#34;Warehouse&#34; /&gt;
-    
-  &lt;/figure&gt;
+
+
+
+
+
+&lt;figure&gt;
+    &lt;img class=&#34;my-0 rounded-md&#34; loading=&#34;lazy&#34; alt=&#34;Warehouse&#34; src=&#34;https://i.imgur.com/s7aEmPu.png&#34; /&gt;
+
+  
+&lt;/figure&gt;
 &lt;/p&gt;
 &lt;p&gt;Once that&amp;rsquo;s done, close filter window, scroll down the list until you see the &lt;strong&gt;nVidia&lt;/strong&gt; drivers, click on the 3 vertical dots and select the &lt;strong&gt;Disable Updates&lt;/strong&gt; option. That&amp;rsquo;s it ! Now they will never be updated.&lt;/p&gt;
-
 
 &lt;h3 class=&#34;relative group&#34;&gt;Downgrade Drivers 
     &lt;div id=&#34;downgrade-drivers&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
@@ -298,11 +318,13 @@
 &lt;/h3&gt;
 &lt;p&gt;This, in my opinion is the most likely scenario to happen to most users who are new to &lt;strong&gt;Linux&lt;/strong&gt; as a whole. It&amp;rsquo;s the one where drivers get updated without previously having &amp;ldquo;Pinned&amp;rdquo; them. If that happens to you, and you end up with a black screen, fear not there is a solution. It&amp;rsquo;s called &lt;em&gt;Downgrading&lt;/em&gt;. We will be using a tool called, you guessed it, &lt;strong&gt;Downgrade&lt;/strong&gt;. More info in article below.&lt;/p&gt;
 
-&lt;section class=&#34;space-y-10 w-full&#34;&gt;
+
+
+  
+
+
+  &lt;section class=&#34;space-y-10 w-full&#34;&gt;
     
-    
-        
-            
 
 
 
@@ -505,25 +527,30 @@
 
 
 
+
+
+
       &lt;/div&gt;
       
     &lt;/div&gt;
   &lt;/a&gt;
 
-        
-    
-&lt;/section&gt;
+  &lt;/section&gt;
+
+
 &lt;p&gt;Since you are stuck on a black screen, with no way to get to the desktop, all you can do in this case is switch to the &lt;strong&gt;TTY&lt;/strong&gt; via &lt;code&gt;CTRL+ALT+F3&lt;/code&gt;. Once there we need to downgrade drivers to whatever previous working ones were.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Install Downgrade :&lt;/strong&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;If you do not already have it, well you will need to install it, you can either use &lt;code&gt;yay&lt;/code&gt; or &lt;code&gt;paru&lt;/code&gt; whichever AUR helper you got, if you don&amp;rsquo;t have one check article below :&lt;/p&gt;
 
-&lt;section class=&#34;space-y-10 w-full&#34;&gt;
+
+
+  
+
+
+  &lt;section class=&#34;space-y-10 w-full&#34;&gt;
     
-    
-        
-            
 
 
 
@@ -750,20 +777,22 @@
 
 
 
+
+
+
       &lt;/div&gt;
       
     &lt;/div&gt;
   &lt;/a&gt;
 
-        
-    
-&lt;/section&gt;
+  &lt;/section&gt;
+
+
 &lt;p&gt;Once you have your &lt;strong&gt;AUR Helper&lt;/strong&gt; of choice, time to install &lt;strong&gt;Downgrade&lt;/strong&gt; :&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;paru -S --noconfirm --needed downgrade
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Now we can downgrade the drivers. To do that just run the following in Terminal :&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo downgrade nvidia-dkms nvidia-settings nvidia-utils opencl-nvidia libxnvctrl lib32-opencl-nvidia lib32-nvidia-utils
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Make sure to select whatever previous working ones were from the list for each of the packages being downgraded. Could be from your local cache if you did not clear it or will be downloaded. Once that&amp;rsquo;s done, you will be prompted if you want to add the affected packages to &lt;em&gt;pacman&lt;/em&gt;&amp;rsquo;s ignore list, please make sure you answer with &lt;code&gt;y&lt;/code&gt; to all, otherwise drivers will get upgraded next time there&amp;rsquo;s an update.&lt;/p&gt;
-
 
 &lt;h3 class=&#34;relative group&#34;&gt;Wrapping up 
     &lt;div id=&#34;wrapping-up&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
@@ -772,11 +801,13 @@
 &lt;p&gt;That covers all the &lt;em&gt;Official&lt;/em&gt; scenarios on &lt;strong&gt;Arch&lt;/strong&gt;. If you are on something else I would highly recommend you consult relevant documentation. I know it sucks, but drivers can&amp;rsquo;t be supported forever. There will always be a time where aging hardware will be dropped. It is what it is.&lt;/p&gt;
 &lt;p&gt;Note how I said &lt;em&gt;Official&lt;/em&gt;, because there are many &lt;em&gt;Unofficial&lt;/em&gt; ways to keep using older drivers. One of them being the &lt;strong&gt;TKG nVidia-All&lt;/strong&gt; script. To know more check article below.&lt;/p&gt;
 
-&lt;section class=&#34;space-y-10 w-full&#34;&gt;
+
+
+  
+
+
+  &lt;section class=&#34;space-y-10 w-full&#34;&gt;
     
-    
-        
-            
 
 
 
@@ -1011,21 +1042,26 @@
 
 
 
+
+
+
       &lt;/div&gt;
       
     &lt;/div&gt;
   &lt;/a&gt;
 
-        
-    
-&lt;/section&gt;
+  &lt;/section&gt;
+
+
 &lt;p&gt;Another way would be to find a repo like &lt;strong&gt;Chaotic-AUR&lt;/strong&gt; enable it and install older drivers from there should they have them if you do not want to compile them yourself.&lt;/p&gt;
 
-&lt;section class=&#34;space-y-10 w-full&#34;&gt;
+
+
+  
+
+
+  &lt;section class=&#34;space-y-10 w-full&#34;&gt;
     
-    
-        
-            
 
 
 
@@ -1252,14 +1288,17 @@
 
 
 
+
+
+
       &lt;/div&gt;
       
     &lt;/div&gt;
   &lt;/a&gt;
 
-        
-    
-&lt;/section&gt;
+  &lt;/section&gt;
+
+
 &lt;p&gt;But those methods are for the more &lt;em&gt;Linux-Savvy&lt;/em&gt; users out there, not for everyone. Anyway I hope this guide has helped you avoid any headaches.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Addendum :&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;From what I can see on &lt;strong&gt;ArchLinux&lt;/strong&gt; repos &lt;code&gt;nvidia-dkms&lt;/code&gt; will be the ones that will contain the &lt;strong&gt;Proprietary&lt;/strong&gt; blobs where &lt;code&gt;nvidia-open-dkms&lt;/code&gt; will have the &lt;strong&gt;Open Kernel Modules&lt;/strong&gt; moving forward, with us ending up with 2 Driver editions.&lt;/p&gt;
@@ -1276,14 +1315,12 @@
       
       <guid>https://xerolinux.xyz/posts/nvidia-vs-amd-linux/</guid>
       <description>
-
 &lt;h3 class=&#34;relative group&#34;&gt;Disclaimer 
     &lt;div id=&#34;disclaimer&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
     
 &lt;/h3&gt;
 &lt;p&gt;I&amp;rsquo;ve gathered some relevant information for you below, which I hope you&amp;rsquo;ll find useful. Please use it at your discretion. If you perceive any favoritism, it&amp;rsquo;s not intentional on my part. The goal here is to provide what best fits your needs. It won&amp;rsquo;t make a difference to me what you choose; what&amp;rsquo;s important is that it works for you.&lt;/p&gt;
 &lt;p&gt;The information might be incomplete due to the short notice, but it&amp;rsquo;s the best I could compile. I could have made this post much longer, but I want to ensure you actually read and find value in it. So, enjoy what I&amp;rsquo;ve put together!&lt;/p&gt;
-
 
 &lt;h3 class=&#34;relative group&#34;&gt;Introduction 
     &lt;div id=&#34;introduction&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
@@ -1293,7 +1330,6 @@
 &lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
       &lt;iframe allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen&#34; loading=&#34;eager&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; src=&#34;https://www.youtube.com/embed/oDCRXhR5n2g?autoplay=0&amp;amp;controls=1&amp;amp;end=0&amp;amp;loop=0&amp;amp;mute=0&amp;amp;start=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;YouTube video&#34;&gt;&lt;/iframe&gt;
     &lt;/div&gt;
-
 
 
 &lt;h3 class=&#34;relative group&#34;&gt;AMD Radeon : FOSS and Easy 
@@ -1319,7 +1355,6 @@
 &lt;/li&gt;
 &lt;/ul&gt;
 
-
 &lt;h3 class=&#34;relative group&#34;&gt;Challenges with AMD GPUs 
     &lt;div id=&#34;challenges-with-amd-gpus&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
     
@@ -1338,7 +1373,6 @@
 &lt;p&gt;&lt;strong&gt;OpenCL and ROCm Support:&lt;/strong&gt; While AMD supports OpenCL, the ecosystem is still catching up to Nvidia’s CUDA dominance in fields like machine learning and professional video editing. Updates like ROCm 6.0.x show promise but may not yet fully match Nvidia’s capabilities in these specialized areas.&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-
 
 &lt;h3 class=&#34;relative group&#34;&gt;Nvidia RTX Series : Proprietary but Robust 
     &lt;div id=&#34;nvidia-rtx-series--proprietary-but-robust&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
@@ -1360,7 +1394,6 @@
 &lt;/li&gt;
 &lt;/ul&gt;
 
-
 &lt;h3 class=&#34;relative group&#34;&gt;Challenges with nVidia GPUs 
     &lt;div id=&#34;challenges-with-nvidia-gpus&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
     
@@ -1369,7 +1402,6 @@
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Setup Complexity:&lt;/strong&gt; Setting up Nvidia drivers on Linux can be intricate, especially with newer kernel versions. Compatibility issues may arise, necessitating manual configuration and occasional troubleshooting for optimal performance. Despite recent updates enhancing Wayland support, Nvidia’s settings control panel remains non-functional on &lt;strong&gt;Wayland&lt;/strong&gt;, contrasting with ongoing improvements in &lt;strong&gt;AMDGPU&lt;/strong&gt; Linux graphics drivers.&lt;/li&gt;
 &lt;/ul&gt;
-
 
 &lt;h3 class=&#34;relative group&#34;&gt;Conclusion: Making the Right Choice 
     &lt;div id=&#34;conclusion-making-the-right-choice&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
@@ -1388,7 +1420,6 @@
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;In conclusion, whether you lean towards AMD Radeon for its open-source ethos and gaming prowess or Nvidia RTX for CUDA-driven performance and advanced graphics capabilities, understanding these nuances is crucial for making an informed decision on your next GPU purchase for Linux.&lt;/p&gt;
-
 
 &lt;h3 class=&#34;relative group&#34;&gt;Data Links 
     &lt;div id=&#34;data-links&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
@@ -1411,14 +1442,12 @@
       
       <guid>https://xerolinux.xyz/posts/tkg-nvidia-all/</guid>
       <description>
-
 &lt;h3 class=&#34;relative group&#34;&gt;Introduction 
     &lt;div id=&#34;introduction&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
     
 &lt;/h3&gt;
 &lt;p&gt;In this post I will be telling you about a very useful tool/script that might help all of you out there having issues with the infamous &lt;strong&gt;nVidia&lt;/strong&gt; GPU on Linux&amp;hellip;&lt;/p&gt;
 &lt;p&gt;Now, a few users were reporting issues with &lt;strong&gt;nVidia&lt;/strong&gt; lately, so I went on the hunt for a few fixes. After some research I stumbled upon an AiO Installer Script by the famous &lt;strong&gt;TKG&lt;/strong&gt;&amp;hellip;&lt;/p&gt;
-
 
 &lt;h3 class=&#34;relative group&#34;&gt;What is it? 
     &lt;div id=&#34;what-is-it&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
@@ -1434,27 +1463,31 @@
 &lt;blockquote&gt;
 &lt;p&gt;&lt;strong&gt;LIBGLVND&lt;/strong&gt; compatible, with 32 bit libs and DKMS enabled out of the box (you will still be asked if you want to use the regular package). Installs for all currently installed kernels. Comes with custom patches to enhance kernel compatibility, dynamically applied when you&amp;rsquo;re requesting a driver that&amp;rsquo;s not compatible OOTB with your currently installed kernel(s). Unwanted packages can be disabled with switches in the &lt;strong&gt;PKGBUILD&lt;/strong&gt;. Defaults to complete installation.&lt;/p&gt;&lt;/blockquote&gt;
 
-
 &lt;h3 class=&#34;relative group&#34;&gt;DKMS or regular? 
     &lt;div id=&#34;dkms-or-regular&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
     
 &lt;/h3&gt;
 &lt;p&gt;&lt;strong&gt;DKMS&lt;/strong&gt; is recommended as it allows for automatic module rebuilding on kernel updates. As long as you&amp;rsquo;re on the same major version (5.8.x for example), you won&amp;rsquo;t need to regenerate the packages on updates, which is a huge QoL feature. Regular modules can also be problematic on Manjaro due to differences in kernel hooking mechanisms compared to Arch. So if in doubt, go &lt;strong&gt;DKMS&lt;/strong&gt;.&lt;/p&gt;
 
-
 &lt;h3 class=&#34;relative group&#34;&gt;Frogging GitHUB 
     &lt;div id=&#34;frogging-github&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
     
 &lt;/h3&gt;
 &lt;p&gt;Well, now that you know more click the button below to get teleported to his GitHub where you will find more info and instructions on how to build and install the drivers.&lt;/p&gt;
-&lt;div class=&#34;github-card-wrapper&#34;&gt;
-&lt;a id=&#34;github-44462de8c3180e34167cb64f269723f5&#34; target=&#34;_blank&#34; href=&#34;https://github.com/Frogging-Family/nvidia-all&#34; class=&#34;cursor-pointer&#34;&gt;
-  &lt;div
-    class=&#34;w-full md:w-auto pt-3 p-5 border border-neutral-200 dark:border-neutral-700 border rounded-md shadow-2xl&#34;&gt;
+&lt;div class=&#34;github-card-wrapper&#34;&gt;&lt;a id=&#34;github-44462de8c3180e34167cb64f269723f5&#34; target=&#34;_blank&#34; href=&#34;https://github.com/Frogging-Family/nvidia-all&#34; class=&#34;cursor-pointer&#34;&gt;
 
-    &lt;div class=&#34;flex items-center&#34;&gt;
-      &lt;span class=&#34;text-2xl text-neutral-800 dark:text-neutral&#34; style=&#34;margin-right:10px;&#34;&gt;
-        
+
+
+    &lt;div
+      class=&#34;w-full md:w-auto p-0 m-0 border border-neutral-200 dark:border-neutral-700 border rounded-md shadow-2xl&#34;&gt;&lt;div class=&#34;w-full nozoom&#34;&gt;
+        &lt;img src=&#34;https://opengraph.githubassets.com/0/Frogging-Family/nvidia-all&#34; alt=&#34;GitHub Repository Thumbnail&#34;
+          class=&#34;nozoom mt-0 mb-0 w-full h-full object-cover&#34;&gt;
+      &lt;/div&gt;&lt;div
+        class=&#34;w-full md:w-auto pt-3 p-5&#34;&gt;
+
+        &lt;div class=&#34;flex items-center&#34;&gt;
+          &lt;span class=&#34;text-2xl text-neutral-800 dark:text-neutral&#34; style=&#34;margin-right:10px;&#34;&gt;
+            
 
   &lt;span class=&#34;relative block icon&#34;&gt;
     &lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 496 512&#34;&gt;&lt;path fill=&#34;currentColor&#34; d=&#34;M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z&#34;/&gt;&lt;/svg&gt;
@@ -1462,73 +1495,70 @@
   &lt;/span&gt;
 
 
-      &lt;/span&gt;
-      &lt;div
-        id=&#34;github-44462de8c3180e34167cb64f269723f5-full_name&#34;
-        class=&#34;m-0 font-bold text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral&#34;&gt;
-        Frogging-Family/nvidia-all
-      &lt;/div&gt;
-    &lt;/div&gt;
+          &lt;/span&gt;
+          &lt;div id=&#34;github-44462de8c3180e34167cb64f269723f5-full_name&#34;
+            class=&#34;m-0 font-bold text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral&#34;&gt;
+            Frogging-Family/nvidia-all
+          &lt;/div&gt;
+        &lt;/div&gt;
 
-    &lt;p id=&#34;github-44462de8c3180e34167cb64f269723f5-description&#34; class=&#34;m-0 mt-2 text-md text-neutral-800 dark:text-neutral&#34;&gt;
-      Nvidia driver latest to 396 series AIO installer
-    &lt;/p&gt;
+        &lt;p id=&#34;github-44462de8c3180e34167cb64f269723f5-description&#34; class=&#34;m-0 mt-2 text-md text-neutral-800 dark:text-neutral&#34;&gt;
+          Nvidia driver latest to 396 series AIO installer
+        &lt;/p&gt;
 
-    &lt;div class=&#34;m-0 mt-2 flex items-center&#34;&gt;
+        &lt;div class=&#34;m-0 mt-2 flex items-center&#34;&gt;
 
-      &lt;span class=&#34;mr-1 inline-block h-3 w-3 rounded-full&#34;
-        style=&#34;background-color: #89e051&#34;&gt;&lt;/span&gt;
-      &lt;div class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
-         Shell 
-      &lt;/div&gt;
+          &lt;span class=&#34;mr-1 inline-block h-3 w-3 rounded-full&#34;
+            style=&#34;background-color: #89e051&#34;&gt;&lt;/span&gt;
+          &lt;div class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
+             Shell 
+          &lt;/div&gt;
 
-      &lt;span class=&#34;text-md mr-1 text-neutral-800 dark:text-neutral&#34;&gt;
-        
+          &lt;span class=&#34;text-md mr-1 text-neutral-800 dark:text-neutral&#34;&gt;
+            
 
   &lt;span class=&#34;relative block icon&#34;&gt;
     &lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 576 512&#34;&gt;&lt;path fill=&#34;currentColor&#34; d=&#34;M287.9 0C297.1 0 305.5 5.25 309.5 13.52L378.1 154.8L531.4 177.5C540.4 178.8 547.8 185.1 550.7 193.7C553.5 202.4 551.2 211.9 544.8 218.2L433.6 328.4L459.9 483.9C461.4 492.9 457.7 502.1 450.2 507.4C442.8 512.7 432.1 513.4 424.9 509.1L287.9 435.9L150.1 509.1C142.9 513.4 133.1 512.7 125.6 507.4C118.2 502.1 114.5 492.9 115.1 483.9L142.2 328.4L31.11 218.2C24.65 211.9 22.36 202.4 25.2 193.7C28.03 185.1 35.5 178.8 44.49 177.5L197.7 154.8L266.3 13.52C270.4 5.249 278.7 0 287.9 0L287.9 0zM287.9 78.95L235.4 187.2C231.9 194.3 225.1 199.3 217.3 200.5L98.98 217.9L184.9 303C190.4 308.5 192.9 316.4 191.6 324.1L171.4 443.7L276.6 387.5C283.7 383.7 292.2 383.7 299.2 387.5L404.4 443.7L384.2 324.1C382.9 316.4 385.5 308.5 391 303L476.9 217.9L358.6 200.5C350.7 199.3 343.9 194.3 340.5 187.2L287.9 78.95z&#34;/&gt;&lt;/svg&gt;
   &lt;/span&gt;
 
 
-      &lt;/span&gt;
-      &lt;div id=&#34;github-44462de8c3180e34167cb64f269723f5-stargazers&#34; class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
-        876
-      &lt;/div&gt;
+          &lt;/span&gt;
+          &lt;div id=&#34;github-44462de8c3180e34167cb64f269723f5-stargazers&#34; class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
+            876
+          &lt;/div&gt;
 
-      &lt;span class=&#34;text-md mr-1 text-neutral-800 dark:text-neutral&#34;&gt;
-        
+          &lt;span class=&#34;text-md mr-1 text-neutral-800 dark:text-neutral&#34;&gt;
+            
 
   &lt;span class=&#34;relative block icon&#34;&gt;
     &lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 448 512&#34;&gt;&lt;path fill=&#34;currentColor&#34; d=&#34;M80 104c13.3 0 24-10.7 24-24s-10.7-24-24-24S56 66.7 56 80s10.7 24 24 24zm80-24c0 32.8-19.7 61-48 73.3V192c0 17.7 14.3 32 32 32H304c17.7 0 32-14.3 32-32V153.3C307.7 141 288 112.8 288 80c0-44.2 35.8-80 80-80s80 35.8 80 80c0 32.8-19.7 61-48 73.3V192c0 53-43 96-96 96H256v70.7c28.3 12.3 48 40.5 48 73.3c0 44.2-35.8 80-80 80s-80-35.8-80-80c0-32.8 19.7-61 48-73.3V288H144c-53 0-96-43-96-96V153.3C19.7 141 0 112.8 0 80C0 35.8 35.8 0 80 0s80 35.8 80 80zm208 24c13.3 0 24-10.7 24-24s-10.7-24-24-24s-24 10.7-24 24s10.7 24 24 24zM248 432c0-13.3-10.7-24-24-24s-24 10.7-24 24s10.7 24 24 24s24-10.7 24-24z&#34;/&gt;&lt;/svg&gt;
   &lt;/span&gt;
 
 
-      &lt;/span&gt;
-      &lt;div id=&#34;github-44462de8c3180e34167cb64f269723f5-forks&#34; class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
-        74
+          &lt;/span&gt;
+          &lt;div id=&#34;github-44462de8c3180e34167cb64f269723f5-forks&#34; class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
+            74
+          &lt;/div&gt;
+
+        &lt;/div&gt;
       &lt;/div&gt;
-
     &lt;/div&gt;
-
-  &lt;/div&gt;
-  &lt;script&gt;
-    fetch(&#34;https://api.github.com/repos/Frogging-Family/nvidia-all&#34;, {
-      headers: new Headers({
-        &#39;User-agent&#39;: &#39;Mozilla/4.0 Custom User Agent&#39;
+    &lt;script&gt;
+      fetch(&#34;https://api.github.com/repos/Frogging-Family/nvidia-all&#34;, {
+        headers: new Headers({
+          &#39;User-agent&#39;: &#39;Mozilla/4.0 Custom User Agent&#39;
+        })
       })
-    })
-      .then(response =&gt; response.json())
-      .then(data =&gt; {
-        document.getElementById(&#39;github-44462de8c3180e34167cb64f269723f5-full_name&#39;).innerHTML = data.full_name;
-        document.getElementById(&#39;github-44462de8c3180e34167cb64f269723f5-description&#39;).innerHTML = data.description;
-        document.getElementById(&#39;github-44462de8c3180e34167cb64f269723f5-stargazers&#39;).innerHTML = data.stargazers_count;
-        document.getElementById(&#39;github-44462de8c3180e34167cb64f269723f5-forks&#39;).innerHTML = data.forks;
-      })
-      .catch(error =&gt; console.error(error))
-  &lt;/script&gt;
-&lt;/a&gt;
-&lt;/div&gt;
-
+        .then(response =&gt; response.json())
+        .then(data =&gt; {
+          document.getElementById(&#39;github-44462de8c3180e34167cb64f269723f5-full_name&#39;).innerHTML = data.full_name;
+          document.getElementById(&#39;github-44462de8c3180e34167cb64f269723f5-description&#39;).innerHTML = data.description;
+          document.getElementById(&#39;github-44462de8c3180e34167cb64f269723f5-stargazers&#39;).innerHTML = data.stargazers_count;
+          document.getElementById(&#39;github-44462de8c3180e34167cb64f269723f5-forks&#39;).innerHTML = data.forks;
+        })
+        .catch(error =&gt; console.error(error))
+    &lt;/script&gt;
+  &lt;/a&gt;&lt;/div&gt;
 
 &lt;h3 class=&#34;relative group&#34;&gt;Useful or a dud? 
     &lt;div id=&#34;useful-or-a-dud&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;

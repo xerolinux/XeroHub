@@ -41,6 +41,7 @@ if [[ -f "$ZIP_FILE" ]]; then
     echo "$ZIP_FILE already exists. Skipping download."
 else
     echo "Downloading selected version to ~/DaVinci/..."
+    echo
     curl --progress-bar -L "$DOWNLOAD_URL" -o "$ZIP_FILE"
 fi
 
@@ -104,4 +105,5 @@ sudo mkdir -p disabled-libraries
 sudo mv libglib* libgio* libgmodule* disabled-libraries/
 echo
 echo "Installation complete! You can now launch DaVinci Resolve."
-sleep 3
+rm -rf ~/DaVinci/
+sleep 6

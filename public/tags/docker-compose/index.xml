@@ -15,27 +15,30 @@
       
       <guid>https://xerolinux.xyz/posts/docker-usage/</guid>
       <description>
-
 &lt;h3 class=&#34;relative group&#34;&gt;Intro 
     &lt;div id=&#34;intro&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
     
 &lt;/h3&gt;
 &lt;p&gt;After messing with &lt;a href=&#34;https://www.docker.com&#34; target=&#34;_blank&#34;&gt;Docker&lt;/a&gt; Containers for so long, I thought I would share the knowledge. Hopefully a video showing it in action soon. In this short tutorial we will be using the Docker Compose feature to deploy our containers. Just note we can do so much more, but this is just an introductory guide, you will have to discover the rest on your own. It&amp;rsquo;s so much fun trust me. To get an idea how much I love them click &lt;a href=&#34;https://blog.xerolinux.xyz/2024/06/docker-containers-a-love-story/&#34; target=&#34;_blank&#34;&gt;&lt;strong&gt;Here&lt;/strong&gt;&lt;/a&gt; to read my thoughts&amp;hellip;&lt;/p&gt;
 &lt;p&gt;
-  &lt;figure&gt;
-    &lt;img class=&#34;my-0 rounded-md&#34; loading=&#34;lazy&#34; src=&#34;https://i.imgur.com/bbD4JDy.png&#34; alt=&#34;[Image: bbD4JDy.png]&#34; /&gt;
-    
-  &lt;/figure&gt;
+
+
+
+
+
+&lt;figure&gt;
+    &lt;img class=&#34;my-0 rounded-md&#34; loading=&#34;lazy&#34; alt=&#34;[Image: bbD4JDy.png]&#34; src=&#34;https://i.imgur.com/bbD4JDy.png&#34; /&gt;
+
+  
+&lt;/figure&gt;
 &lt;/p&gt;
 &lt;p&gt;So without further delay let&amp;rsquo;s gooooooooo&amp;hellip;&lt;/p&gt;
-
 
 &lt;h3 class=&#34;relative group&#34;&gt;What are Docker containers ? 
     &lt;div id=&#34;what-are-docker-containers-&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
     
 &lt;/h3&gt;
 &lt;p&gt;Docker containers are lightweight, portable units that package an application and its dependencies, ensuring consistent performance across different environments. Unlike virtual machines, containers share the host OS kernel, making them more efficient and faster to start.&lt;/p&gt;
-
 
 &lt;h3 class=&#34;relative group&#34;&gt;Key Points: 
     &lt;div id=&#34;key-points&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
@@ -49,7 +52,6 @@
 &lt;li&gt;Scalability: Easily scalable with tools like Kubernetes, perfect for microservices.&lt;/li&gt;
 &lt;/ul&gt;
 
-
 &lt;h3 class=&#34;relative group&#34;&gt;How It Works: 
     &lt;div id=&#34;how-it-works&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
     
@@ -62,7 +64,6 @@
 &lt;/ol&gt;
 &lt;p&gt;Docker containers streamline development, improve resource utilization, and simplify deployment, making them ideal for modern application development.&lt;/p&gt;
 
-
 &lt;h3 class=&#34;relative group&#34;&gt;Install Docker Package 
     &lt;div id=&#34;install-docker-package&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
     
@@ -73,7 +74,6 @@
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo usermod -aG docker &lt;span class=&#34;nv&#34;&gt;$USER&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo systemctl &lt;span class=&#34;nb&#34;&gt;enable&lt;/span&gt; --now docker
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
 &lt;h3 class=&#34;relative group&#34;&gt;Docker Compose file (Stack) 
     &lt;div id=&#34;docker-compose-file-stack&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
     
@@ -99,7 +99,6 @@
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;http://localhost:443 &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;Same machine container is on&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;http://&amp;lt;server-ip&amp;gt;:443 &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;From other machines on same network&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
 &lt;h3 class=&#34;relative group&#34;&gt;Updating Docker Images 
     &lt;div id=&#34;updating-docker-images&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
     
@@ -112,13 +111,11 @@
 &lt;blockquote&gt;
 &lt;p&gt;Keep in mind that some containers might require us to delete them before grabbing new version. Make sure to read their instructions on that before going forward. I just used what works for our example. Not all Containers function the same way&amp;hellip;&lt;/p&gt;&lt;/blockquote&gt;
 
-
 &lt;h3 class=&#34;relative group&#34;&gt;Other tools&amp;hellip; 
     &lt;div id=&#34;other-tools&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
     
 &lt;/h3&gt;
 &lt;p&gt;Kindly note that there are other tools we could use to make deployment much simpler. I just haven&amp;rsquo;t used them in this guide so you can see how it all works. Tools that can be used are, &lt;a href=&#34;https://www.portainer.io&#34; target=&#34;_blank&#34;&gt;Portainer&lt;/a&gt; and &lt;a href=&#34;https://dockge.kuma.pet&#34; target=&#34;_blank&#34;&gt;Dockge&lt;/a&gt;, among many others&amp;hellip;&lt;/p&gt;
-
 
 &lt;h3 class=&#34;relative group&#34;&gt;Nginx Proxy &amp;amp; More&amp;hellip; 
     &lt;div id=&#34;nginx-proxy--more&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;

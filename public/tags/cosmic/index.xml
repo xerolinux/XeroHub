@@ -52,14 +52,12 @@
 &lt;/div&gt;
 
 
-
 &lt;h3 class=&#34;relative group&#34;&gt;What is Cosmic DE? 
     &lt;div id=&#34;what-is-cosmic-de&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
     
 &lt;/h3&gt;
 &lt;p&gt;The &lt;a href=&#34;https://blog.system76.com/post/cosmic-the-road-to-alpha/&#34; target=&#34;_blank&#34;&gt;&lt;strong&gt;Cosmic DE&lt;/strong&gt;&lt;/a&gt; is a new desktop environment being developed by the team behind &lt;strong&gt;Pop!_OS&lt;/strong&gt;, a popular Linux distribution. Unlike their previous efforts, which built upon &lt;strong&gt;GNOME&lt;/strong&gt;, the &lt;strong&gt;Cosmic DE&lt;/strong&gt; is a ground-up development using &lt;strong&gt;Rust&lt;/strong&gt; and a custom compositor built on &lt;strong&gt;Smithay&lt;/strong&gt;, aiming for a lightweight, responsive, and customizable user interface.&lt;/p&gt;
 &lt;p&gt;Its most notable feature is, tiling window management with stacking, and a more integrated experience with the &lt;strong&gt;Pop!_OS&lt;/strong&gt; ecosystem, enhancing performance and user control. It aims to offer a modern alternative to existing desktop environments, designed specifically for Linux users&amp;rsquo; needs.&lt;/p&gt;
-
 
 &lt;h3 class=&#34;relative group&#34;&gt;Installing Cosmic on Arch 
     &lt;div id=&#34;installing-cosmic-on-arch&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
@@ -111,10 +109,16 @@
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;pacman -Syy archinstall &lt;span class=&#34;o&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; archinstall --advanced
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;As mentioned in the video the &lt;code&gt;--advanced&lt;/code&gt; flag is required to unlock the &lt;strong&gt;Cosmic DE&lt;/strong&gt; desktop profile. The reason it&amp;rsquo;s hidden should be clear enough, in case it&amp;rsquo;s not, well it&amp;rsquo;s because it&amp;rsquo;s in Alpha and no one sane enough who requires any kind of stability should install it.&lt;/p&gt;
 &lt;p&gt;
-  &lt;figure&gt;
-    &lt;img class=&#34;my-0 rounded-md&#34; loading=&#34;lazy&#34; src=&#34;https://i.imgur.com/Fvl9uRU.png&#34; alt=&#34;CosmicDE&#34; /&gt;
-    
-  &lt;/figure&gt;
+
+
+
+
+
+&lt;figure&gt;
+    &lt;img class=&#34;my-0 rounded-md&#34; loading=&#34;lazy&#34; alt=&#34;CosmicDE&#34; src=&#34;https://i.imgur.com/Fvl9uRU.png&#34; /&gt;
+
+  
+&lt;/figure&gt;
 &lt;/p&gt;
 &lt;p&gt;Also, note the issue with the &lt;em&gt;Cosmic Greeter&lt;/em&gt;, it could be that the maintainer of the packages on &lt;strong&gt;Arch&lt;/strong&gt; forgot to include it or something else. If you are trying it way after this was written, maybe it&amp;rsquo;s been fixed, if not then do as shown below to fix it.&lt;/p&gt;
 &lt;p&gt;Once all packages are installed, &lt;strong&gt;Before&lt;/strong&gt; you exit &lt;em&gt;chroot&lt;/em&gt; n reboot use this command :&lt;/p&gt;
@@ -125,7 +129,6 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;xdg-user-dirs-update &lt;span class=&#34;o&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; systemctl &lt;span class=&#34;nb&#34;&gt;enable&lt;/span&gt; power-profiles-daemon.service
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Done ! All missing essential features fixed. Keep in mind that it&amp;rsquo;s only natural for them to exist, project is still in Alpha stages, a lot of things need to be addressed. Give it time to mature before judging it, and more importantly report all the bugs related to it or any feature requests you might have upstream, to the &lt;a href=&#34;https://github.com/pop-os&#34; target=&#34;_blank&#34;&gt;&lt;strong&gt;Cosmic Bug Tracker&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
 
-
 &lt;h3 class=&#34;relative group&#34;&gt;Customization 
     &lt;div id=&#34;customization&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
     
@@ -133,13 +136,18 @@
 &lt;p&gt;As we know, &lt;strong&gt;Cosmic DE&lt;/strong&gt; will be highly customizable out of the box. It comes between &lt;strong&gt;Gnome&lt;/strong&gt; and &lt;strong&gt;KDE Plasma&lt;/strong&gt;. Meaning we can modify it more than the former but less than the latter. Still in my opinion that&amp;rsquo;s awesome.&lt;/p&gt;
 &lt;p&gt;There are some caveats however, those being that &lt;strong&gt;Qt&lt;/strong&gt; apps are still not fully supported eg. &lt;strong&gt;Kvantum&lt;/strong&gt;, especially if you are used to the tried and true &lt;strong&gt;Global Menu&lt;/strong&gt; which will not be officially supported as it&amp;rsquo;s way too complex according to the devs. Also the Blur effect not there yet. Maybe in the future someone will port it over ? I dunno about &lt;strong&gt;LibAdwaita&lt;/strong&gt; though, from what I have heard, support coming not yet there.&lt;/p&gt;
 &lt;p&gt;
-  &lt;figure&gt;
-    &lt;img class=&#34;my-0 rounded-md&#34; loading=&#34;lazy&#34; src=&#34;https://i.imgur.com/R8Io5eQ.png&#34; alt=&#34;CosmicThemes&#34; /&gt;
-    
-  &lt;/figure&gt;
+
+
+
+
+
+&lt;figure&gt;
+    &lt;img class=&#34;my-0 rounded-md&#34; loading=&#34;lazy&#34; alt=&#34;CosmicThemes&#34; src=&#34;https://i.imgur.com/R8Io5eQ.png&#34; /&gt;
+
+  
+&lt;/figure&gt;
 &lt;/p&gt;
 &lt;p&gt;So if you are looking for consistency, it will be a long while before we can achieve it. Still, this did not stop some theme developers from porting their themes over to it. So if you would like to try them out, just head on over to the &amp;raquo; &lt;a href=&#34;https://cosmic-themes.org&#34; target=&#34;_blank&#34;&gt;&lt;strong&gt;Cosmic-Themes&lt;/strong&gt;&lt;/a&gt; &amp;ldquo;store&amp;rdquo; and grab the one(s) you like. Importing the &lt;code&gt;.ron&lt;/code&gt; files is easy just open Settings &amp;gt; Desktop &amp;gt; Desktop &amp;amp; Panel &amp;gt; Import, then select file n see it apply immediately.&lt;/p&gt;
-
 
 &lt;h3 class=&#34;relative group&#34;&gt;Wrapping up 
     &lt;div id=&#34;wrapping-up&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;

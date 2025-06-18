@@ -28,8 +28,8 @@
   
   
   
-  <link type="text/css" rel="stylesheet" href="/css/main.bundle.min.4db3aa51a9ce3c64eb864c0a75105b6fdc5de6c0f7275ecc46ede5cd0c6aced79514f22c962bd58adf9e4260dc11aab3c65da4f5139a8b94022d313052f9a376.css"
-    integrity="sha512-TbOqUanOPGTrhkwKdRBbb9xd5sD3J17MRu3lzQxqzteVFPIslivVit&#43;eQmDcEaqzxl2k9ROai5QCLTEwUvmjdg==" />
+  <link type="text/css" rel="stylesheet" href="/css/main.bundle.min.654437ff4907de38f32c502fc69f4acea559e8b9c238342f0ccdab6eaf0c2a45f0a865f276c0384ac2c20244294ecb44596ff5fe964829307bab74ac0170b634.css"
+    integrity="sha512-ZUQ3/0kH3jjzLFAvxp9KzqVZ6LnCODQvDM2rbq8MKkXwqGXydsA4SsLCAkQpTstEWW/1/pZIKTB7q3SsAXC2NA==" />
   
   
   <script type="text/javascript" src="/js/appearance.min.516a16745bea5a9bd011138d254cc0fd3973cd55ce6e15f3dec763e7c7c2c7448f8fe7b54cca811cb821b0c7e12cd161caace1dd794ac3d34d40937cbcc9ee12.js"
@@ -48,8 +48,8 @@
   
   
   
-  <script defer type="text/javascript" id="script-bundle" src="/js/main.bundle.min.ca27df28587cb7e03bdd8ef90eb9a32221cf4f2573466906cca183a2284608b6ab025a77a00f66834419e9e5eb74076afd3e8116fbbe417b6f161e2c5e5aa049.js"
-    integrity="sha512-yiffKFh8t&#43;A73Y75DrmjIiHPTyVzRmkGzKGDoihGCLarAlp3oA9mg0QZ6eXrdAdq/T6BFvu&#43;QXtvFh4sXlqgSQ==" data-copy="Copy" data-copied="Copied"></script>
+  <script defer type="text/javascript" id="script-bundle" src="/js/main.bundle.min.f7e04724dda02f8ffdc6b4507869a4010cd1ae9151a97168d5fd3112b9825c5c6ac376f7d11b0bc353a66d91d614f06e749efb7e56da4ee6fa0c900ed45c85f7.js"
+    integrity="sha512-9&#43;BHJN2gL4/9xrRQeGmkAQzRrpFRqXFo1f0xErmCXFxqw3b30RsLw1OmbZHWFPBudJ77flbaTub6DJAO1FyF9w==" data-copy="Copy" data-copied="Copied"></script>
   
   
   
@@ -210,6 +210,8 @@
 
 
 
+  
+  
   
   
   <meta name="theme-color"/>
@@ -759,7 +761,7 @@
 </span><span class="px-2 text-primary-500">&middot;</span>
 
 
-<script type="text/javascript" src="/js/zen-mode.min.eea5245cf9244ecbdf2c150d1c8833226c1541cadf6e98f63a7c9192b1a3676df2c3ec603b14f4cfaaa53971fd9d8955640c0f405bf3de2b43ee7a5fb29ae721.js" integrity="sha512-7qUkXPkkTsvfLBUNHIgzImwVQcrfbpj2OnyRkrGjZ23yw&#43;xgOxT0z6qlOXH9nYlVZAwPQFvz3itD7npfsprnIQ=="></script>
+<script type="text/javascript" src="/js/zen-mode.min.2a0a1375509c03daf41c53a9831aa2d560895b7a2528c3eb3b56e7b11a135c7529e49727162a053b6193be8340270a8342f42c69f3d7e262ae54bc248eaac8f5.js" integrity="sha512-KgoTdVCcA9r0HFOpgxqi1WCJW3olKMPrO1bnsRoTXHUp5JcnFioFO2GTvoNAJwqDQvQsafPX4mKuVLwkjqrI9Q=="></script>
 
 <span class="mb-[2px]">
     <span id="zen-mode-button"
@@ -859,6 +861,9 @@
   
   
 </div>
+
+
+
 
 
 
@@ -1147,8 +1152,7 @@
       class="order-first lg:ml-auto px-0 lg:order-last ltr:lg:pl-8 rtl:lg:pr-8">
       <div class="toc ltr:pl-5 rtl:pr-5 print:hidden lg:sticky lg:top-[140px]">
 
-         <details open id="TOCView"
-  class="toc-right mt-0 overflow-y-scroll overscroll-contain scrollbar-thin scrollbar-track-neutral-200 scrollbar-thumb-neutral-400 dark:scrollbar-track-neutral-800 dark:scrollbar-thumb-neutral-600 rounded-lg ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 hidden lg:block">
+         <details open id="TOCView" class="toc-right mt-0 overflow-y-auto overscroll-contain scrollbar-thin scrollbar-track-neutral-200 scrollbar-thumb-neutral-400 dark:scrollbar-track-neutral-800 dark:scrollbar-thumb-neutral-600 rounded-lg ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 hidden lg:block">
   <summary
     class="block py-1 text-lg font-semibold cursor-pointer bg-neutral-100 text-neutral-800 ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 dark:bg-neutral-700 dark:text-neutral-100 lg:hidden">
     Table of Contents
@@ -1189,31 +1193,6 @@
 
 <script>
 
-  var margin = 200;
-  var marginError = 50;
-
-  (function () {
-    var $window = $(window);
-    var $toc = $('#TOCView');
-    var tocHeight = $toc.height();
-
-    function onResize() {
-      var windowAndMarginHeight = $window.height() - margin;
-      if(tocHeight >= windowAndMarginHeight) {
-        $toc.css("overflow-y", "scroll")
-        $toc.css("max-height", (windowAndMarginHeight + marginError) + "px")
-      } else {
-        $toc.css("overflow-y", "hidden")
-        $toc.css("max-height", "9999999px")
-      }
-    }
-
-    $window.on('resize', onResize);
-    $(document).ready(onResize);
-  })();
-
-
-
   (function () {
     var $toc = $('#TableOfContents');
     if ($toc.length > 0) {
@@ -1237,7 +1216,7 @@
             $(e).removeClass('active');
           
         });
-        $toc.find('a[href="#' + id + '"]').addClass('active')
+        $toc.find('a[href="#' + id + '"]').addClass('active');
         $toc.find('a[href="#' + id + '"]').parentsUntil('#TableOfContents').each(function (i, e) {
           $(e).children('a').parents('ul').show();          
         });
@@ -1251,7 +1230,6 @@
     }
   })();
 
-
 </script>
    </div>
       </div>
@@ -1264,7 +1242,6 @@
 
         <div class="article-content max-w-prose mb-20">
           
-
 <h3 class="relative group">Intro 
     <div id="intro" class="anchor"></div>
     
@@ -1272,38 +1249,61 @@
 <p>Most of you might already know about the amazing tool called <strong>Ventoy</strong> and how amazing it is at removing the need to have more USB drives if you want to use multiple ISOs, but you might not know about how many more amazing features it has.</p>
 <p>Today I will be showing you how to make a specific Live ISO on your Ventoy USB Drive save all the changes that you make to it.</p>
 
-
 <h3 class="relative group">The Guide 
     <div id="the-guide" class="anchor"></div>
     
 </h3>
 <p>Starting off you would want to have <strong>Ventoy</strong> installed and copy the folder from <code>/opt/ventoy</code> to your USB Drive and renaming it to <code>ventoy_plugins</code> or anything else that you might like.</p>
 <p>
-  <figure>
-    <img class="my-0 rounded-md" loading="lazy" src="https://i.imgur.com/Hg7iIzd.png" alt="[Image: Hg7iIzd.png]" />
-    
-  </figure>
+
+
+
+
+
+<figure>
+    <img class="my-0 rounded-md" loading="lazy" alt="[Image: Hg7iIzd.png]" src="https://i.imgur.com/Hg7iIzd.png" />
+
+  
+</figure>
 </p>
 <p>Then go into the <code>ventoy_plugins</code> folder open a terminal and run <code>sudo sh CreatePersistenceImg.sh -s 20480 -l vtoycow</code> this will create a file called <code>persistence.dat</code> with the size of 20GB, refer to <a href="https://www.ventoy.net/en/plugin_persistence.html" target="_blank">this</a> article from Ventoy for different arguments for the command. After a while you will be granted with this confirmation, just hit <code>y</code> and <code>enter</code> and in a few seconds it should be done.</p>
 <p>
-  <figure>
-    <img class="my-0 rounded-md" loading="lazy" src="https://i.imgur.com/8rKKvT4.png" alt="[Image: 8rKKvT4.png]" />
-    
-  </figure>
+
+
+
+
+
+<figure>
+    <img class="my-0 rounded-md" loading="lazy" alt="[Image: 8rKKvT4.png]" src="https://i.imgur.com/8rKKvT4.png" />
+
+  
+</figure>
 </p>
 <p>Now create a new folder called <code>persistence</code> in the root folder and move the <code>persistence.dat</code> there. Going back to the terminal run <code>sudo sh VentoyPlugson.sh /dev/sdx</code> where <code>x</code> is your USB Drive id.</p>
 <p>
-  <figure>
-    <img class="my-0 rounded-md" loading="lazy" src="https://i.imgur.com/GElDr8y.png" alt="[Image: GElDr8y.png]" />
-    
-  </figure>
+
+
+
+
+
+<figure>
+    <img class="my-0 rounded-md" loading="lazy" alt="[Image: GElDr8y.png]" src="https://i.imgur.com/GElDr8y.png" />
+
+  
+</figure>
 </p>
 <p>Just head over to the webaddress that you get from the terminal, there you will be granted with the Ventoy Plugson WebUI. Head over to the <code>Persistence Plugin</code> and click on add new and just enter the file paths to the ISO that you want and the <code>persistence.dat</code> file and make sure that it says <code>OK</code>.</p>
 <p>
-  <figure>
-    <img class="my-0 rounded-md" loading="lazy" src="https://i.imgur.com/PGduHPr.png" alt="[Image: PGduHPr.png]" />
-    
-  </figure>
+
+
+
+
+
+<figure>
+    <img class="my-0 rounded-md" loading="lazy" alt="[Image: PGduHPr.png]" src="https://i.imgur.com/PGduHPr.png" />
+
+  
+</figure>
 </p>
 <p>Now if you boot into the Xero Linux ISO any changes that you make to it should get saved.</p>
 <p>Cheers :heart:</p>
@@ -1662,6 +1662,9 @@
 
 
 
+
+
+
         </div>
 
         
@@ -1872,6 +1875,9 @@
 
 
 
+
+
+
         </div>
 
         
@@ -2070,6 +2076,9 @@
   
   
 </div>
+
+
+
 
 
 

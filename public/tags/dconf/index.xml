@@ -15,7 +15,6 @@
       
       <guid>https://xerolinux.xyz/posts/dconf-editor/</guid>
       <description>
-
 &lt;h3 class=&#34;relative group&#34;&gt;What is it? 
     &lt;div id=&#34;what-is-it&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
     
@@ -26,7 +25,6 @@
     &lt;/div&gt;
 
 
-
 &lt;h3 class=&#34;relative group&#34;&gt;Install Dconf On Linux 
     &lt;div id=&#34;install-dconf-on-linux&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
     
@@ -34,7 +32,6 @@
 &lt;p&gt;Dconf comes pre-installed in many Linux distributions. If it is not installed already, you can install it using the distribution&amp;rsquo;s default package manager depending upon the distribution you use.&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo pacman -S dconf
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
 &lt;h3 class=&#34;relative group&#34;&gt;Backup/Restore &amp;amp; Reset GNOME Settings With Dconf 
     &lt;div id=&#34;backuprestore--reset-gnome-settings-with-dconf&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
     

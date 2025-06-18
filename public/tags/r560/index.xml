@@ -17,7 +17,6 @@
       <description>&lt;p&gt;&lt;strong&gt;This post is only for affected users&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;Please read the entire post before you start worrying. I have included a short addendum towards the end, make sure to read it. If you are not affected, then you can ignore this.&lt;/p&gt;
 
-
 &lt;h3 class=&#34;relative group&#34;&gt;What is happening? 
     &lt;div id=&#34;what-is-happening&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
     
@@ -25,14 +24,19 @@
 &lt;p&gt;&lt;strong&gt;nVidia&lt;/strong&gt; just released the &lt;strong&gt;R560&lt;/strong&gt; version of its drivers; which drops support for all GPUs that use the &lt;strong&gt;Pascal&lt;/strong&gt; architecture or &lt;em&gt;SOC&lt;/em&gt;. That includes all &lt;strong&gt;900 &amp;amp; 10&lt;/strong&gt; series cards, with exception of the &lt;strong&gt;1650ti&lt;/strong&gt; and &lt;strong&gt;1660ti&lt;/strong&gt;.&lt;/p&gt;
 &lt;p&gt;New drivers will default to using the &lt;a href=&#34;https://developer.nvidia.com/blog/nvidia-transitions-fully-towards-open-source-gpu-kernel-modules/&#34; target=&#34;_blank&#34;&gt;&lt;strong&gt;Open GPU Kernel Modules&lt;/strong&gt;&lt;/a&gt; which only support cards using the &lt;strong&gt;Turing&lt;/strong&gt; architecture and above moving forward.&lt;/p&gt;
 &lt;p&gt;
-  &lt;figure&gt;
-    &lt;img class=&#34;my-0 rounded-md&#34; loading=&#34;lazy&#34; src=&#34;https://i.imgur.com/kFNHP1d.png&#34; alt=&#34;OpenKMS&#34; /&gt;
-    
-  &lt;/figure&gt;
+
+
+
+
+
+&lt;figure&gt;
+    &lt;img class=&#34;my-0 rounded-md&#34; loading=&#34;lazy&#34; alt=&#34;OpenKMS&#34; src=&#34;https://i.imgur.com/kFNHP1d.png&#34; /&gt;
+
+  
+&lt;/figure&gt;
 &lt;/p&gt;
 &lt;p&gt;They have been preparing us for a while now, so we cannot complain too much in my honest opinion. So we knew this day would come eventually. If you are like me and own one of them older GPUs and want to preserve your sanity, this post is for you.&lt;/p&gt;
 &lt;p&gt;That&amp;rsquo;s why, we have to get ready and &lt;em&gt;Pin&lt;/em&gt; our drivers to current working release before new ones drop so we do not suffer the infamous &lt;strong&gt;Black Screen Of Death&lt;/strong&gt; resulting from unsupported drivers.&lt;/p&gt;
-
 
 &lt;h3 class=&#34;relative group&#34;&gt;Pin/Hold nVidia Drivers 
     &lt;div id=&#34;pinhold-nvidia-drivers&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
@@ -48,10 +52,16 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Scroll down a bit until you see the &lt;code&gt;# IgnorePKG =&lt;/code&gt; line, remove the &lt;code&gt;#&lt;/code&gt; from the beginning of the line to activate it, then after the &lt;code&gt;=&lt;/code&gt; add the following packages&lt;/p&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;nvidia-dkms nvidia-settings nvidia-utils opencl-nvidia libxnvctrl lib32-opencl-nvidia lib32-nvidia-utils
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;
-  &lt;figure&gt;
-    &lt;img class=&#34;my-0 rounded-md&#34; loading=&#34;lazy&#34; src=&#34;https://i.imgur.com/PzpOTPx.png&#34; alt=&#34;Pacman&#34; /&gt;
-    
-  &lt;/figure&gt;
+
+
+
+
+
+&lt;figure&gt;
+    &lt;img class=&#34;my-0 rounded-md&#34; loading=&#34;lazy&#34; alt=&#34;Pacman&#34; src=&#34;https://i.imgur.com/PzpOTPx.png&#34; /&gt;
+
+  
+&lt;/figure&gt;
 &lt;/p&gt;
 &lt;p&gt;Save and quit. Now with that being done, your &lt;strong&gt;nVidia&lt;/strong&gt; drivers will never get updated ever again. You will see a message every time you run an update that those packages will be ignored.&lt;/p&gt;
 &lt;ul&gt;
@@ -59,11 +69,13 @@
 &lt;/ul&gt;
 &lt;p&gt;Now comes the turn of &lt;strong&gt;Flatpaks&lt;/strong&gt;. To avoid them from being updated, especially if you use something like &lt;strong&gt;OBS-Studio&lt;/strong&gt;, we will need to use a tool called &lt;strong&gt;Warehouse&lt;/strong&gt; making it easy. If you don&amp;rsquo;t know what it is look at the article below.&lt;/p&gt;
 
-&lt;section class=&#34;space-y-10 w-full&#34;&gt;
+
+
+  
+
+
+  &lt;section class=&#34;space-y-10 w-full&#34;&gt;
     
-    
-        
-            
 
 
 
@@ -274,23 +286,31 @@
 
 
 
+
+
+
       &lt;/div&gt;
       
     &lt;/div&gt;
   &lt;/a&gt;
 
-        
-    
-&lt;/section&gt;
+  &lt;/section&gt;
+
+
 &lt;p&gt;Now, launch it, click on the filter icon and enable the &lt;code&gt;Show Runtimes&lt;/code&gt; option in order to see the drivers currently installed on your system.&lt;/p&gt;
 &lt;p&gt;
-  &lt;figure&gt;
-    &lt;img class=&#34;my-0 rounded-md&#34; loading=&#34;lazy&#34; src=&#34;https://i.imgur.com/s7aEmPu.png&#34; alt=&#34;Warehouse&#34; /&gt;
-    
-  &lt;/figure&gt;
+
+
+
+
+
+&lt;figure&gt;
+    &lt;img class=&#34;my-0 rounded-md&#34; loading=&#34;lazy&#34; alt=&#34;Warehouse&#34; src=&#34;https://i.imgur.com/s7aEmPu.png&#34; /&gt;
+
+  
+&lt;/figure&gt;
 &lt;/p&gt;
 &lt;p&gt;Once that&amp;rsquo;s done, close filter window, scroll down the list until you see the &lt;strong&gt;nVidia&lt;/strong&gt; drivers, click on the 3 vertical dots and select the &lt;strong&gt;Disable Updates&lt;/strong&gt; option. That&amp;rsquo;s it ! Now they will never be updated.&lt;/p&gt;
-
 
 &lt;h3 class=&#34;relative group&#34;&gt;Downgrade Drivers 
     &lt;div id=&#34;downgrade-drivers&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
@@ -298,11 +318,13 @@
 &lt;/h3&gt;
 &lt;p&gt;This, in my opinion is the most likely scenario to happen to most users who are new to &lt;strong&gt;Linux&lt;/strong&gt; as a whole. It&amp;rsquo;s the one where drivers get updated without previously having &amp;ldquo;Pinned&amp;rdquo; them. If that happens to you, and you end up with a black screen, fear not there is a solution. It&amp;rsquo;s called &lt;em&gt;Downgrading&lt;/em&gt;. We will be using a tool called, you guessed it, &lt;strong&gt;Downgrade&lt;/strong&gt;. More info in article below.&lt;/p&gt;
 
-&lt;section class=&#34;space-y-10 w-full&#34;&gt;
+
+
+  
+
+
+  &lt;section class=&#34;space-y-10 w-full&#34;&gt;
     
-    
-        
-            
 
 
 
@@ -505,25 +527,30 @@
 
 
 
+
+
+
       &lt;/div&gt;
       
     &lt;/div&gt;
   &lt;/a&gt;
 
-        
-    
-&lt;/section&gt;
+  &lt;/section&gt;
+
+
 &lt;p&gt;Since you are stuck on a black screen, with no way to get to the desktop, all you can do in this case is switch to the &lt;strong&gt;TTY&lt;/strong&gt; via &lt;code&gt;CTRL+ALT+F3&lt;/code&gt;. Once there we need to downgrade drivers to whatever previous working ones were.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Install Downgrade :&lt;/strong&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;If you do not already have it, well you will need to install it, you can either use &lt;code&gt;yay&lt;/code&gt; or &lt;code&gt;paru&lt;/code&gt; whichever AUR helper you got, if you don&amp;rsquo;t have one check article below :&lt;/p&gt;
 
-&lt;section class=&#34;space-y-10 w-full&#34;&gt;
+
+
+  
+
+
+  &lt;section class=&#34;space-y-10 w-full&#34;&gt;
     
-    
-        
-            
 
 
 
@@ -750,20 +777,22 @@
 
 
 
+
+
+
       &lt;/div&gt;
       
     &lt;/div&gt;
   &lt;/a&gt;
 
-        
-    
-&lt;/section&gt;
+  &lt;/section&gt;
+
+
 &lt;p&gt;Once you have your &lt;strong&gt;AUR Helper&lt;/strong&gt; of choice, time to install &lt;strong&gt;Downgrade&lt;/strong&gt; :&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;paru -S --noconfirm --needed downgrade
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Now we can downgrade the drivers. To do that just run the following in Terminal :&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo downgrade nvidia-dkms nvidia-settings nvidia-utils opencl-nvidia libxnvctrl lib32-opencl-nvidia lib32-nvidia-utils
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Make sure to select whatever previous working ones were from the list for each of the packages being downgraded. Could be from your local cache if you did not clear it or will be downloaded. Once that&amp;rsquo;s done, you will be prompted if you want to add the affected packages to &lt;em&gt;pacman&lt;/em&gt;&amp;rsquo;s ignore list, please make sure you answer with &lt;code&gt;y&lt;/code&gt; to all, otherwise drivers will get upgraded next time there&amp;rsquo;s an update.&lt;/p&gt;
-
 
 &lt;h3 class=&#34;relative group&#34;&gt;Wrapping up 
     &lt;div id=&#34;wrapping-up&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
@@ -772,11 +801,13 @@
 &lt;p&gt;That covers all the &lt;em&gt;Official&lt;/em&gt; scenarios on &lt;strong&gt;Arch&lt;/strong&gt;. If you are on something else I would highly recommend you consult relevant documentation. I know it sucks, but drivers can&amp;rsquo;t be supported forever. There will always be a time where aging hardware will be dropped. It is what it is.&lt;/p&gt;
 &lt;p&gt;Note how I said &lt;em&gt;Official&lt;/em&gt;, because there are many &lt;em&gt;Unofficial&lt;/em&gt; ways to keep using older drivers. One of them being the &lt;strong&gt;TKG nVidia-All&lt;/strong&gt; script. To know more check article below.&lt;/p&gt;
 
-&lt;section class=&#34;space-y-10 w-full&#34;&gt;
+
+
+  
+
+
+  &lt;section class=&#34;space-y-10 w-full&#34;&gt;
     
-    
-        
-            
 
 
 
@@ -1011,21 +1042,26 @@
 
 
 
+
+
+
       &lt;/div&gt;
       
     &lt;/div&gt;
   &lt;/a&gt;
 
-        
-    
-&lt;/section&gt;
+  &lt;/section&gt;
+
+
 &lt;p&gt;Another way would be to find a repo like &lt;strong&gt;Chaotic-AUR&lt;/strong&gt; enable it and install older drivers from there should they have them if you do not want to compile them yourself.&lt;/p&gt;
 
-&lt;section class=&#34;space-y-10 w-full&#34;&gt;
+
+
+  
+
+
+  &lt;section class=&#34;space-y-10 w-full&#34;&gt;
     
-    
-        
-            
 
 
 
@@ -1252,14 +1288,17 @@
 
 
 
+
+
+
       &lt;/div&gt;
       
     &lt;/div&gt;
   &lt;/a&gt;
 
-        
-    
-&lt;/section&gt;
+  &lt;/section&gt;
+
+
 &lt;p&gt;But those methods are for the more &lt;em&gt;Linux-Savvy&lt;/em&gt; users out there, not for everyone. Anyway I hope this guide has helped you avoid any headaches.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Addendum :&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;From what I can see on &lt;strong&gt;ArchLinux&lt;/strong&gt; repos &lt;code&gt;nvidia-dkms&lt;/code&gt; will be the ones that will contain the &lt;strong&gt;Proprietary&lt;/strong&gt; blobs where &lt;code&gt;nvidia-open-dkms&lt;/code&gt; will have the &lt;strong&gt;Open Kernel Modules&lt;/strong&gt; moving forward, with us ending up with 2 Driver editions.&lt;/p&gt;

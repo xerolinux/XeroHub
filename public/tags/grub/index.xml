@@ -15,7 +15,6 @@
       
       <guid>https://xerolinux.xyz/posts/fix-boot/</guid>
       <description>
-
 &lt;h3 class=&#34;relative group&#34;&gt;Preface 
     &lt;div id=&#34;preface&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
     
@@ -26,14 +25,12 @@
     &lt;/div&gt;
 
 
-
 &lt;h3 class=&#34;relative group&#34;&gt;Disclaimer : 
     &lt;div id=&#34;disclaimer-&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
     
 &lt;/h3&gt;
 &lt;p&gt;Below guide covers EXT4/XFS/Unencrypted Filesystems, for Encrypted Drives, you will have to &amp;ldquo;Google it&amp;rdquo; lol,&lt;/p&gt;
 &lt;p&gt;Anyway here&amp;rsquo;s what to do&amp;hellip;&lt;/p&gt;
-
 
 &lt;h3 class=&#34;relative group&#34;&gt;Mount your system to work in.. 
     &lt;div id=&#34;mount-your-system-to-work-in&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
@@ -44,16 +41,21 @@
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo fdisk -l
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Mount the device or partition : (replace &amp;ldquo;sdXn&amp;rdquo; with your actual partition name)&lt;/p&gt;
 &lt;p&gt;
-  &lt;figure&gt;
-    &lt;img class=&#34;my-0 rounded-md&#34; loading=&#34;lazy&#34; src=&#34;https://i.imgur.com/SZO4qw0.png&#34; alt=&#34;[Image: SZO4qw0.png]&#34; /&gt;
-    
-  &lt;/figure&gt;
+
+
+
+
+
+&lt;figure&gt;
+    &lt;img class=&#34;my-0 rounded-md&#34; loading=&#34;lazy&#34; alt=&#34;[Image: SZO4qw0.png]&#34; src=&#34;https://i.imgur.com/SZO4qw0.png&#34; /&gt;
+
+  
+&lt;/figure&gt;
 &lt;/p&gt;
 &lt;p&gt;For EXT4 &amp;amp; XFS&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;mount /dev/sdXn /mnt &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;Linux Filesystem&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;mount /dev/sdXn /mnt/boot/efi &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;EFI System&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
 &lt;h3 class=&#34;relative group&#34;&gt;Chroot into your system : 
     &lt;div id=&#34;chroot-into-your-system-&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
     
@@ -61,7 +63,6 @@
 &lt;p&gt;With this information, you are able to arch-chroot, and to be able to do that you need to have root permissions, so type the following command:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;arch-chroot /mnt
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
 &lt;h3 class=&#34;relative group&#34;&gt;Reinstall missing Kernel : 
     &lt;div id=&#34;reinstall-missing-kernel-&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
     
@@ -86,12 +87,17 @@
       
       <guid>https://xerolinux.xyz/posts/fix-grub/</guid>
       <description>&lt;p&gt;
-  &lt;figure&gt;
-    &lt;img class=&#34;my-0 rounded-md&#34; loading=&#34;lazy&#34; src=&#34;https://i.imgur.com/FlfFJ0o.png&#34; alt=&#34;[Image: FlfFJ0o.png]&#34; /&gt;
-    
-  &lt;/figure&gt;
-&lt;/p&gt;
 
+
+
+
+
+&lt;figure&gt;
+    &lt;img class=&#34;my-0 rounded-md&#34; loading=&#34;lazy&#34; alt=&#34;[Image: FlfFJ0o.png]&#34; src=&#34;https://i.imgur.com/FlfFJ0o.png&#34; /&gt;
+
+  
+&lt;/figure&gt;
+&lt;/p&gt;
 
 &lt;h3 class=&#34;relative group&#34;&gt;Info 
     &lt;div id=&#34;info&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
@@ -99,14 +105,12 @@
 &lt;/h3&gt;
 &lt;p&gt;In case you are one of the affected people, below is how you can fix the issue. I have tested it and it works fine. And keep in mind that &lt;strong&gt;XeroLinux&lt;/strong&gt; is basically &lt;strong&gt;ArchLinux&lt;/strong&gt; so below fix will work on Arch as well as any Arch-Based distros with the exception of &lt;strong&gt;Manjaro&lt;/strong&gt; that is &lt;em&gt;NOT&lt;/em&gt; Arch. Read more on that &amp;raquo; &lt;a href=&#34;https://wiki.manjaro.org/index.php/Manjaro:A_Different_Kind_of_Beast#:~:text=Manjaro%20is%20developed%20independently%20from,from%20its%20own%20independent%20repositories&#34; target=&#34;_blank&#34;&gt;Here&lt;/a&gt; &amp;laquo;&lt;/p&gt;
 
-
 &lt;h3 class=&#34;relative group&#34;&gt;Disclaimer 
     &lt;div id=&#34;disclaimer&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
     
 &lt;/h3&gt;
 &lt;p&gt;Below guide covers EXT4/XFS/BTRFS Unencrypted Filesystems, for Encrypted Drives, you will have to either &amp;ldquo;Google it&amp;rdquo; lol, or check at the bottom of this guide where I posted a link to EndeavourOS&amp;rsquo; more advanced guide for Chrooting into your system&amp;hellip; There are 2 options if first one works no need for the rest, and so on&amp;hellip;&lt;/p&gt;
 &lt;p&gt;Anyway here&amp;rsquo;s what to do&amp;hellip;&lt;/p&gt;
-
 
 &lt;h3 class=&#34;relative group&#34;&gt;Mount Partition 
     &lt;div id=&#34;mount-partition&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
@@ -126,7 +130,6 @@
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo mount -o &lt;span class=&#34;nv&#34;&gt;subvol&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;@ /dev/sdXn /mnt &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;Linux Filesystem&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo mount -o &lt;span class=&#34;nv&#34;&gt;subvol&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;@ /dev/sdXn /mnt/boot/efi &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;EFI System&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
 &lt;h3 class=&#34;relative group&#34;&gt;Arch-Chroot 
     &lt;div id=&#34;arch-chroot&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
     
@@ -134,7 +137,6 @@
 &lt;p&gt;With this information, you are able to arch-chroot, and to be able to do that you need to have root permissions, so type the following command:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo arch-chroot /mnt
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
 &lt;h3 class=&#34;relative group&#34;&gt;Fix Grub boot 
     &lt;div id=&#34;fix-grub-boot&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
     

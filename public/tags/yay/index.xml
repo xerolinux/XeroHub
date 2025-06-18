@@ -15,26 +15,29 @@
       
       <guid>https://xerolinux.xyz/posts/install-yay-paru/</guid>
       <description>
-
 &lt;h3 class=&#34;relative group&#34;&gt;What Are Those? 
     &lt;div id=&#34;what-are-those&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
     
 &lt;/h3&gt;
 &lt;p&gt;Yay &amp;amp; Paru are &lt;strong&gt;AUR&lt;/strong&gt; Helpers. What&amp;rsquo;s that ? Well, an &lt;strong&gt;AUR&lt;/strong&gt; helper is a tool that automates the process of installing and managing packages from the Arch User Repository (AUR) on Arch Linux. The main purpose of AUR helpers is to simplify the installation and updating of AUR packages, which are not available in the official Arch Linux repositories&lt;/p&gt;
 &lt;p&gt;
-  &lt;figure&gt;
-    &lt;img class=&#34;my-0 rounded-md&#34; loading=&#34;lazy&#34; src=&#34;https://i.imgur.com/l2MiVr0.jpeg&#34; alt=&#34;[Image: l2MiVr0.jpeg]&#34; /&gt;
-    
-  &lt;/figure&gt;
-&lt;/p&gt;
 
+
+
+
+
+&lt;figure&gt;
+    &lt;img class=&#34;my-0 rounded-md&#34; loading=&#34;lazy&#34; alt=&#34;[Image: l2MiVr0.jpeg]&#34; src=&#34;https://i.imgur.com/l2MiVr0.jpeg&#34; /&gt;
+
+  
+&lt;/figure&gt;
+&lt;/p&gt;
 
 &lt;h3 class=&#34;relative group&#34;&gt;What is the difference between the two ? 
     &lt;div id=&#34;what-is-the-difference-between-the-two-&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
     
 &lt;/h3&gt;
 &lt;p&gt;The primary differences between the AUR helpers Yay and Paru lie in their underlying programming languages and some of their default settings and features. &lt;strong&gt;Yay&lt;/strong&gt; is written in &lt;strong&gt;Go&lt;/strong&gt;, while &lt;strong&gt;Paru&lt;/strong&gt; is implemented in the more efficient &lt;strong&gt;Rust&lt;/strong&gt; language, resulting in better performance. Additionally, Paru has some saner default settings, such as requiring users to review the PKGBUILD before installing a package, which is an important security consideration when working with the Arch User Repository. Yay, on the other hand, offers a unique &amp;ldquo;&amp;ndash;combinedupgrade&amp;rdquo; flag that provides a color-coded output to distinguish between repository and AUR package upgrades, a feature not present in Paru. In terms of active development, Paru is currently more actively maintained than Yay, though both continue to receive updates and improvements. The choice between the two ultimately comes down to personal preference and specific needs when managing packages from the AUR..&lt;/p&gt;
-
 
 &lt;h3 class=&#34;relative group&#34;&gt;Yay Installation : 
     &lt;div id=&#34;yay-installation-&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
@@ -44,7 +47,6 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;cd&lt;/span&gt; ~/yay-bin/ &lt;span class=&#34;o&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; makepkg -rsi --noconfirm
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;cd&lt;/span&gt; ~ &lt;span class=&#34;o&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; rm -Rf ~/yay-bin/
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
 &lt;h3 class=&#34;relative group&#34;&gt;Yay Configuration : 
     &lt;div id=&#34;yay-configuration-&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
     
@@ -52,7 +54,6 @@
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;yay -Y --devel --save &lt;span class=&#34;o&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; yay -Y --gendb
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sed -i &lt;span class=&#34;s1&#34;&gt;&amp;#39;s/&amp;#34;sudoloop&amp;#34;: false/&amp;#34;sudoloop&amp;#34;: true/&amp;#39;&lt;/span&gt; ~/.config/yay/config.json&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Anyway here&amp;rsquo;s how to proceed for Paru&amp;hellip;&lt;/p&gt;
-
 
 &lt;h3 class=&#34;relative group&#34;&gt;Paru Installation : 
     &lt;div id=&#34;paru-installation-&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
@@ -62,7 +63,6 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;cd&lt;/span&gt; ~/paru-bin/ &lt;span class=&#34;o&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; makepkg -rsi --noconfirm
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;cd&lt;/span&gt; ~ &lt;span class=&#34;o&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; rm -Rf ~/paru-bin/
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
 &lt;h3 class=&#34;relative group&#34;&gt;Paru Configuration : 
     &lt;div id=&#34;paru-configuration-&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
     
@@ -71,7 +71,6 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;SkipReview&amp;#34;&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; sudo tee -a /etc/paru.conf &amp;gt; /dev/null
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;paru --gendb&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
 &lt;h3 class=&#34;relative group&#34;&gt;Closing 
     &lt;div id=&#34;closing&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
     

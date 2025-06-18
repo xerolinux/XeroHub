@@ -15,19 +15,23 @@
       
       <guid>https://xerolinux.xyz/posts/chroot-guide/</guid>
       <description>
-
 &lt;h3 class=&#34;relative group&#34;&gt;Info 
     &lt;div id=&#34;info&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
     
 &lt;/h3&gt;
 &lt;p&gt;
-  &lt;figure&gt;
-    &lt;img class=&#34;my-0 rounded-md&#34; loading=&#34;lazy&#34; src=&#34;https://i.imgur.com/jll2heu.png&#34; alt=&#34;[Image: jll2heu.png]&#34; /&gt;
-    
-  &lt;/figure&gt;
+
+
+
+
+
+&lt;figure&gt;
+    &lt;img class=&#34;my-0 rounded-md&#34; loading=&#34;lazy&#34; alt=&#34;[Image: jll2heu.png]&#34; src=&#34;https://i.imgur.com/jll2heu.png&#34; /&gt;
+
+  
+&lt;/figure&gt;
 &lt;/p&gt;
 &lt;p&gt;Changing Root (Chroot) is the process of changing of the apparent disk root directory (and the current running process and its children) to another root directory. When you change root to another directory you cannot access files and commands outside that directory. This directory is called a “chroot jail”. Changing root is commonly done for system maintenance for such tasks as reinstalling GRUB or resetting a forgotten password. Changing root is often done from a LiveCD or LiveUSB into a mounted partition that contains an installed system.&lt;/p&gt;
-
 
 &lt;h3 class=&#34;relative group&#34;&gt;Requirements 
     &lt;div id=&#34;requirements&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
@@ -39,7 +43,6 @@
 &lt;li&gt;Be sure that the architectures of the Linux environment you have booted into matches the architecture of the root directory you wish to enter (i.e. i686, x86_64). You can find the architecture of your current environment by: &lt;code&gt;uname -m&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;If you need any kernel modules loaded in the chroot environment, load them before chrooting. It may also be useful to initialize your swap (&lt;code&gt;swapon /dev/&amp;lt;device-or-partition-name&amp;gt;&lt;/code&gt;) and to connect to your network before chrooting.&lt;/li&gt;
 &lt;/ul&gt;
-
 
 &lt;h3 class=&#34;relative group&#34;&gt;Mounting the device 
     &lt;div id=&#34;mounting-the-device&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
@@ -57,7 +60,6 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;then mount the returned mapper:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;udiskctl mount -b /dev/mapper/mapper_name
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
 &lt;h3 class=&#34;relative group&#34;&gt;Changing Root 
     &lt;div id=&#34;changing-root&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
     
@@ -82,7 +84,6 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;If your bash configuration doesn’t use a unique prompt, consider creating one to be able to differentiate your chroot environment:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;export&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;PS1&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;(chroot) &lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$PS1&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
 &lt;h3 class=&#34;relative group&#34;&gt;Perform System Maintenance 
     &lt;div id=&#34;perform-system-maintenance&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
     
@@ -100,7 +101,6 @@
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo arch-chroot /mnt/xero
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Now you’ve chrooted into your installed system, and you are able to access your files, install packages, or alter scripts to rescue your system.&lt;/p&gt;
 &lt;p&gt;To make sure &lt;code&gt;arch-chroot&lt;/code&gt; is working check after your users home folder ls &lt;code&gt;/home&lt;/code&gt; that should give your username from the installed system.&lt;/p&gt;
-
 
 &lt;h3 class=&#34;relative group&#34;&gt;Exiting chroot 
     &lt;div id=&#34;exiting-chroot&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
@@ -131,7 +131,6 @@
       
       <guid>https://xerolinux.xyz/posts/pacman-issues/</guid>
       <description>
-
 &lt;h3 class=&#34;relative group&#34;&gt;Info 
     &lt;div id=&#34;info&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
     

@@ -15,14 +15,12 @@
       
       <guid>https://xerolinux.xyz/posts/amelia-automated-archinstall/</guid>
       <description>
-
 &lt;h3 class=&#34;relative group&#34;&gt;Overview 
     &lt;div id=&#34;overview&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
     
 &lt;/h3&gt;
 &lt;p&gt;Meet &lt;strong&gt;Amelia&lt;/strong&gt; – your new best friend for installing ArchLinux! This Bash script is all about automation and ease, bringing you through the installation process with a slick &lt;strong&gt;TUI&lt;/strong&gt; interface that’s both stylish and user-friendly.&lt;/p&gt;
 &lt;p&gt;Arch Linux is legendary for its flexibility and simplicity, but let’s face it, installing it can be a bit of a headache. That’s where &lt;strong&gt;Amelia&lt;/strong&gt; comes in. This nifty tool mixes automation with interactivity, making the installation process a breeze without taking away any control from you, the user.&lt;/p&gt;
-
 
 &lt;h3 class=&#34;relative group&#34;&gt;Features 
     &lt;div id=&#34;features&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
@@ -32,12 +30,17 @@
 &lt;p&gt;Amelia is on the cutting edge with its approach to file systems and initialization. For instance, if you’re using &lt;code&gt;ext4&lt;/code&gt;, it bypasses the old &lt;code&gt;genfstab&lt;/code&gt; command and lets systemd handle the necessary setup. The same goes for initramfs – systemd takes over from the old base and udev combo, streamlining everything.&lt;/p&gt;
 &lt;p&gt;But don’t worry, control freaks! Amelia keeps you in the driver’s seat with interactive, menu-driven prompts that guide you through every step.&lt;/p&gt;
 &lt;p&gt;
-  &lt;figure&gt;
-    &lt;img class=&#34;my-0 rounded-md&#34; loading=&#34;lazy&#34; src=&#34;https://i.imgur.com/IJqFrXI.jpeg&#34; alt=&#34;Amelia&#34; /&gt;
-    
-  &lt;/figure&gt;
-&lt;/p&gt;
 
+
+
+
+
+&lt;figure&gt;
+    &lt;img class=&#34;my-0 rounded-md&#34; loading=&#34;lazy&#34; alt=&#34;Amelia&#34; src=&#34;https://i.imgur.com/IJqFrXI.jpeg&#34; /&gt;
+
+  
+&lt;/figure&gt;
+&lt;/p&gt;
 
 &lt;h3 class=&#34;relative group&#34;&gt;Disk Management 
     &lt;div id=&#34;disk-management&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
@@ -49,7 +52,6 @@
 &lt;p&gt;Advanced users will appreciate options for kernel selection and EFI boot management. Before kicking off the installation, Amelia checks for UEFI mode, internet connectivity, and updates the system clock to keep everything in sync.&lt;/p&gt;
 &lt;p&gt;For the pros, Amelia offers features like LUKS encryption for disk partitions and customization of the pacstrap process. Depending on your level of expertise and preferences, you can choose between automatic or manual partitioning and installation modes.&lt;/p&gt;
 
-
 &lt;h3 class=&#34;relative group&#34;&gt;Getting Started with Amelia 
     &lt;div id=&#34;getting-started-with-amelia&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
     
@@ -60,12 +62,17 @@
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sh Amelia.sh
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;When the installation wraps up, you’ll get a confirmation screen. Reboot your computer, and voila – your shiny new Arch Linux system is ready to roll.&lt;/p&gt;
 &lt;p&gt;
-  &lt;figure&gt;
-    &lt;img class=&#34;my-0 rounded-md&#34; loading=&#34;lazy&#34; src=&#34;https://i.imgur.com/21bSdkY.jpeg&#34; alt=&#34;[AmeliaMain]&#34; /&gt;
-    
-  &lt;/figure&gt;
-&lt;/p&gt;
 
+
+
+
+
+&lt;figure&gt;
+    &lt;img class=&#34;my-0 rounded-md&#34; loading=&#34;lazy&#34; alt=&#34;[AmeliaMain]&#34; src=&#34;https://i.imgur.com/21bSdkY.jpeg&#34; /&gt;
+
+  
+&lt;/figure&gt;
+&lt;/p&gt;
 
 &lt;h3 class=&#34;relative group&#34;&gt;Final Thoughts 
     &lt;div id=&#34;final-thoughts&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
@@ -79,6 +86,7 @@
 &lt;p&gt;In summary, &lt;strong&gt;Amelia&lt;/strong&gt; is a fantastic tool for streamlining the Arch Linux installation process. It’s a huge time-saver for seasoned users, handling much of the manual setup automatically.&lt;/p&gt;
 &lt;p&gt;For those of you still nervous about installing Arch, don’t fret – this script comes to the rescue.&lt;/p&gt;
 &lt;p&gt;For more details on Amelia, check out its &lt;strong&gt;GitLab&lt;/strong&gt; page.&lt;/p&gt;
+&lt;div class=&#34;gitlab-card-wrapper&#34;&gt;
 &lt;a id=&#34;gitlab-b5993c5970e77657baffddc647ed112c&#34; target=&#34;_blank&#34; href=&#34;https://gitlab.com/prism7/archery&#34; class=&#34;cursor-pointer&#34;&gt;
   &lt;div class=&#34;w-full md:w-auto pt-3 p-5 border border-neutral-200 dark:border-neutral-700 border rounded-md shadow-2xl&#34;&gt;
 
@@ -148,6 +156,7 @@
       .catch(error =&gt; console.error(error))
   &lt;/script&gt;
 &lt;/a&gt;
+&lt;/div&gt;
 </description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/amelia-automated-archinstall/featured.webp" />
     </item>
