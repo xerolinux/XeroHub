@@ -1,8 +1,8 @@
 ---
-title: "XeroLinux Wayland"
+title: "XeroLinux Moves to Wayland"
 date: 2025-06-23
 draft: false
-description: "XeroLinux Moves to Wayland"
+description: "Wayland by default"
 tags: ["XeroLinux", "Distro", "Wayland", "X11"]
 ---
 ## Intro
