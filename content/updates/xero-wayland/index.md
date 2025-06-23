@@ -29,6 +29,10 @@ This ensures you can continue using **XeroLinux** your way, even as we move forw
 
 Rest assured, even though **X11** is no longer included by default in **XeroLinux**, our commitment to supporting all users remains unwavering. We will continue to offer assistance and guidance to anyone who needs help with **X11** setups or troubleshooting.
 
+<p align="center">
+    <img width="750" src="https://i.imgur.com/FeBe8gQ.png" alt="X11">
+</p>
+
 Our goal is to provide a smooth, enjoyable experience for everyone, whether you’re embracing the future with **Wayland** or relying on **X11** for your workflow. Together, we’re building a vibrant, inclusive community that thrives on innovation and support.
 
 Cheers :heart:
