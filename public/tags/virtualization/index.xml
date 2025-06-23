@@ -48,7 +48,15 @@
     &lt;div id=&#34;issues&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
     
 &lt;/h3&gt;
-&lt;p&gt;If resolution does not get fixed and you are stuck at low, then you might need consult the follwing detailed Docs (Arch) &amp;raquo; &lt;a href=&#34;https://wiki.archlinux.org/title/VMware&#34; target=&#34;_blank&#34;&gt;&lt;strong&gt;VMWare Setup&lt;/strong&gt;&lt;/a&gt; or &lt;a href=&#34;https://wiki.archlinux.org/title/VMware/Install_Arch_Linux_as_a_guest#Open-VM-Tools&#34; target=&#34;_blank&#34;&gt;&lt;strong&gt;VMTools&lt;/strong&gt;&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;If resolution does not get fixed and you are stuck at low, then you might need consult the follwing detailed Docs (Arch) &amp;raquo; &lt;a
+  href=&#34;https://wiki.archlinux.org/title/VMware&#34;
+    target=&#34;_blank&#34;
+  &gt;&lt;strong&gt;VMWare Setup&lt;/strong&gt;&lt;/a&gt;
+ or &lt;a
+  href=&#34;https://wiki.archlinux.org/title/VMware/Install_Arch_Linux_as_a_guest#Open-VM-Tools&#34;
+    target=&#34;_blank&#34;
+  &gt;&lt;strong&gt;VMTools&lt;/strong&gt;&lt;/a&gt;
+.&lt;/p&gt;
 &lt;p&gt;If you are installing another guest, like &lt;strong&gt;Ubuntu&lt;/strong&gt;, &lt;strong&gt;Debian&lt;/strong&gt; or anything else you will have to find relevant info on your own, I only know and use &lt;strong&gt;Arch&lt;/strong&gt;.&lt;/p&gt;
 &lt;p&gt;Yet another tool to add to the arsenal. Best of luck.&lt;/p&gt;
 </description>

@@ -22,15 +22,20 @@
     
 &lt;/h3&gt;
 &lt;p&gt;&lt;strong&gt;nVidia&lt;/strong&gt; just released the &lt;strong&gt;R560&lt;/strong&gt; version of its drivers; which drops support for all GPUs that use the &lt;strong&gt;Pascal&lt;/strong&gt; architecture or &lt;em&gt;SOC&lt;/em&gt;. That includes all &lt;strong&gt;900 &amp;amp; 10&lt;/strong&gt; series cards, with exception of the &lt;strong&gt;1650ti&lt;/strong&gt; and &lt;strong&gt;1660ti&lt;/strong&gt;.&lt;/p&gt;
-&lt;p&gt;New drivers will default to using the &lt;a href=&#34;https://developer.nvidia.com/blog/nvidia-transitions-fully-towards-open-source-gpu-kernel-modules/&#34; target=&#34;_blank&#34;&gt;&lt;strong&gt;Open GPU Kernel Modules&lt;/strong&gt;&lt;/a&gt; which only support cards using the &lt;strong&gt;Turing&lt;/strong&gt; architecture and above moving forward.&lt;/p&gt;
+&lt;p&gt;New drivers will default to using the &lt;a
+  href=&#34;https://developer.nvidia.com/blog/nvidia-transitions-fully-towards-open-source-gpu-kernel-modules/&#34;
+    target=&#34;_blank&#34;
+  &gt;&lt;strong&gt;Open GPU Kernel Modules&lt;/strong&gt;&lt;/a&gt;
+ which only support cards using the &lt;strong&gt;Turing&lt;/strong&gt; architecture and above moving forward.&lt;/p&gt;
 &lt;p&gt;
 
 
 
 
 
+
 &lt;figure&gt;
-    &lt;img class=&#34;my-0 rounded-md&#34; loading=&#34;lazy&#34; alt=&#34;OpenKMS&#34; src=&#34;https://i.imgur.com/kFNHP1d.png&#34; /&gt;
+    &lt;img class=&#34;my-0 rounded-md&#34; loading=&#34;lazy&#34; alt=&#34;OpenKMS&#34; src=&#34;https://i.imgur.com/kFNHP1d.png&#34;&gt;
 
   
 &lt;/figure&gt;
@@ -57,8 +62,9 @@
 
 
 
+
 &lt;figure&gt;
-    &lt;img class=&#34;my-0 rounded-md&#34; loading=&#34;lazy&#34; alt=&#34;Pacman&#34; src=&#34;https://i.imgur.com/PzpOTPx.png&#34; /&gt;
+    &lt;img class=&#34;my-0 rounded-md&#34; loading=&#34;lazy&#34; alt=&#34;Pacman&#34; src=&#34;https://i.imgur.com/PzpOTPx.png&#34;&gt;
 
   
 &lt;/figure&gt;
@@ -121,40 +127,48 @@
 
 
 
+  
 
+  
+  
+  
 
+  
+  
+    
+  
 
+  
+    
+  
+
+  
+
+  
+
+  
+    
+  
+
+  
+    
+  
+
+  
+    
+  
+
+  
+
+  
 
   
 
 
-
-
-
-
-
-  
-
-
-
-  
-
-
-
-  
-
-
-
-
-
-
-
-
-
-&lt;div class=&#34;flex flex-row flex-wrap items-center&#34;&gt;
-  
-  
-  &lt;time datetime=&#34;2024-06-27T00:00:00&amp;#43;00:00&#34;&gt;27 June 2024&lt;/time&gt;&lt;span class=&#34;px-2 text-primary-500&#34;&gt;&amp;middot;&lt;/span&gt;&lt;span title=&#34;Reading time&#34;&gt;2 mins&lt;/span&gt;&lt;span class=&#34;px-2 text-primary-500&#34;&gt;&amp;middot;&lt;/span&gt;&lt;span&gt;
+  &lt;div class=&#34;flex flex-row flex-wrap items-center&#34;&gt;
+    
+    
+      &lt;time datetime=&#34;2024-06-27T00:00:00&amp;#43;00:00&#34;&gt;27 June 2024&lt;/time&gt;&lt;span class=&#34;px-2 text-primary-500&#34;&gt;&amp;middot;&lt;/span&gt;&lt;span title=&#34;Reading time&#34;&gt;2 mins&lt;/span&gt;&lt;span class=&#34;px-2 text-primary-500&#34;&gt;&amp;middot;&lt;/span&gt;&lt;span&gt;
   
   
     
@@ -167,7 +181,12 @@
       
     
   
-  &lt;span id=&#34;views_posts/warehouse-flatpak/index.md&#34; class=&#34;animate-pulse inline-block text-transparent max-h-3 rounded-full mt-[-2px] align-middle bg-neutral-300 dark:bg-neutral-400&#34; title=&#34;views&#34;&gt;loading&lt;/span&gt;
+  &lt;span
+    id=&#34;views_posts/warehouse-flatpak/index.md&#34;
+    class=&#34;animate-pulse inline-block text-transparent max-h-3 rounded-full mt-[-2px] align-middle bg-neutral-300 dark:bg-neutral-400&#34;
+    title=&#34;views&#34;
+    &gt;loading&lt;/span
+  &gt;
   &lt;span class=&#34;inline-block align-text-bottom&#34;&gt;
 
   &lt;span class=&#34;relative block icon&#34;&gt;
@@ -176,7 +195,8 @@
   &lt;/span&gt;
 
 &lt;/span&gt;
-&lt;/span&gt;&lt;span class=&#34;px-2 text-primary-500&#34;&gt;&amp;middot;&lt;/span&gt;&lt;span&gt;
+&lt;/span&gt;
+&lt;span class=&#34;px-2 text-primary-500&#34;&gt;&amp;middot;&lt;/span&gt;&lt;span&gt;
   
   
     
@@ -189,9 +209,12 @@
       
     
   
-  &lt;span id=&#34;likes_posts/warehouse-flatpak/index.md&#34;
+  &lt;span
+    id=&#34;likes_posts/warehouse-flatpak/index.md&#34;
     class=&#34;animate-pulse inline-block text-transparent max-h-3 rounded-full mt-[-2px] align-middle bg-neutral-300 dark:bg-neutral-400&#34;
-    title=&#34;likes&#34;&gt;loading&lt;/span&gt;
+    title=&#34;likes&#34;
+    &gt;loading&lt;/span
+  &gt;
   &lt;span class=&#34;inline-block align-text-bottom&#34;&gt;
 
   &lt;span class=&#34;relative block icon&#34;&gt;
@@ -201,91 +224,112 @@
 
 &lt;/span&gt;
 &lt;/span&gt;
+
+    
+
+    
+    
+  &lt;/div&gt;
+
+  
+    &lt;div class=&#34;flex flex-row flex-wrap items-center&#34;&gt;
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    &lt;/div&gt;
   
 
   
   
-&lt;/div&gt;
-
-
-&lt;div class=&#34;flex flex-row flex-wrap items-center&#34;&gt;
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-&lt;/div&gt;
-
-
-
-
-&lt;div class=&#34;flex flex-row flex-wrap items-center&#34;&gt;
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  &lt;span style=&#34;margin-top:0.5rem&#34; class=&#34;mr-2&#34; onclick=&#34;window.open(&amp;#34;/tags/flatpak/&amp;#34;,&#39;_self&#39;);return false;&#34;&gt;
-    &lt;span class=&#34;flex&#34; style=&#34;cursor: pointer;&#34;&gt;
-  &lt;span class=&#34;rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400&#34;&gt;
+    &lt;div class=&#34;flex flex-row flex-wrap items-center&#34;&gt;
+      
+        
+      
+        
+          
+        
+      
+        
+      
+        
+          
+            
+              &lt;span
+                class=&#34;mr-2 margin-top-[0.5rem]&#34;
+                onclick=&#34;window.open(&amp;#34;/tags/flatpak/&amp;#34;,&#39;_self&#39;);return false;&#34;&gt;
+                &lt;span class=&#34;flex cursor-pointer&#34;&gt;
+  &lt;span
+    class=&#34;rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400&#34;&gt;
     Flatpak
   &lt;/span&gt;
 &lt;/span&gt;
-  &lt;/span&gt;
-  
-  &lt;span style=&#34;margin-top:0.5rem&#34; class=&#34;mr-2&#34; onclick=&#34;window.open(&amp;#34;/tags/manager/&amp;#34;,&#39;_self&#39;);return false;&#34;&gt;
-    &lt;span class=&#34;flex&#34; style=&#34;cursor: pointer;&#34;&gt;
-  &lt;span class=&#34;rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400&#34;&gt;
+
+              &lt;/span&gt;
+            
+              &lt;span
+                class=&#34;mr-2 margin-top-[0.5rem]&#34;
+                onclick=&#34;window.open(&amp;#34;/tags/manager/&amp;#34;,&#39;_self&#39;);return false;&#34;&gt;
+                &lt;span class=&#34;flex cursor-pointer&#34;&gt;
+  &lt;span
+    class=&#34;rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400&#34;&gt;
     Manager
   &lt;/span&gt;
 &lt;/span&gt;
-  &lt;/span&gt;
-  
-  &lt;span style=&#34;margin-top:0.5rem&#34; class=&#34;mr-2&#34; onclick=&#34;window.open(&amp;#34;/tags/tools/&amp;#34;,&#39;_self&#39;);return false;&#34;&gt;
-    &lt;span class=&#34;flex&#34; style=&#34;cursor: pointer;&#34;&gt;
-  &lt;span class=&#34;rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400&#34;&gt;
+
+              &lt;/span&gt;
+            
+              &lt;span
+                class=&#34;mr-2 margin-top-[0.5rem]&#34;
+                onclick=&#34;window.open(&amp;#34;/tags/tools/&amp;#34;,&#39;_self&#39;);return false;&#34;&gt;
+                &lt;span class=&#34;flex cursor-pointer&#34;&gt;
+  &lt;span
+    class=&#34;rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400&#34;&gt;
     Tools
   &lt;/span&gt;
 &lt;/span&gt;
-  &lt;/span&gt;
-  
-  &lt;span style=&#34;margin-top:0.5rem&#34; class=&#34;mr-2&#34; onclick=&#34;window.open(&amp;#34;/tags/flathub/&amp;#34;,&#39;_self&#39;);return false;&#34;&gt;
-    &lt;span class=&#34;flex&#34; style=&#34;cursor: pointer;&#34;&gt;
-  &lt;span class=&#34;rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400&#34;&gt;
+
+              &lt;/span&gt;
+            
+              &lt;span
+                class=&#34;mr-2 margin-top-[0.5rem]&#34;
+                onclick=&#34;window.open(&amp;#34;/tags/flathub/&amp;#34;,&#39;_self&#39;);return false;&#34;&gt;
+                &lt;span class=&#34;flex cursor-pointer&#34;&gt;
+  &lt;span
+    class=&#34;rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400&#34;&gt;
     Flathub
   &lt;/span&gt;
 &lt;/span&gt;
-  &lt;/span&gt;
-  
-  &lt;span style=&#34;margin-top:0.5rem&#34; class=&#34;mr-2&#34; onclick=&#34;window.open(&amp;#34;/tags/linux/&amp;#34;,&#39;_self&#39;);return false;&#34;&gt;
-    &lt;span class=&#34;flex&#34; style=&#34;cursor: pointer;&#34;&gt;
-  &lt;span class=&#34;rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400&#34;&gt;
+
+              &lt;/span&gt;
+            
+              &lt;span
+                class=&#34;mr-2 margin-top-[0.5rem]&#34;
+                onclick=&#34;window.open(&amp;#34;/tags/linux/&amp;#34;,&#39;_self&#39;);return false;&#34;&gt;
+                &lt;span class=&#34;flex cursor-pointer&#34;&gt;
+  &lt;span
+    class=&#34;rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400&#34;&gt;
     Linux
   &lt;/span&gt;
 &lt;/span&gt;
-  &lt;/span&gt;
+
+              &lt;/span&gt;
+            
+          
+        
+      
+    &lt;/div&gt;
+  
+
   
   
-  
-  
-&lt;/div&gt;
-
-
-
-
 
 
 
@@ -304,8 +348,9 @@
 
 
 
+
 &lt;figure&gt;
-    &lt;img class=&#34;my-0 rounded-md&#34; loading=&#34;lazy&#34; alt=&#34;Warehouse&#34; src=&#34;https://i.imgur.com/s7aEmPu.png&#34; /&gt;
+    &lt;img class=&#34;my-0 rounded-md&#34; loading=&#34;lazy&#34; alt=&#34;Warehouse&#34; src=&#34;https://i.imgur.com/s7aEmPu.png&#34;&gt;
 
   
 &lt;/figure&gt;
@@ -370,40 +415,48 @@
 
 
 
+  
 
+  
+  
+  
 
+  
+  
+    
+  
 
+  
+    
+  
+
+  
+
+  
+
+  
+    
+  
+
+  
+    
+  
+
+  
+    
+  
+
+  
+
+  
 
   
 
 
-
-
-
-
-
-  
-
-
-
-  
-
-
-
-  
-
-
-
-
-
-
-
-
-
-&lt;div class=&#34;flex flex-row flex-wrap items-center&#34;&gt;
-  
-  
-  &lt;time datetime=&#34;2024-06-27T00:00:00&amp;#43;00:00&#34;&gt;27 June 2024&lt;/time&gt;&lt;span class=&#34;px-2 text-primary-500&#34;&gt;&amp;middot;&lt;/span&gt;&lt;span title=&#34;Reading time&#34;&gt;2 mins&lt;/span&gt;&lt;span class=&#34;px-2 text-primary-500&#34;&gt;&amp;middot;&lt;/span&gt;&lt;span&gt;
+  &lt;div class=&#34;flex flex-row flex-wrap items-center&#34;&gt;
+    
+    
+      &lt;time datetime=&#34;2024-06-27T00:00:00&amp;#43;00:00&#34;&gt;27 June 2024&lt;/time&gt;&lt;span class=&#34;px-2 text-primary-500&#34;&gt;&amp;middot;&lt;/span&gt;&lt;span title=&#34;Reading time&#34;&gt;2 mins&lt;/span&gt;&lt;span class=&#34;px-2 text-primary-500&#34;&gt;&amp;middot;&lt;/span&gt;&lt;span&gt;
   
   
     
@@ -416,7 +469,12 @@
       
     
   
-  &lt;span id=&#34;views_posts/downgrade-tool/index.md&#34; class=&#34;animate-pulse inline-block text-transparent max-h-3 rounded-full mt-[-2px] align-middle bg-neutral-300 dark:bg-neutral-400&#34; title=&#34;views&#34;&gt;loading&lt;/span&gt;
+  &lt;span
+    id=&#34;views_posts/downgrade-tool/index.md&#34;
+    class=&#34;animate-pulse inline-block text-transparent max-h-3 rounded-full mt-[-2px] align-middle bg-neutral-300 dark:bg-neutral-400&#34;
+    title=&#34;views&#34;
+    &gt;loading&lt;/span
+  &gt;
   &lt;span class=&#34;inline-block align-text-bottom&#34;&gt;
 
   &lt;span class=&#34;relative block icon&#34;&gt;
@@ -425,7 +483,8 @@
   &lt;/span&gt;
 
 &lt;/span&gt;
-&lt;/span&gt;&lt;span class=&#34;px-2 text-primary-500&#34;&gt;&amp;middot;&lt;/span&gt;&lt;span&gt;
+&lt;/span&gt;
+&lt;span class=&#34;px-2 text-primary-500&#34;&gt;&amp;middot;&lt;/span&gt;&lt;span&gt;
   
   
     
@@ -438,9 +497,12 @@
       
     
   
-  &lt;span id=&#34;likes_posts/downgrade-tool/index.md&#34;
+  &lt;span
+    id=&#34;likes_posts/downgrade-tool/index.md&#34;
     class=&#34;animate-pulse inline-block text-transparent max-h-3 rounded-full mt-[-2px] align-middle bg-neutral-300 dark:bg-neutral-400&#34;
-    title=&#34;likes&#34;&gt;loading&lt;/span&gt;
+    title=&#34;likes&#34;
+    &gt;loading&lt;/span
+  &gt;
   &lt;span class=&#34;inline-block align-text-bottom&#34;&gt;
 
   &lt;span class=&#34;relative block icon&#34;&gt;
@@ -450,83 +512,100 @@
 
 &lt;/span&gt;
 &lt;/span&gt;
+
+    
+
+    
+    
+  &lt;/div&gt;
+
+  
+    &lt;div class=&#34;flex flex-row flex-wrap items-center&#34;&gt;
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    &lt;/div&gt;
   
 
   
   
-&lt;/div&gt;
-
-
-&lt;div class=&#34;flex flex-row flex-wrap items-center&#34;&gt;
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-&lt;/div&gt;
-
-
-
-
-&lt;div class=&#34;flex flex-row flex-wrap items-center&#34;&gt;
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  &lt;span style=&#34;margin-top:0.5rem&#34; class=&#34;mr-2&#34; onclick=&#34;window.open(&amp;#34;/tags/downgrade/&amp;#34;,&#39;_self&#39;);return false;&#34;&gt;
-    &lt;span class=&#34;flex&#34; style=&#34;cursor: pointer;&#34;&gt;
-  &lt;span class=&#34;rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400&#34;&gt;
+    &lt;div class=&#34;flex flex-row flex-wrap items-center&#34;&gt;
+      
+        
+      
+        
+          
+        
+      
+        
+      
+        
+          
+            
+              &lt;span
+                class=&#34;mr-2 margin-top-[0.5rem]&#34;
+                onclick=&#34;window.open(&amp;#34;/tags/downgrade/&amp;#34;,&#39;_self&#39;);return false;&#34;&gt;
+                &lt;span class=&#34;flex cursor-pointer&#34;&gt;
+  &lt;span
+    class=&#34;rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400&#34;&gt;
     Downgrade
   &lt;/span&gt;
 &lt;/span&gt;
-  &lt;/span&gt;
-  
-  &lt;span style=&#34;margin-top:0.5rem&#34; class=&#34;mr-2&#34; onclick=&#34;window.open(&amp;#34;/tags/archlinux/&amp;#34;,&#39;_self&#39;);return false;&#34;&gt;
-    &lt;span class=&#34;flex&#34; style=&#34;cursor: pointer;&#34;&gt;
-  &lt;span class=&#34;rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400&#34;&gt;
+
+              &lt;/span&gt;
+            
+              &lt;span
+                class=&#34;mr-2 margin-top-[0.5rem]&#34;
+                onclick=&#34;window.open(&amp;#34;/tags/archlinux/&amp;#34;,&#39;_self&#39;);return false;&#34;&gt;
+                &lt;span class=&#34;flex cursor-pointer&#34;&gt;
+  &lt;span
+    class=&#34;rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400&#34;&gt;
     ArchLinux
   &lt;/span&gt;
 &lt;/span&gt;
-  &lt;/span&gt;
-  
-  &lt;span style=&#34;margin-top:0.5rem&#34; class=&#34;mr-2&#34; onclick=&#34;window.open(&amp;#34;/tags/guide/&amp;#34;,&#39;_self&#39;);return false;&#34;&gt;
-    &lt;span class=&#34;flex&#34; style=&#34;cursor: pointer;&#34;&gt;
-  &lt;span class=&#34;rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400&#34;&gt;
+
+              &lt;/span&gt;
+            
+              &lt;span
+                class=&#34;mr-2 margin-top-[0.5rem]&#34;
+                onclick=&#34;window.open(&amp;#34;/tags/guide/&amp;#34;,&#39;_self&#39;);return false;&#34;&gt;
+                &lt;span class=&#34;flex cursor-pointer&#34;&gt;
+  &lt;span
+    class=&#34;rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400&#34;&gt;
     Guide
   &lt;/span&gt;
 &lt;/span&gt;
-  &lt;/span&gt;
-  
-  &lt;span style=&#34;margin-top:0.5rem&#34; class=&#34;mr-2&#34; onclick=&#34;window.open(&amp;#34;/tags/linux/&amp;#34;,&#39;_self&#39;);return false;&#34;&gt;
-    &lt;span class=&#34;flex&#34; style=&#34;cursor: pointer;&#34;&gt;
-  &lt;span class=&#34;rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400&#34;&gt;
+
+              &lt;/span&gt;
+            
+              &lt;span
+                class=&#34;mr-2 margin-top-[0.5rem]&#34;
+                onclick=&#34;window.open(&amp;#34;/tags/linux/&amp;#34;,&#39;_self&#39;);return false;&#34;&gt;
+                &lt;span class=&#34;flex cursor-pointer&#34;&gt;
+  &lt;span
+    class=&#34;rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400&#34;&gt;
     Linux
   &lt;/span&gt;
 &lt;/span&gt;
-  &lt;/span&gt;
+
+              &lt;/span&gt;
+            
+          
+        
+      
+    &lt;/div&gt;
+  
+
   
   
-  
-  
-&lt;/div&gt;
-
-
-
-
 
 
 
@@ -596,40 +675,48 @@
 
 
 
+  
 
+  
+  
+  
 
+  
+  
+    
+  
 
+  
+    
+  
+
+  
+
+  
+
+  
+    
+  
+
+  
+    
+  
+
+  
+    
+  
+
+  
+
+  
 
   
 
 
-
-
-
-
-
-  
-
-
-
-  
-
-
-
-  
-
-
-
-
-
-
-
-
-
-&lt;div class=&#34;flex flex-row flex-wrap items-center&#34;&gt;
-  
-  
-  &lt;time datetime=&#34;2024-06-27T00:00:00&amp;#43;00:00&#34;&gt;27 June 2024&lt;/time&gt;&lt;span class=&#34;px-2 text-primary-500&#34;&gt;&amp;middot;&lt;/span&gt;&lt;span title=&#34;Reading time&#34;&gt;2 mins&lt;/span&gt;&lt;span class=&#34;px-2 text-primary-500&#34;&gt;&amp;middot;&lt;/span&gt;&lt;span&gt;
+  &lt;div class=&#34;flex flex-row flex-wrap items-center&#34;&gt;
+    
+    
+      &lt;time datetime=&#34;2024-06-27T00:00:00&amp;#43;00:00&#34;&gt;27 June 2024&lt;/time&gt;&lt;span class=&#34;px-2 text-primary-500&#34;&gt;&amp;middot;&lt;/span&gt;&lt;span title=&#34;Reading time&#34;&gt;2 mins&lt;/span&gt;&lt;span class=&#34;px-2 text-primary-500&#34;&gt;&amp;middot;&lt;/span&gt;&lt;span&gt;
   
   
     
@@ -642,7 +729,12 @@
       
     
   
-  &lt;span id=&#34;views_posts/install-yay-paru/index.md&#34; class=&#34;animate-pulse inline-block text-transparent max-h-3 rounded-full mt-[-2px] align-middle bg-neutral-300 dark:bg-neutral-400&#34; title=&#34;views&#34;&gt;loading&lt;/span&gt;
+  &lt;span
+    id=&#34;views_posts/install-yay-paru/index.md&#34;
+    class=&#34;animate-pulse inline-block text-transparent max-h-3 rounded-full mt-[-2px] align-middle bg-neutral-300 dark:bg-neutral-400&#34;
+    title=&#34;views&#34;
+    &gt;loading&lt;/span
+  &gt;
   &lt;span class=&#34;inline-block align-text-bottom&#34;&gt;
 
   &lt;span class=&#34;relative block icon&#34;&gt;
@@ -651,7 +743,8 @@
   &lt;/span&gt;
 
 &lt;/span&gt;
-&lt;/span&gt;&lt;span class=&#34;px-2 text-primary-500&#34;&gt;&amp;middot;&lt;/span&gt;&lt;span&gt;
+&lt;/span&gt;
+&lt;span class=&#34;px-2 text-primary-500&#34;&gt;&amp;middot;&lt;/span&gt;&lt;span&gt;
   
   
     
@@ -664,9 +757,12 @@
       
     
   
-  &lt;span id=&#34;likes_posts/install-yay-paru/index.md&#34;
+  &lt;span
+    id=&#34;likes_posts/install-yay-paru/index.md&#34;
     class=&#34;animate-pulse inline-block text-transparent max-h-3 rounded-full mt-[-2px] align-middle bg-neutral-300 dark:bg-neutral-400&#34;
-    title=&#34;likes&#34;&gt;loading&lt;/span&gt;
+    title=&#34;likes&#34;
+    &gt;loading&lt;/span
+  &gt;
   &lt;span class=&#34;inline-block align-text-bottom&#34;&gt;
 
   &lt;span class=&#34;relative block icon&#34;&gt;
@@ -676,107 +772,136 @@
 
 &lt;/span&gt;
 &lt;/span&gt;
+
+    
+
+    
+    
+  &lt;/div&gt;
+
+  
+    &lt;div class=&#34;flex flex-row flex-wrap items-center&#34;&gt;
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    &lt;/div&gt;
   
 
   
   
-&lt;/div&gt;
-
-
-&lt;div class=&#34;flex flex-row flex-wrap items-center&#34;&gt;
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-&lt;/div&gt;
-
-
-
-
-&lt;div class=&#34;flex flex-row flex-wrap items-center&#34;&gt;
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  &lt;span style=&#34;margin-top:0.5rem&#34; class=&#34;mr-2&#34; onclick=&#34;window.open(&amp;#34;/tags/yay/&amp;#34;,&#39;_self&#39;);return false;&#34;&gt;
-    &lt;span class=&#34;flex&#34; style=&#34;cursor: pointer;&#34;&gt;
-  &lt;span class=&#34;rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400&#34;&gt;
+    &lt;div class=&#34;flex flex-row flex-wrap items-center&#34;&gt;
+      
+        
+      
+        
+          
+        
+      
+        
+      
+        
+          
+            
+              &lt;span
+                class=&#34;mr-2 margin-top-[0.5rem]&#34;
+                onclick=&#34;window.open(&amp;#34;/tags/yay/&amp;#34;,&#39;_self&#39;);return false;&#34;&gt;
+                &lt;span class=&#34;flex cursor-pointer&#34;&gt;
+  &lt;span
+    class=&#34;rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400&#34;&gt;
     Yay
   &lt;/span&gt;
 &lt;/span&gt;
-  &lt;/span&gt;
-  
-  &lt;span style=&#34;margin-top:0.5rem&#34; class=&#34;mr-2&#34; onclick=&#34;window.open(&amp;#34;/tags/paru/&amp;#34;,&#39;_self&#39;);return false;&#34;&gt;
-    &lt;span class=&#34;flex&#34; style=&#34;cursor: pointer;&#34;&gt;
-  &lt;span class=&#34;rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400&#34;&gt;
+
+              &lt;/span&gt;
+            
+              &lt;span
+                class=&#34;mr-2 margin-top-[0.5rem]&#34;
+                onclick=&#34;window.open(&amp;#34;/tags/paru/&amp;#34;,&#39;_self&#39;);return false;&#34;&gt;
+                &lt;span class=&#34;flex cursor-pointer&#34;&gt;
+  &lt;span
+    class=&#34;rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400&#34;&gt;
     Paru
   &lt;/span&gt;
 &lt;/span&gt;
-  &lt;/span&gt;
-  
-  &lt;span style=&#34;margin-top:0.5rem&#34; class=&#34;mr-2&#34; onclick=&#34;window.open(&amp;#34;/tags/aur/&amp;#34;,&#39;_self&#39;);return false;&#34;&gt;
-    &lt;span class=&#34;flex&#34; style=&#34;cursor: pointer;&#34;&gt;
-  &lt;span class=&#34;rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400&#34;&gt;
+
+              &lt;/span&gt;
+            
+              &lt;span
+                class=&#34;mr-2 margin-top-[0.5rem]&#34;
+                onclick=&#34;window.open(&amp;#34;/tags/aur/&amp;#34;,&#39;_self&#39;);return false;&#34;&gt;
+                &lt;span class=&#34;flex cursor-pointer&#34;&gt;
+  &lt;span
+    class=&#34;rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400&#34;&gt;
     AUR
   &lt;/span&gt;
 &lt;/span&gt;
-  &lt;/span&gt;
-  
-  &lt;span style=&#34;margin-top:0.5rem&#34; class=&#34;mr-2&#34; onclick=&#34;window.open(&amp;#34;/tags/guide/&amp;#34;,&#39;_self&#39;);return false;&#34;&gt;
-    &lt;span class=&#34;flex&#34; style=&#34;cursor: pointer;&#34;&gt;
-  &lt;span class=&#34;rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400&#34;&gt;
+
+              &lt;/span&gt;
+            
+              &lt;span
+                class=&#34;mr-2 margin-top-[0.5rem]&#34;
+                onclick=&#34;window.open(&amp;#34;/tags/guide/&amp;#34;,&#39;_self&#39;);return false;&#34;&gt;
+                &lt;span class=&#34;flex cursor-pointer&#34;&gt;
+  &lt;span
+    class=&#34;rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400&#34;&gt;
     Guide
   &lt;/span&gt;
 &lt;/span&gt;
-  &lt;/span&gt;
-  
-  &lt;span style=&#34;margin-top:0.5rem&#34; class=&#34;mr-2&#34; onclick=&#34;window.open(&amp;#34;/tags/linux/&amp;#34;,&#39;_self&#39;);return false;&#34;&gt;
-    &lt;span class=&#34;flex&#34; style=&#34;cursor: pointer;&#34;&gt;
-  &lt;span class=&#34;rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400&#34;&gt;
+
+              &lt;/span&gt;
+            
+              &lt;span
+                class=&#34;mr-2 margin-top-[0.5rem]&#34;
+                onclick=&#34;window.open(&amp;#34;/tags/linux/&amp;#34;,&#39;_self&#39;);return false;&#34;&gt;
+                &lt;span class=&#34;flex cursor-pointer&#34;&gt;
+  &lt;span
+    class=&#34;rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400&#34;&gt;
     Linux
   &lt;/span&gt;
 &lt;/span&gt;
-  &lt;/span&gt;
-  
-  &lt;span style=&#34;margin-top:0.5rem&#34; class=&#34;mr-2&#34; onclick=&#34;window.open(&amp;#34;/tags/arch/&amp;#34;,&#39;_self&#39;);return false;&#34;&gt;
-    &lt;span class=&#34;flex&#34; style=&#34;cursor: pointer;&#34;&gt;
-  &lt;span class=&#34;rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400&#34;&gt;
+
+              &lt;/span&gt;
+            
+              &lt;span
+                class=&#34;mr-2 margin-top-[0.5rem]&#34;
+                onclick=&#34;window.open(&amp;#34;/tags/arch/&amp;#34;,&#39;_self&#39;);return false;&#34;&gt;
+                &lt;span class=&#34;flex cursor-pointer&#34;&gt;
+  &lt;span
+    class=&#34;rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400&#34;&gt;
     Arch
   &lt;/span&gt;
 &lt;/span&gt;
-  &lt;/span&gt;
-  
-  &lt;span style=&#34;margin-top:0.5rem&#34; class=&#34;mr-2&#34; onclick=&#34;window.open(&amp;#34;/tags/archlinux/&amp;#34;,&#39;_self&#39;);return false;&#34;&gt;
-    &lt;span class=&#34;flex&#34; style=&#34;cursor: pointer;&#34;&gt;
-  &lt;span class=&#34;rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400&#34;&gt;
+
+              &lt;/span&gt;
+            
+              &lt;span
+                class=&#34;mr-2 margin-top-[0.5rem]&#34;
+                onclick=&#34;window.open(&amp;#34;/tags/archlinux/&amp;#34;,&#39;_self&#39;);return false;&#34;&gt;
+                &lt;span class=&#34;flex cursor-pointer&#34;&gt;
+  &lt;span
+    class=&#34;rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400&#34;&gt;
     ArchLinux
   &lt;/span&gt;
 &lt;/span&gt;
-  &lt;/span&gt;
+
+              &lt;/span&gt;
+            
+          
+        
+      
+    &lt;/div&gt;
+  
+
   
   
-  
-  
-&lt;/div&gt;
-
-
-
-
 
 
 
@@ -853,40 +978,48 @@
 
 
 
+  
 
+  
+  
+  
 
+  
+  
+    
+  
 
+  
+    
+  
+
+  
+
+  
+
+  
+    
+  
+
+  
+    
+  
+
+  
+    
+  
+
+  
+
+  
 
   
 
 
-
-
-
-
-
-  
-
-
-
-  
-
-
-
-  
-
-
-
-
-
-
-
-
-
-&lt;div class=&#34;flex flex-row flex-wrap items-center&#34;&gt;
-  
-  
-  &lt;time datetime=&#34;2024-06-27T00:00:00&amp;#43;00:00&#34;&gt;27 June 2024&lt;/time&gt;&lt;span class=&#34;px-2 text-primary-500&#34;&gt;&amp;middot;&lt;/span&gt;&lt;span title=&#34;Reading time&#34;&gt;2 mins&lt;/span&gt;&lt;span class=&#34;px-2 text-primary-500&#34;&gt;&amp;middot;&lt;/span&gt;&lt;span&gt;
+  &lt;div class=&#34;flex flex-row flex-wrap items-center&#34;&gt;
+    
+    
+      &lt;time datetime=&#34;2024-06-27T00:00:00&amp;#43;00:00&#34;&gt;27 June 2024&lt;/time&gt;&lt;span class=&#34;px-2 text-primary-500&#34;&gt;&amp;middot;&lt;/span&gt;&lt;span title=&#34;Reading time&#34;&gt;2 mins&lt;/span&gt;&lt;span class=&#34;px-2 text-primary-500&#34;&gt;&amp;middot;&lt;/span&gt;&lt;span&gt;
   
   
     
@@ -899,7 +1032,12 @@
       
     
   
-  &lt;span id=&#34;views_posts/tkg-nvidia-all/index.md&#34; class=&#34;animate-pulse inline-block text-transparent max-h-3 rounded-full mt-[-2px] align-middle bg-neutral-300 dark:bg-neutral-400&#34; title=&#34;views&#34;&gt;loading&lt;/span&gt;
+  &lt;span
+    id=&#34;views_posts/tkg-nvidia-all/index.md&#34;
+    class=&#34;animate-pulse inline-block text-transparent max-h-3 rounded-full mt-[-2px] align-middle bg-neutral-300 dark:bg-neutral-400&#34;
+    title=&#34;views&#34;
+    &gt;loading&lt;/span
+  &gt;
   &lt;span class=&#34;inline-block align-text-bottom&#34;&gt;
 
   &lt;span class=&#34;relative block icon&#34;&gt;
@@ -908,7 +1046,8 @@
   &lt;/span&gt;
 
 &lt;/span&gt;
-&lt;/span&gt;&lt;span class=&#34;px-2 text-primary-500&#34;&gt;&amp;middot;&lt;/span&gt;&lt;span&gt;
+&lt;/span&gt;
+&lt;span class=&#34;px-2 text-primary-500&#34;&gt;&amp;middot;&lt;/span&gt;&lt;span&gt;
   
   
     
@@ -921,9 +1060,12 @@
       
     
   
-  &lt;span id=&#34;likes_posts/tkg-nvidia-all/index.md&#34;
+  &lt;span
+    id=&#34;likes_posts/tkg-nvidia-all/index.md&#34;
     class=&#34;animate-pulse inline-block text-transparent max-h-3 rounded-full mt-[-2px] align-middle bg-neutral-300 dark:bg-neutral-400&#34;
-    title=&#34;likes&#34;&gt;loading&lt;/span&gt;
+    title=&#34;likes&#34;
+    &gt;loading&lt;/span
+  &gt;
   &lt;span class=&#34;inline-block align-text-bottom&#34;&gt;
 
   &lt;span class=&#34;relative block icon&#34;&gt;
@@ -933,115 +1075,148 @@
 
 &lt;/span&gt;
 &lt;/span&gt;
+
+    
+
+    
+    
+  &lt;/div&gt;
+
+  
+    &lt;div class=&#34;flex flex-row flex-wrap items-center&#34;&gt;
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    &lt;/div&gt;
   
 
   
   
-&lt;/div&gt;
-
-
-&lt;div class=&#34;flex flex-row flex-wrap items-center&#34;&gt;
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-&lt;/div&gt;
-
-
-
-
-&lt;div class=&#34;flex flex-row flex-wrap items-center&#34;&gt;
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  &lt;span style=&#34;margin-top:0.5rem&#34; class=&#34;mr-2&#34; onclick=&#34;window.open(&amp;#34;/tags/nvidia/&amp;#34;,&#39;_self&#39;);return false;&#34;&gt;
-    &lt;span class=&#34;flex&#34; style=&#34;cursor: pointer;&#34;&gt;
-  &lt;span class=&#34;rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400&#34;&gt;
+    &lt;div class=&#34;flex flex-row flex-wrap items-center&#34;&gt;
+      
+        
+      
+        
+          
+        
+      
+        
+      
+        
+          
+            
+              &lt;span
+                class=&#34;mr-2 margin-top-[0.5rem]&#34;
+                onclick=&#34;window.open(&amp;#34;/tags/nvidia/&amp;#34;,&#39;_self&#39;);return false;&#34;&gt;
+                &lt;span class=&#34;flex cursor-pointer&#34;&gt;
+  &lt;span
+    class=&#34;rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400&#34;&gt;
     Nvidia
   &lt;/span&gt;
 &lt;/span&gt;
-  &lt;/span&gt;
-  
-  &lt;span style=&#34;margin-top:0.5rem&#34; class=&#34;mr-2&#34; onclick=&#34;window.open(&amp;#34;/tags/drivers/&amp;#34;,&#39;_self&#39;);return false;&#34;&gt;
-    &lt;span class=&#34;flex&#34; style=&#34;cursor: pointer;&#34;&gt;
-  &lt;span class=&#34;rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400&#34;&gt;
+
+              &lt;/span&gt;
+            
+              &lt;span
+                class=&#34;mr-2 margin-top-[0.5rem]&#34;
+                onclick=&#34;window.open(&amp;#34;/tags/drivers/&amp;#34;,&#39;_self&#39;);return false;&#34;&gt;
+                &lt;span class=&#34;flex cursor-pointer&#34;&gt;
+  &lt;span
+    class=&#34;rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400&#34;&gt;
     Drivers
   &lt;/span&gt;
 &lt;/span&gt;
-  &lt;/span&gt;
-  
-  &lt;span style=&#34;margin-top:0.5rem&#34; class=&#34;mr-2&#34; onclick=&#34;window.open(&amp;#34;/tags/gpu/&amp;#34;,&#39;_self&#39;);return false;&#34;&gt;
-    &lt;span class=&#34;flex&#34; style=&#34;cursor: pointer;&#34;&gt;
-  &lt;span class=&#34;rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400&#34;&gt;
+
+              &lt;/span&gt;
+            
+              &lt;span
+                class=&#34;mr-2 margin-top-[0.5rem]&#34;
+                onclick=&#34;window.open(&amp;#34;/tags/gpu/&amp;#34;,&#39;_self&#39;);return false;&#34;&gt;
+                &lt;span class=&#34;flex cursor-pointer&#34;&gt;
+  &lt;span
+    class=&#34;rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400&#34;&gt;
     Gpu
   &lt;/span&gt;
 &lt;/span&gt;
-  &lt;/span&gt;
-  
-  &lt;span style=&#34;margin-top:0.5rem&#34; class=&#34;mr-2&#34; onclick=&#34;window.open(&amp;#34;/tags/legacy/&amp;#34;,&#39;_self&#39;);return false;&#34;&gt;
-    &lt;span class=&#34;flex&#34; style=&#34;cursor: pointer;&#34;&gt;
-  &lt;span class=&#34;rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400&#34;&gt;
+
+              &lt;/span&gt;
+            
+              &lt;span
+                class=&#34;mr-2 margin-top-[0.5rem]&#34;
+                onclick=&#34;window.open(&amp;#34;/tags/legacy/&amp;#34;,&#39;_self&#39;);return false;&#34;&gt;
+                &lt;span class=&#34;flex cursor-pointer&#34;&gt;
+  &lt;span
+    class=&#34;rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400&#34;&gt;
     Legacy
   &lt;/span&gt;
 &lt;/span&gt;
-  &lt;/span&gt;
-  
-  &lt;span style=&#34;margin-top:0.5rem&#34; class=&#34;mr-2&#34; onclick=&#34;window.open(&amp;#34;/tags/linux/&amp;#34;,&#39;_self&#39;);return false;&#34;&gt;
-    &lt;span class=&#34;flex&#34; style=&#34;cursor: pointer;&#34;&gt;
-  &lt;span class=&#34;rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400&#34;&gt;
+
+              &lt;/span&gt;
+            
+              &lt;span
+                class=&#34;mr-2 margin-top-[0.5rem]&#34;
+                onclick=&#34;window.open(&amp;#34;/tags/linux/&amp;#34;,&#39;_self&#39;);return false;&#34;&gt;
+                &lt;span class=&#34;flex cursor-pointer&#34;&gt;
+  &lt;span
+    class=&#34;rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400&#34;&gt;
     Linux
   &lt;/span&gt;
 &lt;/span&gt;
-  &lt;/span&gt;
-  
-  &lt;span style=&#34;margin-top:0.5rem&#34; class=&#34;mr-2&#34; onclick=&#34;window.open(&amp;#34;/tags/opensource/&amp;#34;,&#39;_self&#39;);return false;&#34;&gt;
-    &lt;span class=&#34;flex&#34; style=&#34;cursor: pointer;&#34;&gt;
-  &lt;span class=&#34;rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400&#34;&gt;
+
+              &lt;/span&gt;
+            
+              &lt;span
+                class=&#34;mr-2 margin-top-[0.5rem]&#34;
+                onclick=&#34;window.open(&amp;#34;/tags/opensource/&amp;#34;,&#39;_self&#39;);return false;&#34;&gt;
+                &lt;span class=&#34;flex cursor-pointer&#34;&gt;
+  &lt;span
+    class=&#34;rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400&#34;&gt;
     Opensource
   &lt;/span&gt;
 &lt;/span&gt;
-  &lt;/span&gt;
-  
-  &lt;span style=&#34;margin-top:0.5rem&#34; class=&#34;mr-2&#34; onclick=&#34;window.open(&amp;#34;/tags/bash/&amp;#34;,&#39;_self&#39;);return false;&#34;&gt;
-    &lt;span class=&#34;flex&#34; style=&#34;cursor: pointer;&#34;&gt;
-  &lt;span class=&#34;rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400&#34;&gt;
+
+              &lt;/span&gt;
+            
+              &lt;span
+                class=&#34;mr-2 margin-top-[0.5rem]&#34;
+                onclick=&#34;window.open(&amp;#34;/tags/bash/&amp;#34;,&#39;_self&#39;);return false;&#34;&gt;
+                &lt;span class=&#34;flex cursor-pointer&#34;&gt;
+  &lt;span
+    class=&#34;rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400&#34;&gt;
     Bash
   &lt;/span&gt;
 &lt;/span&gt;
-  &lt;/span&gt;
-  
-  &lt;span style=&#34;margin-top:0.5rem&#34; class=&#34;mr-2&#34; onclick=&#34;window.open(&amp;#34;/tags/script/&amp;#34;,&#39;_self&#39;);return false;&#34;&gt;
-    &lt;span class=&#34;flex&#34; style=&#34;cursor: pointer;&#34;&gt;
-  &lt;span class=&#34;rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400&#34;&gt;
+
+              &lt;/span&gt;
+            
+              &lt;span
+                class=&#34;mr-2 margin-top-[0.5rem]&#34;
+                onclick=&#34;window.open(&amp;#34;/tags/script/&amp;#34;,&#39;_self&#39;);return false;&#34;&gt;
+                &lt;span class=&#34;flex cursor-pointer&#34;&gt;
+  &lt;span
+    class=&#34;rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400&#34;&gt;
     Script
   &lt;/span&gt;
 &lt;/span&gt;
-  &lt;/span&gt;
+
+              &lt;/span&gt;
+            
+          
+        
+      
+    &lt;/div&gt;
+  
+
   
   
-  
-  
-&lt;/div&gt;
-
-
-
-
 
 
 
@@ -1107,40 +1282,48 @@
 
 
 
+  
 
+  
+  
+  
 
+  
+  
+    
+  
 
+  
+    
+  
+
+  
+
+  
+
+  
+    
+  
+
+  
+    
+  
+
+  
+    
+  
+
+  
+
+  
 
   
 
 
-
-
-
-
-
-  
-
-
-
-  
-
-
-
-  
-
-
-
-
-
-
-
-
-
-&lt;div class=&#34;flex flex-row flex-wrap items-center&#34;&gt;
-  
-  
-  &lt;time datetime=&#34;2024-07-03T00:00:00&amp;#43;00:00&#34;&gt;3 July 2024&lt;/time&gt;&lt;span class=&#34;px-2 text-primary-500&#34;&gt;&amp;middot;&lt;/span&gt;&lt;span title=&#34;Reading time&#34;&gt;2 mins&lt;/span&gt;&lt;span class=&#34;px-2 text-primary-500&#34;&gt;&amp;middot;&lt;/span&gt;&lt;span&gt;
+  &lt;div class=&#34;flex flex-row flex-wrap items-center&#34;&gt;
+    
+    
+      &lt;time datetime=&#34;2024-07-03T00:00:00&amp;#43;00:00&#34;&gt;3 July 2024&lt;/time&gt;&lt;span class=&#34;px-2 text-primary-500&#34;&gt;&amp;middot;&lt;/span&gt;&lt;span title=&#34;Reading time&#34;&gt;2 mins&lt;/span&gt;&lt;span class=&#34;px-2 text-primary-500&#34;&gt;&amp;middot;&lt;/span&gt;&lt;span&gt;
   
   
     
@@ -1153,7 +1336,12 @@
       
     
   
-  &lt;span id=&#34;views_posts/chaotic-aur/index.md&#34; class=&#34;animate-pulse inline-block text-transparent max-h-3 rounded-full mt-[-2px] align-middle bg-neutral-300 dark:bg-neutral-400&#34; title=&#34;views&#34;&gt;loading&lt;/span&gt;
+  &lt;span
+    id=&#34;views_posts/chaotic-aur/index.md&#34;
+    class=&#34;animate-pulse inline-block text-transparent max-h-3 rounded-full mt-[-2px] align-middle bg-neutral-300 dark:bg-neutral-400&#34;
+    title=&#34;views&#34;
+    &gt;loading&lt;/span
+  &gt;
   &lt;span class=&#34;inline-block align-text-bottom&#34;&gt;
 
   &lt;span class=&#34;relative block icon&#34;&gt;
@@ -1162,7 +1350,8 @@
   &lt;/span&gt;
 
 &lt;/span&gt;
-&lt;/span&gt;&lt;span class=&#34;px-2 text-primary-500&#34;&gt;&amp;middot;&lt;/span&gt;&lt;span&gt;
+&lt;/span&gt;
+&lt;span class=&#34;px-2 text-primary-500&#34;&gt;&amp;middot;&lt;/span&gt;&lt;span&gt;
   
   
     
@@ -1175,9 +1364,12 @@
       
     
   
-  &lt;span id=&#34;likes_posts/chaotic-aur/index.md&#34;
+  &lt;span
+    id=&#34;likes_posts/chaotic-aur/index.md&#34;
     class=&#34;animate-pulse inline-block text-transparent max-h-3 rounded-full mt-[-2px] align-middle bg-neutral-300 dark:bg-neutral-400&#34;
-    title=&#34;likes&#34;&gt;loading&lt;/span&gt;
+    title=&#34;likes&#34;
+    &gt;loading&lt;/span
+  &gt;
   &lt;span class=&#34;inline-block align-text-bottom&#34;&gt;
 
   &lt;span class=&#34;relative block icon&#34;&gt;
@@ -1187,107 +1379,136 @@
 
 &lt;/span&gt;
 &lt;/span&gt;
+
+    
+
+    
+    
+  &lt;/div&gt;
+
+  
+    &lt;div class=&#34;flex flex-row flex-wrap items-center&#34;&gt;
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    &lt;/div&gt;
   
 
   
   
-&lt;/div&gt;
-
-
-&lt;div class=&#34;flex flex-row flex-wrap items-center&#34;&gt;
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-&lt;/div&gt;
-
-
-
-
-&lt;div class=&#34;flex flex-row flex-wrap items-center&#34;&gt;
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  &lt;span style=&#34;margin-top:0.5rem&#34; class=&#34;mr-2&#34; onclick=&#34;window.open(&amp;#34;/tags/aur/&amp;#34;,&#39;_self&#39;);return false;&#34;&gt;
-    &lt;span class=&#34;flex&#34; style=&#34;cursor: pointer;&#34;&gt;
-  &lt;span class=&#34;rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400&#34;&gt;
+    &lt;div class=&#34;flex flex-row flex-wrap items-center&#34;&gt;
+      
+        
+      
+        
+          
+        
+      
+        
+      
+        
+          
+            
+              &lt;span
+                class=&#34;mr-2 margin-top-[0.5rem]&#34;
+                onclick=&#34;window.open(&amp;#34;/tags/aur/&amp;#34;,&#39;_self&#39;);return false;&#34;&gt;
+                &lt;span class=&#34;flex cursor-pointer&#34;&gt;
+  &lt;span
+    class=&#34;rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400&#34;&gt;
     AUR
   &lt;/span&gt;
 &lt;/span&gt;
-  &lt;/span&gt;
-  
-  &lt;span style=&#34;margin-top:0.5rem&#34; class=&#34;mr-2&#34; onclick=&#34;window.open(&amp;#34;/tags/chaotic-aur/&amp;#34;,&#39;_self&#39;);return false;&#34;&gt;
-    &lt;span class=&#34;flex&#34; style=&#34;cursor: pointer;&#34;&gt;
-  &lt;span class=&#34;rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400&#34;&gt;
+
+              &lt;/span&gt;
+            
+              &lt;span
+                class=&#34;mr-2 margin-top-[0.5rem]&#34;
+                onclick=&#34;window.open(&amp;#34;/tags/chaotic-aur/&amp;#34;,&#39;_self&#39;);return false;&#34;&gt;
+                &lt;span class=&#34;flex cursor-pointer&#34;&gt;
+  &lt;span
+    class=&#34;rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400&#34;&gt;
     Chaotic-AUR
   &lt;/span&gt;
 &lt;/span&gt;
-  &lt;/span&gt;
-  
-  &lt;span style=&#34;margin-top:0.5rem&#34; class=&#34;mr-2&#34; onclick=&#34;window.open(&amp;#34;/tags/repos/&amp;#34;,&#39;_self&#39;);return false;&#34;&gt;
-    &lt;span class=&#34;flex&#34; style=&#34;cursor: pointer;&#34;&gt;
-  &lt;span class=&#34;rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400&#34;&gt;
+
+              &lt;/span&gt;
+            
+              &lt;span
+                class=&#34;mr-2 margin-top-[0.5rem]&#34;
+                onclick=&#34;window.open(&amp;#34;/tags/repos/&amp;#34;,&#39;_self&#39;);return false;&#34;&gt;
+                &lt;span class=&#34;flex cursor-pointer&#34;&gt;
+  &lt;span
+    class=&#34;rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400&#34;&gt;
     Repos
   &lt;/span&gt;
 &lt;/span&gt;
-  &lt;/span&gt;
-  
-  &lt;span style=&#34;margin-top:0.5rem&#34; class=&#34;mr-2&#34; onclick=&#34;window.open(&amp;#34;/tags/repository/&amp;#34;,&#39;_self&#39;);return false;&#34;&gt;
-    &lt;span class=&#34;flex&#34; style=&#34;cursor: pointer;&#34;&gt;
-  &lt;span class=&#34;rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400&#34;&gt;
+
+              &lt;/span&gt;
+            
+              &lt;span
+                class=&#34;mr-2 margin-top-[0.5rem]&#34;
+                onclick=&#34;window.open(&amp;#34;/tags/repository/&amp;#34;,&#39;_self&#39;);return false;&#34;&gt;
+                &lt;span class=&#34;flex cursor-pointer&#34;&gt;
+  &lt;span
+    class=&#34;rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400&#34;&gt;
     Repository
   &lt;/span&gt;
 &lt;/span&gt;
-  &lt;/span&gt;
-  
-  &lt;span style=&#34;margin-top:0.5rem&#34; class=&#34;mr-2&#34; onclick=&#34;window.open(&amp;#34;/tags/archlinux/&amp;#34;,&#39;_self&#39;);return false;&#34;&gt;
-    &lt;span class=&#34;flex&#34; style=&#34;cursor: pointer;&#34;&gt;
-  &lt;span class=&#34;rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400&#34;&gt;
+
+              &lt;/span&gt;
+            
+              &lt;span
+                class=&#34;mr-2 margin-top-[0.5rem]&#34;
+                onclick=&#34;window.open(&amp;#34;/tags/archlinux/&amp;#34;,&#39;_self&#39;);return false;&#34;&gt;
+                &lt;span class=&#34;flex cursor-pointer&#34;&gt;
+  &lt;span
+    class=&#34;rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400&#34;&gt;
     ArchLinux
   &lt;/span&gt;
 &lt;/span&gt;
-  &lt;/span&gt;
-  
-  &lt;span style=&#34;margin-top:0.5rem&#34; class=&#34;mr-2&#34; onclick=&#34;window.open(&amp;#34;/tags/arch/&amp;#34;,&#39;_self&#39;);return false;&#34;&gt;
-    &lt;span class=&#34;flex&#34; style=&#34;cursor: pointer;&#34;&gt;
-  &lt;span class=&#34;rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400&#34;&gt;
+
+              &lt;/span&gt;
+            
+              &lt;span
+                class=&#34;mr-2 margin-top-[0.5rem]&#34;
+                onclick=&#34;window.open(&amp;#34;/tags/arch/&amp;#34;,&#39;_self&#39;);return false;&#34;&gt;
+                &lt;span class=&#34;flex cursor-pointer&#34;&gt;
+  &lt;span
+    class=&#34;rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400&#34;&gt;
     Arch
   &lt;/span&gt;
 &lt;/span&gt;
-  &lt;/span&gt;
-  
-  &lt;span style=&#34;margin-top:0.5rem&#34; class=&#34;mr-2&#34; onclick=&#34;window.open(&amp;#34;/tags/linux/&amp;#34;,&#39;_self&#39;);return false;&#34;&gt;
-    &lt;span class=&#34;flex&#34; style=&#34;cursor: pointer;&#34;&gt;
-  &lt;span class=&#34;rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400&#34;&gt;
+
+              &lt;/span&gt;
+            
+              &lt;span
+                class=&#34;mr-2 margin-top-[0.5rem]&#34;
+                onclick=&#34;window.open(&amp;#34;/tags/linux/&amp;#34;,&#39;_self&#39;);return false;&#34;&gt;
+                &lt;span class=&#34;flex cursor-pointer&#34;&gt;
+  &lt;span
+    class=&#34;rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400&#34;&gt;
     Linux
   &lt;/span&gt;
 &lt;/span&gt;
-  &lt;/span&gt;
+
+              &lt;/span&gt;
+            
+          
+        
+      
+    &lt;/div&gt;
+  
+
   
   
-  
-  
-&lt;/div&gt;
-
-
-
-
 
 
 

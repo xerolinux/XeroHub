@@ -61,7 +61,11 @@
 &lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;a href=&#34;https://www.blackmagicdesign.com/products/davinciresolve&#34; target=&#34;_blank&#34;&gt;&lt;strong&gt;DaVinci Resolve&lt;/strong&gt;&lt;/a&gt; and &lt;strong&gt;OpenCL:&lt;/strong&gt; AMD’s support for &lt;strong&gt;DaVinci Resolve&lt;/strong&gt; can be hit or miss. While recent updates have improved compatibility, Nvidia GPUs still hold an edge in performance and reliability for professional video editing tasks due to robust CUDA support.&lt;/p&gt;
+&lt;p&gt;&lt;a
+  href=&#34;https://www.blackmagicdesign.com/products/davinciresolve&#34;
+    target=&#34;_blank&#34;
+  &gt;&lt;strong&gt;DaVinci Resolve&lt;/strong&gt;&lt;/a&gt;
+ and &lt;strong&gt;OpenCL:&lt;/strong&gt; AMD’s support for &lt;strong&gt;DaVinci Resolve&lt;/strong&gt; can be hit or miss. While recent updates have improved compatibility, Nvidia GPUs still hold an edge in performance and reliability for professional video editing tasks due to robust CUDA support.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;strong&gt;Machine Learning:&lt;/strong&gt; Nvidia’s dominance in machine learning tasks remains unchallenged on Linux, primarily due to superior CUDA support. Although AMD’s ROCm platform is evolving, compatibility and performance may not yet match Nvidia’s offerings for AI and deep learning applications.&lt;/p&gt;
@@ -84,7 +88,15 @@
 &lt;p&gt;&lt;strong&gt;CUDA and Proprietary Drivers:&lt;/strong&gt; Nvidia’s proprietary drivers are highly esteemed for stability and performance on Linux, particularly in scientific computing, AI, and professional video editing where CUDA acceleration is indispensable. They generally integrate well with distributions like &lt;strong&gt;Ubuntu&lt;/strong&gt; but may encounter occasional compatibility and stability issues, especially with newer kernel versions or specific configurations.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;strong&gt;Enhanced Stability with Version 555.x:&lt;/strong&gt; Recent updates introduce &lt;a href=&#34;https://zamundaaa.github.io/wayland/2024/04/05/explicit-sync.html&#34; target=&#34;_blank&#34;&gt;&lt;strong&gt;Explicit Sync Explained&lt;/strong&gt;&lt;/a&gt; support for &lt;strong&gt;Wayland&lt;/strong&gt; users, &lt;a href=&#34;https://gitlab.freedesktop.org/wayland/wayland-protocols/-/merge_requests/90&#34; target=&#34;_blank&#34;&gt;&lt;strong&gt;merged&lt;/strong&gt;&lt;/a&gt; a short while ago, enhancing stability and performance optimizations without additional configuration, although full support depends on the desktop environment like &lt;strong&gt;KDE Plasma&lt;/strong&gt; or &lt;strong&gt;GNOME&lt;/strong&gt;, not currently available for &lt;strong&gt;Hyprland&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Enhanced Stability with Version 555.x:&lt;/strong&gt; Recent updates introduce &lt;a
+  href=&#34;https://zamundaaa.github.io/wayland/2024/04/05/explicit-sync.html&#34;
+    target=&#34;_blank&#34;
+  &gt;&lt;strong&gt;Explicit Sync Explained&lt;/strong&gt;&lt;/a&gt;
+ support for &lt;strong&gt;Wayland&lt;/strong&gt; users, &lt;a
+  href=&#34;https://gitlab.freedesktop.org/wayland/wayland-protocols/-/merge_requests/90&#34;
+    target=&#34;_blank&#34;
+  &gt;&lt;strong&gt;merged&lt;/strong&gt;&lt;/a&gt;
+ a short while ago, enhancing stability and performance optimizations without additional configuration, although full support depends on the desktop environment like &lt;strong&gt;KDE Plasma&lt;/strong&gt; or &lt;strong&gt;GNOME&lt;/strong&gt;, not currently available for &lt;strong&gt;Hyprland&lt;/strong&gt;.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;strong&gt;Ray Tracing and DLSS:&lt;/strong&gt; Nvidia RTX GPUs excel in real-time ray tracing and AI-enhanced features such as DLSS, delivering superior visual fidelity and performance in supported games and applications. This makes them a preferred choice for users seeking cutting-edge graphics capabilities on Linux.&lt;/p&gt;
@@ -127,9 +139,21 @@
 &lt;/h3&gt;
 &lt;p&gt;Since I do not have the hardware myself to test and provide the data some of you out there might want to look at, below are some relevant links.&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.phoronix.com/review/august-2023-linux-gpus/2&#34; target=&#34;_blank&#34;&gt;&lt;strong&gt;AMD vs nVidia Gaming Benchmarks&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.quora.com/Which-is-a-better-GPU-for-machine-learning-AMD-or-NVIDIA&#34; target=&#34;_blank&#34;&gt;&lt;strong&gt;Nvidia vs AMD: GPUs in Machine Learning&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.tomshardware.com/news/amd-intel-nvidia-video-encoding-performance-quality-tested&#34; target=&#34;_blank&#34;&gt;&lt;strong&gt;Nvidia nVenc vs AMD VCE&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a
+  href=&#34;https://www.phoronix.com/review/august-2023-linux-gpus/2&#34;
+    target=&#34;_blank&#34;
+  &gt;&lt;strong&gt;AMD vs nVidia Gaming Benchmarks&lt;/strong&gt;&lt;/a&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a
+  href=&#34;https://www.quora.com/Which-is-a-better-GPU-for-machine-learning-AMD-or-NVIDIA&#34;
+    target=&#34;_blank&#34;
+  &gt;&lt;strong&gt;Nvidia vs AMD: GPUs in Machine Learning&lt;/strong&gt;&lt;/a&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a
+  href=&#34;https://www.tomshardware.com/news/amd-intel-nvidia-video-encoding-performance-quality-tested&#34;
+    target=&#34;_blank&#34;
+  &gt;&lt;strong&gt;Nvidia nVenc vs AMD VCE&lt;/strong&gt;&lt;/a&gt;
+&lt;/li&gt;
 &lt;/ul&gt;
 </description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/nvidia-vs-amd-linux/featured.webp" />

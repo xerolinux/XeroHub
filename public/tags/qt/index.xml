@@ -27,8 +27,9 @@
 
 
 
+
 &lt;figure&gt;
-    &lt;img class=&#34;my-0 rounded-md&#34; loading=&#34;lazy&#34; alt=&#34;Shot1&#34; src=&#34;https://i.imgur.com/UK5MPRI.png&#34; /&gt;
+    &lt;img class=&#34;my-0 rounded-md&#34; loading=&#34;lazy&#34; alt=&#34;Shot1&#34; src=&#34;https://i.imgur.com/UK5MPRI.png&#34;&gt;
 
   
 &lt;/figure&gt;
@@ -47,12 +48,20 @@
 &lt;/h3&gt;
 &lt;p&gt;To get &lt;strong&gt;Kvantum&lt;/strong&gt; working on your Linux PC, you will need to install it alongside the management tool. To get started, open up a terminal window and install the Kvantum manager, as well as everything else necessary to use it.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Arch Linux&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Kvantum&lt;/strong&gt; is available to Arch Linux users and has been for a very long time. There is an &lt;strong&gt;&lt;a href=&#34;https://aur.archlinux.org/packages/kvantum-qt5-git/&#34; target=&#34;_blank&#34;&gt;AUR package&lt;/a&gt;&lt;/strong&gt;. There’s also a package in the official Arch Linux software sources, which we recommend.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Kvantum&lt;/strong&gt; is available to Arch Linux users and has been for a very long time. There is an &lt;strong&gt;&lt;a
+  href=&#34;https://aur.archlinux.org/packages/kvantum-qt5-git/&#34;
+    target=&#34;_blank&#34;
+  &gt;AUR package&lt;/a&gt;
+&lt;/strong&gt;. There’s also a package in the official Arch Linux software sources, which we recommend.&lt;/p&gt;
 &lt;p&gt;To get the latest Kvantum on your Arch Linux PC, enter the following terminal command.&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo pacman -S kvantum
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;Downloading Kvantum themes&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;In this guide, we’re focusing on the &lt;strong&gt;Kvantum Adapta&lt;/strong&gt; theme. However, if you want to use a different GTK theme and need a matching Kvantum theme to go with it, the best place to go is the KDE Store.&lt;/p&gt;
-&lt;p&gt;The KDE Store has tons of stuff to download, including Kvantum theme engine themes. To download a Kvantum theme, head over to the &lt;strong&gt;&lt;a href=&#34;https://store.kde.org/browse/cat/123/order/latest/&#34; target=&#34;_blank&#34;&gt;Kvantum page&lt;/a&gt;&lt;/strong&gt; on the KDE store. From there, look through the latest themes to download.&lt;/p&gt;
+&lt;p&gt;The KDE Store has tons of stuff to download, including Kvantum theme engine themes. To download a Kvantum theme, head over to the &lt;strong&gt;&lt;a
+  href=&#34;https://store.kde.org/browse/cat/123/order/latest/&#34;
+    target=&#34;_blank&#34;
+  &gt;Kvantum page&lt;/a&gt;
+&lt;/strong&gt; on the KDE store. From there, look through the latest themes to download.&lt;/p&gt;
 &lt;p&gt;Once you’ve downloaded a theme, launch Kvantum Manager, select “Install/Update Theme,” and install it. Then, select “Change/Delete Theme” to start using it on your system.&lt;/p&gt;
 
 &lt;h3 class=&#34;relative group&#34;&gt;Using Kvantum to make KDE apps look better 
@@ -69,8 +78,9 @@
 
 
 
+
 &lt;figure&gt;
-    &lt;img class=&#34;my-0 rounded-md&#34; loading=&#34;lazy&#34; alt=&#34;Shot2&#34; src=&#34;https://i.imgur.com/JVEudZ1.png&#34; /&gt;
+    &lt;img class=&#34;my-0 rounded-md&#34; loading=&#34;lazy&#34; alt=&#34;Shot2&#34; src=&#34;https://i.imgur.com/JVEudZ1.png&#34;&gt;
 
   
 &lt;/figure&gt;
@@ -87,8 +97,9 @@
 
 
 
+
 &lt;figure&gt;
-    &lt;img class=&#34;my-0 rounded-md&#34; loading=&#34;lazy&#34; alt=&#34;Shot3&#34; src=&#34;https://i.imgur.com/v261wDF.png&#34; /&gt;
+    &lt;img class=&#34;my-0 rounded-md&#34; loading=&#34;lazy&#34; alt=&#34;Shot3&#34; src=&#34;https://i.imgur.com/v261wDF.png&#34;&gt;
 
   
 &lt;/figure&gt;
@@ -100,14 +111,19 @@
 
 
 
+
 &lt;figure&gt;
-    &lt;img class=&#34;my-0 rounded-md&#34; loading=&#34;lazy&#34; alt=&#34;Shot4&#34; src=&#34;https://i.imgur.com/EKMmXrF.png&#34; /&gt;
+    &lt;img class=&#34;my-0 rounded-md&#34; loading=&#34;lazy&#34; alt=&#34;Shot4&#34; src=&#34;https://i.imgur.com/EKMmXrF.png&#34;&gt;
 
   
 &lt;/figure&gt;
 &lt;/p&gt;
 &lt;p&gt;Upon applying your changes, KDE applications on XFCE 4 should be using the Kvantum theme set up earlier. This method works the same way on both &lt;strong&gt;XFCE &amp;amp; GNOME&lt;/strong&gt;.&lt;/p&gt;
-&lt;p&gt;Guide by: &lt;strong&gt;&lt;a href=&#34;https://www.addictivetips.com/ubuntu-linux-tips/make-kde-apps-look-better/&#34; target=&#34;_blank&#34;&gt;AddictiveTips.com&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Guide by: &lt;strong&gt;&lt;a
+  href=&#34;https://www.addictivetips.com/ubuntu-linux-tips/make-kde-apps-look-better/&#34;
+    target=&#34;_blank&#34;
+  &gt;AddictiveTips.com&lt;/a&gt;
+&lt;/strong&gt;&lt;/p&gt;
 </description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/theme-qt-apps-on-gtk-de/featured.webp" />
     </item>

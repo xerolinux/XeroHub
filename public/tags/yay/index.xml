@@ -26,8 +26,9 @@
 
 
 
+
 &lt;figure&gt;
-    &lt;img class=&#34;my-0 rounded-md&#34; loading=&#34;lazy&#34; alt=&#34;[Image: l2MiVr0.jpeg]&#34; src=&#34;https://i.imgur.com/l2MiVr0.jpeg&#34; /&gt;
+    &lt;img class=&#34;my-0 rounded-md&#34; loading=&#34;lazy&#34; alt=&#34;[Image: l2MiVr0.jpeg]&#34; src=&#34;https://i.imgur.com/l2MiVr0.jpeg&#34;&gt;
 
   
 &lt;/figure&gt;
@@ -75,7 +76,15 @@
     &lt;div id=&#34;closing&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
     
 &lt;/h3&gt;
-&lt;p&gt;Once that is done, you can use it to start installing packages from the &lt;a href=&#34;https://aur.archlinux.org&#34; target=&#34;_blank&#34;&gt;AUR&lt;/a&gt;. Keep in mind that you do not need to install both; just select the one you prefer, either one works.. I would recommend YaY myself though.. &lt;a href=&#34;https://wiki.archlinux.org/title/AUR_helpers&#34; target=&#34;_blank&#34;&gt;ArchWiki Page&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Once that is done, you can use it to start installing packages from the &lt;a
+  href=&#34;https://aur.archlinux.org&#34;
+    target=&#34;_blank&#34;
+  &gt;AUR&lt;/a&gt;
+. Keep in mind that you do not need to install both; just select the one you prefer, either one works.. I would recommend YaY myself though.. &lt;a
+  href=&#34;https://wiki.archlinux.org/title/AUR_helpers&#34;
+    target=&#34;_blank&#34;
+  &gt;ArchWiki Page&lt;/a&gt;
+&lt;/p&gt;
 </description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/install-yay-paru/featured.webp" />
     </item>

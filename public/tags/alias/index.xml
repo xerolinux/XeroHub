@@ -43,8 +43,9 @@
 
 
 
+
 &lt;figure&gt;
-    &lt;img class=&#34;my-0 rounded-md&#34; loading=&#34;lazy&#34; alt=&#34;Terminal&#34; src=&#34;https://i.imgur.com/Ks6e0Mn.png&#34; /&gt;
+    &lt;img class=&#34;my-0 rounded-md&#34; loading=&#34;lazy&#34; alt=&#34;Terminal&#34; src=&#34;https://i.imgur.com/Ks6e0Mn.png&#34;&gt;
 
   
 &lt;/figure&gt;
@@ -63,7 +64,11 @@
 &lt;li&gt;Search for Package :&lt;/li&gt;
 &lt;/ul&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;alias&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;search&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;pacman -Ss &amp;#34;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;You can also use aliases to execute scripts and edit files among many many many other things. They are amazing. I use a ton of them in &lt;strong&gt;XeroLinux&lt;/strong&gt;. To check them out visit this link &amp;raquo; &lt;a href=&#34;https://github.com/xerolinux/xero-fixes/blob/main/conf/.bashrc&#34; target=&#34;_blank&#34;&gt;&lt;strong&gt;XeroLinux Aliases&lt;/strong&gt;&lt;/a&gt;.&lt;/p&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;You can also use aliases to execute scripts and edit files among many many many other things. They are amazing. I use a ton of them in &lt;strong&gt;XeroLinux&lt;/strong&gt;. To check them out visit this link &amp;raquo; &lt;a
+  href=&#34;https://github.com/xerolinux/xero-fixes/blob/main/conf/.bashrc&#34;
+    target=&#34;_blank&#34;
+  &gt;&lt;strong&gt;XeroLinux Aliases&lt;/strong&gt;&lt;/a&gt;
+.&lt;/p&gt;
 &lt;p&gt;Quick examples :&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Edit Pacman.conf&lt;/li&gt;

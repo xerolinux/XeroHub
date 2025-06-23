@@ -84,7 +84,11 @@ return sequence[:n]
     &lt;div id=&#34;how-to-get-started-with-cursor-ai&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
     
 &lt;/h2&gt;
-&lt;p&gt;Installing Cursor AI is so easy even a junior dev could do it without breaking production (probably). Head over to &lt;a href=&#34;https://www.cursor.com&#34; target=&#34;_blank&#34;&gt;cursor.com&lt;/a&gt; and grab the installer for your OS of choice. For my fellow Linux nerds out there, here’s how you can get up and running:&lt;/p&gt;
+&lt;p&gt;Installing Cursor AI is so easy even a junior dev could do it without breaking production (probably). Head over to &lt;a
+  href=&#34;https://www.cursor.com&#34;
+    target=&#34;_blank&#34;
+  &gt;cursor.com&lt;/a&gt;
+ and grab the installer for your OS of choice. For my fellow Linux nerds out there, here’s how you can get up and running:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;chmod a+x cursor-0.40.3x86_64.AppImage
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;./cursor-0.40.3x86_64.AppImage
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Or if you are on &lt;strong&gt;ArchLinux&lt;/strong&gt; you can install directly from the &lt;strong&gt;A.U.R&lt;/strong&gt; like so :&lt;/p&gt;

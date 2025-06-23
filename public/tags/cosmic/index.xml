@@ -25,16 +25,14 @@
 
 &lt;div
   
-    class=&#34;flex px-4 py-3 rounded-md&#34;
-    style=&#34;background-color: #993350&#34;
+    class=&#34;flex px-4 py-3 rounded-md&#34; style=&#34;background-color: #993350&#34;
+  
   &gt;
-
   &lt;span
     
-      class=&#34;ltr:pr-3 rtl:pl-3 flex items-center&#34;
-      style=&#34;color: #1d3557&#34;
+      class=&#34;ltr:pr-3 rtl:pl-3 flex items-center&#34; style=&#34;color: #1d3557&#34;
+    
     &gt;
-
     
 
   &lt;span class=&#34;relative block icon&#34;&gt;
@@ -48,7 +46,12 @@
   &lt;span
     
       style=&#34;color: #f1faee&#34;
-    &gt;&lt;strong&gt;Cosmic Script :&lt;/strong&gt; I have gone ahead and written a script that will help you do all this and more in one swoop. If you care to give it a whirl, keeping in mind the status of the project, you can grab it from the &lt;a href=&#34;https://wiki.xerolinux.xyz/scripts/#cosmic-alpha&#34; target=&#34;_blank&#34;&gt;&lt;strong&gt;XeroLinux Wiki&lt;/strong&gt;&lt;/a&gt;.&lt;/span&gt;
+    
+    &gt;&lt;strong&gt;Cosmic Script :&lt;/strong&gt; I have gone ahead and written a script that will help you do all this and more in one swoop. If you care to give it a whirl, keeping in mind the status of the project, you can grab it from the &lt;a
+  href=&#34;https://wiki.xerolinux.xyz/scripts/#cosmic-alpha&#34;
+    target=&#34;_blank&#34;
+  &gt;&lt;strong&gt;XeroLinux Wiki&lt;/strong&gt;&lt;/a&gt;
+.&lt;/span&gt;
 &lt;/div&gt;
 
 
@@ -56,7 +59,11 @@
     &lt;div id=&#34;what-is-cosmic-de&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
     
 &lt;/h3&gt;
-&lt;p&gt;The &lt;a href=&#34;https://blog.system76.com/post/cosmic-the-road-to-alpha/&#34; target=&#34;_blank&#34;&gt;&lt;strong&gt;Cosmic DE&lt;/strong&gt;&lt;/a&gt; is a new desktop environment being developed by the team behind &lt;strong&gt;Pop!_OS&lt;/strong&gt;, a popular Linux distribution. Unlike their previous efforts, which built upon &lt;strong&gt;GNOME&lt;/strong&gt;, the &lt;strong&gt;Cosmic DE&lt;/strong&gt; is a ground-up development using &lt;strong&gt;Rust&lt;/strong&gt; and a custom compositor built on &lt;strong&gt;Smithay&lt;/strong&gt;, aiming for a lightweight, responsive, and customizable user interface.&lt;/p&gt;
+&lt;p&gt;The &lt;a
+  href=&#34;https://blog.system76.com/post/cosmic-the-road-to-alpha/&#34;
+    target=&#34;_blank&#34;
+  &gt;&lt;strong&gt;Cosmic DE&lt;/strong&gt;&lt;/a&gt;
+ is a new desktop environment being developed by the team behind &lt;strong&gt;Pop!_OS&lt;/strong&gt;, a popular Linux distribution. Unlike their previous efforts, which built upon &lt;strong&gt;GNOME&lt;/strong&gt;, the &lt;strong&gt;Cosmic DE&lt;/strong&gt; is a ground-up development using &lt;strong&gt;Rust&lt;/strong&gt; and a custom compositor built on &lt;strong&gt;Smithay&lt;/strong&gt;, aiming for a lightweight, responsive, and customizable user interface.&lt;/p&gt;
 &lt;p&gt;Its most notable feature is, tiling window management with stacking, and a more integrated experience with the &lt;strong&gt;Pop!_OS&lt;/strong&gt; ecosystem, enhancing performance and user control. It aims to offer a modern alternative to existing desktop environments, designed specifically for Linux users&amp;rsquo; needs.&lt;/p&gt;
 
 &lt;h3 class=&#34;relative group&#34;&gt;Installing Cosmic on Arch 
@@ -73,16 +80,14 @@
 
 &lt;div
   
-    class=&#34;flex px-4 py-3 rounded-md&#34;
-    style=&#34;background-color: #993350&#34;
+    class=&#34;flex px-4 py-3 rounded-md&#34; style=&#34;background-color: #993350&#34;
+  
   &gt;
-
   &lt;span
     
-      class=&#34;ltr:pr-3 rtl:pl-3 flex items-center&#34;
-      style=&#34;color: #1d3557&#34;
+      class=&#34;ltr:pr-3 rtl:pl-3 flex items-center&#34; style=&#34;color: #1d3557&#34;
+    
     &gt;
-
     
 
   &lt;span class=&#34;relative block icon&#34;&gt;
@@ -96,6 +101,7 @@
   &lt;span
     
       style=&#34;color: #f1faee&#34;
+    
     &gt;&lt;strong&gt;Notice :&lt;/strong&gt; Project is still in &lt;strong&gt;Alpha 1&lt;/strong&gt; stages, please don&amp;rsquo;t use as a daily driver. It&amp;rsquo;s still missing a ton of features. Install at your own risk !&lt;/span&gt;
 &lt;/div&gt;
 
@@ -105,7 +111,11 @@
       &lt;iframe allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen&#34; loading=&#34;eager&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; src=&#34;https://www.youtube.com/embed/dhqQjMQznSo?autoplay=0&amp;amp;controls=1&amp;amp;end=0&amp;amp;loop=0&amp;amp;mute=0&amp;amp;start=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;YouTube video&#34;&gt;&lt;/iframe&gt;
     &lt;/div&gt;
 
-&lt;p&gt;As you can see from the video above, all you have to do it grab the latest &lt;a href=&#34;https://archlinux.org/download/&#34; target=&#34;_blank&#34;&gt;&lt;strong&gt;Arch ISO&lt;/strong&gt;&lt;/a&gt;, boot into it and launch the &lt;strong&gt;ArchInstall&lt;/strong&gt; then go through the motions as usual. I would change up the command a bit like so, making sure we are always running the latest version of the script :&lt;/p&gt;
+&lt;p&gt;As you can see from the video above, all you have to do it grab the latest &lt;a
+  href=&#34;https://archlinux.org/download/&#34;
+    target=&#34;_blank&#34;
+  &gt;&lt;strong&gt;Arch ISO&lt;/strong&gt;&lt;/a&gt;
+, boot into it and launch the &lt;strong&gt;ArchInstall&lt;/strong&gt; then go through the motions as usual. I would change up the command a bit like so, making sure we are always running the latest version of the script :&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;pacman -Syy archinstall &lt;span class=&#34;o&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; archinstall --advanced
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;As mentioned in the video the &lt;code&gt;--advanced&lt;/code&gt; flag is required to unlock the &lt;strong&gt;Cosmic DE&lt;/strong&gt; desktop profile. The reason it&amp;rsquo;s hidden should be clear enough, in case it&amp;rsquo;s not, well it&amp;rsquo;s because it&amp;rsquo;s in Alpha and no one sane enough who requires any kind of stability should install it.&lt;/p&gt;
 &lt;p&gt;
@@ -114,8 +124,9 @@
 
 
 
+
 &lt;figure&gt;
-    &lt;img class=&#34;my-0 rounded-md&#34; loading=&#34;lazy&#34; alt=&#34;CosmicDE&#34; src=&#34;https://i.imgur.com/Fvl9uRU.png&#34; /&gt;
+    &lt;img class=&#34;my-0 rounded-md&#34; loading=&#34;lazy&#34; alt=&#34;CosmicDE&#34; src=&#34;https://i.imgur.com/Fvl9uRU.png&#34;&gt;
 
   
 &lt;/figure&gt;
@@ -127,7 +138,11 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Now that this is fixed, I would like to take this oportunity to mention that there&amp;rsquo;s 2 more missing packages that &lt;strong&gt;ArchInstall&lt;/strong&gt; failed to include, those are &lt;code&gt;xdg-user-dirs&lt;/code&gt; which is resonsible for creating you user folders, like &lt;code&gt;Dicuments, Pictures, Videos...&lt;/code&gt;, and finally the &lt;code&gt;power-profiles-daemon&lt;/code&gt; tool that allows you to switch power profiles, so to fix those do this&amp;hellip;&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;pacman -Syy xdg-user-dirs power-profiles-daemon
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;xdg-user-dirs-update &lt;span class=&#34;o&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; systemctl &lt;span class=&#34;nb&#34;&gt;enable&lt;/span&gt; power-profiles-daemon.service
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Done ! All missing essential features fixed. Keep in mind that it&amp;rsquo;s only natural for them to exist, project is still in Alpha stages, a lot of things need to be addressed. Give it time to mature before judging it, and more importantly report all the bugs related to it or any feature requests you might have upstream, to the &lt;a href=&#34;https://github.com/pop-os&#34; target=&#34;_blank&#34;&gt;&lt;strong&gt;Cosmic Bug Tracker&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Done ! All missing essential features fixed. Keep in mind that it&amp;rsquo;s only natural for them to exist, project is still in Alpha stages, a lot of things need to be addressed. Give it time to mature before judging it, and more importantly report all the bugs related to it or any feature requests you might have upstream, to the &lt;a
+  href=&#34;https://github.com/pop-os&#34;
+    target=&#34;_blank&#34;
+  &gt;&lt;strong&gt;Cosmic Bug Tracker&lt;/strong&gt;&lt;/a&gt;
+&lt;/p&gt;
 
 &lt;h3 class=&#34;relative group&#34;&gt;Customization 
     &lt;div id=&#34;customization&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
@@ -141,22 +156,39 @@
 
 
 
+
 &lt;figure&gt;
-    &lt;img class=&#34;my-0 rounded-md&#34; loading=&#34;lazy&#34; alt=&#34;CosmicThemes&#34; src=&#34;https://i.imgur.com/R8Io5eQ.png&#34; /&gt;
+    &lt;img class=&#34;my-0 rounded-md&#34; loading=&#34;lazy&#34; alt=&#34;CosmicThemes&#34; src=&#34;https://i.imgur.com/R8Io5eQ.png&#34;&gt;
 
   
 &lt;/figure&gt;
 &lt;/p&gt;
-&lt;p&gt;So if you are looking for consistency, it will be a long while before we can achieve it. Still, this did not stop some theme developers from porting their themes over to it. So if you would like to try them out, just head on over to the &amp;raquo; &lt;a href=&#34;https://cosmic-themes.org&#34; target=&#34;_blank&#34;&gt;&lt;strong&gt;Cosmic-Themes&lt;/strong&gt;&lt;/a&gt; &amp;ldquo;store&amp;rdquo; and grab the one(s) you like. Importing the &lt;code&gt;.ron&lt;/code&gt; files is easy just open Settings &amp;gt; Desktop &amp;gt; Desktop &amp;amp; Panel &amp;gt; Import, then select file n see it apply immediately.&lt;/p&gt;
+&lt;p&gt;So if you are looking for consistency, it will be a long while before we can achieve it. Still, this did not stop some theme developers from porting their themes over to it. So if you would like to try them out, just head on over to the &amp;raquo; &lt;a
+  href=&#34;https://cosmic-themes.org&#34;
+    target=&#34;_blank&#34;
+  &gt;&lt;strong&gt;Cosmic-Themes&lt;/strong&gt;&lt;/a&gt;
+ &amp;ldquo;store&amp;rdquo; and grab the one(s) you like. Importing the &lt;code&gt;.ron&lt;/code&gt; files is easy just open Settings &amp;gt; Desktop &amp;gt; Desktop &amp;amp; Panel &amp;gt; Import, then select file n see it apply immediately.&lt;/p&gt;
 
 &lt;h3 class=&#34;relative group&#34;&gt;Wrapping up 
     &lt;div id=&#34;wrapping-up&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
     
 &lt;/h3&gt;
 &lt;p&gt;As mentioned, I would highly recommend you install &lt;strong&gt;Cosmic DE&lt;/strong&gt; on a spare non-essential device since it&amp;rsquo;s still Alpha 1 software. And you will need modern enough hardware that has full support for &lt;strong&gt;Wayland&lt;/strong&gt; since it doesn&amp;rsquo;t nor will it ever have &lt;strong&gt;X11&lt;/strong&gt; support.&lt;/p&gt;
-&lt;p&gt;However, if you are an &lt;strong&gt;Arch&lt;/strong&gt; power user and prefer to do it the &lt;em&gt;manual way&lt;/em&gt;, you can. Just head on over to the wonderful &lt;a href=&#34;https://wiki.archlinux.org/title/COSMIC&#34; target=&#34;_blank&#34;&gt;&lt;strong&gt;ArchWiki&lt;/strong&gt;&lt;/a&gt; and follow the instructions there. I would recommend it over &lt;strong&gt;ArchInstall&lt;/strong&gt; as you can do more and have more flexibility.&lt;/p&gt;
-&lt;p&gt;Finally if you don&amp;rsquo;t want to use it on &lt;strong&gt;Arch&lt;/strong&gt;, you can grab their Official &lt;strong&gt;Pop!_OS 24.04 LTS alpha&lt;/strong&gt; ISO from &amp;raquo; &lt;a href=&#34;https://system76.com/cosmic&#34; target=&#34;_blank&#34;&gt;&lt;strong&gt;Cosmic Downloads&lt;/strong&gt;&lt;/a&gt;. They also have instructions for other Distros like &lt;strong&gt;Fedora&lt;/strong&gt;, &lt;strong&gt;NixOS&lt;/strong&gt; and more&amp;hellip;&lt;/p&gt;
-&lt;p&gt;If you want to know what I think of this DE, and read how my experience with it went, check this post on &amp;raquo; &lt;a href=&#34;https://bytes.xerolinux.xyz/tech/cosmic-experience/&#34; target=&#34;_blank&#34;&gt;&lt;strong&gt;DarkXero&amp;rsquo;s Bytes&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;However, if you are an &lt;strong&gt;Arch&lt;/strong&gt; power user and prefer to do it the &lt;em&gt;manual way&lt;/em&gt;, you can. Just head on over to the wonderful &lt;a
+  href=&#34;https://wiki.archlinux.org/title/COSMIC&#34;
+    target=&#34;_blank&#34;
+  &gt;&lt;strong&gt;ArchWiki&lt;/strong&gt;&lt;/a&gt;
+ and follow the instructions there. I would recommend it over &lt;strong&gt;ArchInstall&lt;/strong&gt; as you can do more and have more flexibility.&lt;/p&gt;
+&lt;p&gt;Finally if you don&amp;rsquo;t want to use it on &lt;strong&gt;Arch&lt;/strong&gt;, you can grab their Official &lt;strong&gt;Pop!_OS 24.04 LTS alpha&lt;/strong&gt; ISO from &amp;raquo; &lt;a
+  href=&#34;https://system76.com/cosmic&#34;
+    target=&#34;_blank&#34;
+  &gt;&lt;strong&gt;Cosmic Downloads&lt;/strong&gt;&lt;/a&gt;
+. They also have instructions for other Distros like &lt;strong&gt;Fedora&lt;/strong&gt;, &lt;strong&gt;NixOS&lt;/strong&gt; and more&amp;hellip;&lt;/p&gt;
+&lt;p&gt;If you want to know what I think of this DE, and read how my experience with it went, check this post on &amp;raquo; &lt;a
+  href=&#34;https://bytes.xerolinux.xyz/tech/cosmic-experience/&#34;
+    target=&#34;_blank&#34;
+  &gt;&lt;strong&gt;DarkXero&amp;rsquo;s Bytes&lt;/strong&gt;&lt;/a&gt;
+&lt;/p&gt;
 &lt;p&gt;I hope this post has proven to be useful.&lt;/p&gt;
 &lt;p&gt;Cheers !&lt;/p&gt;
 </description>

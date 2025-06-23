@@ -23,8 +23,16 @@
 &lt;/h1&gt;
 &lt;p&gt;A list of useful commands for the FFmpeg command line tool.&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;Download FFmpeg &amp;raquo; &lt;a href=&#34;https://www.ffmpeg.org/download.html&#34; target=&#34;_blank&#34;&gt;&lt;strong&gt;Over Here&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Full documentation &amp;raquo; &lt;a href=&#34;https://www.ffmpeg.org/ffmpeg.html&#34; target=&#34;_blank&#34;&gt;&lt;strong&gt;Over Here&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Download FFmpeg &amp;raquo; &lt;a
+  href=&#34;https://www.ffmpeg.org/download.html&#34;
+    target=&#34;_blank&#34;
+  &gt;&lt;strong&gt;Over Here&lt;/strong&gt;&lt;/a&gt;
+&lt;/li&gt;
+&lt;li&gt;Full documentation &amp;raquo; &lt;a
+  href=&#34;https://www.ffmpeg.org/ffmpeg.html&#34;
+    target=&#34;_blank&#34;
+  &gt;&lt;strong&gt;Over Here&lt;/strong&gt;&lt;/a&gt;
+&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h2 class=&#34;relative group&#34;&gt;Basic conversion 
@@ -43,7 +51,11 @@
     &lt;div id=&#34;high-quality-encoding&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
     
 &lt;/h3&gt;
-&lt;p&gt;Use the &lt;code&gt;crf&lt;/code&gt; (Constant Rate Factor) parameter to control the output quality. The lower crf, the higher the quality (range: 0-51). The default value is 23, and visually lossless compression corresponds to &lt;code&gt;-crf 18&lt;/code&gt;. Use the &lt;code&gt;preset&lt;/code&gt; parameter to control the speed of the compression process. Additional info &amp;raquo; &lt;a href=&#34;https://trac.ffmpeg.org/wiki/Encode/H.264&#34; target=&#34;_blank&#34;&gt;&lt;strong&gt;Over Here&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Use the &lt;code&gt;crf&lt;/code&gt; (Constant Rate Factor) parameter to control the output quality. The lower crf, the higher the quality (range: 0-51). The default value is 23, and visually lossless compression corresponds to &lt;code&gt;-crf 18&lt;/code&gt;. Use the &lt;code&gt;preset&lt;/code&gt; parameter to control the speed of the compression process. Additional info &amp;raquo; &lt;a
+  href=&#34;https://trac.ffmpeg.org/wiki/Encode/H.264&#34;
+    target=&#34;_blank&#34;
+  &gt;&lt;strong&gt;Over Here&lt;/strong&gt;&lt;/a&gt;
+&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ffmpeg -i in.mp4 -preset slower -crf &lt;span class=&#34;m&#34;&gt;18&lt;/span&gt; out.mp4
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;h2 class=&#34;relative group&#34;&gt;Trimming 
@@ -53,13 +65,33 @@
 &lt;p&gt;Without re-encoding:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ffmpeg -ss &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;start&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt; -i in.mp4 -t &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;duration&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt; -c copy out.mp4
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://ffmpeg.org/ffmpeg-all.html#Main-options&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;-ss&lt;/code&gt;&lt;/a&gt; specifies the start time, e.g. &lt;code&gt;00:01:23.000&lt;/code&gt; or &lt;code&gt;83&lt;/code&gt; (in seconds)&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://ffmpeg.org/ffmpeg-all.html#Main-options&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;-t&lt;/code&gt;&lt;/a&gt; specifies the duration of the clip (same format).&lt;/li&gt;
+&lt;li&gt;&lt;a
+  href=&#34;http://ffmpeg.org/ffmpeg-all.html#Main-options&#34;
+    target=&#34;_blank&#34;
+  &gt;&lt;code&gt;-ss&lt;/code&gt;&lt;/a&gt;
+ specifies the start time, e.g. &lt;code&gt;00:01:23.000&lt;/code&gt; or &lt;code&gt;83&lt;/code&gt; (in seconds)&lt;/li&gt;
+&lt;li&gt;&lt;a
+  href=&#34;http://ffmpeg.org/ffmpeg-all.html#Main-options&#34;
+    target=&#34;_blank&#34;
+  &gt;&lt;code&gt;-t&lt;/code&gt;&lt;/a&gt;
+ specifies the duration of the clip (same format).&lt;/li&gt;
 &lt;li&gt;Recent &lt;code&gt;ffmpeg&lt;/code&gt; also has a flag to supply the end time with &lt;code&gt;-to&lt;/code&gt;.&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://ffmpeg.org/ffmpeg-all.html#Main-options&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;-c&lt;/code&gt;&lt;/a&gt; copy copies the first video, audio, and subtitle bitstream from the input to the output file without re-encoding them. This won&amp;rsquo;t harm the quality and make the command run within seconds.&lt;/li&gt;
+&lt;li&gt;&lt;a
+  href=&#34;http://ffmpeg.org/ffmpeg-all.html#Main-options&#34;
+    target=&#34;_blank&#34;
+  &gt;&lt;code&gt;-c&lt;/code&gt;&lt;/a&gt;
+ copy copies the first video, audio, and subtitle bitstream from the input to the output file without re-encoding them. This won&amp;rsquo;t harm the quality and make the command run within seconds.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;With re-encoding:&lt;/p&gt;
-&lt;p&gt;If you leave out the &lt;code&gt;-c copy&lt;/code&gt; option, &lt;code&gt;ffmpeg&lt;/code&gt; will automatically re-encode the output video and audio according to the format you chose. For high quality video and audio, read the &lt;a href=&#34;https://ffmpeg.org/trac/ffmpeg/wiki/x264EncodingGuide&#34; target=&#34;_blank&#34;&gt;x264 Encoding Guide&lt;/a&gt; and the &lt;a href=&#34;http://ffmpeg.org/trac/ffmpeg/wiki/AACEncodingGuide&#34; target=&#34;_blank&#34;&gt;AAC Encoding Guide&lt;/a&gt;, respectively.&lt;/p&gt;
+&lt;p&gt;If you leave out the &lt;code&gt;-c copy&lt;/code&gt; option, &lt;code&gt;ffmpeg&lt;/code&gt; will automatically re-encode the output video and audio according to the format you chose. For high quality video and audio, read the &lt;a
+  href=&#34;https://ffmpeg.org/trac/ffmpeg/wiki/x264EncodingGuide&#34;
+    target=&#34;_blank&#34;
+  &gt;x264 Encoding Guide&lt;/a&gt;
+ and the &lt;a
+  href=&#34;http://ffmpeg.org/trac/ffmpeg/wiki/AACEncodingGuide&#34;
+    target=&#34;_blank&#34;
+  &gt;AAC Encoding Guide&lt;/a&gt;
+, respectively.&lt;/p&gt;
 &lt;p&gt;For example:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ffmpeg -ss &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;start&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt; -i in.mp4 -t &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;duration&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt; -c:v libx264 -c:a aac -strict experimental -b:a 128k out.mp4
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
@@ -70,9 +102,21 @@
 &lt;p&gt;To copy the video from in0.mp4 and audio from in1.mp4:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ffmpeg -i in0.mp4 -i in1.mp4 -c copy -map 0:0 -map 1:1 -shortest out.mp4
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
-&lt;li&gt;With &lt;a href=&#34;http://ffmpeg.org/ffmpeg.html#Stream-copy&#34; target=&#34;_blank&#34;&gt;-c copy&lt;/a&gt; the streams will be &lt;code&gt;stream copied&lt;/code&gt;, not re-encoded, so there will be no quality loss. If you want to re-encode, see &lt;a href=&#34;https://trac.ffmpeg.org/wiki/Encode/H.264&#34; target=&#34;_blank&#34;&gt;FFmpeg Wiki: H.264 Encoding Guide&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;With &lt;a
+  href=&#34;http://ffmpeg.org/ffmpeg.html#Stream-copy&#34;
+    target=&#34;_blank&#34;
+  &gt;-c copy&lt;/a&gt;
+ the streams will be &lt;code&gt;stream copied&lt;/code&gt;, not re-encoded, so there will be no quality loss. If you want to re-encode, see &lt;a
+  href=&#34;https://trac.ffmpeg.org/wiki/Encode/H.264&#34;
+    target=&#34;_blank&#34;
+  &gt;FFmpeg Wiki: H.264 Encoding Guide&lt;/a&gt;
+.&lt;/li&gt;
 &lt;li&gt;The &lt;code&gt;-shortest&lt;/code&gt; option will cause the output duration to match the duration of the shortest input stream.&lt;/li&gt;
-&lt;li&gt;See the &lt;a href=&#34;http://ffmpeg.org/ffmpeg.html#Advanced-options&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;-map&lt;/code&gt; option documentation&lt;/a&gt; for more info.&lt;/li&gt;
+&lt;li&gt;See the &lt;a
+  href=&#34;http://ffmpeg.org/ffmpeg.html#Advanced-options&#34;
+    target=&#34;_blank&#34;
+  &gt;&lt;code&gt;-map&lt;/code&gt; option documentation&lt;/a&gt;
+ for more info.&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h2 class=&#34;relative group&#34;&gt;Concat demuxer 
@@ -100,7 +144,11 @@
     &lt;div id=&#34;burn-subtitles&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
     
 &lt;/h2&gt;
-&lt;p&gt;Use the &lt;a href=&#34;http://ffmpeg.org/ffmpeg.html#ass&#34; target=&#34;_blank&#34;&gt;libass&lt;/a&gt; library (make sure your ffmpeg install has the library in the configuration &lt;code&gt;--enable-libass&lt;/code&gt;).&lt;/p&gt;
+&lt;p&gt;Use the &lt;a
+  href=&#34;http://ffmpeg.org/ffmpeg.html#ass&#34;
+    target=&#34;_blank&#34;
+  &gt;libass&lt;/a&gt;
+ library (make sure your ffmpeg install has the library in the configuration &lt;code&gt;--enable-libass&lt;/code&gt;).&lt;/p&gt;
 &lt;p&gt;First convert the subtitles to .ass format:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ffmpeg -i sub.srt sub.ass
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Then add them using a video filter:&lt;/p&gt;
