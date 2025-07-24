@@ -35,8 +35,7 @@
 &lt;p&gt;If you are looking for new applications in Flatpak packaging, browse the &lt;a
   href=&#34;https://flathub.org&#34;
     target=&#34;_blank&#34;
-  &gt;Flathub&lt;/a&gt;
- website.&lt;/p&gt;
+  &gt;Flathub&lt;/a&gt; website.&lt;/p&gt;
 &lt;p&gt;This is the official website from the Flatpak project and it lists and distributes a huge number of Flatpak applications.&lt;/p&gt;
 &lt;p&gt;You can look for recommended apps in the “Editor’s choice” section, recently updated apps, new apps and popular apps.&lt;/p&gt;
 &lt;p&gt;
@@ -61,8 +60,7 @@
 &lt;p&gt;The &lt;a
   href=&#34;https://flathub.org&#34;
     target=&#34;_blank&#34;
-  &gt;Flathub&lt;/a&gt;
- website provides command line instructions to install the application.&lt;/p&gt;
+  &gt;Flathub&lt;/a&gt; website provides command line instructions to install the application.&lt;/p&gt;
 &lt;p&gt;There is also an Install button but it doesn’t install the application for you. It downloads a &lt;code&gt;.flatpakref&lt;/code&gt; file and then you’ll have to use the command line to install from the flatpakref file.&lt;/p&gt;
 &lt;p&gt;
 
@@ -82,19 +80,16 @@
 &lt;p&gt;This way, when you click on the Install button for any application on the &lt;a
   href=&#34;https://flathub.org&#34;
     target=&#34;_blank&#34;
-  &gt;Flathub&lt;/a&gt;
- website, it will ask you to open the link in an XDG application like the Software Center.&lt;/p&gt;
+  &gt;Flathub&lt;/a&gt; website, it will ask you to open the link in an XDG application like the Software Center.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Grab it for Firefox -&amp;gt; &lt;a
   href=&#34;https://addons.mozilla.org/en-US/firefox/addon/flatline-flatpak/&#34;
     target=&#34;_blank&#34;
-  &gt;Firefox Add-on&lt;/a&gt;
-&lt;/li&gt;
+  &gt;Firefox Add-on&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;Grab it for Chromium Browsers -&amp;gt; &lt;a
   href=&#34;https://chrome.google.com/webstore/detail/flatline/cpbniogoilfagmcoipghkgnpmdglfmjm/related&#34;
     target=&#34;_blank&#34;
-  &gt;Chrome Extension&lt;/a&gt;
-&lt;/li&gt;
+  &gt;Chrome Extension&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;
 
@@ -142,8 +137,7 @@
 &lt;p&gt;Alternatively, you can make some manual effort and force the Flatpak applications to use a given theme.  Check &lt;a
   href=&#34;https://forum.xerolinux.xyz/thread-152.html&#34;
     target=&#34;_blank&#34;
-  &gt;This Thread&lt;/a&gt;
- to know more&amp;hellip;&lt;/p&gt;
+  &gt;This Thread&lt;/a&gt; to know more&amp;hellip;&lt;/p&gt;
 
 &lt;h3 class=&#34;relative group&#34;&gt;Update Flatpak apps and clean them 
     &lt;div id=&#34;update-flatpak-apps-and-clean-them&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;

@@ -5,24 +5,24 @@
   class="scroll-smooth"
   data-default-appearance="dark"
   data-auto-appearance="false"><head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8">
   
-  <meta http-equiv="content-language" content="en" />
+    <meta http-equiv="content-language" content="en">
   
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="theme-color">
+
   
   <title>FFmpeg cheat sheet &middot; XeroLinux HQ</title>
-  <meta name="title" content="FFmpeg cheat sheet &middot; XeroLinux HQ" />
+    <meta name="title" content="FFmpeg cheat sheet &middot; XeroLinux HQ">
+
   
-  <meta name="description" content="Become a Pro at using FFmpeg" />
-  <meta name="keywords" content="FFmpeg, Media, Convert, Guide, Conversion, Video, Audio, Linux, " />
-  
-  
-  <link rel="canonical" href="https://xerolinux.xyz/posts/ffmpeg-cheat-sheet/" />
+  <meta name="description" content="Become a Pro at using FFmpeg">
+  <meta name="keywords" content="FFmpeg,Media,Convert,Guide,Conversion,Video,Audio,Linux,">
   
   
-  
+  <link rel="canonical" href="https://xerolinux.xyz/posts/ffmpeg-cheat-sheet/">
   
   
   
@@ -32,13 +32,30 @@
   
   
   
-  <link type="text/css" rel="stylesheet" href="/css/main.bundle.min.0279435344f97bb1bb03f95c0f5ae9d36d6945900b27867fdb404e5fa5575111629d251c105537a9fbd84db6d65bee7267e7f02ea5ecb140f472f82f1476f254.css"
-    integrity="sha512-AnlDU0T5e7G7A/lcD1rp021pRZALJ4Z/20BOX6VXURFinSUcEFU3qfvYTbbWW&#43;5yZ&#43;fwLqXssUD0cvgvFHbyVA==" />
+    
   
   
-  <script type="text/javascript" src="/js/appearance.min.516a16745bea5a9bd011138d254cc0fd3973cd55ce6e15f3dec763e7c7c2c7448f8fe7b54cca811cb821b0c7e12cd161caace1dd794ac3d34d40937cbcc9ee12.js"
+  
+  <link
+    type="text/css"
+    rel="stylesheet"
+    href="/css/main.bundle.min.92d3bf1810e174add80e53b68dc50d8467a4133d5c5f53544354575fb0e37b0d045be582ba67b12026c099559c6030c0c1107e26f772b0ce7a2e0cadbc340b8b.css"
+    integrity="sha512-ktO/GBDhdK3YDlO2jcUNhGekEz1cX1NUQ1RXX7Djew0EW&#43;WCumexICbAmVWcYDDAwRB&#43;JvdysM56LgytvDQLiw==">
+
+  
+  
+  <script
+    type="text/javascript"
+    src="/js/appearance.min.516a16745bea5a9bd011138d254cc0fd3973cd55ce6e15f3dec763e7c7c2c7448f8fe7b54cca811cb821b0c7e12cd161caace1dd794ac3d34d40937cbcc9ee12.js"
     integrity="sha512-UWoWdFvqWpvQERONJUzA/TlzzVXObhXz3sdj58fCx0SPj&#43;e1TMqBHLghsMfhLNFhyqzh3XlKw9NNQJN8vMnuEg=="></script>
   
+    
+    
+    
+  
+  
+    
+    
   
   
   
@@ -48,27 +65,33 @@
   
   
   
+    
+    <script
+      defer
+      type="text/javascript"
+      id="script-bundle"
+      src="/js/main.bundle.min.98bb8ce8f123e03c4d2171eeec151dd404b5c476beb5ef1068d0e8b1a2afb923065e6552fc14b2d867c85ee4bd8529a43193f729f874d3908517ba03b5d1cc57.js"
+      integrity="sha512-mLuM6PEj4DxNIXHu7BUd1AS1xHa&#43;te8QaNDosaKvuSMGXmVS/BSy2GfIXuS9hSmkMZP3Kfh005CFF7oDtdHMVw=="
+      data-copy="Copy"
+      data-copied="Copied"></script>
+  
+  
+
+  
+  
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+  
+
   
   
   
   
-  <script defer type="text/javascript" id="script-bundle" src="/js/main.bundle.min.dc15078f1fe553ce354f85ec1bfce7ded8b4060d4124a49b19e31dd64345b8d8f03edbbb1b681748650181f9d81da9728ca10c2b9cb2ae7bf8983d4b669ba876.js"
-    integrity="sha512-3BUHjx/lU841T4XsG/zn3ti0Bg1BJKSbGeMd1kNFuNjwPtu7G2gXSGUBgfnYHalyjKEMK5yyrnv4mD1LZpuodg==" data-copy="Copy" data-copied="Copied"></script>
   
   
-  
-  
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-  <link rel="manifest" href="/site.webmanifest" />
-  
-  
-  
-  
-  
-  
-  
+
   
   <meta property="og:url" content="https://xerolinux.xyz/posts/ffmpeg-cheat-sheet/">
   <meta property="og:site_name" content="XeroLinux HQ">
@@ -92,8 +115,8 @@
   <meta name="twitter:image" content="https://xerolinux.xyz/posts/ffmpeg-cheat-sheet/featured.webp">
   <meta name="twitter:title" content="FFmpeg cheat sheet">
   <meta name="twitter:description" content="Become a Pro at using FFmpeg">
-
-  
+<meta name="twitter:image" content="https://xerolinux.xyz/posts/ffmpeg-cheat-sheet/featured.webp">
+    <meta property="og:image" content="https://xerolinux.xyz/posts/ffmpeg-cheat-sheet/featured.webp">
   <script type="application/ld+json">
   [{
     "@context": "https://schema.org",
@@ -102,7 +125,7 @@
     "name": "FFmpeg cheat sheet",
     "headline": "FFmpeg cheat sheet",
     "description": "Become a Pro at using FFmpeg",
-    "abstract": "\u003cp\u003eThis will come in useful to all of you Content Creators out there, who like doing things the G33ky \u0026amp; Nerdy way. I use it a lot. This is a a list of useful commands for the \u003cstrong\u003eFFmpeg\u003c\/strong\u003e command line tool.\u003c\/p\u003e\n\u003cp\u003eI would highly recommend you bookmark this page for later use.\u003c\/p\u003e\n\n\u003ch1 class=\u0022relative group\u0022\u003eFFmpeg cheat sheet \n    \u003cdiv id=\u0022ffmpeg-cheat-sheet\u0022 class=\u0022anchor\u0022\u003e\u003c\/div\u003e\n    \n\u003c\/h1\u003e\n\u003cp\u003eA list of useful commands for the FFmpeg command line tool.\u003c\/p\u003e\n\u003cul\u003e\n\u003cli\u003eDownload FFmpeg \u0026raquo; \u003ca\n  href=\u0022https:\/\/www.ffmpeg.org\/download.html\u0022\n    target=\u0022_blank\u0022\n  \u003e\u003cstrong\u003eOver Here\u003c\/strong\u003e\u003c\/a\u003e\n\u003c\/li\u003e\n\u003cli\u003eFull documentation \u0026raquo; \u003ca\n  href=\u0022https:\/\/www.ffmpeg.org\/ffmpeg.html\u0022\n    target=\u0022_blank\u0022\n  \u003e\u003cstrong\u003eOver Here\u003c\/strong\u003e\u003c\/a\u003e\n\u003c\/li\u003e\n\u003c\/ul\u003e\n\n\u003ch2 class=\u0022relative group\u0022\u003eBasic conversion \n    \u003cdiv id=\u0022basic-conversion\u0022 class=\u0022anchor\u0022\u003e\u003c\/div\u003e\n    \n\u003c\/h2\u003e\n\u003cdiv class=\u0022highlight\u0022\u003e\u003cpre tabindex=\u00220\u0022 class=\u0022chroma\u0022\u003e\u003ccode class=\u0022language-Bash\u0022 data-lang=\u0022Bash\u0022\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022cl\u0022\u003effmpeg -i in.mp4 out.avi\n\u003c\/span\u003e\u003c\/span\u003e\u003c\/code\u003e\u003c\/pre\u003e\u003c\/div\u003e\n\u003ch3 class=\u0022relative group\u0022\u003eRemux an MKV file into MP4 \n    \u003cdiv id=\u0022remux-an-mkv-file-into-mp4\u0022 class=\u0022anchor\u0022\u003e\u003c\/div\u003e\n    \n\u003c\/h3\u003e\n\u003cdiv class=\u0022highlight\u0022\u003e\u003cpre tabindex=\u00220\u0022 class=\u0022chroma\u0022\u003e\u003ccode class=\u0022language-Bash\u0022 data-lang=\u0022Bash\u0022\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022cl\u0022\u003effmpeg -i in.mkv -c:v copy -c:a copy out.mp4\n\u003c\/span\u003e\u003c\/span\u003e\u003c\/code\u003e\u003c\/pre\u003e\u003c\/div\u003e\n\u003ch3 class=\u0022relative group\u0022\u003eHigh-quality encoding \n    \u003cdiv id=\u0022high-quality-encoding\u0022 class=\u0022anchor\u0022\u003e\u003c\/div\u003e\n    \n\u003c\/h3\u003e\n\u003cp\u003eUse the \u003ccode\u003ecrf\u003c\/code\u003e (Constant Rate Factor) parameter to control the output quality. The lower crf, the higher the quality (range: 0-51). The default value is 23, and visually lossless compression corresponds to \u003ccode\u003e-crf 18\u003c\/code\u003e. Use the \u003ccode\u003epreset\u003c\/code\u003e parameter to control the speed of the compression process. Additional info \u0026raquo; \u003ca\n  href=\u0022https:\/\/trac.ffmpeg.org\/wiki\/Encode\/H.264\u0022\n    target=\u0022_blank\u0022\n  \u003e\u003cstrong\u003eOver Here\u003c\/strong\u003e\u003c\/a\u003e\n\u003c\/p\u003e",
+    "abstract": "\u003cp\u003eThis will come in useful to all of you Content Creators out there, who like doing things the G33ky \u0026amp; Nerdy way. I use it a lot. This is a a list of useful commands for the \u003cstrong\u003eFFmpeg\u003c\/strong\u003e command line tool.\u003c\/p\u003e\n\u003cp\u003eI would highly recommend you bookmark this page for later use.\u003c\/p\u003e\n\n\u003ch1 class=\u0022relative group\u0022\u003eFFmpeg cheat sheet \n    \u003cdiv id=\u0022ffmpeg-cheat-sheet\u0022 class=\u0022anchor\u0022\u003e\u003c\/div\u003e\n    \n\u003c\/h1\u003e\n\u003cp\u003eA list of useful commands for the FFmpeg command line tool.\u003c\/p\u003e\n\u003cul\u003e\n\u003cli\u003eDownload FFmpeg \u0026raquo; \u003ca\n  href=\u0022https:\/\/www.ffmpeg.org\/download.html\u0022\n    target=\u0022_blank\u0022\n  \u003e\u003cstrong\u003eOver Here\u003c\/strong\u003e\u003c\/a\u003e\u003c\/li\u003e\n\u003cli\u003eFull documentation \u0026raquo; \u003ca\n  href=\u0022https:\/\/www.ffmpeg.org\/ffmpeg.html\u0022\n    target=\u0022_blank\u0022\n  \u003e\u003cstrong\u003eOver Here\u003c\/strong\u003e\u003c\/a\u003e\u003c\/li\u003e\n\u003c\/ul\u003e\n\n\u003ch2 class=\u0022relative group\u0022\u003eBasic conversion \n    \u003cdiv id=\u0022basic-conversion\u0022 class=\u0022anchor\u0022\u003e\u003c\/div\u003e\n    \n\u003c\/h2\u003e\n\u003cdiv class=\u0022highlight\u0022\u003e\u003cpre tabindex=\u00220\u0022 class=\u0022chroma\u0022\u003e\u003ccode class=\u0022language-Bash\u0022 data-lang=\u0022Bash\u0022\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022cl\u0022\u003effmpeg -i in.mp4 out.avi\n\u003c\/span\u003e\u003c\/span\u003e\u003c\/code\u003e\u003c\/pre\u003e\u003c\/div\u003e\n\u003ch3 class=\u0022relative group\u0022\u003eRemux an MKV file into MP4 \n    \u003cdiv id=\u0022remux-an-mkv-file-into-mp4\u0022 class=\u0022anchor\u0022\u003e\u003c\/div\u003e\n    \n\u003c\/h3\u003e\n\u003cdiv class=\u0022highlight\u0022\u003e\u003cpre tabindex=\u00220\u0022 class=\u0022chroma\u0022\u003e\u003ccode class=\u0022language-Bash\u0022 data-lang=\u0022Bash\u0022\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022cl\u0022\u003effmpeg -i in.mkv -c:v copy -c:a copy out.mp4\n\u003c\/span\u003e\u003c\/span\u003e\u003c\/code\u003e\u003c\/pre\u003e\u003c\/div\u003e\n\u003ch3 class=\u0022relative group\u0022\u003eHigh-quality encoding \n    \u003cdiv id=\u0022high-quality-encoding\u0022 class=\u0022anchor\u0022\u003e\u003c\/div\u003e\n    \n\u003c\/h3\u003e\n\u003cp\u003eUse the \u003ccode\u003ecrf\u003c\/code\u003e (Constant Rate Factor) parameter to control the output quality. The lower crf, the higher the quality (range: 0-51). The default value is 23, and visually lossless compression corresponds to \u003ccode\u003e-crf 18\u003c\/code\u003e. Use the \u003ccode\u003epreset\u003c\/code\u003e parameter to control the speed of the compression process. Additional info \u0026raquo; \u003ca\n  href=\u0022https:\/\/trac.ffmpeg.org\/wiki\/Encode\/H.264\u0022\n    target=\u0022_blank\u0022\n  \u003e\u003cstrong\u003eOver Here\u003c\/strong\u003e\u003c\/a\u003e\u003c\/p\u003e",
     "inLanguage": "en",
     "url" : "https:\/\/xerolinux.xyz\/posts\/ffmpeg-cheat-sheet\/",
     "author" : {
@@ -118,72 +141,86 @@
     "keywords": ["FFmpeg","Media","Convert","Guide","Conversion","Video","Audio","Linux"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "813"
+    "wordCount": "811"
   }]
   </script>
 
 
+
   
   
-  <meta name="author" content="DarkXero" />
+    <meta name="author" content="DarkXero">
   
   
+    
+      
+        
+          <link href="https://wiki.xerolinux.xyz" rel="me">
+        
+      
+    
+      
+        
+          <link href="https://discord.gg/5sqxTSuKZu" rel="me">
+        
+      
+    
+      
+        
+          <link href="https://github.com/xerolinux" rel="me">
+        
+      
+    
+      
+        
+          <link href="https://ko-fi.com/XeroLinux" rel="me">
+        
+      
+    
+      
+        
+          <link href="https://techxero.com" rel="me">
+        
+      
+    
+      
+        
+          <link href="https://linkedin.com/in/schaanine" rel="me">
+        
+      
+    
+      
+        
+          <link href="https://bytes.xerolinux.xyz" rel="me">
+        
+      
+    
+      
+        
+          <link href="https://fosstodon.org/@XeroLinux" rel="me">
+        
+      
+    
+      
+        
+          <link href="https://youtube.com/@XeroLinux" rel="me">
+        
+      
+    
+      
+        
+          <link href="https://x.com/XeroLinuxOP" rel="me">
+        
+      
+    
+      
+        
+          <link href="https://facebook.com/XeroLinux" rel="me">
+        
+      
+    
   
-  
-  <link href="https://wiki.xerolinux.xyz" rel="me" />
-  
-  
-  
-  
-  <link href="https://discord.gg/5sqxTSuKZu" rel="me" />
-  
-  
-  
-  
-  <link href="https://github.com/xerolinux" rel="me" />
-  
-  
-  
-  
-  <link href="https://ko-fi.com/XeroLinux" rel="me" />
-  
-  
-  
-  
-  <link href="https://techxero.com" rel="me" />
-  
-  
-  
-  
-  <link href="https://linkedin.com/in/schaanine" rel="me" />
-  
-  
-  
-  
-  <link href="https://bytes.xerolinux.xyz" rel="me" />
-  
-  
-  
-  
-  <link href="https://fosstodon.org/@XeroLinux" rel="me" />
-  
-  
-  
-  
-  <link href="https://youtube.com/@XeroLinux" rel="me" />
-  
-  
-  
-  
-  <link href="https://x.com/XeroLinuxOP" rel="me" />
-  
-  
-  
-  
-  <link href="https://facebook.com/XeroLinux" rel="me" />
-  
-  
-  
+
   
   
 
@@ -210,23 +247,26 @@
 
 
 
+
   
   
 
 
 
 
+
   
   
+
   
   
-  <meta name="theme-color"/>
+
   
   
-  
-  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    
+      <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
   <script>
 
     const firebaseConfig = {
@@ -244,7 +284,7 @@
     var auth = firebase.auth();
 
   </script>
-  
+    
   
 
   
@@ -262,40 +302,57 @@
     
     
       <div class="min-h-[148px]"></div>
-<div class="fixed inset-x-0 pl-[24px] pr-[24px] z-index-100">
+<div class="fixed inset-x-0 pl-[24px] pr-[24px] z-100">
   <div
     id="menu-blur"
     class="absolute opacity-0 inset-x-0 top-0 h-full single_hero_background nozoom bg-neutral dark:bg-neutral-800"></div>
   <div class="relative max-w-[64rem] ml-auto mr-auto">
-    <div class="main-menu flex items-center justify-between px-4 py-6 sm:px-6 md:justify-start gap-x-3 padding-main-menu">
+    
+
+
+
+
+
+
+
+
+
+
+
+<div
+  class="main-menu flex items-center justify-between px-4 py-6 sm:px-6 md:justify-start gap-x-3 pt-[2px] pr-0 pb-[3px] pl-0">
+  
+  
     
     
-    
-    <div>
+      <div>
         <a href="/" class="flex">
-            <span class="sr-only">XeroLinux HQ</span>
-
-            
-            <img src="/logos/logo.png" width="62" height="64"
-                class="logo max-h-[5rem] max-w-[5rem] object-scale-down object-left nozoom" alt="XeroLinux HQ" />
-            
-
+          <span class="sr-only">XeroLinux HQ</span>
+          
+            <img
+              src="/logos/logo.png"
+              width="62"
+              height="64"
+              class="logo max-h-[5rem] max-w-[5rem] object-scale-down object-left nozoom"
+              alt="XeroLinux HQ">
+          
         </a>
-    </div>
+      </div>
     
-    <div class="flex flex-1 items-center justify-between">
-        <nav class="flex space-x-3">
 
-            
-            <a href="/" class="text-base font-medium text-gray-500 hover:text-gray-900">XeroLinux HQ</a>
-            
-
-        </nav>
-        <nav class="hidden md:flex items-center gap-x-5 md:ml-12 h-12">
-
-            
-            
-            
+  <div class="flex flex-1 items-center justify-between">
+    <nav class="flex space-x-3">
+      
+        <a href="/" class="text-base font-medium text-gray-500 hover:text-gray-900">
+          XeroLinux HQ
+        </a>
+      
+    </nav>
+    
+  <nav class="hidden md:flex items-center gap-x-5 md:ml-12 h-12">
+    
+      
+        
   <a
   href="/about/"
   
@@ -308,8 +365,8 @@
 
 
 
-            
-            
+      
+        
   <a
   href="/posts/"
   
@@ -322,8 +379,8 @@
 
 
 
-            
-            
+      
+        
   <a
   href="/updates/"
   
@@ -336,8 +393,8 @@
 
 
 
-            
-            
+      
+        
   <a
   href="/scripts/"
   
@@ -350,8 +407,8 @@
 
 
 
-            
-            
+      
+        
   <a
   href="/gear/"
   
@@ -364,8 +421,8 @@
 
 
 
-            
-            
+      
+        
   <a
   href="https://shop.xerolinux.xyz/"
   target="_blank"
@@ -378,8 +435,8 @@
 
 
 
-            
-            
+      
+        
   <a
   href="https://wiki.xerolinux.xyz/"
   target="_blank"
@@ -392,8 +449,8 @@
 
 
 
-            
-            
+      
+        
   <a
   href="/index.xml"
   
@@ -416,42 +473,19 @@
 
 
 
-            
-            
+      
+    
 
-            
-
-
-            
-            <button id="search-button" aria-label="Search" class="text-base hover:text-primary-600 dark:hover:text-primary-400"
-                title="">
-                
-
-  <span class="relative block icon">
-    <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" class="svg-inline--fa fa-search fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg>
-
-  </span>
+    
 
 
-            </button>
-            
-
-
-            
-            
-
-        </nav>
-        <div class="flex md:hidden items-center gap-x-5 md:ml-12 h-12">
-
-            <span></span>
-
-            
-
-
-            
-            <button id="search-button-mobile" aria-label="Search" class="text-base hover:text-primary-600 dark:hover:text-primary-400"
-                title="">
-                
+    
+      <button
+        id="search-button"
+        aria-label="Search"
+        class="text-base hover:text-primary-600 dark:hover:text-primary-400"
+        title="Search (/)">
+        
 
   <span class="relative block icon">
     <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" class="svg-inline--fa fa-search fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg>
@@ -459,20 +493,45 @@
   </span>
 
 
-            </button>
-            
+      </button>
+    
 
-            
-            
+    
+  </nav>
 
-        </div>
-    </div>
-    <div class="-my-2 md:hidden">
+    
+  <div class="flex md:hidden items-center gap-x-5 md:ml-12 h-12">
+    <span></span>
 
-        <label id="menu-button" class="block">
-            
-            <div class="cursor-pointer hover:text-primary-600 dark:hover:text-primary-400">
-                
+    
+
+    
+      <button
+        id="search-button-mobile"
+        aria-label="Search"
+        class="text-base hover:text-primary-600 dark:hover:text-primary-400"
+        title="Search (/)">
+        
+
+  <span class="relative block icon">
+    <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" class="svg-inline--fa fa-search fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg>
+
+  </span>
+
+
+      </button>
+    
+
+    
+  </div>
+
+  </div>
+  
+  <div class="-my-2 md:hidden">
+    <div id="menu-button" class="block">
+      
+        <div class="cursor-pointer hover:text-primary-600 dark:hover:text-primary-400">
+          
 
   <span class="relative block icon">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M0 96C0 78.33 14.33 64 32 64H416C433.7 64 448 78.33 448 96C448 113.7 433.7 128 416 128H32C14.33 128 0 113.7 0 96zM0 256C0 238.3 14.33 224 32 224H416C433.7 224 448 238.3 448 256C448 273.7 433.7 288 416 288H32C14.33 288 0 273.7 0 256zM416 448H32C14.33 448 0 433.7 0 416C0 398.3 14.33 384 32 384H416C433.7 384 448 398.3 448 416C448 433.7 433.7 448 416 448z"/></svg>
@@ -480,26 +539,28 @@
   </span>
 
 
-            </div>
-            <div id="menu-wrapper" class="fixed inset-0 z-30 invisible w-screen h-screen m-0 overflow-auto transition-opacity opacity-0 cursor-default bg-neutral-100/50 backdrop-blur-sm dark:bg-neutral-900/50 padding-top-[5px]">
-                <ul
-                    class="flex space-y-2 mt-3 flex-col items-end w-full px-6 py-6 mx-auto overflow-visible list-none ltr:text-right rtl:text-left max-w-7xl">
-
-                    <li id="menu-close-button">
-                        <span
-                            class="cursor-pointer inline-block align-text-bottom hover:text-primary-600 dark:hover:text-primary-400">
+        </div>
+        <div
+          id="menu-wrapper"
+          class="fixed inset-0 z-30 invisible w-screen h-screen m-0 overflow-auto transition-opacity opacity-0 cursor-default bg-neutral-100/50 backdrop-blur-sm dark:bg-neutral-900/50 pt-[5px]">
+          <ul
+            class="flex space-y-2 mt-3 flex-col items-end w-full px-6 py-6 mx-auto overflow-visible list-none ltr:text-right rtl:text-left max-w-7xl">
+            <li id="menu-close-button">
+              <span
+                class="cursor-pointer inline-block align-text-bottom hover:text-primary-600 dark:hover:text-primary-400">
+                
 
   <span class="relative block icon">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path fill="currentColor" d="M310.6 361.4c12.5 12.5 12.5 32.75 0 45.25C304.4 412.9 296.2 416 288 416s-16.38-3.125-22.62-9.375L160 301.3L54.63 406.6C48.38 412.9 40.19 416 32 416S15.63 412.9 9.375 406.6c-12.5-12.5-12.5-32.75 0-45.25l105.4-105.4L9.375 150.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L160 210.8l105.4-105.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-105.4 105.4L310.6 361.4z"/></svg>
 
   </span>
 
-</span>
-                    </li>
 
-                    
+              </span>
+            </li>
 
-                    
+            
+              
   <li class="mt-1">
   <a
     href="/about/"
@@ -514,10 +575,8 @@
 
 
 
-
-                    
-
-                    
+            
+              
   <li class="mt-1">
   <a
     href="/posts/"
@@ -532,10 +591,8 @@
 
 
 
-
-                    
-
-                    
+            
+              
   <li class="mt-1">
   <a
     href="/updates/"
@@ -550,10 +607,8 @@
 
 
 
-
-                    
-
-                    
+            
+              
   <li class="mt-1">
   <a
     href="/scripts/"
@@ -568,10 +623,8 @@
 
 
 
-
-                    
-
-                    
+            
+              
   <li class="mt-1">
   <a
     href="/gear/"
@@ -586,10 +639,8 @@
 
 
 
-
-                    
-
-                    
+            
+              
   <li class="mt-1">
   <a
     href="https://shop.xerolinux.xyz/"
@@ -606,10 +657,8 @@
 
 
 
-
-                    
-
-                    
+            
+              
   <li class="mt-1">
   <a
     href="https://wiki.xerolinux.xyz/"
@@ -626,10 +675,8 @@
 
 
 
-
-                    
-
-                    
+            
+              
   <li class="mt-1">
   <a
     href="/index.xml"
@@ -654,30 +701,29 @@
 
 
 
+            
 
-                    
-
-                </ul>
-                
-                
-
-            </div>
-        </label>
+          </ul>
+          
+        </div>
+      
     </div>
+  </div>
+
 </div>
 
 
 
 
-<script>
+  <script>
     (function () {
-        var $mainmenu = $('.main-menu');
-        var path = window.location.pathname;
-        $mainmenu.find('a[href="' + path + '"]').each(function (i, e) {
-            $(e).children('p').addClass('active');
-        });
+      var $mainmenu = $(".main-menu");
+      var path = window.location.pathname;
+      $mainmenu.find('a[href="' + path + '"]').each(function (i, e) {
+        $(e).children("p").addClass("active");
+      });
     })();
-</script>
+  </script>
 
 
   </div>
@@ -686,8 +732,8 @@
 
 <script
   type="text/javascript"
-  src="/js/background-blur.min.4812321520cc2e4cd52bf9137015a55bb6c0b5e66a6b2c96b8654c0ec99be59e8e6425dd838a6fd9bac54000586f37f4a9680bbefaa2aee4601a69e188005cf6.js"
-  integrity="sha512-SBIyFSDMLkzVK/kTcBWlW7bAteZqayyWuGVMDsmb5Z6OZCXdg4pv2brFQABYbzf0qWgLvvqiruRgGmnhiABc9g=="
+  src="/js/background-blur.min.78ad5090e7c0c2533bac9dd23bdb1f723f834e5c3626627bd31017cc139ce0651b529877862129cee49e380ab2fdcd8baef28ae3e086bc54957fdaa7758775b2.js"
+  integrity="sha512-eK1QkOfAwlM7rJ3SO9sfcj&#43;DTlw2JmJ70xAXzBOc4GUbUph3hiEpzuSeOAqy/c2LrvKK4&#43;CGvFSVf9qndYd1sg=="
   data-target-id="menu-blur"></script>
 
     
@@ -778,7 +824,7 @@
   
   <span
     id="views_posts/ffmpeg-cheat-sheet/index.md"
-    class="animate-pulse inline-block text-transparent max-h-3 rounded-full mt-[-2px] align-middle bg-neutral-300 dark:bg-neutral-400"
+    class="animate-pulse inline-block text-transparent max-h-3 rounded-full -mt-[2px] align-middle bg-neutral-300 dark:bg-neutral-400"
     title="views"
     >loading</span
   >
@@ -806,7 +852,7 @@
   
   <span
     id="likes_posts/ffmpeg-cheat-sheet/index.md"
-    class="animate-pulse inline-block text-transparent max-h-3 rounded-full mt-[-2px] align-middle bg-neutral-300 dark:bg-neutral-400"
+    class="animate-pulse inline-block text-transparent max-h-3 rounded-full -mt-[2px] align-middle bg-neutral-300 dark:bg-neutral-400"
     title="likes"
     >loading</span
   >
@@ -822,8 +868,7 @@
 <span class="px-2 text-primary-500">&middot;</span><span>
   <button
     id="button_likes"
-    class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400"
-    onclick="process_article()">
+    class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
     <span id="button_likes_heart" class="inline-block align-text-bottom hidden"
       >
 
@@ -912,7 +957,7 @@
           
             
               <span
-                class="mr-2 margin-top-[0.5rem]"
+                class="mr-2 mt-[0.5rem]"
                 onclick="window.open(&#34;/tags/ffmpeg/&#34;,'_self');return false;">
                 <span class="flex cursor-pointer">
   <span
@@ -924,7 +969,7 @@
               </span>
             
               <span
-                class="mr-2 margin-top-[0.5rem]"
+                class="mr-2 mt-[0.5rem]"
                 onclick="window.open(&#34;/tags/media/&#34;,'_self');return false;">
                 <span class="flex cursor-pointer">
   <span
@@ -936,7 +981,7 @@
               </span>
             
               <span
-                class="mr-2 margin-top-[0.5rem]"
+                class="mr-2 mt-[0.5rem]"
                 onclick="window.open(&#34;/tags/convert/&#34;,'_self');return false;">
                 <span class="flex cursor-pointer">
   <span
@@ -948,7 +993,7 @@
               </span>
             
               <span
-                class="mr-2 margin-top-[0.5rem]"
+                class="mr-2 mt-[0.5rem]"
                 onclick="window.open(&#34;/tags/guide/&#34;,'_self');return false;">
                 <span class="flex cursor-pointer">
   <span
@@ -960,7 +1005,7 @@
               </span>
             
               <span
-                class="mr-2 margin-top-[0.5rem]"
+                class="mr-2 mt-[0.5rem]"
                 onclick="window.open(&#34;/tags/conversion/&#34;,'_self');return false;">
                 <span class="flex cursor-pointer">
   <span
@@ -972,7 +1017,7 @@
               </span>
             
               <span
-                class="mr-2 margin-top-[0.5rem]"
+                class="mr-2 mt-[0.5rem]"
                 onclick="window.open(&#34;/tags/video/&#34;,'_self');return false;">
                 <span class="flex cursor-pointer">
   <span
@@ -984,7 +1029,7 @@
               </span>
             
               <span
-                class="mr-2 margin-top-[0.5rem]"
+                class="mr-2 mt-[0.5rem]"
                 onclick="window.open(&#34;/tags/audio/&#34;,'_self');return false;">
                 <span class="flex cursor-pointer">
   <span
@@ -996,7 +1041,7 @@
               </span>
             
               <span
-                class="mr-2 margin-top-[0.5rem]"
+                class="mr-2 mt-[0.5rem]"
                 onclick="window.open(&#34;/tags/linux/&#34;,'_self');return false;">
                 <span class="flex cursor-pointer">
   <span
@@ -1487,13 +1532,11 @@
 <li>Download FFmpeg &raquo; <a
   href="https://www.ffmpeg.org/download.html"
     target="_blank"
-  ><strong>Over Here</strong></a>
-</li>
+  ><strong>Over Here</strong></a></li>
 <li>Full documentation &raquo; <a
   href="https://www.ffmpeg.org/ffmpeg.html"
     target="_blank"
-  ><strong>Over Here</strong></a>
-</li>
+  ><strong>Over Here</strong></a></li>
 </ul>
 
 <h2 class="relative group">Basic conversion 
@@ -1515,8 +1558,7 @@
 <p>Use the <code>crf</code> (Constant Rate Factor) parameter to control the output quality. The lower crf, the higher the quality (range: 0-51). The default value is 23, and visually lossless compression corresponds to <code>-crf 18</code>. Use the <code>preset</code> parameter to control the speed of the compression process. Additional info &raquo; <a
   href="https://trac.ffmpeg.org/wiki/Encode/H.264"
     target="_blank"
-  ><strong>Over Here</strong></a>
-</p>
+  ><strong>Over Here</strong></a></p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Bash" data-lang="Bash"><span class="line"><span class="cl">ffmpeg -i in.mp4 -preset slower -crf <span class="m">18</span> out.mp4
 </span></span></code></pre></div>
 <h2 class="relative group">Trimming 
@@ -1529,30 +1571,25 @@
 <li><a
   href="http://ffmpeg.org/ffmpeg-all.html#Main-options"
     target="_blank"
-  ><code>-ss</code></a>
- specifies the start time, e.g. <code>00:01:23.000</code> or <code>83</code> (in seconds)</li>
+  ><code>-ss</code></a> specifies the start time, e.g. <code>00:01:23.000</code> or <code>83</code> (in seconds)</li>
 <li><a
   href="http://ffmpeg.org/ffmpeg-all.html#Main-options"
     target="_blank"
-  ><code>-t</code></a>
- specifies the duration of the clip (same format).</li>
+  ><code>-t</code></a> specifies the duration of the clip (same format).</li>
 <li>Recent <code>ffmpeg</code> also has a flag to supply the end time with <code>-to</code>.</li>
 <li><a
   href="http://ffmpeg.org/ffmpeg-all.html#Main-options"
     target="_blank"
-  ><code>-c</code></a>
- copy copies the first video, audio, and subtitle bitstream from the input to the output file without re-encoding them. This won&rsquo;t harm the quality and make the command run within seconds.</li>
+  ><code>-c</code></a> copy copies the first video, audio, and subtitle bitstream from the input to the output file without re-encoding them. This won&rsquo;t harm the quality and make the command run within seconds.</li>
 </ul>
 <p>With re-encoding:</p>
 <p>If you leave out the <code>-c copy</code> option, <code>ffmpeg</code> will automatically re-encode the output video and audio according to the format you chose. For high quality video and audio, read the <a
   href="https://ffmpeg.org/trac/ffmpeg/wiki/x264EncodingGuide"
     target="_blank"
-  >x264 Encoding Guide</a>
- and the <a
+  >x264 Encoding Guide</a> and the <a
   href="http://ffmpeg.org/trac/ffmpeg/wiki/AACEncodingGuide"
     target="_blank"
-  >AAC Encoding Guide</a>
-, respectively.</p>
+  >AAC Encoding Guide</a>, respectively.</p>
 <p>For example:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Bash" data-lang="Bash"><span class="line"><span class="cl">ffmpeg -ss <span class="o">[</span>start<span class="o">]</span> -i in.mp4 -t <span class="o">[</span>duration<span class="o">]</span> -c:v libx264 -c:a aac -strict experimental -b:a 128k out.mp4
 </span></span></code></pre></div>
@@ -1566,18 +1603,15 @@
 <li>With <a
   href="http://ffmpeg.org/ffmpeg.html#Stream-copy"
     target="_blank"
-  >-c copy</a>
- the streams will be <code>stream copied</code>, not re-encoded, so there will be no quality loss. If you want to re-encode, see <a
+  >-c copy</a> the streams will be <code>stream copied</code>, not re-encoded, so there will be no quality loss. If you want to re-encode, see <a
   href="https://trac.ffmpeg.org/wiki/Encode/H.264"
     target="_blank"
-  >FFmpeg Wiki: H.264 Encoding Guide</a>
-.</li>
+  >FFmpeg Wiki: H.264 Encoding Guide</a>.</li>
 <li>The <code>-shortest</code> option will cause the output duration to match the duration of the shortest input stream.</li>
 <li>See the <a
   href="http://ffmpeg.org/ffmpeg.html#Advanced-options"
     target="_blank"
-  ><code>-map</code> option documentation</a>
- for more info.</li>
+  ><code>-map</code> option documentation</a> for more info.</li>
 </ul>
 
 <h2 class="relative group">Concat demuxer 
@@ -1608,8 +1642,7 @@
 <p>Use the <a
   href="http://ffmpeg.org/ffmpeg.html#ass"
     target="_blank"
-  >libass</a>
- library (make sure your ffmpeg install has the library in the configuration <code>--enable-libass</code>).</p>
+  >libass</a> library (make sure your ffmpeg install has the library in the configuration <code>--enable-libass</code>).</p>
 <p>First convert the subtitles to .ass format:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Bash" data-lang="Bash"><span class="line"><span class="cl">ffmpeg -i sub.srt sub.ass
 </span></span></code></pre></div><p>Then add them using a video filter:</p>
@@ -1869,15 +1902,19 @@
         
       
 
-      <div class="px-6 py-4">
 
-        
-        <div class="font-bold text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral"
-          href="/posts/downgrade-tool/">How To Downgrade Packages</div>
-        
+    <div class="px-6 py-4">
+      
+        <div
+          class="font-bold text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral"
+          href="/posts/downgrade-tool/">
+          How To Downgrade Packages
+        </div>
+      
 
-        <div class="text-sm text-neutral-500 dark:text-neutral-400">
-          
+
+      <div class="text-sm text-neutral-500 dark:text-neutral-400">
+        
 
 
 
@@ -1941,7 +1978,7 @@
   
   <span
     id="views_posts/downgrade-tool/index.md"
-    class="animate-pulse inline-block text-transparent max-h-3 rounded-full mt-[-2px] align-middle bg-neutral-300 dark:bg-neutral-400"
+    class="animate-pulse inline-block text-transparent max-h-3 rounded-full -mt-[2px] align-middle bg-neutral-300 dark:bg-neutral-400"
     title="views"
     >loading</span
   >
@@ -1969,7 +2006,7 @@
   
   <span
     id="likes_posts/downgrade-tool/index.md"
-    class="animate-pulse inline-block text-transparent max-h-3 rounded-full mt-[-2px] align-middle bg-neutral-300 dark:bg-neutral-400"
+    class="animate-pulse inline-block text-transparent max-h-3 rounded-full -mt-[2px] align-middle bg-neutral-300 dark:bg-neutral-400"
     title="likes"
     >loading</span
   >
@@ -2021,7 +2058,7 @@
           
             
               <span
-                class="mr-2 margin-top-[0.5rem]"
+                class="mr-2 mt-[0.5rem]"
                 onclick="window.open(&#34;/tags/downgrade/&#34;,'_self');return false;">
                 <span class="flex cursor-pointer">
   <span
@@ -2033,7 +2070,7 @@
               </span>
             
               <span
-                class="mr-2 margin-top-[0.5rem]"
+                class="mr-2 mt-[0.5rem]"
                 onclick="window.open(&#34;/tags/archlinux/&#34;,'_self');return false;">
                 <span class="flex cursor-pointer">
   <span
@@ -2045,7 +2082,7 @@
               </span>
             
               <span
-                class="mr-2 margin-top-[0.5rem]"
+                class="mr-2 mt-[0.5rem]"
                 onclick="window.open(&#34;/tags/guide/&#34;,'_self');return false;">
                 <span class="flex cursor-pointer">
   <span
@@ -2057,7 +2094,7 @@
               </span>
             
               <span
-                class="mr-2 margin-top-[0.5rem]"
+                class="mr-2 mt-[0.5rem]"
                 onclick="window.open(&#34;/tags/linux/&#34;,'_self');return false;">
                 <span class="flex cursor-pointer">
   <span
@@ -2079,15 +2116,13 @@
 
 
 
-        </div>
-
-        
       </div>
-      <div class="px-6 pt-4 pb-2">
 
-      </div>
+      
     </div>
-  </a>
+    <div class="px-6 pt-4 pb-2"></div>
+  </div>
+</a>
 
       
         
@@ -2100,15 +2135,19 @@
         
       
 
-      <div class="px-6 py-4">
 
-        
-        <div class="font-bold text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral"
-          href="/posts/pacman-update/">Pacman R7.0 Update</div>
-        
+    <div class="px-6 py-4">
+      
+        <div
+          class="font-bold text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral"
+          href="/posts/pacman-update/">
+          Pacman R7.0 Update
+        </div>
+      
 
-        <div class="text-sm text-neutral-500 dark:text-neutral-400">
-          
+
+      <div class="text-sm text-neutral-500 dark:text-neutral-400">
+        
 
 
 
@@ -2172,7 +2211,7 @@
   
   <span
     id="views_posts/pacman-update/index.md"
-    class="animate-pulse inline-block text-transparent max-h-3 rounded-full mt-[-2px] align-middle bg-neutral-300 dark:bg-neutral-400"
+    class="animate-pulse inline-block text-transparent max-h-3 rounded-full -mt-[2px] align-middle bg-neutral-300 dark:bg-neutral-400"
     title="views"
     >loading</span
   >
@@ -2200,7 +2239,7 @@
   
   <span
     id="likes_posts/pacman-update/index.md"
-    class="animate-pulse inline-block text-transparent max-h-3 rounded-full mt-[-2px] align-middle bg-neutral-300 dark:bg-neutral-400"
+    class="animate-pulse inline-block text-transparent max-h-3 rounded-full -mt-[2px] align-middle bg-neutral-300 dark:bg-neutral-400"
     title="likes"
     >loading</span
   >
@@ -2252,7 +2291,7 @@
           
             
               <span
-                class="mr-2 margin-top-[0.5rem]"
+                class="mr-2 mt-[0.5rem]"
                 onclick="window.open(&#34;/tags/pacman/&#34;,'_self');return false;">
                 <span class="flex cursor-pointer">
   <span
@@ -2264,7 +2303,7 @@
               </span>
             
               <span
-                class="mr-2 margin-top-[0.5rem]"
+                class="mr-2 mt-[0.5rem]"
                 onclick="window.open(&#34;/tags/aur/&#34;,'_self');return false;">
                 <span class="flex cursor-pointer">
   <span
@@ -2276,7 +2315,7 @@
               </span>
             
               <span
-                class="mr-2 margin-top-[0.5rem]"
+                class="mr-2 mt-[0.5rem]"
                 onclick="window.open(&#34;/tags/arch/&#34;,'_self');return false;">
                 <span class="flex cursor-pointer">
   <span
@@ -2288,7 +2327,7 @@
               </span>
             
               <span
-                class="mr-2 margin-top-[0.5rem]"
+                class="mr-2 mt-[0.5rem]"
                 onclick="window.open(&#34;/tags/guide/&#34;,'_self');return false;">
                 <span class="flex cursor-pointer">
   <span
@@ -2300,7 +2339,7 @@
               </span>
             
               <span
-                class="mr-2 margin-top-[0.5rem]"
+                class="mr-2 mt-[0.5rem]"
                 onclick="window.open(&#34;/tags/linux/&#34;,'_self');return false;">
                 <span class="flex cursor-pointer">
   <span
@@ -2322,15 +2361,13 @@
 
 
 
-        </div>
-
-        
       </div>
-      <div class="px-6 pt-4 pb-2">
 
-      </div>
+      
     </div>
-  </a>
+    <div class="px-6 pt-4 pb-2"></div>
+  </div>
+</a>
 
       
         
@@ -2343,15 +2380,19 @@
         
       
 
-      <div class="px-6 py-4">
 
-        
-        <div class="font-bold text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral"
-          href="/posts/ricing-plasma/">Ricing KDE Plasma</div>
-        
+    <div class="px-6 py-4">
+      
+        <div
+          class="font-bold text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral"
+          href="/posts/ricing-plasma/">
+          Ricing KDE Plasma
+        </div>
+      
 
-        <div class="text-sm text-neutral-500 dark:text-neutral-400">
-          
+
+      <div class="text-sm text-neutral-500 dark:text-neutral-400">
+        
 
 
 
@@ -2415,7 +2456,7 @@
   
   <span
     id="views_posts/ricing-plasma/index.md"
-    class="animate-pulse inline-block text-transparent max-h-3 rounded-full mt-[-2px] align-middle bg-neutral-300 dark:bg-neutral-400"
+    class="animate-pulse inline-block text-transparent max-h-3 rounded-full -mt-[2px] align-middle bg-neutral-300 dark:bg-neutral-400"
     title="views"
     >loading</span
   >
@@ -2443,7 +2484,7 @@
   
   <span
     id="likes_posts/ricing-plasma/index.md"
-    class="animate-pulse inline-block text-transparent max-h-3 rounded-full mt-[-2px] align-middle bg-neutral-300 dark:bg-neutral-400"
+    class="animate-pulse inline-block text-transparent max-h-3 rounded-full -mt-[2px] align-middle bg-neutral-300 dark:bg-neutral-400"
     title="likes"
     >loading</span
   >
@@ -2495,7 +2536,7 @@
           
             
               <span
-                class="mr-2 margin-top-[0.5rem]"
+                class="mr-2 mt-[0.5rem]"
                 onclick="window.open(&#34;/tags/plasma/&#34;,'_self');return false;">
                 <span class="flex cursor-pointer">
   <span
@@ -2507,7 +2548,7 @@
               </span>
             
               <span
-                class="mr-2 margin-top-[0.5rem]"
+                class="mr-2 mt-[0.5rem]"
                 onclick="window.open(&#34;/tags/ricing/&#34;,'_self');return false;">
                 <span class="flex cursor-pointer">
   <span
@@ -2519,7 +2560,7 @@
               </span>
             
               <span
-                class="mr-2 margin-top-[0.5rem]"
+                class="mr-2 mt-[0.5rem]"
                 onclick="window.open(&#34;/tags/kde/&#34;,'_self');return false;">
                 <span class="flex cursor-pointer">
   <span
@@ -2531,7 +2572,7 @@
               </span>
             
               <span
-                class="mr-2 margin-top-[0.5rem]"
+                class="mr-2 mt-[0.5rem]"
                 onclick="window.open(&#34;/tags/kde-plasma/&#34;,'_self');return false;">
                 <span class="flex cursor-pointer">
   <span
@@ -2543,7 +2584,7 @@
               </span>
             
               <span
-                class="mr-2 margin-top-[0.5rem]"
+                class="mr-2 mt-[0.5rem]"
                 onclick="window.open(&#34;/tags/guide/&#34;,'_self');return false;">
                 <span class="flex cursor-pointer">
   <span
@@ -2555,7 +2596,7 @@
               </span>
             
               <span
-                class="mr-2 margin-top-[0.5rem]"
+                class="mr-2 mt-[0.5rem]"
                 onclick="window.open(&#34;/tags/linux/&#34;,'_self');return false;">
                 <span class="flex cursor-pointer">
   <span
@@ -2577,15 +2618,13 @@
 
 
 
-        </div>
-
-        
       </div>
-      <div class="px-6 pt-4 pb-2">
 
-      </div>
+      
     </div>
-  </a>
+    <div class="px-6 pt-4 pb-2"></div>
+  </div>
+</a>
 
       
     </section>
@@ -2605,8 +2644,8 @@
         
         <script
           type="text/javascript"
-          src="/js/page.min.407e5b2727c1f241c95d53db24c776bea71bfc18e09511b815d669ad8caca6e9e18a53864ad364b1ccccfa2f2956768d33cfe193bfb64d3406f3b5ece354ba57.js"
-          integrity="sha512-QH5bJyfB8kHJXVPbJMd2vqcb/BjglRG4FdZprYyspunhilOGStNksczM&#43;i8pVnaNM8/hk7&#43;2TTQG87Xs41S6Vw=="
+          src="/js/page.min.54b6f4371722649edbe871e431d8670d670878c22be8f36e229fe53cc9b786fe25a834def5e6de621f7a3e37b72bc8cd73839aa5ed907ed6cbd45cd3e1b0fa20.js"
+          integrity="sha512-VLb0NxciZJ7b6HHkMdhnDWcIeMIr6PNuIp/lPMm3hv4lqDTe9ebeYh96Pje3K8jNc4Oape2QftbL1FzT4bD6IA=="
           data-oid="views_posts/ffmpeg-cheat-sheet/index.md"
           data-oid-likes="likes_posts/ffmpeg-cheat-sheet/index.md"></script>
       
@@ -2724,7 +2763,7 @@
 </footer>
 <div
   id="search-wrapper"
-  class="invisible fixed inset-0 flex h-screen w-screen cursor-default flex-col bg-neutral-500/50 p-4 backdrop-blur-sm dark:bg-neutral-900/50 sm:p-6 md:p-[10vh] lg:p-[12vh] z-index-500"
+  class="invisible fixed inset-0 flex h-screen w-screen cursor-default flex-col bg-neutral-500/50 p-4 backdrop-blur-sm dark:bg-neutral-900/50 sm:p-6 md:p-[10vh] lg:p-[12vh] z-500"
   data-url="https://xerolinux.xyz/">
   <div
     id="search-modal"

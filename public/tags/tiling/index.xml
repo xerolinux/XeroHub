@@ -17,8 +17,7 @@
       <description>&lt;p&gt;A quick one for today. I do not use &lt;strong&gt;Gnome&lt;/strong&gt; myself, but I keep a close eye on what&amp;rsquo;s going on. Recently &lt;a
   href=&#34;https://www.youtube.com/@DistroTube/videos&#34;
     target=&#34;_blank&#34;
-  &gt;&lt;strong&gt;@DistroTube&lt;/strong&gt;&lt;/a&gt;
- made a video about an extension that most of you out there might like, so I thought, why not post about it here&amp;hellip;&lt;/p&gt;
+  &gt;&lt;strong&gt;@DistroTube&lt;/strong&gt;&lt;/a&gt; made a video about an extension that most of you out there might like, so I thought, why not post about it here&amp;hellip;&lt;/p&gt;
 &lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
       &lt;iframe allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen&#34; loading=&#34;eager&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; src=&#34;https://www.youtube.com/embed/zEe1CqlWKZ0?autoplay=0&amp;amp;controls=1&amp;amp;end=0&amp;amp;loop=0&amp;amp;mute=0&amp;amp;start=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;YouTube video&#34;&gt;&lt;/iframe&gt;
     &lt;/div&gt;
@@ -90,12 +89,10 @@
     &gt;Grab it either from the &lt;a
   href=&#34;https://extensions.gnome.org/extension/7065/tiling-shell/&#34;
     target=&#34;_blank&#34;
-  &gt;&lt;strong&gt;Gnome Extenstions&lt;/strong&gt;&lt;/a&gt;
- site or via the &lt;a
+  &gt;&lt;strong&gt;Gnome Extenstions&lt;/strong&gt;&lt;/a&gt; site or via the &lt;a
   href=&#34;https://flathub.org/apps/com.mattjakeman.ExtensionManager&#34;
     target=&#34;_blank&#34;
-  &gt;&lt;strong&gt;Extension Manager&lt;/strong&gt;&lt;/a&gt;
- app &lt;em&gt;Not&lt;/em&gt; the &lt;strong&gt;A.U.R&lt;/strong&gt; or any repos.&lt;/span&gt;
+  &gt;&lt;strong&gt;Extension Manager&lt;/strong&gt;&lt;/a&gt; app &lt;em&gt;Not&lt;/em&gt; the &lt;strong&gt;A.U.R&lt;/strong&gt; or any repos.&lt;/span&gt;
 &lt;/div&gt;
 
 &lt;p&gt;With that out of the way, I say this coz many have tried grabbing it from the &lt;strong&gt;AUR&lt;/strong&gt; only to suffer maintainers lagging behind on updates. It&amp;rsquo;s better to get it straight from source rather than rely on a 3rd party maintainer (man in the middle).&lt;/p&gt;
@@ -162,7 +159,7 @@
               class=&#34;nozoom mt-0 mb-0 w-full h-full object-cover&#34;&gt;
           &lt;/div&gt;&lt;div class=&#34;w-full md:w-auto pt-3 p-5&#34;&gt;
           &lt;div class=&#34;flex items-center&#34;&gt;
-            &lt;span class=&#34;text-2xl text-neutral-800 dark:text-neutral margin-right-[10px]&#34;&gt;
+            &lt;span class=&#34;text-2xl text-neutral-800 dark:text-neutral mr-[10px]&#34;&gt;
               
 
   &lt;span class=&#34;relative block icon&#34;&gt;
@@ -184,9 +181,10 @@
           &lt;/p&gt;
 
           &lt;div class=&#34;m-0 mt-2 flex items-center&#34;&gt;
+            
+            
             &lt;span
-              class=&#34;mr-1 inline-block h-3 w-3 rounded-full&#34;
-              style=&#34;background-color: #2b7489&#34;&gt;&lt;/span&gt;
+              class=&#34;mr-1 inline-block h-3 w-3 rounded-full background-color-558b544cf685f39d34e4903e39c38b67&#34;&gt;&lt;/span&gt;
             &lt;div class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
               TypeScript
             &lt;/div&gt;
@@ -222,9 +220,10 @@
       
       
       &lt;script
+        async
         type=&#34;text/javascript&#34;
-        src=&#34;https://xerolinux.xyz/js/fetch-repo.min.6fa205e5fc33470feaf8cf69cbed6460022e3c17e86caf270846f7660fbd61d5012ec56f9c8dd8accb81c36c79f8ef40f19d6fd69353d8a62327c3e9bc615f27.js&#34;
-        integrity=&#34;sha512-b6IF5fwzRw/q&amp;#43;M9py&amp;#43;1kYAIuPBfobK8nCEb3Zg&amp;#43;9YdUBLsVvnI3YrMuBw2x5&amp;#43;O9A8Z1v1pNT2KYjJ8PpvGFfJw==&#34;
+        src=&#34;https://xerolinux.xyz/js/fetch-repo.min.44b885f79fea551b2049e9be9ca41b840614ec4aad399936bf666c88998f1494a6de637470104319338fe5fd24022acfbc60ff019481ae5cf70492e32c8428a8.js&#34;
+        integrity=&#34;sha512-RLiF95/qVRsgSem&amp;#43;nKQbhAYU7EqtOZk2v2ZsiJmPFJSm3mN0cBBDGTOP5f0kAirPvGD/AZSBrlz3BJLjLIQoqA==&#34;
         data-repo-url=&#34;https://api.github.com/repos/domferr/tilingshell&#34;
         data-repo-id=&#34;github-960f7422cbeadeb866eb2380db36e9a2&#34;&gt;&lt;/script&gt;
     &lt;/a&gt;&lt;/div&gt;
@@ -232,8 +231,7 @@
 &lt;p&gt;Even though I do not like or use &lt;strong&gt;Window Tiling&lt;/strong&gt; myself, I think the developer behind this extension was heavily &lt;em&gt;inspired&lt;/em&gt; by Windows&amp;rsquo; &lt;a
   href=&#34;https://learn.microsoft.com/en-us/windows/powertoys/fancyzones&#34;
     target=&#34;_blank&#34;
-  &gt;&lt;strong&gt;PowerToys Fancy Zones&lt;/strong&gt;&lt;/a&gt;
-. I do not find this wrong in the slightest, on the contrary, it&amp;rsquo;s one of Windows&amp;rsquo; best features IMO. It&amp;rsquo;s nice to see it make its way to &lt;strong&gt;Linux&lt;/strong&gt;.&lt;/p&gt;
+  &gt;&lt;strong&gt;PowerToys Fancy Zones&lt;/strong&gt;&lt;/a&gt;. I do not find this wrong in the slightest, on the contrary, it&amp;rsquo;s one of Windows&amp;rsquo; best features IMO. It&amp;rsquo;s nice to see it make its way to &lt;strong&gt;Linux&lt;/strong&gt;.&lt;/p&gt;
 &lt;p&gt;With Windows constantly shooting itself in the foot, it&amp;rsquo;s fun to see its most useful parts being cherry picked and ported to &lt;strong&gt;Linux&lt;/strong&gt;. Windows&amp;rsquo; loss is &lt;strong&gt;Liinux&lt;/strong&gt;&amp;rsquo;s gain lol. Well, I hope you enjoy this neat little extension&amp;hellip;&lt;/p&gt;
 
 &lt;h3 class=&#34;relative group&#34;&gt;Honorable mention 
@@ -244,8 +242,7 @@
 &lt;p&gt;Now, with &lt;strong&gt;TilingShell&lt;/strong&gt; covering newcomers from Windows, the extension am talking about here, is none other than &lt;a
   href=&#34;https://extensions.gnome.org/extension/4481/forge/&#34;
     target=&#34;_blank&#34;
-  &gt;&lt;strong&gt;Forge&lt;/strong&gt;&lt;/a&gt;
-, specifically targeted to those coming from a &lt;em&gt;Tiling Window Manager&lt;/em&gt;, who prefer that way of doing things.&lt;/p&gt;
+  &gt;&lt;strong&gt;Forge&lt;/strong&gt;&lt;/a&gt;, specifically targeted to those coming from a &lt;em&gt;Tiling Window Manager&lt;/em&gt;, who prefer that way of doing things.&lt;/p&gt;
 &lt;p&gt;
 
 
@@ -269,7 +266,7 @@
               class=&#34;nozoom mt-0 mb-0 w-full h-full object-cover&#34;&gt;
           &lt;/div&gt;&lt;div class=&#34;w-full md:w-auto pt-3 p-5&#34;&gt;
           &lt;div class=&#34;flex items-center&#34;&gt;
-            &lt;span class=&#34;text-2xl text-neutral-800 dark:text-neutral margin-right-[10px]&#34;&gt;
+            &lt;span class=&#34;text-2xl text-neutral-800 dark:text-neutral mr-[10px]&#34;&gt;
               
 
   &lt;span class=&#34;relative block icon&#34;&gt;
@@ -291,9 +288,10 @@
           &lt;/p&gt;
 
           &lt;div class=&#34;m-0 mt-2 flex items-center&#34;&gt;
+            
+            
             &lt;span
-              class=&#34;mr-1 inline-block h-3 w-3 rounded-full&#34;
-              style=&#34;background-color: #f1e05a&#34;&gt;&lt;/span&gt;
+              class=&#34;mr-1 inline-block h-3 w-3 rounded-full background-color-686155af75a60a0f6e9d80c1f7edd3e9&#34;&gt;&lt;/span&gt;
             &lt;div class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
               JavaScript
             &lt;/div&gt;
@@ -329,9 +327,10 @@
       
       
       &lt;script
+        async
         type=&#34;text/javascript&#34;
-        src=&#34;https://xerolinux.xyz/js/fetch-repo.min.6fa205e5fc33470feaf8cf69cbed6460022e3c17e86caf270846f7660fbd61d5012ec56f9c8dd8accb81c36c79f8ef40f19d6fd69353d8a62327c3e9bc615f27.js&#34;
-        integrity=&#34;sha512-b6IF5fwzRw/q&amp;#43;M9py&amp;#43;1kYAIuPBfobK8nCEb3Zg&amp;#43;9YdUBLsVvnI3YrMuBw2x5&amp;#43;O9A8Z1v1pNT2KYjJ8PpvGFfJw==&#34;
+        src=&#34;https://xerolinux.xyz/js/fetch-repo.min.44b885f79fea551b2049e9be9ca41b840614ec4aad399936bf666c88998f1494a6de637470104319338fe5fd24022acfbc60ff019481ae5cf70492e32c8428a8.js&#34;
+        integrity=&#34;sha512-RLiF95/qVRsgSem&amp;#43;nKQbhAYU7EqtOZk2v2ZsiJmPFJSm3mN0cBBDGTOP5f0kAirPvGD/AZSBrlz3BJLjLIQoqA==&#34;
         data-repo-url=&#34;https://api.github.com/repos/forge-ext/forge&#34;
         data-repo-id=&#34;github-759ccb72510e521a6d6a62d8e54d138b&#34;&gt;&lt;/script&gt;
     &lt;/a&gt;&lt;/div&gt;
@@ -356,8 +355,7 @@
 &lt;p&gt;Another day another Terminal utility. &lt;strong&gt;Zellij&lt;/strong&gt; is a terminal workspace. It has the base functionality of a terminal multiplexer (similar to &lt;code&gt;tmux&lt;/code&gt; or &lt;code&gt;screen&lt;/code&gt;) but includes many built-in features that would allow users to extend it and create their own personalized environment. Visit &lt;a
   href=&#34;https://zellij.dev&#34;
     target=&#34;_blank&#34;
-  &gt;&lt;strong&gt;Official Site&lt;/strong&gt;&lt;/a&gt;
- for more. Or watch video below.&lt;/p&gt;
+  &gt;&lt;strong&gt;Official Site&lt;/strong&gt;&lt;/a&gt; for more. Or watch video below.&lt;/p&gt;
 &lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
       &lt;iframe allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen&#34; loading=&#34;eager&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; src=&#34;https://www.youtube.com/embed/ZPfQS5FHNYQ?autoplay=0&amp;amp;controls=1&amp;amp;end=0&amp;amp;loop=0&amp;amp;mute=0&amp;amp;start=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;YouTube video&#34;&gt;&lt;/iframe&gt;
     &lt;/div&gt;
@@ -395,7 +393,7 @@
               class=&#34;nozoom mt-0 mb-0 w-full h-full object-cover&#34;&gt;
           &lt;/div&gt;&lt;div class=&#34;w-full md:w-auto pt-3 p-5&#34;&gt;
           &lt;div class=&#34;flex items-center&#34;&gt;
-            &lt;span class=&#34;text-2xl text-neutral-800 dark:text-neutral margin-right-[10px]&#34;&gt;
+            &lt;span class=&#34;text-2xl text-neutral-800 dark:text-neutral mr-[10px]&#34;&gt;
               
 
   &lt;span class=&#34;relative block icon&#34;&gt;
@@ -417,9 +415,10 @@
           &lt;/p&gt;
 
           &lt;div class=&#34;m-0 mt-2 flex items-center&#34;&gt;
+            
+            
             &lt;span
-              class=&#34;mr-1 inline-block h-3 w-3 rounded-full&#34;
-              style=&#34;background-color: #dea584&#34;&gt;&lt;/span&gt;
+              class=&#34;mr-1 inline-block h-3 w-3 rounded-full background-color-f5e265d607cb720058fc166e00083fe8&#34;&gt;&lt;/span&gt;
             &lt;div class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
               Rust
             &lt;/div&gt;
@@ -455,9 +454,10 @@
       
       
       &lt;script
+        async
         type=&#34;text/javascript&#34;
-        src=&#34;https://xerolinux.xyz/js/fetch-repo.min.6fa205e5fc33470feaf8cf69cbed6460022e3c17e86caf270846f7660fbd61d5012ec56f9c8dd8accb81c36c79f8ef40f19d6fd69353d8a62327c3e9bc615f27.js&#34;
-        integrity=&#34;sha512-b6IF5fwzRw/q&amp;#43;M9py&amp;#43;1kYAIuPBfobK8nCEb3Zg&amp;#43;9YdUBLsVvnI3YrMuBw2x5&amp;#43;O9A8Z1v1pNT2KYjJ8PpvGFfJw==&#34;
+        src=&#34;https://xerolinux.xyz/js/fetch-repo.min.44b885f79fea551b2049e9be9ca41b840614ec4aad399936bf666c88998f1494a6de637470104319338fe5fd24022acfbc60ff019481ae5cf70492e32c8428a8.js&#34;
+        integrity=&#34;sha512-RLiF95/qVRsgSem&amp;#43;nKQbhAYU7EqtOZk2v2ZsiJmPFJSm3mN0cBBDGTOP5f0kAirPvGD/AZSBrlz3BJLjLIQoqA==&#34;
         data-repo-url=&#34;https://api.github.com/repos/zellij-org/zellij&#34;
         data-repo-id=&#34;github-d4629d5be933fe5b06f61e7e2b4973ce&#34;&gt;&lt;/script&gt;
     &lt;/a&gt;&lt;/div&gt;

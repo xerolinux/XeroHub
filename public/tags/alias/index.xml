@@ -67,8 +67,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;You can also use aliases to execute scripts and edit files among many many many other things. They are amazing. I use a ton of them in &lt;strong&gt;XeroLinux&lt;/strong&gt;. To check them out visit this link &amp;raquo; &lt;a
   href=&#34;https://github.com/xerolinux/xero-fixes/blob/main/conf/.bashrc&#34;
     target=&#34;_blank&#34;
-  &gt;&lt;strong&gt;XeroLinux Aliases&lt;/strong&gt;&lt;/a&gt;
-.&lt;/p&gt;
+  &gt;&lt;strong&gt;XeroLinux Aliases&lt;/strong&gt;&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Quick examples :&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Edit Pacman.conf&lt;/li&gt;

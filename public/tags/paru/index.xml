@@ -79,12 +79,10 @@
 &lt;p&gt;Once that is done, you can use it to start installing packages from the &lt;a
   href=&#34;https://aur.archlinux.org&#34;
     target=&#34;_blank&#34;
-  &gt;AUR&lt;/a&gt;
-. Keep in mind that you do not need to install both; just select the one you prefer, either one works.. I would recommend YaY myself though.. &lt;a
+  &gt;AUR&lt;/a&gt;. Keep in mind that you do not need to install both; just select the one you prefer, either one works.. I would recommend YaY myself though.. &lt;a
   href=&#34;https://wiki.archlinux.org/title/AUR_helpers&#34;
     target=&#34;_blank&#34;
-  &gt;ArchWiki Page&lt;/a&gt;
-&lt;/p&gt;
+  &gt;ArchWiki Page&lt;/a&gt;&lt;/p&gt;
 </description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/install-yay-paru/featured.webp" />
     </item>

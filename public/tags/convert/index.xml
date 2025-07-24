@@ -26,13 +26,11 @@
 &lt;li&gt;Download FFmpeg &amp;raquo; &lt;a
   href=&#34;https://www.ffmpeg.org/download.html&#34;
     target=&#34;_blank&#34;
-  &gt;&lt;strong&gt;Over Here&lt;/strong&gt;&lt;/a&gt;
-&lt;/li&gt;
+  &gt;&lt;strong&gt;Over Here&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;Full documentation &amp;raquo; &lt;a
   href=&#34;https://www.ffmpeg.org/ffmpeg.html&#34;
     target=&#34;_blank&#34;
-  &gt;&lt;strong&gt;Over Here&lt;/strong&gt;&lt;/a&gt;
-&lt;/li&gt;
+  &gt;&lt;strong&gt;Over Here&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h2 class=&#34;relative group&#34;&gt;Basic conversion 
@@ -54,8 +52,7 @@
 &lt;p&gt;Use the &lt;code&gt;crf&lt;/code&gt; (Constant Rate Factor) parameter to control the output quality. The lower crf, the higher the quality (range: 0-51). The default value is 23, and visually lossless compression corresponds to &lt;code&gt;-crf 18&lt;/code&gt;. Use the &lt;code&gt;preset&lt;/code&gt; parameter to control the speed of the compression process. Additional info &amp;raquo; &lt;a
   href=&#34;https://trac.ffmpeg.org/wiki/Encode/H.264&#34;
     target=&#34;_blank&#34;
-  &gt;&lt;strong&gt;Over Here&lt;/strong&gt;&lt;/a&gt;
-&lt;/p&gt;
+  &gt;&lt;strong&gt;Over Here&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ffmpeg -i in.mp4 -preset slower -crf &lt;span class=&#34;m&#34;&gt;18&lt;/span&gt; out.mp4
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;h2 class=&#34;relative group&#34;&gt;Trimming 
@@ -68,30 +65,25 @@
 &lt;li&gt;&lt;a
   href=&#34;http://ffmpeg.org/ffmpeg-all.html#Main-options&#34;
     target=&#34;_blank&#34;
-  &gt;&lt;code&gt;-ss&lt;/code&gt;&lt;/a&gt;
- specifies the start time, e.g. &lt;code&gt;00:01:23.000&lt;/code&gt; or &lt;code&gt;83&lt;/code&gt; (in seconds)&lt;/li&gt;
+  &gt;&lt;code&gt;-ss&lt;/code&gt;&lt;/a&gt; specifies the start time, e.g. &lt;code&gt;00:01:23.000&lt;/code&gt; or &lt;code&gt;83&lt;/code&gt; (in seconds)&lt;/li&gt;
 &lt;li&gt;&lt;a
   href=&#34;http://ffmpeg.org/ffmpeg-all.html#Main-options&#34;
     target=&#34;_blank&#34;
-  &gt;&lt;code&gt;-t&lt;/code&gt;&lt;/a&gt;
- specifies the duration of the clip (same format).&lt;/li&gt;
+  &gt;&lt;code&gt;-t&lt;/code&gt;&lt;/a&gt; specifies the duration of the clip (same format).&lt;/li&gt;
 &lt;li&gt;Recent &lt;code&gt;ffmpeg&lt;/code&gt; also has a flag to supply the end time with &lt;code&gt;-to&lt;/code&gt;.&lt;/li&gt;
 &lt;li&gt;&lt;a
   href=&#34;http://ffmpeg.org/ffmpeg-all.html#Main-options&#34;
     target=&#34;_blank&#34;
-  &gt;&lt;code&gt;-c&lt;/code&gt;&lt;/a&gt;
- copy copies the first video, audio, and subtitle bitstream from the input to the output file without re-encoding them. This won&amp;rsquo;t harm the quality and make the command run within seconds.&lt;/li&gt;
+  &gt;&lt;code&gt;-c&lt;/code&gt;&lt;/a&gt; copy copies the first video, audio, and subtitle bitstream from the input to the output file without re-encoding them. This won&amp;rsquo;t harm the quality and make the command run within seconds.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;With re-encoding:&lt;/p&gt;
 &lt;p&gt;If you leave out the &lt;code&gt;-c copy&lt;/code&gt; option, &lt;code&gt;ffmpeg&lt;/code&gt; will automatically re-encode the output video and audio according to the format you chose. For high quality video and audio, read the &lt;a
   href=&#34;https://ffmpeg.org/trac/ffmpeg/wiki/x264EncodingGuide&#34;
     target=&#34;_blank&#34;
-  &gt;x264 Encoding Guide&lt;/a&gt;
- and the &lt;a
+  &gt;x264 Encoding Guide&lt;/a&gt; and the &lt;a
   href=&#34;http://ffmpeg.org/trac/ffmpeg/wiki/AACEncodingGuide&#34;
     target=&#34;_blank&#34;
-  &gt;AAC Encoding Guide&lt;/a&gt;
-, respectively.&lt;/p&gt;
+  &gt;AAC Encoding Guide&lt;/a&gt;, respectively.&lt;/p&gt;
 &lt;p&gt;For example:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ffmpeg -ss &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;start&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt; -i in.mp4 -t &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;duration&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt; -c:v libx264 -c:a aac -strict experimental -b:a 128k out.mp4
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
@@ -105,18 +97,15 @@
 &lt;li&gt;With &lt;a
   href=&#34;http://ffmpeg.org/ffmpeg.html#Stream-copy&#34;
     target=&#34;_blank&#34;
-  &gt;-c copy&lt;/a&gt;
- the streams will be &lt;code&gt;stream copied&lt;/code&gt;, not re-encoded, so there will be no quality loss. If you want to re-encode, see &lt;a
+  &gt;-c copy&lt;/a&gt; the streams will be &lt;code&gt;stream copied&lt;/code&gt;, not re-encoded, so there will be no quality loss. If you want to re-encode, see &lt;a
   href=&#34;https://trac.ffmpeg.org/wiki/Encode/H.264&#34;
     target=&#34;_blank&#34;
-  &gt;FFmpeg Wiki: H.264 Encoding Guide&lt;/a&gt;
-.&lt;/li&gt;
+  &gt;FFmpeg Wiki: H.264 Encoding Guide&lt;/a&gt;.&lt;/li&gt;
 &lt;li&gt;The &lt;code&gt;-shortest&lt;/code&gt; option will cause the output duration to match the duration of the shortest input stream.&lt;/li&gt;
 &lt;li&gt;See the &lt;a
   href=&#34;http://ffmpeg.org/ffmpeg.html#Advanced-options&#34;
     target=&#34;_blank&#34;
-  &gt;&lt;code&gt;-map&lt;/code&gt; option documentation&lt;/a&gt;
- for more info.&lt;/li&gt;
+  &gt;&lt;code&gt;-map&lt;/code&gt; option documentation&lt;/a&gt; for more info.&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h2 class=&#34;relative group&#34;&gt;Concat demuxer 
@@ -147,8 +136,7 @@
 &lt;p&gt;Use the &lt;a
   href=&#34;http://ffmpeg.org/ffmpeg.html#ass&#34;
     target=&#34;_blank&#34;
-  &gt;libass&lt;/a&gt;
- library (make sure your ffmpeg install has the library in the configuration &lt;code&gt;--enable-libass&lt;/code&gt;).&lt;/p&gt;
+  &gt;libass&lt;/a&gt; library (make sure your ffmpeg install has the library in the configuration &lt;code&gt;--enable-libass&lt;/code&gt;).&lt;/p&gt;
 &lt;p&gt;First convert the subtitles to .ass format:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ffmpeg -i sub.srt sub.ass
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Then add them using a video filter:&lt;/p&gt;
@@ -283,7 +271,7 @@
               class=&#34;nozoom mt-0 mb-0 w-full h-full object-cover&#34;&gt;
           &lt;/div&gt;&lt;div class=&#34;w-full md:w-auto pt-3 p-5&#34;&gt;
           &lt;div class=&#34;flex items-center&#34;&gt;
-            &lt;span class=&#34;text-2xl text-neutral-800 dark:text-neutral margin-right-[10px]&#34;&gt;
+            &lt;span class=&#34;text-2xl text-neutral-800 dark:text-neutral mr-[10px]&#34;&gt;
               
 
   &lt;span class=&#34;relative block icon&#34;&gt;
@@ -305,9 +293,10 @@
           &lt;/p&gt;
 
           &lt;div class=&#34;m-0 mt-2 flex items-center&#34;&gt;
+            
+            
             &lt;span
-              class=&#34;mr-1 inline-block h-3 w-3 rounded-full&#34;
-              style=&#34;background-color: #f34b7d&#34;&gt;&lt;/span&gt;
+              class=&#34;mr-1 inline-block h-3 w-3 rounded-full background-color-f6f87c9fdcf8b3c3f07f93f1ee8712c9&#34;&gt;&lt;/span&gt;
             &lt;div class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
               C&amp;#43;&amp;#43;
             &lt;/div&gt;
@@ -343,9 +332,10 @@
       
       
       &lt;script
+        async
         type=&#34;text/javascript&#34;
-        src=&#34;https://xerolinux.xyz/js/fetch-repo.min.6fa205e5fc33470feaf8cf69cbed6460022e3c17e86caf270846f7660fbd61d5012ec56f9c8dd8accb81c36c79f8ef40f19d6fd69353d8a62327c3e9bc615f27.js&#34;
-        integrity=&#34;sha512-b6IF5fwzRw/q&amp;#43;M9py&amp;#43;1kYAIuPBfobK8nCEb3Zg&amp;#43;9YdUBLsVvnI3YrMuBw2x5&amp;#43;O9A8Z1v1pNT2KYjJ8PpvGFfJw==&#34;
+        src=&#34;https://xerolinux.xyz/js/fetch-repo.min.44b885f79fea551b2049e9be9ca41b840614ec4aad399936bf666c88998f1494a6de637470104319338fe5fd24022acfbc60ff019481ae5cf70492e32c8428a8.js&#34;
+        integrity=&#34;sha512-RLiF95/qVRsgSem&amp;#43;nKQbhAYU7EqtOZk2v2ZsiJmPFJSm3mN0cBBDGTOP5f0kAirPvGD/AZSBrlz3BJLjLIQoqA==&#34;
         data-repo-url=&#34;https://api.github.com/repos/Faster3ck/Converseen&#34;
         data-repo-id=&#34;github-bcb0d2da5009533c2e74cc81533f73ad&#34;&gt;&lt;/script&gt;
     &lt;/a&gt;&lt;/div&gt;

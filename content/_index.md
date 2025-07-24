@@ -40,7 +40,7 @@ The distribution also provides pre-configured environments that serve as an eleg
 
 <div align="center">
 
-{{< youtube lsYg6-wUWXw >}}
+{{< youtube hj9I8UYXToY >}}
 
 </div>
 

@@ -1,0 +1,1 @@
+(()=>{const e=document.currentScript,t=e?.getAttribute("data-target-id");window.addEventListener("scroll",()=>{const e=window.pageYOffset||document.documentElement.scrollTop||document.body.scrollTop||0,n=document.getElementById(t);n.style.opacity=e/300})})()

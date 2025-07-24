@@ -22,8 +22,7 @@
 &lt;p&gt;&lt;a
   href=&#34;https://ollama.com&#34;
     target=&#34;_blank&#34;
-  &gt;&lt;strong&gt;Ollama&lt;/strong&gt;&lt;/a&gt;
- is a tool that allows you to run and manage &lt;em&gt;A.I.&lt;/em&gt; models locally on your own machines, providing privacy and control without relying on &lt;em&gt;cloud-based&lt;/em&gt; services. While it works across multiple platforms, it integrates smoothly into any &lt;strong&gt;Linux&lt;/strong&gt; workflow.&lt;/p&gt;
+  &gt;&lt;strong&gt;Ollama&lt;/strong&gt;&lt;/a&gt; is a tool that allows you to run and manage &lt;em&gt;A.I.&lt;/em&gt; models locally on your own machines, providing privacy and control without relying on &lt;em&gt;cloud-based&lt;/em&gt; services. While it works across multiple platforms, it integrates smoothly into any &lt;strong&gt;Linux&lt;/strong&gt; workflow.&lt;/p&gt;
 &lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
       &lt;iframe allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen&#34; loading=&#34;eager&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; src=&#34;https://www.youtube.com/embed/J6s0n1FhXRo?autoplay=0&amp;amp;controls=1&amp;amp;end=0&amp;amp;loop=0&amp;amp;mute=0&amp;amp;start=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;YouTube video&#34;&gt;&lt;/iframe&gt;
     &lt;/div&gt;
@@ -36,8 +35,7 @@
 &lt;p&gt;Installing is easy, it can be done in multiple ways, that I will show you here. In the video above my good friend and brother &lt;a
   href=&#34;https://www.youtube.com/@DistroTube/videos&#34;
     target=&#34;_blank&#34;
-  &gt;&lt;strong&gt;DistroTube&lt;/strong&gt;&lt;/a&gt;
- goes through the motions on &lt;strong&gt;ArcoLinux&lt;/strong&gt; an &lt;strong&gt;Arch-Based&lt;/strong&gt; distro. Here, I will expanding on that just a little, while including most of the commands used.&lt;/p&gt;
+  &gt;&lt;strong&gt;DistroTube&lt;/strong&gt;&lt;/a&gt; goes through the motions on &lt;strong&gt;ArcoLinux&lt;/strong&gt; an &lt;strong&gt;Arch-Based&lt;/strong&gt; distro. Here, I will expanding on that just a little, while including most of the commands used.&lt;/p&gt;
 &lt;p&gt;First we will need to install the &lt;strong&gt;Ollama Engine&lt;/strong&gt;&amp;hellip;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Platform-Agnostic (Recommended)&lt;/li&gt;
@@ -51,8 +49,7 @@
 &lt;p&gt;We can select model(s) from &lt;a
   href=&#34;https://github.com/ollama/ollama?tab=readme-ov-file#model-library&#34;
     target=&#34;_blank&#34;
-  &gt;&lt;strong&gt;This Link&lt;/strong&gt;&lt;/a&gt;
-, once we have it we use the following command to install and run (using llama3.1 in this example)&amp;hellip;&lt;/p&gt;
+  &gt;&lt;strong&gt;This Link&lt;/strong&gt;&lt;/a&gt;, once we have it we use the following command to install and run (using llama3.1 in this example)&amp;hellip;&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ollama run llama3.1
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Some models are larger than others, reaching up to 232GB !!! Also the bigger the model is the more powerful your machine should be to handle it. Please keep that in mind before diving too deep into it.&lt;/p&gt;
 &lt;p align=&#34;center&#34;&gt;
@@ -68,7 +65,7 @@
               class=&#34;nozoom mt-0 mb-0 w-full h-full object-cover&#34;&gt;
           &lt;/div&gt;&lt;div class=&#34;w-full md:w-auto pt-3 p-5&#34;&gt;
           &lt;div class=&#34;flex items-center&#34;&gt;
-            &lt;span class=&#34;text-2xl text-neutral-800 dark:text-neutral margin-right-[10px]&#34;&gt;
+            &lt;span class=&#34;text-2xl text-neutral-800 dark:text-neutral mr-[10px]&#34;&gt;
               
 
   &lt;span class=&#34;relative block icon&#34;&gt;
@@ -90,9 +87,10 @@
           &lt;/p&gt;
 
           &lt;div class=&#34;m-0 mt-2 flex items-center&#34;&gt;
+            
+            
             &lt;span
-              class=&#34;mr-1 inline-block h-3 w-3 rounded-full&#34;
-              style=&#34;background-color: #00ADD8&#34;&gt;&lt;/span&gt;
+              class=&#34;mr-1 inline-block h-3 w-3 rounded-full background-color-5f075ae3e1f9d0382bb8c4632991f96f&#34;&gt;&lt;/span&gt;
             &lt;div class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
               Go
             &lt;/div&gt;
@@ -128,9 +126,10 @@
       
       
       &lt;script
+        async
         type=&#34;text/javascript&#34;
-        src=&#34;https://xerolinux.xyz/js/fetch-repo.min.6fa205e5fc33470feaf8cf69cbed6460022e3c17e86caf270846f7660fbd61d5012ec56f9c8dd8accb81c36c79f8ef40f19d6fd69353d8a62327c3e9bc615f27.js&#34;
-        integrity=&#34;sha512-b6IF5fwzRw/q&amp;#43;M9py&amp;#43;1kYAIuPBfobK8nCEb3Zg&amp;#43;9YdUBLsVvnI3YrMuBw2x5&amp;#43;O9A8Z1v1pNT2KYjJ8PpvGFfJw==&#34;
+        src=&#34;https://xerolinux.xyz/js/fetch-repo.min.44b885f79fea551b2049e9be9ca41b840614ec4aad399936bf666c88998f1494a6de637470104319338fe5fd24022acfbc60ff019481ae5cf70492e32c8428a8.js&#34;
+        integrity=&#34;sha512-RLiF95/qVRsgSem&amp;#43;nKQbhAYU7EqtOZk2v2ZsiJmPFJSm3mN0cBBDGTOP5f0kAirPvGD/AZSBrlz3BJLjLIQoqA==&#34;
         data-repo-url=&#34;https://api.github.com/repos/ollama/ollama&#34;
         data-repo-id=&#34;github-56f532714b2f7c9707f9dc8d689abff4&#34;&gt;&lt;/script&gt;
     &lt;/a&gt;&lt;/div&gt;

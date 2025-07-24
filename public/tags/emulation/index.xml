@@ -23,8 +23,7 @@
 &lt;p&gt;&lt;a
   href=&#34;https://batocera.org&#34;
     target=&#34;_blank&#34;
-  &gt;&lt;strong&gt;Batocera&lt;/strong&gt;&lt;/a&gt;
- is an open-source and completely free retro-gaming distribution that can be copied to a USB stick or an SD card with the aim of turning any computer/nano computer into a gaming console during a game or permanently. Batocera.linux does not require any modification on your computer. Note that you must own the games you play in order to comply with the law.&lt;/p&gt;
+  &gt;&lt;strong&gt;Batocera&lt;/strong&gt;&lt;/a&gt; is an open-source and completely free retro-gaming distribution that can be copied to a USB stick or an SD card with the aim of turning any computer/nano computer into a gaming console during a game or permanently. Batocera.linux does not require any modification on your computer. Note that you must own the games you play in order to comply with the law.&lt;/p&gt;
 &lt;div class=&#34;github-card-wrapper&#34;&gt;&lt;a id=&#34;github-f27d1586c5573e28a0769a8586d76e5d&#34; target=&#34;_blank&#34; href=&#34;https://github.com/batocera-linux/batocera.linux&#34; class=&#34;cursor-pointer&#34;&gt;
       &lt;div
         class=&#34;w-full md:w-auto p-0 m-0 border border-neutral-200 dark:border-neutral-700 border rounded-md shadow-2xl&#34;&gt;&lt;div class=&#34;w-full nozoom&#34;&gt;
@@ -34,7 +33,7 @@
               class=&#34;nozoom mt-0 mb-0 w-full h-full object-cover&#34;&gt;
           &lt;/div&gt;&lt;div class=&#34;w-full md:w-auto pt-3 p-5&#34;&gt;
           &lt;div class=&#34;flex items-center&#34;&gt;
-            &lt;span class=&#34;text-2xl text-neutral-800 dark:text-neutral margin-right-[10px]&#34;&gt;
+            &lt;span class=&#34;text-2xl text-neutral-800 dark:text-neutral mr-[10px]&#34;&gt;
               
 
   &lt;span class=&#34;relative block icon&#34;&gt;
@@ -56,9 +55,10 @@
           &lt;/p&gt;
 
           &lt;div class=&#34;m-0 mt-2 flex items-center&#34;&gt;
+            
+            
             &lt;span
-              class=&#34;mr-1 inline-block h-3 w-3 rounded-full&#34;
-              style=&#34;background-color: #3572A5&#34;&gt;&lt;/span&gt;
+              class=&#34;mr-1 inline-block h-3 w-3 rounded-full background-color-a7f5f35426b927411fc9231b56382173&#34;&gt;&lt;/span&gt;
             &lt;div class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
               Python
             &lt;/div&gt;
@@ -94,9 +94,10 @@
       
       
       &lt;script
+        async
         type=&#34;text/javascript&#34;
-        src=&#34;https://xerolinux.xyz/js/fetch-repo.min.6fa205e5fc33470feaf8cf69cbed6460022e3c17e86caf270846f7660fbd61d5012ec56f9c8dd8accb81c36c79f8ef40f19d6fd69353d8a62327c3e9bc615f27.js&#34;
-        integrity=&#34;sha512-b6IF5fwzRw/q&amp;#43;M9py&amp;#43;1kYAIuPBfobK8nCEb3Zg&amp;#43;9YdUBLsVvnI3YrMuBw2x5&amp;#43;O9A8Z1v1pNT2KYjJ8PpvGFfJw==&#34;
+        src=&#34;https://xerolinux.xyz/js/fetch-repo.min.44b885f79fea551b2049e9be9ca41b840614ec4aad399936bf666c88998f1494a6de637470104319338fe5fd24022acfbc60ff019481ae5cf70492e32c8428a8.js&#34;
+        integrity=&#34;sha512-RLiF95/qVRsgSem&amp;#43;nKQbhAYU7EqtOZk2v2ZsiJmPFJSm3mN0cBBDGTOP5f0kAirPvGD/AZSBrlz3BJLjLIQoqA==&#34;
         data-repo-url=&#34;https://api.github.com/repos/batocera-linux/batocera.linux&#34;
         data-repo-id=&#34;github-f27d1586c5573e28a0769a8586d76e5d&#34;&gt;&lt;/script&gt;
     &lt;/a&gt;&lt;/div&gt;
@@ -118,41 +119,43 @@
 
 
 
+  
+
+
+
+
+  
 
 
 
 
 
 
+  
 
 
 
 
 
-
-
-
-
-
-
-
-
-  &lt;a class=&#34;flex flex-wrap md:flex-nowrap article &#34; href=&#34;https://xerolinux.xyz/posts/bato-deck/&#34;&gt;
-    
+&lt;a class=&#34;flex flex-wrap md:flex-nowrap article &#34; 
+  href=&#34;https://xerolinux.xyz/posts/bato-deck/&#34;&gt;
         
         &lt;div class=&#34;w-full md:w-auto h-full thumbnail nozoom thumbnailshadow md:mr-7&#34; style=&#34;background-image:url(/posts/bato-deck/featured.webp);&#34;&gt;&lt;/div&gt;
         
       &lt;div class=&#34; mt-3 md:mt-0&#34;&gt;
-      &lt;div class=&#34;items-center text-left text-xl font-semibold&#34;&gt;
-        
-        &lt;div class=&#34;font-bold text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral&#34;
-          href=&#34;https://xerolinux.xyz/posts/bato-deck/&#34;&gt;Batocera On Deck - Part 1&lt;/div&gt;
-        
-        
-        
-      &lt;/div&gt;
-      &lt;div class=&#34;text-sm text-neutral-500 dark:text-neutral-400&#34;&gt;
-        
+    &lt;div class=&#34;items-center text-left text-xl font-semibold&#34;&gt;
+      
+        &lt;div
+          class=&#34;font-bold text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral&#34;
+          href=&#34;https://xerolinux.xyz/posts/bato-deck/&#34;&gt;
+          Batocera On Deck - Part 1
+        &lt;/div&gt;
+      
+      
+      
+    &lt;/div&gt;
+    &lt;div class=&#34;text-sm text-neutral-500 dark:text-neutral-400&#34;&gt;
+      
 
 
 
@@ -216,7 +219,7 @@
   
   &lt;span
     id=&#34;views_posts/bato-deck/index.md&#34;
-    class=&#34;animate-pulse inline-block text-transparent max-h-3 rounded-full mt-[-2px] align-middle bg-neutral-300 dark:bg-neutral-400&#34;
+    class=&#34;animate-pulse inline-block text-transparent max-h-3 rounded-full -mt-[2px] align-middle bg-neutral-300 dark:bg-neutral-400&#34;
     title=&#34;views&#34;
     &gt;loading&lt;/span
   &gt;
@@ -244,7 +247,7 @@
   
   &lt;span
     id=&#34;likes_posts/bato-deck/index.md&#34;
-    class=&#34;animate-pulse inline-block text-transparent max-h-3 rounded-full mt-[-2px] align-middle bg-neutral-300 dark:bg-neutral-400&#34;
+    class=&#34;animate-pulse inline-block text-transparent max-h-3 rounded-full -mt-[2px] align-middle bg-neutral-300 dark:bg-neutral-400&#34;
     title=&#34;likes&#34;
     &gt;loading&lt;/span
   &gt;
@@ -296,7 +299,7 @@
           
             
               &lt;span
-                class=&#34;mr-2 margin-top-[0.5rem]&#34;
+                class=&#34;mr-2 mt-[0.5rem]&#34;
                 onclick=&#34;window.open(&amp;#34;/tags/batocera/&amp;#34;,&#39;_self&#39;);return false;&#34;&gt;
                 &lt;span class=&#34;flex cursor-pointer&#34;&gt;
   &lt;span
@@ -308,7 +311,7 @@
               &lt;/span&gt;
             
               &lt;span
-                class=&#34;mr-2 margin-top-[0.5rem]&#34;
+                class=&#34;mr-2 mt-[0.5rem]&#34;
                 onclick=&#34;window.open(&amp;#34;/tags/emulation/&amp;#34;,&#39;_self&#39;);return false;&#34;&gt;
                 &lt;span class=&#34;flex cursor-pointer&#34;&gt;
   &lt;span
@@ -320,7 +323,7 @@
               &lt;/span&gt;
             
               &lt;span
-                class=&#34;mr-2 margin-top-[0.5rem]&#34;
+                class=&#34;mr-2 mt-[0.5rem]&#34;
                 onclick=&#34;window.open(&amp;#34;/tags/retro-gaming/&amp;#34;,&#39;_self&#39;);return false;&#34;&gt;
                 &lt;span class=&#34;flex cursor-pointer&#34;&gt;
   &lt;span
@@ -332,7 +335,7 @@
               &lt;/span&gt;
             
               &lt;span
-                class=&#34;mr-2 margin-top-[0.5rem]&#34;
+                class=&#34;mr-2 mt-[0.5rem]&#34;
                 onclick=&#34;window.open(&amp;#34;/tags/steam-deck/&amp;#34;,&#39;_self&#39;);return false;&#34;&gt;
                 &lt;span class=&#34;flex cursor-pointer&#34;&gt;
   &lt;span
@@ -344,7 +347,7 @@
               &lt;/span&gt;
             
               &lt;span
-                class=&#34;mr-2 margin-top-[0.5rem]&#34;
+                class=&#34;mr-2 mt-[0.5rem]&#34;
                 onclick=&#34;window.open(&amp;#34;/tags/deck/&amp;#34;,&#39;_self&#39;);return false;&#34;&gt;
                 &lt;span class=&#34;flex cursor-pointer&#34;&gt;
   &lt;span
@@ -356,7 +359,7 @@
               &lt;/span&gt;
             
               &lt;span
-                class=&#34;mr-2 margin-top-[0.5rem]&#34;
+                class=&#34;mr-2 mt-[0.5rem]&#34;
                 onclick=&#34;window.open(&amp;#34;/tags/steamdeck/&amp;#34;,&#39;_self&#39;);return false;&#34;&gt;
                 &lt;span class=&#34;flex cursor-pointer&#34;&gt;
   &lt;span
@@ -368,7 +371,7 @@
               &lt;/span&gt;
             
               &lt;span
-                class=&#34;mr-2 margin-top-[0.5rem]&#34;
+                class=&#34;mr-2 mt-[0.5rem]&#34;
                 onclick=&#34;window.open(&amp;#34;/tags/linux/&amp;#34;,&#39;_self&#39;);return false;&#34;&gt;
                 &lt;span class=&#34;flex cursor-pointer&#34;&gt;
   &lt;span
@@ -390,10 +393,10 @@
 
 
 
-      &lt;/div&gt;
-      
     &lt;/div&gt;
-  &lt;/a&gt;
+    
+  &lt;/div&gt;
+&lt;/a&gt;
 
   &lt;/section&gt;
 
@@ -464,8 +467,7 @@
 &lt;p&gt;First things first, head over to the &lt;a
   href=&#34;https://www.linuxmint.com/download_lmde.php&#34;
     target=&#34;_blank&#34;
-  &gt;&lt;strong&gt;Linix Mint&lt;/strong&gt;&lt;/a&gt;
- and grab the latest &lt;strong&gt;Linux Mint Debian Edition&lt;/strong&gt; ISO. This is the Distro we will be using temporarily in order to Flash &lt;strong&gt;Batocera&lt;/strong&gt; on Deck&amp;rsquo;s internal storage. It&amp;rsquo;s the only one I had on hand that actually worked, surprising isn&amp;rsquo;t it ?&lt;/p&gt;
+  &gt;&lt;strong&gt;Linix Mint&lt;/strong&gt;&lt;/a&gt; and grab the latest &lt;strong&gt;Linux Mint Debian Edition&lt;/strong&gt; ISO. This is the Distro we will be using temporarily in order to Flash &lt;strong&gt;Batocera&lt;/strong&gt; on Deck&amp;rsquo;s internal storage. It&amp;rsquo;s the only one I had on hand that actually worked, surprising isn&amp;rsquo;t it ?&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Booting LMDE&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;Put it on your &lt;strong&gt;Ventoy&lt;/strong&gt; USB, or flash it on USB stick with &lt;strong&gt;Balena Etcher&lt;/strong&gt; choice is yours. Once done, power down the Deck, plug the stick in and boot it while holding the &lt;strong&gt;Volume up + Power&lt;/strong&gt;, release power keep holding volume up until you are on the bios screen. Then select &lt;strong&gt;Boot Manager&lt;/strong&gt; then choose to boot from the stick you created. This will boot into &lt;strong&gt;LMDE&lt;/strong&gt; and get you on the desktop.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Connecting to WiFi&lt;/strong&gt;&lt;/p&gt;
@@ -476,14 +478,12 @@
 &lt;p&gt;Now, head over to the &lt;a
   href=&#34;https://batocera.org&#34;
     target=&#34;_blank&#34;
-  &gt;&lt;strong&gt;Batocera Site&lt;/strong&gt;&lt;/a&gt;
- and grab the latest image for the Steam Deck. Make sure you select the correct image for your Steam Deck’s architecture – this is crucial to avoid any hiccups later on.&lt;/p&gt;
+  &gt;&lt;strong&gt;Batocera Site&lt;/strong&gt;&lt;/a&gt; and grab the latest image for the Steam Deck. Make sure you select the correct image for your Steam Deck’s architecture – this is crucial to avoid any hiccups later on.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;3. Install Balena Etcher:&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;Next up, we need Balena Etcher. This handy tool will flash the Batocera image onto your microSD card. Download it from &lt;a
   href=&#34;https://www.balena.io/etcher&#34;
     target=&#34;_blank&#34;
-  &gt;&lt;strong&gt;Balena&amp;rsquo;s Site&lt;/strong&gt;&lt;/a&gt;
-, install it on your Steam Deck, and fire it up. It’s super user-friendly, so no need to sweat this part.&lt;/p&gt;
+  &gt;&lt;strong&gt;Balena&amp;rsquo;s Site&lt;/strong&gt;&lt;/a&gt;, install it on your Steam Deck, and fire it up. It’s super user-friendly, so no need to sweat this part.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;4. Flash Batocera to Internal Storage:&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;
 
@@ -581,8 +581,7 @@ Shaders: Enhance your gaming experience with graphical shaders. Find them in the
 &lt;p&gt;&lt;a
   href=&#34;https://batocera.org&#34;
     target=&#34;_blank&#34;
-  &gt;&lt;strong&gt;Batocera&lt;/strong&gt;&lt;/a&gt;
- is an open-source and completely free retro-gaming distribution that can be copied to a USB stick or an SD card with the aim of turning any computer/nano computer into a gaming console during a game or permanently. Batocera.linux does not require any modification on your computer. Note that you must own the games you play in order to comply with the law.&lt;/p&gt;
+  &gt;&lt;strong&gt;Batocera&lt;/strong&gt;&lt;/a&gt; is an open-source and completely free retro-gaming distribution that can be copied to a USB stick or an SD card with the aim of turning any computer/nano computer into a gaming console during a game or permanently. Batocera.linux does not require any modification on your computer. Note that you must own the games you play in order to comply with the law.&lt;/p&gt;
 &lt;div class=&#34;github-card-wrapper&#34;&gt;&lt;a id=&#34;github-9301afab42662d82090e070c3e3c31f0&#34; target=&#34;_blank&#34; href=&#34;https://github.com/batocera-linux/batocera.linux&#34; class=&#34;cursor-pointer&#34;&gt;
       &lt;div
         class=&#34;w-full md:w-auto p-0 m-0 border border-neutral-200 dark:border-neutral-700 border rounded-md shadow-2xl&#34;&gt;&lt;div class=&#34;w-full nozoom&#34;&gt;
@@ -592,7 +591,7 @@ Shaders: Enhance your gaming experience with graphical shaders. Find them in the
               class=&#34;nozoom mt-0 mb-0 w-full h-full object-cover&#34;&gt;
           &lt;/div&gt;&lt;div class=&#34;w-full md:w-auto pt-3 p-5&#34;&gt;
           &lt;div class=&#34;flex items-center&#34;&gt;
-            &lt;span class=&#34;text-2xl text-neutral-800 dark:text-neutral margin-right-[10px]&#34;&gt;
+            &lt;span class=&#34;text-2xl text-neutral-800 dark:text-neutral mr-[10px]&#34;&gt;
               
 
   &lt;span class=&#34;relative block icon&#34;&gt;
@@ -614,9 +613,10 @@ Shaders: Enhance your gaming experience with graphical shaders. Find them in the
           &lt;/p&gt;
 
           &lt;div class=&#34;m-0 mt-2 flex items-center&#34;&gt;
+            
+            
             &lt;span
-              class=&#34;mr-1 inline-block h-3 w-3 rounded-full&#34;
-              style=&#34;background-color: #3572A5&#34;&gt;&lt;/span&gt;
+              class=&#34;mr-1 inline-block h-3 w-3 rounded-full background-color-a7f5f35426b927411fc9231b56382173&#34;&gt;&lt;/span&gt;
             &lt;div class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
               Python
             &lt;/div&gt;
@@ -652,9 +652,10 @@ Shaders: Enhance your gaming experience with graphical shaders. Find them in the
       
       
       &lt;script
+        async
         type=&#34;text/javascript&#34;
-        src=&#34;https://xerolinux.xyz/js/fetch-repo.min.6fa205e5fc33470feaf8cf69cbed6460022e3c17e86caf270846f7660fbd61d5012ec56f9c8dd8accb81c36c79f8ef40f19d6fd69353d8a62327c3e9bc615f27.js&#34;
-        integrity=&#34;sha512-b6IF5fwzRw/q&amp;#43;M9py&amp;#43;1kYAIuPBfobK8nCEb3Zg&amp;#43;9YdUBLsVvnI3YrMuBw2x5&amp;#43;O9A8Z1v1pNT2KYjJ8PpvGFfJw==&#34;
+        src=&#34;https://xerolinux.xyz/js/fetch-repo.min.44b885f79fea551b2049e9be9ca41b840614ec4aad399936bf666c88998f1494a6de637470104319338fe5fd24022acfbc60ff019481ae5cf70492e32c8428a8.js&#34;
+        integrity=&#34;sha512-RLiF95/qVRsgSem&amp;#43;nKQbhAYU7EqtOZk2v2ZsiJmPFJSm3mN0cBBDGTOP5f0kAirPvGD/AZSBrlz3BJLjLIQoqA==&#34;
         data-repo-url=&#34;https://api.github.com/repos/batocera-linux/batocera.linux&#34;
         data-repo-id=&#34;github-9301afab42662d82090e070c3e3c31f0&#34;&gt;&lt;/script&gt;
     &lt;/a&gt;&lt;/div&gt;
@@ -667,8 +668,7 @@ Shaders: Enhance your gaming experience with graphical shaders. Find them in the
 &lt;p&gt;Let me start by answering this question, before you ask it. &amp;ldquo;What do you mean by Part 1?&amp;rdquo;. Simple, this guide will be your normal run of the mill about installing &lt;a
   href=&#34;https://batocera.org&#34;
     target=&#34;_blank&#34;
-  &gt;&lt;strong&gt;Batocera&lt;/strong&gt;&lt;/a&gt;
- on an SD-Card dual booting it with &lt;strong&gt;SteamOS&lt;/strong&gt;.&lt;/p&gt;
+  &gt;&lt;strong&gt;Batocera&lt;/strong&gt;&lt;/a&gt; on an SD-Card dual booting it with &lt;strong&gt;SteamOS&lt;/strong&gt;.&lt;/p&gt;
 &lt;p&gt;&amp;ldquo;What will you cover in Part 2?&amp;rdquo;. Well, that&amp;rsquo;s the moment where you will be rolling your eyes, while you call me a weirdo. Part 2 will cover how to wipe &lt;strong&gt;SteamOS&lt;/strong&gt; replacing it with &lt;strong&gt;Batocera&lt;/strong&gt; on the Deck&amp;rsquo;s internal SSD.&lt;/p&gt;
 &lt;p&gt;
 
@@ -721,14 +721,12 @@ Shaders: Enhance your gaming experience with graphical shaders. Find them in the
 &lt;p&gt;First things first, head over to the &lt;a
   href=&#34;https://batocera.org&#34;
     target=&#34;_blank&#34;
-  &gt;&lt;strong&gt;Batocera Site&lt;/strong&gt;&lt;/a&gt;
- and grab the latest image for the Steam Deck. Make sure you select the correct image for your Steam Deck’s architecture – this is crucial to avoid any hiccups later on.&lt;/p&gt;
+  &gt;&lt;strong&gt;Batocera Site&lt;/strong&gt;&lt;/a&gt; and grab the latest image for the Steam Deck. Make sure you select the correct image for your Steam Deck’s architecture – this is crucial to avoid any hiccups later on.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;2. Install Balena Etcher:&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;Next up, we need Balena Etcher. This handy tool will flash the Batocera image onto your microSD card. Download it from &lt;a
   href=&#34;https://www.balena.io/etcher&#34;
     target=&#34;_blank&#34;
-  &gt;&lt;strong&gt;Balena&amp;rsquo;s Site&lt;/strong&gt;&lt;/a&gt;
-, install it on your Steam Deck, and fire it up. It’s super user-friendly, so no need to sweat this part.&lt;/p&gt;
+  &gt;&lt;strong&gt;Balena&amp;rsquo;s Site&lt;/strong&gt;&lt;/a&gt;, install it on your Steam Deck, and fire it up. It’s super user-friendly, so no need to sweat this part.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;3. Flash Batocera to the microSD Card:&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;
 
@@ -861,12 +859,10 @@ Shaders: Enhance your gaming experience with graphical shaders. Find them in the
 &lt;p&gt;If you are looking for a much more detailed guide, might I recommend checking either &lt;a
   href=&#34;https://wagnerstechtalk.com/sd-batocera/&#34;
     target=&#34;_blank&#34;
-  &gt;&lt;strong&gt;Wagner&amp;rsquo;s Tech Talk&lt;/strong&gt;&lt;/a&gt;
- or &lt;a
+  &gt;&lt;strong&gt;Wagner&amp;rsquo;s Tech Talk&lt;/strong&gt;&lt;/a&gt; or &lt;a
   href=&#34;https://retrohandhelds.gg/batocera-on-steam-deck-setup-guide/&#34;
     target=&#34;_blank&#34;
-  &gt;&lt;strong&gt;Retro Handhelds&lt;/strong&gt;&lt;/a&gt;
- where I sourced most my material from.&lt;/p&gt;
+  &gt;&lt;strong&gt;Retro Handhelds&lt;/strong&gt;&lt;/a&gt; where I sourced most my material from.&lt;/p&gt;
 &lt;p&gt;See you in &lt;em&gt;Part 2&lt;/em&gt;, in a couple of weeks when my &lt;strong&gt;Steam Deck&lt;/strong&gt; is back with me, and have tested my methods before bringing you the guide, just so I am as accurate as possible&amp;hellip;.&lt;/p&gt;
 </description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/bato-deck/featured.webp" />

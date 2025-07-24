@@ -26,8 +26,7 @@
 &lt;p&gt;&lt;a
   href=&#34;https://ohmyposh.dev/&#34;
     target=&#34;_blank&#34;
-  &gt;&lt;strong&gt;Oh My Posh&lt;/strong&gt;&lt;/a&gt;
- is a custom prompt engine for any shell that has the ability to adjust the prompt string with a function or variable. It’s beautiful, elegant and intuitive; if you use git from the command line it will be great for you.&lt;/p&gt;
+  &gt;&lt;strong&gt;Oh My Posh&lt;/strong&gt;&lt;/a&gt; is a custom prompt engine for any shell that has the ability to adjust the prompt string with a function or variable. It’s beautiful, elegant and intuitive; if you use git from the command line it will be great for you.&lt;/p&gt;
 &lt;p&gt;It has several predefined themes that allow you to customize your prompt in a matter of seconds, it is also possible to create your own theme, it is compatible with BASH, PowerShell, CMD, Fish, Zsh and nushell is developed in golang and can be installed on &lt;strong&gt;GNU/Linux&lt;/strong&gt;, &lt;strong&gt;MacOS&lt;/strong&gt;, &lt;strong&gt;Windows&lt;/strong&gt; and &lt;strong&gt;Termux&lt;/strong&gt; (Android).&lt;/p&gt;
 &lt;p&gt;
 
@@ -59,41 +58,43 @@
 
 
 
+  
+
+
+
+
+  
 
 
 
 
 
 
+  
 
 
 
 
 
-
-
-
-
-
-
-
-
-  &lt;a class=&#34;flex flex-wrap md:flex-nowrap article &#34; href=&#34;https://xerolinux.xyz/posts/chaotic-aur/&#34;&gt;
-    
+&lt;a class=&#34;flex flex-wrap md:flex-nowrap article &#34; 
+  href=&#34;https://xerolinux.xyz/posts/chaotic-aur/&#34;&gt;
         
         &lt;div class=&#34;w-full md:w-auto h-full thumbnail nozoom thumbnailshadow md:mr-7&#34; style=&#34;background-image:url(/posts/chaotic-aur/featured.webp);&#34;&gt;&lt;/div&gt;
         
       &lt;div class=&#34; mt-3 md:mt-0&#34;&gt;
-      &lt;div class=&#34;items-center text-left text-xl font-semibold&#34;&gt;
-        
-        &lt;div class=&#34;font-bold text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral&#34;
-          href=&#34;https://xerolinux.xyz/posts/chaotic-aur/&#34;&gt;The Chaotic-AUR&lt;/div&gt;
-        
-        
-        
-      &lt;/div&gt;
-      &lt;div class=&#34;text-sm text-neutral-500 dark:text-neutral-400&#34;&gt;
-        
+    &lt;div class=&#34;items-center text-left text-xl font-semibold&#34;&gt;
+      
+        &lt;div
+          class=&#34;font-bold text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral&#34;
+          href=&#34;https://xerolinux.xyz/posts/chaotic-aur/&#34;&gt;
+          The Chaotic-AUR
+        &lt;/div&gt;
+      
+      
+      
+    &lt;/div&gt;
+    &lt;div class=&#34;text-sm text-neutral-500 dark:text-neutral-400&#34;&gt;
+      
 
 
 
@@ -157,7 +158,7 @@
   
   &lt;span
     id=&#34;views_posts/chaotic-aur/index.md&#34;
-    class=&#34;animate-pulse inline-block text-transparent max-h-3 rounded-full mt-[-2px] align-middle bg-neutral-300 dark:bg-neutral-400&#34;
+    class=&#34;animate-pulse inline-block text-transparent max-h-3 rounded-full -mt-[2px] align-middle bg-neutral-300 dark:bg-neutral-400&#34;
     title=&#34;views&#34;
     &gt;loading&lt;/span
   &gt;
@@ -185,7 +186,7 @@
   
   &lt;span
     id=&#34;likes_posts/chaotic-aur/index.md&#34;
-    class=&#34;animate-pulse inline-block text-transparent max-h-3 rounded-full mt-[-2px] align-middle bg-neutral-300 dark:bg-neutral-400&#34;
+    class=&#34;animate-pulse inline-block text-transparent max-h-3 rounded-full -mt-[2px] align-middle bg-neutral-300 dark:bg-neutral-400&#34;
     title=&#34;likes&#34;
     &gt;loading&lt;/span
   &gt;
@@ -237,7 +238,7 @@
           
             
               &lt;span
-                class=&#34;mr-2 margin-top-[0.5rem]&#34;
+                class=&#34;mr-2 mt-[0.5rem]&#34;
                 onclick=&#34;window.open(&amp;#34;/tags/aur/&amp;#34;,&#39;_self&#39;);return false;&#34;&gt;
                 &lt;span class=&#34;flex cursor-pointer&#34;&gt;
   &lt;span
@@ -249,7 +250,7 @@
               &lt;/span&gt;
             
               &lt;span
-                class=&#34;mr-2 margin-top-[0.5rem]&#34;
+                class=&#34;mr-2 mt-[0.5rem]&#34;
                 onclick=&#34;window.open(&amp;#34;/tags/chaotic-aur/&amp;#34;,&#39;_self&#39;);return false;&#34;&gt;
                 &lt;span class=&#34;flex cursor-pointer&#34;&gt;
   &lt;span
@@ -261,7 +262,7 @@
               &lt;/span&gt;
             
               &lt;span
-                class=&#34;mr-2 margin-top-[0.5rem]&#34;
+                class=&#34;mr-2 mt-[0.5rem]&#34;
                 onclick=&#34;window.open(&amp;#34;/tags/repos/&amp;#34;,&#39;_self&#39;);return false;&#34;&gt;
                 &lt;span class=&#34;flex cursor-pointer&#34;&gt;
   &lt;span
@@ -273,7 +274,7 @@
               &lt;/span&gt;
             
               &lt;span
-                class=&#34;mr-2 margin-top-[0.5rem]&#34;
+                class=&#34;mr-2 mt-[0.5rem]&#34;
                 onclick=&#34;window.open(&amp;#34;/tags/repository/&amp;#34;,&#39;_self&#39;);return false;&#34;&gt;
                 &lt;span class=&#34;flex cursor-pointer&#34;&gt;
   &lt;span
@@ -285,7 +286,7 @@
               &lt;/span&gt;
             
               &lt;span
-                class=&#34;mr-2 margin-top-[0.5rem]&#34;
+                class=&#34;mr-2 mt-[0.5rem]&#34;
                 onclick=&#34;window.open(&amp;#34;/tags/archlinux/&amp;#34;,&#39;_self&#39;);return false;&#34;&gt;
                 &lt;span class=&#34;flex cursor-pointer&#34;&gt;
   &lt;span
@@ -297,7 +298,7 @@
               &lt;/span&gt;
             
               &lt;span
-                class=&#34;mr-2 margin-top-[0.5rem]&#34;
+                class=&#34;mr-2 mt-[0.5rem]&#34;
                 onclick=&#34;window.open(&amp;#34;/tags/arch/&amp;#34;,&#39;_self&#39;);return false;&#34;&gt;
                 &lt;span class=&#34;flex cursor-pointer&#34;&gt;
   &lt;span
@@ -309,7 +310,7 @@
               &lt;/span&gt;
             
               &lt;span
-                class=&#34;mr-2 margin-top-[0.5rem]&#34;
+                class=&#34;mr-2 mt-[0.5rem]&#34;
                 onclick=&#34;window.open(&amp;#34;/tags/linux/&amp;#34;,&#39;_self&#39;);return false;&#34;&gt;
                 &lt;span class=&#34;flex cursor-pointer&#34;&gt;
   &lt;span
@@ -331,10 +332,10 @@
 
 
 
-      &lt;/div&gt;
-      
     &lt;/div&gt;
-  &lt;/a&gt;
+    
+  &lt;/div&gt;
+&lt;/a&gt;
 
   &lt;/section&gt;
 
@@ -345,8 +346,7 @@
 &lt;p&gt;So let&amp;rsquo;s grab the one we like from &amp;raquo; &lt;a
   href=&#34;https://ohmyposh.dev/docs/themes&#34;
     target=&#34;_blank&#34;
-  &gt;&lt;strong&gt;OMP Theme Repo&lt;/strong&gt;&lt;/a&gt;
-&lt;/p&gt;
+  &gt;&lt;strong&gt;OMP Theme Repo&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;
 
 
@@ -441,8 +441,7 @@
 &lt;p&gt;There&amp;rsquo;s nothing to say now, except that this project is awesome, I love it and hope it lives long an prosper. Now as mentioned earlier if you want to create your very own config, just head on over to the project&amp;rsquo;s &lt;strong&gt;Git&lt;/strong&gt; below or check out the &amp;raquo; &lt;a
   href=&#34;https://ohmyposh.dev/docs/&#34;
     target=&#34;_blank&#34;
-  &gt;&lt;strong&gt;OMP Docs&lt;/strong&gt;&lt;/a&gt;
-&lt;/p&gt;
+  &gt;&lt;strong&gt;OMP Docs&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;div class=&#34;github-card-wrapper&#34;&gt;&lt;a id=&#34;github-4b2b060cb46e0a0142c2701566b5e2c2&#34; target=&#34;_blank&#34; href=&#34;https://github.com/JanDeDobbeleer/oh-my-posh&#34; class=&#34;cursor-pointer&#34;&gt;
       &lt;div
         class=&#34;w-full md:w-auto p-0 m-0 border border-neutral-200 dark:border-neutral-700 border rounded-md shadow-2xl&#34;&gt;&lt;div class=&#34;w-full nozoom&#34;&gt;
@@ -452,7 +451,7 @@
               class=&#34;nozoom mt-0 mb-0 w-full h-full object-cover&#34;&gt;
           &lt;/div&gt;&lt;div class=&#34;w-full md:w-auto pt-3 p-5&#34;&gt;
           &lt;div class=&#34;flex items-center&#34;&gt;
-            &lt;span class=&#34;text-2xl text-neutral-800 dark:text-neutral margin-right-[10px]&#34;&gt;
+            &lt;span class=&#34;text-2xl text-neutral-800 dark:text-neutral mr-[10px]&#34;&gt;
               
 
   &lt;span class=&#34;relative block icon&#34;&gt;
@@ -474,9 +473,10 @@
           &lt;/p&gt;
 
           &lt;div class=&#34;m-0 mt-2 flex items-center&#34;&gt;
+            
+            
             &lt;span
-              class=&#34;mr-1 inline-block h-3 w-3 rounded-full&#34;
-              style=&#34;background-color: #00ADD8&#34;&gt;&lt;/span&gt;
+              class=&#34;mr-1 inline-block h-3 w-3 rounded-full background-color-5f075ae3e1f9d0382bb8c4632991f96f&#34;&gt;&lt;/span&gt;
             &lt;div class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
               Go
             &lt;/div&gt;
@@ -512,9 +512,10 @@
       
       
       &lt;script
+        async
         type=&#34;text/javascript&#34;
-        src=&#34;https://xerolinux.xyz/js/fetch-repo.min.6fa205e5fc33470feaf8cf69cbed6460022e3c17e86caf270846f7660fbd61d5012ec56f9c8dd8accb81c36c79f8ef40f19d6fd69353d8a62327c3e9bc615f27.js&#34;
-        integrity=&#34;sha512-b6IF5fwzRw/q&amp;#43;M9py&amp;#43;1kYAIuPBfobK8nCEb3Zg&amp;#43;9YdUBLsVvnI3YrMuBw2x5&amp;#43;O9A8Z1v1pNT2KYjJ8PpvGFfJw==&#34;
+        src=&#34;https://xerolinux.xyz/js/fetch-repo.min.44b885f79fea551b2049e9be9ca41b840614ec4aad399936bf666c88998f1494a6de637470104319338fe5fd24022acfbc60ff019481ae5cf70492e32c8428a8.js&#34;
+        integrity=&#34;sha512-RLiF95/qVRsgSem&amp;#43;nKQbhAYU7EqtOZk2v2ZsiJmPFJSm3mN0cBBDGTOP5f0kAirPvGD/AZSBrlz3BJLjLIQoqA==&#34;
         data-repo-url=&#34;https://api.github.com/repos/JanDeDobbeleer/oh-my-posh&#34;
         data-repo-id=&#34;github-4b2b060cb46e0a0142c2701566b5e2c2&#34;&gt;&lt;/script&gt;
     &lt;/a&gt;&lt;/div&gt;

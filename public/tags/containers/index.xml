@@ -22,12 +22,10 @@
 &lt;p&gt;After messing with &lt;a
   href=&#34;https://www.docker.com&#34;
     target=&#34;_blank&#34;
-  &gt;Docker&lt;/a&gt;
- Containers for so long, I thought I would share the knowledge. Hopefully a video showing it in action soon. In this short tutorial we will be using the Docker Compose feature to deploy our containers. Just note we can do so much more, but this is just an introductory guide, you will have to discover the rest on your own. It&amp;rsquo;s so much fun trust me. To get an idea how much I love them click &lt;a
+  &gt;Docker&lt;/a&gt; Containers for so long, I thought I would share the knowledge. Hopefully a video showing it in action soon. In this short tutorial we will be using the Docker Compose feature to deploy our containers. Just note we can do so much more, but this is just an introductory guide, you will have to discover the rest on your own. It&amp;rsquo;s so much fun trust me. To get an idea how much I love them click &lt;a
   href=&#34;https://blog.xerolinux.xyz/2024/06/docker-containers-a-love-story/&#34;
     target=&#34;_blank&#34;
-  &gt;&lt;strong&gt;Here&lt;/strong&gt;&lt;/a&gt;
- to read my thoughts&amp;hellip;&lt;/p&gt;
+  &gt;&lt;strong&gt;Here&lt;/strong&gt;&lt;/a&gt; to read my thoughts&amp;hellip;&lt;/p&gt;
 &lt;p&gt;
 
 
@@ -90,16 +88,13 @@
 &lt;p&gt;Ok, now that everything&amp;rsquo;s set, we can go container hunting&amp;hellip; I would highly recommend sites like, &lt;a
   href=&#34;https://selfh.st/apps/&#34;
     target=&#34;_blank&#34;
-  &gt;SelfH&lt;/a&gt;
- or &lt;a
+  &gt;SelfH&lt;/a&gt; or &lt;a
   href=&#34;https://awesome-selfhosted.net&#34;
     target=&#34;_blank&#34;
-  &gt;AwesomeSelfHosted&lt;/a&gt;
-. But for the sake of this tutorial, I will be showing you an example docker compose file from one of the services found there. I have selected &lt;a
+  &gt;AwesomeSelfHosted&lt;/a&gt;. But for the sake of this tutorial, I will be showing you an example docker compose file from one of the services found there. I have selected &lt;a
   href=&#34;https://demo.filebrowser.org/&#34;
     target=&#34;_blank&#34;
-  &gt;FileBrowser&lt;/a&gt;
- (User : demo / Pass : demo)&lt;/p&gt;
+  &gt;FileBrowser&lt;/a&gt; (User : demo / Pass : demo)&lt;/p&gt;
 &lt;p&gt;Here&amp;rsquo;s the docker compose file contents. Just create a folder called &amp;ldquo;FileBrowser&amp;rdquo;, then inside it a file called &amp;ldquo;compose.yml&amp;rdquo; inside it paste the following :&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Yaml&#34; data-lang=&#34;Yaml&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nt&#34;&gt;services&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;filebrowser&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
@@ -139,12 +134,10 @@
 &lt;p&gt;Kindly note that there are other tools we could use to make deployment much simpler. I just haven&amp;rsquo;t used them in this guide so you can see how it all works. Tools that can be used are, &lt;a
   href=&#34;https://www.portainer.io&#34;
     target=&#34;_blank&#34;
-  &gt;Portainer&lt;/a&gt;
- and &lt;a
+  &gt;Portainer&lt;/a&gt; and &lt;a
   href=&#34;https://dockge.kuma.pet&#34;
     target=&#34;_blank&#34;
-  &gt;Dockge&lt;/a&gt;
-, among many others&amp;hellip;&lt;/p&gt;
+  &gt;Dockge&lt;/a&gt;, among many others&amp;hellip;&lt;/p&gt;
 
 &lt;h3 class=&#34;relative group&#34;&gt;Nginx Proxy &amp;amp; More&amp;hellip; 
     &lt;div id=&#34;nginx-proxy--more&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;

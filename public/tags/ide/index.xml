@@ -22,8 +22,7 @@
 &lt;p&gt;The &lt;em&gt;Linux&lt;/em&gt; version has been in development for a while, they just announced its availablability via their &amp;raquo; &lt;a
   href=&#34;https://zed.dev/blog/zed-on-linux&#34;
     target=&#34;_blank&#34;
-  &gt;&lt;strong&gt;Linux when? Linux now&lt;/strong&gt;&lt;/a&gt;
- post&amp;hellip;&lt;/p&gt;
+  &gt;&lt;strong&gt;Linux when? Linux now&lt;/strong&gt;&lt;/a&gt; post&amp;hellip;&lt;/p&gt;
 
 &lt;h3 class=&#34;relative group&#34;&gt;Some Information 
     &lt;div id=&#34;some-information&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
@@ -32,8 +31,7 @@
 &lt;p&gt;&lt;a
   href=&#34;https://zed.dev&#34;
     target=&#34;_blank&#34;
-  &gt;&lt;strong&gt;Zed&lt;/strong&gt;&lt;/a&gt;
- is a high-performance, open-source code editor built using the Rust programming language. Here are the key points about Zed:&lt;/p&gt;
+  &gt;&lt;strong&gt;Zed&lt;/strong&gt;&lt;/a&gt; is a high-performance, open-source code editor built using the Rust programming language. Here are the key points about Zed:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Built with Rust:&lt;/strong&gt; Zed is written entirely in &lt;strong&gt;Rust&lt;/strong&gt;, a systems programming language known for its speed, safety, and concurrency features. This allows Zed to offer superior performance compared to many other code editors.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Fast and Responsive:&lt;/strong&gt; Zed&amp;rsquo;s innovative GPU-based user interface (GPUI) framework allows it to efficiently leverage the GPU to provide an incredibly fast and responsive coding experience, with instant file loading and smooth UI updates.&lt;/li&gt;
@@ -97,13 +95,11 @@
 &lt;p&gt;You can access the default key binding set using the &lt;code&gt;Zed &amp;gt; Settings &amp;gt; Open Default Key Bindings&lt;/code&gt; menu item. Use &lt;code&gt;⌘ + K&lt;/code&gt;, &lt;code&gt;⌘ + S&lt;/code&gt; to open your custom keymap to add your key bindings. See &lt;a
   href=&#34;https://zed.dev/docs/key-bindings.html&#34;
     target=&#34;_blank&#34;
-  &gt;&lt;strong&gt;Key Bindings&lt;/strong&gt;&lt;/a&gt;
- for more info.&lt;/p&gt;
+  &gt;&lt;strong&gt;Key Bindings&lt;/strong&gt;&lt;/a&gt; for more info.&lt;/p&gt;
 &lt;p&gt;To all you &lt;code&gt;Vim&lt;/code&gt; users out there visit the =&amp;gt; &lt;a
   href=&#34;https://zed.dev/docs/vim.html&#34;
     target=&#34;_blank&#34;
-  &gt;&lt;strong&gt;Vim Docs&lt;/strong&gt;&lt;/a&gt;
-.&lt;/p&gt;
+  &gt;&lt;strong&gt;Vim Docs&lt;/strong&gt;&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;⌘ =&amp;gt; Super Key&lt;/p&gt;
 
 &lt;h3 class=&#34;relative group&#34;&gt;What I think of it 
@@ -117,8 +113,7 @@
 &lt;p&gt;It has way more than what I mentioned here, so if you want to know more about it, either go to the &amp;raquo; &lt;a
   href=&#34;https://zed.dev/docs/&#34;
     target=&#34;_blank&#34;
-  &gt;&lt;strong&gt;Docs/Wiki&lt;/strong&gt;&lt;/a&gt;
- page, or visit their &lt;strong&gt;Git Repo&lt;/strong&gt; below.&lt;/p&gt;
+  &gt;&lt;strong&gt;Docs/Wiki&lt;/strong&gt;&lt;/a&gt; page, or visit their &lt;strong&gt;Git Repo&lt;/strong&gt; below.&lt;/p&gt;
 &lt;div class=&#34;github-card-wrapper&#34;&gt;&lt;a id=&#34;github-048d83c2c4c5d1181ccc6b118c336300&#34; target=&#34;_blank&#34; href=&#34;https://github.com/zed-industries/zed&#34; class=&#34;cursor-pointer&#34;&gt;
       &lt;div
         class=&#34;w-full md:w-auto p-0 m-0 border border-neutral-200 dark:border-neutral-700 border rounded-md shadow-2xl&#34;&gt;&lt;div class=&#34;w-full nozoom&#34;&gt;
@@ -128,7 +123,7 @@
               class=&#34;nozoom mt-0 mb-0 w-full h-full object-cover&#34;&gt;
           &lt;/div&gt;&lt;div class=&#34;w-full md:w-auto pt-3 p-5&#34;&gt;
           &lt;div class=&#34;flex items-center&#34;&gt;
-            &lt;span class=&#34;text-2xl text-neutral-800 dark:text-neutral margin-right-[10px]&#34;&gt;
+            &lt;span class=&#34;text-2xl text-neutral-800 dark:text-neutral mr-[10px]&#34;&gt;
               
 
   &lt;span class=&#34;relative block icon&#34;&gt;
@@ -150,9 +145,10 @@
           &lt;/p&gt;
 
           &lt;div class=&#34;m-0 mt-2 flex items-center&#34;&gt;
+            
+            
             &lt;span
-              class=&#34;mr-1 inline-block h-3 w-3 rounded-full&#34;
-              style=&#34;background-color: #dea584&#34;&gt;&lt;/span&gt;
+              class=&#34;mr-1 inline-block h-3 w-3 rounded-full background-color-f5e265d607cb720058fc166e00083fe8&#34;&gt;&lt;/span&gt;
             &lt;div class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
               Rust
             &lt;/div&gt;
@@ -188,9 +184,10 @@
       
       
       &lt;script
+        async
         type=&#34;text/javascript&#34;
-        src=&#34;https://xerolinux.xyz/js/fetch-repo.min.6fa205e5fc33470feaf8cf69cbed6460022e3c17e86caf270846f7660fbd61d5012ec56f9c8dd8accb81c36c79f8ef40f19d6fd69353d8a62327c3e9bc615f27.js&#34;
-        integrity=&#34;sha512-b6IF5fwzRw/q&amp;#43;M9py&amp;#43;1kYAIuPBfobK8nCEb3Zg&amp;#43;9YdUBLsVvnI3YrMuBw2x5&amp;#43;O9A8Z1v1pNT2KYjJ8PpvGFfJw==&#34;
+        src=&#34;https://xerolinux.xyz/js/fetch-repo.min.44b885f79fea551b2049e9be9ca41b840614ec4aad399936bf666c88998f1494a6de637470104319338fe5fd24022acfbc60ff019481ae5cf70492e32c8428a8.js&#34;
+        integrity=&#34;sha512-RLiF95/qVRsgSem&amp;#43;nKQbhAYU7EqtOZk2v2ZsiJmPFJSm3mN0cBBDGTOP5f0kAirPvGD/AZSBrlz3BJLjLIQoqA==&#34;
         data-repo-url=&#34;https://api.github.com/repos/zed-industries/zed&#34;
         data-repo-id=&#34;github-048d83c2c4c5d1181ccc6b118c336300&#34;&gt;&lt;/script&gt;
     &lt;/a&gt;&lt;/div&gt;

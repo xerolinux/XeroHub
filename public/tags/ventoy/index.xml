@@ -70,7 +70,7 @@
               class=&#34;nozoom mt-0 mb-0 w-full h-full object-cover&#34;&gt;
           &lt;/div&gt;&lt;div class=&#34;w-full md:w-auto pt-3 p-5&#34;&gt;
           &lt;div class=&#34;flex items-center&#34;&gt;
-            &lt;span class=&#34;text-2xl text-neutral-800 dark:text-neutral margin-right-[10px]&#34;&gt;
+            &lt;span class=&#34;text-2xl text-neutral-800 dark:text-neutral mr-[10px]&#34;&gt;
               
 
   &lt;span class=&#34;relative block icon&#34;&gt;
@@ -92,9 +92,10 @@
           &lt;/p&gt;
 
           &lt;div class=&#34;m-0 mt-2 flex items-center&#34;&gt;
+            
+            
             &lt;span
-              class=&#34;mr-1 inline-block h-3 w-3 rounded-full&#34;
-              style=&#34;background-color: #555555&#34;&gt;&lt;/span&gt;
+              class=&#34;mr-1 inline-block h-3 w-3 rounded-full background-color-0d61f8370cad1d412f80b84d143e1257&#34;&gt;&lt;/span&gt;
             &lt;div class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
               C
             &lt;/div&gt;
@@ -130,9 +131,10 @@
       
       
       &lt;script
+        async
         type=&#34;text/javascript&#34;
-        src=&#34;https://xerolinux.xyz/js/fetch-repo.min.6fa205e5fc33470feaf8cf69cbed6460022e3c17e86caf270846f7660fbd61d5012ec56f9c8dd8accb81c36c79f8ef40f19d6fd69353d8a62327c3e9bc615f27.js&#34;
-        integrity=&#34;sha512-b6IF5fwzRw/q&amp;#43;M9py&amp;#43;1kYAIuPBfobK8nCEb3Zg&amp;#43;9YdUBLsVvnI3YrMuBw2x5&amp;#43;O9A8Z1v1pNT2KYjJ8PpvGFfJw==&#34;
+        src=&#34;https://xerolinux.xyz/js/fetch-repo.min.44b885f79fea551b2049e9be9ca41b840614ec4aad399936bf666c88998f1494a6de637470104319338fe5fd24022acfbc60ff019481ae5cf70492e32c8428a8.js&#34;
+        integrity=&#34;sha512-RLiF95/qVRsgSem&amp;#43;nKQbhAYU7EqtOZk2v2ZsiJmPFJSm3mN0cBBDGTOP5f0kAirPvGD/AZSBrlz3BJLjLIQoqA==&#34;
         data-repo-url=&#34;https://api.github.com/repos/ventoy/Ventoy&#34;
         data-repo-id=&#34;github-bf42297933615c069f3c01c1cac3521b&#34;&gt;&lt;/script&gt;
     &lt;/a&gt;&lt;/div&gt;
@@ -140,12 +142,10 @@
 &lt;p&gt;To get it on &lt;strong&gt;Arch&lt;/strong&gt; you first need to have an &lt;strong&gt;AUR&lt;/strong&gt; helper installed since it&amp;rsquo;s only available there. You have a choice between &lt;a
   href=&#34;https://github.com/Jguer/yay&#34;
     target=&#34;_blank&#34;
-  &gt;&lt;strong&gt;YaY&lt;/strong&gt;&lt;/a&gt;
- or &lt;a
+  &gt;&lt;strong&gt;YaY&lt;/strong&gt;&lt;/a&gt; or &lt;a
   href=&#34;https://github.com/morganamilo/paru&#34;
     target=&#34;_blank&#34;
-  &gt;&lt;strong&gt;Paru&lt;/strong&gt;&lt;/a&gt;
-. Select whichever you want, install it then we can grab &lt;strong&gt;Ventoy&lt;/strong&gt; via command below&amp;hellip;&lt;/p&gt;
+  &gt;&lt;strong&gt;Paru&lt;/strong&gt;&lt;/a&gt;. Select whichever you want, install it then we can grab &lt;strong&gt;Ventoy&lt;/strong&gt; via command below&amp;hellip;&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;yay or paru -S ventoy-bin
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;That&amp;rsquo;s it ! Enjoy your distro-hopping. Maybe you find the one that fits your needs the best :smile:&lt;/p&gt;
 </description>
@@ -187,8 +187,7 @@
 &lt;p&gt;Then go into the &lt;code&gt;ventoy_plugins&lt;/code&gt; folder open a terminal and run &lt;code&gt;sudo sh CreatePersistenceImg.sh -s 20480 -l vtoycow&lt;/code&gt; this will create a file called &lt;code&gt;persistence.dat&lt;/code&gt; with the size of 20GB, refer to &lt;a
   href=&#34;https://www.ventoy.net/en/plugin_persistence.html&#34;
     target=&#34;_blank&#34;
-  &gt;this&lt;/a&gt;
- article from Ventoy for different arguments for the command. After a while you will be granted with this confirmation, just hit &lt;code&gt;y&lt;/code&gt; and &lt;code&gt;enter&lt;/code&gt; and in a few seconds it should be done.&lt;/p&gt;
+  &gt;this&lt;/a&gt; article from Ventoy for different arguments for the command. After a while you will be granted with this confirmation, just hit &lt;code&gt;y&lt;/code&gt; and &lt;code&gt;enter&lt;/code&gt; and in a few seconds it should be done.&lt;/p&gt;
 &lt;p&gt;
 
 

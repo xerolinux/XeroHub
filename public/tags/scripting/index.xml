@@ -17,8 +17,7 @@
       <description>&lt;p&gt;This is a short one. Just letting you all know of a recent discovery of mine while I was looking into &lt;a
   href=&#34;https://www.proxmox.com/en/proxmox-virtual-environment/overview&#34;
     target=&#34;_blank&#34;
-  &gt;&lt;strong&gt;Proxmox VE&lt;/strong&gt;&lt;/a&gt;
-&lt;/p&gt;
+  &gt;&lt;strong&gt;Proxmox VE&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;h3 class=&#34;relative group&#34;&gt;What are they? 
     &lt;div id=&#34;what-are-they&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
@@ -74,7 +73,7 @@
               class=&#34;nozoom mt-0 mb-0 w-full h-full object-cover&#34;&gt;
           &lt;/div&gt;&lt;div class=&#34;w-full md:w-auto pt-3 p-5&#34;&gt;
           &lt;div class=&#34;flex items-center&#34;&gt;
-            &lt;span class=&#34;text-2xl text-neutral-800 dark:text-neutral margin-right-[10px]&#34;&gt;
+            &lt;span class=&#34;text-2xl text-neutral-800 dark:text-neutral mr-[10px]&#34;&gt;
               
 
   &lt;span class=&#34;relative block icon&#34;&gt;
@@ -96,9 +95,10 @@
           &lt;/p&gt;
 
           &lt;div class=&#34;m-0 mt-2 flex items-center&#34;&gt;
+            
+            
             &lt;span
-              class=&#34;mr-1 inline-block h-3 w-3 rounded-full&#34;
-              style=&#34;background-color: #89e051&#34;&gt;&lt;/span&gt;
+              class=&#34;mr-1 inline-block h-3 w-3 rounded-full background-color-ea89b68c34ce4a63c0f77e17413c6e30&#34;&gt;&lt;/span&gt;
             &lt;div class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
               Shell
             &lt;/div&gt;
@@ -134,9 +134,10 @@
       
       
       &lt;script
+        async
         type=&#34;text/javascript&#34;
-        src=&#34;https://xerolinux.xyz/js/fetch-repo.min.6fa205e5fc33470feaf8cf69cbed6460022e3c17e86caf270846f7660fbd61d5012ec56f9c8dd8accb81c36c79f8ef40f19d6fd69353d8a62327c3e9bc615f27.js&#34;
-        integrity=&#34;sha512-b6IF5fwzRw/q&amp;#43;M9py&amp;#43;1kYAIuPBfobK8nCEb3Zg&amp;#43;9YdUBLsVvnI3YrMuBw2x5&amp;#43;O9A8Z1v1pNT2KYjJ8PpvGFfJw==&#34;
+        src=&#34;https://xerolinux.xyz/js/fetch-repo.min.44b885f79fea551b2049e9be9ca41b840614ec4aad399936bf666c88998f1494a6de637470104319338fe5fd24022acfbc60ff019481ae5cf70492e32c8428a8.js&#34;
+        integrity=&#34;sha512-RLiF95/qVRsgSem&amp;#43;nKQbhAYU7EqtOZk2v2ZsiJmPFJSm3mN0cBBDGTOP5f0kAirPvGD/AZSBrlz3BJLjLIQoqA==&#34;
         data-repo-url=&#34;https://api.github.com/repos/tteck/Proxmox&#34;
         data-repo-id=&#34;github-12a0460d02150c7a086dac10a56b80ed&#34;&gt;&lt;/script&gt;
     &lt;/a&gt;&lt;/div&gt;
@@ -155,8 +156,7 @@
 &lt;p&gt;In a nutshell, &lt;strong&gt;Docker&lt;/strong&gt; is designed for developers who want to quickly and efficiently build and deploy applications in various environments with minimal setup. On the other hand, &lt;strong&gt;LXC&lt;/strong&gt; is more suitable for users who need a lightweight alternative to virtual machines and want more control over the operating system and hardware. For more info click &amp;raquo; &lt;a
   href=&#34;https://www.docker.com/blog/lxc-vs-docker/&#34;
     target=&#34;_blank&#34;
-  &gt;&lt;strong&gt;Here&lt;/strong&gt;&lt;/a&gt;
-&lt;/p&gt;
+  &gt;&lt;strong&gt;Here&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;h3 class=&#34;relative group&#34;&gt;Conclusion 
     &lt;div id=&#34;conclusion&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
@@ -209,7 +209,7 @@ Proxmox VE Helper-Scripts Database
               class=&#34;nozoom mt-0 mb-0 w-full h-full object-cover&#34;&gt;
           &lt;/div&gt;&lt;div class=&#34;w-full md:w-auto pt-3 p-5&#34;&gt;
           &lt;div class=&#34;flex items-center&#34;&gt;
-            &lt;span class=&#34;text-2xl text-neutral-800 dark:text-neutral margin-right-[10px]&#34;&gt;
+            &lt;span class=&#34;text-2xl text-neutral-800 dark:text-neutral mr-[10px]&#34;&gt;
               
 
   &lt;span class=&#34;relative block icon&#34;&gt;
@@ -231,9 +231,10 @@ Proxmox VE Helper-Scripts Database
           &lt;/p&gt;
 
           &lt;div class=&#34;m-0 mt-2 flex items-center&#34;&gt;
+            
+            
             &lt;span
-              class=&#34;mr-1 inline-block h-3 w-3 rounded-full&#34;
-              style=&#34;background-color: #89e051&#34;&gt;&lt;/span&gt;
+              class=&#34;mr-1 inline-block h-3 w-3 rounded-full background-color-ea89b68c34ce4a63c0f77e17413c6e30&#34;&gt;&lt;/span&gt;
             &lt;div class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
               Shell
             &lt;/div&gt;
@@ -269,9 +270,10 @@ Proxmox VE Helper-Scripts Database
       
       
       &lt;script
+        async
         type=&#34;text/javascript&#34;
-        src=&#34;https://xerolinux.xyz/js/fetch-repo.min.6fa205e5fc33470feaf8cf69cbed6460022e3c17e86caf270846f7660fbd61d5012ec56f9c8dd8accb81c36c79f8ef40f19d6fd69353d8a62327c3e9bc615f27.js&#34;
-        integrity=&#34;sha512-b6IF5fwzRw/q&amp;#43;M9py&amp;#43;1kYAIuPBfobK8nCEb3Zg&amp;#43;9YdUBLsVvnI3YrMuBw2x5&amp;#43;O9A8Z1v1pNT2KYjJ8PpvGFfJw==&#34;
+        src=&#34;https://xerolinux.xyz/js/fetch-repo.min.44b885f79fea551b2049e9be9ca41b840614ec4aad399936bf666c88998f1494a6de637470104319338fe5fd24022acfbc60ff019481ae5cf70492e32c8428a8.js&#34;
+        integrity=&#34;sha512-RLiF95/qVRsgSem&amp;#43;nKQbhAYU7EqtOZk2v2ZsiJmPFJSm3mN0cBBDGTOP5f0kAirPvGD/AZSBrlz3BJLjLIQoqA==&#34;
         data-repo-url=&#34;https://api.github.com/repos/HexValid/Linux-CapsLock-Delay-Fixer&#34;
         data-repo-id=&#34;github-18e693ebc65096b5df283f30dd37163c&#34;&gt;&lt;/script&gt;
     &lt;/a&gt;&lt;/div&gt;

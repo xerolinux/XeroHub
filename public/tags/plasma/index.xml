@@ -31,7 +31,7 @@
               class=&#34;nozoom mt-0 mb-0 w-full h-full object-cover&#34;&gt;
           &lt;/div&gt;&lt;div class=&#34;w-full md:w-auto pt-3 p-5&#34;&gt;
           &lt;div class=&#34;flex items-center&#34;&gt;
-            &lt;span class=&#34;text-2xl text-neutral-800 dark:text-neutral margin-right-[10px]&#34;&gt;
+            &lt;span class=&#34;text-2xl text-neutral-800 dark:text-neutral mr-[10px]&#34;&gt;
               
 
   &lt;span class=&#34;relative block icon&#34;&gt;
@@ -53,9 +53,10 @@
           &lt;/p&gt;
 
           &lt;div class=&#34;m-0 mt-2 flex items-center&#34;&gt;
+            
+            
             &lt;span
-              class=&#34;mr-1 inline-block h-3 w-3 rounded-full&#34;
-              style=&#34;background-color: #44a51c&#34;&gt;&lt;/span&gt;
+              class=&#34;mr-1 inline-block h-3 w-3 rounded-full background-color-c477abfb7fd4959a20d5e0240adc26b0&#34;&gt;&lt;/span&gt;
             &lt;div class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
               QML
             &lt;/div&gt;
@@ -91,9 +92,10 @@
       
       
       &lt;script
+        async
         type=&#34;text/javascript&#34;
-        src=&#34;https://xerolinux.xyz/js/fetch-repo.min.6fa205e5fc33470feaf8cf69cbed6460022e3c17e86caf270846f7660fbd61d5012ec56f9c8dd8accb81c36c79f8ef40f19d6fd69353d8a62327c3e9bc615f27.js&#34;
-        integrity=&#34;sha512-b6IF5fwzRw/q&amp;#43;M9py&amp;#43;1kYAIuPBfobK8nCEb3Zg&amp;#43;9YdUBLsVvnI3YrMuBw2x5&amp;#43;O9A8Z1v1pNT2KYjJ8PpvGFfJw==&#34;
+        src=&#34;https://xerolinux.xyz/js/fetch-repo.min.44b885f79fea551b2049e9be9ca41b840614ec4aad399936bf666c88998f1494a6de637470104319338fe5fd24022acfbc60ff019481ae5cf70492e32c8428a8.js&#34;
+        integrity=&#34;sha512-RLiF95/qVRsgSem&amp;#43;nKQbhAYU7EqtOZk2v2ZsiJmPFJSm3mN0cBBDGTOP5f0kAirPvGD/AZSBrlz3BJLjLIQoqA==&#34;
         data-repo-url=&#34;https://api.github.com/repos/xerolinux/xero-layan-git&#34;
         data-repo-id=&#34;github-a3d14a4a10f892b0bde0c7d2dcb03e5f&#34;&gt;&lt;/script&gt;
     &lt;/a&gt;&lt;/div&gt;
@@ -191,7 +193,7 @@
               class=&#34;nozoom mt-0 mb-0 w-full h-full object-cover&#34;&gt;
           &lt;/div&gt;&lt;div class=&#34;w-full md:w-auto pt-3 p-5&#34;&gt;
           &lt;div class=&#34;flex items-center&#34;&gt;
-            &lt;span class=&#34;text-2xl text-neutral-800 dark:text-neutral margin-right-[10px]&#34;&gt;
+            &lt;span class=&#34;text-2xl text-neutral-800 dark:text-neutral mr-[10px]&#34;&gt;
               
 
   &lt;span class=&#34;relative block icon&#34;&gt;
@@ -213,9 +215,10 @@
           &lt;/p&gt;
 
           &lt;div class=&#34;m-0 mt-2 flex items-center&#34;&gt;
+            
+            
             &lt;span
-              class=&#34;mr-1 inline-block h-3 w-3 rounded-full&#34;
-              style=&#34;background-color: #f34b7d&#34;&gt;&lt;/span&gt;
+              class=&#34;mr-1 inline-block h-3 w-3 rounded-full background-color-f6f87c9fdcf8b3c3f07f93f1ee8712c9&#34;&gt;&lt;/span&gt;
             &lt;div class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
               C&amp;#43;&amp;#43;
             &lt;/div&gt;
@@ -251,9 +254,10 @@
       
       
       &lt;script
+        async
         type=&#34;text/javascript&#34;
-        src=&#34;https://xerolinux.xyz/js/fetch-repo.min.6fa205e5fc33470feaf8cf69cbed6460022e3c17e86caf270846f7660fbd61d5012ec56f9c8dd8accb81c36c79f8ef40f19d6fd69353d8a62327c3e9bc615f27.js&#34;
-        integrity=&#34;sha512-b6IF5fwzRw/q&amp;#43;M9py&amp;#43;1kYAIuPBfobK8nCEb3Zg&amp;#43;9YdUBLsVvnI3YrMuBw2x5&amp;#43;O9A8Z1v1pNT2KYjJ8PpvGFfJw==&#34;
+        src=&#34;https://xerolinux.xyz/js/fetch-repo.min.44b885f79fea551b2049e9be9ca41b840614ec4aad399936bf666c88998f1494a6de637470104319338fe5fd24022acfbc60ff019481ae5cf70492e32c8428a8.js&#34;
+        integrity=&#34;sha512-RLiF95/qVRsgSem&amp;#43;nKQbhAYU7EqtOZk2v2ZsiJmPFJSm3mN0cBBDGTOP5f0kAirPvGD/AZSBrlz3BJLjLIQoqA==&#34;
         data-repo-url=&#34;https://api.github.com/repos/tsujan/Kvantum&#34;
         data-repo-id=&#34;github-674857d8b75e800e4bcc0955b60eca86&#34;&gt;&lt;/script&gt;
     &lt;/a&gt;&lt;/div&gt;
@@ -265,8 +269,7 @@
 &lt;p&gt;Another element &lt;strong&gt;KDE Plasma&lt;/strong&gt; uses, is &lt;a
   href=&#34;https://wiki.archlinux.org/title/SDDM&#34;
     target=&#34;_blank&#34;
-  &gt;&lt;strong&gt;SDDM&lt;/strong&gt;&lt;/a&gt;
- for its &lt;strong&gt;Display Manager/Login&lt;/strong&gt;.&lt;/p&gt;
+  &gt;&lt;strong&gt;SDDM&lt;/strong&gt;&lt;/a&gt; for its &lt;strong&gt;Display Manager/Login&lt;/strong&gt;.&lt;/p&gt;
 &lt;p&gt;
 
 
@@ -287,8 +290,7 @@
 &lt;p&gt;Now, I can already hear you say that this is unrelated to &lt;strong&gt;KDE Plasma&lt;/strong&gt;, to which I will say, yes I agree. Also, not everyone will be using &lt;a
   href=&#34;https://wiki.archlinux.org/title/GRUB&#34;
     target=&#34;_blank&#34;
-  &gt;&lt;strong&gt;Grub&lt;/strong&gt;&lt;/a&gt;
-. Also true.&lt;/p&gt;
+  &gt;&lt;strong&gt;Grub&lt;/strong&gt;&lt;/a&gt;. Also true.&lt;/p&gt;
 &lt;p&gt;
 
 
@@ -309,8 +311,7 @@
 &lt;p&gt;&lt;a
   href=&#34;https://konsole.kde.org/&#34;
     target=&#34;_blank&#34;
-  &gt;&lt;strong&gt;Konsole&lt;/strong&gt;&lt;/a&gt;
- is the &lt;em&gt;Terminal Emulator&lt;/em&gt; that &lt;strong&gt;Plasma&lt;/strong&gt; ships. I know most of you switch to &lt;strong&gt;Alacritty&lt;/strong&gt; or even &lt;strong&gt;Kitty&lt;/strong&gt;. But I prefer to stick with what ships with the DE I use.&lt;/p&gt;
+  &gt;&lt;strong&gt;Konsole&lt;/strong&gt;&lt;/a&gt; is the &lt;em&gt;Terminal Emulator&lt;/em&gt; that &lt;strong&gt;Plasma&lt;/strong&gt; ships. I know most of you switch to &lt;strong&gt;Alacritty&lt;/strong&gt; or even &lt;strong&gt;Kitty&lt;/strong&gt;. But I prefer to stick with what ships with the DE I use.&lt;/p&gt;
 &lt;p&gt;
 
 
@@ -373,8 +374,7 @@
 &lt;p&gt;Oh boy, the reason I will not be talking about those is is simple, it&amp;rsquo;s your rice you do with those as you please. &lt;strong&gt;KDE Plasma&lt;/strong&gt; comes with some awesome widgets, use those to get started, if you want more, well, you will find them on the &lt;a
   href=&#34;https://store.kde.org&#34;
     target=&#34;_blank&#34;
-  &gt;&lt;strong&gt;KDE Store&lt;/strong&gt;&lt;/a&gt;
-.&lt;/p&gt;
+  &gt;&lt;strong&gt;KDE Store&lt;/strong&gt;&lt;/a&gt;.&lt;/p&gt;
 
   
   
@@ -440,7 +440,7 @@
               class=&#34;nozoom mt-0 mb-0 w-full h-full object-cover&#34;&gt;
           &lt;/div&gt;&lt;div class=&#34;w-full md:w-auto pt-3 p-5&#34;&gt;
           &lt;div class=&#34;flex items-center&#34;&gt;
-            &lt;span class=&#34;text-2xl text-neutral-800 dark:text-neutral margin-right-[10px]&#34;&gt;
+            &lt;span class=&#34;text-2xl text-neutral-800 dark:text-neutral mr-[10px]&#34;&gt;
               
 
   &lt;span class=&#34;relative block icon&#34;&gt;
@@ -462,9 +462,10 @@
           &lt;/p&gt;
 
           &lt;div class=&#34;m-0 mt-2 flex items-center&#34;&gt;
+            
+            
             &lt;span
-              class=&#34;mr-1 inline-block h-3 w-3 rounded-full&#34;
-              style=&#34;background-color: #89e051&#34;&gt;&lt;/span&gt;
+              class=&#34;mr-1 inline-block h-3 w-3 rounded-full background-color-ea89b68c34ce4a63c0f77e17413c6e30&#34;&gt;&lt;/span&gt;
             &lt;div class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
               Shell
             &lt;/div&gt;
@@ -500,9 +501,10 @@
       
       
       &lt;script
+        async
         type=&#34;text/javascript&#34;
-        src=&#34;https://xerolinux.xyz/js/fetch-repo.min.6fa205e5fc33470feaf8cf69cbed6460022e3c17e86caf270846f7660fbd61d5012ec56f9c8dd8accb81c36c79f8ef40f19d6fd69353d8a62327c3e9bc615f27.js&#34;
-        integrity=&#34;sha512-b6IF5fwzRw/q&amp;#43;M9py&amp;#43;1kYAIuPBfobK8nCEb3Zg&amp;#43;9YdUBLsVvnI3YrMuBw2x5&amp;#43;O9A8Z1v1pNT2KYjJ8PpvGFfJw==&#34;
+        src=&#34;https://xerolinux.xyz/js/fetch-repo.min.44b885f79fea551b2049e9be9ca41b840614ec4aad399936bf666c88998f1494a6de637470104319338fe5fd24022acfbc60ff019481ae5cf70492e32c8428a8.js&#34;
+        integrity=&#34;sha512-RLiF95/qVRsgSem&amp;#43;nKQbhAYU7EqtOZk2v2ZsiJmPFJSm3mN0cBBDGTOP5f0kAirPvGD/AZSBrlz3BJLjLIQoqA==&#34;
         data-repo-url=&#34;https://api.github.com/repos/shalva97/kde-configuration-files&#34;
         data-repo-id=&#34;github-35acb2467e8c5b7be245dd5d8ae6184d&#34;&gt;&lt;/script&gt;
     &lt;/a&gt;&lt;/div&gt;
@@ -519,41 +521,43 @@
 
 
 
+  
+
+
+
+
+  
 
 
 
 
 
 
+  
 
 
 
 
 
-
-
-
-
-
-
-
-
-  &lt;a class=&#34;flex flex-wrap md:flex-nowrap article &#34; href=&#34;https://xerolinux.xyz/posts/konsave-tool/&#34;&gt;
-    
+&lt;a class=&#34;flex flex-wrap md:flex-nowrap article &#34; 
+  href=&#34;https://xerolinux.xyz/posts/konsave-tool/&#34;&gt;
         
         &lt;div class=&#34;w-full md:w-auto h-full thumbnail nozoom thumbnailshadow md:mr-7&#34; style=&#34;background-image:url(/posts/konsave-tool/featured.webp);&#34;&gt;&lt;/div&gt;
         
       &lt;div class=&#34; mt-3 md:mt-0&#34;&gt;
-      &lt;div class=&#34;items-center text-left text-xl font-semibold&#34;&gt;
-        
-        &lt;div class=&#34;font-bold text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral&#34;
-          href=&#34;https://xerolinux.xyz/posts/konsave-tool/&#34;&gt;Konsave TUI&lt;/div&gt;
-        
-        
-        
-      &lt;/div&gt;
-      &lt;div class=&#34;text-sm text-neutral-500 dark:text-neutral-400&#34;&gt;
-        
+    &lt;div class=&#34;items-center text-left text-xl font-semibold&#34;&gt;
+      
+        &lt;div
+          class=&#34;font-bold text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral&#34;
+          href=&#34;https://xerolinux.xyz/posts/konsave-tool/&#34;&gt;
+          Konsave TUI
+        &lt;/div&gt;
+      
+      
+      
+    &lt;/div&gt;
+    &lt;div class=&#34;text-sm text-neutral-500 dark:text-neutral-400&#34;&gt;
+      
 
 
 
@@ -617,7 +621,7 @@
   
   &lt;span
     id=&#34;views_posts/konsave-tool/index.md&#34;
-    class=&#34;animate-pulse inline-block text-transparent max-h-3 rounded-full mt-[-2px] align-middle bg-neutral-300 dark:bg-neutral-400&#34;
+    class=&#34;animate-pulse inline-block text-transparent max-h-3 rounded-full -mt-[2px] align-middle bg-neutral-300 dark:bg-neutral-400&#34;
     title=&#34;views&#34;
     &gt;loading&lt;/span
   &gt;
@@ -645,7 +649,7 @@
   
   &lt;span
     id=&#34;likes_posts/konsave-tool/index.md&#34;
-    class=&#34;animate-pulse inline-block text-transparent max-h-3 rounded-full mt-[-2px] align-middle bg-neutral-300 dark:bg-neutral-400&#34;
+    class=&#34;animate-pulse inline-block text-transparent max-h-3 rounded-full -mt-[2px] align-middle bg-neutral-300 dark:bg-neutral-400&#34;
     title=&#34;likes&#34;
     &gt;loading&lt;/span
   &gt;
@@ -697,7 +701,7 @@
           
             
               &lt;span
-                class=&#34;mr-2 margin-top-[0.5rem]&#34;
+                class=&#34;mr-2 mt-[0.5rem]&#34;
                 onclick=&#34;window.open(&amp;#34;/tags/themes/&amp;#34;,&#39;_self&#39;);return false;&#34;&gt;
                 &lt;span class=&#34;flex cursor-pointer&#34;&gt;
   &lt;span
@@ -709,7 +713,7 @@
               &lt;/span&gt;
             
               &lt;span
-                class=&#34;mr-2 margin-top-[0.5rem]&#34;
+                class=&#34;mr-2 mt-[0.5rem]&#34;
                 onclick=&#34;window.open(&amp;#34;/tags/plasma/&amp;#34;,&#39;_self&#39;);return false;&#34;&gt;
                 &lt;span class=&#34;flex cursor-pointer&#34;&gt;
   &lt;span
@@ -721,7 +725,7 @@
               &lt;/span&gt;
             
               &lt;span
-                class=&#34;mr-2 margin-top-[0.5rem]&#34;
+                class=&#34;mr-2 mt-[0.5rem]&#34;
                 onclick=&#34;window.open(&amp;#34;/tags/kde/&amp;#34;,&#39;_self&#39;);return false;&#34;&gt;
                 &lt;span class=&#34;flex cursor-pointer&#34;&gt;
   &lt;span
@@ -733,7 +737,7 @@
               &lt;/span&gt;
             
               &lt;span
-                class=&#34;mr-2 margin-top-[0.5rem]&#34;
+                class=&#34;mr-2 mt-[0.5rem]&#34;
                 onclick=&#34;window.open(&amp;#34;/tags/tools/&amp;#34;,&#39;_self&#39;);return false;&#34;&gt;
                 &lt;span class=&#34;flex cursor-pointer&#34;&gt;
   &lt;span
@@ -745,7 +749,7 @@
               &lt;/span&gt;
             
               &lt;span
-                class=&#34;mr-2 margin-top-[0.5rem]&#34;
+                class=&#34;mr-2 mt-[0.5rem]&#34;
                 onclick=&#34;window.open(&amp;#34;/tags/linux/&amp;#34;,&#39;_self&#39;);return false;&#34;&gt;
                 &lt;span class=&#34;flex cursor-pointer&#34;&gt;
   &lt;span
@@ -767,10 +771,10 @@
 
 
 
-      &lt;/div&gt;
-      
     &lt;/div&gt;
-  &lt;/a&gt;
+    
+  &lt;/div&gt;
+&lt;/a&gt;
 
   &lt;/section&gt;
 
@@ -813,8 +817,7 @@
 &lt;p&gt;There are multiple ways to install this extension. One of them being from the &lt;a
   href=&#34;https://www.pling.com/find?search=burn-my-windows&#34;
     target=&#34;_blank&#34;
-  &gt;&lt;strong&gt;KDE Store&lt;/strong&gt;&lt;/a&gt;
- on many distros running &lt;strong&gt;KDE Plasma&lt;/strong&gt; or the &lt;strong&gt;A.U.R&lt;/strong&gt; on &lt;strong&gt;ArchLinux&lt;/strong&gt;. Here I will be showing you the latter.&lt;/p&gt;
+  &gt;&lt;strong&gt;KDE Store&lt;/strong&gt;&lt;/a&gt; on many distros running &lt;strong&gt;KDE Plasma&lt;/strong&gt; or the &lt;strong&gt;A.U.R&lt;/strong&gt; on &lt;strong&gt;ArchLinux&lt;/strong&gt;. Here I will be showing you the latter.&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;paru -S kwin-effects-burn-my-windows
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;github-card-wrapper&#34;&gt;&lt;a id=&#34;github-8c5f7cf4ebc6a27cc9dd18c133eaf67b&#34; target=&#34;_blank&#34; href=&#34;https://github.com/Schneegans/Burn-My-Windows&#34; class=&#34;cursor-pointer&#34;&gt;
       &lt;div
@@ -825,7 +828,7 @@
               class=&#34;nozoom mt-0 mb-0 w-full h-full object-cover&#34;&gt;
           &lt;/div&gt;&lt;div class=&#34;w-full md:w-auto pt-3 p-5&#34;&gt;
           &lt;div class=&#34;flex items-center&#34;&gt;
-            &lt;span class=&#34;text-2xl text-neutral-800 dark:text-neutral margin-right-[10px]&#34;&gt;
+            &lt;span class=&#34;text-2xl text-neutral-800 dark:text-neutral mr-[10px]&#34;&gt;
               
 
   &lt;span class=&#34;relative block icon&#34;&gt;
@@ -847,9 +850,10 @@
           &lt;/p&gt;
 
           &lt;div class=&#34;m-0 mt-2 flex items-center&#34;&gt;
+            
+            
             &lt;span
-              class=&#34;mr-1 inline-block h-3 w-3 rounded-full&#34;
-              style=&#34;background-color: #f1e05a&#34;&gt;&lt;/span&gt;
+              class=&#34;mr-1 inline-block h-3 w-3 rounded-full background-color-686155af75a60a0f6e9d80c1f7edd3e9&#34;&gt;&lt;/span&gt;
             &lt;div class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
               JavaScript
             &lt;/div&gt;
@@ -885,9 +889,10 @@
       
       
       &lt;script
+        async
         type=&#34;text/javascript&#34;
-        src=&#34;https://xerolinux.xyz/js/fetch-repo.min.6fa205e5fc33470feaf8cf69cbed6460022e3c17e86caf270846f7660fbd61d5012ec56f9c8dd8accb81c36c79f8ef40f19d6fd69353d8a62327c3e9bc615f27.js&#34;
-        integrity=&#34;sha512-b6IF5fwzRw/q&amp;#43;M9py&amp;#43;1kYAIuPBfobK8nCEb3Zg&amp;#43;9YdUBLsVvnI3YrMuBw2x5&amp;#43;O9A8Z1v1pNT2KYjJ8PpvGFfJw==&#34;
+        src=&#34;https://xerolinux.xyz/js/fetch-repo.min.44b885f79fea551b2049e9be9ca41b840614ec4aad399936bf666c88998f1494a6de637470104319338fe5fd24022acfbc60ff019481ae5cf70492e32c8428a8.js&#34;
+        integrity=&#34;sha512-RLiF95/qVRsgSem&amp;#43;nKQbhAYU7EqtOZk2v2ZsiJmPFJSm3mN0cBBDGTOP5f0kAirPvGD/AZSBrlz3BJLjLIQoqA==&#34;
         data-repo-url=&#34;https://api.github.com/repos/Schneegans/Burn-My-Windows&#34;
         data-repo-id=&#34;github-8c5f7cf4ebc6a27cc9dd18c133eaf67b&#34;&gt;&lt;/script&gt;
     &lt;/a&gt;&lt;/div&gt;
@@ -955,7 +960,7 @@
               class=&#34;nozoom mt-0 mb-0 w-full h-full object-cover&#34;&gt;
           &lt;/div&gt;&lt;div class=&#34;w-full md:w-auto pt-3 p-5&#34;&gt;
           &lt;div class=&#34;flex items-center&#34;&gt;
-            &lt;span class=&#34;text-2xl text-neutral-800 dark:text-neutral margin-right-[10px]&#34;&gt;
+            &lt;span class=&#34;text-2xl text-neutral-800 dark:text-neutral mr-[10px]&#34;&gt;
               
 
   &lt;span class=&#34;relative block icon&#34;&gt;
@@ -977,9 +982,10 @@
           &lt;/p&gt;
 
           &lt;div class=&#34;m-0 mt-2 flex items-center&#34;&gt;
+            
+            
             &lt;span
-              class=&#34;mr-1 inline-block h-3 w-3 rounded-full&#34;
-              style=&#34;background-color: #3572A5&#34;&gt;&lt;/span&gt;
+              class=&#34;mr-1 inline-block h-3 w-3 rounded-full background-color-a7f5f35426b927411fc9231b56382173&#34;&gt;&lt;/span&gt;
             &lt;div class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
               Python
             &lt;/div&gt;
@@ -1015,9 +1021,10 @@
       
       
       &lt;script
+        async
         type=&#34;text/javascript&#34;
-        src=&#34;https://xerolinux.xyz/js/fetch-repo.min.6fa205e5fc33470feaf8cf69cbed6460022e3c17e86caf270846f7660fbd61d5012ec56f9c8dd8accb81c36c79f8ef40f19d6fd69353d8a62327c3e9bc615f27.js&#34;
-        integrity=&#34;sha512-b6IF5fwzRw/q&amp;#43;M9py&amp;#43;1kYAIuPBfobK8nCEb3Zg&amp;#43;9YdUBLsVvnI3YrMuBw2x5&amp;#43;O9A8Z1v1pNT2KYjJ8PpvGFfJw==&#34;
+        src=&#34;https://xerolinux.xyz/js/fetch-repo.min.44b885f79fea551b2049e9be9ca41b840614ec4aad399936bf666c88998f1494a6de637470104319338fe5fd24022acfbc60ff019481ae5cf70492e32c8428a8.js&#34;
+        integrity=&#34;sha512-RLiF95/qVRsgSem&amp;#43;nKQbhAYU7EqtOZk2v2ZsiJmPFJSm3mN0cBBDGTOP5f0kAirPvGD/AZSBrlz3BJLjLIQoqA==&#34;
         data-repo-url=&#34;https://api.github.com/repos/Prayag2/konsave&#34;
         data-repo-id=&#34;github-332ee8afae17adb75781b84a058a1d54&#34;&gt;&lt;/script&gt;
     &lt;/a&gt;&lt;/div&gt;
@@ -1125,7 +1132,7 @@ cd LightlyShaders; mkdir qt5build; cd qt5build; cmake ../ -DCMAKE_INSTALL_PREFIX
               class=&#34;nozoom mt-0 mb-0 w-full h-full object-cover&#34;&gt;
           &lt;/div&gt;&lt;div class=&#34;w-full md:w-auto pt-3 p-5&#34;&gt;
           &lt;div class=&#34;flex items-center&#34;&gt;
-            &lt;span class=&#34;text-2xl text-neutral-800 dark:text-neutral margin-right-[10px]&#34;&gt;
+            &lt;span class=&#34;text-2xl text-neutral-800 dark:text-neutral mr-[10px]&#34;&gt;
               
 
   &lt;span class=&#34;relative block icon&#34;&gt;
@@ -1147,9 +1154,10 @@ cd LightlyShaders; mkdir qt5build; cd qt5build; cmake ../ -DCMAKE_INSTALL_PREFIX
           &lt;/p&gt;
 
           &lt;div class=&#34;m-0 mt-2 flex items-center&#34;&gt;
+            
+            
             &lt;span
-              class=&#34;mr-1 inline-block h-3 w-3 rounded-full&#34;
-              style=&#34;background-color: #f34b7d&#34;&gt;&lt;/span&gt;
+              class=&#34;mr-1 inline-block h-3 w-3 rounded-full background-color-f6f87c9fdcf8b3c3f07f93f1ee8712c9&#34;&gt;&lt;/span&gt;
             &lt;div class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
               C&amp;#43;&amp;#43;
             &lt;/div&gt;
@@ -1185,9 +1193,10 @@ cd LightlyShaders; mkdir qt5build; cd qt5build; cmake ../ -DCMAKE_INSTALL_PREFIX
       
       
       &lt;script
+        async
         type=&#34;text/javascript&#34;
-        src=&#34;https://xerolinux.xyz/js/fetch-repo.min.6fa205e5fc33470feaf8cf69cbed6460022e3c17e86caf270846f7660fbd61d5012ec56f9c8dd8accb81c36c79f8ef40f19d6fd69353d8a62327c3e9bc615f27.js&#34;
-        integrity=&#34;sha512-b6IF5fwzRw/q&amp;#43;M9py&amp;#43;1kYAIuPBfobK8nCEb3Zg&amp;#43;9YdUBLsVvnI3YrMuBw2x5&amp;#43;O9A8Z1v1pNT2KYjJ8PpvGFfJw==&#34;
+        src=&#34;https://xerolinux.xyz/js/fetch-repo.min.44b885f79fea551b2049e9be9ca41b840614ec4aad399936bf666c88998f1494a6de637470104319338fe5fd24022acfbc60ff019481ae5cf70492e32c8428a8.js&#34;
+        integrity=&#34;sha512-RLiF95/qVRsgSem&amp;#43;nKQbhAYU7EqtOZk2v2ZsiJmPFJSm3mN0cBBDGTOP5f0kAirPvGD/AZSBrlz3BJLjLIQoqA==&#34;
         data-repo-url=&#34;https://api.github.com/repos/a-parhom/LightlyShaders&#34;
         data-repo-id=&#34;github-9035e4604f09af91fb89685b1e617483&#34;&gt;&lt;/script&gt;
     &lt;/a&gt;&lt;/div&gt;
@@ -1239,8 +1248,7 @@ cd LightlyShaders; mkdir qt5build; cd qt5build; cmake ../ -DCMAKE_INSTALL_PREFIX
 &lt;p&gt;&lt;strong&gt;Kvantum&lt;/strong&gt; is available to Arch Linux users and has been for a very long time. There is an &lt;strong&gt;&lt;a
   href=&#34;https://aur.archlinux.org/packages/kvantum-qt5-git/&#34;
     target=&#34;_blank&#34;
-  &gt;AUR package&lt;/a&gt;
-&lt;/strong&gt;. There’s also a package in the official Arch Linux software sources, which we recommend.&lt;/p&gt;
+  &gt;AUR package&lt;/a&gt;&lt;/strong&gt;. There’s also a package in the official Arch Linux software sources, which we recommend.&lt;/p&gt;
 &lt;p&gt;To get the latest Kvantum on your Arch Linux PC, enter the following terminal command.&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo pacman -S kvantum
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;Downloading Kvantum themes&lt;/strong&gt;&lt;/p&gt;
@@ -1248,8 +1256,7 @@ cd LightlyShaders; mkdir qt5build; cd qt5build; cmake ../ -DCMAKE_INSTALL_PREFIX
 &lt;p&gt;The KDE Store has tons of stuff to download, including Kvantum theme engine themes. To download a Kvantum theme, head over to the &lt;strong&gt;&lt;a
   href=&#34;https://store.kde.org/browse/cat/123/order/latest/&#34;
     target=&#34;_blank&#34;
-  &gt;Kvantum page&lt;/a&gt;
-&lt;/strong&gt; on the KDE store. From there, look through the latest themes to download.&lt;/p&gt;
+  &gt;Kvantum page&lt;/a&gt;&lt;/strong&gt; on the KDE store. From there, look through the latest themes to download.&lt;/p&gt;
 &lt;p&gt;Once you’ve downloaded a theme, launch Kvantum Manager, select “Install/Update Theme,” and install it. Then, select “Change/Delete Theme” to start using it on your system.&lt;/p&gt;
 
 &lt;h3 class=&#34;relative group&#34;&gt;Using Kvantum to make KDE apps look better 
@@ -1310,8 +1317,7 @@ cd LightlyShaders; mkdir qt5build; cd qt5build; cmake ../ -DCMAKE_INSTALL_PREFIX
 &lt;p&gt;Guide by: &lt;strong&gt;&lt;a
   href=&#34;https://www.addictivetips.com/ubuntu-linux-tips/make-kde-apps-look-better/&#34;
     target=&#34;_blank&#34;
-  &gt;AddictiveTips.com&lt;/a&gt;
-&lt;/strong&gt;&lt;/p&gt;
+  &gt;AddictiveTips.com&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
 </description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/theme-qt-apps-on-gtk-de/featured.webp" />
     </item>
@@ -1330,8 +1336,7 @@ cd LightlyShaders; mkdir qt5build; cd qt5build; cmake ../ -DCMAKE_INSTALL_PREFIX
 &lt;p&gt;Our good friend from &lt;a
   href=&#34;https://gitlab.com/stephan-raabe&#34;
     target=&#34;_blank&#34;
-  &gt;&lt;strong&gt;ML4W&lt;/strong&gt;&lt;/a&gt;
- just posted a video showing us how to have both &lt;strong&gt;Plasma 6&lt;/strong&gt; and &lt;strong&gt;Hyprland&lt;/strong&gt; side-by-side with his awesome dotfiles.. Check it out below with links to his repositories&amp;hellip;&lt;/p&gt;
+  &gt;&lt;strong&gt;ML4W&lt;/strong&gt;&lt;/a&gt; just posted a video showing us how to have both &lt;strong&gt;Plasma 6&lt;/strong&gt; and &lt;strong&gt;Hyprland&lt;/strong&gt; side-by-side with his awesome dotfiles.. Check it out below with links to his repositories&amp;hellip;&lt;/p&gt;
 &lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
       &lt;iframe allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen&#34; loading=&#34;eager&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; src=&#34;https://www.youtube.com/embed/n6Yg232bCOU?autoplay=0&amp;amp;controls=1&amp;amp;end=0&amp;amp;loop=0&amp;amp;mute=0&amp;amp;start=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;YouTube video&#34;&gt;&lt;/iframe&gt;
     &lt;/div&gt;
@@ -1347,7 +1352,7 @@ cd LightlyShaders; mkdir qt5build; cd qt5build; cmake ../ -DCMAKE_INSTALL_PREFIX
       &lt;div
         class=&#34;w-full md:w-auto pt-3 p-5 border border-neutral-200 dark:border-neutral-700 border rounded-md shadow-2xl&#34;&gt;
         &lt;div class=&#34;flex items-center&#34;&gt;
-          &lt;span class=&#34;text-2xl text-neutral-800 dark:text-neutral margin-right-[10px]&#34;&gt;
+          &lt;span class=&#34;text-2xl text-neutral-800 dark:text-neutral mr-[10px]&#34;&gt;
             
 
   &lt;span class=&#34;relative block icon&#34;&gt;
@@ -1399,9 +1404,10 @@ cd LightlyShaders; mkdir qt5build; cd qt5build; cmake ../ -DCMAKE_INSTALL_PREFIX
       
       
       &lt;script
+        async
         type=&#34;text/javascript&#34;
-        src=&#34;https://xerolinux.xyz/js/fetch-repo.min.6fa205e5fc33470feaf8cf69cbed6460022e3c17e86caf270846f7660fbd61d5012ec56f9c8dd8accb81c36c79f8ef40f19d6fd69353d8a62327c3e9bc615f27.js&#34;
-        integrity=&#34;sha512-b6IF5fwzRw/q&amp;#43;M9py&amp;#43;1kYAIuPBfobK8nCEb3Zg&amp;#43;9YdUBLsVvnI3YrMuBw2x5&amp;#43;O9A8Z1v1pNT2KYjJ8PpvGFfJw==&#34;
+        src=&#34;https://xerolinux.xyz/js/fetch-repo.min.44b885f79fea551b2049e9be9ca41b840614ec4aad399936bf666c88998f1494a6de637470104319338fe5fd24022acfbc60ff019481ae5cf70492e32c8428a8.js&#34;
+        integrity=&#34;sha512-RLiF95/qVRsgSem&amp;#43;nKQbhAYU7EqtOZk2v2ZsiJmPFJSm3mN0cBBDGTOP5f0kAirPvGD/AZSBrlz3BJLjLIQoqA==&#34;
         data-repo-url=&#34;https://gitlab.com/api/v4/projects/42798482&#34;
         data-repo-id=&#34;gitlab-0d0a434e1fe710b26526a44305bad7a0&#34;&gt;&lt;/script&gt;
     &lt;/a&gt;
@@ -1424,8 +1430,7 @@ cd LightlyShaders; mkdir qt5build; cd qt5build; cmake ../ -DCMAKE_INSTALL_PREFIX
 &lt;p&gt;I have always wanted to use cool animated wallpapers on Linux. Found many free ways, but nothing rivaled the awesome features of &lt;a
   href=&#34;https://www.wallpaperengine.io/en&#34;
     target=&#34;_blank&#34;
-  &gt;Wallpaper Engine&lt;/a&gt;
- found on steam for the low price of $5.. Only problem was that it only ran on Windows, nothing else. But someone awesome took it upon him/herself to port it over to Linux.&lt;/p&gt;
+  &gt;Wallpaper Engine&lt;/a&gt; found on steam for the low price of $5.. Only problem was that it only ran on Windows, nothing else. But someone awesome took it upon him/herself to port it over to Linux.&lt;/p&gt;
 &lt;p&gt;Below is a video on how to get it running on KDE Plasma via that plugin&amp;hellip; Just note that, as it&amp;rsquo;s mentioned in the video, not all animated wallpapers will work, test it and see. Oh and any Audio Spectrum ones that are supposed to react to music will absolutely not work as it has no way to hook to players. Besides that it should work.&lt;/p&gt;
 &lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
       &lt;iframe allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen&#34; loading=&#34;eager&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; src=&#34;https://www.youtube.com/embed/irDqraC0K6g?autoplay=0&amp;amp;controls=1&amp;amp;end=0&amp;amp;loop=0&amp;amp;mute=0&amp;amp;start=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;YouTube video&#34;&gt;&lt;/iframe&gt;
@@ -1448,7 +1453,7 @@ cd LightlyShaders; mkdir qt5build; cd qt5build; cmake ../ -DCMAKE_INSTALL_PREFIX
               class=&#34;nozoom mt-0 mb-0 w-full h-full object-cover&#34;&gt;
           &lt;/div&gt;&lt;div class=&#34;w-full md:w-auto pt-3 p-5&#34;&gt;
           &lt;div class=&#34;flex items-center&#34;&gt;
-            &lt;span class=&#34;text-2xl text-neutral-800 dark:text-neutral margin-right-[10px]&#34;&gt;
+            &lt;span class=&#34;text-2xl text-neutral-800 dark:text-neutral mr-[10px]&#34;&gt;
               
 
   &lt;span class=&#34;relative block icon&#34;&gt;
@@ -1470,9 +1475,10 @@ cd LightlyShaders; mkdir qt5build; cd qt5build; cmake ../ -DCMAKE_INSTALL_PREFIX
           &lt;/p&gt;
 
           &lt;div class=&#34;m-0 mt-2 flex items-center&#34;&gt;
+            
+            
             &lt;span
-              class=&#34;mr-1 inline-block h-3 w-3 rounded-full&#34;
-              style=&#34;background-color: #44a51c&#34;&gt;&lt;/span&gt;
+              class=&#34;mr-1 inline-block h-3 w-3 rounded-full background-color-c477abfb7fd4959a20d5e0240adc26b0&#34;&gt;&lt;/span&gt;
             &lt;div class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
               QML
             &lt;/div&gt;
@@ -1508,9 +1514,10 @@ cd LightlyShaders; mkdir qt5build; cd qt5build; cmake ../ -DCMAKE_INSTALL_PREFIX
       
       
       &lt;script
+        async
         type=&#34;text/javascript&#34;
-        src=&#34;https://xerolinux.xyz/js/fetch-repo.min.6fa205e5fc33470feaf8cf69cbed6460022e3c17e86caf270846f7660fbd61d5012ec56f9c8dd8accb81c36c79f8ef40f19d6fd69353d8a62327c3e9bc615f27.js&#34;
-        integrity=&#34;sha512-b6IF5fwzRw/q&amp;#43;M9py&amp;#43;1kYAIuPBfobK8nCEb3Zg&amp;#43;9YdUBLsVvnI3YrMuBw2x5&amp;#43;O9A8Z1v1pNT2KYjJ8PpvGFfJw==&#34;
+        src=&#34;https://xerolinux.xyz/js/fetch-repo.min.44b885f79fea551b2049e9be9ca41b840614ec4aad399936bf666c88998f1494a6de637470104319338fe5fd24022acfbc60ff019481ae5cf70492e32c8428a8.js&#34;
+        integrity=&#34;sha512-RLiF95/qVRsgSem&amp;#43;nKQbhAYU7EqtOZk2v2ZsiJmPFJSm3mN0cBBDGTOP5f0kAirPvGD/AZSBrlz3BJLjLIQoqA==&#34;
         data-repo-url=&#34;https://api.github.com/repos/catsout/wallpaper-engine-kde-plugin&#34;
         data-repo-id=&#34;github-ca71a5e83707668542a12e863d6e8215&#34;&gt;&lt;/script&gt;
     &lt;/a&gt;&lt;/div&gt;

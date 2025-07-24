@@ -43,8 +43,7 @@
 &lt;p&gt;Then go into the &lt;code&gt;ventoy_plugins&lt;/code&gt; folder open a terminal and run &lt;code&gt;sudo sh CreatePersistenceImg.sh -s 20480 -l vtoycow&lt;/code&gt; this will create a file called &lt;code&gt;persistence.dat&lt;/code&gt; with the size of 20GB, refer to &lt;a
   href=&#34;https://www.ventoy.net/en/plugin_persistence.html&#34;
     target=&#34;_blank&#34;
-  &gt;this&lt;/a&gt;
- article from Ventoy for different arguments for the command. After a while you will be granted with this confirmation, just hit &lt;code&gt;y&lt;/code&gt; and &lt;code&gt;enter&lt;/code&gt; and in a few seconds it should be done.&lt;/p&gt;
+  &gt;this&lt;/a&gt; article from Ventoy for different arguments for the command. After a while you will be granted with this confirmation, just hit &lt;code&gt;y&lt;/code&gt; and &lt;code&gt;enter&lt;/code&gt; and in a few seconds it should be done.&lt;/p&gt;
 &lt;p&gt;
 
 

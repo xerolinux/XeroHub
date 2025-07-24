@@ -108,8 +108,7 @@
 &lt;p&gt;In case you are one of the affected people, below is how you can fix the issue. I have tested it and it works fine. And keep in mind that &lt;strong&gt;XeroLinux&lt;/strong&gt; is basically &lt;strong&gt;ArchLinux&lt;/strong&gt; so below fix will work on Arch as well as any Arch-Based distros with the exception of &lt;strong&gt;Manjaro&lt;/strong&gt; that is &lt;em&gt;NOT&lt;/em&gt; Arch. Read more on that &amp;raquo; &lt;a
   href=&#34;https://wiki.manjaro.org/index.php/Manjaro:A_Different_Kind_of_Beast#:~:text=Manjaro%20is%20developed%20independently%20from,from%20its%20own%20independent%20repositories&#34;
     target=&#34;_blank&#34;
-  &gt;Here&lt;/a&gt;
- &amp;laquo;&lt;/p&gt;
+  &gt;Here&lt;/a&gt; &amp;laquo;&lt;/p&gt;
 
 &lt;h3 class=&#34;relative group&#34;&gt;Disclaimer 
     &lt;div id=&#34;disclaimer&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
@@ -156,8 +155,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Exit arch-chroot via &lt;code&gt;exit&lt;/code&gt; command then unmount your system n reboot. If you want to know more please check out EndeavourOS&amp;rsquo;s &lt;a
   href=&#34;https://discovery.endeavouros.com/system-rescue/arch-chroot/2022/12/&#34;
     target=&#34;_blank&#34;
-  &gt;Advanced Chroot Guide&lt;/a&gt;
-, they did a great job.&lt;/p&gt;
+  &gt;Advanced Chroot Guide&lt;/a&gt;, they did a great job.&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo umount /mnt/boot/efi
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo umount /mnt
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>

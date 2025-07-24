@@ -51,8 +51,7 @@
 &lt;p&gt;First things first, you will need to install &lt;code&gt;snapd&lt;/code&gt; service and enable it. To do so please type the following commands in Terminal. Please report any issues to &lt;a
   href=&#34;https://github.com/snapcore/snapd&#34;
     target=&#34;_blank&#34;
-  &gt;Snapd Upstream&lt;/a&gt;
-.&lt;/p&gt;
+  &gt;Snapd Upstream&lt;/a&gt;.&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;paru -S --noconfirm snapd
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo systemctl &lt;span class=&#34;nb&#34;&gt;enable&lt;/span&gt; --now snapd.socket
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo systemctl &lt;span class=&#34;nb&#34;&gt;enable&lt;/span&gt; --now snapd.apparmor

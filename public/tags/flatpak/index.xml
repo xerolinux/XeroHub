@@ -54,7 +54,7 @@
               class=&#34;nozoom mt-0 mb-0 w-full h-full object-cover&#34;&gt;
           &lt;/div&gt;&lt;div class=&#34;w-full md:w-auto pt-3 p-5&#34;&gt;
           &lt;div class=&#34;flex items-center&#34;&gt;
-            &lt;span class=&#34;text-2xl text-neutral-800 dark:text-neutral margin-right-[10px]&#34;&gt;
+            &lt;span class=&#34;text-2xl text-neutral-800 dark:text-neutral mr-[10px]&#34;&gt;
               
 
   &lt;span class=&#34;relative block icon&#34;&gt;
@@ -76,9 +76,10 @@
           &lt;/p&gt;
 
           &lt;div class=&#34;m-0 mt-2 flex items-center&#34;&gt;
+            
+            
             &lt;span
-              class=&#34;mr-1 inline-block h-3 w-3 rounded-full&#34;
-              style=&#34;background-color: #00B4AB&#34;&gt;&lt;/span&gt;
+              class=&#34;mr-1 inline-block h-3 w-3 rounded-full background-color-35900d987289a83af101d18a9f7c3501&#34;&gt;&lt;/span&gt;
             &lt;div class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
               Dart
             &lt;/div&gt;
@@ -114,9 +115,10 @@
       
       
       &lt;script
+        async
         type=&#34;text/javascript&#34;
-        src=&#34;https://xerolinux.xyz/js/fetch-repo.min.6fa205e5fc33470feaf8cf69cbed6460022e3c17e86caf270846f7660fbd61d5012ec56f9c8dd8accb81c36c79f8ef40f19d6fd69353d8a62327c3e9bc615f27.js&#34;
-        integrity=&#34;sha512-b6IF5fwzRw/q&amp;#43;M9py&amp;#43;1kYAIuPBfobK8nCEb3Zg&amp;#43;9YdUBLsVvnI3YrMuBw2x5&amp;#43;O9A8Z1v1pNT2KYjJ8PpvGFfJw==&#34;
+        src=&#34;https://xerolinux.xyz/js/fetch-repo.min.44b885f79fea551b2049e9be9ca41b840614ec4aad399936bf666c88998f1494a6de637470104319338fe5fd24022acfbc60ff019481ae5cf70492e32c8428a8.js&#34;
+        integrity=&#34;sha512-RLiF95/qVRsgSem&amp;#43;nKQbhAYU7EqtOZk2v2ZsiJmPFJSm3mN0cBBDGTOP5f0kAirPvGD/AZSBrlz3BJLjLIQoqA==&#34;
         data-repo-url=&#34;https://api.github.com/repos/imikado/dupotEasyFlatpak&#34;
         data-repo-id=&#34;github-55a7e247f2f2b6f3753f13b4f04d7b27&#34;&gt;&lt;/script&gt;
     &lt;/a&gt;&lt;/div&gt;
@@ -175,7 +177,7 @@
               class=&#34;nozoom mt-0 mb-0 w-full h-full object-cover&#34;&gt;
           &lt;/div&gt;&lt;div class=&#34;w-full md:w-auto pt-3 p-5&#34;&gt;
           &lt;div class=&#34;flex items-center&#34;&gt;
-            &lt;span class=&#34;text-2xl text-neutral-800 dark:text-neutral margin-right-[10px]&#34;&gt;
+            &lt;span class=&#34;text-2xl text-neutral-800 dark:text-neutral mr-[10px]&#34;&gt;
               
 
   &lt;span class=&#34;relative block icon&#34;&gt;
@@ -197,9 +199,10 @@
           &lt;/p&gt;
 
           &lt;div class=&#34;m-0 mt-2 flex items-center&#34;&gt;
+            
+            
             &lt;span
-              class=&#34;mr-1 inline-block h-3 w-3 rounded-full&#34;
-              style=&#34;background-color: #00B4AB&#34;&gt;&lt;/span&gt;
+              class=&#34;mr-1 inline-block h-3 w-3 rounded-full background-color-35900d987289a83af101d18a9f7c3501&#34;&gt;&lt;/span&gt;
             &lt;div class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
               Dart
             &lt;/div&gt;
@@ -235,9 +238,10 @@
       
       
       &lt;script
+        async
         type=&#34;text/javascript&#34;
-        src=&#34;https://xerolinux.xyz/js/fetch-repo.min.6fa205e5fc33470feaf8cf69cbed6460022e3c17e86caf270846f7660fbd61d5012ec56f9c8dd8accb81c36c79f8ef40f19d6fd69353d8a62327c3e9bc615f27.js&#34;
-        integrity=&#34;sha512-b6IF5fwzRw/q&amp;#43;M9py&amp;#43;1kYAIuPBfobK8nCEb3Zg&amp;#43;9YdUBLsVvnI3YrMuBw2x5&amp;#43;O9A8Z1v1pNT2KYjJ8PpvGFfJw==&#34;
+        src=&#34;https://xerolinux.xyz/js/fetch-repo.min.44b885f79fea551b2049e9be9ca41b840614ec4aad399936bf666c88998f1494a6de637470104319338fe5fd24022acfbc60ff019481ae5cf70492e32c8428a8.js&#34;
+        integrity=&#34;sha512-RLiF95/qVRsgSem&amp;#43;nKQbhAYU7EqtOZk2v2ZsiJmPFJSm3mN0cBBDGTOP5f0kAirPvGD/AZSBrlz3BJLjLIQoqA==&#34;
         data-repo-url=&#34;https://api.github.com/repos/krtirtho/spotube&#34;
         data-repo-id=&#34;github-95784f9db36c1bd48c66366504913f55&#34;&gt;&lt;/script&gt;
     &lt;/a&gt;&lt;/div&gt;
@@ -292,7 +296,7 @@
               class=&#34;nozoom mt-0 mb-0 w-full h-full object-cover&#34;&gt;
           &lt;/div&gt;&lt;div class=&#34;w-full md:w-auto pt-3 p-5&#34;&gt;
           &lt;div class=&#34;flex items-center&#34;&gt;
-            &lt;span class=&#34;text-2xl text-neutral-800 dark:text-neutral margin-right-[10px]&#34;&gt;
+            &lt;span class=&#34;text-2xl text-neutral-800 dark:text-neutral mr-[10px]&#34;&gt;
               
 
   &lt;span class=&#34;relative block icon&#34;&gt;
@@ -314,9 +318,10 @@
           &lt;/p&gt;
 
           &lt;div class=&#34;m-0 mt-2 flex items-center&#34;&gt;
+            
+            
             &lt;span
-              class=&#34;mr-1 inline-block h-3 w-3 rounded-full&#34;
-              style=&#34;background-color: #2b7489&#34;&gt;&lt;/span&gt;
+              class=&#34;mr-1 inline-block h-3 w-3 rounded-full background-color-558b544cf685f39d34e4903e39c38b67&#34;&gt;&lt;/span&gt;
             &lt;div class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
               TypeScript
             &lt;/div&gt;
@@ -352,9 +357,10 @@
       
       
       &lt;script
+        async
         type=&#34;text/javascript&#34;
-        src=&#34;https://xerolinux.xyz/js/fetch-repo.min.6fa205e5fc33470feaf8cf69cbed6460022e3c17e86caf270846f7660fbd61d5012ec56f9c8dd8accb81c36c79f8ef40f19d6fd69353d8a62327c3e9bc615f27.js&#34;
-        integrity=&#34;sha512-b6IF5fwzRw/q&amp;#43;M9py&amp;#43;1kYAIuPBfobK8nCEb3Zg&amp;#43;9YdUBLsVvnI3YrMuBw2x5&amp;#43;O9A8Z1v1pNT2KYjJ8PpvGFfJw==&#34;
+        src=&#34;https://xerolinux.xyz/js/fetch-repo.min.44b885f79fea551b2049e9be9ca41b840614ec4aad399936bf666c88998f1494a6de637470104319338fe5fd24022acfbc60ff019481ae5cf70492e32c8428a8.js&#34;
+        integrity=&#34;sha512-RLiF95/qVRsgSem&amp;#43;nKQbhAYU7EqtOZk2v2ZsiJmPFJSm3mN0cBBDGTOP5f0kAirPvGD/AZSBrlz3BJLjLIQoqA==&#34;
         data-repo-url=&#34;https://api.github.com/repos/ferdium/ferdium-app&#34;
         data-repo-id=&#34;github-3779791f9be93f712e396768a672133d&#34;&gt;&lt;/script&gt;
     &lt;/a&gt;&lt;/div&gt;
@@ -391,8 +397,7 @@
 &lt;p&gt;If you are looking for new applications in Flatpak packaging, browse the &lt;a
   href=&#34;https://flathub.org&#34;
     target=&#34;_blank&#34;
-  &gt;Flathub&lt;/a&gt;
- website.&lt;/p&gt;
+  &gt;Flathub&lt;/a&gt; website.&lt;/p&gt;
 &lt;p&gt;This is the official website from the Flatpak project and it lists and distributes a huge number of Flatpak applications.&lt;/p&gt;
 &lt;p&gt;You can look for recommended apps in the “Editor’s choice” section, recently updated apps, new apps and popular apps.&lt;/p&gt;
 &lt;p&gt;
@@ -417,8 +422,7 @@
 &lt;p&gt;The &lt;a
   href=&#34;https://flathub.org&#34;
     target=&#34;_blank&#34;
-  &gt;Flathub&lt;/a&gt;
- website provides command line instructions to install the application.&lt;/p&gt;
+  &gt;Flathub&lt;/a&gt; website provides command line instructions to install the application.&lt;/p&gt;
 &lt;p&gt;There is also an Install button but it doesn’t install the application for you. It downloads a &lt;code&gt;.flatpakref&lt;/code&gt; file and then you’ll have to use the command line to install from the flatpakref file.&lt;/p&gt;
 &lt;p&gt;
 
@@ -438,19 +442,16 @@
 &lt;p&gt;This way, when you click on the Install button for any application on the &lt;a
   href=&#34;https://flathub.org&#34;
     target=&#34;_blank&#34;
-  &gt;Flathub&lt;/a&gt;
- website, it will ask you to open the link in an XDG application like the Software Center.&lt;/p&gt;
+  &gt;Flathub&lt;/a&gt; website, it will ask you to open the link in an XDG application like the Software Center.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Grab it for Firefox -&amp;gt; &lt;a
   href=&#34;https://addons.mozilla.org/en-US/firefox/addon/flatline-flatpak/&#34;
     target=&#34;_blank&#34;
-  &gt;Firefox Add-on&lt;/a&gt;
-&lt;/li&gt;
+  &gt;Firefox Add-on&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;Grab it for Chromium Browsers -&amp;gt; &lt;a
   href=&#34;https://chrome.google.com/webstore/detail/flatline/cpbniogoilfagmcoipghkgnpmdglfmjm/related&#34;
     target=&#34;_blank&#34;
-  &gt;Chrome Extension&lt;/a&gt;
-&lt;/li&gt;
+  &gt;Chrome Extension&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;
 
@@ -498,8 +499,7 @@
 &lt;p&gt;Alternatively, you can make some manual effort and force the Flatpak applications to use a given theme.  Check &lt;a
   href=&#34;https://forum.xerolinux.xyz/thread-152.html&#34;
     target=&#34;_blank&#34;
-  &gt;This Thread&lt;/a&gt;
- to know more&amp;hellip;&lt;/p&gt;
+  &gt;This Thread&lt;/a&gt; to know more&amp;hellip;&lt;/p&gt;
 
 &lt;h3 class=&#34;relative group&#34;&gt;Update Flatpak apps and clean them 
     &lt;div id=&#34;update-flatpak-apps-and-clean-them&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
@@ -580,7 +580,7 @@
               class=&#34;nozoom mt-0 mb-0 w-full h-full object-cover&#34;&gt;
           &lt;/div&gt;&lt;div class=&#34;w-full md:w-auto pt-3 p-5&#34;&gt;
           &lt;div class=&#34;flex items-center&#34;&gt;
-            &lt;span class=&#34;text-2xl text-neutral-800 dark:text-neutral margin-right-[10px]&#34;&gt;
+            &lt;span class=&#34;text-2xl text-neutral-800 dark:text-neutral mr-[10px]&#34;&gt;
               
 
   &lt;span class=&#34;relative block icon&#34;&gt;
@@ -602,9 +602,10 @@
           &lt;/p&gt;
 
           &lt;div class=&#34;m-0 mt-2 flex items-center&#34;&gt;
+            
+            
             &lt;span
-              class=&#34;mr-1 inline-block h-3 w-3 rounded-full&#34;
-              style=&#34;background-color: #555555&#34;&gt;&lt;/span&gt;
+              class=&#34;mr-1 inline-block h-3 w-3 rounded-full background-color-0d61f8370cad1d412f80b84d143e1257&#34;&gt;&lt;/span&gt;
             &lt;div class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
               C
             &lt;/div&gt;
@@ -640,9 +641,10 @@
       
       
       &lt;script
+        async
         type=&#34;text/javascript&#34;
-        src=&#34;https://xerolinux.xyz/js/fetch-repo.min.6fa205e5fc33470feaf8cf69cbed6460022e3c17e86caf270846f7660fbd61d5012ec56f9c8dd8accb81c36c79f8ef40f19d6fd69353d8a62327c3e9bc615f27.js&#34;
-        integrity=&#34;sha512-b6IF5fwzRw/q&amp;#43;M9py&amp;#43;1kYAIuPBfobK8nCEb3Zg&amp;#43;9YdUBLsVvnI3YrMuBw2x5&amp;#43;O9A8Z1v1pNT2KYjJ8PpvGFfJw==&#34;
+        src=&#34;https://xerolinux.xyz/js/fetch-repo.min.44b885f79fea551b2049e9be9ca41b840614ec4aad399936bf666c88998f1494a6de637470104319338fe5fd24022acfbc60ff019481ae5cf70492e32c8428a8.js&#34;
+        integrity=&#34;sha512-RLiF95/qVRsgSem&amp;#43;nKQbhAYU7EqtOZk2v2ZsiJmPFJSm3mN0cBBDGTOP5f0kAirPvGD/AZSBrlz3BJLjLIQoqA==&#34;
         data-repo-url=&#34;https://api.github.com/repos/obsproject/obs-studio&#34;
         data-repo-id=&#34;github-2294faaf2680cd82062f8e3f92431994&#34;&gt;&lt;/script&gt;
     &lt;/a&gt;&lt;/div&gt;
@@ -667,8 +669,7 @@
 &lt;p&gt;The official way to apply GTK themes to Flatpak apps is by &lt;a
   href=&#34;https://docs.flatpak.org/en/latest/desktop-integration.html#theming&#34;
     target=&#34;_blank&#34;
-  &gt;installing the desired theme as a flatpak&lt;/a&gt;
-. However, there are only a few GTK themes that can be installed as Flatpak.&lt;/p&gt;
+  &gt;installing the desired theme as a flatpak&lt;/a&gt;. However, there are only a few GTK themes that can be installed as Flatpak.&lt;/p&gt;
 &lt;p&gt;This means that if you found a beautiful GTK theme, your Flatpak applications will still be using their default appearance. But wait! There is a workaround.&lt;/p&gt;
 &lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
       &lt;iframe allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen&#34; loading=&#34;eager&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; src=&#34;https://www.youtube.com/embed/IYXlgzrZRIE?autoplay=0&amp;amp;controls=1&amp;amp;end=0&amp;amp;loop=0&amp;amp;mute=0&amp;amp;start=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;YouTube video&#34;&gt;&lt;/iframe&gt;
@@ -685,8 +686,7 @@
 &lt;p&gt;GTK themes are located in &lt;code&gt;/usr/share/themes&lt;/code&gt; for all users, and in &lt;code&gt;~/.themes&lt;/code&gt; for a specific user. Notice that you can’t give access to &lt;code&gt;/usr/share/themes&lt;/code&gt; because according to &lt;a
   href=&#34;https://docs.flatpak.org/en/latest/sandbox-permissions.html#filesystem-access&#34;
     target=&#34;_blank&#34;
-  &gt;Flatpak Documentation&lt;/a&gt;
- they are blacklisted.&lt;/p&gt;
+  &gt;Flatpak Documentation&lt;/a&gt; they are blacklisted.&lt;/p&gt;
 &lt;p&gt;So, since all included GTK Themes in XeroLinux  are located under &lt;code&gt;/usr/share/themes&lt;/code&gt; which Flatpaks cannot access we need to copy them to &lt;code&gt;~/.themes&lt;/code&gt; .&lt;/p&gt;
 &lt;p&gt;Once that is done, to give all flatpak packages permission to access &lt;code&gt;~/.themes&lt;/code&gt; run the following command:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo flatpak override --filesystem&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$HOME&lt;/span&gt;/.themes
@@ -700,8 +700,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Once that&amp;rsquo;s done you will end up with a file in the system that includes those values. Seemingly enough there is some info about that exact issue on the &lt;a
   href=&#34;https://github.com/flatpak/flatpak/issues/4633&#34;
     target=&#34;_blank&#34;
-  &gt;Flathub iisue reporter&lt;/a&gt;
-..&lt;/p&gt;
+  &gt;Flathub iisue reporter&lt;/a&gt;..&lt;/p&gt;
 &lt;p&gt;As you can see in the screenshot below, there is two themes available, Ant-Bloody and Orchis-dark. Copy and paste the exact theme name in the above command:&lt;/p&gt;
 &lt;p&gt;
 
@@ -733,12 +732,10 @@
 &lt;p&gt;Here&amp;rsquo;s the Original Thread on &lt;a
   href=&#34;https://forum.manjaro.org/t/add-out-of-the-box-flatpak-gtk-application-themes-for-kde-plasma-users/117103&#34;
     target=&#34;_blank&#34;
-  &gt;Manjaro Forums&lt;/a&gt;
-&amp;hellip; Oh and &lt;a
+  &gt;Manjaro Forums&lt;/a&gt;&amp;hellip; Oh and &lt;a
   href=&#34;https://itsfoss.com/flatpak-app-apply-theme/&#34;
     target=&#34;_blank&#34;
-  &gt;This Thread&lt;/a&gt;
- Too&amp;hellip;.&lt;/p&gt;
+  &gt;This Thread&lt;/a&gt; Too&amp;hellip;.&lt;/p&gt;
 </description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/flatpak-theming/featured.webp" />
     </item>
@@ -781,7 +778,7 @@
               class=&#34;nozoom mt-0 mb-0 w-full h-full object-cover&#34;&gt;
           &lt;/div&gt;&lt;div class=&#34;w-full md:w-auto pt-3 p-5&#34;&gt;
           &lt;div class=&#34;flex items-center&#34;&gt;
-            &lt;span class=&#34;text-2xl text-neutral-800 dark:text-neutral margin-right-[10px]&#34;&gt;
+            &lt;span class=&#34;text-2xl text-neutral-800 dark:text-neutral mr-[10px]&#34;&gt;
               
 
   &lt;span class=&#34;relative block icon&#34;&gt;
@@ -803,9 +800,10 @@
           &lt;/p&gt;
 
           &lt;div class=&#34;m-0 mt-2 flex items-center&#34;&gt;
+            
+            
             &lt;span
-              class=&#34;mr-1 inline-block h-3 w-3 rounded-full&#34;
-              style=&#34;background-color: #3572A5&#34;&gt;&lt;/span&gt;
+              class=&#34;mr-1 inline-block h-3 w-3 rounded-full background-color-a7f5f35426b927411fc9231b56382173&#34;&gt;&lt;/span&gt;
             &lt;div class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
               Python
             &lt;/div&gt;
@@ -841,9 +839,10 @@
       
       
       &lt;script
+        async
         type=&#34;text/javascript&#34;
-        src=&#34;https://xerolinux.xyz/js/fetch-repo.min.6fa205e5fc33470feaf8cf69cbed6460022e3c17e86caf270846f7660fbd61d5012ec56f9c8dd8accb81c36c79f8ef40f19d6fd69353d8a62327c3e9bc615f27.js&#34;
-        integrity=&#34;sha512-b6IF5fwzRw/q&amp;#43;M9py&amp;#43;1kYAIuPBfobK8nCEb3Zg&amp;#43;9YdUBLsVvnI3YrMuBw2x5&amp;#43;O9A8Z1v1pNT2KYjJ8PpvGFfJw==&#34;
+        src=&#34;https://xerolinux.xyz/js/fetch-repo.min.44b885f79fea551b2049e9be9ca41b840614ec4aad399936bf666c88998f1494a6de637470104319338fe5fd24022acfbc60ff019481ae5cf70492e32c8428a8.js&#34;
+        integrity=&#34;sha512-RLiF95/qVRsgSem&amp;#43;nKQbhAYU7EqtOZk2v2ZsiJmPFJSm3mN0cBBDGTOP5f0kAirPvGD/AZSBrlz3BJLjLIQoqA==&#34;
         data-repo-url=&#34;https://api.github.com/repos/flattool/warehouse&#34;
         data-repo-id=&#34;github-ceed8b24e6b3fdf44892e309c880fd50&#34;&gt;&lt;/script&gt;
     &lt;/a&gt;&lt;/div&gt;

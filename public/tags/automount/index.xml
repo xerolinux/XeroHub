@@ -28,8 +28,7 @@
 &lt;p&gt;&lt;a
   href=&#34;https://wiki.gnome.org/Apps/Disks&#34;
     target=&#34;_blank&#34;
-  &gt;Gnome Disks&lt;/a&gt;
- has many features, like S.M.A.R.T. monitoring, partition management, benchmarking, and more, including one that might not be obvious, but is very useful: it can set drives to mount automatically at startup.&lt;/p&gt;
+  &gt;Gnome Disks&lt;/a&gt; has many features, like S.M.A.R.T. monitoring, partition management, benchmarking, and more, including one that might not be obvious, but is very useful: it can set drives to mount automatically at startup.&lt;/p&gt;
 &lt;p&gt;Use it to automount your new hard disk that uses Ext4, your Windows NTFS / exFAT partition, etc.&lt;/p&gt;
 &lt;p&gt;
 

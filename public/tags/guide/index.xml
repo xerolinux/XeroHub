@@ -194,12 +194,10 @@
 &lt;p&gt;Recently &lt;a
   href=&#34;https://wiki.archlinux.org/title/Pacman&#34;
     target=&#34;_blank&#34;
-  &gt;&lt;strong&gt;Pacman&lt;/strong&gt;&lt;/a&gt;
-, &lt;strong&gt;Arch&lt;/strong&gt;&amp;rsquo;s package manager recieved a major upgrade to R7.0, which brought with it a ton of changes, some of which will require &lt;a
+  &gt;&lt;strong&gt;Pacman&lt;/strong&gt;&lt;/a&gt;, &lt;strong&gt;Arch&lt;/strong&gt;&amp;rsquo;s package manager recieved a major upgrade to R7.0, which brought with it a ton of changes, some of which will require &lt;a
   href=&#34;https://wiki.archlinux.org/title/Pacman&#34;
     target=&#34;_blank&#34;
-  &gt;&lt;em&gt;manual intervention&lt;/em&gt;&lt;/a&gt;
-.&lt;/p&gt;
+  &gt;&lt;em&gt;manual intervention&lt;/em&gt;&lt;/a&gt;.&lt;/p&gt;
 &lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
       &lt;iframe allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen&#34; loading=&#34;eager&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; src=&#34;https://www.youtube.com/embed/DD8d8ciqkFk?autoplay=0&amp;amp;controls=1&amp;amp;end=0&amp;amp;loop=0&amp;amp;mute=0&amp;amp;start=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;YouTube video&#34;&gt;&lt;/iframe&gt;
     &lt;/div&gt;
@@ -292,12 +290,10 @@
 &lt;p&gt;If you want to learn more about how to use &lt;strong&gt;Pacman&lt;/strong&gt; and become a pro, I would highly recommend &lt;a
   href=&#34;https://linuxiac.com/how-to-use-pacman-to-manage-software-on-arch-linux/&#34;
     target=&#34;_blank&#34;
-  &gt;&lt;strong&gt;This Awesome Guide&lt;/strong&gt;&lt;/a&gt;
- by &lt;a
+  &gt;&lt;strong&gt;This Awesome Guide&lt;/strong&gt;&lt;/a&gt; by &lt;a
   href=&#34;https://linuxiac.com&#34;
     target=&#34;_blank&#34;
-  &gt;&lt;strong&gt;@Linuxiac&lt;/strong&gt;&lt;/a&gt;
-.&lt;/p&gt;
+  &gt;&lt;strong&gt;@Linuxiac&lt;/strong&gt;&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;I hope this helps y&amp;rsquo;all&amp;hellip;&lt;/p&gt;
 </description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/pacman-update/featured.webp" />
@@ -326,7 +322,7 @@
               class=&#34;nozoom mt-0 mb-0 w-full h-full object-cover&#34;&gt;
           &lt;/div&gt;&lt;div class=&#34;w-full md:w-auto pt-3 p-5&#34;&gt;
           &lt;div class=&#34;flex items-center&#34;&gt;
-            &lt;span class=&#34;text-2xl text-neutral-800 dark:text-neutral margin-right-[10px]&#34;&gt;
+            &lt;span class=&#34;text-2xl text-neutral-800 dark:text-neutral mr-[10px]&#34;&gt;
               
 
   &lt;span class=&#34;relative block icon&#34;&gt;
@@ -348,9 +344,10 @@
           &lt;/p&gt;
 
           &lt;div class=&#34;m-0 mt-2 flex items-center&#34;&gt;
+            
+            
             &lt;span
-              class=&#34;mr-1 inline-block h-3 w-3 rounded-full&#34;
-              style=&#34;background-color: #44a51c&#34;&gt;&lt;/span&gt;
+              class=&#34;mr-1 inline-block h-3 w-3 rounded-full background-color-c477abfb7fd4959a20d5e0240adc26b0&#34;&gt;&lt;/span&gt;
             &lt;div class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
               QML
             &lt;/div&gt;
@@ -386,9 +383,10 @@
       
       
       &lt;script
+        async
         type=&#34;text/javascript&#34;
-        src=&#34;https://xerolinux.xyz/js/fetch-repo.min.6fa205e5fc33470feaf8cf69cbed6460022e3c17e86caf270846f7660fbd61d5012ec56f9c8dd8accb81c36c79f8ef40f19d6fd69353d8a62327c3e9bc615f27.js&#34;
-        integrity=&#34;sha512-b6IF5fwzRw/q&amp;#43;M9py&amp;#43;1kYAIuPBfobK8nCEb3Zg&amp;#43;9YdUBLsVvnI3YrMuBw2x5&amp;#43;O9A8Z1v1pNT2KYjJ8PpvGFfJw==&#34;
+        src=&#34;https://xerolinux.xyz/js/fetch-repo.min.44b885f79fea551b2049e9be9ca41b840614ec4aad399936bf666c88998f1494a6de637470104319338fe5fd24022acfbc60ff019481ae5cf70492e32c8428a8.js&#34;
+        integrity=&#34;sha512-RLiF95/qVRsgSem&amp;#43;nKQbhAYU7EqtOZk2v2ZsiJmPFJSm3mN0cBBDGTOP5f0kAirPvGD/AZSBrlz3BJLjLIQoqA==&#34;
         data-repo-url=&#34;https://api.github.com/repos/xerolinux/xero-layan-git&#34;
         data-repo-id=&#34;github-a3d14a4a10f892b0bde0c7d2dcb03e5f&#34;&gt;&lt;/script&gt;
     &lt;/a&gt;&lt;/div&gt;
@@ -486,7 +484,7 @@
               class=&#34;nozoom mt-0 mb-0 w-full h-full object-cover&#34;&gt;
           &lt;/div&gt;&lt;div class=&#34;w-full md:w-auto pt-3 p-5&#34;&gt;
           &lt;div class=&#34;flex items-center&#34;&gt;
-            &lt;span class=&#34;text-2xl text-neutral-800 dark:text-neutral margin-right-[10px]&#34;&gt;
+            &lt;span class=&#34;text-2xl text-neutral-800 dark:text-neutral mr-[10px]&#34;&gt;
               
 
   &lt;span class=&#34;relative block icon&#34;&gt;
@@ -508,9 +506,10 @@
           &lt;/p&gt;
 
           &lt;div class=&#34;m-0 mt-2 flex items-center&#34;&gt;
+            
+            
             &lt;span
-              class=&#34;mr-1 inline-block h-3 w-3 rounded-full&#34;
-              style=&#34;background-color: #f34b7d&#34;&gt;&lt;/span&gt;
+              class=&#34;mr-1 inline-block h-3 w-3 rounded-full background-color-f6f87c9fdcf8b3c3f07f93f1ee8712c9&#34;&gt;&lt;/span&gt;
             &lt;div class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
               C&amp;#43;&amp;#43;
             &lt;/div&gt;
@@ -546,9 +545,10 @@
       
       
       &lt;script
+        async
         type=&#34;text/javascript&#34;
-        src=&#34;https://xerolinux.xyz/js/fetch-repo.min.6fa205e5fc33470feaf8cf69cbed6460022e3c17e86caf270846f7660fbd61d5012ec56f9c8dd8accb81c36c79f8ef40f19d6fd69353d8a62327c3e9bc615f27.js&#34;
-        integrity=&#34;sha512-b6IF5fwzRw/q&amp;#43;M9py&amp;#43;1kYAIuPBfobK8nCEb3Zg&amp;#43;9YdUBLsVvnI3YrMuBw2x5&amp;#43;O9A8Z1v1pNT2KYjJ8PpvGFfJw==&#34;
+        src=&#34;https://xerolinux.xyz/js/fetch-repo.min.44b885f79fea551b2049e9be9ca41b840614ec4aad399936bf666c88998f1494a6de637470104319338fe5fd24022acfbc60ff019481ae5cf70492e32c8428a8.js&#34;
+        integrity=&#34;sha512-RLiF95/qVRsgSem&amp;#43;nKQbhAYU7EqtOZk2v2ZsiJmPFJSm3mN0cBBDGTOP5f0kAirPvGD/AZSBrlz3BJLjLIQoqA==&#34;
         data-repo-url=&#34;https://api.github.com/repos/tsujan/Kvantum&#34;
         data-repo-id=&#34;github-674857d8b75e800e4bcc0955b60eca86&#34;&gt;&lt;/script&gt;
     &lt;/a&gt;&lt;/div&gt;
@@ -560,8 +560,7 @@
 &lt;p&gt;Another element &lt;strong&gt;KDE Plasma&lt;/strong&gt; uses, is &lt;a
   href=&#34;https://wiki.archlinux.org/title/SDDM&#34;
     target=&#34;_blank&#34;
-  &gt;&lt;strong&gt;SDDM&lt;/strong&gt;&lt;/a&gt;
- for its &lt;strong&gt;Display Manager/Login&lt;/strong&gt;.&lt;/p&gt;
+  &gt;&lt;strong&gt;SDDM&lt;/strong&gt;&lt;/a&gt; for its &lt;strong&gt;Display Manager/Login&lt;/strong&gt;.&lt;/p&gt;
 &lt;p&gt;
 
 
@@ -582,8 +581,7 @@
 &lt;p&gt;Now, I can already hear you say that this is unrelated to &lt;strong&gt;KDE Plasma&lt;/strong&gt;, to which I will say, yes I agree. Also, not everyone will be using &lt;a
   href=&#34;https://wiki.archlinux.org/title/GRUB&#34;
     target=&#34;_blank&#34;
-  &gt;&lt;strong&gt;Grub&lt;/strong&gt;&lt;/a&gt;
-. Also true.&lt;/p&gt;
+  &gt;&lt;strong&gt;Grub&lt;/strong&gt;&lt;/a&gt;. Also true.&lt;/p&gt;
 &lt;p&gt;
 
 
@@ -604,8 +602,7 @@
 &lt;p&gt;&lt;a
   href=&#34;https://konsole.kde.org/&#34;
     target=&#34;_blank&#34;
-  &gt;&lt;strong&gt;Konsole&lt;/strong&gt;&lt;/a&gt;
- is the &lt;em&gt;Terminal Emulator&lt;/em&gt; that &lt;strong&gt;Plasma&lt;/strong&gt; ships. I know most of you switch to &lt;strong&gt;Alacritty&lt;/strong&gt; or even &lt;strong&gt;Kitty&lt;/strong&gt;. But I prefer to stick with what ships with the DE I use.&lt;/p&gt;
+  &gt;&lt;strong&gt;Konsole&lt;/strong&gt;&lt;/a&gt; is the &lt;em&gt;Terminal Emulator&lt;/em&gt; that &lt;strong&gt;Plasma&lt;/strong&gt; ships. I know most of you switch to &lt;strong&gt;Alacritty&lt;/strong&gt; or even &lt;strong&gt;Kitty&lt;/strong&gt;. But I prefer to stick with what ships with the DE I use.&lt;/p&gt;
 &lt;p&gt;
 
 
@@ -668,8 +665,7 @@
 &lt;p&gt;Oh boy, the reason I will not be talking about those is is simple, it&amp;rsquo;s your rice you do with those as you please. &lt;strong&gt;KDE Plasma&lt;/strong&gt; comes with some awesome widgets, use those to get started, if you want more, well, you will find them on the &lt;a
   href=&#34;https://store.kde.org&#34;
     target=&#34;_blank&#34;
-  &gt;&lt;strong&gt;KDE Store&lt;/strong&gt;&lt;/a&gt;
-.&lt;/p&gt;
+  &gt;&lt;strong&gt;KDE Store&lt;/strong&gt;&lt;/a&gt;.&lt;/p&gt;
 
   
   
@@ -735,7 +731,7 @@
               class=&#34;nozoom mt-0 mb-0 w-full h-full object-cover&#34;&gt;
           &lt;/div&gt;&lt;div class=&#34;w-full md:w-auto pt-3 p-5&#34;&gt;
           &lt;div class=&#34;flex items-center&#34;&gt;
-            &lt;span class=&#34;text-2xl text-neutral-800 dark:text-neutral margin-right-[10px]&#34;&gt;
+            &lt;span class=&#34;text-2xl text-neutral-800 dark:text-neutral mr-[10px]&#34;&gt;
               
 
   &lt;span class=&#34;relative block icon&#34;&gt;
@@ -757,9 +753,10 @@
           &lt;/p&gt;
 
           &lt;div class=&#34;m-0 mt-2 flex items-center&#34;&gt;
+            
+            
             &lt;span
-              class=&#34;mr-1 inline-block h-3 w-3 rounded-full&#34;
-              style=&#34;background-color: #89e051&#34;&gt;&lt;/span&gt;
+              class=&#34;mr-1 inline-block h-3 w-3 rounded-full background-color-ea89b68c34ce4a63c0f77e17413c6e30&#34;&gt;&lt;/span&gt;
             &lt;div class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
               Shell
             &lt;/div&gt;
@@ -795,9 +792,10 @@
       
       
       &lt;script
+        async
         type=&#34;text/javascript&#34;
-        src=&#34;https://xerolinux.xyz/js/fetch-repo.min.6fa205e5fc33470feaf8cf69cbed6460022e3c17e86caf270846f7660fbd61d5012ec56f9c8dd8accb81c36c79f8ef40f19d6fd69353d8a62327c3e9bc615f27.js&#34;
-        integrity=&#34;sha512-b6IF5fwzRw/q&amp;#43;M9py&amp;#43;1kYAIuPBfobK8nCEb3Zg&amp;#43;9YdUBLsVvnI3YrMuBw2x5&amp;#43;O9A8Z1v1pNT2KYjJ8PpvGFfJw==&#34;
+        src=&#34;https://xerolinux.xyz/js/fetch-repo.min.44b885f79fea551b2049e9be9ca41b840614ec4aad399936bf666c88998f1494a6de637470104319338fe5fd24022acfbc60ff019481ae5cf70492e32c8428a8.js&#34;
+        integrity=&#34;sha512-RLiF95/qVRsgSem&amp;#43;nKQbhAYU7EqtOZk2v2ZsiJmPFJSm3mN0cBBDGTOP5f0kAirPvGD/AZSBrlz3BJLjLIQoqA==&#34;
         data-repo-url=&#34;https://api.github.com/repos/shalva97/kde-configuration-files&#34;
         data-repo-id=&#34;github-35acb2467e8c5b7be245dd5d8ae6184d&#34;&gt;&lt;/script&gt;
     &lt;/a&gt;&lt;/div&gt;
@@ -814,41 +812,43 @@
 
 
 
+  
+
+
+
+
+  
 
 
 
 
 
 
+  
 
 
 
 
 
-
-
-
-
-
-
-
-
-  &lt;a class=&#34;flex flex-wrap md:flex-nowrap article &#34; href=&#34;https://xerolinux.xyz/posts/konsave-tool/&#34;&gt;
-    
+&lt;a class=&#34;flex flex-wrap md:flex-nowrap article &#34; 
+  href=&#34;https://xerolinux.xyz/posts/konsave-tool/&#34;&gt;
         
         &lt;div class=&#34;w-full md:w-auto h-full thumbnail nozoom thumbnailshadow md:mr-7&#34; style=&#34;background-image:url(/posts/konsave-tool/featured.webp);&#34;&gt;&lt;/div&gt;
         
       &lt;div class=&#34; mt-3 md:mt-0&#34;&gt;
-      &lt;div class=&#34;items-center text-left text-xl font-semibold&#34;&gt;
-        
-        &lt;div class=&#34;font-bold text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral&#34;
-          href=&#34;https://xerolinux.xyz/posts/konsave-tool/&#34;&gt;Konsave TUI&lt;/div&gt;
-        
-        
-        
-      &lt;/div&gt;
-      &lt;div class=&#34;text-sm text-neutral-500 dark:text-neutral-400&#34;&gt;
-        
+    &lt;div class=&#34;items-center text-left text-xl font-semibold&#34;&gt;
+      
+        &lt;div
+          class=&#34;font-bold text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral&#34;
+          href=&#34;https://xerolinux.xyz/posts/konsave-tool/&#34;&gt;
+          Konsave TUI
+        &lt;/div&gt;
+      
+      
+      
+    &lt;/div&gt;
+    &lt;div class=&#34;text-sm text-neutral-500 dark:text-neutral-400&#34;&gt;
+      
 
 
 
@@ -912,7 +912,7 @@
   
   &lt;span
     id=&#34;views_posts/konsave-tool/index.md&#34;
-    class=&#34;animate-pulse inline-block text-transparent max-h-3 rounded-full mt-[-2px] align-middle bg-neutral-300 dark:bg-neutral-400&#34;
+    class=&#34;animate-pulse inline-block text-transparent max-h-3 rounded-full -mt-[2px] align-middle bg-neutral-300 dark:bg-neutral-400&#34;
     title=&#34;views&#34;
     &gt;loading&lt;/span
   &gt;
@@ -940,7 +940,7 @@
   
   &lt;span
     id=&#34;likes_posts/konsave-tool/index.md&#34;
-    class=&#34;animate-pulse inline-block text-transparent max-h-3 rounded-full mt-[-2px] align-middle bg-neutral-300 dark:bg-neutral-400&#34;
+    class=&#34;animate-pulse inline-block text-transparent max-h-3 rounded-full -mt-[2px] align-middle bg-neutral-300 dark:bg-neutral-400&#34;
     title=&#34;likes&#34;
     &gt;loading&lt;/span
   &gt;
@@ -992,7 +992,7 @@
           
             
               &lt;span
-                class=&#34;mr-2 margin-top-[0.5rem]&#34;
+                class=&#34;mr-2 mt-[0.5rem]&#34;
                 onclick=&#34;window.open(&amp;#34;/tags/themes/&amp;#34;,&#39;_self&#39;);return false;&#34;&gt;
                 &lt;span class=&#34;flex cursor-pointer&#34;&gt;
   &lt;span
@@ -1004,7 +1004,7 @@
               &lt;/span&gt;
             
               &lt;span
-                class=&#34;mr-2 margin-top-[0.5rem]&#34;
+                class=&#34;mr-2 mt-[0.5rem]&#34;
                 onclick=&#34;window.open(&amp;#34;/tags/plasma/&amp;#34;,&#39;_self&#39;);return false;&#34;&gt;
                 &lt;span class=&#34;flex cursor-pointer&#34;&gt;
   &lt;span
@@ -1016,7 +1016,7 @@
               &lt;/span&gt;
             
               &lt;span
-                class=&#34;mr-2 margin-top-[0.5rem]&#34;
+                class=&#34;mr-2 mt-[0.5rem]&#34;
                 onclick=&#34;window.open(&amp;#34;/tags/kde/&amp;#34;,&#39;_self&#39;);return false;&#34;&gt;
                 &lt;span class=&#34;flex cursor-pointer&#34;&gt;
   &lt;span
@@ -1028,7 +1028,7 @@
               &lt;/span&gt;
             
               &lt;span
-                class=&#34;mr-2 margin-top-[0.5rem]&#34;
+                class=&#34;mr-2 mt-[0.5rem]&#34;
                 onclick=&#34;window.open(&amp;#34;/tags/tools/&amp;#34;,&#39;_self&#39;);return false;&#34;&gt;
                 &lt;span class=&#34;flex cursor-pointer&#34;&gt;
   &lt;span
@@ -1040,7 +1040,7 @@
               &lt;/span&gt;
             
               &lt;span
-                class=&#34;mr-2 margin-top-[0.5rem]&#34;
+                class=&#34;mr-2 mt-[0.5rem]&#34;
                 onclick=&#34;window.open(&amp;#34;/tags/linux/&amp;#34;,&#39;_self&#39;);return false;&#34;&gt;
                 &lt;span class=&#34;flex cursor-pointer&#34;&gt;
   &lt;span
@@ -1062,10 +1062,10 @@
 
 
 
-      &lt;/div&gt;
-      
     &lt;/div&gt;
-  &lt;/a&gt;
+    
+  &lt;/div&gt;
+&lt;/a&gt;
 
   &lt;/section&gt;
 
@@ -1094,13 +1094,11 @@
 &lt;li&gt;Download FFmpeg &amp;raquo; &lt;a
   href=&#34;https://www.ffmpeg.org/download.html&#34;
     target=&#34;_blank&#34;
-  &gt;&lt;strong&gt;Over Here&lt;/strong&gt;&lt;/a&gt;
-&lt;/li&gt;
+  &gt;&lt;strong&gt;Over Here&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;Full documentation &amp;raquo; &lt;a
   href=&#34;https://www.ffmpeg.org/ffmpeg.html&#34;
     target=&#34;_blank&#34;
-  &gt;&lt;strong&gt;Over Here&lt;/strong&gt;&lt;/a&gt;
-&lt;/li&gt;
+  &gt;&lt;strong&gt;Over Here&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h2 class=&#34;relative group&#34;&gt;Basic conversion 
@@ -1122,8 +1120,7 @@
 &lt;p&gt;Use the &lt;code&gt;crf&lt;/code&gt; (Constant Rate Factor) parameter to control the output quality. The lower crf, the higher the quality (range: 0-51). The default value is 23, and visually lossless compression corresponds to &lt;code&gt;-crf 18&lt;/code&gt;. Use the &lt;code&gt;preset&lt;/code&gt; parameter to control the speed of the compression process. Additional info &amp;raquo; &lt;a
   href=&#34;https://trac.ffmpeg.org/wiki/Encode/H.264&#34;
     target=&#34;_blank&#34;
-  &gt;&lt;strong&gt;Over Here&lt;/strong&gt;&lt;/a&gt;
-&lt;/p&gt;
+  &gt;&lt;strong&gt;Over Here&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ffmpeg -i in.mp4 -preset slower -crf &lt;span class=&#34;m&#34;&gt;18&lt;/span&gt; out.mp4
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;h2 class=&#34;relative group&#34;&gt;Trimming 
@@ -1136,30 +1133,25 @@
 &lt;li&gt;&lt;a
   href=&#34;http://ffmpeg.org/ffmpeg-all.html#Main-options&#34;
     target=&#34;_blank&#34;
-  &gt;&lt;code&gt;-ss&lt;/code&gt;&lt;/a&gt;
- specifies the start time, e.g. &lt;code&gt;00:01:23.000&lt;/code&gt; or &lt;code&gt;83&lt;/code&gt; (in seconds)&lt;/li&gt;
+  &gt;&lt;code&gt;-ss&lt;/code&gt;&lt;/a&gt; specifies the start time, e.g. &lt;code&gt;00:01:23.000&lt;/code&gt; or &lt;code&gt;83&lt;/code&gt; (in seconds)&lt;/li&gt;
 &lt;li&gt;&lt;a
   href=&#34;http://ffmpeg.org/ffmpeg-all.html#Main-options&#34;
     target=&#34;_blank&#34;
-  &gt;&lt;code&gt;-t&lt;/code&gt;&lt;/a&gt;
- specifies the duration of the clip (same format).&lt;/li&gt;
+  &gt;&lt;code&gt;-t&lt;/code&gt;&lt;/a&gt; specifies the duration of the clip (same format).&lt;/li&gt;
 &lt;li&gt;Recent &lt;code&gt;ffmpeg&lt;/code&gt; also has a flag to supply the end time with &lt;code&gt;-to&lt;/code&gt;.&lt;/li&gt;
 &lt;li&gt;&lt;a
   href=&#34;http://ffmpeg.org/ffmpeg-all.html#Main-options&#34;
     target=&#34;_blank&#34;
-  &gt;&lt;code&gt;-c&lt;/code&gt;&lt;/a&gt;
- copy copies the first video, audio, and subtitle bitstream from the input to the output file without re-encoding them. This won&amp;rsquo;t harm the quality and make the command run within seconds.&lt;/li&gt;
+  &gt;&lt;code&gt;-c&lt;/code&gt;&lt;/a&gt; copy copies the first video, audio, and subtitle bitstream from the input to the output file without re-encoding them. This won&amp;rsquo;t harm the quality and make the command run within seconds.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;With re-encoding:&lt;/p&gt;
 &lt;p&gt;If you leave out the &lt;code&gt;-c copy&lt;/code&gt; option, &lt;code&gt;ffmpeg&lt;/code&gt; will automatically re-encode the output video and audio according to the format you chose. For high quality video and audio, read the &lt;a
   href=&#34;https://ffmpeg.org/trac/ffmpeg/wiki/x264EncodingGuide&#34;
     target=&#34;_blank&#34;
-  &gt;x264 Encoding Guide&lt;/a&gt;
- and the &lt;a
+  &gt;x264 Encoding Guide&lt;/a&gt; and the &lt;a
   href=&#34;http://ffmpeg.org/trac/ffmpeg/wiki/AACEncodingGuide&#34;
     target=&#34;_blank&#34;
-  &gt;AAC Encoding Guide&lt;/a&gt;
-, respectively.&lt;/p&gt;
+  &gt;AAC Encoding Guide&lt;/a&gt;, respectively.&lt;/p&gt;
 &lt;p&gt;For example:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ffmpeg -ss &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;start&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt; -i in.mp4 -t &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;duration&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt; -c:v libx264 -c:a aac -strict experimental -b:a 128k out.mp4
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
@@ -1173,18 +1165,15 @@
 &lt;li&gt;With &lt;a
   href=&#34;http://ffmpeg.org/ffmpeg.html#Stream-copy&#34;
     target=&#34;_blank&#34;
-  &gt;-c copy&lt;/a&gt;
- the streams will be &lt;code&gt;stream copied&lt;/code&gt;, not re-encoded, so there will be no quality loss. If you want to re-encode, see &lt;a
+  &gt;-c copy&lt;/a&gt; the streams will be &lt;code&gt;stream copied&lt;/code&gt;, not re-encoded, so there will be no quality loss. If you want to re-encode, see &lt;a
   href=&#34;https://trac.ffmpeg.org/wiki/Encode/H.264&#34;
     target=&#34;_blank&#34;
-  &gt;FFmpeg Wiki: H.264 Encoding Guide&lt;/a&gt;
-.&lt;/li&gt;
+  &gt;FFmpeg Wiki: H.264 Encoding Guide&lt;/a&gt;.&lt;/li&gt;
 &lt;li&gt;The &lt;code&gt;-shortest&lt;/code&gt; option will cause the output duration to match the duration of the shortest input stream.&lt;/li&gt;
 &lt;li&gt;See the &lt;a
   href=&#34;http://ffmpeg.org/ffmpeg.html#Advanced-options&#34;
     target=&#34;_blank&#34;
-  &gt;&lt;code&gt;-map&lt;/code&gt; option documentation&lt;/a&gt;
- for more info.&lt;/li&gt;
+  &gt;&lt;code&gt;-map&lt;/code&gt; option documentation&lt;/a&gt; for more info.&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h2 class=&#34;relative group&#34;&gt;Concat demuxer 
@@ -1215,8 +1204,7 @@
 &lt;p&gt;Use the &lt;a
   href=&#34;http://ffmpeg.org/ffmpeg.html#ass&#34;
     target=&#34;_blank&#34;
-  &gt;libass&lt;/a&gt;
- library (make sure your ffmpeg install has the library in the configuration &lt;code&gt;--enable-libass&lt;/code&gt;).&lt;/p&gt;
+  &gt;libass&lt;/a&gt; library (make sure your ffmpeg install has the library in the configuration &lt;code&gt;--enable-libass&lt;/code&gt;).&lt;/p&gt;
 &lt;p&gt;First convert the subtitles to .ass format:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ffmpeg -i sub.srt sub.ass
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Then add them using a video filter:&lt;/p&gt;
@@ -1319,8 +1307,7 @@
 &lt;p&gt;&lt;a
   href=&#34;https://waydro.id/&#34;
     target=&#34;_blank&#34;
-  &gt;&lt;strong&gt;WayDroid&lt;/strong&gt;&lt;/a&gt;
- is a container-based tool that allows for launching a complete &lt;strong&gt;Android&lt;/strong&gt; system within the Linux desktop. It does this with Linux namespaces, effectively utilizing the Linux kernel. In simple terms, namespaces are a feature that helps isolate and separate parts of a computer so that it is possible to run each part independently as if it is the only one on the computer.&lt;/p&gt;
+  &gt;&lt;strong&gt;WayDroid&lt;/strong&gt;&lt;/a&gt; is a container-based tool that allows for launching a complete &lt;strong&gt;Android&lt;/strong&gt; system within the Linux desktop. It does this with Linux namespaces, effectively utilizing the Linux kernel. In simple terms, namespaces are a feature that helps isolate and separate parts of a computer so that it is possible to run each part independently as if it is the only one on the computer.&lt;/p&gt;
 &lt;p&gt;If you&amp;rsquo;re trying to run Android apps on Linux, WayDroid is the way to do it, and former &amp;ldquo;Android on Linux&amp;rdquo; tools like Anbox recommend it. WayDroid is compatible with a wide variety of Linux distributions and CPU architectures. Additionally, it harnesses Android&amp;rsquo;s Mesa technology to enable efficient GPU pass-through from the container to the host system, which enhances the performance of graphical applications, ensuring a smooth user experience.&lt;/p&gt;
 &lt;div class=&#34;github-card-wrapper&#34;&gt;&lt;a id=&#34;github-e2697052f914cf610b2b9d5d5e94a310&#34; target=&#34;_blank&#34; href=&#34;https://github.com/waydroid/waydroid&#34; class=&#34;cursor-pointer&#34;&gt;
       &lt;div
@@ -1331,7 +1318,7 @@
               class=&#34;nozoom mt-0 mb-0 w-full h-full object-cover&#34;&gt;
           &lt;/div&gt;&lt;div class=&#34;w-full md:w-auto pt-3 p-5&#34;&gt;
           &lt;div class=&#34;flex items-center&#34;&gt;
-            &lt;span class=&#34;text-2xl text-neutral-800 dark:text-neutral margin-right-[10px]&#34;&gt;
+            &lt;span class=&#34;text-2xl text-neutral-800 dark:text-neutral mr-[10px]&#34;&gt;
               
 
   &lt;span class=&#34;relative block icon&#34;&gt;
@@ -1353,9 +1340,10 @@
           &lt;/p&gt;
 
           &lt;div class=&#34;m-0 mt-2 flex items-center&#34;&gt;
+            
+            
             &lt;span
-              class=&#34;mr-1 inline-block h-3 w-3 rounded-full&#34;
-              style=&#34;background-color: #3572A5&#34;&gt;&lt;/span&gt;
+              class=&#34;mr-1 inline-block h-3 w-3 rounded-full background-color-a7f5f35426b927411fc9231b56382173&#34;&gt;&lt;/span&gt;
             &lt;div class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
               Python
             &lt;/div&gt;
@@ -1391,9 +1379,10 @@
       
       
       &lt;script
+        async
         type=&#34;text/javascript&#34;
-        src=&#34;https://xerolinux.xyz/js/fetch-repo.min.6fa205e5fc33470feaf8cf69cbed6460022e3c17e86caf270846f7660fbd61d5012ec56f9c8dd8accb81c36c79f8ef40f19d6fd69353d8a62327c3e9bc615f27.js&#34;
-        integrity=&#34;sha512-b6IF5fwzRw/q&amp;#43;M9py&amp;#43;1kYAIuPBfobK8nCEb3Zg&amp;#43;9YdUBLsVvnI3YrMuBw2x5&amp;#43;O9A8Z1v1pNT2KYjJ8PpvGFfJw==&#34;
+        src=&#34;https://xerolinux.xyz/js/fetch-repo.min.44b885f79fea551b2049e9be9ca41b840614ec4aad399936bf666c88998f1494a6de637470104319338fe5fd24022acfbc60ff019481ae5cf70492e32c8428a8.js&#34;
+        integrity=&#34;sha512-RLiF95/qVRsgSem&amp;#43;nKQbhAYU7EqtOZk2v2ZsiJmPFJSm3mN0cBBDGTOP5f0kAirPvGD/AZSBrlz3BJLjLIQoqA==&#34;
         data-repo-url=&#34;https://api.github.com/repos/waydroid/waydroid&#34;
         data-repo-id=&#34;github-e2697052f914cf610b2b9d5d5e94a310&#34;&gt;&lt;/script&gt;
     &lt;/a&gt;&lt;/div&gt;
@@ -1439,8 +1428,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Then launch Waydroid from the applications menu. For network in your Waydroid container, please check this out &amp;raquo; &lt;a
   href=&#34;https://wiki.archlinux.org/title/Waydroid#Network&#34;
     target=&#34;_blank&#34;
-  &gt;&lt;strong&gt;Network in WayDroid&lt;/strong&gt;&lt;/a&gt;
-&lt;/p&gt;
+  &gt;&lt;strong&gt;Network in WayDroid&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;ol start=&#34;6&#34;&gt;
 &lt;li&gt;To Sideload an application:&lt;/li&gt;
 &lt;/ol&gt;
@@ -1453,8 +1441,7 @@
 &lt;p&gt;Run &lt;code&gt;sudo waydroid-extras&lt;/code&gt;, and select &lt;strong&gt;Android 11&lt;/strong&gt;, then the &lt;strong&gt;Get Google Device ID&lt;/strong&gt; option, &lt;strong&gt;make sure Waydroid is running and Gapps has been installed!&lt;/strong&gt; Copy the returned numeric ID open &amp;raquo; &lt;a
   href=&#34;https://google.com/android/uncertified/&#34;
     target=&#34;_blank&#34;
-  &gt;&lt;strong&gt;Device Registration Page&lt;/strong&gt;&lt;/a&gt;
-, enter the ID and register it, you may need to wait up to 10-20 minutes for device to get registered, then clear Google Play Service’s cache and try logging in!&lt;/p&gt;
+  &gt;&lt;strong&gt;Device Registration Page&lt;/strong&gt;&lt;/a&gt;, enter the ID and register it, you may need to wait up to 10-20 minutes for device to get registered, then clear Google Play Service’s cache and try logging in!&lt;/p&gt;
 &lt;p&gt;To update WayDroid all you have to do is run the following command, keep in mind that image is well over 800MB in size&amp;hellip;&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo waydroid upgrade
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
@@ -1465,8 +1452,7 @@
 &lt;p&gt;To fix unusable rotated apps, since some rotated for phones rather than tablets. As for other troubleshooting tips visit this link on the &amp;raquo; &lt;a
   href=&#34;https://wiki.archlinux.org/title/Waydroid#Troubleshooting&#34;
     target=&#34;_blank&#34;
-  &gt;&lt;strong&gt;ArchWiki&lt;/strong&gt;&lt;/a&gt;
-.&lt;/p&gt;
+  &gt;&lt;strong&gt;ArchWiki&lt;/strong&gt;&lt;/a&gt;.&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo waydroid shell wm set-fix-to-user-rotation enabled
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Hope this answers that question&amp;hellip;.&lt;/p&gt;
 </description>
@@ -1493,8 +1479,7 @@
 &lt;p&gt;&lt;a
   href=&#34;https://wiki.gnome.org/Apps/Disks&#34;
     target=&#34;_blank&#34;
-  &gt;Gnome Disks&lt;/a&gt;
- has many features, like S.M.A.R.T. monitoring, partition management, benchmarking, and more, including one that might not be obvious, but is very useful: it can set drives to mount automatically at startup.&lt;/p&gt;
+  &gt;Gnome Disks&lt;/a&gt; has many features, like S.M.A.R.T. monitoring, partition management, benchmarking, and more, including one that might not be obvious, but is very useful: it can set drives to mount automatically at startup.&lt;/p&gt;
 &lt;p&gt;Use it to automount your new hard disk that uses Ext4, your Windows NTFS / exFAT partition, etc.&lt;/p&gt;
 &lt;p&gt;
 
@@ -1802,12 +1787,10 @@
 &lt;p&gt;After messing with &lt;a
   href=&#34;https://www.docker.com&#34;
     target=&#34;_blank&#34;
-  &gt;Docker&lt;/a&gt;
- Containers for so long, I thought I would share the knowledge. Hopefully a video showing it in action soon. In this short tutorial we will be using the Docker Compose feature to deploy our containers. Just note we can do so much more, but this is just an introductory guide, you will have to discover the rest on your own. It&amp;rsquo;s so much fun trust me. To get an idea how much I love them click &lt;a
+  &gt;Docker&lt;/a&gt; Containers for so long, I thought I would share the knowledge. Hopefully a video showing it in action soon. In this short tutorial we will be using the Docker Compose feature to deploy our containers. Just note we can do so much more, but this is just an introductory guide, you will have to discover the rest on your own. It&amp;rsquo;s so much fun trust me. To get an idea how much I love them click &lt;a
   href=&#34;https://blog.xerolinux.xyz/2024/06/docker-containers-a-love-story/&#34;
     target=&#34;_blank&#34;
-  &gt;&lt;strong&gt;Here&lt;/strong&gt;&lt;/a&gt;
- to read my thoughts&amp;hellip;&lt;/p&gt;
+  &gt;&lt;strong&gt;Here&lt;/strong&gt;&lt;/a&gt; to read my thoughts&amp;hellip;&lt;/p&gt;
 &lt;p&gt;
 
 
@@ -1870,16 +1853,13 @@
 &lt;p&gt;Ok, now that everything&amp;rsquo;s set, we can go container hunting&amp;hellip; I would highly recommend sites like, &lt;a
   href=&#34;https://selfh.st/apps/&#34;
     target=&#34;_blank&#34;
-  &gt;SelfH&lt;/a&gt;
- or &lt;a
+  &gt;SelfH&lt;/a&gt; or &lt;a
   href=&#34;https://awesome-selfhosted.net&#34;
     target=&#34;_blank&#34;
-  &gt;AwesomeSelfHosted&lt;/a&gt;
-. But for the sake of this tutorial, I will be showing you an example docker compose file from one of the services found there. I have selected &lt;a
+  &gt;AwesomeSelfHosted&lt;/a&gt;. But for the sake of this tutorial, I will be showing you an example docker compose file from one of the services found there. I have selected &lt;a
   href=&#34;https://demo.filebrowser.org/&#34;
     target=&#34;_blank&#34;
-  &gt;FileBrowser&lt;/a&gt;
- (User : demo / Pass : demo)&lt;/p&gt;
+  &gt;FileBrowser&lt;/a&gt; (User : demo / Pass : demo)&lt;/p&gt;
 &lt;p&gt;Here&amp;rsquo;s the docker compose file contents. Just create a folder called &amp;ldquo;FileBrowser&amp;rdquo;, then inside it a file called &amp;ldquo;compose.yml&amp;rdquo; inside it paste the following :&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Yaml&#34; data-lang=&#34;Yaml&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nt&#34;&gt;services&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;filebrowser&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
@@ -1919,12 +1899,10 @@
 &lt;p&gt;Kindly note that there are other tools we could use to make deployment much simpler. I just haven&amp;rsquo;t used them in this guide so you can see how it all works. Tools that can be used are, &lt;a
   href=&#34;https://www.portainer.io&#34;
     target=&#34;_blank&#34;
-  &gt;Portainer&lt;/a&gt;
- and &lt;a
+  &gt;Portainer&lt;/a&gt; and &lt;a
   href=&#34;https://dockge.kuma.pet&#34;
     target=&#34;_blank&#34;
-  &gt;Dockge&lt;/a&gt;
-, among many others&amp;hellip;&lt;/p&gt;
+  &gt;Dockge&lt;/a&gt;, among many others&amp;hellip;&lt;/p&gt;
 
 &lt;h3 class=&#34;relative group&#34;&gt;Nginx Proxy &amp;amp; More&amp;hellip; 
     &lt;div id=&#34;nginx-proxy--more&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
@@ -1979,8 +1957,7 @@
 &lt;p&gt;First things first, you will need to install &lt;code&gt;snapd&lt;/code&gt; service and enable it. To do so please type the following commands in Terminal. Please report any issues to &lt;a
   href=&#34;https://github.com/snapcore/snapd&#34;
     target=&#34;_blank&#34;
-  &gt;Snapd Upstream&lt;/a&gt;
-.&lt;/p&gt;
+  &gt;Snapd Upstream&lt;/a&gt;.&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;paru -S --noconfirm snapd
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo systemctl &lt;span class=&#34;nb&#34;&gt;enable&lt;/span&gt; --now snapd.socket
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo systemctl &lt;span class=&#34;nb&#34;&gt;enable&lt;/span&gt; --now snapd.apparmor
@@ -2127,12 +2104,10 @@
 &lt;p&gt;Once that is done, you can use it to start installing packages from the &lt;a
   href=&#34;https://aur.archlinux.org&#34;
     target=&#34;_blank&#34;
-  &gt;AUR&lt;/a&gt;
-. Keep in mind that you do not need to install both; just select the one you prefer, either one works.. I would recommend YaY myself though.. &lt;a
+  &gt;AUR&lt;/a&gt;. Keep in mind that you do not need to install both; just select the one you prefer, either one works.. I would recommend YaY myself though.. &lt;a
   href=&#34;https://wiki.archlinux.org/title/AUR_helpers&#34;
     target=&#34;_blank&#34;
-  &gt;ArchWiki Page&lt;/a&gt;
-&lt;/p&gt;
+  &gt;ArchWiki Page&lt;/a&gt;&lt;/p&gt;
 </description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/install-yay-paru/featured.webp" />
     </item>
@@ -2184,8 +2159,7 @@
 &lt;p&gt;The official way to apply GTK themes to Flatpak apps is by &lt;a
   href=&#34;https://docs.flatpak.org/en/latest/desktop-integration.html#theming&#34;
     target=&#34;_blank&#34;
-  &gt;installing the desired theme as a flatpak&lt;/a&gt;
-. However, there are only a few GTK themes that can be installed as Flatpak.&lt;/p&gt;
+  &gt;installing the desired theme as a flatpak&lt;/a&gt;. However, there are only a few GTK themes that can be installed as Flatpak.&lt;/p&gt;
 &lt;p&gt;This means that if you found a beautiful GTK theme, your Flatpak applications will still be using their default appearance. But wait! There is a workaround.&lt;/p&gt;
 &lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
       &lt;iframe allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen&#34; loading=&#34;eager&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; src=&#34;https://www.youtube.com/embed/IYXlgzrZRIE?autoplay=0&amp;amp;controls=1&amp;amp;end=0&amp;amp;loop=0&amp;amp;mute=0&amp;amp;start=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;YouTube video&#34;&gt;&lt;/iframe&gt;
@@ -2202,8 +2176,7 @@
 &lt;p&gt;GTK themes are located in &lt;code&gt;/usr/share/themes&lt;/code&gt; for all users, and in &lt;code&gt;~/.themes&lt;/code&gt; for a specific user. Notice that you can’t give access to &lt;code&gt;/usr/share/themes&lt;/code&gt; because according to &lt;a
   href=&#34;https://docs.flatpak.org/en/latest/sandbox-permissions.html#filesystem-access&#34;
     target=&#34;_blank&#34;
-  &gt;Flatpak Documentation&lt;/a&gt;
- they are blacklisted.&lt;/p&gt;
+  &gt;Flatpak Documentation&lt;/a&gt; they are blacklisted.&lt;/p&gt;
 &lt;p&gt;So, since all included GTK Themes in XeroLinux  are located under &lt;code&gt;/usr/share/themes&lt;/code&gt; which Flatpaks cannot access we need to copy them to &lt;code&gt;~/.themes&lt;/code&gt; .&lt;/p&gt;
 &lt;p&gt;Once that is done, to give all flatpak packages permission to access &lt;code&gt;~/.themes&lt;/code&gt; run the following command:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo flatpak override --filesystem&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$HOME&lt;/span&gt;/.themes
@@ -2217,8 +2190,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Once that&amp;rsquo;s done you will end up with a file in the system that includes those values. Seemingly enough there is some info about that exact issue on the &lt;a
   href=&#34;https://github.com/flatpak/flatpak/issues/4633&#34;
     target=&#34;_blank&#34;
-  &gt;Flathub iisue reporter&lt;/a&gt;
-..&lt;/p&gt;
+  &gt;Flathub iisue reporter&lt;/a&gt;..&lt;/p&gt;
 &lt;p&gt;As you can see in the screenshot below, there is two themes available, Ant-Bloody and Orchis-dark. Copy and paste the exact theme name in the above command:&lt;/p&gt;
 &lt;p&gt;
 
@@ -2250,12 +2222,10 @@
 &lt;p&gt;Here&amp;rsquo;s the Original Thread on &lt;a
   href=&#34;https://forum.manjaro.org/t/add-out-of-the-box-flatpak-gtk-application-themes-for-kde-plasma-users/117103&#34;
     target=&#34;_blank&#34;
-  &gt;Manjaro Forums&lt;/a&gt;
-&amp;hellip; Oh and &lt;a
+  &gt;Manjaro Forums&lt;/a&gt;&amp;hellip; Oh and &lt;a
   href=&#34;https://itsfoss.com/flatpak-app-apply-theme/&#34;
     target=&#34;_blank&#34;
-  &gt;This Thread&lt;/a&gt;
- Too&amp;hellip;.&lt;/p&gt;
+  &gt;This Thread&lt;/a&gt; Too&amp;hellip;.&lt;/p&gt;
 </description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/flatpak-theming/featured.webp" />
     </item>

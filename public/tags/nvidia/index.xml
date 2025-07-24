@@ -25,8 +25,7 @@
 &lt;p&gt;New drivers will default to using the &lt;a
   href=&#34;https://developer.nvidia.com/blog/nvidia-transitions-fully-towards-open-source-gpu-kernel-modules/&#34;
     target=&#34;_blank&#34;
-  &gt;&lt;strong&gt;Open GPU Kernel Modules&lt;/strong&gt;&lt;/a&gt;
- which only support cards using the &lt;strong&gt;Turing&lt;/strong&gt; architecture and above moving forward.&lt;/p&gt;
+  &gt;&lt;strong&gt;Open GPU Kernel Modules&lt;/strong&gt;&lt;/a&gt; which only support cards using the &lt;strong&gt;Turing&lt;/strong&gt; architecture and above moving forward.&lt;/p&gt;
 &lt;p&gt;
 
 
@@ -85,41 +84,43 @@
 
 
 
+  
+
+
+
+
+  
 
 
 
 
 
 
+  
 
 
 
 
 
-
-
-
-
-
-
-
-
-  &lt;a class=&#34;flex flex-wrap md:flex-nowrap article &#34; href=&#34;https://xerolinux.xyz/posts/warehouse-flatpak/&#34;&gt;
-    
+&lt;a class=&#34;flex flex-wrap md:flex-nowrap article &#34; 
+  href=&#34;https://xerolinux.xyz/posts/warehouse-flatpak/&#34;&gt;
         
         &lt;div class=&#34;w-full md:w-auto h-full thumbnail nozoom thumbnailshadow md:mr-7&#34; style=&#34;background-image:url(/posts/warehouse-flatpak/featured.webp);&#34;&gt;&lt;/div&gt;
         
       &lt;div class=&#34; mt-3 md:mt-0&#34;&gt;
-      &lt;div class=&#34;items-center text-left text-xl font-semibold&#34;&gt;
-        
-        &lt;div class=&#34;font-bold text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral&#34;
-          href=&#34;https://xerolinux.xyz/posts/warehouse-flatpak/&#34;&gt;Warehouse Flatpak Toolbox&lt;/div&gt;
-        
-        
-        
-      &lt;/div&gt;
-      &lt;div class=&#34;text-sm text-neutral-500 dark:text-neutral-400&#34;&gt;
-        
+    &lt;div class=&#34;items-center text-left text-xl font-semibold&#34;&gt;
+      
+        &lt;div
+          class=&#34;font-bold text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral&#34;
+          href=&#34;https://xerolinux.xyz/posts/warehouse-flatpak/&#34;&gt;
+          Warehouse Flatpak Toolbox
+        &lt;/div&gt;
+      
+      
+      
+    &lt;/div&gt;
+    &lt;div class=&#34;text-sm text-neutral-500 dark:text-neutral-400&#34;&gt;
+      
 
 
 
@@ -183,7 +184,7 @@
   
   &lt;span
     id=&#34;views_posts/warehouse-flatpak/index.md&#34;
-    class=&#34;animate-pulse inline-block text-transparent max-h-3 rounded-full mt-[-2px] align-middle bg-neutral-300 dark:bg-neutral-400&#34;
+    class=&#34;animate-pulse inline-block text-transparent max-h-3 rounded-full -mt-[2px] align-middle bg-neutral-300 dark:bg-neutral-400&#34;
     title=&#34;views&#34;
     &gt;loading&lt;/span
   &gt;
@@ -211,7 +212,7 @@
   
   &lt;span
     id=&#34;likes_posts/warehouse-flatpak/index.md&#34;
-    class=&#34;animate-pulse inline-block text-transparent max-h-3 rounded-full mt-[-2px] align-middle bg-neutral-300 dark:bg-neutral-400&#34;
+    class=&#34;animate-pulse inline-block text-transparent max-h-3 rounded-full -mt-[2px] align-middle bg-neutral-300 dark:bg-neutral-400&#34;
     title=&#34;likes&#34;
     &gt;loading&lt;/span
   &gt;
@@ -263,7 +264,7 @@
           
             
               &lt;span
-                class=&#34;mr-2 margin-top-[0.5rem]&#34;
+                class=&#34;mr-2 mt-[0.5rem]&#34;
                 onclick=&#34;window.open(&amp;#34;/tags/flatpak/&amp;#34;,&#39;_self&#39;);return false;&#34;&gt;
                 &lt;span class=&#34;flex cursor-pointer&#34;&gt;
   &lt;span
@@ -275,7 +276,7 @@
               &lt;/span&gt;
             
               &lt;span
-                class=&#34;mr-2 margin-top-[0.5rem]&#34;
+                class=&#34;mr-2 mt-[0.5rem]&#34;
                 onclick=&#34;window.open(&amp;#34;/tags/manager/&amp;#34;,&#39;_self&#39;);return false;&#34;&gt;
                 &lt;span class=&#34;flex cursor-pointer&#34;&gt;
   &lt;span
@@ -287,7 +288,7 @@
               &lt;/span&gt;
             
               &lt;span
-                class=&#34;mr-2 margin-top-[0.5rem]&#34;
+                class=&#34;mr-2 mt-[0.5rem]&#34;
                 onclick=&#34;window.open(&amp;#34;/tags/tools/&amp;#34;,&#39;_self&#39;);return false;&#34;&gt;
                 &lt;span class=&#34;flex cursor-pointer&#34;&gt;
   &lt;span
@@ -299,7 +300,7 @@
               &lt;/span&gt;
             
               &lt;span
-                class=&#34;mr-2 margin-top-[0.5rem]&#34;
+                class=&#34;mr-2 mt-[0.5rem]&#34;
                 onclick=&#34;window.open(&amp;#34;/tags/flathub/&amp;#34;,&#39;_self&#39;);return false;&#34;&gt;
                 &lt;span class=&#34;flex cursor-pointer&#34;&gt;
   &lt;span
@@ -311,7 +312,7 @@
               &lt;/span&gt;
             
               &lt;span
-                class=&#34;mr-2 margin-top-[0.5rem]&#34;
+                class=&#34;mr-2 mt-[0.5rem]&#34;
                 onclick=&#34;window.open(&amp;#34;/tags/linux/&amp;#34;,&#39;_self&#39;);return false;&#34;&gt;
                 &lt;span class=&#34;flex cursor-pointer&#34;&gt;
   &lt;span
@@ -333,10 +334,10 @@
 
 
 
-      &lt;/div&gt;
-      
     &lt;/div&gt;
-  &lt;/a&gt;
+    
+  &lt;/div&gt;
+&lt;/a&gt;
 
   &lt;/section&gt;
 
@@ -373,41 +374,43 @@
 
 
 
+  
+
+
+
+
+  
 
 
 
 
 
 
+  
 
 
 
 
 
-
-
-
-
-
-
-
-
-  &lt;a class=&#34;flex flex-wrap md:flex-nowrap article &#34; href=&#34;https://xerolinux.xyz/posts/downgrade-tool/&#34;&gt;
-    
+&lt;a class=&#34;flex flex-wrap md:flex-nowrap article &#34; 
+  href=&#34;https://xerolinux.xyz/posts/downgrade-tool/&#34;&gt;
         
         &lt;div class=&#34;w-full md:w-auto h-full thumbnail nozoom thumbnailshadow md:mr-7&#34; style=&#34;background-image:url(/posts/downgrade-tool/featured.webp);&#34;&gt;&lt;/div&gt;
         
       &lt;div class=&#34; mt-3 md:mt-0&#34;&gt;
-      &lt;div class=&#34;items-center text-left text-xl font-semibold&#34;&gt;
-        
-        &lt;div class=&#34;font-bold text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral&#34;
-          href=&#34;https://xerolinux.xyz/posts/downgrade-tool/&#34;&gt;How To Downgrade Packages&lt;/div&gt;
-        
-        
-        
-      &lt;/div&gt;
-      &lt;div class=&#34;text-sm text-neutral-500 dark:text-neutral-400&#34;&gt;
-        
+    &lt;div class=&#34;items-center text-left text-xl font-semibold&#34;&gt;
+      
+        &lt;div
+          class=&#34;font-bold text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral&#34;
+          href=&#34;https://xerolinux.xyz/posts/downgrade-tool/&#34;&gt;
+          How To Downgrade Packages
+        &lt;/div&gt;
+      
+      
+      
+    &lt;/div&gt;
+    &lt;div class=&#34;text-sm text-neutral-500 dark:text-neutral-400&#34;&gt;
+      
 
 
 
@@ -471,7 +474,7 @@
   
   &lt;span
     id=&#34;views_posts/downgrade-tool/index.md&#34;
-    class=&#34;animate-pulse inline-block text-transparent max-h-3 rounded-full mt-[-2px] align-middle bg-neutral-300 dark:bg-neutral-400&#34;
+    class=&#34;animate-pulse inline-block text-transparent max-h-3 rounded-full -mt-[2px] align-middle bg-neutral-300 dark:bg-neutral-400&#34;
     title=&#34;views&#34;
     &gt;loading&lt;/span
   &gt;
@@ -499,7 +502,7 @@
   
   &lt;span
     id=&#34;likes_posts/downgrade-tool/index.md&#34;
-    class=&#34;animate-pulse inline-block text-transparent max-h-3 rounded-full mt-[-2px] align-middle bg-neutral-300 dark:bg-neutral-400&#34;
+    class=&#34;animate-pulse inline-block text-transparent max-h-3 rounded-full -mt-[2px] align-middle bg-neutral-300 dark:bg-neutral-400&#34;
     title=&#34;likes&#34;
     &gt;loading&lt;/span
   &gt;
@@ -551,7 +554,7 @@
           
             
               &lt;span
-                class=&#34;mr-2 margin-top-[0.5rem]&#34;
+                class=&#34;mr-2 mt-[0.5rem]&#34;
                 onclick=&#34;window.open(&amp;#34;/tags/downgrade/&amp;#34;,&#39;_self&#39;);return false;&#34;&gt;
                 &lt;span class=&#34;flex cursor-pointer&#34;&gt;
   &lt;span
@@ -563,7 +566,7 @@
               &lt;/span&gt;
             
               &lt;span
-                class=&#34;mr-2 margin-top-[0.5rem]&#34;
+                class=&#34;mr-2 mt-[0.5rem]&#34;
                 onclick=&#34;window.open(&amp;#34;/tags/archlinux/&amp;#34;,&#39;_self&#39;);return false;&#34;&gt;
                 &lt;span class=&#34;flex cursor-pointer&#34;&gt;
   &lt;span
@@ -575,7 +578,7 @@
               &lt;/span&gt;
             
               &lt;span
-                class=&#34;mr-2 margin-top-[0.5rem]&#34;
+                class=&#34;mr-2 mt-[0.5rem]&#34;
                 onclick=&#34;window.open(&amp;#34;/tags/guide/&amp;#34;,&#39;_self&#39;);return false;&#34;&gt;
                 &lt;span class=&#34;flex cursor-pointer&#34;&gt;
   &lt;span
@@ -587,7 +590,7 @@
               &lt;/span&gt;
             
               &lt;span
-                class=&#34;mr-2 margin-top-[0.5rem]&#34;
+                class=&#34;mr-2 mt-[0.5rem]&#34;
                 onclick=&#34;window.open(&amp;#34;/tags/linux/&amp;#34;,&#39;_self&#39;);return false;&#34;&gt;
                 &lt;span class=&#34;flex cursor-pointer&#34;&gt;
   &lt;span
@@ -609,10 +612,10 @@
 
 
 
-      &lt;/div&gt;
-      
     &lt;/div&gt;
-  &lt;/a&gt;
+    
+  &lt;/div&gt;
+&lt;/a&gt;
 
   &lt;/section&gt;
 
@@ -633,41 +636,43 @@
 
 
 
+  
+
+
+
+
+  
 
 
 
 
 
 
+  
 
 
 
 
 
-
-
-
-
-
-
-
-
-  &lt;a class=&#34;flex flex-wrap md:flex-nowrap article &#34; href=&#34;https://xerolinux.xyz/posts/install-yay-paru/&#34;&gt;
-    
+&lt;a class=&#34;flex flex-wrap md:flex-nowrap article &#34; 
+  href=&#34;https://xerolinux.xyz/posts/install-yay-paru/&#34;&gt;
         
         &lt;div class=&#34;w-full md:w-auto h-full thumbnail nozoom thumbnailshadow md:mr-7&#34; style=&#34;background-image:url(/posts/install-yay-paru/featured.webp);&#34;&gt;&lt;/div&gt;
         
       &lt;div class=&#34; mt-3 md:mt-0&#34;&gt;
-      &lt;div class=&#34;items-center text-left text-xl font-semibold&#34;&gt;
-        
-        &lt;div class=&#34;font-bold text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral&#34;
-          href=&#34;https://xerolinux.xyz/posts/install-yay-paru/&#34;&gt;Install Yay or Paru&lt;/div&gt;
-        
-        
-        
-      &lt;/div&gt;
-      &lt;div class=&#34;text-sm text-neutral-500 dark:text-neutral-400&#34;&gt;
-        
+    &lt;div class=&#34;items-center text-left text-xl font-semibold&#34;&gt;
+      
+        &lt;div
+          class=&#34;font-bold text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral&#34;
+          href=&#34;https://xerolinux.xyz/posts/install-yay-paru/&#34;&gt;
+          Install Yay or Paru
+        &lt;/div&gt;
+      
+      
+      
+    &lt;/div&gt;
+    &lt;div class=&#34;text-sm text-neutral-500 dark:text-neutral-400&#34;&gt;
+      
 
 
 
@@ -731,7 +736,7 @@
   
   &lt;span
     id=&#34;views_posts/install-yay-paru/index.md&#34;
-    class=&#34;animate-pulse inline-block text-transparent max-h-3 rounded-full mt-[-2px] align-middle bg-neutral-300 dark:bg-neutral-400&#34;
+    class=&#34;animate-pulse inline-block text-transparent max-h-3 rounded-full -mt-[2px] align-middle bg-neutral-300 dark:bg-neutral-400&#34;
     title=&#34;views&#34;
     &gt;loading&lt;/span
   &gt;
@@ -759,7 +764,7 @@
   
   &lt;span
     id=&#34;likes_posts/install-yay-paru/index.md&#34;
-    class=&#34;animate-pulse inline-block text-transparent max-h-3 rounded-full mt-[-2px] align-middle bg-neutral-300 dark:bg-neutral-400&#34;
+    class=&#34;animate-pulse inline-block text-transparent max-h-3 rounded-full -mt-[2px] align-middle bg-neutral-300 dark:bg-neutral-400&#34;
     title=&#34;likes&#34;
     &gt;loading&lt;/span
   &gt;
@@ -811,7 +816,7 @@
           
             
               &lt;span
-                class=&#34;mr-2 margin-top-[0.5rem]&#34;
+                class=&#34;mr-2 mt-[0.5rem]&#34;
                 onclick=&#34;window.open(&amp;#34;/tags/yay/&amp;#34;,&#39;_self&#39;);return false;&#34;&gt;
                 &lt;span class=&#34;flex cursor-pointer&#34;&gt;
   &lt;span
@@ -823,7 +828,7 @@
               &lt;/span&gt;
             
               &lt;span
-                class=&#34;mr-2 margin-top-[0.5rem]&#34;
+                class=&#34;mr-2 mt-[0.5rem]&#34;
                 onclick=&#34;window.open(&amp;#34;/tags/paru/&amp;#34;,&#39;_self&#39;);return false;&#34;&gt;
                 &lt;span class=&#34;flex cursor-pointer&#34;&gt;
   &lt;span
@@ -835,7 +840,7 @@
               &lt;/span&gt;
             
               &lt;span
-                class=&#34;mr-2 margin-top-[0.5rem]&#34;
+                class=&#34;mr-2 mt-[0.5rem]&#34;
                 onclick=&#34;window.open(&amp;#34;/tags/aur/&amp;#34;,&#39;_self&#39;);return false;&#34;&gt;
                 &lt;span class=&#34;flex cursor-pointer&#34;&gt;
   &lt;span
@@ -847,7 +852,7 @@
               &lt;/span&gt;
             
               &lt;span
-                class=&#34;mr-2 margin-top-[0.5rem]&#34;
+                class=&#34;mr-2 mt-[0.5rem]&#34;
                 onclick=&#34;window.open(&amp;#34;/tags/guide/&amp;#34;,&#39;_self&#39;);return false;&#34;&gt;
                 &lt;span class=&#34;flex cursor-pointer&#34;&gt;
   &lt;span
@@ -859,7 +864,7 @@
               &lt;/span&gt;
             
               &lt;span
-                class=&#34;mr-2 margin-top-[0.5rem]&#34;
+                class=&#34;mr-2 mt-[0.5rem]&#34;
                 onclick=&#34;window.open(&amp;#34;/tags/linux/&amp;#34;,&#39;_self&#39;);return false;&#34;&gt;
                 &lt;span class=&#34;flex cursor-pointer&#34;&gt;
   &lt;span
@@ -871,7 +876,7 @@
               &lt;/span&gt;
             
               &lt;span
-                class=&#34;mr-2 margin-top-[0.5rem]&#34;
+                class=&#34;mr-2 mt-[0.5rem]&#34;
                 onclick=&#34;window.open(&amp;#34;/tags/arch/&amp;#34;,&#39;_self&#39;);return false;&#34;&gt;
                 &lt;span class=&#34;flex cursor-pointer&#34;&gt;
   &lt;span
@@ -883,7 +888,7 @@
               &lt;/span&gt;
             
               &lt;span
-                class=&#34;mr-2 margin-top-[0.5rem]&#34;
+                class=&#34;mr-2 mt-[0.5rem]&#34;
                 onclick=&#34;window.open(&amp;#34;/tags/archlinux/&amp;#34;,&#39;_self&#39;);return false;&#34;&gt;
                 &lt;span class=&#34;flex cursor-pointer&#34;&gt;
   &lt;span
@@ -905,10 +910,10 @@
 
 
 
-      &lt;/div&gt;
-      
     &lt;/div&gt;
-  &lt;/a&gt;
+    
+  &lt;/div&gt;
+&lt;/a&gt;
 
   &lt;/section&gt;
 
@@ -936,41 +941,43 @@
 
 
 
+  
+
+
+
+
+  
 
 
 
 
 
 
+  
 
 
 
 
 
-
-
-
-
-
-
-
-
-  &lt;a class=&#34;flex flex-wrap md:flex-nowrap article &#34; href=&#34;https://xerolinux.xyz/posts/tkg-nvidia-all/&#34;&gt;
-    
+&lt;a class=&#34;flex flex-wrap md:flex-nowrap article &#34; 
+  href=&#34;https://xerolinux.xyz/posts/tkg-nvidia-all/&#34;&gt;
         
         &lt;div class=&#34;w-full md:w-auto h-full thumbnail nozoom thumbnailshadow md:mr-7&#34; style=&#34;background-image:url(/posts/tkg-nvidia-all/featured.webp);&#34;&gt;&lt;/div&gt;
         
       &lt;div class=&#34; mt-3 md:mt-0&#34;&gt;
-      &lt;div class=&#34;items-center text-left text-xl font-semibold&#34;&gt;
-        
-        &lt;div class=&#34;font-bold text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral&#34;
-          href=&#34;https://xerolinux.xyz/posts/tkg-nvidia-all/&#34;&gt;TKG nVidia-AiO Installer&lt;/div&gt;
-        
-        
-        
-      &lt;/div&gt;
-      &lt;div class=&#34;text-sm text-neutral-500 dark:text-neutral-400&#34;&gt;
-        
+    &lt;div class=&#34;items-center text-left text-xl font-semibold&#34;&gt;
+      
+        &lt;div
+          class=&#34;font-bold text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral&#34;
+          href=&#34;https://xerolinux.xyz/posts/tkg-nvidia-all/&#34;&gt;
+          TKG nVidia-AiO Installer
+        &lt;/div&gt;
+      
+      
+      
+    &lt;/div&gt;
+    &lt;div class=&#34;text-sm text-neutral-500 dark:text-neutral-400&#34;&gt;
+      
 
 
 
@@ -1034,7 +1041,7 @@
   
   &lt;span
     id=&#34;views_posts/tkg-nvidia-all/index.md&#34;
-    class=&#34;animate-pulse inline-block text-transparent max-h-3 rounded-full mt-[-2px] align-middle bg-neutral-300 dark:bg-neutral-400&#34;
+    class=&#34;animate-pulse inline-block text-transparent max-h-3 rounded-full -mt-[2px] align-middle bg-neutral-300 dark:bg-neutral-400&#34;
     title=&#34;views&#34;
     &gt;loading&lt;/span
   &gt;
@@ -1062,7 +1069,7 @@
   
   &lt;span
     id=&#34;likes_posts/tkg-nvidia-all/index.md&#34;
-    class=&#34;animate-pulse inline-block text-transparent max-h-3 rounded-full mt-[-2px] align-middle bg-neutral-300 dark:bg-neutral-400&#34;
+    class=&#34;animate-pulse inline-block text-transparent max-h-3 rounded-full -mt-[2px] align-middle bg-neutral-300 dark:bg-neutral-400&#34;
     title=&#34;likes&#34;
     &gt;loading&lt;/span
   &gt;
@@ -1114,7 +1121,7 @@
           
             
               &lt;span
-                class=&#34;mr-2 margin-top-[0.5rem]&#34;
+                class=&#34;mr-2 mt-[0.5rem]&#34;
                 onclick=&#34;window.open(&amp;#34;/tags/nvidia/&amp;#34;,&#39;_self&#39;);return false;&#34;&gt;
                 &lt;span class=&#34;flex cursor-pointer&#34;&gt;
   &lt;span
@@ -1126,7 +1133,7 @@
               &lt;/span&gt;
             
               &lt;span
-                class=&#34;mr-2 margin-top-[0.5rem]&#34;
+                class=&#34;mr-2 mt-[0.5rem]&#34;
                 onclick=&#34;window.open(&amp;#34;/tags/drivers/&amp;#34;,&#39;_self&#39;);return false;&#34;&gt;
                 &lt;span class=&#34;flex cursor-pointer&#34;&gt;
   &lt;span
@@ -1138,7 +1145,7 @@
               &lt;/span&gt;
             
               &lt;span
-                class=&#34;mr-2 margin-top-[0.5rem]&#34;
+                class=&#34;mr-2 mt-[0.5rem]&#34;
                 onclick=&#34;window.open(&amp;#34;/tags/gpu/&amp;#34;,&#39;_self&#39;);return false;&#34;&gt;
                 &lt;span class=&#34;flex cursor-pointer&#34;&gt;
   &lt;span
@@ -1150,7 +1157,7 @@
               &lt;/span&gt;
             
               &lt;span
-                class=&#34;mr-2 margin-top-[0.5rem]&#34;
+                class=&#34;mr-2 mt-[0.5rem]&#34;
                 onclick=&#34;window.open(&amp;#34;/tags/legacy/&amp;#34;,&#39;_self&#39;);return false;&#34;&gt;
                 &lt;span class=&#34;flex cursor-pointer&#34;&gt;
   &lt;span
@@ -1162,7 +1169,7 @@
               &lt;/span&gt;
             
               &lt;span
-                class=&#34;mr-2 margin-top-[0.5rem]&#34;
+                class=&#34;mr-2 mt-[0.5rem]&#34;
                 onclick=&#34;window.open(&amp;#34;/tags/linux/&amp;#34;,&#39;_self&#39;);return false;&#34;&gt;
                 &lt;span class=&#34;flex cursor-pointer&#34;&gt;
   &lt;span
@@ -1174,7 +1181,7 @@
               &lt;/span&gt;
             
               &lt;span
-                class=&#34;mr-2 margin-top-[0.5rem]&#34;
+                class=&#34;mr-2 mt-[0.5rem]&#34;
                 onclick=&#34;window.open(&amp;#34;/tags/opensource/&amp;#34;,&#39;_self&#39;);return false;&#34;&gt;
                 &lt;span class=&#34;flex cursor-pointer&#34;&gt;
   &lt;span
@@ -1186,7 +1193,7 @@
               &lt;/span&gt;
             
               &lt;span
-                class=&#34;mr-2 margin-top-[0.5rem]&#34;
+                class=&#34;mr-2 mt-[0.5rem]&#34;
                 onclick=&#34;window.open(&amp;#34;/tags/bash/&amp;#34;,&#39;_self&#39;);return false;&#34;&gt;
                 &lt;span class=&#34;flex cursor-pointer&#34;&gt;
   &lt;span
@@ -1198,7 +1205,7 @@
               &lt;/span&gt;
             
               &lt;span
-                class=&#34;mr-2 margin-top-[0.5rem]&#34;
+                class=&#34;mr-2 mt-[0.5rem]&#34;
                 onclick=&#34;window.open(&amp;#34;/tags/script/&amp;#34;,&#39;_self&#39;);return false;&#34;&gt;
                 &lt;span class=&#34;flex cursor-pointer&#34;&gt;
   &lt;span
@@ -1220,10 +1227,10 @@
 
 
 
-      &lt;/div&gt;
-      
     &lt;/div&gt;
-  &lt;/a&gt;
+    
+  &lt;/div&gt;
+&lt;/a&gt;
 
   &lt;/section&gt;
 
@@ -1240,41 +1247,43 @@
 
 
 
+  
+
+
+
+
+  
 
 
 
 
 
 
+  
 
 
 
 
 
-
-
-
-
-
-
-
-
-  &lt;a class=&#34;flex flex-wrap md:flex-nowrap article &#34; href=&#34;https://xerolinux.xyz/posts/chaotic-aur/&#34;&gt;
-    
+&lt;a class=&#34;flex flex-wrap md:flex-nowrap article &#34; 
+  href=&#34;https://xerolinux.xyz/posts/chaotic-aur/&#34;&gt;
         
         &lt;div class=&#34;w-full md:w-auto h-full thumbnail nozoom thumbnailshadow md:mr-7&#34; style=&#34;background-image:url(/posts/chaotic-aur/featured.webp);&#34;&gt;&lt;/div&gt;
         
       &lt;div class=&#34; mt-3 md:mt-0&#34;&gt;
-      &lt;div class=&#34;items-center text-left text-xl font-semibold&#34;&gt;
-        
-        &lt;div class=&#34;font-bold text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral&#34;
-          href=&#34;https://xerolinux.xyz/posts/chaotic-aur/&#34;&gt;The Chaotic-AUR&lt;/div&gt;
-        
-        
-        
-      &lt;/div&gt;
-      &lt;div class=&#34;text-sm text-neutral-500 dark:text-neutral-400&#34;&gt;
-        
+    &lt;div class=&#34;items-center text-left text-xl font-semibold&#34;&gt;
+      
+        &lt;div
+          class=&#34;font-bold text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral&#34;
+          href=&#34;https://xerolinux.xyz/posts/chaotic-aur/&#34;&gt;
+          The Chaotic-AUR
+        &lt;/div&gt;
+      
+      
+      
+    &lt;/div&gt;
+    &lt;div class=&#34;text-sm text-neutral-500 dark:text-neutral-400&#34;&gt;
+      
 
 
 
@@ -1338,7 +1347,7 @@
   
   &lt;span
     id=&#34;views_posts/chaotic-aur/index.md&#34;
-    class=&#34;animate-pulse inline-block text-transparent max-h-3 rounded-full mt-[-2px] align-middle bg-neutral-300 dark:bg-neutral-400&#34;
+    class=&#34;animate-pulse inline-block text-transparent max-h-3 rounded-full -mt-[2px] align-middle bg-neutral-300 dark:bg-neutral-400&#34;
     title=&#34;views&#34;
     &gt;loading&lt;/span
   &gt;
@@ -1366,7 +1375,7 @@
   
   &lt;span
     id=&#34;likes_posts/chaotic-aur/index.md&#34;
-    class=&#34;animate-pulse inline-block text-transparent max-h-3 rounded-full mt-[-2px] align-middle bg-neutral-300 dark:bg-neutral-400&#34;
+    class=&#34;animate-pulse inline-block text-transparent max-h-3 rounded-full -mt-[2px] align-middle bg-neutral-300 dark:bg-neutral-400&#34;
     title=&#34;likes&#34;
     &gt;loading&lt;/span
   &gt;
@@ -1418,7 +1427,7 @@
           
             
               &lt;span
-                class=&#34;mr-2 margin-top-[0.5rem]&#34;
+                class=&#34;mr-2 mt-[0.5rem]&#34;
                 onclick=&#34;window.open(&amp;#34;/tags/aur/&amp;#34;,&#39;_self&#39;);return false;&#34;&gt;
                 &lt;span class=&#34;flex cursor-pointer&#34;&gt;
   &lt;span
@@ -1430,7 +1439,7 @@
               &lt;/span&gt;
             
               &lt;span
-                class=&#34;mr-2 margin-top-[0.5rem]&#34;
+                class=&#34;mr-2 mt-[0.5rem]&#34;
                 onclick=&#34;window.open(&amp;#34;/tags/chaotic-aur/&amp;#34;,&#39;_self&#39;);return false;&#34;&gt;
                 &lt;span class=&#34;flex cursor-pointer&#34;&gt;
   &lt;span
@@ -1442,7 +1451,7 @@
               &lt;/span&gt;
             
               &lt;span
-                class=&#34;mr-2 margin-top-[0.5rem]&#34;
+                class=&#34;mr-2 mt-[0.5rem]&#34;
                 onclick=&#34;window.open(&amp;#34;/tags/repos/&amp;#34;,&#39;_self&#39;);return false;&#34;&gt;
                 &lt;span class=&#34;flex cursor-pointer&#34;&gt;
   &lt;span
@@ -1454,7 +1463,7 @@
               &lt;/span&gt;
             
               &lt;span
-                class=&#34;mr-2 margin-top-[0.5rem]&#34;
+                class=&#34;mr-2 mt-[0.5rem]&#34;
                 onclick=&#34;window.open(&amp;#34;/tags/repository/&amp;#34;,&#39;_self&#39;);return false;&#34;&gt;
                 &lt;span class=&#34;flex cursor-pointer&#34;&gt;
   &lt;span
@@ -1466,7 +1475,7 @@
               &lt;/span&gt;
             
               &lt;span
-                class=&#34;mr-2 margin-top-[0.5rem]&#34;
+                class=&#34;mr-2 mt-[0.5rem]&#34;
                 onclick=&#34;window.open(&amp;#34;/tags/archlinux/&amp;#34;,&#39;_self&#39;);return false;&#34;&gt;
                 &lt;span class=&#34;flex cursor-pointer&#34;&gt;
   &lt;span
@@ -1478,7 +1487,7 @@
               &lt;/span&gt;
             
               &lt;span
-                class=&#34;mr-2 margin-top-[0.5rem]&#34;
+                class=&#34;mr-2 mt-[0.5rem]&#34;
                 onclick=&#34;window.open(&amp;#34;/tags/arch/&amp;#34;,&#39;_self&#39;);return false;&#34;&gt;
                 &lt;span class=&#34;flex cursor-pointer&#34;&gt;
   &lt;span
@@ -1490,7 +1499,7 @@
               &lt;/span&gt;
             
               &lt;span
-                class=&#34;mr-2 margin-top-[0.5rem]&#34;
+                class=&#34;mr-2 mt-[0.5rem]&#34;
                 onclick=&#34;window.open(&amp;#34;/tags/linux/&amp;#34;,&#39;_self&#39;);return false;&#34;&gt;
                 &lt;span class=&#34;flex cursor-pointer&#34;&gt;
   &lt;span
@@ -1512,10 +1521,10 @@
 
 
 
-      &lt;/div&gt;
-      
     &lt;/div&gt;
-  &lt;/a&gt;
+    
+  &lt;/div&gt;
+&lt;/a&gt;
 
   &lt;/section&gt;
 
@@ -1585,8 +1594,7 @@
 &lt;p&gt;&lt;a
   href=&#34;https://www.blackmagicdesign.com/products/davinciresolve&#34;
     target=&#34;_blank&#34;
-  &gt;&lt;strong&gt;DaVinci Resolve&lt;/strong&gt;&lt;/a&gt;
- and &lt;strong&gt;OpenCL:&lt;/strong&gt; AMD’s support for &lt;strong&gt;DaVinci Resolve&lt;/strong&gt; can be hit or miss. While recent updates have improved compatibility, Nvidia GPUs still hold an edge in performance and reliability for professional video editing tasks due to robust CUDA support.&lt;/p&gt;
+  &gt;&lt;strong&gt;DaVinci Resolve&lt;/strong&gt;&lt;/a&gt; and &lt;strong&gt;OpenCL:&lt;/strong&gt; AMD’s support for &lt;strong&gt;DaVinci Resolve&lt;/strong&gt; can be hit or miss. While recent updates have improved compatibility, Nvidia GPUs still hold an edge in performance and reliability for professional video editing tasks due to robust CUDA support.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;strong&gt;Machine Learning:&lt;/strong&gt; Nvidia’s dominance in machine learning tasks remains unchallenged on Linux, primarily due to superior CUDA support. Although AMD’s ROCm platform is evolving, compatibility and performance may not yet match Nvidia’s offerings for AI and deep learning applications.&lt;/p&gt;
@@ -1612,12 +1620,10 @@
 &lt;p&gt;&lt;strong&gt;Enhanced Stability with Version 555.x:&lt;/strong&gt; Recent updates introduce &lt;a
   href=&#34;https://zamundaaa.github.io/wayland/2024/04/05/explicit-sync.html&#34;
     target=&#34;_blank&#34;
-  &gt;&lt;strong&gt;Explicit Sync Explained&lt;/strong&gt;&lt;/a&gt;
- support for &lt;strong&gt;Wayland&lt;/strong&gt; users, &lt;a
+  &gt;&lt;strong&gt;Explicit Sync Explained&lt;/strong&gt;&lt;/a&gt; support for &lt;strong&gt;Wayland&lt;/strong&gt; users, &lt;a
   href=&#34;https://gitlab.freedesktop.org/wayland/wayland-protocols/-/merge_requests/90&#34;
     target=&#34;_blank&#34;
-  &gt;&lt;strong&gt;merged&lt;/strong&gt;&lt;/a&gt;
- a short while ago, enhancing stability and performance optimizations without additional configuration, although full support depends on the desktop environment like &lt;strong&gt;KDE Plasma&lt;/strong&gt; or &lt;strong&gt;GNOME&lt;/strong&gt;, not currently available for &lt;strong&gt;Hyprland&lt;/strong&gt;.&lt;/p&gt;
+  &gt;&lt;strong&gt;merged&lt;/strong&gt;&lt;/a&gt; a short while ago, enhancing stability and performance optimizations without additional configuration, although full support depends on the desktop environment like &lt;strong&gt;KDE Plasma&lt;/strong&gt; or &lt;strong&gt;GNOME&lt;/strong&gt;, not currently available for &lt;strong&gt;Hyprland&lt;/strong&gt;.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;strong&gt;Ray Tracing and DLSS:&lt;/strong&gt; Nvidia RTX GPUs excel in real-time ray tracing and AI-enhanced features such as DLSS, delivering superior visual fidelity and performance in supported games and applications. This makes them a preferred choice for users seeking cutting-edge graphics capabilities on Linux.&lt;/p&gt;
@@ -1663,18 +1669,15 @@
 &lt;li&gt;&lt;a
   href=&#34;https://www.phoronix.com/review/august-2023-linux-gpus/2&#34;
     target=&#34;_blank&#34;
-  &gt;&lt;strong&gt;AMD vs nVidia Gaming Benchmarks&lt;/strong&gt;&lt;/a&gt;
-&lt;/li&gt;
+  &gt;&lt;strong&gt;AMD vs nVidia Gaming Benchmarks&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a
   href=&#34;https://www.quora.com/Which-is-a-better-GPU-for-machine-learning-AMD-or-NVIDIA&#34;
     target=&#34;_blank&#34;
-  &gt;&lt;strong&gt;Nvidia vs AMD: GPUs in Machine Learning&lt;/strong&gt;&lt;/a&gt;
-&lt;/li&gt;
+  &gt;&lt;strong&gt;Nvidia vs AMD: GPUs in Machine Learning&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a
   href=&#34;https://www.tomshardware.com/news/amd-intel-nvidia-video-encoding-performance-quality-tested&#34;
     target=&#34;_blank&#34;
-  &gt;&lt;strong&gt;Nvidia nVenc vs AMD VCE&lt;/strong&gt;&lt;/a&gt;
-&lt;/li&gt;
+  &gt;&lt;strong&gt;Nvidia nVenc vs AMD VCE&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/nvidia-vs-amd-linux/featured.webp" />
@@ -1728,7 +1731,7 @@
               class=&#34;nozoom mt-0 mb-0 w-full h-full object-cover&#34;&gt;
           &lt;/div&gt;&lt;div class=&#34;w-full md:w-auto pt-3 p-5&#34;&gt;
           &lt;div class=&#34;flex items-center&#34;&gt;
-            &lt;span class=&#34;text-2xl text-neutral-800 dark:text-neutral margin-right-[10px]&#34;&gt;
+            &lt;span class=&#34;text-2xl text-neutral-800 dark:text-neutral mr-[10px]&#34;&gt;
               
 
   &lt;span class=&#34;relative block icon&#34;&gt;
@@ -1750,9 +1753,10 @@
           &lt;/p&gt;
 
           &lt;div class=&#34;m-0 mt-2 flex items-center&#34;&gt;
+            
+            
             &lt;span
-              class=&#34;mr-1 inline-block h-3 w-3 rounded-full&#34;
-              style=&#34;background-color: #89e051&#34;&gt;&lt;/span&gt;
+              class=&#34;mr-1 inline-block h-3 w-3 rounded-full background-color-ea89b68c34ce4a63c0f77e17413c6e30&#34;&gt;&lt;/span&gt;
             &lt;div class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
               Shell
             &lt;/div&gt;
@@ -1788,9 +1792,10 @@
       
       
       &lt;script
+        async
         type=&#34;text/javascript&#34;
-        src=&#34;https://xerolinux.xyz/js/fetch-repo.min.6fa205e5fc33470feaf8cf69cbed6460022e3c17e86caf270846f7660fbd61d5012ec56f9c8dd8accb81c36c79f8ef40f19d6fd69353d8a62327c3e9bc615f27.js&#34;
-        integrity=&#34;sha512-b6IF5fwzRw/q&amp;#43;M9py&amp;#43;1kYAIuPBfobK8nCEb3Zg&amp;#43;9YdUBLsVvnI3YrMuBw2x5&amp;#43;O9A8Z1v1pNT2KYjJ8PpvGFfJw==&#34;
+        src=&#34;https://xerolinux.xyz/js/fetch-repo.min.44b885f79fea551b2049e9be9ca41b840614ec4aad399936bf666c88998f1494a6de637470104319338fe5fd24022acfbc60ff019481ae5cf70492e32c8428a8.js&#34;
+        integrity=&#34;sha512-RLiF95/qVRsgSem&amp;#43;nKQbhAYU7EqtOZk2v2ZsiJmPFJSm3mN0cBBDGTOP5f0kAirPvGD/AZSBrlz3BJLjLIQoqA==&#34;
         data-repo-url=&#34;https://api.github.com/repos/Frogging-Family/nvidia-all&#34;
         data-repo-id=&#34;github-44462de8c3180e34167cb64f269723f5&#34;&gt;&lt;/script&gt;
     &lt;/a&gt;&lt;/div&gt;

@@ -22,8 +22,7 @@
 &lt;p&gt;Sick &amp;amp; Tired of &lt;strong&gt;ArchInstall&lt;/strong&gt; breaking ? Well fear not coz this guide will help you build an updated version using latest commits. I mean we can always grab the ISO  from the &lt;a
   href=&#34;https://archlinux.org/download/&#34;
     target=&#34;_blank&#34;
-  &gt;&lt;strong&gt;ArchLinux&lt;/strong&gt;&lt;/a&gt;
- site as outdated as it can be. Still knowing how to build a &lt;em&gt;Bleeding Edge&lt;/em&gt; one can be useful in a bind, am I right ?&lt;/p&gt;
+  &gt;&lt;strong&gt;ArchLinux&lt;/strong&gt;&lt;/a&gt; site as outdated as it can be. Still knowing how to build a &lt;em&gt;Bleeding Edge&lt;/em&gt; one can be useful in a bind, am I right ?&lt;/p&gt;
 &lt;p align=&#34;center&#34;&gt;
     &lt;img width=&#34;500&#34; src=&#34;https://i.imgur.com/QWqMIsr.png&#34; alt=&#34;logo&#34;&gt;
 &lt;/p&gt;
@@ -35,8 +34,7 @@
 &lt;p&gt;First off we need to grab a few packages in order to be able to build the ISO. Keep in mind that in order to do this you must be on &lt;strong&gt;Arch&lt;/strong&gt;. In case you aren&amp;rsquo;t, that&amp;rsquo;s where &lt;a
   href=&#34;https://distrobox.it/compatibility/&#34;
     target=&#34;_blank&#34;
-  &gt;&lt;strong&gt;Distrobox&lt;/strong&gt;&lt;/a&gt;
- comes in really handy.&lt;/p&gt;
+  &gt;&lt;strong&gt;Distrobox&lt;/strong&gt;&lt;/a&gt; comes in really handy.&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo pacman -S archiso
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Now we need to clone the repo to grab latest commits. I recommend for you to keep the folder around and &lt;code&gt;git pull&lt;/code&gt; every now and again to grab latest updates, that way you can always build a fresh new one if and when issues do happen&amp;hellip;&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git clone https://github.com/archlinux/archinstall
@@ -54,8 +52,7 @@
 &lt;p&gt;Test it out and as is the norm by now, if you encounter any issues report them on &lt;strong&gt;Github&lt;/strong&gt;. Or if you do not want or know how to use it, they also have their very own &lt;a
   href=&#34;https://discord.gg/aDeMffrxNg&#34;
     target=&#34;_blank&#34;
-  &gt;&lt;strong&gt;Discord Server&lt;/strong&gt;&lt;/a&gt;
-.&lt;/p&gt;
+  &gt;&lt;strong&gt;Discord Server&lt;/strong&gt;&lt;/a&gt;.&lt;/p&gt;
 &lt;div class=&#34;github-card-wrapper&#34;&gt;&lt;a id=&#34;github-440438209058c97cd509119818da215b&#34; target=&#34;_blank&#34; href=&#34;https://github.com/archlinux/archinstall&#34; class=&#34;cursor-pointer&#34;&gt;
       &lt;div
         class=&#34;w-full md:w-auto p-0 m-0 border border-neutral-200 dark:border-neutral-700 border rounded-md shadow-2xl&#34;&gt;&lt;div class=&#34;w-full nozoom&#34;&gt;
@@ -65,7 +62,7 @@
               class=&#34;nozoom mt-0 mb-0 w-full h-full object-cover&#34;&gt;
           &lt;/div&gt;&lt;div class=&#34;w-full md:w-auto pt-3 p-5&#34;&gt;
           &lt;div class=&#34;flex items-center&#34;&gt;
-            &lt;span class=&#34;text-2xl text-neutral-800 dark:text-neutral margin-right-[10px]&#34;&gt;
+            &lt;span class=&#34;text-2xl text-neutral-800 dark:text-neutral mr-[10px]&#34;&gt;
               
 
   &lt;span class=&#34;relative block icon&#34;&gt;
@@ -87,9 +84,10 @@
           &lt;/p&gt;
 
           &lt;div class=&#34;m-0 mt-2 flex items-center&#34;&gt;
+            
+            
             &lt;span
-              class=&#34;mr-1 inline-block h-3 w-3 rounded-full&#34;
-              style=&#34;background-color: #3572A5&#34;&gt;&lt;/span&gt;
+              class=&#34;mr-1 inline-block h-3 w-3 rounded-full background-color-a7f5f35426b927411fc9231b56382173&#34;&gt;&lt;/span&gt;
             &lt;div class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
               Python
             &lt;/div&gt;
@@ -125,9 +123,10 @@
       
       
       &lt;script
+        async
         type=&#34;text/javascript&#34;
-        src=&#34;https://xerolinux.xyz/js/fetch-repo.min.6fa205e5fc33470feaf8cf69cbed6460022e3c17e86caf270846f7660fbd61d5012ec56f9c8dd8accb81c36c79f8ef40f19d6fd69353d8a62327c3e9bc615f27.js&#34;
-        integrity=&#34;sha512-b6IF5fwzRw/q&amp;#43;M9py&amp;#43;1kYAIuPBfobK8nCEb3Zg&amp;#43;9YdUBLsVvnI3YrMuBw2x5&amp;#43;O9A8Z1v1pNT2KYjJ8PpvGFfJw==&#34;
+        src=&#34;https://xerolinux.xyz/js/fetch-repo.min.44b885f79fea551b2049e9be9ca41b840614ec4aad399936bf666c88998f1494a6de637470104319338fe5fd24022acfbc60ff019481ae5cf70492e32c8428a8.js&#34;
+        integrity=&#34;sha512-RLiF95/qVRsgSem&amp;#43;nKQbhAYU7EqtOZk2v2ZsiJmPFJSm3mN0cBBDGTOP5f0kAirPvGD/AZSBrlz3BJLjLIQoqA==&#34;
         data-repo-url=&#34;https://api.github.com/repos/archlinux/archinstall&#34;
         data-repo-id=&#34;github-440438209058c97cd509119818da215b&#34;&gt;&lt;/script&gt;
     &lt;/a&gt;&lt;/div&gt;
@@ -151,8 +150,7 @@
 &lt;p&gt;Sick &amp;amp; Tired of waiting a whole month before you can grab a fresh copy of the &lt;strong&gt;Arch&lt;/strong&gt; ISO ? Well fear not coz this guide will help you build a fresh one. I mean we can always grab the ISO  from the &lt;a
   href=&#34;https://archlinux.org/download/&#34;
     target=&#34;_blank&#34;
-  &gt;&lt;strong&gt;ArchLinux&lt;/strong&gt;&lt;/a&gt;
- site as outdated as it can be. Still knowing how to build a fresh one can be useful in a bind, am I right ?&lt;/p&gt;
+  &gt;&lt;strong&gt;ArchLinux&lt;/strong&gt;&lt;/a&gt; site as outdated as it can be. Still knowing how to build a fresh one can be useful in a bind, am I right ?&lt;/p&gt;
 &lt;p align=&#34;center&#34;&gt;
     &lt;img width=&#34;500&#34; src=&#34;https://i.imgur.com/QWqMIsr.png&#34; alt=&#34;logo&#34;&gt;
 &lt;/p&gt;
@@ -164,8 +162,7 @@
 &lt;p&gt;First off we need to grab a few packages in order to be able to build the ISO. Keep in mind that in order to do this you must be on &lt;strong&gt;Arch&lt;/strong&gt;. In case you aren&amp;rsquo;t, that&amp;rsquo;s where &lt;a
   href=&#34;https://distrobox.it/compatibility/&#34;
     target=&#34;_blank&#34;
-  &gt;&lt;strong&gt;Distrobox&lt;/strong&gt;&lt;/a&gt;
- comes in really handy.&lt;/p&gt;
+  &gt;&lt;strong&gt;Distrobox&lt;/strong&gt;&lt;/a&gt; comes in really handy.&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo pacman -S archiso
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Now we need create two folders in our home directory or anywhere else, up to you, one called &lt;code&gt;ArchWork&lt;/code&gt; for placing extracted files, another called &lt;code&gt;ArchOut&lt;/code&gt; where final ISO will be located.&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;mkdir ~/ArchWork &lt;span class=&#34;o&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; mkdir ~/ArchOut
