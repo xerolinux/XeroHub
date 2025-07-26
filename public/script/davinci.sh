@@ -17,7 +17,7 @@ echo
 echo "1) DaVinci Resolve (Free/Limited)"
 echo "2) DaVinci Resolve Studio (Commercial)"
 echo
-read -rp "Enter 1 or 2: " VERSION_CHOICE
+read -rp "Enter 1 or 2, ctrl+c to exit : " VERSION_CHOICE
 echo
 if [[ "$VERSION_CHOICE" == "1" ]]; then
     DOWNLOAD_URL="https://dvr.xerolinux.xyz/DaVinci_Resolve_20.0.1_Linux.zip"
