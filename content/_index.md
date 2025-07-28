@@ -20,12 +20,10 @@ Discover a Distro Fueled by our Passion for GNU/Linux.
 
 {{< carousel images="shots/*" aspectRatio="16-9" interval="3600" >}}
 
-Check out the <a href="https://github.com/XeroLinuxDev/xero-build/blob/main/Changelog.md" target="_blank"><strong>Changelog</strong></a> and <a href="https://wiki.xerolinux.xyz/distro/" target="_blank"><strong>Wiki</strong></a> for further information.</div>
-
-<div align="center">
+Check out the <a href="https://github.com/XeroLinuxDev/xero-build/blob/main/Changelog.md" target="_blank"><strong>Changelog</strong></a> and <a href="https://wiki.xerolinux.xyz/distro/" target="_blank"><strong>Wiki</strong></a> for further information.
 
 {{< button href="https://ko-fi.com/xerolinux/shop" target="_blank" >}}
-↪️ Get XeroLinux ↩️
+💰 Get XeroLinux 💰
 {{< /button >}}
 
 </div><br />
@@ -64,6 +62,3 @@ By choosing **XeroLinux**, you will be directly helping support the project's de
     'floating-chat.donateButton.text-color': '#fff'
   });
 </script>
-
-
-
