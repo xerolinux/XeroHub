@@ -26,8 +26,8 @@ Discover a Distro Fueled by our Passion for GNU/Linux.
 
 For demonstration purposes only. [**More Info**](https://wiki.xerolinux.xyz/distro/#free-demo-isos)
 
-{{< button href="https://iso.xerolinux.xyz/?dir=demo/kde" target="_blank" >}}
-↪️ Plasma Demo ↩️ {{< /button >}} &emsp;&emsp;&emsp; {{< button href="https://iso.xerolinux.xyz/?dir=demo/gnome" target="_blank" >}}
+{{< button href="https://xiso.xerolinux.xyz/?dir=demo/kde" target="_blank" >}}
+↪️ Plasma Demo ↩️ {{< /button >}} &emsp;&emsp;&emsp; {{< button href="https://xiso.xerolinux.xyz/?dir=demo/gnome" target="_blank" >}}
 ↪️ Gnome Demo ↩️
 {{< /button >}}<br />
 
