@@ -18,14 +18,24 @@ Discover a Distro Fueled by our Passion for GNU/Linux.
 
 <div align="center">
 
-{{< carousel images="shots/*" aspectRatio="16-9" interval="3600" >}}
+{{< carousel images="shots/*" aspectRatio="16-9" interval="3600" >}}</div>
 
-Check out the <a href="https://github.com/XeroLinuxDev/xero-build/blob/main/Changelog.md" target="_blank"><strong>Changelog</strong></a> and <a href="https://wiki.xerolinux.xyz/distro/" target="_blank"><strong>Wiki</strong></a> for further information.
+<div align="center">
+
+<strong>Free Demo ISOs</strong>
+
+For demonstration purposes only. [**More Info**](https://wiki.xerolinux.xyz/distro/#free-demo-isos)
+
+{{< button href="https://iso.xerolinux.xyz/?dir=demo/kde" target="_blank" >}}
+↪️ Plasma Demo ↩️ {{< /button >}} &emsp;&emsp;&emsp; {{< button href="https://iso.xerolinux.xyz/?dir=demo/gnome" target="_blank" >}}
+↪️ Gnome Demo ↩️
+{{< /button >}}<br />
+
+<strong>Unlocked ISOs (Donate)</strong>
 
 {{< button href="https://ko-fi.com/xerolinux/shop" target="_blank" >}}
-💰 Get XeroLinux 💰
+💰 XeroLinux on Ko-Fi 💰
 {{< /button >}}
-
 </div><br />
 
 #### XeroLinux: Arch, Effortlessly Refined
@@ -62,3 +72,6 @@ By choosing **XeroLinux**, you will be directly helping support the project's de
     'floating-chat.donateButton.text-color': '#fff'
   });
 </script>
+
+
+
