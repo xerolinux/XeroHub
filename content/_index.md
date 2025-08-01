@@ -22,21 +22,21 @@ Discover a Distro Fueled by our Passion for GNU/Linux.
 
 <div align="center">
 
-<strong>Free Demo ISOs</strong>
+<strong>Make Your Selection</strong>
 
-For demonstration purposes only. [**More Info**](https://wiki.xerolinux.xyz/distro/#free-demo-isos)
+Preview ISOs are for testing purposes only. [**More Info**](https://wiki.xerolinux.xyz/distro/#free-demo-isos)
 
-{{< button href="https://iso.xerolinux.xyz/demo/kde/" target="_blank" >}}
-↪️ Plasma Demo ↩️ {{< /button >}} &emsp;&emsp;&emsp; {{< button href="https://iso.xerolinux.xyz/demo/gnome/" target="_blank" >}}
-↪️ Gnome Demo ↩️
-{{< /button >}}<br />
-
-<strong>Unlocked ISOs (Donate)</strong>
-
-{{< button href="https://ko-fi.com/xerolinux/shop" target="_blank" >}}
-💰 XeroLinux on Ko-Fi 💰
+{{< button href="https://iso.xerolinux.xyz/demo/" target="_blank" >}}
+↪️ Preview ISOs ↩️ {{< /button >}} &emsp;&emsp;&emsp; {{< button href="https://ko-fi.com/xerolinux/shop" target="_blank" >}}
+💰 Unlocked ISOs 💰
 {{< /button >}}
-</div><br />
+</div>
+
+<div align="center">
+
+------ Main Content ------
+
+</div>
 
 #### XeroLinux: Arch, Effortlessly Refined
 
