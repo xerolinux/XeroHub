@@ -19,18 +19,18 @@ Initially, I wrote [**this guide**](https://bytes.xerolinux.xyz/posts/try-before
 
 So, what next? Last night, during the **DistroTube** Patron Cast (check the video below), someone suggested something brilliant: why not make *Demo* ISOs without the installer? Lightbulb moment! I couldn’t believe I hadn’t thought of it before. So I jumped right in and made it happen.
 
-{{< youtube mQ7uEYED96A >}}
+{{< youtube 7AtsbVUQzGg >}}
 
 The demo ISOs won’t include the installer, which means you can’t install the OS from them. Plus, I’ve limited the *cow-space* to 100MiB — so you won’t be able to update or install big packages. They’re just for testing, so don’t try updating, it won’t work because of the space limit.
 
-These demo ISOs will be available soon on the main page. Stay tuned!
+These demo ISOs are now available for download on the main page. Enjoy !
 
 ## Conclusion
 
 We’re really excited to offer these **Free Demo ISOs** as a way for everyone to try out **XeroLinux** without any risk. It’s all about giving you a hands-on experience so you can see what the distro is all about before deciding to support the project by getting the full, unlocked versions.
 
-We hope this approach strikes the perfect balance between sharing our work and encouraging contributions.
+We hope this approach strikes the perfect balance between sharing our work and encouraging contributions. To know more about limitations, check [**this post**](https://wiki.xerolinux.xyz/distro/#free-demo-isos)
 
-Keep an eye on the main page for when the demos drop — and as always, thanks for being part of the **XeroLinux** community!
+And as always, thanks for being part of the **XeroLinux** community!
 
 Cheers !
