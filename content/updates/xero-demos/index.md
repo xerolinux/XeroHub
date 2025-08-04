@@ -17,7 +17,7 @@ Lately, I’ve been getting a bunch of requests to offer a free version so peopl
 
 Initially, I wrote [**this guide**](https://bytes.xerolinux.xyz/posts/try-before-buy/) on how to do it. But more feedback came in, with people saying stuff like “Why should we do all the hard work ourselves?”
 
-So, what next? Last night, during the **DistroTube** Patron Cast (check the video below), someone suggested something brilliant: why not make *Demo* ISOs without the installer? Lightbulb moment! I couldn’t believe I hadn’t thought of it before. So I jumped right in and made it happen.
+So, what next? Last night, during the **DistroTube** Patron Cast, someone suggested something brilliant: why not make *Demo* ISOs without the installer? Lightbulb moment! I couldn’t believe I hadn’t thought of it before. So I jumped right in and made it happen.
 
 {{< youtube 7AtsbVUQzGg >}}
 
@@ -29,7 +29,7 @@ These demo ISOs are now available for download on the main page. Enjoy !
 
 We’re really excited to offer these **Free Demo ISOs** as a way for everyone to try out **XeroLinux** without any risk. It’s all about giving you a hands-on experience so you can see what the distro is all about before deciding to support the project by getting the full, unlocked versions.
 
-We hope this approach strikes the perfect balance between sharing our work and encouraging contributions. To know more about limitations, check [**this post**](https://wiki.xerolinux.xyz/distro/#free-demo-isos)
+We hope this approach strikes the perfect balance between sharing our work and encouraging contributions. To know more about what's included as well as limitations, check [**this post**](https://wiki.xerolinux.xyz/distro/#free-demo-isos)
 
 And as always, thanks for being part of the **XeroLinux** community!
 
