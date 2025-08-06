@@ -76,11 +76,23 @@
 
 
 
+
+
   
 
 
   &lt;section class=&#34;space-y-10 w-full&#34;&gt;
     
+    
+
+
+
+
+
+
+
+  
+
 
 
 
@@ -95,23 +107,20 @@
 
 
 
-
-  
-
-
-
-
-
-&lt;a class=&#34;flex flex-wrap md:flex-nowrap article &#34; 
-  href=&#34;https://xerolinux.xyz/posts/warehouse-flatpak/&#34;&gt;
+&lt;div class=&#34;group-hover-card group flex flex-wrap md:flex-nowrap article relative &#34;&gt;
+  &lt;a
+    
+  href=&#34;https://xerolinux.xyz/posts/warehouse-flatpak/&#34;
+    class=&#34;absolute inset-0&#34;
+    aria-label=&#34;&#34;&gt;&lt;/a&gt;
         
-        &lt;div class=&#34;w-full md:w-auto h-full thumbnail nozoom thumbnailshadow md:mr-7&#34; style=&#34;background-image:url(/posts/warehouse-flatpak/featured.webp);&#34;&gt;&lt;/div&gt;
+          &lt;div class=&#34;w-full md:w-auto h-full thumbnail nozoom thumbnailshadow md:mr-7&#34; style=&#34;background-image:url(/posts/warehouse-flatpak/featured.webp);&#34;&gt;&lt;/div&gt;
         
       &lt;div class=&#34; mt-3 md:mt-0&#34;&gt;
     &lt;div class=&#34;items-center text-left text-xl font-semibold&#34;&gt;
       
         &lt;div
-          class=&#34;font-bold text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral&#34;
+          class=&#34;group-hover-card-title decoration-primary-500 dark:text-neutral text-xl font-bold text-neutral-800 group-hover:underline group-hover:underline-offset-2&#34;
           href=&#34;https://xerolinux.xyz/posts/warehouse-flatpak/&#34;&gt;
           Warehouse Flatpak Toolbox
         &lt;/div&gt;
@@ -119,7 +128,7 @@
       
       
     &lt;/div&gt;
-    &lt;div class=&#34;text-sm text-neutral-500 dark:text-neutral-400&#34;&gt;
+    &lt;div class=&#34;group-hover-cancel text-sm text-neutral-500 dark:text-neutral-400&#34;&gt;
       
 
 
@@ -188,14 +197,8 @@
     title=&#34;views&#34;
     &gt;loading&lt;/span
   &gt;
-  &lt;span class=&#34;inline-block align-text-bottom&#34;&gt;
-
-  &lt;span class=&#34;relative block icon&#34;&gt;
-    &lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 576 512&#34;&gt;
-&lt;path fill=&#34;currentColor&#34; d=&#34;M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z&#34;/&gt;&lt;/svg&gt;
-  &lt;/span&gt;
-
-&lt;/span&gt;
+  &lt;span class=&#34;inline-block align-text-bottom&#34;&gt;&lt;span class=&#34;relative block icon&#34;&gt;&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 576 512&#34;&gt;
+&lt;path fill=&#34;currentColor&#34; d=&#34;M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z&#34;/&gt;&lt;/svg&gt;&lt;/span&gt;&lt;/span&gt;
 &lt;/span&gt;
 &lt;span class=&#34;px-2 text-primary-500&#34;&gt;&amp;middot;&lt;/span&gt;&lt;span&gt;
   
@@ -216,14 +219,8 @@
     title=&#34;likes&#34;
     &gt;loading&lt;/span
   &gt;
-  &lt;span class=&#34;inline-block align-text-bottom&#34;&gt;
-
-  &lt;span class=&#34;relative block icon&#34;&gt;
-    &lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 512 512&#34;&gt;
-&lt;path fill=&#34;currentColor&#34; d=&#34;M47.6 300.4L228.3 469.1c7.5 7 17.4 10.9 27.7 10.9s20.2-3.9 27.7-10.9L464.4 300.4c30.4-28.3 47.6-68 47.6-109.5v-5.8c0-69.9-50.5-129.5-119.4-141C347 36.5 300.6 51.4 268 84L256 96 244 84c-32.6-32.6-79-47.5-124.6-39.9C50.5 55.6 0 115.2 0 185.1v5.8c0 41.5 17.2 81.2 47.6 109.5z&#34;/&gt;&lt;/svg&gt;
-  &lt;/span&gt;
-
-&lt;/span&gt;
+  &lt;span class=&#34;inline-block align-text-bottom&#34;&gt;&lt;span class=&#34;relative block icon&#34;&gt;&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 512 512&#34;&gt;
+&lt;path fill=&#34;currentColor&#34; d=&#34;M47.6 300.4L228.3 469.1c7.5 7 17.4 10.9 27.7 10.9s20.2-3.9 27.7-10.9L464.4 300.4c30.4-28.3 47.6-68 47.6-109.5v-5.8c0-69.9-50.5-129.5-119.4-141C347 36.5 300.6 51.4 268 84L256 96 244 84c-32.6-32.6-79-47.5-124.6-39.9C50.5 55.6 0 115.2 0 185.1v5.8c0 41.5 17.2 81.2 47.6 109.5z&#34;/&gt;&lt;/svg&gt;&lt;/span&gt;&lt;/span&gt;
 &lt;/span&gt;
 
     
@@ -263,65 +260,55 @@
         
           
             
-              &lt;span
-                class=&#34;mr-2 mt-[0.5rem]&#34;
-                onclick=&#34;window.open(&amp;#34;/tags/flatpak/&amp;#34;,&#39;_self&#39;);return false;&#34;&gt;
-                &lt;span class=&#34;flex cursor-pointer&#34;&gt;
+              &lt;a class=&#34;relative mt-[0.5rem] mr-2&#34; href=&#34;https://xerolinux.xyz/tags/flatpak/&#34;
+                &gt;&lt;span class=&#34;flex cursor-pointer&#34;&gt;
   &lt;span
     class=&#34;rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400&#34;&gt;
     Flatpak
   &lt;/span&gt;
 &lt;/span&gt;
-
-              &lt;/span&gt;
+&lt;/a
+              &gt;
             
-              &lt;span
-                class=&#34;mr-2 mt-[0.5rem]&#34;
-                onclick=&#34;window.open(&amp;#34;/tags/manager/&amp;#34;,&#39;_self&#39;);return false;&#34;&gt;
-                &lt;span class=&#34;flex cursor-pointer&#34;&gt;
+              &lt;a class=&#34;relative mt-[0.5rem] mr-2&#34; href=&#34;https://xerolinux.xyz/tags/manager/&#34;
+                &gt;&lt;span class=&#34;flex cursor-pointer&#34;&gt;
   &lt;span
     class=&#34;rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400&#34;&gt;
     Manager
   &lt;/span&gt;
 &lt;/span&gt;
-
-              &lt;/span&gt;
+&lt;/a
+              &gt;
             
-              &lt;span
-                class=&#34;mr-2 mt-[0.5rem]&#34;
-                onclick=&#34;window.open(&amp;#34;/tags/tools/&amp;#34;,&#39;_self&#39;);return false;&#34;&gt;
-                &lt;span class=&#34;flex cursor-pointer&#34;&gt;
+              &lt;a class=&#34;relative mt-[0.5rem] mr-2&#34; href=&#34;https://xerolinux.xyz/tags/tools/&#34;
+                &gt;&lt;span class=&#34;flex cursor-pointer&#34;&gt;
   &lt;span
     class=&#34;rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400&#34;&gt;
     Tools
   &lt;/span&gt;
 &lt;/span&gt;
-
-              &lt;/span&gt;
+&lt;/a
+              &gt;
             
-              &lt;span
-                class=&#34;mr-2 mt-[0.5rem]&#34;
-                onclick=&#34;window.open(&amp;#34;/tags/flathub/&amp;#34;,&#39;_self&#39;);return false;&#34;&gt;
-                &lt;span class=&#34;flex cursor-pointer&#34;&gt;
+              &lt;a class=&#34;relative mt-[0.5rem] mr-2&#34; href=&#34;https://xerolinux.xyz/tags/flathub/&#34;
+                &gt;&lt;span class=&#34;flex cursor-pointer&#34;&gt;
   &lt;span
     class=&#34;rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400&#34;&gt;
     Flathub
   &lt;/span&gt;
 &lt;/span&gt;
-
-              &lt;/span&gt;
+&lt;/a
+              &gt;
             
-              &lt;span
-                class=&#34;mr-2 mt-[0.5rem]&#34;
-                onclick=&#34;window.open(&amp;#34;/tags/linux/&amp;#34;,&#39;_self&#39;);return false;&#34;&gt;
-                &lt;span class=&#34;flex cursor-pointer&#34;&gt;
+              &lt;a class=&#34;relative mt-[0.5rem] mr-2&#34; href=&#34;https://xerolinux.xyz/tags/linux/&#34;
+                &gt;&lt;span class=&#34;flex cursor-pointer&#34;&gt;
   &lt;span
     class=&#34;rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400&#34;&gt;
     Linux
   &lt;/span&gt;
 &lt;/span&gt;
-
-              &lt;/span&gt;
+&lt;/a
+              &gt;
             
           
         
@@ -336,8 +323,12 @@
 
     &lt;/div&gt;
     
+    
+      
+    
+    
   &lt;/div&gt;
-&lt;/a&gt;
+&lt;/div&gt;
 
   &lt;/section&gt;
 
@@ -366,11 +357,23 @@
 
 
 
+
+
   
 
 
   &lt;section class=&#34;space-y-10 w-full&#34;&gt;
     
+    
+
+
+
+
+
+
+
+  
+
 
 
 
@@ -385,23 +388,20 @@
 
 
 
-
-  
-
-
-
-
-
-&lt;a class=&#34;flex flex-wrap md:flex-nowrap article &#34; 
-  href=&#34;https://xerolinux.xyz/posts/downgrade-tool/&#34;&gt;
+&lt;div class=&#34;group-hover-card group flex flex-wrap md:flex-nowrap article relative &#34;&gt;
+  &lt;a
+    
+  href=&#34;https://xerolinux.xyz/posts/downgrade-tool/&#34;
+    class=&#34;absolute inset-0&#34;
+    aria-label=&#34;&#34;&gt;&lt;/a&gt;
         
-        &lt;div class=&#34;w-full md:w-auto h-full thumbnail nozoom thumbnailshadow md:mr-7&#34; style=&#34;background-image:url(/posts/downgrade-tool/featured.webp);&#34;&gt;&lt;/div&gt;
+          &lt;div class=&#34;w-full md:w-auto h-full thumbnail nozoom thumbnailshadow md:mr-7&#34; style=&#34;background-image:url(/posts/downgrade-tool/featured.webp);&#34;&gt;&lt;/div&gt;
         
       &lt;div class=&#34; mt-3 md:mt-0&#34;&gt;
     &lt;div class=&#34;items-center text-left text-xl font-semibold&#34;&gt;
       
         &lt;div
-          class=&#34;font-bold text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral&#34;
+          class=&#34;group-hover-card-title decoration-primary-500 dark:text-neutral text-xl font-bold text-neutral-800 group-hover:underline group-hover:underline-offset-2&#34;
           href=&#34;https://xerolinux.xyz/posts/downgrade-tool/&#34;&gt;
           How To Downgrade Packages
         &lt;/div&gt;
@@ -409,7 +409,7 @@
       
       
     &lt;/div&gt;
-    &lt;div class=&#34;text-sm text-neutral-500 dark:text-neutral-400&#34;&gt;
+    &lt;div class=&#34;group-hover-cancel text-sm text-neutral-500 dark:text-neutral-400&#34;&gt;
       
 
 
@@ -478,14 +478,8 @@
     title=&#34;views&#34;
     &gt;loading&lt;/span
   &gt;
-  &lt;span class=&#34;inline-block align-text-bottom&#34;&gt;
-
-  &lt;span class=&#34;relative block icon&#34;&gt;
-    &lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 576 512&#34;&gt;
-&lt;path fill=&#34;currentColor&#34; d=&#34;M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z&#34;/&gt;&lt;/svg&gt;
-  &lt;/span&gt;
-
-&lt;/span&gt;
+  &lt;span class=&#34;inline-block align-text-bottom&#34;&gt;&lt;span class=&#34;relative block icon&#34;&gt;&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 576 512&#34;&gt;
+&lt;path fill=&#34;currentColor&#34; d=&#34;M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z&#34;/&gt;&lt;/svg&gt;&lt;/span&gt;&lt;/span&gt;
 &lt;/span&gt;
 &lt;span class=&#34;px-2 text-primary-500&#34;&gt;&amp;middot;&lt;/span&gt;&lt;span&gt;
   
@@ -506,14 +500,8 @@
     title=&#34;likes&#34;
     &gt;loading&lt;/span
   &gt;
-  &lt;span class=&#34;inline-block align-text-bottom&#34;&gt;
-
-  &lt;span class=&#34;relative block icon&#34;&gt;
-    &lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 512 512&#34;&gt;
-&lt;path fill=&#34;currentColor&#34; d=&#34;M47.6 300.4L228.3 469.1c7.5 7 17.4 10.9 27.7 10.9s20.2-3.9 27.7-10.9L464.4 300.4c30.4-28.3 47.6-68 47.6-109.5v-5.8c0-69.9-50.5-129.5-119.4-141C347 36.5 300.6 51.4 268 84L256 96 244 84c-32.6-32.6-79-47.5-124.6-39.9C50.5 55.6 0 115.2 0 185.1v5.8c0 41.5 17.2 81.2 47.6 109.5z&#34;/&gt;&lt;/svg&gt;
-  &lt;/span&gt;
-
-&lt;/span&gt;
+  &lt;span class=&#34;inline-block align-text-bottom&#34;&gt;&lt;span class=&#34;relative block icon&#34;&gt;&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 512 512&#34;&gt;
+&lt;path fill=&#34;currentColor&#34; d=&#34;M47.6 300.4L228.3 469.1c7.5 7 17.4 10.9 27.7 10.9s20.2-3.9 27.7-10.9L464.4 300.4c30.4-28.3 47.6-68 47.6-109.5v-5.8c0-69.9-50.5-129.5-119.4-141C347 36.5 300.6 51.4 268 84L256 96 244 84c-32.6-32.6-79-47.5-124.6-39.9C50.5 55.6 0 115.2 0 185.1v5.8c0 41.5 17.2 81.2 47.6 109.5z&#34;/&gt;&lt;/svg&gt;&lt;/span&gt;&lt;/span&gt;
 &lt;/span&gt;
 
     
@@ -553,53 +541,45 @@
         
           
             
-              &lt;span
-                class=&#34;mr-2 mt-[0.5rem]&#34;
-                onclick=&#34;window.open(&amp;#34;/tags/downgrade/&amp;#34;,&#39;_self&#39;);return false;&#34;&gt;
-                &lt;span class=&#34;flex cursor-pointer&#34;&gt;
+              &lt;a class=&#34;relative mt-[0.5rem] mr-2&#34; href=&#34;https://xerolinux.xyz/tags/downgrade/&#34;
+                &gt;&lt;span class=&#34;flex cursor-pointer&#34;&gt;
   &lt;span
     class=&#34;rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400&#34;&gt;
     Downgrade
   &lt;/span&gt;
 &lt;/span&gt;
-
-              &lt;/span&gt;
+&lt;/a
+              &gt;
             
-              &lt;span
-                class=&#34;mr-2 mt-[0.5rem]&#34;
-                onclick=&#34;window.open(&amp;#34;/tags/archlinux/&amp;#34;,&#39;_self&#39;);return false;&#34;&gt;
-                &lt;span class=&#34;flex cursor-pointer&#34;&gt;
+              &lt;a class=&#34;relative mt-[0.5rem] mr-2&#34; href=&#34;https://xerolinux.xyz/tags/archlinux/&#34;
+                &gt;&lt;span class=&#34;flex cursor-pointer&#34;&gt;
   &lt;span
     class=&#34;rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400&#34;&gt;
     ArchLinux
   &lt;/span&gt;
 &lt;/span&gt;
-
-              &lt;/span&gt;
+&lt;/a
+              &gt;
             
-              &lt;span
-                class=&#34;mr-2 mt-[0.5rem]&#34;
-                onclick=&#34;window.open(&amp;#34;/tags/guide/&amp;#34;,&#39;_self&#39;);return false;&#34;&gt;
-                &lt;span class=&#34;flex cursor-pointer&#34;&gt;
+              &lt;a class=&#34;relative mt-[0.5rem] mr-2&#34; href=&#34;https://xerolinux.xyz/tags/guide/&#34;
+                &gt;&lt;span class=&#34;flex cursor-pointer&#34;&gt;
   &lt;span
     class=&#34;rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400&#34;&gt;
     Guide
   &lt;/span&gt;
 &lt;/span&gt;
-
-              &lt;/span&gt;
+&lt;/a
+              &gt;
             
-              &lt;span
-                class=&#34;mr-2 mt-[0.5rem]&#34;
-                onclick=&#34;window.open(&amp;#34;/tags/linux/&amp;#34;,&#39;_self&#39;);return false;&#34;&gt;
-                &lt;span class=&#34;flex cursor-pointer&#34;&gt;
+              &lt;a class=&#34;relative mt-[0.5rem] mr-2&#34; href=&#34;https://xerolinux.xyz/tags/linux/&#34;
+                &gt;&lt;span class=&#34;flex cursor-pointer&#34;&gt;
   &lt;span
     class=&#34;rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400&#34;&gt;
     Linux
   &lt;/span&gt;
 &lt;/span&gt;
-
-              &lt;/span&gt;
+&lt;/a
+              &gt;
             
           
         
@@ -614,8 +594,12 @@
 
     &lt;/div&gt;
     
+    
+      
+    
+    
   &lt;/div&gt;
-&lt;/a&gt;
+&lt;/div&gt;
 
   &lt;/section&gt;
 
@@ -628,11 +612,23 @@
 
 
 
+
+
   
 
 
   &lt;section class=&#34;space-y-10 w-full&#34;&gt;
     
+    
+
+
+
+
+
+
+
+  
+
 
 
 
@@ -647,23 +643,20 @@
 
 
 
-
-  
-
-
-
-
-
-&lt;a class=&#34;flex flex-wrap md:flex-nowrap article &#34; 
-  href=&#34;https://xerolinux.xyz/posts/install-yay-paru/&#34;&gt;
+&lt;div class=&#34;group-hover-card group flex flex-wrap md:flex-nowrap article relative &#34;&gt;
+  &lt;a
+    
+  href=&#34;https://xerolinux.xyz/posts/install-yay-paru/&#34;
+    class=&#34;absolute inset-0&#34;
+    aria-label=&#34;&#34;&gt;&lt;/a&gt;
         
-        &lt;div class=&#34;w-full md:w-auto h-full thumbnail nozoom thumbnailshadow md:mr-7&#34; style=&#34;background-image:url(/posts/install-yay-paru/featured.webp);&#34;&gt;&lt;/div&gt;
+          &lt;div class=&#34;w-full md:w-auto h-full thumbnail nozoom thumbnailshadow md:mr-7&#34; style=&#34;background-image:url(/posts/install-yay-paru/featured.webp);&#34;&gt;&lt;/div&gt;
         
       &lt;div class=&#34; mt-3 md:mt-0&#34;&gt;
     &lt;div class=&#34;items-center text-left text-xl font-semibold&#34;&gt;
       
         &lt;div
-          class=&#34;font-bold text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral&#34;
+          class=&#34;group-hover-card-title decoration-primary-500 dark:text-neutral text-xl font-bold text-neutral-800 group-hover:underline group-hover:underline-offset-2&#34;
           href=&#34;https://xerolinux.xyz/posts/install-yay-paru/&#34;&gt;
           Install Yay or Paru
         &lt;/div&gt;
@@ -671,7 +664,7 @@
       
       
     &lt;/div&gt;
-    &lt;div class=&#34;text-sm text-neutral-500 dark:text-neutral-400&#34;&gt;
+    &lt;div class=&#34;group-hover-cancel text-sm text-neutral-500 dark:text-neutral-400&#34;&gt;
       
 
 
@@ -740,14 +733,8 @@
     title=&#34;views&#34;
     &gt;loading&lt;/span
   &gt;
-  &lt;span class=&#34;inline-block align-text-bottom&#34;&gt;
-
-  &lt;span class=&#34;relative block icon&#34;&gt;
-    &lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 576 512&#34;&gt;
-&lt;path fill=&#34;currentColor&#34; d=&#34;M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z&#34;/&gt;&lt;/svg&gt;
-  &lt;/span&gt;
-
-&lt;/span&gt;
+  &lt;span class=&#34;inline-block align-text-bottom&#34;&gt;&lt;span class=&#34;relative block icon&#34;&gt;&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 576 512&#34;&gt;
+&lt;path fill=&#34;currentColor&#34; d=&#34;M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z&#34;/&gt;&lt;/svg&gt;&lt;/span&gt;&lt;/span&gt;
 &lt;/span&gt;
 &lt;span class=&#34;px-2 text-primary-500&#34;&gt;&amp;middot;&lt;/span&gt;&lt;span&gt;
   
@@ -768,14 +755,8 @@
     title=&#34;likes&#34;
     &gt;loading&lt;/span
   &gt;
-  &lt;span class=&#34;inline-block align-text-bottom&#34;&gt;
-
-  &lt;span class=&#34;relative block icon&#34;&gt;
-    &lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 512 512&#34;&gt;
-&lt;path fill=&#34;currentColor&#34; d=&#34;M47.6 300.4L228.3 469.1c7.5 7 17.4 10.9 27.7 10.9s20.2-3.9 27.7-10.9L464.4 300.4c30.4-28.3 47.6-68 47.6-109.5v-5.8c0-69.9-50.5-129.5-119.4-141C347 36.5 300.6 51.4 268 84L256 96 244 84c-32.6-32.6-79-47.5-124.6-39.9C50.5 55.6 0 115.2 0 185.1v5.8c0 41.5 17.2 81.2 47.6 109.5z&#34;/&gt;&lt;/svg&gt;
-  &lt;/span&gt;
-
-&lt;/span&gt;
+  &lt;span class=&#34;inline-block align-text-bottom&#34;&gt;&lt;span class=&#34;relative block icon&#34;&gt;&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 512 512&#34;&gt;
+&lt;path fill=&#34;currentColor&#34; d=&#34;M47.6 300.4L228.3 469.1c7.5 7 17.4 10.9 27.7 10.9s20.2-3.9 27.7-10.9L464.4 300.4c30.4-28.3 47.6-68 47.6-109.5v-5.8c0-69.9-50.5-129.5-119.4-141C347 36.5 300.6 51.4 268 84L256 96 244 84c-32.6-32.6-79-47.5-124.6-39.9C50.5 55.6 0 115.2 0 185.1v5.8c0 41.5 17.2 81.2 47.6 109.5z&#34;/&gt;&lt;/svg&gt;&lt;/span&gt;&lt;/span&gt;
 &lt;/span&gt;
 
     
@@ -815,89 +796,75 @@
         
           
             
-              &lt;span
-                class=&#34;mr-2 mt-[0.5rem]&#34;
-                onclick=&#34;window.open(&amp;#34;/tags/yay/&amp;#34;,&#39;_self&#39;);return false;&#34;&gt;
-                &lt;span class=&#34;flex cursor-pointer&#34;&gt;
+              &lt;a class=&#34;relative mt-[0.5rem] mr-2&#34; href=&#34;https://xerolinux.xyz/tags/yay/&#34;
+                &gt;&lt;span class=&#34;flex cursor-pointer&#34;&gt;
   &lt;span
     class=&#34;rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400&#34;&gt;
     Yay
   &lt;/span&gt;
 &lt;/span&gt;
-
-              &lt;/span&gt;
+&lt;/a
+              &gt;
             
-              &lt;span
-                class=&#34;mr-2 mt-[0.5rem]&#34;
-                onclick=&#34;window.open(&amp;#34;/tags/paru/&amp;#34;,&#39;_self&#39;);return false;&#34;&gt;
-                &lt;span class=&#34;flex cursor-pointer&#34;&gt;
+              &lt;a class=&#34;relative mt-[0.5rem] mr-2&#34; href=&#34;https://xerolinux.xyz/tags/paru/&#34;
+                &gt;&lt;span class=&#34;flex cursor-pointer&#34;&gt;
   &lt;span
     class=&#34;rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400&#34;&gt;
     Paru
   &lt;/span&gt;
 &lt;/span&gt;
-
-              &lt;/span&gt;
+&lt;/a
+              &gt;
             
-              &lt;span
-                class=&#34;mr-2 mt-[0.5rem]&#34;
-                onclick=&#34;window.open(&amp;#34;/tags/aur/&amp;#34;,&#39;_self&#39;);return false;&#34;&gt;
-                &lt;span class=&#34;flex cursor-pointer&#34;&gt;
+              &lt;a class=&#34;relative mt-[0.5rem] mr-2&#34; href=&#34;https://xerolinux.xyz/tags/aur/&#34;
+                &gt;&lt;span class=&#34;flex cursor-pointer&#34;&gt;
   &lt;span
     class=&#34;rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400&#34;&gt;
     AUR
   &lt;/span&gt;
 &lt;/span&gt;
-
-              &lt;/span&gt;
+&lt;/a
+              &gt;
             
-              &lt;span
-                class=&#34;mr-2 mt-[0.5rem]&#34;
-                onclick=&#34;window.open(&amp;#34;/tags/guide/&amp;#34;,&#39;_self&#39;);return false;&#34;&gt;
-                &lt;span class=&#34;flex cursor-pointer&#34;&gt;
+              &lt;a class=&#34;relative mt-[0.5rem] mr-2&#34; href=&#34;https://xerolinux.xyz/tags/guide/&#34;
+                &gt;&lt;span class=&#34;flex cursor-pointer&#34;&gt;
   &lt;span
     class=&#34;rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400&#34;&gt;
     Guide
   &lt;/span&gt;
 &lt;/span&gt;
-
-              &lt;/span&gt;
+&lt;/a
+              &gt;
             
-              &lt;span
-                class=&#34;mr-2 mt-[0.5rem]&#34;
-                onclick=&#34;window.open(&amp;#34;/tags/linux/&amp;#34;,&#39;_self&#39;);return false;&#34;&gt;
-                &lt;span class=&#34;flex cursor-pointer&#34;&gt;
+              &lt;a class=&#34;relative mt-[0.5rem] mr-2&#34; href=&#34;https://xerolinux.xyz/tags/linux/&#34;
+                &gt;&lt;span class=&#34;flex cursor-pointer&#34;&gt;
   &lt;span
     class=&#34;rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400&#34;&gt;
     Linux
   &lt;/span&gt;
 &lt;/span&gt;
-
-              &lt;/span&gt;
+&lt;/a
+              &gt;
             
-              &lt;span
-                class=&#34;mr-2 mt-[0.5rem]&#34;
-                onclick=&#34;window.open(&amp;#34;/tags/arch/&amp;#34;,&#39;_self&#39;);return false;&#34;&gt;
-                &lt;span class=&#34;flex cursor-pointer&#34;&gt;
+              &lt;a class=&#34;relative mt-[0.5rem] mr-2&#34; href=&#34;https://xerolinux.xyz/tags/arch/&#34;
+                &gt;&lt;span class=&#34;flex cursor-pointer&#34;&gt;
   &lt;span
     class=&#34;rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400&#34;&gt;
     Arch
   &lt;/span&gt;
 &lt;/span&gt;
-
-              &lt;/span&gt;
+&lt;/a
+              &gt;
             
-              &lt;span
-                class=&#34;mr-2 mt-[0.5rem]&#34;
-                onclick=&#34;window.open(&amp;#34;/tags/archlinux/&amp;#34;,&#39;_self&#39;);return false;&#34;&gt;
-                &lt;span class=&#34;flex cursor-pointer&#34;&gt;
+              &lt;a class=&#34;relative mt-[0.5rem] mr-2&#34; href=&#34;https://xerolinux.xyz/tags/archlinux/&#34;
+                &gt;&lt;span class=&#34;flex cursor-pointer&#34;&gt;
   &lt;span
     class=&#34;rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400&#34;&gt;
     ArchLinux
   &lt;/span&gt;
 &lt;/span&gt;
-
-              &lt;/span&gt;
+&lt;/a
+              &gt;
             
           
         
@@ -912,8 +879,12 @@
 
     &lt;/div&gt;
     
+    
+      
+    
+    
   &lt;/div&gt;
-&lt;/a&gt;
+&lt;/div&gt;
 
   &lt;/section&gt;
 
@@ -933,11 +904,23 @@
 
 
 
+
+
   
 
 
   &lt;section class=&#34;space-y-10 w-full&#34;&gt;
     
+    
+
+
+
+
+
+
+
+  
+
 
 
 
@@ -952,23 +935,20 @@
 
 
 
-
-  
-
-
-
-
-
-&lt;a class=&#34;flex flex-wrap md:flex-nowrap article &#34; 
-  href=&#34;https://xerolinux.xyz/posts/tkg-nvidia-all/&#34;&gt;
+&lt;div class=&#34;group-hover-card group flex flex-wrap md:flex-nowrap article relative &#34;&gt;
+  &lt;a
+    
+  href=&#34;https://xerolinux.xyz/posts/tkg-nvidia-all/&#34;
+    class=&#34;absolute inset-0&#34;
+    aria-label=&#34;&#34;&gt;&lt;/a&gt;
         
-        &lt;div class=&#34;w-full md:w-auto h-full thumbnail nozoom thumbnailshadow md:mr-7&#34; style=&#34;background-image:url(/posts/tkg-nvidia-all/featured.webp);&#34;&gt;&lt;/div&gt;
+          &lt;div class=&#34;w-full md:w-auto h-full thumbnail nozoom thumbnailshadow md:mr-7&#34; style=&#34;background-image:url(/posts/tkg-nvidia-all/featured.webp);&#34;&gt;&lt;/div&gt;
         
       &lt;div class=&#34; mt-3 md:mt-0&#34;&gt;
     &lt;div class=&#34;items-center text-left text-xl font-semibold&#34;&gt;
       
         &lt;div
-          class=&#34;font-bold text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral&#34;
+          class=&#34;group-hover-card-title decoration-primary-500 dark:text-neutral text-xl font-bold text-neutral-800 group-hover:underline group-hover:underline-offset-2&#34;
           href=&#34;https://xerolinux.xyz/posts/tkg-nvidia-all/&#34;&gt;
           TKG nVidia-AiO Installer
         &lt;/div&gt;
@@ -976,7 +956,7 @@
       
       
     &lt;/div&gt;
-    &lt;div class=&#34;text-sm text-neutral-500 dark:text-neutral-400&#34;&gt;
+    &lt;div class=&#34;group-hover-cancel text-sm text-neutral-500 dark:text-neutral-400&#34;&gt;
       
 
 
@@ -1045,14 +1025,8 @@
     title=&#34;views&#34;
     &gt;loading&lt;/span
   &gt;
-  &lt;span class=&#34;inline-block align-text-bottom&#34;&gt;
-
-  &lt;span class=&#34;relative block icon&#34;&gt;
-    &lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 576 512&#34;&gt;
-&lt;path fill=&#34;currentColor&#34; d=&#34;M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z&#34;/&gt;&lt;/svg&gt;
-  &lt;/span&gt;
-
-&lt;/span&gt;
+  &lt;span class=&#34;inline-block align-text-bottom&#34;&gt;&lt;span class=&#34;relative block icon&#34;&gt;&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 576 512&#34;&gt;
+&lt;path fill=&#34;currentColor&#34; d=&#34;M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z&#34;/&gt;&lt;/svg&gt;&lt;/span&gt;&lt;/span&gt;
 &lt;/span&gt;
 &lt;span class=&#34;px-2 text-primary-500&#34;&gt;&amp;middot;&lt;/span&gt;&lt;span&gt;
   
@@ -1073,14 +1047,8 @@
     title=&#34;likes&#34;
     &gt;loading&lt;/span
   &gt;
-  &lt;span class=&#34;inline-block align-text-bottom&#34;&gt;
-
-  &lt;span class=&#34;relative block icon&#34;&gt;
-    &lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 512 512&#34;&gt;
-&lt;path fill=&#34;currentColor&#34; d=&#34;M47.6 300.4L228.3 469.1c7.5 7 17.4 10.9 27.7 10.9s20.2-3.9 27.7-10.9L464.4 300.4c30.4-28.3 47.6-68 47.6-109.5v-5.8c0-69.9-50.5-129.5-119.4-141C347 36.5 300.6 51.4 268 84L256 96 244 84c-32.6-32.6-79-47.5-124.6-39.9C50.5 55.6 0 115.2 0 185.1v5.8c0 41.5 17.2 81.2 47.6 109.5z&#34;/&gt;&lt;/svg&gt;
-  &lt;/span&gt;
-
-&lt;/span&gt;
+  &lt;span class=&#34;inline-block align-text-bottom&#34;&gt;&lt;span class=&#34;relative block icon&#34;&gt;&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 512 512&#34;&gt;
+&lt;path fill=&#34;currentColor&#34; d=&#34;M47.6 300.4L228.3 469.1c7.5 7 17.4 10.9 27.7 10.9s20.2-3.9 27.7-10.9L464.4 300.4c30.4-28.3 47.6-68 47.6-109.5v-5.8c0-69.9-50.5-129.5-119.4-141C347 36.5 300.6 51.4 268 84L256 96 244 84c-32.6-32.6-79-47.5-124.6-39.9C50.5 55.6 0 115.2 0 185.1v5.8c0 41.5 17.2 81.2 47.6 109.5z&#34;/&gt;&lt;/svg&gt;&lt;/span&gt;&lt;/span&gt;
 &lt;/span&gt;
 
     
@@ -1120,101 +1088,85 @@
         
           
             
-              &lt;span
-                class=&#34;mr-2 mt-[0.5rem]&#34;
-                onclick=&#34;window.open(&amp;#34;/tags/nvidia/&amp;#34;,&#39;_self&#39;);return false;&#34;&gt;
-                &lt;span class=&#34;flex cursor-pointer&#34;&gt;
+              &lt;a class=&#34;relative mt-[0.5rem] mr-2&#34; href=&#34;https://xerolinux.xyz/tags/nvidia/&#34;
+                &gt;&lt;span class=&#34;flex cursor-pointer&#34;&gt;
   &lt;span
     class=&#34;rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400&#34;&gt;
     Nvidia
   &lt;/span&gt;
 &lt;/span&gt;
-
-              &lt;/span&gt;
+&lt;/a
+              &gt;
             
-              &lt;span
-                class=&#34;mr-2 mt-[0.5rem]&#34;
-                onclick=&#34;window.open(&amp;#34;/tags/drivers/&amp;#34;,&#39;_self&#39;);return false;&#34;&gt;
-                &lt;span class=&#34;flex cursor-pointer&#34;&gt;
+              &lt;a class=&#34;relative mt-[0.5rem] mr-2&#34; href=&#34;https://xerolinux.xyz/tags/drivers/&#34;
+                &gt;&lt;span class=&#34;flex cursor-pointer&#34;&gt;
   &lt;span
     class=&#34;rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400&#34;&gt;
     Drivers
   &lt;/span&gt;
 &lt;/span&gt;
-
-              &lt;/span&gt;
+&lt;/a
+              &gt;
             
-              &lt;span
-                class=&#34;mr-2 mt-[0.5rem]&#34;
-                onclick=&#34;window.open(&amp;#34;/tags/gpu/&amp;#34;,&#39;_self&#39;);return false;&#34;&gt;
-                &lt;span class=&#34;flex cursor-pointer&#34;&gt;
+              &lt;a class=&#34;relative mt-[0.5rem] mr-2&#34; href=&#34;https://xerolinux.xyz/tags/gpu/&#34;
+                &gt;&lt;span class=&#34;flex cursor-pointer&#34;&gt;
   &lt;span
     class=&#34;rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400&#34;&gt;
     Gpu
   &lt;/span&gt;
 &lt;/span&gt;
-
-              &lt;/span&gt;
+&lt;/a
+              &gt;
             
-              &lt;span
-                class=&#34;mr-2 mt-[0.5rem]&#34;
-                onclick=&#34;window.open(&amp;#34;/tags/legacy/&amp;#34;,&#39;_self&#39;);return false;&#34;&gt;
-                &lt;span class=&#34;flex cursor-pointer&#34;&gt;
+              &lt;a class=&#34;relative mt-[0.5rem] mr-2&#34; href=&#34;https://xerolinux.xyz/tags/legacy/&#34;
+                &gt;&lt;span class=&#34;flex cursor-pointer&#34;&gt;
   &lt;span
     class=&#34;rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400&#34;&gt;
     Legacy
   &lt;/span&gt;
 &lt;/span&gt;
-
-              &lt;/span&gt;
+&lt;/a
+              &gt;
             
-              &lt;span
-                class=&#34;mr-2 mt-[0.5rem]&#34;
-                onclick=&#34;window.open(&amp;#34;/tags/linux/&amp;#34;,&#39;_self&#39;);return false;&#34;&gt;
-                &lt;span class=&#34;flex cursor-pointer&#34;&gt;
+              &lt;a class=&#34;relative mt-[0.5rem] mr-2&#34; href=&#34;https://xerolinux.xyz/tags/linux/&#34;
+                &gt;&lt;span class=&#34;flex cursor-pointer&#34;&gt;
   &lt;span
     class=&#34;rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400&#34;&gt;
     Linux
   &lt;/span&gt;
 &lt;/span&gt;
-
-              &lt;/span&gt;
+&lt;/a
+              &gt;
             
-              &lt;span
-                class=&#34;mr-2 mt-[0.5rem]&#34;
-                onclick=&#34;window.open(&amp;#34;/tags/opensource/&amp;#34;,&#39;_self&#39;);return false;&#34;&gt;
-                &lt;span class=&#34;flex cursor-pointer&#34;&gt;
+              &lt;a class=&#34;relative mt-[0.5rem] mr-2&#34; href=&#34;https://xerolinux.xyz/tags/opensource/&#34;
+                &gt;&lt;span class=&#34;flex cursor-pointer&#34;&gt;
   &lt;span
     class=&#34;rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400&#34;&gt;
     Opensource
   &lt;/span&gt;
 &lt;/span&gt;
-
-              &lt;/span&gt;
+&lt;/a
+              &gt;
             
-              &lt;span
-                class=&#34;mr-2 mt-[0.5rem]&#34;
-                onclick=&#34;window.open(&amp;#34;/tags/bash/&amp;#34;,&#39;_self&#39;);return false;&#34;&gt;
-                &lt;span class=&#34;flex cursor-pointer&#34;&gt;
+              &lt;a class=&#34;relative mt-[0.5rem] mr-2&#34; href=&#34;https://xerolinux.xyz/tags/bash/&#34;
+                &gt;&lt;span class=&#34;flex cursor-pointer&#34;&gt;
   &lt;span
     class=&#34;rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400&#34;&gt;
     Bash
   &lt;/span&gt;
 &lt;/span&gt;
-
-              &lt;/span&gt;
+&lt;/a
+              &gt;
             
-              &lt;span
-                class=&#34;mr-2 mt-[0.5rem]&#34;
-                onclick=&#34;window.open(&amp;#34;/tags/script/&amp;#34;,&#39;_self&#39;);return false;&#34;&gt;
-                &lt;span class=&#34;flex cursor-pointer&#34;&gt;
+              &lt;a class=&#34;relative mt-[0.5rem] mr-2&#34; href=&#34;https://xerolinux.xyz/tags/script/&#34;
+                &gt;&lt;span class=&#34;flex cursor-pointer&#34;&gt;
   &lt;span
     class=&#34;rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400&#34;&gt;
     Script
   &lt;/span&gt;
 &lt;/span&gt;
-
-              &lt;/span&gt;
+&lt;/a
+              &gt;
             
           
         
@@ -1229,8 +1181,12 @@
 
     &lt;/div&gt;
     
+    
+      
+    
+    
   &lt;/div&gt;
-&lt;/a&gt;
+&lt;/div&gt;
 
   &lt;/section&gt;
 
@@ -1239,11 +1195,23 @@
 
 
 
+
+
   
 
 
   &lt;section class=&#34;space-y-10 w-full&#34;&gt;
     
+    
+
+
+
+
+
+
+
+  
+
 
 
 
@@ -1258,23 +1226,20 @@
 
 
 
-
-  
-
-
-
-
-
-&lt;a class=&#34;flex flex-wrap md:flex-nowrap article &#34; 
-  href=&#34;https://xerolinux.xyz/posts/chaotic-aur/&#34;&gt;
+&lt;div class=&#34;group-hover-card group flex flex-wrap md:flex-nowrap article relative &#34;&gt;
+  &lt;a
+    
+  href=&#34;https://xerolinux.xyz/posts/chaotic-aur/&#34;
+    class=&#34;absolute inset-0&#34;
+    aria-label=&#34;&#34;&gt;&lt;/a&gt;
         
-        &lt;div class=&#34;w-full md:w-auto h-full thumbnail nozoom thumbnailshadow md:mr-7&#34; style=&#34;background-image:url(/posts/chaotic-aur/featured.webp);&#34;&gt;&lt;/div&gt;
+          &lt;div class=&#34;w-full md:w-auto h-full thumbnail nozoom thumbnailshadow md:mr-7&#34; style=&#34;background-image:url(/posts/chaotic-aur/featured.webp);&#34;&gt;&lt;/div&gt;
         
       &lt;div class=&#34; mt-3 md:mt-0&#34;&gt;
     &lt;div class=&#34;items-center text-left text-xl font-semibold&#34;&gt;
       
         &lt;div
-          class=&#34;font-bold text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral&#34;
+          class=&#34;group-hover-card-title decoration-primary-500 dark:text-neutral text-xl font-bold text-neutral-800 group-hover:underline group-hover:underline-offset-2&#34;
           href=&#34;https://xerolinux.xyz/posts/chaotic-aur/&#34;&gt;
           The Chaotic-AUR
         &lt;/div&gt;
@@ -1282,7 +1247,7 @@
       
       
     &lt;/div&gt;
-    &lt;div class=&#34;text-sm text-neutral-500 dark:text-neutral-400&#34;&gt;
+    &lt;div class=&#34;group-hover-cancel text-sm text-neutral-500 dark:text-neutral-400&#34;&gt;
       
 
 
@@ -1351,14 +1316,8 @@
     title=&#34;views&#34;
     &gt;loading&lt;/span
   &gt;
-  &lt;span class=&#34;inline-block align-text-bottom&#34;&gt;
-
-  &lt;span class=&#34;relative block icon&#34;&gt;
-    &lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 576 512&#34;&gt;
-&lt;path fill=&#34;currentColor&#34; d=&#34;M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z&#34;/&gt;&lt;/svg&gt;
-  &lt;/span&gt;
-
-&lt;/span&gt;
+  &lt;span class=&#34;inline-block align-text-bottom&#34;&gt;&lt;span class=&#34;relative block icon&#34;&gt;&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 576 512&#34;&gt;
+&lt;path fill=&#34;currentColor&#34; d=&#34;M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z&#34;/&gt;&lt;/svg&gt;&lt;/span&gt;&lt;/span&gt;
 &lt;/span&gt;
 &lt;span class=&#34;px-2 text-primary-500&#34;&gt;&amp;middot;&lt;/span&gt;&lt;span&gt;
   
@@ -1379,14 +1338,8 @@
     title=&#34;likes&#34;
     &gt;loading&lt;/span
   &gt;
-  &lt;span class=&#34;inline-block align-text-bottom&#34;&gt;
-
-  &lt;span class=&#34;relative block icon&#34;&gt;
-    &lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 512 512&#34;&gt;
-&lt;path fill=&#34;currentColor&#34; d=&#34;M47.6 300.4L228.3 469.1c7.5 7 17.4 10.9 27.7 10.9s20.2-3.9 27.7-10.9L464.4 300.4c30.4-28.3 47.6-68 47.6-109.5v-5.8c0-69.9-50.5-129.5-119.4-141C347 36.5 300.6 51.4 268 84L256 96 244 84c-32.6-32.6-79-47.5-124.6-39.9C50.5 55.6 0 115.2 0 185.1v5.8c0 41.5 17.2 81.2 47.6 109.5z&#34;/&gt;&lt;/svg&gt;
-  &lt;/span&gt;
-
-&lt;/span&gt;
+  &lt;span class=&#34;inline-block align-text-bottom&#34;&gt;&lt;span class=&#34;relative block icon&#34;&gt;&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 512 512&#34;&gt;
+&lt;path fill=&#34;currentColor&#34; d=&#34;M47.6 300.4L228.3 469.1c7.5 7 17.4 10.9 27.7 10.9s20.2-3.9 27.7-10.9L464.4 300.4c30.4-28.3 47.6-68 47.6-109.5v-5.8c0-69.9-50.5-129.5-119.4-141C347 36.5 300.6 51.4 268 84L256 96 244 84c-32.6-32.6-79-47.5-124.6-39.9C50.5 55.6 0 115.2 0 185.1v5.8c0 41.5 17.2 81.2 47.6 109.5z&#34;/&gt;&lt;/svg&gt;&lt;/span&gt;&lt;/span&gt;
 &lt;/span&gt;
 
     
@@ -1426,89 +1379,75 @@
         
           
             
-              &lt;span
-                class=&#34;mr-2 mt-[0.5rem]&#34;
-                onclick=&#34;window.open(&amp;#34;/tags/aur/&amp;#34;,&#39;_self&#39;);return false;&#34;&gt;
-                &lt;span class=&#34;flex cursor-pointer&#34;&gt;
+              &lt;a class=&#34;relative mt-[0.5rem] mr-2&#34; href=&#34;https://xerolinux.xyz/tags/aur/&#34;
+                &gt;&lt;span class=&#34;flex cursor-pointer&#34;&gt;
   &lt;span
     class=&#34;rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400&#34;&gt;
     AUR
   &lt;/span&gt;
 &lt;/span&gt;
-
-              &lt;/span&gt;
+&lt;/a
+              &gt;
             
-              &lt;span
-                class=&#34;mr-2 mt-[0.5rem]&#34;
-                onclick=&#34;window.open(&amp;#34;/tags/chaotic-aur/&amp;#34;,&#39;_self&#39;);return false;&#34;&gt;
-                &lt;span class=&#34;flex cursor-pointer&#34;&gt;
+              &lt;a class=&#34;relative mt-[0.5rem] mr-2&#34; href=&#34;https://xerolinux.xyz/tags/chaotic-aur/&#34;
+                &gt;&lt;span class=&#34;flex cursor-pointer&#34;&gt;
   &lt;span
     class=&#34;rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400&#34;&gt;
     Chaotic-AUR
   &lt;/span&gt;
 &lt;/span&gt;
-
-              &lt;/span&gt;
+&lt;/a
+              &gt;
             
-              &lt;span
-                class=&#34;mr-2 mt-[0.5rem]&#34;
-                onclick=&#34;window.open(&amp;#34;/tags/repos/&amp;#34;,&#39;_self&#39;);return false;&#34;&gt;
-                &lt;span class=&#34;flex cursor-pointer&#34;&gt;
+              &lt;a class=&#34;relative mt-[0.5rem] mr-2&#34; href=&#34;https://xerolinux.xyz/tags/repos/&#34;
+                &gt;&lt;span class=&#34;flex cursor-pointer&#34;&gt;
   &lt;span
     class=&#34;rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400&#34;&gt;
     Repos
   &lt;/span&gt;
 &lt;/span&gt;
-
-              &lt;/span&gt;
+&lt;/a
+              &gt;
             
-              &lt;span
-                class=&#34;mr-2 mt-[0.5rem]&#34;
-                onclick=&#34;window.open(&amp;#34;/tags/repository/&amp;#34;,&#39;_self&#39;);return false;&#34;&gt;
-                &lt;span class=&#34;flex cursor-pointer&#34;&gt;
+              &lt;a class=&#34;relative mt-[0.5rem] mr-2&#34; href=&#34;https://xerolinux.xyz/tags/repository/&#34;
+                &gt;&lt;span class=&#34;flex cursor-pointer&#34;&gt;
   &lt;span
     class=&#34;rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400&#34;&gt;
     Repository
   &lt;/span&gt;
 &lt;/span&gt;
-
-              &lt;/span&gt;
+&lt;/a
+              &gt;
             
-              &lt;span
-                class=&#34;mr-2 mt-[0.5rem]&#34;
-                onclick=&#34;window.open(&amp;#34;/tags/archlinux/&amp;#34;,&#39;_self&#39;);return false;&#34;&gt;
-                &lt;span class=&#34;flex cursor-pointer&#34;&gt;
+              &lt;a class=&#34;relative mt-[0.5rem] mr-2&#34; href=&#34;https://xerolinux.xyz/tags/archlinux/&#34;
+                &gt;&lt;span class=&#34;flex cursor-pointer&#34;&gt;
   &lt;span
     class=&#34;rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400&#34;&gt;
     ArchLinux
   &lt;/span&gt;
 &lt;/span&gt;
-
-              &lt;/span&gt;
+&lt;/a
+              &gt;
             
-              &lt;span
-                class=&#34;mr-2 mt-[0.5rem]&#34;
-                onclick=&#34;window.open(&amp;#34;/tags/arch/&amp;#34;,&#39;_self&#39;);return false;&#34;&gt;
-                &lt;span class=&#34;flex cursor-pointer&#34;&gt;
+              &lt;a class=&#34;relative mt-[0.5rem] mr-2&#34; href=&#34;https://xerolinux.xyz/tags/arch/&#34;
+                &gt;&lt;span class=&#34;flex cursor-pointer&#34;&gt;
   &lt;span
     class=&#34;rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400&#34;&gt;
     Arch
   &lt;/span&gt;
 &lt;/span&gt;
-
-              &lt;/span&gt;
+&lt;/a
+              &gt;
             
-              &lt;span
-                class=&#34;mr-2 mt-[0.5rem]&#34;
-                onclick=&#34;window.open(&amp;#34;/tags/linux/&amp;#34;,&#39;_self&#39;);return false;&#34;&gt;
-                &lt;span class=&#34;flex cursor-pointer&#34;&gt;
+              &lt;a class=&#34;relative mt-[0.5rem] mr-2&#34; href=&#34;https://xerolinux.xyz/tags/linux/&#34;
+                &gt;&lt;span class=&#34;flex cursor-pointer&#34;&gt;
   &lt;span
     class=&#34;rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400&#34;&gt;
     Linux
   &lt;/span&gt;
 &lt;/span&gt;
-
-              &lt;/span&gt;
+&lt;/a
+              &gt;
             
           
         
@@ -1523,8 +1462,12 @@
 
     &lt;/div&gt;
     
+    
+      
+    
+    
   &lt;/div&gt;
-&lt;/a&gt;
+&lt;/div&gt;
 
   &lt;/section&gt;
 
