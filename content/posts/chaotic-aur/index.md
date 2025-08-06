@@ -19,7 +19,7 @@ If you want to start using the **Chaotic-AUR** or just need to copy the setup co
 
 Before we begin, I would like to remind everyone that if you are using the **XeroLinux Toolkit** it has an option that automates everything for you. Check it out on **Github** below.
 
-{{< github repo="xerolinux/xlapit-cli" >}}
+{{< github repo="xerolinuxdev/xlapit-cli" >}}
 
 If you prefer to do it manually, then we start by retrieving the primary key to enable the installation of our keyring and mirror list:
 

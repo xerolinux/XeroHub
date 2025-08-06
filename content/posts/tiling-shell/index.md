@@ -34,7 +34,7 @@ With that out of the way, I say this coz many have tried grabbing it from the **
 
 > If you are using the **XeroLinux** toolkit, I added an option that will install everything you need to start customizing your **Gnome** experience. Which includes the **Extension Manager** application, that can be found under the **4 : System Customization** menu.
 
-{{< github repo="xerolinux/xlapit-cli" >}}
+{{< github repo="xerolinuxdev/xlapit-cli" >}}
 
 Now that you got the extension installed, here's some usage tips.
 
