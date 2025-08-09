@@ -34,7 +34,10 @@ Preview ISOs are for testing purposes only. [**More Info**](https://wiki.xerolin
 
 <div align="center">
 
------- Main Content ------
+Need help, have Questions or Suggestions ?
+
+{{< button href="https://discord.xerolinux.xyz/" target="_blank" >}}
+🗨️ Join us on Discord 🗨️ {{< /button >}}
 
 </div>
 
