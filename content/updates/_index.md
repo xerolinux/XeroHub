@@ -1,6 +1,4 @@
 ---
-title: "XeroLinux News"
-description: News Related to XeroLinux
 logo: "logos/logo.png"
 ---
 
