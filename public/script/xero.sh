@@ -204,7 +204,7 @@ install_gnome() {
   cd ~ && mv .bashrc .bashrc.bk && wget https://raw.githubusercontent.com/XeroLinuxDev/xero-build/refs/heads/main/XeroG/airootfs/etc/skel/.bashrc
   sudo rm /etc/lsb-release
   sudo wget https://raw.githubusercontent.com/XeroLinuxDev/xero-build/refs/heads/main/XeroG/airootfs/etc/xerolinux-release -O /etc/lsb-release
-  git clone git clone https://github.com/xerolinux/xero-grubs
+  git clone https://github.com/xerolinux/xero-grubs
   cd xero-grubs/XeroSimple/ && sudo ./install.sh
   cd .. && rm -rf xero-grubs
 }
