@@ -17,19 +17,14 @@ print_title() {
   clear
   echo -e "${BOLD}${BLUE}"
   if command -v figlet &>/dev/null; then
-    figlet -f small "Xero DE Installer"
+    figlet -f small "XeroLinux Installer"
   else
     echo "╔════════════════════════════════════════════════════╗"
-    echo "║                XERO DESKTOP INSTALLER              ║"
+    echo "║                 XEROLINUX INSTALLER                ║"
     echo "╚════════════════════════════════════════════════════╝"
   fi
   echo -e "${RESET}"
 }
-
-warning() {
-  echo -e "\n${RED}⚠️ This DE is still in Alpha stages — use AT YOUR OWN RISK!${RESET}\n"
-}
-
 
 print_section() {
   local msg="$1"
@@ -41,7 +36,7 @@ print_section() {
 # Pre-checks
 check_vanilla_arch() {
   if ! grep -q '^ID=arch' /etc/os-release || ! [ -f /etc/arch-release ]; then
-    echo -e "${RED}This script is for Vanilla Arch Linux only. Exiting.${RESET}"
+    echo -e "${RED}This script is for Plain Arch Linux only. Exiting.${RESET}"
     exit 1
   fi
 }
