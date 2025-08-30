@@ -220,7 +220,7 @@ post_install() {
   clear && print_section "Bluetooth Stuff..."
   install_packages bluez bluez-utils bluez-plugins bluez-hid2hci bluez-cups bluez-libs bluez-tools blueberry
   sudo systemctl enable bluetooth
-  sudo mkdir /var/lib/flatpak/overrides/
+  sudo mkdir -p /var/lib/flatpak/overrides/
   sudo wget https://raw.githubusercontent.com/XeroLinuxDev/xero-build/refs/heads/main/XeroKDE/airootfs/var/lib/flatpak/overrides/global -O /var/lib/flatpak/overrides/global
 
   clear && print_section "System Stuff..."
