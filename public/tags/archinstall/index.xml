@@ -30,7 +30,7 @@
   &gt;
   &lt;span
     
-      class=&#34;ltr:pr-3 rtl:pl-3 flex items-center&#34; style=&#34;color: #1d3557&#34;
+      class=&#34;pe-3 flex items-center&#34; style=&#34;color: #1d3557&#34;
     
     &gt;
     &lt;span class=&#34;relative block icon&#34;&gt;&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 448 512&#34;&gt;
@@ -77,7 +77,7 @@
   &gt;
   &lt;span
     
-      class=&#34;ltr:pr-3 rtl:pl-3 flex items-center&#34; style=&#34;color: #1d3557&#34;
+      class=&#34;pe-3 flex items-center&#34; style=&#34;color: #1d3557&#34;
     
     &gt;
     &lt;span class=&#34;relative block icon&#34;&gt;&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 448 512&#34;&gt;

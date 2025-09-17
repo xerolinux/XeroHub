@@ -22,7 +22,7 @@ Discover a Distro Fueled by our Passion for GNU/Linux.
 
 <div align="center">
 
-<strong>Make Your Selection</strong>
+<strong>ISO Downloads :</strong>
 
 Preview ISOs are for testing purposes only. [**More Info**](https://wiki.xerolinux.xyz/distro/#free-demos)
 
