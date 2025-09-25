@@ -24,7 +24,7 @@ Discover a Distro Fueled by our Passion for GNU/Linux.
 
 <strong>ISO Downloads :</strong>
 
-Preview ISO is for testing purposes only. [**More Info**](https://wiki.xerolinux.xyz/distro/#free-demos)
+Preview ISO is for testing purposes only. [**More Info**](https://wiki.xerolinux.xyz/distro/#free-demo)
 
 {{< button href="https://iso.xerolinux.xyz/demo/" target="_blank" >}}
 ↪️ Preview/Demo ISO ↩️ {{< /button >}} &emsp;&emsp;&emsp; {{< button href="https://ko-fi.com/xerolinux/shop" target="_blank" >}}
