@@ -15,7 +15,7 @@ Our Discord server, while less active than some others, is wonderful just the wa
 
 **XeroLinux** is currently in the process of shedding some extra weight, but don’t worry, the project as a whole isn’t going anywhere. In fact, things will be changing for the better, I assure you. While we will be losing a few scripts, they will be replaced with new and improved ones that enhance the overall experience.
 
-Additionally, we will be discontinuing the **Gnome ISO** and dropping support for other distros to streamline our efforts. I am doing this so I can focus more on the most important aspect—stability—without spreading myself too thin. This project is not about quantity but quality, and this refocusing will ensure it continues to thrive as the distro I have always wanted.
+Additionally, we will be discontinuing the **Gnome ISO** and dropping support for other distros to streamline our efforts. I am doing this so I can focus more on the most important aspect—stability—without spreading myself too thin. This project is not about quantity but quality, hence why there will be no more spins, not now not ever, so please do not request any. This refocusing will ensure it continues to thrive as the distro I have always wanted.
 
 That’s why, from this point forward, there will only be one version: the KDE version. It’s simply because KDE is the desktop environment I love, flaws and all. It’s a bit like a marriage, committed for the long haul, “til death do us part.” Alongside this change, the Discord server will undergo some minor adjustments as well.
 
