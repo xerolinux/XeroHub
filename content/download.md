@@ -12,9 +12,9 @@ Welcome to the official download page for **XeroLinux** — a fast, lightweight,
 
 ## 🧪 Demo Version
 
-Check out the *free* **Demo ISO** to try it first. Learn more here: [More Info](https://wiki.xerolinux.xyz/distro/#free-demo)
+Check out the *free* **Demo ISO** to try it first. Learn more here : [Demo Info](https://wiki.xerolinux.xyz/distro/#free-demo)
 
-{{< alert cardColor="#993399" >}}
+{{< alert cardColor="#9966ff40" >}}
 - Runs as a Live Environment **without an installer**  
 - Uses limited **100 MiB cow-space** (RAM overlay) no updates
 - Installing drivers or software requiring a reboot **won’t work**  
@@ -31,9 +31,9 @@ This demo is ideal for exploring the UI, testing hardware compatibility, and pee
 
 ## 💿 Unlocked Version
 
-When you're ready to fully adopt **XeroLinux**, go for the **Unlocked Version**, which includes:
+When you're ready to fully adopt **XeroLinux**, go for the **Unlocked Version**, which includes :
 
-{{< alert cardColor="#993399" >}}
+{{< alert cardColor="#9966ff40" >}}
 - Full system installer  
 - Unrestricted package management  
 - All features and updates enabled by default  
@@ -54,7 +54,7 @@ Before jumping in, please make sure to read the the [**XeroWiki**](https://wiki.
 
 > 📌 Note: The wiki evolves with each release, so do not take it as facts for all versions.
 
-Explore the source on GitHub:
+Explore the source on GitHub :
 
 {{< github repo="XeroLinuxDev/XeroBuild" >}}
 
