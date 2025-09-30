@@ -14,24 +14,29 @@ pageRef = "updates"
 weight = 30
 
 [[main]]
+name = "Discord"
+url = "https://discord.xerolinux.xyz/"
+weight = 40
+
+[[main]]
 name = "My Gear"
 pageRef = "gear"
-weight = 40
+weight = 50
 
 [[main]]
 name = "Merch"
 url = "https://shop.xerolinux.xyz/"
-weight = 50
+weight = 60
 
 [[main]]
 name = "Wiki"
 url = "https://wiki.xerolinux.xyz/"
-weight = 60
+weight = 70
 
 [[main]]
 pre = "rss"
 url = "/index.xml"
-weight = 70
+weight = 80
 
 [[footer]]
 none = "none"
