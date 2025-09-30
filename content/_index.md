@@ -20,18 +20,6 @@ Discover a Distro Fueled by our Passion for GNU/Linux.
 
 {{< carousel images="shots/*" aspectRatio="16-9" interval="3600" >}}</div>
 
-<div align="center">
-
-<strong>ISO Downloads :</strong>
-
-Demo ISO is for testing purposes only. [**More Info**](https://wiki.xerolinux.xyz/distro/#free-demo)
-
-{{< button href="https://iso.xerolinux.xyz/demo/" target="_blank" >}}
-↪️ Demo ISO ↩️ {{< /button >}} &emsp;&emsp;&emsp; {{< button href="https://ko-fi.com/xerolinux/shop" target="_blank" >}}
-💰 Full ISO 💰
-{{< /button >}}
-</div>
-
 #### XeroLinux: Arch, Effortlessly Refined
 
 **XeroLinux** represents an innovative *Arch-based* distribution designed to demystify the installation process while preserving the core principles of user-driven customization. This distribution offers a thoughtful approach to Linux that balances accessibility with the renowned flexibility of **ArchLinux**.
