@@ -41,10 +41,16 @@ Loved the demo? Get the **full unlocked version** with :
 💰 Download Full ISO 💰
 {{< /button >}}
 
+## 📝 Read the Wiki
+
+Before jumping in, please make sure to read the [**XeroWiki**](https://wiki.xerolinux.xyz/distro/), understand what's going on and how things are done. Also note that the wiki subject to change with every release, so do not take it as facts for all versions. Finally to access source code head on over to our Project Github...
+
+{{< github repo="XeroLinuxDev/XeroBuild" >}}
+
 ---
 
 ## ❤️ Project Support
 
-Your support helps keep this project alive and thriving for the long haul. Try the demo, and if it speaks to you, please consider donating => [**Here**](https://ko-fi.com/XeroLinux)
+Your support helps keep this project alive and thriving for the long haul. Try the demo, and if it speaks to you, please consider donating => [**Here**](https://ko-fi.com/XeroLinux). 
 
 
