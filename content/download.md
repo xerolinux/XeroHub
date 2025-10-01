@@ -23,9 +23,13 @@ Check out the *free* **Demo ISO** to try it first. Learn more here : [Demo Info]
 
 This demo is ideal for exploring the UI, testing hardware compatibility, and peeking at how XeroLinux is configured — all with **zero commitment**.
 
+<div align="center">
+
 {{< button href="https://iso.xerolinux.xyz/demo/" target="_blank" >}}
 ↪️ Download Demo ISO ↩️
 {{< /button >}}
+
+</div>
 
 ---
 
@@ -40,11 +44,15 @@ When you're ready to fully adopt **XeroLinux**, go for the **Unlocked Version**,
 - Access to full community support and feature requests  
 {{< /alert >}}
 
-> ⚠️ Access to this version requires a donation.
+<div align="center">
+
+⚠️ Access to this version requires a donation. ⚠️
 
 {{< button href="https://ko-fi.com/s/cf9def9630" target="_blank" >}}
 💰 Download Full ISO 💰
 {{< /button >}}
+
+</div>
 
 ---
 
@@ -52,7 +60,7 @@ When you're ready to fully adopt **XeroLinux**, go for the **Unlocked Version**,
 
 Before jumping in, please make sure to read the the [**XeroWiki**](https://wiki.xerolinux.xyz/distro/) for guides, details, and version‑specific instructions. 
 
-> 📌 Note: The wiki evolves with each release, so do not take it as facts for all versions.
+> 📌 Note : The wiki evolves with each release.
 
 Explore the source on GitHub :
 
