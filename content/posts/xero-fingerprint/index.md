@@ -7,25 +7,27 @@ tags: ["Fingerprint", "Arch", "ArchLinux", "XeroLinux", "Linux"]
 ---
 
 {{< alert icon="fire" cardColor="#993350" iconColor="#1d3557" textColor="#f1faee" >}}
-**Status :** Before you get all excited, this tool was created for **XeroLinux** no other distro. Trying on others will result in failure. However it will be opened up in the future so you can install n use it on the likes of **Debian** and **Fedora** based distros. Dource code => [**Here**](https://github.com/XeroLinuxDev/xfprintd-gui)
+**Status :** Before you get all excited, this tool was created for **XeroLinux** no other distro. Trying on others will result in failure. However it will be opened up in the future so you can install n use it on the likes of **Debian** and **Fedora** based distros. Source code => [**Here**](https://github.com/XeroLinuxDev/xfprintd-gui)
 {{< /alert >}}
 
 ### What is it
 
-Our fingerprint tool is a handy utility created by us in **Rust**, that allows you to use your fingerprint reader to authenticate yourself quickly and securely. With this tool, you can enroll your fingerprint through a simple and intuitive GUI, which creates a digital fingerprint profile stored safely on your system. Once set up, it integrates with Linux's authentication framework (such as PAM), letting you log in, or authorize commands like sudo just by placing your finger on the scanner, no need to type your password every time. Setup usually involves installing a package like "fprintd," enrolling your fingerprint via command line, and enabling fingerprint authentication for your login and sudo prompts. This improves both the convenience and security of your Linux experience by using biometrics in place of or alongside passwords.
+Our fingerprint tool is a handy utility created by us in **Rust**, that allows you to use your fingerprint reader to authenticate yourself quickly and securely. With this tool, you can enroll your fingerprint through a simple and intuitive GUI, which creates a digital fingerprint profile stored safely on your system. 
+
+Once set up, it integrates with Linux's authentication framework (such as PAM), letting you log in, or authorize commands like sudo just by placing your finger on the scanner, no need to type your password every time. Setup usually involves installing a package like "fprintd," enrolling your fingerprint via command line, and enabling fingerprint authentication for your login and sudo prompts. This improves both the convenience and security of your Linux experience by using biometrics in place of or alongside passwords.
 
 We have also taken the time to ensure you do not do anything stupid like locking yourself out of your system. There are checks in place.
 
 ### Reasons
 
-The reason we decided to create this tool is simple, I have a **Thinkpad** laptop with a fingerprint sensor that I didn't want to go to waste, tried looking for an existing tool that would help with it, but alas I couldn't find one, not on the Arch repos or the **A.U.R**. There was one, but it's from almost a decade ago, making it incompatible with any of the modern scanners. 
+The reason we decided to create this tool is simple, I have a **Thinkpad** laptop with a fingerprint sensor that I didn't want to go to waste, looked for an existing tool that would help with it, but alas I couldn't find one, not on the Arch repos or the **A.U.R**. There was one, but it's from almost a decade ago, making it incompatible with any of the modern scanners. 
 
-So what could I do ? Accept it and move on like so many have done in the past ? Nope, I took this as an opportunity for a challenge. So I sat down, and began work on the GUI. And before you ask, yes I used **ChatGPT Claude A.I** to do it. Remember I am not a developer but an ideas person. Anyway with the GUI in place I went looking for an actual developer who can help bring this idea to life. I have since found one and the rest is history...
+Should I accept it and move on like so many have done in the past ? Nope, I took this as a challenge. So I sat down, and began work on the GUI. And before you ask, yes I used **ChatGPT Claude A.I** to do it. Remember I am not a developer but an ideas person. Anyway with the GUI in place I went looking for an actual developer who can help bring this idea to life. I have since found one and the rest is history...
 
-### Using the tool
+### Usage
 
 {{< alert icon="fire" cardColor="#993350" iconColor="#1d3557" textColor="#f1faee" >}}
-**Support :** This tool uses `fprintd` on the backend. It's just a GUI wrapper for it. So sensor support might limited. There's no definitive list of what devices it does or doesn't support. So all you can do is try and see, then report your findings back to us. Nothing we can do about it but report to the `fprintd` devs.
+**Support :** This tool uses `fprintd` on the backend. It's just a GUI wrapper for it. So sensor support might limited. There's no definitive list of what devices it does or doesn't support. So all you can do is try and see, then report your findings to the `fprintd` devs.
 {{< /alert >}}
 
 This tool has an ituitive UI, making it easy to understand and use. It has all the checks in place in order to keep it from locking you out of your system. Here's how to use it.

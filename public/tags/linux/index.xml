@@ -40,7 +40,7 @@
     
       style=&#34;color: #f1faee&#34;
     
-    &gt;&lt;strong&gt;Status :&lt;/strong&gt; Before you get all excited, this tool was created for &lt;strong&gt;XeroLinux&lt;/strong&gt; no other distro. Trying on others will result in failure. However it will be opened up in the future so you can install n use it on the likes of &lt;strong&gt;Debian&lt;/strong&gt; and &lt;strong&gt;Fedora&lt;/strong&gt; based distros. Dource code =&amp;gt; &lt;a
+    &gt;&lt;strong&gt;Status :&lt;/strong&gt; Before you get all excited, this tool was created for &lt;strong&gt;XeroLinux&lt;/strong&gt; no other distro. Trying on others will result in failure. However it will be opened up in the future so you can install n use it on the likes of &lt;strong&gt;Debian&lt;/strong&gt; and &lt;strong&gt;Fedora&lt;/strong&gt; based distros. Source code =&amp;gt; &lt;a
   href=&#34;https://github.com/XeroLinuxDev/xfprintd-gui&#34;
     target=&#34;_blank&#34;
   &gt;&lt;strong&gt;Here&lt;/strong&gt;&lt;/a&gt;&lt;/span&gt;
@@ -51,18 +51,19 @@
     &lt;div id=&#34;what-is-it&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
     
 &lt;/h3&gt;
-&lt;p&gt;Our fingerprint tool is a handy utility created by us in &lt;strong&gt;Rust&lt;/strong&gt;, that allows you to use your fingerprint reader to authenticate yourself quickly and securely. With this tool, you can enroll your fingerprint through a simple and intuitive GUI, which creates a digital fingerprint profile stored safely on your system. Once set up, it integrates with Linux&amp;rsquo;s authentication framework (such as PAM), letting you log in, or authorize commands like sudo just by placing your finger on the scanner, no need to type your password every time. Setup usually involves installing a package like &amp;ldquo;fprintd,&amp;rdquo; enrolling your fingerprint via command line, and enabling fingerprint authentication for your login and sudo prompts. This improves both the convenience and security of your Linux experience by using biometrics in place of or alongside passwords.&lt;/p&gt;
+&lt;p&gt;Our fingerprint tool is a handy utility created by us in &lt;strong&gt;Rust&lt;/strong&gt;, that allows you to use your fingerprint reader to authenticate yourself quickly and securely. With this tool, you can enroll your fingerprint through a simple and intuitive GUI, which creates a digital fingerprint profile stored safely on your system.&lt;/p&gt;
+&lt;p&gt;Once set up, it integrates with Linux&amp;rsquo;s authentication framework (such as PAM), letting you log in, or authorize commands like sudo just by placing your finger on the scanner, no need to type your password every time. Setup usually involves installing a package like &amp;ldquo;fprintd,&amp;rdquo; enrolling your fingerprint via command line, and enabling fingerprint authentication for your login and sudo prompts. This improves both the convenience and security of your Linux experience by using biometrics in place of or alongside passwords.&lt;/p&gt;
 &lt;p&gt;We have also taken the time to ensure you do not do anything stupid like locking yourself out of your system. There are checks in place.&lt;/p&gt;
 
 &lt;h3 class=&#34;relative group&#34;&gt;Reasons 
     &lt;div id=&#34;reasons&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
     
 &lt;/h3&gt;
-&lt;p&gt;The reason we decided to create this tool is simple, I have a &lt;strong&gt;Thinkpad&lt;/strong&gt; laptop with a fingerprint sensor that I didn&amp;rsquo;t want to go to waste, tried looking for an existing tool that would help with it, but alas I couldn&amp;rsquo;t find one, not on the Arch repos or the &lt;strong&gt;A.U.R&lt;/strong&gt;. There was one, but it&amp;rsquo;s from almost a decade ago, making it incompatible with any of the modern scanners.&lt;/p&gt;
-&lt;p&gt;So what could I do ? Accept it and move on like so many have done in the past ? Nope, I took this as an opportunity for a challenge. So I sat down, and began work on the GUI. And before you ask, yes I used &lt;strong&gt;ChatGPT Claude A.I&lt;/strong&gt; to do it. Remember I am not a developer but an ideas person. Anyway with the GUI in place I went looking for an actual developer who can help bring this idea to life. I have since found one and the rest is history&amp;hellip;&lt;/p&gt;
+&lt;p&gt;The reason we decided to create this tool is simple, I have a &lt;strong&gt;Thinkpad&lt;/strong&gt; laptop with a fingerprint sensor that I didn&amp;rsquo;t want to go to waste, looked for an existing tool that would help with it, but alas I couldn&amp;rsquo;t find one, not on the Arch repos or the &lt;strong&gt;A.U.R&lt;/strong&gt;. There was one, but it&amp;rsquo;s from almost a decade ago, making it incompatible with any of the modern scanners.&lt;/p&gt;
+&lt;p&gt;Should I accept it and move on like so many have done in the past ? Nope, I took this as a challenge. So I sat down, and began work on the GUI. And before you ask, yes I used &lt;strong&gt;ChatGPT Claude A.I&lt;/strong&gt; to do it. Remember I am not a developer but an ideas person. Anyway with the GUI in place I went looking for an actual developer who can help bring this idea to life. I have since found one and the rest is history&amp;hellip;&lt;/p&gt;
 
-&lt;h3 class=&#34;relative group&#34;&gt;Using the tool 
-    &lt;div id=&#34;using-the-tool&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+&lt;h3 class=&#34;relative group&#34;&gt;Usage 
+    &lt;div id=&#34;usage&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
     
 &lt;/h3&gt;
 
@@ -91,7 +92,7 @@
     
       style=&#34;color: #f1faee&#34;
     
-    &gt;&lt;strong&gt;Support :&lt;/strong&gt; This tool uses &lt;code&gt;fprintd&lt;/code&gt; on the backend. It&amp;rsquo;s just a GUI wrapper for it. So sensor support might limited. There&amp;rsquo;s no definitive list of what devices it does or doesn&amp;rsquo;t support. So all you can do is try and see, then report your findings back to us. Nothing we can do about it but report to the &lt;code&gt;fprintd&lt;/code&gt; devs.&lt;/span&gt;
+    &gt;&lt;strong&gt;Support :&lt;/strong&gt; This tool uses &lt;code&gt;fprintd&lt;/code&gt; on the backend. It&amp;rsquo;s just a GUI wrapper for it. So sensor support might limited. There&amp;rsquo;s no definitive list of what devices it does or doesn&amp;rsquo;t support. So all you can do is try and see, then report your findings to the &lt;code&gt;fprintd&lt;/code&gt; devs.&lt;/span&gt;
 &lt;/div&gt;
 
 &lt;p&gt;This tool has an ituitive UI, making it easy to understand and use. It has all the checks in place in order to keep it from locking you out of your system. Here&amp;rsquo;s how to use it.&lt;/p&gt;
