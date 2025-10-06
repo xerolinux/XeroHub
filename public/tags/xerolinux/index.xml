@@ -95,7 +95,7 @@
     &gt;&lt;strong&gt;Support :&lt;/strong&gt; This tool uses &lt;code&gt;fprintd&lt;/code&gt; on the backend. It&amp;rsquo;s just a GUI wrapper for it. So sensor support might limited. There&amp;rsquo;s no definitive list of what devices it does or doesn&amp;rsquo;t support. So all you can do is try and see, then report your findings to the &lt;code&gt;fprintd&lt;/code&gt; devs.&lt;/span&gt;
 &lt;/div&gt;
 
-&lt;p&gt;This tool has an ituitive UI, making it easy to understand and use. It has all the checks in place in order to keep it from locking you out of your system. Here&amp;rsquo;s how to use it.&lt;/p&gt;
+&lt;p&gt;This tool has an intuitive UI, making it easy to understand and use. It has all the checks in place in order to keep it from locking you out of your system. Here&amp;rsquo;s how to use it.&lt;/p&gt;
 &lt;p&gt;
 
 
@@ -139,7 +139,7 @@
 &lt;/p&gt;
 &lt;p&gt;Once registered, you can go back to register more or back to main screen, where you can enable biometric authentication on either, &lt;strong&gt;Login&lt;/strong&gt;(i), &lt;strong&gt;Terminal/Sudo&lt;/strong&gt; or &lt;strong&gt;Polkit/Prompt&lt;/strong&gt;. No more having to type your password over and over and over again. It&amp;rsquo;s amazing and we had fun working on it.&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;(i)&lt;/strong&gt; : When it comes to &lt;em&gt;Login&lt;/em&gt;, the &lt;strong&gt;SDDM Display Manager/Greeter&lt;/strong&gt; currently doesn’t &lt;em&gt;natively&lt;/em&gt; support fingerprint login, as a result it won&amp;rsquo;t display a “scan your finger” message. So to unlock using your fingerprint, Select your user (If needed), leave password blank, hit &lt;strong&gt;Enter&lt;/strong&gt; once, then scan your registered finger. It&amp;rsquo;s a &amp;ldquo;Hack&amp;rdquo; until support is added. (if ever lol).&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;(i)&lt;/strong&gt; : When it comes to &lt;em&gt;Login&lt;/em&gt;, the &lt;strong&gt;SDDM Display Manager/Greeter&lt;/strong&gt; currently doesn’t &lt;em&gt;natively&lt;/em&gt; support fingerprint login, as a result it won&amp;rsquo;t display a “scan your finger” message. Click the &amp;ldquo;BULB&amp;rdquo; icon to know more. It&amp;rsquo;s a &amp;ldquo;Hack&amp;rdquo; until support is added to &lt;strong&gt;SDDM&lt;/strong&gt;, (if ever lol).&lt;/p&gt;&lt;/blockquote&gt;
 
 &lt;h3 class=&#34;relative group&#34;&gt;Credits 
     &lt;div id=&#34;credits&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;

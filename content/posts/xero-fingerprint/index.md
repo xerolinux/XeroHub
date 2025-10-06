@@ -30,7 +30,7 @@ Should I accept it and move on like so many have done in the past ? Nope, I took
 **Support :** This tool uses `fprintd` on the backend. It's just a GUI wrapper for it. So sensor support might limited. There's no definitive list of what devices it does or doesn't support. So all you can do is try and see, then report your findings to the `fprintd` devs.
 {{< /alert >}}
 
-This tool has an ituitive UI, making it easy to understand and use. It has all the checks in place in order to keep it from locking you out of your system. Here's how to use it.
+This tool has an intuitive UI, making it easy to understand and use. It has all the checks in place in order to keep it from locking you out of your system. Here's how to use it.
 
 ![main](https://i.imgur.com/WUGMuLk.png)
 
@@ -44,7 +44,7 @@ There, you select which print you want to register. You got all 5 fingers for ea
 
 Once registered, you can go back to register more or back to main screen, where you can enable biometric authentication on either, **Login**(i), **Terminal/Sudo** or **Polkit/Prompt**. No more having to type your password over and over and over again. It's amazing and we had fun working on it.
 
-> **(i)** : When it comes to *Login*, the **SDDM Display Manager/Greeter** currently doesn’t *natively* support fingerprint login, as a result it won't display a “scan your finger” message. So to unlock using your fingerprint, Select your user (If needed), leave password blank, hit **Enter** once, then scan your registered finger. It's a "Hack" until support is added. (if ever lol).
+> **(i)** : When it comes to *Login*, the **SDDM Display Manager/Greeter** currently doesn’t *natively* support fingerprint login, as a result it won't display a “scan your finger” message. Click the "BULB" icon to know more. It's a "Hack" until support is added to **SDDM**, (if ever lol).
 
 ### Credits
 
