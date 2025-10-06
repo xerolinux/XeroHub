@@ -4,7 +4,19 @@
 
   <url>
     <loc>https://xerolinux.xyz/</loc>
-    <lastmod>2025-09-30T00:00:00+00:00</lastmod>
+    <lastmod>2025-10-06T00:00:00+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://xerolinux.xyz/posts/</loc>
+    <lastmod>2025-10-06T00:00:00+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://xerolinux.xyz/posts/xero-fingerprint/</loc>
+    <lastmod>2025-10-06T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
@@ -41,12 +53,6 @@
   <url>
     <loc>https://xerolinux.xyz/updates/xero-reviews/</loc>
     <lastmod>2025-05-24T00:00:00+00:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://xerolinux.xyz/posts/</loc>
-    <lastmod>2025-05-19T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>

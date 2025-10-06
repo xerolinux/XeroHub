@@ -7,7 +7,153 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>Proudly made in Lebanon &lt;img src=&#39;https://xerolinux.xyz/logos/lb.png&#39; alt=&#39;🇱🇧&#39; width=&#39;18&#39; height=&#39;18&#39; style=&#39;margin: 0; display: inline; vertical-align: middle;&#39;&gt;</copyright>
-    <lastBuildDate>Tue, 30 Sep 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://xerolinux.xyz/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 06 Oct 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://xerolinux.xyz/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>XeroLinux Fingerprint GUI</title>
+      <link>https://xerolinux.xyz/posts/xero-fingerprint/</link>
+      <pubDate>Mon, 06 Oct 2025 00:00:00 +0000</pubDate>
+      
+      <guid>https://xerolinux.xyz/posts/xero-fingerprint/</guid>
+      <description>
+  
+  
+  
+  
+
+
+
+&lt;div
+  
+    class=&#34;flex px-4 py-3 rounded-md&#34; style=&#34;background-color: #993350&#34;
+  
+  &gt;
+  &lt;span
+    
+      class=&#34;pe-3 flex items-center&#34; style=&#34;color: #1d3557&#34;
+    
+    &gt;
+    &lt;span class=&#34;relative block icon&#34;&gt;&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 448 512&#34;&gt;
+&lt;path fill=&#34;currentColor&#34;  d=&#34;M159.3 5.4c7.8-7.3 19.9-7.2 27.7 .1c27.6 25.9 53.5 53.8 77.7 84c11-14.4 23.5-30.1 37-42.9c7.9-7.4 20.1-7.4 28 .1c34.6 33 63.9 76.6 84.5 118c20.3 40.8 33.8 82.5 33.8 111.9C448 404.2 348.2 512 224 512C98.4 512 0 404.1 0 276.5c0-38.4 17.8-85.3 45.4-131.7C73.3 97.7 112.7 48.6 159.3 5.4zM225.7 416c25.3 0 47.7-7 68.8-21c42.1-29.4 53.4-88.2 28.1-134.4c-2.8-5.6-5.6-11.2-9.8-16.8l-50.6 58.8s-81.4-103.6-87.1-110.6C133.1 243.8 112 273.2 112 306.8C112 375.4 162.6 416 225.7 416z&#34;/&gt;&lt;/svg&gt;&lt;/span&gt;
+  &lt;/span&gt;
+
+  &lt;span
+    
+      style=&#34;color: #f1faee&#34;
+    
+    &gt;&lt;strong&gt;Status :&lt;/strong&gt; Before you get all excited, this tool was created for &lt;strong&gt;XeroLinux&lt;/strong&gt; no other distro. Trying on others will result in failure. However it will be opened up in the future so you can install n use it on the likes of &lt;strong&gt;Debian&lt;/strong&gt; and &lt;strong&gt;Fedora&lt;/strong&gt; based distros. Dource code =&amp;gt; &lt;a
+  href=&#34;https://github.com/XeroLinuxDev/xfprintd-gui&#34;
+    target=&#34;_blank&#34;
+  &gt;&lt;strong&gt;Here&lt;/strong&gt;&lt;/a&gt;&lt;/span&gt;
+&lt;/div&gt;
+
+
+&lt;h3 class=&#34;relative group&#34;&gt;What is it 
+    &lt;div id=&#34;what-is-it&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+    
+&lt;/h3&gt;
+&lt;p&gt;Our fingerprint tool is a handy utility created by us in &lt;strong&gt;Rust&lt;/strong&gt;, that allows you to use your fingerprint reader to authenticate yourself quickly and securely. With this tool, you can enroll your fingerprint through a simple and intuitive GUI, which creates a digital fingerprint profile stored safely on your system. Once set up, it integrates with Linux&amp;rsquo;s authentication framework (such as PAM), letting you log in, or authorize commands like sudo just by placing your finger on the scanner, no need to type your password every time. Setup usually involves installing a package like &amp;ldquo;fprintd,&amp;rdquo; enrolling your fingerprint via command line, and enabling fingerprint authentication for your login and sudo prompts. This improves both the convenience and security of your Linux experience by using biometrics in place of or alongside passwords.&lt;/p&gt;
+&lt;p&gt;We have also taken the time to ensure you do not do anything stupid like locking yourself out of your system. There are checks in place.&lt;/p&gt;
+
+&lt;h3 class=&#34;relative group&#34;&gt;Reasons 
+    &lt;div id=&#34;reasons&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+    
+&lt;/h3&gt;
+&lt;p&gt;The reason we decided to create this tool is simple, I have a &lt;strong&gt;Thinkpad&lt;/strong&gt; laptop with a fingerprint sensor that I didn&amp;rsquo;t want to go to waste, tried looking for an existing tool that would help with it, but alas I couldn&amp;rsquo;t find one, not on the Arch repos or the &lt;strong&gt;A.U.R&lt;/strong&gt;. There was one, but it&amp;rsquo;s from almost a decade ago, making it incompatible with any of the modern scanners.&lt;/p&gt;
+&lt;p&gt;So what could I do ? Accept it and move on like so many have done in the past ? Nope, I took this as an opportunity for a challenge. So I sat down, and began work on the GUI. And before you ask, yes I used &lt;strong&gt;ChatGPT Claude A.I&lt;/strong&gt; to do it. Remember I am not a developer but an ideas person. Anyway with the GUI in place I went looking for an actual developer who can help bring this idea to life. I have since found one and the rest is history&amp;hellip;&lt;/p&gt;
+
+&lt;h3 class=&#34;relative group&#34;&gt;Using the tool 
+    &lt;div id=&#34;using-the-tool&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+    
+&lt;/h3&gt;
+
+  
+  
+  
+  
+
+
+
+&lt;div
+  
+    class=&#34;flex px-4 py-3 rounded-md&#34; style=&#34;background-color: #993350&#34;
+  
+  &gt;
+  &lt;span
+    
+      class=&#34;pe-3 flex items-center&#34; style=&#34;color: #1d3557&#34;
+    
+    &gt;
+    &lt;span class=&#34;relative block icon&#34;&gt;&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 448 512&#34;&gt;
+&lt;path fill=&#34;currentColor&#34;  d=&#34;M159.3 5.4c7.8-7.3 19.9-7.2 27.7 .1c27.6 25.9 53.5 53.8 77.7 84c11-14.4 23.5-30.1 37-42.9c7.9-7.4 20.1-7.4 28 .1c34.6 33 63.9 76.6 84.5 118c20.3 40.8 33.8 82.5 33.8 111.9C448 404.2 348.2 512 224 512C98.4 512 0 404.1 0 276.5c0-38.4 17.8-85.3 45.4-131.7C73.3 97.7 112.7 48.6 159.3 5.4zM225.7 416c25.3 0 47.7-7 68.8-21c42.1-29.4 53.4-88.2 28.1-134.4c-2.8-5.6-5.6-11.2-9.8-16.8l-50.6 58.8s-81.4-103.6-87.1-110.6C133.1 243.8 112 273.2 112 306.8C112 375.4 162.6 416 225.7 416z&#34;/&gt;&lt;/svg&gt;&lt;/span&gt;
+  &lt;/span&gt;
+
+  &lt;span
+    
+      style=&#34;color: #f1faee&#34;
+    
+    &gt;&lt;strong&gt;Support :&lt;/strong&gt; This tool uses &lt;code&gt;fprintd&lt;/code&gt; on the backend. It&amp;rsquo;s just a GUI wrapper for it. So sensor support might limited. There&amp;rsquo;s no definitive list of what devices it does or doesn&amp;rsquo;t support. So all you can do is try and see, then report your findings back to us. Nothing we can do about it but report to the &lt;code&gt;fprintd&lt;/code&gt; devs.&lt;/span&gt;
+&lt;/div&gt;
+
+&lt;p&gt;This tool has an ituitive UI, making it easy to understand and use. It has all the checks in place in order to keep it from locking you out of your system. Here&amp;rsquo;s how to use it.&lt;/p&gt;
+&lt;p&gt;
+
+
+
+
+
+
+&lt;figure&gt;
+    &lt;img class=&#34;my-0 rounded-md&#34; loading=&#34;lazy&#34; alt=&#34;main&#34; src=&#34;https://i.imgur.com/WUGMuLk.png&#34;&gt;
+
+  
+&lt;/figure&gt;
+&lt;/p&gt;
+&lt;p&gt;As you can see from the image above, this is the main screen, click on the &lt;strong&gt;Enroll Fingerprint&lt;/strong&gt; button to begin. Note the toggles, they will not be functional until at least one print is registered. Once you have clicked the button, you will be taken to the prints registration page as seen below.&lt;/p&gt;
+&lt;p&gt;
+
+
+
+
+
+
+&lt;figure&gt;
+    &lt;img class=&#34;my-0 rounded-md&#34; loading=&#34;lazy&#34; alt=&#34;mng&#34; src=&#34;https://i.imgur.com/LoCci1h.png&#34;&gt;
+
+  
+&lt;/figure&gt;
+&lt;/p&gt;
+&lt;p&gt;There, you select which print you want to register. You got all 5 fingers for each hand. Select the one you want to register an you will be taken to the registration page where you can either delete existing print or add new one. To register click the add button and swipe finger as many times as needed until you see the success message like so&amp;hellip;&lt;/p&gt;
+&lt;p&gt;
+
+
+
+
+
+
+&lt;figure&gt;
+    &lt;img class=&#34;my-0 rounded-md&#34; loading=&#34;lazy&#34; alt=&#34;nroll&#34; src=&#34;https://i.imgur.com/EiR3YeU.png&#34;&gt;
+
+  
+&lt;/figure&gt;
+&lt;/p&gt;
+&lt;p&gt;Once registered, you can go back to register more or back to main screen, where you can enable biometric authentication on either, &lt;strong&gt;Login&lt;/strong&gt;(i), &lt;strong&gt;Terminal/Sudo&lt;/strong&gt; or &lt;strong&gt;Polkit/Prompt&lt;/strong&gt;. No more having to type your password over and over and over again. It&amp;rsquo;s amazing and we had fun working on it.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;(i)&lt;/strong&gt; : When it comes to &lt;em&gt;Login&lt;/em&gt;, the &lt;strong&gt;SDDM Display Manager/Greeter&lt;/strong&gt; currently doesn’t &lt;em&gt;natively&lt;/em&gt; support fingerprint login, as a result it won&amp;rsquo;t display a “scan your finger” message. So to unlock using your fingerprint, Select your user (If needed), leave password blank, hit &lt;strong&gt;Enter&lt;/strong&gt; once, then scan your registered finger. It&amp;rsquo;s a &amp;ldquo;Hack&amp;rdquo; until support is added. (if ever lol).&lt;/p&gt;&lt;/blockquote&gt;
+
+&lt;h3 class=&#34;relative group&#34;&gt;Credits 
+    &lt;div id=&#34;credits&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+    
+&lt;/h3&gt;
+&lt;p&gt;This tool wouldn&amp;rsquo;t have been possible if it weren&amp;rsquo;t for my good friend and now &lt;strong&gt;XeroLinux&lt;/strong&gt; team member &lt;a
+  href=&#34;https://github.com/BananikXenos&#34;
+    target=&#34;_blank&#34;
+  &gt;&lt;strong&gt;Synse&lt;/strong&gt;&lt;/a&gt;. He worked tirelessly to bring life to my idea. Please give him a follow on &lt;strong&gt;Github&lt;/strong&gt; to show support.&lt;/p&gt;
+&lt;p&gt;We will be working on new tools as time passes. Keep an eye out !&lt;/p&gt;
+&lt;p&gt;Cheers !&lt;/p&gt;
+</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://xerolinux.xyz/posts/xero-fingerprint/featured.webp" />
+    </item>
+    
     <item>
       <title>Build a Bleeding Edge Arch ISO</title>
       <link>https://xerolinux.xyz/posts/build-archiso-git/</link>
