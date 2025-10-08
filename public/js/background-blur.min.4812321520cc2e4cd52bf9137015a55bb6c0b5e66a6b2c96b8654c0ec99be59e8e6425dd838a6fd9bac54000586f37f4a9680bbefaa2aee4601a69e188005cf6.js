@@ -1,1 +1,0 @@
-function setBackgroundBlur(){const e=document.currentScript,t=e&&e.getAttribute("data-target-id")?e.getAttribute("data-target-id"):(console.error("data-target-id is null"),null);window.addEventListener("scroll",()=>{const e=window.pageYOffset||document.documentElement.scrollTop||document.body.scrollTop||0,n=document.getElementById(t);n.style.opacity=e/300})}setBackgroundBlur()
