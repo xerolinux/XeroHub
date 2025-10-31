@@ -11,7 +11,7 @@ title = "XeroLinux HQ"
   logo = "logos/logo.png"
   # secondaryLogo = "img/secondary-logo.png"
   description = "Our Base Of Operations..."
-  copyright = "Proudly made in Lebanon <img src='/logos/lb.png' alt='🇱🇧' width='18' height='18' style='margin: 0; display: inline; vertical-align: middle;'>"
+  copyright = "Proudly made in 🇱🇧"
 
 [params.author]
   name = "DarkXero"
