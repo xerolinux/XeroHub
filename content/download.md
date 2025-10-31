@@ -16,6 +16,7 @@ Check out the *free* **Demo ISO** to try it first. Learn more here : [Demo Info]
 
 {{< alert cardColor="#9966ff40" >}}
 - Runs as a Live Environment **without an installer**  
+- The **XeroLinux Post-Install Toolkit** is not included  
 - Uses limited **100 MiB cow-space** (RAM overlay) no updates
 - Installing drivers or software requiring a reboot **won’t work**  
 - System changes will **not persist** after a reboot (non-persistent)  
@@ -41,6 +42,7 @@ When you're ready to fully adopt **XeroLinux**, go for the **Unlocked Version**,
 - Full system installer  
 - Unrestricted package management  
 - All features and updates enabled by default  
+- The **XeroLinux Post-Install Toolkit** is included  
 - Access to full community support and feature requests  
 {{< /alert >}}
 
