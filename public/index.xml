@@ -215,12 +215,7 @@
           &lt;/p&gt;
 
           &lt;div class=&#34;m-0 mt-2 flex items-center&#34;&gt;
-            
-            
-            
-            &lt;span
-              class=&#34;mr-1 inline-block h-3 w-3 rounded-full language-dot&#34;
-              data-language=&#34;Python&#34;&gt;&lt;/span&gt;
+            &lt;span class=&#34;mr-1 inline-block h-3 w-3 rounded-full language-dot&#34; data-language=&#34;Python&#34;&gt;&lt;/span&gt;
             &lt;div class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
               Python
             &lt;/div&gt;
@@ -414,12 +409,7 @@
           &lt;/p&gt;
 
           &lt;div class=&#34;m-0 mt-2 flex items-center&#34;&gt;
-            
-            
-            
-            &lt;span
-              class=&#34;mr-1 inline-block h-3 w-3 rounded-full language-dot&#34;
-              data-language=&#34;QML&#34;&gt;&lt;/span&gt;
+            &lt;span class=&#34;mr-1 inline-block h-3 w-3 rounded-full language-dot&#34; data-language=&#34;QML&#34;&gt;&lt;/span&gt;
             &lt;div class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
               QML
             &lt;/div&gt;
@@ -684,12 +674,7 @@ return sequence[:n]
           &lt;/p&gt;
 
           &lt;div class=&#34;m-0 mt-2 flex items-center&#34;&gt;
-            
-            
-            
-            &lt;span
-              class=&#34;mr-1 inline-block h-3 w-3 rounded-full language-dot&#34;
-              data-language=&#34;Dart&#34;&gt;&lt;/span&gt;
+            &lt;span class=&#34;mr-1 inline-block h-3 w-3 rounded-full language-dot&#34; data-language=&#34;Dart&#34;&gt;&lt;/span&gt;
             &lt;div class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
               Dart
             &lt;/div&gt;
@@ -859,12 +844,7 @@ return sequence[:n]
           &lt;/p&gt;
 
           &lt;div class=&#34;m-0 mt-2 flex items-center&#34;&gt;
-            
-            
-            
-            &lt;span
-              class=&#34;mr-1 inline-block h-3 w-3 rounded-full language-dot&#34;
-              data-language=&#34;Go&#34;&gt;&lt;/span&gt;
+            &lt;span class=&#34;mr-1 inline-block h-3 w-3 rounded-full language-dot&#34; data-language=&#34;Go&#34;&gt;&lt;/span&gt;
             &lt;div class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
               Go
             &lt;/div&gt;
@@ -1470,7 +1450,7 @@ return sequence[:n]
     &lt;header class=&#34;items-center text-start text-xl font-semibold&#34;&gt;
       &lt;a
         
-          href=&#34;&#34;
+          href=&#34;https://xerolinux.xyz/posts/warehouse-flatpak/&#34;
         
         class=&#34;not-prose before:absolute before:inset-0 decoration-primary-500 dark:text-neutral text-xl font-bold text-neutral-800 hover:underline hover:underline-offset-2&#34;&gt;
         &lt;h2&gt;
@@ -1495,10 +1475,9 @@ return sequence[:n]
   
   
   
-
-  
-  
     
+  
+
   
 
   
@@ -1723,7 +1702,7 @@ return sequence[:n]
     &lt;header class=&#34;items-center text-start text-xl font-semibold&#34;&gt;
       &lt;a
         
-          href=&#34;&#34;
+          href=&#34;https://xerolinux.xyz/posts/downgrade-tool/&#34;
         
         class=&#34;not-prose before:absolute before:inset-0 decoration-primary-500 dark:text-neutral text-xl font-bold text-neutral-800 hover:underline hover:underline-offset-2&#34;&gt;
         &lt;h2&gt;
@@ -1748,10 +1727,9 @@ return sequence[:n]
   
   
   
-
-  
-  
     
+  
+
   
 
   
@@ -1964,7 +1942,7 @@ return sequence[:n]
     &lt;header class=&#34;items-center text-start text-xl font-semibold&#34;&gt;
       &lt;a
         
-          href=&#34;&#34;
+          href=&#34;https://xerolinux.xyz/posts/install-yay-paru/&#34;
         
         class=&#34;not-prose before:absolute before:inset-0 decoration-primary-500 dark:text-neutral text-xl font-bold text-neutral-800 hover:underline hover:underline-offset-2&#34;&gt;
         &lt;h2&gt;
@@ -1989,10 +1967,9 @@ return sequence[:n]
   
   
   
-
-  
-  
     
+  
+
   
 
   
@@ -2212,7 +2189,7 @@ return sequence[:n]
     &lt;header class=&#34;items-center text-start text-xl font-semibold&#34;&gt;
       &lt;a
         
-          href=&#34;&#34;
+          href=&#34;https://xerolinux.xyz/posts/tkg-nvidia-all/&#34;
         
         class=&#34;not-prose before:absolute before:inset-0 decoration-primary-500 dark:text-neutral text-xl font-bold text-neutral-800 hover:underline hover:underline-offset-2&#34;&gt;
         &lt;h2&gt;
@@ -2237,10 +2214,9 @@ return sequence[:n]
   
   
   
-
-  
-  
     
+  
+
   
 
   
@@ -2449,7 +2425,7 @@ return sequence[:n]
     &lt;header class=&#34;items-center text-start text-xl font-semibold&#34;&gt;
       &lt;a
         
-          href=&#34;&#34;
+          href=&#34;https://xerolinux.xyz/posts/chaotic-aur/&#34;
         
         class=&#34;not-prose before:absolute before:inset-0 decoration-primary-500 dark:text-neutral text-xl font-bold text-neutral-800 hover:underline hover:underline-offset-2&#34;&gt;
         &lt;h2&gt;
@@ -2474,10 +2450,9 @@ return sequence[:n]
   
   
   
-
-  
-  
     
+  
+
   
 
   
@@ -2719,12 +2694,7 @@ return sequence[:n]
           &lt;/p&gt;
 
           &lt;div class=&#34;m-0 mt-2 flex items-center&#34;&gt;
-            
-            
-            
-            &lt;span
-              class=&#34;mr-1 inline-block h-3 w-3 rounded-full language-dot&#34;
-              data-language=&#34;Python&#34;&gt;&lt;/span&gt;
+            &lt;span class=&#34;mr-1 inline-block h-3 w-3 rounded-full language-dot&#34; data-language=&#34;Python&#34;&gt;&lt;/span&gt;
             &lt;div class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
               Python
             &lt;/div&gt;
@@ -2818,12 +2788,7 @@ return sequence[:n]
           &lt;/p&gt;
 
           &lt;div class=&#34;m-0 mt-2 flex items-center&#34;&gt;
-            
-            
-            
-            &lt;span
-              class=&#34;mr-1 inline-block h-3 w-3 rounded-full language-dot&#34;
-              data-language=&#34;Svelte&#34;&gt;&lt;/span&gt;
+            &lt;span class=&#34;mr-1 inline-block h-3 w-3 rounded-full language-dot&#34; data-language=&#34;Svelte&#34;&gt;&lt;/span&gt;
             &lt;div class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
               Svelte
             &lt;/div&gt;
@@ -2953,7 +2918,7 @@ return sequence[:n]
     &lt;header class=&#34;items-center text-start text-xl font-semibold&#34;&gt;
       &lt;a
         
-          href=&#34;&#34;
+          href=&#34;https://xerolinux.xyz/posts/aurora-atomic/&#34;
         
         class=&#34;not-prose before:absolute before:inset-0 decoration-primary-500 dark:text-neutral text-xl font-bold text-neutral-800 hover:underline hover:underline-offset-2&#34;&gt;
         &lt;h2&gt;
@@ -2978,10 +2943,9 @@ return sequence[:n]
   
   
   
-
-  
-  
     
+  
+
   
 
   
@@ -3196,12 +3160,7 @@ return sequence[:n]
           &lt;/p&gt;
 
           &lt;div class=&#34;m-0 mt-2 flex items-center&#34;&gt;
-            
-            
-            
-            &lt;span
-              class=&#34;mr-1 inline-block h-3 w-3 rounded-full language-dot&#34;
-              data-language=&#34;QML&#34;&gt;&lt;/span&gt;
+            &lt;span class=&#34;mr-1 inline-block h-3 w-3 rounded-full language-dot&#34; data-language=&#34;QML&#34;&gt;&lt;/span&gt;
             &lt;div class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
               QML
             &lt;/div&gt;
@@ -3330,12 +3289,7 @@ return sequence[:n]
           &lt;/p&gt;
 
           &lt;div class=&#34;m-0 mt-2 flex items-center&#34;&gt;
-            
-            
-            
-            &lt;span
-              class=&#34;mr-1 inline-block h-3 w-3 rounded-full language-dot&#34;
-              data-language=&#34;C&amp;#43;&amp;#43;&#34;&gt;&lt;/span&gt;
+            &lt;span class=&#34;mr-1 inline-block h-3 w-3 rounded-full language-dot&#34; data-language=&#34;C&amp;#43;&amp;#43;&#34;&gt;&lt;/span&gt;
             &lt;div class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
               C&amp;#43;&amp;#43;
             &lt;/div&gt;
@@ -3536,12 +3490,7 @@ return sequence[:n]
           &lt;/p&gt;
 
           &lt;div class=&#34;m-0 mt-2 flex items-center&#34;&gt;
-            
-            
-            
-            &lt;span
-              class=&#34;mr-1 inline-block h-3 w-3 rounded-full language-dot&#34;
-              data-language=&#34;Shell&#34;&gt;&lt;/span&gt;
+            &lt;span class=&#34;mr-1 inline-block h-3 w-3 rounded-full language-dot&#34; data-language=&#34;Shell&#34;&gt;&lt;/span&gt;
             &lt;div class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
               Shell
             &lt;/div&gt;
@@ -3652,7 +3601,7 @@ return sequence[:n]
     &lt;header class=&#34;items-center text-start text-xl font-semibold&#34;&gt;
       &lt;a
         
-          href=&#34;&#34;
+          href=&#34;https://xerolinux.xyz/posts/konsave-tool/&#34;
         
         class=&#34;not-prose before:absolute before:inset-0 decoration-primary-500 dark:text-neutral text-xl font-bold text-neutral-800 hover:underline hover:underline-offset-2&#34;&gt;
         &lt;h2&gt;
@@ -3677,10 +3626,9 @@ return sequence[:n]
   
   
   
-
-  
-  
     
+  
+
   
 
   
@@ -3858,12 +3806,7 @@ return sequence[:n]
           &lt;/p&gt;
 
           &lt;div class=&#34;m-0 mt-2 flex items-center&#34;&gt;
-            
-            
-            
-            &lt;span
-              class=&#34;mr-1 inline-block h-3 w-3 rounded-full language-dot&#34;
-              data-language=&#34;Python&#34;&gt;&lt;/span&gt;
+            &lt;span class=&#34;mr-1 inline-block h-3 w-3 rounded-full language-dot&#34; data-language=&#34;Python&#34;&gt;&lt;/span&gt;
             &lt;div class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
               Python
             &lt;/div&gt;
@@ -3979,7 +3922,7 @@ return sequence[:n]
     &lt;header class=&#34;items-center text-start text-xl font-semibold&#34;&gt;
       &lt;a
         
-          href=&#34;&#34;
+          href=&#34;https://xerolinux.xyz/posts/bato-deck/&#34;
         
         class=&#34;not-prose before:absolute before:inset-0 decoration-primary-500 dark:text-neutral text-xl font-bold text-neutral-800 hover:underline hover:underline-offset-2&#34;&gt;
         &lt;h2&gt;
@@ -4004,10 +3947,9 @@ return sequence[:n]
   
   
   
-
-  
-  
     
+  
+
   
 
   
@@ -4418,12 +4360,7 @@ Shaders: Enhance your gaming experience with graphical shaders. Find them in the
           &lt;/p&gt;
 
           &lt;div class=&#34;m-0 mt-2 flex items-center&#34;&gt;
-            
-            
-            
-            &lt;span
-              class=&#34;mr-1 inline-block h-3 w-3 rounded-full language-dot&#34;
-              data-language=&#34;TypeScript&#34;&gt;&lt;/span&gt;
+            &lt;span class=&#34;mr-1 inline-block h-3 w-3 rounded-full language-dot&#34; data-language=&#34;TypeScript&#34;&gt;&lt;/span&gt;
             &lt;div class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
               TypeScript
             &lt;/div&gt;
@@ -4808,12 +4745,7 @@ Shaders: Enhance your gaming experience with graphical shaders. Find them in the
           &lt;/p&gt;
 
           &lt;div class=&#34;m-0 mt-2 flex items-center&#34;&gt;
-            
-            
-            
-            &lt;span
-              class=&#34;mr-1 inline-block h-3 w-3 rounded-full language-dot&#34;
-              data-language=&#34;Shell&#34;&gt;&lt;/span&gt;
+            &lt;span class=&#34;mr-1 inline-block h-3 w-3 rounded-full language-dot&#34; data-language=&#34;Shell&#34;&gt;&lt;/span&gt;
             &lt;div class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
               Shell
             &lt;/div&gt;
@@ -4923,12 +4855,7 @@ Shaders: Enhance your gaming experience with graphical shaders. Find them in the
           &lt;/p&gt;
 
           &lt;div class=&#34;m-0 mt-2 flex items-center&#34;&gt;
-            
-            
-            
-            &lt;span
-              class=&#34;mr-1 inline-block h-3 w-3 rounded-full language-dot&#34;
-              data-language=&#34;TypeScript&#34;&gt;&lt;/span&gt;
+            &lt;span class=&#34;mr-1 inline-block h-3 w-3 rounded-full language-dot&#34; data-language=&#34;TypeScript&#34;&gt;&lt;/span&gt;
             &lt;div class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
               TypeScript
             &lt;/div&gt;
@@ -5011,12 +4938,7 @@ Shaders: Enhance your gaming experience with graphical shaders. Find them in the
           &lt;/p&gt;
 
           &lt;div class=&#34;m-0 mt-2 flex items-center&#34;&gt;
-            
-            
-            
-            &lt;span
-              class=&#34;mr-1 inline-block h-3 w-3 rounded-full language-dot&#34;
-              data-language=&#34;JavaScript&#34;&gt;&lt;/span&gt;
+            &lt;span class=&#34;mr-1 inline-block h-3 w-3 rounded-full language-dot&#34; data-language=&#34;JavaScript&#34;&gt;&lt;/span&gt;
             &lt;div class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
               JavaScript
             &lt;/div&gt;
@@ -5096,12 +5018,7 @@ Shaders: Enhance your gaming experience with graphical shaders. Find them in the
           &lt;/p&gt;
 
           &lt;div class=&#34;m-0 mt-2 flex items-center&#34;&gt;
-            
-            
-            
-            &lt;span
-              class=&#34;mr-1 inline-block h-3 w-3 rounded-full language-dot&#34;
-              data-language=&#34;Python&#34;&gt;&lt;/span&gt;
+            &lt;span class=&#34;mr-1 inline-block h-3 w-3 rounded-full language-dot&#34; data-language=&#34;Python&#34;&gt;&lt;/span&gt;
             &lt;div class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
               Python
             &lt;/div&gt;
@@ -5449,12 +5366,7 @@ Shaders: Enhance your gaming experience with graphical shaders. Find them in the
           &lt;/p&gt;
 
           &lt;div class=&#34;m-0 mt-2 flex items-center&#34;&gt;
-            
-            
-            
-            &lt;span
-              class=&#34;mr-1 inline-block h-3 w-3 rounded-full language-dot&#34;
-              data-language=&#34;Rust&#34;&gt;&lt;/span&gt;
+            &lt;span class=&#34;mr-1 inline-block h-3 w-3 rounded-full language-dot&#34; data-language=&#34;Rust&#34;&gt;&lt;/span&gt;
             &lt;div class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
               Rust
             &lt;/div&gt;
@@ -5605,7 +5517,7 @@ Shaders: Enhance your gaming experience with graphical shaders. Find them in the
     &lt;header class=&#34;items-center text-start text-xl font-semibold&#34;&gt;
       &lt;a
         
-          href=&#34;&#34;
+          href=&#34;https://xerolinux.xyz/posts/chaotic-aur/&#34;
         
         class=&#34;not-prose before:absolute before:inset-0 decoration-primary-500 dark:text-neutral text-xl font-bold text-neutral-800 hover:underline hover:underline-offset-2&#34;&gt;
         &lt;h2&gt;
@@ -5630,10 +5542,9 @@ Shaders: Enhance your gaming experience with graphical shaders. Find them in the
   
   
   
-
-  
-  
     
+  
+
   
 
   
@@ -5866,12 +5777,7 @@ Shaders: Enhance your gaming experience with graphical shaders. Find them in the
           &lt;/p&gt;
 
           &lt;div class=&#34;m-0 mt-2 flex items-center&#34;&gt;
-            
-            
-            
-            &lt;span
-              class=&#34;mr-1 inline-block h-3 w-3 rounded-full language-dot&#34;
-              data-language=&#34;Shell&#34;&gt;&lt;/span&gt;
+            &lt;span class=&#34;mr-1 inline-block h-3 w-3 rounded-full language-dot&#34; data-language=&#34;Shell&#34;&gt;&lt;/span&gt;
             &lt;div class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
               Shell
             &lt;/div&gt;
@@ -5933,12 +5839,7 @@ Shaders: Enhance your gaming experience with graphical shaders. Find them in the
           &lt;/p&gt;
 
           &lt;div class=&#34;m-0 mt-2 flex items-center&#34;&gt;
-            
-            
-            
-            &lt;span
-              class=&#34;mr-1 inline-block h-3 w-3 rounded-full language-dot&#34;
-              data-language=&#34;Go&#34;&gt;&lt;/span&gt;
+            &lt;span class=&#34;mr-1 inline-block h-3 w-3 rounded-full language-dot&#34; data-language=&#34;Go&#34;&gt;&lt;/span&gt;
             &lt;div class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
               Go
             &lt;/div&gt;
@@ -6196,12 +6097,7 @@ Shaders: Enhance your gaming experience with graphical shaders. Find them in the
           &lt;/p&gt;
 
           &lt;div class=&#34;m-0 mt-2 flex items-center&#34;&gt;
-            
-            
-            
-            &lt;span
-              class=&#34;mr-1 inline-block h-3 w-3 rounded-full language-dot&#34;
-              data-language=&#34;Shell&#34;&gt;&lt;/span&gt;
+            &lt;span class=&#34;mr-1 inline-block h-3 w-3 rounded-full language-dot&#34; data-language=&#34;Shell&#34;&gt;&lt;/span&gt;
             &lt;div class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
               Shell
             &lt;/div&gt;
@@ -6382,12 +6278,7 @@ Shaders: Enhance your gaming experience with graphical shaders. Find them in the
           &lt;/p&gt;
 
           &lt;div class=&#34;m-0 mt-2 flex items-center&#34;&gt;
-            
-            
-            
-            &lt;span
-              class=&#34;mr-1 inline-block h-3 w-3 rounded-full language-dot&#34;
-              data-language=&#34;C&#34;&gt;&lt;/span&gt;
+            &lt;span class=&#34;mr-1 inline-block h-3 w-3 rounded-full language-dot&#34; data-language=&#34;C&#34;&gt;&lt;/span&gt;
             &lt;div class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
               C
             &lt;/div&gt;
@@ -6453,12 +6344,7 @@ Shaders: Enhance your gaming experience with graphical shaders. Find them in the
           &lt;/p&gt;
 
           &lt;div class=&#34;m-0 mt-2 flex items-center&#34;&gt;
-            
-            
-            
-            &lt;span
-              class=&#34;mr-1 inline-block h-3 w-3 rounded-full language-dot&#34;
-              data-language=&#34;C&amp;#43;&amp;#43;&#34;&gt;&lt;/span&gt;
+            &lt;span class=&#34;mr-1 inline-block h-3 w-3 rounded-full language-dot&#34; data-language=&#34;C&amp;#43;&amp;#43;&#34;&gt;&lt;/span&gt;
             &lt;div class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
               C&amp;#43;&amp;#43;
             &lt;/div&gt;
@@ -6571,12 +6457,7 @@ Shaders: Enhance your gaming experience with graphical shaders. Find them in the
           &lt;/p&gt;
 
           &lt;div class=&#34;m-0 mt-2 flex items-center&#34;&gt;
-            
-            
-            
-            &lt;span
-              class=&#34;mr-1 inline-block h-3 w-3 rounded-full language-dot&#34;
-              data-language=&#34;Shell&#34;&gt;&lt;/span&gt;
+            &lt;span class=&#34;mr-1 inline-block h-3 w-3 rounded-full language-dot&#34; data-language=&#34;Shell&#34;&gt;&lt;/span&gt;
             &lt;div class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
               Shell
             &lt;/div&gt;
@@ -6703,12 +6584,7 @@ Proxmox VE Helper-Scripts Database
           &lt;/p&gt;
 
           &lt;div class=&#34;m-0 mt-2 flex items-center&#34;&gt;
-            
-            
-            
-            &lt;span
-              class=&#34;mr-1 inline-block h-3 w-3 rounded-full language-dot&#34;
-              data-language=&#34;Shell&#34;&gt;&lt;/span&gt;
+            &lt;span class=&#34;mr-1 inline-block h-3 w-3 rounded-full language-dot&#34; data-language=&#34;Shell&#34;&gt;&lt;/span&gt;
             &lt;div class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
               Shell
             &lt;/div&gt;
@@ -6780,12 +6656,7 @@ Proxmox VE Helper-Scripts Database
           &lt;/p&gt;
 
           &lt;div class=&#34;m-0 mt-2 flex items-center&#34;&gt;
-            
-            
-            
-            &lt;span
-              class=&#34;mr-1 inline-block h-3 w-3 rounded-full language-dot&#34;
-              data-language=&#34;Shell&#34;&gt;&lt;/span&gt;
+            &lt;span class=&#34;mr-1 inline-block h-3 w-3 rounded-full language-dot&#34; data-language=&#34;Shell&#34;&gt;&lt;/span&gt;
             &lt;div class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
               Shell
             &lt;/div&gt;
@@ -6878,12 +6749,7 @@ Proxmox VE Helper-Scripts Database
           &lt;/p&gt;
 
           &lt;div class=&#34;m-0 mt-2 flex items-center&#34;&gt;
-            
-            
-            
-            &lt;span
-              class=&#34;mr-1 inline-block h-3 w-3 rounded-full language-dot&#34;
-              data-language=&#34;Shell&#34;&gt;&lt;/span&gt;
+            &lt;span class=&#34;mr-1 inline-block h-3 w-3 rounded-full language-dot&#34; data-language=&#34;Shell&#34;&gt;&lt;/span&gt;
             &lt;div class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
               Shell
             &lt;/div&gt;
@@ -7008,7 +6874,7 @@ Proxmox VE Helper-Scripts Database
     &lt;header class=&#34;items-center text-start text-xl font-semibold&#34;&gt;
       &lt;a
         
-          href=&#34;&#34;
+          href=&#34;https://xerolinux.xyz/posts/topgrade-updater/&#34;
         
         class=&#34;not-prose before:absolute before:inset-0 decoration-primary-500 dark:text-neutral text-xl font-bold text-neutral-800 hover:underline hover:underline-offset-2&#34;&gt;
         &lt;h2&gt;
@@ -7033,10 +6899,9 @@ Proxmox VE Helper-Scripts Database
   
   
   
-
-  
-  
     
+  
+
   
 
   
@@ -7271,12 +7136,7 @@ Download Bluefin Aurora
           &lt;/p&gt;
 
           &lt;div class=&#34;m-0 mt-2 flex items-center&#34;&gt;
-            
-            
-            
-            &lt;span
-              class=&#34;mr-1 inline-block h-3 w-3 rounded-full language-dot&#34;
-              data-language=&#34;Python&#34;&gt;&lt;/span&gt;
+            &lt;span class=&#34;mr-1 inline-block h-3 w-3 rounded-full language-dot&#34; data-language=&#34;Python&#34;&gt;&lt;/span&gt;
             &lt;div class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
               Python
             &lt;/div&gt;
@@ -7440,12 +7300,7 @@ Download Bluefin Aurora
           &lt;/p&gt;
 
           &lt;div class=&#34;m-0 mt-2 flex items-center&#34;&gt;
-            
-            
-            
-            &lt;span
-              class=&#34;mr-1 inline-block h-3 w-3 rounded-full language-dot&#34;
-              data-language=&#34;JavaScript&#34;&gt;&lt;/span&gt;
+            &lt;span class=&#34;mr-1 inline-block h-3 w-3 rounded-full language-dot&#34; data-language=&#34;JavaScript&#34;&gt;&lt;/span&gt;
             &lt;div class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
               JavaScript
             &lt;/div&gt;
@@ -7699,12 +7554,7 @@ Download Bluefin Aurora
           &lt;/p&gt;
 
           &lt;div class=&#34;m-0 mt-2 flex items-center&#34;&gt;
-            
-            
-            
-            &lt;span
-              class=&#34;mr-1 inline-block h-3 w-3 rounded-full language-dot&#34;
-              data-language=&#34;Rust&#34;&gt;&lt;/span&gt;
+            &lt;span class=&#34;mr-1 inline-block h-3 w-3 rounded-full language-dot&#34; data-language=&#34;Rust&#34;&gt;&lt;/span&gt;
             &lt;div class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
               Rust
             &lt;/div&gt;
@@ -7932,12 +7782,7 @@ Download Bluefin Aurora
           &lt;/p&gt;
 
           &lt;div class=&#34;m-0 mt-2 flex items-center&#34;&gt;
-            
-            
-            
-            &lt;span
-              class=&#34;mr-1 inline-block h-3 w-3 rounded-full language-dot&#34;
-              data-language=&#34;C&amp;#43;&amp;#43;&#34;&gt;&lt;/span&gt;
+            &lt;span class=&#34;mr-1 inline-block h-3 w-3 rounded-full language-dot&#34; data-language=&#34;C&amp;#43;&amp;#43;&#34;&gt;&lt;/span&gt;
             &lt;div class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
               C&amp;#43;&amp;#43;
             &lt;/div&gt;
@@ -8069,12 +7914,7 @@ Download Bluefin Aurora
           &lt;/p&gt;
 
           &lt;div class=&#34;m-0 mt-2 flex items-center&#34;&gt;
-            
-            
-            
-            &lt;span
-              class=&#34;mr-1 inline-block h-3 w-3 rounded-full language-dot&#34;
-              data-language=&#34;Dart&#34;&gt;&lt;/span&gt;
+            &lt;span class=&#34;mr-1 inline-block h-3 w-3 rounded-full language-dot&#34; data-language=&#34;Dart&#34;&gt;&lt;/span&gt;
             &lt;div class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
               Dart
             &lt;/div&gt;
@@ -8152,12 +7992,7 @@ Download Bluefin Aurora
           &lt;/p&gt;
 
           &lt;div class=&#34;m-0 mt-2 flex items-center&#34;&gt;
-            
-            
-            
-            &lt;span
-              class=&#34;mr-1 inline-block h-3 w-3 rounded-full language-dot&#34;
-              data-language=&#34;Shell&#34;&gt;&lt;/span&gt;
+            &lt;span class=&#34;mr-1 inline-block h-3 w-3 rounded-full language-dot&#34; data-language=&#34;Shell&#34;&gt;&lt;/span&gt;
             &lt;div class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
               Shell
             &lt;/div&gt;
@@ -8369,12 +8204,7 @@ Download Bluefin Aurora
           &lt;/p&gt;
 
           &lt;div class=&#34;m-0 mt-2 flex items-center&#34;&gt;
-            
-            
-            
-            &lt;span
-              class=&#34;mr-1 inline-block h-3 w-3 rounded-full language-dot&#34;
-              data-language=&#34;C&amp;#43;&amp;#43;&#34;&gt;&lt;/span&gt;
+            &lt;span class=&#34;mr-1 inline-block h-3 w-3 rounded-full language-dot&#34; data-language=&#34;C&amp;#43;&amp;#43;&#34;&gt;&lt;/span&gt;
             &lt;div class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
               C&amp;#43;&amp;#43;
             &lt;/div&gt;
@@ -8715,12 +8545,7 @@ Download Bluefin Aurora
           &lt;/p&gt;
 
           &lt;div class=&#34;m-0 mt-2 flex items-center&#34;&gt;
-            
-            
-            
-            &lt;span
-              class=&#34;mr-1 inline-block h-3 w-3 rounded-full language-dot&#34;
-              data-language=&#34;TypeScript&#34;&gt;&lt;/span&gt;
+            &lt;span class=&#34;mr-1 inline-block h-3 w-3 rounded-full language-dot&#34; data-language=&#34;TypeScript&#34;&gt;&lt;/span&gt;
             &lt;div class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
               TypeScript
             &lt;/div&gt;
@@ -9174,12 +8999,7 @@ Download Bluefin Aurora
           &lt;/p&gt;
 
           &lt;div class=&#34;m-0 mt-2 flex items-center&#34;&gt;
-            
-            
-            
-            &lt;span
-              class=&#34;mr-1 inline-block h-3 w-3 rounded-full language-dot&#34;
-              data-language=&#34;Python&#34;&gt;&lt;/span&gt;
+            &lt;span class=&#34;mr-1 inline-block h-3 w-3 rounded-full language-dot&#34; data-language=&#34;Python&#34;&gt;&lt;/span&gt;
             &lt;div class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
               Python
             &lt;/div&gt;
@@ -9322,12 +9142,7 @@ cd LightlyShaders; mkdir qt5build; cd qt5build; cmake ../ -DCMAKE_INSTALL_PREFIX
           &lt;/p&gt;
 
           &lt;div class=&#34;m-0 mt-2 flex items-center&#34;&gt;
-            
-            
-            
-            &lt;span
-              class=&#34;mr-1 inline-block h-3 w-3 rounded-full language-dot&#34;
-              data-language=&#34;C&amp;#43;&amp;#43;&#34;&gt;&lt;/span&gt;
+            &lt;span class=&#34;mr-1 inline-block h-3 w-3 rounded-full language-dot&#34; data-language=&#34;C&amp;#43;&amp;#43;&#34;&gt;&lt;/span&gt;
             &lt;div class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
               C&amp;#43;&amp;#43;
             &lt;/div&gt;
@@ -9709,12 +9524,7 @@ cd LightlyShaders; mkdir qt5build; cd qt5build; cmake ../ -DCMAKE_INSTALL_PREFIX
           &lt;/p&gt;
 
           &lt;div class=&#34;m-0 mt-2 flex items-center&#34;&gt;
-            
-            
-            
-            &lt;span
-              class=&#34;mr-1 inline-block h-3 w-3 rounded-full language-dot&#34;
-              data-language=&#34;C&#34;&gt;&lt;/span&gt;
+            &lt;span class=&#34;mr-1 inline-block h-3 w-3 rounded-full language-dot&#34; data-language=&#34;C&#34;&gt;&lt;/span&gt;
             &lt;div class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
               C
             &lt;/div&gt;
@@ -9839,12 +9649,7 @@ cd LightlyShaders; mkdir qt5build; cd qt5build; cmake ../ -DCMAKE_INSTALL_PREFIX
           &lt;/p&gt;
 
           &lt;div class=&#34;m-0 mt-2 flex items-center&#34;&gt;
-            
-            
-            
-            &lt;span
-              class=&#34;mr-1 inline-block h-3 w-3 rounded-full language-dot&#34;
-              data-language=&#34;Go&#34;&gt;&lt;/span&gt;
+            &lt;span class=&#34;mr-1 inline-block h-3 w-3 rounded-full language-dot&#34; data-language=&#34;Go&#34;&gt;&lt;/span&gt;
             &lt;div class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
               Go
             &lt;/div&gt;
@@ -9972,12 +9777,7 @@ cd LightlyShaders; mkdir qt5build; cd qt5build; cmake ../ -DCMAKE_INSTALL_PREFIX
           &lt;/p&gt;
 
           &lt;div class=&#34;m-0 mt-2 flex items-center&#34;&gt;
-            
-            
-            
-            &lt;span
-              class=&#34;mr-1 inline-block h-3 w-3 rounded-full language-dot&#34;
-              data-language=&#34;Python&#34;&gt;&lt;/span&gt;
+            &lt;span class=&#34;mr-1 inline-block h-3 w-3 rounded-full language-dot&#34; data-language=&#34;Python&#34;&gt;&lt;/span&gt;
             &lt;div class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
               Python
             &lt;/div&gt;
@@ -10069,12 +9869,7 @@ cd LightlyShaders; mkdir qt5build; cd qt5build; cmake ../ -DCMAKE_INSTALL_PREFIX
           &lt;/p&gt;
 
           &lt;div class=&#34;m-0 mt-2 flex items-center&#34;&gt;
-            
-            
-            
-            &lt;span
-              class=&#34;mr-1 inline-block h-3 w-3 rounded-full language-dot&#34;
-              data-language=&#34;TypeScript&#34;&gt;&lt;/span&gt;
+            &lt;span class=&#34;mr-1 inline-block h-3 w-3 rounded-full language-dot&#34; data-language=&#34;TypeScript&#34;&gt;&lt;/span&gt;
             &lt;div class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
               TypeScript
             &lt;/div&gt;
@@ -10258,12 +10053,7 @@ cd LightlyShaders; mkdir qt5build; cd qt5build; cmake ../ -DCMAKE_INSTALL_PREFIX
           &lt;/p&gt;
 
           &lt;div class=&#34;m-0 mt-2 flex items-center&#34;&gt;
-            
-            
-            
-            &lt;span
-              class=&#34;mr-1 inline-block h-3 w-3 rounded-full language-dot&#34;
-              data-language=&#34;Shell&#34;&gt;&lt;/span&gt;
+            &lt;span class=&#34;mr-1 inline-block h-3 w-3 rounded-full language-dot&#34; data-language=&#34;Shell&#34;&gt;&lt;/span&gt;
             &lt;div class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
               Shell
             &lt;/div&gt;
@@ -10382,12 +10172,7 @@ cd LightlyShaders; mkdir qt5build; cd qt5build; cmake ../ -DCMAKE_INSTALL_PREFIX
           &lt;/p&gt;
 
           &lt;div class=&#34;m-0 mt-2 flex items-center&#34;&gt;
-            
-            
-            
-            &lt;span
-              class=&#34;mr-1 inline-block h-3 w-3 rounded-full language-dot&#34;
-              data-language=&#34;C&#34;&gt;&lt;/span&gt;
+            &lt;span class=&#34;mr-1 inline-block h-3 w-3 rounded-full language-dot&#34; data-language=&#34;C&#34;&gt;&lt;/span&gt;
             &lt;div class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
               C
             &lt;/div&gt;
@@ -10486,12 +10271,7 @@ cd LightlyShaders; mkdir qt5build; cd qt5build; cmake ../ -DCMAKE_INSTALL_PREFIX
           &lt;/p&gt;
 
           &lt;div class=&#34;m-0 mt-2 flex items-center&#34;&gt;
-            
-            
-            
-            &lt;span
-              class=&#34;mr-1 inline-block h-3 w-3 rounded-full language-dot&#34;
-              data-language=&#34;QML&#34;&gt;&lt;/span&gt;
+            &lt;span class=&#34;mr-1 inline-block h-3 w-3 rounded-full language-dot&#34; data-language=&#34;QML&#34;&gt;&lt;/span&gt;
             &lt;div class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
               QML
             &lt;/div&gt;
@@ -10589,12 +10369,7 @@ cd LightlyShaders; mkdir qt5build; cd qt5build; cmake ../ -DCMAKE_INSTALL_PREFIX
           &lt;/p&gt;
 
           &lt;div class=&#34;m-0 mt-2 flex items-center&#34;&gt;
-            
-            
-            
-            &lt;span
-              class=&#34;mr-1 inline-block h-3 w-3 rounded-full language-dot&#34;
-              data-language=&#34;Python&#34;&gt;&lt;/span&gt;
+            &lt;span class=&#34;mr-1 inline-block h-3 w-3 rounded-full language-dot&#34; data-language=&#34;Python&#34;&gt;&lt;/span&gt;
             &lt;div class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
               Python
             &lt;/div&gt;
@@ -10683,12 +10458,7 @@ cd LightlyShaders; mkdir qt5build; cd qt5build; cmake ../ -DCMAKE_INSTALL_PREFIX
           &lt;/p&gt;
 
           &lt;div class=&#34;m-0 mt-2 flex items-center&#34;&gt;
-            
-            
-            
-            &lt;span
-              class=&#34;mr-1 inline-block h-3 w-3 rounded-full language-dot&#34;
-              data-language=&#34;Rust&#34;&gt;&lt;/span&gt;
+            &lt;span class=&#34;mr-1 inline-block h-3 w-3 rounded-full language-dot&#34; data-language=&#34;Rust&#34;&gt;&lt;/span&gt;
             &lt;div class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
               Rust
             &lt;/div&gt;
@@ -10782,12 +10552,7 @@ cd LightlyShaders; mkdir qt5build; cd qt5build; cmake ../ -DCMAKE_INSTALL_PREFIX
           &lt;/p&gt;
 
           &lt;div class=&#34;m-0 mt-2 flex items-center&#34;&gt;
-            
-            
-            
-            &lt;span
-              class=&#34;mr-1 inline-block h-3 w-3 rounded-full language-dot&#34;
-              data-language=&#34;Ruby&#34;&gt;&lt;/span&gt;
+            &lt;span class=&#34;mr-1 inline-block h-3 w-3 rounded-full language-dot&#34; data-language=&#34;Ruby&#34;&gt;&lt;/span&gt;
             &lt;div class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
               Ruby
             &lt;/div&gt;
@@ -10957,12 +10722,7 @@ cd LightlyShaders; mkdir qt5build; cd qt5build; cmake ../ -DCMAKE_INSTALL_PREFIX
           &lt;/p&gt;
 
           &lt;div class=&#34;m-0 mt-2 flex items-center&#34;&gt;
-            
-            
-            
-            &lt;span
-              class=&#34;mr-1 inline-block h-3 w-3 rounded-full language-dot&#34;
-              data-language=&#34;Rust&#34;&gt;&lt;/span&gt;
+            &lt;span class=&#34;mr-1 inline-block h-3 w-3 rounded-full language-dot&#34; data-language=&#34;Rust&#34;&gt;&lt;/span&gt;
             &lt;div class=&#34;m-0 mr-5 text-md text-neutral-800 dark:text-neutral&#34;&gt;
               Rust
             &lt;/div&gt;
