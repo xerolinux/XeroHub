@@ -41,8 +41,6 @@ paru -S binder_linux-dkms
 paru -S waydroid
 ```
 
-Now Reboot !
-
 4. Setting up Waydroid:
 
 ```Bash
@@ -57,7 +55,7 @@ sudo waydroid init -s GAPPS -f
 sudo systemctl enable --now waydroid-container
 ```
 
-Then launch Waydroid from the applications menu. For network in your Waydroid container, please check this out >> [**Network in WayDroid**](https://wiki.archlinux.org/title/Waydroid#Network)
+Now Reboot ! Then launch Waydroid from the applications menu. For network in your Waydroid container, please check this out >> [**Network in WayDroid**](https://wiki.archlinux.org/title/Waydroid#Network)
 
 6. To Sideload an application:
 
@@ -67,9 +65,17 @@ waydroid app install $path_to_apk
 
 ### Register your WayDroid with Google
 
-Run `sudo waydroid-extras`, and select **Android 11**, then the **Get Google Device ID** option, **make sure Waydroid is running and Gapps has been installed!** Copy the returned numeric ID open >> [**Device Registration Page**](https://google.com/android/uncertified/), enter the ID and register it, you may need to wait up to 10-20 minutes for device to get registered, then clear Google Play Service’s cache and try logging in!
+To be able to install apps from the **Play Store** you will need to *Register* your device with **Google**. In order to do that, you will need a package only available on the **AUR**, or the **Chaotic-AUR** repos called `waydroid-script-git`, install it :
 
-To update WayDroid all you have to do is run the following command, keep in mind that image is well over 800MB in size...
+```Bash
+paru/yay -S waydroid-script-git
+```
+
+Now run `sudo waydroid-extras`, and select **Android 13**, then the **Get Google Device ID** option, **make sure Waydroid is running and Gapps has been installed!** Copy the returned numeric ID open >> [**Device Registration Page**](https://google.com/android/uncertified/), enter the ID and register it, you may need to wait up to 10-20 minutes for device to get registered, reboot your machine (not Waydroid), launch it and try logging in!
+
+### Update WayDroid
+
+To update WayDroid all you have to do is run the following command, keep in mind that image is well over 800MB in size from **Sourceforge** which can be slow at times...
 
 ```Bash
 sudo waydroid upgrade

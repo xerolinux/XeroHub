@@ -1363,7 +1363,7 @@
     "keywords": ["WayDroid","Wayland","Setup","Guide","Linux"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "461"
+    "wordCount": "519"
   }]
   </script>
 
@@ -2349,6 +2349,7 @@
         <li><a href="#waydroid-in-a-nutshell">WayDroid in a nutshell</a></li>
         <li><a href="#setting-up-waydroid-in-no-time">Setting Up WayDroid in No Time</a></li>
         <li><a href="#register-your-waydroid-with-google">Register your WayDroid with Google</a></li>
+        <li><a href="#update-waydroid">Update WayDroid</a></li>
         <li><a href="#troubleshooting-waydroid">Troubleshooting WayDroid</a></li>
       </ul>
     </li>
@@ -2370,6 +2371,7 @@
         <li><a href="#waydroid-in-a-nutshell">WayDroid in a nutshell</a></li>
         <li><a href="#setting-up-waydroid-in-no-time">Setting Up WayDroid in No Time</a></li>
         <li><a href="#register-your-waydroid-with-google">Register your WayDroid with Google</a></li>
+        <li><a href="#update-waydroid">Update WayDroid</a></li>
         <li><a href="#troubleshooting-waydroid">Troubleshooting WayDroid</a></li>
       </ul>
     </li>
@@ -2586,8 +2588,7 @@
 <li>Installing Waydroid:</li>
 </ol>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Bash" data-lang="Bash"><span class="line"><span class="cl">paru -S waydroid
-</span></span></code></pre></div><p>Now Reboot !</p>
-<ol start="4">
+</span></span></code></pre></div><ol start="4">
 <li>Setting up Waydroid:</li>
 </ol>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Bash" data-lang="Bash"><span class="line"><span class="cl">sudo waydroid init -s GAPPS -f
@@ -2596,7 +2597,7 @@
 <li>Enable and start the waydroid-container service:</li>
 </ol>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Bash" data-lang="Bash"><span class="line"><span class="cl">sudo systemctl <span class="nb">enable</span> --now waydroid-container
-</span></span></code></pre></div><p>Then launch Waydroid from the applications menu. For network in your Waydroid container, please check this out &raquo; <a
+</span></span></code></pre></div><p>Now Reboot ! Then launch Waydroid from the applications menu. For network in your Waydroid container, please check this out &raquo; <a
   href="https://wiki.archlinux.org/title/Waydroid#Network"
     target="_blank"
   ><strong>Network in WayDroid</strong></a></p>
@@ -2609,11 +2610,18 @@
     <div id="register-your-waydroid-with-google" class="anchor"></div>
     
 </h3>
-<p>Run <code>sudo waydroid-extras</code>, and select <strong>Android 11</strong>, then the <strong>Get Google Device ID</strong> option, <strong>make sure Waydroid is running and Gapps has been installed!</strong> Copy the returned numeric ID open &raquo; <a
+<p>To be able to install apps from the <strong>Play Store</strong> you will need to <em>Register</em> your device with <strong>Google</strong>. In order to do that, you will need a package only available on the <strong>AUR</strong>, or the <strong>Chaotic-AUR</strong> repos called <code>waydroid-script-git</code>, install it :</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Bash" data-lang="Bash"><span class="line"><span class="cl">paru/yay -S waydroid-script-git
+</span></span></code></pre></div><p>Now run <code>sudo waydroid-extras</code>, and select <strong>Android 13</strong>, then the <strong>Get Google Device ID</strong> option, <strong>make sure Waydroid is running and Gapps has been installed!</strong> Copy the returned numeric ID open &raquo; <a
   href="https://google.com/android/uncertified/"
     target="_blank"
-  ><strong>Device Registration Page</strong></a>, enter the ID and register it, you may need to wait up to 10-20 minutes for device to get registered, then clear Google Play Service’s cache and try logging in!</p>
-<p>To update WayDroid all you have to do is run the following command, keep in mind that image is well over 800MB in size&hellip;</p>
+  ><strong>Device Registration Page</strong></a>, enter the ID and register it, you may need to wait up to 10-20 minutes for device to get registered, reboot your machine (not Waydroid), launch it and try logging in!</p>
+
+<h3 class="relative group">Update WayDroid
+    <div id="update-waydroid" class="anchor"></div>
+    
+</h3>
+<p>To update WayDroid all you have to do is run the following command, keep in mind that image is well over 800MB in size from <strong>Sourceforge</strong> which can be slow at times&hellip;</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Bash" data-lang="Bash"><span class="line"><span class="cl">sudo waydroid upgrade
 </span></span></code></pre></div>
 <h3 class="relative group">Troubleshooting WayDroid

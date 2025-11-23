@@ -7196,8 +7196,7 @@ Download Bluefin Aurora
 &lt;li&gt;Installing Waydroid:&lt;/li&gt;
 &lt;/ol&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;paru -S waydroid
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Now Reboot !&lt;/p&gt;
-&lt;ol start=&#34;4&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ol start=&#34;4&#34;&gt;
 &lt;li&gt;Setting up Waydroid:&lt;/li&gt;
 &lt;/ol&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo waydroid init -s GAPPS -f
@@ -7206,7 +7205,7 @@ Download Bluefin Aurora
 &lt;li&gt;Enable and start the waydroid-container service:&lt;/li&gt;
 &lt;/ol&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo systemctl &lt;span class=&#34;nb&#34;&gt;enable&lt;/span&gt; --now waydroid-container
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Then launch Waydroid from the applications menu. For network in your Waydroid container, please check this out &amp;raquo; &lt;a
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Now Reboot ! Then launch Waydroid from the applications menu. For network in your Waydroid container, please check this out &amp;raquo; &lt;a
   href=&#34;https://wiki.archlinux.org/title/Waydroid#Network&#34;
     target=&#34;_blank&#34;
   &gt;&lt;strong&gt;Network in WayDroid&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
@@ -7219,11 +7218,18 @@ Download Bluefin Aurora
     &lt;div id=&#34;register-your-waydroid-with-google&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
     
 &lt;/h3&gt;
-&lt;p&gt;Run &lt;code&gt;sudo waydroid-extras&lt;/code&gt;, and select &lt;strong&gt;Android 11&lt;/strong&gt;, then the &lt;strong&gt;Get Google Device ID&lt;/strong&gt; option, &lt;strong&gt;make sure Waydroid is running and Gapps has been installed!&lt;/strong&gt; Copy the returned numeric ID open &amp;raquo; &lt;a
+&lt;p&gt;To be able to install apps from the &lt;strong&gt;Play Store&lt;/strong&gt; you will need to &lt;em&gt;Register&lt;/em&gt; your device with &lt;strong&gt;Google&lt;/strong&gt;. In order to do that, you will need a package only available on the &lt;strong&gt;AUR&lt;/strong&gt;, or the &lt;strong&gt;Chaotic-AUR&lt;/strong&gt; repos called &lt;code&gt;waydroid-script-git&lt;/code&gt;, install it :&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;paru/yay -S waydroid-script-git
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Now run &lt;code&gt;sudo waydroid-extras&lt;/code&gt;, and select &lt;strong&gt;Android 13&lt;/strong&gt;, then the &lt;strong&gt;Get Google Device ID&lt;/strong&gt; option, &lt;strong&gt;make sure Waydroid is running and Gapps has been installed!&lt;/strong&gt; Copy the returned numeric ID open &amp;raquo; &lt;a
   href=&#34;https://google.com/android/uncertified/&#34;
     target=&#34;_blank&#34;
-  &gt;&lt;strong&gt;Device Registration Page&lt;/strong&gt;&lt;/a&gt;, enter the ID and register it, you may need to wait up to 10-20 minutes for device to get registered, then clear Google Play Service’s cache and try logging in!&lt;/p&gt;
-&lt;p&gt;To update WayDroid all you have to do is run the following command, keep in mind that image is well over 800MB in size&amp;hellip;&lt;/p&gt;
+  &gt;&lt;strong&gt;Device Registration Page&lt;/strong&gt;&lt;/a&gt;, enter the ID and register it, you may need to wait up to 10-20 minutes for device to get registered, reboot your machine (not Waydroid), launch it and try logging in!&lt;/p&gt;
+
+&lt;h3 class=&#34;relative group&#34;&gt;Update WayDroid
+    &lt;div id=&#34;update-waydroid&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+    
+&lt;/h3&gt;
+&lt;p&gt;To update WayDroid all you have to do is run the following command, keep in mind that image is well over 800MB in size from &lt;strong&gt;Sourceforge&lt;/strong&gt; which can be slow at times&amp;hellip;&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo waydroid upgrade
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;h3 class=&#34;relative group&#34;&gt;Troubleshooting WayDroid
