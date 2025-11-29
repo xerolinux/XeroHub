@@ -8,6 +8,12 @@ description: "Download XeroLinux"
 
 Welcome to the official download page for **XeroLinux** — a fast, lightweight, and finely tuned Linux experience.
 
+<div align="center">
+
+{{< changelog >}}
+
+</div>
+
 ---
 
 ## 🧪 Demo Version
