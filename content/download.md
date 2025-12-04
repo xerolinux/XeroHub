@@ -54,7 +54,8 @@ When you're ready to fully adopt **XeroLinux**, go for the **Unlocked Version**,
 
 <div align="center">
 
-⚠️ Access to this version requires a donation. ⚠️
+⚠️ <strong>Access to this version requires a donation.</strong> ⚠️<br />
+(We accept Ko-Fi & Crypto. Choose one.)
 
 {{< button href="https://ko-fi.com/s/cf9def9630" target="_blank" >}}
 💰 Ko-Fi 💰
