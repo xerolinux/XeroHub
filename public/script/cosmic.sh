@@ -96,7 +96,7 @@ echo
 sudo pacman -S --noconfirm --needed \
   cosmic-desktop-config firefox rust qt6ct kvantum fastfetch adw-gtk-theme \
   gnome-themes-extra ttf-fira-code nordic-wallpapers xero-hooks grub-hooks \
-  otf-libertinus tex-gyre-fonts ttf-hack-nerd xero-fonts-git xero-fix-scripts \
+  otf-libertinus tex-gyre-fonts ttf-hack-nerd xero-fonts-git extra-scripts \
   ttf-ubuntu-font-family awesome-terminal-fonts ttf-jetbrains-mono-nerd \
   adobe-source-sans-pro-fonts bat bat-extras jq figlet bash-completion \
   brightnessctl acpi upower gtk-update-icon-cache
