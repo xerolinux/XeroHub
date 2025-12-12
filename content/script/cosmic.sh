@@ -105,17 +105,12 @@ sudo pacman -S --noconfirm --needed \
 setup_aur_helper
 echo "Installing AUR packages..."
 $AUR_HELPER -S --noconfirm --needed \
-  oh-my-posh-bin cosmic-applet-arch cosmic-ext-tweaks cosmic-ext-forecast-git \
+  tela-icon-theme oh-my-posh-bin cosmic-applet-arch cosmic-ext-tweaks cosmic-ext-forecast-git \
   system76-power xdg-terminal-exec-git pacseek topgrade cosmic-ext-applet-caffeine-git
 
 # Step 4: Enable services
 echo "Enabling services..."
 sudo systemctl enable sshd com.system76.PowerDaemon
-
-# Step 5: Copy Wallpaper
-sudo mkdir -p /usr/share/xero-gfx
-cd /usr/share/xero-gfx && sudo wget https://raw.githubusercontent.com/DarkXero-dev/Storage/refs/heads/main/Archived/CosmicX/airootfs/usr/share/xero-gfx/Xero-Purple.jpg
-cd
 
 # Step 6: Copy /etc/skel to home
 echo "Copying /etc/skel to user home..."
