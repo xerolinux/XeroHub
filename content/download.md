@@ -40,16 +40,18 @@ This demo is ideal for exploring the UI, testing hardware compatibility, and pee
 
 ---
 
-## 💿 Unlocked Version
+## 💿 Unlocked Version(s)
 
 When you're ready to fully adopt **XeroLinux**, go for the **Unlocked Version**, which includes :
 
 {{< alert cardColor="#9966ff40" >}}
-- Full system installer  
-- Unrestricted package management  
-- All features and updates enabled by default  
-- The **XeroLinux Post-Install Toolkit** is included  
-- Access to full community support and feature requests  
+- Full system installer 
+- **Intel/AMD** & **nVidia** ISOs.
+- Fingerprint GUI Tool (Toolkit).
+- Unrestricted package management.
+- All features and updates enabled by default.
+- The **XeroLinux Post-Install Toolkit** is included.
+- Access to full community support and feature requests.
 {{< /alert >}}
 
 <div align="center">
