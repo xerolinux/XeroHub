@@ -63,12 +63,6 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://xerolinux.xyz/posts/vanilla-to-xero/</loc>
-    <lastmod>2025-03-23T00:00:00+00:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://xerolinux.xyz/updates/browser-situation/</loc>
     <lastmod>2025-03-10T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
@@ -137,12 +131,6 @@
   <url>
     <loc>https://xerolinux.xyz/updates/help-needed/</loc>
     <lastmod>2024-08-13T00:00:00+00:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://xerolinux.xyz/posts/nvidia-560xx/</loc>
-    <lastmod>2024-08-07T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
