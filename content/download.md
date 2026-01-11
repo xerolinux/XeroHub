@@ -21,14 +21,15 @@ Welcome to the official download page for **XeroLinux** — a fast, lightweight,
 Check out the *free* **Demo ISO** to try it first. Learn more here : [Demo Info](https://wiki.xerolinux.xyz/distro/#free-demo)
 
 {{< alert cardColor="#9966ff40" >}}
-- Runs as a Live Environment **without an installer**  
-- The **XeroLinux Post-Install Toolkit** is not included  
-- Uses limited **100 MiB cow-space** (RAM overlay) no updates
-- Installing drivers or software requiring a reboot **won’t work**  
-- System changes will **not persist** after a reboot (non-persistent)  
+- Built for testing in a **Virtual Machine** *Only*.  
+- Runs as a Live Environment **without an installer** . 
+- The **XeroLinux Post-Install Toolkit** is not included.  
+- Uses limited **100 MiB cow-space** (RAM overlay) no updates.
+- Installing drivers or software requiring a reboot **won’t work**.  
+- System changes will **not persist** after a reboot (non-persistent).  
 {{< /alert >}}
 
-This demo is ideal for exploring the UI, testing hardware compatibility, and peeking at how XeroLinux is configured — all with **zero commitment**.
+This demo is ideal for exploring the UI, and peeking at how XeroLinux is configured — all with **zero commitment**.
 
 <div align="center">
 
@@ -45,7 +46,7 @@ This demo is ideal for exploring the UI, testing hardware compatibility, and pee
 When you're ready to fully adopt **XeroLinux**, go for the **Unlocked Version**, which includes :
 
 {{< alert cardColor="#9966ff40" >}}
-- Full system installer 
+- Full system installer. 
 - **Intel/AMD** & **nVidia** ISOs.
 - Fingerprint GUI Tool (Toolkit).
 - Unrestricted package management.
