@@ -157,12 +157,6 @@ sudo grub-mkconfig -o /boot/grub/grub.cfg
 
 ## Customization
 
-### Changing KDE Script URL
-Edit `xero-install.sh` and modify:
-```bash
-XERO_KDE_URL="https://your-url/xero-kde.sh"
-```
-
 ### Adding Packages
 Modify the `install_base_system()` function to add packages to the base install.
 
