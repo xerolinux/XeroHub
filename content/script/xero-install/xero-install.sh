@@ -595,7 +595,7 @@ select_graphics_driver() {
                 gum style --foreground 214 --margin "0 2" "⚠ Will configure: mkinitcpio modules + GRUB parameters"
                 ;;
             "vm")
-                gum style --foreground 245 --margin "0 2" "Packages: mesa xf86-video-vmware"
+                gum style --foreground 245 --margin "0 2" "Packages: mesa"
                 ;;
         esac
     fi
@@ -1145,7 +1145,7 @@ install_graphics() {
             needs_nvidia_config="yes"
             ;;
         "vm")
-            packages="mesa xf86-video-vmware xorg-server xorg-xinit"
+            packages="mesa xorg-server xorg-xinit"
             ;;
     esac
 
