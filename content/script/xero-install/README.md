@@ -1,6 +1,6 @@
 # ✨ Xero Arch Installer v1.0
 
-A beautiful, streamlined Arch Linux installer designed for XeroLinux with a modern `gum`-based TUI.
+A beautiful, streamlined Arch Linux installer designed by XeroLinux with a modern TUI.
 
 ![Xero Arch Installer](https://img.shields.io/badge/version-1.0-blue)
 ![License](https://img.shields.io/badge/license-GPL--3.0-green)
