@@ -12,11 +12,11 @@
 # License: GPL-3.0
 #
 
-set -e
+set -Eeuo pipefail
 
-# ══════════════════════════════════════════════════════════════════════════════════
+# ────────────────────────────────────────────────────────────────────────────────
 # CONFIGURATION
-# ══════════════════════════════════════════════════════════════════════════════════
+# ────────────────────────────────────────────────────────────────────────────────
 
 VERSION="1.0"
 SCRIPT_NAME="Xero Arch Installer"
@@ -53,13 +53,46 @@ CONFIG[swap]="zram"
 CONFIG[swap_algo]="zstd"
 CONFIG[gfx_driver]="mesa"
 CONFIG[uefi]="no"
+CONFIG[boot_part]=""
+CONFIG[root_part]=""
+CONFIG[root_device]=""
 
-# ══════════════════════════════════════════════════════════════════════════════════
+# ────────────────────────────────────────────────────────────────────────────────
+# ERROR HANDLING
+# ────────────────────────────────────────────────────────────────────────────────
+
+have_gum() { command -v gum &>/dev/null; }
+
+on_err() {
+    local exit_code=$?
+    local line_no=${1:-?}
+    local cmd=${2:-?}
+
+    if have_gum; then
+        gum style --foreground 196 --bold --margin "1 2" \
+            "❌ ERROR (exit=$exit_code) at line $line_no" \
+            "$cmd"
+        echo ""
+        gum style --foreground 245 --margin "0 2" \
+            "Tip: If this was during formatting, it's often missing partitions (udev timing) or empty device paths."
+        echo ""
+        gum input --placeholder "Press Enter to exit..."
+    else
+        echo -e "${RED}ERROR (exit=$exit_code) at line $line_no${NC}"
+        echo -e "${RED}$cmd${NC}"
+    fi
+
+    exit "$exit_code"
+}
+
+trap 'on_err "$LINENO" "$BASH_COMMAND"' ERR
+
+# ────────────────────────────────────────────────────────────────────────────────
 # UTILITY FUNCTIONS
-# ══════════════════════════════════════════════════════════════════════════════════
+# ────────────────────────────────────────────────────────────────────────────────
 
 check_root() {
-    if [[ $EUID -ne 0 ]]; then
+    if [[ ${EUID:-0} -ne 0 ]]; then
         echo -e "${RED}Error: This script must be run as root${NC}"
         echo "Please run: sudo $0"
         exit 1
@@ -89,15 +122,24 @@ ensure_dependencies() {
     command -v parted &>/dev/null || deps_needed+=("parted")
     command -v arch-chroot &>/dev/null || deps_needed+=("arch-install-scripts")
 
+    # Used by this script:
+    command -v sgdisk &>/dev/null || deps_needed+=("gptfdisk")
+    command -v mkfs.btrfs &>/dev/null || deps_needed+=("btrfs-progs")
+    command -v mkfs.fat &>/dev/null || deps_needed+=("dosfstools")
+    command -v mkfs.ext4 &>/dev/null || deps_needed+=("e2fsprogs")
+    command -v mkfs.xfs &>/dev/null || deps_needed+=("xfsprogs")
+    command -v cryptsetup &>/dev/null || deps_needed+=("cryptsetup")
+    command -v curl &>/dev/null || deps_needed+=("curl")
+
     if [[ ${#deps_needed[@]} -gt 0 ]]; then
         echo -e "${CYAN}Installing required dependencies...${NC}"
         pacman -Sy --noconfirm "${deps_needed[@]}" &>/dev/null
     fi
 }
 
-# ══════════════════════════════════════════════════════════════════════════════════
+# ────────────────────────────────────────────────────────────────────────────────
 # GUM UI HELPERS
-# ══════════════════════════════════════════════════════════════════════════════════
+# ────────────────────────────────────────────────────────────────────────────────
 
 show_header() {
     clear
@@ -134,19 +176,23 @@ show_warning() {
     gum style --foreground 214 "  ⚠ $1"
 }
 
-run_with_spinner() {
-    local msg="$1"
-    shift
-    gum spin --spinner dot --title "$msg" -- "$@"
-}
-
 confirm_action() {
     gum confirm --affirmative "Yes" --negative "No" "$1"
 }
 
-# ══════════════════════════════════════════════════════════════════════════════════
+run_step() {
+    # Runs a function/command in the CURRENT shell (no subshell),
+    # so CONFIG changes persist. If it fails, the ERR trap prints details.
+    local title="$1"
+    shift
+    show_info "$title"
+    "$@"
+    show_success "${title%...}"
+}
+
+# ────────────────────────────────────────────────────────────────────────────────
 # 1. INSTALLER LANGUAGE
-# ══════════════════════════════════════════════════════════════════════════════════
+# ────────────────────────────────────────────────────────────────────────────────
 
 select_installer_language() {
     show_header
@@ -172,8 +218,8 @@ select_installer_language() {
         "Türkçe (Turkish)"
     )
 
-    local selection
-    selection=$(printf '%s\n' "${languages[@]}" | gum choose --height 15 --header "Choose language:")
+    local selection=""
+    selection=$(printf '%s\n' "${languages[@]}" | gum choose --height 15 --header "Choose language:") || true
 
     if [[ -n "$selection" ]]; then
         CONFIG[installer_lang]="$selection"
@@ -183,16 +229,15 @@ select_installer_language() {
     sleep 0.5
 }
 
-# ══════════════════════════════════════════════════════════════════════════════════
+# ────────────────────────────────────────────────────────────────────────────────
 # 2. LOCALES (System Language + Keyboard)
-# ══════════════════════════════════════════════════════════════════════════════════
+# ────────────────────────────────────────────────────────────────────────────────
 
 select_locales() {
     show_header
     show_submenu_header "🗺️ System Locales"
     echo ""
 
-    # System Locale
     show_info "Select your system locale (language & encoding)"
     echo ""
 
@@ -229,8 +274,8 @@ select_locales() {
         "ro_RO.UTF-8"
     )
 
-    local locale_selection
-    locale_selection=$(printf '%s\n' "${locales[@]}" | gum filter --placeholder "Search locale..." --height 12)
+    local locale_selection=""
+    locale_selection=$(printf '%s\n' "${locales[@]}" | gum filter --placeholder "Search locale..." --height 12) || true
 
     if [[ -n "$locale_selection" ]]; then
         CONFIG[locale]="$locale_selection"
@@ -239,11 +284,9 @@ select_locales() {
 
     echo ""
 
-    # Keyboard Layout
     show_info "Select your keyboard layout"
     echo ""
 
-    # Common keyboard layouts
     local keyboards=(
         "us"
         "uk"
@@ -276,12 +319,11 @@ select_locales() {
         "colemak"
     )
 
-    local kb_selection
-    kb_selection=$(printf '%s\n' "${keyboards[@]}" | gum filter --placeholder "Search keyboard layout..." --height 12)
+    local kb_selection=""
+    kb_selection=$(printf '%s\n' "${keyboards[@]}" | gum filter --placeholder "Search keyboard layout..." --height 12) || true
 
     if [[ -n "$kb_selection" ]]; then
         CONFIG[keyboard]="$kb_selection"
-        # Apply keyboard layout immediately for testing
         loadkeys "$kb_selection" 2>/dev/null || true
         show_success "Keyboard layout: $kb_selection"
     fi
@@ -289,9 +331,9 @@ select_locales() {
     sleep 0.5
 }
 
-# ══════════════════════════════════════════════════════════════════════════════════
+# ────────────────────────────────────────────────────────────────────────────────
 # 3. DISK CONFIGURATION
-# ══════════════════════════════════════════════════════════════════════════════════
+# ────────────────────────────────────────────────────────────────────────────────
 
 select_disk() {
     show_header
@@ -305,7 +347,6 @@ select_disk() {
     show_info "Select the target disk for installation"
     echo ""
 
-    # Get available disks
     local disks=()
     while IFS= read -r line; do
         [[ -n "$line" ]] && disks+=("$line")
@@ -317,22 +358,20 @@ select_disk() {
         exit 1
     fi
 
-    local disk_selection
-    disk_selection=$(printf '%s\n' "${disks[@]}" | gum choose --height 10 --header "Available disks:")
+    local disk_selection=""
+    disk_selection=$(printf '%s\n' "${disks[@]}" | gum choose --height 10 --header "Available disks:") || true
 
     if [[ -n "$disk_selection" ]]; then
         CONFIG[disk]=$(echo "$disk_selection" | awk '{print $1}')
         show_success "Selected disk: ${CONFIG[disk]}"
 
         echo ""
-        # Show disk info
         gum style --foreground 245 --margin "0 2" \
             "$(lsblk "${CONFIG[disk]}" 2>/dev/null)"
     fi
 
     echo ""
 
-    # Filesystem Selection
     show_info "Select filesystem type"
     echo ""
 
@@ -342,8 +381,8 @@ select_disk() {
         "xfs      │ High-performance filesystem"
     )
 
-    local fs_selection
-    fs_selection=$(printf '%s\n' "${filesystems[@]}" | gum choose --height 5 --header "Filesystem:")
+    local fs_selection=""
+    fs_selection=$(printf '%s\n' "${filesystems[@]}" | gum choose --height 5 --header "Filesystem:") || true
 
     if [[ -n "$fs_selection" ]]; then
         CONFIG[filesystem]=$(echo "$fs_selection" | awk '{print $1}')
@@ -352,7 +391,6 @@ select_disk() {
 
     echo ""
 
-    # Encryption Option
     show_info "Disk Encryption (LUKS)"
     echo ""
 
@@ -360,9 +398,9 @@ select_disk() {
         CONFIG[encrypt]="yes"
 
         echo ""
-        local enc_pass1 enc_pass2
-        enc_pass1=$(gum input --password --placeholder "Enter encryption password" --width 50)
-        enc_pass2=$(gum input --password --placeholder "Confirm encryption password" --width 50)
+        local enc_pass1="" enc_pass2=""
+        enc_pass1=$(gum input --password --placeholder "Enter encryption password" --width 50) || true
+        enc_pass2=$(gum input --password --placeholder "Confirm encryption password" --width 50) || true
 
         if [[ "$enc_pass1" == "$enc_pass2" && -n "$enc_pass1" ]]; then
             CONFIG[encrypt_password]="$enc_pass1"
@@ -370,18 +408,20 @@ select_disk() {
         else
             show_error "Passwords don't match or empty. Encryption disabled."
             CONFIG[encrypt]="no"
+            CONFIG[encrypt_password]=""
         fi
     else
         CONFIG[encrypt]="no"
+        CONFIG[encrypt_password]=""
         show_info "Disk encryption disabled"
     fi
 
     sleep 0.5
 }
 
-# ══════════════════════════════════════════════════════════════════════════════════
+# ────────────────────────────────────────────────────────────────────────────────
 # 4. SWAP CONFIGURATION
-# ══════════════════════════════════════════════════════════════════════════════════
+# ────────────────────────────────────────────────────────────────────────────────
 
 configure_swap() {
     show_header
@@ -397,14 +437,13 @@ configure_swap() {
         "none     │ No swap (not recommended)"
     )
 
-    local swap_selection
-    swap_selection=$(printf '%s\n' "${swap_options[@]}" | gum choose --height 5 --header "Swap type:")
+    local swap_selection=""
+    swap_selection=$(printf '%s\n' "${swap_options[@]}" | gum choose --height 5 --header "Swap type:") || true
 
     if [[ -n "$swap_selection" ]]; then
         CONFIG[swap]=$(echo "$swap_selection" | awk '{print $1}')
         show_success "Swap type: ${CONFIG[swap]}"
 
-        # If zram, ask for compression algorithm
         if [[ "${CONFIG[swap]}" == "zram" ]]; then
             echo ""
             show_info "Select zram compression algorithm"
@@ -416,8 +455,8 @@ configure_swap() {
                 "lzo      │ Balanced speed/ratio"
             )
 
-            local algo_selection
-            algo_selection=$(printf '%s\n' "${algos[@]}" | gum choose --height 5 --header "Algorithm:")
+            local algo_selection=""
+            algo_selection=$(printf '%s\n' "${algos[@]}" | gum choose --height 5 --header "Algorithm:") || true
 
             if [[ -n "$algo_selection" ]]; then
                 CONFIG[swap_algo]=$(echo "$algo_selection" | awk '{print $1}')
@@ -429,9 +468,9 @@ configure_swap() {
     sleep 0.5
 }
 
-# ══════════════════════════════════════════════════════════════════════════════════
+# ────────────────────────────────────────────────────────────────────────────────
 # 5. HOSTNAME
-# ══════════════════════════════════════════════════════════════════════════════════
+# ────────────────────────────────────────────────────────────────────────────────
 
 configure_hostname() {
     show_header
@@ -442,10 +481,9 @@ configure_hostname() {
     show_info "(lowercase letters, numbers, and hyphens only)"
     echo ""
 
-    local hostname
-    hostname=$(gum input --placeholder "xerolinux" --value "${CONFIG[hostname]}" --width 40 --header "Hostname:")
+    local hostname=""
+    hostname=$(gum input --placeholder "xerolinux" --value "${CONFIG[hostname]}" --width 40 --header "Hostname:") || true
 
-    # Validate hostname
     if [[ "$hostname" =~ ^[a-z][a-z0-9-]*$ && ${#hostname} -le 63 ]]; then
         CONFIG[hostname]="$hostname"
         show_success "Hostname: ${CONFIG[hostname]}"
@@ -457,39 +495,31 @@ configure_hostname() {
     sleep 0.5
 }
 
-# ══════════════════════════════════════════════════════════════════════════════════
+# ────────────────────────────────────────────────────────────────────────────────
 # 6. GRAPHICS DRIVER
-# ══════════════════════════════════════════════════════════════════════════════════
+# ────────────────────────────────────────────────────────────────────────────────
 
 select_graphics_driver() {
     show_header
     show_submenu_header "🎮 Graphics Driver"
     echo ""
 
-    # Detect GPU
-    local gpu_info=""
-    if lspci 2>/dev/null | grep -qi nvidia; then
-        gpu_info+="NVIDIA detected. "
-    fi
-    if lspci 2>/dev/null | grep -qi "amd\|radeon"; then
-        gpu_info+="AMD detected. "
-    fi
-    if lspci 2>/dev/null | grep -qi intel; then
-        gpu_info+="Intel detected. "
-    fi
+    local is_vm="no"
     if systemd-detect-virt -q 2>/dev/null; then
-        gpu_info+="Virtual Machine detected. "
-    fi
-
-    if [[ -n "$gpu_info" ]]; then
-        gum style --foreground 82 --margin "0 2" "🔍 $gpu_info"
+        is_vm="yes"
+        gum style --foreground 82 --margin "0 2" "🔍 Virtual Machine detected."
         echo ""
     fi
 
     show_info "Select the graphics driver configuration for your system"
     echo ""
 
-    local drivers=(
+    # If VM, put "vm" first (better UX)
+    local drivers=()
+    if [[ "$is_vm" == "yes" ]]; then
+        drivers+=("vm                   │ Virtual Machine")
+    fi
+    drivers+=(
         "intel                │ Intel Graphics"
         "amd                  │ AMD Graphics"
         "nvidia-turing        │ NVIDIA Turing+ (RTX 20/30/40, GTX 1650+)"
@@ -499,17 +529,18 @@ select_graphics_driver() {
         "intel-nvidia-legacy  │ Intel + NVIDIA Legacy (Optimus)"
         "amd-nvidia-turing    │ AMD + NVIDIA Turing+ (Hybrid)"
         "amd-nvidia-legacy    │ AMD + NVIDIA Legacy (Hybrid)"
-        "vm                   │ Virtual Machine"
     )
+    if [[ "$is_vm" != "yes" ]]; then
+        drivers+=("vm                   │ Virtual Machine")
+    fi
 
-    local driver_selection
-    driver_selection=$(printf '%s\n' "${drivers[@]}" | gum choose --height 12 --header "Graphics driver:")
+    local driver_selection=""
+    driver_selection=$(printf '%s\n' "${drivers[@]}" | gum choose --height 12 --header "Graphics driver:") || true
 
     if [[ -n "$driver_selection" ]]; then
         CONFIG[gfx_driver]=$(echo "$driver_selection" | awk '{print $1}')
         show_success "Graphics driver: ${CONFIG[gfx_driver]}"
 
-        # Show what will be configured
         echo ""
         case "${CONFIG[gfx_driver]}" in
             "intel")
@@ -554,24 +585,22 @@ select_graphics_driver() {
     sleep 0.5
 }
 
-# ══════════════════════════════════════════════════════════════════════════════════
+# ────────────────────────────────────────────────────────────────────────────────
 # 7. AUTHENTICATION (Users & Root)
-# ══════════════════════════════════════════════════════════════════════════════════
+# ────────────────────────────────────────────────────────────────────────────────
 
 configure_authentication() {
     show_header
     show_submenu_header "👤 User Account Setup"
     echo ""
 
-    # Username
     show_info "Create your user account"
     echo ""
 
-    local username
-    username=$(gum input --placeholder "username" --width 40 --header "Username (lowercase):")
+    local username=""
+    username=$(gum input --placeholder "username" --width 40 --header "Username (lowercase):") || true
 
-    # Validate username
-    if [[ ! "$username" =~ ^[a-z_][a-z0-9_-]*$ || ${#username} -gt 32 ]]; then
+    if [[ ! "$username" =~ ^[a-z_][a-z0-9_-]*$ || ${#username} -gt 32 || -z "$username" ]]; then
         show_warning "Invalid username. Using 'user'"
         username="user"
     fi
@@ -580,10 +609,9 @@ configure_authentication() {
 
     echo ""
 
-    # User password
-    local user_pass1 user_pass2
-    user_pass1=$(gum input --password --placeholder "Password for $username" --width 50)
-    user_pass2=$(gum input --password --placeholder "Confirm password" --width 50)
+    local user_pass1="" user_pass2=""
+    user_pass1=$(gum input --password --placeholder "Password for $username" --width 50) || true
+    user_pass2=$(gum input --password --placeholder "Confirm password" --width 50) || true
 
     if [[ "$user_pass1" == "$user_pass2" && ${#user_pass1} -ge 1 ]]; then
         CONFIG[user_password]="$user_pass1"
@@ -603,9 +631,9 @@ configure_authentication() {
         CONFIG[root_password]="${CONFIG[user_password]}"
         show_success "Root password set (same as user)"
     else
-        local root_pass1 root_pass2
-        root_pass1=$(gum input --password --placeholder "Root password" --width 50)
-        root_pass2=$(gum input --password --placeholder "Confirm root password" --width 50)
+        local root_pass1="" root_pass2=""
+        root_pass1=$(gum input --password --placeholder "Root password" --width 50) || true
+        root_pass2=$(gum input --password --placeholder "Confirm root password" --width 50) || true
 
         if [[ "$root_pass1" == "$root_pass2" && -n "$root_pass1" ]]; then
             CONFIG[root_password]="$root_pass1"
@@ -619,9 +647,9 @@ configure_authentication() {
     sleep 0.5
 }
 
-# ══════════════════════════════════════════════════════════════════════════════════
+# ────────────────────────────────────────────────────────────────────────────────
 # 8. TIMEZONE
-# ══════════════════════════════════════════════════════════════════════════════════
+# ────────────────────────────────────────────────────────────────────────────────
 
 select_timezone() {
     show_header
@@ -631,23 +659,21 @@ select_timezone() {
     show_info "Select your timezone"
     echo ""
 
-    # Get regions
-    local regions
+    local regions=""
     regions=$(find /usr/share/zoneinfo -maxdepth 1 -type d -printf '%f\n' 2>/dev/null | \
-              grep -vE '^(\+|posix|right|zoneinfo)$' | sort)
+              grep -vE '^(\+|posix|right|zoneinfo)$' | sort) || true
 
-    local region
-    region=$(echo "$regions" | gum filter --placeholder "Search region..." --height 12 --header "Select region:")
+    local region=""
+    region=$(echo "$regions" | gum filter --placeholder "Search region..." --height 12 --header "Select region:") || true
 
     if [[ -n "$region" ]]; then
-        # Get cities in region
-        local cities
-        cities=$(find "/usr/share/zoneinfo/$region" -type f -printf '%f\n' 2>/dev/null | sort)
+        local cities=""
+        cities=$(find "/usr/share/zoneinfo/$region" -type f -printf '%f\n' 2>/dev/null | sort) || true
 
         if [[ -n "$cities" ]]; then
             echo ""
-            local city
-            city=$(echo "$cities" | gum filter --placeholder "Search city..." --height 12 --header "Select city:")
+            local city=""
+            city=$(echo "$cities" | gum filter --placeholder "Search city..." --height 12 --header "Select city:") || true
 
             if [[ -n "$city" ]]; then
                 CONFIG[timezone]="$region/$city"
@@ -664,15 +690,14 @@ select_timezone() {
     sleep 0.5
 }
 
-# ══════════════════════════════════════════════════════════════════════════════════
+# ────────────────────────────────────────────────────────────────────────────────
 # MAIN MENU
-# ══════════════════════════════════════════════════════════════════════════════════
+# ────────────────────────────────────────────────────────────────────────────────
 
 show_main_menu() {
     while true; do
         show_header
 
-        # Show current configuration status
         local boot_mode="BIOS"
         [[ "${CONFIG[uefi]}" == "yes" ]] && boot_mode="UEFI"
 
@@ -695,8 +720,8 @@ show_main_menu() {
             "0. ❌ Exit"
         )
 
-        local selection
-        selection=$(printf '%s\n' "${menu_items[@]}" | gum choose --height 15 --header $'Configure your installation:\n')
+        local selection=""
+        selection=$(printf '%s\n' "${menu_items[@]}" | gum choose --height 15 --header $'Configure your installation:\n') || true
 
         case "$selection" in
             "1."*) select_installer_language ;;
@@ -726,9 +751,9 @@ show_main_menu() {
     done
 }
 
-# ══════════════════════════════════════════════════════════════════════════════════
+# ────────────────────────────────────────────────────────────────────────────────
 # VALIDATION
-# ══════════════════════════════════════════════════════════════════════════════════
+# ────────────────────────────────────────────────────────────────────────────────
 
 validate_config() {
     local errors=()
@@ -754,9 +779,9 @@ validate_config() {
     return 0
 }
 
-# ══════════════════════════════════════════════════════════════════════════════════
+# ────────────────────────────────────────────────────────────────────────────────
 # SUMMARY
-# ══════════════════════════════════════════════════════════════════════════════════
+# ────────────────────────────────────────────────────────────────────────────────
 
 show_summary() {
     show_header
@@ -792,9 +817,9 @@ show_summary() {
     echo ""
 }
 
-# ══════════════════════════════════════════════════════════════════════════════════
+# ────────────────────────────────────────────────────────────────────────────────
 # INSTALLATION
-# ══════════════════════════════════════════════════════════════════════════════════
+# ────────────────────────────────────────────────────────────────────────────────
 
 perform_installation() {
     show_header
@@ -802,55 +827,30 @@ perform_installation() {
         "🚀 Starting Installation..."
     echo ""
 
-    # Step 1: Partition disk
-    gum spin --spinner dot --title "Partitioning disk..." -- bash -c "partition_disk"
-    show_success "Disk partitioned"
+    # IMPORTANT: run stateful functions in THIS shell (no gum spin subshell).
+    run_step "Partitioning disk..." partition_disk
 
-    # Step 2: Setup encryption (if enabled)
     if [[ "${CONFIG[encrypt]}" == "yes" ]]; then
-        gum spin --spinner dot --title "Setting up encryption..." -- bash -c "setup_encryption"
-        show_success "Encryption configured"
+        run_step "Setting up encryption..." setup_encryption
     fi
 
-    # Step 3: Format partitions
-    gum spin --spinner dot --title "Formatting partitions..." -- bash -c "format_partitions"
-    show_success "Partitions formatted"
+    run_step "Formatting partitions..." format_partitions
+    run_step "Mounting filesystems..." mount_filesystems
 
-    # Step 4: Mount filesystems
-    gum spin --spinner dot --title "Mounting filesystems..." -- bash -c "mount_filesystems"
-    show_success "Filesystems mounted"
-
-    # Step 5: Install base system
     show_info "Installing base system (this may take a while)..."
     install_base_system
     show_success "Base system installed"
 
-    # Step 6: Add XeroLinux and Chaotic-AUR repositories
     show_info "Adding XeroLinux and Chaotic-AUR repositories..."
     add_repos
     show_success "Repositories configured"
 
-    # Step 7: Configure system
-    gum spin --spinner dot --title "Configuring system..." -- bash -c "configure_system"
-    show_success "System configured"
+    run_step "Configuring system..." configure_system
+    run_step "Installing GRUB bootloader..." install_bootloader
+    run_step "Creating user account..." create_user
+    run_step "Installing graphics drivers..." install_graphics
+    run_step "Configuring swap..." setup_swap_system
 
-    # Step 8: Install bootloader
-    gum spin --spinner dot --title "Installing GRUB bootloader..." -- bash -c "install_bootloader"
-    show_success "Bootloader installed"
-
-    # Step 9: Create user
-    gum spin --spinner dot --title "Creating user account..." -- bash -c "create_user"
-    show_success "User account created"
-
-    # Step 10: Install graphics drivers
-    gum spin --spinner dot --title "Installing graphics drivers..." -- bash -c "install_graphics"
-    show_success "Graphics drivers installed"
-
-    # Step 11: Setup swap
-    gum spin --spinner dot --title "Configuring swap..." -- bash -c "setup_swap_system"
-    show_success "Swap configured"
-
-    # Step 12: Download and prepare KDE installer
     show_info "Preparing XeroLinux KDE installer..."
     prepare_kde_installer
     show_success "KDE installer ready"
@@ -866,10 +866,8 @@ perform_installation() {
     echo ""
     gum input --placeholder "Press Enter to continue to KDE installation..."
 
-    # Run KDE installer in chroot
     run_kde_installer
 
-    # Final message
     show_header
     gum style --foreground 82 --bold --border double --border-foreground 82 \
         --align center --width 60 --margin "1 2" --padding "1 2" \
@@ -882,36 +880,35 @@ perform_installation() {
     echo ""
 }
 
-# ══════════════════════════════════════════════════════════════════════════════════
+# ────────────────────────────────────────────────────────────────────────────────
 # DISK OPERATIONS
-# ══════════════════════════════════════════════════════════════════════════════════
+# ────────────────────────────────────────────────────────────────────────────────
 
 partition_disk() {
     local disk="${CONFIG[disk]}"
 
-    # Wipe disk
+    [[ -n "$disk" ]] || { echo "ERROR: CONFIG[disk] is empty"; exit 1; }
+
     wipefs -af "$disk" &>/dev/null || true
     sgdisk -Z "$disk" &>/dev/null || true
 
     if [[ "${CONFIG[uefi]}" == "yes" ]]; then
-        # GPT for UEFI
         parted -s "$disk" mklabel gpt
         parted -s "$disk" mkpart ESP fat32 1MiB 513MiB
         parted -s "$disk" set 1 esp on
         parted -s "$disk" mkpart primary 513MiB 100%
     else
-        # MBR for BIOS
         parted -s "$disk" mklabel msdos
         parted -s "$disk" mkpart primary ext4 1MiB 513MiB
         parted -s "$disk" set 1 boot on
         parted -s "$disk" mkpart primary 513MiB 100%
     fi
 
-    sleep 2
-    partprobe "$disk"
+    # Make sure kernel/udev creates partition nodes (common VM timing issue)
+    partprobe "$disk" || true
+    udevadm settle
     sleep 1
 
-    # Set partition paths
     if [[ "$disk" == *"nvme"* || "$disk" == *"mmcblk"* ]]; then
         CONFIG[boot_part]="${disk}p1"
         CONFIG[root_part]="${disk}p2"
@@ -919,50 +916,61 @@ partition_disk() {
         CONFIG[boot_part]="${disk}1"
         CONFIG[root_part]="${disk}2"
     fi
+
+    # Validate partitions exist as block devices BEFORE formatting
+    if [[ ! -b "${CONFIG[boot_part]}" || ! -b "${CONFIG[root_part]}" ]]; then
+        echo "ERROR: Partitions not ready after partitioning."
+        echo "  disk='$disk'"
+        echo "  boot_part='${CONFIG[boot_part]}' block? $( [[ -b "${CONFIG[boot_part]}" ]] && echo yes || echo no )"
+        echo "  root_part='${CONFIG[root_part]}' block? $( [[ -b "${CONFIG[root_part]}" ]] && echo yes || echo no )"
+        echo ""
+        lsblk -f "$disk" || true
+        exit 1
+    fi
 }
 
 setup_encryption() {
-    if [[ "${CONFIG[encrypt]}" != "yes" ]]; then
-        return
-    fi
+    [[ "${CONFIG[encrypt]}" == "yes" ]] || return 0
+
+    [[ -n "${CONFIG[encrypt_password]}" ]] || { echo "ERROR: Encryption enabled but password is empty"; exit 1; }
+    [[ -b "${CONFIG[root_part]}" ]] || { echo "ERROR: root_part '${CONFIG[root_part]}' is not a block device"; exit 1; }
 
     echo -n "${CONFIG[encrypt_password]}" | cryptsetup luksFormat --type luks2 "${CONFIG[root_part]}" -
     echo -n "${CONFIG[encrypt_password]}" | cryptsetup open "${CONFIG[root_part]}" cryptroot -
 
     CONFIG[root_device]="/dev/mapper/cryptroot"
+
+    [[ -b "${CONFIG[root_device]}" ]] || { echo "ERROR: cryptroot mapper not created"; exit 1; }
 }
 
 format_partitions() {
     local root_device="${CONFIG[root_part]}"
-    [[ "${CONFIG[encrypt]}" == "yes" ]] && root_device="/dev/mapper/cryptroot"
+    [[ "${CONFIG[encrypt]}" == "yes" ]] && root_device="${CONFIG[root_device]}"
 
-    # Format boot
+    [[ -b "${CONFIG[boot_part]}" ]] || { echo "ERROR: boot_part '${CONFIG[boot_part]}' is not a block device"; exit 1; }
+    [[ -b "$root_device" ]] || { echo "ERROR: root device '$root_device' is not a block device"; exit 1; }
+
     if [[ "${CONFIG[uefi]}" == "yes" ]]; then
         mkfs.fat -F32 "${CONFIG[boot_part]}"
     else
         mkfs.ext4 -F "${CONFIG[boot_part]}"
     fi
 
-    # Format root
     case "${CONFIG[filesystem]}" in
-        btrfs)
-            mkfs.btrfs -f "$root_device"
-            ;;
-        ext4)
-            mkfs.ext4 -F "$root_device"
-            ;;
-        xfs)
-            mkfs.xfs -f "$root_device"
-            ;;
+        btrfs) mkfs.btrfs -f "$root_device" ;;
+        ext4)  mkfs.ext4 -F "$root_device" ;;
+        xfs)   mkfs.xfs -f "$root_device" ;;
+        *)     echo "ERROR: Unknown filesystem '${CONFIG[filesystem]}'"; exit 1 ;;
     esac
 }
 
 mount_filesystems() {
     local root_device="${CONFIG[root_part]}"
-    [[ "${CONFIG[encrypt]}" == "yes" ]] && root_device="/dev/mapper/cryptroot"
+    [[ "${CONFIG[encrypt]}" == "yes" ]] && root_device="${CONFIG[root_device]}"
+
+    [[ -b "$root_device" ]] || { echo "ERROR: root device '$root_device' is not a block device"; exit 1; }
 
     if [[ "${CONFIG[filesystem]}" == "btrfs" ]]; then
-        # Mount and create subvolumes
         mount "$root_device" "$MOUNTPOINT"
         btrfs subvolume create "$MOUNTPOINT/@"
         btrfs subvolume create "$MOUNTPOINT/@home"
@@ -971,7 +979,6 @@ mount_filesystems() {
         btrfs subvolume create "$MOUNTPOINT/@snapshots"
         umount "$MOUNTPOINT"
 
-        # Remount with subvolumes
         mount -o noatime,compress=zstd,subvol=@ "$root_device" "$MOUNTPOINT"
         mkdir -p "$MOUNTPOINT"/{home,var,tmp,.snapshots,boot}
         mount -o noatime,compress=zstd,subvol=@home "$root_device" "$MOUNTPOINT/home"
@@ -983,7 +990,6 @@ mount_filesystems() {
         mkdir -p "$MOUNTPOINT/boot"
     fi
 
-    # Mount boot
     if [[ "${CONFIG[uefi]}" == "yes" ]]; then
         mkdir -p "$MOUNTPOINT/boot/efi"
         mount "${CONFIG[boot_part]}" "$MOUNTPOINT/boot/efi"
@@ -992,71 +998,56 @@ mount_filesystems() {
     fi
 }
 
-# ══════════════════════════════════════════════════════════════════════════════════
+# ────────────────────────────────────────────────────────────────────────────────
 # SYSTEM INSTALLATION
-# ══════════════════════════════════════════════════════════════════════════════════
+# ────────────────────────────────────────────────────────────────────────────────
 
 install_base_system() {
-    # Base packages
     local packages="base base-devel linux linux-firmware linux-headers"
 
-    # Add microcode
     if grep -q "GenuineIntel" /proc/cpuinfo; then
         packages+=" intel-ucode"
     elif grep -q "AuthenticAMD" /proc/cpuinfo; then
         packages+=" amd-ucode"
     fi
 
-    # Essential packages
     packages+=" grub efibootmgr os-prober"
-    packages+=" btrfs-progs dosfstools e2fsprogs"
+    packages+=" btrfs-progs dosfstools e2fsprogs xfsprogs"
     packages+=" networkmanager sudo nano vim git wget curl"
 
     pacstrap -K "$MOUNTPOINT" $packages
-
-    # Generate fstab
     genfstab -U "$MOUNTPOINT" >> "$MOUNTPOINT/etc/fstab"
 }
 
 add_repos() {
-    # Add XeroLinux repository
     if ! grep -q "\[xerolinux\]" "$MOUNTPOINT/etc/pacman.conf"; then
         echo -e '\n[xerolinux]\nSigLevel = Optional TrustAll\nServer = https://repos.xerolinux.xyz/$repo/$arch' >> "$MOUNTPOINT/etc/pacman.conf"
     fi
 
-    # Add Chaotic-AUR repository
     if ! grep -q "\[chaotic-aur\]" "$MOUNTPOINT/etc/pacman.conf"; then
-        # Add Chaotic-AUR keyring
         arch-chroot "$MOUNTPOINT" pacman-key --recv-key 3056513887B78AEB --keyserver keyserver.ubuntu.com
         arch-chroot "$MOUNTPOINT" pacman-key --lsign-key 3056513887B78AEB
 
-        # Install keyring and mirrorlist
         arch-chroot "$MOUNTPOINT" pacman -U --noconfirm 'https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-keyring.pkg.tar.zst'
         arch-chroot "$MOUNTPOINT" pacman -U --noconfirm 'https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-mirrorlist.pkg.tar.zst'
 
-        # Add to pacman.conf
         echo -e '\n[chaotic-aur]\nInclude = /etc/pacman.d/chaotic-mirrorlist' >> "$MOUNTPOINT/etc/pacman.conf"
     fi
 
-    # Sync package databases with new repos
     arch-chroot "$MOUNTPOINT" pacman -Sy
 }
 
 configure_system() {
-    # Timezone
     arch-chroot "$MOUNTPOINT" ln -sf "/usr/share/zoneinfo/${CONFIG[timezone]}" /etc/localtime
     arch-chroot "$MOUNTPOINT" hwclock --systohc
 
-    # Locale
     echo "${CONFIG[locale]} UTF-8" >> "$MOUNTPOINT/etc/locale.gen"
     echo "en_US.UTF-8 UTF-8" >> "$MOUNTPOINT/etc/locale.gen"
     arch-chroot "$MOUNTPOINT" locale-gen
     echo "LANG=${CONFIG[locale]}" > "$MOUNTPOINT/etc/locale.conf"
 
-    # Keyboard
     echo "KEYMAP=${CONFIG[keyboard]}" > "$MOUNTPOINT/etc/vconsole.conf"
 
-    # Hostname
     echo "${CONFIG[hostname]}" > "$MOUNTPOINT/etc/hostname"
     cat > "$MOUNTPOINT/etc/hosts" << EOF
 127.0.0.1   localhost
@@ -1064,10 +1055,8 @@ configure_system() {
 127.0.1.1   ${CONFIG[hostname]}.localdomain ${CONFIG[hostname]}
 EOF
 
-    # Enable NetworkManager
     arch-chroot "$MOUNTPOINT" systemctl enable NetworkManager
 
-    # Configure mkinitcpio for encryption
     if [[ "${CONFIG[encrypt]}" == "yes" ]]; then
         sed -i 's/^HOOKS=.*/HOOKS=(base udev autodetect microcode modconf kms keyboard keymap consolefont block encrypt filesystems fsck)/' "$MOUNTPOINT/etc/mkinitcpio.conf"
         arch-chroot "$MOUNTPOINT" mkinitcpio -P
@@ -1081,9 +1070,8 @@ install_bootloader() {
         arch-chroot "$MOUNTPOINT" grub-install --target=i386-pc "${CONFIG[disk]}"
     fi
 
-    # Configure GRUB for encryption
     if [[ "${CONFIG[encrypt]}" == "yes" ]]; then
-        local uuid
+        local uuid=""
         uuid=$(blkid -s UUID -o value "${CONFIG[root_part]}")
         sed -i "s|^GRUB_CMDLINE_LINUX=.*|GRUB_CMDLINE_LINUX=\"cryptdevice=UUID=$uuid:cryptroot root=/dev/mapper/cryptroot\"|" "$MOUNTPOINT/etc/default/grub"
     fi
@@ -1092,14 +1080,11 @@ install_bootloader() {
 }
 
 create_user() {
-    # Set root password
     echo "root:${CONFIG[root_password]}" | arch-chroot "$MOUNTPOINT" chpasswd
 
-    # Create user
     arch-chroot "$MOUNTPOINT" useradd -m -G wheel,audio,video,storage,optical -s /bin/bash "${CONFIG[username]}"
     echo "${CONFIG[username]}:${CONFIG[user_password]}" | arch-chroot "$MOUNTPOINT" chpasswd
 
-    # Enable sudo for wheel group
     sed -i 's/^# %wheel ALL=(ALL:ALL) ALL/%wheel ALL=(ALL:ALL) ALL/' "$MOUNTPOINT/etc/sudoers"
 }
 
@@ -1146,25 +1131,15 @@ install_graphics() {
             ;;
     esac
 
-    # Install packages
     if [[ -n "$packages" ]]; then
         arch-chroot "$MOUNTPOINT" pacman -S --noconfirm --needed $packages
     fi
 
-    # Configure NVIDIA if needed
     if [[ "$needs_nvidia_config" == "yes" ]]; then
-        # Add NVIDIA modules to mkinitcpio.conf
         sed -i 's/^MODULES=(\(.*\))/MODULES=(\1 nvidia nvidia_modeset nvidia_uvm nvidia_drm)/' "$MOUNTPOINT/etc/mkinitcpio.conf"
-        # Clean up any double spaces
         sed -i 's/MODULES=( /MODULES=(/' "$MOUNTPOINT/etc/mkinitcpio.conf"
-
-        # Rebuild initramfs
         arch-chroot "$MOUNTPOINT" mkinitcpio -P
-
-        # Add NVIDIA parameters to GRUB
         sed -i 's/^GRUB_CMDLINE_LINUX_DEFAULT="\(.*\)"/GRUB_CMDLINE_LINUX_DEFAULT="\1 modprobe.blacklist=nouveau nvidia-drm.modeset=1"/' "$MOUNTPOINT/etc/default/grub"
-
-        # Rebuild GRUB config
         arch-chroot "$MOUNTPOINT" grub-mkconfig -o /boot/grub/grub.cfg
     fi
 }
@@ -1180,27 +1155,25 @@ compression-algorithm = ${CONFIG[swap_algo]}
 EOF
             ;;
         "file")
-            # Create 4GB swap file
             arch-chroot "$MOUNTPOINT" dd if=/dev/zero of=/swapfile bs=1M count=4096 status=progress
             arch-chroot "$MOUNTPOINT" chmod 600 /swapfile
             arch-chroot "$MOUNTPOINT" mkswap /swapfile
             echo "/swapfile none swap defaults 0 0" >> "$MOUNTPOINT/etc/fstab"
             ;;
+        "none")
+            ;;
     esac
 }
 
-# ══════════════════════════════════════════════════════════════════════════════════
+# ────────────────────────────────────────────────────────────────────────────────
 # KDE INSTALLER
-# ══════════════════════════════════════════════════════════════════════════════════
+# ────────────────────────────────────────────────────────────────────────────────
 
 prepare_kde_installer() {
-    # Copy the KDE installer script to the new system
     if [[ -f "/root/xero-kde.sh" ]]; then
         cp /root/xero-kde.sh "$MOUNTPOINT/home/${CONFIG[username]}/xero-kde.sh"
     else
-        # Download if not present locally
         curl -fsSL "$XERO_KDE_URL" -o "$MOUNTPOINT/home/${CONFIG[username]}/xero-kde.sh" || {
-            # Create a minimal fallback script
             cat > "$MOUNTPOINT/home/${CONFIG[username]}/xero-kde.sh" << 'KDESCRIPT'
 #!/bin/bash
 echo "XeroLinux KDE installer placeholder"
@@ -1219,30 +1192,19 @@ run_kde_installer() {
         "🎨 Running XeroLinux KDE Setup..."
     echo ""
 
-    # Run the KDE installer as the new user
     arch-chroot "$MOUNTPOINT" su - "${CONFIG[username]}" -c "bash /home/${CONFIG[username]}/xero-kde.sh"
 }
 
-# ══════════════════════════════════════════════════════════════════════════════════
+# ────────────────────────────────────────────────────────────────────────────────
 # MAIN ENTRY POINT
-# ══════════════════════════════════════════════════════════════════════════════════
+# ────────────────────────────────────────────────────────────────────────────────
 
 main() {
-    # Pre-flight checks
     check_root
     check_internet
     ensure_dependencies
     check_uefi
-
-    # Show welcome and run main menu
     show_main_menu
 }
 
-# Export functions for subshells
-export -f partition_disk setup_encryption format_partitions mount_filesystems
-export -f install_base_system add_repos configure_system install_bootloader create_user
-export -f install_graphics setup_swap_system
-export CONFIG MOUNTPOINT
-
-# Run main
 main "$@"
