@@ -1233,7 +1233,7 @@ run_kde_installer() {
         "🎨 Running XeroLinux KDE Setup..."
     echo ""
 
-    arch-chroot "$MOUNTPOINT" su - "${CONFIG[username]}" -c "bash /home/${CONFIG[username]}/xero-kde.sh"
+    arch-chroot "$MOUNTPOINT" bash "/home/${CONFIG[username]}/xero-kde.sh"
 }
 
 # ────────────────────────────────────────────────────────────────────────────────
