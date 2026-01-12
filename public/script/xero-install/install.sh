@@ -2,7 +2,7 @@
 #
 # Xero Arch Installer - Quick Launch Script
 # 
-# Run with: curl -fsSL https://raw.githubusercontent.com/xerolinux/xero-install/main/install.sh | bash
+# Run with: curl -fsSL https://xerolinux.xyz/script/xero-install/install.sh | bash
 #
 # Or: bash <(curl -fsSL https://xero.link/install)
 #
@@ -65,7 +65,7 @@ cd "$INSTALL_DIR"
 
 # Download main installer
 echo -e "${CYAN}Downloading Xero Arch Installer...${NC}"
-INSTALLER_URL="https://raw.githubusercontent.com/xerolinux/xero-install/main/xero-install.sh"
+INSTALLER_URL="https://xerolinux.xyz/script/xero-install/xero-install.sh"
 curl -fsSL "$INSTALLER_URL" -o xero-install.sh
 chmod +x xero-install.sh
 echo -e "${GREEN}✓ Installer downloaded${NC}"
