@@ -666,8 +666,9 @@ show_main_menu() {
         echo ""
         
         local menu_items=(
+            ""
             "1. 🌐 Installer Language    │ ${CONFIG[installer_lang]}"
-            "2. 🗺️  Locales               │ ${CONFIG[locale]} / ${CONFIG[keyboard]}"
+            "2. 🗺️ Locales               │ ${CONFIG[locale]} / ${CONFIG[keyboard]}"
             "3. 💾 Disk Configuration    │ ${CONFIG[disk]:-Not configured}"
             "4. 🔄 Swap                  │ ${CONFIG[swap]}"
             "5. 💻 Hostname              │ ${CONFIG[hostname]}"

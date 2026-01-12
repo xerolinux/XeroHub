@@ -72,7 +72,7 @@ echo -e "${GREEN}✓ Installer downloaded${NC}"
 
 # Download KDE script
 echo -e "${CYAN}Downloading XeroLinux KDE script...${NC}"
-KDE_URL="https://raw.githubusercontent.com/xerolinux/xero-scripts/main/xero-kde.sh"
+KDE_URL="https://xerolinux.xyz/script/xero-install/xero-kde.sh"
 curl -fsSL "$KDE_URL" -o /root/xero-kde.sh 2>/dev/null || {
     echo -e "${CYAN}Note: KDE script will be downloaded during installation${NC}"
 }
