@@ -16,7 +16,7 @@ A beautiful, streamlined Arch Linux installer designed for XeroLinux with a mode
 
 ## Quick Start
 
-Boot into the Arch Linux live ISO and run:
+Boot into the Arch Linux live ISO and run the following command :
 
 ```bash
 bash <(curl -fsSL https://xerolinux.xyz/script/xero-install/install.sh)
