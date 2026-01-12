@@ -521,7 +521,7 @@ install_kde() {
     print_step "Installing Kernel & Bootloader... 🐧"
 
     sudo pacman -S --needed --noconfirm \
-        linux linux-atm linux-headers grub os-prober grub-hooks update-grub || { print_error "Kernel/bootloader installation failed!"; exit 1; }
+        linux linux-atm linux-headers os-prober grub-hooks update-grub || { print_error "Kernel/bootloader installation failed!"; exit 1; }
 
     print_success "Kernel & bootloader installed!"
     echo ""
@@ -793,7 +793,7 @@ install_kde() {
 
     if [ -n "$VIDEO" ]; then
         print_step "Installing video apps... 🎬"
-        sudo pacman -S --needed --noconfirm $VIDEO || print_warning "Some video apps failed (non-critical)"
+        sudo pacman -S --needed --noconfirm $VIDEO || print_warning "Failed to install some video apps (non-critical)"
         print_success "Video apps installed!"
         echo ""
     fi
@@ -874,12 +874,12 @@ install_kde() {
 
     if [[ $REPLY =~ ^[Yy]$ ]]; then
         print_step "Preparing for Xero-Layan configuration... 📁"
-        
+
         # Create ~/.config if it doesn't exist (required for rice backup)
         mkdir -p ~/.config
         print_success "Config directory ready!"
         echo ""
-        
+
         print_step "Downloading Xero-Layan configuration... 🎨"
 
         cd /tmp || exit 1
