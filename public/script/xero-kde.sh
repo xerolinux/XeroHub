@@ -59,6 +59,12 @@ detect_vm() {
     fi
 }
 
+# Detect root filesystem type
+detect_filesystem() {
+    local root_fs=$(findmnt -n -o FSTYPE /)
+    echo "$root_fs"
+}
+
 # Check if running as root
 check_root() {
     if [[ $EUID -eq 0 ]]; then
@@ -77,7 +83,6 @@ prompt_user() {
     echo -e "  ${BLUE}•${NC} Hardware Support & Drivers"
     echo -e "  ${BLUE}•${NC} Multimedia & Graphics Applications"
     echo -e "  ${BLUE}•${NC} Power User Tools (monitoring, development, etc.)"
-    echo -e "  ${BLUE}•${NC} XeroLinux & Chaotic-AUR Repositories"
     echo ""
     echo -e "${YELLOW}⚠ This will modify your system!${NC}"
     echo ""
@@ -363,39 +368,6 @@ customization_prompts() {
     read -p "Press Enter to begin installation..."
 }
 
-# Add repositories
-add_repos() {
-    # Check for XeroLinux repo
-    if grep -q "\[xerolinux\]" /etc/pacman.conf; then
-        print_step "XeroLinux repository already present, skipping... ✓"
-    else
-        print_step "Adding XeroLinux Repository... 🔧"
-        echo -e '\n[xerolinux]\nSigLevel = Optional TrustAll\nServer = https://repos.xerolinux.xyz/$repo/$arch' | sudo tee -a /etc/pacman.conf > /dev/null
-        print_success "XeroLinux repo added!"
-    fi
-    echo ""
-
-    # Check for Chaotic-AUR repo
-    if grep -q "\[chaotic-aur\]" /etc/pacman.conf; then
-        print_step "Chaotic-AUR repository already present, skipping... ✓"
-    else
-        print_step "Adding Chaotic-AUR Repository... 🌀"
-
-        # Add Chaotic-AUR keyring
-        sudo pacman-key --recv-key 3056513887B78AEB --keyserver keyserver.ubuntu.com || { print_error "Failed to receive Chaotic-AUR key!"; exit 1; }
-        sudo pacman-key --lsign-key 3056513887B78AEB || { print_error "Failed to sign Chaotic-AUR key!"; exit 1; }
-
-        # Install keyring and mirrorlist
-        sudo pacman -U --noconfirm 'https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-keyring.pkg.tar.zst' || { print_error "Failed to install Chaotic keyring!"; exit 1; }
-        sudo pacman -U --noconfirm 'https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-mirrorlist.pkg.tar.zst' || { print_error "Failed to install Chaotic mirrorlist!"; exit 1; }
-
-        # Add to pacman.conf
-        echo -e '\n[chaotic-aur]\nInclude = /etc/pacman.d/chaotic-mirrorlist' | sudo tee -a /etc/pacman.conf > /dev/null
-        print_success "Chaotic-AUR repo added!"
-    fi
-    echo ""
-}
-
 # Main installation
 install_kde() {
     print_header
@@ -403,11 +375,8 @@ install_kde() {
     print_step "Starting KDE Plasma installation... 🚀"
     echo ""
 
-    # Add repositories
-    add_repos
-
     # Update system
-    print_step "Updating system with new repos..."
+    print_step "Syncing package databases..."
     sudo pacman -Sy --noconfirm || { print_error "System update failed!"; exit 1; }
     print_success "System updated!"
     echo ""
@@ -508,14 +477,28 @@ install_kde() {
 
     print_step "Installing System Base & Tools... ⚙️"
 
+    # Detect filesystem type and set appropriate package
+    ROOT_FS=$(detect_filesystem)
+    FS_PROGS=""
+    if [ "$ROOT_FS" = "btrfs" ]; then
+        print_step "Btrfs filesystem detected..."
+        FS_PROGS="btrfs-progs"
+    elif [ "$ROOT_FS" = "xfs" ]; then
+        print_step "XFS filesystem detected..."
+        FS_PROGS="xfsprogs"
+    else
+        print_step "EXT4/other filesystem detected..."
+        FS_PROGS=""
+    fi
+
     # Base system packages
     sudo pacman -S --needed --noconfirm \
         base base-devel archiso b43-fwcutter rsync sdparm ntfs-3g \
-        gptfdisk xfsprogs tpm2-tss udftools syslinux fatresize nfs-utils \
+        gptfdisk tpm2-tss udftools syslinux fatresize nfs-utils \
         e2fsprogs dosfstools exfatprogs tpm2-tools fsarchiver squashfs-tools \
         gpart dmraid parted hdparm usbmuxd usbutils testdisk ddrescue \
         timeshift partclone partimage clonezilla open-iscsi memtest86+-efi \
-        usb_modeswitch || print_warning "Some base tools failed (non-critical)"
+        usb_modeswitch $FS_PROGS || print_warning "Some base tools failed (non-critical)"
 
     print_success "System base installed!"
     echo ""
@@ -890,6 +873,13 @@ install_kde() {
     echo ""
 
     if [[ $REPLY =~ ^[Yy]$ ]]; then
+        print_step "Preparing for Xero-Layan configuration... 📁"
+        
+        # Create ~/.config if it doesn't exist (required for rice backup)
+        mkdir -p ~/.config
+        print_success "Config directory ready!"
+        echo ""
+        
         print_step "Downloading Xero-Layan configuration... 🎨"
 
         cd /tmp || exit 1
@@ -903,6 +893,7 @@ install_kde() {
             cd xero-layan-git || exit 1
             chmod +x install.sh
             ./install.sh
+            rm -rf ~/.config-*
 
             print_success "Xero-Layan theme applied!"
             echo ""
