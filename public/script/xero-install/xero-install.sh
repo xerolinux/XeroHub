@@ -91,12 +91,35 @@ trap 'on_err "$LINENO" "$BASH_COMMAND"' ERR
 # UTILITY FUNCTIONS
 # ────────────────────────────────────────────────────────────────────────────────
 
+# Detect if running in chroot environment
+detect_chroot() {
+    if [ "$(stat -c %d:%i /)" != "$(stat -c %d:%i /proc/1/root/.)" ] 2>/dev/null; then
+        return 0  # In chroot
+    elif [ -f /etc/arch-chroot ]; then
+        return 0  # In chroot
+    elif [ "${EUID:-0}" -eq 0 ] && [ -z "${SUDO_USER:-}" ]; then
+        return 0  # Running as root without sudo (likely chroot)
+    else
+        return 1  # Not in chroot
+    fi
+}
+
+# Set up sudo command (empty if running as root/in chroot)
+setup_sudo() {
+    if [ "${EUID:-0}" -eq 0 ]; then
+        SUDO_CMD=""
+    else
+        SUDO_CMD="sudo"
+    fi
+}
+
 check_root() {
     if [[ ${EUID:-0} -ne 0 ]]; then
         echo -e "${RED}Error: This script must be run as root${NC}"
         echo "Please run: sudo $0"
         exit 1
     fi
+    setup_sudo
 }
 
 check_uefi() {
