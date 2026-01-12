@@ -380,7 +380,7 @@ customization_prompts() {
     echo ""
 
     if [[ $REPLY =~ ^[Yy]$ ]]; then
-        STEAM="steam lib32-pipewire-jack gamemode gamescope mangohud mangoverlay lib32-mangohud wine-meta wine-nine ttf-liberation lib32-fontconfig wqy-zenhei vkd3d giflib lib32-giflib libpng lib32-libpng libldap lib32-libldap gnutls lib32-gnutls mpg123 lib32-mpg123 openal lib32-openal v4l-utils lib32-v4l-utils libpulse lib32-libpulse libgpg-error lib32-libgpg-error alsa-plugins lib32-alsa-plugins alsa-lib lib32-alsa-lib libjpeg-turbo lib32-libjpeg-turbo sqlite lib32-sqlite libxcomposite lib32-libxcomposite libxinerama lib32-libgcrypt libgcrypt lib32-libxinerama ncurses lib32-ncurses ocl-icd lib32-ocl-icd libxslt lib32-libxslt libva lib32-libva gtk3 lib32-gtk3 gst-plugins-base-libs lib32-gst-plugins-base-libs vulkan-icd-loader lib32-vulkan-icd-loader cups dosbox lib32-opencl-icd-loader lib32-vkd3d opencl-icd-loader wine-meta"
+        STEAM="steam falcond-gui falcond-profiles falcond gamescope mangohud mangoverlay lib32-mangohud wine-meta wine-nine ttf-liberation lib32-fontconfig wqy-zenhei vkd3d giflib lib32-giflib libpng lib32-libpng libldap lib32-libldap gnutls lib32-gnutls mpg123 lib32-mpg123 openal lib32-openal v4l-utils lib32-v4l-utils libpulse lib32-libpulse libgpg-error lib32-libgpg-error alsa-plugins lib32-alsa-plugins alsa-lib lib32-alsa-lib libjpeg-turbo lib32-libjpeg-turbo sqlite lib32-sqlite libxcomposite lib32-libxcomposite libxinerama lib32-libgcrypt libgcrypt lib32-libxinerama ncurses lib32-ncurses ocl-icd lib32-ocl-icd libxslt lib32-libxslt libva lib32-libva gtk3 lib32-gtk3 gst-plugins-base-libs lib32-gst-plugins-base-libs vulkan-icd-loader lib32-vulkan-icd-loader cups dosbox lib32-opencl-icd-loader lib32-vkd3d opencl-icd-loader wine-meta"
     else
         STEAM=""
     fi
@@ -898,6 +898,7 @@ install_kde() {
     sudo systemctl enable dhcpcd || print_warning "Failed to enable dhcpcd"
     sudo systemctl enable preload || print_warning "Failed to enable preload"
     sudo systemctl enable sshd || print_warning "Failed to enable sshd"
+    sudo systemctl enable falcond || print_warning "Failed to enable falcond"
 
     print_success "Essential services enabled!"
     echo ""

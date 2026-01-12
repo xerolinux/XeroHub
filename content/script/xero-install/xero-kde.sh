@@ -416,7 +416,7 @@ install_kde() {
 
     # Update system
     print_step "Syncing package databases..."
-    sudo pacman -Sy --noconfirm || { print_error "System update failed!"; exit 1; }
+    pacman -Sy --noconfirm || { print_error "System update failed!"; exit 1; }
     print_success "System updated!"
     echo ""
 
@@ -424,7 +424,7 @@ install_kde() {
     print_step "Installing Core KDE Frameworks... 💎"
 
     # Core meta packages
-    sudo pacman -S --needed --noconfirm \
+    pacman -S --needed --noconfirm \
         kf6 \
         qt6 \
         kde-system || { print_error "Core KDE installation failed!"; exit 1; }
@@ -435,7 +435,7 @@ install_kde() {
     print_step "Installing Plasma Components... 🌊"
 
     # Plasma group - XeroLinux curated selection
-    sudo pacman -S --needed --noconfirm \
+    pacman -S --needed --noconfirm \
         kwin krdp milou breeze oxygen aurorae drkonqi kwrited \
         kgamma kscreen sddm-kcm kmenuedit bluedevil kpipewire \
         plasma-nm plasma-pa plasma-sdk libkscreen breeze-gtk \
@@ -452,19 +452,19 @@ install_kde() {
     echo ""
 
     print_step "Installing SDDM Display Manager... 🖥️"
-    sudo pacman -S --needed --noconfirm sddm || { print_error "SDDM installation failed!"; exit 1; }
+    pacman -S --needed --noconfirm sddm || { print_error "SDDM installation failed!"; exit 1; }
     print_success "SDDM installed!"
     echo ""
 
     print_step "Enabling SDDM service..."
-    sudo systemctl enable sddm.service || { print_error "Failed to enable SDDM!"; exit 1; }
+    systemctl enable sddm.service || { print_error "Failed to enable SDDM!"; exit 1; }
     print_success "SDDM enabled!"
     echo ""
 
     print_step "Installing KDE Network Tools... 🌐"
 
     # KDE Network group
-    sudo pacman -S --needed --noconfirm \
+    pacman -S --needed --noconfirm \
         krdc krfb smb4k alligator kdeconnect kio-admin kio-extras \
         kio-gdrive konversation kio-zeroconf kdenetwork-filesharing \
         signon-kwallet-extension || print_warning "Some network tools failed (non-critical)"
@@ -475,7 +475,7 @@ install_kde() {
     print_step "Installing KDE Graphics Applications... 🎨"
 
     # KDE Graphics group
-    sudo pacman -S --needed --noconfirm \
+    pacman -S --needed --noconfirm \
         okular kamera svgpart skanlite gwenview spectacle \
         colord-kde kcolorchooser kimagemapeditor \
         kdegraphics-thumbnailers || print_warning "Some graphics apps failed (non-critical)"
@@ -486,7 +486,7 @@ install_kde() {
     print_step "Installing KDE Utilities... 🛠️"
 
     # KDE Utilities group
-    sudo pacman -S --needed --noconfirm \
+    pacman -S --needed --noconfirm \
         ark kate kgpg kfind sweeper konsole kdialog yakuake \
         skanpage filelight kmousetool kcharselect markdownpart \
         qalculate-qt keditbookmarks kdebugsettings kwalletmanager \
@@ -498,7 +498,7 @@ install_kde() {
     print_step "Installing KDE Multimedia... 🎵"
 
     # KDE Multimedia group
-    sudo pacman -S --needed --noconfirm \
+    pacman -S --needed --noconfirm \
         k3b kamoso audiotube plasmatube audiocd-kio || print_warning "Some multimedia apps failed (non-critical)"
 
     print_success "Multimedia applications installed!"
@@ -507,7 +507,7 @@ install_kde() {
     print_step "Installing Wayland Support... 🪟"
 
     # KDE Wayland group
-    sudo pacman -S --needed --noconfirm \
+    pacman -S --needed --noconfirm \
         waypipe dwayland egl-wayland qt6-wayland lib32-wayland \
         wayland-protocols kwayland-integration plasma-wayland-protocols || print_warning "Some Wayland packages failed (non-critical)"
 
@@ -531,7 +531,7 @@ install_kde() {
     fi
 
     # Base system packages
-    sudo pacman -S --needed --noconfirm \
+    pacman -S --needed --noconfirm \
         base base-devel archiso b43-fwcutter rsync sdparm ntfs-3g \
         gptfdisk tpm2-tss udftools syslinux fatresize nfs-utils \
         e2fsprogs dosfstools exfatprogs tpm2-tools fsarchiver squashfs-tools \
@@ -544,7 +544,7 @@ install_kde() {
 
     print_step "Installing Terminal Tools... 💻"
 
-    sudo pacman -S --needed --noconfirm \
+    pacman -S --needed --noconfirm \
         fd nano tmux brltty msedit nvme-cli terminus-font \
         foot-terminfo kitty-terminfo pv mc gpm nbd lvm2 bolt bind less \
         lynx sudo tldr nmap irssi mdadm wvdial hyperv mtools lsscsi \
@@ -559,7 +559,7 @@ install_kde() {
 
     print_step "Installing Kernel & Bootloader... 🐧"
 
-    sudo pacman -S --needed --noconfirm \
+    pacman -S --needed --noconfirm \
         linux linux-atm linux-headers os-prober grub-hooks update-grub || { print_error "Kernel/bootloader installation failed!"; exit 1; }
 
     print_success "Kernel & bootloader installed!"
@@ -567,7 +567,7 @@ install_kde() {
 
     print_step "Installing XeroLinux Tools... 🎯"
 
-    sudo pacman -S --needed --noconfirm \
+    pacman -S --needed --noconfirm \
         preload extra-scripts || print_warning "Some XeroLinux tools failed (non-critical)"
 
     print_success "XeroLinux tools installed!"
@@ -575,7 +575,7 @@ install_kde() {
 
     print_step "Installing Build Tools & Dependencies... 🔨"
 
-    sudo pacman -S --needed --noconfirm \
+    pacman -S --needed --noconfirm \
         xmlto boost ckbcomp kpmcore yaml-cpp boost-libs \
         gtk-update-icon-cache xdg-terminal-exec-git mkinitcpio mkinitcpio-fw \
         mkinitcpio-utils mkinitcpio-archiso mkinitcpio-openswap \
@@ -591,26 +591,26 @@ install_kde() {
     CPU_VENDOR=$(detect_cpu)
     if [ "$CPU_VENDOR" = "intel" ]; then
         print_step "Intel CPU detected, installing Intel microcode..."
-        sudo pacman -S --needed --noconfirm fwupd intel-ucode || print_warning "Intel microcode installation failed (non-critical)"
+        pacman -S --needed --noconfirm fwupd intel-ucode || print_warning "Intel microcode installation failed (non-critical)"
     elif [ "$CPU_VENDOR" = "amd" ]; then
         print_step "AMD CPU detected, installing AMD microcode..."
-        sudo pacman -S --needed --noconfirm fwupd amd-ucode || print_warning "AMD microcode installation failed (non-critical)"
+        pacman -S --needed --noconfirm fwupd amd-ucode || print_warning "AMD microcode installation failed (non-critical)"
     else
         print_warning "Unknown CPU vendor, skipping microcode installation"
-        sudo pacman -S --needed --noconfirm fwupd || print_warning "Firmware tools installation failed (non-critical)"
+        pacman -S --needed --noconfirm fwupd || print_warning "Firmware tools installation failed (non-critical)"
     fi
 
     # Video drivers
-    sudo pacman -S --needed --noconfirm \
+    pacman -S --needed --noconfirm \
         mesa autorandr mesa-utils lib32-mesa \
         xf86-video-qxl xf86-video-fbdev lib32-mesa-utils || print_warning "Some video drivers failed (non-critical)"
 
     # Printer/Scanner
-    sudo pacman -S --needed --noconfirm \
+    pacman -S --needed --noconfirm \
         hplip print-manager scanner-support printer-support || print_warning "Printer support failed (non-critical)"
 
     # Input devices
-    sudo pacman -S --needed --noconfirm \
+    pacman -S --needed --noconfirm \
         orca onboard libinput xf86-input-void xf86-input-evdev \
         iio-sensor-proxy game-devices-udev xf86-input-vmmouse \
         xf86-input-libinput xf86-input-synaptics xf86-input-elographics || print_warning "Some input drivers failed (non-critical)"
@@ -621,13 +621,13 @@ install_kde() {
     print_step "Installing Audio & Multimedia... 🔊"
 
     # GStreamer
-    sudo pacman -S --needed --noconfirm \
+    pacman -S --needed --noconfirm \
         gstreamer gst-libav gst-plugins-bad gst-plugins-base \
         gst-plugins-ugly gst-plugins-good gst-plugins-espeak \
         gst-plugin-pipewire || print_warning "GStreamer plugins failed (non-critical)"
 
     # Multimedia tools
-    sudo pacman -S --needed --noconfirm \
+    pacman -S --needed --noconfirm \
         ffmpeg ffmpegthumbs ffnvcodec-headers || print_warning "FFmpeg tools failed (non-critical)"
 
     print_success "Audio & multimedia installed!"
@@ -636,11 +636,11 @@ install_kde() {
     print_step "Installing Bluetooth & Networking... 📡"
 
     # Bluetooth
-    sudo pacman -S --needed --noconfirm \
+    pacman -S --needed --noconfirm \
         bluez bluez-libs bluez-utils bluez-tools bluez-plugins bluez-hid2hci || print_warning "Bluetooth failed (non-critical)"
 
     # Networking
-    sudo pacman -S --needed --noconfirm \
+    pacman -S --needed --noconfirm \
         iw iwd ppp lftp ldns avahi samba netctl dhcpcd openssh openvpn \
         dnsmasq dhclient openldap nss-mdns smbclient net-tools openresolv \
         darkhttpd reflector pptpclient cloud-init openconnect traceroute \
@@ -652,7 +652,7 @@ install_kde() {
 
     print_step "Installing Xorg & Display Server... 🪟"
 
-    sudo pacman -S --needed --noconfirm \
+    pacman -S --needed --noconfirm \
         xorg-apps xorg-xinit xorg-server xorg-xwayland || { print_error "Xorg installation failed!"; exit 1; }
 
     print_success "Xorg installed!"
@@ -660,7 +660,7 @@ install_kde() {
 
     print_step "Installing Applications & Utilities... 📦"
 
-    sudo pacman -S --needed --noconfirm \
+    pacman -S --needed --noconfirm \
         falkon hblock cryptsetup brightnessctl switcheroo-control \
         power-profiles-daemon jq vim figlet ostree lolcat numlockx \
         localsend lm_sensors appstream-glib lib32-lm_sensors bat bat-extras || print_warning "Some utilities failed (non-critical)"
@@ -670,7 +670,7 @@ install_kde() {
 
     print_step "Installing Fonts... 🔤"
 
-    sudo pacman -S --needed --noconfirm \
+    pacman -S --needed --noconfirm \
         ttf-fira-code otf-libertinus tex-gyre-fonts ttf-hack-nerd \
         ttf-ubuntu-font-family awesome-terminal-fonts ttf-jetbrains-mono-nerd \
         adobe-source-sans-pro-fonts || print_warning "Some fonts failed (non-critical)"
@@ -680,13 +680,13 @@ install_kde() {
 
     print_step "Installing Theming & Customization... 🎨"
 
-    sudo pacman -S --needed --noconfirm \
+    pacman -S --needed --noconfirm \
         kvantum fastfetch adw-gtk-theme oh-my-posh-bin gnome-themes-extra \
         kwin-effect-rounded-corners-git kwin-zones kde-wallpapers \
         kwin-scripts-kzones tela-circle-icon-theme-purple || print_warning "Some themes failed (non-critical)"
 
     # Kate plugins
-    sudo pacman -S --needed --noconfirm \
+    pacman -S --needed --noconfirm \
         bash-language-server typescript-language-server vscode-json-languageserver || print_warning "Kate plugins failed (non-critical)"
 
     print_success "Theming & customization installed!"
@@ -695,18 +695,18 @@ install_kde() {
     print_step "Installing File Management & Libraries... 📁"
 
     # GVFS
-    sudo pacman -S --needed --noconfirm \
+    pacman -S --needed --noconfirm \
         gvfs mtpfs udiskie udisks2 ldmtool gvfs-afc gvfs-mtp gvfs-nfs \
         gvfs-smb gvfs-goa gvfs-wsdd gvfs-dnssd gvfs-google gvfs-gphoto2 \
         gvfs-onedrive || print_warning "GVFS components failed (non-critical)"
 
     # Tumbler
-    sudo pacman -S --needed --noconfirm \
+    pacman -S --needed --noconfirm \
         libgsf tumbler freetype2 libopenraw poppler-qt6 poppler-glib \
         ffmpegthumbnailer || print_warning "Tumbler components failed (non-critical)"
 
     # Python libraries
-    sudo pacman -S --needed --noconfirm \
+    pacman -S --needed --noconfirm \
         python-pip python-cffi python-numpy python-docopt python-pyaudio \
         python-pyparted python-pygments python-websockets || print_warning "Python libraries failed (non-critical)"
 
@@ -715,7 +715,7 @@ install_kde() {
 
     print_step "Installing Package Management Tools... 📦"
 
-    sudo pacman -S --needed --noconfirm \
+    pacman -S --needed --noconfirm \
         paru flatpak topgrade appstream-qt pacman-contrib pacman-bintrans || print_warning "Some package tools failed (non-critical)"
 
     print_success "Package management tools installed!"
@@ -723,7 +723,7 @@ install_kde() {
 
     print_step "Installing System Essentials... ⚡"
 
-    sudo pacman -S --needed --noconfirm \
+    pacman -S --needed --noconfirm \
         xdg-user-dirs ocs-url xmlstarlet yt-dlp wavpack unarchiver \
         rate-mirrors gnustep-base parallel xsettingsd polkit-qt6 \
         systemdgenie gnome-keyring || print_warning "Some system tools failed (non-critical)"
@@ -734,31 +734,31 @@ install_kde() {
     print_step "Installing Power User Tools & Enhancements... ⚡"
 
     # Development & Build Tools
-    sudo pacman -S --needed --noconfirm \
+    pacman -S --needed --noconfirm \
         vi gcc git npm nodejs vala meson gettext intltool node-gyp \
         graphviz pkgconf semver || print_warning "Some dev tools failed (non-critical)"
 
     # System Monitoring & Info
-    sudo pacman -S --needed --noconfirm \
+    pacman -S --needed --noconfirm \
         duf btop htop iftop nvtop vnstat inxi lshw hwinfo nmon \
         sysprof || print_warning "Some monitoring tools failed (non-critical)"
 
     # Archive & Compression
-    sudo pacman -S --needed --noconfirm \
+    pacman -S --needed --noconfirm \
         zip unzip unrar p7zip lzop lhasa unace fuseiso || print_warning "Some archive tools failed (non-critical)"
 
     # File System & Storage
-    sudo pacman -S --needed --noconfirm \
+    pacman -S --needed --noconfirm \
         fuse3 sshfs s3fs-fuse cifs-utils gparted gnome-disk-utility \
         grsync hddtemp mlocate || print_warning "Some filesystem tools failed (non-critical)"
 
     # Network & System Utilities
-    sudo pacman -S --needed --noconfirm \
+    pacman -S --needed --noconfirm \
         pciutils inetutils cronie playerctl asciinema ventoy-bin \
         downgrade pkgstats lsb-release laptop-detect || print_warning "Some utilities failed (non-critical)"
 
     # Libraries & Dependencies
-    sudo pacman -S --needed --noconfirm \
+    pacman -S --needed --noconfirm \
         yad xdo gum tree expac cblas glfw rhash assimp netpbm wmctrl \
         libmtp polkit zenity jsoncpp oniguruma dbus-python dconf-editor \
         perl-xml-parser appmenu-gtk-module arandr || print_warning "Some libraries failed (non-critical)"
@@ -769,77 +769,77 @@ install_kde() {
     # Install user-selected applications
     if [ -n "$BROWSER" ]; then
         print_step "Installing selected browser ($BROWSER)... 🌐"
-        sudo pacman -S --needed --noconfirm $BROWSER || print_warning "Browser installation failed (non-critical)"
+        pacman -S --needed --noconfirm $BROWSER || print_warning "Browser installation failed (non-critical)"
         print_success "Browser installed!"
         echo ""
     fi
 
     if [ -n "$VPN" ]; then
         print_step "Installing selected VPN ($VPN)... 🔒"
-        sudo pacman -S --needed --noconfirm $VPN || print_warning "VPN installation failed (non-critical)"
+        pacman -S --needed --noconfirm $VPN || print_warning "VPN installation failed (non-critical)"
         print_success "VPN installed!"
         echo ""
     fi
 
     if [ -n "$SOCIAL" ]; then
         print_step "Installing social apps... 💬"
-        sudo pacman -S --needed --noconfirm $SOCIAL || print_warning "Some social apps failed (non-critical)"
+        pacman -S --needed --noconfirm $SOCIAL || print_warning "Some social apps failed (non-critical)"
         print_success "Social apps installed!"
         echo ""
     fi
 
     if [ -n "$ANDROID" ]; then
         print_step "Installing Android tools... 📱"
-        sudo pacman -S --needed --noconfirm $ANDROID || print_warning "Some Android tools failed (non-critical)"
+        pacman -S --needed --noconfirm $ANDROID || print_warning "Some Android tools failed (non-critical)"
         print_success "Android tools installed!"
         echo ""
     fi
 
     if [ -n "$LIBREOFFICE" ]; then
         print_step "Installing LibreOffice... 📄"
-        sudo pacman -S --needed --noconfirm $LIBREOFFICE || print_warning "LibreOffice installation failed (non-critical)"
+        pacman -S --needed --noconfirm $LIBREOFFICE || print_warning "LibreOffice installation failed (non-critical)"
         print_success "LibreOffice installed!"
         echo ""
     fi
 
     if [ -n "$DEV" ]; then
         print_step "Installing development tools... 💻"
-        sudo pacman -S --needed --noconfirm $DEV || print_warning "Some dev tools failed (non-critical)"
+        pacman -S --needed --noconfirm $DEV || print_warning "Some dev tools failed (non-critical)"
         print_success "Development tools installed!"
         echo ""
     fi
 
     if [ -n "$PASS" ]; then
         print_step "Installing password manager(s)... 🔐"
-        sudo pacman -S --needed --noconfirm $PASS || print_warning "Password manager installation failed (non-critical)"
+        pacman -S --needed --noconfirm $PASS || print_warning "Password manager installation failed (non-critical)"
         print_success "Password manager installed!"
         echo ""
     fi
 
     if [ -n "$IMAGING" ]; then
         print_step "Installing creative apps... 🎨"
-        sudo pacman -S --needed --noconfirm $IMAGING || print_warning "Some creative apps failed (non-critical)"
+        pacman -S --needed --noconfirm $IMAGING || print_warning "Some creative apps failed (non-critical)"
         print_success "Creative apps installed!"
         echo ""
     fi
 
     if [ -n "$MUSIC" ]; then
         print_step "Installing music apps... 🎵"
-        sudo pacman -S --needed --noconfirm $MUSIC || print_warning "Some music apps failed (non-critical)"
+        pacman -S --needed --noconfirm $MUSIC || print_warning "Some music apps failed (non-critical)"
         print_success "Music apps installed!"
         echo ""
     fi
 
     if [ -n "$VIDEO" ]; then
         print_step "Installing video apps... 🎬"
-        sudo pacman -S --needed --noconfirm $VIDEO || print_warning "Failed to install some video apps (non-critical)"
+        pacman -S --needed --noconfirm $VIDEO || print_warning "Failed to install some video apps (non-critical)"
         print_success "Video apps installed!"
         echo ""
     fi
 
     if [ -n "$APPLE_SIDELOAD" ]; then
         print_step "Installing Apple Sideloading App... 🍎"
-        sudo pacman -S --needed --noconfirm $APPLE_SIDELOAD || print_warning "Apple Sideloading installation failed (non-critical)"
+        pacman -S --needed --noconfirm $APPLE_SIDELOAD || print_warning "Apple Sideloading installation failed (non-critical)"
         print_success "Apple Sideloading App installed!"
         echo ""
     fi
@@ -853,10 +853,10 @@ install_kde() {
 
     if [ -n "$QEMU_VM" ]; then
         print_step "Installing QEMU Virtual Machine support... 🖥️"
-        sudo pacman -Rdd --noconfirm iptables gnu-netcat || print_warning "Failed to remove conflicting packages"
-        sudo pacman -S --needed --noconfirm virt-manager-meta openbsd-netcat || print_warning "QEMU installation failed (non-critical)"
-        echo "options kvm-intel nested=1" | sudo tee /etc/modprobe.d/kvm-intel.conf
-        sudo systemctl enable libvirtd.service || print_warning "Failed to enable libvirtd service"
+        pacman -Rdd --noconfirm iptables gnu-netcat || print_warning "Failed to remove conflicting packages"
+        pacman -S --needed --noconfirm virt-manager-meta openbsd-netcat || print_warning "QEMU installation failed (non-critical)"
+        echo "options kvm-intel nested=1" | tee /etc/modprobe.d/kvm-intel.conf
+        systemctl enable libvirtd.service || print_warning "Failed to enable libvirtd service"
         print_success "QEMU Virtual Machine support installed!"
         echo ""
     fi
@@ -866,7 +866,7 @@ install_kde() {
     if detect_vm; then
         VM_TYPE=$(systemd-detect-virt)
         print_step "Virtual Machine detected ($VM_TYPE), installing VM tools..."
-        sudo pacman -S --needed --noconfirm \
+        pacman -S --needed --noconfirm \
             spice-vdagent open-vm-tools qemu-guest-agent virtualbox-guest-utils || print_warning "Some VM tools failed (non-critical)"
         print_success "VM support installed!"
     else
@@ -876,29 +876,29 @@ install_kde() {
 
     print_step "Updating initramfs... 🔄"
 
-    sudo mkinitcpio -P || { print_error "Failed to update initramfs!"; exit 1; }
+    mkinitcpio -P || { print_error "Failed to update initramfs!"; exit 1; }
     print_success "Initramfs updated!"
     echo ""
 
     print_step "Updating GRUB configuration... 🔄"
 
-    sudo update-grub || { print_error "Failed to update GRUB!"; exit 1; }
+    update-grub || { print_error "Failed to update GRUB!"; exit 1; }
     print_success "GRUB configuration updated!"
     echo ""
 
     print_step "Enabling essential services... ⚙️"
 
     # Enable services
-    sudo systemctl enable cups.socket || print_warning "Failed to enable cups.socket"
-    sudo systemctl enable saned.socket || print_warning "Failed to enable saned.socket"
-    sudo systemctl enable NetworkManager || print_warning "Failed to enable NetworkManager"
-    sudo systemctl enable bluetooth || print_warning "Failed to enable bluetooth"
-    sudo systemctl enable power-profiles-daemon || print_warning "Failed to enable power-profiles-daemon"
-    sudo systemctl enable switcheroo-control || print_warning "Failed to enable switcheroo-control"
-    sudo systemctl enable dhcpcd || print_warning "Failed to enable dhcpcd"
-    sudo systemctl enable preload || print_warning "Failed to enable preload"
-    sudo systemctl enable sshd || print_warning "Failed to enable sshd"
-    sudo systemctl enable falcond || print_warning "Failed to enable falcond"
+    systemctl enable cups.socket || print_warning "Failed to enable cups.socket"
+    systemctl enable saned.socket || print_warning "Failed to enable saned.socket"
+    systemctl enable NetworkManager || print_warning "Failed to enable NetworkManager"
+    systemctl enable bluetooth || print_warning "Failed to enable bluetooth"
+    systemctl enable power-profiles-daemon || print_warning "Failed to enable power-profiles-daemon"
+    systemctl enable switcheroo-control || print_warning "Failed to enable switcheroo-control"
+    systemctl enable dhcpcd || print_warning "Failed to enable dhcpcd"
+    systemctl enable preload || print_warning "Failed to enable preload"
+    systemctl enable sshd || print_warning "Failed to enable sshd"
+    systemctl enable falcond || print_warning "Failed to enable falcond"
 
     print_success "Essential services enabled!"
     echo ""
@@ -906,9 +906,9 @@ install_kde() {
     print_step "Disabling unnecessary services... 🚫"
 
     # Disable services
-    sudo systemctl disable systemd-time-wait-sync || print_warning "Failed to disable systemd-time-wait-sync"
-    sudo systemctl disable reflector || print_warning "Failed to disable reflector"
-    sudo systemctl disable pacman-init || print_warning "Failed to disable pacman-init"
+    systemctl disable systemd-time-wait-sync || print_warning "Failed to disable systemd-time-wait-sync"
+    systemctl disable reflector || print_warning "Failed to disable reflector"
+    systemctl disable pacman-init || print_warning "Failed to disable pacman-init"
 
     print_success "Unnecessary services disabled!"
     echo ""

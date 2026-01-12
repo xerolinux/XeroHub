@@ -103,7 +103,7 @@ customization_prompts() {
     echo -e "${CYAN}🎨 Personalization Time!${NC}"
     echo ""
     echo -e "To make your system truly yours, we'll ask you to choose from"
-    echo -e "10 quick categories (browsers, apps, tools, etc.)."
+    echo -e "a few quick categories (browsers, apps, tools, etc.)."
     echo ""
     echo -e "${GREEN}Don't worry!${NC} You can skip any category or select multiple options."
     echo -e "This helps keep your system lean with only what ${PURPLE}you${NC} need."
@@ -358,6 +358,45 @@ customization_prompts() {
             6) VIDEO="$VIDEO losslesscut-bin" ;;
         esac
     done
+
+    # Sub-Prompt 11: Apple Sideloading
+    print_header
+    echo -e "${CYAN}[11] Apple Sideloading App${NC}"
+    echo ""
+    read -p "Do you want Apple Sideloading App (plume-impactor)? [y/N]: " -n 1 -r
+    echo ""
+
+    if [[ $REPLY =~ ^[Yy]$ ]]; then
+        APPLE_SIDELOAD="plume-impactor"
+    else
+        APPLE_SIDELOAD=""
+    fi
+
+    # Sub-Prompt 12: Steam Gaming
+    print_header
+    echo -e "${CYAN}[12] Steam Gaming${NC}"
+    echo ""
+    read -p "Do you want Steam with gaming tools? [y/N]: " -n 1 -r
+    echo ""
+
+    if [[ $REPLY =~ ^[Yy]$ ]]; then
+        STEAM="steam falcond-gui falcond-profiles falcond gamescope mangohud mangoverlay lib32-mangohud wine-meta wine-nine ttf-liberation lib32-fontconfig wqy-zenhei vkd3d giflib lib32-giflib libpng lib32-libpng libldap lib32-libldap gnutls lib32-gnutls mpg123 lib32-mpg123 openal lib32-openal v4l-utils lib32-v4l-utils libpulse lib32-libpulse libgpg-error lib32-libgpg-error alsa-plugins lib32-alsa-plugins alsa-lib lib32-alsa-lib libjpeg-turbo lib32-libjpeg-turbo sqlite lib32-sqlite libxcomposite lib32-libxcomposite libxinerama lib32-libgcrypt libgcrypt lib32-libxinerama ncurses lib32-ncurses ocl-icd lib32-ocl-icd libxslt lib32-libxslt libva lib32-libva gtk3 lib32-gtk3 gst-plugins-base-libs lib32-gst-plugins-base-libs vulkan-icd-loader lib32-vulkan-icd-loader cups dosbox lib32-opencl-icd-loader lib32-vkd3d opencl-icd-loader wine-meta"
+    else
+        STEAM=""
+    fi
+
+    # Sub-Prompt 13: QEMU Virtual Machine
+    print_header
+    echo -e "${CYAN}[13] QEMU Virtual Machine${NC}"
+    echo ""
+    read -p "Do you want QEMU Virtual Machine support? [y/N]: " -n 1 -r
+    echo ""
+
+    if [[ $REPLY =~ ^[Yy]$ ]]; then
+        QEMU_VM="yes"
+    else
+        QEMU_VM=""
+    fi
 
     # Summary
     print_header
@@ -798,6 +837,30 @@ install_kde() {
         echo ""
     fi
 
+    if [ -n "$APPLE_SIDELOAD" ]; then
+        print_step "Installing Apple Sideloading App... 🍎"
+        sudo pacman -S --needed --noconfirm $APPLE_SIDELOAD || print_warning "Apple Sideloading installation failed (non-critical)"
+        print_success "Apple Sideloading App installed!"
+        echo ""
+    fi
+
+    if [ -n "$STEAM" ]; then
+        print_step "Installing Steam and gaming tools... 🎮"
+        paru -S --needed --noconfirm $STEAM || print_warning "Some Steam/gaming packages failed (non-critical)"
+        print_success "Steam and gaming tools installed!"
+        echo ""
+    fi
+
+    if [ -n "$QEMU_VM" ]; then
+        print_step "Installing QEMU Virtual Machine support... 🖥️"
+        sudo pacman -Rdd --noconfirm iptables gnu-netcat || print_warning "Failed to remove conflicting packages"
+        sudo pacman -S --needed --noconfirm virt-manager-meta openbsd-netcat || print_warning "QEMU installation failed (non-critical)"
+        echo "options kvm-intel nested=1" | sudo tee /etc/modprobe.d/kvm-intel.conf
+        sudo systemctl enable libvirtd.service || print_warning "Failed to enable libvirtd service"
+        print_success "QEMU Virtual Machine support installed!"
+        echo ""
+    fi
+
     print_step "Installing Virtual Machine Support... 🖧"
 
     if detect_vm; then
@@ -835,6 +898,7 @@ install_kde() {
     sudo systemctl enable dhcpcd || print_warning "Failed to enable dhcpcd"
     sudo systemctl enable preload || print_warning "Failed to enable preload"
     sudo systemctl enable sshd || print_warning "Failed to enable sshd"
+    sudo systemctl enable falcond || print_warning "Failed to enable falcond"
 
     print_success "Essential services enabled!"
     echo ""
