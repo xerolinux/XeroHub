@@ -12,7 +12,7 @@ A beautiful, streamlined Arch Linux installer designed for XeroLinux with a mode
 - 🔒 **LUKS Encryption** - Optional full disk encryption
 - 🎮 **Graphics Drivers** - Easy selection for NVIDIA, AMD, Intel, or VMs
 - 🔄 **Smart Swap** - ZRAM with compression or traditional swap file
-- 🚀 **Automated KDE Setup** - Runs XeroLinux KDE installer after base install
+- 🚀 **Automated KDE Setup** - Runs XeroLinux KDE installer.
 
 ## Quick Start
 
