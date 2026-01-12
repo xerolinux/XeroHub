@@ -522,7 +522,7 @@ class Installer:
         else:
             self.print_step("Skipping KDE installation")
             print("\nYou can install KDE later by running:")
-            print("  curl -fsSL https://xerolinux.xyz/scripts/xero-kde.sh | bash")
+            print("  curl -fsSL https://xerolinux.xyz/script/xero-kde.sh | bash")
 
         print()
         self.pause()
