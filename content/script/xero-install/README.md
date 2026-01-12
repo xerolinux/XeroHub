@@ -7,7 +7,7 @@ A beautiful, streamlined Arch Linux installer designed for XeroLinux with a mode
 
 ## Features
 
-- 🎨 **Beautiful TUI** - Modern interface using `gum` for elegant menus
+- 🎨 **Beautiful TUI** - Modern interface using `gum` for clean menus
 - 💾 **Flexible Disk Setup** - Support for BTRFS (with subvolumes), EXT4, XFS
 - 🔒 **LUKS Encryption** - Optional full disk encryption
 - 🎮 **Graphics Drivers** - Easy selection for NVIDIA, AMD, Intel, or VMs
