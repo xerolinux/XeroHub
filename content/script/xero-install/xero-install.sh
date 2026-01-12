@@ -189,7 +189,7 @@ select_installer_language() {
 
 select_locales() {
     show_header
-    show_submenu_header "🗺️  System Locales"
+    show_submenu_header "🗺️ System Locales"
     echo ""
     
     # System Locale
@@ -681,7 +681,7 @@ show_main_menu() {
         
         local selection
         selection=$(printf '%s\n' "${menu_items[@]}" | gum choose --height 15 --header "Configure your installation:")
-        
+        echo ""
         case "$selection" in
             "1."*) select_installer_language ;;
             "2."*) select_locales ;;

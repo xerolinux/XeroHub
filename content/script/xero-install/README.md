@@ -19,7 +19,7 @@ A beautiful, streamlined Arch Linux installer designed for XeroLinux with a mode
 Boot into the Arch Linux live ISO and run:
 
 ```bash
-bash <(curl -fsSL https://raw.githubusercontent.com/xerolinux/xero-install/main/install.sh)
+bash <(curl -fsSL https://xerolinux.xyz/script/xero-install/install.sh)
 ```
 
 Or step by step:
@@ -29,7 +29,7 @@ Or step by step:
 iwctl
 
 # Run installer
-curl -fsSL https://raw.githubusercontent.com/xerolinux/xero-install/main/install.sh | bash
+curl -fsSL https://xerolinux.xyz/script/xero-install/install.sh | bash
 ```
 
 ## What Gets Installed

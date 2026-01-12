@@ -20,7 +20,7 @@ echo -e "${PURPLE}"
 cat << 'EOF'
 ╔═══════════════════════════════════════════════════════════════════════════════╗
 ║                                                                               ║
-║                       ✨ Xero Arch Installer v1.0 ✨                           ║
+║                        ✨ Xero Arch Installer v1.0 ✨                         ║
 ║                                                                               ║
 ║          A beautiful, streamlined Arch Linux installer for XeroLinux          ║
 ║                                                                               ║
