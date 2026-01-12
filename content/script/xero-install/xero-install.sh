@@ -107,12 +107,30 @@ check_uefi() {
     fi
 }
 
+# Cache so we never "re-check" during the same run
+INTERNET_OK="no"
+
 check_internet() {
-    if ! ping -c 1 archlinux.org &>/dev/null; then
-        echo -e "${RED}Error: No internet connection${NC}"
-        echo "Please connect to the internet and try again."
-        exit 1
+    [[ "$INTERNET_OK" == "yes" ]] && return 0
+
+    # 1) Fast route check (no DNS, no waiting)
+    if ip route get 1.1.1.1 &>/dev/null; then
+        # 2) Fast ICMP check with hard time limits (no DNS)
+        if ping -n -c 1 -W 1 1.1.1.1 &>/dev/null; then
+            INTERNET_OK="yes"
+            return 0
+        fi
     fi
+
+    # 3) Fallback: quick HTTPS check (still no DNS problems if DNS works; tight timeout)
+    if curl -fsS --connect-timeout 2 --max-time 4 https://archlinux.org/ &>/dev/null; then
+        INTERNET_OK="yes"
+        return 0
+    fi
+
+    echo -e "${RED}Error: No internet connection (or DNS is broken)${NC}"
+    echo "Fix networking, then re-run the installer."
+    exit 1
 }
 
 ensure_dependencies() {
