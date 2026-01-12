@@ -1123,7 +1123,10 @@ install_bootloader() {
 create_user() {
     echo "root:${CONFIG[root_password]}" | arch-chroot "$MOUNTPOINT" chpasswd
 
-    arch-chroot "$MOUNTPOINT" useradd -m -G wheel,audio,video,storage,optical -s /bin/bash "${CONFIG[username]}"
+    # Create falcond group if it doesn't exist
+    arch-chroot "$MOUNTPOINT" groupadd -f falcond
+
+    arch-chroot "$MOUNTPOINT" useradd -m -G wheel,audio,video,storage,optical,falcond -s /bin/bash "${CONFIG[username]}"
     echo "${CONFIG[username]}:${CONFIG[user_password]}" | arch-chroot "$MOUNTPOINT" chpasswd
 
     sed -i 's/^# %wheel ALL=(ALL:ALL) ALL/%wheel ALL=(ALL:ALL) ALL/' "$MOUNTPOINT/etc/sudoers"
