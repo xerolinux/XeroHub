@@ -600,7 +600,7 @@ install_kde() {
     print_step "Installing Build Tools & Dependencies... 🔨"
 
     $SUDO_CMD pacman -S --needed --noconfirm \
-        xmlto boost ckbcomp kpmcore yaml-cpp boost-libs \
+        xmlto xero-toolkit extra-scripts xero-hooks boost ckbcomp kpmcore yaml-cpp boost-libs \
         gtk-update-icon-cache xdg-terminal-exec-git mkinitcpio mkinitcpio-fw \
         mkinitcpio-utils mkinitcpio-archiso mkinitcpio-openswap \
         mkinitcpio-nfs-utils dex bash make libxinerama bash-completion \
