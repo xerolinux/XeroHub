@@ -1125,6 +1125,13 @@ install_bootloader() {
         arch-chroot "$MOUNTPOINT" grub-install --target=i386-pc "${CONFIG[disk]}"
     fi
 
+        # Set default kernel parameters
+        sed -i 's/^GRUB_CMDLINE_LINUX_DEFAULT=.*/GRUB_CMDLINE_LINUX_DEFAULT="quiet nowatchdog loglevel=3 nvme_load=yes"/' "$MOUNTPOINT/etc/default/grub"
+
+        # Set distributor and enable os-prober
+        sed -i 's/^GRUB_DISTRIBUTOR=.*/GRUB_DISTRIBUTOR="XeroLinux"/' "$MOUNTPOINT/etc/default/grub"
+        sed -i 's/^#*GRUB_DISABLE_OS_PROBER=.*/GRUB_DISABLE_OS_PROBER=false/' "$MOUNTPOINT/etc/default/grub"
+
     if [[ "${CONFIG[encrypt]}" == "yes" ]]; then
         local uuid=""
         uuid=$(blkid -s UUID -o value "${CONFIG[root_part]}")
@@ -1200,7 +1207,7 @@ install_graphics() {
         sed -i 's/^MODULES=(\(.*\))/MODULES=(\1 nvidia nvidia_modeset nvidia_uvm nvidia_drm)/' "$MOUNTPOINT/etc/mkinitcpio.conf"
         sed -i 's/MODULES=( /MODULES=(/' "$MOUNTPOINT/etc/mkinitcpio.conf"
         arch-chroot "$MOUNTPOINT" mkinitcpio -P
-        sed -i 's/^GRUB_CMDLINE_LINUX_DEFAULT="\(.*\)"/GRUB_CMDLINE_LINUX_DEFAULT="\1 modprobe.blacklist=nouveau nvidia-drm.modeset=1"/' "$MOUNTPOINT/etc/default/grub"
+        sed -i 's/^GRUB_CMDLINE_LINUX_DEFAULT="\(.*\)"/GRUB_CMDLINE_LINUX_DEFAULT="\1 nvidia_drm.modeset=1 nvidia_drm.fbdev=1"/' "$MOUNTPOINT/etc/default/grub"
         arch-chroot "$MOUNTPOINT" grub-mkconfig -o /boot/grub/grub.cfg
     fi
 }
