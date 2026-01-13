@@ -84,7 +84,6 @@ System hostname (e.g., `xero-desktop`)
 **Single GPU Setups :**
 
 - **mesa-all**: All open-source drivers (safe default)
-- **nvidia-prop**: NVIDIA proprietary (best gaming performance)
 - **nvidia-open**: NVIDIA open kernel module (Turing+ GPUs)
 - **nvidia-legacy**: NVIDIA proprietary (900/1000)
 - **nvidia-nouveau**: NVIDIA open-source nouveau
