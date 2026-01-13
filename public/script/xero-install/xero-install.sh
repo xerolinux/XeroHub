@@ -992,15 +992,15 @@ format_partitions() {
     [[ -b "$root_device" ]] || { echo "ERROR: root device '$root_device' is not a block device"; exit 1; }
 
     if [[ "${CONFIG[uefi]}" == "yes" ]]; then
-        mkfs.fat -F32 "${CONFIG[boot_part]}"
+        mkfs.fat -F32 "${CONFIG[boot_part]}" 2>/dev/null
     else
-        mkfs.ext4 -F "${CONFIG[boot_part]}"
+        mkfs.ext4 -F "${CONFIG[boot_part]}" 2>/dev/null
     fi
 
     case "${CONFIG[filesystem]}" in
-        btrfs) mkfs.btrfs -f "$root_device" ;;
-        ext4)  mkfs.ext4 -F "$root_device" ;;
-        xfs)   mkfs.xfs -f "$root_device" ;;
+        btrfs) mkfs.btrfs -f "$root_device" 2>/dev/null ;;
+        ext4)  mkfs.ext4 -F "$root_device" 2>/dev/null ;;
+        xfs)   mkfs.xfs -f "$root_device" 2>/dev/null ;;
         *)     echo "ERROR: Unknown filesystem '${CONFIG[filesystem]}'"; exit 1 ;;
     esac
 }
