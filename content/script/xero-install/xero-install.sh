@@ -930,7 +930,7 @@ partition_disk() {
 
     [[ -n "$disk" ]] || { echo "ERROR: CONFIG[disk] is empty"; exit 1; }
 
-    wipefs -af "$disk" &>/dev/null || true
+    wipefs -af "$disk" 2>/dev/null || true
     sgdisk -Z "$disk" &>/dev/null || true
 
     if [[ "${CONFIG[uefi]}" == "yes" ]]; then
@@ -976,7 +976,7 @@ setup_encryption() {
     [[ -n "${CONFIG[encrypt_password]}" ]] || { echo "ERROR: Encryption enabled but password is empty"; exit 1; }
     [[ -b "${CONFIG[root_part]}" ]] || { echo "ERROR: root_part '${CONFIG[root_part]}' is not a block device"; exit 1; }
 
-    echo -n "${CONFIG[encrypt_password]}" | cryptsetup luksFormat --type luks2 "${CONFIG[root_part]}" -
+    echo -n "${CONFIG[encrypt_password]}" | cryptsetup luksFormat --type luks2 "${CONFIG[root_part]}" - 2>/dev/null
     echo -n "${CONFIG[encrypt_password]}" | cryptsetup open "${CONFIG[root_part]}" cryptroot -
 
     CONFIG[root_device]="/dev/mapper/cryptroot"
