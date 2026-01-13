@@ -1061,6 +1061,8 @@ install_base_system() {
 }
 
 add_repos() {
+    sed -i '/^#\[multilib\]/{N;s/#\[multilib\]\n#Include/[multilib]\nInclude/}' "$MOUNTPOINT/etc/pacman.conf"
+
     if ! grep -q "\[xerolinux\]" "$MOUNTPOINT/etc/pacman.conf"; then
         echo -e '\n[xerolinux]\nSigLevel = Optional TrustAll\nServer = https://repos.xerolinux.xyz/$repo/$arch' >> "$MOUNTPOINT/etc/pacman.conf"
     fi

@@ -160,8 +160,8 @@
   <link
     type="text/css"
     rel="stylesheet"
-    href="/css/main.bundle.min.6265ffecafed03f40ec8eb2a4915a080e1f8d853e6e7f440a6977251a0e02fe92486409ff6e8e1e5dd462e03a8b7fbe88d330bf893f5d25c1e0e07f647e42bd5.css"
-    integrity="sha512-YmX/7K/tA/QOyOsqSRWggOH42FPm5/RAppdyUaDgL&#43;kkhkCf9ujh5d1GLgOot/vojTML&#43;JP10lweDgf2R&#43;Qr1Q==">
+    href="/css/main.bundle.min.54b2494a28e59afc2f69894a4e8da542f87b70410e487838e3c486d0d1b389996af774f5cce466bc9e7989c3768b8f31a30148f9719b7d9495d4e05a0133ce15.css"
+    integrity="sha512-VLJJSijlmvwvaYlKTo2lQvh7cEEOSHg448SG0NGziZlq93T1zORmvJ55icN2i48xowFI&#43;XGbfZSV1OBaATPOFQ==">
 
   
   
@@ -1457,7 +1457,7 @@
 <div class="fixed inset-x-0 z-100">
   <div
     id="menu-blur"
-    class="absolute opacity-0 inset-x-0 top-0 h-full single_hero_background nozoom backdrop-blur-2xl backdrop-saturate-220 backdrop-brightness-112 dark:backdrop-saturate-180 dark:backdrop-brightness-95 bg-primary-200/50 bg-linear-65 dark:from-neutral-900/88 dark:via-neutral-800/72 dark:to-neutral-900/55 shadow-xl"></div>
+    class="absolute opacity-0 inset-x-0 top-0 h-full single_hero_background nozoom backdrop-blur-2xl backdrop-saturate-220 backdrop-brightness-112 dark:backdrop-saturate-180 dark:backdrop-brightness-95 bg-primary-200/80 bg-linear-60 dark:bg-primary-800/30 shadow-xl"></div>
   <div class="relative m-auto leading-7 max-w-7xl px-6 sm:px-14 md:px-24 lg:px-32">
     <div class="main-menu flex items-center w-full gap-2 p-1 pl-0">
   
@@ -2310,10 +2310,9 @@
       
       
       
-        <div class="order-first lg:ml-auto px-0 lg:order-last lg:ps-8 lg:max-w-2xs">
+        <div class="order-first lg:ms-auto px-0 lg:order-last lg:ps-8 lg:max-w-2xs">
           <div class="toc ps-5 print:hidden lg:sticky lg:top-[140px]">
-            
-              <details
+            <details
   open
   id="TOCView"
   class="toc-right mt-0 overflow-y-auto overscroll-contain bf-scrollbar rounded-lg -ms-5 ps-5 pe-2 hidden lg:block">
@@ -2459,7 +2458,6 @@
 </script>
 
 
-            
           </div>
         </div>
       
@@ -2474,7 +2472,7 @@
     <div id="information" class="anchor"></div>
     
 </h3>
-<p><a href="https://ollama.com"  target="_blank"><strong>Ollama</strong></a> is a tool that allows you to run and manage <em>A.I.</em> models locally on your own machines, providing privacy and control without relying on <em>cloud-based</em> services. While it works across multiple platforms, it integrates smoothly into any <strong>Linux</strong> workflow.</p>
+<p><a href="https://ollama.com"  target="_blank" rel="noreferrer"><strong>Ollama</strong></a> is a tool that allows you to run and manage <em>A.I.</em> models locally on your own machines, providing privacy and control without relying on <em>cloud-based</em> services. While it works across multiple platforms, it integrates smoothly into any <strong>Linux</strong> workflow.</p>
 <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
       <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/J6s0n1FhXRo?autoplay=0&amp;controls=1&amp;end=0&amp;loop=0&amp;mute=0&amp;start=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="YouTube video"></iframe>
     </div>
@@ -2484,7 +2482,7 @@
     <div id="installation" class="anchor"></div>
     
 </h3>
-<p>Installing is easy, it can be done in multiple ways, that I will show you here. In the video above my good friend and brother <a href="https://www.youtube.com/@DistroTube/videos"  target="_blank"><strong>DistroTube</strong></a> goes through the motions on <strong>ArcoLinux</strong> an <strong>Arch-Based</strong> distro. Here, I will expanding on that just a little, while including most of the commands used.</p>
+<p>Installing is easy, it can be done in multiple ways, that I will show you here. In the video above my good friend and brother <a href="https://www.youtube.com/@DistroTube/videos"  target="_blank" rel="noreferrer"><strong>DistroTube</strong></a> goes through the motions on <strong>ArcoLinux</strong> an <strong>Arch-Based</strong> distro. Here, I will expanding on that just a little, while including most of the commands used.</p>
 <p>First we will need to install the <strong>Ollama Engine</strong>&hellip;</p>
 <ul>
 <li>Platform-Agnostic (Recommended)</li>
@@ -2495,7 +2493,7 @@
 </ul>
 <div class="highlight-wrapper"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Bash" data-lang="Bash"><span class="line"><span class="cl">sudo pacman -S ollama <span class="o">&amp;&amp;</span> sudo systemctl <span class="nb">enable</span> --now ollama</span></span></code></pre></div></div>
 <p>Now that we have the engine installed, it&rsquo;s time to grab the model we want to use with it, since without one it will not work properly. There are quite a few varying in size, be mindful of that.</p>
-<p>We can select model(s) from <a href="https://github.com/ollama/ollama?tab=readme-ov-file#model-library"  target="_blank"><strong>This Link</strong></a>, once we have it we use the following command to install and run (using llama3.1 in this example)&hellip;</p>
+<p>We can select model(s) from <a href="https://github.com/ollama/ollama?tab=readme-ov-file#model-library"  target="_blank" rel="noreferrer"><strong>This Link</strong></a>, once we have it we use the following command to install and run (using llama3.1 in this example)&hellip;</p>
 <div class="highlight-wrapper"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Bash" data-lang="Bash"><span class="line"><span class="cl">ollama run llama3.1</span></span></code></pre></div></div>
 <p>Some models are larger than others, reaching up to 232GB !!! Also the bigger the model is the more powerful your machine should be to handle it. Please keep that in mind before diving too deep into it.</p>
 <p align="center">
@@ -2718,7 +2716,7 @@
 
 
 <article
-  class="relative min-h-full min-w-full overflow-hidden rounded-lg border border-neutral-300 dark:border-neutral-600">
+  class="article-link--related relative min-h-full min-w-full overflow-hidden rounded-lg border border-neutral-300 dark:border-neutral-600">
   
     <div class="flex-none relative overflow-hidden thumbnail_card_related">
       <img
@@ -2921,7 +2919,7 @@
 
 
 <article
-  class="relative min-h-full min-w-full overflow-hidden rounded-lg border border-neutral-300 dark:border-neutral-600">
+  class="article-link--related relative min-h-full min-w-full overflow-hidden rounded-lg border border-neutral-300 dark:border-neutral-600">
   
     <div class="flex-none relative overflow-hidden thumbnail_card_related">
       <img
@@ -3124,7 +3122,7 @@
 
 
 <article
-  class="relative min-h-full min-w-full overflow-hidden rounded-lg border border-neutral-300 dark:border-neutral-600">
+  class="article-link--related relative min-h-full min-w-full overflow-hidden rounded-lg border border-neutral-300 dark:border-neutral-600">
   
     <div class="flex-none relative overflow-hidden thumbnail_card_related">
       <img

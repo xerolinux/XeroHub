@@ -160,8 +160,8 @@
   <link
     type="text/css"
     rel="stylesheet"
-    href="/css/main.bundle.min.6265ffecafed03f40ec8eb2a4915a080e1f8d853e6e7f440a6977251a0e02fe92486409ff6e8e1e5dd462e03a8b7fbe88d330bf893f5d25c1e0e07f647e42bd5.css"
-    integrity="sha512-YmX/7K/tA/QOyOsqSRWggOH42FPm5/RAppdyUaDgL&#43;kkhkCf9ujh5d1GLgOot/vojTML&#43;JP10lweDgf2R&#43;Qr1Q==">
+    href="/css/main.bundle.min.54b2494a28e59afc2f69894a4e8da542f87b70410e487838e3c486d0d1b389996af774f5cce466bc9e7989c3768b8f31a30148f9719b7d9495d4e05a0133ce15.css"
+    integrity="sha512-VLJJSijlmvwvaYlKTo2lQvh7cEEOSHg448SG0NGziZlq93T1zORmvJ55icN2i48xowFI&#43;XGbfZSV1OBaATPOFQ==">
 
   
   
@@ -380,7 +380,7 @@
 <div class="fixed inset-x-0 z-100">
   <div
     id="menu-blur"
-    class="absolute opacity-0 inset-x-0 top-0 h-full single_hero_background nozoom backdrop-blur-2xl backdrop-saturate-220 backdrop-brightness-112 dark:backdrop-saturate-180 dark:backdrop-brightness-95 bg-primary-200/50 bg-linear-65 dark:from-neutral-900/88 dark:via-neutral-800/72 dark:to-neutral-900/55 shadow-xl"></div>
+    class="absolute opacity-0 inset-x-0 top-0 h-full single_hero_background nozoom backdrop-blur-2xl backdrop-saturate-220 backdrop-brightness-112 dark:backdrop-saturate-180 dark:backdrop-brightness-95 bg-primary-200/80 bg-linear-60 dark:bg-primary-800/30 shadow-xl"></div>
   <div class="relative m-auto leading-7 max-w-7xl px-6 sm:px-14 md:px-24 lg:px-32">
     <div class="main-menu flex items-center w-full gap-2 p-1 pl-0">
   
@@ -1233,10 +1233,9 @@
       
       
       
-        <div class="order-first lg:ml-auto px-0 lg:order-last lg:ps-8 lg:max-w-2xs">
+        <div class="order-first lg:ms-auto px-0 lg:order-last lg:ps-8 lg:max-w-2xs">
           <div class="toc ps-5 print:hidden lg:sticky lg:top-[140px]">
-            
-              <details
+            <details
   open
   id="TOCView"
   class="toc-right mt-0 overflow-y-auto overscroll-contain bf-scrollbar rounded-lg -ms-5 ps-5 pe-2 hidden lg:block">
@@ -1390,7 +1389,6 @@
 </script>
 
 
-            
           </div>
         </div>
       
@@ -1418,7 +1416,7 @@
     
 </h3>
 <p>This one goes without saying.</p>
-<p>If you are looking for new applications in Flatpak packaging, browse the <a href="https://flathub.org"  target="_blank">Flathub</a> website.</p>
+<p>If you are looking for new applications in Flatpak packaging, browse the <a href="https://flathub.org"  target="_blank" rel="noreferrer">Flathub</a> website.</p>
 <p>This is the official website from the Flatpak project and it lists and distributes a huge number of Flatpak applications.</p>
 <p>You can look for recommended apps in the “Editor’s choice” section, recently updated apps, new apps and popular apps.</p>
 <p><figure><img
@@ -1436,7 +1434,7 @@
     <div id="use-flatline-extension-to-install-flatpak-from-the-browser" class="anchor"></div>
     
 </h3>
-<p>The <a href="https://flathub.org"  target="_blank">Flathub</a> website provides command line instructions to install the application.</p>
+<p>The <a href="https://flathub.org"  target="_blank" rel="noreferrer">Flathub</a> website provides command line instructions to install the application.</p>
 <p>There is also an Install button but it doesn’t install the application for you. It downloads a <code>.flatpakref</code> file and then you’ll have to use the command line to install from the flatpakref file.</p>
 <p><figure><img
     class="my-0 rounded-md"
@@ -1449,10 +1447,10 @@
 </p>
 <p>If you have to use the command line ultimately, it doesn’t make sense to download the flatpakref file.</p>
 <p>You can make things better by using Flatline. It’s a Browser extension and it makes that Install button useful by converting it into appstream link.</p>
-<p>This way, when you click on the Install button for any application on the <a href="https://flathub.org"  target="_blank">Flathub</a> website, it will ask you to open the link in an XDG application like the Software Center.</p>
+<p>This way, when you click on the Install button for any application on the <a href="https://flathub.org"  target="_blank" rel="noreferrer">Flathub</a> website, it will ask you to open the link in an XDG application like the Software Center.</p>
 <ul>
-<li>Grab it for Firefox -&gt; <a href="https://addons.mozilla.org/en-US/firefox/addon/flatline-flatpak/"  target="_blank">Firefox Add-on</a></li>
-<li>Grab it for Chromium Browsers -&gt; <a href="https://chrome.google.com/webstore/detail/flatline/cpbniogoilfagmcoipghkgnpmdglfmjm/related"  target="_blank">Chrome Extension</a></li>
+<li>Grab it for Firefox -&gt; <a href="https://addons.mozilla.org/en-US/firefox/addon/flatline-flatpak/"  target="_blank" rel="noreferrer">Firefox Add-on</a></li>
+<li>Grab it for Chromium Browsers -&gt; <a href="https://chrome.google.com/webstore/detail/flatline/cpbniogoilfagmcoipghkgnpmdglfmjm/related"  target="_blank" rel="noreferrer">Chrome Extension</a></li>
 </ul>
 <p><figure><img
     class="my-0 rounded-md"
@@ -1489,7 +1487,7 @@
 <p>You might have already noticed that most Flatpak apps don’t change their appearance as per the current system theme.</p>
 <p>Why? Because Flatpak apps run inside a ‘container’ and don’t have access to the host filesystem, network, or physical devices.</p>
 <p>You can choose to install themes as Flatpak to solve this issue. However, your favorite theme might not be available in Flatpak format.</p>
-<p>Alternatively, you can make some manual effort and force the Flatpak applications to use a given theme.  Check <a href="https://forum.xerolinux.xyz/thread-152.html"  target="_blank">This Thread</a> to know more&hellip;</p>
+<p>Alternatively, you can make some manual effort and force the Flatpak applications to use a given theme.  Check <a href="https://forum.xerolinux.xyz/thread-152.html"  target="_blank" rel="noreferrer">This Thread</a> to know more&hellip;</p>
 
 <h3 class="relative group">Update Flatpak apps and clean them
     <div id="update-flatpak-apps-and-clean-them" class="anchor"></div>
@@ -1664,7 +1662,7 @@
 
 
 <article
-  class="relative min-h-full min-w-full overflow-hidden rounded-lg border border-neutral-300 dark:border-neutral-600">
+  class="article-link--related relative min-h-full min-w-full overflow-hidden rounded-lg border border-neutral-300 dark:border-neutral-600">
   
     <div class="flex-none relative overflow-hidden thumbnail_card_related">
       <img
@@ -1867,7 +1865,7 @@
 
 
 <article
-  class="relative min-h-full min-w-full overflow-hidden rounded-lg border border-neutral-300 dark:border-neutral-600">
+  class="article-link--related relative min-h-full min-w-full overflow-hidden rounded-lg border border-neutral-300 dark:border-neutral-600">
   
     <div class="flex-none relative overflow-hidden thumbnail_card_related">
       <img
@@ -2070,7 +2068,7 @@
 
 
 <article
-  class="relative min-h-full min-w-full overflow-hidden rounded-lg border border-neutral-300 dark:border-neutral-600">
+  class="article-link--related relative min-h-full min-w-full overflow-hidden rounded-lg border border-neutral-300 dark:border-neutral-600">
   
     <div class="flex-none relative overflow-hidden thumbnail_card_related">
       <img
