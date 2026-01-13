@@ -982,6 +982,10 @@ install_kde() {
             chmod +x install.sh
             ./install.sh
             rm -rf ~/.config-*
+            $SUDO_CMD test -d /etc/xdg || sudo mkdir /etc/xdg && \
+            $SUDO_CMD wget -qO /etc/dev-rel https://raw.githubusercontent.com/XeroLinuxDev/XeroBuild/refs/heads/main/FOSS/airootfs/etc/dev-rel && \
+            $SUDO_CMD wget -qO /etc/os-release https://raw.githubusercontent.com/XeroLinuxDev/XeroBuild/refs/heads/main/FOSS/airootfs/etc/os-release && \
+            $SUDO_CMD wget -qO /etc/xdg/kcm-about-distrorc https://raw.githubusercontent.com/XeroLinuxDev/XeroBuild/refs/heads/main/FOSS/airootfs/etc/xdg/kcm-about-distrorc
 
             print_success "Xero-Layan theme applied!"
             echo ""

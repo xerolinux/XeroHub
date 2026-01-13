@@ -1106,7 +1106,16 @@ EOF
 
 install_bootloader() {
     if [[ "${CONFIG[uefi]}" == "yes" ]]; then
-        arch-chroot "$MOUNTPOINT" grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=GRUB
+        # Ensure EFI directory exists
+        mkdir -p "$MOUNTPOINT/boot/efi"
+
+        # Check if EFI partition is mounted
+        if ! mountpoint -q "$MOUNTPOINT/boot/efi"; then
+            mount "${CONFIG[boot_part]}" "$MOUNTPOINT/boot/efi"
+        fi
+
+        # Install GRUB for UEFI with --removable flag for better compatibility
+        arch-chroot "$MOUNTPOINT" grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=XeroLinux --removable --recheck
     else
         arch-chroot "$MOUNTPOINT" grub-install --target=i386-pc "${CONFIG[disk]}"
     fi
