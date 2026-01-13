@@ -2,6 +2,8 @@
 
 A beautiful, streamlined Arch Linux installer designed by XeroLinux with a modern TUI.
 
+![Screenshot](https://i.imgur.com/vl5hMAF.png)
+
 ![Xero Arch Installer](https://img.shields.io/badge/version-1.0-blue)
 ![License](https://img.shields.io/badge/license-GPL--3.0-green)
 
@@ -35,13 +37,16 @@ curl -fsSL https://xerolinux.xyz/script/xero-install/install.sh | bash
 ## What Gets Installed
 
 ### Base System
+
 - Linux kernel + headers
 - GRUB bootloader
 - Essential system utilities
 - NetworkManager
 
 ### After Base Install
+
 The installer automatically runs the XeroLinux KDE script which installs:
+
 - KDE Plasma Desktop
 - XeroLinux curated applications
 - System tools and utilities
@@ -50,35 +55,55 @@ The installer automatically runs the XeroLinux KDE script which installs:
 ## Configuration Options
 
 ### 1. Installer Language
+
 Select the interface language for the installer.
 
 ### 2. Locales
+
 - **System Locale**: Language and encoding (e.g., `en_US.UTF-8`)
 - **Keyboard Layout**: Console keyboard layout (e.g., `us`, `de`, `fr`)
 
 ### 3. Disk Configuration
+
 - **Target Disk**: Select installation disk (⚠️ will be erased!)
 - **Filesystem**: BTRFS (recommended), EXT4, or XFS
 - **Encryption**: Optional LUKS2 full disk encryption
 
 ### 4. Swap
+
 - **ZRAM**: Compressed RAM swap (recommended)
 - **File**: Traditional swap file
 - **None**: No swap
 
 ### 5. Hostname
+
 System hostname (e.g., `xero-desktop`)
 
 ### 6. Graphics Driver
+
+**Single GPU Setups :**
+
 - **mesa-all**: All open-source drivers (safe default)
 - **nvidia-prop**: NVIDIA proprietary (best gaming performance)
 - **nvidia-open**: NVIDIA open kernel module (Turing+ GPUs)
+- **nvidia-legacy**: NVIDIA proprietary (900/1000)
 - **nvidia-nouveau**: NVIDIA open-source nouveau
 - **amd**: AMD/ATI open-source
 - **intel**: Intel open-source
 - **vm**: Virtual machine drivers
 
+**Hybrid Setups :**
+
+- **intel-amd**
+- **intel-nvidia-turing**
+- **intel-nvidia-legacy**
+- **amd-nvidia-turing**
+- **amd-nvidia-legacy**
+
 ### 7. Authentication
+
+User will be part of `wheel` group. So can use `sudo` out the box.
+
 - **Username**: Your user account
 - **User Password**: Password for your account
 - **Root Password**: System root password
@@ -138,6 +163,7 @@ dhcpcd
 ```
 
 ### Installer won't start
+
 ```bash
 # Install gum manually
 pacman -Sy gum
@@ -147,6 +173,7 @@ bash xero-install.sh
 ```
 
 ### NVIDIA issues after install
+
 ```bash
 # Regenerate initramfs
 sudo mkinitcpio -P
@@ -158,6 +185,7 @@ sudo grub-mkconfig -o /boot/grub/grub.cfg
 ## Customization
 
 ### Adding Packages
+
 Modify the `install_base_system()` function to add packages to the base install.
 
 ## Version History
