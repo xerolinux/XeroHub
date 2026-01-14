@@ -1047,6 +1047,9 @@ mount_filesystems() {
 # ────────────────────────────────────────────────────────────────────────────────
 
 add_temp_repo() {
+    # Enable multilib repo on live ISO
+    sed -i '/^#\[multilib\]/{N;s/#\[multilib\]\n#Include/[multilib]\nInclude/}' /etc/pacman.conf
+
     # Temporarily add xerolinux and chaotic-aur repos to live ISO for pacstrap access
     if ! grep -q "\[xerolinux\]" /etc/pacman.conf; then
         echo -e '\n[xerolinux]\nSigLevel = Optional TrustAll\nServer = https://repos.xerolinux.xyz/$repo/$arch' >> /etc/pacman.conf
