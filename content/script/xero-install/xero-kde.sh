@@ -619,7 +619,6 @@ install_kde() {
         kwalletmanager dolphin-plugins \
         k3b kamoso audiotube plasmatube audiocd-kio \
         waypipe dwayland egl-wayland qt6-wayland lib32-wayland wayland-protocols \
-        kwayland-integration plasma-wayland-protocols
         kwayland-integration plasma-wayland-protocols || { print_error "KDE installation failed!"; exit 1; }
 
     print_success "KDE Plasma Desktop installed!"
