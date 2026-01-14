@@ -618,7 +618,7 @@ select_graphics_driver() {
                 gum style --foreground 214 --margin "0 2" "⚠ Will configure: mkinitcpio modules + GRUB parameters"
                 ;;
             "vm")
-                gum style --foreground 245 --margin "0 2" "Packages: mesa"
+                gum style --foreground 245 --margin "0 2" "Packages: Foss"
                 ;;
         esac
     fi
