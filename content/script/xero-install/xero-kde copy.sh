@@ -39,6 +39,17 @@ print_warning() {
     echo -e "${YELLOW}⚠${NC} $1"
 }
 
+# Detect CPU vendor
+detect_cpu() {
+    if grep -q "GenuineIntel" /proc/cpuinfo; then
+        echo "intel"
+    elif grep -q "AuthenticAMD" /proc/cpuinfo; then
+        echo "amd"
+    else
+        echo "unknown"
+    fi
+}
+
 # Detect if running in a VM
 detect_vm() {
     if systemd-detect-virt -q; then
@@ -46,6 +57,12 @@ detect_vm() {
     else
         return 1
     fi
+}
+
+# Detect root filesystem type
+detect_filesystem() {
+    local root_fs=$(findmnt -n -o FSTYPE /)
+    echo "$root_fs"
 }
 
 # Detect if running in chroot environment
@@ -86,9 +103,10 @@ prompt_user() {
 
     echo -e "${CYAN}This script will install:${NC}"
     echo -e "  ${BLUE}•${NC} KDE Plasma Desktop (XeroLinux curated selection)"
-    echo -e "  ${BLUE}•${NC} Essential KDE Applications"
-    echo -e "  ${BLUE}•${NC} Your selected AUR helper & packages"
-    echo -e "  ${BLUE}•${NC} XeroLinux configurations"
+    echo -e "  ${BLUE}•${NC} Essential System Tools & Utilities"
+    echo -e "  ${BLUE}•${NC} Hardware Support & Drivers"
+    echo -e "  ${BLUE}•${NC} Multimedia & Graphics Applications"
+    echo -e "  ${BLUE}•${NC} Power User Tools (monitoring, development, etc.)"
     echo ""
     echo -e "${YELLOW}⚠ This will modify your system!${NC}"
     echo ""
@@ -100,28 +118,6 @@ prompt_user() {
         print_warning "Installation cancelled by user. Exiting..."
         exit 0
     fi
-}
-
-# Step A: AUR Helper Selection
-select_aur_helper() {
-    print_header
-
-    echo -e "${CYAN}🔧 AUR Helper Selection${NC}"
-    echo ""
-    echo -e "Choose your preferred AUR helper:"
-    echo ""
-    echo -e "  ${BLUE}1)${NC} paru  (Rust-based, feature-rich)"
-    echo -e "  ${BLUE}2)${NC} yay   (Go-based, popular choice)"
-    echo ""
-    read -p "Enter choice (1 or 2, default is paru): " aur_choice
-
-    case $aur_choice in
-        2) AUR_HELPER="yay" ;;
-        *) AUR_HELPER="paru" ;;
-    esac
-
-    print_success "Selected AUR helper: $AUR_HELPER"
-    echo ""
 }
 
 # Customization prompts
@@ -140,7 +136,7 @@ customization_prompts() {
 
     # Sub-Prompt 1: Web Browser
     print_header
-    echo -e "${CYAN}[1/12] Web Browser${NC}"
+    echo -e "${CYAN}[1/10] Web Browser${NC}"
     echo -e "Choose your preferred web browser (or press Enter to skip):"
     echo ""
     echo -e "  ${BLUE}1)${NC} Floorp"
@@ -170,7 +166,7 @@ customization_prompts() {
 
     # Sub-Prompt 2: VPN
     print_header
-    echo -e "${CYAN}[2/12] VPN Service${NC}"
+    echo -e "${CYAN}[2/10] VPN Service${NC}"
     echo -e "Choose your VPN client (or press Enter to skip):"
     echo ""
     echo -e "  ${BLUE}1)${NC} ExpressVPN"
@@ -190,7 +186,7 @@ customization_prompts() {
 
     # Sub-Prompt 3: Social Apps
     print_header
-    echo -e "${CYAN}[3/12] Social & Communication Apps${NC}"
+    echo -e "${CYAN}[3/10] Social & Communication Apps${NC}"
     echo -e "Choose your social apps (separate multiple with spaces, or press Enter to skip):"
     echo ""
     echo -e "  ${BLUE}1)${NC} ZapZap (WhatsApp)"
@@ -220,7 +216,7 @@ customization_prompts() {
 
     # Sub-Prompt 4: Android Tools
     print_header
-    echo -e "${CYAN}[4/12] Android Development Tools${NC}"
+    echo -e "${CYAN}[4/10] Android Development Tools${NC}"
     echo ""
     read -p "Do you want Android tools (ADB, scrcpy, etc.)? [y/N]: " -n 1 -r
     echo ""
@@ -233,7 +229,7 @@ customization_prompts() {
 
     # Sub-Prompt 5: LibreOffice
     print_header
-    echo -e "${CYAN}[5/12] Office Suite${NC}"
+    echo -e "${CYAN}[5/10] Office Suite${NC}"
     echo ""
     read -p "Do you want LibreOffice? [y/N]: " -n 1 -r
     echo ""
@@ -273,7 +269,7 @@ customization_prompts() {
 
     # Sub-Prompt 6: Development Apps
     print_header
-    echo -e "${CYAN}[6/12] Development Tools${NC}"
+    echo -e "${CYAN}[6/10] Development Tools${NC}"
     echo -e "Choose your dev tools (separate multiple with spaces, or press Enter to skip):"
     echo ""
     echo -e "  ${BLUE}1)${NC} Hugo (static site generator)"
@@ -295,7 +291,7 @@ customization_prompts() {
 
     # Sub-Prompt 7: Password Manager
     print_header
-    echo -e "${CYAN}[7/12] Password Manager${NC}"
+    echo -e "${CYAN}[7/10] Password Manager${NC}"
     echo -e "Choose your password manager (separate multiple with spaces, or press Enter to skip):"
     echo ""
     echo -e "  ${BLUE}1)${NC} KeePassXC"
@@ -313,7 +309,7 @@ customization_prompts() {
 
     # Sub-Prompt 8: Imaging/Creative Apps
     print_header
-    echo -e "${CYAN}[8/12] Creative & Imaging Apps${NC}"
+    echo -e "${CYAN}[8/10] Creative & Imaging Apps${NC}"
     echo -e "Choose your creative tools (separate multiple with spaces, or press Enter to skip):"
     echo ""
     echo -e "  ${BLUE}1)${NC} GIMP (photo editing)"
@@ -337,7 +333,7 @@ customization_prompts() {
 
     # Sub-Prompt 9: Music Apps
     print_header
-    echo -e "${CYAN}[9/12] Music & Audio Apps${NC}"
+    echo -e "${CYAN}[9/10] Music & Audio Apps${NC}"
     echo -e "Choose your music apps (separate multiple with spaces, or press Enter to skip):"
     echo ""
     echo -e "  ${BLUE}1)${NC} MPV (media player)"
@@ -363,7 +359,7 @@ customization_prompts() {
 
     # Sub-Prompt 10: Video Apps
     print_header
-    echo -e "${CYAN}[10/12] Video Editing Apps${NC}"
+    echo -e "${CYAN}[10/10] Video Editing Apps${NC}"
     echo -e "Choose your video tools (separate multiple with spaces, or press Enter to skip):"
     echo ""
     echo -e "  ${BLUE}1)${NC} Mystiq (video converter)"
@@ -389,7 +385,7 @@ customization_prompts() {
 
     # Sub-Prompt 11: Apple Sideloading
     print_header
-    echo -e "${CYAN}[11/12] Apple Sideloading App${NC}"
+    echo -e "${CYAN}[11] Apple Sideloading App${NC}"
     echo ""
     read -p "Do you want Apple Sideloading App (plume-impactor)? [y/N]: " -n 1 -r
     echo ""
@@ -402,7 +398,7 @@ customization_prompts() {
 
     # Sub-Prompt 12: QEMU Virtual Machine
     print_header
-    echo -e "${CYAN}[12/12] QEMU Virtual Machine${NC}"
+    echo -e "${CYAN}[12] QEMU Virtual Machine${NC}"
     echo ""
     read -p "Do you want QEMU Virtual Machine support? [y/N]: " -n 1 -r
     echo ""
@@ -422,7 +418,7 @@ customization_prompts() {
     read -p "Press Enter to begin installation..."
 }
 
-# Step B: Install all KDE packages consolidated + enable sddm
+# Main installation
 install_kde() {
     print_header
 
@@ -432,24 +428,27 @@ install_kde() {
     # Update system
     print_step "Syncing package databases..."
     $SUDO_CMD pacman -Sy --noconfirm || { print_error "System update failed!"; exit 1; }
-    print_success "System synced!"
+    print_success "System updated!"
     echo ""
 
-    # Install selected AUR helper
-    print_step "Installing AUR helper ($AUR_HELPER)... 📦"
-    $SUDO_CMD pacman -S --needed --noconfirm $AUR_HELPER || { print_error "AUR helper installation failed!"; exit 1; }
-    print_success "AUR helper ($AUR_HELPER) installed!"
-    echo ""
+    # Install KDE Plasma - The XeroLinux Way
+    print_step "Installing Core KDE Frameworks... 💎"
 
-    # Step B: Install all KDE packages consolidated
-    print_step "Installing KDE Plasma Desktop Environment... 💎"
-
+    # Core meta packages
     $SUDO_CMD pacman -S --needed --noconfirm \
         kf6 \
         qt6 \
-        kde-system \
+        kde-system || { print_error "Core KDE installation failed!"; exit 1; }
+
+    print_success "Core frameworks installed!"
+    echo ""
+
+    print_step "Installing Plasma Components... 🌊"
+
+    # Plasma group - XeroLinux curated selection
+    $SUDO_CMD pacman -S --needed --noconfirm \
         kwin krdp milou breeze oxygen aurorae drkonqi kwrited \
-        kgamma kscreen sddm sddm-kcm kmenuedit bluedevil kpipewire \
+        kgamma kscreen sddm-kcm kmenuedit bluedevil kpipewire \
         plasma-nm plasma-pa plasma-sdk libkscreen breeze-gtk \
         powerdevil kinfocenter flatpak-kcm kdecoration ksshaskpass \
         kwallet-pam libksysguard plasma-vault ksystemstats kde-cli-tools \
@@ -458,124 +457,327 @@ install_kde() {
         plasma-workspace kdeplasma-addons ocean-sound-theme qqc2-breeze-style \
         kactivitymanagerd plasma-integration plasma-thunderbolt \
         plasma5-integration plasma-systemmonitor xdg-desktop-portal-kde \
-        plasma-browser-integration \
-        krdc krfb smb4k alligator kdeconnect kio-admin kio-extras \
-        kio-gdrive konversation kio-zeroconf kdenetwork-filesharing \
-        signon-kwallet-extension \
-        okular kamera svgpart skanlite gwenview spectacle \
-        colord-kde kcolorchooser kimagemapeditor \
-        kdegraphics-thumbnailers \
-        ark kate kgpg kfind sweeper konsole kdialog yakuake \
-        skanpage filelight kmousetool kcharselect markdownpart \
-        qalculate-qt keditbookmarks kdebugsettings kwalletmanager \
-        dolphin-plugins akregator packagekit-qt6 dolphin \
-        k3b kamoso audiotube plasmatube audiocd-kio \
-        waypipe dwayland egl-wayland qt6-wayland lib32-wayland \
-        wayland-protocols kwayland-integration plasma-wayland-protocols || { print_error "KDE installation failed!"; exit 1; }
+        plasma-browser-integration || { print_error "Plasma components installation failed!"; exit 1; }
 
-    print_success "KDE Plasma Desktop installed!"
+    print_success "Plasma components installed!"
     echo ""
 
-    # Enable SDDM service immediately after KDE install
-    print_step "Enabling SDDM service... 🖥️"
+    print_step "Installing SDDM Display Manager... 🖥️"
+    $SUDO_CMD pacman -S --needed --noconfirm sddm || { print_error "SDDM installation failed!"; exit 1; }
+    print_success "SDDM installed!"
+    echo ""
+
+    print_step "Enabling SDDM service..."
     $SUDO_CMD systemctl enable sddm.service || { print_error "Failed to enable SDDM!"; exit 1; }
     print_success "SDDM enabled!"
     echo ""
-}
 
-# Step C: Install custom non-KDE packages (excluding what's already in xero-install.sh)
-install_custom_pkgs() {
-    print_header
+    print_step "Installing KDE Network Tools... 🌐"
 
-    print_step "Installing Additional System Packages... ⚙️"
+    # KDE Network group
+    $SUDO_CMD pacman -S --needed --noconfirm \
+        krdc krfb smb4k alligator kdeconnect kio-admin kio-extras \
+        kio-gdrive konversation kio-zeroconf kdenetwork-filesharing \
+        signon-kwallet-extension || print_warning "Some network tools failed (non-critical)"
+
+    print_success "Network tools installed!"
     echo ""
 
-    # These packages are NOT in xero-install.sh
+    print_step "Installing KDE Graphics Applications... 🎨"
+
+    # KDE Graphics group
     $SUDO_CMD pacman -S --needed --noconfirm \
-        desktop-config archiso b43-fwcutter rsync sdparm ntfs-3g \
+        okular kamera svgpart skanlite gwenview spectacle \
+        colord-kde kcolorchooser kimagemapeditor \
+        kdegraphics-thumbnailers || print_warning "Some graphics apps failed (non-critical)"
+
+    print_success "Graphics applications installed!"
+    echo ""
+
+    print_step "Installing KDE Utilities... 🛠️"
+
+    # KDE Utilities group
+    $SUDO_CMD pacman -S --needed --noconfirm \
+        ark kate kgpg kfind sweeper konsole kdialog yakuake \
+        skanpage filelight kmousetool kcharselect markdownpart \
+        qalculate-qt keditbookmarks kdebugsettings kwalletmanager \
+        dolphin-plugins akregator packagekit-qt6 dolphin || print_warning "Some utilities failed (non-critical)"
+
+    print_success "Utilities installed!"
+    echo ""
+
+    print_step "Installing KDE Multimedia... 🎵"
+
+    # KDE Multimedia group
+    $SUDO_CMD pacman -S --needed --noconfirm \
+        k3b kamoso audiotube plasmatube audiocd-kio || print_warning "Some multimedia apps failed (non-critical)"
+
+    print_success "Multimedia applications installed!"
+    echo ""
+
+    print_step "Installing Wayland Support... 🪟"
+
+    # KDE Wayland group
+    $SUDO_CMD pacman -S --needed --noconfirm \
+        waypipe dwayland egl-wayland qt6-wayland lib32-wayland \
+        wayland-protocols kwayland-integration plasma-wayland-protocols || print_warning "Some Wayland packages failed (non-critical)"
+
+    print_success "Wayland support installed!"
+    echo ""
+
+    print_step "Installing System Base & Tools... ⚙️"
+
+    # Detect filesystem type and set appropriate package
+    ROOT_FS=$(detect_filesystem)
+    FS_PROGS=""
+    if [ "$ROOT_FS" = "btrfs" ]; then
+        print_step "Btrfs filesystem detected..."
+        FS_PROGS="btrfs-progs"
+    elif [ "$ROOT_FS" = "xfs" ]; then
+        print_step "XFS filesystem detected..."
+        FS_PROGS="xfsprogs"
+    else
+        print_step "EXT4/other filesystem detected..."
+        FS_PROGS=""
+    fi
+
+    # Base system packages
+    $SUDO_CMD pacman -S --needed --noconfirm \
+        base base-devel archiso b43-fwcutter rsync sdparm ntfs-3g \
         gptfdisk tpm2-tss udftools syslinux fatresize nfs-utils \
-        exfatprogs tpm2-tools fsarchiver squashfs-tools \
+        e2fsprogs dosfstools exfatprogs tpm2-tools fsarchiver squashfs-tools \
         gpart dmraid parted hdparm usbmuxd usbutils testdisk ddrescue \
         timeshift partclone partimage clonezilla open-iscsi memtest86+-efi \
-        usb_modeswitch \
-        fd tmux brltty msedit nvme-cli terminus-font \
+        usb_modeswitch $FS_PROGS || print_warning "Some base tools failed (non-critical)"
+
+    print_success "System base installed!"
+    echo ""
+
+    print_step "Installing Terminal Tools... 💻"
+
+    $SUDO_CMD pacman -S --needed --noconfirm \
+        fd nano tmux brltty msedit nvme-cli terminus-font \
         foot-terminfo kitty-terminfo pv mc gpm nbd lvm2 bolt bind less \
-        lynx tldr nmap irssi mdadm wvdial hyperv mtools lsscsi \
+        lynx sudo tldr nmap irssi mdadm wvdial hyperv mtools lsscsi \
         ndisc6 screen man-db xl2tpd tcpdump ethtool xdotool pcsclite \
         espeakup libfido2 xdg-utils man-pages diffutils mmc-utils sg3_utils \
-        dmidecode sequoia-sq edk2-shell python-pyqt6 sof-firmware \
-        libusb-compat smartmontools wireguard-tools eza ntp cava most \
-        dialog dnsutils logrotate \
-        linux-atm grub-hooks update-grub \
-        preload extra-scripts \
-        xmlto xero-toolkit xero-hooks xero-gpu-tools boost ckbcomp kpmcore yaml-cpp boost-libs \
-        gtk-update-icon-cache xdg-terminal-exec-git mkinitcpio-fw \
+        dmidecode efibootmgr sequoia-sq edk2-shell python-pyqt6 sof-firmware \
+        libusb-compat smartmontools wireguard-tools eza ntp cava most wget \
+        dialog dnsutils logrotate || print_warning "Some terminal tools failed (non-critical)"
+
+    print_success "Terminal tools installed!"
+    echo ""
+
+    print_step "Installing Kernel & Bootloader... 🐧"
+
+    $SUDO_CMD pacman -S --needed --noconfirm \
+        linux linux-atm linux-headers os-prober grub-hooks update-grub || { print_error "Kernel/bootloader installation failed!"; exit 1; }
+
+    print_success "Kernel & bootloader installed!"
+    echo ""
+
+    print_step "Installing XeroLinux Tools... 🎯"
+
+    $SUDO_CMD pacman -S --needed --noconfirm \
+        preload extra-scripts || print_warning "Some XeroLinux tools failed (non-critical)"
+
+    print_success "XeroLinux tools installed!"
+    echo ""
+
+    print_step "Installing Build Tools & Dependencies... 🔨"
+
+    $SUDO_CMD pacman -S --needed --noconfirm \
+        xmlto xero-toolkit extra-scripts xero-hooks boost ckbcomp kpmcore yaml-cpp boost-libs \
+        gtk-update-icon-cache xdg-terminal-exec-git mkinitcpio mkinitcpio-fw \
         mkinitcpio-utils mkinitcpio-archiso mkinitcpio-openswap \
-        mkinitcpio-nfs-utils dex make libxinerama bash-completion \
-        kirigami polkit-gnome \
-        fwupd \
+        mkinitcpio-nfs-utils dex bash make libxinerama bash-completion \
+        kirigami polkit-gnome || print_warning "Some build tools failed (non-critical)"
+
+    print_success "Build tools installed!"
+    echo ""
+
+    print_step "Installing Hardware Support... 🖥️"
+
+    # CPU microcode detection
+    CPU_VENDOR=$(detect_cpu)
+    if [ "$CPU_VENDOR" = "intel" ]; then
+        print_step "Intel CPU detected, installing Intel microcode..."
+        $SUDO_CMD pacman -S --needed --noconfirm fwupd intel-ucode || print_warning "Intel microcode installation failed (non-critical)"
+    elif [ "$CPU_VENDOR" = "amd" ]; then
+        print_step "AMD CPU detected, installing AMD microcode..."
+        $SUDO_CMD pacman -S --needed --noconfirm fwupd amd-ucode || print_warning "AMD microcode installation failed (non-critical)"
+    else
+        print_warning "Unknown CPU vendor, skipping microcode installation"
+        $SUDO_CMD pacman -S --needed --noconfirm fwupd || print_warning "Firmware tools installation failed (non-critical)"
+    fi
+
+    # Video drivers
+    $SUDO_CMD pacman -S --needed --noconfirm \
         mesa autorandr mesa-utils lib32-mesa \
-        xf86-video-qxl xf86-video-fbdev lib32-mesa-utils \
-        hplip print-manager scanner-support printer-support \
+        xf86-video-qxl xf86-video-fbdev lib32-mesa-utils || print_warning "Some video drivers failed (non-critical)"
+
+    # Printer/Scanner
+    $SUDO_CMD pacman -S --needed --noconfirm \
+        hplip print-manager scanner-support printer-support || print_warning "Printer support failed (non-critical)"
+
+    # Input devices
+    $SUDO_CMD pacman -S --needed --noconfirm \
         orca onboard libinput xf86-input-void xf86-input-evdev \
         iio-sensor-proxy game-devices-udev xf86-input-vmmouse \
-        xf86-input-libinput xf86-input-synaptics xf86-input-elographics \
+        xf86-input-libinput xf86-input-synaptics xf86-input-elographics || print_warning "Some input drivers failed (non-critical)"
+
+    print_success "Hardware support installed!"
+    echo ""
+
+    print_step "Installing Audio & Multimedia... 🔊"
+
+    # GStreamer
+    $SUDO_CMD pacman -S --needed --noconfirm \
         gstreamer gst-libav gst-plugins-bad gst-plugins-base \
         gst-plugins-ugly gst-plugins-good gst-plugins-espeak \
-        gst-plugin-pipewire \
-        ffmpeg ffmpegthumbs ffnvcodec-headers \
-        bluez bluez-libs bluez-utils bluez-tools bluez-plugins bluez-hid2hci \
+        gst-plugin-pipewire || print_warning "GStreamer plugins failed (non-critical)"
+
+    # Multimedia tools
+    $SUDO_CMD pacman -S --needed --noconfirm \
+        ffmpeg ffmpegthumbs ffnvcodec-headers || print_warning "FFmpeg tools failed (non-critical)"
+
+    print_success "Audio & multimedia installed!"
+    echo ""
+
+    print_step "Installing Bluetooth & Networking... 📡"
+
+    # Bluetooth
+    $SUDO_CMD pacman -S --needed --noconfirm \
+        bluez bluez-libs bluez-utils bluez-tools bluez-plugins bluez-hid2hci || print_warning "Bluetooth failed (non-critical)"
+
+    # Networking
+    $SUDO_CMD pacman -S --needed --noconfirm \
         iw iwd ppp lftp ldns avahi samba netctl dhcpcd openssh openvpn \
         dnsmasq dhclient openldap nss-mdns smbclient net-tools \
         darkhttpd reflector pptpclient cloud-init openconnect traceroute \
-        nm-cloud-setup wireless-regdb wireless_tools \
-        wpa_supplicant modemmanager-qt openpgp-card-tools systemd-resolvconf \
-        xorg-apps xorg-xinit xorg-server xorg-xwayland \
+        networkmanager nm-cloud-setup wireless-regdb wireless_tools \
+        wpa_supplicant modemmanager-qt openpgp-card-tools systemd-resolvconf || print_warning "Some networking tools failed (non-critical)"
+
+    print_success "Bluetooth & networking installed!"
+    echo ""
+
+    print_step "Installing Xorg & Display Server... 🪟"
+
+    $SUDO_CMD pacman -S --needed --noconfirm \
+        xorg-apps xorg-xinit xorg-server xorg-xwayland || { print_error "Xorg installation failed!"; exit 1; }
+
+    print_success "Xorg installed!"
+    echo ""
+
+    print_step "Installing Applications & Utilities... 📦"
+
+    $SUDO_CMD pacman -S --needed --noconfirm \
         hblock cryptsetup brightnessctl switcheroo-control \
-        power-profiles-daemon jq figlet ostree lolcat numlockx \
-        localsend lm_sensors appstream-glib lib32-lm_sensors bat bat-extras \
+        power-profiles-daemon jq vim figlet ostree lolcat numlockx \
+        localsend lm_sensors appstream-glib lib32-lm_sensors bat bat-extras || print_warning "Some utilities failed (non-critical)"
+
+    print_success "Applications installed!"
+    echo ""
+
+    print_step "Installing Fonts... 🔤"
+
+    $SUDO_CMD pacman -S --needed --noconfirm \
         ttf-fira-code otf-libertinus tex-gyre-fonts ttf-hack-nerd \
         ttf-ubuntu-font-family awesome-terminal-fonts ttf-jetbrains-mono-nerd \
-        adobe-source-sans-pro-fonts \
+        adobe-source-sans-pro-fonts || print_warning "Some fonts failed (non-critical)"
+
+    print_success "Fonts installed!"
+    echo ""
+
+    print_step "Installing Theming & Customization... 🎨"
+
+    $SUDO_CMD pacman -S --needed --noconfirm \
         kvantum fastfetch adw-gtk-theme oh-my-posh-bin gnome-themes-extra \
         kwin-effect-rounded-corners-git kwin-zones kde-wallpapers \
-        kwin-scripts-kzones tela-circle-icon-theme-purple \
-        bash-language-server typescript-language-server vscode-json-languageserver \
+        kwin-scripts-kzones tela-circle-icon-theme-purple || print_warning "Some themes failed (non-critical)"
+
+    # Kate plugins
+    $SUDO_CMD pacman -S --needed --noconfirm \
+        bash-language-server typescript-language-server vscode-json-languageserver || print_warning "Kate plugins failed (non-critical)"
+
+    print_success "Theming & customization installed!"
+    echo ""
+
+    print_step "Installing File Management & Libraries... 📁"
+
+    # GVFS
+    $SUDO_CMD pacman -S --needed --noconfirm \
         gvfs mtpfs udiskie udisks2 ldmtool gvfs-afc gvfs-mtp gvfs-nfs \
         gvfs-smb gvfs-goa gvfs-wsdd gvfs-dnssd gvfs-google gvfs-gphoto2 \
-        gvfs-onedrive \
+        gvfs-onedrive || print_warning "GVFS components failed (non-critical)"
+
+    # Tumbler
+    $SUDO_CMD pacman -S --needed --noconfirm \
         libgsf tumbler freetype2 libopenraw poppler-qt6 poppler-glib \
-        ffmpegthumbnailer \
+        ffmpegthumbnailer || print_warning "Tumbler components failed (non-critical)"
+
+    # Python libraries
+    $SUDO_CMD pacman -S --needed --noconfirm \
         python-pip python-cffi python-numpy python-docopt python-pyaudio \
-        python-pyparted python-pygments python-websockets \
-        flatpak topgrade appstream-qt pacman-contrib pacman-bintrans \
+        python-pyparted python-pygments python-websockets || print_warning "Python libraries failed (non-critical)"
+
+    print_success "File management & libraries installed!"
+    echo ""
+
+    print_step "Installing Package Management Tools... 📦"
+
+    $SUDO_CMD pacman -S --needed --noconfirm \
+        paru flatpak topgrade appstream-qt pacman-contrib pacman-bintrans || print_warning "Some package tools failed (non-critical)"
+
+    print_success "Package management tools installed!"
+    echo ""
+
+    print_step "Installing System Essentials... ⚡"
+
+    $SUDO_CMD pacman -S --needed --noconfirm \
         xdg-user-dirs ocs-url xmlstarlet yt-dlp wavpack unarchiver \
         rate-mirrors gnustep-base parallel xsettingsd polkit-qt6 \
-        systemdgenie gnome-keyring \
-        vi gcc npm nodejs vala meson gettext intltool node-gyp \
-        graphviz pkgconf semver \
+        systemdgenie gnome-keyring || print_warning "Some system tools failed (non-critical)"
+
+    print_success "System essentials installed!"
+    echo ""
+
+    print_step "Installing Power User Tools & Enhancements... ⚡"
+
+    # Development & Build Tools
+    $SUDO_CMD pacman -S --needed --noconfirm \
+        vi gcc git npm nodejs vala meson gettext intltool node-gyp \
+        graphviz pkgconf semver || print_warning "Some dev tools failed (non-critical)"
+
+    # System Monitoring & Info
+    $SUDO_CMD pacman -S --needed --noconfirm \
         duf btop htop iftop nvtop vnstat inxi lshw hwinfo nmon \
-        sysprof \
-        zip unzip unrar p7zip lzop lhasa unace fuseiso \
+        sysprof || print_warning "Some monitoring tools failed (non-critical)"
+
+    # Archive & Compression
+    $SUDO_CMD pacman -S --needed --noconfirm \
+        zip unzip unrar p7zip lzop lhasa unace fuseiso || print_warning "Some archive tools failed (non-critical)"
+
+    # File System & Storage
+    $SUDO_CMD pacman -S --needed --noconfirm \
         fuse3 sshfs s3fs-fuse cifs-utils gparted gnome-disk-utility \
-        grsync hddtemp mlocate \
+        grsync hddtemp mlocate || print_warning "Some filesystem tools failed (non-critical)"
+
+    # Network & System Utilities
+    $SUDO_CMD pacman -S --needed --noconfirm \
         pciutils inetutils cronie playerctl asciinema ventoy-bin \
-        downgrade pkgstats lsb-release laptop-detect \
+        downgrade pkgstats lsb-release laptop-detect || print_warning "Some utilities failed (non-critical)"
+
+    # Libraries & Dependencies
+    $SUDO_CMD pacman -S --needed --noconfirm \
         yad xdo gum tree expac cblas glfw rhash assimp netpbm wmctrl \
         libmtp polkit zenity jsoncpp oniguruma dbus-python dconf-editor \
-        perl-xml-parser appmenu-gtk-module arandr || print_warning "Some packages failed (non-critical)"
+        perl-xml-parser appmenu-gtk-module arandr || print_warning "Some libraries failed (non-critical)"
 
-    print_success "Additional system packages installed!"
-    echo ""
-}
-
-# Step D: Install user-selected packages
-install_user_packages() {
-    print_header
-
-    print_step "Installing User-Selected Packages... 🎯"
+    print_success "Power user tools installed!"
     echo ""
 
+    # Install user-selected applications
     if [ -n "$BROWSER" ]; then
         print_step "Installing selected browser ($BROWSER)... 🌐"
         $SUDO_CMD pacman -S --needed --noconfirm $BROWSER || print_warning "Browser installation failed (non-critical)"
@@ -655,21 +857,15 @@ install_user_packages() {
 
     if [ -n "$QEMU_VM" ]; then
         print_step "Installing QEMU Virtual Machine support... 🖥️"
-        $SUDO_CMD pacman -Rdd --noconfirm iptables gnu-netcat 2>/dev/null || true
+        $SUDO_CMD pacman -Rdd --noconfirm iptables gnu-netcat || print_warning "Failed to remove conflicting packages"
         $SUDO_CMD pacman -S --needed --noconfirm virt-manager-meta openbsd-netcat || print_warning "QEMU installation failed (non-critical)"
-        echo "options kvm-intel nested=1" | $SUDO_CMD tee /etc/modprobe.d/kvm-intel.conf > /dev/null
+        echo "options kvm-intel nested=1" | $SUDO_CMD tee /etc/modprobe.d/kvm-intel.conf
         $SUDO_CMD systemctl enable libvirtd.service || print_warning "Failed to enable libvirtd service"
         print_success "QEMU Virtual Machine support installed!"
         echo ""
     fi
 
-    print_success "User-selected packages installed!"
-    echo ""
-}
-
-# Install VM support if detected
-install_vm_support() {
-    print_step "Checking for Virtual Machine environment... 🖧"
+    print_step "Installing Virtual Machine Support... 🖧"
 
     if detect_vm; then
         VM_TYPE=$(systemd-detect-virt)
@@ -681,21 +877,15 @@ install_vm_support() {
         print_step "Physical machine detected, skipping VM tools..."
     fi
     echo ""
-}
-
-# System finalization
-finalize_system() {
-    print_header
-
-    print_step "Finalizing system configuration... ⚙️"
-    echo ""
 
     print_step "Updating initramfs... 🔄"
+
     $SUDO_CMD mkinitcpio -P || { print_error "Failed to update initramfs!"; exit 1; }
     print_success "Initramfs updated!"
     echo ""
 
     print_step "Updating GRUB configuration... 🔄"
+
     $SUDO_CMD update-grub || { print_error "Failed to update GRUB!"; exit 1; }
     print_success "GRUB configuration updated!"
     echo ""
@@ -705,13 +895,13 @@ finalize_system() {
     # Enable services
     $SUDO_CMD systemctl enable cups.socket || print_warning "Failed to enable cups.socket"
     $SUDO_CMD systemctl enable saned.socket || print_warning "Failed to enable saned.socket"
+    $SUDO_CMD systemctl enable NetworkManager || print_warning "Failed to enable NetworkManager"
     $SUDO_CMD systemctl enable bluetooth || print_warning "Failed to enable bluetooth"
     $SUDO_CMD systemctl enable power-profiles-daemon || print_warning "Failed to enable power-profiles-daemon"
     $SUDO_CMD systemctl enable switcheroo-control || print_warning "Failed to enable switcheroo-control"
     $SUDO_CMD systemctl enable dhcpcd || print_warning "Failed to enable dhcpcd"
     $SUDO_CMD systemctl enable preload || print_warning "Failed to enable preload"
     $SUDO_CMD systemctl enable sshd || print_warning "Failed to enable sshd"
-    $SUDO_CMD systemctl enable xero-gpu-check || print_warning "Failed to enable xero-gpu-check"
 
     print_success "Essential services enabled!"
     echo ""
@@ -725,64 +915,72 @@ finalize_system() {
 
     print_success "Unnecessary services disabled!"
     echo ""
-}
 
-# Step E: Copy skel to actual created user's home
-copy_skel_to_user() {
+    # Offer Xero-Layan rice
     print_header
-
-    print_step "Applying XeroLinux configurations... 📁"
+    echo -e "${PURPLE}╔════════════════════════════════════════════════╗${NC}"
+    echo -e "${PURPLE}║                                                ║${NC}"
+    echo -e "${PURPLE}║${CYAN}        ✨ One More Thing... ✨                ${PURPLE}║${NC}"
+    echo -e "${PURPLE}║                                                ║${NC}"
+    echo -e "${PURPLE}╚════════════════════════════════════════════════╝${NC}"
+    echo ""
+    echo -e "${CYAN}Would you like to apply the famous Xero-Layan theme?${NC}"
+    echo ""
+    echo -e "The Xero-Layan rice is a beautiful, cohesive design that"
+    echo -e "transforms KDE Plasma into a stunning desktop experience."
+    echo ""
+    echo -e "It includes:"
+    echo -e "  ${BLUE}•${NC} Custom Layan theme & colors"
+    echo -e "  ${BLUE}•${NC} Carefully crafted panel layouts"
+    echo -e "  ${BLUE}•${NC} Beautiful window decorations"
+    echo -e "  ${BLUE}•${NC} Matching icons & cursors"
+    echo ""
+    read -p "$(echo -e ${GREEN}Apply Xero-Layan theme? ${NC}[${GREEN}y${NC}/${RED}N${NC}]: )" -n 1 -r
+    echo ""
     echo ""
 
-    # Determine the actual user (not root)
-    if [ -n "$SUDO_USER" ]; then
-        ACTUAL_USER="$SUDO_USER"
-    elif [ "$EUID" -eq 0 ]; then
-        # In chroot, find the first non-root user with a home directory
-        ACTUAL_USER=$(getent passwd | awk -F: '$3 >= 1000 && $3 < 65534 && $6 ~ /^\/home/ {print $1; exit}')
+    if [[ $REPLY =~ ^[Yy]$ ]]; then
+        print_step "Preparing for Xero-Layan configuration... 📁"
+
+        # Create ~/.config if it doesn't exist (required for rice backup)
+        mkdir -p ~/.config
+        print_success "Config directory ready!"
+        echo ""
+
+        print_step "Downloading Xero-Layan configuration... 🎨"
+
+        cd /tmp || exit 1
+        git clone https://github.com/xerolinux/xero-layan-git || { print_warning "Failed to clone Xero-Layan repo"; }
+
+        if [ -d "xero-layan-git" ]; then
+            print_success "Repository cloned!"
+            echo ""
+            print_step "Applying Xero-Layan theme... ✨"
+
+            cd xero-layan-git || exit 1
+            chmod +x install.sh
+            ./install.sh
+            rm -rf ~/.config-*
+            $SUDO_CMD test -d /etc/xdg || sudo mkdir /etc/xdg && \
+            $SUDO_CMD wget -qO /etc/dev-rel https://raw.githubusercontent.com/XeroLinuxDev/XeroBuild/refs/heads/main/FOSS/airootfs/etc/dev-rel && \
+            $SUDO_CMD wget -qO /etc/os-release https://raw.githubusercontent.com/XeroLinuxDev/XeroBuild/refs/heads/main/FOSS/airootfs/etc/os-release && \
+            $SUDO_CMD wget -qO /etc/xdg/kcm-about-distrorc https://raw.githubusercontent.com/XeroLinuxDev/XeroBuild/refs/heads/main/FOSS/airootfs/etc/xdg/kcm-about-distrorc
+
+            print_success "Xero-Layan theme applied!"
+            echo ""
+        fi
     else
-        ACTUAL_USER="$USER"
+        print_step "Skipping Xero-Layan theme..."
+        echo ""
     fi
 
-    if [ -z "$ACTUAL_USER" ]; then
-        print_warning "Could not determine target user, skipping config copy"
-        return 1
-    fi
-
-    ACTUAL_HOME=$(getent passwd "$ACTUAL_USER" | cut -d: -f6)
-
-    if [ -z "$ACTUAL_HOME" ] || [ ! -d "$ACTUAL_HOME" ]; then
-        print_warning "User home directory not found for $ACTUAL_USER, skipping config copy"
-        return 1
-    fi
-
-    print_step "Copying configurations to $ACTUAL_HOME for user $ACTUAL_USER..."
-
-    # Switch to the actual user and copy skel files
-    if [ "$EUID" -eq 0 ]; then
-        # Running as root (in chroot), use su to switch to the user
-        su - "$ACTUAL_USER" -c 'cp -a /etc/skel/. "$HOME/"'
-    else
-        # Running with sudo
-        sudo -u "$ACTUAL_USER" bash -c 'cp -a /etc/skel/. "$HOME/"'
-    fi
-
-    # Ensure proper ownership
-    $SUDO_CMD chown -R "$ACTUAL_USER:$ACTUAL_USER" "$ACTUAL_HOME"
-
-    print_success "XeroLinux configurations applied to $ACTUAL_HOME!"
-    echo ""
-}
-
-# Final message
-show_completion() {
-    print_header
+    # Final message
     echo -e "${PURPLE}╔════════════════════════════════════════════════╗${NC}"
     echo -e "${PURPLE}║${GREEN}     🎉 Installation Complete! 🎉              ${PURPLE}║${NC}"
     echo -e "${PURPLE}╠════════════════════════════════════════════════╣${NC}"
     echo -e "${PURPLE}║${NC}  Your personalized KDE Plasma is ready!       ${PURPLE}║${NC}"
     echo -e "${PURPLE}║${NC}  Reboot to experience your new desktop        ${PURPLE}║${NC}"
-    echo -e "${PURPLE}║${NC}                                               ${PURPLE}║${NC}"
+    echo -e "${PURPLE}║${NC}                                                ${PURPLE}║${NC}"
     echo -e "${PURPLE}║${NC}  Command: ${YELLOW}sudo reboot${NC}                        ${PURPLE}║${NC}"
     echo -e "${PURPLE}╚════════════════════════════════════════════════╝${NC}"
     echo ""
@@ -791,12 +989,5 @@ show_completion() {
 # Run the script
 check_root
 prompt_user
-select_aur_helper
 customization_prompts
 install_kde
-install_custom_pkgs
-install_user_packages
-install_vm_support
-finalize_system
-copy_skel_to_user
-show_completion
