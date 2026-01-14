@@ -1119,23 +1119,59 @@ install_bootloader() {
             mount "${CONFIG[boot_part]}" "$MOUNTPOINT/boot/efi"
         fi
 
-        # Install GRUB for UEFI with --removable flag for better compatibility
-        arch-chroot "$MOUNTPOINT" grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=XeroLinux --removable --recheck
+        # If system is encrypted, enable GRUB cryptodisk + preload modules
+        if [[ "${CONFIG[encrypt]}" == "yes" ]]; then
+            # Enable cryptodisk in GRUB defaults
+            if grep -q '^GRUB_ENABLE_CRYPTODISK=' "$MOUNTPOINT/etc/default/grub"; then
+                sed -i 's/^GRUB_ENABLE_CRYPTODISK=.*/GRUB_ENABLE_CRYPTODISK=y/' "$MOUNTPOINT/etc/default/grub"
+            else
+                echo 'GRUB_ENABLE_CRYPTODISK=y' >> "$MOUNTPOINT/etc/default/grub"
+            fi
+
+            # Preload modules needed for LUKS2 unlock
+            if grep -q '^GRUB_PRELOAD_MODULES=' "$MOUNTPOINT/etc/default/grub"; then
+                sed -i 's/^GRUB_PRELOAD_MODULES=.*/GRUB_PRELOAD_MODULES="part_gpt part_msdos luks2 cryptodisk gcry_rijndael gcry_sha256"/' \
+                    "$MOUNTPOINT/etc/default/grub"
+            else
+                echo 'GRUB_PRELOAD_MODULES="part_gpt part_msdos luks2 cryptodisk gcry_rijndael gcry_sha256"' >> "$MOUNTPOINT/etc/default/grub"
+            fi
+
+            # Install GRUB for UEFI (encrypted root/boot)
+            arch-chroot "$MOUNTPOINT" grub-install \
+                --target=x86_64-efi \
+                --efi-directory=/boot/efi \
+                --bootloader-id=XeroLinux \
+                --removable \
+                --recheck \
+                --modules="part_gpt part_msdos luks2 cryptodisk gcry_rijndael gcry_sha256"
+        else
+            # Install GRUB for UEFI (non-encrypted)
+            arch-chroot "$MOUNTPOINT" grub-install \
+                --target=x86_64-efi \
+                --efi-directory=/boot/efi \
+                --bootloader-id=XeroLinux \
+                --removable \
+                --recheck
+        fi
     else
+        # BIOS install
         arch-chroot "$MOUNTPOINT" grub-install --target=i386-pc "${CONFIG[disk]}"
     fi
 
-        # Set default kernel parameters
-        sed -i 's/^GRUB_CMDLINE_LINUX_DEFAULT=.*/GRUB_CMDLINE_LINUX_DEFAULT="quiet nowatchdog loglevel=3 nvme_load=yes"/' "$MOUNTPOINT/etc/default/grub"
+    # Set default kernel parameters
+    sed -i 's/^GRUB_CMDLINE_LINUX_DEFAULT=.*/GRUB_CMDLINE_LINUX_DEFAULT="quiet splash loglevel=3 nvme_load=yes"/' \
+        "$MOUNTPOINT/etc/default/grub"
 
-        # Set distributor and enable os-prober
-        sed -i 's/^GRUB_DISTRIBUTOR=.*/GRUB_DISTRIBUTOR="XeroLinux"/' "$MOUNTPOINT/etc/default/grub"
-        sed -i 's/^#*GRUB_DISABLE_OS_PROBER=.*/GRUB_DISABLE_OS_PROBER=false/' "$MOUNTPOINT/etc/default/grub"
+    # Set distributor and enable os-prober
+    sed -i 's/^GRUB_DISTRIBUTOR=.*/GRUB_DISTRIBUTOR="XeroLinux"/' "$MOUNTPOINT/etc/default/grub"
+    sed -i 's/^#*GRUB_DISABLE_OS_PROBER=.*/GRUB_DISABLE_OS_PROBER=false/' "$MOUNTPOINT/etc/default/grub"
 
+    # If encrypted, ensure cryptdevice kernel cmdline exists
     if [[ "${CONFIG[encrypt]}" == "yes" ]]; then
         local uuid=""
         uuid=$(blkid -s UUID -o value "${CONFIG[root_part]}")
-        sed -i "s|^GRUB_CMDLINE_LINUX=.*|GRUB_CMDLINE_LINUX=\"cryptdevice=UUID=$uuid:cryptroot root=/dev/mapper/cryptroot\"|" "$MOUNTPOINT/etc/default/grub"
+        sed -i "s|^GRUB_CMDLINE_LINUX=.*|GRUB_CMDLINE_LINUX=\"cryptdevice=UUID=${uuid}:cryptroot root=/dev/mapper/cryptroot\"|" \
+            "$MOUNTPOINT/etc/default/grub"
     fi
 
     arch-chroot "$MOUNTPOINT" grub-mkconfig -o /boot/grub/grub.cfg
