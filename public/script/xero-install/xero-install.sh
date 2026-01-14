@@ -1117,9 +1117,6 @@ install_base_system() {
     # Firmware
     packages+=" fwupd mkinitcpio-fw sof-firmware"
 
-    # Virtual Machine support
-    packages+=" spice-vdagent open-vm-tools qemu-guest-agent virtualbox-guest-utils"
-
     pacstrap -K "$MOUNTPOINT" $packages
     genfstab -U "$MOUNTPOINT" >> "$MOUNTPOINT/etc/fstab"
 }
@@ -1296,6 +1293,24 @@ install_graphics() {
             ;;
         "vm")
             packages="$base_drivers xorg-server xorg-xinit"
+            # Auto-detect VM type and install appropriate guest utilities
+            local vm_type=""
+            vm_type=$(systemd-detect-virt 2>/dev/null || echo "unknown")
+            case "$vm_type" in
+                "qemu"|"kvm")
+                    packages+=" spice-vdagent qemu-guest-agent"
+                    ;;
+                "vmware")
+                    packages+=" open-vm-tools"
+                    ;;
+                "oracle")
+                    packages+=" virtualbox-guest-utils"
+                    ;;
+                *)
+                    # Install all if we can't detect
+                    packages+=" spice-vdagent qemu-guest-agent open-vm-tools virtualbox-guest-utils"
+                    ;;
+            esac
             ;;
     esac
 

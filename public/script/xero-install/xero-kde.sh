@@ -39,15 +39,6 @@ print_warning() {
     echo -e "${YELLOW}⚠${NC} $1"
 }
 
-# Detect if running in a VM
-detect_vm() {
-    if systemd-detect-virt -q; then
-        return 0
-    else
-        return 1
-    fi
-}
-
 # Detect if running in chroot environment
 detect_chroot() {
     if [ "$(stat -c %d:%i /)" != "$(stat -c %d:%i /proc/1/root/.)" ] 2>/dev/null; then
@@ -238,33 +229,199 @@ customization_prompts() {
 
     if [[ $REPLY =~ ^[Yy]$ ]]; then
         echo ""
-        echo -e "Choose your language:"
-        echo -e "  ${BLUE}1)${NC} English (en)"
-        echo -e "  ${BLUE}2)${NC} Spanish (es)"
-        echo -e "  ${BLUE}3)${NC} French (fr)"
-        echo -e "  ${BLUE}4)${NC} German (de)"
-        echo -e "  ${BLUE}5)${NC} Italian (it)"
-        echo -e "  ${BLUE}6)${NC} Portuguese (pt)"
-        echo -e "  ${BLUE}7)${NC} Russian (ru)"
-        echo -e "  ${BLUE}8)${NC} Chinese (zh-CN)"
-        echo -e "  ${BLUE}9)${NC} Japanese (ja)"
+        echo -e "Choose your LibreOffice language (UI + spellcheck):"
         echo ""
-        read -p "Enter choice (1-9, default is English): " lang_choice
 
-        case $lang_choice in
-            1|"") LANG_CODE="en" ;;
-            2) LANG_CODE="es" ;;
-            3) LANG_CODE="fr" ;;
-            4) LANG_CODE="de" ;;
-            5) LANG_CODE="it" ;;
-            6) LANG_CODE="pt" ;;
-            7) LANG_CODE="ru" ;;
-            8) LANG_CODE="zh-CN" ;;
-            9) LANG_CODE="ja" ;;
-            *) LANG_CODE="en" ;;
-        esac
+        # All Hunspell dictionaries currently available in Arch Extra repos (plus safe fallbacks).
+        # We will also try to install the matching LibreOffice language pack: libreoffice-fresh-<lang>.
+        LO_LANG_MENU=(
+            "Use system locale|SYSTEM|"
+            "English (US)|en_US|hunspell-en_us"
+            "English (GB)|en_GB|hunspell-en_gb"
+            "English (AU)|en_AU|hunspell-en_au"
+            "English (CA)|en_CA|hunspell-en_ca"
+            "German|de_DE|hunspell-de"
+            "Greek|el_GR|hunspell-el"
+            "French|fr_FR|hunspell-fr"
+            "Hebrew|he_IL|hunspell-he"
+            "Hungarian|hu_HU|hunspell-hu"
+            "Italian|it_IT|hunspell-it"
+            "Dutch|nl_NL|hunspell-nl"
+            "Polish|pl_PL|hunspell-pl"
+            "Romanian|ro_RO|hunspell-ro"
+            "Russian|ru_RU|hunspell-ru"
+            "Spanish (generic)|es|hunspell-es_any"
+            "Spanish (Argentina)|es_AR|hunspell-es_ar"
+            "Spanish (Bolivia)|es_BO|hunspell-es_bo"
+            "Spanish (Chile)|es_CL|hunspell-es_cl"
+            "Spanish (Colombia)|es_CO|hunspell-es_co"
+            "Spanish (Costa Rica)|es_CR|hunspell-es_cr"
+            "Spanish (Cuba)|es_CU|hunspell-es_cu"
+            "Spanish (Dominican Republic)|es_DO|hunspell-es_do"
+            "Spanish (Ecuador)|es_EC|hunspell-es_ec"
+            "Spanish (Spain)|es_ES|hunspell-es_es"
+            "Spanish (Guatemala)|es_GT|hunspell-es_gt"
+            "Spanish (Honduras)|es_HN|hunspell-es_hn"
+            "Spanish (Mexico)|es_MX|hunspell-es_mx"
+            "Spanish (Nicaragua)|es_NI|hunspell-es_ni"
+            "Spanish (Panama)|es_PA|hunspell-es_pa"
+            "Spanish (Peru)|es_PE|hunspell-es_pe"
+            "Spanish (Puerto Rico)|es_PR|hunspell-es_pr"
+            "Spanish (Paraguay)|es_PY|hunspell-es_py"
+            "Spanish (El Salvador)|es_SV|hunspell-es_sv"
+            "Spanish (Uruguay)|es_UY|hunspell-es_uy"
+            "Spanish (Venezuela)|es_VE|hunspell-es_ve"
+            "Custom (enter locale code)|CUSTOM|"
+        )
 
-        LIBREOFFICE="hunspell libreoffice-fresh hunspell-$LANG_CODE libreoffice-extension-texmaths libreoffice-extension-writer2latex"
+        for i in "${!LO_LANG_MENU[@]}"; do
+            idx=$((i + 1))
+            IFS='|' read -r label loc _ <<< "${LO_LANG_MENU[$i]}"
+            if [[ "$loc" == "SYSTEM" ]]; then
+                sys_loc="$(locale 2>/dev/null | awk -F= '/^LANG=/{print $2}' | tr -d '"')"
+                sys_loc="${sys_loc:-en_US}"
+                echo -e "  ${BLUE}${idx})${NC} ${label} (${sys_loc})"
+            elif [[ "$loc" == "CUSTOM" ]]; then
+                echo -e "  ${BLUE}${idx})${NC} ${label}"
+            else
+                echo -e "  ${BLUE}${idx})${NC} ${label} (${loc})"
+            fi
+        done
+
+        echo ""
+        read -p "Enter choice (default: English US): " lang_choice
+
+        # Default to English (US)
+        if [[ -z "$lang_choice" ]]; then
+            lang_choice=2
+        fi
+
+        if ! [[ "$lang_choice" =~ ^[0-9]+$ ]] || (( lang_choice < 1 || lang_choice > ${#LO_LANG_MENU[@]} )); then
+            lang_choice=2
+        fi
+
+        IFS='|' read -r _ LOCALE_SELECTED HUNSPELL_SELECTED <<< "${LO_LANG_MENU[$((lang_choice - 1))]}"
+
+        if [[ "$LOCALE_SELECTED" == "SYSTEM" ]]; then
+            LOCALE_SELECTED="$(locale 2>/dev/null | awk -F= '/^LANG=/{print $2}' | tr -d '"')"
+            LOCALE_SELECTED="${LOCALE_SELECTED:-en_US}"
+        elif [[ "$LOCALE_SELECTED" == "CUSTOM" ]]; then
+            read -p "Enter locale code (examples: en_US, en_GB, fr_FR, es_MX, ru_RU, zh_CN): " LOCALE_SELECTED
+            LOCALE_SELECTED="${LOCALE_SELECTED:-en_US}"
+            HUNSPELL_SELECTED=""  # will be derived below
+        fi
+
+        normalize_locale() {
+            local loc="$1"
+            loc="${loc%%.*}"     # strip .UTF-8
+            loc="${loc%%@*}"     # strip @variant
+            echo "$loc"
+        }
+
+        # Derive hunspell package from locale when not explicitly specified.
+        hunspell_from_locale() {
+            local loc
+            loc="$(normalize_locale "$1")"
+            local lang="${loc%%_*}"
+            local region=""
+            if [[ "$loc" == *"_"* ]]; then
+                region="${loc#*_}"
+            fi
+            lang="${lang,,}"
+            region="${region,,}"
+
+            case "$lang" in
+                en)
+                    if [[ -n "$region" ]]; then
+                        echo "hunspell-en_${region}"
+                    else
+                        echo "hunspell-en_us"
+                    fi
+                    ;;
+                es)
+                    if [[ -n "$region" ]]; then
+                        echo "hunspell-es_${region}"
+                    else
+                        echo "hunspell-es_any"
+                    fi
+                    ;;
+                zh|ja|ko)
+                    # Hunspell dictionaries may not exist for these in repos; rely on LO language packs.
+                    echo ""
+                    ;;
+                pt)
+                    # Not all Portuguese hunspell dictionaries are in official repos; we'll try best-effort names.
+                    if [[ "$region" == "br" ]]; then
+                        echo "hunspell-pt_br"
+                    else
+                        echo "hunspell-pt_pt"
+                    fi
+                    ;;
+                *)
+                    if [[ -n "$region" ]]; then
+                        echo "hunspell-${lang}_${region}"
+                    else
+                        echo "hunspell-$lang"
+                    fi
+                    ;;
+            esac
+        }
+
+        # Determine the LibreOffice language pack package name from locale, if it exists.
+        lo_langpack_from_locale() {
+            local loc
+            loc="$(normalize_locale "$1")"
+            loc="${loc,,}"
+            loc="${loc/_/-}"
+
+            local lang="${loc%%-*}"
+            local region=""
+            if [[ "$loc" == *"-"* ]]; then
+                region="${loc#*-}"
+            fi
+
+            local candidates=()
+            if [[ -n "$region" ]]; then
+                candidates+=("${lang}-${region}")
+            fi
+            candidates+=("${lang}")
+
+            for c in "${candidates[@]}"; do
+                if pacman -Si "libreoffice-fresh-$c" &>/dev/null; then
+                    echo "libreoffice-fresh-$c"
+                    return 0
+                fi
+            done
+
+            echo ""
+            return 0
+        }
+
+        add_pkg_if_exists() {
+            local pkg="$1"
+            if [[ -z "$pkg" ]]; then
+                return 0
+            fi
+            if pacman -Si "$pkg" &>/dev/null; then
+                LO_PKGS="$LO_PKGS $pkg"
+            else
+                print_warning "Package not found in repos, skipping: $pkg"
+            fi
+        }
+
+        LO_PKGS="hunspell libreoffice-fresh libreoffice-extension-texmaths libreoffice-extension-writer2latex"
+
+        if [[ -z "$HUNSPELL_SELECTED" ]]; then
+            HUNSPELL_SELECTED="$(hunspell_from_locale "$LOCALE_SELECTED")"
+        fi
+
+        add_pkg_if_exists "$HUNSPELL_SELECTED"
+
+        LO_LANGPACK="$(lo_langpack_from_locale "$LOCALE_SELECTED")"
+        add_pkg_if_exists "$LO_LANGPACK"
+
+        # Clean whitespace
+        LIBREOFFICE="$(echo "$LO_PKGS" | xargs)"
     else
         LIBREOFFICE=""
     fi
@@ -443,8 +600,9 @@ install_kde() {
     print_step "Installing KDE Plasma Desktop Environment... 💎"
 
     $SUDO_CMD pacman -S --needed --noconfirm \
-        kf6 qt6 kde-system kwin krdp milou breeze oxygen aurorae drkonqi kwrited \
-        kgamma kscreen sddm sddm-kcm kmenuedit bluedevil kpipewire plasma-nm plasma-pa \
+        kf6 qt6 kde-system \
+        kwin krdp milou breeze oxygen aurorae drkonqi kwrited \
+        kgamma kscreen sddm-kcm kmenuedit bluedevil kpipewire plasma-nm plasma-pa \
         plasma-sdk libkscreen breeze-gtk powerdevil kinfocenter flatpak-kcm \
         kdecoration ksshaskpass kwallet-pam libksysguard plasma-vault ksystemstats \
         kde-cli-tools oxygen-sounds kscreenlocker kglobalacceld systemsettings \
@@ -458,9 +616,10 @@ install_kde() {
         kimagemapeditor kdegraphics-thumbnailers \
         ark kate kgpg kfind sweeper konsole kdialog yakuake skanpage filelight \
         kmousetool kcharselect markdownpart qalculate-qt keditbookmarks kdebugsettings \
-        kwalletmanager dolphin-plugins akregator \
+        kwalletmanager dolphin-plugins \
         k3b kamoso audiotube plasmatube audiocd-kio \
         waypipe dwayland egl-wayland qt6-wayland lib32-wayland wayland-protocols \
+        kwayland-integration plasma-wayland-protocols
         kwayland-integration plasma-wayland-protocols || { print_error "KDE installation failed!"; exit 1; }
 
     print_success "KDE Plasma Desktop installed!"
@@ -627,22 +786,6 @@ install_user_packages() {
     echo ""
 }
 
-# Install VM support if detected
-install_vm_support() {
-    print_step "Checking for Virtual Machine environment... 🖧"
-
-    if detect_vm; then
-        VM_TYPE=$(systemd-detect-virt)
-        print_step "Virtual Machine detected ($VM_TYPE), installing VM tools..."
-        $SUDO_CMD pacman -S --needed --noconfirm \
-            spice-vdagent open-vm-tools qemu-guest-agent virtualbox-guest-utils || print_warning "Some VM tools failed (non-critical)"
-        print_success "VM support installed!"
-    else
-        print_step "Physical machine detected, skipping VM tools..."
-    fi
-    echo ""
-}
-
 # System finalization
 finalize_system() {
     print_header
@@ -740,9 +883,9 @@ copy_skel_to_user() {
     print_step "Copying /etc/skel configurations to /root ..."
     echo ""
     if [[ "$EUID" -eq 0 ]]; then
-        cp -a /etc/skel/. /root/
+        cp -Rf /etc/skel/. /root/
     else
-        sudo cp -a /etc/skel/. /root/
+        sudo cp -Rf /etc/skel/. /root/
     fi
     print_success "Configurations copied to /root!"
     echo ""
@@ -769,6 +912,7 @@ copy_skel_to_user() {
     if [[ -n "$WORKDIR" && -d "$WORKDIR" && -f "$WORKDIR/Grub.sh" ]]; then
         if [[ "$EUID" -eq 0 ]]; then
             cd "$WORKDIR" || return 1
+            sudo cp -Rf Configs/System/. /
             chmod +x ./Grub.sh 2>/dev/null || true
             bash ./Grub.sh || print_warning "Grub.sh failed (non-critical)"
             cd / || true
@@ -867,7 +1011,6 @@ customization_prompts
 install_kde
 install_custom_pkgs
 install_user_packages
-install_vm_support
 finalize_system
 copy_skel_to_user
 show_completion
