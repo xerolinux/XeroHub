@@ -444,7 +444,7 @@ install_kde() {
 
     $SUDO_CMD pacman -S --needed --noconfirm \
         kf6 qt6 kde-system kwin krdp milou breeze oxygen aurorae drkonqi kwrited \
-        kgamma kscreen sddm-kcm kmenuedit bluedevil kpipewire plasma-nm plasma-pa \
+        kgamma kscreen sddm sddm-kcm kmenuedit bluedevil kpipewire plasma-nm plasma-pa \
         plasma-sdk libkscreen breeze-gtk powerdevil kinfocenter flatpak-kcm \
         kdecoration ksshaskpass kwallet-pam libksysguard plasma-vault ksystemstats \
         kde-cli-tools oxygen-sounds kscreenlocker kglobalacceld systemsettings \
@@ -458,7 +458,7 @@ install_kde() {
         kimagemapeditor kdegraphics-thumbnailers \
         ark kate kgpg kfind sweeper konsole kdialog yakuake skanpage filelight \
         kmousetool kcharselect markdownpart qalculate-qt keditbookmarks kdebugsettings \
-        kwalletmanager dolphin-plugins \
+        kwalletmanager dolphin-plugins akregator \
         k3b kamoso audiotube plasmatube audiocd-kio \
         waypipe dwayland egl-wayland qt6-wayland lib32-wayland wayland-protocols \
         kwayland-integration plasma-wayland-protocols || { print_error "KDE installation failed!"; exit 1; }
@@ -504,26 +504,25 @@ install_custom_pkgs() {
         bash-language-server typescript-language-server vscode-json-languageserver \
         ttf-fira-code otf-libertinus tex-gyre-fonts ttf-hack-nerd ttf-ubuntu-font-family \
         awesome-terminal-fonts ttf-jetbrains-mono-nerd adobe-source-sans-pro-fonts \
-        bat bat-extras jq figlet ostree lolcat numlockx localsend lm_sensors \
+        bat bat-extras jq vim figlet ostree lolcat numlockx localsend lm_sensors \
         appstream-glib lib32-lm_sensors \
         xmlto ckbcomp yaml-cpp kirigami boost-libs polkit-gnome gtk-update-icon-cache \
-        xorg-xwayland dex bash make libxinerama bash-completion \
+        dex bash make libxinerama bash-completion \
         hblock cryptsetup brightnessctl switcheroo-control power-profiles-daemon \
-        mkinitcpio mkinitcpio-fw mkinitcpio-utils mkinitcpio-archiso mkinitcpio-openswap \
+        mkinitcpio mkinitcpio-utils mkinitcpio-archiso mkinitcpio-openswap \
         mkinitcpio-nfs-utils \
-        xmlto boost ckbcomp kpmcore yaml-cpp boost-libs gtk-update-icon-cache \
-        xdg-terminal-exec-git \
+        boost kpmcore xdg-terminal-exec-git \
         preload xero-toolkit extra-scripts desktop-config xero-gpu-tools \
-        eza ntp cava most dialog dnsutils logrotate \
+        eza ntp cava most dialog dnsutils logrotate xdg-user-dirs \
         archiso rsync sdparm ntfs-3g tpm2-tss udftools syslinux fatresize \
         nfs-utils exfatprogs tpm2-tools fsarchiver squashfs-tools \
         gpart dmraid parted hdparm usbmuxd usbutils testdisk ddrescue timeshift \
         partclone partimage clonezilla open-iscsi memtest86+-efi usb_modeswitch \
         fd tmux brltty msedit nvme-cli terminus-font foot-terminfo kitty-terminfo \
         pv mc gpm nbd lvm2 bolt bind less lynx tldr nmap irssi mdadm wvdial hyperv \
-        mtools lsscsi ndisc6 screen man-db xl2tpd tcpdump ethtool xdotool pcsclite \
+        mtools lsscsi ndisc6 screen man-db tcpdump ethtool xdotool pcsclite \
         espeakup libfido2 xdg-utils man-pages diffutils mmc-utils sg3_utils dmidecode \
-        sequoia-sq edk2-shell python-pyqt6 sof-firmware libusb-compat smartmontools \
+        sequoia-sq edk2-shell python-pyqt6 libusb-compat smartmontools \
         wireguard-tools || print_warning "Some packages failed (non-critical)"
 
     print_success "Additional system packages installed!"

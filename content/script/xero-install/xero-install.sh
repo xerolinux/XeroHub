@@ -1046,8 +1046,28 @@ mount_filesystems() {
 # SYSTEM INSTALLATION
 # ────────────────────────────────────────────────────────────────────────────────
 
+add_temp_repo() {
+    # Temporarily add xerolinux and chaotic-aur repos to live ISO for pacstrap access
+    if ! grep -q "\[xerolinux\]" /etc/pacman.conf; then
+        echo -e '\n[xerolinux]\nSigLevel = Optional TrustAll\nServer = https://repos.xerolinux.xyz/$repo/$arch' >> /etc/pacman.conf
+    fi
+
+    if ! grep -q "\[chaotic-aur\]" /etc/pacman.conf; then
+        pacman-key --recv-key 3056513887B78AEB --keyserver keyserver.ubuntu.com
+        pacman-key --lsign-key 3056513887B78AEB
+        pacman -U --noconfirm 'https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-keyring.pkg.tar.zst'
+        pacman -U --noconfirm 'https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-mirrorlist.pkg.tar.zst'
+        echo -e '\n[chaotic-aur]\nInclude = /etc/pacman.d/chaotic-mirrorlist' >> /etc/pacman.conf
+    fi
+
+    pacman -Sy
+}
+
 install_base_system() {
-    local packages="base base-devel linux linux-firmware linux-headers"
+    # Add xerolinux and chaotic-aur repos to live ISO first
+    add_temp_repo
+
+    local packages="base base-devel linux linux-firmware linux-headers linux-atm"
 
     if grep -q "GenuineIntel" /proc/cpuinfo; then
         packages+=" intel-ucode"
@@ -1056,18 +1076,18 @@ install_base_system() {
     fi
 
     # Boot & filesystem
-    packages+=" grub efibootmgr os-prober"
-    packages+=" btrfs-progs dosfstools e2fsprogs xfsprogs"
+    packages+=" grub efibootmgr os-prober grub-hooks update-grub"
+    packages+=" btrfs-progs dosfstools e2fsprogs xfsprogs gptfdisk"
 
     # Base utilities
     packages+=" sudo nano vim git wget curl"
 
     # Network
     packages+=" networkmanager iw iwd ppp lftp ldns avahi samba netctl dhcpcd openssh"
-    packages+=" openvpn dnsmasq dhclient openldap nss-mdns smbclient net-tools openresolv"
-    packages+=" darkhttpd reflector pptpclient cloud-init openconnect traceroute b43-fwcutter"
-    packages+=" nm-cloud-setup wireless-regdb wireless_tools wpa_supplicant modemmanager-qt"
-    packages+=" openpgp-card-tools systemd-resolvconf"
+    packages+=" openvpn dnsmasq dhclient openldap nss-mdns smbclient net-tools"
+    packages+=" darkhttpd reflector pptpclient cloud-init openconnect traceroute"
+    packages+=" b43-fwcutter nm-cloud-setup wireless-regdb wireless_tools wpa_supplicant"
+    packages+=" modemmanager-qt openpgp-card-tools xl2tpd"
 
     # Bluetooth
     packages+=" bluez bluez-libs bluez-utils bluez-tools bluez-plugins bluez-hid2hci"
@@ -1076,6 +1096,10 @@ install_base_system() {
     packages+=" pipewire wireplumber pipewire-jack pipewire-support lib32-pipewire-jack"
     packages+=" alsa-utils alsa-plugins alsa-firmware pavucontrol-qt libdvdcss"
 
+    # GStreamer
+    packages+=" gstreamer gst-libav gst-plugins-bad gst-plugins-base gst-plugins-ugly"
+    packages+=" gst-plugins-good gst-plugins-espeak gst-plugin-pipewire"
+
     # Printing & scanning
     packages+=" cups hplip print-manager scanner-support printer-support"
 
@@ -1083,6 +1107,15 @@ install_base_system() {
     packages+=" orca onboard libinput xf86-input-void xf86-input-evdev iio-sensor-proxy"
     packages+=" game-devices-udev xf86-input-vmmouse xf86-input-libinput xf86-input-synaptics"
     packages+=" xf86-input-elographics"
+
+    # Xorg
+    packages+=" xorg-apps xorg-xinit xorg-server xorg-xwayland"
+
+    # Firmware
+    packages+=" fwupd mkinitcpio-fw sof-firmware"
+
+    # Virtual Machine support
+    packages+=" spice-vdagent open-vm-tools qemu-guest-agent virtualbox-guest-utils"
 
     pacstrap -K "$MOUNTPOINT" $packages
     genfstab -U "$MOUNTPOINT" >> "$MOUNTPOINT/etc/fstab"
