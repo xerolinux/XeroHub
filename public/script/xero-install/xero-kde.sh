@@ -884,7 +884,7 @@ copy_skel_to_user() {
     if [[ "$EUID" -eq 0 ]]; then
         cp -Rf /etc/skel/. /root/
     else
-        sudo cp -Rf /etc/skel/. /root/
+        cp -Rf /etc/skel/. /root/
     fi
     print_success "Configurations copied to /root!"
     echo ""
@@ -901,8 +901,8 @@ copy_skel_to_user() {
             WORKDIR=""
         }
     else
-        sudo rm -rf "$WORKDIR"
-        sudo git clone https://github.com/xerolinux/xero-layan-git.git "$WORKDIR" || {
+        rm -rf "$WORKDIR"
+        git clone https://github.com/xerolinux/xero-layan-git.git "$WORKDIR" || {
             print_warning "Failed to clone xero-layan-git repo (non-critical)"
             WORKDIR=""
         }
@@ -911,15 +911,15 @@ copy_skel_to_user() {
     if [[ -n "$WORKDIR" && -d "$WORKDIR" && -f "$WORKDIR/Grub.sh" ]]; then
         if [[ "$EUID" -eq 0 ]]; then
             cd "$WORKDIR" || return 1
-            sudo cp -Rf Configs/System/. /
+            cp -Rf Configs/System/. /
             chmod +x ./Grub.sh 2>/dev/null || true
             bash ./Grub.sh || print_warning "Grub.sh failed (non-critical)"
             cd / || true
             rm -rf "$WORKDIR"
         else
-            sudo bash -lc "cd '$WORKDIR' && chmod +x ./Grub.sh 2>/dev/null || true; bash ./Grub.sh" \
+            bash -lc "cd '$WORKDIR' && chmod +x ./Grub.sh 2>/dev/null || true; bash ./Grub.sh" \
                 || print_warning "Grub.sh failed (non-critical)"
-            sudo rm -rf "$WORKDIR"
+            rm -rf "$WORKDIR"
         fi
         print_success "GRUB theme applied (and repo cleaned up)."
         echo ""
@@ -927,7 +927,7 @@ copy_skel_to_user() {
         print_warning "Grub.sh not found after clone; skipping GRUB theming (non-critical)"
         echo ""
         if [[ -n "$WORKDIR" && -d "$WORKDIR" ]]; then
-            [[ "$EUID" -eq 0 ]] && rm -rf "$WORKDIR" || sudo rm -rf "$WORKDIR"
+            [[ "$EUID" -eq 0 ]] && rm -rf "$WORKDIR" || rm -rf "$WORKDIR"
         fi
     fi
 
@@ -943,13 +943,13 @@ copy_skel_to_user() {
             if [[ "$EUID" -eq 0 ]]; then
                 wget -qO "$dest" "$url"
             else
-                sudo wget -qO "$dest" "$url"
+                wget -qO "$dest" "$url"
             fi
         elif command -v curl >/dev/null 2>&1; then
             if [[ "$EUID" -eq 0 ]]; then
                 curl -fsSL "$url" -o "$dest"
             else
-                sudo curl -fsSL "$url" -o "$dest"
+                curl -fsSL "$url" -o "$dest"
             fi
         else
             return 1
@@ -962,7 +962,7 @@ copy_skel_to_user() {
     if [[ "$EUID" -eq 0 ]]; then
         mkdir -p /etc/xdg
     else
-        sudo mkdir -p /etc/xdg
+        mkdir -p /etc/xdg
     fi
 
     if ! fetch_file "$ID_URL_BASE/dev-rel" "/etc/dev-rel"; then
