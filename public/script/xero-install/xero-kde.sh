@@ -175,16 +175,14 @@ customization_prompts() {
     echo ""
     echo -e "  ${BLUE}1)${NC} ExpressVPN"
     echo -e "  ${BLUE}2)${NC} Mozilla VPN"
-    echo -e "  ${BLUE}3)${NC} Mullvad VPN"
-    echo -e "  ${BLUE}4)${NC} Proton VPN"
+    echo -e "  ${BLUE}3)${NC} Proton VPN"
     echo ""
-    read -p "Enter choice (1-4, or Enter to skip): " vpn_choice
+    read -p "Enter choice (1-3, or Enter to skip): " vpn_choice
 
     case $vpn_choice in
         1) VPN="expressvpn" ;;
         2) VPN="mozillavpn" ;;
-        3) VPN="mullvad-vpn" ;;
-        4) VPN="proton-vpn-cli" ;;
+        3) VPN="proton-vpn-cli" ;;
         *) VPN="" ;;
     esac
 
@@ -445,33 +443,25 @@ install_kde() {
     print_step "Installing KDE Plasma Desktop Environment... 💎"
 
     $SUDO_CMD pacman -S --needed --noconfirm \
-        kf6 \
-        qt6 \
-        kde-system \
-        kwin krdp milou breeze oxygen aurorae drkonqi kwrited \
-        kgamma kscreen sddm sddm-kcm kmenuedit bluedevil kpipewire \
-        plasma-nm plasma-pa plasma-sdk libkscreen breeze-gtk \
-        powerdevil kinfocenter flatpak-kcm kdecoration ksshaskpass \
-        kwallet-pam libksysguard plasma-vault ksystemstats kde-cli-tools \
-        oxygen-sounds kscreenlocker kglobalacceld systemsettings \
-        kde-gtk-config layer-shell-qt plasma-desktop polkit-kde-agent \
-        plasma-workspace kdeplasma-addons ocean-sound-theme qqc2-breeze-style \
-        kactivitymanagerd plasma-integration plasma-thunderbolt \
-        plasma5-integration plasma-systemmonitor xdg-desktop-portal-kde \
-        plasma-browser-integration \
-        krdc krfb smb4k alligator kdeconnect kio-admin kio-extras \
-        kio-gdrive konversation kio-zeroconf kdenetwork-filesharing \
-        signon-kwallet-extension \
-        okular kamera svgpart skanlite gwenview spectacle \
-        colord-kde kcolorchooser kimagemapeditor \
-        kdegraphics-thumbnailers \
-        ark kate kgpg kfind sweeper konsole kdialog yakuake \
-        skanpage filelight kmousetool kcharselect markdownpart \
-        qalculate-qt keditbookmarks kdebugsettings kwalletmanager \
-        dolphin-plugins akregator packagekit-qt6 dolphin \
+        kf6 qt6 kde-system kwin krdp milou breeze oxygen aurorae drkonqi kwrited \
+        kgamma kscreen sddm-kcm kmenuedit bluedevil kpipewire plasma-nm plasma-pa \
+        plasma-sdk libkscreen breeze-gtk powerdevil kinfocenter flatpak-kcm \
+        kdecoration ksshaskpass kwallet-pam libksysguard plasma-vault ksystemstats \
+        kde-cli-tools oxygen-sounds kscreenlocker kglobalacceld systemsettings \
+        kde-gtk-config layer-shell-qt plasma-desktop polkit-kde-agent plasma-workspace \
+        kdeplasma-addons ocean-sound-theme qqc2-breeze-style kactivitymanagerd \
+        plasma-integration plasma-thunderbolt plasma5-integration plasma-systemmonitor \
+        xdg-desktop-portal-kde plasma-browser-integration \
+        krdc krfb smb4k alligator kdeconnect kio-admin kio-extras kio-gdrive \
+        konversation kio-zeroconf kdenetwork-filesharing signon-kwallet-extension \
+        okular kamera svgpart skanlite gwenview spectacle colord-kde kcolorchooser \
+        kimagemapeditor kdegraphics-thumbnailers \
+        ark kate kgpg kfind sweeper konsole kdialog yakuake skanpage filelight \
+        kmousetool kcharselect markdownpart qalculate-qt keditbookmarks kdebugsettings \
+        kwalletmanager dolphin-plugins \
         k3b kamoso audiotube plasmatube audiocd-kio \
-        waypipe dwayland egl-wayland qt6-wayland lib32-wayland \
-        wayland-protocols kwayland-integration plasma-wayland-protocols || { print_error "KDE installation failed!"; exit 1; }
+        waypipe dwayland egl-wayland qt6-wayland lib32-wayland wayland-protocols \
+        kwayland-integration plasma-wayland-protocols || { print_error "KDE installation failed!"; exit 1; }
 
     print_success "KDE Plasma Desktop installed!"
     echo ""
@@ -492,78 +482,49 @@ install_custom_pkgs() {
 
     # These packages are NOT in xero-install.sh
     $SUDO_CMD pacman -S --needed --noconfirm \
-        desktop-config archiso b43-fwcutter rsync sdparm ntfs-3g \
-        gptfdisk tpm2-tss udftools syslinux fatresize nfs-utils \
-        exfatprogs tpm2-tools fsarchiver squashfs-tools \
-        gpart dmraid parted hdparm usbmuxd usbutils testdisk ddrescue \
-        timeshift partclone partimage clonezilla open-iscsi memtest86+-efi \
-        usb_modeswitch \
-        fd tmux brltty msedit nvme-cli terminus-font \
-        foot-terminfo kitty-terminfo pv mc gpm nbd lvm2 bolt bind less \
-        lynx tldr nmap irssi mdadm wvdial hyperv mtools lsscsi \
-        ndisc6 screen man-db xl2tpd tcpdump ethtool xdotool pcsclite \
-        espeakup libfido2 xdg-utils man-pages diffutils mmc-utils sg3_utils \
-        dmidecode sequoia-sq edk2-shell python-pyqt6 sof-firmware \
-        libusb-compat smartmontools wireguard-tools eza ntp cava most \
-        dialog dnsutils logrotate \
-        linux-atm grub-hooks update-grub \
-        preload extra-scripts \
-        xmlto xero-toolkit xero-hooks xero-gpu-tools boost ckbcomp kpmcore yaml-cpp boost-libs \
-        gtk-update-icon-cache xdg-terminal-exec-git mkinitcpio-fw \
-        mkinitcpio-utils mkinitcpio-archiso mkinitcpio-openswap \
-        mkinitcpio-nfs-utils dex make libxinerama bash-completion \
-        kirigami polkit-gnome \
-        fwupd \
-        mesa autorandr mesa-utils lib32-mesa \
-        xf86-video-qxl xf86-video-fbdev lib32-mesa-utils \
-        hplip print-manager scanner-support printer-support \
-        orca onboard libinput xf86-input-void xf86-input-evdev \
-        iio-sensor-proxy game-devices-udev xf86-input-vmmouse \
-        xf86-input-libinput xf86-input-synaptics xf86-input-elographics \
-        gstreamer gst-libav gst-plugins-bad gst-plugins-base \
-        gst-plugins-ugly gst-plugins-good gst-plugins-espeak \
-        gst-plugin-pipewire \
-        ffmpeg ffmpegthumbs ffnvcodec-headers \
-        bluez bluez-libs bluez-utils bluez-tools bluez-plugins bluez-hid2hci \
-        iw iwd ppp lftp ldns avahi samba netctl dhcpcd openssh openvpn \
-        dnsmasq dhclient openldap nss-mdns smbclient net-tools \
-        darkhttpd reflector pptpclient cloud-init openconnect traceroute \
-        nm-cloud-setup wireless-regdb wireless_tools \
-        wpa_supplicant modemmanager-qt openpgp-card-tools systemd-resolvconf \
-        xorg-apps xorg-xinit xorg-server xorg-xwayland \
-        hblock cryptsetup brightnessctl switcheroo-control \
-        power-profiles-daemon jq figlet ostree lolcat numlockx \
-        localsend lm_sensors appstream-glib lib32-lm_sensors bat bat-extras \
-        ttf-fira-code otf-libertinus tex-gyre-fonts ttf-hack-nerd \
-        ttf-ubuntu-font-family awesome-terminal-fonts ttf-jetbrains-mono-nerd \
-        adobe-source-sans-pro-fonts \
-        kvantum fastfetch adw-gtk-theme oh-my-posh-bin gnome-themes-extra \
-        kwin-effect-rounded-corners-git kwin-zones kde-wallpapers \
-        kwin-scripts-kzones tela-circle-icon-theme-purple \
-        bash-language-server typescript-language-server vscode-json-languageserver \
-        gvfs mtpfs udiskie udisks2 ldmtool gvfs-afc gvfs-mtp gvfs-nfs \
-        gvfs-smb gvfs-goa gvfs-wsdd gvfs-dnssd gvfs-google gvfs-gphoto2 \
-        gvfs-onedrive \
-        libgsf tumbler freetype2 libopenraw poppler-qt6 poppler-glib \
-        ffmpegthumbnailer \
+        vi duf gcc npm yad zip xdo gum inxi lzop nmon tree vala btop glfw htop lshw \
+        cblas expac fuse3 lhasa meson unace unrar unzip p7zip iftop nvtop rhash sshfs \
+        vnstat nodejs cronie hwinfo arandr assimp netpbm wmctrl grsync libmtp polkit \
+        sysprof semver zenity gparted hddtemp mlocate jsoncpp fuseiso gettext node-gyp \
+        intltool graphviz pkgstats pciutils inetutils downgrade s3fs-fuse playerctl \
+        asciinema oniguruma ventoy-bin cifs-utils lsb-release dbus-python dconf-editor \
+        laptop-detect perl-xml-parser gnome-disk-utility appmenu-gtk-module \
+        parallel xsettingsd polkit-qt6 systemdgenie gnome-keyring \
+        yt-dlp wavpack unarchiver rate-mirrors gnustep-base ocs-url xmlstarlet \
         python-pip python-cffi python-numpy python-docopt python-pyaudio \
         python-pyparted python-pygments python-websockets \
+        libgsf tumbler freetype2 libopenraw poppler-qt6 poppler-glib ffmpegthumbnailer \
+        gvfs mtpfs udiskie udisks2 ldmtool gvfs-afc gvfs-mtp gvfs-nfs gvfs-smb \
+        gvfs-goa gvfs-wsdd gvfs-dnssd gvfs-google gvfs-gphoto2 gvfs-onedrive \
         flatpak topgrade appstream-qt pacman-contrib pacman-bintrans \
-        xdg-user-dirs ocs-url xmlstarlet yt-dlp wavpack unarchiver \
-        rate-mirrors gnustep-base parallel xsettingsd polkit-qt6 \
-        systemdgenie gnome-keyring \
-        vi gcc npm nodejs vala meson gettext intltool node-gyp \
-        graphviz pkgconf semver \
-        duf btop htop iftop nvtop vnstat inxi lshw hwinfo nmon \
-        sysprof \
-        zip unzip unrar p7zip lzop lhasa unace fuseiso \
-        fuse3 sshfs s3fs-fuse cifs-utils gparted gnome-disk-utility \
-        grsync hddtemp mlocate \
-        pciutils inetutils cronie playerctl asciinema ventoy-bin \
-        downgrade pkgstats lsb-release laptop-detect \
-        yad xdo gum tree expac cblas glfw rhash assimp netpbm wmctrl \
-        libmtp polkit zenity jsoncpp oniguruma dbus-python dconf-editor \
-        perl-xml-parser appmenu-gtk-module arandr || print_warning "Some packages failed (non-critical)"
+        ffmpeg ffmpegthumbs ffnvcodec-headers \
+        kwin-zones kde-wallpapers kwin-scripts-kzones tela-circle-icon-theme-purple \
+        kvantum fastfetch adw-gtk-theme oh-my-posh-bin gnome-themes-extra \
+        kwin-effect-rounded-corners-git \
+        bash-language-server typescript-language-server vscode-json-languageserver \
+        ttf-fira-code otf-libertinus tex-gyre-fonts ttf-hack-nerd ttf-ubuntu-font-family \
+        awesome-terminal-fonts ttf-jetbrains-mono-nerd adobe-source-sans-pro-fonts \
+        bat bat-extras jq figlet ostree lolcat numlockx localsend lm_sensors \
+        appstream-glib lib32-lm_sensors \
+        xmlto ckbcomp yaml-cpp kirigami boost-libs polkit-gnome gtk-update-icon-cache \
+        xorg-xwayland dex bash make libxinerama bash-completion \
+        hblock cryptsetup brightnessctl switcheroo-control power-profiles-daemon \
+        mkinitcpio mkinitcpio-fw mkinitcpio-utils mkinitcpio-archiso mkinitcpio-openswap \
+        mkinitcpio-nfs-utils \
+        xmlto boost ckbcomp kpmcore yaml-cpp boost-libs gtk-update-icon-cache \
+        xdg-terminal-exec-git \
+        preload xero-toolkit extra-scripts desktop-config xero-gpu-tools \
+        eza ntp cava most dialog dnsutils logrotate \
+        archiso rsync sdparm ntfs-3g tpm2-tss udftools syslinux fatresize \
+        nfs-utils exfatprogs tpm2-tools fsarchiver squashfs-tools \
+        gpart dmraid parted hdparm usbmuxd usbutils testdisk ddrescue timeshift \
+        partclone partimage clonezilla open-iscsi memtest86+-efi usb_modeswitch \
+        fd tmux brltty msedit nvme-cli terminus-font foot-terminfo kitty-terminfo \
+        pv mc gpm nbd lvm2 bolt bind less lynx tldr nmap irssi mdadm wvdial hyperv \
+        mtools lsscsi ndisc6 screen man-db xl2tpd tcpdump ethtool xdotool pcsclite \
+        espeakup libfido2 xdg-utils man-pages diffutils mmc-utils sg3_utils dmidecode \
+        sequoia-sq edk2-shell python-pyqt6 sof-firmware libusb-compat smartmontools \
+        wireguard-tools || print_warning "Some packages failed (non-critical)"
 
     print_success "Additional system packages installed!"
     echo ""
@@ -735,42 +696,153 @@ copy_skel_to_user() {
     echo ""
 
     # Determine the actual user (not root)
-    if [ -n "$SUDO_USER" ]; then
+    if [[ -n "${SUDO_USER:-}" && "${SUDO_USER}" != "root" ]]; then
         ACTUAL_USER="$SUDO_USER"
-    elif [ "$EUID" -eq 0 ]; then
-        # In chroot, find the first non-root user with a home directory
-        ACTUAL_USER=$(getent passwd | awk -F: '$3 >= 1000 && $3 < 65534 && $6 ~ /^\/home/ {print $1; exit}')
+    elif [[ "$EUID" -eq 0 ]]; then
+        # In chroot/root context: pick first "real" user with /home (UID >= 1000, not nobody)
+        ACTUAL_USER="$(getent passwd | awk -F: '$3 >= 1000 && $3 < 65534 && $1 != "nobody" && $6 ~ /^\/home\// {print $1; exit}')"
     else
         ACTUAL_USER="$USER"
     fi
 
-    if [ -z "$ACTUAL_USER" ]; then
+    if [[ -z "${ACTUAL_USER:-}" ]]; then
         print_warning "Could not determine target user, skipping config copy"
         return 1
     fi
 
-    ACTUAL_HOME=$(getent passwd "$ACTUAL_USER" | cut -d: -f6)
+    ACTUAL_HOME="$(getent passwd "$ACTUAL_USER" | cut -d: -f6)"
 
-    if [ -z "$ACTUAL_HOME" ] || [ ! -d "$ACTUAL_HOME" ]; then
-        print_warning "User home directory not found for $ACTUAL_USER, skipping config copy"
-        return 1
-    fi
-
-    print_step "Copying configurations to $ACTUAL_HOME for user $ACTUAL_USER..."
-
-    # Switch to the actual user and copy skel files
-    if [ "$EUID" -eq 0 ]; then
-        # Running as root (in chroot), use su to switch to the user
-        su - "$ACTUAL_USER" -c 'cp -a /etc/skel/. "$HOME/"'
+    if [[ -z "${ACTUAL_HOME:-}" || ! -d "$ACTUAL_HOME" ]]; then
+        print_warning "User home directory not found for $ACTUAL_USER ($ACTUAL_HOME), skipping user config copy"
+        # We still continue with root tasks below.
     else
-        # Running with sudo
-        sudo -u "$ACTUAL_USER" bash -c 'cp -a /etc/skel/. "$HOME/"'
+        print_step "Copying /etc/skel configurations to $ACTUAL_HOME for user $ACTUAL_USER..."
+        echo ""
+
+        # Copy as the user so ownership is correct
+        if [[ "$EUID" -eq 0 ]]; then
+            if command -v runuser >/dev/null 2>&1; then
+                runuser -l "$ACTUAL_USER" -c 'cp -a /etc/skel/. "$HOME"/'
+            else
+                su - "$ACTUAL_USER" -c 'cp -a /etc/skel/. "$HOME"/'
+            fi
+
+            # Ensure proper ownership
+            chown -R "$ACTUAL_USER:$ACTUAL_USER" "$ACTUAL_HOME"
+        else
+            sudo -u "$ACTUAL_USER" bash -lc 'cp -a /etc/skel/. "$HOME"/'
+        fi
+
+        print_success "XeroLinux configurations applied to $ACTUAL_HOME!"
+        echo ""
     fi
 
-    # Ensure proper ownership
-    $SUDO_CMD chown -R "$ACTUAL_USER:$ACTUAL_USER" "$ACTUAL_HOME"
+    # Copy /etc/skel to /root as requested
+    print_step "Copying /etc/skel configurations to /root ..."
+    echo ""
+    if [[ "$EUID" -eq 0 ]]; then
+        cp -a /etc/skel/. /root/
+    else
+        sudo cp -a /etc/skel/. /root/
+    fi
+    print_success "Configurations copied to /root!"
+    echo ""
 
-    print_success "XeroLinux configurations applied to $ACTUAL_HOME!"
+    # Apply GRUB theme using xero-layan-git repo (run Grub.sh as root), then delete folder
+    print_step "Applying GRUB theme from xero-layan-git... 🧩"
+    echo ""
+
+    WORKDIR="/tmp/xero-layan-git"
+    if [[ "$EUID" -eq 0 ]]; then
+        rm -rf "$WORKDIR"
+        git clone https://github.com/xerolinux/xero-layan-git.git "$WORKDIR" || {
+            print_warning "Failed to clone xero-layan-git repo (non-critical)"
+            WORKDIR=""
+        }
+    else
+        sudo rm -rf "$WORKDIR"
+        sudo git clone https://github.com/xerolinux/xero-layan-git.git "$WORKDIR" || {
+            print_warning "Failed to clone xero-layan-git repo (non-critical)"
+            WORKDIR=""
+        }
+    fi
+
+    if [[ -n "$WORKDIR" && -d "$WORKDIR" && -f "$WORKDIR/Grub.sh" ]]; then
+        if [[ "$EUID" -eq 0 ]]; then
+            cd "$WORKDIR" || return 1
+            chmod +x ./Grub.sh 2>/dev/null || true
+            bash ./Grub.sh || print_warning "Grub.sh failed (non-critical)"
+            cd / || true
+            rm -rf "$WORKDIR"
+        else
+            sudo bash -lc "cd '$WORKDIR' && chmod +x ./Grub.sh 2>/dev/null || true; bash ./Grub.sh" \
+                || print_warning "Grub.sh failed (non-critical)"
+            sudo rm -rf "$WORKDIR"
+        fi
+        print_success "GRUB theme applied (and repo cleaned up)."
+        echo ""
+    else
+        print_warning "Grub.sh not found after clone; skipping GRUB theming (non-critical)"
+        echo ""
+        if [[ -n "$WORKDIR" && -d "$WORKDIR" ]]; then
+            [[ "$EUID" -eq 0 ]] && rm -rf "$WORKDIR" || sudo rm -rf "$WORKDIR"
+        fi
+    fi
+
+    # Distro identity files
+    print_step "Setting distro identity files... 🏷️"
+    echo ""
+
+    fetch_file() {
+        local url="$1"
+        local dest="$2"
+
+        if command -v wget >/dev/null 2>&1; then
+            if [[ "$EUID" -eq 0 ]]; then
+                wget -qO "$dest" "$url"
+            else
+                sudo wget -qO "$dest" "$url"
+            fi
+        elif command -v curl >/dev/null 2>&1; then
+            if [[ "$EUID" -eq 0 ]]; then
+                curl -fsSL "$url" -o "$dest"
+            else
+                sudo curl -fsSL "$url" -o "$dest"
+            fi
+        else
+            return 1
+        fi
+    }
+
+    ID_URL_BASE="https://raw.githubusercontent.com/XeroLinuxDev/XeroBuild/refs/heads/main/FOSS/airootfs/etc"
+
+    # Ensure /etc/xdg exists
+    if [[ "$EUID" -eq 0 ]]; then
+        mkdir -p /etc/xdg
+    else
+        sudo mkdir -p /etc/xdg
+    fi
+
+    if ! fetch_file "$ID_URL_BASE/dev-rel" "/etc/dev-rel"; then
+        print_warning "Failed to fetch /etc/dev-rel (non-critical)"
+    else
+        print_success "Updated /etc/dev-rel"
+    fi
+
+    if ! fetch_file "$ID_URL_BASE/os-release" "/etc/os-release"; then
+        print_warning "Failed to fetch /etc/os-release (non-critical)"
+    else
+        print_success "Updated /etc/os-release"
+    fi
+
+    if ! fetch_file "$ID_URL_BASE/xdg/kcm-about-distrorc" "/etc/xdg/kcm-about-distrorc"; then
+        print_warning "Failed to fetch /etc/xdg/kcm-about-distrorc (non-critical)"
+    else
+        print_success "Updated /etc/xdg/kcm-about-distrorc"
+    fi
+
+    echo ""
+    print_success "All requested post-install config steps completed."
     echo ""
 }
 

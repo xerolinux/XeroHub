@@ -1055,9 +1055,34 @@ install_base_system() {
         packages+=" amd-ucode"
     fi
 
+    # Boot & filesystem
     packages+=" grub efibootmgr os-prober"
     packages+=" btrfs-progs dosfstools e2fsprogs xfsprogs"
-    packages+=" networkmanager sudo nano vim git wget curl"
+
+    # Base utilities
+    packages+=" sudo nano vim git wget curl"
+
+    # Network
+    packages+=" networkmanager iw iwd ppp lftp ldns avahi samba netctl dhcpcd openssh"
+    packages+=" openvpn dnsmasq dhclient openldap nss-mdns smbclient net-tools openresolv"
+    packages+=" darkhttpd reflector pptpclient cloud-init openconnect traceroute b43-fwcutter"
+    packages+=" nm-cloud-setup wireless-regdb wireless_tools wpa_supplicant modemmanager-qt"
+    packages+=" openpgp-card-tools systemd-resolvconf"
+
+    # Bluetooth
+    packages+=" bluez bluez-libs bluez-utils bluez-tools bluez-plugins bluez-hid2hci"
+
+    # Audio (PipeWire)
+    packages+=" pipewire wireplumber pipewire-jack pipewire-support lib32-pipewire-jack"
+    packages+=" alsa-utils alsa-plugins alsa-firmware pavucontrol-qt libdvdcss"
+
+    # Printing & scanning
+    packages+=" cups hplip print-manager scanner-support printer-support"
+
+    # Input devices & accessibility
+    packages+=" orca onboard libinput xf86-input-void xf86-input-evdev iio-sensor-proxy"
+    packages+=" game-devices-udev xf86-input-vmmouse xf86-input-libinput xf86-input-synaptics"
+    packages+=" xf86-input-elographics"
 
     pacstrap -K "$MOUNTPOINT" $packages
     genfstab -U "$MOUNTPOINT" >> "$MOUNTPOINT/etc/fstab"
@@ -1196,42 +1221,45 @@ install_graphics() {
     local packages=""
     local needs_nvidia_config="no"
 
+    # Base mesa/VM drivers (installed for all configurations)
+    local base_drivers="mesa autorandr mesa-utils lib32-mesa xf86-video-qxl xf86-video-fbdev lib32-mesa-utils"
+
     case "${CONFIG[gfx_driver]}" in
         "intel")
-            packages="intel-drv"
+            packages="intel-drv $base_drivers"
             ;;
         "amd")
-            packages="amd-drv"
+            packages="amd-drv $base_drivers"
             ;;
         "nvidia-turing")
-            packages="libvdpau nvidia-utils opencl-nvidia libvdpau-va-gl nvidia-settings nvidia-open-dkms vulkan-icd-loader lib32-nvidia-utils lib32-opencl-nvidia linux-firmware-nvidia lib32-vulkan-icd-loader"
+            packages="libvdpau nvidia-utils opencl-nvidia libvdpau-va-gl nvidia-settings nvidia-open-dkms vulkan-icd-loader lib32-nvidia-utils lib32-opencl-nvidia linux-firmware-nvidia lib32-vulkan-icd-loader $base_drivers"
             needs_nvidia_config="yes"
             ;;
         "nvidia-legacy")
-            packages="nvidia-580xx-dkms nvidia-580xx-utils opencl-nvidia-580xx lib32-opencl-nvidia-580xx lib32-nvidia-580xx-utils"
+            packages="nvidia-580xx-dkms nvidia-580xx-utils opencl-nvidia-580xx lib32-opencl-nvidia-580xx lib32-nvidia-580xx-utils $base_drivers"
             needs_nvidia_config="yes"
             ;;
         "intel-amd")
-            packages="intel-drv amd-drv"
+            packages="intel-drv amd-drv $base_drivers"
             ;;
         "intel-nvidia-turing")
-            packages="intel-drv libvdpau nvidia-utils opencl-nvidia libvdpau-va-gl nvidia-settings nvidia-open-dkms vulkan-icd-loader lib32-nvidia-utils lib32-opencl-nvidia linux-firmware-nvidia lib32-vulkan-icd-loader"
+            packages="intel-drv libvdpau nvidia-utils opencl-nvidia libvdpau-va-gl nvidia-settings nvidia-open-dkms vulkan-icd-loader lib32-nvidia-utils lib32-opencl-nvidia linux-firmware-nvidia lib32-vulkan-icd-loader $base_drivers"
             needs_nvidia_config="yes"
             ;;
         "intel-nvidia-legacy")
-            packages="intel-drv nvidia-580xx-dkms nvidia-580xx-utils opencl-nvidia-580xx lib32-opencl-nvidia-580xx lib32-nvidia-580xx-utils"
+            packages="intel-drv nvidia-580xx-dkms nvidia-580xx-utils opencl-nvidia-580xx lib32-opencl-nvidia-580xx lib32-nvidia-580xx-utils $base_drivers"
             needs_nvidia_config="yes"
             ;;
         "amd-nvidia-turing")
-            packages="amd-drv libvdpau nvidia-utils opencl-nvidia libvdpau-va-gl nvidia-settings nvidia-open-dkms vulkan-icd-loader lib32-nvidia-utils lib32-opencl-nvidia linux-firmware-nvidia lib32-vulkan-icd-loader"
+            packages="amd-drv libvdpau nvidia-utils opencl-nvidia libvdpau-va-gl nvidia-settings nvidia-open-dkms vulkan-icd-loader lib32-nvidia-utils lib32-opencl-nvidia linux-firmware-nvidia lib32-vulkan-icd-loader $base_drivers"
             needs_nvidia_config="yes"
             ;;
         "amd-nvidia-legacy")
-            packages="amd-drv nvidia-580xx-dkms nvidia-580xx-utils opencl-nvidia-580xx lib32-opencl-nvidia-580xx lib32-nvidia-580xx-utils"
+            packages="amd-drv nvidia-580xx-dkms nvidia-580xx-utils opencl-nvidia-580xx lib32-opencl-nvidia-580xx lib32-nvidia-580xx-utils $base_drivers"
             needs_nvidia_config="yes"
             ;;
         "vm")
-            packages="mesa xorg-server xorg-xinit"
+            packages="$base_drivers xorg-server xorg-xinit"
             ;;
     esac
 
