@@ -1293,10 +1293,38 @@ KDESCRIPT
 run_kde_installer() {
     show_header
     gum style --foreground 212 --bold --margin "1 2" \
-        "🎨 Running XeroLinux KDE Setup..."
+        "🎨 Running XeroLinux KDE Setup (as ${CONFIG[username]})..."
     echo ""
 
-    arch-chroot "$MOUNTPOINT" bash "/home/${CONFIG[username]}/xero-kde.sh"
+    local user="${CONFIG[username]}"
+    local user_home="/home/${user}"
+    local script_path="${user_home}/xero-kde.sh"
+
+    # Ensure script exists
+    if [[ ! -f "${MOUNTPOINT}${script_path}" ]]; then
+        show_error "KDE script not found at ${script_path}"
+        return 1
+    fi
+
+    # Ensure user exists inside chroot
+    if ! arch-chroot "$MOUNTPOINT" id "$user" &>/dev/null; then
+        show_error "User '${user}' does not exist in target system yet."
+        return 1
+    fi
+
+    # Ensure correct ownership (avoid root-owned dotfiles/configs)
+    arch-chroot "$MOUNTPOINT" chown -R "${user}:${user}" "${user_home}"
+
+    # Many "rice"/setup scripts call sudo for pacman/system changes.
+    # Temporarily allow passwordless sudo for this user so the script can complete non-interactively.
+    arch-chroot "$MOUNTPOINT" bash -lc "echo '${user} ALL=(ALL:ALL) NOPASSWD: ALL' > /etc/sudoers.d/99-xero-installer"
+    arch-chroot "$MOUNTPOINT" chmod 0440 /etc/sudoers.d/99-xero-installer
+
+    # Run as the created user with a login shell so HOME/XDG stuff is correct
+    arch-chroot "$MOUNTPOINT" runuser -l "$user" -c "bash -lc '${script_path}'"
+
+    # Remove temporary sudo rule
+    arch-chroot "$MOUNTPOINT" rm -f /etc/sudoers.d/99-xero-installer
 }
 
 # ────────────────────────────────────────────────────────────────────────────────
