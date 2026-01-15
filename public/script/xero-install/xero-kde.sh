@@ -33,10 +33,12 @@ print_success() {
 
 print_error() {
     echo -e "${RED}✗${NC} $1"
+    sleep 3
 }
 
 print_warning() {
     echo -e "${YELLOW}⚠${NC} $1"
+    sleep 3
 }
 
 # Detect if running in chroot environment
@@ -937,7 +939,12 @@ copy_skel_to_user() {
     if [[ -n "$WORKDIR" && -d "$WORKDIR" && -f "$WORKDIR/Grub.sh" ]]; then
         $SUDO_CMD cp -Rf "$WORKDIR/Configs/System/." /
         chmod +x "$WORKDIR/Grub.sh" 2>/dev/null || true
-        (cd "$WORKDIR" && $SUDO_CMD bash ./Grub.sh) || print_warning "Grub.sh failed (non-critical)"
+        # Grub.sh uses relative paths, so we must cd first, then run with sudo -E to preserve working dir
+        if [[ "$EUID" -eq 0 ]]; then
+            (cd "$WORKDIR" && bash ./Grub.sh) || print_warning "Grub.sh failed (non-critical)"
+        else
+            sudo bash -c "cd '$WORKDIR' && bash ./Grub.sh" || print_warning "Grub.sh failed (non-critical)"
+        fi
         rm -rf "$WORKDIR"
         print_success "GRUB theme applied (and repo cleaned up)."
         echo ""
