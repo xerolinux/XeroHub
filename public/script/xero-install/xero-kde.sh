@@ -864,9 +864,26 @@ copy_skel_to_user() {
             else
                 su - "$ACTUAL_USER" -c 'cp -a /etc/skel/. "$HOME"/'
             fi
+
+            # Add Oh-My-Posh config to user's .bashrc if not already present
+            OMP_LINE='eval "$(oh-my-posh init bash --config $HOME/.config/ohmyposh/xero.omp.json)"'
+            if ! grep -qF "oh-my-posh init bash" "$ACTUAL_HOME/.bashrc" 2>/dev/null; then
+                echo "" >> "$ACTUAL_HOME/.bashrc"
+                echo "# Oh-My-Posh Config" >> "$ACTUAL_HOME/.bashrc"
+                echo "$OMP_LINE" >> "$ACTUAL_HOME/.bashrc"
+            fi
+
             chown -R "$ACTUAL_USER:$ACTUAL_USER" "$ACTUAL_HOME"
         else
             sudo -u "$ACTUAL_USER" bash -lc 'cp -a /etc/skel/. "$HOME"/'
+
+            # Add Oh-My-Posh config to user's .bashrc if not already present
+            OMP_LINE='eval "$(oh-my-posh init bash --config $HOME/.config/ohmyposh/xero.omp.json)"'
+            if ! grep -qF "oh-my-posh init bash" "$ACTUAL_HOME/.bashrc" 2>/dev/null; then
+                echo "" >> "$ACTUAL_HOME/.bashrc"
+                echo "# Oh-My-Posh Config" >> "$ACTUAL_HOME/.bashrc"
+                echo "$OMP_LINE" >> "$ACTUAL_HOME/.bashrc"
+            fi
         fi
 
         print_success "XeroLinux configurations applied to $ACTUAL_HOME!"
