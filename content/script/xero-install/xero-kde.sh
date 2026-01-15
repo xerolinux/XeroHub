@@ -873,6 +873,13 @@ copy_skel_to_user() {
                 echo "$OMP_LINE" >> "$ACTUAL_HOME/.bashrc"
             fi
 
+            # Add clear && fastfetch to user's .bashrc if not already present
+            if ! grep -qF "clear && fastfetch" "$ACTUAL_HOME/.bashrc" 2>/dev/null; then
+                echo "" >> "$ACTUAL_HOME/.bashrc"
+                echo "# Fastfetch on terminal start" >> "$ACTUAL_HOME/.bashrc"
+                echo "clear && fastfetch" >> "$ACTUAL_HOME/.bashrc"
+            fi
+
             chown -R "$ACTUAL_USER:$ACTUAL_USER" "$ACTUAL_HOME"
         else
             sudo -u "$ACTUAL_USER" bash -lc 'cp -a /etc/skel/. "$HOME"/'
@@ -884,11 +891,30 @@ copy_skel_to_user() {
                 echo "# Oh-My-Posh Config" >> "$ACTUAL_HOME/.bashrc"
                 echo "$OMP_LINE" >> "$ACTUAL_HOME/.bashrc"
             fi
+
+            # Add clear && fastfetch to user's .bashrc if not already present
+            if ! grep -qF "clear && fastfetch" "$ACTUAL_HOME/.bashrc" 2>/dev/null; then
+                echo "" >> "$ACTUAL_HOME/.bashrc"
+                echo "# Fastfetch on terminal start" >> "$ACTUAL_HOME/.bashrc"
+                echo "clear && fastfetch" >> "$ACTUAL_HOME/.bashrc"
+            fi
         fi
 
         print_success "XeroLinux configurations applied to $ACTUAL_HOME!"
         echo ""
     fi
+
+    # Copy xero-toolkit.desktop to autostart
+    print_step "Setting up XeroLinux Toolkit autostart... 🚀"
+    echo ""
+    $SUDO_CMD mkdir -p /etc/xdg/autostart
+    if [[ -f /usr/share/applications/xero-toolkit.desktop ]]; then
+        $SUDO_CMD cp /usr/share/applications/xero-toolkit.desktop /etc/xdg/autostart/
+        print_success "XeroLinux Toolkit added to autostart!"
+    else
+        print_warning "xero-toolkit.desktop not found, skipping autostart setup (non-critical)"
+    fi
+    echo ""
 
     # Copy /etc/skel to /root
     print_step "Copying /etc/skel configurations to /root ..."
@@ -909,11 +935,9 @@ copy_skel_to_user() {
     }
 
     if [[ -n "$WORKDIR" && -d "$WORKDIR" && -f "$WORKDIR/Grub.sh" ]]; then
-        cd "$WORKDIR" || return 1
-        $SUDO_CMD cp -Rf Configs/System/. /
-        chmod +x ./Grub.sh 2>/dev/null || true
-        $SUDO_CMD bash ./Grub.sh || print_warning "Grub.sh failed (non-critical)"
-        cd / || true
+        $SUDO_CMD cp -Rf "$WORKDIR/Configs/System/." /
+        chmod +x "$WORKDIR/Grub.sh" 2>/dev/null || true
+        (cd "$WORKDIR" && $SUDO_CMD bash ./Grub.sh) || print_warning "Grub.sh failed (non-critical)"
         rm -rf "$WORKDIR"
         print_success "GRUB theme applied (and repo cleaned up)."
         echo ""
