@@ -445,7 +445,7 @@ customization_prompts() {
         case $choice in
             1) DEV="$DEV hugo" ;;
             2) DEV="$DEV meld" ;;
-            3) DEV="$DEV vscodium-bin" ;;
+            3) DEV="$DEV vscodium" ;;
             4) DEV="$DEV github-desktop" ;;
         esac
     done
