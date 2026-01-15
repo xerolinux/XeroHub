@@ -1070,7 +1070,7 @@ install_base_system() {
     # Add xerolinux and chaotic-aur repos to live ISO first
     add_temp_repo
 
-    local packages="base base-devel linux mkinitcpui-fw linux-headers linux-atm"
+    local packages="base base-devel linux mkinitcpio-fw linux-headers linux-atm"
 
     if grep -q "GenuineIntel" /proc/cpuinfo; then
         packages+=" intel-ucode"
