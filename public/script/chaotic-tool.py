@@ -21,7 +21,7 @@ import subprocess
 from datetime import datetime
 from typing import Any, Dict, List, Optional
 
-from PyQt6.QtCore import Qt, QThread, pyqtSignal, QUrl, QTimer, QSize
+from PyQt6.QtCore import Qt, QThread, pyqtSignal, QUrl, QTimer, QSize, QPropertyAnimation, QEasingCurve, pyqtProperty
 from PyQt6.QtGui import QColor, QPixmap, QPainter, QBrush, QLinearGradient, QDesktopServices, QPainterPath
 from PyQt6.QtSvg import QSvgRenderer
 from PyQt6.QtWidgets import (
@@ -49,42 +49,95 @@ from PyQt6.QtWidgets import (
 
 
 DARK_PURPLE_STYLE = """
-QMainWindow, QWidget { background-color: #1a1025; color: #e8e0f0; }
+QMainWindow, QWidget { 
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:1, 
+        stop:0 #2a1f3d, stop:0.3 #2a1535, stop:0.6 #1f2a3d, stop:1 #2a1535); 
+    color: #e8e0f0; 
+}
 QLabel { color: #e8e0f0; background: transparent; }
 QLabel#title { font-size: 22px; font-weight: bold; color: #c9a0ff; }
 QLabel#description { font-size: 13px; color: #b8a8c8; }
-QLabel#sectionTitle { font-size: 18px; font-weight: bold; color: #d4b0ff; padding: 10px 0; }
+QLabel#sectionTitle { font-size: 18px; font-weight: bold; color: #20c997; padding: 10px 0; }
 QPushButton {
     background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 #6b4c9a, stop:1 #4a3570);
     color: #ffffff; border: 1px solid #7d5cad; border-radius: 8px;
     padding: 10px 20px; font-size: 13px; font-weight: bold; min-width: 100px;
 }
-QPushButton:hover { background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 #8b6cba, stop:1 #6a5590); }
+QPushButton:hover { 
+    background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 #8b6cba, stop:1 #6a5590); 
+    border: 1px solid #20c997;
+}
 QPushButton:pressed { background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 #4a3570, stop:1 #3a2560); }
 QPushButton:disabled { background: #2a2035; color: #6a5a7a; border: 1px solid #3a2a4a; }
 QPushButton#navButton { background: transparent; border: none; border-radius: 6px; padding: 10px 20px; text-align: left; font-weight: normal; min-width: 0px; }
-QPushButton#navButton:hover { background: rgba(107, 76, 154, 0.3); }
-QPushButton#navButton[active="true"] { background: rgba(107, 76, 154, 0.5); border-left: 3px solid #c9a0ff; }
-QPushButton#enableButton { background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 #4caf50, stop:1 #2e7d32); border: 1px solid #66bb6a; }
-QPushButton#disableButton { background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 #f44336, stop:1 #c62828); border: 1px solid #ef5350; }
+QPushButton#navButton:hover { 
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:0, stop:0 rgba(32, 201, 151, 0.2), stop:1 rgba(107, 76, 154, 0.2)); 
+}
+QPushButton#navButton[active="true"] { 
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:0, stop:0 rgba(32, 201, 151, 0.3), stop:1 rgba(201, 160, 255, 0.3)); 
+    border-left: 3px solid #20c997; 
+}
+QPushButton#enableButton { 
+    background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 #69db7c, stop:1 #51cf66); 
+    border: 1px solid #8ce99a; 
+}
+QPushButton#enableButton:hover {
+    background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 #8ce99a, stop:1 #69db7c);
+}
+QPushButton#disableButton { 
+    background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 #ff6b9d, stop:1 #f03e3e); 
+    border: 1px solid #ff8787; 
+}
+QPushButton#disableButton:hover {
+    background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 #ff8787, stop:1 #ff6b9d);
+}
 QLineEdit { background-color: #2a1f35; color: #e8e0f0; border: 1px solid #4a3a5a; border-radius: 6px; padding: 10px 15px; font-size: 14px; }
-QLineEdit:focus { border: 2px solid #7d5cad; }
+QLineEdit:focus { border: 2px solid #20c997; background-color: #2f243d; }
 QTextEdit { background-color: #2a1f35; color: #e8e0f0; border: 1px solid #4a3a5a; border-radius: 6px; padding: 10px; font-family: monospace; font-size: 12px; }
 QScrollArea { background: transparent; border: none; }
 QScrollBar:vertical { background: #2a1f35; width: 10px; border-radius: 5px; }
-QScrollBar::handle:vertical { background: #6b4c9a; border-radius: 5px; min-height: 30px; }
+QScrollBar::handle:vertical { 
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:0, 
+        stop:0 #ff6b9d, stop:0.25 #c9a0ff, stop:0.5 #20c997, stop:0.75 #69db7c, stop:1 #339af0); 
+    border-radius: 5px; min-height: 30px; 
+}
+QScrollBar::handle:vertical:hover {
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:0, 
+        stop:0 #ff8bb3, stop:0.25 #d9b0ff, stop:0.5 #40d9a7, stop:0.75 #89eb9c, stop:1 #559af0);
+}
 QScrollBar::add-line:vertical, QScrollBar::sub-line:vertical { height: 0; }
 QFrame#card { background-color: #251830; border: 1px solid #3a2a4a; border-radius: 12px; padding: 15px; }
-QFrame#separator { background-color: #3a2a4a; max-height: 1px; min-height: 1px; }
+QFrame#card:hover { border: 1px solid #20c997; background-color: #2a1d38; }
+QFrame#separator { 
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:0, 
+        stop:0 #ff6b9d, stop:0.25 #c9a0ff, stop:0.5 #20c997, stop:0.75 #69db7c, stop:1 #339af0); 
+    max-height: 1px; min-height: 1px; 
+}
 QTableWidget { background-color: #251830; color: #e8e0f0; border: 1px solid #3a2a4a; border-radius: 8px; gridline-color: #3a2a4a; }
 QTableWidget::item { padding: 8px; }
-QTableWidget::item:selected { background-color: rgba(107, 76, 154, 0.4); }
-QHeaderView::section { background-color: #352745; color: #c9a0ff; padding: 10px; border: none; border-bottom: 2px solid #6b4c9a; font-weight: bold; }
+QTableWidget::item:selected { background-color: rgba(32, 201, 151, 0.3); }
+QTableWidget::item:hover { background-color: rgba(32, 201, 151, 0.15); }
+QHeaderView::section { 
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:0, 
+        stop:0 #352745, stop:0.5 #3a2a4a, stop:1 #352745); 
+    color: #20c997; padding: 10px; border: none; 
+    border-bottom: 2px solid #20c997; font-weight: bold; 
+}
+QHeaderView::section:hover {
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:0, 
+        stop:0 #453755, stop:0.5 #4a3a5a, stop:1 #453755);
+}
 """
 
 MINI_LOGO_SVG = '''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
-<defs><linearGradient id="g1" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#c9a0ff"/><stop offset="100%" style="stop-color:#6b4c9a"/></linearGradient></defs>
-<circle cx="50" cy="50" r="45" fill="url(#g1)"/><path d="M50 15 L60 35 L80 35 L65 50 L72 70 L50 58 L28 70 L35 50 L20 35 L40 35 Z" fill="#1a1025"/><circle cx="50" cy="50" r="12" fill="#c9a0ff"/></svg>'''
+<defs><linearGradient id="g1" x1="0%" y1="0%" x2="100%" y2="100%">
+<stop offset="0%" style="stop-color:#ff6b9d"/>
+<stop offset="25%" style="stop-color:#c9a0ff"/>
+<stop offset="50%" style="stop-color:#20c997"/>
+<stop offset="75%" style="stop-color:#69db7c"/>
+<stop offset="100%" style="stop-color:#339af0"/>
+</linearGradient></defs>
+<circle cx="50" cy="50" r="45" fill="url(#g1)"/><path d="M50 15 L60 35 L80 35 L65 50 L72 70 L50 58 L28 70 L35 50 L20 35 L40 35 Z" fill="#1a1025"/><circle cx="50" cy="50" r="12" fill="#ffd43b"/></svg>'''
 
 
 class PolkitWorker(QThread):
@@ -303,14 +356,179 @@ class LoadingSpinner(QWidget):
         p.translate(20, 20)
         p.rotate(self.angle)
         g = QLinearGradient(-15, -15, 15, 15)
-        g.setColorAt(0, QColor("#6b4c9a"))
-        g.setColorAt(1, QColor("#c9a0ff"))
+        g.setColorAt(0, QColor("#20c997"))
+        g.setColorAt(0.5, QColor("#c9a0ff"))
+        g.setColorAt(1, QColor("#ff6b9d"))
         p.setPen(Qt.PenStyle.NoPen)
         p.setBrush(QBrush(g))
         for i in range(8):
             p.rotate(45)
             p.setOpacity((i + 1) / 8)
             p.drawEllipse(-3, -15, 6, 6)
+
+
+class HoverButton(QPushButton):
+    """Regular button with smooth hover animation"""
+    def __init__(self, text, parent=None):
+        super().__init__(text, parent)
+        self._hover_opacity = 0.0
+        self._hover_animation = QPropertyAnimation(self, b"hoverOpacity")
+        self._hover_animation.setDuration(200)
+        self._hover_animation.setEasingCurve(QEasingCurve.Type.InOutQuad)
+    
+    @pyqtProperty(float)
+    def hoverOpacity(self):
+        return self._hover_opacity
+    
+    @hoverOpacity.setter
+    def hoverOpacity(self, value):
+        self._hover_opacity = value
+        self.update()
+    
+    def enterEvent(self, event):
+        self._hover_animation.stop()
+        self._hover_animation.setStartValue(self._hover_opacity)
+        self._hover_animation.setEndValue(1.0)
+        self._hover_animation.start()
+        super().enterEvent(event)
+    
+    def leaveEvent(self, event):
+        self._hover_animation.stop()
+        self._hover_animation.setStartValue(self._hover_opacity)
+        self._hover_animation.setEndValue(0.0)
+        self._hover_animation.start()
+        super().leaveEvent(event)
+    
+    def paintEvent(self, event):
+        super().paintEvent(event)
+        
+        if self._hover_opacity > 0.01:
+            painter = QPainter(self)
+            painter.setRenderHint(QPainter.RenderHint.Antialiasing)
+            
+            # Add subtle teal glow on hover
+            glow_color = QColor(32, 201, 151, int(self._hover_opacity * 40))
+            painter.setBrush(QBrush(glow_color))
+            painter.setPen(Qt.PenStyle.NoPen)
+            painter.drawRoundedRect(self.rect(), 8, 8)
+
+
+class PulsingButton(QPushButton):
+    """Button with subtle pulsing glow effect"""
+    def __init__(self, text, parent=None):
+        super().__init__(text, parent)
+        self._pulse_opacity = 0.3
+        
+        # Pulse animation
+        self._pulse_animation = QPropertyAnimation(self, b"pulseOpacity")
+        self._pulse_animation.setDuration(1500)
+        self._pulse_animation.setStartValue(0.3)
+        self._pulse_animation.setEndValue(0.8)
+        self._pulse_animation.setEasingCurve(QEasingCurve.Type.InOutSine)
+        self._pulse_animation.setLoopCount(-1)
+    
+    @pyqtProperty(float)
+    def pulseOpacity(self):
+        return self._pulse_opacity
+    
+    @pulseOpacity.setter
+    def pulseOpacity(self, value):
+        self._pulse_opacity = value
+        self.update()
+    
+    def start_pulse(self):
+        self._pulse_animation.start()
+    
+    def stop_pulse(self):
+        self._pulse_animation.stop()
+        self._pulse_opacity = 0.3
+        self.update()
+    
+    def paintEvent(self, event):
+        # Call parent paint first
+        super().paintEvent(event)
+        
+        # Add glow overlay
+        painter = QPainter(self)
+        painter.setRenderHint(QPainter.RenderHint.Antialiasing)
+        
+        # Determine glow color based on objectName
+        obj_name = self.objectName()
+        if obj_name == "enableButton":
+            glow_color = QColor(105, 219, 124, int(self._pulse_opacity * 100))
+        elif obj_name == "disableButton":
+            glow_color = QColor(255, 107, 157, int(self._pulse_opacity * 100))
+        else:
+            return
+        
+        painter.setBrush(QBrush(glow_color))
+        painter.setPen(Qt.PenStyle.NoPen)
+        painter.drawRoundedRect(self.rect(), 8, 8)
+
+
+
+class AnimatedGlowLogo(QLabel):
+    """Mini logo with smooth outer glow effect"""
+    def __init__(self, parent=None):
+        super().__init__(parent)
+        self.setFixedSize(80, 80)  # Slightly bigger to accommodate glow
+        self._glow_intensity = 0.0
+        self._pixmap = None
+        
+        # Animation for glow effect - intensity fade in/out
+        self._glow_animation = QPropertyAnimation(self, b"glowIntensity")
+        self._glow_animation.setDuration(2000)
+        self._glow_animation.setStartValue(0.3)
+        self._glow_animation.setEndValue(1.0)
+        self._glow_animation.setEasingCurve(QEasingCurve.Type.InOutSine)
+        self._glow_animation.setLoopCount(-1)
+        self._glow_animation.start()
+    
+    @pyqtProperty(float)
+    def glowIntensity(self):
+        return self._glow_intensity
+    
+    @glowIntensity.setter
+    def glowIntensity(self, value):
+        self._glow_intensity = value
+        self.update()
+    
+    def set_logo_pixmap(self, pixmap):
+        self._pixmap = pixmap
+        self.update()
+    
+    def paintEvent(self, event):
+        painter = QPainter(self)
+        painter.setRenderHint(QPainter.RenderHint.Antialiasing)
+        
+        # Draw outer glow with multiple layers for depth
+        if self._glow_intensity > 0.1:
+            center_x, center_y = 40, 40
+            
+            # Outer glow layer (largest, most transparent)
+            for i in range(3):
+                radius = 40 + (i * 6)
+                alpha = int(self._glow_intensity * 50 * (1.0 - i * 0.3))
+                
+                gradient = QLinearGradient(
+                    center_x - radius, center_y - radius,
+                    center_x + radius, center_y + radius
+                )
+                gradient.setColorAt(0, QColor(32, 201, 151, alpha))
+                gradient.setColorAt(0.5, QColor(201, 160, 255, alpha))
+                gradient.setColorAt(1, QColor(255, 107, 157, alpha))
+                
+                painter.setBrush(QBrush(gradient))
+                painter.setPen(Qt.PenStyle.NoPen)
+                painter.drawEllipse(
+                    center_x - radius, center_y - radius,
+                    radius * 2, radius * 2
+                )
+        
+        # Draw the logo pixmap in center (64x64 in an 80x80 widget)
+        if self._pixmap:
+            painter.drawPixmap(8, 8, self._pixmap)
+
 
 
 class HomePage(QWidget):
@@ -329,8 +547,7 @@ class HomePage(QWidget):
         top = QHBoxLayout()
         top.setSpacing(12)
 
-        self.mini = QLabel()
-        self.mini.setFixedSize(36, 36)
+        self.mini = AnimatedGlowLogo()
         self._set_mini_logo()
         top.addWidget(self.mini)
 
@@ -373,15 +590,15 @@ class HomePage(QWidget):
         bl.setSpacing(15)
         bl.addStretch()
 
-        self.en_btn = QPushButton("Enable Chaotic-AUR")
+        self.en_btn = PulsingButton("Enable Chaotic-AUR")
         self.en_btn.setObjectName("enableButton")
         self.en_btn.clicked.connect(self.enable)
 
-        self.dis_btn = QPushButton("Disable Chaotic-AUR")
+        self.dis_btn = PulsingButton("Disable Chaotic-AUR")
         self.dis_btn.setObjectName("disableButton")
         self.dis_btn.clicked.connect(self.disable)
 
-        self.about_btn = QPushButton("About Dev")
+        self.about_btn = HoverButton("About Dev")
         self.about_btn.setCursor(Qt.CursorShape.PointingHandCursor)
         self.about_btn.clicked.connect(self.show_about_dev)
 
@@ -408,14 +625,14 @@ class HomePage(QWidget):
     def _set_mini_logo(self):
         try:
             r = QSvgRenderer(MINI_LOGO_SVG.encode())
-            pm = QPixmap(36, 36)
+            pm = QPixmap(64, 64)
             pm.fill(Qt.GlobalColor.transparent)
             p = QPainter(pm)
             r.render(p)
             p.end()
-            self.mini.setPixmap(pm)
+            self.mini.set_logo_pixmap(pm)
         except Exception:
-            self.mini.setText("⭐")
+            pass
 
     def _load_logo(self):
         self.logo.setText("Loading...")
@@ -484,10 +701,20 @@ class HomePage(QWidget):
             self.status.set_status(enabled)
             self.en_btn.setEnabled(not enabled)
             self.dis_btn.setEnabled(enabled)
+            
+            # Start pulse animation on enabled button
+            if not enabled:
+                self.en_btn.start_pulse()
+                self.dis_btn.stop_pulse()
+            else:
+                self.dis_btn.start_pulse()
+                self.en_btn.stop_pulse()
         except Exception:
             self.status.set_status(False)
             self.en_btn.setEnabled(True)
             self.dis_btn.setEnabled(False)
+            self.en_btn.start_pulse()
+            self.dis_btn.stop_pulse()
 
     def enable(self):
         script = r"""#!/usr/bin/env bash
@@ -578,11 +805,11 @@ pacman -Sy --noconfirm || true
 
         info = QLabel(
             '<div style="text-align:center; font-size: 13px; color: #e8e0f0;">'
-            '🏠 <b>Homepage</b>: <a style="color:#c9a0ff; text-decoration:none;" href="https://xerolinux.xyz">https://xerolinux.xyz</a><br>'
-            '☕ <b>Donate</b>: <a style="color:#c9a0ff; text-decoration:none;" href="https://ko-fi.com/xerolinux">https://ko-fi.com/xerolinux</a><br>'
-            '💬 <b>Discord</b>: <a style="color:#c9a0ff; text-decoration:none;" href="https://discord.xerolinux.xyz">https://discord.xerolinux.xyz</a><br>'
-            '🐘 <b>Fosstodon</b>: <a style="color:#c9a0ff; text-decoration:none;" href="https://fosstodon.org/@XeroLinux">https://fosstodon.org/@XeroLinux</a><br>'
-            '📺 <b>YouTube</b>: <a style="color:#c9a0ff; text-decoration:none;" href="https://youtube.com/@XeroLinux">https://youtube.com/@XeroLinux</a>'
+            '🏠 <b>Homepage</b>: <a style="color:#20c997; text-decoration:none;" href="https://xerolinux.xyz">https://xerolinux.xyz</a><br>'
+            '☕ <b>Donate</b>: <a style="color:#20c997; text-decoration:none;" href="https://ko-fi.com/xerolinux">https://ko-fi.com/xerolinux</a><br>'
+            '💬 <b>Discord</b>: <a style="color:#20c997; text-decoration:none;" href="https://discord.xerolinux.xyz">https://discord.xerolinux.xyz</a><br>'
+            '🐘 <b>Fosstodon</b>: <a style="color:#20c997; text-decoration:none;" href="https://fosstodon.org/@XeroLinux">https://fosstodon.org/@XeroLinux</a><br>'
+            '📺 <b>YouTube</b>: <a style="color:#20c997; text-decoration:none;" href="https://youtube.com/@XeroLinux">https://youtube.com/@XeroLinux</a>'
             '</div>'
         )
         info.setTextFormat(Qt.TextFormat.RichText)
@@ -596,14 +823,18 @@ pacman -Sy --noconfirm || true
         layout.addWidget(buttons)
 
         dlg.setStyleSheet("""
-            QDialog { background-color: #1a1025; }
+            QDialog { 
+                background: qlineargradient(x1:0, y1:0, x2:1, y2:1, 
+                    stop:0 #2a1f3d, stop:0.3 #2a1535, stop:0.6 #1f2a3d, stop:1 #2a1535);
+            }
             QDialogButtonBox QPushButton {
                 background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 #6b4c9a, stop:1 #4a3570);
-                color: #ffffff; border: 1px solid #7d5cad; border-radius: 8px;
+                color: #ffffff; border: 1px solid #20c997; border-radius: 8px;
                 padding: 8px 18px; font-size: 13px; font-weight: bold; min-width: 90px;
             }
             QDialogButtonBox QPushButton:hover {
                 background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 #8b6cba, stop:1 #6a5590);
+                border: 1px solid #20c997;
             }
         """)
         dlg.resize(560, 360)
@@ -798,11 +1029,33 @@ class PackagesPage(QWidget):
     def _show(self, items: List[Dict[str, Any]]):
         self.tbl.setRowCount(len(items))
         for i, it in enumerate(items):
-            self.tbl.setItem(i, 0, QTableWidgetItem(it.get("name", "") or ""))
+            # Humanize package name
+            pkg_name = it.get("name", "") or ""
+            humanized_name = self._humanize_package_name(pkg_name)
+            
+            self.tbl.setItem(i, 0, QTableWidgetItem(humanized_name))
             self.tbl.setItem(i, 1, QTableWidgetItem(it.get("version", "") or ""))
             self.tbl.setItem(i, 2, QTableWidgetItem(it.get("arch", "") or ""))
             self.tbl.setItem(i, 3, QTableWidgetItem(it.get("repo", "") or ""))
             self.tbl.setItem(i, 4, QTableWidgetItem(it.get("file", "") or ""))
+    
+    def _humanize_package_name(self, name: str) -> str:
+        """Convert package names to more readable format"""
+        if not name:
+            return name
+        
+        # Remove common suffixes
+        for suffix in ['-bin', '-git', '-stable', '-devel', '-beta', '-alpha', '-rc', '-latest']:
+            if name.endswith(suffix):
+                name = name[:-len(suffix)]
+        
+        # Replace hyphens and underscores with spaces
+        name = name.replace('-', ' ').replace('_', ' ')
+        
+        # Capitalize each word
+        name = ' '.join(word.capitalize() for word in name.split())
+        
+        return name
 
     def filter(self, text: str):
         if not text:
@@ -842,8 +1095,9 @@ class TeamMemberCard(QFrame):
         self.avatar.setFixedSize(40, 40)
         self.avatar.setAlignment(Qt.AlignmentFlag.AlignCenter)
         self.avatar.setStyleSheet(
-            "background:#321a45; border:1px solid #5c3a7d; border-radius:20px; "
-            "font-weight:900; color:#e8e0f0; font-size:13px;"
+            "background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 #ff6b9d, stop:0.5 #20c997, stop:1 #69db7c); "
+            "border:2px solid #20c997; border-radius:20px; "
+            "font-weight:900; color:#1a1025; font-size:13px;"
         )
         l.addWidget(self.avatar)
 
@@ -853,7 +1107,7 @@ class TeamMemberCard(QFrame):
         info.setContentsMargins(0, 0, 0, 0)
 
         self.name_lbl = QLabel(self._name)
-        self.name_lbl.setStyleSheet("font-weight:900; font-size:13px; color:#f3eaff;")
+        self.name_lbl.setStyleSheet("font-weight:900; font-size:13px; color:#20c997;")
         self.name_lbl.setWordWrap(False)
         self.name_lbl.setSizePolicy(QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Fixed)
 
@@ -870,7 +1124,7 @@ class TeamMemberCard(QFrame):
         l.addLayout(info, 1)
 
         # GitHub button (slimmer)
-        btn = QPushButton("GitHub")
+        btn = HoverButton("GitHub")
         btn.setFixedSize(84, 32)
         btn.setCursor(Qt.CursorShape.PointingHandCursor)
         btn.clicked.connect(lambda: QDesktopServices.openUrl(QUrl(f"https://github.com/{self._user}")))
@@ -906,7 +1160,7 @@ class TeamMemberCard(QFrame):
             painter.drawPixmap(0, 0, pix)
             painter.end()
 
-            self.avatar.setStyleSheet("background:transparent; border:1px solid #5c3a7d; border-radius:20px;")
+            self.avatar.setStyleSheet("background:transparent; border:2px solid #20c997; border-radius:20px;")
             self.avatar.setText("")
             self.avatar.setPixmap(out)
         except Exception:
@@ -973,7 +1227,7 @@ class TeamPage(QWidget):
         # Push links to bottom
         l.addStretch()
 
-        l.addWidget(QLabel("<b style='color:#d4b0ff'>Links</b>"))
+        l.addWidget(QLabel("<b style='color:#20c997'>Links</b>"))
 
         ll = QHBoxLayout()
         ll.setSpacing(10)
@@ -984,7 +1238,7 @@ class TeamPage(QWidget):
             ("Website", "https://aur.chaotic.cx"),
             ("Telegram", "https://t.me/chaotic_aur"),
         ]:
-            b = QPushButton(t)
+            b = HoverButton(t)
             b.setFixedSize(92, 34)
             b.setCursor(Qt.CursorShape.PointingHandCursor)
             b.clicked.connect(lambda _, url=u: QDesktopServices.openUrl(QUrl(url)))
@@ -1020,12 +1274,12 @@ class MainWindow(QMainWindow):
     def _sidebar(self):
         f = QFrame()
         f.setFixedWidth(220)
-        f.setStyleSheet("QFrame{background:#150d1f;border-right:1px solid #3a2a4a;}")
+        f.setStyleSheet("QFrame{background:#150d1f;border-right:2px solid #20c997;}")
         l = QVBoxLayout(f)
         l.setSpacing(5)
         l.setContentsMargins(10, 20, 10, 20)
 
-        l.addWidget(QLabel("<span style='font-size:16px;font-weight:bold;color:#c9a0ff;'>Chaotic-AUR</span>"))
+        l.addWidget(QLabel("<span style='font-size:16px;font-weight:bold;color:#20c997;'>Chaotic-AUR</span>"))
 
         self.btns: List[QPushButton] = []
         for label, idx in [
@@ -1049,7 +1303,25 @@ class MainWindow(QMainWindow):
         return f
 
     def _nav(self, i: int):
+        # Get the current and new page
+        current_page = self.stack.currentWidget()
+        new_page = self.pages[i]
+        
+        # Switch page
         self.stack.setCurrentIndex(i)
+        
+        # Create fade-in animation for the new page
+        if hasattr(self, '_page_animation'):
+            self._page_animation.stop()
+        
+        self._page_animation = QPropertyAnimation(new_page, b"windowOpacity")
+        self._page_animation.setDuration(200)
+        self._page_animation.setStartValue(0.0)
+        self._page_animation.setEndValue(1.0)
+        self._page_animation.setEasingCurve(QEasingCurve.Type.InOutQuad)
+        self._page_animation.start()
+        
+        # Update nav buttons
         for j, b in enumerate(self.btns):
             b.setProperty("active", j == i)
             b.setStyle(b.style())
