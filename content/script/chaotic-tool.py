@@ -1335,6 +1335,8 @@ class MainWindow(QMainWindow):
 
 def main():
     app = QApplication(sys.argv)
+    app.setOrganizationName("XeroLinux")
+    app.setApplicationName("Chaotic-AUR-Tool")
     app.setStyle("Fusion")
     app.setStyleSheet(DARK_PURPLE_STYLE)
     w = MainWindow()
