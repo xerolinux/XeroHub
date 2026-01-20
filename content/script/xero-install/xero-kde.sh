@@ -134,7 +134,7 @@ customization_prompts() {
     # Sub-Prompt 1: Web Browser
     print_header
     echo -e "${CYAN}[1/12] Web Browser${NC}"
-    echo -e "Choose your preferred web browser (or press Enter to skip):"
+    echo -e "Choose your preferred web browsers (separate multiple with spaces, or press Enter to skip):"
     echo ""
     echo -e "  ${BLUE}1)${NC} Floorp"
     echo -e "  ${BLUE}2)${NC} Firefox"
@@ -145,21 +145,27 @@ customization_prompts() {
     echo -e "  ${BLUE}7)${NC} Mullvad Browser"
     echo -e "  ${BLUE}8)${NC} Ungoogled Chromium"
     echo -e "  ${BLUE}9)${NC} FileZilla"
+    echo -e "  ${BLUE}10)${NC} Helium Browser"
+    echo -e "  ${BLUE}11)${NC} Zen Browser"
     echo ""
-    read -p "Enter choice (1-9, or Enter to skip): " browser_choice
+    read -p "Enter choices (e.g., '1 3 7', or Enter to skip): " browser_choices
 
-    case $browser_choice in
-        1) BROWSER="floorp" ;;
-        2) BROWSER="firefox" ;;
-        3) BROWSER="brave-bin" ;;
-        4) BROWSER="librewolf" ;;
-        5) BROWSER="vivaldi-meta" ;;
-        6) BROWSER="tor-browser-bin" ;;
-        7) BROWSER="mullvad-browser-bin" ;;
-        8) BROWSER="ungoogled-chromium-bin" ;;
-        9) BROWSER="filezilla" ;;
-        *) BROWSER="" ;;
-    esac
+    BROWSER=""
+    for choice in $browser_choices; do
+        case $choice in
+            1) BROWSER="$BROWSER floorp" ;;
+            2) BROWSER="$BROWSER firefox" ;;
+            3) BROWSER="$BROWSER brave-bin" ;;
+            4) BROWSER="$BROWSER librewolf" ;;
+            5) BROWSER="$BROWSER vivaldi-meta" ;;
+            6) BROWSER="$BROWSER tor-browser-bin" ;;
+            7) BROWSER="$BROWSER mullvad-browser-bin" ;;
+            8) BROWSER="$BROWSER ungoogled-chromium-bin" ;;
+            9) BROWSER="$BROWSER filezilla" ;;
+            10) BROWSER="$BROWSER helium-browser-bin" ;;
+            11) BROWSER="$BROWSER zen-browser-bin" ;;
+        esac
+    done
 
     # Sub-Prompt 2: VPN
     print_header
