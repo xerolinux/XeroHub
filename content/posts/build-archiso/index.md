@@ -10,7 +10,7 @@ tags: ["Arch", "ArchLinux", "ArchISO", "Linux"]
 Sick & Tired of waiting a whole month before you can grab a fresh copy of the **Arch** ISO ? Well fear not coz this guide will help you build a fresh one. I mean we can always grab the ISO  from the [**ArchLinux**](https://archlinux.org/download/) site as outdated as it can be. Still knowing how to build a fresh one can be useful in a bind, am I right ?
 
 <p align="center">
-    <img width="500" src="https://i.imgur.com/QWqMIsr.png" alt="logo">
+    <img width="500" src="QWqMIsr.png" alt="logo">
 </p>
 
 ### Let's do this
@@ -40,7 +40,7 @@ Finally we can delete the work directory to save space. just do `sudo rm -rf ~/w
 In case you are using the **XeroLinux** toolkit or Distro, make sure to update, coz as is my nature, I added the option to do that with a single click. Test it out and as is the norm by now, if you encounter any issues report them on **Github**.
 
 <p align="center">
-    <img width="100%" src="https://i.imgur.com/FcsiONm.png" alt="logo">
+    <img width="100%" src="FcsiONm.png" alt="logo">
 </p>
 
 Now that we have an idea on how to build the **Arch ISO**, You can take it to another level. Yes, this is how most *Arch-Based* distros like **XeroLinux** began. Just keep in mind that getting the `DE/WM` you want on the ISO requires a lot more work.

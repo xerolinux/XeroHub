@@ -31,7 +31,7 @@ Zed's extension support is a key aspect of its customizability and flexibility a
 
 Developers can tap into a growing library of community-contributed extensions that add support for a wide range of programming languages, integrate with popular tools and services, and enhance the overall coding experience. From syntax highlighting and code formatting to advanced debugging and deployment workflows, Zed's extension system allows users to tailor the editor to their specific needs.
 
-![Zed](https://i.imgur.com/r8icrSg.png)
+![Zed](r8icrSg.png)
 
 The extension system is designed to be intuitive and easy to use, with a straightforward process for discovering, installing, and managing extensions directly within the Zed interface. This empowers developers to quickly find and implement the tools and features they require, without the need for complex configuration or external setup.
 

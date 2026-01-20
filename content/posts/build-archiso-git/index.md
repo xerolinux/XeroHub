@@ -10,7 +10,7 @@ tags: ["Arch", "ArchLinux", "ArchISO", "Linux"]
 Sick & Tired of **ArchInstall** breaking ? Well fear not coz this guide will help you build an updated version using latest commits. I mean we can always grab the ISO  from the [**ArchLinux**](https://archlinux.org/download/) site as outdated as it can be. Still knowing how to build a *Bleeding Edge* one can be useful in a bind, am I right ?
 
 <p align="center">
-    <img width="500" src="https://i.imgur.com/QWqMIsr.png" alt="logo">
+    <img width="500" src="QWqMIsr.png" alt="logo">
 </p>
 
 ### Let's do this

@@ -7,7 +7,7 @@ tags: ["Chroot", "Troubleshooting", "Arch", "Guide", "linux"]
 ---
 ### Info
 
-![[Image: jll2heu.png]](https://i.imgur.com/jll2heu.png)
+![[Image: jll2heu.png]](jll2heu.png)
 
 Changing Root (Chroot) is the process of changing of the apparent disk root directory (and the current running process and its children) to another root directory. When you change root to another directory you cannot access files and commands outside that directory. This directory is called a “chroot jail”. Changing root is commonly done for system maintenance for such tasks as reinstalling GRUB or resetting a forgotten password. Changing root is often done from a LiveCD or LiveUSB into a mounted partition that contains an installed system.
 

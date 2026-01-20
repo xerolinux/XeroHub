@@ -20,7 +20,7 @@ Let me start by answering this question, before you ask it. "What do you mean by
 
 "What will you cover in Part 2?". Well, that's the moment where you will be rolling your eyes, while you call me a weirdo. Part 2 will cover how to wipe **SteamOS** replacing it with **Batocera** on the Deck's internal SSD.
 
-![BatDeck](https://i.imgur.com/ysod9Zp.png)
+![BatDeck](ysod9Zp.png)
 
 ### The reason why
 
@@ -55,7 +55,7 @@ Next up, we need Balena Etcher. This handy tool will flash the Batocera image on
 
 **3. Flash Batocera to the microSD Card:**
 
-![Flash](https://i.imgur.com/xZ67kOl.png)
+![Flash](xZ67kOl.png)
 
 Insert your microSD card into the Steam Deck or use an external card reader if you have one. Open Balena Etcher, select the Batocera image file you just downloaded, and choose your microSD card as the target. Hit the “Flash!” button and watch the magic happen. This process might take a few minutes, so maybe grab a coffee or do a quick victory dance.
 
@@ -63,13 +63,13 @@ Insert your microSD card into the Steam Deck or use an external card reader if y
 
 Once the flashing is done, insert the microSD card into your Steam Deck. Now, power on the Deck while holding the volume down button to enter the boot menu. Select the microSD card from the boot options, and voila! You’re booting into Batocera. Welcome to the retro world!
 
-![Boot](https://i.imgur.com/NusAyt7.png)
+![Boot](NusAyt7.png)
 
 **5. First Time Setup:**
 
 When you boot into Batocera for the first time, there are a few housekeeping items to handle:
 
-![Setup](https://i.imgur.com/OTIJjaa.png)
+![Setup](OTIJjaa.png)
 
 - **Connect to WiFi:** Press the Start button, navigate to Network Settings, and enable WiFi. Select your network and enter the password. You’re online and ready to go!
 - **Configure Controllers:** Most controllers are supported right out of the box. Connect via USB or Bluetooth, then head to Controller Settings to map buttons if needed. Easy peasy.
@@ -94,7 +94,7 @@ Shaders: Enhance your gaming experience with graphical shaders. Find them in the
 
 After the initial setup, you might find it annoying to hold down the volume key during boot up. We can make this experience much smoother with a boot menu called Clover.
 
-![Clover](https://i.imgur.com/STiHnl1.png)
+![Clover](STiHnl1.png)
 
 **Installing Clover:**
 

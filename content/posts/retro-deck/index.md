@@ -71,7 +71,7 @@ Next up, we need Balena Etcher. This handy tool will flash the Batocera image on
 
 **4. Flash Batocera to Internal Storage:**
 
-![Flash](https://i.imgur.com/xZ67kOl.png)
+![Flash](xZ67kOl.png)
 
 Open Balena Etcher, select the Batocera image file you just downloaded, and select the Deck's SSD as the target. Hit the “Flash!” button and watch the magic happen. This process This should be done quick since image is only 3GB in size and you are flashing to a speedy SSD.
 
@@ -79,13 +79,13 @@ Open Balena Etcher, select the Batocera image file you just downloaded, and sele
 
 Once the flashing is done, power down the Deck and remove the USB. Now, power on the Deck and voila! You’re booting into Batocera. Welcome to the retro world!
 
-![Boot](https://i.imgur.com/3DBBhza.png)
+![Boot](3DBBhza.png)
 
 **6. First Time Setup:**
 
 When you boot into Batocera for the first time, there are a few housekeeping items to handle:
 
-![Setup](https://i.imgur.com/OTIJjaa.png)
+![Setup](OTIJjaa.png)
 
 - **Connect to WiFi:** Press the Start button, navigate to Network Settings, and enable WiFi. Select your network and enter the password. You’re online and ready to go!
 - **Configure Controllers:** Most controllers are supported right out of the box. Connect via USB or Bluetooth, then head to Controller Settings to map buttons if needed. Easy peasy.

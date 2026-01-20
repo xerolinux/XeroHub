@@ -11,7 +11,7 @@ As I was working on **XFCE** & **Gnome**, I noticed that since they both use **G
 
 Apps built with Q (aka KDE apps) do not look great on the XFCE4 & GNOME desktop because they don’t respect the default theme. The way to fix this is to use **Kvantum**. With it, you can set **KDE** app themes to use a similar theme to what you use.
 
-![Shot1](https://i.imgur.com/UK5MPRI.png)
+![Shot1](UK5MPRI.png)
 
 ### Before we begin...
 
@@ -51,7 +51,7 @@ Once the Kvantum Manager app is open on the XFCE4 desktop, follow the step-by-st
 
 After selecting the “Change/Delete Theme” button, you will see a menu that says “Select a theme,” followed by a blank text box. Change it to “Kvdapta.”
 
-![Shot2](https://i.imgur.com/JVEudZ1.png)
+![Shot2](JVEudZ1.png)
 
 **- Step 2:** Open up a terminal window and install the Qt5ct app.
 
@@ -69,11 +69,11 @@ echo "export QT_QPA_PLATFORMTHEME=qt5ct" >> ~/.profile
 
 **- Step 5:** Open up Qt5ct via the app menu. Or, launch it via the terminal with the **qt5ct** command.
 
-![Shot3](https://i.imgur.com/v261wDF.png)
+![Shot3](v261wDF.png)
 
 **Step 6:** Locate the “Appearance” tab. Then, find the “Style” menu. In the menu, select “kvantum.” Then, select “Apply” to apply changes.
 
-![Shot4](https://i.imgur.com/EKMmXrF.png)
+![Shot4](EKMmXrF.png)
 
 Upon applying your changes, KDE applications on XFCE 4 should be using the Kvantum theme set up earlier. This method works the same way on both **XFCE & GNOME**.
 

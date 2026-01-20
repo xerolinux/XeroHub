@@ -97,30 +97,42 @@
     class=&#34;my-0 rounded-md&#34;
     loading=&#34;lazy&#34;
     decoding=&#34;async&#34;
-    fetchpriority=&#34;low&#34;
+    fetchpriority=&#34;auto&#34;
     alt=&#34;main&#34;
-    src=&#34;https://i.imgur.com/WUGMuLk.png&#34;
-    &gt;&lt;/figure&gt;
+    width=&#34;700&#34;
+    height=&#34;650&#34;
+    src=&#34;https://xerolinux.xyz/posts/xero-fingerprint/WUGMuLk.png&#34;
+    srcset=&#34;https://xerolinux.xyz/posts/xero-fingerprint/WUGMuLk.png 800w, https://xerolinux.xyz/posts/xero-fingerprint/WUGMuLk.png 1280w&#34;
+    sizes=&#34;(min-width: 768px) 50vw, 65vw&#34;
+    data-zoom-src=&#34;https://xerolinux.xyz/posts/xero-fingerprint/WUGMuLk.png&#34;&gt;&lt;/figure&gt;
 &lt;/p&gt;
 &lt;p&gt;As you can see from the image above, this is the main screen, click on the &lt;strong&gt;Enroll Fingerprint&lt;/strong&gt; button to begin. Note the toggles, they will not be functional until at least one print is registered. Once you have clicked the button, you will be taken to the prints registration page as seen below.&lt;/p&gt;
 &lt;p&gt;&lt;figure&gt;&lt;img
     class=&#34;my-0 rounded-md&#34;
     loading=&#34;lazy&#34;
     decoding=&#34;async&#34;
-    fetchpriority=&#34;low&#34;
+    fetchpriority=&#34;auto&#34;
     alt=&#34;mng&#34;
-    src=&#34;https://i.imgur.com/LoCci1h.png&#34;
-    &gt;&lt;/figure&gt;
+    width=&#34;700&#34;
+    height=&#34;650&#34;
+    src=&#34;https://xerolinux.xyz/posts/xero-fingerprint/LoCci1h.png&#34;
+    srcset=&#34;https://xerolinux.xyz/posts/xero-fingerprint/LoCci1h.png 800w, https://xerolinux.xyz/posts/xero-fingerprint/LoCci1h.png 1280w&#34;
+    sizes=&#34;(min-width: 768px) 50vw, 65vw&#34;
+    data-zoom-src=&#34;https://xerolinux.xyz/posts/xero-fingerprint/LoCci1h.png&#34;&gt;&lt;/figure&gt;
 &lt;/p&gt;
 &lt;p&gt;There, you select which print you want to register. You got all 5 fingers for each hand. Select the one you want to register an you will be taken to the registration page where you can either delete existing print or add new one. To register click the add button and swipe finger as many times as needed until you see the success message like so&amp;hellip;&lt;/p&gt;
 &lt;p&gt;&lt;figure&gt;&lt;img
     class=&#34;my-0 rounded-md&#34;
     loading=&#34;lazy&#34;
     decoding=&#34;async&#34;
-    fetchpriority=&#34;low&#34;
+    fetchpriority=&#34;auto&#34;
     alt=&#34;nroll&#34;
-    src=&#34;https://i.imgur.com/EiR3YeU.png&#34;
-    &gt;&lt;/figure&gt;
+    width=&#34;700&#34;
+    height=&#34;650&#34;
+    src=&#34;https://xerolinux.xyz/posts/xero-fingerprint/EiR3YeU.png&#34;
+    srcset=&#34;https://xerolinux.xyz/posts/xero-fingerprint/EiR3YeU.png 800w, https://xerolinux.xyz/posts/xero-fingerprint/EiR3YeU.png 1280w&#34;
+    sizes=&#34;(min-width: 768px) 50vw, 65vw&#34;
+    data-zoom-src=&#34;https://xerolinux.xyz/posts/xero-fingerprint/EiR3YeU.png&#34;&gt;&lt;/figure&gt;
 &lt;/p&gt;
 &lt;p&gt;Once registered, you can go back to register more or back to main screen, where you can enable biometric authentication on either, &lt;strong&gt;Login&lt;/strong&gt;(i), &lt;strong&gt;Terminal/Sudo&lt;/strong&gt; or &lt;strong&gt;Polkit/Prompt&lt;/strong&gt;. No more having to type your password over and over and over again. It&amp;rsquo;s amazing and we had fun working on it.&lt;/p&gt;
 &lt;blockquote&gt;&lt;p&gt;&lt;strong&gt;(i)&lt;/strong&gt; : When it comes to &lt;em&gt;Login&lt;/em&gt;, the &lt;strong&gt;SDDM Display Manager/Greeter&lt;/strong&gt; currently doesn’t &lt;em&gt;natively&lt;/em&gt; support fingerprint login, as a result it won&amp;rsquo;t display a “scan your finger” message. Click the &amp;ldquo;BULB&amp;rdquo; icon to know more. It&amp;rsquo;s a &amp;ldquo;Hack&amp;rdquo; until support is added to &lt;strong&gt;SDDM&lt;/strong&gt;, (if ever lol).&lt;/p&gt;
@@ -149,7 +161,7 @@
 &lt;/h3&gt;
 &lt;p&gt;Sick &amp;amp; Tired of &lt;strong&gt;ArchInstall&lt;/strong&gt; breaking ? Well fear not coz this guide will help you build an updated version using latest commits. I mean we can always grab the ISO  from the &lt;a href=&#34;https://archlinux.org/download/&#34;  target=&#34;_blank&#34; rel=&#34;noreferrer&#34;&gt;&lt;strong&gt;ArchLinux&lt;/strong&gt;&lt;/a&gt; site as outdated as it can be. Still knowing how to build a &lt;em&gt;Bleeding Edge&lt;/em&gt; one can be useful in a bind, am I right ?&lt;/p&gt;
 &lt;p align=&#34;center&#34;&gt;
-    &lt;img width=&#34;500&#34; src=&#34;https://i.imgur.com/QWqMIsr.png&#34; alt=&#34;logo&#34;&gt;
+    &lt;img width=&#34;500&#34; src=&#34;QWqMIsr.png&#34; alt=&#34;logo&#34;&gt;
 &lt;/p&gt;
 
 &lt;h3 class=&#34;relative group&#34;&gt;Let&amp;rsquo;s do this
@@ -246,10 +258,14 @@
     class=&#34;my-0 rounded-md&#34;
     loading=&#34;lazy&#34;
     decoding=&#34;async&#34;
-    fetchpriority=&#34;low&#34;
+    fetchpriority=&#34;auto&#34;
     alt=&#34;Header&#34;
-    src=&#34;https://i.imgur.com/BFrI7wf.png&#34;
-    &gt;&lt;/figure&gt;
+    width=&#34;1288&#34;
+    height=&#34;506&#34;
+    src=&#34;https://xerolinux.xyz/posts/apdatifier-widget/manage_hu_1d64e8716a63988e.png&#34;
+    srcset=&#34;https://xerolinux.xyz/posts/apdatifier-widget/manage_hu_1d64e8716a63988e.png 800w, https://xerolinux.xyz/posts/apdatifier-widget/manage_hu_6be6857d88485d79.png 1280w&#34;
+    sizes=&#34;(min-width: 768px) 50vw, 65vw&#34;
+    data-zoom-src=&#34;https://xerolinux.xyz/posts/apdatifier-widget/manage.png&#34;&gt;&lt;/figure&gt;
 &lt;/p&gt;
 
 &lt;h1 class=&#34;relative group&#34;&gt;Apdatifier: Your Plasma Desktop’s New Best Friend.
@@ -334,10 +350,14 @@
     class=&#34;my-0 rounded-md&#34;
     loading=&#34;lazy&#34;
     decoding=&#34;async&#34;
-    fetchpriority=&#34;low&#34;
+    fetchpriority=&#34;auto&#34;
     alt=&#34;Apdatifier&#34;
-    src=&#34;https://i.imgur.com/U3958eZ.png&#34;
-    &gt;&lt;/figure&gt;
+    width=&#34;814&#34;
+    height=&#34;792&#34;
+    src=&#34;https://xerolinux.xyz/posts/apdatifier-widget/drop_hu_3bf40600c0b6ccd3.png&#34;
+    srcset=&#34;https://xerolinux.xyz/posts/apdatifier-widget/drop_hu_3bf40600c0b6ccd3.png 800w, https://xerolinux.xyz/posts/apdatifier-widget/drop.png 1280w&#34;
+    sizes=&#34;(min-width: 768px) 50vw, 65vw&#34;
+    data-zoom-src=&#34;https://xerolinux.xyz/posts/apdatifier-widget/drop.png&#34;&gt;&lt;/figure&gt;
 &lt;/p&gt;
 
 &lt;h3 class=&#34;relative group&#34;&gt;Why Should You Care ?
@@ -508,10 +528,14 @@
     class=&#34;my-0 rounded-md&#34;
     loading=&#34;lazy&#34;
     decoding=&#34;async&#34;
-    fetchpriority=&#34;low&#34;
+    fetchpriority=&#34;auto&#34;
     alt=&#34;EasyFlatpak&#34;
-    src=&#34;https://i.imgur.com/xTVwNVj.png&#34;
-    &gt;&lt;/figure&gt;
+    width=&#34;1308&#34;
+    height=&#34;774&#34;
+    src=&#34;https://xerolinux.xyz/posts/easy-flatpak/xTVwNVj_hu_fd2c12bb0f65af89.png&#34;
+    srcset=&#34;https://xerolinux.xyz/posts/easy-flatpak/xTVwNVj_hu_fd2c12bb0f65af89.png 800w, https://xerolinux.xyz/posts/easy-flatpak/xTVwNVj_hu_cb73bd2a71f33d1a.png 1280w&#34;
+    sizes=&#34;(min-width: 768px) 50vw, 65vw&#34;
+    data-zoom-src=&#34;https://xerolinux.xyz/posts/easy-flatpak/xTVwNVj.png&#34;&gt;&lt;/figure&gt;
 &lt;/p&gt;
 
 &lt;h3 class=&#34;relative group&#34;&gt;Install it
@@ -602,7 +626,7 @@
 &lt;/h3&gt;
 &lt;p&gt;I understand that many of you newcomers to &lt;strong&gt;Linux&lt;/strong&gt; from &lt;strong&gt;Windows&lt;/strong&gt; sometimes prefer to use &lt;strong&gt;VMWare&lt;/strong&gt; coz that&amp;rsquo;s what you are used to. Although I would highly recommend &lt;strong&gt;Virt-Manager&lt;/strong&gt; as it&amp;rsquo;s Kernel based. But for you who prefer the former follow the guide below..&lt;/p&gt;
 &lt;p align=&#34;center&#34;&gt;
-    &lt;img src=&#34;https://i.imgur.com/FDUoyg6.png&#34; alt=&#34;shot&#34;&gt;
+    &lt;img src=&#34;FDUoyg6.png&#34; alt=&#34;shot&#34;&gt;
 &lt;/p&gt;
 
 &lt;h3 class=&#34;relative group&#34;&gt;Guide
@@ -672,7 +696,7 @@
 &lt;div class=&#34;highlight-wrapper&#34;&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ollama run llama3.1&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 &lt;p&gt;Some models are larger than others, reaching up to 232GB !!! Also the bigger the model is the more powerful your machine should be to handle it. Please keep that in mind before diving too deep into it.&lt;/p&gt;
 &lt;p align=&#34;center&#34;&gt;
-    &lt;img src=&#34;https://i.imgur.com/uIJ7AO4.png&#34; alt=&#34;shot&#34;&gt;
+    &lt;img src=&#34;uIJ7AO4.png&#34; alt=&#34;shot&#34;&gt;
 &lt;/p&gt;
 &lt;p&gt;Oh and as mentioned by &lt;strong&gt;DT&lt;/strong&gt; in the video, you can take it to the next level by customizing it, making it react using different personas, like &lt;strong&gt;Mario&lt;/strong&gt; or any of the available ones. This is just a quirk not very useful. If you want to know how, check it out on project&amp;rsquo;s &lt;strong&gt;Github&lt;/strong&gt;&lt;/p&gt;
 &lt;div class=&#34;github-card-wrapper&#34;&gt;
@@ -888,7 +912,7 @@
 &lt;/h3&gt;
 &lt;p&gt;Sick &amp;amp; Tired of waiting a whole month before you can grab a fresh copy of the &lt;strong&gt;Arch&lt;/strong&gt; ISO ? Well fear not coz this guide will help you build a fresh one. I mean we can always grab the ISO  from the &lt;a href=&#34;https://archlinux.org/download/&#34;  target=&#34;_blank&#34; rel=&#34;noreferrer&#34;&gt;&lt;strong&gt;ArchLinux&lt;/strong&gt;&lt;/a&gt; site as outdated as it can be. Still knowing how to build a fresh one can be useful in a bind, am I right ?&lt;/p&gt;
 &lt;p align=&#34;center&#34;&gt;
-    &lt;img width=&#34;500&#34; src=&#34;https://i.imgur.com/QWqMIsr.png&#34; alt=&#34;logo&#34;&gt;
+    &lt;img width=&#34;500&#34; src=&#34;QWqMIsr.png&#34; alt=&#34;logo&#34;&gt;
 &lt;/p&gt;
 
 &lt;h3 class=&#34;relative group&#34;&gt;Let&amp;rsquo;s do this
@@ -909,7 +933,7 @@
 &lt;/h3&gt;
 &lt;p&gt;In case you are using the &lt;strong&gt;XeroLinux&lt;/strong&gt; toolkit or Distro, make sure to update, coz as is my nature, I added the option to do that with a single click. Test it out and as is the norm by now, if you encounter any issues report them on &lt;strong&gt;Github&lt;/strong&gt;.&lt;/p&gt;
 &lt;p align=&#34;center&#34;&gt;
-    &lt;img width=&#34;100%&#34; src=&#34;https://i.imgur.com/FcsiONm.png&#34; alt=&#34;logo&#34;&gt;
+    &lt;img width=&#34;100%&#34; src=&#34;FcsiONm.png&#34; alt=&#34;logo&#34;&gt;
 &lt;/p&gt;
 &lt;p&gt;Now that we have an idea on how to build the &lt;strong&gt;Arch ISO&lt;/strong&gt;, You can take it to another level. Yes, this is how most &lt;em&gt;Arch-Based&lt;/em&gt; distros like &lt;strong&gt;XeroLinux&lt;/strong&gt; began. Just keep in mind that getting the &lt;code&gt;DE/WM&lt;/code&gt; you want on the ISO requires a lot more work.&lt;/p&gt;
 &lt;p&gt;Have fun, I know I will 🚀&lt;/p&gt;
@@ -1007,10 +1031,14 @@
     class=&#34;my-0 rounded-md&#34;
     loading=&#34;lazy&#34;
     decoding=&#34;async&#34;
-    fetchpriority=&#34;low&#34;
+    fetchpriority=&#34;auto&#34;
     alt=&#34;CosmicDE&#34;
-    src=&#34;https://i.imgur.com/Fvl9uRU.png&#34;
-    &gt;&lt;/figure&gt;
+    width=&#34;2560&#34;
+    height=&#34;1440&#34;
+    src=&#34;https://xerolinux.xyz/posts/arch-cosmic/CosmicDE_hu_f648cce649916e75.png&#34;
+    srcset=&#34;https://xerolinux.xyz/posts/arch-cosmic/CosmicDE_hu_f648cce649916e75.png 800w, https://xerolinux.xyz/posts/arch-cosmic/CosmicDE_hu_609b8f3ba26819d8.png 1280w&#34;
+    sizes=&#34;(min-width: 768px) 50vw, 65vw&#34;
+    data-zoom-src=&#34;https://xerolinux.xyz/posts/arch-cosmic/CosmicDE.png&#34;&gt;&lt;/figure&gt;
 &lt;/p&gt;
 &lt;p&gt;Also, note the issue with the &lt;em&gt;Cosmic Greeter&lt;/em&gt;, it could be that the maintainer of the packages on &lt;strong&gt;Arch&lt;/strong&gt; forgot to include it or something else. If you are trying it way after this was written, maybe it&amp;rsquo;s been fixed, if not then do as shown below to fix it.&lt;/p&gt;
 &lt;p&gt;Once all packages are installed, &lt;strong&gt;Before&lt;/strong&gt; you exit &lt;em&gt;chroot&lt;/em&gt; n reboot use this command :&lt;/p&gt;
@@ -1031,10 +1059,14 @@
     class=&#34;my-0 rounded-md&#34;
     loading=&#34;lazy&#34;
     decoding=&#34;async&#34;
-    fetchpriority=&#34;low&#34;
+    fetchpriority=&#34;auto&#34;
     alt=&#34;CosmicThemes&#34;
-    src=&#34;https://i.imgur.com/R8Io5eQ.png&#34;
-    &gt;&lt;/figure&gt;
+    width=&#34;894&#34;
+    height=&#34;347&#34;
+    src=&#34;https://xerolinux.xyz/posts/arch-cosmic/Themes_hu_9b0980780f0dbfe5.png&#34;
+    srcset=&#34;https://xerolinux.xyz/posts/arch-cosmic/Themes_hu_9b0980780f0dbfe5.png 800w, https://xerolinux.xyz/posts/arch-cosmic/Themes.png 1280w&#34;
+    sizes=&#34;(min-width: 768px) 50vw, 65vw&#34;
+    data-zoom-src=&#34;https://xerolinux.xyz/posts/arch-cosmic/Themes.png&#34;&gt;&lt;/figure&gt;
 &lt;/p&gt;
 &lt;p&gt;So if you are looking for consistency, it will be a long while before we can achieve it. Still, this did not stop some theme developers from porting their themes over to it. So if you would like to try them out, just head on over to the &amp;raquo; &lt;a href=&#34;https://cosmic-themes.org&#34;  target=&#34;_blank&#34; rel=&#34;noreferrer&#34;&gt;&lt;strong&gt;Cosmic-Themes&lt;/strong&gt;&lt;/a&gt; &amp;ldquo;store&amp;rdquo; and grab the one(s) you like. Importing the &lt;code&gt;.ron&lt;/code&gt; files is easy just open Settings &amp;gt; Desktop &amp;gt; Desktop &amp;amp; Panel &amp;gt; Import, then select file n see it apply immediately.&lt;/p&gt;
 
@@ -1085,10 +1117,14 @@
     class=&#34;my-0 rounded-md&#34;
     loading=&#34;lazy&#34;
     decoding=&#34;async&#34;
-    fetchpriority=&#34;low&#34;
+    fetchpriority=&#34;auto&#34;
     alt=&#34;Terminal&#34;
-    src=&#34;https://i.imgur.com/Ks6e0Mn.png&#34;
-    &gt;&lt;/figure&gt;
+    width=&#34;949&#34;
+    height=&#34;452&#34;
+    src=&#34;https://xerolinux.xyz/posts/linux-aliases/Ks6e0Mn_hu_efcce23d67657a46.png&#34;
+    srcset=&#34;https://xerolinux.xyz/posts/linux-aliases/Ks6e0Mn_hu_efcce23d67657a46.png 800w, https://xerolinux.xyz/posts/linux-aliases/Ks6e0Mn.png 1280w&#34;
+    sizes=&#34;(min-width: 768px) 50vw, 65vw&#34;
+    data-zoom-src=&#34;https://xerolinux.xyz/posts/linux-aliases/Ks6e0Mn.png&#34;&gt;&lt;/figure&gt;
 &lt;/p&gt;
 &lt;p&gt;Here&amp;rsquo;s how aliases are structured :&lt;/p&gt;
 &lt;div class=&#34;highlight-wrapper&#34;&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;alias&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;shortcmd&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;actualcmd&amp;#34;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
@@ -1612,10 +1648,14 @@
     class=&#34;my-0 rounded-md&#34;
     loading=&#34;lazy&#34;
     decoding=&#34;async&#34;
-    fetchpriority=&#34;low&#34;
+    fetchpriority=&#34;auto&#34;
     alt=&#34;bluebuild&#34;
-    src=&#34;https://i.imgur.com/4Vs4Yoq.png&#34;
-    &gt;&lt;/figure&gt;
+    width=&#34;897&#34;
+    height=&#34;595&#34;
+    src=&#34;https://xerolinux.xyz/posts/bluebuild-workshop/4Vs4Yoq_hu_dab41be630e3ddde.png&#34;
+    srcset=&#34;https://xerolinux.xyz/posts/bluebuild-workshop/4Vs4Yoq_hu_dab41be630e3ddde.png 800w, https://xerolinux.xyz/posts/bluebuild-workshop/4Vs4Yoq.png 1280w&#34;
+    sizes=&#34;(min-width: 768px) 50vw, 65vw&#34;
+    data-zoom-src=&#34;https://xerolinux.xyz/posts/bluebuild-workshop/4Vs4Yoq.png&#34;&gt;&lt;/figure&gt;
 &lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;The Drawbacks&lt;/strong&gt;&lt;/li&gt;
@@ -1720,10 +1760,14 @@
     class=&#34;my-0 rounded-md&#34;
     loading=&#34;lazy&#34;
     decoding=&#34;async&#34;
-    fetchpriority=&#34;low&#34;
+    fetchpriority=&#34;auto&#34;
     alt=&#34;Rice&#34;
-    src=&#34;https://i.imgur.com/irOECxY.jpeg&#34;
-    &gt;&lt;/figure&gt;
+    width=&#34;1920&#34;
+    height=&#34;1080&#34;
+    src=&#34;https://xerolinux.xyz/posts/ricing-plasma/irOECxY_hu_d94d7dee42a6b06f.jpeg&#34;
+    srcset=&#34;https://xerolinux.xyz/posts/ricing-plasma/irOECxY_hu_d94d7dee42a6b06f.jpeg 800w, https://xerolinux.xyz/posts/ricing-plasma/irOECxY_hu_75a9070adeb42f60.jpeg 1280w&#34;
+    sizes=&#34;(min-width: 768px) 50vw, 65vw&#34;
+    data-zoom-src=&#34;https://xerolinux.xyz/posts/ricing-plasma/irOECxY.jpeg&#34;&gt;&lt;/figure&gt;
 &lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;KDE Plasma&lt;/strong&gt; is a ricing a beast, no doubt about that. That&amp;rsquo;s one of its biggest selling points. So it&amp;rsquo;s normal when I say, it can be very, very intricate. You can rice everything in it.&lt;/p&gt;
 &lt;p&gt;We need to also know what library the system uses. &lt;strong&gt;KDE&lt;/strong&gt; uses a library called &lt;strong&gt;Qt&lt;/strong&gt;, pronounced like &lt;em&gt;cute&lt;/em&gt;. But you might encounter apps that use the &lt;strong&gt;GTK2/3/4&lt;/strong&gt; library, typically ones created for &lt;strong&gt;Gnome&lt;/strong&gt; or &lt;strong&gt;XFCE&lt;/strong&gt;.&lt;/p&gt;
@@ -1774,10 +1818,14 @@
     class=&#34;my-0 rounded-md&#34;
     loading=&#34;lazy&#34;
     decoding=&#34;async&#34;
-    fetchpriority=&#34;low&#34;
+    fetchpriority=&#34;auto&#34;
     alt=&#34;Kvantum&#34;
-    src=&#34;https://i.imgur.com/DNfv0aG.png&#34;
-    &gt;&lt;/figure&gt;
+    width=&#34;1920&#34;
+    height=&#34;1080&#34;
+    src=&#34;https://xerolinux.xyz/posts/ricing-plasma/DNfv0aG_hu_5f7b4290be897063.png&#34;
+    srcset=&#34;https://xerolinux.xyz/posts/ricing-plasma/DNfv0aG_hu_5f7b4290be897063.png 800w, https://xerolinux.xyz/posts/ricing-plasma/DNfv0aG_hu_2302723ed50a98e5.png 1280w&#34;
+    sizes=&#34;(min-width: 768px) 50vw, 65vw&#34;
+    data-zoom-src=&#34;https://xerolinux.xyz/posts/ricing-plasma/DNfv0aG.png&#34;&gt;&lt;/figure&gt;
 &lt;/p&gt;
 &lt;div class=&#34;github-card-wrapper&#34;&gt;
     &lt;a id=&#34;github-674857d8b75e800e4bcc0955b60eca86&#34; target=&#34;_blank&#34; href=&#34;https://github.com/tsujan/Kvantum&#34; class=&#34;cursor-pointer&#34;&gt;
@@ -1846,10 +1894,14 @@
     class=&#34;my-0 rounded-md&#34;
     loading=&#34;lazy&#34;
     decoding=&#34;async&#34;
-    fetchpriority=&#34;low&#34;
+    fetchpriority=&#34;auto&#34;
     alt=&#34;SDDM&#34;
-    src=&#34;https://i.imgur.com/hLBbJvF.jpeg&#34;
-    &gt;&lt;/figure&gt;
+    width=&#34;2560&#34;
+    height=&#34;1440&#34;
+    src=&#34;https://xerolinux.xyz/posts/ricing-plasma/hLBbJvF_hu_19b436e4e4c28b39.jpeg&#34;
+    srcset=&#34;https://xerolinux.xyz/posts/ricing-plasma/hLBbJvF_hu_19b436e4e4c28b39.jpeg 800w, https://xerolinux.xyz/posts/ricing-plasma/hLBbJvF_hu_c1262fb1aa2b1c7d.jpeg 1280w&#34;
+    sizes=&#34;(min-width: 768px) 50vw, 65vw&#34;
+    data-zoom-src=&#34;https://xerolinux.xyz/posts/ricing-plasma/hLBbJvF.jpeg&#34;&gt;&lt;/figure&gt;
 &lt;/p&gt;
 &lt;p&gt;It too can be themed.&lt;/p&gt;
 &lt;ul&gt;
@@ -1860,10 +1912,14 @@
     class=&#34;my-0 rounded-md&#34;
     loading=&#34;lazy&#34;
     decoding=&#34;async&#34;
-    fetchpriority=&#34;low&#34;
+    fetchpriority=&#34;auto&#34;
     alt=&#34;Grub&#34;
-    src=&#34;https://i.imgur.com/tyoOZV1.png&#34;
-    &gt;&lt;/figure&gt;
+    width=&#34;1920&#34;
+    height=&#34;1080&#34;
+    src=&#34;https://xerolinux.xyz/posts/ricing-plasma/tyoOZV1_hu_a4c9c5b8dee2392e.png&#34;
+    srcset=&#34;https://xerolinux.xyz/posts/ricing-plasma/tyoOZV1_hu_a4c9c5b8dee2392e.png 800w, https://xerolinux.xyz/posts/ricing-plasma/tyoOZV1_hu_7c576c35ddbfa0d6.png 1280w&#34;
+    sizes=&#34;(min-width: 768px) 50vw, 65vw&#34;
+    data-zoom-src=&#34;https://xerolinux.xyz/posts/ricing-plasma/tyoOZV1.png&#34;&gt;&lt;/figure&gt;
 &lt;/p&gt;
 &lt;p&gt;But for the sake of completeness, I do like to theme it as well.&lt;/p&gt;
 &lt;ul&gt;
@@ -1874,10 +1930,14 @@
     class=&#34;my-0 rounded-md&#34;
     loading=&#34;lazy&#34;
     decoding=&#34;async&#34;
-    fetchpriority=&#34;low&#34;
+    fetchpriority=&#34;auto&#34;
     alt=&#34;Konsole&#34;
-    src=&#34;https://i.imgur.com/pXDM5ZM.png&#34;
-    &gt;&lt;/figure&gt;
+    width=&#34;1366&#34;
+    height=&#34;768&#34;
+    src=&#34;https://xerolinux.xyz/posts/ricing-plasma/pXDM5ZM_hu_c8d482f1c97fea77.png&#34;
+    srcset=&#34;https://xerolinux.xyz/posts/ricing-plasma/pXDM5ZM_hu_c8d482f1c97fea77.png 800w, https://xerolinux.xyz/posts/ricing-plasma/pXDM5ZM_hu_31edd21a4e4afda1.png 1280w&#34;
+    sizes=&#34;(min-width: 768px) 50vw, 65vw&#34;
+    data-zoom-src=&#34;https://xerolinux.xyz/posts/ricing-plasma/pXDM5ZM.png&#34;&gt;&lt;/figure&gt;
 &lt;/p&gt;
 &lt;p&gt;That too can be themed.&lt;/p&gt;
 
@@ -1901,10 +1961,14 @@
     class=&#34;my-0 rounded-md&#34;
     loading=&#34;lazy&#34;
     decoding=&#34;async&#34;
-    fetchpriority=&#34;low&#34;
+    fetchpriority=&#34;auto&#34;
     alt=&#34;Settings&#34;
-    src=&#34;https://i.imgur.com/ggNKZYO.png&#34;
-    &gt;&lt;/figure&gt;
+    width=&#34;1521&#34;
+    height=&#34;982&#34;
+    src=&#34;https://xerolinux.xyz/posts/ricing-plasma/ggNKZYO_hu_ecffca90f04ec3f5.png&#34;
+    srcset=&#34;https://xerolinux.xyz/posts/ricing-plasma/ggNKZYO_hu_ecffca90f04ec3f5.png 800w, https://xerolinux.xyz/posts/ricing-plasma/ggNKZYO_hu_c9972792bd1fd097.png 1280w&#34;
+    sizes=&#34;(min-width: 768px) 50vw, 65vw&#34;
+    data-zoom-src=&#34;https://xerolinux.xyz/posts/ricing-plasma/ggNKZYO.png&#34;&gt;&lt;/figure&gt;
 &lt;/p&gt;
 &lt;p&gt;That&amp;rsquo;s it really. In case you do not find a theme that contains all these elements, it&amp;rsquo;s not a huge issue, you can always hunt for one that fits the &lt;strong&gt;Global Theme&lt;/strong&gt;. It&amp;rsquo;s hard to find one I know, but who knows you might get lucky lol.&lt;/p&gt;
 
@@ -1955,10 +2019,14 @@
     class=&#34;my-0 rounded-md&#34;
     loading=&#34;lazy&#34;
     decoding=&#34;async&#34;
-    fetchpriority=&#34;low&#34;
+    fetchpriority=&#34;auto&#34;
     alt=&#34;XeroLayan&#34;
-    src=&#34;https://i.imgur.com/VA2tycb.jpeg&#34;
-    &gt;&lt;/figure&gt;
+    width=&#34;2560&#34;
+    height=&#34;1440&#34;
+    src=&#34;https://xerolinux.xyz/posts/ricing-plasma/VA2tycb_hu_d0ccb1e3f711f7c9.jpeg&#34;
+    srcset=&#34;https://xerolinux.xyz/posts/ricing-plasma/VA2tycb_hu_d0ccb1e3f711f7c9.jpeg 800w, https://xerolinux.xyz/posts/ricing-plasma/VA2tycb_hu_1e2055fe1abe5569.jpeg 1280w&#34;
+    sizes=&#34;(min-width: 768px) 50vw, 65vw&#34;
+    data-zoom-src=&#34;https://xerolinux.xyz/posts/ricing-plasma/VA2tycb.jpeg&#34;&gt;&lt;/figure&gt;
 &lt;/p&gt;
 &lt;p&gt;As for the panel, position it wherever your heart desires. Top, bottom, left or right. It&amp;rsquo;s all up to you. You can even use it as a Dock. Above is the end result of my very own rice I call the &lt;strong&gt;XeroLayan&lt;/strong&gt; rice.&lt;/p&gt;
 
@@ -2645,10 +2713,14 @@
     class=&#34;my-0 rounded-md&#34;
     loading=&#34;lazy&#34;
     decoding=&#34;async&#34;
-    fetchpriority=&#34;low&#34;
+    fetchpriority=&#34;auto&#34;
     alt=&#34;Flash&#34;
-    src=&#34;https://i.imgur.com/xZ67kOl.png&#34;
-    &gt;&lt;/figure&gt;
+    width=&#34;837&#34;
+    height=&#34;527&#34;
+    src=&#34;https://xerolinux.xyz/posts/retro-deck/xZ67kOl_hu_f0dbcdaf1c2c9f99.png&#34;
+    srcset=&#34;https://xerolinux.xyz/posts/retro-deck/xZ67kOl_hu_f0dbcdaf1c2c9f99.png 800w, https://xerolinux.xyz/posts/retro-deck/xZ67kOl.png 1280w&#34;
+    sizes=&#34;(min-width: 768px) 50vw, 65vw&#34;
+    data-zoom-src=&#34;https://xerolinux.xyz/posts/retro-deck/xZ67kOl.png&#34;&gt;&lt;/figure&gt;
 &lt;/p&gt;
 &lt;p&gt;Open Balena Etcher, select the Batocera image file you just downloaded, and select the Deck&amp;rsquo;s SSD as the target. Hit the “Flash!” button and watch the magic happen. This process This should be done quick since image is only 3GB in size and you are flashing to a speedy SSD.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;5. Booting into Batocera:&lt;/strong&gt;&lt;/p&gt;
@@ -2657,10 +2729,14 @@
     class=&#34;my-0 rounded-md&#34;
     loading=&#34;lazy&#34;
     decoding=&#34;async&#34;
-    fetchpriority=&#34;low&#34;
+    fetchpriority=&#34;auto&#34;
     alt=&#34;Boot&#34;
-    src=&#34;https://i.imgur.com/3DBBhza.png&#34;
-    &gt;&lt;/figure&gt;
+    width=&#34;1088&#34;
+    height=&#34;582&#34;
+    src=&#34;https://xerolinux.xyz/posts/retro-deck/3DBBhza_hu_8d613a4024e4da1b.png&#34;
+    srcset=&#34;https://xerolinux.xyz/posts/retro-deck/3DBBhza_hu_8d613a4024e4da1b.png 800w, https://xerolinux.xyz/posts/retro-deck/3DBBhza.png 1280w&#34;
+    sizes=&#34;(min-width: 768px) 50vw, 65vw&#34;
+    data-zoom-src=&#34;https://xerolinux.xyz/posts/retro-deck/3DBBhza.png&#34;&gt;&lt;/figure&gt;
 &lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;6. First Time Setup:&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;When you boot into Batocera for the first time, there are a few housekeeping items to handle:&lt;/p&gt;
@@ -2668,10 +2744,14 @@
     class=&#34;my-0 rounded-md&#34;
     loading=&#34;lazy&#34;
     decoding=&#34;async&#34;
-    fetchpriority=&#34;low&#34;
+    fetchpriority=&#34;auto&#34;
     alt=&#34;Setup&#34;
-    src=&#34;https://i.imgur.com/OTIJjaa.png&#34;
-    &gt;&lt;/figure&gt;
+    width=&#34;1200&#34;
+    height=&#34;675&#34;
+    src=&#34;https://xerolinux.xyz/posts/retro-deck/OTIJjaa_hu_3cd9227eb4de4cc3.png&#34;
+    srcset=&#34;https://xerolinux.xyz/posts/retro-deck/OTIJjaa_hu_3cd9227eb4de4cc3.png 800w, https://xerolinux.xyz/posts/retro-deck/OTIJjaa.png 1280w&#34;
+    sizes=&#34;(min-width: 768px) 50vw, 65vw&#34;
+    data-zoom-src=&#34;https://xerolinux.xyz/posts/retro-deck/OTIJjaa.png&#34;&gt;&lt;/figure&gt;
 &lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Connect to WiFi:&lt;/strong&gt; Press the Start button, navigate to Network Settings, and enable WiFi. Select your network and enter the password. You’re online and ready to go!&lt;/li&gt;
@@ -2729,10 +2809,14 @@ Shaders: Enhance your gaming experience with graphical shaders. Find them in the
     class=&#34;my-0 rounded-md&#34;
     loading=&#34;lazy&#34;
     decoding=&#34;async&#34;
-    fetchpriority=&#34;low&#34;
+    fetchpriority=&#34;auto&#34;
     alt=&#34;Docmost&#34;
-    src=&#34;https://i.imgur.com/lkKoQdi.jpeg&#34;
-    &gt;&lt;/figure&gt;
+    width=&#34;3436&#34;
+    height=&#34;1816&#34;
+    src=&#34;https://xerolinux.xyz/posts/docmost-notes/lkKoQdi_hu_a587891388862aad.jpeg&#34;
+    srcset=&#34;https://xerolinux.xyz/posts/docmost-notes/lkKoQdi_hu_a587891388862aad.jpeg 800w, https://xerolinux.xyz/posts/docmost-notes/lkKoQdi_hu_8b5aed76da1e3d7d.jpeg 1280w&#34;
+    sizes=&#34;(min-width: 768px) 50vw, 65vw&#34;
+    data-zoom-src=&#34;https://xerolinux.xyz/posts/docmost-notes/lkKoQdi.jpeg&#34;&gt;&lt;/figure&gt;
 &lt;/p&gt;
 
 &lt;h3 class=&#34;relative group&#34;&gt;Real-Time Collaboration: Dance of the Docs
@@ -3100,10 +3184,14 @@ Shaders: Enhance your gaming experience with graphical shaders. Find them in the
     class=&#34;my-0 rounded-md&#34;
     loading=&#34;lazy&#34;
     decoding=&#34;async&#34;
-    fetchpriority=&#34;low&#34;
+    fetchpriority=&#34;auto&#34;
     alt=&#34;TilingShell&#34;
-    src=&#34;https://i.imgur.com/a7O9ITP.jpeg&#34;
-    &gt;&lt;/figure&gt;
+    width=&#34;3840&#34;
+    height=&#34;2415&#34;
+    src=&#34;https://xerolinux.xyz/posts/tiling-shell/a7O9ITP_hu_8130163e5f7baaef.jpeg&#34;
+    srcset=&#34;https://xerolinux.xyz/posts/tiling-shell/a7O9ITP_hu_8130163e5f7baaef.jpeg 800w, https://xerolinux.xyz/posts/tiling-shell/a7O9ITP_hu_2d1651693799b078.jpeg 1280w&#34;
+    sizes=&#34;(min-width: 768px) 50vw, 65vw&#34;
+    data-zoom-src=&#34;https://xerolinux.xyz/posts/tiling-shell/a7O9ITP.jpeg&#34;&gt;&lt;/figure&gt;
 &lt;/p&gt;
 
 &lt;h3 class=&#34;relative group&#34;&gt;Tiling Shell Installation
@@ -3319,10 +3407,14 @@ Shaders: Enhance your gaming experience with graphical shaders. Find them in the
     class=&#34;my-0 rounded-md&#34;
     loading=&#34;lazy&#34;
     decoding=&#34;async&#34;
-    fetchpriority=&#34;low&#34;
+    fetchpriority=&#34;auto&#34;
     alt=&#34;Forge&#34;
-    src=&#34;https://i.imgur.com/ncyrt2L.png&#34;
-    &gt;&lt;/figure&gt;
+    width=&#34;3440&#34;
+    height=&#34;1440&#34;
+    src=&#34;https://xerolinux.xyz/posts/tiling-shell/ncyrt2L_hu_49dbd109eb322aed.png&#34;
+    srcset=&#34;https://xerolinux.xyz/posts/tiling-shell/ncyrt2L_hu_49dbd109eb322aed.png 800w, https://xerolinux.xyz/posts/tiling-shell/ncyrt2L_hu_c04703235c8212b6.png 1280w&#34;
+    sizes=&#34;(min-width: 768px) 50vw, 65vw&#34;
+    data-zoom-src=&#34;https://xerolinux.xyz/posts/tiling-shell/ncyrt2L.png&#34;&gt;&lt;/figure&gt;
 &lt;/p&gt;
 &lt;p&gt;To install it use the aforementioned &lt;strong&gt;Extension Manager&lt;/strong&gt; app. For more information about its features and how to use it, link to project&amp;rsquo;s &lt;strong&gt;Git&lt;/strong&gt; found below. Enjoy your experience on &lt;strong&gt;Gnome&lt;/strong&gt; my fellow &lt;strong&gt;FOSS G33ks&lt;/strong&gt;&amp;hellip;&lt;/p&gt;
 &lt;div class=&#34;github-card-wrapper&#34;&gt;
@@ -3471,10 +3563,14 @@ Shaders: Enhance your gaming experience with graphical shaders. Find them in the
     class=&#34;my-0 rounded-md&#34;
     loading=&#34;lazy&#34;
     decoding=&#34;async&#34;
-    fetchpriority=&#34;low&#34;
+    fetchpriority=&#34;auto&#34;
     alt=&#34;BatDeck&#34;
-    src=&#34;https://i.imgur.com/ysod9Zp.png&#34;
-    &gt;&lt;/figure&gt;
+    width=&#34;1088&#34;
+    height=&#34;582&#34;
+    src=&#34;https://xerolinux.xyz/posts/bato-deck/ysod9Zp_hu_8d613a4024e4da1b.png&#34;
+    srcset=&#34;https://xerolinux.xyz/posts/bato-deck/ysod9Zp_hu_8d613a4024e4da1b.png 800w, https://xerolinux.xyz/posts/bato-deck/ysod9Zp.png 1280w&#34;
+    sizes=&#34;(min-width: 768px) 50vw, 65vw&#34;
+    data-zoom-src=&#34;https://xerolinux.xyz/posts/bato-deck/ysod9Zp.png&#34;&gt;&lt;/figure&gt;
 &lt;/p&gt;
 
 &lt;h3 class=&#34;relative group&#34;&gt;The reason why
@@ -3519,10 +3615,14 @@ Shaders: Enhance your gaming experience with graphical shaders. Find them in the
     class=&#34;my-0 rounded-md&#34;
     loading=&#34;lazy&#34;
     decoding=&#34;async&#34;
-    fetchpriority=&#34;low&#34;
+    fetchpriority=&#34;auto&#34;
     alt=&#34;Flash&#34;
-    src=&#34;https://i.imgur.com/xZ67kOl.png&#34;
-    &gt;&lt;/figure&gt;
+    width=&#34;837&#34;
+    height=&#34;527&#34;
+    src=&#34;https://xerolinux.xyz/posts/bato-deck/xZ67kOl_hu_f0dbcdaf1c2c9f99.png&#34;
+    srcset=&#34;https://xerolinux.xyz/posts/bato-deck/xZ67kOl_hu_f0dbcdaf1c2c9f99.png 800w, https://xerolinux.xyz/posts/bato-deck/xZ67kOl.png 1280w&#34;
+    sizes=&#34;(min-width: 768px) 50vw, 65vw&#34;
+    data-zoom-src=&#34;https://xerolinux.xyz/posts/bato-deck/xZ67kOl.png&#34;&gt;&lt;/figure&gt;
 &lt;/p&gt;
 &lt;p&gt;Insert your microSD card into the Steam Deck or use an external card reader if you have one. Open Balena Etcher, select the Batocera image file you just downloaded, and choose your microSD card as the target. Hit the “Flash!” button and watch the magic happen. This process might take a few minutes, so maybe grab a coffee or do a quick victory dance.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;4. Booting into Batocera:&lt;/strong&gt;&lt;/p&gt;
@@ -3531,10 +3631,14 @@ Shaders: Enhance your gaming experience with graphical shaders. Find them in the
     class=&#34;my-0 rounded-md&#34;
     loading=&#34;lazy&#34;
     decoding=&#34;async&#34;
-    fetchpriority=&#34;low&#34;
+    fetchpriority=&#34;auto&#34;
     alt=&#34;Boot&#34;
-    src=&#34;https://i.imgur.com/NusAyt7.png&#34;
-    &gt;&lt;/figure&gt;
+    width=&#34;1200&#34;
+    height=&#34;675&#34;
+    src=&#34;https://xerolinux.xyz/posts/bato-deck/NusAyt7_hu_6eb275c0b830e0bc.png&#34;
+    srcset=&#34;https://xerolinux.xyz/posts/bato-deck/NusAyt7_hu_6eb275c0b830e0bc.png 800w, https://xerolinux.xyz/posts/bato-deck/NusAyt7.png 1280w&#34;
+    sizes=&#34;(min-width: 768px) 50vw, 65vw&#34;
+    data-zoom-src=&#34;https://xerolinux.xyz/posts/bato-deck/NusAyt7.png&#34;&gt;&lt;/figure&gt;
 &lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;5. First Time Setup:&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;When you boot into Batocera for the first time, there are a few housekeeping items to handle:&lt;/p&gt;
@@ -3542,10 +3646,14 @@ Shaders: Enhance your gaming experience with graphical shaders. Find them in the
     class=&#34;my-0 rounded-md&#34;
     loading=&#34;lazy&#34;
     decoding=&#34;async&#34;
-    fetchpriority=&#34;low&#34;
+    fetchpriority=&#34;auto&#34;
     alt=&#34;Setup&#34;
-    src=&#34;https://i.imgur.com/OTIJjaa.png&#34;
-    &gt;&lt;/figure&gt;
+    width=&#34;1200&#34;
+    height=&#34;675&#34;
+    src=&#34;https://xerolinux.xyz/posts/bato-deck/OTIJjaa_hu_3cd9227eb4de4cc3.png&#34;
+    srcset=&#34;https://xerolinux.xyz/posts/bato-deck/OTIJjaa_hu_3cd9227eb4de4cc3.png 800w, https://xerolinux.xyz/posts/bato-deck/OTIJjaa.png 1280w&#34;
+    sizes=&#34;(min-width: 768px) 50vw, 65vw&#34;
+    data-zoom-src=&#34;https://xerolinux.xyz/posts/bato-deck/OTIJjaa.png&#34;&gt;&lt;/figure&gt;
 &lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Connect to WiFi:&lt;/strong&gt; Press the Start button, navigate to Network Settings, and enable WiFi. Select your network and enter the password. You’re online and ready to go!&lt;/li&gt;
@@ -3575,10 +3683,14 @@ Shaders: Enhance your gaming experience with graphical shaders. Find them in the
     class=&#34;my-0 rounded-md&#34;
     loading=&#34;lazy&#34;
     decoding=&#34;async&#34;
-    fetchpriority=&#34;low&#34;
+    fetchpriority=&#34;auto&#34;
     alt=&#34;Clover&#34;
-    src=&#34;https://i.imgur.com/STiHnl1.png&#34;
-    &gt;&lt;/figure&gt;
+    width=&#34;1200&#34;
+    height=&#34;675&#34;
+    src=&#34;https://xerolinux.xyz/posts/bato-deck/STiHnl1_hu_31e4cf1b6ff571b0.png&#34;
+    srcset=&#34;https://xerolinux.xyz/posts/bato-deck/STiHnl1_hu_31e4cf1b6ff571b0.png 800w, https://xerolinux.xyz/posts/bato-deck/STiHnl1.png 1280w&#34;
+    sizes=&#34;(min-width: 768px) 50vw, 65vw&#34;
+    data-zoom-src=&#34;https://xerolinux.xyz/posts/bato-deck/STiHnl1.png&#34;&gt;&lt;/figure&gt;
 &lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Installing Clover:&lt;/strong&gt;&lt;/p&gt;
 &lt;ol&gt;
@@ -3671,10 +3783,14 @@ Shaders: Enhance your gaming experience with graphical shaders. Find them in the
     class=&#34;my-0 rounded-md&#34;
     loading=&#34;lazy&#34;
     decoding=&#34;async&#34;
-    fetchpriority=&#34;low&#34;
+    fetchpriority=&#34;auto&#34;
     alt=&#34;Zed&#34;
-    src=&#34;https://i.imgur.com/r8icrSg.png&#34;
-    &gt;&lt;/figure&gt;
+    width=&#34;1270&#34;
+    height=&#34;743&#34;
+    src=&#34;https://xerolinux.xyz/posts/zed-ide/r8icrSg_hu_9554f2d4adbf71da.png&#34;
+    srcset=&#34;https://xerolinux.xyz/posts/zed-ide/r8icrSg_hu_9554f2d4adbf71da.png 800w, https://xerolinux.xyz/posts/zed-ide/r8icrSg.png 1280w&#34;
+    sizes=&#34;(min-width: 768px) 50vw, 65vw&#34;
+    data-zoom-src=&#34;https://xerolinux.xyz/posts/zed-ide/r8icrSg.png&#34;&gt;&lt;/figure&gt;
 &lt;/p&gt;
 &lt;p&gt;The extension system is designed to be intuitive and easy to use, with a straightforward process for discovering, installing, and managing extensions directly within the Zed interface. This empowers developers to quickly find and implement the tools and features they require, without the need for complex configuration or external setup.&lt;/p&gt;
 &lt;p&gt;As Zed continues to gain traction and attract a dedicated user base, the extension ecosystem is expected to flourish, with more and more developers contributing their own custom extensions and integrations. This extensibility is a key factor that sets Zed apart, allowing it to evolve and adapt to the changing needs of modern software development.&lt;/p&gt;
@@ -3805,10 +3921,14 @@ Shaders: Enhance your gaming experience with graphical shaders. Find them in the
     class=&#34;my-0 rounded-md&#34;
     loading=&#34;lazy&#34;
     decoding=&#34;async&#34;
-    fetchpriority=&#34;low&#34;
+    fetchpriority=&#34;auto&#34;
     alt=&#34;Prompt&#34;
-    src=&#34;https://i.imgur.com/jjSKX0P.png&#34;
-    &gt;&lt;/figure&gt;
+    width=&#34;1149&#34;
+    height=&#34;119&#34;
+    src=&#34;https://xerolinux.xyz/posts/ohmyposh-p10k-replacement/jjSKX0P_hu_fe31ceee6b399c7c.png&#34;
+    srcset=&#34;https://xerolinux.xyz/posts/ohmyposh-p10k-replacement/jjSKX0P_hu_fe31ceee6b399c7c.png 800w, https://xerolinux.xyz/posts/ohmyposh-p10k-replacement/jjSKX0P.png 1280w&#34;
+    sizes=&#34;(min-width: 768px) 50vw, 65vw&#34;
+    data-zoom-src=&#34;https://xerolinux.xyz/posts/ohmyposh-p10k-replacement/jjSKX0P.png&#34;&gt;&lt;/figure&gt;
 &lt;/p&gt;
 
 &lt;h3 class=&#34;relative group&#34;&gt;Installing Oh My Posh
@@ -4055,19 +4175,27 @@ Shaders: Enhance your gaming experience with graphical shaders. Find them in the
     class=&#34;my-0 rounded-md&#34;
     loading=&#34;lazy&#34;
     decoding=&#34;async&#34;
-    fetchpriority=&#34;low&#34;
+    fetchpriority=&#34;auto&#34;
     alt=&#34;Aliens&#34;
-    src=&#34;https://i.imgur.com/OL0pbr3.png&#34;
-    &gt;&lt;/figure&gt;
+    width=&#34;4479&#34;
+    height=&#34;632&#34;
+    src=&#34;https://xerolinux.xyz/posts/ohmyposh-p10k-replacement/OL0pbr3_hu_b454aa6067c7cfd1.png&#34;
+    srcset=&#34;https://xerolinux.xyz/posts/ohmyposh-p10k-replacement/OL0pbr3_hu_b454aa6067c7cfd1.png 800w, https://xerolinux.xyz/posts/ohmyposh-p10k-replacement/OL0pbr3_hu_35acea21a432148b.png 1280w&#34;
+    sizes=&#34;(min-width: 768px) 50vw, 65vw&#34;
+    data-zoom-src=&#34;https://xerolinux.xyz/posts/ohmyposh-p10k-replacement/OL0pbr3.png&#34;&gt;&lt;/figure&gt;
 &lt;/p&gt;
 &lt;p&gt;&lt;figure&gt;&lt;img
     class=&#34;my-0 rounded-md&#34;
     loading=&#34;lazy&#34;
     decoding=&#34;async&#34;
-    fetchpriority=&#34;low&#34;
+    fetchpriority=&#34;auto&#34;
     alt=&#34;NightOwl&#34;
-    src=&#34;https://i.imgur.com/EZmvwxa.png&#34;
-    &gt;&lt;/figure&gt;
+    width=&#34;4970&#34;
+    height=&#34;698&#34;
+    src=&#34;https://xerolinux.xyz/posts/ohmyposh-p10k-replacement/EZmvwxa_hu_d315a6d72d1af23.png&#34;
+    srcset=&#34;https://xerolinux.xyz/posts/ohmyposh-p10k-replacement/EZmvwxa_hu_d315a6d72d1af23.png 800w, https://xerolinux.xyz/posts/ohmyposh-p10k-replacement/EZmvwxa_hu_1be4b4320714ddd9.png 1280w&#34;
+    sizes=&#34;(min-width: 768px) 50vw, 65vw&#34;
+    data-zoom-src=&#34;https://xerolinux.xyz/posts/ohmyposh-p10k-replacement/EZmvwxa.png&#34;&gt;&lt;/figure&gt;
 &lt;/p&gt;
 &lt;p&gt;To grab it we will have to create the folder where we will be storing our selected config. We can do it either via our favorite file manager or Terminal. Since we are on &lt;strong&gt;Arch&lt;/strong&gt; we gonna be &lt;strong&gt;Terminal Ninjas&lt;/strong&gt; lol&amp;hellip;&lt;/p&gt;
 &lt;div class=&#34;highlight-wrapper&#34;&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;mkdir -p &lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$HOME&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;/.config/ohmyposh&amp;#34;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
@@ -4083,10 +4211,14 @@ Shaders: Enhance your gaming experience with graphical shaders. Find them in the
     class=&#34;my-0 rounded-md&#34;
     loading=&#34;lazy&#34;
     decoding=&#34;async&#34;
-    fetchpriority=&#34;low&#34;
+    fetchpriority=&#34;auto&#34;
     alt=&#34;Preview&#34;
-    src=&#34;https://i.imgur.com/GJiIrxm.png&#34;
-    &gt;&lt;/figure&gt;
+    width=&#34;1039&#34;
+    height=&#34;595&#34;
+    src=&#34;https://xerolinux.xyz/posts/ohmyposh-p10k-replacement/GJiIrxm_hu_719aea0ffebc3ce4.png&#34;
+    srcset=&#34;https://xerolinux.xyz/posts/ohmyposh-p10k-replacement/GJiIrxm_hu_719aea0ffebc3ce4.png 800w, https://xerolinux.xyz/posts/ohmyposh-p10k-replacement/GJiIrxm.png 1280w&#34;
+    sizes=&#34;(min-width: 768px) 50vw, 65vw&#34;
+    data-zoom-src=&#34;https://xerolinux.xyz/posts/ohmyposh-p10k-replacement/GJiIrxm.png&#34;&gt;&lt;/figure&gt;
 &lt;/p&gt;
 &lt;p&gt;Oh, I forgot to mention that it also has its own set of commands * flags you can use. For example did you know that even if you have installed it from the &lt;strong&gt;AUR/ChaoticAUR&lt;/strong&gt;, where sometimes they lag behind, you can update it using an internal command ? Here&amp;rsquo;s how, might need to run with &lt;code&gt;sudo&lt;/code&gt; :&lt;/p&gt;
 &lt;div class=&#34;highlight-wrapper&#34;&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;oh-my-posh upgrade&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
@@ -4095,10 +4227,14 @@ Shaders: Enhance your gaming experience with graphical shaders. Find them in the
     class=&#34;my-0 rounded-md&#34;
     loading=&#34;lazy&#34;
     decoding=&#34;async&#34;
-    fetchpriority=&#34;low&#34;
+    fetchpriority=&#34;auto&#34;
     alt=&#34;Commands&#34;
-    src=&#34;https://i.imgur.com/DX1x5gP.png&#34;
-    &gt;&lt;/figure&gt;
+    width=&#34;1039&#34;
+    height=&#34;595&#34;
+    src=&#34;https://xerolinux.xyz/posts/ohmyposh-p10k-replacement/DX1x5gP_hu_f2fabba7a7b89cb6.png&#34;
+    srcset=&#34;https://xerolinux.xyz/posts/ohmyposh-p10k-replacement/DX1x5gP_hu_f2fabba7a7b89cb6.png 800w, https://xerolinux.xyz/posts/ohmyposh-p10k-replacement/DX1x5gP.png 1280w&#34;
+    sizes=&#34;(min-width: 768px) 50vw, 65vw&#34;
+    data-zoom-src=&#34;https://xerolinux.xyz/posts/ohmyposh-p10k-replacement/DX1x5gP.png&#34;&gt;&lt;/figure&gt;
 &lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;&lt;/p&gt;
 &lt;blockquote&gt;&lt;p&gt;In case you were using the now on Life Support &lt;strong&gt;Powerlevel10k&lt;/strong&gt;, as shown in the video, remove any mention of it from either &lt;code&gt;.bashrc&lt;/code&gt; or &lt;code&gt;.zshrc&lt;/code&gt;.&lt;/p&gt;
@@ -4112,10 +4248,14 @@ Shaders: Enhance your gaming experience with graphical shaders. Find them in the
     class=&#34;my-0 rounded-md&#34;
     loading=&#34;lazy&#34;
     decoding=&#34;async&#34;
-    fetchpriority=&#34;low&#34;
+    fetchpriority=&#34;auto&#34;
     alt=&#34;Toolkit&#34;
-    src=&#34;https://i.imgur.com/tWgYv7k.png&#34;
-    &gt;&lt;/figure&gt;
+    width=&#34;913&#34;
+    height=&#34;578&#34;
+    src=&#34;https://xerolinux.xyz/posts/ohmyposh-p10k-replacement/tWgYv7k_hu_a820577fa4e3811c.png&#34;
+    srcset=&#34;https://xerolinux.xyz/posts/ohmyposh-p10k-replacement/tWgYv7k_hu_a820577fa4e3811c.png 800w, https://xerolinux.xyz/posts/ohmyposh-p10k-replacement/tWgYv7k.png 1280w&#34;
+    sizes=&#34;(min-width: 768px) 50vw, 65vw&#34;
+    data-zoom-src=&#34;https://xerolinux.xyz/posts/ohmyposh-p10k-replacement/tWgYv7k.png&#34;&gt;&lt;/figure&gt;
 &lt;/p&gt;
 &lt;p&gt;As you can see from the image above, for those of you out there using the &lt;strong&gt;XeroLinux Post Install Toolkit&lt;/strong&gt;, we added the option that will do everything mentioned in this guide automatically for you.&lt;/p&gt;
 &lt;p&gt;Keep in mind that this only applies to &lt;strong&gt;Bash&lt;/strong&gt;, for anyone who prefers &lt;strong&gt;Fish&lt;/strong&gt; that will always be &lt;em&gt;Vanilla&lt;/em&gt; as for those of you, who, like myself love &lt;strong&gt;ZSH&lt;/strong&gt;, well it is included with option &lt;strong&gt;4. ZSH All-in-one w/OMP&lt;/strong&gt;&amp;hellip;&lt;/p&gt;
@@ -4267,10 +4407,14 @@ Shaders: Enhance your gaming experience with graphical shaders. Find them in the
     class=&#34;my-0 rounded-md&#34;
     loading=&#34;lazy&#34;
     decoding=&#34;async&#34;
-    fetchpriority=&#34;low&#34;
+    fetchpriority=&#34;auto&#34;
     alt=&#34;Amelia&#34;
-    src=&#34;https://i.imgur.com/IJqFrXI.jpeg&#34;
-    &gt;&lt;/figure&gt;
+    width=&#34;1024&#34;
+    height=&#34;544&#34;
+    src=&#34;https://xerolinux.xyz/posts/amelia-automated-archinstall/main_hu_48a38d400ebf3d99.jpeg&#34;
+    srcset=&#34;https://xerolinux.xyz/posts/amelia-automated-archinstall/main_hu_48a38d400ebf3d99.jpeg 800w, https://xerolinux.xyz/posts/amelia-automated-archinstall/main.jpeg 1280w&#34;
+    sizes=&#34;(min-width: 768px) 50vw, 65vw&#34;
+    data-zoom-src=&#34;https://xerolinux.xyz/posts/amelia-automated-archinstall/main.jpeg&#34;&gt;&lt;/figure&gt;
 &lt;/p&gt;
 
 &lt;h3 class=&#34;relative group&#34;&gt;Disk Management
@@ -4296,10 +4440,14 @@ Shaders: Enhance your gaming experience with graphical shaders. Find them in the
     class=&#34;my-0 rounded-md&#34;
     loading=&#34;lazy&#34;
     decoding=&#34;async&#34;
-    fetchpriority=&#34;low&#34;
-    alt=&#34;[AmeliaMain]&#34;
-    src=&#34;https://i.imgur.com/21bSdkY.jpeg&#34;
-    &gt;&lt;/figure&gt;
+    fetchpriority=&#34;auto&#34;
+    alt=&#34;AmeliaMain&#34;
+    width=&#34;1024&#34;
+    height=&#34;631&#34;
+    src=&#34;https://xerolinux.xyz/posts/amelia-automated-archinstall/process_hu_478ced91c085ba6f.jpeg&#34;
+    srcset=&#34;https://xerolinux.xyz/posts/amelia-automated-archinstall/process_hu_478ced91c085ba6f.jpeg 800w, https://xerolinux.xyz/posts/amelia-automated-archinstall/process.jpeg 1280w&#34;
+    sizes=&#34;(min-width: 768px) 50vw, 65vw&#34;
+    data-zoom-src=&#34;https://xerolinux.xyz/posts/amelia-automated-archinstall/process.jpeg&#34;&gt;&lt;/figure&gt;
 &lt;/p&gt;
 
 &lt;h3 class=&#34;relative group&#34;&gt;Final Thoughts
@@ -4411,10 +4559,14 @@ Shaders: Enhance your gaming experience with graphical shaders. Find them in the
     class=&#34;my-0 rounded-md&#34;
     loading=&#34;lazy&#34;
     decoding=&#34;async&#34;
-    fetchpriority=&#34;low&#34;
+    fetchpriority=&#34;auto&#34;
     alt=&#34;ML4W&#34;
-    src=&#34;https://i.imgur.com/amMcyTO.jpeg&#34;
-    &gt;&lt;/figure&gt;
+    width=&#34;2560&#34;
+    height=&#34;1440&#34;
+    src=&#34;https://xerolinux.xyz/posts/ml4w-hyprland-dots/amMcyTO_hu_afec7dbd51bfd125.jpeg&#34;
+    srcset=&#34;https://xerolinux.xyz/posts/ml4w-hyprland-dots/amMcyTO_hu_afec7dbd51bfd125.jpeg 800w, https://xerolinux.xyz/posts/ml4w-hyprland-dots/amMcyTO_hu_d00be3e762550896.jpeg 1280w&#34;
+    sizes=&#34;(min-width: 768px) 50vw, 65vw&#34;
+    data-zoom-src=&#34;https://xerolinux.xyz/posts/ml4w-hyprland-dots/amMcyTO.jpeg&#34;&gt;&lt;/figure&gt;
 &lt;/p&gt;
 &lt;p&gt;The installation script will create a backups from configurations of your .config folder that will be overwritten from the installation procedure and previous ML4W Dotfiles installation.&lt;/p&gt;
 &lt;p&gt;If possible, please create a snapshot of your current system if snapper or Timeshift is installed and available.&lt;/p&gt;
@@ -5363,10 +5515,14 @@ Proxmox VE Helper-Scripts Database
     class=&#34;my-0 rounded-md&#34;
     loading=&#34;lazy&#34;
     decoding=&#34;async&#34;
-    fetchpriority=&#34;low&#34;
+    fetchpriority=&#34;auto&#34;
     alt=&#34;ujust&#34;
-    src=&#34;https://i.imgur.com/qNeqmIG.png&#34;
-    &gt;&lt;/figure&gt;
+    width=&#34;1608&#34;
+    height=&#34;958&#34;
+    src=&#34;https://xerolinux.xyz/posts/aurora-atomic/ujust_hu_9c29de5e4d723050.png&#34;
+    srcset=&#34;https://xerolinux.xyz/posts/aurora-atomic/ujust_hu_9c29de5e4d723050.png 800w, https://xerolinux.xyz/posts/aurora-atomic/ujust_hu_d6e6b72e4f088ec7.png 1280w&#34;
+    sizes=&#34;(min-width: 768px) 50vw, 65vw&#34;
+    data-zoom-src=&#34;https://xerolinux.xyz/posts/aurora-atomic/ujust.png&#34;&gt;&lt;/figure&gt;
 &lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Stability and Immunability&lt;/strong&gt;&lt;/li&gt;
@@ -5906,10 +6062,14 @@ Download Bluefin Aurora
     class=&#34;my-0 rounded-md&#34;
     loading=&#34;lazy&#34;
     decoding=&#34;async&#34;
-    fetchpriority=&#34;low&#34;
-    alt=&#34;[Image: jsnRZUU.png]&#34;
-    src=&#34;https://i.imgur.com/jsnRZUU.png&#34;
-    &gt;&lt;/figure&gt;
+    fetchpriority=&#34;auto&#34;
+    alt=&#34;Disks&#34;
+    width=&#34;886&#34;
+    height=&#34;630&#34;
+    src=&#34;https://xerolinux.xyz/posts/automount-drives/Disks_hu_f04c1f21d3561a1c.png&#34;
+    srcset=&#34;https://xerolinux.xyz/posts/automount-drives/Disks_hu_f04c1f21d3561a1c.png 800w, https://xerolinux.xyz/posts/automount-drives/Disks.png 1280w&#34;
+    sizes=&#34;(min-width: 768px) 50vw, 65vw&#34;
+    data-zoom-src=&#34;https://xerolinux.xyz/posts/automount-drives/Disks.png&#34;&gt;&lt;/figure&gt;
 &lt;/p&gt;
 &lt;p&gt;Disks, or Gnome Disk Utility, is installed by default in many Linux distributions, including Ubuntu, Fedora, both Linux Mint Cinnamon and MATE, Xubuntu, and so on. If it&amp;rsquo;s not installed, use your Linux distribution&amp;rsquo;s package manager to install it - search / install gnome-disk-utility.&lt;/p&gt;
 &lt;p&gt;For each partition you set to mount automatically on startup, Gnome Disks adds an entry in your /etc/fstab file, useful for those who are not very familiar with editing /etc/fstab. That means each partition mounted on startup through Disks is available system-wide, and not just for your user.&lt;/p&gt;
@@ -5923,20 +6083,28 @@ Download Bluefin Aurora
     class=&#34;my-0 rounded-md&#34;
     loading=&#34;lazy&#34;
     decoding=&#34;async&#34;
-    fetchpriority=&#34;low&#34;
-    alt=&#34;[Image: 27YPYEC.png]&#34;
-    src=&#34;https://i.imgur.com/27YPYEC.png&#34;
-    &gt;&lt;/figure&gt;
+    fetchpriority=&#34;auto&#34;
+    alt=&#34;Disks2&#34;
+    width=&#34;926&#34;
+    height=&#34;730&#34;
+    src=&#34;https://xerolinux.xyz/posts/automount-drives/Disks2_hu_f8e44391092a1d69.png&#34;
+    srcset=&#34;https://xerolinux.xyz/posts/automount-drives/Disks2_hu_f8e44391092a1d69.png 800w, https://xerolinux.xyz/posts/automount-drives/Disks2.png 1280w&#34;
+    sizes=&#34;(min-width: 768px) 50vw, 65vw&#34;
+    data-zoom-src=&#34;https://xerolinux.xyz/posts/automount-drives/Disks2.png&#34;&gt;&lt;/figure&gt;
 &lt;/p&gt;
 &lt;p&gt;In the mount options, toggle the &lt;code&gt;User Session Defaults&lt;/code&gt; option (this may be called &lt;code&gt;Automatic Mount Options&lt;/code&gt; on older versions) to enable the options below it, and make sure &lt;code&gt;Mount at system startup&lt;/code&gt; is enabled. You can enter a name under &lt;code&gt;Display Name&lt;/code&gt;. The defaults should be enough for most users, so you don&amp;rsquo;t have to change anything here. After you&amp;rsquo;re done, click &lt;code&gt;OK&lt;/code&gt; :&lt;/p&gt;
 &lt;p&gt;&lt;figure&gt;&lt;img
     class=&#34;my-0 rounded-md&#34;
     loading=&#34;lazy&#34;
     decoding=&#34;async&#34;
-    fetchpriority=&#34;low&#34;
-    alt=&#34;[Image: HzloKaO.png]&#34;
-    src=&#34;https://i.imgur.com/HzloKaO.png&#34;
-    &gt;&lt;/figure&gt;
+    fetchpriority=&#34;auto&#34;
+    alt=&#34;Disks3&#34;
+    width=&#34;931&#34;
+    height=&#34;656&#34;
+    src=&#34;https://xerolinux.xyz/posts/automount-drives/Disks3_hu_aa486cbc12cba1ae.png&#34;
+    srcset=&#34;https://xerolinux.xyz/posts/automount-drives/Disks3_hu_aa486cbc12cba1ae.png 800w, https://xerolinux.xyz/posts/automount-drives/Disks3.png 1280w&#34;
+    sizes=&#34;(min-width: 768px) 50vw, 65vw&#34;
+    data-zoom-src=&#34;https://xerolinux.xyz/posts/automount-drives/Disks3.png&#34;&gt;&lt;/figure&gt;
 &lt;/p&gt;
 &lt;p&gt;To test the changes, you can reboot your system or type the following command to mount all filesystems mentioned in &lt;code&gt;fstab&lt;/code&gt; (since Disks sets partitions to automount on startup by adding them to &lt;code&gt;/etc/fstab&lt;/code&gt;) :&lt;/p&gt;
 &lt;div class=&#34;highlight-wrapper&#34;&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo mount --all&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
@@ -5981,10 +6149,14 @@ Download Bluefin Aurora
     class=&#34;my-0 rounded-md&#34;
     loading=&#34;lazy&#34;
     decoding=&#34;async&#34;
-    fetchpriority=&#34;low&#34;
+    fetchpriority=&#34;auto&#34;
     alt=&#34;[Image: SZO4qw0.png]&#34;
-    src=&#34;https://i.imgur.com/SZO4qw0.png&#34;
-    &gt;&lt;/figure&gt;
+    width=&#34;549&#34;
+    height=&#34;227&#34;
+    src=&#34;https://xerolinux.xyz/posts/fix-boot/SZO4qw0.png&#34;
+    srcset=&#34;https://xerolinux.xyz/posts/fix-boot/SZO4qw0.png 800w, https://xerolinux.xyz/posts/fix-boot/SZO4qw0.png 1280w&#34;
+    sizes=&#34;(min-width: 768px) 50vw, 65vw&#34;
+    data-zoom-src=&#34;https://xerolinux.xyz/posts/fix-boot/SZO4qw0.png&#34;&gt;&lt;/figure&gt;
 &lt;/p&gt;
 &lt;p&gt;For EXT4 &amp;amp; XFS&lt;/p&gt;
 &lt;div class=&#34;highlight-wrapper&#34;&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;mount /dev/sdXn /mnt &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;Linux Filesystem&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
@@ -6108,10 +6280,14 @@ Download Bluefin Aurora
     class=&#34;my-0 rounded-md&#34;
     loading=&#34;lazy&#34;
     decoding=&#34;async&#34;
-    fetchpriority=&#34;low&#34;
+    fetchpriority=&#34;auto&#34;
     alt=&#34;[Image: hLVPjV1]&#34;
-    src=&#34;https://i.imgur.com/hLVPjV1.png&#34;
-    &gt;&lt;/figure&gt;
+    width=&#34;1218&#34;
+    height=&#34;198&#34;
+    src=&#34;https://xerolinux.xyz/posts/nix-package-manager/hLVPjV1_hu_c879ead6ceffa424.png&#34;
+    srcset=&#34;https://xerolinux.xyz/posts/nix-package-manager/hLVPjV1_hu_c879ead6ceffa424.png 800w, https://xerolinux.xyz/posts/nix-package-manager/hLVPjV1.png 1280w&#34;
+    sizes=&#34;(min-width: 768px) 50vw, 65vw&#34;
+    data-zoom-src=&#34;https://xerolinux.xyz/posts/nix-package-manager/hLVPjV1.png&#34;&gt;&lt;/figure&gt;
 &lt;/p&gt;
 &lt;p&gt;Or from terminal you can list all packages with &lt;code&gt;nix-env -qaP&lt;/code&gt; then just &lt;code&gt;grep&lt;/code&gt; what you are looking for.&lt;/p&gt;
 &lt;p&gt;Example: &lt;code&gt;nix-env -qaP | grep hugo&lt;/code&gt;&lt;/p&gt;
@@ -6323,10 +6499,14 @@ Download Bluefin Aurora
     class=&#34;my-0 rounded-md&#34;
     loading=&#34;lazy&#34;
     decoding=&#34;async&#34;
-    fetchpriority=&#34;low&#34;
+    fetchpriority=&#34;auto&#34;
     alt=&#34;[Image: jll2heu.png]&#34;
-    src=&#34;https://i.imgur.com/jll2heu.png&#34;
-    &gt;&lt;/figure&gt;
+    width=&#34;871&#34;
+    height=&#34;418&#34;
+    src=&#34;https://xerolinux.xyz/posts/chroot-guide/jll2heu_hu_277c3cd33066c27c.png&#34;
+    srcset=&#34;https://xerolinux.xyz/posts/chroot-guide/jll2heu_hu_277c3cd33066c27c.png 800w, https://xerolinux.xyz/posts/chroot-guide/jll2heu.png 1280w&#34;
+    sizes=&#34;(min-width: 768px) 50vw, 65vw&#34;
+    data-zoom-src=&#34;https://xerolinux.xyz/posts/chroot-guide/jll2heu.png&#34;&gt;&lt;/figure&gt;
 &lt;/p&gt;
 &lt;p&gt;Changing Root (Chroot) is the process of changing of the apparent disk root directory (and the current running process and its children) to another root directory. When you change root to another directory you cannot access files and commands outside that directory. This directory is called a “chroot jail”. Changing root is commonly done for system maintenance for such tasks as reinstalling GRUB or resetting a forgotten password. Changing root is often done from a LiveCD or LiveUSB into a mounted partition that contains an installed system.&lt;/p&gt;
 
@@ -6584,10 +6764,14 @@ Download Bluefin Aurora
     class=&#34;my-0 rounded-md&#34;
     loading=&#34;lazy&#34;
     decoding=&#34;async&#34;
-    fetchpriority=&#34;low&#34;
+    fetchpriority=&#34;auto&#34;
     alt=&#34;[Image: bbD4JDy.png]&#34;
-    src=&#34;https://i.imgur.com/bbD4JDy.png&#34;
-    &gt;&lt;/figure&gt;
+    width=&#34;1024&#34;
+    height=&#34;768&#34;
+    src=&#34;https://xerolinux.xyz/posts/docker-usage/bbD4JDy_hu_8d51592a221f8e41.png&#34;
+    srcset=&#34;https://xerolinux.xyz/posts/docker-usage/bbD4JDy_hu_8d51592a221f8e41.png 800w, https://xerolinux.xyz/posts/docker-usage/bbD4JDy.png 1280w&#34;
+    sizes=&#34;(min-width: 768px) 50vw, 65vw&#34;
+    data-zoom-src=&#34;https://xerolinux.xyz/posts/docker-usage/bbD4JDy.png&#34;&gt;&lt;/figure&gt;
 &lt;/p&gt;
 &lt;p&gt;So without further delay let&amp;rsquo;s gooooooooo&amp;hellip;&lt;/p&gt;
 
@@ -6711,10 +6895,14 @@ Download Bluefin Aurora
     class=&#34;my-0 rounded-md&#34;
     loading=&#34;lazy&#34;
     decoding=&#34;async&#34;
-    fetchpriority=&#34;low&#34;
+    fetchpriority=&#34;auto&#34;
     alt=&#34;[Image: BpMGL6X.png]&#34;
-    src=&#34;https://i.imgur.com/BpMGL6X.png&#34;
-    &gt;&lt;/figure&gt;
+    width=&#34;819&#34;
+    height=&#34;534&#34;
+    src=&#34;https://xerolinux.xyz/posts/enable-snaps/BpMGL6X_hu_1f70760fdde2b84f.png&#34;
+    srcset=&#34;https://xerolinux.xyz/posts/enable-snaps/BpMGL6X_hu_1f70760fdde2b84f.png 800w, https://xerolinux.xyz/posts/enable-snaps/BpMGL6X.png 1280w&#34;
+    sizes=&#34;(min-width: 768px) 50vw, 65vw&#34;
+    data-zoom-src=&#34;https://xerolinux.xyz/posts/enable-snaps/BpMGL6X.png&#34;&gt;&lt;/figure&gt;
 &lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Step 1 : Install &amp;amp; enable snapd service&lt;/li&gt;
@@ -6867,10 +7055,14 @@ Download Bluefin Aurora
     class=&#34;my-0 rounded-md&#34;
     loading=&#34;lazy&#34;
     decoding=&#34;async&#34;
-    fetchpriority=&#34;low&#34;
+    fetchpriority=&#34;auto&#34;
     alt=&#34;[Image: iAHc4uB.png]&#34;
-    src=&#34;https://i.imgur.com/iAHc4uB.png&#34;
-    &gt;&lt;/figure&gt;
+    width=&#34;907&#34;
+    height=&#34;587&#34;
+    src=&#34;https://xerolinux.xyz/posts/flatpak-tips/iAHc4uB_hu_c9a6790274db6349.png&#34;
+    srcset=&#34;https://xerolinux.xyz/posts/flatpak-tips/iAHc4uB_hu_c9a6790274db6349.png 800w, https://xerolinux.xyz/posts/flatpak-tips/iAHc4uB.png 1280w&#34;
+    sizes=&#34;(min-width: 768px) 50vw, 65vw&#34;
+    data-zoom-src=&#34;https://xerolinux.xyz/posts/flatpak-tips/iAHc4uB.png&#34;&gt;&lt;/figure&gt;
 &lt;/p&gt;
 &lt;p&gt;You can have the application screenshots, description, developer information, and installation instructions on the individual application webpages.&lt;/p&gt;
 
@@ -6884,10 +7076,14 @@ Download Bluefin Aurora
     class=&#34;my-0 rounded-md&#34;
     loading=&#34;lazy&#34;
     decoding=&#34;async&#34;
-    fetchpriority=&#34;low&#34;
+    fetchpriority=&#34;auto&#34;
     alt=&#34;[Image: wovEk8x.png]&#34;
-    src=&#34;https://i.imgur.com/wovEk8x.png&#34;
-    &gt;&lt;/figure&gt;
+    width=&#34;907&#34;
+    height=&#34;626&#34;
+    src=&#34;https://xerolinux.xyz/posts/flatpak-tips/wovEk8x_hu_c43664924ab5b7c0.png&#34;
+    srcset=&#34;https://xerolinux.xyz/posts/flatpak-tips/wovEk8x_hu_c43664924ab5b7c0.png 800w, https://xerolinux.xyz/posts/flatpak-tips/wovEk8x.png 1280w&#34;
+    sizes=&#34;(min-width: 768px) 50vw, 65vw&#34;
+    data-zoom-src=&#34;https://xerolinux.xyz/posts/flatpak-tips/wovEk8x.png&#34;&gt;&lt;/figure&gt;
 &lt;/p&gt;
 &lt;p&gt;If you have to use the command line ultimately, it doesn’t make sense to download the flatpakref file.&lt;/p&gt;
 &lt;p&gt;You can make things better by using Flatline. It’s a Browser extension and it makes that Install button useful by converting it into appstream link.&lt;/p&gt;
@@ -6900,10 +7096,14 @@ Download Bluefin Aurora
     class=&#34;my-0 rounded-md&#34;
     loading=&#34;lazy&#34;
     decoding=&#34;async&#34;
-    fetchpriority=&#34;low&#34;
+    fetchpriority=&#34;auto&#34;
     alt=&#34;[Image: Nsvf6WO.png]&#34;
-    src=&#34;https://i.imgur.com/Nsvf6WO.png&#34;
-    &gt;&lt;/figure&gt;
+    width=&#34;1076&#34;
+    height=&#34;736&#34;
+    src=&#34;https://xerolinux.xyz/posts/flatpak-tips/Nsvf6WO_hu_cc03f46edaabee37.png&#34;
+    srcset=&#34;https://xerolinux.xyz/posts/flatpak-tips/Nsvf6WO_hu_cc03f46edaabee37.png 800w, https://xerolinux.xyz/posts/flatpak-tips/Nsvf6WO.png 1280w&#34;
+    sizes=&#34;(min-width: 768px) 50vw, 65vw&#34;
+    data-zoom-src=&#34;https://xerolinux.xyz/posts/flatpak-tips/Nsvf6WO.png&#34;&gt;&lt;/figure&gt;
 &lt;/p&gt;
 &lt;p&gt;This also means that you should have Fltapak support integrated into the software center.&lt;/p&gt;
 
@@ -6916,10 +7116,14 @@ Download Bluefin Aurora
     class=&#34;my-0 rounded-md&#34;
     loading=&#34;lazy&#34;
     decoding=&#34;async&#34;
-    fetchpriority=&#34;low&#34;
+    fetchpriority=&#34;auto&#34;
     alt=&#34;[Image: nf6PVxe.png]&#34;
-    src=&#34;https://i.imgur.com/nf6PVxe.png&#34;
-    &gt;&lt;/figure&gt;
+    width=&#34;1037&#34;
+    height=&#34;652&#34;
+    src=&#34;https://xerolinux.xyz/posts/flatpak-tips/nf6PVxe_hu_88bc1f036cb9be8b.png&#34;
+    srcset=&#34;https://xerolinux.xyz/posts/flatpak-tips/nf6PVxe_hu_88bc1f036cb9be8b.png 800w, https://xerolinux.xyz/posts/flatpak-tips/nf6PVxe.png 1280w&#34;
+    sizes=&#34;(min-width: 768px) 50vw, 65vw&#34;
+    data-zoom-src=&#34;https://xerolinux.xyz/posts/flatpak-tips/nf6PVxe.png&#34;&gt;&lt;/figure&gt;
 &lt;/p&gt;
 &lt;p&gt;It lists all the installed Flatpak applications and shows what kind of permissions the selected application has.&lt;/p&gt;
 &lt;p&gt;You may enable or disable the permissions. Please bear in mind that disabling some permissions might impact the normal functioning of the application. You should know what you are doing.&lt;/p&gt;
@@ -6944,10 +7148,14 @@ Download Bluefin Aurora
     class=&#34;my-0 rounded-md&#34;
     loading=&#34;lazy&#34;
     decoding=&#34;async&#34;
-    fetchpriority=&#34;low&#34;
+    fetchpriority=&#34;auto&#34;
     alt=&#34;[Image: M6j3R4s.png]&#34;
-    src=&#34;https://i.imgur.com/M6j3R4s.png&#34;
-    &gt;&lt;/figure&gt;
+    width=&#34;824&#34;
+    height=&#34;394&#34;
+    src=&#34;https://xerolinux.xyz/posts/flatpak-tips/M6j3R4s_hu_1e4732beb1a2bffc.png&#34;
+    srcset=&#34;https://xerolinux.xyz/posts/flatpak-tips/M6j3R4s_hu_1e4732beb1a2bffc.png 800w, https://xerolinux.xyz/posts/flatpak-tips/M6j3R4s.png 1280w&#34;
+    sizes=&#34;(min-width: 768px) 50vw, 65vw&#34;
+    data-zoom-src=&#34;https://xerolinux.xyz/posts/flatpak-tips/M6j3R4s.png&#34;&gt;&lt;/figure&gt;
 &lt;/p&gt;
 
 &lt;h3 class=&#34;relative group&#34;&gt;Conclusion
@@ -6969,10 +7177,14 @@ Download Bluefin Aurora
     class=&#34;my-0 rounded-md&#34;
     loading=&#34;lazy&#34;
     decoding=&#34;async&#34;
-    fetchpriority=&#34;low&#34;
+    fetchpriority=&#34;auto&#34;
     alt=&#34;[Image: FlfFJ0o.png]&#34;
-    src=&#34;https://i.imgur.com/FlfFJ0o.png&#34;
-    &gt;&lt;/figure&gt;
+    width=&#34;945&#34;
+    height=&#34;400&#34;
+    src=&#34;https://xerolinux.xyz/posts/fix-grub/FlfFJ0o_hu_3920dbc7b43045ec.png&#34;
+    srcset=&#34;https://xerolinux.xyz/posts/fix-grub/FlfFJ0o_hu_3920dbc7b43045ec.png 800w, https://xerolinux.xyz/posts/fix-grub/FlfFJ0o.png 1280w&#34;
+    sizes=&#34;(min-width: 768px) 50vw, 65vw&#34;
+    data-zoom-src=&#34;https://xerolinux.xyz/posts/fix-grub/FlfFJ0o.png&#34;&gt;&lt;/figure&gt;
 &lt;/p&gt;
 
 &lt;h3 class=&#34;relative group&#34;&gt;Info
@@ -6997,7 +7209,7 @@ Download Bluefin Aurora
 &lt;div class=&#34;highlight-wrapper&#34;&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo fdisk -l&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 &lt;p&gt;Mount the device or partition : (replace &amp;ldquo;sdXn&amp;rdquo; with your Actual partition name)&lt;/p&gt;
 &lt;div align=&#34;center&#34;&gt;
-  &lt;img src=&#34;https://i.imgur.com/SZO4qw0.png&#34; /&gt;
+  &lt;img src=&#34;SZO4qw0.png&#34; /&gt;
 &lt;/div&gt;
 &lt;p&gt;For &lt;strong&gt;EXT4&lt;/strong&gt; &amp;amp; &lt;strong&gt;XFS&lt;/strong&gt;&lt;/p&gt;
 &lt;div class=&#34;highlight-wrapper&#34;&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo mount /dev/sdXn /mnt &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;Linux Filesystem&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
@@ -7105,10 +7317,14 @@ Download Bluefin Aurora
     class=&#34;my-0 rounded-md&#34;
     loading=&#34;lazy&#34;
     decoding=&#34;async&#34;
-    fetchpriority=&#34;low&#34;
+    fetchpriority=&#34;auto&#34;
     alt=&#34;[Image: l2MiVr0.jpeg]&#34;
-    src=&#34;https://i.imgur.com/l2MiVr0.jpeg&#34;
-    &gt;&lt;/figure&gt;
+    width=&#34;533&#34;
+    height=&#34;300&#34;
+    src=&#34;https://xerolinux.xyz/posts/install-yay-paru/l2MiVr0.jpeg&#34;
+    srcset=&#34;https://xerolinux.xyz/posts/install-yay-paru/l2MiVr0.jpeg 800w, https://xerolinux.xyz/posts/install-yay-paru/l2MiVr0.jpeg 1280w&#34;
+    sizes=&#34;(min-width: 768px) 50vw, 65vw&#34;
+    data-zoom-src=&#34;https://xerolinux.xyz/posts/install-yay-paru/l2MiVr0.jpeg&#34;&gt;&lt;/figure&gt;
 &lt;/p&gt;
 
 &lt;h3 class=&#34;relative group&#34;&gt;What is the difference between the two ?
@@ -7276,10 +7492,14 @@ Download Bluefin Aurora
     class=&#34;my-0 rounded-md&#34;
     loading=&#34;lazy&#34;
     decoding=&#34;async&#34;
-    fetchpriority=&#34;low&#34;
+    fetchpriority=&#34;auto&#34;
     alt=&#34;[Image: ngDtR0J.jpeg]&#34;
-    src=&#34;https://i.imgur.com/ngDtR0J.jpeg&#34;
-    &gt;&lt;/figure&gt;
+    width=&#34;2880&#34;
+    height=&#34;1800&#34;
+    src=&#34;https://xerolinux.xyz/posts/lightly-shaders/ngDtR0J_hu_9b105b6f7d30ac74.jpeg&#34;
+    srcset=&#34;https://xerolinux.xyz/posts/lightly-shaders/ngDtR0J_hu_9b105b6f7d30ac74.jpeg 800w, https://xerolinux.xyz/posts/lightly-shaders/ngDtR0J_hu_60ba3abbf68e2667.jpeg 1280w&#34;
+    sizes=&#34;(min-width: 768px) 50vw, 65vw&#34;
+    data-zoom-src=&#34;https://xerolinux.xyz/posts/lightly-shaders/ngDtR0J.jpeg&#34;&gt;&lt;/figure&gt;
 &lt;/p&gt;
 
   
@@ -7331,10 +7551,14 @@ Download Bluefin Aurora
     class=&#34;my-0 rounded-md&#34;
     loading=&#34;lazy&#34;
     decoding=&#34;async&#34;
-    fetchpriority=&#34;low&#34;
+    fetchpriority=&#34;auto&#34;
     alt=&#34;[Image: HmT5hnm.png]&#34;
-    src=&#34;https://i.imgur.com/HmT5hnm.png&#34;
-    &gt;&lt;/figure&gt;
+    width=&#34;1048&#34;
+    height=&#34;754&#34;
+    src=&#34;https://xerolinux.xyz/posts/lightly-shaders/HmT5hnm_hu_5016c80ef8429e63.png&#34;
+    srcset=&#34;https://xerolinux.xyz/posts/lightly-shaders/HmT5hnm_hu_5016c80ef8429e63.png 800w, https://xerolinux.xyz/posts/lightly-shaders/HmT5hnm.png 1280w&#34;
+    sizes=&#34;(min-width: 768px) 50vw, 65vw&#34;
+    data-zoom-src=&#34;https://xerolinux.xyz/posts/lightly-shaders/HmT5hnm.png&#34;&gt;&lt;/figure&gt;
 &lt;/p&gt;
 &lt;p&gt;Note :&lt;/p&gt;
 &lt;blockquote&gt;&lt;p&gt;After some updates of Plasma this plugin may need to be recompiled in order to work with changes introduced to KWin.&lt;/p&gt;
@@ -7417,10 +7641,14 @@ Download Bluefin Aurora
     class=&#34;my-0 rounded-md&#34;
     loading=&#34;lazy&#34;
     decoding=&#34;async&#34;
-    fetchpriority=&#34;low&#34;
+    fetchpriority=&#34;auto&#34;
     alt=&#34;Shot1&#34;
-    src=&#34;https://i.imgur.com/UK5MPRI.png&#34;
-    &gt;&lt;/figure&gt;
+    width=&#34;1200&#34;
+    height=&#34;650&#34;
+    src=&#34;https://xerolinux.xyz/posts/theme-qt-apps-on-gtk-de/UK5MPRI_hu_eff359ad07479d40.png&#34;
+    srcset=&#34;https://xerolinux.xyz/posts/theme-qt-apps-on-gtk-de/UK5MPRI_hu_eff359ad07479d40.png 800w, https://xerolinux.xyz/posts/theme-qt-apps-on-gtk-de/UK5MPRI.png 1280w&#34;
+    sizes=&#34;(min-width: 768px) 50vw, 65vw&#34;
+    data-zoom-src=&#34;https://xerolinux.xyz/posts/theme-qt-apps-on-gtk-de/UK5MPRI.png&#34;&gt;&lt;/figure&gt;
 &lt;/p&gt;
 
 &lt;h3 class=&#34;relative group&#34;&gt;Before we begin&amp;hellip;
@@ -7456,10 +7684,14 @@ Download Bluefin Aurora
     class=&#34;my-0 rounded-md&#34;
     loading=&#34;lazy&#34;
     decoding=&#34;async&#34;
-    fetchpriority=&#34;low&#34;
+    fetchpriority=&#34;auto&#34;
     alt=&#34;Shot2&#34;
-    src=&#34;https://i.imgur.com/JVEudZ1.png&#34;
-    &gt;&lt;/figure&gt;
+    width=&#34;1200&#34;
+    height=&#34;533&#34;
+    src=&#34;https://xerolinux.xyz/posts/theme-qt-apps-on-gtk-de/JVEudZ1_hu_d90828d6ab6cbbac.png&#34;
+    srcset=&#34;https://xerolinux.xyz/posts/theme-qt-apps-on-gtk-de/JVEudZ1_hu_d90828d6ab6cbbac.png 800w, https://xerolinux.xyz/posts/theme-qt-apps-on-gtk-de/JVEudZ1.png 1280w&#34;
+    sizes=&#34;(min-width: 768px) 50vw, 65vw&#34;
+    data-zoom-src=&#34;https://xerolinux.xyz/posts/theme-qt-apps-on-gtk-de/JVEudZ1.png&#34;&gt;&lt;/figure&gt;
 &lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;- Step 2:&lt;/strong&gt; Open up a terminal window and install the Qt5ct app.&lt;/p&gt;
 &lt;div class=&#34;highlight-wrapper&#34;&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo pacman -S qt5ct&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
@@ -7471,20 +7703,28 @@ Download Bluefin Aurora
     class=&#34;my-0 rounded-md&#34;
     loading=&#34;lazy&#34;
     decoding=&#34;async&#34;
-    fetchpriority=&#34;low&#34;
+    fetchpriority=&#34;auto&#34;
     alt=&#34;Shot3&#34;
-    src=&#34;https://i.imgur.com/v261wDF.png&#34;
-    &gt;&lt;/figure&gt;
+    width=&#34;1200&#34;
+    height=&#34;653&#34;
+    src=&#34;https://xerolinux.xyz/posts/theme-qt-apps-on-gtk-de/v261wDF_hu_c790bac454a9b77b.png&#34;
+    srcset=&#34;https://xerolinux.xyz/posts/theme-qt-apps-on-gtk-de/v261wDF_hu_c790bac454a9b77b.png 800w, https://xerolinux.xyz/posts/theme-qt-apps-on-gtk-de/v261wDF.png 1280w&#34;
+    sizes=&#34;(min-width: 768px) 50vw, 65vw&#34;
+    data-zoom-src=&#34;https://xerolinux.xyz/posts/theme-qt-apps-on-gtk-de/v261wDF.png&#34;&gt;&lt;/figure&gt;
 &lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Step 6:&lt;/strong&gt; Locate the “Appearance” tab. Then, find the “Style” menu. In the menu, select “kvantum.” Then, select “Apply” to apply changes.&lt;/p&gt;
 &lt;p&gt;&lt;figure&gt;&lt;img
     class=&#34;my-0 rounded-md&#34;
     loading=&#34;lazy&#34;
     decoding=&#34;async&#34;
-    fetchpriority=&#34;low&#34;
+    fetchpriority=&#34;auto&#34;
     alt=&#34;Shot4&#34;
-    src=&#34;https://i.imgur.com/EKMmXrF.png&#34;
-    &gt;&lt;/figure&gt;
+    width=&#34;1200&#34;
+    height=&#34;650&#34;
+    src=&#34;https://xerolinux.xyz/posts/theme-qt-apps-on-gtk-de/EKMmXrF_hu_eff359ad07479d40.png&#34;
+    srcset=&#34;https://xerolinux.xyz/posts/theme-qt-apps-on-gtk-de/EKMmXrF_hu_eff359ad07479d40.png 800w, https://xerolinux.xyz/posts/theme-qt-apps-on-gtk-de/EKMmXrF.png 1280w&#34;
+    sizes=&#34;(min-width: 768px) 50vw, 65vw&#34;
+    data-zoom-src=&#34;https://xerolinux.xyz/posts/theme-qt-apps-on-gtk-de/EKMmXrF.png&#34;&gt;&lt;/figure&gt;
 &lt;/p&gt;
 &lt;p&gt;Upon applying your changes, KDE applications on XFCE 4 should be using the Kvantum theme set up earlier. This method works the same way on both &lt;strong&gt;XFCE &amp;amp; GNOME&lt;/strong&gt;.&lt;/p&gt;
 &lt;p&gt;Guide by: &lt;strong&gt;&lt;a href=&#34;https://www.addictivetips.com/ubuntu-linux-tips/make-kde-apps-look-better/&#34;  target=&#34;_blank&#34; rel=&#34;noreferrer&#34;&gt;AddictiveTips.com&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
@@ -7682,7 +7922,11 @@ Download Bluefin Aurora
 &lt;p&gt;&lt;strong&gt;OBS Studio&lt;/strong&gt; is a free and open-source, cross-platform screencasting and streaming app. It is available for Windows, macOS, Linux distributions, and BSD. The OBS Project raises funds on Open Collective and Patreon.&lt;/p&gt;
 
 &lt;figure&gt;
-      &lt;img class=&#34;my-0 rounded-md center-image&#34; src=&#34;https://i.imgur.com/lDWEJbL.jpeg&#34; alt=&#34;obs&#34; /&gt;
+        &lt;img
+          class=&#34;my-0 rounded-md center-image&#34;
+          src=&#34;https://xerolinux.xyz/posts/obs-official/lDWEJbL.jpeg&#34;
+          alt=&#34;obs&#34;
+        /&gt;
   
   
   &lt;/figure&gt;
@@ -7694,7 +7938,11 @@ Download Bluefin Aurora
 &lt;p&gt;We ship the &amp;ldquo;Official&amp;rdquo; Flatpak version of OBS-Studio via our toolkit. The best part of it is, we don&amp;rsquo;t just ship the main package alone, we have included some extra plugins too.. Specifically made for the flatpak version.&lt;/p&gt;
 
 &lt;figure&gt;
-      &lt;img class=&#34;my-0 rounded-md center-image&#34; src=&#34;https://i.imgur.com/nckiQXt.png&#34; alt=&#34;obs&#34; /&gt;
+        &lt;img
+          class=&#34;my-0 rounded-md center-image&#34;
+          src=&#34;https://xerolinux.xyz/posts/obs-official/nckiQXt.png&#34;
+          alt=&#34;obs&#34;
+        /&gt;
   
   
   &lt;/figure&gt;
@@ -8155,10 +8403,14 @@ Download Bluefin Aurora
     class=&#34;my-0 rounded-md&#34;
     loading=&#34;lazy&#34;
     decoding=&#34;async&#34;
-    fetchpriority=&#34;low&#34;
+    fetchpriority=&#34;auto&#34;
     alt=&#34;[Image: uT6brUj.png]&#34;
-    src=&#34;https://i.imgur.com/uT6brUj.png&#34;
-    &gt;&lt;/figure&gt;
+    width=&#34;800&#34;
+    height=&#34;277&#34;
+    src=&#34;https://xerolinux.xyz/posts/flatpak-theming/uT6brUj.png&#34;
+    srcset=&#34;https://xerolinux.xyz/posts/flatpak-theming/uT6brUj.png 800w, https://xerolinux.xyz/posts/flatpak-theming/uT6brUj.png 1280w&#34;
+    sizes=&#34;(min-width: 768px) 50vw, 65vw&#34;
+    data-zoom-src=&#34;https://xerolinux.xyz/posts/flatpak-theming/uT6brUj.png&#34;&gt;&lt;/figure&gt;
 &lt;/p&gt;
 &lt;p&gt;This only applies to GTK3/4 based packages, for QT in most cases nothing needs to be done &lt;figure&gt;&lt;img
     class=&#34;my-0 rounded-md&#34;
@@ -8310,10 +8562,14 @@ Download Bluefin Aurora
     class=&#34;my-0 rounded-md&#34;
     loading=&#34;lazy&#34;
     decoding=&#34;async&#34;
-    fetchpriority=&#34;low&#34;
+    fetchpriority=&#34;auto&#34;
     alt=&#34;Shot1&#34;
-    src=&#34;https://i.imgur.com/x7bmLFq.png&#34;
-    &gt;&lt;/figure&gt;
+    width=&#34;1079&#34;
+    height=&#34;586&#34;
+    src=&#34;https://xerolinux.xyz/posts/ventoy-multi-boot/x7bmLFq_hu_610782337eb0a13c.png&#34;
+    srcset=&#34;https://xerolinux.xyz/posts/ventoy-multi-boot/x7bmLFq_hu_610782337eb0a13c.png 800w, https://xerolinux.xyz/posts/ventoy-multi-boot/x7bmLFq.png 1280w&#34;
+    sizes=&#34;(min-width: 768px) 50vw, 65vw&#34;
+    data-zoom-src=&#34;https://xerolinux.xyz/posts/ventoy-multi-boot/x7bmLFq.png&#34;&gt;&lt;/figure&gt;
 &lt;/p&gt;
 
 &lt;h3 class=&#34;relative group&#34;&gt;Theme Support
@@ -8797,10 +9053,14 @@ Download Bluefin Aurora
     class=&#34;my-0 rounded-md&#34;
     loading=&#34;lazy&#34;
     decoding=&#34;async&#34;
-    fetchpriority=&#34;low&#34;
+    fetchpriority=&#34;auto&#34;
     alt=&#34;[Image: Aqqr28I.png]&#34;
-    src=&#34;https://i.imgur.com/Aqqr28I.png&#34;
-    &gt;&lt;/figure&gt;
+    width=&#34;684&#34;
+    height=&#34;316&#34;
+    src=&#34;https://xerolinux.xyz/posts/topgrade-updater/Aqqr28I.png&#34;
+    srcset=&#34;https://xerolinux.xyz/posts/topgrade-updater/Aqqr28I.png 800w, https://xerolinux.xyz/posts/topgrade-updater/Aqqr28I.png 1280w&#34;
+    sizes=&#34;(min-width: 768px) 50vw, 65vw&#34;
+    data-zoom-src=&#34;https://xerolinux.xyz/posts/topgrade-updater/Aqqr28I.png&#34;&gt;&lt;/figure&gt;
 &lt;/p&gt;
 
 &lt;h3 class=&#34;relative group&#34;&gt;What Is Topgrade ?
@@ -8823,10 +9083,14 @@ Download Bluefin Aurora
     class=&#34;my-0 rounded-md&#34;
     loading=&#34;lazy&#34;
     decoding=&#34;async&#34;
-    fetchpriority=&#34;low&#34;
+    fetchpriority=&#34;auto&#34;
     alt=&#34;[Image: 5EGo5tK.png]&#34;
-    src=&#34;https://i.imgur.com/5EGo5tK.png&#34;
-    &gt;&lt;/figure&gt;
+    width=&#34;800&#34;
+    height=&#34;400&#34;
+    src=&#34;https://xerolinux.xyz/posts/topgrade-updater/5EGo5tK.png&#34;
+    srcset=&#34;https://xerolinux.xyz/posts/topgrade-updater/5EGo5tK.png 800w, https://xerolinux.xyz/posts/topgrade-updater/5EGo5tK.png 1280w&#34;
+    sizes=&#34;(min-width: 768px) 50vw, 65vw&#34;
+    data-zoom-src=&#34;https://xerolinux.xyz/posts/topgrade-updater/5EGo5tK.png&#34;&gt;&lt;/figure&gt;
 &lt;/p&gt;
 &lt;p&gt;Topgrade can also upgrade a large portion of your configuration files. It will upgrade your Vim or Neovim configuration if you use NeoBundle, Vundle, Plug, or Dein. If you use a Git repository for your dotfiles, it will also pull any recent changes to them.&lt;/p&gt;
 &lt;p&gt;You can also add custom commands for Topgrade to run while upgrading. This is handy if you use some custom scripts you’d like to keep automatically updated.&lt;/p&gt;
@@ -8848,10 +9112,14 @@ Download Bluefin Aurora
     class=&#34;my-0 rounded-md&#34;
     loading=&#34;lazy&#34;
     decoding=&#34;async&#34;
-    fetchpriority=&#34;low&#34;
+    fetchpriority=&#34;auto&#34;
     alt=&#34;[Image: lwqfe3q.png]&#34;
-    src=&#34;https://i.imgur.com/lwqfe3q.png&#34;
-    &gt;&lt;/figure&gt;
+    width=&#34;1350&#34;
+    height=&#34;675&#34;
+    src=&#34;https://xerolinux.xyz/posts/topgrade-updater/lwqfe3q_hu_ecd49bdef6c0051d.png&#34;
+    srcset=&#34;https://xerolinux.xyz/posts/topgrade-updater/lwqfe3q_hu_ecd49bdef6c0051d.png 800w, https://xerolinux.xyz/posts/topgrade-updater/lwqfe3q_hu_ba25c9a394ac3af6.png 1280w&#34;
+    sizes=&#34;(min-width: 768px) 50vw, 65vw&#34;
+    data-zoom-src=&#34;https://xerolinux.xyz/posts/topgrade-updater/lwqfe3q.png&#34;&gt;&lt;/figure&gt;
 &lt;/p&gt;
 &lt;p&gt;If you want to add some custom commands or tweak how Topgrade works, you’ll need to edit its configuration file. On Linux, this is located at &lt;code&gt;~/.config/topgrade.toml&lt;/code&gt; For example, if you have a list of Git repositories you’d like to refresh, add the following to the file:&lt;/p&gt;
 &lt;div class=&#34;highlight-wrapper&#34;&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git-repos = [
@@ -8950,40 +9218,56 @@ Download Bluefin Aurora
     class=&#34;my-0 rounded-md&#34;
     loading=&#34;lazy&#34;
     decoding=&#34;async&#34;
-    fetchpriority=&#34;low&#34;
+    fetchpriority=&#34;auto&#34;
     alt=&#34;[Image: Hg7iIzd.png]&#34;
-    src=&#34;https://i.imgur.com/Hg7iIzd.png&#34;
-    &gt;&lt;/figure&gt;
+    width=&#34;1647&#34;
+    height=&#34;823&#34;
+    src=&#34;https://xerolinux.xyz/posts/ventoy-persistence/Hg7iIzd_hu_8df910df612ae999.png&#34;
+    srcset=&#34;https://xerolinux.xyz/posts/ventoy-persistence/Hg7iIzd_hu_8df910df612ae999.png 800w, https://xerolinux.xyz/posts/ventoy-persistence/Hg7iIzd_hu_c844e0831acaf643.png 1280w&#34;
+    sizes=&#34;(min-width: 768px) 50vw, 65vw&#34;
+    data-zoom-src=&#34;https://xerolinux.xyz/posts/ventoy-persistence/Hg7iIzd.png&#34;&gt;&lt;/figure&gt;
 &lt;/p&gt;
 &lt;p&gt;Then go into the &lt;code&gt;ventoy_plugins&lt;/code&gt; folder open a terminal and run &lt;code&gt;sudo sh CreatePersistenceImg.sh -s 20480 -l vtoycow&lt;/code&gt; this will create a file called &lt;code&gt;persistence.dat&lt;/code&gt; with the size of 20GB, refer to &lt;a href=&#34;https://www.ventoy.net/en/plugin_persistence.html&#34;  target=&#34;_blank&#34; rel=&#34;noreferrer&#34;&gt;this&lt;/a&gt; article from Ventoy for different arguments for the command. After a while you will be granted with this confirmation, just hit &lt;code&gt;y&lt;/code&gt; and &lt;code&gt;enter&lt;/code&gt; and in a few seconds it should be done.&lt;/p&gt;
 &lt;p&gt;&lt;figure&gt;&lt;img
     class=&#34;my-0 rounded-md&#34;
     loading=&#34;lazy&#34;
     decoding=&#34;async&#34;
-    fetchpriority=&#34;low&#34;
+    fetchpriority=&#34;auto&#34;
     alt=&#34;[Image: 8rKKvT4.png]&#34;
-    src=&#34;https://i.imgur.com/8rKKvT4.png&#34;
-    &gt;&lt;/figure&gt;
+    width=&#34;928&#34;
+    height=&#34;481&#34;
+    src=&#34;https://xerolinux.xyz/posts/ventoy-persistence/8rKKvT4_hu_cd207c4676a0a700.png&#34;
+    srcset=&#34;https://xerolinux.xyz/posts/ventoy-persistence/8rKKvT4_hu_cd207c4676a0a700.png 800w, https://xerolinux.xyz/posts/ventoy-persistence/8rKKvT4.png 1280w&#34;
+    sizes=&#34;(min-width: 768px) 50vw, 65vw&#34;
+    data-zoom-src=&#34;https://xerolinux.xyz/posts/ventoy-persistence/8rKKvT4.png&#34;&gt;&lt;/figure&gt;
 &lt;/p&gt;
 &lt;p&gt;Now create a new folder called &lt;code&gt;persistence&lt;/code&gt; in the root folder and move the &lt;code&gt;persistence.dat&lt;/code&gt; there. Going back to the terminal run &lt;code&gt;sudo sh VentoyPlugson.sh /dev/sdx&lt;/code&gt; where &lt;code&gt;x&lt;/code&gt; is your USB Drive id.&lt;/p&gt;
 &lt;p&gt;&lt;figure&gt;&lt;img
     class=&#34;my-0 rounded-md&#34;
     loading=&#34;lazy&#34;
     decoding=&#34;async&#34;
-    fetchpriority=&#34;low&#34;
+    fetchpriority=&#34;auto&#34;
     alt=&#34;[Image: GElDr8y.png]&#34;
-    src=&#34;https://i.imgur.com/GElDr8y.png&#34;
-    &gt;&lt;/figure&gt;
+    width=&#34;928&#34;
+    height=&#34;481&#34;
+    src=&#34;https://xerolinux.xyz/posts/ventoy-persistence/GElDr8y_hu_e9048776f601e54e.png&#34;
+    srcset=&#34;https://xerolinux.xyz/posts/ventoy-persistence/GElDr8y_hu_e9048776f601e54e.png 800w, https://xerolinux.xyz/posts/ventoy-persistence/GElDr8y.png 1280w&#34;
+    sizes=&#34;(min-width: 768px) 50vw, 65vw&#34;
+    data-zoom-src=&#34;https://xerolinux.xyz/posts/ventoy-persistence/GElDr8y.png&#34;&gt;&lt;/figure&gt;
 &lt;/p&gt;
 &lt;p&gt;Just head over to the webaddress that you get from the terminal, there you will be granted with the Ventoy Plugson WebUI. Head over to the &lt;code&gt;Persistence Plugin&lt;/code&gt; and click on add new and just enter the file paths to the ISO that you want and the &lt;code&gt;persistence.dat&lt;/code&gt; file and make sure that it says &lt;code&gt;OK&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;&lt;figure&gt;&lt;img
     class=&#34;my-0 rounded-md&#34;
     loading=&#34;lazy&#34;
     decoding=&#34;async&#34;
-    fetchpriority=&#34;low&#34;
+    fetchpriority=&#34;auto&#34;
     alt=&#34;[Image: PGduHPr.png]&#34;
-    src=&#34;https://i.imgur.com/PGduHPr.png&#34;
-    &gt;&lt;/figure&gt;
+    width=&#34;1920&#34;
+    height=&#34;1080&#34;
+    src=&#34;https://xerolinux.xyz/posts/ventoy-persistence/PGduHPr_hu_12f6ec60f01afbeb.png&#34;
+    srcset=&#34;https://xerolinux.xyz/posts/ventoy-persistence/PGduHPr_hu_12f6ec60f01afbeb.png 800w, https://xerolinux.xyz/posts/ventoy-persistence/PGduHPr_hu_d1aea839d8e4c4d1.png 1280w&#34;
+    sizes=&#34;(min-width: 768px) 50vw, 65vw&#34;
+    data-zoom-src=&#34;https://xerolinux.xyz/posts/ventoy-persistence/PGduHPr.png&#34;&gt;&lt;/figure&gt;
 &lt;/p&gt;
 &lt;p&gt;Now if you boot into the Xero Linux ISO any changes that you make to it should get saved.&lt;/p&gt;
 &lt;p&gt;Cheers :heart:&lt;/p&gt;

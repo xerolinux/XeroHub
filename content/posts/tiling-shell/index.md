@@ -20,7 +20,7 @@ This is a Gnome Shell extension implementing modern windows tiling system by ext
 - 💡 Layouts are not strict, you can span multiple tiles if you want
 - 🚀 Automatically sets the same UI of your GNOME theme, for a seamless integration!
 
-![TilingShell](https://i.imgur.com/a7O9ITP.jpeg)
+![TilingShell](a7O9ITP.jpeg)
 
 ### Tiling Shell Installation
 
@@ -93,7 +93,7 @@ As a bonus, I would like to mention another *Tiling* extension. But before I men
 
 Now, with **TilingShell** covering newcomers from Windows, the extension am talking about here, is none other than [**Forge**](https://extensions.gnome.org/extension/4481/forge/), specifically targeted to those coming from a *Tiling Window Manager*, who prefer that way of doing things.
 
-![Forge](https://i.imgur.com/ncyrt2L.png)
+![Forge](ncyrt2L.png)
 
 To install it use the aforementioned **Extension Manager** app. For more information about its features and how to use it, link to project's **Git** found below. Enjoy your experience on **Gnome** my fellow **FOSS G33ks**...
 

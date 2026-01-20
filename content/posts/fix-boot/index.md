@@ -29,7 +29,7 @@ sudo fdisk -l
 
 Mount the device or partition : (replace "sdXn" with your actual partition name)
 
-![[Image: SZO4qw0.png]](https://i.imgur.com/SZO4qw0.png)
+![[Image: SZO4qw0.png]](SZO4qw0.png)
 
 For EXT4 & XFS
 

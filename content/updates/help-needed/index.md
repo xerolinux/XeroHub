@@ -19,7 +19,7 @@ I am no designer, nor do I have a high quality logo to start with, just a very l
 
 The service I have chosen is [**FourthWall**](https://fourthwall.com). I chose this one because Matt from [**TheLinuxCast**](https://thelinuxcast.org) recommended it, and I trust his choice. I am new to all this, so I have **NO** idea what am doing. That's why your help is needed.
 
-![Image](https://i.imgur.com/Ho4o9GK.png)
+![Image](Ho4o9GK.png)
 
 I have already set up the domain, and added a few basic items with my logo, so now all that's missing is more high quality merch lol. However it's a good start I guess. So if you can help add more and have some cool FOSS meme ideas we can print, let me know.
 

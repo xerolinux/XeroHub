@@ -10,7 +10,7 @@ tags: ["VMWare", "Virtualization", "Tools", "Linux"]
 I understand that many of you newcomers to **Linux** from **Windows** sometimes prefer to use **VMWare** coz that's what you are used to. Although I would highly recommend **Virt-Manager** as it's Kernel based. But for you who prefer the former follow the guide below..
 
 <p align="center">
-    <img src="https://i.imgur.com/FDUoyg6.png" alt="shot">
+    <img src="FDUoyg6.png" alt="shot">
 </p>
 
 ### Guide

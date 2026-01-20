@@ -15,11 +15,11 @@ In case you feel like doing a write up that you think would be useful to others,
 
 **- Folder contents**
 
-![Image1](https://i.imgur.com/nBUbAZg.png)
+![Image1](nBUbAZg.png)
 
 **- Markdown contents**
 
-![Image2](https://i.imgur.com/sdCCPtn.png)
+![Image2](sdCCPtn.png)
 
 Don't forget to update the date of the post in `date:`, also give it a short descriptive `title:` with a good `description`. Finally use the right `tags:` as shown in the screenshot. If in doubt click this  to check >> [**Template**](https://github.com/xerolinux/XeroHub/tree/main/content/posts/spotube-for-spotify)
 

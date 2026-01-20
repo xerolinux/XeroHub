@@ -7,7 +7,7 @@ tags: ["Apdatifier", "Arch", "ArchLinux", "Plasmoid", "Widget", "Update", "Updat
 ---
 <br />
 
-![Header](https://i.imgur.com/BFrI7wf.png)
+![Header](manage.png)
 
 # Apdatifier: Your Plasma Desktop’s New Best Friend.
 
@@ -32,7 +32,7 @@ But wait theres more ! Apdatefier isn’t a passive observer, it also offers :
 3\. Mirrorlist refreshing for blazing fast downloads.<br>
 4\. Customization, change icons tweak settings make yours.
 
-![Apdatifier](https://i.imgur.com/U3958eZ.png)
+![Apdatifier](drop.png)
 
 ### Why Should You Care ?
 

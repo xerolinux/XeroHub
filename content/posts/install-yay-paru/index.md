@@ -9,7 +9,7 @@ tags: ["Yay", "Paru", "AUR", "Guide", "Linux", "Arch", "ArchLinux"]
 
 Yay & Paru are **AUR** Helpers. What's that ? Well, an **AUR** helper is a tool that automates the process of installing and managing packages from the Arch User Repository (AUR) on Arch Linux. The main purpose of AUR helpers is to simplify the installation and updating of AUR packages, which are not available in the official Arch Linux repositories
 
-![[Image: l2MiVr0.jpeg]](https://i.imgur.com/l2MiVr0.jpeg)
+![[Image: l2MiVr0.jpeg]](l2MiVr0.jpeg)
 
 ### What is the difference between the two ?
 

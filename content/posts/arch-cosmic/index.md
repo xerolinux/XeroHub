@@ -37,7 +37,7 @@ pacman -Syy archinstall && archinstall --advanced
 
 As mentioned in the video the `--advanced` flag is required to unlock the **Cosmic DE** desktop profile. The reason it's hidden should be clear enough, in case it's not, well it's because it's in Alpha and no one sane enough who requires any kind of stability should install it.
 
-![CosmicDE](https://i.imgur.com/Fvl9uRU.png)
+![CosmicDE](CosmicDE.png)
 
 Also, note the issue with the *Cosmic Greeter*, it could be that the maintainer of the packages on **Arch** forgot to include it or something else. If you are trying it way after this was written, maybe it's been fixed, if not then do as shown below to fix it.
 
@@ -63,7 +63,7 @@ As we know, **Cosmic DE** will be highly customizable out of the box. It comes b
 
 There are some caveats however, those being that **Qt** apps are still not fully supported eg. **Kvantum**, especially if you are used to the tried and true **Global Menu** which will not be officially supported as it's way too complex according to the devs. Also the Blur effect not there yet. Maybe in the future someone will port it over ? I dunno about **LibAdwaita** though, from what I have heard, support coming not yet there.
 
-![CosmicThemes](https://i.imgur.com/R8Io5eQ.png)
+![CosmicThemes](Themes.png)
 
 So if you are looking for consistency, it will be a long while before we can achieve it. Still, this did not stop some theme developers from porting their themes over to it. So if you would like to try them out, just head on over to the >> [**Cosmic-Themes**](https://cosmic-themes.org) "store" and grab the one(s) you like. Importing the `.ron` files is easy just open Settings > Desktop > Desktop & Panel > Import, then select file n see it apply immediately.
 

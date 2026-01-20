@@ -5,7 +5,7 @@ draft: false
 description: "How to fix Grub with Arch-Chroot"
 tags: ["repar", "chroot", "grub", "arch", "archlinux", "linux"]
 ---
-![[Image: FlfFJ0o.png]](https://i.imgur.com/FlfFJ0o.png)
+![[Image: FlfFJ0o.png]](FlfFJ0o.png)
 
 ### Info
 
@@ -31,7 +31,7 @@ Mount the device or partition : (replace "sdXn" with your Actual partition name)
 
 <div align="center">
 
-  <img src="https://i.imgur.com/SZO4qw0.png" />
+  <img src="SZO4qw0.png" />
   
 </div>
 

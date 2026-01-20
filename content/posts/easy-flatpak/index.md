@@ -14,7 +14,7 @@ tags: ["Flatpak", "Package Manager", "Tools", "Desktop", "Linux"]
 
 For example, for Steam, it asks the user to choose a folder where they store their games before installation.
 
-![EasyFlatpak](https://i.imgur.com/xTVwNVj.png)
+![EasyFlatpak](xTVwNVj.png)
 
 ### Install it
 

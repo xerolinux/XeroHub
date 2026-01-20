@@ -37,7 +37,7 @@ Just keep in mind that This isn't a *distro builder*, just a custom image builde
 
 Now I don't know how to put this, but you can do so much with this thing. As to benefits, I can't say much beyond what I already have. With the right amount of **Linux** knowledge you can take it to another level. You can build images that rival the likes of **Bluefin** and its derivatives to a certain degree using just images no ISOs to maintain, set it n forget it style. It's all up to you & your level of knowledge.
 
-![bluebuild](https://i.imgur.com/4Vs4Yoq.png)
+![bluebuild](4Vs4Yoq.png)
 
 - **The Drawbacks**
 

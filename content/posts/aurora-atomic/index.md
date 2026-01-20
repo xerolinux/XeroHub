@@ -35,7 +35,7 @@ I will begin by saying this, it's a neat project, I love how they use their sort
 
 Not just that, but they also supply so many pre-configured scripts that make harder tasks on other distros so damn simple, it's not even funny. They even supply an image with the **nVidia** or **AMD** drivers baked it and pre-configured for you so you don't have to lift a finger.
 
-![ujust](https://i.imgur.com/qNeqmIG.png)
+![ujust](ujust.png)
 
 * **Stability and Immunability**
 

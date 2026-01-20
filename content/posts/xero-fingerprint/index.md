@@ -32,15 +32,15 @@ Should I accept it and move on like so many have done in the past ? Nope, I took
 
 This tool has an intuitive UI, making it easy to understand and use. It has all the checks in place in order to keep it from locking you out of your system. Here's how to use it.
 
-![main](https://i.imgur.com/WUGMuLk.png)
+![main](WUGMuLk.png)
 
 As you can see from the image above, this is the main screen, click on the **Enroll Fingerprint** button to begin. Note the toggles, they will not be functional until at least one print is registered. Once you have clicked the button, you will be taken to the prints registration page as seen below.
 
-![mng](https://i.imgur.com/LoCci1h.png)
+![mng](LoCci1h.png)
 
 There, you select which print you want to register. You got all 5 fingers for each hand. Select the one you want to register an you will be taken to the registration page where you can either delete existing print or add new one. To register click the add button and swipe finger as many times as needed until you see the success message like so...
 
-![nroll](https://i.imgur.com/EiR3YeU.png)
+![nroll](EiR3YeU.png)
 
 Once registered, you can go back to register more or back to main screen, where you can enable biometric authentication on either, **Login**(i), **Terminal/Sudo** or **Polkit/Prompt**. No more having to type your password over and over and over again. It's amazing and we had fun working on it.
 

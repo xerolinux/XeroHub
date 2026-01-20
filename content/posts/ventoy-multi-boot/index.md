@@ -21,7 +21,7 @@ Even better, it is possible to place multiple ISO images on the USB device after
 
 Ventoy even supports Secure Boot. Other than that it also includes support for changing the filesystem of the first partition (ntfs/udf/xfs/ext2/ext3/ext4), persistence support for various Linux distributions such as Ubuntu or Linux Mint, and support for auto-installation.
 
-![Shot1](https://i.imgur.com/x7bmLFq.png)
+![Shot1](x7bmLFq.png)
 
 ### Theme Support
 

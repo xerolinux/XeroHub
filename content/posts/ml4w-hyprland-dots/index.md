@@ -38,7 +38,7 @@ Before we start, just know that the **ML4W** Dotfiles should work on all Arch Li
 
 > For **ArcoLinux** users: Please reinstall/force the installation of all packages during the installation/update process of the install script. The script will also offer to remove ttf-ms-fonts if installed to avoid issues with icons on waybar.
 
-![ML4W](https://i.imgur.com/amMcyTO.jpeg)
+![ML4W](amMcyTO.jpeg)
 
 The installation script will create a backups from configurations of your .config folder that will be overwritten from the installation procedure and previous ML4W Dotfiles installation.
 

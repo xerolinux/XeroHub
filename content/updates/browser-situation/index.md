@@ -25,7 +25,7 @@ Mozilla, realizing they'd stepped in it, quickly backtracked and clarified that 
 
 Here at the **XeroLinux HQ**, we thought, "Hey, let's let the users decide!" So, we ran a poll, and the winner was [**LibreWolf**](https://librewolf.net), a browser known for its privacy focus. Seemed like a solid choice, right?
 
-![LibreWolf](https://i.imgur.com/xOYZ3JZ.jpeg)
+![LibreWolf](xOYZ3JZ.jpeg)
 
 Wrong! This decision detonated a digital war between LibreWolf's supporters and those with concerns about its developer and philosophy. It was like watching two factions battle it out in an MMORPG, and we were caught in the crossfire.
 
@@ -43,7 +43,7 @@ For the **Gnome** spin, we're going with [**Epiphany**](https://apps.gnome.org/E
 
 We're hoping this change will finally calm things down for good. These placeholder browsers are just there to get you started. After that, you can grab your favorite from our toolkit **No Judgement !** We'll keep adding more over time.
 
-![Browsers](https://i.imgur.com/k0gin7l.png)
+![Browsers](k0gin7l.png)
 
 If you don't see your preferred browser on our list, don't panic! Just head over to [**Flathub**](https://flathub.org), the [**AUR**](https://aur.archlinux.org), or the official **Arch Repos** and install it from there.
 

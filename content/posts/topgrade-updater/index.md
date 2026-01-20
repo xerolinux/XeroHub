@@ -12,7 +12,7 @@ Upgrading Linux has gotten much easier than it used to be. In the old days, you 
 
 Package management systems have made this easy, but they can’t update every part of your system. What about Ruby Gems or packages you installed via a third-party package manager like Linuxbrew? How will you keep your configuration files synced?
 
-![[Image: Aqqr28I.png]](https://i.imgur.com/Aqqr28I.png)
+![[Image: Aqqr28I.png]](Aqqr28I.png)
 
 ### What Is Topgrade ?
 
@@ -26,7 +26,7 @@ While we’re focusing on Linux here, Topgrade also works on macOS and Windows. 
 
 On Linux it will upgrade your system via its package manager, but that’s just the beginning. It will also upgrade Ruby Gems, Atom packages, Linuxbrew and nix packages, and more. It also upgrades apps installed via Snap or Flatpak. This is far from everything, but it should give you an idea.
 
-![[Image: 5EGo5tK.png]](https://i.imgur.com/5EGo5tK.png)
+![[Image: 5EGo5tK.png]](5EGo5tK.png)
 
 Topgrade can also upgrade a large portion of your configuration files. It will upgrade your Vim or Neovim configuration if you use NeoBundle, Vundle, Plug, or Dein. If you use a Git repository for your dotfiles, it will also pull any recent changes to them.
 
@@ -48,7 +48,7 @@ Now that Topgrade is installed, keeping your system up to date is easy. To run T
 topgrade
 ```
 
-![[Image: lwqfe3q.png]](https://i.imgur.com/lwqfe3q.png)
+![[Image: lwqfe3q.png]](lwqfe3q.png)
 
 If you want to add some custom commands or tweak how Topgrade works, you’ll need to edit its configuration file. On Linux, this is located at `~/.config/topgrade.toml` For example, if you have a list of Git repositories you’d like to refresh, add the following to the file:
 

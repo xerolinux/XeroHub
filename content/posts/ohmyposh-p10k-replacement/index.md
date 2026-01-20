@@ -14,7 +14,7 @@ tags: ["Prompt", "Shell", "ZSH", "Bash", "OhMyZsh", "OhMyPosh", "Linux"]
 
 It has several predefined themes that allow you to customize your prompt in a matter of seconds, it is also possible to create your own theme, it is compatible with BASH, PowerShell, CMD, Fish, Zsh and nushell is developed in golang and can be installed on **GNU/Linux**, **MacOS**, **Windows** and **Termux** (Android).
 
-![Prompt](https://i.imgur.com/jjSKX0P.png)
+![Prompt](jjSKX0P.png)
 
 ### Installing Oh My Posh
 
@@ -32,9 +32,9 @@ Now that it is installed, we need to activate it. In the video above, it was sho
 
 So let's grab the one we like from >> [**OMP Theme Repo**](https://ohmyposh.dev/docs/themes)
 
-![Aliens](https://i.imgur.com/OL0pbr3.png)
+![Aliens](OL0pbr3.png)
 
-![NightOwl](https://i.imgur.com/EZmvwxa.png)
+![NightOwl](EZmvwxa.png)
 
 To grab it we will have to create the folder where we will be storing our selected config. We can do it either via our favorite file manager or Terminal. Since we are on **Arch** we gonna be **Terminal Ninjas** lol...
 
@@ -64,7 +64,7 @@ eval "$(oh-my-posh init zsh --config $HOME/.config/ohmyposh/dracula.omp.json)"
 
 That's it ! Now if you had a shell/terminal window open, relaunch it n see **Oh My Posh** in action !!!!
 
-![Preview](https://i.imgur.com/GJiIrxm.png)
+![Preview](GJiIrxm.png)
 
 Oh, I forgot to mention that it also has its own set of commands * flags you can use. For example did you know that even if you have installed it from the **AUR/ChaoticAUR**, where sometimes they lag behind, you can update it using an internal command ? Here's how, might need to run with `sudo` :
 
@@ -74,7 +74,7 @@ oh-my-posh upgrade
 
 Here's a list of all Flags/Commands :
 
-![Commands](https://i.imgur.com/DX1x5gP.png)
+![Commands](DX1x5gP.png)
 
 **Note**
 
@@ -84,7 +84,7 @@ Here's a list of all Flags/Commands :
 
 It's a shame to see a project like **Powerlevel10k** slowly die. But where one goes others are born from their ashes. Now **THAT**'s the beauty of Open Source.
 
-![Toolkit](https://i.imgur.com/tWgYv7k.png)
+![Toolkit](tWgYv7k.png)
 
 As you can see from the image above, for those of you out there using the **XeroLinux Post Install Toolkit**, we added the option that will do everything mentioned in this guide automatically for you.
 

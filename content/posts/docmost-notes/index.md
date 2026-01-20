@@ -11,7 +11,7 @@ tags: ["Docmost", "Notes", "Docker", "Wiki", "Self-Hosted", "Linux"]
 
 Ever dreamt of a magical realm where creating, collaborating, and sharing knowledge is as smooth as casting a spell? Welcome to Docmost, the open-source documentation software that's like Hogwarts for your inner nerd. Buckle up for a journey through the enchanted features of [**Docmost**](https://docmost.com).
 
-![Docmost](https://i.imgur.com/lkKoQdi.jpeg)
+![Docmost](lkKoQdi.jpeg)
 
 ### Real-Time Collaboration: Dance of the Docs
 

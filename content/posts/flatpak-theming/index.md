@@ -54,7 +54,7 @@ Once that's done you will end up with a file in the system that includes those v
 
 As you can see in the screenshot below, there is two themes available, Ant-Bloody and Orchis-dark. Copy and paste the exact theme name in the above command:
 
-![[Image: uT6brUj.png]](https://i.imgur.com/uT6brUj.png)
+![[Image: uT6brUj.png]](uT6brUj.png)
 
 This only applies to GTK3/4 based packages, for QT in most cases nothing needs to be done ![Wink](https://forum.xerolinux.xyz/images/smilies/wink.png "Wink")
 

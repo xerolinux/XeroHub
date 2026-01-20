@@ -9,7 +9,7 @@ tags: ["ricing", "kde", "plasma", "themes", "linux"]
 
 I would like to share a neat little "Effect" if you will, called LightlyShaders which is a fork of another project that is a simple KWin/5 effect that simply rounds corners of windows, to do this it uses an opengl shader and is able to round any window, like mpv video for example will have rounded corners.
 
-![[Image: ngDtR0J.jpeg]](https://i.imgur.com/ngDtR0J.jpeg)
+![[Image: ngDtR0J.jpeg]](ngDtR0J.jpeg)
 
 {{< alert "warn" >}}
 1. This effect is basically a hack!
@@ -43,7 +43,7 @@ cd LightlyShaders; mkdir qt5build; cd qt5build; cmake ../ -DCMAKE_INSTALL_PREFIX
 
 It's highly recommended to reboot after install. Once that's done head on over to `Settings > Workspace Behavior > Desktop Effects` and Enable it. Press the Gear if you want to increase/decrease radius...
 
-![[Image: HmT5hnm.png]](https://i.imgur.com/HmT5hnm.png)
+![[Image: HmT5hnm.png]](HmT5hnm.png)
 
 
 Note :

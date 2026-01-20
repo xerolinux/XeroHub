@@ -25,7 +25,7 @@ This is the official website from the Flatpak project and it lists and distribut
 
 You can look for recommended apps in the “Editor’s choice” section, recently updated apps, new apps and popular apps.
 
-![[Image: iAHc4uB.png]](https://i.imgur.com/iAHc4uB.png)
+![[Image: iAHc4uB.png]](iAHc4uB.png)
 
 
 You can have the application screenshots, description, developer information, and installation instructions on the individual application webpages.
@@ -36,7 +36,7 @@ The [Flathub](https://flathub.org) website provides command line instructions to
 
 There is also an Install button but it doesn’t install the application for you. It downloads a `.flatpakref` file and then you’ll have to use the command line to install from the flatpakref file.
 
-![[Image: wovEk8x.png]](https://i.imgur.com/wovEk8x.png)
+![[Image: wovEk8x.png]](wovEk8x.png)
 
 If you have to use the command line ultimately, it doesn’t make sense to download the flatpakref file.
 
@@ -47,7 +47,7 @@ This way, when you click on the Install button for any application on the [Flath
 * Grab it for Firefox -> [Firefox Add-on](https://addons.mozilla.org/en-US/firefox/addon/flatline-flatpak/)
 * Grab it for Chromium Browsers -> [Chrome Extension](https://chrome.google.com/webstore/detail/flatline/cpbniogoilfagmcoipghkgnpmdglfmjm/related)
 
-![[Image: Nsvf6WO.png]](https://i.imgur.com/Nsvf6WO.png)
+![[Image: Nsvf6WO.png]](Nsvf6WO.png)
 
 This also means that you should have Fltapak support integrated into the software center.
 
@@ -55,7 +55,7 @@ This also means that you should have Fltapak support integrated into the softwar
 
 Flatseal is a graphical utility to review and modify your Flatpak applications’ permissions. This makes things a lot easier than going through the commands.
 
-![[Image: nf6PVxe.png]](https://i.imgur.com/nf6PVxe.png)
+![[Image: nf6PVxe.png]](nf6PVxe.png)
 
 It lists all the installed Flatpak applications and shows what kind of permissions the selected application has.
 
@@ -81,7 +81,7 @@ You can update all your installed Flatpak apps simultaneously with:
 flatpak update
 ```
 
-![[Image: M6j3R4s.png]](https://i.imgur.com/M6j3R4s.png)
+![[Image: M6j3R4s.png]](M6j3R4s.png)
 
 ### Conclusion
 

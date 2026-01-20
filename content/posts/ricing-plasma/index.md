@@ -19,7 +19,7 @@ And if you want to see what I have managed to do, well, hop on over to my **Laya
 
 Ricing can be a bit invloved. At least if you are like me, and care about consistency. It's not about just slapping a desktop theme and calling it a day. That's just lazy. Please don't do that.
 
-![Rice](https://i.imgur.com/irOECxY.jpeg)
+![Rice](irOECxY.jpeg)
 
 **KDE Plasma** is a ricing a beast, no doubt about that. That's one of its biggest selling points. So it's normal when I say, it can be very, very intricate. You can rice everything in it.
 
@@ -45,7 +45,7 @@ Please read the above warning, ignoring it will result in nothing but headaches.
 
 First, we will need and app that I highly recommend to have on hand, called **Kvantum**. I consider it an essantial tool for every ricer out there.
 
-![Kvantum](https://i.imgur.com/DNfv0aG.png)
+![Kvantum](DNfv0aG.png)
 
 {{< github repo="tsujan/Kvantum" >}}
 
@@ -55,7 +55,7 @@ This will take care of the awesome window blur and transparency effects for all 
 
 Another element **KDE Plasma** uses, is [**SDDM**](https://wiki.archlinux.org/title/SDDM) for its **Display Manager/Login**.
 
-![SDDM](https://i.imgur.com/hLBbJvF.jpeg)
+![SDDM](hLBbJvF.jpeg)
 
 It too can be themed.
 
@@ -63,7 +63,7 @@ It too can be themed.
 
 Now, I can already hear you say that this is unrelated to **KDE Plasma**, to which I will say, yes I agree. Also, not everyone will be using [**Grub**](https://wiki.archlinux.org/title/GRUB). Also true.
 
-![Grub](https://i.imgur.com/tyoOZV1.png)
+![Grub](tyoOZV1.png)
 
 But for the sake of completeness, I do like to theme it as well.
 
@@ -71,7 +71,7 @@ But for the sake of completeness, I do like to theme it as well.
 
 [**Konsole**](https://konsole.kde.org/) is the *Terminal Emulator* that **Plasma** ships. I know most of you switch to **Alacritty** or even **Kitty**. But I prefer to stick with what ships with the DE I use.
 
-![Konsole](https://i.imgur.com/pXDM5ZM.png)
+![Konsole](pXDM5ZM.png)
 
 That too can be themed.
 
@@ -91,7 +91,7 @@ Once we have found a noce theme, we need to make sure it applies to the followin
 - **Icons** : A fitting icon theme. (Optional)
 - **SDDM** : Login theme.
 
-![Settings](https://i.imgur.com/ggNKZYO.png)
+![Settings](ggNKZYO.png)
 
 That's it really. In case you do not find a theme that contains all these elements, it's not a huge issue, you can always hunt for one that fits the **Global Theme**. It's hard to find one I know, but who knows you might get lucky lol.
 
@@ -113,7 +113,7 @@ Oh boy, the reason I will not be talking about those is is simple, it's your ric
 **Warning :** Please make sure they are compatible with **Plasma 6**.
 {{< /alert >}}
 
-![XeroLayan](https://i.imgur.com/VA2tycb.jpeg)
+![XeroLayan](VA2tycb.jpeg)
 
 As for the panel, position it wherever your heart desires. Top, bottom, left or right. It's all up to you. You can even use it as a Dock. Above is the end result of my very own rice I call the **XeroLayan** rice.
 

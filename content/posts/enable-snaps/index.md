@@ -17,7 +17,7 @@ Snap support was never intended to be used outside Ubuntu / Debian that package 
 
 With that out of the way, I would recommend you look for your apps on either Arch Repos, AUR or Flathub first since those are the package managers officially supported on XeroLinux / Arch, but if you still insist on doing it, Do it at your own risk ! here's how to do it, follow the guide step by step, if you didn't miss anything you will be well on your way to start using Snaps.
 
-![[Image: BpMGL6X.png]](https://i.imgur.com/BpMGL6X.png)
+![[Image: BpMGL6X.png]](BpMGL6X.png)
 
 * Step 1 : Install & enable snapd service
 

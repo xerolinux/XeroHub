@@ -31,7 +31,7 @@ Note: Recommend multi-user install if it prompts for it.
 
 We recommend using their [**WebStore**](https://search.nixos.org/packages) to find packages to install, but make sure to click the “unstable” button as NixOS stable is a Linux Distribution few use.
 
-![[Image: hLVPjV1]](https://i.imgur.com/hLVPjV1.png)
+![[Image: hLVPjV1]](hLVPjV1.png)
 
 Or from terminal you can list all packages with `nix-env -qaP` then just `grep` what you are looking for.
 

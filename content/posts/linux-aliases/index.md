@@ -21,7 +21,7 @@ First, before you start, you will have to know what shell you are using, as diff
 
 With that out of the way, the method is the same for both. Just open relevant file in your IDE of choice and let's begin.
 
-![Terminal](https://i.imgur.com/Ks6e0Mn.png)
+![Terminal](Ks6e0Mn.png)
 
 Here's how aliases are structured :
 

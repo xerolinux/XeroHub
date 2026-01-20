@@ -15,7 +15,7 @@ This keeps being asked on social. So I decided to post it here.. It's all over t
 
 Use it to automount your new hard disk that uses Ext4, your Windows NTFS / exFAT partition, etc.
 
-![[Image: jsnRZUU.png]](https://i.imgur.com/jsnRZUU.png)
+![Disks](Disks.png)
 
 Disks, or Gnome Disk Utility, is installed by default in many Linux distributions, including Ubuntu, Fedora, both Linux Mint Cinnamon and MATE, Xubuntu, and so on. If it's not installed, use your Linux distribution's package manager to install it - search / install gnome-disk-utility.
 
@@ -25,11 +25,11 @@ For each partition you set to mount automatically on startup, Gnome Disks adds a
 
 Start by launching "Disks" from your applications menu. Choose the hard disk from the left Disks sidebar, select the partition you want to auto mount on startup, then click the button with the gears icon under it, and click `Edit Mount Options`:
 
-![[Image: 27YPYEC.png]](https://i.imgur.com/27YPYEC.png)
+![Disks2](Disks2.png)
 
 In the mount options, toggle the `User Session Defaults` option (this may be called `Automatic Mount Options` on older versions) to enable the options below it, and make sure `Mount at system startup` is enabled. You can enter a name under `Display Name`. The defaults should be enough for most users, so you don't have to change anything here. After you're done, click `OK` :
 
-![[Image: HzloKaO.png]](https://i.imgur.com/HzloKaO.png)
+![Disks3](Disks3.png)
 
 To test the changes, you can reboot your system or type the following command to mount all filesystems mentioned in `fstab` (since Disks sets partitions to automount on startup by adding them to `/etc/fstab`) :
 

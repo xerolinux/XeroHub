@@ -41,7 +41,7 @@ ollama run llama3.1
 Some models are larger than others, reaching up to 232GB !!! Also the bigger the model is the more powerful your machine should be to handle it. Please keep that in mind before diving too deep into it.
 
 <p align="center">
-    <img src="https://i.imgur.com/uIJ7AO4.png" alt="shot">
+    <img src="uIJ7AO4.png" alt="shot">
 </p>
 
 Oh and as mentioned by **DT** in the video, you can take it to the next level by customizing it, making it react using different personas, like **Mario** or any of the available ones. This is just a quirk not very useful. If you want to know how, check it out on project's **Github**

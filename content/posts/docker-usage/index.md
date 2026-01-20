@@ -9,7 +9,7 @@ tags: ["Docker", "Docker-Compose", "Tools", "Containers", "Linux", "Guide"]
 
 After messing with [Docker](https://www.docker.com) Containers for so long, I thought I would share the knowledge. Hopefully a video showing it in action soon. In this short tutorial we will be using the Docker Compose feature to deploy our containers. Just note we can do so much more, but this is just an introductory guide, you will have to discover the rest on your own. It's so much fun trust me. To get an idea how much I love them click [**Here**](https://blog.xerolinux.xyz/2024/06/docker-containers-a-love-story/) to read my thoughts...
 
-![[Image: bbD4JDy.png]](https://i.imgur.com/bbD4JDy.png)
+![[Image: bbD4JDy.png]](bbD4JDy.png)
 
 So without further delay let's gooooooooo...
 

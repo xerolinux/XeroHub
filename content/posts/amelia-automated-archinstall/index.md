@@ -19,7 +19,7 @@ Amelia is on the cutting edge with its approach to file systems and initializati
 
 But don’t worry, control freaks! Amelia keeps you in the driver’s seat with interactive, menu-driven prompts that guide you through every step.
 
-![Amelia](https://i.imgur.com/IJqFrXI.jpeg)
+![Amelia](main.jpeg)
 
 ### Disk Management
 
@@ -50,7 +50,7 @@ sh Amelia.sh
 When the installation wraps up, you’ll get a confirmation screen. Reboot your computer, and voila – your shiny new Arch Linux system is ready to roll.
 
 
-![[AmeliaMain]](https://i.imgur.com/21bSdkY.jpeg)
+![AmeliaMain](process.jpeg)
 
 
 ### Final Thoughts
