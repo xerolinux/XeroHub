@@ -393,7 +393,7 @@ class XeroLinuxHub(QMainWindow):
         info1 = InfoBox(
             "ℹ️ Custom themes might not get updated very often, if at all by their respective developers/artists, "
             "which might result in some parts of the system and apps not to get themed correctly. "
-            "That, my friends, is unfortunately out of our hands.",
+            "That, my friends, is out of our hands.",
             "info"
         )
         l.addWidget(info1)
