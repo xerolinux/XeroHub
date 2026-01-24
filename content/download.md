@@ -68,7 +68,7 @@ When you're ready to fully adopt **XeroLinux**, go for the **Unlocked Version**,
 {{< /button >}}<br />
 Or use the below<br>
 {{< button href="https://wiki.xerolinux.xyz/xero-install/" target="_blank" >}}
-📜 Free Install Script 📜
+📜 Xero Install Script 📜
 {{< /button >}}
 
 </div>
