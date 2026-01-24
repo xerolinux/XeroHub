@@ -57,7 +57,7 @@ When you're ready to fully adopt **XeroLinux**, go for the **Unlocked Version**,
 
 <div align="center">
 
-⚠️ <strong>Access to this version requires a donation.</strong> ⚠️<br />
+⚠️ <strong>Access the ISOs requires a donation.</strong> ⚠️<br />
 (We accept Ko-Fi & Crypto. Choose one.)
 
 {{< button href="https://ko-fi.com/s/cf9def9630" target="_blank" >}}
@@ -65,6 +65,10 @@ When you're ready to fully adopt **XeroLinux**, go for the **Unlocked Version**,
 {{< /button >}} <span style="display:inline-block; width:20px;"></span>
 {{< button href="https://iso.xerolinux.xyz/crypto.html" target="_blank" >}}
 💰 Crypto 💰
+{{< /button >}}<br />
+Or use the below<br>
+{{< button href="https://wiki.xerolinux.xyz/xero-install/" target="_blank" >}}
+📜 Free Install Script 📜
 {{< /button >}}
 
 </div>
