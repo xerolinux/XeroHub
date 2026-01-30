@@ -267,12 +267,6 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://xerolinux.xyz/updates/add-our-repo/</loc>
-    <lastmod>2024-06-28T00:00:00+00:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://xerolinux.xyz/posts/automount-drives/</loc>
     <lastmod>2024-06-28T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
