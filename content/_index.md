@@ -68,16 +68,55 @@ By choosing **XeroLinux**, you will be directly helping support the project's de
 
 **XeroLinux** embodies the true spirit of **ArchLinux**: a platform where you have the freedom to create your ideal computing environment, guided by curiosity, learning, and personal preference. ❤️‍🔥
 
-<script src='https://storage.ko-fi.com/cdn/scripts/overlay-widget.js'></script>
-<script>
-  kofiWidgetOverlay.draw('xerolinux', {
-    'type': 'floating-chat',
-    'floating-chat.position': 'bottom_right',
-    'floating-chat.donateButton.text': 'Support me',
-    'floating-chat.donateButton.background-color': '#794bc4',
-    'floating-chat.donateButton.text-color': '#fff'
-  });
-</script>
+<style>
+.kofi-wrapper {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 9999;
+}
+.kofi-btn {
+  background: #794bc4;
+  color: #fff;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 30px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 14px;
+  box-shadow: 0 4px 15px rgba(121, 75, 196, 0.4);
+  transition: all 0.2s;
+}
+.kofi-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(121, 75, 196, 0.5);
+}
+.kofi-panel {
+  display: none;
+  position: absolute;
+  bottom: 60px;
+  right: 0;
+  width: 320px;
+  height: 500px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+}
+.kofi-panel.open {
+  display: block;
+}
+</style>
+<div class="kofi-wrapper">
+  <div class="kofi-panel" id="kofiPanel">
+    <iframe src="https://ko-fi.com/xerolinux/?hidefeed=true&widget=true&embed=true"
+      style="border:none;width:100%;height:100%;background:#1a1a2e;"
+      title="Support on Ko-fi">
+    </iframe>
+  </div>
+  <button class="kofi-btn" onclick="document.getElementById('kofiPanel').classList.toggle('open')">
+    ☕ Support Us
+  </button>
+</div>
 
 
 
