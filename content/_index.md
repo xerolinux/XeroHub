@@ -18,13 +18,37 @@ Discover a Distro Fueled by our Passion for GNU/Linux.
 
 <div align="center">
 
-{{< carousel images="shots/*" aspectRatio="16-9" interval="3600" >}}</div>
+{{< carousel images="shots/*" aspectRatio="16-9" interval="6000" >}}</div>
 
-#### XeroLinux: Arch, Effortlessly Refined
+<style>
+.uniform-buttons a {
+  min-width: 160px !important;
+  text-align: center !important;
+  justify-content: center !important;
+}
+</style>
+
+<div class="uniform-buttons" style="display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap; margin: 2rem 0;">
+
+{{< button href="https://wiki.xerolinux.xyz" target="_blank" >}}
+{{< icon "lightbulb" >}}&nbsp; Wiki
+{{< /button >}}
+
+{{< button href="/download/" target="_self" >}}
+{{< icon "download" >}}&nbsp; Download
+{{< /button >}}
+
+{{< button href="https://github.com/XeroLinuxDev/XeroBuild" target="_blank" >}}
+{{< icon "github" >}}&nbsp; Source Code
+{{< /button >}}
+
+</div>
+
+## XeroLinux: Arch, Effortlessly Refined
 
 **XeroLinux** represents an innovative *Arch-based* distribution designed to demystify the installation process while preserving the core principles of user-driven customization. This distribution offers a thoughtful approach to Linux that balances accessibility with the renowned flexibility of **ArchLinux**.
 
-#### A Tailored Linux Experience
+## A Tailored Linux Experience
 
 The distribution also provides pre-configured environments that serve as an elegant, functional starting point for you. Unlike more heavily modified, and single purpose distributions, **XeroLinux** provides a basic framework that allows you to configure and learn about your system, encouraging you to understand and shape your system's configuration.
 
@@ -34,11 +58,11 @@ The distribution also provides pre-configured environments that serve as an eleg
 
 </div>
 
-#### Designed for Your Unique Needs
+## Designed for Your Unique Needs
 
 Whether you're pursuing production work, gaming, or software development, **XeroLinux** offers a versatile foundation. The included [**Toolkit**](https://wiki.xerolinux.xyz/xlapit/) and system improvements create a refined initial environment, while leaving ample room for you to adapt and learn.
 
-#### Supporting Innovation and Community
+## Supporting Innovation and Community
 
 By choosing **XeroLinux**, you will be directly helping support the project's development. The ISO offerings represent more than just software, they're a meaningful way for you to contribute to an open-source initiative during these challenging times.
 

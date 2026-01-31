@@ -6,7 +6,7 @@ description: "Download XeroLinux"
 
 # 🐧 Download XeroLinux
 
-Welcome to the official download page for **XeroLinux** — a fast, lightweight, and finely tuned Linux experience.
+Welcome to the official download page for **XeroLinux**, a fast, lightweight, and finely tuned Linux experience. The **Demo** is completely free and lets you explore XeroLinux in a VM before committing. The **Unlocked** edition includes the full installer and all features, available through a small donation. This isn't a paywall or a demand, just a gentle ask: if you find value in this project, your support helps keep it alive and actively developed. It also helps me, the developer, navigate the ongoing economic crisis in Lebanon. Whether you donate or not, thank you for being here.
 
 <div align="center">
 
@@ -16,79 +16,124 @@ Welcome to the official download page for **XeroLinux** — a fast, lightweight,
 
 ---
 
-## 🧪 Demo Version
+## 📦 Choose Edition
 
-Check out the *free* **Demo ISO** to try it first. Learn more here : [Demo Info](https://wiki.xerolinux.xyz/distro/#free-demo)
+<style>
+.edition-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  margin: 2rem 0;
+  align-items: start;
+}
+@media (max-width: 900px) {
+  .edition-grid {
+    grid-template-columns: 1fr;
+  }
+}
+.edition-box {
+  display: flex;
+  flex-direction: column;
+}
+.edition-box h3 {
+  text-align: center;
+  margin-bottom: 1rem;
+  min-height: 32px;
+}
+.edition-box > div:has(.rounded-md), .edition-box .rounded-md {
+  height: 270px !important;
+  min-height: 270px !important;
+  max-height: 270px !important;
+  overflow: hidden;
+}
+.edition-buttons {
+  text-align: center;
+  padding-top: 1.5rem;
+  min-height: 60px;
+}
+.edition-buttons .btn-row {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+.edition-buttons a {
+  text-align: center !important;
+  justify-content: center !important;
+  white-space: nowrap !important;
+  height: 44px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+}
+.edition-box:first-child .edition-buttons a {
+  width: 100% !important;
+}
+.edition-box:last-child .edition-buttons .btn-row {
+  width: 100%;
+}
+.edition-box:last-child .edition-buttons a {
+  flex: 1;
+  width: calc(50% - 0.5rem) !important;
+}
+</style>
 
-{{< alert cardColor="#9966ff40" >}}
-- Built for testing in a **Virtual Machine** *Only*.  
-- Runs as a Live Environment **without an installer** . 
-- The **XeroLinux Post-Install Toolkit** is not included.  
-- Uses limited **100 MiB cow-space** (RAM overlay) no updates.
-- Installing drivers or software requiring a reboot **won’t work**.  
-- System changes will **not persist** after a reboot (non-persistent).  
+<div class="edition-grid">
+
+<div class="edition-box">
+
+<h3 style="text-align: center;">🧪 Demo Edition (Free)</h3>
+
+{{< alert icon="triangle-exclamation" cardColor="#ff990030" iconColor="#ff9900" textColor="#ffcc80" >}}
+- ⚠️ For VM testing only.
+- ⚠️ Persistence disabled.
+- ❌ Toolkit not included.
+- ⚠️ No installer only Live.
+- ⚠️ 100 MiB Cowspace limit.
+- ❌ No GPU Drivers Just VM/FOSS.
 {{< /alert >}}
 
-This demo is ideal for exploring the UI, and peeking at how XeroLinux is configured — all with **zero commitment**.
-
-<div align="center">
+<div class="edition-buttons">
 
 {{< button href="https://iso.xerolinux.xyz/demo/" target="_blank" >}}
-↪️ Download Demo ISO ↩️
+Download Free Demo
 {{< /button >}}
 
 </div>
 
----
+</div>
 
-## 💿 Unlocked Version(s)
+<div class="edition-box">
 
-When you're ready to fully adopt **XeroLinux**, go for the **Unlocked Version**, which includes :
+<h3 style="text-align: center;">💿 Unlocked Edition</h3>
 
-{{< alert cardColor="#9966ff40" >}}
-- Full system installer. 
-- **Intel/AMD** & **nVidia** ISOs.
-- Fingerprint GUI Tool (Toolkit).
-- Unrestricted package management.
-- All features and updates enabled by default.
-- The **XeroLinux Post-Install Toolkit** is included.
-- Access to full community support and feature requests.
+{{< alert icon="check" cardColor="#00cc6630" iconColor="#00cc66" textColor="#80ffb3" >}}
+- ✅ Full Calamares installer.
+- ✅ 2 ISOs (Intel/AMD & nVidia)
+- ✅ Post-Install Toolkit included.
+- ✅ BTRFS/Encryption features enabled.
+- ✅ Full community support on Discord.
+- ✅ Full package manager support enabled.
 {{< /alert >}}
 
-<div align="center">
-
-⚠️ <strong>Access the ISOs requires a donation.</strong> ⚠️<br />
-(We accept Ko-Fi & Crypto. Choose one.)
+<div class="edition-buttons">
+<div class="btn-row">
 
 {{< button href="https://ko-fi.com/s/cf9def9630" target="_blank" >}}
-💰 Ko-Fi 💰
-{{< /button >}} <span style="display:inline-block; width:20px;"></span>
+Ko-Fi Shop
+{{< /button >}}
+
 {{< button href="https://iso.xerolinux.xyz/crypto.html" target="_blank" >}}
-💰 Crypto 💰
-{{< /button >}}<br />
-Or use the below<br>
-{{< button href="https://wiki.xerolinux.xyz/xero-install/" target="_blank" >}}
-📜 Free Install Script 📜
+Crypto Portal
 {{< /button >}}
 
 </div>
+</div>
+
+</div>
+
+</div>
+
+{{< alert icon="circle-info" cardColor="#6666ff30" iconColor="#9999ff" textColor="#ccccff" >}}
+**🆓 Free Alternative :** Prefer to be a nerd ? So beit, use the custom [**XeroInstall Script**](https://wiki.xerolinux.xyz/xero-install/) to install it the *ArchInstall* way.
+{{< /alert >}}
 
 ---
-
-## 📝 Docs & Sources
-
-Before jumping in, please make sure to read the the [**XeroWiki**](https://wiki.xerolinux.xyz/distro/) for guides, details, and version‑specific instructions. 
-
-> 📌 Note : The wiki evolves with each release.
-
-Explore the source on GitHub :
-
-{{< github repo="XeroLinuxDev/XeroBuild" >}}
-
----
-
-## ❤️ Support Project
-
-Your support keeps this project not just alive, but **thriving for the long haul**. If you can help, please consider donating: [Donate Here](https://ko-fi.com/XeroLinux)
-
-Thank you for helping fuel open source innovation.

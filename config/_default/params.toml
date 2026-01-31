@@ -11,6 +11,7 @@ autoSwitchAppearance = false
 
 enableSearch = true
 enableCodeCopy = true
+enableStyledScrollbar = true
 
 replyByEmail = false
 
@@ -33,7 +34,7 @@ smartTOCHideUnfocusedChildren = false
   layout = "fixed-fill-blur" # valid options: basic, fixed, fixed-fill, fixed-gradient, fixed-fill-blur
 
 [footer]
-  showMenu = false
+  showMenu = true
   showCopyright = true
   showThemeAttribution = true
   showAppearanceSwitcher = false
@@ -62,7 +63,7 @@ smartTOCHideUnfocusedChildren = false
   heroStyle = "background" # valid options: basic, big, background, thumbAndBackground
   layoutBackgroundBlur = true # only used when heroStyle equals background or thumbAndBackground
   layoutBackgroundHeaderSpace = true # only used when heroStyle equals background
-  showBreadcrumbs = false
+  showBreadcrumbs = true
   showDraftLabel = false
   showEdit = false
   # editURL = "https://github.com/xerolinux/xerohub/"
@@ -74,7 +75,7 @@ smartTOCHideUnfocusedChildren = false
   showReadingTime = true
   showTableOfContents = true
   showRelatedContent = true
-  relatedContentLimit = 3
+  relatedContentLimit = 6
   showTaxonomies = true
   showAuthorsBadges = true
   showWordCount = false

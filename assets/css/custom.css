@@ -95,9 +95,9 @@ a:hover, button:hover {
     z-index: 1;
 }
 
-article > section h4.relative.group:first-of-type,
-article > section h4.relative.group:first-of-type ~ h4,
-article > section h4.relative.group:first-of-type ~ p {
+article > section h2.relative.group:first-of-type,
+article > section h2.relative.group:first-of-type ~ h2,
+article > section h2.relative.group:first-of-type ~ p {
     background: rgba(0, 0, 0, 0.25);
     border: 2px solid rgba(255, 255, 255, 0.3);
     border-radius: 12px;
@@ -129,3 +129,38 @@ input[type="text"]:focus, textarea:focus {
 .blowfish-carousel {
     list-style-type: none;
 }
+
+/* Center all images in posts by default */
+article img,
+.article-content img,
+section.prose img {
+    display: block !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+/* Exception: Keep author avatar left-aligned */
+.author img,
+.author-avatar img,
+[class*="author"] img,
+.flex.items-center img {
+    display: inline-block !important;
+    margin-left: 0 !important;
+    margin-right: 1rem !important;
+}
+
+/* Permanent Zen Mode - hide button and TOC */
+#zen-mode-button {
+    display: none !important;
+}
+.toc-right {
+    display: none !important;
+}
+.article-content {
+    max-width: fit-content !important;
+}
+#single_header,
+footer {
+    max-width: 100% !important;
+}
+

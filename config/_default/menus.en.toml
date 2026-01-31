@@ -3,40 +3,40 @@ name = "About"
 pageRef = "about"
 weight = 10
 
-[[main]]
-name = "Download"
-pageRef = "download"
-weight = 20
+# [[main]]
+# name = "Download"
+# pageRef = "download"
+# weight = 20
 
 [[main]]
 name = "Posts"
 pageRef = "posts"
-weight = 30
+weight = 20
 
 [[main]]
 name = "Updates"
 pageRef = "updates"
-weight = 40
+weight = 30
 
 [[main]]
 name = "My Gear"
 pageRef = "gear"
-weight = 50
+weight = 40
 
 [[main]]
 name = "Merch"
 url = "https://shop.xerolinux.xyz/"
-weight = 60
+weight = 50
 
-[[main]]
-name = "Wiki"
-url = "https://wiki.xerolinux.xyz/"
-weight = 70
+# [[main]]
+# name = "Wiki"
+# url = "https://wiki.xerolinux.xyz/"
+# weight = 70
 
 [[main]]
 pre = "rss"
 url = "/index.xml"
-weight = 80
+weight = 60
 
 [[footer]]
 none = "none"

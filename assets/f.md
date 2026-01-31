@@ -3,8 +3,9 @@
 - **2026-03-01**
 
     - Updated to KDE 6.6.
-    - **Bios/MBR** Support is back.
+    - System update during install.
     - **zRAM** Enabled by default.
+    - **Bios/MBR** Support added back.
     - **Plasma-Login** used by default.
     - Updated to latest Kernel (6.19.x).
     - Added new widgets & updated the old.
