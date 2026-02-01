@@ -54,7 +54,7 @@ Discover a Distro Fueled by our Passion for GNU/Linux.
 
 </div>
 
-## 🚀 XeroLinux: Arch, Effortlessly Refined
+## 🚀 XeroLinux: Arch, Refined
 
 **XeroLinux** represents an innovative *Arch-based* distribution designed to demystify the installation process while preserving the core principles of user-driven customization. This distribution offers a thoughtful approach to Linux that balances accessibility with the renowned flexibility of **ArchLinux**.
 
@@ -72,7 +72,7 @@ The distribution also provides pre-configured environments that serve as an eleg
 
 Whether you're pursuing production work, gaming, or software development, **XeroLinux** offers a versatile foundation. The included [**Toolkit**](https://github.com/synsejse/xero-toolkit/) and system improvements create a refined initial environment, while leaving ample room for you to adapt and learn.
 
-## 💜 Supporting Innovation and Community
+## 💜 Supporting Innovation
 
 By choosing **XeroLinux**, you will be directly helping support the project's development. The ISO offerings represent more than just software, they're a meaningful way for you to contribute to an open-source initiative during these challenging times.
 
