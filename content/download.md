@@ -46,9 +46,9 @@ Welcome to the official download page for **XeroLinux**, a fast, lightweight, an
   min-height: 32px;
 }
 .edition-box > div:has(.rounded-md), .edition-box .rounded-md {
-  height: 270px !important;
-  min-height: 270px !important;
-  max-height: 270px !important;
+  height: auto !important;
+  min-height: unset !important;
+  max-height: unset !important;
   overflow: hidden;
 }
 .edition-buttons {
