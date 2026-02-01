@@ -30,6 +30,11 @@ Welcome to the official download page for **XeroLinux**, a fast, lightweight, an
   .edition-grid {
     grid-template-columns: 1fr;
   }
+  .edition-box > div:has(.rounded-md), .edition-box .rounded-md {
+    height: auto !important;
+    min-height: unset !important;
+    max-height: unset !important;
+  }
 }
 .edition-box {
   display: flex;
