@@ -70,7 +70,7 @@ The distribution also provides pre-configured environments that serve as an eleg
 
 ## 🎯 Designed for Your Unique Needs
 
-Whether you're pursuing production work, gaming, or software development, **XeroLinux** offers a versatile foundation. The included [**Toolkit**](https://wiki.xerolinux.xyz/xlapit/) and system improvements create a refined initial environment, while leaving ample room for you to adapt and learn.
+Whether you're pursuing production work, gaming, or software development, **XeroLinux** offers a versatile foundation. The included [**Toolkit**](https://github.com/synsejse/xero-toolkit/) and system improvements create a refined initial environment, while leaving ample room for you to adapt and learn.
 
 ## 💜 Supporting Innovation and Community
 
