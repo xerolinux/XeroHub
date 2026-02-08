@@ -2,7 +2,7 @@
 #
 # ╔═══════════════════════════════════════════════════════════════════════════════╗
 # ║                                                                               ║
-# ║                      ✨ Xero Arch Installer v1.0 ✨                           ║
+# ║                      ✨ Xero Arch Installer v1.3 ✨                           ║
 # ║                                                                               ║
 # ║          A beautiful, streamlined Arch Linux installer for XeroLinux         ║
 # ║                                                                               ║
@@ -18,7 +18,7 @@ set -Eeuo pipefail
 # CONFIGURATION
 # ────────────────────────────────────────────────────────────────────────────────
 
-VERSION="1.0"
+VERSION="1.3"
 SCRIPT_NAME="Xero Arch Installer"
 
 # URLs for fetching scripts
@@ -453,8 +453,8 @@ select_disk() {
             echo ""
 
             local encrypt_options=(
-                "root+boot │ Encrypt root & boot (More secure, GRUB asks for password)"
                 "root      │ Encrypt root only  (Faster boot, single password prompt)"
+                "root+boot │ Encrypt root & boot (More secure, GRUB asks for password)"
             )
 
             local enc_selection=""
