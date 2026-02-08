@@ -48,6 +48,7 @@ CONFIG[root_password]=""
 CONFIG[disk]=""
 CONFIG[filesystem]="btrfs"
 CONFIG[encrypt]="no"
+CONFIG[encrypt_boot]="no"
 CONFIG[encrypt_password]=""
 CONFIG[swap]="zram"
 CONFIG[swap_algo]="zstd"
@@ -432,7 +433,7 @@ select_disk() {
 
     echo ""
 
-    show_info "Disk Encryption (LUKS)"
+    show_info "Disk Encryption (LUKS2)"
     echo ""
 
     if confirm_action "Enable full disk encryption?"; then
@@ -446,13 +447,35 @@ select_disk() {
         if [[ "$enc_pass1" == "$enc_pass2" && -n "$enc_pass1" ]]; then
             CONFIG[encrypt_password]="$enc_pass1"
             show_success "Disk encryption enabled"
+
+            echo ""
+            show_info "Choose what to encrypt:"
+            echo ""
+
+            local encrypt_options=(
+                "root+boot │ Encrypt root & boot (More secure, GRUB asks for password)"
+                "root      │ Encrypt root only  (Faster boot, single password prompt)"
+            )
+
+            local enc_selection=""
+            enc_selection=$(printf '%s\n' "${encrypt_options[@]}" | gum choose --height 4 --header "Encryption scope:") || true
+
+            if [[ "$enc_selection" == "root+boot"* ]]; then
+                CONFIG[encrypt_boot]="yes"
+                show_success "Encrypting root & boot"
+            else
+                CONFIG[encrypt_boot]="no"
+                show_success "Encrypting root only"
+            fi
         else
             show_error "Passwords don't match or empty. Encryption disabled."
             CONFIG[encrypt]="no"
+            CONFIG[encrypt_boot]="no"
             CONFIG[encrypt_password]=""
         fi
     else
         CONFIG[encrypt]="no"
+        CONFIG[encrypt_boot]="no"
         CONFIG[encrypt_password]=""
         show_info "Disk encryption disabled"
     fi
@@ -750,7 +773,7 @@ show_main_menu() {
             ""
             "1. 🌐 Installer Language    │ ${CONFIG[installer_lang]}"
             "2. 🗺️ Locales               │ ${CONFIG[locale]} / ${CONFIG[keyboard]}"
-            "3. 💾 Disk Configuration    │ ${CONFIG[disk]:-Not configured}$( [[ -n "${CONFIG[disk]}" ]] && echo " (${CONFIG[filesystem]}$( [[ "${CONFIG[encrypt]}" == "yes" ]] && echo ", encrypted"))" )"
+            "3. 💾 Disk Configuration    │ ${CONFIG[disk]:-Not configured}$( [[ -n "${CONFIG[disk]}" ]] && echo " (${CONFIG[filesystem]}$( [[ "${CONFIG[encrypt]}" == "yes" && "${CONFIG[encrypt_boot]}" == "yes" ]] && echo ", encrypted root+boot" || { [[ "${CONFIG[encrypt]}" == "yes" ]] && echo ", encrypted root"; }))" )"
             "4. 🔄 Swap                  │ ${CONFIG[swap]}"
             "5. 💻 Hostname              │ ${CONFIG[hostname]}"
             "6. 🎮 Graphics Driver       │ ${CONFIG[gfx_driver]}"
@@ -830,7 +853,11 @@ show_summary() {
     echo ""
 
     local encrypt_status="No"
-    [[ "${CONFIG[encrypt]}" == "yes" ]] && encrypt_status="Yes (LUKS)"
+    if [[ "${CONFIG[encrypt]}" == "yes" && "${CONFIG[encrypt_boot]}" == "yes" ]]; then
+        encrypt_status="Yes (LUKS2, root + boot)"
+    elif [[ "${CONFIG[encrypt]}" == "yes" ]]; then
+        encrypt_status="Yes (LUKS2, root only)"
+    fi
 
     local boot_mode="BIOS/Legacy"
     [[ "${CONFIG[uefi]}" == "yes" ]] && boot_mode="UEFI"
@@ -938,6 +965,10 @@ partition_disk() {
         parted -s "$disk" mkpart ESP fat32 1MiB 513MiB
         parted -s "$disk" set 1 esp on
         parted -s "$disk" mkpart primary 513MiB 100%
+    elif [[ "${CONFIG[encrypt]}" == "yes" && "${CONFIG[encrypt_boot]}" == "yes" ]]; then
+        # BIOS + encrypted boot: single partition, GRUB uses post-MBR gap
+        parted -s "$disk" mklabel msdos
+        parted -s "$disk" mkpart primary 1MiB 100%
     else
         parted -s "$disk" mklabel msdos
         parted -s "$disk" mkpart primary ext4 1MiB 513MiB
@@ -950,21 +981,34 @@ partition_disk() {
     udevadm settle
     sleep 1
 
-    if [[ "$disk" == *"nvme"* || "$disk" == *"mmcblk"* ]]; then
-        CONFIG[boot_part]="${disk}p1"
-        CONFIG[root_part]="${disk}p2"
+    if [[ "${CONFIG[encrypt]}" == "yes" && "${CONFIG[encrypt_boot]}" == "yes" && "${CONFIG[uefi]}" != "yes" ]]; then
+        # BIOS encrypted boot: single partition, no separate boot
+        CONFIG[boot_part]=""
+        if [[ "$disk" == *"nvme"* || "$disk" == *"mmcblk"* ]]; then
+            CONFIG[root_part]="${disk}p1"
+        else
+            CONFIG[root_part]="${disk}1"
+        fi
     else
-        CONFIG[boot_part]="${disk}1"
-        CONFIG[root_part]="${disk}2"
+        if [[ "$disk" == *"nvme"* || "$disk" == *"mmcblk"* ]]; then
+            CONFIG[boot_part]="${disk}p1"
+            CONFIG[root_part]="${disk}p2"
+        else
+            CONFIG[boot_part]="${disk}1"
+            CONFIG[root_part]="${disk}2"
+        fi
     fi
 
     # Validate partitions exist as block devices BEFORE formatting
-    if [[ ! -b "${CONFIG[boot_part]}" || ! -b "${CONFIG[root_part]}" ]]; then
-        echo "ERROR: Partitions not ready after partitioning."
-        echo "  disk='$disk'"
-        echo "  boot_part='${CONFIG[boot_part]}' block? $( [[ -b "${CONFIG[boot_part]}" ]] && echo yes || echo no )"
-        echo "  root_part='${CONFIG[root_part]}' block? $( [[ -b "${CONFIG[root_part]}" ]] && echo yes || echo no )"
-        echo ""
+    if [[ -n "${CONFIG[boot_part]}" && ! -b "${CONFIG[boot_part]}" ]]; then
+        echo "ERROR: Boot partition not ready after partitioning."
+        echo "  boot_part='${CONFIG[boot_part]}' block? no"
+        lsblk -f "$disk" || true
+        exit 1
+    fi
+    if [[ ! -b "${CONFIG[root_part]}" ]]; then
+        echo "ERROR: Root partition not ready after partitioning."
+        echo "  root_part='${CONFIG[root_part]}' block? no"
         lsblk -f "$disk" || true
         exit 1
     fi
@@ -988,15 +1032,19 @@ format_partitions() {
     local root_device="${CONFIG[root_part]}"
     [[ "${CONFIG[encrypt]}" == "yes" ]] && root_device="${CONFIG[root_device]}"
 
-    [[ -b "${CONFIG[boot_part]}" ]] || { echo "ERROR: boot_part '${CONFIG[boot_part]}' is not a block device"; exit 1; }
     [[ -b "$root_device" ]] || { echo "ERROR: root device '$root_device' is not a block device"; exit 1; }
 
-    if [[ "${CONFIG[uefi]}" == "yes" ]]; then
-        wipefs -af "${CONFIG[boot_part]}" &>/dev/null
-        mkfs.fat -F32 "${CONFIG[boot_part]}"
-    else
-        wipefs -af "${CONFIG[boot_part]}" &>/dev/null
-        mkfs.ext4 -F "${CONFIG[boot_part]}"
+    # Format boot partition (skipped for BIOS encrypted boot — no separate boot)
+    if [[ -n "${CONFIG[boot_part]}" ]]; then
+        [[ -b "${CONFIG[boot_part]}" ]] || { echo "ERROR: boot_part '${CONFIG[boot_part]}' is not a block device"; exit 1; }
+
+        if [[ "${CONFIG[uefi]}" == "yes" ]]; then
+            wipefs -af "${CONFIG[boot_part]}" &>/dev/null
+            mkfs.fat -F32 "${CONFIG[boot_part]}"
+        else
+            wipefs -af "${CONFIG[boot_part]}" &>/dev/null
+            mkfs.ext4 -F "${CONFIG[boot_part]}"
+        fi
     fi
 
     wipefs -af "$root_device" &>/dev/null
@@ -1035,11 +1083,20 @@ mount_filesystems() {
     fi
 
     if [[ "${CONFIG[uefi]}" == "yes" ]]; then
-        mkdir -p "$MOUNTPOINT/boot/efi"
-        mount "${CONFIG[boot_part]}" "$MOUNTPOINT/boot/efi"
-    else
+        if [[ "${CONFIG[encrypt]}" == "yes" && "${CONFIG[encrypt_boot]}" == "no" ]]; then
+            # UEFI root-only encryption: ESP is /boot so kernel+initramfs stay unencrypted
+            mkdir -p "$MOUNTPOINT/boot"
+            mount "${CONFIG[boot_part]}" "$MOUNTPOINT/boot"
+        else
+            # UEFI encrypted boot or no encryption: ESP at /boot/efi
+            mkdir -p "$MOUNTPOINT/boot/efi"
+            mount "${CONFIG[boot_part]}" "$MOUNTPOINT/boot/efi"
+        fi
+    elif [[ -n "${CONFIG[boot_part]}" ]]; then
+        # BIOS with separate boot partition
         mount "${CONFIG[boot_part]}" "$MOUNTPOINT/boot"
     fi
+    # else: BIOS encrypted boot — /boot is a dir on encrypted root, no separate mount
 }
 
 # ────────────────────────────────────────────────────────────────────────────────
@@ -1162,31 +1219,38 @@ EOF
     arch-chroot "$MOUNTPOINT" systemctl enable NetworkManager
 
     if [[ "${CONFIG[encrypt]}" == "yes" ]]; then
-        sed -i 's/^HOOKS=.*/HOOKS=(base udev autodetect microcode modconf kms keyboard keymap consolefont block encrypt filesystems fsck)/' "$MOUNTPOINT/etc/mkinitcpio.conf"
+        sed -i 's/^HOOKS=.*/HOOKS=(base systemd autodetect microcode modconf kms keyboard sd-vconsole block sd-encrypt filesystems fsck)/' "$MOUNTPOINT/etc/mkinitcpio.conf"
         arch-chroot "$MOUNTPOINT" mkinitcpio -P
     fi
 }
 
 install_bootloader() {
-    if [[ "${CONFIG[uefi]}" == "yes" ]]; then
-        # Ensure EFI directory exists
-        mkdir -p "$MOUNTPOINT/boot/efi"
+    local efi_dir="/boot/efi"
 
-        # Check if EFI partition is mounted
-        if ! mountpoint -q "$MOUNTPOINT/boot/efi"; then
-            mount "${CONFIG[boot_part]}" "$MOUNTPOINT/boot/efi"
+    if [[ "${CONFIG[uefi]}" == "yes" ]]; then
+        # Determine EFI directory based on encryption scope
+        if [[ "${CONFIG[encrypt]}" == "yes" && "${CONFIG[encrypt_boot]}" == "no" ]]; then
+            # Root-only encryption: ESP is /boot
+            efi_dir="/boot"
+        else
+            # Encrypted boot or no encryption: ESP at /boot/efi
+            efi_dir="/boot/efi"
         fi
 
-        # If system is encrypted, enable GRUB cryptodisk + preload modules
-        if [[ "${CONFIG[encrypt]}" == "yes" ]]; then
-            # Enable cryptodisk in GRUB defaults
+        mkdir -p "$MOUNTPOINT$efi_dir"
+
+        if ! mountpoint -q "$MOUNTPOINT$efi_dir"; then
+            mount "${CONFIG[boot_part]}" "$MOUNTPOINT$efi_dir"
+        fi
+
+        if [[ "${CONFIG[encrypt_boot]}" == "yes" && "${CONFIG[encrypt]}" == "yes" ]]; then
+            # Encrypted boot: GRUB must unlock LUKS to read /boot
             if grep -q '^GRUB_ENABLE_CRYPTODISK=' "$MOUNTPOINT/etc/default/grub"; then
                 sed -i 's/^GRUB_ENABLE_CRYPTODISK=.*/GRUB_ENABLE_CRYPTODISK=y/' "$MOUNTPOINT/etc/default/grub"
             else
                 echo 'GRUB_ENABLE_CRYPTODISK=y' >> "$MOUNTPOINT/etc/default/grub"
             fi
 
-            # Preload modules needed for LUKS2 unlock
             if grep -q '^GRUB_PRELOAD_MODULES=' "$MOUNTPOINT/etc/default/grub"; then
                 sed -i 's/^GRUB_PRELOAD_MODULES=.*/GRUB_PRELOAD_MODULES="part_gpt part_msdos luks2 cryptodisk gcry_rijndael gcry_sha256"/' \
                     "$MOUNTPOINT/etc/default/grub"
@@ -1194,26 +1258,47 @@ install_bootloader() {
                 echo 'GRUB_PRELOAD_MODULES="part_gpt part_msdos luks2 cryptodisk gcry_rijndael gcry_sha256"' >> "$MOUNTPOINT/etc/default/grub"
             fi
 
-            # Install GRUB for UEFI (encrypted root/boot)
             arch-chroot "$MOUNTPOINT" grub-install \
                 --target=x86_64-efi \
-                --efi-directory=/boot/efi \
+                --efi-directory="$efi_dir" \
                 --bootloader-id=XeroLinux \
                 --removable \
                 --recheck \
                 --modules="part_gpt part_msdos luks2 cryptodisk gcry_rijndael gcry_sha256"
         else
-            # Install GRUB for UEFI (non-encrypted)
+            # Root-only encryption or no encryption: boot is unencrypted
             arch-chroot "$MOUNTPOINT" grub-install \
                 --target=x86_64-efi \
-                --efi-directory=/boot/efi \
+                --efi-directory="$efi_dir" \
                 --bootloader-id=XeroLinux \
                 --removable \
                 --recheck
         fi
     else
         # BIOS install
-        arch-chroot "$MOUNTPOINT" grub-install --target=i386-pc "${CONFIG[disk]}"
+        if [[ "${CONFIG[encrypt_boot]}" == "yes" && "${CONFIG[encrypt]}" == "yes" ]]; then
+            # Encrypted boot: GRUB must unlock LUKS to read /boot from encrypted root
+            if grep -q '^GRUB_ENABLE_CRYPTODISK=' "$MOUNTPOINT/etc/default/grub"; then
+                sed -i 's/^GRUB_ENABLE_CRYPTODISK=.*/GRUB_ENABLE_CRYPTODISK=y/' "$MOUNTPOINT/etc/default/grub"
+            else
+                echo 'GRUB_ENABLE_CRYPTODISK=y' >> "$MOUNTPOINT/etc/default/grub"
+            fi
+
+            if grep -q '^GRUB_PRELOAD_MODULES=' "$MOUNTPOINT/etc/default/grub"; then
+                sed -i 's/^GRUB_PRELOAD_MODULES=.*/GRUB_PRELOAD_MODULES="part_gpt part_msdos luks2 cryptodisk gcry_rijndael gcry_sha256"/' \
+                    "$MOUNTPOINT/etc/default/grub"
+            else
+                echo 'GRUB_PRELOAD_MODULES="part_gpt part_msdos luks2 cryptodisk gcry_rijndael gcry_sha256"' >> "$MOUNTPOINT/etc/default/grub"
+            fi
+
+            arch-chroot "$MOUNTPOINT" grub-install \
+                --target=i386-pc \
+                --recheck \
+                --modules="part_msdos luks2 cryptodisk gcry_rijndael gcry_sha256" \
+                "${CONFIG[disk]}"
+        else
+            arch-chroot "$MOUNTPOINT" grub-install --target=i386-pc "${CONFIG[disk]}"
+        fi
     fi
 
     # Set default kernel parameters
@@ -1224,11 +1309,11 @@ install_bootloader() {
     sed -i 's/^GRUB_DISTRIBUTOR=.*/GRUB_DISTRIBUTOR="XeroLinux"/' "$MOUNTPOINT/etc/default/grub"
     sed -i 's/^#*GRUB_DISABLE_OS_PROBER=.*/GRUB_DISABLE_OS_PROBER=false/' "$MOUNTPOINT/etc/default/grub"
 
-    # If encrypted, ensure cryptdevice kernel cmdline exists
+    # If encrypted, set LUKS2 kernel cmdline for sd-encrypt hook
     if [[ "${CONFIG[encrypt]}" == "yes" ]]; then
         local uuid=""
         uuid=$(blkid -s UUID -o value "${CONFIG[root_part]}")
-        sed -i "s|^GRUB_CMDLINE_LINUX=.*|GRUB_CMDLINE_LINUX=\"cryptdevice=UUID=${uuid}:cryptroot root=/dev/mapper/cryptroot\"|" \
+        sed -i "s|^GRUB_CMDLINE_LINUX=.*|GRUB_CMDLINE_LINUX=\"rd.luks.name=${uuid}=cryptroot root=/dev/mapper/cryptroot\"|" \
             "$MOUNTPOINT/etc/default/grub"
     fi
 
