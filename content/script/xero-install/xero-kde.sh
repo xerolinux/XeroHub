@@ -844,13 +844,16 @@ copy_skel_to_user() {
     print_step "Applying XeroLinux configurations... 📁"
     echo ""
 
-    # Determine the actual user (not root)
+    # Determine the actual user (not root) — try every reliable method
     if [[ -n "${SUDO_USER:-}" && "${SUDO_USER}" != "root" ]]; then
         ACTUAL_USER="$SUDO_USER"
-    elif [[ "$EUID" -eq 0 ]]; then
-        ACTUAL_USER="$(getent passwd | awk -F: '$3 >= 1000 && $3 < 65534 && $1 != "nobody" && $6 ~ /^\/home\// {print $1; exit}')"
-    else
+    elif [[ -n "${USER:-}" && "${USER}" != "root" ]]; then
         ACTUAL_USER="$USER"
+    elif [[ "$(id -un 2>/dev/null)" != "root" ]]; then
+        ACTUAL_USER="$(id -un)"
+    else
+        # Running as root (chroot) — find the first human user
+        ACTUAL_USER="$(getent passwd | awk -F: '$3 >= 1000 && $3 < 65534 && $1 != "nobody" && $6 ~ /^\/home\// {print $1; exit}')"
     fi
 
     if [[ -z "${ACTUAL_USER:-}" ]]; then
@@ -862,55 +865,46 @@ copy_skel_to_user() {
 
     if [[ -z "${ACTUAL_HOME:-}" || ! -d "$ACTUAL_HOME" ]]; then
         print_warning "User home directory not found for $ACTUAL_USER ($ACTUAL_HOME), skipping user config copy"
-    else
-        print_step "Copying /etc/skel configurations to $ACTUAL_HOME for user $ACTUAL_USER..."
-        echo ""
-
-        if [[ "$EUID" -eq 0 ]]; then
-            if command -v runuser >/dev/null 2>&1; then
-                runuser -l "$ACTUAL_USER" -c 'cp -a /etc/skel/. "$HOME"/'
-            else
-                su - "$ACTUAL_USER" -c 'cp -a /etc/skel/. "$HOME"/'
-            fi
-
-            # Add Oh-My-Posh config to user's .bashrc if not already present
-            OMP_LINE='eval "$(oh-my-posh init bash --config $HOME/.config/ohmyposh/xero.omp.json)"'
-            if ! grep -qF "oh-my-posh init bash" "$ACTUAL_HOME/.bashrc" 2>/dev/null; then
-                echo "" >> "$ACTUAL_HOME/.bashrc"
-                echo "# Oh-My-Posh Config" >> "$ACTUAL_HOME/.bashrc"
-                echo "$OMP_LINE" >> "$ACTUAL_HOME/.bashrc"
-            fi
-
-            # Add clear && fastfetch to user's .bashrc if not already present
-            if ! grep -qF "clear && fastfetch" "$ACTUAL_HOME/.bashrc" 2>/dev/null; then
-                echo "" >> "$ACTUAL_HOME/.bashrc"
-                echo "# Fastfetch on terminal start" >> "$ACTUAL_HOME/.bashrc"
-                echo "clear && fastfetch" >> "$ACTUAL_HOME/.bashrc"
-            fi
-
-            chown -R "$ACTUAL_USER:$ACTUAL_USER" "$ACTUAL_HOME"
-        else
-            sudo -u "$ACTUAL_USER" bash -lc 'cp -a /etc/skel/. "$HOME"/'
-
-            # Add Oh-My-Posh config to user's .bashrc if not already present
-            OMP_LINE='eval "$(oh-my-posh init bash --config $HOME/.config/ohmyposh/xero.omp.json)"'
-            if ! grep -qF "oh-my-posh init bash" "$ACTUAL_HOME/.bashrc" 2>/dev/null; then
-                echo "" >> "$ACTUAL_HOME/.bashrc"
-                echo "# Oh-My-Posh Config" >> "$ACTUAL_HOME/.bashrc"
-                echo "$OMP_LINE" >> "$ACTUAL_HOME/.bashrc"
-            fi
-
-            # Add clear && fastfetch to user's .bashrc if not already present
-            if ! grep -qF "clear && fastfetch" "$ACTUAL_HOME/.bashrc" 2>/dev/null; then
-                echo "" >> "$ACTUAL_HOME/.bashrc"
-                echo "# Fastfetch on terminal start" >> "$ACTUAL_HOME/.bashrc"
-                echo "clear && fastfetch" >> "$ACTUAL_HOME/.bashrc"
-            fi
-        fi
-
-        print_success "XeroLinux configurations applied to $ACTUAL_HOME!"
-        echo ""
+        return 1
     fi
+
+    # Copy /etc/skel to user's home (as root so nothing is skipped)
+    print_step "Copying /etc/skel configurations to $ACTUAL_HOME for user $ACTUAL_USER..."
+    echo ""
+
+    if ! $SUDO_CMD cp -Rf /etc/skel/. "$ACTUAL_HOME"/; then
+        print_error "Failed to copy /etc/skel to $ACTUAL_HOME!"
+        return 1
+    fi
+
+    $SUDO_CMD chown -R "$ACTUAL_USER:$ACTUAL_USER" "$ACTUAL_HOME"
+
+    # Add Oh-My-Posh config to user's .bashrc if not already present
+    OMP_LINE='eval "$(oh-my-posh init bash --config $HOME/.config/ohmyposh/xero.omp.json)"'
+    if ! grep -qF "oh-my-posh init bash" "$ACTUAL_HOME/.bashrc" 2>/dev/null; then
+        echo "" >> "$ACTUAL_HOME/.bashrc"
+        echo "# Oh-My-Posh Config" >> "$ACTUAL_HOME/.bashrc"
+        echo "$OMP_LINE" >> "$ACTUAL_HOME/.bashrc"
+    fi
+
+    # Add clear && fastfetch to user's .bashrc if not already present
+    if ! grep -qF "clear && fastfetch" "$ACTUAL_HOME/.bashrc" 2>/dev/null; then
+        echo "" >> "$ACTUAL_HOME/.bashrc"
+        echo "# Fastfetch on terminal start" >> "$ACTUAL_HOME/.bashrc"
+        echo "clear && fastfetch" >> "$ACTUAL_HOME/.bashrc"
+    fi
+
+    $SUDO_CMD chown -R "$ACTUAL_USER:$ACTUAL_USER" "$ACTUAL_HOME"
+
+    print_success "XeroLinux configurations applied to $ACTUAL_HOME!"
+    echo ""
+
+    # Copy /etc/skel to /root
+    print_step "Copying /etc/skel configurations to /root..."
+    echo ""
+    $SUDO_CMD cp -Rf /etc/skel/. /root/
+    print_success "Configurations copied to /root!"
+    echo ""
 
     # Copy xero-toolkit.desktop to autostart
     print_step "Setting up XeroLinux Toolkit autostart... 🚀"
@@ -922,13 +916,6 @@ copy_skel_to_user() {
     else
         print_warning "xero-toolkit.desktop not found, skipping autostart setup (non-critical)"
     fi
-    echo ""
-
-    # Copy /etc/skel to /root
-    print_step "Copying /etc/skel configurations to /root ..."
-    echo ""
-    $SUDO_CMD cp -Rf /etc/skel/. /root/
-    print_success "Configurations copied to /root!"
     echo ""
 
     # Apply GRUB theme using xero-layan-git repo
