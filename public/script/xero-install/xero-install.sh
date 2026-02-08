@@ -1394,16 +1394,17 @@ run_kde_installer() {
     # Ensure correct ownership (avoid root-owned dotfiles/configs)
     arch-chroot "$MOUNTPOINT" chown -R "${user}:${user}" "${user_home}"
 
-    # Many "rice"/setup scripts call sudo for pacman/system changes.
-    # Temporarily allow passwordless sudo for this user so the script can complete non-interactively.
-    arch-chroot "$MOUNTPOINT" bash -lc "echo '${user} ALL=(ALL:ALL) NOPASSWD: ALL' > /etc/sudoers.d/99-xero-installer"
-    arch-chroot "$MOUNTPOINT" chmod 0440 /etc/sudoers.d/99-xero-installer
+    # Temporarily allow passwordless sudo so the KDE script can install packages.
+    echo "${user} ALL=(ALL:ALL) NOPASSWD: ALL" > "$MOUNTPOINT/etc/sudoers.d/99-xero-installer"
+    chmod 0440 "$MOUNTPOINT/etc/sudoers.d/99-xero-installer"
 
-    # Run as the created user with a login shell so HOME/XDG stuff is correct
-    arch-chroot "$MOUNTPOINT" runuser -l "$user" -c "bash -lc '${script_path}'"
+    # Run as the created user. Use a single su -l (login shell) to set up
+    # HOME/USER/XDG correctly, and pass the script path directly — avoids
+    # the nested runuser -> bash -lc chain that broke stdin/TTY passthrough.
+    arch-chroot "$MOUNTPOINT" su -l "$user" -c "bash '${script_path}'"
 
     # Remove temporary sudo rule
-    arch-chroot "$MOUNTPOINT" rm -f /etc/sudoers.d/99-xero-installer
+    rm -f "$MOUNTPOINT/etc/sudoers.d/99-xero-installer"
 }
 
 # ────────────────────────────────────────────────────────────────────────────────
