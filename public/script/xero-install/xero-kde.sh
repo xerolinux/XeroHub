@@ -119,129 +119,156 @@ select_aur_helper() {
 
 # Customization prompts
 customization_prompts() {
-    print_header
+    clear
 
-    echo -e "${CYAN}🎨 Personalization Time!${NC}"
+    # --- Display the unified package selection menu ---
+    echo -e "${PURPLE}═══════════════════════════════════════════════════════════════════════════${NC}"
+    echo -e "${PURPLE}                PACKAGE SELECTION -- Choose Your Apps${NC}"
+    echo -e "${CYAN}     Enter numbers separated by spaces, or press Enter to skip all${NC}"
+    echo -e "${PURPLE}═══════════════════════════════════════════════════════════════════════════${NC}"
     echo ""
-    echo -e "To make your system truly yours, we'll ask you to choose from"
-    echo -e "a few quick categories (browsers, apps, tools, etc.)."
+    echo -e "${CYAN}-- WEB BROWSERS -----------------------------------------------------------${NC}"
     echo ""
-    echo -e "${GREEN}Don't worry!${NC} You can skip any category or select multiple options."
-    echo -e "This helps keep your system lean with only what ${PURPLE}you${NC} need."
+    echo -e "  ${CYAN} 1)${NC} Floorp              ${CYAN} 2)${NC} Firefox             ${CYAN} 3)${NC} Brave"
+    echo -e "  ${CYAN} 4)${NC} LibreWolf           ${CYAN} 5)${NC} Vivaldi             ${CYAN} 6)${NC} Tor Browser"
+    echo -e "  ${CYAN} 7)${NC} Mullvad Browser     ${CYAN} 8)${NC} Ungoogled Chromium  ${CYAN} 9)${NC} FileZilla"
+    echo -e "  ${CYAN}10)${NC} Helium Browser      ${CYAN}11)${NC} Zen Browser"
     echo ""
-    read -p "Press Enter to continue..."
+    echo -e "${GREEN}-- VPN --------------------------------------------------------------------${NC}"
+    echo ""
+    echo -e "  ${GREEN}12)${NC} ExpressVPN          ${GREEN}13)${NC} Mozilla VPN         ${GREEN}14)${NC} Proton VPN"
+    echo ""
+    echo -e "${PURPLE}-- SOCIAL & COMMUNICATION -------------------------------------------------${NC}"
+    echo ""
+    echo -e "  ${PURPLE}15)${NC} ZapZap (WhatsApp)   ${PURPLE}16)${NC} Discord             ${PURPLE}17)${NC} Vesktop"
+    echo -e "  ${PURPLE}18)${NC} Telegram            ${PURPLE}19)${NC} Ferdium (All-in-one)"
+    echo ""
+    echo -e "${YELLOW}-- DEVELOPMENT TOOLS ------------------------------------------------------${NC}"
+    echo ""
+    echo -e "  ${YELLOW}20)${NC} Hugo                ${YELLOW}21)${NC} Meld (diff viewer)  ${YELLOW}22)${NC} VSCodium"
+    echo -e "  ${YELLOW}23)${NC} GitHub Desktop"
+    echo ""
+    echo -e "${BLUE}-- PASSWORD MANAGERS -------------------------------------------------------${NC}"
+    echo ""
+    echo -e "  ${BLUE}24)${NC} KeePassXC           ${BLUE}25)${NC} Bitwarden           ${BLUE}26)${NC} pass"
+    echo ""
+    echo -e "${RED}-- CREATIVE & IMAGING -----------------------------------------------------${NC}"
+    echo ""
+    echo -e "  ${RED}27)${NC} GIMP                ${RED}28)${NC} Krita               ${RED}29)${NC} Inkscape"
+    echo -e "  ${RED}30)${NC} Blender"
+    echo ""
+    echo -e "${GREEN}-- MUSIC & AUDIO ----------------------------------------------------------${NC}"
+    echo ""
+    echo -e "  ${GREEN}31)${NC} MPV                 ${GREEN}32)${NC} Amarok              ${GREEN}33)${NC} Spotify"
+    echo -e "  ${GREEN}34)${NC} Tenacity            ${GREEN}35)${NC} JamesDSP            ${GREEN}36)${NC} EasyEffects"
+    echo ""
+    echo -e "${CYAN}-- VIDEO EDITING ----------------------------------------------------------${NC}"
+    echo ""
+    echo -e "  ${CYAN}37)${NC} MakeMKV             ${CYAN}38)${NC} Kdenlive            ${CYAN}39)${NC} Avidemux"
+    echo -e "  ${CYAN}40)${NC} MKVToolNix"
+    echo ""
+    echo -e "${PURPLE}-- OFFICE -----------------------------------------------------------------${NC}"
+    echo ""
+    echo -e "  ${PURPLE}41)${NC} LibreOffice"
+    echo ""
+    echo -e "${YELLOW}-- EXTRAS -----------------------------------------------------------------${NC}"
+    echo ""
+    echo -e "  ${YELLOW}42)${NC} Android Tools       ${YELLOW}43)${NC} Apple Sideloading   ${YELLOW}44)${NC} QEMU Virtual Machine"
+    echo ""
 
-    # Sub-Prompt 1: Web Browser
-    print_header
-    echo -e "${CYAN}[1/12] Web Browser${NC}"
-    echo -e "Choose your preferred web browsers (separate multiple with spaces, or press Enter to skip):"
-    echo ""
-    echo -e "  ${BLUE}1)${NC} Floorp"
-    echo -e "  ${BLUE}2)${NC} Firefox"
-    echo -e "  ${BLUE}3)${NC} Brave"
-    echo -e "  ${BLUE}4)${NC} LibreWolf"
-    echo -e "  ${BLUE}5)${NC} Vivaldi"
-    echo -e "  ${BLUE}6)${NC} Tor Browser"
-    echo -e "  ${BLUE}7)${NC} Mullvad Browser"
-    echo -e "  ${BLUE}8)${NC} Ungoogled Chromium"
-    echo -e "  ${BLUE}9)${NC} FileZilla"
-    echo -e "  ${BLUE}10)${NC} Helium Browser"
-    echo -e "  ${BLUE}11)${NC} Zen Browser"
-    echo ""
-    read -p "Enter choices (e.g., '1 3 7', or Enter to skip): " browser_choices
+    read -p ">> Your choices: " user_input
 
+    # --- Initialize all variables ---
     BROWSER=""
-    for choice in $browser_choices; do
+    VPN=""
+    SOCIAL=""
+    DEV=""
+    PASS=""
+    IMAGING=""
+    MUSIC=""
+    VIDEO=""
+    ANDROID=""
+    APPLE_SIDELOAD=""
+    QEMU_VM=""
+    WANTS_LIBREOFFICE=""
+
+    # --- Parse user selections ---
+    for choice in $user_input; do
         case $choice in
-            1) BROWSER="$BROWSER floorp" ;;
-            2) BROWSER="$BROWSER firefox" ;;
-            3) BROWSER="$BROWSER brave-bin" ;;
-            4) BROWSER="$BROWSER librewolf" ;;
-            5) BROWSER="$BROWSER vivaldi-meta" ;;
-            6) BROWSER="$BROWSER tor-browser-bin" ;;
-            7) BROWSER="$BROWSER mullvad-browser-bin" ;;
-            8) BROWSER="$BROWSER ungoogled-chromium-bin" ;;
-            9) BROWSER="$BROWSER filezilla" ;;
+            # Web Browsers
+            1)  BROWSER="$BROWSER floorp" ;;
+            2)  BROWSER="$BROWSER firefox" ;;
+            3)  BROWSER="$BROWSER brave-bin" ;;
+            4)  BROWSER="$BROWSER librewolf" ;;
+            5)  BROWSER="$BROWSER vivaldi-meta" ;;
+            6)  BROWSER="$BROWSER tor-browser-bin" ;;
+            7)  BROWSER="$BROWSER mullvad-browser-bin" ;;
+            8)  BROWSER="$BROWSER ungoogled-chromium-bin" ;;
+            9)  BROWSER="$BROWSER filezilla" ;;
             10) BROWSER="$BROWSER helium-browser-bin" ;;
             11) BROWSER="$BROWSER zen-browser-bin" ;;
+            # VPN
+            12) VPN="$VPN expressvpn" ;;
+            13) VPN="$VPN mozillavpn" ;;
+            14) VPN="$VPN proton-vpn-cli" ;;
+            # Social & Communication
+            15) SOCIAL="$SOCIAL zapzap" ;;
+            16) SOCIAL="$SOCIAL discord" ;;
+            17) SOCIAL="$SOCIAL vesktop" ;;
+            18) SOCIAL="$SOCIAL telegram" ;;
+            19) SOCIAL="$SOCIAL ferdium-bin" ;;
+            # Development Tools
+            20) DEV="$DEV hugo" ;;
+            21) DEV="$DEV meld" ;;
+            22) DEV="$DEV vscodium" ;;
+            23) DEV="$DEV github-desktop" ;;
+            # Password Managers
+            24) PASS="$PASS keepassxc" ;;
+            25) PASS="$PASS bitwarden" ;;
+            26) PASS="$PASS pass" ;;
+            # Creative & Imaging
+            27) IMAGING="$IMAGING gimp" ;;
+            28) IMAGING="$IMAGING krita" ;;
+            29) IMAGING="$IMAGING inkscape" ;;
+            30) IMAGING="$IMAGING blender" ;;
+            # Music & Audio
+            31) MUSIC="$MUSIC mpv" ;;
+            32) MUSIC="$MUSIC amarok" ;;
+            33) MUSIC="$MUSIC spotify" ;;
+            34) MUSIC="$MUSIC tenacity" ;;
+            35) MUSIC="$MUSIC jamesdsp" ;;
+            36) MUSIC="$MUSIC easyeffects" ;;
+            # Video Editing
+            37) VIDEO="$VIDEO makemkv" ;;
+            38) VIDEO="$VIDEO kdenlive" ;;
+            39) VIDEO="$VIDEO avidemux-qt" ;;
+            40) VIDEO="$VIDEO mkvtoolnix-gui" ;;
+            # Office
+            41) WANTS_LIBREOFFICE="yes" ;;
+            # Extras
+            42) ANDROID="heimdall qtscrcpy adbmanager android-udev android-tools android-platform android-sdk-platform-tools" ;;
+            43) APPLE_SIDELOAD="plume-impactor" ;;
+            44) QEMU_VM="yes" ;;
         esac
     done
 
-    # Sub-Prompt 2: VPN
-    print_header
-    echo -e "${CYAN}[2/12] VPN Service${NC}"
-    echo -e "Choose your VPN client (or press Enter to skip):"
-    echo ""
-    echo -e "  ${BLUE}1)${NC} ExpressVPN"
-    echo -e "  ${BLUE}2)${NC} Mozilla VPN"
-    echo -e "  ${BLUE}3)${NC} Proton VPN"
-    echo ""
-    read -p "Enter choice (1-3, or Enter to skip): " vpn_choice
+    # Trim leading whitespace from all variables
+    BROWSER="$(echo $BROWSER)"
+    VPN="$(echo $VPN)"
+    SOCIAL="$(echo $SOCIAL)"
+    DEV="$(echo $DEV)"
+    PASS="$(echo $PASS)"
+    IMAGING="$(echo $IMAGING)"
+    MUSIC="$(echo $MUSIC)"
+    VIDEO="$(echo $VIDEO)"
 
-    case $vpn_choice in
-        1) VPN="expressvpn" ;;
-        2) VPN="mozillavpn" ;;
-        3) VPN="proton-vpn-cli" ;;
-        *) VPN="" ;;
-    esac
-
-    # Sub-Prompt 3: Social Apps
-    print_header
-    echo -e "${CYAN}[3/12] Social & Communication Apps${NC}"
-    echo -e "Choose your social apps (separate multiple with spaces, or press Enter to skip):"
-    echo ""
-    echo -e "  ${BLUE}1)${NC} ZapZap (WhatsApp)"
-    echo -e "  ${BLUE}2)${NC} Tokodon (Mastodon)"
-    echo -e "  ${BLUE}3)${NC} Discord"
-    echo -e "  ${BLUE}4)${NC} Element (Matrix)"
-    echo -e "  ${BLUE}5)${NC} Vesktop (Discord mod)"
-    echo -e "  ${BLUE}6)${NC} WebCord (Discord)"
-    echo -e "  ${BLUE}7)${NC} Telegram"
-    echo -e "  ${BLUE}8)${NC} Ferdium (All-in-one)"
-    echo ""
-    read -p "Enter choices (e.g., '1 3 7', or Enter to skip): " social_choices
-
-    SOCIAL=""
-    for choice in $social_choices; do
-        case $choice in
-            1) SOCIAL="$SOCIAL zapzap" ;;
-            2) SOCIAL="$SOCIAL tokodon" ;;
-            3) SOCIAL="$SOCIAL discord" ;;
-            4) SOCIAL="$SOCIAL element" ;;
-            5) SOCIAL="$SOCIAL vesktop" ;;
-            6) SOCIAL="$SOCIAL webcord" ;;
-            7) SOCIAL="$SOCIAL telegram" ;;
-            8) SOCIAL="$SOCIAL ferdium-bin" ;;
-        esac
-    done
-
-    # Sub-Prompt 4: Android Tools
-    print_header
-    echo -e "${CYAN}[4/12] Android Development Tools${NC}"
-    echo ""
-    read -p "Do you want Android tools (ADB, scrcpy, etc.)? [y/N]: " -n 1 -r
-    echo ""
-
-    if [[ $REPLY =~ ^[Yy]$ ]]; then
-        ANDROID="heimdall qtscrcpy adbmanager android-udev android-tools android-platform android-sdk-platform-tools"
-    else
-        ANDROID=""
-    fi
-
-    # Sub-Prompt 5: LibreOffice
-    print_header
-    echo -e "${CYAN}[5/12] Office Suite${NC}"
-    echo ""
-    read -p "Do you want LibreOffice? [y/N]: " -n 1 -r
-    echo ""
-
-    if [[ $REPLY =~ ^[Yy]$ ]]; then
+    # --- LibreOffice language selection (only if selected) ---
+    LIBREOFFICE=""
+    if [[ -n "$WANTS_LIBREOFFICE" ]]; then
         echo ""
-        echo -e "Choose your LibreOffice language (UI + spellcheck):"
+        echo -e "${CYAN}LibreOffice selected -- Choose your language (UI + spellcheck):${NC}"
         echo ""
 
-        # All Hunspell dictionaries currently available in Arch Extra repos (plus safe fallbacks).
-        # We will also try to install the matching LibreOffice language pack: libreoffice-fresh-<lang>.
         LO_LANG_MENU=(
             "Use system locale|SYSTEM|"
             "English (US)|en_US|hunspell-en_us"
@@ -299,7 +326,6 @@ customization_prompts() {
         echo ""
         read -p "Enter choice (default: English US): " lang_choice
 
-        # Default to English (US)
         if [[ -z "$lang_choice" ]]; then
             lang_choice=2
         fi
@@ -316,7 +342,7 @@ customization_prompts() {
         elif [[ "$LOCALE_SELECTED" == "CUSTOM" ]]; then
             read -p "Enter locale code (examples: en_US, en_GB, fr_FR, es_MX, ru_RU, zh_CN): " LOCALE_SELECTED
             LOCALE_SELECTED="${LOCALE_SELECTED:-en_US}"
-            HUNSPELL_SELECTED=""  # will be derived below
+            HUNSPELL_SELECTED=""
         fi
 
         normalize_locale() {
@@ -326,7 +352,6 @@ customization_prompts() {
             echo "$loc"
         }
 
-        # Derive hunspell package from locale when not explicitly specified.
         hunspell_from_locale() {
             local loc
             loc="$(normalize_locale "$1")"
@@ -354,11 +379,9 @@ customization_prompts() {
                     fi
                     ;;
                 zh|ja|ko)
-                    # Hunspell dictionaries may not exist for these in repos; rely on LO language packs.
                     echo ""
                     ;;
                 pt)
-                    # Not all Portuguese hunspell dictionaries are in official repos; we'll try best-effort names.
                     if [[ "$region" == "br" ]]; then
                         echo "hunspell-pt_br"
                     else
@@ -375,7 +398,6 @@ customization_prompts() {
             esac
         }
 
-        # Determine the LibreOffice language pack package name from locale, if it exists.
         lo_langpack_from_locale() {
             local loc
             loc="$(normalize_locale "$1")"
@@ -428,159 +450,31 @@ customization_prompts() {
         LO_LANGPACK="$(lo_langpack_from_locale "$LOCALE_SELECTED")"
         add_pkg_if_exists "$LO_LANGPACK"
 
-        # Clean whitespace
         LIBREOFFICE="$(echo "$LO_PKGS" | xargs)"
-    else
-        LIBREOFFICE=""
     fi
 
-    # Sub-Prompt 6: Development Apps
-    print_header
-    echo -e "${CYAN}[6/12] Development Tools${NC}"
-    echo -e "Choose your dev tools (separate multiple with spaces, or press Enter to skip):"
+    # --- Selection summary ---
     echo ""
-    echo -e "  ${BLUE}1)${NC} Hugo (static site generator)"
-    echo -e "  ${BLUE}2)${NC} Meld (diff viewer)"
-    echo -e "  ${BLUE}3)${NC} VSCodium"
-    echo -e "  ${BLUE}4)${NC} GitHub Desktop"
-    echo ""
-    read -p "Enter choices (e.g., '1 3', or Enter to skip): " dev_choices
+    echo -e "${PURPLE}═══════════════════════════════════════════════════════════════════════${NC}"
+    echo -e "${GREEN}Selection Summary:${NC}"
+    [[ -n "$BROWSER" ]]        && echo -e "  Browsers:       ${CYAN}$BROWSER${NC}"
+    [[ -n "$VPN" ]]            && echo -e "  VPN:            ${CYAN}$VPN${NC}"
+    [[ -n "$SOCIAL" ]]         && echo -e "  Social:         ${CYAN}$SOCIAL${NC}"
+    [[ -n "$DEV" ]]            && echo -e "  Dev Tools:      ${CYAN}$DEV${NC}"
+    [[ -n "$PASS" ]]           && echo -e "  Passwords:      ${CYAN}$PASS${NC}"
+    [[ -n "$IMAGING" ]]        && echo -e "  Creative:       ${CYAN}$IMAGING${NC}"
+    [[ -n "$MUSIC" ]]          && echo -e "  Music/Audio:    ${CYAN}$MUSIC${NC}"
+    [[ -n "$VIDEO" ]]          && echo -e "  Video:          ${CYAN}$VIDEO${NC}"
+    [[ -n "$LIBREOFFICE" ]]    && echo -e "  LibreOffice:    ${CYAN}yes${NC}"
+    [[ -n "$ANDROID" ]]        && echo -e "  Android Tools:  ${CYAN}yes${NC}"
+    [[ -n "$APPLE_SIDELOAD" ]] && echo -e "  Apple Sideload: ${CYAN}yes${NC}"
+    [[ -n "$QEMU_VM" ]]        && echo -e "  QEMU VM:        ${CYAN}yes${NC}"
 
-    DEV=""
-    for choice in $dev_choices; do
-        case $choice in
-            1) DEV="$DEV hugo" ;;
-            2) DEV="$DEV meld" ;;
-            3) DEV="$DEV vscodium" ;;
-            4) DEV="$DEV github-desktop" ;;
-        esac
-    done
-
-    # Sub-Prompt 7: Password Manager
-    print_header
-    echo -e "${CYAN}[7/12] Password Manager${NC}"
-    echo -e "Choose your password manager (separate multiple with spaces, or press Enter to skip):"
-    echo ""
-    echo -e "  ${BLUE}1)${NC} KeePassXC"
-    echo -e "  ${BLUE}2)${NC} Bitwarden"
-    echo ""
-    read -p "Enter choices (e.g., '1', or Enter to skip): " pass_choices
-
-    PASS=""
-    for choice in $pass_choices; do
-        case $choice in
-            1) PASS="$PASS keepassxc" ;;
-            2) PASS="$PASS bitwarden" ;;
-        esac
-    done
-
-    # Sub-Prompt 8: Imaging/Creative Apps
-    print_header
-    echo -e "${CYAN}[8/12] Creative & Imaging Apps${NC}"
-    echo -e "Choose your creative tools (separate multiple with spaces, or press Enter to skip):"
-    echo ""
-    echo -e "  ${BLUE}1)${NC} GIMP (photo editing)"
-    echo -e "  ${BLUE}2)${NC} Godot (game engine)"
-    echo -e "  ${BLUE}3)${NC} Krita (digital painting)"
-    echo -e "  ${BLUE}4)${NC} Inkscape (vector graphics)"
-    echo -e "  ${BLUE}5)${NC} Blender (3D creation)"
-    echo ""
-    read -p "Enter choices (e.g., '1 3 5', or Enter to skip): " imaging_choices
-
-    IMAGING=""
-    for choice in $imaging_choices; do
-        case $choice in
-            1) IMAGING="$IMAGING gimp" ;;
-            2) IMAGING="$IMAGING godot" ;;
-            3) IMAGING="$IMAGING krita" ;;
-            4) IMAGING="$IMAGING inkscape" ;;
-            5) IMAGING="$IMAGING blender" ;;
-        esac
-    done
-
-    # Sub-Prompt 9: Music Apps
-    print_header
-    echo -e "${CYAN}[9/12] Music & Audio Apps${NC}"
-    echo -e "Choose your music apps (separate multiple with spaces, or press Enter to skip):"
-    echo ""
-    echo -e "  ${BLUE}1)${NC} MPV (media player)"
-    echo -e "  ${BLUE}2)${NC} Amarok (music player)"
-    echo -e "  ${BLUE}3)${NC} Spotify"
-    echo -e "  ${BLUE}4)${NC} Tenacity (audio editor)"
-    echo -e "  ${BLUE}5)${NC} JamesDSP (audio effects)"
-    echo -e "  ${BLUE}6)${NC} EasyEffects (audio effects)"
-    echo ""
-    read -p "Enter choices (e.g., '1 3', or Enter to skip): " music_choices
-
-    MUSIC=""
-    for choice in $music_choices; do
-        case $choice in
-            1) MUSIC="$MUSIC mpv" ;;
-            2) MUSIC="$MUSIC amarok" ;;
-            3) MUSIC="$MUSIC spotify" ;;
-            4) MUSIC="$MUSIC tenacity" ;;
-            5) MUSIC="$MUSIC jamesdsp" ;;
-            6) MUSIC="$MUSIC easyeffects" ;;
-        esac
-    done
-
-    # Sub-Prompt 10: Video Apps
-    print_header
-    echo -e "${CYAN}[10/12] Video Editing Apps${NC}"
-    echo -e "Choose your video tools (separate multiple with spaces, or press Enter to skip):"
-    echo ""
-    echo -e "  ${BLUE}1)${NC} Mystiq (video converter)"
-    echo -e "  ${BLUE}2)${NC} MakeMKV (DVD/Blu-ray ripper)"
-    echo -e "  ${BLUE}3)${NC} Kdenlive (video editor)"
-    echo -e "  ${BLUE}4)${NC} Avidemux (video editor)"
-    echo -e "  ${BLUE}5)${NC} MKVToolNix (MKV tools)"
-    echo -e "  ${BLUE}6)${NC} LosslessCut (video trimmer)"
-    echo ""
-    read -p "Enter choices (e.g., '3 6', or Enter to skip): " video_choices
-
-    VIDEO=""
-    for choice in $video_choices; do
-        case $choice in
-            1) VIDEO="$VIDEO mystiq" ;;
-            2) VIDEO="$VIDEO makemkv" ;;
-            3) VIDEO="$VIDEO kdenlive" ;;
-            4) VIDEO="$VIDEO avidemux-qt" ;;
-            5) VIDEO="$VIDEO mkvtoolnix-gui" ;;
-            6) VIDEO="$VIDEO losslesscut-bin" ;;
-        esac
-    done
-
-    # Sub-Prompt 11: Apple Sideloading
-    print_header
-    echo -e "${CYAN}[11/12] Apple Sideloading App${NC}"
-    echo ""
-    read -p "Do you want Apple Sideloading App (plume-impactor)? [y/N]: " -n 1 -r
-    echo ""
-
-    if [[ $REPLY =~ ^[Yy]$ ]]; then
-        APPLE_SIDELOAD="plume-impactor"
-    else
-        APPLE_SIDELOAD=""
+    if [[ -z "$BROWSER$VPN$SOCIAL$DEV$PASS$IMAGING$MUSIC$VIDEO$LIBREOFFICE$ANDROID$APPLE_SIDELOAD$QEMU_VM" ]]; then
+        echo -e "  ${YELLOW}(no packages selected)${NC}"
     fi
 
-    # Sub-Prompt 12: QEMU Virtual Machine
-    print_header
-    echo -e "${CYAN}[12/12] QEMU Virtual Machine${NC}"
-    echo ""
-    read -p "Do you want QEMU Virtual Machine support? [y/N]: " -n 1 -r
-    echo ""
-
-    if [[ $REPLY =~ ^[Yy]$ ]]; then
-        QEMU_VM="yes"
-    else
-        QEMU_VM=""
-    fi
-
-    # Summary
-    print_header
-    echo -e "${GREEN}✓ Customization complete!${NC}"
-    echo ""
-    echo -e "${CYAN}Ready to install your personalized KDE Plasma system.${NC}"
+    echo -e "${PURPLE}═══════════════════════════════════════════════════════════════════════${NC}"
     echo ""
     read -p "Press Enter to begin installation..."
 }
