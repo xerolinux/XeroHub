@@ -134,62 +134,49 @@ customization_prompts() {
     echo -e "  ${CYAN} 7)${NC} Mullvad Browser     ${CYAN} 8)${NC} Ungoogled Chromium  ${CYAN} 9)${NC} FileZilla"
     echo -e "  ${CYAN}10)${NC} Helium Browser      ${CYAN}11)${NC} Zen Browser"
     echo ""
-    echo -e "${GREEN}-- VPN --------------------------------------------------------------------${NC}"
+    echo -e "${GREEN}-- SOCIAL & COMMUNICATION -------------------------------------------------${NC}"
     echo ""
-    echo -e "  ${GREEN}12)${NC} ExpressVPN          ${GREEN}13)${NC} Mozilla VPN         ${GREEN}14)${NC} Proton VPN"
+    echo -e "  ${GREEN}12)${NC} ZapZap (WhatsApp)   ${GREEN}13)${NC} Discord             ${GREEN}14)${NC} Vesktop"
+    echo -e "  ${GREEN}15)${NC} Telegram            ${GREEN}16)${NC} Ferdium (All-in-one)"
     echo ""
-    echo -e "${PURPLE}-- SOCIAL & COMMUNICATION -------------------------------------------------${NC}"
+    echo -e "${PURPLE}-- DEVELOPMENT TOOLS ------------------------------------------------------${NC}"
     echo ""
-    echo -e "  ${PURPLE}15)${NC} ZapZap (WhatsApp)   ${PURPLE}16)${NC} Discord             ${PURPLE}17)${NC} Vesktop"
-    echo -e "  ${PURPLE}18)${NC} Telegram            ${PURPLE}19)${NC} Ferdium (All-in-one)"
+    echo -e "  ${PURPLE}17)${NC} Hugo                ${PURPLE}18)${NC} Meld (diff viewer)  ${PURPLE}19)${NC} VSCodium"
+    echo -e "  ${PURPLE}20)${NC} GitHub Desktop"
     echo ""
-    echo -e "${YELLOW}-- DEVELOPMENT TOOLS ------------------------------------------------------${NC}"
+    echo -e "${YELLOW}-- PASSWORD MANAGERS -------------------------------------------------------${NC}"
     echo ""
-    echo -e "  ${YELLOW}20)${NC} Hugo                ${YELLOW}21)${NC} Meld (diff viewer)  ${YELLOW}22)${NC} VSCodium"
-    echo -e "  ${YELLOW}23)${NC} GitHub Desktop"
+    echo -e "  ${YELLOW}21)${NC} KeePassXC           ${YELLOW}22)${NC} Bitwarden           ${YELLOW}23)${NC} pass"
     echo ""
-    echo -e "${BLUE}-- PASSWORD MANAGERS -------------------------------------------------------${NC}"
+    echo -e "${BLUE}-- CREATIVE & IMAGING -----------------------------------------------------${NC}"
     echo ""
-    echo -e "  ${BLUE}24)${NC} KeePassXC           ${BLUE}25)${NC} Bitwarden           ${BLUE}26)${NC} pass"
+    echo -e "  ${BLUE}24)${NC} GIMP                ${BLUE}25)${NC} Krita               ${BLUE}26)${NC} Inkscape"
     echo ""
-    echo -e "${RED}-- CREATIVE & IMAGING -----------------------------------------------------${NC}"
+    echo -e "${RED}-- MUSIC & AUDIO ----------------------------------------------------------${NC}"
     echo ""
-    echo -e "  ${RED}27)${NC} GIMP                ${RED}28)${NC} Krita               ${RED}29)${NC} Inkscape"
-    echo -e "  ${RED}30)${NC} Blender"
+    echo -e "  ${RED}27)${NC} MPV                 ${RED}28)${NC} Amarok              ${RED}29)${NC} Spotify"
+    echo -e "  ${RED}30)${NC} Tenacity            ${RED}31)${NC} JamesDSP            ${RED}32)${NC} EasyEffects"
     echo ""
-    echo -e "${GREEN}-- MUSIC & AUDIO ----------------------------------------------------------${NC}"
+    echo -e "${GREEN}-- VIDEO EDITING ----------------------------------------------------------${NC}"
     echo ""
-    echo -e "  ${GREEN}31)${NC} MPV                 ${GREEN}32)${NC} Amarok              ${GREEN}33)${NC} Spotify"
-    echo -e "  ${GREEN}34)${NC} Tenacity            ${GREEN}35)${NC} JamesDSP            ${GREEN}36)${NC} EasyEffects"
+    echo -e "  ${GREEN}33)${NC} MakeMKV             ${GREEN}34)${NC} Kdenlive            ${GREEN}35)${NC} Avidemux"
+    echo -e "  ${GREEN}36)${NC} MKVToolNix"
     echo ""
-    echo -e "${CYAN}-- VIDEO EDITING ----------------------------------------------------------${NC}"
+    echo -e "${CYAN}-- OFFICE -----------------------------------------------------------------${NC}"
     echo ""
-    echo -e "  ${CYAN}37)${NC} MakeMKV             ${CYAN}38)${NC} Kdenlive            ${CYAN}39)${NC} Avidemux"
-    echo -e "  ${CYAN}40)${NC} MKVToolNix"
-    echo ""
-    echo -e "${PURPLE}-- OFFICE -----------------------------------------------------------------${NC}"
-    echo ""
-    echo -e "  ${PURPLE}41)${NC} LibreOffice"
-    echo ""
-    echo -e "${YELLOW}-- EXTRAS -----------------------------------------------------------------${NC}"
-    echo ""
-    echo -e "  ${YELLOW}42)${NC} Android Tools       ${YELLOW}43)${NC} Apple Sideloading   ${YELLOW}44)${NC} QEMU Virtual Machine"
+    echo -e "  ${CYAN}37)${NC} LibreOffice"
     echo ""
 
     read -p ">> Your choices: " user_input
 
     # --- Initialize all variables ---
     BROWSER=""
-    VPN=""
     SOCIAL=""
     DEV=""
     PASS=""
     IMAGING=""
     MUSIC=""
     VIDEO=""
-    ANDROID=""
-    APPLE_SIDELOAD=""
-    QEMU_VM=""
     WANTS_LIBREOFFICE=""
 
     # --- Parse user selections ---
@@ -207,54 +194,44 @@ customization_prompts() {
             9)  BROWSER="$BROWSER filezilla" ;;
             10) BROWSER="$BROWSER helium-browser-bin" ;;
             11) BROWSER="$BROWSER zen-browser-bin" ;;
-            # VPN
-            12) VPN="$VPN expressvpn" ;;
-            13) VPN="$VPN mozillavpn" ;;
-            14) VPN="$VPN proton-vpn-cli" ;;
             # Social & Communication
-            15) SOCIAL="$SOCIAL zapzap" ;;
-            16) SOCIAL="$SOCIAL discord" ;;
-            17) SOCIAL="$SOCIAL vesktop" ;;
-            18) SOCIAL="$SOCIAL telegram" ;;
-            19) SOCIAL="$SOCIAL ferdium-bin" ;;
+            12) SOCIAL="$SOCIAL zapzap" ;;
+            13) SOCIAL="$SOCIAL discord" ;;
+            14) SOCIAL="$SOCIAL vesktop" ;;
+            15) SOCIAL="$SOCIAL telegram" ;;
+            16) SOCIAL="$SOCIAL ferdium-bin" ;;
             # Development Tools
-            20) DEV="$DEV hugo" ;;
-            21) DEV="$DEV meld" ;;
-            22) DEV="$DEV vscodium" ;;
-            23) DEV="$DEV github-desktop" ;;
+            17) DEV="$DEV hugo" ;;
+            18) DEV="$DEV meld" ;;
+            19) DEV="$DEV vscodium" ;;
+            20) DEV="$DEV github-desktop" ;;
             # Password Managers
-            24) PASS="$PASS keepassxc" ;;
-            25) PASS="$PASS bitwarden" ;;
-            26) PASS="$PASS pass" ;;
+            21) PASS="$PASS keepassxc" ;;
+            22) PASS="$PASS bitwarden" ;;
+            23) PASS="$PASS pass" ;;
             # Creative & Imaging
-            27) IMAGING="$IMAGING gimp" ;;
-            28) IMAGING="$IMAGING krita" ;;
-            29) IMAGING="$IMAGING inkscape" ;;
-            30) IMAGING="$IMAGING blender" ;;
+            24) IMAGING="$IMAGING gimp" ;;
+            25) IMAGING="$IMAGING krita" ;;
+            26) IMAGING="$IMAGING inkscape" ;;
             # Music & Audio
-            31) MUSIC="$MUSIC mpv" ;;
-            32) MUSIC="$MUSIC amarok" ;;
-            33) MUSIC="$MUSIC spotify" ;;
-            34) MUSIC="$MUSIC tenacity" ;;
-            35) MUSIC="$MUSIC jamesdsp" ;;
-            36) MUSIC="$MUSIC easyeffects" ;;
+            27) MUSIC="$MUSIC mpv" ;;
+            28) MUSIC="$MUSIC amarok" ;;
+            29) MUSIC="$MUSIC spotify" ;;
+            30) MUSIC="$MUSIC tenacity" ;;
+            31) MUSIC="$MUSIC jamesdsp" ;;
+            32) MUSIC="$MUSIC easyeffects" ;;
             # Video Editing
-            37) VIDEO="$VIDEO makemkv" ;;
-            38) VIDEO="$VIDEO kdenlive" ;;
-            39) VIDEO="$VIDEO avidemux-qt" ;;
-            40) VIDEO="$VIDEO mkvtoolnix-gui" ;;
+            33) VIDEO="$VIDEO makemkv" ;;
+            34) VIDEO="$VIDEO kdenlive" ;;
+            35) VIDEO="$VIDEO avidemux-qt" ;;
+            36) VIDEO="$VIDEO mkvtoolnix-gui" ;;
             # Office
-            41) WANTS_LIBREOFFICE="yes" ;;
-            # Extras
-            42) ANDROID="heimdall qtscrcpy adbmanager android-udev android-tools android-platform android-sdk-platform-tools" ;;
-            43) APPLE_SIDELOAD="plume-impactor" ;;
-            44) QEMU_VM="yes" ;;
+            37) WANTS_LIBREOFFICE="yes" ;;
         esac
     done
 
     # Trim leading whitespace from all variables
     BROWSER="$(echo $BROWSER)"
-    VPN="$(echo $VPN)"
     SOCIAL="$(echo $SOCIAL)"
     DEV="$(echo $DEV)"
     PASS="$(echo $PASS)"
@@ -458,7 +435,6 @@ customization_prompts() {
     echo -e "${PURPLE}═══════════════════════════════════════════════════════════════════════${NC}"
     echo -e "${GREEN}Selection Summary:${NC}"
     [[ -n "$BROWSER" ]]        && echo -e "  Browsers:       ${CYAN}$BROWSER${NC}"
-    [[ -n "$VPN" ]]            && echo -e "  VPN:            ${CYAN}$VPN${NC}"
     [[ -n "$SOCIAL" ]]         && echo -e "  Social:         ${CYAN}$SOCIAL${NC}"
     [[ -n "$DEV" ]]            && echo -e "  Dev Tools:      ${CYAN}$DEV${NC}"
     [[ -n "$PASS" ]]           && echo -e "  Passwords:      ${CYAN}$PASS${NC}"
@@ -466,11 +442,8 @@ customization_prompts() {
     [[ -n "$MUSIC" ]]          && echo -e "  Music/Audio:    ${CYAN}$MUSIC${NC}"
     [[ -n "$VIDEO" ]]          && echo -e "  Video:          ${CYAN}$VIDEO${NC}"
     [[ -n "$LIBREOFFICE" ]]    && echo -e "  LibreOffice:    ${CYAN}yes${NC}"
-    [[ -n "$ANDROID" ]]        && echo -e "  Android Tools:  ${CYAN}yes${NC}"
-    [[ -n "$APPLE_SIDELOAD" ]] && echo -e "  Apple Sideload: ${CYAN}yes${NC}"
-    [[ -n "$QEMU_VM" ]]        && echo -e "  QEMU VM:        ${CYAN}yes${NC}"
 
-    if [[ -z "$BROWSER$VPN$SOCIAL$DEV$PASS$IMAGING$MUSIC$VIDEO$LIBREOFFICE$ANDROID$APPLE_SIDELOAD$QEMU_VM" ]]; then
+    if [[ -z "$BROWSER$SOCIAL$DEV$PASS$IMAGING$MUSIC$VIDEO$LIBREOFFICE" ]]; then
         echo -e "  ${YELLOW}(no packages selected)${NC}"
     fi
 
@@ -603,24 +576,10 @@ install_user_packages() {
         echo ""
     fi
 
-    if [ -n "$VPN" ]; then
-        print_step "Installing selected VPN ($VPN)... 🔒"
-        $SUDO_CMD pacman -S --needed --noconfirm $VPN || print_warning "VPN installation failed (non-critical)"
-        print_success "VPN installed!"
-        echo ""
-    fi
-
     if [ -n "$SOCIAL" ]; then
         print_step "Installing social apps... 💬"
         $SUDO_CMD pacman -S --needed --noconfirm $SOCIAL || print_warning "Some social apps failed (non-critical)"
         print_success "Social apps installed!"
-        echo ""
-    fi
-
-    if [ -n "$ANDROID" ]; then
-        print_step "Installing Android tools... 📱"
-        $SUDO_CMD pacman -S --needed --noconfirm $ANDROID || print_warning "Some Android tools failed (non-critical)"
-        print_success "Android tools installed!"
         echo ""
     fi
 
@@ -663,23 +622,6 @@ install_user_packages() {
         print_step "Installing video apps... 🎬"
         $SUDO_CMD pacman -S --needed --noconfirm $VIDEO || print_warning "Failed to install some video apps (non-critical)"
         print_success "Video apps installed!"
-        echo ""
-    fi
-
-    if [ -n "$APPLE_SIDELOAD" ]; then
-        print_step "Installing Apple Sideloading App... 🍎"
-        $SUDO_CMD pacman -S --needed --noconfirm $APPLE_SIDELOAD || print_warning "Apple Sideloading installation failed (non-critical)"
-        print_success "Apple Sideloading App installed!"
-        echo ""
-    fi
-
-    if [ -n "$QEMU_VM" ]; then
-        print_step "Installing QEMU Virtual Machine support... 🖥️"
-        $SUDO_CMD pacman -Rdd --noconfirm iptables gnu-netcat 2>/dev/null || true
-        $SUDO_CMD pacman -S --needed --noconfirm virt-manager-meta openbsd-netcat || print_warning "QEMU installation failed (non-critical)"
-        echo "options kvm-intel nested=1" | $SUDO_CMD tee /etc/modprobe.d/kvm-intel.conf > /dev/null
-        $SUDO_CMD systemctl enable libvirtd.service || print_warning "Failed to enable libvirtd service"
-        print_success "QEMU Virtual Machine support installed!"
         echo ""
     fi
 

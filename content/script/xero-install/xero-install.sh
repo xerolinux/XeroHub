@@ -2,7 +2,7 @@
 #
 # ╔═══════════════════════════════════════════════════════════════════════════════╗
 # ║                                                                               ║
-# ║                      ✨ Xero Arch Installer v1.4 ✨                           ║
+# ║                      ✨ Xero Arch Installer v1.5 ✨                           ║
 # ║                                                                               ║
 # ║          A beautiful, streamlined Arch Linux installer for XeroLinux         ║
 # ║                                                                               ║
@@ -18,7 +18,7 @@ set -Eeuo pipefail
 # CONFIGURATION
 # ────────────────────────────────────────────────────────────────────────────────
 
-VERSION="1.4"
+VERSION="1.5"
 SCRIPT_NAME="Xero Arch Installer"
 
 # URLs for fetching scripts
@@ -137,17 +137,7 @@ INTERNET_OK="no"
 check_internet() {
     [[ "$INTERNET_OK" == "yes" ]] && return 0
 
-    # 1) Fast route check (no DNS, no waiting)
-    if ip route get 1.1.1.1 &>/dev/null; then
-        # 2) Fast ICMP check with hard time limits (no DNS)
-        if ping -n -c 1 -W 1 1.1.1.1 &>/dev/null; then
-            INTERNET_OK="yes"
-            return 0
-        fi
-    fi
-
-    # 3) Fallback: quick HTTPS check (still no DNS problems if DNS works; tight timeout)
-    if curl -fsS --connect-timeout 2 --max-time 4 https://archlinux.org/ &>/dev/null; then
+    if ping -c 6 -W 2 archlinux.org &>/dev/null; then
         INTERNET_OK="yes"
         return 0
     fi
@@ -962,18 +952,18 @@ partition_disk() {
 
     if [[ "${CONFIG[uefi]}" == "yes" ]]; then
         parted -s "$disk" mklabel gpt
-        parted -s "$disk" mkpart ESP fat32 1MiB 513MiB
+        parted -s "$disk" mkpart ESP fat32 1MiB 2049MiB
         parted -s "$disk" set 1 esp on
-        parted -s "$disk" mkpart primary 513MiB 100%
+        parted -s "$disk" mkpart primary 2049MiB 100%
     elif [[ "${CONFIG[encrypt]}" == "yes" && "${CONFIG[encrypt_boot]}" == "yes" ]]; then
         # BIOS + encrypted boot: single partition, GRUB uses post-MBR gap
         parted -s "$disk" mklabel msdos
         parted -s "$disk" mkpart primary 1MiB 100%
     else
         parted -s "$disk" mklabel msdos
-        parted -s "$disk" mkpart primary ext4 1MiB 513MiB
+        parted -s "$disk" mkpart primary ext4 1MiB 2049MiB
         parted -s "$disk" set 1 boot on
-        parted -s "$disk" mkpart primary 513MiB 100%
+        parted -s "$disk" mkpart primary 2049MiB 100%
     fi
 
     # Make sure kernel/udev creates partition nodes (common VM timing issue)
