@@ -39,8 +39,8 @@ if [[ $EUID -ne 0 ]]; then
 fi
 
 # Check for internet connection
-echo -e "${CYAN}Checking internet connection (might take a min)...${NC}"
-if ! ping -c 1 -W 3 archlinux.org &>/dev/null; then
+echo -e "${CYAN}Checking internet connection (might take a bit)...${NC}"
+if ! ping -c 1 -W 3 xerolinux.xyz &>/dev/null; then
     echo -e "${RED}Error: No internet connection${NC}"
     echo "Please connect to the internet and try again."
     echo ""
