@@ -1561,9 +1561,12 @@ run_kde_installer() {
 
 main() {
     check_root
-    check_internet
-    ensure_dependencies
     check_uefi
+    # Skip internet/deps check if launched from install.sh (deps already installed)
+    if ! command -v gum &>/dev/null; then
+        check_internet
+        ensure_dependencies
+    fi
     show_main_menu
 }
 

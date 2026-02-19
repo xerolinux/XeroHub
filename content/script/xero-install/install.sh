@@ -39,7 +39,7 @@ if [[ $EUID -ne 0 ]]; then
 fi
 
 # Check for internet connection
-echo -e "${CYAN}Checking internet connection (might take a bit)...${NC}"
+echo -e "${CYAN}Checking internet connection (might take a while)...${NC}"
 if ! ping -c 1 -W 3 xerolinux.xyz &>/dev/null; then
     echo -e "${RED}Error: No internet connection${NC}"
     echo "Please connect to the internet and try again."
@@ -86,8 +86,8 @@ curl -fsSL "$KDE_URL" -o /root/xero-kde.sh 2>/dev/null || {
 echo -e "${GREEN}✓ Ready to install${NC}"
 
 echo ""
-echo -e "${PURPLE}Starting installer in 3 seconds...${NC}"
-sleep 3
+echo -e "${PURPLE}Starting installer...${NC}"
+sleep 1
 
 # Run the installer
 exec bash xero-install.sh
