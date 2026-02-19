@@ -633,6 +633,7 @@ finalize_system() {
     $SUDO_CMD systemctl enable bluetooth || print_warning "Failed to enable bluetooth"
     $SUDO_CMD systemctl enable power-profiles-daemon || print_warning "Failed to enable power-profiles-daemon"
     $SUDO_CMD systemctl enable switcheroo-control || print_warning "Failed to enable switcheroo-control"
+    $SUDO_CMD systemctl enable wpa_supplicant || print_warning "Failed to enable wpa_supplicant"
     $SUDO_CMD systemctl disable iwd 2>/dev/null || true
     $SUDO_CMD systemctl disable dhcpcd 2>/dev/null || true
     $SUDO_CMD systemctl enable preload || print_warning "Failed to enable preload"

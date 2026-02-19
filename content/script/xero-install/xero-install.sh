@@ -1275,6 +1275,13 @@ EOF
 
     arch-chroot "$MOUNTPOINT" systemctl enable NetworkManager
 
+    # Force NetworkManager to use wpa_supplicant for WiFi (not iwd)
+    mkdir -p "$MOUNTPOINT/etc/NetworkManager/conf.d"
+    cat > "$MOUNTPOINT/etc/NetworkManager/conf.d/wifi-backend.conf" << EOF
+[device]
+wifi.backend=wpa_supplicant
+EOF
+
     if [[ "${CONFIG[encrypt]}" == "yes" ]]; then
         sed -i 's/^HOOKS=.*/HOOKS=(base systemd autodetect microcode modconf kms keyboard sd-vconsole block sd-encrypt filesystems fsck)/' "$MOUNTPOINT/etc/mkinitcpio.conf"
         arch-chroot "$MOUNTPOINT" mkinitcpio -P
