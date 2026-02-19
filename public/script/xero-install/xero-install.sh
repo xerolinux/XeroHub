@@ -138,7 +138,7 @@ INTERNET_OK="no"
 check_internet() {
     [[ "$INTERNET_OK" == "yes" ]] && return 0
 
-    if ping -c 6 -W 2 archlinux.org &>/dev/null; then
+    if ping -c 1 -W 3 archlinux.org &>/dev/null; then
         INTERNET_OK="yes"
         return 0
     fi
