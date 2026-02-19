@@ -748,12 +748,7 @@ copy_skel_to_user() {
     if [[ -n "$WORKDIR" && -d "$WORKDIR" && -f "$WORKDIR/Grub.sh" ]]; then
         $SUDO_CMD cp -Rf "$WORKDIR/Configs/System/." /
         chmod +x "$WORKDIR/Grub.sh" 2>/dev/null || true
-        # Grub.sh uses relative paths, so we must cd first, then run with sudo -E to preserve working dir
-        if [[ "$EUID" -eq 0 ]]; then
-            (cd "$WORKDIR" && bash ./Grub.sh) || print_warning "Grub.sh failed (non-critical)"
-        else
-            sudo bash -c "cd '$WORKDIR' && bash ./Grub.sh" || print_warning "Grub.sh failed (non-critical)"
-        fi
+        $SUDO_CMD bash -c "cd '$WORKDIR' && bash ./Grub.sh" || print_warning "Grub.sh failed (non-critical)"
         rm -rf "$WORKDIR"
         print_success "GRUB theme applied (and repo cleaned up)."
         echo ""
