@@ -4,7 +4,7 @@ date: 2024-07-12
 description: "About Me"
 ---
 
-{{< figure src="https://i.imgur.com/SKZO0zo.png" alt="Support" class="center-image" >}}
+{{< figure src="../images/SKZO0zo.png" alt="Support" class="center-image" >}}
 
 ### Who I Am
 
