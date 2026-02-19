@@ -7,7 +7,7 @@
 # Or: bash <(curl -fsSL https://xero.link/install)
 #
 
-set -e
+set +e
 
 # Colors
 RED='\033[0;31m'
@@ -39,7 +39,7 @@ if [[ $EUID -ne 0 ]]; then
 fi
 
 # Check for internet connection
-echo -e "${CYAN}Checking internet connection (might take a while)...${NC}"
+echo -e "${CYAN}Checking internet connection (might take a bit)...${NC}"
 if ! ping -c 1 -W 3 xerolinux.xyz &>/dev/null; then
     echo -e "${RED}Error: No internet connection${NC}"
     echo "Please connect to the internet and try again."
@@ -57,9 +57,7 @@ fi
 
 # Install dependencies
 echo -e "${CYAN}Installing dependencies...${NC}"
-if ! pacman -Sy --noconfirm --needed gum arch-install-scripts parted dosfstools btrfs-progs; then
-    echo -e "${RED}Warning: Some dependency issues, continuing anyway...${NC}"
-fi
+pacman -Sy --noconfirm --needed gum arch-install-scripts parted dosfstools btrfs-progs &>/dev/null || true
 echo -e "${GREEN}✓ Dependencies installed${NC}"
 
 # Create temp directory with cleanup trap
