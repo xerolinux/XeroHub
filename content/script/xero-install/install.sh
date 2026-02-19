@@ -39,7 +39,7 @@ if [[ $EUID -ne 0 ]]; then
 fi
 
 # Check for internet connection
-echo -e "${CYAN}Checking internet connection (might take a bit)...${NC}"
+echo -e "${CYAN}Checking internet connection (might take a while)...${NC}"
 if ! ping -c 1 -W 3 xerolinux.xyz &>/dev/null; then
     echo -e "${RED}Error: No internet connection${NC}"
     echo "Please connect to the internet and try again."
@@ -57,7 +57,7 @@ fi
 
 # Install dependencies
 echo -e "${CYAN}Installing dependencies...${NC}"
-if ! pacman -Syu --noconfirm --needed gum arch-install-scripts parted dosfstools btrfs-progs; then
+if ! pacman -Sy --noconfirm --needed gum arch-install-scripts parted dosfstools btrfs-progs; then
     echo -e "${RED}Warning: Some dependency issues, continuing anyway...${NC}"
 fi
 echo -e "${GREEN}✓ Dependencies installed${NC}"

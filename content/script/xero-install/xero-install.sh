@@ -166,7 +166,7 @@ ensure_dependencies() {
 
     if [[ ${#deps_needed[@]} -gt 0 ]]; then
         echo -e "${CYAN}Installing required dependencies...${NC}"
-        pacman -Syu --noconfirm "${deps_needed[@]}" &>/dev/null
+        pacman -Sy --noconfirm "${deps_needed[@]}" &>/dev/null
     fi
 }
 
