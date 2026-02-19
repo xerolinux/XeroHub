@@ -1,7 +1,8 @@
 #!/bin/bash
 
 # XeroLinux KDE Plasma Installer
-# A clean and simple KDE installation script for Arch Linux
+
+SCRIPT_PATH="$(readlink -f "$0" 2>/dev/null || echo "")"
 
 # Colors
 RED='\033[0;31m'
@@ -10,9 +11,8 @@ YELLOW='\033[1;33m'
 BLUE='\033[0;34m'
 PURPLE='\033[0;35m'
 CYAN='\033[0;36m'
-NC='\033[0m' # No Color :(
+NC='\033[0m'
 
-# Functions
 print_header() {
     clear
     echo -e "${PURPLE}╔════════════════════════════════════════════════╗${NC}"
@@ -33,12 +33,12 @@ print_success() {
 
 print_error() {
     echo -e "${RED}✗${NC} $1"
-    sleep 3
+    sleep 1
 }
 
 print_warning() {
     echo -e "${YELLOW}⚠${NC} $1"
-    sleep 3
+    sleep 1
 }
 
 # Detect if running in chroot environment
@@ -121,7 +121,6 @@ select_aur_helper() {
 customization_prompts() {
     clear
 
-    # --- Display the unified package selection menu ---
     echo -e "${PURPLE}═══════════════════════════════════════════════════════════════════════════${NC}"
     echo -e "${PURPLE}                PACKAGE SELECTION -- Choose Your Apps${NC}"
     echo -e "${CYAN}     Enter numbers separated by spaces, or press Enter to skip all${NC}"
@@ -169,7 +168,6 @@ customization_prompts() {
 
     read -p ">> Your choices: " user_input
 
-    # --- Initialize all variables ---
     BROWSER=""
     SOCIAL=""
     DEV=""
@@ -179,7 +177,6 @@ customization_prompts() {
     VIDEO=""
     WANTS_LIBREOFFICE=""
 
-    # --- Parse user selections ---
     for choice in $user_input; do
         case $choice in
             # Web Browsers
@@ -198,7 +195,7 @@ customization_prompts() {
             12) SOCIAL="$SOCIAL zapzap" ;;
             13) SOCIAL="$SOCIAL discord" ;;
             14) SOCIAL="$SOCIAL vesktop" ;;
-            15) SOCIAL="$SOCIAL telegram" ;;
+            15) SOCIAL="$SOCIAL telegram-desktop" ;;
             16) SOCIAL="$SOCIAL ferdium-bin" ;;
             # Development Tools
             17) DEV="$DEV hugo" ;;
@@ -239,7 +236,7 @@ customization_prompts() {
     MUSIC="$(echo $MUSIC)"
     VIDEO="$(echo $VIDEO)"
 
-    # --- LibreOffice language selection (only if selected) ---
+    # LibreOffice language selection
     LIBREOFFICE=""
     if [[ -n "$WANTS_LIBREOFFICE" ]]; then
         echo ""
@@ -430,7 +427,6 @@ customization_prompts() {
         LIBREOFFICE="$(echo "$LO_PKGS" | xargs)"
     fi
 
-    # --- Selection summary ---
     echo ""
     echo -e "${PURPLE}═══════════════════════════════════════════════════════════════════════${NC}"
     echo -e "${GREEN}Selection Summary:${NC}"
@@ -452,38 +448,35 @@ customization_prompts() {
     read -p "Press Enter to begin installation..."
 }
 
-# Step B: Install all KDE packages consolidated + enable sddm
-install_kde() {
+# Step B: Install all packages + enable plasma login manager
+install_packages() {
     print_header
 
-    print_step "Starting KDE Plasma installation... 🚀"
+    print_step "Starting KDE Plasma installation..."
     echo ""
 
-    # Update system
-    print_step "Syncing package databases..."
-    $SUDO_CMD pacman -Sy --noconfirm || { print_error "System update failed!"; exit 1; }
-    print_success "System synced!"
+    print_step "Syncing and updating system..."
+    $SUDO_CMD pacman -Syu --noconfirm || { print_error "System update failed!"; exit 1; }
+    print_success "System updated!"
     echo ""
 
-    # Install selected AUR helper
-    print_step "Installing AUR helper ($AUR_HELPER)... 📦"
+    print_step "Installing AUR helper ($AUR_HELPER)..."
     $SUDO_CMD pacman -S --needed --noconfirm $AUR_HELPER || { print_error "AUR helper installation failed!"; exit 1; }
     print_success "AUR helper ($AUR_HELPER) installed!"
     echo ""
 
-    # Step B: Install all KDE packages consolidated
-    print_step "Installing KDE Plasma Desktop Environment... 💎"
+    print_step "Installing KDE Plasma and system packages..."
 
     $SUDO_CMD pacman -S --needed --noconfirm \
         kf6 qt6 kde-system \
-        kwin krdp milou breeze oxygen aurorae drkonqi kwrited \
-        kgamma kscreen sddm-kcm kmenuedit bluedevil kpipewire plasma-nm plasma-pa \
+        kwin krdp milou breeze oxygen drkonqi kwrited \
+        kgamma kscreen plasma-login-manager kmenuedit bluedevil kpipewire plasma-nm plasma-pa \
         plasma-sdk libkscreen breeze-gtk powerdevil kinfocenter flatpak-kcm \
         kdecoration ksshaskpass kwallet-pam libksysguard plasma-vault ksystemstats \
         kde-cli-tools oxygen-sounds kscreenlocker kglobalacceld systemsettings \
         kde-gtk-config layer-shell-qt plasma-desktop polkit-kde-agent plasma-workspace \
         kdeplasma-addons ocean-sound-theme qqc2-breeze-style kactivitymanagerd \
-        plasma-integration plasma-thunderbolt plasma5-integration plasma-systemmonitor \
+        plasma-integration plasma-thunderbolt plasma-systemmonitor \
         xdg-desktop-portal-kde plasma-browser-integration \
         krdc krfb smb4k alligator kdeconnect kio-admin kio-extras kio-gdrive \
         konversation kio-zeroconf kdenetwork-filesharing signon-kwallet-extension \
@@ -493,41 +486,22 @@ install_kde() {
         kmousetool kcharselect markdownpart qalculate-qt keditbookmarks kdebugsettings \
         kwalletmanager dolphin-plugins \
         k3b kamoso audiotube plasmatube audiocd-kio \
-        waypipe dwayland egl-wayland qt6-wayland lib32-wayland wayland-protocols \
-        kwayland-integration plasma-wayland-protocols || { print_error "KDE installation failed!"; exit 1; }
-
-    print_success "KDE Plasma Desktop installed!"
-    echo ""
-
-    # Enable SDDM service immediately after KDE install
-    print_step "Enabling SDDM service... 🖥️"
-    $SUDO_CMD systemctl enable sddm.service || { print_error "Failed to enable SDDM!"; exit 1; }
-    print_success "SDDM enabled!"
-    echo ""
-}
-
-# Step C: Install custom non-KDE packages (excluding what's already in xero-install.sh)
-install_custom_pkgs() {
-    print_header
-
-    print_step "Installing Additional System Packages... ⚙️"
-    echo ""
-
-    # These packages are NOT in xero-install.sh
-    $SUDO_CMD pacman -S --needed --noconfirm \
+        waypipe egl-wayland qt6-wayland lib32-wayland wayland-protocols \
+        kwayland-integration plasma-wayland-protocols \
+        plasma-keyboard ocrad \
         vi duf gcc npm yad zip xdo gum inxi lzop nmon tree vala btop glfw htop lshw \
         cblas expac fuse3 lhasa meson unace unrar unzip p7zip iftop nvtop rhash sshfs \
         vnstat nodejs cronie hwinfo arandr assimp netpbm wmctrl grsync libmtp polkit \
-        sysprof semver zenity gparted hddtemp mlocate jsoncpp fuseiso gettext node-gyp \
+        sysprof semver zenity gparted plocate jsoncpp fuseiso gettext node-gyp \
         intltool graphviz pkgstats pciutils inetutils downgrade s3fs-fuse playerctl \
-        asciinema oniguruma ventoy-bin cifs-utils lsb-release dbus-python dconf-editor \
+        asciinema oniguruma ventoy-bin cifs-utils lsb-release python-dbus dconf-editor \
         laptop-detect perl-xml-parser gnome-disk-utility appmenu-gtk-module \
-        parallel xsettingsd polkit-qt6 systemdgenie gnome-keyring \
+        parallel xsettingsd polkit-qt6 systemdgenie \
         yt-dlp wavpack unarchiver rate-mirrors gnustep-base ocs-url xmlstarlet \
         python-pip python-cffi python-numpy python-docopt python-pyaudio \
         python-pyparted python-pygments python-websockets \
         libgsf tumbler freetype2 libopenraw poppler-qt6 poppler-glib ffmpegthumbnailer \
-        gvfs mtpfs udiskie udisks2 ldmtool gvfs-afc gvfs-mtp gvfs-nfs gvfs-smb \
+        gvfs mtpfs udiskie udisks2 libldm gvfs-afc gvfs-mtp gvfs-nfs gvfs-smb \
         gvfs-goa gvfs-wsdd gvfs-dnssd gvfs-google gvfs-gphoto2 gvfs-onedrive \
         flatpak topgrade appstream-qt pacman-contrib pacman-bintrans \
         ffmpeg ffmpegthumbs ffnvcodec-headers \
@@ -536,13 +510,13 @@ install_custom_pkgs() {
         kwin-effect-rounded-corners-git \
         bash-language-server typescript-language-server vscode-json-languageserver \
         ttf-fira-code otf-libertinus tex-gyre-fonts ttf-hack-nerd ttf-ubuntu-font-family \
-        awesome-terminal-fonts ttf-jetbrains-mono-nerd adobe-source-sans-pro-fonts \
+        awesome-terminal-fonts ttf-jetbrains-mono-nerd adobe-source-sans-fonts \
         bat bat-extras jq vim figlet ostree lolcat numlockx localsend lm_sensors \
         appstream-glib lib32-lm_sensors \
         xmlto ckbcomp yaml-cpp kirigami boost-libs polkit-gnome gtk-update-icon-cache \
-        dex bash make libxinerama bash-completion \
+        dex libxinerama bash-completion \
         hblock cryptsetup brightnessctl switcheroo-control power-profiles-daemon \
-        mkinitcpio mkinitcpio-utils mkinitcpio-archiso mkinitcpio-openswap \
+        mkinitcpio-utils mkinitcpio-archiso mkinitcpio-openswap \
         mkinitcpio-nfs-utils \
         boost kpmcore xdg-terminal-exec-git \
         preload xero-toolkit extra-scripts desktop-config xero-gpu-tools \
@@ -552,13 +526,18 @@ install_custom_pkgs() {
         gpart dmraid parted hdparm usbmuxd usbutils testdisk ddrescue timeshift \
         partclone partimage clonezilla open-iscsi memtest86+-efi usb_modeswitch \
         fd tmux brltty msedit nvme-cli terminus-font foot-terminfo kitty-terminfo \
-        pv mc gpm nbd lvm2 bolt bind less lynx tldr nmap irssi mdadm wvdial hyperv \
-        mtools lsscsi ndisc6 screen man-db tcpdump ethtool xdotool pcsclite \
-        espeakup libfido2 xdg-utils man-pages diffutils mmc-utils sg3_utils dmidecode \
-        sequoia-sq edk2-shell python-pyqt6 libusb-compat smartmontools \
+        pv mc gpm nbd lvm2 bolt bind lynx tldr nmap irssi mdadm wvdial hyperv \
+        mtools lsscsi ndisc6 screen tcpdump ethtool xdotool pcsclite \
+        espeakup libfido2 xdg-utils smartmontools \
+        sequoia-sq edk2-shell python-pyqt6 libusb-compat \
         wireguard-tools || print_warning "Some packages failed (non-critical)"
 
-    print_success "Additional system packages installed!"
+    print_success "All packages installed!"
+    echo ""
+
+    print_step "Enabling Plasma Login Manager..."
+    $SUDO_CMD systemctl enable plasmalogin.service || { print_error "Failed to enable Plasma Login Manager!"; exit 1; }
+    print_success "Plasma Login Manager enabled!"
     echo ""
 }
 
@@ -654,7 +633,8 @@ finalize_system() {
     $SUDO_CMD systemctl enable bluetooth || print_warning "Failed to enable bluetooth"
     $SUDO_CMD systemctl enable power-profiles-daemon || print_warning "Failed to enable power-profiles-daemon"
     $SUDO_CMD systemctl enable switcheroo-control || print_warning "Failed to enable switcheroo-control"
-    $SUDO_CMD systemctl enable dhcpcd || print_warning "Failed to enable dhcpcd"
+    $SUDO_CMD systemctl disable iwd 2>/dev/null || true
+    $SUDO_CMD systemctl disable dhcpcd 2>/dev/null || true
     $SUDO_CMD systemctl enable preload || print_warning "Failed to enable preload"
     $SUDO_CMD systemctl enable sshd || print_warning "Failed to enable sshd"
     $SUDO_CMD systemctl enable xero-gpu-check || print_warning "Failed to enable xero-gpu-check"
@@ -841,14 +821,17 @@ show_completion() {
     echo ""
 }
 
-# Run the script
 check_root
 prompt_user
 select_aur_helper
 customization_prompts
-install_kde
-install_custom_pkgs
+install_packages
 install_user_packages
 finalize_system
 copy_skel_to_user
 show_completion
+
+# Clean up: remove this script
+if [[ -n "$SCRIPT_PATH" && -f "$SCRIPT_PATH" ]]; then
+    rm -f "$SCRIPT_PATH"
+fi

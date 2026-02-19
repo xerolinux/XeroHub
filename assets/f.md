@@ -12,5 +12,5 @@
     - **nVidia** ISO made more robust for Laptops.
     - An all-new **Live Welcome** tool in **Rust**.
     - Re-enabled **BTRFS** & **Encryption** in Calamares.
+    - A brand-new *G.U.I Package Manager* created in **Rust/Qt**
     - Kernel Manager & **Scheds-ext** unlocked in the **Xero-Toolkit**.
-    - A brand-new *Standalone* **Scheds-ext** tool added to the mix. ([**Click for more info**](https://github.com/XeroLinuxDev/scx-tool))

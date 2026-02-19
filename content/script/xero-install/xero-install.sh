@@ -2,7 +2,7 @@
 #
 # ╔═══════════════════════════════════════════════════════════════════════════════╗
 # ║                                                                               ║
-# ║                      ✨ Xero Arch Installer v1.5 ✨                           ║
+# ║                      ✨ Xero Arch Installer v1.6 ✨                           ║
 # ║                                                                               ║
 # ║          A beautiful, streamlined Arch Linux installer for XeroLinux         ║
 # ║                                                                               ║
@@ -18,7 +18,7 @@ set -Eeuo pipefail
 # CONFIGURATION
 # ────────────────────────────────────────────────────────────────────────────────
 
-VERSION="1.5"
+VERSION="1.6"
 SCRIPT_NAME="Xero Arch Installer"
 
 # URLs for fetching scripts
@@ -53,6 +53,7 @@ CONFIG[encrypt_password]=""
 CONFIG[swap]="zram"
 CONFIG[swap_algo]="zstd"
 CONFIG[gfx_driver]="mesa"
+CONFIG[parallel_downloads]="5"
 CONFIG[uefi]="no"
 CONFIG[boot_part]=""
 CONFIG[root_part]=""
@@ -165,7 +166,7 @@ ensure_dependencies() {
 
     if [[ ${#deps_needed[@]} -gt 0 ]]; then
         echo -e "${CYAN}Installing required dependencies...${NC}"
-        pacman -Sy --noconfirm "${deps_needed[@]}" &>/dev/null
+        pacman -Syu --noconfirm "${deps_needed[@]}" &>/dev/null
     fi
 }
 
@@ -745,6 +746,65 @@ select_timezone() {
 }
 
 # ────────────────────────────────────────────────────────────────────────────────
+# 9. PARALLEL DOWNLOADS
+# ────────────────────────────────────────────────────────────────────────────────
+
+configure_parallel_downloads() {
+    show_header
+    show_submenu_header "⚡ Parallel Downloads"
+    echo ""
+
+    show_info "Set number of parallel package downloads (speeds up installation)"
+    echo ""
+
+    local options=(
+        "3      │ Conservative (slow connections)"
+        "5      │ Default (recommended)"
+        "10     │ Fast (good connections)"
+        "15     │ Maximum (excellent connections)"
+    )
+
+    local selection=""
+    selection=$(printf '%s\n' "${options[@]}" | gum choose --height 6 --header "Parallel downloads:") || true
+
+    if [[ -n "$selection" ]]; then
+        CONFIG[parallel_downloads]=$(echo "$selection" | awk '{print $1}')
+        show_success "Parallel downloads: ${CONFIG[parallel_downloads]}"
+    fi
+
+    sleep 0.5
+}
+
+apply_parallel_downloads() {
+    local conf="$1"
+    local count="${CONFIG[parallel_downloads]}"
+    if grep -q '^#*ParallelDownloads' "$conf"; then
+        sed -i "s/^#*ParallelDownloads.*/ParallelDownloads = $count/" "$conf"
+    else
+        sed -i '/^\[options\]/a ParallelDownloads = '"$count" "$conf"
+    fi
+}
+
+configure_pacman_options() {
+    local conf="$1"
+    local simple_opts=(Color ILoveCandy VerbosePkgLists DisableDownloadTimeout)
+
+    for opt in "${simple_opts[@]}"; do
+        if grep -q "^#\s*${opt}" "$conf"; then
+            sed -i "s/^#\s*${opt}.*/${opt}/" "$conf"
+        elif ! grep -q "^${opt}" "$conf"; then
+            sed -i '/^\[options\]/a '"${opt}" "$conf"
+        fi
+    done
+
+    if grep -q '^#*DownloadUser' "$conf"; then
+        sed -i 's/^#*DownloadUser.*/DownloadUser = alpm/' "$conf"
+    elif ! grep -q '^DownloadUser' "$conf"; then
+        sed -i '/^\[options\]/a DownloadUser = alpm' "$conf"
+    fi
+}
+
+# ────────────────────────────────────────────────────────────────────────────────
 # MAIN MENU
 # ────────────────────────────────────────────────────────────────────────────────
 
@@ -769,13 +829,14 @@ show_main_menu() {
             "6. 🎮 Graphics Driver       │ ${CONFIG[gfx_driver]}"
             "7. 👤 Authentication        │ ${CONFIG[username]:-Not configured}"
             "8. 🕐 Timezone              │ ${CONFIG[timezone]}"
+            "9. ⚡ Parallel Downloads    │ ${CONFIG[parallel_downloads]}"
             "─────────────────────────────────────────────"
-            "9. ✅ Start Installation"
-            "0. ❌ Exit"
+            "10. ✅ Start Installation"
+            "0.  ❌ Exit"
         )
 
         local selection=""
-        selection=$(printf '%s\n' "${menu_items[@]}" | gum choose --height 15 --header $'Configure your installation:\n') || true
+        selection=$(printf '%s\n' "${menu_items[@]}" | gum choose --height 16 --header $'Configure your installation:\n') || true
 
         case "$selection" in
             "1."*) select_installer_language ;;
@@ -786,7 +847,8 @@ show_main_menu() {
             "6."*) select_graphics_driver ;;
             "7."*) configure_authentication ;;
             "8."*) select_timezone ;;
-            "9."*)
+            "9."*) configure_parallel_downloads ;;
+            "10."*)
                 if validate_config; then
                     show_summary
                     if confirm_action "Start installation? THIS WILL ERASE ${CONFIG[disk]}"; then
@@ -867,7 +929,8 @@ show_summary() {
         "" \
         "Graphics:         ${CONFIG[gfx_driver]}" \
         "Boot Mode:        $boot_mode" \
-        "Bootloader:       GRUB"
+        "Bootloader:       GRUB" \
+        "Downloads:        ${CONFIG[parallel_downloads]} parallel"
 
     echo ""
     gum style --foreground 196 --bold --margin "0 2" \
@@ -1110,6 +1173,8 @@ add_temp_repo() {
         echo -e '\n[chaotic-aur]\nInclude = /etc/pacman.d/chaotic-mirrorlist' >> /etc/pacman.conf
     fi
 
+    apply_parallel_downloads /etc/pacman.conf
+    configure_pacman_options /etc/pacman.conf
     pacman -Sy
 }
 
@@ -1140,7 +1205,7 @@ install_base_system() {
     packages+=" modemmanager-qt openpgp-card-tools xl2tpd"
 
     # Bluetooth
-    packages+=" bluez bluez-libs bluez-utils bluez-tools bluez-plugins bluez-hid2hci"
+    packages+=" bluez bluez-libs bluez-utils bluez-tools bluez-hid2hci"
 
     # Audio (PipeWire)
     packages+=" pipewire wireplumber pipewire-jack pipewire-support lib32-pipewire-jack"
@@ -1185,6 +1250,8 @@ add_repos() {
         echo -e '\n[chaotic-aur]\nInclude = /etc/pacman.d/chaotic-mirrorlist' >> "$MOUNTPOINT/etc/pacman.conf"
     fi
 
+    apply_parallel_downloads "$MOUNTPOINT/etc/pacman.conf"
+    configure_pacman_options "$MOUNTPOINT/etc/pacman.conf"
     arch-chroot "$MOUNTPOINT" pacman -Sy
 }
 
@@ -1413,7 +1480,13 @@ compression-algorithm = ${CONFIG[swap_algo]}
 EOF
             ;;
         "file")
-            arch-chroot "$MOUNTPOINT" dd if=/dev/zero of=/swapfile bs=1M count=4096 status=progress
+            if [[ "${CONFIG[filesystem]}" == "btrfs" ]]; then
+                arch-chroot "$MOUNTPOINT" truncate -s 0 /swapfile
+                arch-chroot "$MOUNTPOINT" chattr +C /swapfile
+                arch-chroot "$MOUNTPOINT" fallocate -l 4G /swapfile
+            else
+                arch-chroot "$MOUNTPOINT" dd if=/dev/zero of=/swapfile bs=1M count=4096 status=progress
+            fi
             arch-chroot "$MOUNTPOINT" chmod 600 /swapfile
             arch-chroot "$MOUNTPOINT" mkswap /swapfile
             echo "/swapfile none swap defaults 0 0" >> "$MOUNTPOINT/etc/fstab"

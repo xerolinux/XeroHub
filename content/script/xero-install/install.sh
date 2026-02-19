@@ -21,7 +21,7 @@ clear
 cat << 'EOF'
 ╔═══════════════════════════════════════════════════════════════════════════════╗
 ║                                                                               ║
-║                        ✨ Xero Arch Installer v1.5 ✨                         ║
+║                        ✨ Xero Arch Installer v1.6 ✨                         ║
 ║                                                                               ║
 ║          A beautiful, streamlined Arch Linux installer for XeroLinux          ║
 ║                                                                               ║
@@ -57,17 +57,22 @@ fi
 
 # Install dependencies
 echo -e "${CYAN}Installing dependencies...${NC}"
-pacman -Sy --noconfirm --needed gum arch-install-scripts parted dosfstools btrfs-progs &>/dev/null
+pacman -Syu --noconfirm --needed gum arch-install-scripts parted dosfstools btrfs-progs &>/dev/null
 echo -e "${GREEN}✓ Dependencies installed${NC}"
 
-# Create temp directory
+# Create temp directory with cleanup trap
 INSTALL_DIR=$(mktemp -d)
+trap 'rm -rf "$INSTALL_DIR"' EXIT
 cd "$INSTALL_DIR"
 
 # Download main installer
 echo -e "${CYAN}Downloading Xero Arch Installer...${NC}"
 INSTALLER_URL="https://xerolinux.xyz/script/xero-install/xero-install.sh"
 curl -fsSL "$INSTALLER_URL" -o xero-install.sh
+if [[ ! -s xero-install.sh ]]; then
+    echo -e "${RED}Error: Failed to download installer (empty file)${NC}"
+    exit 1
+fi
 chmod +x xero-install.sh
 echo -e "${GREEN}✓ Installer downloaded${NC}"
 
@@ -77,7 +82,7 @@ KDE_URL="https://xerolinux.xyz/script/xero-install/xero-kde.sh"
 curl -fsSL "$KDE_URL" -o /root/xero-kde.sh 2>/dev/null || {
     echo -e "${CYAN}Note: KDE script will be downloaded during installation${NC}"
 }
-chmod +x /root/xero-kde.sh 2>/dev/null || true
+[[ -f /root/xero-kde.sh ]] && chmod +x /root/xero-kde.sh
 echo -e "${GREEN}✓ Ready to install${NC}"
 
 echo ""
