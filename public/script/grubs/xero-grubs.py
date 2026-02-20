@@ -71,6 +71,11 @@ headerbar {
 .preview-image {
     border-radius: 5px;
 }
+.loading-label {
+    font-size: 13px;
+    font-style: italic;
+    opacity: 0.6;
+}
 .install-button {
     background: linear-gradient(to right, #ff00ff, #00ffff, #ffff00);
     color: #000000;
@@ -258,19 +263,41 @@ class GrubApp(Adw.Application):
         info_box.append(desc)
         outer.append(info_box)
 
-        # 4x2 Grid — spinner shown while images download
+        # Loading label
+        loading_label = Gtk.Label(label="Loading previews please wait...")
+        loading_label.add_css_class("loading-label")
+        loading_label.set_halign(Gtk.Align.CENTER)
+        outer.append(loading_label)
+
+        # 4x2 Grid — placeholder cards shown immediately
         grid = Gtk.Grid()
         grid.set_row_spacing(15)
         grid.set_column_spacing(15)
         grid.set_column_homogeneous(True)
         outer.append(grid)
 
-        spinner = Gtk.Spinner(spinning=True)
-        spinner.set_size_request(48, 48)
-        spinner.set_halign(Gtk.Align.CENTER)
-        spinner.set_margin_top(40)
-        spinner.set_margin_bottom(40)
-        grid.attach(spinner, 0, 0, 4, 1)
+        image_slots = []
+        for i, (name, filename) in enumerate(THEMES):
+            row = i // 4
+            col = i % 4
+
+            card = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=4)
+            card.add_css_class("theme-card")
+            card.set_hexpand(True)
+
+            slot = Gtk.Box()
+            slot.set_size_request(-1, 180)
+            slot.add_css_class("preview-image")
+            slot.set_hexpand(True)
+            card.append(slot)
+            image_slots.append((slot, filename))
+
+            label = Gtk.Label(label=name)
+            label.add_css_class("theme-name")
+            label.set_halign(Gtk.Align.CENTER)
+            card.append(label)
+
+            grid.attach(card, col, row, 1, 1)
 
         # Install button
         install_btn = Gtk.Button(label="Install GRUB Themes (Interactive Installer)")
@@ -289,24 +316,29 @@ class GrubApp(Adw.Application):
         toolbar_view.set_content(scrolled)
 
         win.set_content(toolbar_view)
-        win.set_default_size(1200, 700)
+        win.set_default_size(1200, 780)
         win.present()
 
-        # Download images in background, then populate grid on main thread
-        def download_and_populate():
+        # Download images in background, then fill slots on main thread
+        def download_and_fill():
             ensure_cached_images()
-            GLib.idle_add(self.populate_grid, grid, spinner)
+            GLib.idle_add(self.fill_image_slots, image_slots, loading_label)
 
-        threading.Thread(target=download_and_populate, daemon=True).start()
+        threading.Thread(target=download_and_fill, daemon=True).start()
 
-    def populate_grid(self, grid, spinner):
-        grid.remove(spinner)
-        for i, (name, filename) in enumerate(THEMES):
-            row = i // 4
-            col = i % 4
-            card = build_theme_card(name, filename)
-            card.set_hexpand(True)
-            grid.attach(card, col, row, 1, 1)
+    def fill_image_slots(self, image_slots, loading_label):
+        loading_label.set_visible(False)
+        for slot, filename in image_slots:
+            path = get_image_path(filename)
+            if path:
+                texture = load_scaled_texture(path, 180)
+                if texture:
+                    picture = Gtk.Picture.new_for_paintable(texture)
+                    picture.set_can_shrink(True)
+                    picture.set_content_fit(Gtk.ContentFit.CONTAIN)
+                    picture.set_hexpand(True)
+                    picture.add_css_class("preview-image")
+                    slot.append(picture)
 
 
 def main():
