@@ -20,7 +20,7 @@ gi.require_version("Adw", "1")
 from gi.repository import Gtk, Gdk, GdkPixbuf, Gio, Adw
 
 APP_ID = "io.xerolinux.grubs"
-ASSET_BASE_URL = "https://raw.githubusercontent.com/xerolinux/xero-grubs/main/assets"
+ASSET_BASE_URL = "https://xerolinux.xyz/script/grubs/assets"
 CACHE_DIR = Path.home() / ".cache" / "xero-grubs"
 
 THEMES = [
