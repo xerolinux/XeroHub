@@ -208,7 +208,7 @@ def build_theme_card(name, filename):
 
 class GrubApp(Adw.Application):
     def __init__(self):
-        super().__init__(application_id=APP_ID, flags=Gio.ApplicationFlags.DEFAULT_FLAGS)
+        super().__init__(application_id=APP_ID, flags=Gio.ApplicationFlags.NON_UNIQUE)
         self.connect("activate", self.on_activate)
 
     def on_activate(self, app):
@@ -281,7 +281,7 @@ class GrubApp(Adw.Application):
         toolbar_view.set_content(scrolled)
 
         win.set_content(toolbar_view)
-        win.set_default_size(1200, -1)
+        win.set_default_size(1200, 700)
         win.present()
 
         # Download images in background, then populate grid on main thread
