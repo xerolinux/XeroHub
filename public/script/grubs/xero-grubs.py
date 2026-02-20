@@ -6,6 +6,7 @@ Launchable via: bash -c "python3 <(curl -fsSL 'https://raw.githubusercontent.com
 """
 
 import subprocess
+import threading
 import urllib.request
 import warnings
 from pathlib import Path
@@ -17,7 +18,7 @@ gi.require_version("Gtk", "4.0")
 gi.require_version("Gdk", "4.0")
 gi.require_version("GdkPixbuf", "2.0")
 gi.require_version("Adw", "1")
-from gi.repository import Gtk, Gdk, GdkPixbuf, Gio, Adw
+from gi.repository import Gtk, Gdk, GdkPixbuf, Gio, GLib, Adw
 
 APP_ID = "io.xerolinux.grubs"
 ASSET_BASE_URL = "https://xerolinux.xyz/script/grubs/assets"
@@ -247,20 +248,19 @@ class GrubApp(Adw.Application):
         desc.set_xalign(0)
         outer.append(desc)
 
-        # 4x2 Grid
+        # 4x2 Grid — spinner shown while images download
         grid = Gtk.Grid()
         grid.set_row_spacing(15)
         grid.set_column_spacing(15)
         grid.set_column_homogeneous(True)
-
-        for i, (name, filename) in enumerate(THEMES):
-            row = i // 4
-            col = i % 4
-            card = build_theme_card(name, filename)
-            card.set_hexpand(True)
-            grid.attach(card, col, row, 1, 1)
-
         outer.append(grid)
+
+        spinner = Gtk.Spinner(spinning=True)
+        spinner.set_size_request(48, 48)
+        spinner.set_halign(Gtk.Align.CENTER)
+        spinner.set_margin_top(40)
+        spinner.set_margin_bottom(40)
+        grid.attach(spinner, 0, 0, 4, 1)
 
         # Install button
         install_btn = Gtk.Button(label="Install GRUB Themes (Interactive Installer)")
@@ -282,9 +282,24 @@ class GrubApp(Adw.Application):
         win.set_default_size(1200, -1)
         win.present()
 
+        # Download images in background, then populate grid on main thread
+        def download_and_populate():
+            ensure_cached_images()
+            GLib.idle_add(self.populate_grid, grid, spinner)
+
+        threading.Thread(target=download_and_populate, daemon=True).start()
+
+    def populate_grid(self, grid, spinner):
+        grid.remove(spinner)
+        for i, (name, filename) in enumerate(THEMES):
+            row = i // 4
+            col = i % 4
+            card = build_theme_card(name, filename)
+            card.set_hexpand(True)
+            grid.attach(card, col, row, 1, 1)
+
 
 def main():
-    ensure_cached_images()
     app = GrubApp()
     app.run(None)
 
