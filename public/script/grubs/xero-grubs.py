@@ -100,7 +100,9 @@ def ensure_cached_images():
             continue
         url = f"{ASSET_BASE_URL}/{filename}"
         try:
-            urllib.request.urlretrieve(url, str(dest))
+            req = urllib.request.Request(url, headers={"User-Agent": "xero-grubs/1.0"})
+            with urllib.request.urlopen(req) as resp, open(dest, "wb") as out:
+                out.write(resp.read())
         except Exception:
             pass
 
