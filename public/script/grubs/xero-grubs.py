@@ -44,9 +44,15 @@ headerbar {
     font-size: 20px;
     font-weight: 700;
 }
+.info-box {
+    background: alpha(#00d9ff, 0.12);
+    border-left: 4px solid #00d9ff;
+    border-radius: 8px;
+    padding: 14px 18px;
+}
 .main-desc {
     font-size: 13px;
-    opacity: 0.7;
+    opacity: 0.85;
 }
 .theme-card {
     background: alpha(@card_bg_color, 0.5);
@@ -230,12 +236,14 @@ class GrubApp(Adw.Application):
         outer.set_margin_end(20)
 
         # Header
-        header = Gtk.Label(label="GRUB Themes")
+        header = Gtk.Label(label="Xero GRUB Themes")
         header.add_css_class("main-header")
-        header.set_halign(Gtk.Align.START)
+        header.set_halign(Gtk.Align.CENTER)
         outer.append(header)
 
-        # Description
+        # Description in info box
+        info_box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL)
+        info_box.add_css_class("info-box")
         desc = Gtk.Label(
             label=(
                 "Transform your bootloader with our complete collection of 8 stunning GRUB themes. "
@@ -245,10 +253,10 @@ class GrubApp(Adw.Application):
             )
         )
         desc.add_css_class("main-desc")
-        desc.set_halign(Gtk.Align.START)
         desc.set_wrap(True)
         desc.set_xalign(0)
-        outer.append(desc)
+        info_box.append(desc)
+        outer.append(info_box)
 
         # 4x2 Grid — spinner shown while images download
         grid = Gtk.Grid()
@@ -277,7 +285,7 @@ class GrubApp(Adw.Application):
         scrolled.set_propagate_natural_height(True)
 
         toolbar_view = Adw.ToolbarView()
-        toolbar_view.add_top_bar(Adw.HeaderBar(title_widget=Gtk.Label(label="GRUB Themes")))
+        toolbar_view.add_top_bar(Adw.HeaderBar(title_widget=Gtk.Label(label="Xero GRUB Themes")))
         toolbar_view.set_content(scrolled)
 
         win.set_content(toolbar_view)
