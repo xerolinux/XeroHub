@@ -1,10 +1,6 @@
 #!/usr/bin/env python3
-"""
-xero-grubs — GTK4 GRUB Theme Previewer
-Standalone viewer for XeroLinux GRUB themes.
-Launchable via: bash -c "python3 <(curl -fsSL 'https://raw.githubusercontent.com/xerolinux/xero-grubs/main/xero-grubs.py')"
-"""
 
+import shutil
 import subprocess
 import threading
 import urllib.request
@@ -12,6 +8,12 @@ import warnings
 from pathlib import Path
 
 warnings.filterwarnings("ignore", category=DeprecationWarning)
+
+import os, sys
+os.environ["GTK_A11Y"] = "none"
+_devnull = os.open(os.devnull, os.O_WRONLY)
+os.dup2(_devnull, 2)
+os.close(_devnull)
 
 import gi
 gi.require_version("Gtk", "4.0")
@@ -135,38 +137,45 @@ def get_image_path(filename):
 def find_terminal():
     """Detect available terminal emulator."""
     terminals = [
-        "konsole", "gnome-terminal", "xfce4-terminal",
+        "konsole", "ptyxis", "kgx", "xfce4-terminal",
         "alacritty", "kitty", "terminator", "xterm",
     ]
     for term in terminals:
-        try:
-            subprocess.run(
-                ["which", term], check=True,
-                capture_output=True, text=True,
-            )
+        if shutil.which(term):
             return term
-        except Exception:
-            continue
     return None
 
 
-def launch_install(widget):
+def show_error_dialog(window, title, body):
+    """Show an error dialog to the user."""
+    dialog = Adw.AlertDialog(heading=title, body=body)
+    dialog.add_response("ok", "OK")
+    dialog.present(window)
+
+
+def launch_install(widget, window):
     """Launch the GRUB themes installer in a terminal."""
     cmd = "git clone https://github.com/xerolinux/xero-grubs && cd xero-grubs/ && sudo ./install.sh; cd .. && rm -rf xero-grubs"
     wrapped = f"{cmd}; echo '\\nPress Enter to close...'; read"
     term = find_terminal()
     if not term:
-        print("No suitable terminal emulator found")
+        show_error_dialog(
+            window,
+            "No Terminal Found",
+            "Could not find a supported terminal emulator. Please install one of: konsole, ptyxis, kgx (Console), xfce4-terminal, alacritty, kitty, terminator, or xterm.",
+        )
         return
     try:
-        if term == "konsole":
-            subprocess.Popen([term, "-e", "bash", "-c", wrapped])
-        elif term in ("gnome-terminal", "xfce4-terminal"):
+        if term in ("ptyxis", "kgx", "xfce4-terminal"):
             subprocess.Popen([term, "--", "bash", "-c", wrapped])
         else:
             subprocess.Popen([term, "-e", "bash", "-c", wrapped])
     except Exception as e:
-        print(f"Error launching terminal: {e}")
+        show_error_dialog(
+            window,
+            "Failed to Launch Installer",
+            f"Error launching {term}: {e}",
+        )
 
 
 def load_scaled_texture(path, max_height=180):
@@ -303,7 +312,7 @@ class GrubApp(Adw.Application):
         install_btn = Gtk.Button(label="Install GRUB Themes (Interactive Installer)")
         install_btn.add_css_class("install-button")
         install_btn.set_margin_top(15)
-        install_btn.connect("clicked", launch_install)
+        install_btn.connect("clicked", launch_install, win)
         outer.append(install_btn)
 
         scrolled = Gtk.ScrolledWindow()
