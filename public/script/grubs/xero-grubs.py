@@ -155,7 +155,12 @@ def show_error_dialog(window, title, body):
 
 def launch_install(widget, window):
     """Launch the GRUB themes installer in a terminal."""
-    cmd = "git clone https://github.com/xerolinux/xero-grubs && cd xero-grubs/ && sudo ./install.sh; cd .. && rm -rf xero-grubs"
+    cmd = (
+        "rm -rf xero-grubs && "
+        "git clone https://github.com/xerolinux/xero-grubs && "
+        "cd xero-grubs/ && sudo ./install.sh; "
+        "cd .. && rm -rf xero-grubs"
+    )
     wrapped = f"{cmd}; echo '\\nPress Enter to close...'; read"
     term = find_terminal()
     if not term:
