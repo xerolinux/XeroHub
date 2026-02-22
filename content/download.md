@@ -4,11 +4,11 @@ date: 2025-09-30
 description: "Download XeroLinux"
 ---
 
-# 🐧 Download XeroLinux
+# 🐧 Looking for your next Distro ?
 
-Welcome to the official download page for **XeroLinux**, a fast, lightweight, and finely tuned Linux experience. The **ISO** includes an esy to use installer (*Calamares*) through a small donation. This isn't a paywall or a demand, just a gentle ask: if you find value in this project, your support helps keep it alive and actively developed. It also helps me, the developer, navigate the ongoing economic crisis in Lebanon. Whether you donate or not.
+Welcome to the official download page for **XeroLinux**, a fast, lightweight, and finely tuned Linux experience. The ISO is currently available through a small donation. This isn't a paywall or a demand, just a gentle ask, if you find value in this project, your support helps keep it alive and actively developed. It also helps me navigate the ongoing economic crisis in Lebanon. Whether you donate or not.
 
-In case you cannot donate, you will not be judged, just grab the free script...
+However, if you are unable to donate, I understand. You can get it for free using my simple custom install script.
 
 Thank you for being here.
 
