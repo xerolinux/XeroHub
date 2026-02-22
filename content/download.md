@@ -180,8 +180,7 @@ Thank you for being here.
 - ✅ Full Calamares installer.
 - ✅ 2 ISOs (Intel/AMD & nVidia)
 - ✅ Post-Install Toolkit included.
-- ✅ BTRFS/Encryption features enabled.
-- ✅ Full community support on Discord.
+- ✅ BTRFS/Encryption features enabled. (Soon)
 - ✅ Full package manager support enabled.
 {{< /alert >}}
 
