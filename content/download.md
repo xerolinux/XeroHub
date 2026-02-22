@@ -79,13 +79,77 @@ Welcome to the official download page for **XeroLinux**, a fast, lightweight, an
   flex: 1;
   width: calc(50% - 0.5rem) !important;
 }
+/* Discontinued Demo box */
+.edition-box.discontinued {
+  filter: saturate(0);
+  opacity: 0.6;
+}
+.crossed-out-wrapper {
+  position: relative;
+}
+.crossed-out-wrapper .skull-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 9rem;
+  opacity: 0.3;
+  z-index: 5;
+  pointer-events: none;
+  line-height: 1;
+}
+.crossed-out-wrapper::before,
+.crossed-out-wrapper::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10;
+  pointer-events: none;
+}
+.crossed-out-wrapper::before {
+  background: linear-gradient(
+    to bottom right,
+    transparent calc(50% - 2px),
+    #ff4444 calc(50% - 2px),
+    #ff4444 calc(50% + 2px),
+    transparent calc(50% + 2px)
+  );
+}
+.crossed-out-wrapper::after {
+  background: linear-gradient(
+    to bottom left,
+    transparent calc(50% - 2px),
+    #ff4444 calc(50% - 2px),
+    #ff4444 calc(50% + 2px),
+    transparent calc(50% + 2px)
+  );
+}
+.btn-disabled {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 44px;
+  border-radius: 0.375rem;
+  background: #555;
+  color: #999;
+  cursor: not-allowed;
+  font-weight: 500;
+  pointer-events: none;
+}
 </style>
 
 <div class="edition-grid">
 
-<div class="edition-box">
+<div class="edition-box discontinued">
 
-<h3 style="text-align: center;">🧪 Demo Edition (Free)</h3>
+<h3 style="text-align: center;">🧪 Demo Edition (Discontinued)</h3>
+
+<div class="crossed-out-wrapper">
+<span class="skull-overlay">☠️</span>
 
 {{< alert icon="triangle-exclamation" cardColor="#ff990030" iconColor="#ff9900" textColor="#ffcc80" >}}
 - ⚠️ For VM testing only.
@@ -96,12 +160,10 @@ Welcome to the official download page for **XeroLinux**, a fast, lightweight, an
 - ❌ No GPU Drivers Just VM/FOSS.
 {{< /alert >}}
 
+</div>
+
 <div class="edition-buttons">
-
-{{< button href="https://iso.xerolinux.xyz/demo/" target="_blank" >}}
-Download Free Demo
-{{< /button >}}
-
+<span class="btn-disabled">No Longer Available</span>
 </div>
 
 </div>
