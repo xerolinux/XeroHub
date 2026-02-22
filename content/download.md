@@ -182,6 +182,7 @@ Thank you for being here.
 - ✅ Post-Install Toolkit included.
 - ✅ BTRFS/Encryption features enabled. (Soon)
 - ✅ Full package manager support enabled.
+- ✅ Keeps project alive & kicking for a long time.
 {{< /alert >}}
 
 <div class="edition-buttons">
