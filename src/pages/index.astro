@@ -69,17 +69,18 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
     <div class="mx-auto max-w-5xl">
       <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
         {[
-          { value: '🖥️ KDE', label: 'Plasma Desktop' },
-          { value: '🏗️ Arch', label: 'Based' },
-          { value: '🪟 Wayland', label: 'Ready' },
-          { value: '🛠️ XeroHub', label: 'Control Center' },
+          { icon: `<svg viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5 shrink-0"><path d="M13.881 0L9.89.382v16.435l3.949-.594V9.216l5.308 7.772 4.162-1.317-5.436-7.475 5.479-7.05L19.105.17 13.84 7.22zM4.834 4.005a.203.203 0 00-.123.059L3.145 5.63a.203.203 0 00-.03.248L4.949 8.9a7.84 7.84 0 00-.772 1.759l-3.367.7a.203.203 0 00-.162.199v2.215c0 .093.064.174.155.196l3.268.8a7.83 7.83 0 00.801 2.03L2.98 19.683a.203.203 0 00.027.254l1.566 1.567a.204.204 0 00.249.03l2.964-1.8c.582.336 1.21.6 1.874.78l.692 3.325c.02.094.102.161.198.161h2.215a.202.202 0 00.197-.155l.815-3.332a7.807 7.807 0 001.927-.811l2.922 1.915c.08.053.186.042.254-.026l1.567-1.566a.202.202 0 00.03-.248l-1.067-1.758-.345.11a.12.12 0 01-.135-.047L17.371 15.8a6.347 6.347 0 11-8.255-8.674V5.488c-.401.14-.79.31-1.159.511l-.001-.002-2.99-1.96a.203.203 0 00-.132-.033z"/></svg>`, value: 'KDE Plasma', label: 'Desktop' },
+          { icon: `<svg viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5 shrink-0"><path d="M11.39.605C10.376 3.092 9.764 4.72 8.635 7.132c.693.734 1.543 1.589 2.923 2.554-1.484-.61-2.496-1.224-3.252-1.86C6.86 10.842 4.596 15.138 0 23.395c3.612-2.085 6.412-3.37 9.021-3.862a6.61 6.61 0 01-.171-1.547l.003-.115c.058-2.315 1.261-4.095 2.687-3.973 1.426.12 2.534 2.096 2.478 4.409a6.52 6.52 0 01-.146 1.243c2.58.505 5.352 1.787 8.914 3.844-.702-1.293-1.33-2.459-1.929-3.57-.943-.73-1.926-1.682-3.933-2.713 1.38.359 2.367.772 3.137 1.234-6.09-11.334-6.582-12.84-8.67-17.74z"/></svg>`, value: 'Arch Linux', label: 'Foundation' },
+          { icon: `<svg viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5 shrink-0"><path d="M2 6a2 2 0 012-2h16a2 2 0 012 2v10a2 2 0 01-2 2h-5l1 2h1a1 1 0 110 2H7a1 1 0 110-2h1l1-2H4a2 2 0 01-2-2V6zm2 0v10h16V6H4z"/></svg>`, value: 'Wayland', label: 'Display Protocol' },
+          { icon: `<svg viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5 shrink-0"><path d="M4 4a2 2 0 00-2 2v12a2 2 0 002 2h16a2 2 0 002-2V6a2 2 0 00-2-2H4zm0 2h16v12H4V6zm2 2v2h2V8H6zm3 0v2h2V8H9zm5 4v2h4v-2h-4z"/></svg>`, value: 'XeroHub', label: 'Toolkit' },
         ].map((stat, i) => (
           <div class={`fade-in fade-in-delay-${i + 1}`}>
-            <GlassCard class="text-center">
-              <div class="font-heading text-2xl sm:text-3xl font-bold text-[var(--color-accent)] mb-1">
+            <GlassCard class="text-center h-full">
+              <div class="flex items-center justify-center gap-2 font-heading text-lg sm:text-xl font-bold text-[var(--color-accent)] mb-1">
+                <Fragment set:html={stat.icon} />
                 {stat.value}
               </div>
-              <div class="text-sm text-[var(--color-text-secondary)]">
+              <div class="text-xs text-[var(--color-text-secondary)]">
                 {stat.label}
               </div>
             </GlassCard>
@@ -97,7 +98,8 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
         id="kofi-trigger"
         class="inline-flex items-center gap-2 px-8 py-4 text-base font-medium rounded-xl btn-glow bg-gradient-to-r from-[var(--color-accent)] to-[var(--color-accent-dark)] text-white hover:from-[var(--color-accent-light)] hover:to-[var(--color-accent)] transition-all duration-300 cursor-pointer"
       >
-        ☕ Support Us on Ko-fi
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0016.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 002 8.5c0 2.3 1.5 4.05 3 5.5l7 7 7-7z"/></svg>
+        Support Us on Ko-fi
       </button>
     </div>
   </section>
