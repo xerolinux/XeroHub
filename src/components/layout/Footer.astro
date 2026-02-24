@@ -1,0 +1,98 @@
+---
+const currentYear = new Date().getFullYear();
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+
+const socialLinks = [
+  { label: 'GitHub', href: 'https://github.com/xerolinux', icon: 'github' },
+  { label: 'Discord', href: 'https://discord.gg/5sqxTSuKZu', icon: 'discord' },
+  { label: 'YouTube', href: 'https://youtube.com/@XeroLinux', icon: 'youtube' },
+  { label: 'Mastodon', href: 'https://fosstodon.org/@XeroLinux', icon: 'mastodon' },
+];
+
+const footerLinks = [
+  { label: 'About', href: `${base}/about/` },
+  { label: 'Updates', href: `${base}/updates/` },
+  { label: 'Gear', href: `${base}/gear/` },
+  { label: 'Download', href: `${base}/download/` },
+  { label: 'Wiki', href: 'https://wiki.xerolinux.xyz' },
+  { label: 'Merch', href: 'https://shop.xerolinux.xyz' },
+];
+---
+
+<footer class="relative z-10 border-t border-[var(--color-border)] mt-24">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <!-- Brand -->
+      <div>
+        <a href={`${base}/`} class="flex items-center gap-3 mb-4">
+          <img src={`${base}/logos/logo.png`} alt="XeroLinux" width="192" height="192" loading="lazy" class="w-9 h-9 rounded-lg" />
+          <span class="font-heading font-semibold text-lg text-[var(--color-text-primary)]">
+            Xero<span class="text-[var(--color-accent)]">Linux</span>
+          </span>
+        </a>
+        <p class="text-sm text-[var(--color-text-secondary)] leading-relaxed">
+          Our Base Of Operations...
+        </p>
+      </div>
+
+      <!-- Links -->
+      <div>
+        <h3 class="font-heading font-semibold text-sm uppercase tracking-wider text-[var(--color-text-muted)] mb-4">
+          Navigation
+        </h3>
+        <div class="grid grid-cols-2 gap-2">
+          {footerLinks.map(link => (
+            <a
+              href={link.href}
+              class="text-sm text-[var(--color-text-secondary)] hover:text-[var(--color-accent-light)] transition-colors duration-200"
+            >
+              {link.label}
+            </a>
+          ))}
+        </div>
+      </div>
+
+      <!-- Socials -->
+      <div>
+        <h3 class="font-heading font-semibold text-sm uppercase tracking-wider text-[var(--color-text-muted)] mb-4">
+          Community
+        </h3>
+        <div class="flex gap-3">
+          {socialLinks.map(link => (
+            <a
+              href={link.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="w-11 h-11 rounded-xl glass glass-hover flex items-center justify-center text-[var(--color-text-secondary)] hover:text-[var(--color-accent-light)] transition-all duration-200"
+              aria-label={link.label}
+              title={link.label}
+            >
+              {link.icon === 'github' && (
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+              )}
+              {link.icon === 'discord' && (
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M20.317 4.3698a19.7913 19.7913 0 00-4.8851-1.5152.0741.0741 0 00-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868 0-.1636-.3933-.4058-.8742-.6177-1.2495a.077.077 0 00-.0785-.037 19.7363 19.7363 0 00-4.8852 1.515.0699.0699 0 00-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824 0 00.0312.0561c2.0528 1.5076 4.0413 2.4228 5.9929 3.0294a.0777.0777 0 00.0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076 0 00-.0416-.1057c-.6528-.2476-1.2743-.5495-1.8722-.8923a.077.077 0 01-.0076-.1277c.1258-.0943.2517-.1923.3718-.2914a.0743.0743 0 01.0776-.0105c3.9278 1.7933 8.18 1.7933 12.0614 0a.0739.0739 0 01.0785.0095c.1202.099.246.1981.3728.2924a.077.077 0 01-.0066.1276 12.2986 12.2986 0 01-1.873.8914.0766.0766 0 00-.0407.1067c.3604.698.7719 1.3628 1.225 1.9932a.076.076 0 00.0842.0286c1.961-.6067 3.9495-1.5219 6.0023-3.0294a.077.077 0 00.0313-.0552c.5004-5.177-.8382-9.6739-3.5485-13.6604a.061.061 0 00-.0312-.0286zM8.02 15.3312c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9555-2.4189 2.157-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.9555 2.4189-2.1569 2.4189zm7.9748 0c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9554-2.4189 2.1569-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.946 2.4189-2.1568 2.4189z"/></svg>
+              )}
+              {link.icon === 'youtube' && (
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+              )}
+              {link.icon === 'mastodon' && (
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M23.268 5.313c-.35-2.578-2.617-4.61-5.304-5.004C17.51.242 15.792 0 11.813 0h-.03c-3.98 0-4.835.242-5.288.309C3.882.692 1.496 2.518.917 5.127.64 6.412.61 7.837.661 9.143c.074 1.874.088 3.745.26 5.611.118 1.24.325 2.47.62 3.68.55 2.237 2.777 4.098 4.96 4.857 2.336.792 4.849.923 7.256.38.265-.061.527-.132.786-.213.585-.184 1.27-.39 1.774-.753a.057.057 0 0 0 .023-.043v-1.809a.052.052 0 0 0-.02-.041.053.053 0 0 0-.046-.01 20.282 20.282 0 0 1-4.709.547c-2.73 0-3.463-1.284-3.674-1.818a5.593 5.593 0 0 1-.319-1.433.053.053 0 0 1 .066-.054 19.648 19.648 0 0 0 4.581.536c.394 0 .787 0 1.183-.007 2.053-.063 4.22-.166 6.236-.645 .052-.013.108-.02.16-.04 2.478-.53 4.835-2.187 5.083-5.137.012-.146.04-.61.04-.61.014-.207.153-2.07.087-3.16a.053.053 0 0 0 0-.007zM19.5 13.97h-2.97v5.477c0 1.15-.48 1.735-1.44 1.735-.944 0-1.418-.693-1.418-2.063V14.74h-2.945v4.38c0 1.37-.475 2.063-1.418 2.063-.96 0-1.44-.584-1.44-1.735V13.97H4.904c0 1.212-.031 2.253.093 2.567.184.464.553.83 1.008 1.005l-.005.014.043-.012a.053.053 0 0 0 0 .009 1.3 1.3 0 0 0 .283.091 5.887 5.887 0 0 0 2.156.096l-.005-.002h-.005a20.83 20.83 0 0 0 1.943-.309l.004-.002h.001c.285-.065.563-.15.83-.255h.001l.001-.001c.04-.016.077-.034.117-.05h.003c.038-.017.077-.034.115-.053l.005-.003.107-.057h.002c.032-.018.064-.037.096-.056l.008-.005c.026-.017.054-.033.08-.051l.01-.006c.025-.017.05-.035.075-.053l.01-.008.02-.014c.017-.014.035-.026.052-.04l.012-.01.01-.008c.02-.017.04-.035.06-.054l.003-.003c.057-.053.113-.11.166-.17h.001c.004-.005.008-.01.013-.014.052-.06.1-.123.145-.19h.001a2.59 2.59 0 0 0 .156-.256l.002-.003.01-.022h.001a2.5 2.5 0 0 0 .224-.665l.001-.006.003-.015a2.71 2.71 0 0 0 .07-.556L12 14.74V9.65c0-1.466.477-2.212 1.435-2.212.959 0 1.438.884 1.438 2.638v2.77h2.93V10.076c0-1.754.479-2.638 1.437-2.638.958 0 1.435.746 1.435 2.212v3.724c0 .048-.001.094-.003.14l-.001.022v.007a2.688 2.688 0 0 1-.07.51l-.003.019-.001.004a2.44 2.44 0 0 1-.373.85h.001a2.435 2.435 0 0 1-.18.218l-.006.006-.003.003c-.02.02-.04.038-.06.055l-.01.008-.012.01c-.017.015-.035.028-.053.042l-.019.014-.01.007c-.025.018-.05.036-.076.053l-.01.006c-.026.018-.053.035-.08.052l-.007.004c-.033.02-.065.039-.097.057h-.002l-.108.057-.004.002-.114.053h-.003l-.117.05h-.001c-.268.105-.546.19-.831.255h-.001l-.004.001a21.125 21.125 0 0 1-1.943.31h.005a5.922 5.922 0 0 1-2.156-.097 1.273 1.273 0 0 1-.283-.091V16.537c.455-.175.824-.541 1.008-1.005.124-.314.093-1.355.093-2.567v.005z"/></svg>
+              )}
+            </a>
+          ))}
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom bar -->
+    <div class="mt-8 pt-8 border-t border-[var(--color-border)] flex flex-col sm:flex-row items-center justify-between gap-4">
+      <p class="text-sm text-[var(--color-text-muted)]">
+        &copy; {currentYear} XeroLinux. Proudly made in Lebanon.
+      </p>
+      <p class="text-sm text-[var(--color-text-muted)]">
+        Built with <a href="https://astro.build" target="_blank" rel="noopener" class="text-[var(--color-accent-light)] hover:text-[var(--color-accent)] transition-colors">Astro</a> & <a href="https://tailwindcss.com" target="_blank" rel="noopener" class="text-[var(--color-accent-light)] hover:text-[var(--color-accent)] transition-colors">Tailwind</a>
+      </p>
+    </div>
+  </div>
+</footer>

@@ -1,0 +1,51 @@
+---
+import { formatDate, readingTime } from '../../lib/utils';
+
+interface Props {
+  title: string;
+  description?: string;
+  date: Date;
+  image?: string;
+  slug: string;
+  body?: string;
+}
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const { title, description, date, image, slug, body = '' } = Astro.props;
+---
+
+<a href={`${base}/updates/${slug}/`} class="group block">
+  <article class="glass glass-hover overflow-hidden">
+    {image && (
+      <div class="aspect-video overflow-hidden">
+        <img
+          src={`${base}${image}`}
+          alt={title}
+          class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+          loading="lazy"
+        />
+      </div>
+    )}
+    <div class="p-5">
+      <div class="flex items-center gap-3 mb-3 text-xs text-[var(--color-text-muted)]">
+        <time datetime={date.toISOString()}>
+          {formatDate(date)}
+        </time>
+        {body && (
+          <>
+            <span class="w-1 h-1 rounded-full bg-[var(--color-text-muted)]"></span>
+            <span>{readingTime(body)}</span>
+          </>
+        )}
+      </div>
+      <h3 class="font-heading font-semibold text-lg text-[var(--color-text-primary)] group-hover:text-[var(--color-accent-light)] transition-colors duration-200 line-clamp-2 mb-2">
+        {title}
+      </h3>
+      {description && (
+        <p class="text-sm text-[var(--color-text-secondary)] line-clamp-2">
+          {description}
+        </p>
+      )}
+    </div>
+  </article>
+</a>

@@ -1,0 +1,44 @@
+---
+interface Props {
+  name: string;
+  description: string;
+  specs: string[];
+  image?: string;
+  usage?: string;
+}
+
+const { name, description, specs, image, usage } = Astro.props;
+---
+
+<article class="glass glass-hover overflow-hidden">
+  {image && (
+    <div class="aspect-video overflow-hidden">
+      <img
+        src={image}
+        alt={name}
+        class="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+        loading="lazy"
+      />
+    </div>
+  )}
+  <div class="p-6">
+    <h3 class="font-heading font-semibold text-lg text-[var(--color-text-primary)] mb-2">
+      {name}
+    </h3>
+    {usage && (
+      <p class="text-xs font-medium text-[var(--color-accent-light)] mb-3 uppercase tracking-wider">
+        {usage}
+      </p>
+    )}
+    <p class="text-sm text-[var(--color-text-secondary)] mb-4">
+      {description}
+    </p>
+    <div class="flex flex-wrap gap-2">
+      {specs.map(spec => (
+        <span class="px-2.5 py-1 text-xs rounded-lg bg-[var(--color-bg-tertiary)] text-[var(--color-text-secondary)] border border-[var(--color-border)]">
+          {spec}
+        </span>
+      ))}
+    </div>
+  </div>
+</article>

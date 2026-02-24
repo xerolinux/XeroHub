@@ -1,0 +1,54 @@
+---
+import GlassCard from '../ui/GlassCard.astro';
+
+const features = [
+  {
+    icon: '💻',
+    title: 'A Tailored Linux Experience',
+    description: 'Pre-configured environments that serve as an elegant, functional starting point. Unlike more heavily modified distributions, XeroLinux provides a basic framework that allows you to configure and learn about your system.',
+  },
+  {
+    icon: '⚡',
+    title: 'Designed for Your Unique Needs',
+    description: 'Whether you\'re pursuing production work, gaming, or software development, XeroLinux offers a versatile foundation. The included Toolkit and system improvements create a refined initial environment.',
+  },
+  {
+    icon: '❤️',
+    title: 'Supporting Innovation',
+    description: 'By choosing XeroLinux, you will be directly helping support the project\'s development. The ISO offerings represent more than just software, they\'re a meaningful way for you to contribute to an open-source initiative.',
+  },
+];
+---
+
+<section class="py-20 px-4 sm:px-6 lg:px-8">
+  <div class="mx-auto max-w-7xl">
+    <!-- Section Header -->
+    <div class="text-center mb-16">
+      <h2 class="fade-in display-heading text-3xl sm:text-4xl text-[var(--color-text-primary)] mb-4">
+        Why <span class="text-[var(--color-accent)]">XeroLinux</span>?
+      </h2>
+      <p class="fade-in fade-in-delay-1 text-[var(--color-text-secondary)] max-w-2xl mx-auto">
+        An innovative Arch-based distribution designed to demystify the installation process while preserving user-driven customization.
+      </p>
+    </div>
+
+    <!-- Cards Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      {features.map((feature, i) => (
+        <div class={`fade-in fade-in-delay-${i + 1}`}>
+          <GlassCard class="h-full">
+            <div class={`w-14 h-14 rounded-2xl bg-gradient-to-br from-[var(--color-accent-subtle)] to-transparent flex items-center justify-center text-3xl mb-5 icon-float${i > 0 ? ` icon-float-delay-${i}` : ''}`}>
+              {feature.icon}
+            </div>
+            <h3 class="font-heading font-semibold text-xl text-[var(--color-text-primary)] mb-3">
+              {feature.title}
+            </h3>
+            <p class="text-[var(--color-text-secondary)] text-sm leading-relaxed">
+              {feature.description}
+            </p>
+          </GlassCard>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

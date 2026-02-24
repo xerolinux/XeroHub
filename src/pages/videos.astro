@@ -1,0 +1,263 @@
+---
+import { getEntry } from 'astro:content';
+import Layout from '../components/layout/Layout.astro';
+import PageViews from '../components/ui/PageViews.astro';
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const pageId = Astro.url.pathname.replace(/^\//, '').replace(/\/$/, '').replace(/\//g, '-') || 'home';
+
+const entry = await getEntry('pages', 'videos');
+const { youtubeHandle } = entry.data;
+---
+
+<Layout title={entry.data.title} description={entry.data.description}>
+  <section class="pt-32 pb-20 px-4 sm:px-6 lg:px-8">
+    <div class="mx-auto max-w-6xl">
+      <!-- Header -->
+      <div class="fade-in text-center mb-12">
+        <h1 class="display-heading text-4xl sm:text-5xl text-[var(--color-text-primary)] mb-4">
+          Latest <span class="text-[var(--color-accent)]">Videos</span>
+        </h1>
+        <div class="flex justify-center">
+          <PageViews pageId={pageId} />
+        </div>
+      </div>
+
+      <!-- Video Grid -->
+      <div
+        id="video-grid"
+        class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
+        data-handle={youtubeHandle}
+        data-api-key={import.meta.env.PUBLIC_YOUTUBE_API_KEY}
+      >
+        <!-- Loading Skeletons -->
+        {Array.from({ length: 6 }).map(() => (
+          <div class="skeleton-card glass rounded-2xl overflow-hidden animate-pulse">
+            <div class="aspect-video bg-[var(--color-bg-tertiary)]"></div>
+            <div class="p-4 space-y-3">
+              <div class="h-4 bg-[var(--color-bg-tertiary)] rounded w-full"></div>
+              <div class="h-4 bg-[var(--color-bg-tertiary)] rounded w-3/4"></div>
+              <div class="h-3 bg-[var(--color-bg-tertiary)] rounded w-1/3"></div>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <!-- Error State -->
+      <div id="video-error" class="hidden text-center py-16">
+        <svg class="w-16 h-16 mx-auto mb-4 text-[var(--color-text-muted)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z" />
+        </svg>
+        <p class="text-[var(--color-text-secondary)] text-lg mb-2">Failed to load videos</p>
+        <p class="text-[var(--color-text-muted)] text-sm" id="video-error-msg"></p>
+        <button id="video-retry" class="mt-4 px-6 py-2 rounded-full glass text-sm font-medium text-[var(--color-accent-light)] hover:text-[var(--color-text-primary)] transition-colors cursor-pointer">
+          Try Again
+        </button>
+      </div>
+
+      <!-- Load More -->
+      <div class="flex justify-center mt-10">
+        <button
+          id="load-more"
+          class="hidden px-8 py-3 rounded-full glass glass-hover text-sm font-medium text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)] transition-all duration-200 cursor-pointer"
+        >
+          Load More Videos
+        </button>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<script is:inline>
+(function () {
+  const grid = document.getElementById('video-grid');
+  const errorDiv = document.getElementById('video-error');
+  const errorMsg = document.getElementById('video-error-msg');
+  const retryBtn = document.getElementById('video-retry');
+  const loadMoreBtn = document.getElementById('load-more');
+
+  if (!grid) return;
+
+  const API_KEY = grid.dataset.apiKey;
+  const HANDLE = grid.dataset.handle;
+  const API_BASE = 'https://www.googleapis.com/youtube/v3';
+
+  let nextPageToken = null;
+  let uploadsPlaylistId = null;
+
+  function formatDate(dateStr) {
+    const d = new Date(dateStr);
+    const now = new Date();
+    const diff = now - d;
+    const days = Math.floor(diff / 86400000);
+    if (days < 1) return 'Today';
+    if (days === 1) return 'Yesterday';
+    if (days < 7) return days + ' days ago';
+    if (days < 30) return Math.floor(days / 7) + (Math.floor(days / 7) === 1 ? ' week ago' : ' weeks ago');
+    if (days < 365) return Math.floor(days / 30) + (Math.floor(days / 30) === 1 ? ' month ago' : ' months ago');
+    return d.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
+  }
+
+  function createVideoCard(video) {
+    const snippet = video.snippet;
+    const videoId = snippet.resourceId.videoId;
+    const thumb = snippet.thumbnails.medium || snippet.thumbnails.default;
+
+    const card = document.createElement('a');
+    card.href = 'https://www.youtube.com/watch?v=' + videoId;
+    card.target = '_blank';
+    card.rel = 'noopener noreferrer';
+    card.className = 'glass glass-hover rounded-2xl overflow-hidden block group cursor-pointer';
+
+    card.innerHTML =
+      '<div class="aspect-video overflow-hidden relative">' +
+        '<img src="' + thumb.url + '" alt="' + snippet.title.replace(/"/g, '&quot;') + '" ' +
+          'class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" loading="lazy" />' +
+        '<div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">' +
+          '<div class="w-14 h-14 rounded-full bg-red-600/90 flex items-center justify-center shadow-lg">' +
+            '<svg class="w-6 h-6 text-white ml-0.5" fill="currentColor" viewBox="0 0 24 24">' +
+              '<path d="M8 5v14l11-7z"/>' +
+            '</svg>' +
+          '</div>' +
+        '</div>' +
+      '</div>' +
+      '<div class="p-4">' +
+        '<h3 class="text-sm font-medium text-[var(--color-text-primary)] line-clamp-2 mb-2">' +
+          snippet.title +
+        '</h3>' +
+        '<p class="text-xs text-[var(--color-text-muted)]">' +
+          formatDate(snippet.publishedAt) +
+        '</p>' +
+      '</div>';
+
+    return card;
+  }
+
+  function removeSkeletons() {
+    var skeletons = grid.querySelectorAll('.skeleton-card');
+    skeletons.forEach(function (s) { s.remove(); });
+  }
+
+  function showError(msg) {
+    removeSkeletons();
+    grid.classList.add('hidden');
+    errorDiv.classList.remove('hidden');
+    errorMsg.textContent = msg || '';
+  }
+
+  async function getUploadsPlaylistId() {
+    var cached = sessionStorage.getItem('yt-uploads-' + HANDLE);
+    if (cached) return cached;
+
+    var res = await fetch(
+      API_BASE + '/channels?part=contentDetails&forHandle=' + HANDLE + '&key=' + API_KEY
+    );
+    if (!res.ok) throw new Error('Channel lookup failed (' + res.status + ')');
+    var data = await res.json();
+    if (!data.items || !data.items.length) throw new Error('Channel not found for @' + HANDLE);
+
+    var id = data.items[0].contentDetails.relatedPlaylists.uploads;
+    sessionStorage.setItem('yt-uploads-' + HANDLE, id);
+    return id;
+  }
+
+  async function fetchPlaylistPage(pageToken) {
+    if (!uploadsPlaylistId) {
+      uploadsPlaylistId = await getUploadsPlaylistId();
+    }
+
+    var url = API_BASE + '/playlistItems?part=snippet&playlistId=' + uploadsPlaylistId +
+      '&maxResults=50&key=' + API_KEY;
+    if (pageToken) url += '&pageToken=' + pageToken;
+
+    var res = await fetch(url);
+    if (!res.ok) throw new Error('Video fetch failed (' + res.status + ')');
+    return res.json();
+  }
+
+  async function filterOutLiveStreams(items) {
+    var validItems = items.filter(function (item) {
+      var t = item.snippet.title;
+      return t !== 'Deleted video' && t !== 'Private video';
+    });
+    if (!validItems.length) return [];
+
+    var ids = validItems.map(function (item) {
+      return item.snippet.resourceId.videoId;
+    }).join(',');
+
+    var res = await fetch(
+      API_BASE + '/videos?part=liveStreamingDetails&id=' + ids + '&key=' + API_KEY
+    );
+    if (!res.ok) return validItems; // fallback: show all on error
+
+    var data = await res.json();
+    var liveIds = new Set();
+    data.items.forEach(function (v) {
+      if (v.liveStreamingDetails) liveIds.add(v.id);
+    });
+
+    return validItems.filter(function (item) {
+      return !liveIds.has(item.snippet.resourceId.videoId);
+    });
+  }
+
+  async function loadVideos(pageToken) {
+    loadMoreBtn.classList.add('hidden');
+
+    try {
+      var data = await fetchPlaylistPage(pageToken);
+      var filtered = await filterOutLiveStreams(data.items);
+
+      removeSkeletons();
+      grid.classList.remove('hidden');
+      errorDiv.classList.add('hidden');
+
+      filtered.forEach(function (item) {
+        grid.appendChild(createVideoCard(item));
+      });
+
+      nextPageToken = data.nextPageToken || null;
+      if (nextPageToken) {
+        loadMoreBtn.classList.remove('hidden');
+      }
+    } catch (err) {
+      showError(err.message);
+    }
+  }
+
+  loadMoreBtn.addEventListener('click', function () {
+    if (nextPageToken) loadVideos(nextPageToken);
+  });
+
+  retryBtn.addEventListener('click', function () {
+    errorDiv.classList.add('hidden');
+    grid.classList.remove('hidden');
+    // Re-add skeletons
+    for (var i = 0; i < 6; i++) {
+      var sk = document.createElement('div');
+      sk.className = 'skeleton-card glass rounded-2xl overflow-hidden animate-pulse';
+      sk.innerHTML =
+        '<div class="aspect-video bg-[var(--color-bg-tertiary)]"></div>' +
+        '<div class="p-4 space-y-3">' +
+          '<div class="h-4 bg-[var(--color-bg-tertiary)] rounded w-full"></div>' +
+          '<div class="h-4 bg-[var(--color-bg-tertiary)] rounded w-3/4"></div>' +
+          '<div class="h-3 bg-[var(--color-bg-tertiary)] rounded w-1/3"></div>' +
+        '</div>';
+      grid.appendChild(sk);
+    }
+    loadVideos(null);
+  });
+
+  // Initial load
+  loadVideos(null);
+})();
+</script>
+
+<style>
+  .line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+</style>

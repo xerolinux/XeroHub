@@ -1,0 +1,65 @@
+---
+interface Props {
+  pageId: string;
+}
+
+const { pageId } = Astro.props;
+---
+
+<span class="page-views inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass text-sm font-medium" data-page-id={pageId}>
+  <svg class="w-4 h-4 text-[var(--color-accent-light)]" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+    <path stroke-linecap="round" stroke-linejoin="round" d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z" />
+    <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+  </svg>
+  <span class="page-views-count text-[var(--color-text-primary)]">&mdash;</span>
+  <span class="text-[var(--color-text-secondary)]">views</span>
+</span>
+
+<script>
+  import { db, auth } from '../../lib/firebase';
+  import { doc, onSnapshot, updateDoc, setDoc, increment } from 'firebase/firestore';
+  import { signInAnonymously } from 'firebase/auth';
+
+  async function initPageViews() {
+    const elements = document.querySelectorAll<HTMLElement>('.page-views');
+    if (!elements.length) return;
+
+    await signInAnonymously(auth);
+
+    // Group elements by pageId
+    const pageIds = new Map<string, HTMLElement[]>();
+    elements.forEach(el => {
+      const id = el.dataset.pageId;
+      if (!id) return;
+      if (!pageIds.has(id)) pageIds.set(id, []);
+      pageIds.get(id)!.push(el);
+    });
+
+    for (const [pageId, els] of pageIds) {
+      const docRef = doc(db, 'views', pageId);
+
+      // Real-time listener — updates all matching elements
+      onSnapshot(docRef, (snap) => {
+        const count = snap.exists() ? (snap.data().views || 0) : 0;
+        els.forEach(el => {
+          const countEl = el.querySelector('.page-views-count');
+          if (countEl) countEl.textContent = count.toLocaleString();
+        });
+      });
+
+      // Dedup via localStorage — increment once per browser
+      const storageKey = `viewed-${pageId}`;
+      if (!localStorage.getItem(storageKey)) {
+        try {
+          await updateDoc(docRef, { views: increment(1) });
+        } catch {
+          // Document doesn't exist yet — create it
+          await setDoc(docRef, { views: 1 });
+        }
+        localStorage.setItem(storageKey, 'true');
+      }
+    }
+  }
+
+  initPageViews();
+</script>

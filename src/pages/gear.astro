@@ -1,0 +1,82 @@
+---
+import { getEntry } from 'astro:content';
+import Layout from '../components/layout/Layout.astro';
+import GlassCard from '../components/ui/GlassCard.astro';
+import PageViews from '../components/ui/PageViews.astro';
+import { inlineMarkdown } from '../lib/inline-markdown';
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const pageId = Astro.url.pathname.replace(/^\//, '').replace(/\/$/, '').replace(/\//g, '-') || 'home';
+
+const entry = await getEntry('pages', 'gear');
+const { info, hardwareIntro, hardware, otherSystems, thanks } = entry.data;
+---
+
+<Layout title={entry.data.title} description={entry.data.description}>
+  <section class="pt-32 pb-20 px-4 sm:px-6 lg:px-8">
+    <div class="mx-auto max-w-4xl">
+      <!-- Header -->
+      <div class="fade-in text-center mb-12">
+        <h1 class="display-heading text-4xl sm:text-5xl text-[var(--color-text-primary)] mb-4">
+          Our <span class="text-[var(--color-accent)]">Gear</span>
+        </h1>
+        <div class="flex justify-center">
+          <PageViews pageId={pageId} />
+        </div>
+      </div>
+
+      <div class="fade-in fade-in-delay-1 space-y-8">
+        <!-- Information -->
+        <GlassCard padding="p-8">
+          <h3 class="font-heading text-xl font-semibold text-[var(--color-text-primary)] mb-4">Information</h3>
+          {info!.map((paragraph, i) => (
+            <p class:list={["prose-inline text-[var(--color-text-secondary)]", { "mt-3": i > 0 }]} set:html={inlineMarkdown(paragraph)} />
+          ))}
+        </GlassCard>
+
+        <!-- The Hardware -->
+        <div>
+          <h2 class="fade-in font-heading text-2xl font-bold text-[var(--color-text-primary)] mb-6">The Hardware</h2>
+          <p class="fade-in prose-inline text-[var(--color-text-secondary)] mb-8" set:html={inlineMarkdown(hardwareIntro!)} />
+        </div>
+
+        <!-- Hardware Cards -->
+        {hardware!.map(item => (
+          <div class="fade-in">
+            <GlassCard padding="p-0" class="overflow-hidden">
+              <img src={`${base}/${item.image}`} alt={item.name} class="w-full" loading="lazy" />
+              <div class="p-6">
+                <p class="text-xs font-medium text-[var(--color-accent-light)] mb-1 uppercase tracking-wider">{item.subtitle}</p>
+                <h3 class="font-heading text-xl font-bold text-[var(--color-text-primary)] mb-3">{item.name}</h3>
+                <p class="prose-inline text-[var(--color-text-secondary)] text-sm" set:html={inlineMarkdown(item.description)} />
+              </div>
+            </GlassCard>
+          </div>
+        ))}
+
+        <!-- Other Systems -->
+        <div>
+          <h2 class="fade-in font-heading text-2xl font-bold text-[var(--color-text-primary)] mb-6">Other systems</h2>
+        </div>
+
+        <div class="fade-in">
+          <GlassCard padding="p-0" class="overflow-hidden">
+            <img src={`${base}/${otherSystems!.image}`} alt="MacBook & SteamDeck" class="w-full" loading="lazy" />
+            <div class="p-6">
+              {otherSystems!.text.map((paragraph, i) => (
+                <p class:list={["prose-inline text-[var(--color-text-secondary)] text-sm", { "mt-3": i > 0 }]} set:html={inlineMarkdown(paragraph)} />
+              ))}
+            </div>
+          </GlassCard>
+        </div>
+
+        <!-- Thanks -->
+        <div class="fade-in">
+          <GlassCard>
+            <h3 class="font-heading text-xl font-semibold text-[var(--color-text-primary)] mb-3">Thanks for reading</h3>
+            <p class="prose-inline text-[var(--color-text-secondary)] text-sm" set:html={inlineMarkdown(thanks!)} />
+          </GlassCard>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>

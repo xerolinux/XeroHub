@@ -1,0 +1,154 @@
+---
+import { getEntry, render } from 'astro:content';
+import Layout from '../components/layout/Layout.astro';
+import GlassCard from '../components/ui/GlassCard.astro';
+import Button from '../components/ui/Button.astro';
+import CryptoModal from '../components/ui/CryptoModal.astro';
+import ChangelogModal from '../components/ui/ChangelogModal.astro';
+import PageViews from '../components/ui/PageViews.astro';
+import { inlineMarkdown } from '../lib/inline-markdown';
+const pageId = Astro.url.pathname.replace(/^\//, '').replace(/\/$/, '').replace(/\//g, '-') || 'home';
+
+const entry = await getEntry('pages', 'download');
+const { Content } = await render(entry);
+const { alert, isoFeatures, tuiFeatures } = entry.data;
+---
+
+<Layout title={entry.data.title} description={entry.data.description}>
+  <section class="pt-32 pb-20 px-4 sm:px-6 lg:px-8">
+    <div class="mx-auto max-w-6xl">
+      <!-- Header -->
+      <div class="fade-in text-center mb-8">
+        <h1 class="display-heading text-4xl sm:text-5xl text-[var(--color-text-primary)] mb-4">
+          Looking for your next <span class="text-[var(--color-accent)]">Distro</span> ?
+        </h1>
+        <div class="flex justify-center">
+          <PageViews pageId={pageId} />
+        </div>
+      </div>
+
+      <!-- Alert -->
+      <div class="fade-in max-w-4xl mx-auto mb-10">
+        <div class="flex items-start gap-3 p-4 rounded-xl bg-orange-500/15 border border-orange-500/30">
+          <svg class="w-5 h-5 text-orange-400 shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/>
+          </svg>
+          <p class="text-sm text-orange-100">
+            <strong class="text-orange-300">Note :</strong> <span class="prose-inline [&_strong]:text-orange-300" set:html={inlineMarkdown(alert!)} />
+          </p>
+        </div>
+      </div>
+
+      <!-- Intro Text -->
+      <div class="fade-in fade-in-delay-1 max-w-4xl mx-auto mb-12 prose max-w-none">
+        <Content />
+      </div>
+
+      <!-- Changelog Button -->
+      <div class="fade-in flex justify-center mb-10">
+        <button
+          data-changelog-modal
+          class="inline-flex items-center gap-2 px-6 py-2.5 rounded-full glass text-sm font-medium text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)] hover:border-[var(--color-border-hover)] transition-all duration-200 cursor-pointer"
+        >
+          <svg class="w-4 h-4 text-[var(--color-accent)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" />
+          </svg>
+          View The XeroLinux Changelog
+        </button>
+      </div>
+
+      <!-- Two Options -->
+      <h2 class="fade-in display-heading text-2xl sm:text-3xl text-center text-[var(--color-text-primary)] mb-8">
+        Choose Your <span class="text-[var(--color-accent)]">Path</span> :
+      </h2>
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
+        <!-- ISO Option -->
+        <div class="fade-in fade-in-delay-1">
+          <GlassCard padding="p-8" class="h-full flex flex-col border-green-500/20 relative overflow-hidden">
+            <div class="absolute top-4 -right-8 rotate-45 bg-green-500/90 text-white text-[10px] font-bold uppercase tracking-widest py-1 px-8 shadow-lg z-10">Donation</div>
+            <h2 class="font-heading text-xl font-bold text-[var(--color-text-primary)] text-center mb-1">
+              XeroLinux ISO
+            </h2>
+            <p class="text-xs text-center uppercase tracking-wider text-green-400 font-medium mb-6">
+              Donation-based
+            </p>
+
+            <h4 class="text-sm uppercase tracking-wider text-green-400 font-semibold mb-4 pb-3 border-b border-green-500/15">
+              Highlights
+            </h4>
+
+            <ul class="space-y-3 mb-6 flex-1">
+              {isoFeatures!.map(feature => (
+                <li class="flex items-start gap-3 text-sm text-[var(--color-text-secondary)]">
+                  <span class="text-green-400 font-bold shrink-0">&#10003;</span>
+                  <span set:html={feature} />
+                </li>
+              ))}
+            </ul>
+
+            <div class="rounded-lg bg-green-500/10 border border-green-500/20 p-3 text-center text-sm text-green-300 font-semibold mb-6">
+              Full control over disk partitioning
+            </div>
+
+            <div class="flex gap-3 pt-4 border-t border-green-500/10">
+              <Button href="https://ko-fi.com/s/cf9def9630" external class="flex-1">
+                Ko-Fi Shop
+              </Button>
+              <Button variant="secondary" class="flex-1" data-crypto-modal>
+                Crypto Portal
+              </Button>
+            </div>
+          </GlassCard>
+        </div>
+
+        <!-- TUI Option -->
+        <div class="fade-in fade-in-delay-2">
+          <GlassCard padding="p-8" class="h-full flex flex-col relative overflow-hidden">
+            <div class="absolute top-4 -right-8 rotate-45 bg-indigo-500/90 text-white text-[10px] font-bold uppercase tracking-widest py-1 px-10 shadow-lg z-10">Free</div>
+            <h2 class="font-heading text-xl font-bold text-[var(--color-text-primary)] text-center mb-1">
+              XeroLinux T.U.I
+            </h2>
+            <p class="text-xs text-center uppercase tracking-wider text-indigo-400 font-medium mb-6">
+              Completely free
+            </p>
+
+            <h4 class="text-sm uppercase tracking-wider text-indigo-400 font-semibold mb-4 pb-3 border-b border-indigo-500/15">
+              Highlights
+            </h4>
+
+            <ul class="space-y-3 mb-6 flex-1">
+              {tuiFeatures!.map(feature => (
+                <li class="flex items-start gap-3 text-sm text-[var(--color-text-secondary)]">
+                  <span class="text-indigo-400 font-bold shrink-0">&#10003;</span>
+                  <span>{feature}</span>
+                </li>
+              ))}
+            </ul>
+
+            <div class="rounded-lg bg-red-500/10 border border-red-500/20 p-3 text-center text-sm text-red-300 font-semibold mb-6">
+              Wipes entire drive — no manual partitioning
+            </div>
+
+            <div class="pt-4 border-t border-indigo-500/10">
+              <Button href="https://wiki.xerolinux.xyz/xero-install/" variant="secondary" external class="w-full">
+                Check the T.U.I Wiki for How-To
+              </Button>
+            </div>
+          </GlassCard>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EOF Separator -->
+  <section class="pb-20 px-4 sm:px-6 lg:px-8">
+    <div class="fade-in mx-auto max-w-3xl flex items-center gap-4">
+      <div class="flex-1 h-px bg-gradient-to-r from-transparent via-[var(--color-border-hover)] to-transparent"></div>
+      <span class="font-mono text-sm text-[var(--color-text-muted)] tracking-widest whitespace-nowrap">~ ~ ~ E.O.F ~ ~ ~</span>
+      <div class="flex-1 h-px bg-gradient-to-r from-transparent via-[var(--color-border-hover)] to-transparent"></div>
+    </div>
+  </section>
+
+  <CryptoModal />
+  <ChangelogModal />
+</Layout>

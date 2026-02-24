@@ -1,0 +1,27 @@
+---
+import Layout from '../components/layout/Layout.astro';
+import Button from '../components/ui/Button.astro';
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+---
+
+<Layout title="404 - Not Found" description="The page you're looking for doesn't exist.">
+  <section class="pt-32 pb-20 px-4 sm:px-6 lg:px-8 min-h-[70vh] flex items-center">
+    <div class="mx-auto max-w-2xl text-center">
+      <div class="font-heading text-8xl sm:text-9xl font-bold text-[var(--color-accent)] opacity-30 mb-4">
+        404
+      </div>
+      <h1 class="font-heading text-3xl sm:text-4xl font-bold text-[var(--color-text-primary)] mb-4">
+        Page Not Found
+      </h1>
+      <p class="text-[var(--color-text-secondary)] mb-8">
+        The page you're looking for doesn't exist or has been moved.
+      </p>
+      <Button href={`${base}/`}>
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+        </svg>
+        Back to Home
+      </Button>
+    </div>
+  </section>
+</Layout>

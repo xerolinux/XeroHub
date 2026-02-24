@@ -1,0 +1,71 @@
+---
+import { getCollection, render } from 'astro:content';
+import Layout from '../../components/layout/Layout.astro';
+import GlassCard from '../../components/ui/GlassCard.astro';
+import PageViews from '../../components/ui/PageViews.astro';
+import { formatDate, readingTime } from '../../lib/utils';
+
+export async function getStaticPaths() {
+  const updates = await getCollection('updates', ({ data }) => !data.draft);
+  return updates.map(update => ({
+    params: { id: update.id },
+    props: { update },
+  }));
+}
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const { update } = Astro.props;
+const { Content } = await render(update);
+const pageId = Astro.url.pathname.replace(/^\//, '').replace(/\/$/, '').replace(/\//g, '-') || 'home';
+---
+
+<Layout
+  title={update.data.title}
+  description={update.data.description}
+  image={update.data.image ? `${base}${update.data.image}` : undefined}
+>
+  <article class="pt-32 pb-20 px-4 sm:px-6 lg:px-8">
+    <div class="mx-auto max-w-3xl">
+      <!-- Header -->
+      <header class="fade-in mb-10">
+        <a href={`${base}/updates/`} class="inline-flex items-center gap-2 text-sm text-[var(--color-accent-light)] hover:text-[var(--color-accent)] transition-colors mb-6">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+          </svg>
+          Back to Updates
+        </a>
+        <div class="flex items-center gap-3 mb-4 text-sm text-[var(--color-text-muted)]">
+          <time datetime={update.data.date.toISOString()}>
+            {formatDate(update.data.date)}
+          </time>
+          <span class="w-1 h-1 rounded-full bg-[var(--color-text-muted)]"></span>
+          <span>{readingTime(update.body || '')}</span>
+          <span class="w-1 h-1 rounded-full bg-[var(--color-text-muted)]"></span>
+          <PageViews pageId={pageId} />
+        </div>
+        <h1 class="font-heading text-3xl sm:text-4xl font-bold text-[var(--color-text-primary)] leading-tight">
+          {update.data.title}
+        </h1>
+      </header>
+
+      <!-- Featured Image -->
+      {update.data.image && (
+        <div class="fade-in fade-in-delay-1 mb-10">
+          <GlassCard padding="p-2">
+            <img
+              src={`${base}${update.data.image}`}
+              alt={update.data.title}
+              loading="lazy"
+              class="w-full rounded-xl"
+            />
+          </GlassCard>
+        </div>
+      )}
+
+      <!-- Content -->
+      <div class="fade-in fade-in-delay-2 prose">
+        <Content />
+      </div>
+    </div>
+  </article>
+</Layout>

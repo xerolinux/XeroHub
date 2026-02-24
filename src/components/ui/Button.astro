@@ -1,0 +1,46 @@
+---
+interface Props {
+  href?: string;
+  variant?: 'primary' | 'secondary' | 'ghost';
+  size?: 'sm' | 'md' | 'lg';
+  external?: boolean;
+  class?: string;
+  [key: string]: any;
+}
+
+const {
+  href,
+  variant = 'primary',
+  size = 'md',
+  external = false,
+  class: className = '',
+  ...rest
+} = Astro.props;
+
+const Tag = href ? 'a' : 'button';
+
+const baseClasses = 'inline-flex items-center justify-center gap-2 font-medium rounded-xl transition-all duration-300 cursor-pointer';
+
+const sizeClasses = {
+  sm: 'px-4 py-2 text-sm',
+  md: 'px-6 py-3 text-sm',
+  lg: 'px-8 py-4 text-base',
+};
+
+const variantClasses = {
+  primary: 'btn-glow bg-gradient-to-r from-[var(--color-accent)] to-[var(--color-accent-dark)] text-white hover:from-[var(--color-accent-light)] hover:to-[var(--color-accent)]',
+  secondary: 'glass glass-hover text-[var(--color-text-primary)]',
+  ghost: 'text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)] hover:bg-[var(--color-bg-tertiary)]',
+};
+
+const externalAttrs = external ? { target: '_blank', rel: 'noopener noreferrer' } : {};
+---
+
+<Tag
+  href={href}
+  class:list={[baseClasses, sizeClasses[size], variantClasses[variant], className]}
+  {...externalAttrs}
+  {...rest}
+>
+  <slot />
+</Tag>

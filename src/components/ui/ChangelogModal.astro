@@ -1,0 +1,113 @@
+<!-- Changelog Modal -->
+<div id="changelog-modal" class="fixed inset-0 z-[9999] hidden items-center justify-center">
+  <!-- Backdrop -->
+  <div id="changelog-backdrop" class="absolute inset-0 bg-black/70 backdrop-blur-sm"></div>
+
+  <!-- Modal container -->
+  <div class="relative w-full max-w-[860px] mx-4 glass rounded-2xl overflow-hidden" style="max-height: 86vh;">
+    <!-- Close button -->
+    <button
+      id="changelog-close"
+      class="absolute top-4 right-4 z-10 w-9 h-9 rounded-full bg-[var(--color-bg-secondary)] border border-[var(--color-border)] text-[var(--color-text-secondary)] hover:text-white hover:border-[var(--color-border-hover)] transition-all duration-200 flex items-center justify-center cursor-pointer"
+      aria-label="Close changelog"
+    >
+      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+      </svg>
+    </button>
+
+    <!-- Header -->
+    <div class="px-8 pt-8 pb-4">
+      <h2 class="display-heading text-2xl text-[var(--color-text-primary)] flex items-center gap-3">
+        <svg class="w-6 h-6 text-[var(--color-accent)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" />
+        </svg>
+        XeroLinux Changelog
+      </h2>
+      <div class="mt-3 h-px bg-gradient-to-r from-[var(--color-accent)] via-[var(--color-accent-light)] to-transparent"></div>
+    </div>
+
+    <!-- Body (scrollable) -->
+    <div class="px-8 pb-8 overflow-y-auto" style="max-height: calc(86vh - 120px);">
+      <div>
+        <!-- Date header -->
+        <p class="text-xs uppercase tracking-widest text-[var(--color-accent-light)] font-semibold mb-2">2026-01-01</p>
+        <!-- Changelog items -->
+        <ul class="space-y-1">
+          <li class="flex items-start gap-2 text-sm text-[var(--color-text-secondary)] bg-[var(--color-bg-primary)]/50 rounded-lg px-4 py-1.5">
+            <span class="text-[var(--color-accent)] mt-0.5 shrink-0">&#9656;</span>
+            Updated to KDE 6.5.4.
+          </li>
+          <li class="flex items-start gap-2 text-sm text-[var(--color-text-secondary)] bg-[var(--color-bg-primary)]/50 rounded-lg px-4 py-1.5">
+            <span class="text-[var(--color-accent)] mt-0.5 shrink-0">&#9656;</span>
+            Updated to latest Kernel (6.18.x).
+          </li>
+          <li class="flex items-start gap-2 text-sm text-[var(--color-text-secondary)] bg-[var(--color-bg-primary)]/50 rounded-lg px-4 py-1.5">
+            <span class="text-[var(--color-accent)] mt-0.5 shrink-0">&#9656;</span>
+            Added new widgets & updated the old.
+          </li>
+          <li class="flex items-start gap-2 text-sm text-[var(--color-text-secondary)] bg-[var(--color-bg-primary)]/50 rounded-lg px-4 py-1.5">
+            <span class="text-[var(--color-accent)] mt-0.5 shrink-0">&#9656;</span>
+            Enabled <strong class="text-[var(--color-text-primary)]">Package Chooser</strong> in <strong class="text-[var(--color-text-primary)]">Calamares</strong>.
+          </li>
+          <li class="flex items-start gap-2 text-sm text-[var(--color-text-secondary)] bg-[var(--color-bg-primary)]/50 rounded-lg px-4 py-1.5">
+            <span class="text-[var(--color-accent)] mt-0.5 shrink-0">&#9656;</span>
+            <strong class="text-[var(--color-text-primary)]">Intel/AMD</strong> drivers smart detection system.
+          </li>
+          <li class="flex items-start gap-2 text-sm text-[var(--color-text-secondary)] bg-[var(--color-bg-primary)]/50 rounded-lg px-4 py-1.5">
+            <span class="text-[var(--color-accent)] mt-0.5 shrink-0">&#9656;</span>
+            GPU Swap detection system (<a href="https://wiki.xerolinux.xyz/distro/#gpu-swap-detection" target="_blank" class="text-[var(--color-accent-light)] hover:underline">Click for more info</a>)
+          </li>
+          <li class="flex items-start gap-2 text-sm text-[var(--color-text-secondary)] bg-[var(--color-bg-primary)]/50 rounded-lg px-4 py-1.5">
+            <span class="text-[var(--color-accent)] mt-0.5 shrink-0">&#9656;</span>
+            New Post-Install Toolkit GUI Written in <strong class="text-[var(--color-text-primary)]">Rust/GTK</strong>.
+          </li>
+          <li class="flex items-start gap-2 text-sm text-[var(--color-text-secondary)] bg-[var(--color-bg-primary)]/50 rounded-lg px-4 py-1.5">
+            <span class="text-[var(--color-accent)] mt-0.5 shrink-0">&#9656;</span>
+            New <strong class="text-[var(--color-text-primary)]">nVidia</strong> ISO added to the list (<a href="https://wiki.xerolinux.xyz/distro/#nvidia-iso-split" target="_blank" class="text-[var(--color-accent-light)] hover:underline">Click for more info</a>)
+          </li>
+        </ul>
+
+        <!-- EOF -->
+        <div class="flex items-center gap-4 mt-6">
+          <div class="flex-1 h-px bg-gradient-to-r from-transparent via-[var(--color-border-hover)] to-transparent"></div>
+          <span class="font-mono text-xs text-[var(--color-text-muted)] tracking-widest whitespace-nowrap">~ ~ ~ E.O.F ~ ~ ~</span>
+          <div class="flex-1 h-px bg-gradient-to-r from-transparent via-[var(--color-border-hover)] to-transparent"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script is:inline>
+  (function () {
+    const modal = document.getElementById('changelog-modal');
+    const backdrop = document.getElementById('changelog-backdrop');
+    const closeBtn = document.getElementById('changelog-close');
+
+    function openModal() {
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal() {
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+      document.body.style.overflow = '';
+    }
+
+    document.querySelectorAll('[data-changelog-modal]').forEach(btn => {
+      btn.addEventListener('click', openModal);
+    });
+
+    closeBtn?.addEventListener('click', closeModal);
+    backdrop?.addEventListener('click', closeModal);
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+        closeModal();
+      }
+    });
+  })();
+</script>

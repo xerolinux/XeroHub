@@ -1,0 +1,109 @@
+---
+// Animated floating gradient orbs + subtle particle canvas for the background
+---
+
+<div class="fixed inset-0 z-0 overflow-hidden pointer-events-none" aria-hidden="true">
+  <div class="bg-orb bg-orb-1"></div>
+  <div class="bg-orb bg-orb-2"></div>
+  <div class="bg-orb bg-orb-3"></div>
+  <div class="bg-orb bg-orb-4"></div>
+  <canvas id="bg-canvas"></canvas>
+</div>
+
+<script is:inline>
+  // Subtle floating particle system — optimized
+  (function() {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+    const canvas = document.getElementById('bg-canvas');
+    if (!canvas) return;
+    const ctx = canvas.getContext('2d');
+    let particles = [];
+    let w, h;
+    let animId;
+    let paused = false;
+    const isMobile = window.innerWidth < 768;
+    const maxParticles = isMobile ? 30 : 60;
+    const lineDistSq = 12000;
+
+    function resize() {
+      w = canvas.width = window.innerWidth;
+      h = canvas.height = window.innerHeight;
+    }
+
+    function createParticles() {
+      particles = [];
+      const count = Math.min(Math.floor((w * h) / 18000), maxParticles);
+      for (let i = 0; i < count; i++) {
+        particles.push({
+          x: Math.random() * w,
+          y: Math.random() * h,
+          r: Math.random() * 1.5 + 0.5,
+          dx: (Math.random() - 0.5) * 0.3,
+          dy: (Math.random() - 0.5) * 0.3,
+          opacity: Math.random() * 0.3 + 0.05,
+        });
+      }
+    }
+
+    function draw() {
+      if (paused) return;
+      ctx.clearRect(0, 0, w, h);
+      for (const p of particles) {
+        p.x += p.dx;
+        p.y += p.dy;
+        if (p.x < 0) p.x = w;
+        if (p.x > w) p.x = 0;
+        if (p.y < 0) p.y = h;
+        if (p.y > h) p.y = 0;
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(168, 125, 232, ${p.opacity})`;
+        ctx.fill();
+      }
+      // Skip line-drawing on mobile for performance
+      if (!isMobile) {
+        for (let i = 0; i < particles.length; i++) {
+          for (let j = i + 1; j < particles.length; j++) {
+            const dx = particles[i].x - particles[j].x;
+            const dy = particles[i].y - particles[j].y;
+            const dist = dx * dx + dy * dy;
+            if (dist < lineDistSq) {
+              ctx.beginPath();
+              ctx.moveTo(particles[i].x, particles[i].y);
+              ctx.lineTo(particles[j].x, particles[j].y);
+              ctx.strokeStyle = `rgba(121, 75, 196, ${0.04 * (1 - dist / lineDistSq)})`;
+              ctx.lineWidth = 0.5;
+              ctx.stroke();
+            }
+          }
+        }
+      }
+      animId = requestAnimationFrame(draw);
+    }
+
+    // Pause when tab is hidden
+    document.addEventListener('visibilitychange', () => {
+      if (document.hidden) {
+        paused = true;
+        if (animId) cancelAnimationFrame(animId);
+      } else {
+        paused = false;
+        animId = requestAnimationFrame(draw);
+      }
+    });
+
+    let resizeTimer;
+    window.addEventListener('resize', () => {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(() => {
+        resize();
+        createParticles();
+      }, 150);
+    });
+
+    resize();
+    createParticles();
+    draw();
+  })();
+</script>

@@ -1,0 +1,187 @@
+---
+const pathname = Astro.url.pathname;
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+
+const navLinks = [
+  { label: 'Home', href: `${base}/` },
+  { label: 'About', href: `${base}/about/` },
+  { label: 'Updates', href: `${base}/updates/` },
+  { label: 'Gear', href: `${base}/gear/` },
+  { label: 'Videos', href: `${base}/videos/` },
+  { label: 'Download', href: `${base}/download/` },
+];
+
+const externalLinks = [
+  { label: 'Merch', href: 'https://shop.xerolinux.xyz' },
+];
+---
+
+<header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300" id="site-header">
+  <nav class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div class="glass mt-4 rounded-2xl px-6 py-3 flex items-center justify-between">
+      <!-- Logo -->
+      <a href={`${base}/`} class="flex items-center gap-3 group">
+        <img src={`${base}/logos/logo.png`} alt="XeroLinux" width="192" height="192" class="w-9 h-9 rounded-lg transition-transform duration-300 group-hover:scale-110" />
+        <span class="font-heading font-semibold text-lg text-[var(--color-text-primary)] hidden sm:block">
+          Xero<span class="text-[var(--color-accent)]">Linux</span>
+        </span>
+      </a>
+
+      <!-- Desktop Nav -->
+      <div class="hidden md:flex items-center gap-1">
+        {navLinks.map(link => (
+          <a
+            href={link.href}
+            class:list={[
+              'nav-link px-3 py-3 text-sm font-medium transition-colors duration-200',
+              (link.href === `${base}/` ? pathname === `${base}/` : pathname.startsWith(link.href))
+                ? 'text-[var(--color-accent-light)] active'
+                : 'text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)]'
+            ]}
+          >
+            {link.label}
+          </a>
+        ))}
+        <div class="w-px h-5 bg-[var(--color-border)] mx-2"></div>
+        {externalLinks.map(link => (
+          <a
+            href={link.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="nav-link px-3 py-3 text-sm font-medium text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)] transition-colors duration-200 flex items-center gap-1"
+          >
+            {link.label}
+            <svg class="w-3 h-3 opacity-50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+            </svg>
+          </a>
+        ))}
+        <a
+          href={`${base}/rss.xml`}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="p-2 text-orange-400 hover:text-orange-300 transition-colors duration-200"
+          aria-label="RSS Feed"
+          title="RSS Feed"
+        >
+          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M6.18 15.64a2.18 2.18 0 012.18 2.18C8.36 19 7.38 20 6.18 20 5 20 4 19 4 17.82a2.18 2.18 0 012.18-2.18M4 4.44A15.56 15.56 0 0119.56 20h-2.83A12.73 12.73 0 004 7.27V4.44m0 5.66a9.9 9.9 0 019.9 9.9h-2.83A7.07 7.07 0 004 12.93V10.1z"/>
+          </svg>
+        </a>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <button
+        id="mobile-menu-btn"
+        class="md:hidden p-2 text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)] transition-colors"
+        aria-label="Toggle menu"
+        aria-expanded="false"
+      >
+        <svg class="w-6 h-6 menu-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+        <svg class="w-6 h-6 close-icon hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="glass mt-2 rounded-2xl p-4 hidden md:hidden transition-all duration-200 origin-top">
+      <div class="flex flex-col gap-1">
+        {navLinks.map(link => (
+          <a
+            href={link.href}
+            class:list={[
+              'px-4 py-3 rounded-xl text-sm font-medium transition-all duration-200',
+              (link.href === `${base}/` ? pathname === `${base}/` : pathname.startsWith(link.href))
+                ? 'bg-[var(--color-accent-subtle)] text-[var(--color-accent-light)]'
+                : 'text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)] hover:bg-[var(--color-bg-tertiary)]'
+            ]}
+          >
+            {link.label}
+          </a>
+        ))}
+        <div class="h-px bg-[var(--color-border)] my-2"></div>
+        {externalLinks.map(link => (
+          <a
+            href={link.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="px-4 py-3 rounded-xl text-sm font-medium text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)] hover:bg-[var(--color-bg-tertiary)] transition-all duration-200 flex items-center justify-between"
+          >
+            {link.label}
+            <svg class="w-3 h-3 opacity-50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+            </svg>
+          </a>
+        ))}
+        <a
+          href={`${base}/rss.xml`}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="px-4 py-3 rounded-xl text-sm font-medium text-orange-400 hover:text-orange-300 hover:bg-[var(--color-bg-tertiary)] transition-all duration-200 flex items-center justify-between"
+        >
+          RSS Feed
+          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M6.18 15.64a2.18 2.18 0 012.18 2.18C8.36 19 7.38 20 6.18 20 5 20 4 19 4 17.82a2.18 2.18 0 012.18-2.18M4 4.44A15.56 15.56 0 0119.56 20h-2.83A12.73 12.73 0 004 7.27V4.44m0 5.66a9.9 9.9 0 019.9 9.9h-2.83A7.07 7.07 0 004 12.93V10.1z"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<script is:inline>
+  // Mobile menu toggle
+  const menuBtn = document.getElementById('mobile-menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const menuIcon = menuBtn?.querySelector('.menu-icon');
+  const closeIcon = menuBtn?.querySelector('.close-icon');
+
+  function closeMenu() {
+    mobileMenu?.classList.add('hidden');
+    menuIcon?.classList.remove('hidden');
+    closeIcon?.classList.add('hidden');
+    menuBtn?.setAttribute('aria-expanded', 'false');
+  }
+
+  function openMenu() {
+    mobileMenu?.classList.remove('hidden');
+    menuIcon?.classList.add('hidden');
+    closeIcon?.classList.remove('hidden');
+    menuBtn?.setAttribute('aria-expanded', 'true');
+  }
+
+  menuBtn?.addEventListener('click', () => {
+    const isOpen = !mobileMenu?.classList.contains('hidden');
+    if (isOpen) closeMenu();
+    else openMenu();
+  });
+
+  // Close on click outside
+  document.addEventListener('click', (e) => {
+    if (!mobileMenu?.classList.contains('hidden') &&
+        !mobileMenu?.contains(e.target) &&
+        !menuBtn?.contains(e.target)) {
+      closeMenu();
+    }
+  });
+
+  // Close on Escape
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && !mobileMenu?.classList.contains('hidden')) {
+      closeMenu();
+    }
+  });
+
+  // Header background on scroll
+  const header = document.getElementById('site-header');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 50) {
+      header?.classList.add('backdrop-blur-sm');
+    } else {
+      header?.classList.remove('backdrop-blur-sm');
+    }
+  }, { passive: true });
+</script>

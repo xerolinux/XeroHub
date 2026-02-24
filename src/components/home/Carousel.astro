@@ -1,0 +1,153 @@
+---
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const slides = [
+  {
+    image: `${base}/images/Calamares.webp`,
+    caption: 'Calamares Installer',
+  },
+  {
+    image: `${base}/images/Desktop.webp`,
+    caption: 'KDE Plasma Desktop',
+  },
+  {
+    image: `${base}/images/Toolkit.webp`,
+    caption: 'Post-Install Toolkit',
+  },
+];
+---
+
+<section class="py-16 px-4 sm:px-6 lg:px-8">
+  <div class="mx-auto max-w-5xl">
+    <div class="fade-in glass p-2 sm:p-3 rounded-2xl">
+      <div class="relative overflow-hidden rounded-xl" id="carousel">
+        <!-- Slides -->
+        <div class="relative aspect-[16/9]" id="carousel-track">
+          {slides.map((slide, i) => (
+            <div
+              class:list={[
+                'carousel-slide absolute inset-0 transition-opacity duration-700 ease-in-out',
+                i === 0 ? 'opacity-100' : 'opacity-0'
+              ]}
+              data-index={i}
+            >
+              <img
+                src={slide.image}
+                alt={slide.caption}
+                width="2560"
+                height="1440"
+                class="w-full h-full object-cover rounded-xl"
+                loading={i === 0 ? 'eager' : 'lazy'}
+              />
+              <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-4 sm:p-6 rounded-b-xl">
+                <p class="text-white text-sm sm:text-base font-medium">{slide.caption}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <!-- Navigation arrows -->
+        <button
+          class="absolute left-2 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full glass flex items-center justify-center text-white hover:bg-[var(--color-bg-glass-hover)] transition-all z-10"
+          id="carousel-prev"
+          aria-label="Previous slide"
+        >
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+          </svg>
+        </button>
+        <button
+          class="absolute right-2 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full glass flex items-center justify-center text-white hover:bg-[var(--color-bg-glass-hover)] transition-all z-10"
+          id="carousel-next"
+          aria-label="Next slide"
+        >
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+          </svg>
+        </button>
+
+        <!-- Dots -->
+        <div class="absolute bottom-12 sm:bottom-14 left-1/2 -translate-x-1/2 flex gap-1 z-10">
+          {slides.map((_, i) => (
+            <button
+              class:list={[
+                'carousel-dot rounded-full transition-all duration-300 p-2 group',
+              ]}
+              data-index={i}
+              aria-label={`Go to slide ${i + 1}`}
+            >
+              <span class:list={[
+                'block h-2 rounded-full transition-all duration-300',
+                i === 0 ? 'bg-white w-6' : 'bg-white/40 w-2'
+              ]} />
+            </button>
+          ))}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script is:inline>
+  (() => {
+    const slides = document.querySelectorAll('.carousel-slide');
+    const dots = document.querySelectorAll('.carousel-dot');
+    const track = document.getElementById('carousel-track');
+    const prevBtn = document.getElementById('carousel-prev');
+    const nextBtn = document.getElementById('carousel-next');
+    let current = 0;
+    let interval;
+
+    function goTo(index) {
+      slides.forEach((s, i) => {
+        s.classList.toggle('opacity-100', i === index);
+        s.classList.toggle('opacity-0', i !== index);
+      });
+      dots.forEach((d, i) => {
+        const span = d.querySelector('span');
+        if (!span) return;
+        span.classList.toggle('bg-white', i === index);
+        span.classList.toggle('w-6', i === index);
+        span.classList.toggle('bg-white/40', i !== index);
+        span.classList.toggle('w-2', i !== index);
+      });
+      current = index;
+    }
+
+    function next() { goTo((current + 1) % slides.length); }
+    function prev() { goTo((current - 1 + slides.length) % slides.length); }
+    function startAutoplay() { interval = setInterval(next, 6000); }
+    function stopAutoplay() { clearInterval(interval); }
+
+    prevBtn?.addEventListener('click', () => { stopAutoplay(); prev(); startAutoplay(); });
+    nextBtn?.addEventListener('click', () => { stopAutoplay(); next(); startAutoplay(); });
+    dots.forEach(dot => {
+      dot.addEventListener('click', () => {
+        stopAutoplay();
+        goTo(parseInt(dot.dataset.index));
+        startAutoplay();
+      });
+    });
+
+    // Touch/swipe support
+    let touchStartX = 0;
+    let touchEndX = 0;
+    const minSwipe = 50;
+
+    track?.addEventListener('touchstart', (e) => {
+      touchStartX = e.changedTouches[0].screenX;
+      stopAutoplay();
+    }, { passive: true });
+
+    track?.addEventListener('touchend', (e) => {
+      touchEndX = e.changedTouches[0].screenX;
+      const diff = touchStartX - touchEndX;
+      if (Math.abs(diff) > minSwipe) {
+        if (diff > 0) next();
+        else prev();
+      }
+      startAutoplay();
+    }, { passive: true });
+
+    startAutoplay();
+  })();
+</script>

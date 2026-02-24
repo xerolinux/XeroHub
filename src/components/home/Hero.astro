@@ -1,0 +1,274 @@
+---
+import Button from '../ui/Button.astro';
+import PageViews from '../ui/PageViews.astro';
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const pageId = Astro.url.pathname.replace(/^\//, '').replace(/\/$/, '').replace(/\//g, '-') || 'home';
+---
+
+<section class="relative pt-32 pb-20 px-4 sm:px-6 lg:px-8">
+  <div class="mx-auto max-w-5xl text-center">
+    <!-- Logo -->
+    <div class="fade-in mb-6">
+      <img src={`${base}/logos/logo.png`} alt="XeroLinux" width="192" height="192" class="w-28 h-28 sm:w-32 sm:h-32 mx-auto rounded-3xl shadow-lg shadow-[var(--color-accent-glow)]" />
+    </div>
+
+    <!-- Page Views -->
+    <div class="fade-in flex justify-center mb-4">
+      <PageViews pageId={pageId} />
+    </div>
+
+    <!-- Headline -->
+    <h1 class="fade-in fade-in-delay-1 display-heading text-4xl sm:text-5xl md:text-7xl tracking-tight mb-6">
+      <span class="bg-gradient-to-r from-[var(--color-accent)] via-[var(--color-accent-light)] to-[#c44b8b] bg-clip-text text-transparent">XeroLinux</span>
+    </h1>
+
+    <!-- Badge -->
+    <div class="fade-in fade-in-delay-1 flex justify-center mb-6">
+      <div class="inline-flex items-center gap-2.5 px-5 py-2 rounded-full glass text-sm text-[var(--color-text-secondary)]">
+        <svg class="w-4 h-4 text-[#1793D1]" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M11.39.605C10.376 3.092 9.764 4.72 8.635 7.132c.693.734 1.543 1.589 2.923 2.554-1.484-.61-2.496-1.224-3.252-1.86C6.86 10.842 4.596 15.138 0 23.395c3.612-2.085 6.412-3.37 9.021-3.862a6.61 6.61 0 01-.171-1.547l.003-.115c.058-2.315 1.261-4.095 2.687-3.973 1.426.12 2.534 2.096 2.478 4.409a6.52 6.52 0 01-.146 1.243c2.58.505 5.352 1.787 8.914 3.844-.702-1.293-1.33-2.459-1.929-3.57-.943-.73-1.926-1.682-3.933-2.713 1.38.359 2.367.772 3.137 1.234-6.09-11.334-6.582-12.84-8.67-17.74z"/>
+        </svg>
+        Fueled by : ArchLinux & KDE Plasma
+        <svg class="w-4 h-4 text-[#1D99F3]" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M13.881 0L9.89.382v16.435l3.949-.594V9.216l5.308 7.772 4.162-1.317-5.436-7.475 5.479-7.05L19.105.17 13.84 7.22zM4.834 4.005a.203.203 0 0 0-.123.059L3.145 5.63a.203.203 0 0 0-.03.248L4.949 8.9a7.84 7.84 0 0 0-.772 1.759l-3.367.7a.203.203 0 0 0-.162.199v2.215c0 .093.064.174.155.196l3.268.8a7.83 7.83 0 0 0 .801 2.03L2.98 19.683a.203.203 0 0 0 .027.254l1.566 1.567a.204.204 0 0 0 .249.03l2.964-1.8c.582.336 1.21.6 1.874.78l.692 3.325c.02.094.102.161.198.161h2.215a.202.202 0 0 0 .197-.155l.815-3.332a7.807 7.807 0 0 0 1.927-.811l2.922 1.915c.08.053.186.042.254-.026l1.567-1.566a.202.202 0 0 0 .03-.248l-1.067-1.758-.345.11a.12.12 0 0 1-.135-.047L17.371 15.8a6.347 6.347 0 1 1-8.255-8.674V5.488c-.401.14-.79.31-1.159.511l-.001-.002-2.99-1.96a.203.203 0 0 0-.132-.033Z"/>
+        </svg>
+      </div>
+    </div>
+
+    <!-- Typing tagline -->
+    <p class="fade-in fade-in-delay-2 text-lg sm:text-xl text-[var(--color-text-secondary)] max-w-2xl mx-auto mb-10 leading-relaxed text-center" id="hero-tagline">
+      Discover a Distro Fueled by our Passion for GNU/Linux.
+    </p>
+
+    <!-- CMatrix Terminal -->
+    <div class="fade-in fade-in-delay-3 mx-auto max-w-2xl w-full mb-10">
+      <div class="glass overflow-hidden">
+        <!-- Title bar -->
+        <div class="flex items-center gap-2 px-4 py-2.5 bg-[var(--color-bg-secondary)] border-b border-[var(--color-border)]">
+          <div class="flex gap-1.5">
+            <div class="w-3 h-3 rounded-full bg-[#ff5f57]"></div>
+            <div class="w-3 h-3 rounded-full bg-[#febc2e]"></div>
+            <div class="w-3 h-3 rounded-full bg-[#28c840]"></div>
+          </div>
+          <span class="text-xs text-[var(--color-text-muted)] font-mono ml-2">xero@arch ~ </span>
+        </div>
+        <!-- Terminal body -->
+        <div class="relative bg-black/40 p-0" style="height: 220px;">
+          <!-- Prompt line (overlay on top of canvas) -->
+          <div id="cmatrix-prompt" class="absolute top-0 left-0 right-0 z-10 px-4 py-2 font-mono text-sm">
+            <span class="text-[var(--color-accent-light)]">$</span>
+            <span id="cmatrix-typed" class="text-[var(--color-text-primary)] ml-1"></span>
+            <span id="cmatrix-cursor" class="inline-block w-2 h-4 bg-[var(--color-accent)] align-middle animate-pulse ml-0.5"></span>
+          </div>
+          <!-- Matrix rain canvas -->
+          <canvas id="cmatrix-canvas" class="w-full h-full block"></canvas>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA Buttons -->
+    <div class="fade-in fade-in-delay-3 flex flex-col sm:flex-row items-center justify-center gap-4">
+      <Button href="https://wiki.xerolinux.xyz" size="lg" external>
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+        </svg>
+        The Wiki
+      </Button>
+      <Button href={`${base}/download/`} variant="secondary" size="lg">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+        </svg>
+        Download
+      </Button>
+      <Button href="https://github.com/XeroLinuxDev/XeroBuild" variant="secondary" size="lg" external>
+        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+        Github
+      </Button>
+    </div>
+
+    <!-- Scroll indicator -->
+    <div class="fade-in fade-in-delay-4 mt-16 flex justify-center">
+      <div class="w-6 h-10 rounded-full border-2 border-[var(--color-border)] flex justify-center">
+        <div class="w-1.5 h-3 bg-[var(--color-accent)] rounded-full mt-2 animate-bounce"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script is:inline>
+(function () {
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+  const canvas = document.getElementById('cmatrix-canvas');
+  if (!canvas) return;
+  const ctx = canvas.getContext('2d');
+  const prompt = document.getElementById('cmatrix-prompt');
+  const typed = document.getElementById('cmatrix-typed');
+  const cursor = document.getElementById('cmatrix-cursor');
+  const command = 'cmatrix';
+  let charIndex = 0;
+  let matrixStarted = false;
+  let animId = null;
+  let lastFrame = 0;
+  let isVisible = true;
+  const frameInterval = 70; // ms between frames — slower rain
+
+  // Matrix characters (katakana + latin + digits)
+  const chars = 'アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲンABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@#$%^&*';
+
+  // Site palette colors
+  const leadColor = '#e8d5ff';       // bright lavender (lead char)
+  const trailColor = '#a06af0';      // accent purple (trailing)
+  const dimColor = '#6040a0';        // dimmer purple (faded trail)
+
+  function resize() {
+    const rect = canvas.parentElement.getBoundingClientRect();
+    canvas.width = rect.width * window.devicePixelRatio;
+    canvas.height = rect.height * window.devicePixelRatio;
+    ctx.scale(window.devicePixelRatio, window.devicePixelRatio);
+    canvas.style.width = rect.width + 'px';
+    canvas.style.height = rect.height + 'px';
+  }
+
+  resize();
+  let resizeTimer;
+  window.addEventListener('resize', function () {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(function () {
+      resize();
+      if (matrixStarted) initDrops();
+    }, 150);
+  });
+
+  // Pause when off-screen
+  const observer = new IntersectionObserver(function (entries) {
+    isVisible = entries[0].isIntersecting;
+    if (!isVisible && animId) {
+      cancelAnimationFrame(animId);
+      animId = null;
+    } else if (isVisible && matrixStarted && !animId) {
+      lastFrame = 0;
+      animId = requestAnimationFrame(drawMatrix);
+    }
+  }, { threshold: 0 });
+  observer.observe(canvas.parentElement);
+
+  const fontSize = 14;
+  let columns, drops;
+
+  function initDrops() {
+    const w = canvas.width / window.devicePixelRatio;
+    columns = Math.floor(w / fontSize);
+    drops = [];
+    for (let i = 0; i < columns; i++) {
+      drops[i] = -(Math.random() * 40 | 0);
+    }
+  }
+
+  function drawMatrix(timestamp) {
+    if (!isVisible) { animId = null; return; }
+    // Throttle frame rate for slower rain
+    if (timestamp - lastFrame < frameInterval) {
+      animId = requestAnimationFrame(drawMatrix);
+      return;
+    }
+    lastFrame = timestamp;
+
+    const w = canvas.width / window.devicePixelRatio;
+    const h = canvas.height / window.devicePixelRatio;
+
+    // Longer trails with slower fade
+    ctx.fillStyle = 'rgba(26, 26, 46, 0.08)';
+    ctx.fillRect(0, 0, w, h);
+
+    ctx.font = fontSize + 'px monospace';
+
+    for (let i = 0; i < columns; i++) {
+      if (drops[i] < 0) {
+        drops[i]++;
+        continue;
+      }
+
+      const char = chars[Math.random() * chars.length | 0];
+      const x = i * fontSize;
+      const y = drops[i] * fontSize;
+
+      if (y > 0 && y < h + fontSize) {
+        // Lead character — bright lavender/white
+        ctx.fillStyle = leadColor;
+        ctx.fillText(char, x, y);
+
+        // One behind — bright accent purple
+        if (drops[i] > 1) {
+          const c2 = chars[Math.random() * chars.length | 0];
+          ctx.fillStyle = trailColor;
+          ctx.fillText(c2, x, (drops[i] - 1) * fontSize);
+        }
+
+        // Two behind — dimmer purple
+        if (drops[i] > 2) {
+          const c3 = chars[Math.random() * chars.length | 0];
+          ctx.fillStyle = dimColor;
+          ctx.fillText(c3, x, (drops[i] - 2) * fontSize);
+        }
+      }
+
+      drops[i]++;
+
+      // Reset drop to top — slightly less frequent for longer streams
+      if (drops[i] * fontSize > h && Math.random() > 0.985) {
+        drops[i] = 0;
+      }
+    }
+
+    animId = requestAnimationFrame(drawMatrix);
+  }
+
+  function typeCommand() {
+    if (charIndex < command.length) {
+      typed.textContent += command[charIndex];
+      charIndex++;
+      setTimeout(typeCommand, 120 + Math.random() * 100);
+    } else {
+      setTimeout(startMatrix, 500);
+    }
+  }
+
+  function startMatrix() {
+    prompt.style.opacity = '0';
+    prompt.style.transition = 'opacity 0.3s';
+    cursor.style.display = 'none';
+    matrixStarted = true;
+
+    const w = canvas.width / window.devicePixelRatio;
+    const h = canvas.height / window.devicePixelRatio;
+    ctx.fillStyle = 'rgba(26, 26, 46, 1)';
+    ctx.fillRect(0, 0, w, h);
+
+    initDrops();
+    lastFrame = 0;
+    animId = requestAnimationFrame(drawMatrix);
+
+    // Rain lasts 25 seconds before resetting
+    setTimeout(resetTerminal, 25000);
+  }
+
+  function resetTerminal() {
+    if (animId) cancelAnimationFrame(animId);
+    matrixStarted = false;
+
+    const w = canvas.width / window.devicePixelRatio;
+    const h = canvas.height / window.devicePixelRatio;
+    ctx.clearRect(0, 0, w, h);
+
+    typed.textContent = '';
+    charIndex = 0;
+    cursor.style.display = '';
+    prompt.style.opacity = '1';
+
+    setTimeout(typeCommand, 1200);
+  }
+
+  setTimeout(typeCommand, 800);
+})();
+</script>

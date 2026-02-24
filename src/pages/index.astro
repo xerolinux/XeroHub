@@ -1,0 +1,178 @@
+---
+import Layout from '../components/layout/Layout.astro';
+import Hero from '../components/home/Hero.astro';
+import Carousel from '../components/home/Carousel.astro';
+import FeatureCards from '../components/home/FeatureCards.astro';
+import GlassCard from '../components/ui/GlassCard.astro';
+import Button from '../components/ui/Button.astro';
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+---
+
+<Layout title="Home" description="The XeroLinux HQ">
+  <Hero />
+  <Carousel />
+  <FeatureCards />
+
+  <!-- Arch Refined Section -->
+  <section class="py-20 px-4 sm:px-6 lg:px-8">
+    <div class="mx-auto max-w-7xl">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <h2 class="fade-in display-heading text-3xl sm:text-4xl text-[var(--color-text-primary)] mb-6">
+            XeroLinux: <span class="text-[var(--color-accent)]">Arch, Refined</span>
+          </h2>
+          <div class="fade-in fade-in-delay-1 space-y-4 text-[var(--color-text-secondary)]">
+            <p>
+              <strong class="text-[var(--color-text-primary)]">XeroLinux</strong> represents an innovative <em>Arch-based</em> distribution designed to demystify the installation process while preserving the core principles of user-driven customization. This distribution offers a thoughtful approach to Linux that balances accessibility with the renowned flexibility of <strong class="text-[var(--color-text-primary)]">ArchLinux</strong>.
+            </p>
+            <p>
+              <strong class="text-[var(--color-text-primary)]">XeroLinux</strong> embodies the true spirit of <strong class="text-[var(--color-text-primary)]">ArchLinux</strong>: a platform where you have the freedom to create your ideal computing environment, guided by curiosity, learning, and personal preference.
+            </p>
+          </div>
+          <div class="fade-in fade-in-delay-2 mt-8">
+            <Button href={`${base}/download/`}>
+              Get Started
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+              </svg>
+            </Button>
+          </div>
+        </div>
+        <div class="fade-in fade-in-delay-2">
+          <GlassCard padding="p-3">
+            <div class="aspect-video rounded-xl overflow-hidden relative cursor-pointer group" id="yt-lite" data-vid="hj9I8UYXToY">
+              <img
+                src="https://i.ytimg.com/vi/hj9I8UYXToY/hqdefault.jpg"
+                alt="XeroLinux Overview"
+                width="480"
+                height="360"
+                loading="lazy"
+                class="w-full h-full object-cover rounded-xl"
+              />
+              <!-- Play button overlay -->
+              <div class="absolute inset-0 flex items-center justify-center bg-black/30 group-hover:bg-black/40 transition-colors rounded-xl">
+                <div class="w-16 h-16 sm:w-20 sm:h-20 bg-red-600 rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
+                  <svg class="w-8 h-8 sm:w-10 sm:h-10 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M8 5v14l11-7z"/>
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </GlassCard>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats / Quick Info -->
+  <section class="py-16 px-4 sm:px-6 lg:px-8">
+    <div class="mx-auto max-w-5xl">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+        {[
+          { value: '🖥️ KDE', label: 'Plasma Desktop' },
+          { value: '🏗️ Arch', label: 'Based' },
+          { value: '🪟 Wayland', label: 'Ready' },
+          { value: '🛠️ XeroHub', label: 'Control Center' },
+        ].map((stat, i) => (
+          <div class={`fade-in fade-in-delay-${i + 1}`}>
+            <GlassCard class="text-center">
+              <div class="font-heading text-2xl sm:text-3xl font-bold text-[var(--color-accent)] mb-1">
+                {stat.value}
+              </div>
+              <div class="text-sm text-[var(--color-text-secondary)]">
+                {stat.label}
+              </div>
+            </GlassCard>
+          </div>
+        ))}
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Support Button -->
+  <section class="py-20 px-4 sm:px-6 lg:px-8">
+    <div class="fade-in text-center">
+      <button
+        id="kofi-trigger"
+        class="inline-flex items-center gap-2 px-8 py-4 text-base font-medium rounded-xl btn-glow bg-gradient-to-r from-[var(--color-accent)] to-[var(--color-accent-dark)] text-white hover:from-[var(--color-accent-light)] hover:to-[var(--color-accent)] transition-all duration-300 cursor-pointer"
+      >
+        ☕ Support Us on Ko-fi
+      </button>
+    </div>
+  </section>
+
+  <!-- Ko-fi Modal -->
+  <div id="kofi-modal" class="fixed inset-0 z-[9999] hidden items-center justify-center">
+    <div id="kofi-backdrop" class="absolute inset-0 bg-black/70 backdrop-blur-sm"></div>
+    <div class="relative mx-4 rounded-2xl overflow-hidden border border-[var(--color-border)] w-full" style="max-width: 420px; height: 560px;">
+      <button
+        id="kofi-close"
+        class="absolute top-2 right-2 z-10 w-8 h-8 rounded-full bg-black/60 border border-white/20 text-white hover:bg-black/80 transition-all duration-200 flex items-center justify-center cursor-pointer"
+        aria-label="Close"
+      >
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+      <iframe
+        id="kofi-iframe"
+        src=""
+        class="w-full h-full"
+        style="border: none; background: #1a1a2e;"
+        title="Support on Ko-fi"
+      ></iframe>
+    </div>
+  </div>
+
+  <script is:inline>
+    // YouTube lite-embed — load iframe only on click
+    (function () {
+      const yt = document.getElementById('yt-lite');
+      if (yt) {
+        yt.addEventListener('click', function () {
+          const vid = yt.dataset.vid;
+          const iframe = document.createElement('iframe');
+          iframe.src = 'https://www.youtube.com/embed/' + vid + '?autoplay=1';
+          iframe.className = 'w-full h-full rounded-xl';
+          iframe.style.border = '0';
+          iframe.setAttribute('allowfullscreen', '');
+          iframe.setAttribute('allow', 'autoplay; encrypted-media');
+          iframe.title = 'XeroLinux Overview';
+          yt.innerHTML = '';
+          yt.appendChild(iframe);
+          yt.style.cursor = 'default';
+        }, { once: true });
+      }
+    })();
+
+    (function () {
+      const trigger = document.getElementById('kofi-trigger');
+      const modal = document.getElementById('kofi-modal');
+      const backdrop = document.getElementById('kofi-backdrop');
+      const closeBtn = document.getElementById('kofi-close');
+      const iframe = document.getElementById('kofi-iframe');
+
+      function openModal() {
+        iframe.src = 'https://ko-fi.com/xerolinux/?hidefeed=true&widget=true&embed=true';
+        modal.classList.remove('hidden');
+        modal.classList.add('flex');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeModal() {
+        modal.classList.add('hidden');
+        modal.classList.remove('flex');
+        document.body.style.overflow = '';
+        iframe.src = '';
+      }
+
+      trigger?.addEventListener('click', openModal);
+      closeBtn?.addEventListener('click', closeModal);
+      backdrop?.addEventListener('click', closeModal);
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && !modal.classList.contains('hidden')) closeModal();
+      });
+    })();
+  </script>
+</Layout>

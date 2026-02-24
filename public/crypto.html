@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>XeroLinux Crypto Donation Portal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      height: 100%;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    }
+
+    body {
+      background-image: url('https://i.imgur.com/uLTqgct.jpeg');
+      background-size: cover;
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(15, 10, 30, 0.85) 0%, rgba(30, 15, 50, 0.80) 100%);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      z-index: 0;
+    }
+
+    .bg-orb {
+      position: fixed;
+      border-radius: 50%;
+      filter: blur(80px);
+      opacity: 0.35;
+      z-index: 0;
+      animation: float 20s ease-in-out infinite;
+    }
+
+    .bg-orb-1 {
+      width: 350px;
+      height: 350px;
+      background: linear-gradient(135deg, #8b5cf6, #6366f1);
+      top: -100px;
+      right: -100px;
+    }
+
+    .bg-orb-2 {
+      width: 280px;
+      height: 280px;
+      background: linear-gradient(135deg, #ec4899, #8b5cf6);
+      bottom: -80px;
+      left: -80px;
+      animation-delay: -7s;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translate(0, 0) scale(1); }
+      50% { transform: translate(-20px, 20px) scale(0.95); }
+    }
+
+    .main-container {
+      position: relative;
+      width: 100%;
+      max-width: 900px;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .glass-card {
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-radius: 20px;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      box-shadow: 0 20px 40px -12px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+      padding: 20px;
+      color: white;
+    }
+
+    .form-column {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .form-column form {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .form-column .form-footer {
+      margin-top: auto;
+      padding-top: 16px;
+    }
+
+    /* Left column - Info */
+    .info-column .header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+
+    .logo-icon {
+      width: 44px;
+      height: 44px;
+      background: linear-gradient(135deg, #8b5cf6 0%, #6366f1 100%);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      box-shadow: 0 6px 20px rgba(139, 92, 246, 0.4);
+      flex-shrink: 0;
+    }
+
+    .header-text h1 {
+      font-size: 18px;
+      font-weight: 700;
+      background: linear-gradient(135deg, #fff 0%, #c4b5fd 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .header-text .subtitle {
+      font-size: 12px;
+      color: rgba(255, 255, 255, 0.5);
+    }
+
+    .info-section {
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 12px;
+      padding: 12px;
+      margin-bottom: 10px;
+      border: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .info-section h3 {
+      font-size: 13px;
+      font-weight: 600;
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .info-section h3 .icon {
+      font-size: 13px;
+    }
+
+    .info-section p {
+      font-size: 12.5px;
+      line-height: 1.55;
+      color: rgba(255, 255, 255, 0.75);
+    }
+
+    .kofi-link {
+      display: block;
+      text-align: center;
+      margin-top: 10px;
+      padding: 8px 14px;
+      background: linear-gradient(135deg, rgba(255, 94, 91, 0.2), rgba(255, 94, 91, 0.1));
+      border: 1px solid rgba(255, 94, 91, 0.4);
+      border-radius: 8px;
+      color: #ff8a88;
+      font-size: 12px;
+      font-weight: 500;
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+
+    .kofi-link:hover {
+      background: linear-gradient(135deg, rgba(255, 94, 91, 0.3), rgba(255, 94, 91, 0.2));
+      border-color: rgba(255, 94, 91, 0.6);
+      transform: translateY(-1px);
+    }
+
+    .steps-list {
+      list-style: none;
+      margin-top: 8px;
+    }
+
+    .steps-list li {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 0;
+      font-size: 12.5px;
+      color: rgba(255, 255, 255, 0.85);
+    }
+
+    .steps-list li:not(:last-child) {
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .step-icon {
+      font-size: 12px;
+    }
+
+    /* Right column - Wallets & Form */
+    .section-label {
+      font-size: 11px;
+      font-weight: 600;
+      margin-bottom: 8px;
+      color: rgba(255, 255, 255, 0.5);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .wallets-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+      margin-bottom: 14px;
+    }
+
+    .wallet-box {
+      background: rgba(0, 0, 0, 0.25);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 10px;
+      padding: 10px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      text-align: center;
+    }
+
+    .wallet-box:hover {
+      border-color: rgba(139, 92, 246, 0.4);
+      background: rgba(0, 0, 0, 0.35);
+    }
+
+    .wallet-box.active {
+      border-color: rgba(139, 92, 246, 0.6);
+      box-shadow: 0 0 16px rgba(139, 92, 246, 0.2);
+      background: rgba(139, 92, 246, 0.1);
+    }
+
+    .wallet-icon {
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      margin: 0 auto 6px;
+      font-weight: 600;
+    }
+
+    .wallet-icon.btc { background: linear-gradient(135deg, #f7931a, #ffab40); }
+    .wallet-icon.usdt { background: linear-gradient(135deg, #26a17b, #50c8a8); }
+    .wallet-icon.eth { background: linear-gradient(135deg, #627eea, #8b9ff0); }
+
+    .wallet-name {
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    .address-display {
+      background: rgba(0, 0, 0, 0.3);
+      border-radius: 8px;
+      padding: 10px;
+      margin-bottom: 14px;
+      display: none;
+      animation: fadeIn 0.2s ease;
+    }
+
+    .address-display.visible {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-4px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .address-text {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      color: rgba(255, 255, 255, 0.8);
+      word-break: break-all;
+      flex: 1;
+      line-height: 1.4;
+    }
+
+    .copy-btn {
+      background: rgba(139, 92, 246, 0.25);
+      border: 1px solid rgba(139, 92, 246, 0.4);
+      color: #c4b5fd;
+      padding: 6px 10px;
+      border-radius: 6px;
+      font-size: 11px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      white-space: nowrap;
+    }
+
+    .copy-btn:hover {
+      background: rgba(139, 92, 246, 0.35);
+    }
+
+    .copy-btn.copied {
+      background: rgba(34, 197, 94, 0.25);
+      border-color: rgba(34, 197, 94, 0.5);
+      color: #86efac;
+    }
+
+    /* Form */
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+
+    .form-group {
+      margin-bottom: 0;
+    }
+
+    .form-group.full-width {
+      grid-column: 1 / -1;
+    }
+
+    label {
+      display: block;
+      font-size: 12px;
+      font-weight: 500;
+      margin-bottom: 5px;
+      color: rgba(255, 255, 255, 0.85);
+    }
+
+    input[type="text"],
+    input[type="email"] {
+      width: 100%;
+      padding: 10px 12px;
+      border-radius: 8px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      background: rgba(0, 0, 0, 0.3);
+      color: #fff;
+      font-size: 13px;
+      font-family: inherit;
+      transition: all 0.2s ease;
+    }
+
+    input::placeholder {
+      color: rgba(255, 255, 255, 0.3);
+    }
+
+    input:focus {
+      outline: none;
+      border-color: rgba(139, 92, 246, 0.5);
+      box-shadow: 0 0 0 2px rgba(139, 92, 246, 0.15);
+    }
+
+    input.invalid {
+      border-color: rgba(239, 68, 68, 0.6) !important;
+      box-shadow: 0 0 0 2px rgba(239, 68, 68, 0.15) !important;
+    }
+
+    #txid {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+    }
+
+    .field-hint {
+      display: block;
+      font-size: 11px;
+      color: rgba(251, 191, 36, 0.85);
+      margin-top: 5px;
+    }
+
+    .trust-indicators {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      margin-top: 18px;
+      padding: 18px;
+      background: rgba(139, 92, 246, 0.08);
+      border: 1px solid rgba(139, 92, 246, 0.2);
+      border-radius: 12px;
+    }
+
+    .trust-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px;
+      background: rgba(139, 92, 246, 0.08);
+      border-radius: 8px;
+    }
+
+    .trust-icon {
+      width: 36px;
+      height: 36px;
+      background: rgba(139, 92, 246, 0.2);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+    }
+
+    .trust-text {
+      font-size: 12px;
+      font-weight: 600;
+      color: rgba(255, 255, 255, 0.85);
+    }
+
+    .form-footer {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .spam-check {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 12px;
+      color: rgba(255, 255, 255, 0.75);
+    }
+
+    .spam-check input {
+      width: 60px;
+      text-align: center;
+      padding: 8px;
+    }
+
+    button[type="submit"] {
+      padding: 10px 20px;
+      background: linear-gradient(135deg, #8b5cf6 0%, #6366f1 100%);
+      color: white;
+      font-weight: 600;
+      font-size: 13px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      box-shadow: 0 4px 12px rgba(139, 92, 246, 0.35);
+      font-family: inherit;
+    }
+
+    button[type="submit"]:hover:not(:disabled) {
+      transform: translateY(-1px);
+      box-shadow: 0 6px 16px rgba(139, 92, 246, 0.45);
+    }
+
+    button[type="submit"]:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+      background: linear-gradient(135deg, #6b7280 0%, #4b5563 100%);
+      box-shadow: none;
+    }
+
+    .message {
+      margin-top: 10px;
+      padding: 10px;
+      border-radius: 8px;
+      text-align: center;
+      font-size: 12px;
+      font-weight: 500;
+      display: none;
+    }
+
+    .message.success {
+      background: rgba(34, 197, 94, 0.15);
+      border: 1px solid rgba(34, 197, 94, 0.3);
+      color: #86efac;
+    }
+
+    .message.error {
+      background: rgba(239, 68, 68, 0.15);
+      border: 1px solid rgba(239, 68, 68, 0.3);
+      color: #fca5a5;
+    }
+
+    /* Mobile */
+    .mobile-warning {
+      display: none;
+      position: relative;
+      z-index: 1;
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      padding: 24px;
+      border-radius: 16px;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      color: white;
+      text-align: center;
+      width: 90%;
+      max-width: 340px;
+    }
+
+    .mobile-warning .warning-icon {
+      font-size: 32px;
+      margin-bottom: 12px;
+    }
+
+    .mobile-warning h2 {
+      font-size: 16px;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    .mobile-warning p {
+      font-size: 12px;
+      color: rgba(255, 255, 255, 0.7);
+      line-height: 1.5;
+    }
+
+    @media (max-width: 800px) {
+      .mobile-warning { display: block; }
+      .main-container { display: none !important; }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="bg-orb bg-orb-1"></div>
+  <div class="bg-orb bg-orb-2"></div>
+
+  <div class="mobile-warning">
+    <div class="warning-icon">⚠️</div>
+    <h2>Better Viewed on a Larger Screen</h2>
+    <p>This page contains an interactive crypto donation form designed for desktops, laptops, and tablets. For the best compatibility and proper display, please visit this page on a larger device.</p>
+  </div>
+
+  <div class="main-container">
+    <!-- Left Column - Info -->
+    <div class="glass-card info-column">
+      <div class="header">
+        <div class="logo-icon">💸</div>
+        <div class="header-text">
+          <h1>XeroLinux Crypto Donation Portal</h1>
+          <span class="subtitle">Support the project with cryptocurrency</span>
+        </div>
+      </div>
+
+      <div class="info-section">
+        <h3><span class="icon">👋</span> Welcome!</h3>
+        <p>We know we're a bit late to the game, but as the saying goes, better late than never! After countless requests from our awesome community, we're finally joining the crypto era and opening the gates to donations.</p>
+        <a href="https://ko-fi.com/xerolinux" target="_blank" class="kofi-link">☕ No Crypto? No problem, donate on Ko-Fi!</a>
+      </div>
+
+      <div class="info-section">
+        <h3><span class="icon">❤️</span> Just Donating?</h3>
+        <p>Any amount is super appreciated. ❤️</p>
+      </div>
+
+      <div class="info-section">
+        <h3><span class="icon">💿</span> Want to access XeroLinux ISO?</h3>
+        <p>Please follow these steps & be patient :</p>
+        <ul class="steps-list">
+          <li><span class="step-icon">💰</span> Donate at least $15 to one of the wallets below.</li>
+          <li><span class="step-icon">🧾</span> Enter your Transaction ID and email in the form below.</li>
+          <li><span class="step-icon">📩</span> We'll send you the download link with code by email.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Right Column - Wallets & Form -->
+    <div class="glass-card form-column">
+      <div class="section-label">Select Wallet</div>
+
+      <div class="wallets-grid">
+        <div class="wallet-box" onclick="selectWallet('btc', 'bc1qhl7qmeh8rlk35cggrr3py7j6670c4dnsh4veyl')">
+          <div class="wallet-icon btc">₿</div>
+          <div class="wallet-name">BTC</div>
+        </div>
+        <div class="wallet-box" onclick="selectWallet('usdt', 'TLgG5Qh8XL1M98it9TSLRzoLDVCPwYQhYd')">
+          <div class="wallet-icon usdt">₮</div>
+          <div class="wallet-name">USDT/TRX</div>
+        </div>
+        <div class="wallet-box" onclick="selectWallet('eth', '0xEe53C2dcbf1AC11aC964f318b2759BcF70D6C0A0')">
+          <div class="wallet-icon eth">Ξ</div>
+          <div class="wallet-name">ETH</div>
+        </div>
+      </div>
+
+      <div class="address-display" id="address-display">
+        <span class="address-text" id="address-text"></span>
+        <button class="copy-btn" onclick="copyAddress()">Copy</button>
+      </div>
+
+      <div class="section-label">Submit Donation</div>
+
+      <form id="donation-form">
+        <div style="position: absolute; left: -9999px;" aria-hidden="true">
+          <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
+        </div>
+
+        <div class="form-grid">
+          <div class="form-group full-width">
+            <label for="txid">🏦 Transaction ID</label>
+            <input type="text" id="txid" name="txid" required placeholder="0x4e9ce36f2a1b7d8f...">
+          </div>
+
+          <div class="form-group full-width">
+            <label for="email">📧 Your Email</label>
+            <input type="email" id="email" name="email" required placeholder="you@example.com">
+            <span class="field-hint">⚠️ We need a valid email to send you the access code!</span>
+          </div>
+        </div>
+
+        <div class="trust-indicators">
+          <div class="trust-item">
+            <span class="trust-icon">🔒</span>
+            <span class="trust-text">Secure & Private</span>
+          </div>
+          <div class="trust-item">
+            <span class="trust-icon">⚡</span>
+            <span class="trust-text">Fast Processing</span>
+          </div>
+          <div class="trust-item">
+            <span class="trust-icon">✉️</span>
+            <span class="trust-text">24-48h Response</span>
+          </div>
+          <div class="trust-item">
+            <span class="trust-icon">💎</span>
+            <span class="trust-text">Lifetime Access</span>
+          </div>
+        </div>
+
+        <div class="form-footer">
+          <div class="spam-check">
+            <span>🤖 What is <strong id="math-question"></strong>?</span>
+            <input type="text" id="human-check" name="human_check" required autocomplete="off">
+          </div>
+          <button type="submit" id="submit-btn" disabled>Wait...</button>
+        </div>
+      </form>
+
+      <div class="message" id="form-message"></div>
+    </div>
+  </div>
+
+  <script>
+    let currentAddress = '';
+
+    function selectWallet(type, address) {
+      document.querySelectorAll('.wallet-box').forEach(w => w.classList.remove('active'));
+      event.currentTarget.classList.add('active');
+
+      currentAddress = address;
+      document.getElementById('address-text').textContent = address;
+      document.getElementById('address-display').classList.add('visible');
+    }
+
+    function copyAddress() {
+      const btn = event.currentTarget;
+      navigator.clipboard.writeText(currentAddress).then(() => {
+        btn.textContent = 'Copied!';
+        btn.classList.add('copied');
+        setTimeout(() => {
+          btn.textContent = 'Copy';
+          btn.classList.remove('copied');
+        }, 2000);
+      });
+    }
+
+    // Spam protection
+    let mathAnswer = 0, num1 = 0, num2 = 0;
+    const pageLoadTime = Date.now();
+    const MIN_TIME_SECONDS = 5;
+
+    // Wallet addresses to block from being used as TX IDs
+    const BLOCKED_ADDRESSES = [
+      'bc1qhl7qmeh8rlk35cggrr3py7j6670c4dnsh4veyl',
+      'TLgG5Qh8XL1M98it9TSLRzoLDVCPwYQhYd',
+      '0xEe53C2dcbf1AC11aC964f318b2759BcF70D6C0A0'
+    ];
+
+    function generateMathQuestion() {
+      num1 = Math.floor(Math.random() * 10) + 1;
+      num2 = Math.floor(Math.random() * 10) + 1;
+      mathAnswer = num1 + num2;
+      document.getElementById('math-question').textContent = `${num1} + ${num2}`;
+    }
+
+    function enableSubmitAfterDelay() {
+      const btn = document.getElementById('submit-btn');
+      let countdown = MIN_TIME_SECONDS;
+      const timer = setInterval(() => {
+        countdown--;
+        btn.textContent = countdown > 0 ? `${countdown}s...` : 'Submit';
+        if (countdown <= 0) {
+          clearInterval(timer);
+          btn.disabled = false;
+        }
+      }, 1000);
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      generateMathQuestion();
+      enableSubmitAfterDelay();
+    });
+
+    function isValidTxid(value) {
+      const v = value.trim();
+      return /^0x[a-fA-F0-9]{64}$/.test(v) || /^[a-fA-F0-9]{64}$/.test(v);
+    }
+
+    function isBlockedAddress(value) {
+      const v = value.trim().toLowerCase();
+      return BLOCKED_ADDRESSES.some(addr => addr.toLowerCase() === v);
+    }
+
+    function showMessage(text, isSuccess) {
+      const el = document.getElementById('form-message');
+      el.textContent = text;
+      el.className = 'message ' + (isSuccess ? 'success' : 'error');
+      el.style.display = 'block';
+    }
+
+    document.getElementById('donation-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const txid = document.getElementById('txid');
+      const email = document.getElementById('email');
+      const honeypot = document.getElementById('website');
+      const check = document.getElementById('human-check');
+      const msg = document.getElementById('form-message');
+
+      txid.classList.remove('invalid');
+      email.classList.remove('invalid');
+      check.classList.remove('invalid');
+      msg.style.display = 'none';
+
+      if (honeypot.value.trim()) {
+        showMessage('Thanks! Your submission has been received. ✅', true);
+        e.target.reset();
+        generateMathQuestion();
+        return;
+      }
+
+      if ((Date.now() - pageLoadTime) / 1000 < MIN_TIME_SECONDS) {
+        showMessage('Please slow down. Wait a moment.', false);
+        return;
+      }
+
+      if (parseInt(check.value.trim(), 10) !== mathAnswer) {
+        check.classList.add('invalid');
+        showMessage(`Incorrect. What is ${num1} + ${num2}?`, false);
+        return;
+      }
+
+      // Check if user pasted a wallet address instead of TX ID
+      if (isBlockedAddress(txid.value)) {
+        txid.classList.add('invalid');
+        showMessage('⚠️ That\'s a wallet address, not a Transaction ID. Please paste your actual TX hash.', false);
+        return;
+      }
+
+      if (!isValidTxid(txid.value)) {
+        txid.classList.add('invalid');
+        showMessage('Invalid Transaction ID. Please paste a valid TX hash.', false);
+        return;
+      }
+
+      if (!email.checkValidity()) {
+        email.classList.add('invalid');
+        showMessage('⚠️ Please enter a valid email. Without it, we cannot send you the access code!', false);
+        return;
+      }
+
+      const data = new FormData(e.target);
+      data.delete('website');
+      data.delete('human_check');
+
+      const btn = document.getElementById('submit-btn');
+      btn.disabled = true;
+      btn.textContent = '...';
+
+      fetch('https://formsubmit.co/ajax/steve@techxero.com', {
+        method: 'POST',
+        body: data
+      })
+      .then(r => {
+        if (r.ok) {
+          showMessage('Thanks! Your submission has been received. ✅', true);
+          e.target.reset();
+          generateMathQuestion();
+        } else {
+          showMessage('Something went wrong. Try again.', false);
+        }
+      })
+      .catch(() => showMessage('Submission failed. Check connection.', false))
+      .finally(() => {
+        btn.disabled = false;
+        btn.textContent = 'Submit';
+      });
+    });
+  </script>
+</body>
+</html>
