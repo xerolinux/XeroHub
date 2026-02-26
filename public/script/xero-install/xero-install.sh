@@ -295,6 +295,7 @@ select_locales() {
         "vi_VN.UTF-8"
         "sv_SE.UTF-8"
         "da_DK.UTF-8"
+        "kl_GL.UTF-8"
         "fi_FI.UTF-8"
         "nb_NO.UTF-8"
         "cs_CZ.UTF-8"

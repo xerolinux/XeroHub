@@ -47,16 +47,16 @@ const { pageId } = Astro.props;
         });
       });
 
-      // Dedup via localStorage — increment once per browser
+      // Dedup via sessionStorage — increment once per session per page
       const storageKey = `viewed-${pageId}`;
-      if (!localStorage.getItem(storageKey)) {
+      if (!sessionStorage.getItem(storageKey)) {
         try {
           await updateDoc(docRef, { views: increment(1) });
         } catch {
           // Document doesn't exist yet — create it
           await setDoc(docRef, { views: 1 });
         }
-        localStorage.setItem(storageKey, 'true');
+        sessionStorage.setItem(storageKey, 'true');
       }
     }
   }

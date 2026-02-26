@@ -54,14 +54,20 @@ const { youtubeHandle } = entry.data;
         </button>
       </div>
 
-      <!-- Load More -->
+      <!-- Visit Channel -->
       <div class="flex justify-center mt-10">
-        <button
-          id="load-more"
-          class="hidden px-8 py-3 rounded-full glass glass-hover text-sm font-medium text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)] transition-all duration-200 cursor-pointer"
+        <a
+          href={`https://www.youtube.com/@${youtubeHandle}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="cta-pulse inline-flex items-center gap-2.5 px-10 py-3.5 rounded-full glass text-base font-medium text-[var(--color-text-primary)] transition-all duration-200 hover:scale-105"
         >
-          Load More Videos
-        </button>
+          <svg class="w-5 h-5 text-[var(--color-accent)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+          Visit Channel for more...
+        </a>
       </div>
     </div>
   </section>
@@ -73,15 +79,14 @@ const { youtubeHandle } = entry.data;
   const errorDiv = document.getElementById('video-error');
   const errorMsg = document.getElementById('video-error-msg');
   const retryBtn = document.getElementById('video-retry');
-  const loadMoreBtn = document.getElementById('load-more');
 
   if (!grid) return;
 
   const API_KEY = grid.dataset.apiKey;
   const HANDLE = grid.dataset.handle;
   const API_BASE = 'https://www.googleapis.com/youtube/v3';
+  const MAX_VIDEOS = 6;
 
-  let nextPageToken = null;
   let uploadsPlaylistId = null;
 
   function formatDate(dateStr) {
@@ -160,14 +165,13 @@ const { youtubeHandle } = entry.data;
     return id;
   }
 
-  async function fetchPlaylistPage(pageToken) {
+  async function fetchPlaylistPage() {
     if (!uploadsPlaylistId) {
       uploadsPlaylistId = await getUploadsPlaylistId();
     }
 
     var url = API_BASE + '/playlistItems?part=snippet&playlistId=' + uploadsPlaylistId +
-      '&maxResults=50&key=' + API_KEY;
-    if (pageToken) url += '&pageToken=' + pageToken;
+      '&maxResults=15&key=' + API_KEY;
 
     var res = await fetch(url);
     if (!res.ok) throw new Error('Video fetch failed (' + res.status + ')');
@@ -201,12 +205,11 @@ const { youtubeHandle } = entry.data;
     });
   }
 
-  async function loadVideos(pageToken) {
-    loadMoreBtn.classList.add('hidden');
-
+  async function loadVideos() {
     try {
-      var data = await fetchPlaylistPage(pageToken);
+      var data = await fetchPlaylistPage();
       var filtered = await filterOutLiveStreams(data.items);
+      filtered = filtered.slice(0, MAX_VIDEOS);
 
       removeSkeletons();
       grid.classList.remove('hidden');
@@ -215,19 +218,10 @@ const { youtubeHandle } = entry.data;
       filtered.forEach(function (item) {
         grid.appendChild(createVideoCard(item));
       });
-
-      nextPageToken = data.nextPageToken || null;
-      if (nextPageToken) {
-        loadMoreBtn.classList.remove('hidden');
-      }
     } catch (err) {
       showError(err.message);
     }
   }
-
-  loadMoreBtn.addEventListener('click', function () {
-    if (nextPageToken) loadVideos(nextPageToken);
-  });
 
   retryBtn.addEventListener('click', function () {
     errorDiv.classList.add('hidden');
@@ -245,11 +239,11 @@ const { youtubeHandle } = entry.data;
         '</div>';
       grid.appendChild(sk);
     }
-    loadVideos(null);
+    loadVideos();
   });
 
   // Initial load
-  loadVideos(null);
+  loadVideos();
 })();
 </script>
 
