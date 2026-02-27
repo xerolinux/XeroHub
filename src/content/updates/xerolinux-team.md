@@ -9,6 +9,8 @@ image: "/images/updates/xero-team.webp"
 
 ### Meet the XeroLinux Dream Team!
 
+**XeroLinux** is mainly a solo passion project from **Lebanon**, a country facing corruption and tough times, yet where grit turns challenges into triumphs. Unlike bloated teams behind massive distros, we're a lean, dedicated small crew fueled by pure open-source heart. That scrappy spirit shines through every release, with a donation wall keeping the lights on for mirrors and builds. Realism meets resilience, small team, big impact.
+
 At the helm stands [**DarkXero**](https://github.com/DarkXero-dev), the ideas volcano, lead maintainer, and Lord of the distro, constantly erupting with bold concepts like toolkit overhauls and seamless Arch workflows, then wrangling the chaos into polished perfection through sheer grit and vision.
 
 [**Synse**](https://github.com/synsejse/) & [**kyvran**](https://github.com/kyvran) are the dev ninjas deep in the trenches, hand-crafting and relentlessly perfecting our core toolkit *plus* other essential tools from scratch. They plunge into code depths with debug katanas, annihilating bugs via endless `gdb` sessions and ironclad test suites, ensuring your Plasma tweaks, install scripts, and custom goodies execute flawlessly on everything from vintage ThinkPads to modern beasts, zero crashes allowed.
