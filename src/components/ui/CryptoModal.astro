@@ -1,8 +1,7 @@
 ---
-const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 ---
 <!-- Crypto Donation Modal — iframe popup -->
-<div id="crypto-modal" class="fixed inset-0 z-[9999] hidden items-center justify-center" data-base={base}>
+<div id="crypto-modal" class="fixed inset-0 z-[9999] hidden items-center justify-center">
   <!-- Backdrop -->
   <div id="crypto-backdrop" class="absolute inset-0 bg-black/70 backdrop-blur-sm"></div>
 
@@ -37,10 +36,12 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
     const backdrop = document.getElementById('crypto-backdrop');
     const closeBtn = document.getElementById('crypto-close');
     const iframe = document.getElementById('crypto-iframe');
-    const base = modal?.getAttribute('data-base') || '';
+
+    // URL injected at runtime to keep it out of static HTML
+    const _p = atob('aHR0cHM6Ly9pc28ueGVyb2xpbnV4Lnh5ei9jcnlwdG8uaHRtbA==');
 
     function openModal() {
-      iframe.src = base + '/crypto.html';
+      iframe.src = _p;
       modal.classList.remove('hidden');
       modal.classList.add('flex');
       document.body.style.overflow = 'hidden';
@@ -53,18 +54,13 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
       iframe.src = '';
     }
 
-    // Trigger: any element with data-crypto-modal
     document.querySelectorAll('[data-crypto-modal]').forEach(btn => {
       btn.addEventListener('click', openModal);
     });
 
-    // Close on X click
     closeBtn?.addEventListener('click', closeModal);
-
-    // Close on backdrop click
     backdrop?.addEventListener('click', closeModal);
 
-    // Close on Escape key
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
         closeModal();

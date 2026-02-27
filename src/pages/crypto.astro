@@ -1,0 +1,370 @@
+---
+import Layout from '../components/layout/Layout.astro';
+---
+
+<Layout title="Crypto Portal" description="Support XeroLinux using cryptocurrency">
+  <section class="pt-32 pb-10 px-4 sm:px-6 lg:px-8">
+    <div class="mx-auto max-w-5xl">
+
+      <!-- Back pill -->
+      <div class="fade-in flex justify-center mb-6">
+        <a href="/download/" class="inline-flex items-center gap-2 px-5 py-2 rounded-full glass text-sm font-medium text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)] hover:border-[var(--color-border-hover)] transition-all duration-200">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+          </svg>
+          Back to Download
+        </a>
+      </div>
+
+      <!-- Header -->
+      <div class="fade-in text-center mb-10">
+        <h1 class="display-heading text-3xl sm:text-5xl text-[var(--color-text-primary)] mb-2">
+          Crypto <span class="text-[var(--color-accent)]">Portal</span>
+        </h1>
+        <p class="text-center text-[var(--color-text-secondary)] text-sm">Support XeroLinux using cryptocurrency</p>
+      </div>
+
+      <!-- Info alert -->
+      <div class="fade-in w-fit mx-auto mb-10">
+        <div class="flex items-start gap-3 p-4 rounded-xl bg-green-500/15 border border-green-500/30">
+          <svg class="w-5 h-5 text-green-400 shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/>
+          </svg>
+          <p class="text-sm text-green-100">
+            <strong class="text-green-300">Don't see your preferred wallet ?</strong> Reach out on <strong class="text-green-300">Discord</strong> and we'll send you the address.
+          </p>
+        </div>
+      </div>
+
+      <!-- Two columns — stretch so both cards are identical height -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+
+        <!-- Left: Info -->
+        <div class="fade-in fade-in-delay-1 glass rounded-2xl p-6 flex flex-col">
+
+          <!-- Card header -->
+          <div class="flex items-center gap-3 pb-4 border-b border-[var(--color-border)]">
+            <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-[var(--color-accent)] to-[var(--color-accent-dark)] flex items-center justify-center shrink-0 shadow-lg shadow-[var(--color-accent-glow)]">
+              <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </div>
+            <div>
+              <h2 class="font-heading font-bold text-[var(--color-text-primary)] text-base">XeroLinux Crypto Donation Portal</h2>
+              <p class="text-xs text-[var(--color-text-secondary)]">Support the project with cryptocurrency</p>
+            </div>
+          </div>
+
+          <!-- Welcome -->
+          <div class="pt-4">
+            <h3 class="font-semibold text-sm text-[var(--color-text-primary)] flex items-center gap-2 mb-2">
+              <svg class="w-4 h-4 text-[var(--color-accent)] shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              Welcome!
+            </h3>
+            <p class="text-xs text-[var(--color-text-secondary)] leading-relaxed">We know we're a bit late to the game, but as the saying goes, better late than never! After countless requests from our awesome community, we're finally joining the crypto era and opening the gates to donations.</p>
+            <a href="https://ko-fi.com/xerolinux" target="_blank" rel="noopener noreferrer" class="mt-3 flex items-center justify-center gap-2 px-3 py-2 rounded-lg bg-red-500/10 border border-red-500/30 text-red-300 text-xs font-medium hover:bg-red-500/20 hover:border-red-500/50 transition-all duration-200">
+              <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0016.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 002 8.5c0 2.3 1.5 4.05 3 5.5l7 7 7-7z"/></svg>
+              No Crypto? No problem — donate on Ko-Fi!
+            </a>
+          </div>
+
+          <!-- Just Donating -->
+          <div class="pt-4 mt-4 border-t border-[var(--color-border)]">
+            <h3 class="font-semibold text-sm text-[var(--color-text-primary)] flex items-center gap-2 mb-2">
+              <svg class="w-4 h-4 text-[var(--color-accent)] shrink-0" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+              </svg>
+              Just Donating?
+            </h3>
+            <p class="text-xs text-[var(--color-text-secondary)] leading-relaxed">Any amount is super appreciated.</p>
+          </div>
+
+          <!-- ISO Steps — flex-1 so it fills remaining card height -->
+          <div class="pt-4 mt-4 border-t border-[var(--color-border)] flex-1 flex flex-col">
+            <h3 class="font-semibold text-sm text-[var(--color-text-primary)] flex items-center gap-2 mb-2">
+              <svg class="w-4 h-4 text-[var(--color-accent)] shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+              </svg>
+              Want to access XeroLinux ISO?
+            </h3>
+            <p class="text-xs text-[var(--color-text-secondary)] mb-3">Please follow these steps &amp; be patient :</p>
+            <ul class="flex-1 flex flex-col justify-around">
+              <li class="flex items-start gap-3 text-xs text-[var(--color-text-secondary)] py-2 border-b border-[var(--color-border)]">
+                <svg class="w-4 h-4 text-[var(--color-accent)] shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z" /></svg>
+                Donate at least $15 to one of the wallets below.
+              </li>
+              <li class="flex items-start gap-3 text-xs text-[var(--color-text-secondary)] py-2 border-b border-[var(--color-border)]">
+                <svg class="w-4 h-4 text-[var(--color-accent)] shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" /></svg>
+                Enter your Transaction ID and email in the form.
+              </li>
+              <li class="flex items-start gap-3 text-xs text-[var(--color-text-secondary)] py-2">
+                <svg class="w-4 h-4 text-[var(--color-accent)] shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
+                We'll send you the download link with code by email.
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Right: Wallets & Form -->
+        <div class="fade-in fade-in-delay-2 glass rounded-2xl p-6 flex flex-col">
+
+          <!-- Wallet selector -->
+          <p class="text-xs font-semibold uppercase tracking-widest text-[var(--color-text-secondary)] mb-3">Select Wallet</p>
+          <div class="grid grid-cols-3 gap-3 mb-4">
+            <button type="button" class="wallet-box rounded-xl p-3 border border-[var(--color-border)] bg-[var(--color-bg-primary)]/30 hover:border-[var(--color-accent)]/50 transition-all duration-200 text-center cursor-pointer" data-address="bc1qhl7qmeh8rlk35cggrr3py7j6670c4dnsh4veyl">
+              <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-[#f7931a] to-[#ffab40] flex items-center justify-center font-bold text-white text-sm mx-auto mb-2">₿</div>
+              <span class="text-xs font-semibold text-[var(--color-text-primary)]">BTC</span>
+            </button>
+            <button type="button" class="wallet-box rounded-xl p-3 border border-[var(--color-border)] bg-[var(--color-bg-primary)]/30 hover:border-[var(--color-accent)]/50 transition-all duration-200 text-center cursor-pointer" data-address="TLgG5Qh8XL1M98it9TSLRzoLDVCPwYQhYd">
+              <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-[#26a17b] to-[#50c8a8] flex items-center justify-center font-bold text-white text-sm mx-auto mb-2">₮</div>
+              <span class="text-xs font-semibold text-[var(--color-text-primary)]">USDT/TRX</span>
+            </button>
+            <button type="button" class="wallet-box rounded-xl p-3 border border-[var(--color-border)] bg-[var(--color-bg-primary)]/30 hover:border-[var(--color-accent)]/50 transition-all duration-200 text-center cursor-pointer" data-address="0xEe53C2dcbf1AC11aC964f318b2759BcF70D6C0A0">
+              <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-[#627eea] to-[#8b9ff0] flex items-center justify-center font-bold text-white text-sm mx-auto mb-2">Ξ</div>
+              <span class="text-xs font-semibold text-[var(--color-text-primary)]">ETH</span>
+            </button>
+          </div>
+
+          <!-- Address display -->
+          <div id="address-display" class="hidden mb-4">
+            <div class="flex items-center gap-3 bg-[var(--color-bg-primary)]/50 border border-[var(--color-border)] rounded-xl px-4 py-3">
+              <span id="address-text" class="font-mono text-xs text-[var(--color-text-secondary)] break-all flex-1 leading-relaxed"></span>
+              <button type="button" id="copy-btn" class="shrink-0 px-3 py-1.5 rounded-lg bg-[var(--color-accent)]/20 border border-[var(--color-accent)]/40 text-[var(--color-accent)] text-xs font-medium hover:bg-[var(--color-accent)]/30 transition-all duration-200 whitespace-nowrap">Copy</button>
+            </div>
+          </div>
+
+          <!-- Form — flex-1 so it fills remaining card height -->
+          <div class="flex-1 flex flex-col">
+            <p class="text-xs font-semibold uppercase tracking-widest text-[var(--color-text-secondary)] mb-3">Submit Donation</p>
+            <form id="donation-form" class="flex-1 flex flex-col gap-4">
+              <!-- Honeypot -->
+              <div style="position:absolute;left:-9999px;" aria-hidden="true">
+                <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
+              </div>
+
+              <!-- TX ID -->
+              <div>
+                <label for="txid" class="block text-xs font-medium text-[var(--color-text-secondary)] mb-1.5">Transaction ID</label>
+                <input type="text" id="txid" name="txid" required placeholder="0x4e9ce36f2a1b7d8f..." class="crypto-input w-full px-3 py-2.5 rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-primary)]/50 text-[var(--color-text-primary)] text-base sm:text-xs font-mono placeholder:text-[var(--color-text-muted)] focus:outline-none transition-all duration-200">
+              </div>
+
+              <!-- Email -->
+              <div>
+                <label for="email" class="block text-xs font-medium text-[var(--color-text-secondary)] mb-1.5">Your Email</label>
+                <input type="email" id="email" name="email" required placeholder="you@example.com" class="crypto-input w-full px-3 py-2.5 rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-primary)]/50 text-[var(--color-text-primary)] text-base sm:text-xs placeholder:text-[var(--color-text-muted)] focus:outline-none transition-all duration-200">
+                <span class="block text-xs text-yellow-400/80 mt-1.5">We need a valid email to send you the access code.</span>
+              </div>
+
+              <!-- Trust indicators -->
+              <div class="grid grid-cols-2 gap-2">
+                <div class="flex items-center gap-2 p-2 rounded-lg bg-[var(--color-accent)]/5 border border-[var(--color-accent)]/10">
+                  <div class="w-7 h-7 rounded-lg bg-[var(--color-accent)]/15 flex items-center justify-center shrink-0">
+                    <svg class="w-3.5 h-3.5 text-[var(--color-accent)]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" /></svg>
+                  </div>
+                  <span class="text-xs font-medium text-[var(--color-text-secondary)]">Secure & Private</span>
+                </div>
+                <div class="flex items-center gap-2 p-2 rounded-lg bg-[var(--color-accent)]/5 border border-[var(--color-accent)]/10">
+                  <div class="w-7 h-7 rounded-lg bg-[var(--color-accent)]/15 flex items-center justify-center shrink-0">
+                    <svg class="w-3.5 h-3.5 text-[var(--color-accent)]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
+                  </div>
+                  <span class="text-xs font-medium text-[var(--color-text-secondary)]">Fast Processing</span>
+                </div>
+                <div class="flex items-center gap-2 p-2 rounded-lg bg-[var(--color-accent)]/5 border border-[var(--color-accent)]/10">
+                  <div class="w-7 h-7 rounded-lg bg-[var(--color-accent)]/15 flex items-center justify-center shrink-0">
+                    <svg class="w-3.5 h-3.5 text-[var(--color-accent)]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
+                  </div>
+                  <span class="text-xs font-medium text-[var(--color-text-secondary)]">24-48h Response</span>
+                </div>
+                <div class="flex items-center gap-2 p-2 rounded-lg bg-[var(--color-accent)]/5 border border-[var(--color-accent)]/10">
+                  <div class="w-7 h-7 rounded-lg bg-[var(--color-accent)]/15 flex items-center justify-center shrink-0">
+                    <svg class="w-3.5 h-3.5 text-[var(--color-accent)]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" /></svg>
+                  </div>
+                  <span class="text-xs font-medium text-[var(--color-text-secondary)]">Lifetime Access</span>
+                </div>
+              </div>
+
+              <!-- Spam check + submit — pushed to bottom -->
+              <div class="mt-auto flex flex-wrap items-center gap-3 pt-2">
+                <div class="flex items-center gap-2 text-xs text-[var(--color-text-secondary)]">
+                  <span>What is <strong id="math-question" class="text-[var(--color-text-primary)]"></strong>?</span>
+                  <input type="text" id="human-check" name="human_check" required autocomplete="off" class="crypto-input w-16 px-2 py-1.5 rounded-lg border border-[var(--color-border)] bg-[var(--color-bg-primary)]/50 text-[var(--color-text-primary)] text-base sm:text-xs text-center focus:outline-none transition-all duration-200">
+                </div>
+                <button type="submit" id="submit-btn" disabled class="ml-auto px-5 py-2.5 rounded-xl bg-gradient-to-r from-[var(--color-accent)] to-[var(--color-accent-dark)] text-white text-xs font-semibold disabled:opacity-40 disabled:cursor-not-allowed hover:from-[var(--color-accent-light)] hover:to-[var(--color-accent)] transition-all duration-200 shadow-lg shadow-[var(--color-accent-glow)] cursor-pointer">Wait...</button>
+              </div>
+            </form>
+          </div>
+
+          <!-- Message -->
+          <div id="form-message" class="hidden mt-4 px-4 py-3 rounded-xl text-xs font-medium text-center"></div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Crypto Exit -->
+  <section class="py-10 px-4 sm:px-6 lg:px-8">
+    <div class="fade-in mx-auto max-w-3xl flex items-center gap-4">
+      <div class="flex-1 h-px bg-gradient-to-r from-transparent via-[var(--color-border-hover)] to-transparent"></div>
+      <span class="font-mono text-sm text-[var(--color-text-muted)] tracking-widest whitespace-nowrap">~ ~ ~ Crypto Exit ~ ~ ~</span>
+      <div class="flex-1 h-px bg-gradient-to-r from-transparent via-[var(--color-border-hover)] to-transparent"></div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .crypto-input:focus {
+    border-color: rgba(160, 106, 240, 0.6);
+    box-shadow: 0 0 0 2px rgba(160, 106, 240, 0.15);
+  }
+  .crypto-input.invalid {
+    border-color: rgba(239, 68, 68, 0.6) !important;
+    box-shadow: 0 0 0 2px rgba(239, 68, 68, 0.15) !important;
+  }
+  .wallet-box.active {
+    border-color: rgba(160, 106, 240, 0.6);
+    background: rgba(160, 106, 240, 0.1);
+    box-shadow: 0 0 16px rgba(160, 106, 240, 0.2);
+  }
+  #form-message.success {
+    background: rgba(34, 197, 94, 0.15);
+    border: 1px solid rgba(34, 197, 94, 0.3);
+    color: #86efac;
+    display: block;
+  }
+  #form-message.error {
+    background: rgba(239, 68, 68, 0.15);
+    border: 1px solid rgba(239, 68, 68, 0.3);
+    color: #fca5a5;
+    display: block;
+  }
+</style>
+
+<script is:inline>
+  (function () {
+    const BLOCKED = [
+      'bc1qhl7qmeh8rlk35cggrr3py7j6670c4dnsh4veyl',
+      'TLgG5Qh8XL1M98it9TSLRzoLDVCPwYQhYd',
+      '0xEe53C2dcbf1AC11aC964f318b2759BcF70D6C0A0'
+    ];
+
+    let currentAddress = '';
+    let mathAnswer = 0, num1 = 0, num2 = 0;
+    const pageLoadTime = Date.now();
+    const MIN_TIME = 5;
+
+    // Wallet selection
+    document.querySelectorAll('.wallet-box').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        document.querySelectorAll('.wallet-box').forEach(function (b) { b.classList.remove('active'); });
+        btn.classList.add('active');
+        currentAddress = btn.dataset.address;
+        document.getElementById('address-text').textContent = currentAddress;
+        document.getElementById('address-display').classList.remove('hidden');
+      });
+    });
+
+    // Copy address
+    document.getElementById('copy-btn').addEventListener('click', function () {
+      const btn = this;
+      navigator.clipboard.writeText(currentAddress).then(function () {
+        btn.textContent = 'Copied!';
+        btn.style.color = '#86efac';
+        btn.style.borderColor = 'rgba(34,197,94,0.5)';
+        setTimeout(function () {
+          btn.textContent = 'Copy';
+          btn.style.color = '';
+          btn.style.borderColor = '';
+        }, 2000);
+      });
+    });
+
+    // Math question
+    function generateMath() {
+      num1 = Math.floor(Math.random() * 10) + 1;
+      num2 = Math.floor(Math.random() * 10) + 1;
+      mathAnswer = num1 + num2;
+      document.getElementById('math-question').textContent = num1 + ' + ' + num2;
+    }
+
+    // Submit button countdown
+    function startCountdown() {
+      const btn = document.getElementById('submit-btn');
+      let t = MIN_TIME;
+      const timer = setInterval(function () {
+        t--;
+        btn.textContent = t > 0 ? t + 's...' : 'Submit';
+        if (t <= 0) { clearInterval(timer); btn.disabled = false; }
+      }, 1000);
+    }
+
+    generateMath();
+    startCountdown();
+
+    // Message helper
+    function showMessage(text, ok) {
+      const el = document.getElementById('form-message');
+      el.textContent = text;
+      el.className = ok ? 'success' : 'error';
+    }
+
+    // TX ID validation
+    function validTxid(v) {
+      v = v.trim();
+      return /^0x[a-fA-F0-9]{64}$/.test(v) || /^[a-fA-F0-9]{64}$/.test(v);
+    }
+
+    // Form submission
+    document.getElementById('donation-form').addEventListener('submit', function (e) {
+      e.preventDefault();
+      const txid = document.getElementById('txid');
+      const email = document.getElementById('email');
+      const honeypot = document.getElementById('website');
+      const check = document.getElementById('human-check');
+
+      [txid, email, check].forEach(function (el) { el.classList.remove('invalid'); });
+      const msg = document.getElementById('form-message');
+      msg.className = 'hidden';
+
+      if (honeypot.value.trim()) {
+        showMessage('Thanks! Your submission has been received.', true); e.target.reset(); generateMath(); return;
+      }
+      if ((Date.now() - pageLoadTime) / 1000 < MIN_TIME) {
+        showMessage('Please wait a moment before submitting.', false); return;
+      }
+      if (parseInt(check.value.trim(), 10) !== mathAnswer) {
+        check.classList.add('invalid');
+        showMessage('Incorrect answer. What is ' + num1 + ' + ' + num2 + '?', false); return;
+      }
+      if (BLOCKED.some(function (a) { return a.toLowerCase() === txid.value.trim().toLowerCase(); })) {
+        txid.classList.add('invalid');
+        showMessage("That's a wallet address, not a Transaction ID. Please paste your TX hash.", false); return;
+      }
+      if (!validTxid(txid.value)) {
+        txid.classList.add('invalid');
+        showMessage('Invalid Transaction ID. Please paste a valid TX hash.', false); return;
+      }
+      if (!email.checkValidity()) {
+        email.classList.add('invalid');
+        showMessage('Please enter a valid email. We need it to send you the access code.', false); return;
+      }
+
+      const btn = document.getElementById('submit-btn');
+      btn.disabled = true; btn.textContent = '...';
+
+      const data = new FormData(e.target);
+      data.delete('website');
+      data.delete('human_check');
+
+      fetch('https://formsubmit.co/ajax/steve@techxero.com', { method: 'POST', body: data })
+        .then(function (r) {
+          if (r.ok) { showMessage('Thanks! Your submission has been received.', true); e.target.reset(); generateMath(); }
+          else { showMessage('Something went wrong. Please try again.', false); }
+        })
+        .catch(function () { showMessage('Submission failed. Check your connection.', false); })
+        .finally(function () { btn.disabled = false; btn.textContent = 'Submit'; });
+    });
+  })();
+</script>

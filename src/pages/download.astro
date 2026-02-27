@@ -3,7 +3,6 @@ import { getEntry, render } from 'astro:content';
 import Layout from '../components/layout/Layout.astro';
 import GlassCard from '../components/ui/GlassCard.astro';
 import Button from '../components/ui/Button.astro';
-import CryptoModal from '../components/ui/CryptoModal.astro';
 import ChangelogModal from '../components/ui/ChangelogModal.astro';
 import PageViews from '../components/ui/PageViews.astro';
 import { inlineMarkdown } from '../lib/inline-markdown';
@@ -101,7 +100,7 @@ const { alert, isoFeatures, tuiFeatures } = entry.data;
               <Button href="https://ko-fi.com/s/cf9def9630" external class="flex-1">
                 Ko-Fi Shop
               </Button>
-              <Button variant="secondary" class="flex-1" data-crypto-modal>
+              <Button href="/crypto/" variant="secondary" class="flex-1">
                 Crypto Portal
               </Button>
             </div>
@@ -156,6 +155,5 @@ const { alert, isoFeatures, tuiFeatures } = entry.data;
     </div>
   </section>
 
-  <CryptoModal />
   <ChangelogModal />
 </Layout>
