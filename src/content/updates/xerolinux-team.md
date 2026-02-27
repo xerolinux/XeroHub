@@ -15,7 +15,7 @@ At the helm stands [**DarkXero**](https://github.com/DarkXero-dev), the ideas vo
 
 [**Synse**](https://github.com/synsejse/) & [**kyvran**](https://github.com/kyvran) are the dev ninjas deep in the trenches, hand-crafting and relentlessly perfecting our core toolkit *plus* other essential tools from scratch. They plunge into code depths with debug katanas, annihilating bugs via endless `gdb` sessions and ironclad test suites, ensuring your Plasma tweaks, install scripts, and custom goodies execute flawlessly on everything from vintage ThinkPads to modern beasts, zero crashes allowed.
 
-Holding down Discord fort: **inittux111**, mod maestro who smoothly onboards noobs with pro Arch guides while slinging meme shields at spam armies. **NatFetch** & [**TheLegit**](https://www.twitch.tv/techben10) rule as admin overlords, fortress-hardening servers, dropping stunning neofetch ASCII art, and igniting epic events, from ISO drop parties to marathon debug fests that crack the toughest nuts.
+Holding down Discord fort: **inittux111**, and **Cracken**, mods maestros who smoothly onboard noobs with pro Arch guides while slinging meme shields at spam armies. **NatFetch** & [**TheLegit**](https://www.twitch.tv/techben10) rule as admin overlords, fortress-hardening servers, dropping stunning neofetch ASCII art, and igniting epic events, from ISO drop parties to marathon debug fests that crack the toughest nuts.
 
 Finally, there's [**Digidude512**](https://github.com/digidude512) our resident ISO builder and uploader extraordinaire, churning out fresh, lightning-fast builds and zipping them to mirrors worldwide, making sure you grab the latest **XeroLinux** goodness with a single click.
 
