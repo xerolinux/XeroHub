@@ -63,9 +63,16 @@ const pageId = Astro.url.pathname.replace(/^\//, '').replace(/\/$/, '').replace(
       )}
 
       <!-- Content -->
-      <div class="fade-in fade-in-delay-2 prose">
+      <div class="fade-in fade-in-delay-2 prose" id="post-content">
         <Content />
       </div>
     </div>
   </article>
 </Layout>
+
+<script is:inline>
+  document.querySelectorAll('#post-content a[href^="http"]').forEach(function (a) {
+    a.setAttribute('target', '_blank');
+    a.setAttribute('rel', 'noopener noreferrer');
+  });
+</script>
