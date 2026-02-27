@@ -15,6 +15,8 @@ At the helm stands [**DarkXero**](https://github.com/DarkXero-dev), the ideas vo
 
 Holding down Discord fort: **inittux111**, mod maestro who smoothly onboards noobs with pro Arch guides while slinging meme shields at spam armies. **NatFetch** & [**TheLegit**](https://www.twitch.tv/techben10) rule as admin overlords, fortress-hardening servers, dropping stunning neofetch ASCII art, and igniting epic events, from ISO drop parties to marathon debug fests that crack the toughest nuts.
 
+Finally, there's [**Digidude512**](https://www.reddit.com/user/digidude512/) our resident ISO builder and uploader extraordinaire, churning out fresh, lightning-fast builds and zipping them to mirrors worldwide—making sure you grab the latest **XeroLinux** goodness with a single click.
+
 That's your **XeroLinux** crew, a perfect blend of vision, code mastery, and community fire.
 
 **[Join Discord Now!](https://discord.xerolinux.xyz)** Leap in, flex your builds, and let's crank Arch to eleven! 🐧 #XeroLinux
