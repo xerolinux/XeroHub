@@ -17,8 +17,8 @@ const pageId = Astro.url.pathname.replace(/^\//, '').replace(/\/$/, '').replace(
         <h1 class="display-heading text-4xl sm:text-5xl text-[var(--color-text-primary)] mb-4">
           <span class="text-[var(--color-accent)]">Updates</span>
         </h1>
-        <p class="text-[var(--color-text-secondary)] text-lg">
-          Project announcements and changelog
+        <p class="text-[var(--color-text-secondary)] text-center">
+          Project announcements, updates and changes
         </p>
         <div class="flex justify-center mt-2">
           <PageViews pageId={pageId} />
