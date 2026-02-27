@@ -31,42 +31,46 @@
     <div class="px-8 pb-8 overflow-y-auto" style="max-height: calc(86vh - 120px);">
       <div>
         <!-- Date header -->
-        <p class="text-xs uppercase tracking-widest text-[var(--color-accent-light)] font-semibold mb-2">2026-01-01</p>
+        <p class="text-xs uppercase tracking-widest text-[var(--color-accent-light)] font-semibold mb-2">2026-03-01</p>
         <!-- Changelog items -->
-        <ul class="space-y-1">
-          <li class="flex items-start gap-2 text-sm text-[var(--color-text-secondary)] bg-[var(--color-bg-primary)]/50 rounded-lg px-4 py-1.5">
-            <span class="text-[var(--color-accent)] mt-0.5 shrink-0">&#9656;</span>
-            Updated to KDE 6.5.4.
-          </li>
-          <li class="flex items-start gap-2 text-sm text-[var(--color-text-secondary)] bg-[var(--color-bg-primary)]/50 rounded-lg px-4 py-1.5">
-            <span class="text-[var(--color-accent)] mt-0.5 shrink-0">&#9656;</span>
-            Updated to latest Kernel (6.18.x).
-          </li>
-          <li class="flex items-start gap-2 text-sm text-[var(--color-text-secondary)] bg-[var(--color-bg-primary)]/50 rounded-lg px-4 py-1.5">
-            <span class="text-[var(--color-accent)] mt-0.5 shrink-0">&#9656;</span>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-2">
+          <div class="text-sm text-[var(--color-text-secondary)] border-l-2 border-[var(--color-accent)]/40 bg-[var(--color-bg-primary)]/30 rounded-r-lg px-4 py-2">
+            Updated to KDE 6.6.1.
+          </div>
+          <div class="text-sm text-[var(--color-text-secondary)] border-l-2 border-[var(--color-accent)]/40 bg-[var(--color-bg-primary)]/30 rounded-r-lg px-4 py-2">
+            System update during install.
+          </div>
+          <div class="text-sm text-[var(--color-text-secondary)] border-l-2 border-[var(--color-accent)]/40 bg-[var(--color-bg-primary)]/30 rounded-r-lg px-4 py-2">
+            <strong class="text-[var(--color-text-primary)]">zRAM</strong> enabled by default.
+          </div>
+          <div class="text-sm text-[var(--color-text-secondary)] border-l-2 border-[var(--color-accent)]/40 bg-[var(--color-bg-primary)]/30 rounded-r-lg px-4 py-2">
+            <strong class="text-[var(--color-text-primary)]">Bios/MBR</strong> support added back.
+          </div>
+          <div class="text-sm text-[var(--color-text-secondary)] border-l-2 border-[var(--color-accent)]/40 bg-[var(--color-bg-primary)]/30 rounded-r-lg px-4 py-2">
+            <strong class="text-[var(--color-text-primary)]">Plasma-Login</strong> used by default.
+          </div>
+          <div class="text-sm text-[var(--color-text-secondary)] border-l-2 border-[var(--color-accent)]/40 bg-[var(--color-bg-primary)]/30 rounded-r-lg px-4 py-2">
+            Updated to latest Kernel (6.19.x).
+          </div>
+          <div class="text-sm text-[var(--color-text-secondary)] border-l-2 border-[var(--color-accent)]/40 bg-[var(--color-bg-primary)]/30 rounded-r-lg px-4 py-2">
+            <strong class="text-[var(--color-text-primary)]">nVidia</strong> ISO more robust for Laptops.
+          </div>
+          <div class="text-sm text-[var(--color-text-secondary)] border-l-2 border-[var(--color-accent)]/40 bg-[var(--color-bg-primary)]/30 rounded-r-lg px-4 py-2">
             Added new widgets & updated the old.
-          </li>
-          <li class="flex items-start gap-2 text-sm text-[var(--color-text-secondary)] bg-[var(--color-bg-primary)]/50 rounded-lg px-4 py-1.5">
-            <span class="text-[var(--color-accent)] mt-0.5 shrink-0">&#9656;</span>
-            Enabled <strong class="text-[var(--color-text-primary)]">Package Chooser</strong> in <strong class="text-[var(--color-text-primary)]">Calamares</strong>.
-          </li>
-          <li class="flex items-start gap-2 text-sm text-[var(--color-text-secondary)] bg-[var(--color-bg-primary)]/50 rounded-lg px-4 py-1.5">
-            <span class="text-[var(--color-accent)] mt-0.5 shrink-0">&#9656;</span>
-            <strong class="text-[var(--color-text-primary)]">Intel/AMD</strong> drivers smart detection system.
-          </li>
-          <li class="flex items-start gap-2 text-sm text-[var(--color-text-secondary)] bg-[var(--color-bg-primary)]/50 rounded-lg px-4 py-1.5">
-            <span class="text-[var(--color-accent)] mt-0.5 shrink-0">&#9656;</span>
-            GPU Swap detection system (<a href="https://wiki.xerolinux.xyz/distro/#gpu-swap-detection" target="_blank" class="text-[var(--color-accent-light)] hover:underline">Click for more info</a>)
-          </li>
-          <li class="flex items-start gap-2 text-sm text-[var(--color-text-secondary)] bg-[var(--color-bg-primary)]/50 rounded-lg px-4 py-1.5">
-            <span class="text-[var(--color-accent)] mt-0.5 shrink-0">&#9656;</span>
-            New Post-Install Toolkit GUI Written in <strong class="text-[var(--color-text-primary)]">Rust/GTK</strong>.
-          </li>
-          <li class="flex items-start gap-2 text-sm text-[var(--color-text-secondary)] bg-[var(--color-bg-primary)]/50 rounded-lg px-4 py-1.5">
-            <span class="text-[var(--color-accent)] mt-0.5 shrink-0">&#9656;</span>
-            New <strong class="text-[var(--color-text-primary)]">nVidia</strong> ISO added to the list (<a href="https://wiki.xerolinux.xyz/distro/#nvidia-iso-split" target="_blank" class="text-[var(--color-accent-light)] hover:underline">Click for more info</a>)
-          </li>
-        </ul>
+          </div>
+          <div class="text-sm text-[var(--color-text-secondary)] border-l-2 border-[var(--color-accent)]/40 bg-[var(--color-bg-primary)]/30 rounded-r-lg px-4 py-2">
+            All-new <strong class="text-[var(--color-text-primary)]">Live Welcome</strong> tool made in <strong class="text-[var(--color-text-primary)]">Rust</strong>.
+          </div>
+          <div class="text-sm text-[var(--color-text-secondary)] border-l-2 border-[var(--color-accent)]/40 bg-[var(--color-bg-primary)]/30 rounded-r-lg px-4 py-2">
+            Re-enabled <strong class="text-[var(--color-text-primary)]">BTRFS</strong> & <strong class="text-[var(--color-text-primary)]">Encryption</strong> in Calamares.
+          </div>
+          <div class="text-sm text-[var(--color-text-secondary)] border-l-2 border-[var(--color-accent)]/40 bg-[var(--color-bg-primary)]/30 rounded-r-lg px-4 py-2">
+            New G.U.I Package Manager made in <strong class="text-[var(--color-text-primary)]">Rust/Qt</strong>.
+          </div>
+          <div class="text-sm text-[var(--color-text-secondary)] border-l-2 border-[var(--color-accent)]/40 bg-[var(--color-bg-primary)]/30 rounded-r-lg px-4 py-2">
+            <strong class="text-[var(--color-text-primary)]">Scheds-ext</strong> & Kernel Manager in <strong class="text-[var(--color-text-primary)]">Xero-Toolkit</strong>.
+          </div>
+        </div>
 
         <!-- EOF -->
         <div class="flex items-center gap-4 mt-6">
