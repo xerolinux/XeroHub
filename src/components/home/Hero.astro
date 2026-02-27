@@ -5,7 +5,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 const pageId = Astro.url.pathname.replace(/^\//, '').replace(/\/$/, '').replace(/\//g, '-') || 'home';
 ---
 
-<section class="relative pt-32 pb-20 px-4 sm:px-6 lg:px-8">
+<section class="relative pt-32 pb-6 sm:pb-20 px-4 sm:px-6 lg:px-8">
   <div class="mx-auto max-w-5xl text-center">
     <!-- Logo -->
     <div class="fade-in mb-6">
@@ -87,7 +87,7 @@ const pageId = Astro.url.pathname.replace(/^\//, '').replace(/\/$/, '').replace(
     </div>
 
     <!-- Scroll indicator -->
-    <div class="fade-in fade-in-delay-4 mt-16 flex justify-center">
+    <div class="fade-in fade-in-delay-4 mt-6 sm:mt-16 flex justify-center">
       <div class="w-6 h-10 rounded-full border-2 border-[var(--color-border)] flex justify-center">
         <div class="w-1.5 h-3 bg-[var(--color-accent)] rounded-full mt-2 animate-bounce"></div>
       </div>
