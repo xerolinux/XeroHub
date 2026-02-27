@@ -31,7 +31,7 @@ import Layout from '../components/layout/Layout.astro';
             <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/>
           </svg>
           <p class="text-sm text-green-100">
-            <strong class="text-green-300">Don't see your preferred wallet ?</strong> Reach out on <strong class="text-green-300">Discord</strong> and we'll send you the address.
+            <strong class="text-green-300">Don't see your preferred wallet ?</strong> Reach out and we'll send you the address.
           </p>
         </div>
       </div>
@@ -93,15 +93,15 @@ import Layout from '../components/layout/Layout.astro';
             <ul class="flex-1 flex flex-col justify-around">
               <li class="flex items-start gap-3 text-xs text-[var(--color-text-secondary)] py-2 border-b border-[var(--color-border)]">
                 <svg class="w-4 h-4 text-[var(--color-accent)] shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z" /></svg>
-                Donate at least $15 to one of the wallets below.
+                Donate at least $15 to one of the available wallets.
               </li>
               <li class="flex items-start gap-3 text-xs text-[var(--color-text-secondary)] py-2 border-b border-[var(--color-border)]">
                 <svg class="w-4 h-4 text-[var(--color-accent)] shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" /></svg>
-                Enter your Transaction ID and email in the form.
+                Enter your Transaction ID and email in this here form.
               </li>
               <li class="flex items-start gap-3 text-xs text-[var(--color-text-secondary)] py-2">
                 <svg class="w-4 h-4 text-[var(--color-accent)] shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
-                We'll send you the download link with code by email.
+                We'll send you the download link with access code via email.
               </li>
             </ul>
           </div>
@@ -113,26 +113,28 @@ import Layout from '../components/layout/Layout.astro';
           <!-- Wallet selector -->
           <p class="text-xs font-semibold uppercase tracking-widest text-[var(--color-text-secondary)] mb-3">Select Wallet</p>
           <div class="grid grid-cols-3 gap-3 mb-4">
-            <button type="button" class="wallet-box rounded-xl p-3 border border-[var(--color-border)] bg-[var(--color-bg-primary)]/30 hover:border-[var(--color-accent)]/50 transition-all duration-200 text-center cursor-pointer" data-address="bc1qhl7qmeh8rlk35cggrr3py7j6670c4dnsh4veyl">
+            <button type="button" class="wallet-box rounded-xl p-3 border border-[var(--color-border)] bg-[var(--color-bg-primary)]/30 hover:border-[var(--color-accent)]/50 transition-all duration-200 text-center cursor-pointer" data-name="BTC" data-address="bc1qhl7qmeh8rlk35cggrr3py7j6670c4dnsh4veyl">
               <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-[#f7931a] to-[#ffab40] flex items-center justify-center font-bold text-white text-sm mx-auto mb-2">₿</div>
               <span class="text-xs font-semibold text-[var(--color-text-primary)]">BTC</span>
             </button>
-            <button type="button" class="wallet-box rounded-xl p-3 border border-[var(--color-border)] bg-[var(--color-bg-primary)]/30 hover:border-[var(--color-accent)]/50 transition-all duration-200 text-center cursor-pointer" data-address="TLgG5Qh8XL1M98it9TSLRzoLDVCPwYQhYd">
+            <button type="button" class="wallet-box rounded-xl p-3 border border-[var(--color-border)] bg-[var(--color-bg-primary)]/30 hover:border-[var(--color-accent)]/50 transition-all duration-200 text-center cursor-pointer" data-name="USDT/TRX" data-address="TLgG5Qh8XL1M98it9TSLRzoLDVCPwYQhYd">
               <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-[#26a17b] to-[#50c8a8] flex items-center justify-center font-bold text-white text-sm mx-auto mb-2">₮</div>
               <span class="text-xs font-semibold text-[var(--color-text-primary)]">USDT/TRX</span>
             </button>
-            <button type="button" class="wallet-box rounded-xl p-3 border border-[var(--color-border)] bg-[var(--color-bg-primary)]/30 hover:border-[var(--color-accent)]/50 transition-all duration-200 text-center cursor-pointer" data-address="0xEe53C2dcbf1AC11aC964f318b2759BcF70D6C0A0">
+            <button type="button" class="wallet-box rounded-xl p-3 border border-[var(--color-border)] bg-[var(--color-bg-primary)]/30 hover:border-[var(--color-accent)]/50 transition-all duration-200 text-center cursor-pointer" data-name="ETH" data-address="0xEe53C2dcbf1AC11aC964f318b2759BcF70D6C0A0">
               <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-[#627eea] to-[#8b9ff0] flex items-center justify-center font-bold text-white text-sm mx-auto mb-2">Ξ</div>
               <span class="text-xs font-semibold text-[var(--color-text-primary)]">ETH</span>
             </button>
           </div>
 
-          <!-- Address display -->
-          <div id="address-display" class="hidden mb-4">
-            <div class="flex items-center gap-3 bg-[var(--color-bg-primary)]/50 border border-[var(--color-border)] rounded-xl px-4 py-3">
-              <span id="address-text" class="font-mono text-xs text-[var(--color-text-secondary)] break-all flex-1 leading-relaxed"></span>
-              <button type="button" id="copy-btn" class="shrink-0 px-3 py-1.5 rounded-lg bg-[var(--color-accent)]/20 border border-[var(--color-accent)]/40 text-[var(--color-accent)] text-xs font-medium hover:bg-[var(--color-accent)]/30 transition-all duration-200 whitespace-nowrap">Copy</button>
-            </div>
+          <!-- Live price display -->
+          <div id="price-display" class="mb-4 flex flex-wrap items-center gap-x-3 gap-y-1 px-3 py-2.5 rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-primary)]/30 text-xs">
+            <span class="text-[var(--color-text-muted)]">Min. $15 ≈</span>
+            <span id="price-btc" class="font-mono text-[var(--color-accent)]">—</span>
+            <span class="text-[var(--color-border-hover)]">·</span>
+            <span id="price-usdt" class="font-mono text-[var(--color-accent)]">—</span>
+            <span class="text-[var(--color-border-hover)]">·</span>
+            <span id="price-eth" class="font-mono text-[var(--color-accent)]">—</span>
           </div>
 
           <!-- Form — flex-1 so it fills remaining card height -->
@@ -204,6 +206,30 @@ import Layout from '../components/layout/Layout.astro';
     </div>
   </section>
 
+  <!-- Wallet Modal -->
+  <div id="wallet-modal" class="fixed inset-0 z-[9999] hidden items-center justify-center">
+    <div id="wallet-backdrop" class="absolute inset-0 bg-black/70 backdrop-blur-sm"></div>
+    <div class="relative mx-4 w-full max-w-sm glass rounded-2xl p-6">
+      <!-- Close -->
+      <button id="wallet-close" class="absolute -top-3 -right-3 w-8 h-8 rounded-full bg-[var(--color-bg-secondary)] border border-[var(--color-border)] text-[var(--color-text-secondary)] hover:text-white hover:border-[var(--color-border-hover)] transition-all duration-200 flex items-center justify-center cursor-pointer" aria-label="Close">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+      </button>
+      <!-- Wallet name -->
+      <p id="wallet-name" class="text-xs font-semibold uppercase tracking-widest text-[var(--color-text-secondary)] mb-4 text-center"></p>
+      <!-- QR code -->
+      <div class="flex justify-center mb-4">
+        <div class="bg-white rounded-xl p-2.5">
+          <img id="qr-img" src="" alt="Wallet QR Code" class="w-44 h-44 block rounded-lg">
+        </div>
+      </div>
+      <!-- Address + copy -->
+      <div class="bg-[var(--color-bg-primary)]/50 border border-[var(--color-border)] rounded-xl px-4 py-3 mb-3 overflow-x-auto">
+        <span id="address-text" class="font-mono text-xs text-[var(--color-text-secondary)] whitespace-nowrap block text-center"></span>
+      </div>
+      <button type="button" id="copy-btn" class="w-full py-2.5 rounded-xl bg-[var(--color-accent)]/20 border border-[var(--color-accent)]/40 text-[var(--color-accent)] text-sm font-medium hover:bg-[var(--color-accent)]/30 transition-all duration-200">Copy Address</button>
+    </div>
+  </div>
+
   <!-- Crypto Exit -->
   <section class="py-10 px-4 sm:px-6 lg:px-8">
     <div class="fade-in mx-auto max-w-3xl flex items-center gap-4">
@@ -255,28 +281,68 @@ import Layout from '../components/layout/Layout.astro';
     const pageLoadTime = Date.now();
     const MIN_TIME = 5;
 
-    // Wallet selection
+    // Live prices from CoinGecko
+    fetch('https://api.coingecko.com/api/v3/simple/price?ids=bitcoin,ethereum,tether&vs_currencies=usd')
+      .then(function (r) { return r.json(); })
+      .then(function (d) {
+        var min = 15;
+        document.getElementById('price-btc').textContent  = (min / d.bitcoin.usd).toFixed(6)  + ' BTC';
+        document.getElementById('price-usdt').textContent = (min / d.tether.usd).toFixed(2)   + ' USDT';
+        document.getElementById('price-eth').textContent  = (min / d.ethereum.usd).toFixed(4) + ' ETH';
+      })
+      .catch(function () {
+        document.getElementById('price-display').style.display = 'none';
+      });
+
+    // Wallet modal
+    var wModal = document.getElementById('wallet-modal');
+    var wBackdrop = document.getElementById('wallet-backdrop');
+    var wClose = document.getElementById('wallet-close');
+
+    function openWalletModal(address, name) {
+      currentAddress = address;
+      document.getElementById('wallet-name').textContent = name + ' Wallet';
+      document.getElementById('address-text').textContent = address;
+      document.getElementById('qr-img').src =
+        'https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=' + encodeURIComponent(address) + '&margin=0';
+      wModal.classList.remove('hidden');
+      wModal.classList.add('flex');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeWalletModal() {
+      wModal.classList.add('hidden');
+      wModal.classList.remove('flex');
+      document.body.style.overflow = '';
+    }
+
     document.querySelectorAll('.wallet-box').forEach(function (btn) {
       btn.addEventListener('click', function () {
         document.querySelectorAll('.wallet-box').forEach(function (b) { b.classList.remove('active'); });
         btn.classList.add('active');
-        currentAddress = btn.dataset.address;
-        document.getElementById('address-text').textContent = currentAddress;
-        document.getElementById('address-display').classList.remove('hidden');
+        openWalletModal(btn.dataset.address, btn.dataset.name);
       });
+    });
+
+    wClose.addEventListener('click', closeWalletModal);
+    wBackdrop.addEventListener('click', closeWalletModal);
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') closeWalletModal();
     });
 
     // Copy address
     document.getElementById('copy-btn').addEventListener('click', function () {
-      const btn = this;
+      var btn = this;
       navigator.clipboard.writeText(currentAddress).then(function () {
         btn.textContent = 'Copied!';
-        btn.style.color = '#86efac';
+        btn.style.background = 'rgba(34,197,94,0.2)';
         btn.style.borderColor = 'rgba(34,197,94,0.5)';
+        btn.style.color = '#86efac';
         setTimeout(function () {
-          btn.textContent = 'Copy';
-          btn.style.color = '';
+          btn.textContent = 'Copy Address';
+          btn.style.background = '';
           btn.style.borderColor = '';
+          btn.style.color = '';
         }, 2000);
       });
     });
