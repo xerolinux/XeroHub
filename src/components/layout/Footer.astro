@@ -14,8 +14,8 @@ const footerLinks = [
   { label: 'Updates', href: `${base}/updates/` },
   { label: 'Gear', href: `${base}/gear/` },
   { label: 'Download', href: `${base}/download/` },
-  { label: 'Wiki', href: 'https://wiki.xerolinux.xyz' },
-  { label: 'Merch', href: 'https://shop.xerolinux.xyz' },
+  { label: 'Wiki', href: 'https://wiki.xerolinux.xyz', external: true },
+  { label: 'Merch', href: 'https://shop.xerolinux.xyz', external: true },
 ];
 ---
 
@@ -44,6 +44,8 @@ const footerLinks = [
           {footerLinks.map(link => (
             <a
               href={link.href}
+              target={link.external ? '_blank' : undefined}
+              rel={link.external ? 'noopener noreferrer' : undefined}
               class="text-sm text-[var(--color-text-secondary)] hover:text-[var(--color-accent-light)] transition-colors duration-200"
             >
               {link.label}
