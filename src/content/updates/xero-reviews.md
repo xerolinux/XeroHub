@@ -15,7 +15,7 @@ Honestly, I’m not entirely sure why, but that’s exactly why I wanted to take
 
 ## How to Reach Out
 
-Getting your hands on the ISOs is easier than you might think. If you already have an account on [**Fosstodon**](https://fosstodon.org/@XeroLinux), just send me a message there. If you don’t, no worries, you can quickly create an account using [**this invite link**](https://fosstodon.org/invite/VyhmPW4w). Alternatively, you can reach out on [**Discord**](https://discord.gg/5sqxTSuKZu). No access to those platforms ? Ok how about a simple [**E-mail**](mailto:steve@techxero.com).
+Getting your hands on the ISOs is easier than you might think. If you already have an account on [**Fosstodon**](https://fosstodon.org/@XeroLinux), just send me a message there. If you don’t, no worries, you can quickly create an account using [**this invite link**](https://fosstodon.org/invite/VyhmPW4w). Alternatively, you can reach out on [**Discord**](https://discord.xerolinux.xyz). No access to those platforms ? Ok how about a simple [**E-mail**](mailto:steve@techxero.com).
 
 Just drop me a link to your channel or platform where you’d like to share your review, and I’ll send you a private download link for one or both ISOs, free of charge of course.
 
