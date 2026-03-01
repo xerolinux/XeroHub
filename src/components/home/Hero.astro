@@ -68,13 +68,13 @@ const pageId = Astro.url.pathname.replace(/^\//, '').replace(/\/$/, '').replace(
 
     <!-- CTA Buttons -->
     <div class="fade-in fade-in-delay-3 flex flex-row flex-wrap items-center justify-center gap-3">
-      <Button href="https://wiki.xerolinux.xyz" size="md" external>
+      <Button href="https://wiki.xerolinux.xyz" variant="secondary" size="md" external>
         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
         </svg>
         The Wiki
       </Button>
-      <Button href={`${base}/download/`} variant="secondary" size="md">
+      <Button href={`${base}/download/`} size="md">
         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
         </svg>
