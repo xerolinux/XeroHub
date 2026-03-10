@@ -2,7 +2,7 @@
 #
 # ╔═══════════════════════════════════════════════════════════════════════════════╗
 # ║                                                                               ║
-# ║                      ✨ Xero Arch Installer v1.6 ✨                           ║
+# ║                      ✨ Xero Arch Installer v1.7 ✨                           ║
 # ║                                                                               ║
 # ║          A beautiful, streamlined Arch Linux installer for XeroLinux         ║
 # ║                                                                               ║
@@ -18,7 +18,7 @@ set -Eeuo pipefail
 # CONFIGURATION
 # ────────────────────────────────────────────────────────────────────────────────
 
-VERSION="1.6"
+VERSION="1.7"
 SCRIPT_NAME="Xero Arch Installer"
 
 # URLs for fetching scripts
@@ -58,6 +58,8 @@ CONFIG[uefi]="no"
 CONFIG[boot_part]=""
 CONFIG[root_part]=""
 CONFIG[root_device]=""
+CONFIG[partition_mode]="auto"
+CONFIG[reuse_efi]="no"
 
 # ────────────────────────────────────────────────────────────────────────────────
 # ERROR HANDLING
@@ -295,7 +297,6 @@ select_locales() {
         "vi_VN.UTF-8"
         "sv_SE.UTF-8"
         "da_DK.UTF-8"
-        "kl_GL.UTF-8"
         "fi_FI.UTF-8"
         "nb_NO.UTF-8"
         "cs_CZ.UTF-8"
@@ -367,6 +368,227 @@ select_locales() {
 
 # ────────────────────────────────────────────────────────────────────────────────
 # 3. DISK CONFIGURATION
+# ────────────────────────────────────────────────────────────────────────────────
+
+# ────────────────────────────────────────────────────────────────────────────────
+# 3a. PARTITIONING MODE SELECTION
+# ────────────────────────────────────────────────────────────────────────────────
+
+select_partitioning_mode() {
+    show_header
+    show_submenu_header "💾 Disk Configuration"
+    echo ""
+
+    local mode_options=(
+        "Auto    │ Wipe entire disk and partition automatically (Recommended)"
+        "Manual  │ Choose existing partitions (dual-boot, custom layouts)"
+    )
+
+    local mode_sel=""
+    mode_sel=$(printf '%s\n' "${mode_options[@]}" | gum choose --height 4 \
+        --header "Select partitioning mode:") || true
+
+    if [[ "$mode_sel" == "Manual"* ]]; then
+        CONFIG[partition_mode]="manual"
+        manual_partitioning
+    else
+        CONFIG[partition_mode]="auto"
+        select_disk
+    fi
+}
+
+# ────────────────────────────────────────────────────────────────────────────────
+# 3b. MANUAL PARTITIONING
+# ────────────────────────────────────────────────────────────────────────────────
+
+manual_partitioning() {
+    show_header
+    show_submenu_header "💾 Manual Partitioning"
+    echo ""
+
+    gum style --foreground 226 --bold --margin "0 2" \
+        "ℹ️  Your partitions will not be wiped — only the ones you assign will be formatted."
+    echo ""
+
+    # Show current layout
+    gum style --foreground 245 --margin "0 2" \
+        "$(lsblk -o NAME,SIZE,FSTYPE,LABEL,TYPE,MOUNTPOINT 2>/dev/null)"
+    echo ""
+
+    # Optionally launch cfdisk so the user can create partitions first
+    if confirm_action "Launch cfdisk to create or modify partitions first?"; then
+        local disks=()
+        while IFS= read -r line; do
+            [[ -n "$line" ]] && disks+=("$line")
+        done < <(lsblk -dpno NAME,SIZE,MODEL 2>/dev/null \
+            | grep -E '^/dev/(sd|nvme|vd|mmcblk)' | sed 's/  */ /g')
+
+        if [[ ${#disks[@]} -gt 0 ]]; then
+            local disk_sel=""
+            disk_sel=$(printf '%s\n' "${disks[@]}" | gum choose --height 10 \
+                --header "Select disk to open in cfdisk:") || true
+            if [[ -n "$disk_sel" ]]; then
+                local target_disk
+                target_disk=$(echo "$disk_sel" | awk '{print $1}')
+                cfdisk "$target_disk" || true
+                partprobe "$target_disk" || true
+                udevadm settle
+            fi
+        fi
+
+        # Refresh view after cfdisk
+        show_header
+        show_submenu_header "💾 Manual Partitioning"
+        echo ""
+        gum style --foreground 245 --margin "0 2" "Updated disk layout:"
+        echo ""
+        gum style --foreground 245 --margin "0 2" \
+            "$(lsblk -o NAME,SIZE,FSTYPE,LABEL,TYPE,MOUNTPOINT 2>/dev/null)"
+        echo ""
+    fi
+
+    # Build list of all available partitions
+    local partitions=()
+    while IFS= read -r line; do
+        [[ -n "$line" ]] && partitions+=("$line")
+    done < <(lsblk -pno NAME,SIZE,FSTYPE,LABEL 2>/dev/null \
+        | grep -E '^\s*/dev/(sd|nvme|vd|mmcblk)[^ ]*[0-9]' \
+        | sed 's/^ *//' | sed 's/  */ /g')
+
+    if [[ ${#partitions[@]} -eq 0 ]]; then
+        show_error "No partitions found. Create partitions first and try again."
+        gum input --placeholder "Press Enter to continue..."
+        return
+    fi
+
+    # ── Boot / EFI partition ──────────────────────────────────────────────────
+    echo ""
+    if [[ "${CONFIG[uefi]}" == "yes" ]]; then
+        show_info "Select EFI System Partition (ESP)"
+    else
+        show_info "Select boot partition  (or skip to keep /boot on the root partition)"
+    fi
+    echo ""
+
+    local boot_options=("-- Skip (no separate boot partition) --")
+    for p in "${partitions[@]}"; do boot_options+=("$p"); done
+
+    local boot_sel=""
+    boot_sel=$(printf '%s\n' "${boot_options[@]}" | gum choose --height 14 \
+        --header "Boot / EFI partition:") || true
+
+    if [[ "$boot_sel" == "-- Skip"* ]]; then
+        CONFIG[boot_part]=""
+        CONFIG[reuse_efi]="no"
+        show_info "No separate boot partition — /boot will live on the root partition"
+    else
+        CONFIG[boot_part]=$(echo "$boot_sel" | awk '{print $1}')
+        show_success "Boot/EFI partition: ${CONFIG[boot_part]}"
+
+        if [[ "${CONFIG[uefi]}" == "yes" ]]; then
+            echo ""
+            gum style --foreground 226 --bold --margin "0 2" \
+                "Dual-boot tip: If this ESP already contains Windows boot files, choose 'Reuse'." \
+                "Choosing 'Format' will wipe the ESP and break the Windows boot entry."
+            echo ""
+
+            local efi_action=""
+            efi_action=$(printf '%s\n' \
+                "Format  │ Wipe and format as FAT32  (single-OS or new ESP)" \
+                "Reuse   │ Mount without formatting   (Windows dual-boot)" \
+                | gum choose --height 4 --header "What to do with this EFI partition:") || true
+
+            if [[ "$efi_action" == "Reuse"* ]]; then
+                CONFIG[reuse_efi]="yes"
+                show_success "EFI partition will be reused — dual-boot safe"
+            else
+                CONFIG[reuse_efi]="no"
+                show_success "EFI partition will be formatted as FAT32"
+            fi
+        fi
+    fi
+
+    # ── Root partition ────────────────────────────────────────────────────────
+    echo ""
+    show_info "Select root partition"
+    echo ""
+
+    local root_sel=""
+    root_sel=$(printf '%s\n' "${partitions[@]}" | gum choose --height 14 \
+        --header "Root ( / ) partition:") || true
+
+    if [[ -z "$root_sel" ]]; then
+        show_error "No root partition selected."
+        gum input --placeholder "Press Enter to continue..."
+        return
+    fi
+
+    CONFIG[root_part]=$(echo "$root_sel" | awk '{print $1}')
+    show_success "Root partition: ${CONFIG[root_part]}"
+
+    # Derive parent disk for GRUB install
+    local parent_disk
+    parent_disk=$(lsblk -no PKNAME "${CONFIG[root_part]}" 2>/dev/null | head -1)
+    if [[ -n "$parent_disk" ]]; then
+        CONFIG[disk]="/dev/$parent_disk"
+    else
+        CONFIG[disk]="${CONFIG[root_part]}"
+    fi
+
+    # ── Filesystem ───────────────────────────────────────────────────────────
+    echo ""
+    show_info "Select filesystem for root partition"
+    echo ""
+
+    local filesystems=(
+        "btrfs    │ Modern CoW filesystem with snapshots (Recommended)"
+        "ext4     │ Traditional reliable filesystem"
+        "xfs      │ High-performance filesystem"
+    )
+
+    local fs_selection=""
+    fs_selection=$(printf '%s\n' "${filesystems[@]}" | gum choose --height 5 \
+        --header "Filesystem:") || true
+
+    if [[ -n "$fs_selection" ]]; then
+        CONFIG[filesystem]=$(echo "$fs_selection" | awk '{print $1}')
+        show_success "Filesystem: ${CONFIG[filesystem]}"
+    fi
+
+    # ── Encryption ───────────────────────────────────────────────────────────
+    echo ""
+    show_info "Root Partition Encryption (LUKS2)"
+    echo ""
+
+    if confirm_action "Enable encryption on the root partition?"; then
+        CONFIG[encrypt]="yes"
+        CONFIG[encrypt_boot]="no"   # manual mode: root-only encryption only
+
+        echo ""
+        local enc_pass1="" enc_pass2=""
+        enc_pass1=$(gum input --password --placeholder "Enter encryption password" --width 50) || true
+        enc_pass2=$(gum input --password --placeholder "Confirm encryption password" --width 50) || true
+
+        if [[ "$enc_pass1" == "$enc_pass2" && -n "$enc_pass1" ]]; then
+            CONFIG[encrypt_password]="$enc_pass1"
+            show_success "Root encryption enabled"
+        else
+            show_error "Passwords don't match or empty. Encryption disabled."
+            CONFIG[encrypt]="no"
+            CONFIG[encrypt_password]=""
+        fi
+    else
+        CONFIG[encrypt]="no"
+        CONFIG[encrypt_boot]="no"
+        CONFIG[encrypt_password]=""
+        show_info "Encryption disabled"
+    fi
+
+    sleep 0.5
+}
+
+# ────────────────────────────────────────────────────────────────────────────────
+# 3c. AUTO DISK SELECTION (original select_disk)
 # ────────────────────────────────────────────────────────────────────────────────
 
 select_disk() {
@@ -820,11 +1042,36 @@ show_main_menu() {
             "Boot Mode: $boot_mode"
         echo ""
 
+        # Build disk info line for menu display
+        local disk_info=""
+        if [[ "${CONFIG[partition_mode]}" == "manual" ]]; then
+            if [[ -n "${CONFIG[root_part]}" ]]; then
+                disk_info="Manual: root=${CONFIG[root_part]}"
+                [[ -n "${CONFIG[boot_part]}" ]] && disk_info+=" boot=${CONFIG[boot_part]}"
+                disk_info+=" (${CONFIG[filesystem]}"
+                [[ "${CONFIG[encrypt]}" == "yes" ]] && disk_info+=", encrypted"
+                disk_info+=")"
+            else
+                disk_info="Manual: Not configured"
+            fi
+        else
+            disk_info="${CONFIG[disk]:-Not configured}"
+            if [[ -n "${CONFIG[disk]}" ]]; then
+                disk_info+=" (${CONFIG[filesystem]}"
+                if [[ "${CONFIG[encrypt]}" == "yes" && "${CONFIG[encrypt_boot]}" == "yes" ]]; then
+                    disk_info+=", encrypted root+boot"
+                elif [[ "${CONFIG[encrypt]}" == "yes" ]]; then
+                    disk_info+=", encrypted root"
+                fi
+                disk_info+=")"
+            fi
+        fi
+
         local menu_items=(
             ""
             "1. 🌐 Installer Language    │ ${CONFIG[installer_lang]}"
             "2. 🗺️ Locales               │ ${CONFIG[locale]} / ${CONFIG[keyboard]}"
-            "3. 💾 Disk Configuration    │ ${CONFIG[disk]:-Not configured}$( [[ -n "${CONFIG[disk]}" ]] && echo " (${CONFIG[filesystem]}$( [[ "${CONFIG[encrypt]}" == "yes" && "${CONFIG[encrypt_boot]}" == "yes" ]] && echo ", encrypted root+boot" || { [[ "${CONFIG[encrypt]}" == "yes" ]] && echo ", encrypted root"; }))" )"
+            "3. 💾 Disk Configuration    │ $disk_info"
             "4. 🔄 Swap                  │ ${CONFIG[swap]}"
             "5. 💻 Hostname              │ ${CONFIG[hostname]}"
             "6. 🎮 Graphics Driver       │ ${CONFIG[gfx_driver]}"
@@ -842,7 +1089,7 @@ show_main_menu() {
         case "$selection" in
             "1."*) select_installer_language ;;
             "2."*) select_locales ;;
-            "3."*) select_disk ;;
+            "3."*) select_partitioning_mode ;;
             "4."*) configure_swap ;;
             "5."*) configure_hostname ;;
             "6."*) select_graphics_driver ;;
@@ -852,7 +1099,13 @@ show_main_menu() {
             "10."*)
                 if validate_config; then
                     show_summary
-                    if confirm_action "Start installation? THIS WILL ERASE ${CONFIG[disk]}"; then
+                    local confirm_msg=""
+                    if [[ "${CONFIG[partition_mode]}" == "manual" ]]; then
+                        confirm_msg="Start installation? ${CONFIG[root_part]} will be formatted as root"
+                    else
+                        confirm_msg="Start installation? THIS WILL ERASE ${CONFIG[disk]}"
+                    fi
+                    if confirm_action "$confirm_msg"; then
                         perform_installation
                         break
                     fi
@@ -875,7 +1128,16 @@ show_main_menu() {
 validate_config() {
     local errors=()
 
-    [[ -z "${CONFIG[disk]}" ]] && errors+=("Disk not configured")
+    if [[ "${CONFIG[partition_mode]}" == "manual" ]]; then
+        [[ -z "${CONFIG[root_part]}" ]] && errors+=("Root partition not configured (Manual mode)")
+        [[ -n "${CONFIG[root_part]}" && ! -b "${CONFIG[root_part]}" ]] && \
+            errors+=("Root partition '${CONFIG[root_part]}' is not a valid block device")
+        [[ -n "${CONFIG[boot_part]}" && ! -b "${CONFIG[boot_part]}" ]] && \
+            errors+=("Boot partition '${CONFIG[boot_part]}' is not a valid block device")
+    else
+        [[ -z "${CONFIG[disk]}" ]] && errors+=("Disk not configured")
+    fi
+
     [[ -z "${CONFIG[username]}" ]] && errors+=("User account not configured")
     [[ -z "${CONFIG[user_password]}" ]] && errors+=("User password not set")
     [[ -z "${CONFIG[root_password]}" ]] && errors+=("Root password not set")
@@ -915,27 +1177,62 @@ show_summary() {
     local boot_mode="BIOS/Legacy"
     [[ "${CONFIG[uefi]}" == "yes" ]] && boot_mode="UEFI"
 
-    gum style --border rounded --border-foreground 212 --padding "1 2" --margin "0 2" \
-        "Locale:           ${CONFIG[locale]}" \
-        "Keyboard:         ${CONFIG[keyboard]}" \
-        "Timezone:         ${CONFIG[timezone]}" \
-        "Hostname:         ${CONFIG[hostname]}" \
-        "" \
-        "Username:         ${CONFIG[username]}" \
-        "" \
-        "Target Disk:      ${CONFIG[disk]}" \
-        "Filesystem:       ${CONFIG[filesystem]}" \
-        "Encryption:       $encrypt_status" \
-        "Swap:             ${CONFIG[swap]}" \
-        "" \
-        "Graphics:         ${CONFIG[gfx_driver]}" \
-        "Boot Mode:        $boot_mode" \
-        "Bootloader:       GRUB" \
-        "Downloads:        ${CONFIG[parallel_downloads]} parallel"
+    if [[ "${CONFIG[partition_mode]}" == "manual" ]]; then
+        local efi_note=""
+        [[ "${CONFIG[reuse_efi]}" == "yes" ]] && efi_note=" (reused, not formatted)"
+        local boot_line="None (boot on root)"
+        [[ -n "${CONFIG[boot_part]}" ]] && boot_line="${CONFIG[boot_part]}$efi_note"
 
-    echo ""
-    gum style --foreground 196 --bold --margin "0 2" \
-        "⚠️  ALL DATA ON ${CONFIG[disk]} WILL BE PERMANENTLY ERASED!"
+        gum style --border rounded --border-foreground 212 --padding "1 2" --margin "0 2" \
+            "Locale:           ${CONFIG[locale]}" \
+            "Keyboard:         ${CONFIG[keyboard]}" \
+            "Timezone:         ${CONFIG[timezone]}" \
+            "Hostname:         ${CONFIG[hostname]}" \
+            "" \
+            "Username:         ${CONFIG[username]}" \
+            "" \
+            "Partition mode:   Manual" \
+            "Root partition:   ${CONFIG[root_part]}" \
+            "Boot partition:   $boot_line" \
+            "Filesystem:       ${CONFIG[filesystem]}" \
+            "Encryption:       $encrypt_status" \
+            "Swap:             ${CONFIG[swap]}" \
+            "" \
+            "Graphics:         ${CONFIG[gfx_driver]}" \
+            "Boot Mode:        $boot_mode" \
+            "Bootloader:       GRUB (on ${CONFIG[disk]})" \
+            "Downloads:        ${CONFIG[parallel_downloads]} parallel"
+
+        echo ""
+        gum style --foreground 196 --bold --margin "0 2" \
+            "⚠️  ${CONFIG[root_part]} will be FORMATTED as the root partition!"
+        [[ "${CONFIG[reuse_efi]}" != "yes" && -n "${CONFIG[boot_part]}" ]] && \
+            gum style --foreground 196 --bold --margin "0 2" \
+                "⚠️  ${CONFIG[boot_part]} will be FORMATTED as the boot/EFI partition!"
+    else
+        gum style --border rounded --border-foreground 212 --padding "1 2" --margin "0 2" \
+            "Locale:           ${CONFIG[locale]}" \
+            "Keyboard:         ${CONFIG[keyboard]}" \
+            "Timezone:         ${CONFIG[timezone]}" \
+            "Hostname:         ${CONFIG[hostname]}" \
+            "" \
+            "Username:         ${CONFIG[username]}" \
+            "" \
+            "Partition mode:   Auto (whole disk)" \
+            "Target Disk:      ${CONFIG[disk]}" \
+            "Filesystem:       ${CONFIG[filesystem]}" \
+            "Encryption:       $encrypt_status" \
+            "Swap:             ${CONFIG[swap]}" \
+            "" \
+            "Graphics:         ${CONFIG[gfx_driver]}" \
+            "Boot Mode:        $boot_mode" \
+            "Bootloader:       GRUB" \
+            "Downloads:        ${CONFIG[parallel_downloads]} parallel"
+
+        echo ""
+        gum style --foreground 196 --bold --margin "0 2" \
+            "⚠️  ALL DATA ON ${CONFIG[disk]} WILL BE PERMANENTLY ERASED!"
+    fi
     echo ""
 }
 
@@ -1007,6 +1304,9 @@ perform_installation() {
 # ────────────────────────────────────────────────────────────────────────────────
 
 partition_disk() {
+    # Manual mode: user already selected partitions — nothing to partition
+    [[ "${CONFIG[partition_mode]}" == "manual" ]] && return 0
+
     local disk="${CONFIG[disk]}"
 
     [[ -n "$disk" ]] || { echo "ERROR: CONFIG[disk] is empty"; exit 1; }
@@ -1088,11 +1388,13 @@ format_partitions() {
 
     [[ -b "$root_device" ]] || { echo "ERROR: root device '$root_device' is not a block device"; exit 1; }
 
-    # Format boot partition (skipped for BIOS encrypted boot — no separate boot)
+    # Format boot partition (skipped for BIOS encrypted boot or when reusing existing EFI)
     if [[ -n "${CONFIG[boot_part]}" ]]; then
         [[ -b "${CONFIG[boot_part]}" ]] || { echo "ERROR: boot_part '${CONFIG[boot_part]}' is not a block device"; exit 1; }
 
-        if [[ "${CONFIG[uefi]}" == "yes" ]]; then
+        if [[ "${CONFIG[reuse_efi]}" == "yes" ]]; then
+            echo "Reusing existing EFI partition ${CONFIG[boot_part]} — skipping format"
+        elif [[ "${CONFIG[uefi]}" == "yes" ]]; then
             wipefs -af "${CONFIG[boot_part]}" &>/dev/null
             mkfs.fat -F32 "${CONFIG[boot_part]}"
         else

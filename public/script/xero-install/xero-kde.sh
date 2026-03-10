@@ -470,7 +470,7 @@ install_packages() {
     $SUDO_CMD pacman -S --needed --noconfirm \
         kf6 qt6 kde-system \
         kwin krdp milou breeze oxygen drkonqi kwrited \
-        kgamma kscreen plasma-login-manager kmenuedit bluedevil kpipewire plasma-nm plasma-pa \
+        kgamma kscreen kmenuedit bluedevil kpipewire plasma-nm plasma-pa \
         plasma-sdk libkscreen breeze-gtk powerdevil kinfocenter flatpak-kcm \
         kdecoration ksshaskpass kwallet-pam libksysguard plasma-vault ksystemstats \
         kde-cli-tools oxygen-sounds kscreenlocker kglobalacceld systemsettings \
@@ -535,10 +535,6 @@ install_packages() {
     print_success "All packages installed!"
     echo ""
 
-    print_step "Enabling Plasma Login Manager..."
-    $SUDO_CMD systemctl enable plasmalogin.service || { print_error "Failed to enable Plasma Login Manager!"; exit 1; }
-    print_success "Plasma Login Manager enabled!"
-    echo ""
 }
 
 # Step D: Install user-selected packages
@@ -803,6 +799,43 @@ copy_skel_to_user() {
     echo ""
 }
 
+# Step F: Login manager selection
+select_login_manager() {
+    print_header
+
+    echo -e "${CYAN}🔐 Display / Login Manager Selection${NC}"
+    echo ""
+    echo -e "Choose which login manager to install and enable:"
+    echo ""
+    echo -e "  ${BLUE}1)${NC} SDDM                 ${YELLOW}(stable, battle-tested, widely used)${NC}"
+    echo -e "  ${BLUE}2)${NC} Plasma Login Manager  ${YELLOW}(new KDE-native manager, replaces SDDM)${NC}"
+    echo ""
+    read -p "Enter choice (1 or 2, default is SDDM): " lm_choice
+
+    case $lm_choice in
+        2)
+            print_step "Installing Plasma Login Manager..."
+            $SUDO_CMD pacman -S --needed --noconfirm plasma-login-manager || { print_error "Failed to install Plasma Login Manager!"; exit 1; }
+            print_success "Plasma Login Manager installed!"
+            echo ""
+            print_step "Enabling plasmalogin.service..."
+            $SUDO_CMD systemctl enable plasmalogin.service || { print_error "Failed to enable plasmalogin.service!"; exit 1; }
+            print_success "plasmalogin.service enabled!"
+            ;;
+        *)
+            print_step "Installing SDDM..."
+            $SUDO_CMD pacman -S --needed --noconfirm sddm || { print_error "Failed to install SDDM!"; exit 1; }
+            print_success "SDDM installed!"
+            echo ""
+            print_step "Enabling sddm.service..."
+            $SUDO_CMD systemctl enable sddm.service || { print_error "Failed to enable sddm.service!"; exit 1; }
+            print_success "sddm.service enabled!"
+            ;;
+    esac
+
+    echo ""
+}
+
 # Final message
 show_completion() {
     print_header
@@ -825,6 +858,7 @@ install_packages
 install_user_packages
 finalize_system
 copy_skel_to_user
+select_login_manager
 show_completion
 
 # Clean up: remove this script
