@@ -9,7 +9,7 @@ hardware:
   - name: StationXero
     subtitle: "The Beast — Main Rig"
     image: images/XeroMain.png
-    description: "Main rig, the one I do all my *Development*, *Gaming* and other things on. It has an `RX 7800XT` and a `Ryzen 9 5950X` with whopping `32GB DDR4@3200Mt/s` RAM. I think this machine still has at least half a decade of reliable service left in it."
+    description: "Main rig, the one I do all my *Development*, *Gaming* and other things on. It has an `RX 7800XT` and a `Ryzen 9 5950X` with a whopping `32GB DDR4@3200Mt/s` RAM. I think this machine still has a few years of reliable service left in it in this economy."
   - name: XeroMini
     subtitle: "Mini Workstation"
     image: images/XeroMini.webp
