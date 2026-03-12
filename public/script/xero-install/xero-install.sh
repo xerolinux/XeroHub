@@ -1530,7 +1530,7 @@ install_base_system() {
     packages+=" xorg-apps xorg-xinit xorg-server xorg-xwayland"
 
     # Firmware
-    packages+=" fwupd mkinitcpio-fw sof-firmware"
+    packages+=" fwupd mkinitcpio-fw sof-firmware linux-firmware-intel"
 
     pacstrap -K "$MOUNTPOINT" $packages
     genfstab -U "$MOUNTPOINT" >> "$MOUNTPOINT/etc/fstab"
