@@ -421,7 +421,7 @@ manual_partitioning() {
         while IFS= read -r line; do
             [[ -n "$line" ]] && disks+=("$line")
         done < <(lsblk -dpno NAME,SIZE,MODEL 2>/dev/null \
-            | grep -E '^/dev/(sd|nvme|vd|mmcblk)' | sed 's/  */ /g')
+            | { grep -E '^/dev/(sd|nvme|vd|mmcblk)' || true; } | sed 's/  */ /g')
 
         if [[ ${#disks[@]} -gt 0 ]]; then
             local disk_sel=""
@@ -452,7 +452,7 @@ manual_partitioning() {
     while IFS= read -r line; do
         [[ -n "$line" ]] && partitions+=("$line")
     done < <(lsblk -pno NAME,SIZE,FSTYPE,LABEL 2>/dev/null \
-        | grep -E '^\s*/dev/(sd|nvme|vd|mmcblk)[^ ]*[0-9]' \
+        | { grep -E '^\s*/dev/(sd|nvme|vd|mmcblk)[^ ]*[0-9]' || true; } \
         | sed 's/^ *//' | sed 's/  */ /g')
 
     if [[ ${#partitions[@]} -eq 0 ]]; then
@@ -606,7 +606,7 @@ select_disk() {
     local disks=()
     while IFS= read -r line; do
         [[ -n "$line" ]] && disks+=("$line")
-    done < <(lsblk -dpno NAME,SIZE,MODEL 2>/dev/null | grep -E '^/dev/(sd|nvme|vd|mmcblk)' | sed 's/  */ /g')
+    done < <(lsblk -dpno NAME,SIZE,MODEL 2>/dev/null | { grep -E '^/dev/(sd|nvme|vd|mmcblk)' || true; } | sed 's/  */ /g')
 
     if [[ ${#disks[@]} -eq 0 ]]; then
         show_error "No suitable disks found!"
