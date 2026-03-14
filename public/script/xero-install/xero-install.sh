@@ -451,9 +451,9 @@ manual_partitioning() {
     local partitions=()
     while IFS= read -r line; do
         [[ -n "$line" ]] && partitions+=("$line")
-    done < <(lsblk -pno NAME,SIZE,FSTYPE,LABEL 2>/dev/null \
-        | { grep -E '^\s*/dev/(sd|nvme|vd|mmcblk)[^ ]*[0-9]' || true; } \
-        | sed 's/^ *//' | sed 's/  */ /g')
+    done < <(lsblk -lpno NAME,SIZE,FSTYPE,LABEL 2>/dev/null \
+        | { grep -E '^/dev/(sd|nvme|vd|mmcblk)[^ ]*[0-9]' || true; } \
+        | sed 's/  */ /g')
 
     if [[ ${#partitions[@]} -eq 0 ]]; then
         show_error "No partitions found. Create partitions first and try again."
@@ -550,10 +550,14 @@ manual_partitioning() {
     fs_selection=$(printf '%s\n' "${filesystems[@]}" | gum choose --height 5 \
         --header "Filesystem:") || true
 
-    if [[ -n "$fs_selection" ]]; then
-        CONFIG[filesystem]=$(echo "$fs_selection" | awk '{print $1}')
-        show_success "Filesystem: ${CONFIG[filesystem]}"
+    if [[ -z "$fs_selection" ]]; then
+        show_error "No filesystem selected."
+        gum input --placeholder "Press Enter to continue..."
+        return
     fi
+
+    CONFIG[filesystem]=$(echo "$fs_selection" | awk '{print $1}')
+    show_success "Filesystem: ${CONFIG[filesystem]}"
 
     # ── Encryption ───────────────────────────────────────────────────────────
     echo ""
