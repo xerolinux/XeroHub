@@ -772,7 +772,7 @@ copy_skel_to_user() {
         fi
     }
 
-    ID_URL_BASE="https://raw.githubusercontent.com/XeroLinuxDev/XeroBuild/refs/heads/main/FOSS/airootfs/etc"
+    ID_URL_BASE="https://raw.githubusercontent.com/XeroLinux/XeroBuild/refs/heads/main/FOSS/airootfs/etc"
 
     $SUDO_CMD mkdir -p /etc/xdg
 

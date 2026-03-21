@@ -629,7 +629,7 @@ class XeroLinuxHub(QMainWindow):
             "This is my Plymouth manager script/TUI. It allows you to install Plymouth and manage themes the easy way. "
             "It also has an option that safely reverts any changes should you not want it anymore. "
             "It was created for fun, during my spare time.",
-            'bash -c "$(curl -fsSL https://raw.githubusercontent.com/XeroLinuxDev/extra-scripts/refs/heads/main/usr/local/bin/xpm)"',
+            'bash -c "$(curl -fsSL https://raw.githubusercontent.com/XeroLinux/extra-scripts/refs/heads/main/usr/local/bin/xpm)"',
             PLYMOUTH
         )
         plymouth.clicked.connect(self.execute)
