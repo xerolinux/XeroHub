@@ -27,9 +27,9 @@ hardware:
     image: images/XeroCosmic.png
     description: "Used in the office, with `1Tb nVme`, a `Ryzen 5 PRO 4650U`, `16Gb RAM` and an iGPU. I mainly use this thing for testing **Cosmic Epoch**. I love this D.E behind KDE, I think the devs are on to something great. It will never see **Windows** mark my words. It's the most **Linux** friendly laptop on the market today..."
 otherSystems:
-  image: images/3DBBhza.png
+  image: images/Deck.png
   text:
-    - "I also have the awesome **SteamDeck**. It's now my *Retro Gaming Console* with [Batocera](https://batocera.org) running the show. I absolutely love it ! Sadly I no longer have the time to use it, so it's now sitting behind my monitors teasing me lol ;)"
+    - "I also have the awesome **SteamDeck**. It used to be my retro gaming console, but it has since been repurposed as my *Homelab* with **XeroLinux** installed on it, paired with an external **1TB nVMe SSD** for extra storage. It's the perfect little compact server that just sits there quietly doing its thing. I absolutely love it !"
     - "An old-ass **Dell-XPS**, 13' Capacitive 4K Touch screen, with an `Intel Core i7 7600` and `16GB RAM`. That thing sits around, maybe try a few Distros on it every now and then."
     - "And finally I have An old **MacBook Pro** from 2016, yeah the one with the faulty butterfly keyboard n thouchbar. I barely use that thing relegated to a shelf somewhere."
 thanks: "That's it folks. Now you have a better idea of what equipment I use on a daily basis to bring you everything I do. I did not list all the softwares I use coz it's a long list that varies a lot. Thanks for reading."
