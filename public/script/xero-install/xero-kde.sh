@@ -519,7 +519,7 @@ install_packages() {
         mkinitcpio-utils mkinitcpio-archiso mkinitcpio-openswap \
         mkinitcpio-nfs-utils \
         boost kpmcore xdg-terminal-exec-git \
-        preload xero-toolkit extra-scripts desktop-config xero-gpu-tools \
+        xero-toolkit extra-scripts desktop-config \
         eza ntp cava most dialog dnsutils logrotate xdg-user-dirs \
         archiso rsync sdparm ntfs-3g tpm2-tss udftools syslinux fatresize \
         nfs-utils exfatprogs tpm2-tools fsarchiver squashfs-tools \
@@ -636,8 +636,9 @@ finalize_system() {
     $SUDO_CMD systemctl enable wpa_supplicant || print_warning "Failed to enable wpa_supplicant"
     $SUDO_CMD systemctl disable iwd 2>/dev/null || true
     $SUDO_CMD systemctl disable dhcpcd 2>/dev/null || true
-    $SUDO_CMD systemctl enable preload || print_warning "Failed to enable preload"
     $SUDO_CMD systemctl enable sshd || print_warning "Failed to enable sshd"
+    print_step "Installing xero-gpu-tools..."
+    $SUDO_CMD pacman -S --needed --noconfirm xero-gpu-tools || print_warning "Failed to install xero-gpu-tools"
     $SUDO_CMD systemctl enable xero-gpu-check || print_warning "Failed to enable xero-gpu-check"
 
     print_success "Essential services enabled!"
@@ -648,7 +649,9 @@ finalize_system() {
     # Disable services
     $SUDO_CMD systemctl disable systemd-time-wait-sync || print_warning "Failed to disable systemd-time-wait-sync"
     $SUDO_CMD systemctl disable reflector || print_warning "Failed to disable reflector"
-    $SUDO_CMD systemctl disable pacman-init || print_warning "Failed to disable pacman-init"
+    $SUDO_CMD systemctl list-unit-files pacman-init.service &>/dev/null \
+        && { $SUDO_CMD systemctl disable pacman-init || print_warning "Failed to disable pacman-init"; } \
+        || true
 
     print_success "Unnecessary services disabled!"
     echo ""
@@ -803,45 +806,27 @@ copy_skel_to_user() {
     echo ""
 }
 
-# Step F: Login manager selection
+# Step F: Install and configure SDDM
 select_login_manager() {
     print_header
 
-    echo -e "${CYAN}🔐 Display / Login Manager Selection${NC}"
+    print_step "Installing SDDM..."
+    $SUDO_CMD pacman -S --needed --noconfirm sddm || { print_error "Failed to install SDDM!"; exit 1; }
+    print_success "SDDM installed!"
     echo ""
-    echo -e "Choose which login manager to install and enable:"
-    echo ""
-    echo -e "  ${BLUE}1)${NC} SDDM                 ${YELLOW}(stable, battle-tested, widely used)${NC}"
-    echo -e "  ${BLUE}2)${NC} Plasma Login Manager  ${YELLOW}(new KDE-native manager, replaces SDDM)${NC}"
-    echo ""
-    read -p "Enter choice (1 or 2, default is SDDM): " lm_choice
 
-    case $lm_choice in
-        2)
-            print_step "Installing Plasma Login Manager..."
-            $SUDO_CMD pacman -S --needed --noconfirm plasma-login-manager || { print_error "Failed to install Plasma Login Manager!"; exit 1; }
-            print_success "Plasma Login Manager installed!"
-            echo ""
-            print_step "Enabling plasmalogin.service..."
-            $SUDO_CMD systemctl enable plasmalogin.service || { print_error "Failed to enable plasmalogin.service!"; exit 1; }
-            print_success "plasmalogin.service enabled!"
-            ;;
-        *)
-            print_step "Installing SDDM..."
-            $SUDO_CMD pacman -S --needed --noconfirm sddm || { print_error "Failed to install SDDM!"; exit 1; }
-            print_success "SDDM installed!"
-            echo ""
-            print_step "Installing XeroDark SDDM theme..."
-            $SUDO_CMD git clone https://github.com/xerolinux/XeroDark.git /usr/share/sddm/themes/ || print_warning "Failed to clone XeroDark theme"
-            print_success "XeroDark theme installed!"
-            echo ""
-            print_step "Writing SDDM configuration..."
-            $SUDO_CMD mkdir -p /etc/sddm.conf.d
-            cat <<'EOF' | $SUDO_CMD tee /etc/sddm.conf > /dev/null
+    print_step "Installing XeroDark SDDM theme..."
+    $SUDO_CMD git clone https://github.com/xerolinux/XeroDark.git /usr/share/sddm/themes/XeroDark || print_warning "Failed to clone XeroDark theme"
+    print_success "XeroDark theme installed!"
+    echo ""
+
+    print_step "Writing SDDM configuration..."
+    $SUDO_CMD mkdir -p /etc/sddm.conf.d
+    cat <<'EOF' | $SUDO_CMD tee /etc/sddm.conf > /dev/null
 [General]
 InputMethod=
 EOF
-            cat <<'EOF' | $SUDO_CMD tee /etc/sddm.conf.d/kde_settings.conf > /dev/null
+    cat <<'EOF' | $SUDO_CMD tee /etc/sddm.conf.d/kde_settings.conf > /dev/null
 [Autologin]
 Relogin=false
 Session=
@@ -858,14 +843,12 @@ Current=XeroDark
 MaximumUid=60000
 MinimumUid=1000
 EOF
-            print_success "SDDM configuration written!"
-            echo ""
-            print_step "Enabling sddm.service..."
-            $SUDO_CMD systemctl enable sddm.service || { print_error "Failed to enable sddm.service!"; exit 1; }
-            print_success "sddm.service enabled!"
-            ;;
-    esac
+    print_success "SDDM configuration written!"
+    echo ""
 
+    print_step "Enabling sddm.service..."
+    $SUDO_CMD systemctl enable sddm.service || { print_error "Failed to enable sddm.service!"; exit 1; }
+    print_success "sddm.service enabled!"
     echo ""
 }
 
