@@ -468,10 +468,10 @@ install_packages() {
     print_step "Installing KDE Plasma and system packages..."
 
     $SUDO_CMD pacman -S --needed --noconfirm \
-        kf6 qt6 kde-system \
+        kf6 qt6 kde-system libplasma \
         kwin krdp milou breeze oxygen drkonqi kwrited \
         kgamma kscreen kmenuedit bluedevil kpipewire plasma-nm plasma-pa \
-        plasma-sdk libkscreen breeze-gtk powerdevil kinfocenter flatpak-kcm \
+        plasma-sdk libkscreen breeze-gtk breeze-cursors breeze-icons powerdevil kinfocenter flatpak-kcm \
         kdecoration ksshaskpass kwallet-pam libksysguard plasma-vault ksystemstats \
         kde-cli-tools oxygen-sounds kscreenlocker kglobalacceld systemsettings \
         kde-gtk-config layer-shell-qt plasma-desktop polkit-kde-agent plasma-workspace \
@@ -502,7 +502,7 @@ install_packages() {
         python-pyparted python-pygments python-websockets \
         libgsf tumbler freetype2 libopenraw poppler-qt6 poppler-glib ffmpegthumbnailer \
         gvfs mtpfs udiskie udisks2 libldm gvfs-afc gvfs-mtp gvfs-nfs gvfs-smb \
-        gvfs-goa gvfs-wsdd gvfs-dnssd gvfs-google gvfs-gphoto2 gvfs-onedrive \
+        gvfs-goa gvfs-wsdd gvfs-dnssd gvfs-gphoto2 gvfs-onedrive \
         flatpak topgrade appstream-qt pacman-contrib pacman-bintrans \
         ffmpeg ffmpegthumbs ffnvcodec-headers \
         kwin-zones kde-wallpapers kwin-scripts-kzones tela-circle-icon-theme-purple \
