@@ -1573,6 +1573,34 @@ configure_system() {
 
     echo "KEYMAP=${CONFIG[keyboard]}" > "$MOUNTPOINT/etc/vconsole.conf"
 
+    # Map console keymap names to X11 layout names where they differ
+    local xkb_layout="${CONFIG[keyboard]}"
+    local xkb_variant=""
+    case "${CONFIG[keyboard]}" in
+        pt-latin9) xkb_layout="pt" ;;
+        br-abnt2)  xkb_layout="br" ;;
+        jp106)     xkb_layout="jp" ;;
+        dvorak)    xkb_layout="us"; xkb_variant="dvorak" ;;
+        colemak)   xkb_layout="us"; xkb_variant="colemak" ;;
+    esac
+
+    # X11/Wayland keyboard config — read by systemd-localed (used by KWin via D-Bus)
+    mkdir -p "$MOUNTPOINT/etc/X11/xorg.conf.d"
+    cat > "$MOUNTPOINT/etc/X11/xorg.conf.d/00-keyboard.conf" << EOF
+Section "InputClass"
+    Identifier "system-keyboard"
+    MatchIsKeyboard "on"
+    Option "XkbLayout" "${xkb_layout}"
+$([ -n "$xkb_variant" ] && echo "    Option \"XkbVariant\" \"${xkb_variant}\"")
+EndSection
+EOF
+
+    # Wayland-native XKB env vars — read directly by libxkbcommon / KWin Wayland
+    {
+        echo "XKB_DEFAULT_LAYOUT=${xkb_layout}"
+        [ -n "$xkb_variant" ] && echo "XKB_DEFAULT_VARIANT=${xkb_variant}"
+    } >> "$MOUNTPOINT/etc/environment"
+
     echo "${CONFIG[hostname]}" > "$MOUNTPOINT/etc/hostname"
     cat > "$MOUNTPOINT/etc/hosts" << EOF
 127.0.0.1   localhost
