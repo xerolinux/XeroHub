@@ -627,8 +627,12 @@ finalize_system() {
     $SUDO_CMD systemctl enable cups.socket || print_warning "Failed to enable cups.socket"
     $SUDO_CMD systemctl enable saned.socket || print_warning "Failed to enable saned.socket"
     $SUDO_CMD systemctl enable bluetooth || print_warning "Failed to enable bluetooth"
-    $SUDO_CMD systemctl enable power-profiles-daemon || print_warning "Failed to enable power-profiles-daemon"
-    $SUDO_CMD systemctl enable switcheroo-control || print_warning "Failed to enable switcheroo-control"
+    $SUDO_CMD pacman -Qq power-profiles-daemon &>/dev/null \
+        && { $SUDO_CMD systemctl enable power-profiles-daemon || print_warning "Failed to enable power-profiles-daemon"; } \
+        || print_warning "power-profiles-daemon not installed, skipping enable"
+    $SUDO_CMD pacman -Qq switcheroo-control &>/dev/null \
+        && { $SUDO_CMD systemctl enable switcheroo-control || print_warning "Failed to enable switcheroo-control"; } \
+        || print_warning "switcheroo-control not installed, skipping enable"
     $SUDO_CMD systemctl enable wpa_supplicant || print_warning "Failed to enable wpa_supplicant"
     $SUDO_CMD systemctl disable iwd 2>/dev/null || true
     $SUDO_CMD systemctl disable dhcpcd 2>/dev/null || true
@@ -826,6 +830,35 @@ select_login_manager() {
             print_step "Installing SDDM..."
             $SUDO_CMD pacman -S --needed --noconfirm sddm || { print_error "Failed to install SDDM!"; exit 1; }
             print_success "SDDM installed!"
+            echo ""
+            print_step "Installing XeroDark SDDM theme..."
+            $SUDO_CMD git clone https://github.com/xerolinux/XeroDark.git /usr/share/sddm/themes/ || print_warning "Failed to clone XeroDark theme"
+            print_success "XeroDark theme installed!"
+            echo ""
+            print_step "Writing SDDM configuration..."
+            $SUDO_CMD mkdir -p /etc/sddm.conf.d
+            cat <<'EOF' | $SUDO_CMD tee /etc/sddm.conf > /dev/null
+[General]
+InputMethod=
+EOF
+            cat <<'EOF' | $SUDO_CMD tee /etc/sddm.conf.d/kde_settings.conf > /dev/null
+[Autologin]
+Relogin=false
+Session=
+User=
+
+[General]
+HaltCommand=/usr/bin/systemctl poweroff
+RebootCommand=/usr/bin/systemctl reboot
+
+[Theme]
+Current=XeroDark
+
+[Users]
+MaximumUid=60000
+MinimumUid=1000
+EOF
+            print_success "SDDM configuration written!"
             echo ""
             print_step "Enabling sddm.service..."
             $SUDO_CMD systemctl enable sddm.service || { print_error "Failed to enable sddm.service!"; exit 1; }
