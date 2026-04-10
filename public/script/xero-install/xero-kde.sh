@@ -811,7 +811,7 @@ select_login_manager() {
     print_header
 
     print_step "Installing SDDM..."
-    $SUDO_CMD pacman -S --needed --noconfirm sddm || { print_error "Failed to install SDDM!"; exit 1; }
+    $SUDO_CMD pacman -S --needed --noconfirm sddm sddm-kcm || { print_error "Failed to install SDDM!"; exit 1; }
     print_success "SDDM installed!"
     echo ""
 
