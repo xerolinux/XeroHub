@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# XeroLinux KDE Plasma Installer
+# XeroLinux KDE Plasma Installer v1.8
 
 SCRIPT_PATH="$(readlink -f "$0" 2>/dev/null || echo "")"
 
@@ -801,28 +801,56 @@ copy_skel_to_user() {
     fi
     echo ""
 
-    # Apply GRUB theme using xero-layan-git repo
-    print_step "Applying GRUB theme from xero-layan-git... 🧩"
+    # Apply GRUB theme from xero-layan-git
+    # We do NOT call the repo's Grub.sh because it checks $UID (real UID), not
+    # $EUID (effective UID). Under `sudo`, $UID stays as the invoking user's UID
+    # so Grub.sh thinks it lacks root and falls into an interactive password prompt
+    # that times out and exits 1. We replicate its three steps directly instead.
+    print_step "Applying GRUB theme..."
     echo ""
 
-    WORKDIR="/tmp/xero-layan-git"
-    rm -rf "$WORKDIR"
-    git clone https://github.com/xerolinux/xero-layan-git.git "$WORKDIR" || {
-        print_warning "Failed to clone xero-layan-git repo (non-critical)"
-        WORKDIR=""
-    }
+    local WORKDIR="/tmp/xero-layan-git"
+    $SUDO_CMD rm -rf "$WORKDIR"
 
-    if [[ -n "$WORKDIR" && -d "$WORKDIR" && -f "$WORKDIR/Grub.sh" ]]; then
-        $SUDO_CMD cp -Rf "$WORKDIR/Configs/System/." /
-        chmod +x "$WORKDIR/Grub.sh" 2>/dev/null || true
-        $SUDO_CMD bash -c "cd '$WORKDIR' && bash ./Grub.sh" || print_warning "Grub.sh failed (non-critical)"
-        rm -rf "$WORKDIR"
-        print_success "GRUB theme applied (and repo cleaned up)."
+    if git clone --depth=1 https://github.com/xerolinux/xero-layan-git.git "$WORKDIR" 2>/dev/null; then
+        local THEME_SRC="$WORKDIR/XeroLayan"
+        local THEME_DEST="/usr/share/grub/themes/XeroLayan"
+
+        if [[ -d "$THEME_SRC" && -f "$THEME_SRC/theme.txt" ]]; then
+
+            # 1. Install theme files
+            $SUDO_CMD rm -rf "$THEME_DEST"
+            $SUDO_CMD mkdir -p "$THEME_DEST"
+            $SUDO_CMD cp -a "$THEME_SRC/." "$THEME_DEST/"
+
+            # 2. Set GRUB_THEME in /etc/default/grub (update or append)
+            if $SUDO_CMD grep -q "^GRUB_THEME=" /etc/default/grub 2>/dev/null; then
+                $SUDO_CMD sed -i "s|^GRUB_THEME=.*|GRUB_THEME=\"${THEME_DEST}/theme.txt\"|" /etc/default/grub
+            else
+                echo "GRUB_THEME=\"${THEME_DEST}/theme.txt\"" | $SUDO_CMD tee -a /etc/default/grub > /dev/null
+            fi
+
+            # 3. Regenerate grub.cfg
+            if $SUDO_CMD update-grub 2>/dev/null; then
+                print_success "GRUB theme applied!"
+            elif $SUDO_CMD grub-mkconfig -o /boot/grub/grub.cfg 2>/dev/null; then
+                print_success "GRUB theme applied (via grub-mkconfig)!"
+            else
+                print_warning "grub-mkconfig failed — theme is configured but grub.cfg may be stale"
+            fi
+        else
+            print_warning "XeroLayan theme directory or theme.txt missing in repo — skipping"
+        fi
+
+        # Copy system-wide assets (logos, Kvantum theme, etc.) — non-fatal
+        [[ -d "$WORKDIR/Configs/System" ]] && \
+            $SUDO_CMD cp -Rf "$WORKDIR/Configs/System/." / 2>/dev/null || true
+
+        $SUDO_CMD rm -rf "$WORKDIR"
         echo ""
     else
-        print_warning "Grub.sh not found after clone; skipping GRUB theming (non-critical)"
+        print_warning "Failed to clone xero-layan-git — GRUB theme not applied (non-critical)"
         echo ""
-        [[ -n "$WORKDIR" && -d "$WORKDIR" ]] && rm -rf "$WORKDIR"
     fi
 
     # Distro identity files

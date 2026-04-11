@@ -2,7 +2,7 @@
 #
 # ╔═══════════════════════════════════════════════════════════════════════════════╗
 # ║                                                                               ║
-# ║                      ✨ Xero Arch Installer v1.7 ✨                           ║
+# ║                      ✨ Xero Arch Installer v1.8 ✨                           ║
 # ║                                                                               ║
 # ║          A beautiful, streamlined Arch Linux installer for XeroLinux         ║
 # ║                                                                               ║
@@ -18,7 +18,7 @@ set -Eeuo pipefail
 # CONFIGURATION
 # ────────────────────────────────────────────────────────────────────────────────
 
-VERSION="1.7"
+VERSION="1.8"
 SCRIPT_NAME="Xero Arch Installer"
 
 # URLs for fetching scripts

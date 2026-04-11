@@ -1,10 +1,10 @@
-# ✨ Xero Arch Installer v1.7
+# ✨ Xero Arch Installer v1.8
 
 A beautiful, streamlined Arch Linux installer designed by XeroLinux with a modern TUI.
 
 ![Screenshot](https://i.imgur.com/vl5hMAF.png)
 
-![Xero Arch Installer](https://img.shields.io/badge/version-1.7-blue)
+![Xero Arch Installer](https://img.shields.io/badge/version-1.8-blue)
 ![License](https://img.shields.io/badge/license-GPL--3.0-green)
 
 ## Features
@@ -13,7 +13,8 @@ A beautiful, streamlined Arch Linux installer designed by XeroLinux with a moder
 - 🔒 **LUKS2 Encryption** - Optional encryption with root-only or root+boot
 - 🎮 **Graphics Drivers** - Easy selection for NVIDIA, AMD, Intel, or VMs
 - 🔄 **Smart Swap** - ZRAM with compression or traditional swap file
-- 🚀 **Automated KDE Setup** - Runs XeroLinux KDE installer.
+- 📦 **AUR Helper Choice** - Select paru or yay from the main installer menu
+- 🚀 **Automated KDE Setup** - Runs XeroLinux KDE installer in chroot
 
 ## Quick Start
 
@@ -28,18 +29,19 @@ bash <(curl -fsSL https://urls.xerolinux.xyz/xeroinstall)
 ### Base System
 
 - Linux kernel + headers
-- GRUB bootloader
+- GRUB bootloader + XeroLayan theme
 - Essential system utilities
-- NetworkManager
+- NetworkManager (wpa_supplicant backend)
 
 ### After Base Install
 
 The installer automatically runs the XeroLinux KDE script which installs:
 
-- KDE Plasma Desktop
-- XeroLinux curated applications
-- System tools and utilities
-- Optional: Xero-Layan theme
+- KDE Plasma Desktop (full curated selection)
+- SDDM with XeroDark theme
+- XeroLinux packages and configurations
+- AUR helper of your choice (paru or yay)
+- Optional: browsers, social apps, creative tools, office suite
 
 ## Requirements
 
@@ -77,14 +79,15 @@ bash xero-install.sh
 
 ### Adding Packages
 
-Modify the `install_base_system()` function to add packages to the base install.
+Modify the `install_base_system()` function in `xero-install.sh` to add packages to the base install, or the relevant `install_group()` call in `xero-kde.sh` for KDE-stage packages.
 
 ## Version History
 
 | Version | Highlights |
 |---------|------------|
-| **v1.7** | Manual partitioning mode, dual-boot support, SDDM or Plasma Login Manager choice |
-| **v1.6** | Parallel downloads option, pacman tweaks, misc bug fixes, faster installs |
+| **v1.8** | AUR helper moved to main menu; SDDM + XeroDark as default; duplicate package and function cleanup |
+| **v1.7** | Manual partitioning mode, dual-boot EFI reuse support, filesystem and encryption choice in manual mode |
+| **v1.6** | Parallel downloads option, pacman tweaks (Color, ILoveCandy, VerbosePkgLists), misc bug fixes, faster installs |
 | **v1.5** | Larger boot partition, trimmed package list, simplified connectivity check |
 | **v1.4** | All package prompts merged into one screen, leaner default selection |
 | **v1.3** | LUKS2 encryption, choose root-only or root+boot encryption scope |
