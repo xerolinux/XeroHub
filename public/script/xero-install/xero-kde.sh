@@ -4,6 +4,9 @@
 
 SCRIPT_PATH="$(readlink -f "$0" 2>/dev/null || echo "")"
 
+# AUR helper passed as $1 from xero-install.sh; default to paru
+AUR_HELPER="${1:-paru}"
+
 # Colors
 RED='\033[0;31m'
 GREEN='\033[0;32m'
@@ -42,12 +45,14 @@ print_warning() {
 }
 
 # Detect if running in chroot environment
+# NOTE: intentionally duplicated from xero-install.sh — this script runs standalone
+# inside the target chroot as an unprivileged user, so it needs its own copy.
 detect_chroot() {
     if [ "$(stat -c %d:%i /)" != "$(stat -c %d:%i /proc/1/root/.)" ] 2>/dev/null; then
         return 0  # In chroot
     elif [ -f /etc/arch-chroot ]; then
         return 0  # In chroot
-    elif [ "$EUID" -eq 0 ] && [ -z "$SUDO_USER" ]; then
+    elif [ "${EUID:-0}" -eq 0 ] && [ -z "${SUDO_USER:-}" ]; then
         return 0  # Running as root without sudo (likely chroot)
     else
         return 1  # Not in chroot
@@ -55,19 +60,23 @@ detect_chroot() {
 }
 
 # Set up sudo command (empty if running as root/in chroot)
+# NOTE: intentionally duplicated — see detect_chroot note above.
 setup_sudo() {
-    if [ "$EUID" -eq 0 ]; then
+    if [ "${EUID:-0}" -eq 0 ]; then
         SUDO_CMD=""
-        print_step "Running as root (chroot environment detected)"
+        print_step "Running as root (chroot environment)"
     else
         SUDO_CMD="sudo"
     fi
 }
 
-# Check if running as root (only warn if NOT in chroot)
+# Check if running as root
+# NOTE: intentionally OPPOSITE logic from xero-install.sh —
+#   xero-install.sh REQUIRES root (live ISO context).
+#   This script REJECTS root unless inside a chroot (user context).
 check_root() {
-    if [[ $EUID -eq 0 ]] && ! detect_chroot; then
-        print_error "Don't run this script as root!"
+    if [[ ${EUID:-0} -eq 0 ]] && ! detect_chroot; then
+        print_error "Do not run this script as root outside a chroot!"
         exit 1
     fi
     setup_sudo
@@ -80,7 +89,8 @@ prompt_user() {
     echo -e "${CYAN}This script will install:${NC}"
     echo -e "  ${BLUE}•${NC} KDE Plasma Desktop (XeroLinux curated selection)"
     echo -e "  ${BLUE}•${NC} Essential KDE Applications"
-    echo -e "  ${BLUE}•${NC} Your selected AUR helper & packages"
+    echo -e "  ${BLUE}•${NC} AUR helper: ${GREEN}${AUR_HELPER}${NC}"
+    echo -e "  ${BLUE}•${NC} Your selected optional packages"
     echo -e "  ${BLUE}•${NC} XeroLinux configurations"
     echo ""
     echo -e "${YELLOW}⚠ This will modify your system!${NC}"
@@ -93,28 +103,6 @@ prompt_user() {
         print_warning "Installation cancelled by user. Exiting..."
         exit 0
     fi
-}
-
-# Step A: AUR Helper Selection
-select_aur_helper() {
-    print_header
-
-    echo -e "${CYAN}🔧 AUR Helper Selection${NC}"
-    echo ""
-    echo -e "Choose your preferred AUR helper:"
-    echo ""
-    echo -e "  ${BLUE}1)${NC} paru  (Rust-based, feature-rich)"
-    echo -e "  ${BLUE}2)${NC} yay   (Go-based, popular choice)"
-    echo ""
-    read -p "Enter choice (1 or 2, default is paru): " aur_choice
-
-    case $aur_choice in
-        2) AUR_HELPER="yay" ;;
-        *) AUR_HELPER="paru" ;;
-    esac
-
-    print_success "Selected AUR helper: $AUR_HELPER"
-    echo ""
 }
 
 # Customization prompts
@@ -448,36 +436,141 @@ customization_prompts() {
     read -p "Press Enter to begin installation..."
 }
 
-# Step B: Install all packages + enable plasma login manager
+# ── Package install helpers ───────────────────────────────────────────────────
+
+# install_group <name> <pkg...>
+# Attempts bulk install; on any failure retries each package individually.
+# Never aborts the script — reports skipped packages as warnings.
+install_group() {
+    local group_name="$1"; shift
+    local pkgs=("$@")
+
+    print_step "[$group_name] Installing ${#pkgs[@]} packages..."
+
+    # Fast path: install all at once
+    if $SUDO_CMD pacman -S --needed --noconfirm "${pkgs[@]}" 2>/dev/null; then
+        print_success "[$group_name] Done!"
+        echo ""
+        return 0
+    fi
+
+    # Slow path: group failed — retry each individually so one bad pkg doesn't block the rest
+    print_warning "[$group_name] Bulk install failed — retrying individually..."
+    local failed=() installed=0
+    for pkg in "${pkgs[@]}"; do
+        if $SUDO_CMD pacman -S --needed --noconfirm "$pkg" 2>/dev/null; then
+            (( installed++ )) || true
+        else
+            failed+=("$pkg")
+        fi
+    done
+
+    [[ ${#failed[@]} -gt 0 ]] && \
+        print_warning "[$group_name] Skipped (${#failed[@]}): ${failed[*]}"
+    print_success "[$group_name] Done — $installed installed, ${#failed[@]} skipped."
+    echo ""
+    return 0
+}
+
+# install_group_required <name> <pkg...>
+# Same as install_group but exits if ZERO packages were installed (truly critical).
+install_group_required() {
+    local group_name="$1"; shift
+    local pkgs=("$@")
+
+    print_step "[$group_name] Installing ${#pkgs[@]} packages (required)..."
+
+    # Fast path
+    if $SUDO_CMD pacman -S --needed --noconfirm "${pkgs[@]}" 2>/dev/null; then
+        print_success "[$group_name] Done!"
+        echo ""
+        return 0
+    fi
+
+    # Slow path
+    print_warning "[$group_name] Bulk install failed — retrying individually..."
+    local failed=() installed=0
+    for pkg in "${pkgs[@]}"; do
+        if $SUDO_CMD pacman -S --needed --noconfirm "$pkg" 2>/dev/null; then
+            (( installed++ )) || true
+        else
+            failed+=("$pkg")
+        fi
+    done
+
+    [[ ${#failed[@]} -gt 0 ]] && \
+        print_warning "[$group_name] Skipped (${#failed[@]}): ${failed[*]}"
+
+    if [[ $installed -eq 0 ]]; then
+        print_error "[$group_name] Critical: zero packages installed — aborting!"
+        exit 1
+    fi
+
+    print_success "[$group_name] Done — $installed installed, ${#failed[@]} skipped."
+    echo ""
+    return 0
+}
+
+# ── Service helpers ───────────────────────────────────────────────────────────
+
+# Enable a service only if its unit file is present
+enable_service_if_available() {
+    local svc="$1"
+    if $SUDO_CMD systemctl cat "$svc" &>/dev/null; then
+        $SUDO_CMD systemctl enable "$svc" \
+            && print_success "Enabled: $svc" \
+            || print_warning "Failed to enable $svc"
+    else
+        print_warning "Unit $svc not found — skipping"
+    fi
+}
+
+# Enable a service only if its package is installed
+enable_if_installed() {
+    local pkg="$1"
+    local svc="${2:-$1}"
+    if $SUDO_CMD pacman -Qq "$pkg" &>/dev/null; then
+        enable_service_if_available "$svc"
+    else
+        print_warning "Package $pkg not installed — skipping $svc"
+    fi
+}
+
+# Step B: Install all packages
 install_packages() {
     print_header
-
     print_step "Starting KDE Plasma installation..."
     echo ""
 
+    # ── System update ─────────────────────────────────────────────────────────
     print_step "Syncing and updating system..."
     $SUDO_CMD pacman -Syu --noconfirm || { print_error "System update failed!"; exit 1; }
     print_success "System updated!"
     echo ""
 
+    # ── AUR helper ────────────────────────────────────────────────────────────
     print_step "Installing AUR helper ($AUR_HELPER)..."
-    $SUDO_CMD pacman -S --needed --noconfirm $AUR_HELPER || { print_error "AUR helper installation failed!"; exit 1; }
+    $SUDO_CMD pacman -S --needed --noconfirm "$AUR_HELPER" \
+        || { print_error "AUR helper ($AUR_HELPER) installation failed!"; exit 1; }
     print_success "AUR helper ($AUR_HELPER) installed!"
     echo ""
 
-    print_step "Installing KDE Plasma and system packages..."
-
-    $SUDO_CMD pacman -S --needed --noconfirm \
+    # ── KDE Plasma Core (required — exits if nothing installs) ────────────────
+    install_group_required "KDE Plasma Core" \
         kf6 qt6 kde-system libplasma \
         kwin krdp milou breeze oxygen drkonqi kwrited \
         kgamma kscreen kmenuedit bluedevil kpipewire plasma-nm plasma-pa \
-        plasma-sdk libkscreen breeze-gtk breeze-cursors breeze-icons powerdevil kinfocenter flatpak-kcm \
-        kdecoration ksshaskpass kwallet-pam libksysguard plasma-vault ksystemstats \
-        kde-cli-tools oxygen-sounds kscreenlocker kglobalacceld systemsettings \
-        kde-gtk-config layer-shell-qt plasma-desktop polkit-kde-agent plasma-workspace \
-        kdeplasma-addons ocean-sound-theme qqc2-breeze-style kactivitymanagerd \
+        plasma-sdk libkscreen breeze-gtk breeze-cursors breeze-icons powerdevil \
+        kinfocenter flatpak-kcm kdecoration ksshaskpass kwallet-pam \
+        libksysguard plasma-vault ksystemstats kde-cli-tools oxygen-sounds \
+        kscreenlocker kglobalacceld systemsettings kde-gtk-config layer-shell-qt \
+        plasma-desktop polkit-kde-agent plasma-workspace kdeplasma-addons \
+        ocean-sound-theme qqc2-breeze-style kactivitymanagerd \
         plasma-integration plasma-thunderbolt plasma-systemmonitor \
-        xdg-desktop-portal-kde plasma-browser-integration \
+        xdg-desktop-portal-kde plasma-browser-integration plasma-keyboard
+
+    # ── KDE Applications ──────────────────────────────────────────────────────
+    install_group "KDE Applications" \
         krdc krfb smb4k alligator kdeconnect kio-admin kio-extras kio-gdrive \
         konversation kio-zeroconf kdenetwork-filesharing signon-kwallet-extension \
         okular kamera svgpart skanlite gwenview spectacle colord-kde kcolorchooser \
@@ -485,11 +578,20 @@ install_packages() {
         ark kate kgpg kfind sweeper konsole kdialog yakuake skanpage filelight \
         kmousetool kcharselect markdownpart qalculate-qt keditbookmarks kdebugsettings \
         kwalletmanager dolphin-plugins \
-        k3b kamoso audiotube plasmatube audiocd-kio \
+        k3b kamoso audiotube plasmatube audiocd-kio
+
+    # ── Wayland & Display ─────────────────────────────────────────────────────
+    install_group "Wayland & Display" \
         waypipe egl-wayland qt6-wayland lib32-wayland wayland-protocols \
-        kwayland-integration plasma-wayland-protocols \
-        plasma-keyboard ocrad \
-        vi duf gcc npm yad zip xdo gum inxi lzop nmon tree vala btop glfw htop lshw \
+        kwayland-integration plasma-wayland-protocols ocrad
+
+    # ── Power & GPU Utilities ─────────────────────────────────────────────────
+    install_group "Power & GPU Utilities" \
+        switcheroo-control power-profiles-daemon brightnessctl
+
+    # ── System Utilities (split into two calls to reduce transaction size) ─────
+    install_group "System Utilities A" \
+        duf gcc npm yad zip xdo gum inxi lzop nmon tree vala btop glfw htop lshw \
         cblas expac fuse3 lhasa meson unace unrar unzip p7zip iftop nvtop rhash sshfs \
         vnstat nodejs cronie hwinfo arandr assimp netpbm wmctrl grsync libmtp polkit \
         sysprof semver zenity gparted plocate jsoncpp fuseiso gettext node-gyp \
@@ -498,107 +600,67 @@ install_packages() {
         laptop-detect perl-xml-parser gnome-disk-utility appmenu-gtk-module \
         parallel xsettingsd polkit-qt6 systemdgenie \
         yt-dlp wavpack unarchiver rate-mirrors gnustep-base ocs-url xmlstarlet \
-        python-pip python-cffi python-numpy python-docopt python-pyaudio \
-        python-pyparted python-pygments python-websockets \
         libgsf tumbler freetype2 libopenraw poppler-qt6 poppler-glib ffmpegthumbnailer \
         gvfs mtpfs udiskie udisks2 libldm gvfs-afc gvfs-mtp gvfs-nfs gvfs-smb \
         gvfs-goa gvfs-wsdd gvfs-dnssd gvfs-gphoto2 gvfs-onedrive \
         flatpak topgrade appstream-qt pacman-contrib pacman-bintrans \
-        ffmpeg ffmpegthumbs ffnvcodec-headers \
-        kwin-zones kde-wallpapers kwin-scripts-kzones tela-circle-icon-theme-purple \
-        kvantum fastfetch adw-gtk-theme oh-my-posh-bin gnome-themes-extra \
-        kwin-effect-rounded-corners-git \
-        bash-language-server typescript-language-server vscode-json-languageserver \
-        ttf-fira-code otf-libertinus tex-gyre-fonts ttf-hack-nerd ttf-ubuntu-font-family \
-        awesome-terminal-fonts ttf-jetbrains-mono-nerd adobe-source-sans-fonts \
-        bat bat-extras jq vim figlet ostree lolcat numlockx localsend lm_sensors \
+        ffmpeg ffmpegthumbs ffnvcodec-headers
+
+    install_group "System Utilities B" \
+        bat bat-extras jq figlet ostree lolcat numlockx localsend lm_sensors \
         appstream-glib lib32-lm_sensors \
         xmlto ckbcomp yaml-cpp kirigami boost-libs polkit-gnome gtk-update-icon-cache \
         dex libxinerama bash-completion \
-        hblock cryptsetup brightnessctl switcheroo-control power-profiles-daemon \
-        mkinitcpio-utils mkinitcpio-archiso mkinitcpio-openswap \
-        mkinitcpio-nfs-utils \
-        boost kpmcore xdg-terminal-exec-git \
-        xero-toolkit extra-scripts desktop-config \
-        eza ntp cava most dialog dnsutils logrotate xdg-user-dirs \
+        hblock cryptsetup mkinitcpio-utils mkinitcpio-archiso \
+        mkinitcpio-openswap mkinitcpio-nfs-utils boost kpmcore xdg-terminal-exec-git \
+        eza ntp cava most dialog bind logrotate xdg-user-dirs \
         archiso rsync sdparm ntfs-3g tpm2-tss udftools syslinux fatresize \
         nfs-utils exfatprogs tpm2-tools fsarchiver squashfs-tools \
         gpart dmraid parted hdparm usbmuxd usbutils testdisk ddrescue timeshift \
         partclone partimage clonezilla open-iscsi memtest86+-efi usb_modeswitch \
         fd tmux brltty msedit nvme-cli terminus-font foot-terminfo kitty-terminfo \
-        pv mc gpm nbd lvm2 bolt bind lynx tldr nmap irssi mdadm wvdial hyperv \
+        pv mc gpm nbd lvm2 bolt lynx tldr nmap irssi mdadm wvdial hyperv \
         mtools lsscsi ndisc6 screen tcpdump ethtool xdotool pcsclite \
         espeakup libfido2 xdg-utils smartmontools \
-        sequoia-sq edk2-shell python-pyqt6 libusb-compat \
-        wireguard-tools || print_warning "Some packages failed (non-critical)"
+        sequoia-sq edk2-shell python-pyqt6 libusb-compat wireguard-tools
 
-    print_success "All packages installed!"
-    echo ""
+    # ── Python Libraries ──────────────────────────────────────────────────────
+    install_group "Python Libraries" \
+        python-pip python-cffi python-numpy python-docopt python-pyaudio \
+        python-pyparted python-pygments python-websockets
 
+    # ── Fonts & Themes ────────────────────────────────────────────────────────
+    install_group "Fonts & Themes" \
+        ttf-fira-code otf-libertinus tex-gyre-fonts ttf-hack-nerd ttf-ubuntu-font-family \
+        awesome-terminal-fonts ttf-jetbrains-mono-nerd adobe-source-sans-fonts \
+        kwin-zones kde-wallpapers kwin-scripts-kzones tela-circle-icon-theme-purple \
+        kvantum fastfetch adw-gtk-theme oh-my-posh-bin gnome-themes-extra \
+        kwin-effect-rounded-corners-git
+
+    # ── Language Servers ──────────────────────────────────────────────────────
+    install_group "Language Servers" \
+        bash-language-server typescript-language-server vscode-json-languageserver
+
+    # ── XeroLinux Packages ────────────────────────────────────────────────────
+    install_group "XeroLinux Packages" \
+        xero-toolkit extra-scripts desktop-config
 }
 
 # Step D: Install user-selected packages
 install_user_packages() {
     print_header
-
-    print_step "Installing User-Selected Packages... 🎯"
+    print_step "Installing User-Selected Packages..."
     echo ""
 
-    if [ -n "$BROWSER" ]; then
-        print_step "Installing selected browser ($BROWSER)... 🌐"
-        $SUDO_CMD pacman -S --needed --noconfirm $BROWSER || print_warning "Browser installation failed (non-critical)"
-        print_success "Browser installed!"
-        echo ""
-    fi
-
-    if [ -n "$SOCIAL" ]; then
-        print_step "Installing social apps... 💬"
-        $SUDO_CMD pacman -S --needed --noconfirm $SOCIAL || print_warning "Some social apps failed (non-critical)"
-        print_success "Social apps installed!"
-        echo ""
-    fi
-
-    if [ -n "$LIBREOFFICE" ]; then
-        print_step "Installing LibreOffice... 📄"
-        $SUDO_CMD pacman -S --needed --noconfirm $LIBREOFFICE || print_warning "LibreOffice installation failed (non-critical)"
-        print_success "LibreOffice installed!"
-        echo ""
-    fi
-
-    if [ -n "$DEV" ]; then
-        print_step "Installing development tools... 💻"
-        $SUDO_CMD pacman -S --needed --noconfirm $DEV || print_warning "Some dev tools failed (non-critical)"
-        print_success "Development tools installed!"
-        echo ""
-    fi
-
-    if [ -n "$PASS" ]; then
-        print_step "Installing password manager(s)... 🔐"
-        $SUDO_CMD pacman -S --needed --noconfirm $PASS || print_warning "Password manager installation failed (non-critical)"
-        print_success "Password manager installed!"
-        echo ""
-    fi
-
-    if [ -n "$IMAGING" ]; then
-        print_step "Installing creative apps... 🎨"
-        $SUDO_CMD pacman -S --needed --noconfirm $IMAGING || print_warning "Some creative apps failed (non-critical)"
-        print_success "Creative apps installed!"
-        echo ""
-    fi
-
-    if [ -n "$MUSIC" ]; then
-        print_step "Installing music apps... 🎵"
-        $SUDO_CMD pacman -S --needed --noconfirm $MUSIC || print_warning "Some music apps failed (non-critical)"
-        print_success "Music apps installed!"
-        echo ""
-    fi
-
-    if [ -n "$VIDEO" ]; then
-        print_step "Installing video apps... 🎬"
-        $SUDO_CMD pacman -S --needed --noconfirm $VIDEO || print_warning "Failed to install some video apps (non-critical)"
-        print_success "Video apps installed!"
-        echo ""
-    fi
+    # shellcheck disable=SC2086
+    [[ -n "$BROWSER" ]]     && install_group "Browsers"          $BROWSER
+    [[ -n "$SOCIAL" ]]      && install_group "Social Apps"        $SOCIAL
+    [[ -n "$LIBREOFFICE" ]] && install_group "LibreOffice"        $LIBREOFFICE
+    [[ -n "$DEV" ]]         && install_group "Dev Tools"          $DEV
+    [[ -n "$PASS" ]]        && install_group "Password Managers"  $PASS
+    [[ -n "$IMAGING" ]]     && install_group "Creative Apps"      $IMAGING
+    [[ -n "$MUSIC" ]]       && install_group "Music & Audio"      $MUSIC
+    [[ -n "$VIDEO" ]]       && install_group "Video Apps"         $VIDEO
 
     print_success "User-selected packages installed!"
     echo ""
@@ -611,49 +673,50 @@ finalize_system() {
     print_step "Finalizing system configuration... ⚙️"
     echo ""
 
-    print_step "Updating initramfs... 🔄"
-    $SUDO_CMD mkinitcpio -P || { print_error "Failed to update initramfs!"; exit 1; }
-    print_success "Initramfs updated!"
+    print_step "Updating initramfs..."
+    $SUDO_CMD mkinitcpio -P \
+        && print_success "Initramfs updated!" \
+        || print_warning "mkinitcpio had errors — system may still boot, check manually"
     echo ""
 
-    print_step "Updating GRUB configuration... 🔄"
-    $SUDO_CMD update-grub || { print_error "Failed to update GRUB!"; exit 1; }
-    print_success "GRUB configuration updated!"
+    print_step "Updating GRUB configuration..."
+    $SUDO_CMD update-grub \
+        && print_success "GRUB configuration updated!" \
+        || print_warning "update-grub had errors — check bootloader config manually"
     echo ""
 
-    print_step "Enabling essential services... ⚙️"
+    # ── Core services ─────────────────────────────────────────────────────────
+    print_step "Enabling core services..."
+    enable_service_if_available cups.socket
+    enable_service_if_available saned.socket
+    enable_service_if_available bluetooth
+    enable_service_if_available wpa_supplicant
+    enable_service_if_available sshd
+    print_success "Core services enabled!"
+    echo ""
 
-    # Enable services
-    $SUDO_CMD systemctl enable cups.socket || print_warning "Failed to enable cups.socket"
-    $SUDO_CMD systemctl enable saned.socket || print_warning "Failed to enable saned.socket"
-    $SUDO_CMD systemctl enable bluetooth || print_warning "Failed to enable bluetooth"
-    $SUDO_CMD pacman -Qq power-profiles-daemon &>/dev/null \
-        && { $SUDO_CMD systemctl enable power-profiles-daemon || print_warning "Failed to enable power-profiles-daemon"; } \
-        || print_warning "power-profiles-daemon not installed, skipping enable"
-    $SUDO_CMD pacman -Qq switcheroo-control &>/dev/null \
-        && { $SUDO_CMD systemctl enable switcheroo-control || print_warning "Failed to enable switcheroo-control"; } \
-        || print_warning "switcheroo-control not installed, skipping enable"
-    $SUDO_CMD systemctl enable wpa_supplicant || print_warning "Failed to enable wpa_supplicant"
-    $SUDO_CMD systemctl disable iwd 2>/dev/null || true
-    $SUDO_CMD systemctl disable dhcpcd 2>/dev/null || true
-    $SUDO_CMD systemctl enable sshd || print_warning "Failed to enable sshd"
+    # ── Conditional services (package must be installed) ──────────────────────
+    print_step "Enabling conditional services..."
+    enable_if_installed power-profiles-daemon
+    enable_if_installed switcheroo-control
+    print_success "Conditional services processed!"
+    echo ""
+
+    # ── GPU tools (separate transaction to avoid rollback contamination) ───────
     print_step "Installing xero-gpu-tools..."
-    $SUDO_CMD pacman -S --needed --noconfirm xero-gpu-tools || print_warning "Failed to install xero-gpu-tools"
-    $SUDO_CMD systemctl enable xero-gpu-check || print_warning "Failed to enable xero-gpu-check"
-
-    print_success "Essential services enabled!"
+    $SUDO_CMD pacman -S --needed --noconfirm xero-gpu-tools \
+        && enable_service_if_available xero-gpu-check \
+        || print_warning "xero-gpu-tools install failed (non-critical)"
     echo ""
 
-    print_step "Disabling unnecessary services... 🚫"
-
-    # Disable services
-    $SUDO_CMD systemctl disable systemd-time-wait-sync || print_warning "Failed to disable systemd-time-wait-sync"
-    $SUDO_CMD systemctl disable reflector || print_warning "Failed to disable reflector"
-    $SUDO_CMD systemctl list-unit-files pacman-init.service &>/dev/null \
-        && { $SUDO_CMD systemctl disable pacman-init || print_warning "Failed to disable pacman-init"; } \
-        || true
-
-    print_success "Unnecessary services disabled!"
+    # ── Disable live-environment services ─────────────────────────────────────
+    print_step "Disabling live-environment services..."
+    $SUDO_CMD systemctl disable iwd           2>/dev/null || true
+    $SUDO_CMD systemctl disable dhcpcd        2>/dev/null || true
+    $SUDO_CMD systemctl disable reflector     2>/dev/null || true
+    $SUDO_CMD systemctl disable pacman-init   2>/dev/null || true
+    $SUDO_CMD systemctl disable systemd-time-wait-sync 2>/dev/null || true
+    print_success "Live-environment services disabled!"
     echo ""
 }
 
@@ -868,7 +931,6 @@ show_completion() {
 
 check_root
 prompt_user
-select_aur_helper
 customization_prompts
 install_packages
 install_user_packages

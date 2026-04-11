@@ -54,6 +54,7 @@ CONFIG[swap]="zram"
 CONFIG[swap_algo]="zstd"
 CONFIG[gfx_driver]="mesa"
 CONFIG[parallel_downloads]="5"
+CONFIG[aur_helper]="paru"
 CONFIG[uefi]="no"
 CONFIG[boot_part]=""
 CONFIG[root_part]=""
@@ -96,6 +97,8 @@ trap 'on_err "$LINENO" "$BASH_COMMAND"' ERR
 # ────────────────────────────────────────────────────────────────────────────────
 
 # Detect if running in chroot environment
+# NOTE: also present in xero-kde.sh — both scripts run standalone in different
+# contexts and cannot share a common library file.
 detect_chroot() {
     if [ "$(stat -c %d:%i /)" != "$(stat -c %d:%i /proc/1/root/.)" ] 2>/dev/null; then
         return 0  # In chroot
@@ -1002,6 +1005,33 @@ configure_parallel_downloads() {
     sleep 0.5
 }
 
+# ────────────────────────────────────────────────────────────────────────────────
+# 10. AUR HELPER
+# ────────────────────────────────────────────────────────────────────────────────
+
+select_aur_helper() {
+    show_header
+    show_submenu_header "📦 AUR Helper"
+    echo ""
+    show_info "Select the AUR helper to install during KDE setup"
+    echo ""
+
+    local helpers=(
+        "paru   │ Rust-based, feature-rich (Recommended)"
+        "yay    │ Go-based, popular choice"
+    )
+
+    local selection=""
+    selection=$(printf '%s\n' "${helpers[@]}" | gum choose --height 4 --header "AUR Helper:") || true
+
+    if [[ -n "$selection" ]]; then
+        CONFIG[aur_helper]=$(echo "$selection" | awk '{print $1}')
+        show_success "AUR helper: ${CONFIG[aur_helper]}"
+    fi
+
+    sleep 0.5
+}
+
 apply_parallel_downloads() {
     local conf="$1"
     local count="${CONFIG[parallel_downloads]}"
@@ -1073,34 +1103,36 @@ show_main_menu() {
 
         local menu_items=(
             ""
-            "1. 🌐 Installer Language    │ ${CONFIG[installer_lang]}"
-            "2. 🗺️ Locales               │ ${CONFIG[locale]} / ${CONFIG[keyboard]}"
-            "3. 💾 Disk Configuration    │ $disk_info"
-            "4. 🔄 Swap                  │ ${CONFIG[swap]}"
-            "5. 💻 Hostname              │ ${CONFIG[hostname]}"
-            "6. 🎮 Graphics Driver       │ ${CONFIG[gfx_driver]}"
-            "7. 👤 Authentication        │ ${CONFIG[username]:-Not configured}"
-            "8. 🕐 Timezone              │ ${CONFIG[timezone]}"
-            "9. ⚡ Parallel Downloads    │ ${CONFIG[parallel_downloads]}"
+            "1.  🌐 Installer Language   │ ${CONFIG[installer_lang]}"
+            "2.  🗺️  Locales              │ ${CONFIG[locale]} / ${CONFIG[keyboard]}"
+            "3.  💾 Disk Configuration   │ $disk_info"
+            "4.  🔄 Swap                 │ ${CONFIG[swap]}"
+            "5.  💻 Hostname             │ ${CONFIG[hostname]}"
+            "6.  🎮 Graphics Driver      │ ${CONFIG[gfx_driver]}"
+            "7.  👤 Authentication       │ ${CONFIG[username]:-Not configured}"
+            "8.  🕐 Timezone             │ ${CONFIG[timezone]}"
+            "9.  ⚡ Parallel Downloads   │ ${CONFIG[parallel_downloads]}"
+            "10. 📦 AUR Helper           │ ${CONFIG[aur_helper]}"
             "─────────────────────────────────────────────"
-            "10. ✅ Start Installation"
+            "11. ✅ Start Installation"
             "0.  ❌ Exit"
         )
 
         local selection=""
-        selection=$(printf '%s\n' "${menu_items[@]}" | gum choose --height 16 --header $'Configure your installation:\n') || true
+        selection=$(printf '%s\n' "${menu_items[@]}" | gum choose --height 18 --header $'Configure your installation:\n') || true
 
         case "$selection" in
-            "1."*) select_installer_language ;;
-            "2."*) select_locales ;;
-            "3."*) select_partitioning_mode ;;
-            "4."*) configure_swap ;;
-            "5."*) configure_hostname ;;
-            "6."*) select_graphics_driver ;;
-            "7."*) configure_authentication ;;
-            "8."*) select_timezone ;;
-            "9."*) configure_parallel_downloads ;;
-            "10."*)
+            "1."*)  select_installer_language ;;
+            "2."*)  select_locales ;;
+            "3."*)  select_partitioning_mode ;;
+            "4."*)  configure_swap ;;
+            "5."*)  configure_hostname ;;
+            "6."*)  select_graphics_driver ;;
+            "7."*)  configure_authentication ;;
+            "8."*)  select_timezone ;;
+            "9."*)  configure_parallel_downloads ;;
+            "10."*) select_aur_helper ;;
+            "11."*)
                 if validate_config; then
                     show_summary
                     local confirm_msg=""
@@ -1463,20 +1495,50 @@ mount_filesystems() {
 # SYSTEM INSTALLATION
 # ────────────────────────────────────────────────────────────────────────────────
 
+
+# Import chaotic-aur key with fallback keyservers and retries
+import_chaotic_key() {
+    local keyid="3056513887B78AEB"
+    local keyservers=(
+        "keyserver.ubuntu.com"
+        "keys.openpgp.org"
+        "pgp.mit.edu"
+    )
+    local imported=0
+
+    for ks in "${keyservers[@]}"; do
+        if pacman-key --recv-key "$keyid" --keyserver "$ks" 2>/dev/null; then
+            imported=1
+            break
+        fi
+        show_warning "Keyserver $ks failed, trying next..."
+    done
+
+    if [[ $imported -eq 0 ]]; then
+        show_warning "All keyservers failed — trying hkps fallback..."
+        pacman-key --recv-key "$keyid" \
+            --keyserver hkps://keyserver.ubuntu.com 2>/dev/null || true
+    fi
+
+    pacman-key --lsign-key "$keyid" || true
+}
+
 add_temp_repo() {
     # Enable multilib repo on live ISO
     sed -i '/^#\[multilib\]/{N;s/#\[multilib\]\n#Include/[multilib]\nInclude/}' /etc/pacman.conf
 
-    # Temporarily add xerolinux and chaotic-aur repos to live ISO for pacstrap access
+    # Temporarily add xerolinux repo to live ISO for pacstrap access
     if ! grep -q "\[xerolinux\]" /etc/pacman.conf; then
         echo -e '\n[xerolinux]\nSigLevel = Optional TrustAll\nServer = https://repos.xerolinux.xyz/$repo/$arch' >> /etc/pacman.conf
     fi
 
+    # Add chaotic-aur repo to live ISO
     if ! grep -q "\[chaotic-aur\]" /etc/pacman.conf; then
-        pacman-key --recv-key 3056513887B78AEB --keyserver keyserver.ubuntu.com
-        pacman-key --lsign-key 3056513887B78AEB
-        pacman -U --noconfirm 'https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-keyring.pkg.tar.zst'
-        pacman -U --noconfirm 'https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-mirrorlist.pkg.tar.zst'
+        import_chaotic_key
+        pacman -U --noconfirm 'https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-keyring.pkg.tar.zst' \
+            || show_warning "chaotic-keyring install failed — repo may not work fully"
+        pacman -U --noconfirm 'https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-mirrorlist.pkg.tar.zst' \
+            || show_warning "chaotic-mirrorlist install failed"
         echo -e '\n[chaotic-aur]\nInclude = /etc/pacman.d/chaotic-mirrorlist' >> /etc/pacman.conf
     fi
 
@@ -1489,54 +1551,68 @@ install_base_system() {
     # Add xerolinux and chaotic-aur repos to live ISO first
     add_temp_repo
 
-    local packages="base base-devel linux mkinitcpio-fw linux-headers linux-atm"
+    # ── Critical base (pacstrap aborts if these fail) ─────────────────────────
+    local critical="base base-devel linux linux-headers mkinitcpio-fw linux-atm"
 
-    if grep -q "GenuineIntel" /proc/cpuinfo; then
-        packages+=" intel-ucode"
-    elif grep -q "AuthenticAMD" /proc/cpuinfo; then
-        packages+=" amd-ucode"
+    # Microcode (auto-detect)
+    if grep -q "GenuineIntel" /proc/cpuinfo 2>/dev/null; then
+        critical+=" intel-ucode"
+    elif grep -q "AuthenticAMD" /proc/cpuinfo 2>/dev/null; then
+        critical+=" amd-ucode"
     fi
 
-    # Boot & filesystem
-    packages+=" grub efibootmgr os-prober grub-hooks update-grub"
-    packages+=" btrfs-progs dosfstools e2fsprogs xfsprogs gptfdisk"
+    # Boot & filesystems
+    critical+=" grub efibootmgr os-prober grub-hooks update-grub"
+    critical+=" btrfs-progs dosfstools e2fsprogs xfsprogs gptfdisk"
 
     # Base utilities
-    packages+=" sudo nano vim git wget curl"
+    critical+=" sudo nano vim git wget curl"
 
-    # Network
-    packages+=" networkmanager iw iwd ppp lftp ldns avahi samba netctl dhcpcd openssh"
-    packages+=" openvpn dnsmasq dhclient openldap nss-mdns smbclient net-tools"
-    packages+=" darkhttpd reflector pptpclient cloud-init openconnect traceroute"
-    packages+=" b43-fwcutter nm-cloud-setup wireless-regdb wireless_tools wpa_supplicant"
-    packages+=" modemmanager-qt openpgp-card-tools xl2tpd"
+    # Network stack
+    critical+=" networkmanager iw iwd ppp lftp ldns avahi samba netctl dhcpcd openssh"
+    critical+=" openvpn dnsmasq dhclient openldap nss-mdns smbclient net-tools"
+    critical+=" darkhttpd reflector pptpclient cloud-init openconnect traceroute"
+    critical+=" b43-fwcutter nm-cloud-setup wireless-regdb wireless_tools wpa_supplicant"
+    critical+=" modemmanager-qt openpgp-card-tools xl2tpd"
 
     # Bluetooth
-    packages+=" bluez bluez-libs bluez-utils bluez-tools bluez-hid2hci"
+    critical+=" bluez bluez-libs bluez-utils bluez-tools bluez-hid2hci"
 
     # Audio (PipeWire)
-    packages+=" pipewire wireplumber pipewire-jack pipewire-support lib32-pipewire-jack"
-    packages+=" alsa-utils alsa-plugins alsa-firmware pavucontrol-qt libdvdcss"
+    critical+=" pipewire wireplumber pipewire-jack pipewire-support lib32-pipewire-jack"
+    critical+=" alsa-utils alsa-plugins alsa-firmware pavucontrol-qt libdvdcss"
 
     # GStreamer
-    packages+=" gstreamer gst-libav gst-plugins-bad gst-plugins-base gst-plugins-ugly"
-    packages+=" gst-plugins-good gst-plugins-espeak gst-plugin-pipewire"
+    critical+=" gstreamer gst-libav gst-plugins-bad gst-plugins-base gst-plugins-ugly"
+    critical+=" gst-plugins-good gst-plugins-espeak gst-plugin-pipewire"
 
     # Printing & scanning
-    packages+=" cups hplip print-manager scanner-support printer-support"
+    critical+=" cups hplip print-manager scanner-support printer-support"
 
-    # Input devices & accessibility
-    packages+=" orca onboard libinput xf86-input-void xf86-input-evdev iio-sensor-proxy"
-    packages+=" game-devices-udev xf86-input-vmmouse xf86-input-libinput xf86-input-synaptics"
-    packages+=" xf86-input-elographics"
+    # Xorg & input
+    critical+=" xorg-apps xorg-xinit xorg-server xorg-xwayland"
+    critical+=" libinput xf86-input-void xf86-input-libinput"
 
-    # Xorg
-    packages+=" xorg-apps xorg-xinit xorg-server xorg-xwayland"
+    # Install critical packages — abort on failure
+    # shellcheck disable=SC2086
+    pacstrap -K "$MOUNTPOINT" $critical
 
-    # Firmware
-    packages+=" fwupd mkinitcpio-fw sof-firmware linux-firmware-intel"
+    # ── Optional packages (failures logged, install continues) ────────────────
+    local optional=""
 
-    pacstrap -K "$MOUNTPOINT" $packages
+    # Extra input / accessibility
+    optional+=" orca onboard xf86-input-evdev iio-sensor-proxy"
+    optional+=" game-devices-udev xf86-input-vmmouse xf86-input-synaptics"
+    optional+=" xf86-input-elographics"
+
+    # Firmware (some may not apply to all hardware)
+    optional+=" fwupd sof-firmware linux-firmware-intel"
+
+    show_info "Installing optional base packages (failures non-fatal)..."
+    # shellcheck disable=SC2086
+    pacstrap -K "$MOUNTPOINT" $optional 2>/dev/null || \
+        show_warning "Some optional base packages failed — continuing"
+
     genfstab -U "$MOUNTPOINT" >> "$MOUNTPOINT/etc/fstab"
 }
 
@@ -1548,11 +1624,31 @@ add_repos() {
     fi
 
     if ! grep -q "\[chaotic-aur\]" "$MOUNTPOINT/etc/pacman.conf"; then
-        arch-chroot "$MOUNTPOINT" pacman-key --recv-key 3056513887B78AEB --keyserver keyserver.ubuntu.com
-        arch-chroot "$MOUNTPOINT" pacman-key --lsign-key 3056513887B78AEB
+        local keyid="3056513887B78AEB"
+        local keyservers=("keyserver.ubuntu.com" "keys.openpgp.org" "pgp.mit.edu")
+        local imported=0
 
-        arch-chroot "$MOUNTPOINT" pacman -U --noconfirm 'https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-keyring.pkg.tar.zst'
-        arch-chroot "$MOUNTPOINT" pacman -U --noconfirm 'https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-mirrorlist.pkg.tar.zst'
+        for ks in "${keyservers[@]}"; do
+            if arch-chroot "$MOUNTPOINT" pacman-key --recv-key "$keyid" --keyserver "$ks" 2>/dev/null; then
+                imported=1
+                break
+            fi
+            show_warning "Keyserver $ks failed, trying next..."
+        done
+
+        [[ $imported -eq 0 ]] && \
+            arch-chroot "$MOUNTPOINT" pacman-key --recv-key "$keyid" \
+                --keyserver hkps://keyserver.ubuntu.com 2>/dev/null || true
+
+        arch-chroot "$MOUNTPOINT" pacman-key --lsign-key "$keyid" || true
+
+        arch-chroot "$MOUNTPOINT" pacman -U --noconfirm \
+            'https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-keyring.pkg.tar.zst' \
+            || show_warning "chaotic-keyring install failed — repo may not work fully"
+
+        arch-chroot "$MOUNTPOINT" pacman -U --noconfirm \
+            'https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-mirrorlist.pkg.tar.zst' \
+            || show_warning "chaotic-mirrorlist install failed"
 
         echo -e '\n[chaotic-aur]\nInclude = /etc/pacman.d/chaotic-mirrorlist' >> "$MOUNTPOINT/etc/pacman.conf"
     fi
@@ -1799,7 +1895,9 @@ install_graphics() {
     esac
 
     if [[ -n "$packages" ]]; then
-        arch-chroot "$MOUNTPOINT" pacman -S --noconfirm --needed $packages
+        # shellcheck disable=SC2086
+        arch-chroot "$MOUNTPOINT" pacman -S --noconfirm --needed $packages \
+            || show_warning "Some graphics packages failed — system may still work with basic drivers"
     fi
 
     if [[ "$needs_nvidia_config" == "yes" ]]; then
@@ -1891,7 +1989,7 @@ run_kde_installer() {
     # Run as the created user. Use a single su -l (login shell) to set up
     # HOME/USER/XDG correctly, and pass the script path directly — avoids
     # the nested runuser -> bash -lc chain that broke stdin/TTY passthrough.
-    arch-chroot "$MOUNTPOINT" su -l "$user" -c "bash '${script_path}'"
+    arch-chroot "$MOUNTPOINT" su -l "$user" -c "bash '${script_path}' '${CONFIG[aur_helper]}'"
 
     # Remove temporary sudo rule
     rm -f "$MOUNTPOINT/etc/sudoers.d/99-xero-installer"
