@@ -1757,7 +1757,6 @@ install_bootloader() {
                 --target=x86_64-efi \
                 --efi-directory="$efi_dir" \
                 --bootloader-id=XeroLinux \
-                --removable \
                 --recheck \
                 --modules="part_gpt part_msdos luks2 cryptodisk gcry_rijndael gcry_sha256"
         else
@@ -1766,7 +1765,6 @@ install_bootloader() {
                 --target=x86_64-efi \
                 --efi-directory="$efi_dir" \
                 --bootloader-id=XeroLinux \
-                --removable \
                 --recheck
         fi
     else
