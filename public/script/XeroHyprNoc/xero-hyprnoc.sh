@@ -88,7 +88,7 @@ prompt_user() {
     echo -e "  ${BLUE}•${NC} Hyprlock + Hypridle — screen locker and idle daemon"
     echo -e "  ${BLUE}•${NC} Full Wayland + XDG portal stack"
     echo -e "  ${BLUE}•${NC} PipeWire audio stack"
-    echo -e "  ${BLUE}•${NC} SDDM display manager (default theme)"
+    echo -e "  ${BLUE}•${NC} SDDM display manager (Breeze theme)"
     echo -e "  ${BLUE}•${NC} matugen + adw-gtk3 for Material You theming"
     echo -e "  ${BLUE}•${NC} Your selected optional packages"
     echo ""
@@ -227,7 +227,7 @@ install_group() {
     local group="$1"; shift
     local pkgs=("$@")
     print_step "[${group}] Installing ${#pkgs[@]} packages..."
-    if $SUDO_CMD pacman -S --needed --noconfirm "${pkgs[@]}" 2>/dev/null; then
+    if $SUDO_CMD pacman -S --needed --noconfirm "${pkgs[@]}"; then
         print_success "[${group}] Done!"
         echo ""
         return 0
@@ -235,7 +235,7 @@ install_group() {
     print_warning "[${group}] Bulk install failed — retrying individually..."
     local failed=() installed=0
     for pkg in "${pkgs[@]}"; do
-        if $SUDO_CMD pacman -S --needed --noconfirm "${pkg}" 2>/dev/null; then
+        if $SUDO_CMD pacman -S --needed --noconfirm "${pkg}"; then
             (( installed++ )) || true
         else
             failed+=("${pkg}")
@@ -253,7 +253,7 @@ install_aur_group() {
     local pkgs=("$@")
     [[ -z "${AUR_CMD}" ]] && { print_error "AUR helper not set."; exit 1; }
     print_step "[${group}] Installing ${#pkgs[@]} AUR packages..."
-    if "${AUR_CMD}" -S --needed --noconfirm "${pkgs[@]}" 2>/dev/null; then
+    if "${AUR_CMD}" -S --needed --noconfirm "${pkgs[@]}"; then
         print_success "[${group}] Done!"
         echo ""
         return 0
@@ -261,7 +261,7 @@ install_aur_group() {
     print_warning "[${group}] Bulk failed — retrying individually..."
     local failed=() installed=0
     for pkg in "${pkgs[@]}"; do
-        if "${AUR_CMD}" -S --needed --noconfirm "${pkg}" 2>/dev/null; then
+        if "${AUR_CMD}" -S --needed --noconfirm "${pkg}"; then
             (( installed++ )) || true
         else
             failed+=("${pkg}")
@@ -288,7 +288,7 @@ install_packages() {
 
     # ── Wayland stack ─────────────────────────────────────────────────────────
     install_group "Wayland Stack" \
-        wayland wayland-protocols xwayland \
+        wayland wayland-protocols xorg-xwayland \
         qt5-wayland qt6-wayland \
         xdg-desktop-portal xdg-desktop-portal-gtk xdg-desktop-portal-hyprland \
         xdg-utils
@@ -319,8 +319,8 @@ install_packages() {
     install_aur_group "Noctalia Shell" \
         noctalia-shell matugen
 
-    install_aur_group "GTK Theme" \
-        adw-gtk3 || print_warning "adw-gtk3 failed — GTK theming won't apply. Continuing."
+    install_group "GTK Theme" \
+        adw-gtk-theme || print_warning "adw-gtk-theme failed — GTK theming won't apply. Continuing."
 
     # ── Desktop/MIME databases ────────────────────────────────────────────────
     print_step "Updating desktop and MIME databases..."
@@ -844,7 +844,7 @@ install_noctalia_polkit() {
     tmp=$(mktemp -d)
 
     if git clone --no-checkout --depth=1 --filter=blob:none \
-        https://github.com/noctalia-dev/noctalia-plugins.git "${tmp}" 2>/dev/null; then
+        https://github.com/noctalia-dev/noctalia-plugins.git "${tmp}"; then
         git -C "${tmp}" sparse-checkout set polkit-agent
         git -C "${tmp}" checkout
         cp -r "${tmp}/polkit-agent" "${dest}"
@@ -886,8 +886,8 @@ EOF
 
 setup_sddm() {
     print_header
-    print_step "Installing SDDM..."
-    $SUDO_CMD pacman -S --needed --noconfirm sddm \
+    print_step "Installing SDDM + Breeze theme..."
+    $SUDO_CMD pacman -S --needed --noconfirm sddm breeze \
         || { print_error "SDDM install failed!"; exit 1; }
     print_success "SDDM installed."
     echo ""
@@ -907,6 +907,9 @@ User=
 [General]
 HaltCommand=/usr/bin/systemctl poweroff
 RebootCommand=/usr/bin/systemctl reboot
+
+[Theme]
+Current=breeze
 
 [Users]
 MaximumUid=60000
