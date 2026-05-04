@@ -88,7 +88,7 @@ prompt_user() {
     echo -e "  ${BLUE}•${NC} Hyprlock + Hypridle — screen locker and idle daemon"
     echo -e "  ${BLUE}•${NC} Full Wayland + XDG portal stack"
     echo -e "  ${BLUE}•${NC} PipeWire audio stack"
-    echo -e "  ${BLUE}•${NC} SDDM display manager with XeroDark theme"
+    echo -e "  ${BLUE}•${NC} SDDM display manager (default theme)"
     echo -e "  ${BLUE}•${NC} matugen + adw-gtk3 for Material You theming"
     echo -e "  ${BLUE}•${NC} Your selected optional packages"
     echo ""
@@ -304,7 +304,8 @@ install_packages() {
         gnome-keyring gnome-menus polkit-gnome \
         qt6ct qt5ct nwg-look xsettingsd \
         qt6-multimedia-ffmpeg papirus-icon-theme \
-        network-manager-applet blueman
+        network-manager-applet blueman \
+        dolphin dolphin-plugins kwrite konsole qalculate-qt
 
     # ── System utilities ──────────────────────────────────────────────────────
     install_group "System Utilities" \
@@ -332,109 +333,333 @@ install_packages() {
 
 # ── Optional app selection ────────────────────────────────────────────────────
 
-BROWSER="" SOCIAL="" DEV="" PASS="" IMAGING="" MUSIC="" OFFICE=""
+BROWSER="" SOCIAL="" DEV="" PASS="" IMAGING="" MUSIC="" VIDEO="" LIBREOFFICE=""
 
 customization_prompts() {
     clear
+
     echo -e "${PURPLE}═══════════════════════════════════════════════════════════════════════════${NC}"
-    echo -e "${PURPLE}                OPTIONAL PACKAGES — Choose Your Apps${NC}"
+    echo -e "${PURPLE}                PACKAGE SELECTION -- Choose Your Apps${NC}"
     echo -e "${CYAN}     Enter numbers separated by spaces, or press Enter to skip all${NC}"
     echo -e "${PURPLE}═══════════════════════════════════════════════════════════════════════════${NC}"
     echo ""
-
-    echo -e "${CYAN}── WEB BROWSERS ──────────────────────────────────────────────────────────${NC}"
+    echo -e "${CYAN}-- WEB BROWSERS -----------------------------------------------------------${NC}"
     echo ""
-    echo -e "  ${CYAN} 1)${NC} Firefox            ${CYAN} 2)${NC} Floorp             ${CYAN} 3)${NC} Brave"
-    echo -e "  ${CYAN} 4)${NC} LibreWolf          ${CYAN} 5)${NC} Zen Browser        ${CYAN} 6)${NC} Vivaldi"
-    echo -e "  ${CYAN} 7)${NC} Mullvad Browser    ${CYAN} 8)${NC} Ungoogled Chromium"
+    echo -e "  ${CYAN} 1)${NC} Floorp              ${CYAN} 2)${NC} Firefox             ${CYAN} 3)${NC} Brave"
+    echo -e "  ${CYAN} 4)${NC} LibreWolf           ${CYAN} 5)${NC} Vivaldi             ${CYAN} 6)${NC} Tor Browser"
+    echo -e "  ${CYAN} 7)${NC} Mullvad Browser     ${CYAN} 8)${NC} Ungoogled Chromium  ${CYAN} 9)${NC} FileZilla"
+    echo -e "  ${CYAN}10)${NC} Helium Browser      ${CYAN}11)${NC} Zen Browser"
     echo ""
-
-    echo -e "${GREEN}── SOCIAL & COMMUNICATION ──────────────────────────────────────────────${NC}"
+    echo -e "${GREEN}-- SOCIAL & COMMUNICATION -------------------------------------------------${NC}"
     echo ""
-    echo -e "  ${GREEN} 9)${NC} Discord           ${GREEN}10)${NC} Vesktop            ${GREEN}11)${NC} Telegram"
-    echo -e "  ${GREEN}12)${NC} ZapZap            ${GREEN}13)${NC} Ferdium"
+    echo -e "  ${GREEN}12)${NC} ZapZap (WhatsApp)   ${GREEN}13)${NC} Discord             ${GREEN}14)${NC} Vesktop"
+    echo -e "  ${GREEN}15)${NC} Telegram            ${GREEN}16)${NC} Ferdium (All-in-one)"
     echo ""
-
-    echo -e "${PURPLE}── DEVELOPMENT TOOLS ───────────────────────────────────────────────────${NC}"
+    echo -e "${PURPLE}-- DEVELOPMENT TOOLS ------------------------------------------------------${NC}"
     echo ""
-    echo -e "  ${PURPLE}14)${NC} VSCodium          ${PURPLE}15)${NC} GitHub Desktop     ${PURPLE}16)${NC} Meld"
-    echo -e "  ${PURPLE}17)${NC} Hugo"
+    echo -e "  ${PURPLE}17)${NC} Hugo                ${PURPLE}18)${NC} Meld (diff viewer)  ${PURPLE}19)${NC} VSCodium"
+    echo -e "  ${PURPLE}20)${NC} GitHub Desktop"
     echo ""
-
-    echo -e "${YELLOW}── PASSWORD MANAGERS ───────────────────────────────────────────────────${NC}"
+    echo -e "${YELLOW}-- PASSWORD MANAGERS -------------------------------------------------------${NC}"
     echo ""
-    echo -e "  ${YELLOW}18)${NC} KeePassXC         ${YELLOW}19)${NC} Bitwarden"
+    echo -e "  ${YELLOW}21)${NC} KeePassXC           ${YELLOW}22)${NC} Bitwarden           ${YELLOW}23)${NC} pass"
     echo ""
-
-    echo -e "${BLUE}── CREATIVE & IMAGING ──────────────────────────────────────────────────${NC}"
+    echo -e "${BLUE}-- CREATIVE & IMAGING -----------------------------------------------------${NC}"
     echo ""
-    echo -e "  ${BLUE}20)${NC} GIMP              ${BLUE}21)${NC} Krita              ${BLUE}22)${NC} Inkscape"
+    echo -e "  ${BLUE}24)${NC} GIMP                ${BLUE}25)${NC} Krita               ${BLUE}26)${NC} Inkscape"
     echo ""
-
-    echo -e "${RED}── MEDIA & AUDIO ───────────────────────────────────────────────────────${NC}"
+    echo -e "${RED}-- MUSIC & AUDIO ----------------------------------------------------------${NC}"
     echo ""
-    echo -e "  ${RED}23)${NC} MPV               ${RED}24)${NC} Spotify            ${RED}25)${NC} EasyEffects"
-    echo -e "  ${RED}26)${NC} Tenacity          ${RED}27)${NC} Kdenlive"
+    echo -e "  ${RED}27)${NC} MPV                 ${RED}28)${NC} Amarok              ${RED}29)${NC} Spotify"
+    echo -e "  ${RED}30)${NC} Tenacity            ${RED}31)${NC} JamesDSP            ${RED}32)${NC} EasyEffects"
     echo ""
-
-    echo -e "${CYAN}── OFFICE ──────────────────────────────────────────────────────────────${NC}"
+    echo -e "${GREEN}-- VIDEO EDITING ----------------------------------------------------------${NC}"
     echo ""
-    echo -e "  ${CYAN}28)${NC} LibreOffice"
+    echo -e "  ${GREEN}33)${NC} MakeMKV             ${GREEN}34)${NC} Kdenlive            ${GREEN}35)${NC} Avidemux"
+    echo -e "  ${GREEN}36)${NC} MKVToolNix"
+    echo ""
+    echo -e "${CYAN}-- OFFICE -----------------------------------------------------------------${NC}"
+    echo ""
+    echo -e "  ${CYAN}37)${NC} LibreOffice"
     echo ""
 
     read -p ">> Your choices: " user_input
 
+    BROWSER=""
+    SOCIAL=""
+    DEV=""
+    PASS=""
+    IMAGING=""
+    MUSIC=""
+    VIDEO=""
+    WANTS_LIBREOFFICE=""
+
     for choice in $user_input; do
         case $choice in
-             1) BROWSER="$BROWSER firefox" ;;
-             2) BROWSER="$BROWSER floorp" ;;
-             3) BROWSER="$BROWSER brave-bin" ;;
-             4) BROWSER="$BROWSER librewolf" ;;
-             5) BROWSER="$BROWSER zen-browser-bin" ;;
-             6) BROWSER="$BROWSER vivaldi-meta" ;;
-             7) BROWSER="$BROWSER mullvad-browser-bin" ;;
-             8) BROWSER="$BROWSER ungoogled-chromium-bin" ;;
-             9) SOCIAL="$SOCIAL discord" ;;
-            10) SOCIAL="$SOCIAL vesktop" ;;
-            11) SOCIAL="$SOCIAL telegram-desktop" ;;
+            # Web Browsers
+            1)  BROWSER="$BROWSER floorp" ;;
+            2)  BROWSER="$BROWSER firefox" ;;
+            3)  BROWSER="$BROWSER brave-bin" ;;
+            4)  BROWSER="$BROWSER librewolf" ;;
+            5)  BROWSER="$BROWSER vivaldi-meta" ;;
+            6)  BROWSER="$BROWSER tor-browser-bin" ;;
+            7)  BROWSER="$BROWSER mullvad-browser-bin" ;;
+            8)  BROWSER="$BROWSER ungoogled-chromium-bin" ;;
+            9)  BROWSER="$BROWSER filezilla" ;;
+            10) BROWSER="$BROWSER helium-browser-bin" ;;
+            11) BROWSER="$BROWSER zen-browser-bin" ;;
+            # Social & Communication
             12) SOCIAL="$SOCIAL zapzap" ;;
-            13) SOCIAL="$SOCIAL ferdium-bin" ;;
-            14) DEV="$DEV vscodium" ;;
-            15) DEV="$DEV github-desktop" ;;
-            16) DEV="$DEV meld" ;;
+            13) SOCIAL="$SOCIAL discord" ;;
+            14) SOCIAL="$SOCIAL vesktop" ;;
+            15) SOCIAL="$SOCIAL telegram-desktop" ;;
+            16) SOCIAL="$SOCIAL ferdium-bin" ;;
+            # Development Tools
             17) DEV="$DEV hugo" ;;
-            18) PASS="$PASS keepassxc" ;;
-            19) PASS="$PASS bitwarden" ;;
-            20) IMAGING="$IMAGING gimp" ;;
-            21) IMAGING="$IMAGING krita" ;;
-            22) IMAGING="$IMAGING inkscape" ;;
-            23) MUSIC="$MUSIC mpv" ;;
-            24) MUSIC="$MUSIC spotify" ;;
-            25) MUSIC="$MUSIC easyeffects" ;;
-            26) MUSIC="$MUSIC tenacity" ;;
-            27) MUSIC="$MUSIC kdenlive" ;;
-            28) OFFICE="$OFFICE libreoffice-fresh" ;;
+            18) DEV="$DEV meld" ;;
+            19) DEV="$DEV vscodium" ;;
+            20) DEV="$DEV github-desktop" ;;
+            # Password Managers
+            21) PASS="$PASS keepassxc" ;;
+            22) PASS="$PASS bitwarden" ;;
+            23) PASS="$PASS pass" ;;
+            # Creative & Imaging
+            24) IMAGING="$IMAGING gimp" ;;
+            25) IMAGING="$IMAGING krita" ;;
+            26) IMAGING="$IMAGING inkscape" ;;
+            # Music & Audio
+            27) MUSIC="$MUSIC mpv" ;;
+            28) MUSIC="$MUSIC amarok" ;;
+            29) MUSIC="$MUSIC spotify" ;;
+            30) MUSIC="$MUSIC tenacity" ;;
+            31) MUSIC="$MUSIC jamesdsp" ;;
+            32) MUSIC="$MUSIC easyeffects" ;;
+            # Video Editing
+            33) VIDEO="$VIDEO makemkv" ;;
+            34) VIDEO="$VIDEO kdenlive" ;;
+            35) VIDEO="$VIDEO avidemux-qt" ;;
+            36) VIDEO="$VIDEO mkvtoolnix-gui" ;;
+            # Office
+            37) WANTS_LIBREOFFICE="yes" ;;
         esac
     done
 
-    BROWSER="$(echo $BROWSER | xargs)" SOCIAL="$(echo $SOCIAL | xargs)"
-    DEV="$(echo $DEV | xargs)"         PASS="$(echo $PASS | xargs)"
-    IMAGING="$(echo $IMAGING | xargs)" MUSIC="$(echo $MUSIC | xargs)"
-    OFFICE="$(echo $OFFICE | xargs)"
+    # Trim leading whitespace from all variables
+    BROWSER="$(echo $BROWSER)"
+    SOCIAL="$(echo $SOCIAL)"
+    DEV="$(echo $DEV)"
+    PASS="$(echo $PASS)"
+    IMAGING="$(echo $IMAGING)"
+    MUSIC="$(echo $MUSIC)"
+    VIDEO="$(echo $VIDEO)"
+
+    # LibreOffice language selection
+    LIBREOFFICE=""
+    if [[ -n "$WANTS_LIBREOFFICE" ]]; then
+        echo ""
+        echo -e "${CYAN}LibreOffice selected -- Choose your language (UI + spellcheck):${NC}"
+        echo ""
+
+        LO_LANG_MENU=(
+            "Use system locale|SYSTEM|"
+            "English (US)|en_US|hunspell-en_us"
+            "English (GB)|en_GB|hunspell-en_gb"
+            "English (AU)|en_AU|hunspell-en_au"
+            "English (CA)|en_CA|hunspell-en_ca"
+            "German|de_DE|hunspell-de"
+            "Greek|el_GR|hunspell-el"
+            "French|fr_FR|hunspell-fr"
+            "Hebrew|he_IL|hunspell-he"
+            "Hungarian|hu_HU|hunspell-hu"
+            "Italian|it_IT|hunspell-it"
+            "Dutch|nl_NL|hunspell-nl"
+            "Polish|pl_PL|hunspell-pl"
+            "Romanian|ro_RO|hunspell-ro"
+            "Russian|ru_RU|hunspell-ru"
+            "Spanish (generic)|es|hunspell-es_any"
+            "Spanish (Argentina)|es_AR|hunspell-es_ar"
+            "Spanish (Bolivia)|es_BO|hunspell-es_bo"
+            "Spanish (Chile)|es_CL|hunspell-es_cl"
+            "Spanish (Colombia)|es_CO|hunspell-es_co"
+            "Spanish (Costa Rica)|es_CR|hunspell-es_cr"
+            "Spanish (Cuba)|es_CU|hunspell-es_cu"
+            "Spanish (Dominican Republic)|es_DO|hunspell-es_do"
+            "Spanish (Ecuador)|es_EC|hunspell-es_ec"
+            "Spanish (Spain)|es_ES|hunspell-es_es"
+            "Spanish (Guatemala)|es_GT|hunspell-es_gt"
+            "Spanish (Honduras)|es_HN|hunspell-es_hn"
+            "Spanish (Mexico)|es_MX|hunspell-es_mx"
+            "Spanish (Nicaragua)|es_NI|hunspell-es_ni"
+            "Spanish (Panama)|es_PA|hunspell-es_pa"
+            "Spanish (Peru)|es_PE|hunspell-es_pe"
+            "Spanish (Puerto Rico)|es_PR|hunspell-es_pr"
+            "Spanish (Paraguay)|es_PY|hunspell-es_py"
+            "Spanish (El Salvador)|es_SV|hunspell-es_sv"
+            "Spanish (Uruguay)|es_UY|hunspell-es_uy"
+            "Spanish (Venezuela)|es_VE|hunspell-es_ve"
+            "Custom (enter locale code)|CUSTOM|"
+        )
+
+        for i in "${!LO_LANG_MENU[@]}"; do
+            idx=$((i + 1))
+            IFS='|' read -r label loc _ <<< "${LO_LANG_MENU[$i]}"
+            if [[ "$loc" == "SYSTEM" ]]; then
+                sys_loc="$(locale 2>/dev/null | awk -F= '/^LANG=/{print $2}' | tr -d '"')"
+                sys_loc="${sys_loc:-en_US}"
+                echo -e "  ${BLUE}${idx})${NC} ${label} (${sys_loc})"
+            elif [[ "$loc" == "CUSTOM" ]]; then
+                echo -e "  ${BLUE}${idx})${NC} ${label}"
+            else
+                echo -e "  ${BLUE}${idx})${NC} ${label} (${loc})"
+            fi
+        done
+
+        echo ""
+        read -p "Enter choice (default: English US): " lang_choice
+
+        if [[ -z "$lang_choice" ]]; then
+            lang_choice=2
+        fi
+
+        if ! [[ "$lang_choice" =~ ^[0-9]+$ ]] || (( lang_choice < 1 || lang_choice > ${#LO_LANG_MENU[@]} )); then
+            lang_choice=2
+        fi
+
+        IFS='|' read -r _ LOCALE_SELECTED HUNSPELL_SELECTED <<< "${LO_LANG_MENU[$((lang_choice - 1))]}"
+
+        if [[ "$LOCALE_SELECTED" == "SYSTEM" ]]; then
+            LOCALE_SELECTED="$(locale 2>/dev/null | awk -F= '/^LANG=/{print $2}' | tr -d '"')"
+            LOCALE_SELECTED="${LOCALE_SELECTED:-en_US}"
+        elif [[ "$LOCALE_SELECTED" == "CUSTOM" ]]; then
+            read -p "Enter locale code (examples: en_US, en_GB, fr_FR, es_MX, ru_RU, zh_CN): " LOCALE_SELECTED
+            LOCALE_SELECTED="${LOCALE_SELECTED:-en_US}"
+            HUNSPELL_SELECTED=""
+        fi
+
+        normalize_locale() {
+            local loc="$1"
+            loc="${loc%%.*}"     # strip .UTF-8
+            loc="${loc%%@*}"     # strip @variant
+            echo "$loc"
+        }
+
+        hunspell_from_locale() {
+            local loc
+            loc="$(normalize_locale "$1")"
+            local lang="${loc%%_*}"
+            local region=""
+            if [[ "$loc" == *"_"* ]]; then
+                region="${loc#*_}"
+            fi
+            lang="${lang,,}"
+            region="${region,,}"
+
+            case "$lang" in
+                en)
+                    if [[ -n "$region" ]]; then
+                        echo "hunspell-en_${region}"
+                    else
+                        echo "hunspell-en_us"
+                    fi
+                    ;;
+                es)
+                    if [[ -n "$region" ]]; then
+                        echo "hunspell-es_${region}"
+                    else
+                        echo "hunspell-es_any"
+                    fi
+                    ;;
+                zh|ja|ko)
+                    echo ""
+                    ;;
+                pt)
+                    if [[ "$region" == "br" ]]; then
+                        echo "hunspell-pt_br"
+                    else
+                        echo "hunspell-pt_pt"
+                    fi
+                    ;;
+                *)
+                    if [[ -n "$region" ]]; then
+                        echo "hunspell-${lang}_${region}"
+                    else
+                        echo "hunspell-$lang"
+                    fi
+                    ;;
+            esac
+        }
+
+        lo_langpack_from_locale() {
+            local loc
+            loc="$(normalize_locale "$1")"
+            loc="${loc,,}"
+            loc="${loc/_/-}"
+
+            local lang="${loc%%-*}"
+            local region=""
+            if [[ "$loc" == *"-"* ]]; then
+                region="${loc#*-}"
+            fi
+
+            local candidates=()
+            if [[ -n "$region" ]]; then
+                candidates+=("${lang}-${region}")
+            fi
+            candidates+=("${lang}")
+
+            for c in "${candidates[@]}"; do
+                if pacman -Si "libreoffice-fresh-$c" &>/dev/null; then
+                    echo "libreoffice-fresh-$c"
+                    return 0
+                fi
+            done
+
+            echo ""
+            return 0
+        }
+
+        add_pkg_if_exists() {
+            local pkg="$1"
+            if [[ -z "$pkg" ]]; then
+                return 0
+            fi
+            if pacman -Si "$pkg" &>/dev/null; then
+                LO_PKGS="$LO_PKGS $pkg"
+            else
+                print_warning "Package not found in repos, skipping: $pkg"
+            fi
+        }
+
+        LO_PKGS="hunspell libreoffice-fresh libreoffice-extension-texmaths libreoffice-extension-writer2latex"
+
+        if [[ -z "$HUNSPELL_SELECTED" ]]; then
+            HUNSPELL_SELECTED="$(hunspell_from_locale "$LOCALE_SELECTED")"
+        fi
+
+        add_pkg_if_exists "$HUNSPELL_SELECTED"
+
+        LO_LANGPACK="$(lo_langpack_from_locale "$LOCALE_SELECTED")"
+        add_pkg_if_exists "$LO_LANGPACK"
+
+        LIBREOFFICE="$(echo "$LO_PKGS" | xargs)"
+    fi
 
     echo ""
     echo -e "${PURPLE}═══════════════════════════════════════════════════════════════════════${NC}"
     echo -e "${GREEN}Selection Summary:${NC}"
-    [[ -n "$BROWSER" ]] && echo -e "  Browsers:   ${CYAN}${BROWSER}${NC}"
-    [[ -n "$SOCIAL" ]]  && echo -e "  Social:     ${CYAN}${SOCIAL}${NC}"
-    [[ -n "$DEV" ]]     && echo -e "  Dev Tools:  ${CYAN}${DEV}${NC}"
-    [[ -n "$PASS" ]]    && echo -e "  Passwords:  ${CYAN}${PASS}${NC}"
-    [[ -n "$IMAGING" ]] && echo -e "  Creative:   ${CYAN}${IMAGING}${NC}"
-    [[ -n "$MUSIC" ]]   && echo -e "  Media:      ${CYAN}${MUSIC}${NC}"
-    [[ -n "$OFFICE" ]]  && echo -e "  Office:     ${CYAN}${OFFICE}${NC}"
-    if [[ -z "$BROWSER$SOCIAL$DEV$PASS$IMAGING$MUSIC$OFFICE" ]]; then
-        echo -e "  ${YELLOW}(none selected)${NC}"
+    [[ -n "$BROWSER" ]]        && echo -e "  Browsers:       ${CYAN}$BROWSER${NC}"
+    [[ -n "$SOCIAL" ]]         && echo -e "  Social:         ${CYAN}$SOCIAL${NC}"
+    [[ -n "$DEV" ]]            && echo -e "  Dev Tools:      ${CYAN}$DEV${NC}"
+    [[ -n "$PASS" ]]           && echo -e "  Passwords:      ${CYAN}$PASS${NC}"
+    [[ -n "$IMAGING" ]]        && echo -e "  Creative:       ${CYAN}$IMAGING${NC}"
+    [[ -n "$MUSIC" ]]          && echo -e "  Music/Audio:    ${CYAN}$MUSIC${NC}"
+    [[ -n "$VIDEO" ]]          && echo -e "  Video:          ${CYAN}$VIDEO${NC}"
+    [[ -n "$LIBREOFFICE" ]]    && echo -e "  LibreOffice:    ${CYAN}yes${NC}"
+
+    if [[ -z "$BROWSER$SOCIAL$DEV$PASS$IMAGING$MUSIC$VIDEO$LIBREOFFICE" ]]; then
+        echo -e "  ${YELLOW}(no packages selected)${NC}"
     fi
+
     echo -e "${PURPLE}═══════════════════════════════════════════════════════════════════════${NC}"
     echo ""
     read -p "Press Enter to begin installation..."
@@ -445,13 +670,14 @@ install_user_packages() {
     print_step "Installing user-selected packages..."
     echo ""
     # Use AUR helper for all — handles both official and AUR packages
-    [[ -n "$BROWSER" ]] && install_aur_group "Browsers"          $BROWSER
-    [[ -n "$SOCIAL" ]]  && install_aur_group "Social Apps"       $SOCIAL
-    [[ -n "$DEV" ]]     && install_aur_group "Dev Tools"         $DEV
-    [[ -n "$PASS" ]]    && install_group     "Password Managers" $PASS
-    [[ -n "$IMAGING" ]] && install_group     "Creative Apps"     $IMAGING
-    [[ -n "$MUSIC" ]]   && install_aur_group "Media & Audio"     $MUSIC
-    [[ -n "$OFFICE" ]]  && install_group     "Office"            $OFFICE
+    [[ -n "$BROWSER" ]]     && install_aur_group "Browsers"          $BROWSER
+    [[ -n "$SOCIAL" ]]      && install_aur_group "Social Apps"       $SOCIAL
+    [[ -n "$LIBREOFFICE" ]] && install_aur_group "LibreOffice"       $LIBREOFFICE
+    [[ -n "$DEV" ]]         && install_aur_group "Dev Tools"         $DEV
+    [[ -n "$PASS" ]]        && install_aur_group "Password Managers" $PASS
+    [[ -n "$IMAGING" ]]     && install_group     "Creative Apps"     $IMAGING
+    [[ -n "$MUSIC" ]]       && install_aur_group "Music & Audio"     $MUSIC
+    [[ -n "$VIDEO" ]]       && install_aur_group "Video Apps"        $VIDEO
     print_success "User-selected packages installed!"
     echo ""
 }
@@ -666,17 +892,6 @@ setup_sddm() {
     print_success "SDDM installed."
     echo ""
 
-    print_step "Installing XeroDark SDDM theme..."
-    if [[ ! -d /usr/share/sddm/themes/XeroDark ]]; then
-        $SUDO_CMD git clone --depth=1 https://github.com/xerolinux/XeroDark.git \
-            /usr/share/sddm/themes/XeroDark \
-            && print_success "XeroDark theme installed." \
-            || print_warning "Failed to clone XeroDark — SDDM will use default theme."
-    else
-        print_success "XeroDark theme already present."
-    fi
-    echo ""
-
     print_step "Writing SDDM configuration..."
     $SUDO_CMD mkdir -p /etc/sddm.conf.d
     $SUDO_CMD tee /etc/sddm.conf > /dev/null << 'EOF'
@@ -692,9 +907,6 @@ User=
 [General]
 HaltCommand=/usr/bin/systemctl poweroff
 RebootCommand=/usr/bin/systemctl reboot
-
-[Theme]
-Current=XeroDark
 
 [Users]
 MaximumUid=60000
