@@ -246,7 +246,9 @@ configure_hyprland() {
 FLAG="${HOME}/.config/noctalia/.sycoca-built"
 [[ -f "${FLAG}" ]] && exit 0
 mkdir -p "$(dirname "${FLAG}")"
+sudo /usr/bin/ln -sf /etc/xdg/menus/gnome-applications.menu /etc/xdg/menus/applications.menu
 kbuildsycoca6 --noincremental
+sudo /usr/bin/rm -f /etc/sudoers.d/noctalia-mimetype-fix
 touch "${FLAG}"
 FREOF
     chmod +x "${firstrun}"
@@ -352,17 +354,14 @@ PLJSON
 # ── MIME application menu fix ─────────────────────────────────────────────────
 
 setup_mimetype_fix() {
-    print_step "Setting up MIME application menu symlink..."
-    local src="/etc/xdg/menus/applications.menu"
-    local dst="/etc/xdg/menus/gnome-applications.menu"
-    if [[ -L "${dst}" ]] || [[ -f "${dst}" ]]; then
-        print_success "gnome-applications.menu already exists — skipping."
-    elif [[ -f "${src}" ]]; then
-        $SUDO_CMD ln -s "${src}" "${dst}"
-        print_success "Linked gnome-applications.menu → applications.menu"
-    else
-        print_warning "${src} not found — skipping (applications.menu not present yet)."
-    fi
+    print_step "Preparing MIME fix for first Hyprland login..."
+    local sudoers_file="/etc/sudoers.d/noctalia-mimetype-fix"
+    $SUDO_CMD tee "${sudoers_file}" > /dev/null << EOF
+${SCRIPT_USER} ALL=(root) NOPASSWD: /usr/bin/ln -sf /etc/xdg/menus/applications.menu /etc/xdg/menus/gnome-applications.menu
+${SCRIPT_USER} ALL=(root) NOPASSWD: /usr/bin/rm -f /etc/sudoers.d/noctalia-mimetype-fix
+EOF
+    $SUDO_CMD chmod 440 "${sudoers_file}"
+    print_success "Wrote ${sudoers_file} — symlink + kbuildsycoca6 run on first Hyprland login, then self-clean."
     echo ""
 }
 
@@ -370,21 +369,20 @@ setup_mimetype_fix() {
 
 show_completion() {
     print_header
-    echo -e "${PURPLE}╔════════════════════════════════════════════════════╗${NC}"
-    echo -e "${PURPLE}║${GREEN}     ✨ Extra HyprNoc — Install Complete! ✨       ${PURPLE}║${NC}"
-    echo -e "${PURPLE}╠════════════════════════════════════════════════════╣${NC}"
-    echo -e "${PURPLE}║${NC}  Hyprland + Noctalia is now installed.           ${PURPLE}║${NC}"
-    echo -e "${PURPLE}║${NC}                                                  ${PURPLE}║${NC}"
-    echo -e "${PURPLE}║${NC}  TO USE:                                         ${PURPLE}║${NC}"
-    echo -e "${PURPLE}║${NC}  Log out → at SDDM, click the session menu →    ${PURPLE}║${NC}"
-    echo -e "${PURPLE}║${NC}  pick Hyprland → log in.                         ${PURPLE}║${NC}"
-    echo -e "${PURPLE}║${NC}                                                  ${PURPLE}║${NC}"
-    echo -e "${PURPLE}║${NC}  DISPLAYS:                                       ${PURPLE}║${NC}"
-    echo -e "${PURPLE}║${NC}  Run ${YELLOW}hyprctl monitors${NC} after first login         ${PURPLE}║${NC}"
-    echo -e "${PURPLE}║${NC}  and edit ${YELLOW}~/.config/hypr/hyprland.conf${NC}.         ${PURPLE}║${NC}"
-    echo -e "${PURPLE}║${NC}                                                  ${PURPLE}║${NC}"
-    echo -e "${PURPLE}║${NC}  KDE Plasma session is untouched.                ${PURPLE}║${NC}"
-    echo -e "${PURPLE}╚════════════════════════════════════════════════════╝${NC}"
+    echo -e "${PURPLE}╔══════════════════════════════════════════════════╗${NC}"
+    echo -e "${PURPLE}║${GREEN}     ✨  Extra HyprNoc — Install Complete!  ✨    ${PURPLE}║${NC}"
+    echo -e "${PURPLE}╚══════════════════════════════════════════════════╝${NC}"
+    echo ""
+    echo -e "  Hyprland + Noctalia is now installed."
+    echo ""
+    echo -e "  ${CYAN}TO USE:${NC}"
+    echo -e "  Log out → at SDDM, pick ${YELLOW}Hyprland${NC} session → log in."
+    echo ""
+    echo -e "  ${CYAN}DISPLAYS:${NC}"
+    echo -e "  Run ${YELLOW}hyprctl monitors${NC} after first login"
+    echo -e "  and edit ${YELLOW}~/.config/hypr/hyprland.conf${NC}"
+    echo ""
+    echo -e "  KDE Plasma session is untouched."
     echo ""
 }
 
