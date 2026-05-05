@@ -239,21 +239,6 @@ configure_hyprland() {
     # Disable waybar if present — Noctalia replaces it
     sed -i 's|^\(exec-once\s*=\s*waybar\)|# \1  # disabled: Noctalia replaces waybar|' "${cfg}" || true
 
-    # Write first-run script — runs kbuildsycoca6 once on first Noctalia login
-    local firstrun="${cfg_dir}/noctalia-first-run.sh"
-    cat > "${firstrun}" << 'FREOF'
-#!/bin/bash
-FLAG="${HOME}/.config/noctalia/.sycoca-built"
-[[ -f "${FLAG}" ]] && exit 0
-mkdir -p "$(dirname "${FLAG}")"
-sudo /usr/bin/ln -sf /etc/xdg/menus/gnome-applications.menu /etc/xdg/menus/applications.menu
-kbuildsycoca6 --noincremental
-sudo /usr/bin/rm -f /etc/sudoers.d/noctalia-mimetype-fix
-touch "${FLAG}"
-FREOF
-    chmod +x "${firstrun}"
-    print_success "Wrote ${firstrun}"
-
     if ! grep -q "qs -c noctalia-shell" "${cfg}"; then
         cat >> "${cfg}" << 'HYPREOF'
 
@@ -271,7 +256,6 @@ exec-once = blueman-applet
 exec-once = wl-paste --type text  --watch cliphist store
 exec-once = wl-paste --type image --watch cliphist store
 HYPREOF
-        echo "exec-once = bash ${SCRIPT_HOME}/.config/hypr/noctalia-first-run.sh" >> "${cfg}"
         print_success "Appended Noctalia env + exec-once block to hyprland.conf"
     else
         print_success "Noctalia config already present — skipping."
@@ -354,14 +338,41 @@ PLJSON
 # ── MIME application menu fix ─────────────────────────────────────────────────
 
 setup_mimetype_fix() {
-    print_step "Preparing MIME fix for first Hyprland login..."
-    local sudoers_file="/etc/sudoers.d/noctalia-mimetype-fix"
-    $SUDO_CMD tee "${sudoers_file}" > /dev/null << EOF
-${SCRIPT_USER} ALL=(root) NOPASSWD: /usr/bin/ln -sf /etc/xdg/menus/applications.menu /etc/xdg/menus/gnome-applications.menu
-${SCRIPT_USER} ALL=(root) NOPASSWD: /usr/bin/rm -f /etc/sudoers.d/noctalia-mimetype-fix
-EOF
-    $SUDO_CMD chmod 440 "${sudoers_file}"
-    print_success "Wrote ${sudoers_file} — symlink + kbuildsycoca6 run on first Hyprland login, then self-clean."
+    print_step "Applying MIME application menu fix..."
+
+    # Symlink — sudo available here, do it now
+    local src="/etc/xdg/menus/gnome-applications.menu"
+    local dst="/etc/xdg/menus/applications.menu"
+    if [[ -L "${dst}" ]] || [[ -f "${dst}" ]]; then
+        print_success "applications.menu already exists — skipping symlink."
+    elif [[ -f "${src}" ]]; then
+        $SUDO_CMD ln -sf "${src}" "${dst}"
+        print_success "Linked ${dst} → ${src}"
+    else
+        print_warning "${src} not found — gnome-menus may not be installed yet."
+    fi
+
+    # kbuildsycoca6 must run inside a user session — one-shot systemd user service
+    local svc_dir="${SCRIPT_HOME}/.config/systemd/user"
+    local noc_dir="${SCRIPT_HOME}/.config/noctalia"
+    local flag="${noc_dir}/.sycoca-built"
+    mkdir -p "${svc_dir}" "${noc_dir}"
+    cat > "${svc_dir}/noctalia-sycoca.service" << SVCEOF
+[Unit]
+Description=Rebuild KDE sycoca for Noctalia (runs once)
+ConditionPathExists=!${flag}
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/kbuildsycoca6 --noincremental
+ExecStartPost=/usr/bin/touch ${flag}
+
+[Install]
+WantedBy=default.target
+SVCEOF
+
+    systemctl --user enable noctalia-sycoca.service 2>/dev/null || true
+    print_success "Wrote + enabled noctalia-sycoca.service — kbuildsycoca6 fires at first Hyprland login."
     echo ""
 }
 
@@ -370,7 +381,7 @@ EOF
 show_completion() {
     print_header
     echo -e "${PURPLE}╔══════════════════════════════════════════════════╗${NC}"
-    echo -e "${PURPLE}║${GREEN}     ✨  Extra HyprNoc — Install Complete!  ✨    ${PURPLE}║${NC}"
+    echo -e "${PURPLE}║${GREEN}   ✨  Extra HyprNoc — Install Complete!  ✨    ${PURPLE}║${NC}"
     echo -e "${PURPLE}╚══════════════════════════════════════════════════╝${NC}"
     echo ""
     echo -e "  Hyprland + Noctalia is now installed."
