@@ -32,8 +32,8 @@ SUDO_CMD="sudo"
 print_header() {
     clear
     echo -e "${PURPLE}╔══════════════════════════════════════════════════╗${NC}"
-    echo -e "${PURPLE}║${CYAN}    ✨ Extra HyprNoc — Hyprland + Noctalia ✨    ${PURPLE}║${NC}"
-    echo -e "${PURPLE}║${YELLOW}      For existing XeroLinux / KDE installs      ${PURPLE}║${NC}"
+    echo -e "${PURPLE}║${CYAN}     ✨ Extra HyprNoc — Hyprland + Noctalia ✨    ${PURPLE}║${NC}"
+    echo -e "${PURPLE}║${YELLOW}       For existing XeroLinux / KDE installs      ${PURPLE}║${NC}"
     echo -e "${PURPLE}╚══════════════════════════════════════════════════╝${NC}"
     echo ""
 }
@@ -381,7 +381,7 @@ SVCEOF
 show_completion() {
     print_header
     echo -e "${PURPLE}╔══════════════════════════════════════════════════╗${NC}"
-    echo -e "${PURPLE}║${GREEN}   ✨  Extra HyprNoc — Install Complete!  ✨    ${PURPLE}║${NC}"
+    echo -e "${PURPLE}║${GREEN}     ✨  Extra HyprNoc — Install Complete!  ✨    ${PURPLE}║${NC}"
     echo -e "${PURPLE}╚══════════════════════════════════════════════════╝${NC}"
     echo ""
     echo -e "  Hyprland + Noctalia is now installed."
