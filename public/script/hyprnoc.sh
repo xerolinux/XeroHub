@@ -223,15 +223,15 @@ configure_hyprland() {
     local cfg="${cfg_dir}/hyprland.conf"
     mkdir -p "${cfg_dir}"
 
+    local example="/usr/share/hypr/hyprland.conf"
+    if [[ ! -f "${example}" ]]; then
+        print_error "Default config not found at ${example} — ensure hyprland is installed."
+        exit 1
+    fi
+
     if [[ ! -f "${cfg}" ]]; then
-        local example="/usr/share/hyprland/hyprland.conf"
-        if [[ -f "${example}" ]]; then
-            cp "${example}" "${cfg}"
-            print_success "Copied default config from ${example}"
-        else
-            touch "${cfg}"
-            print_warning "No example config found — created empty hyprland.conf."
-        fi
+        cp "${example}" "${cfg}"
+        print_success "Copied default config from ${example}"
     else
         print_success "hyprland.conf exists — appending only."
     fi
@@ -239,11 +239,29 @@ configure_hyprland() {
     # Disable waybar if present — Noctalia replaces it
     sed -i 's|^\(exec-once\s*=\s*waybar\)|# \1  # disabled: Noctalia replaces waybar|' "${cfg}" || true
 
+    # Write first-run script — runs kbuildsycoca6 once on first Noctalia login
+    local firstrun="${cfg_dir}/noctalia-first-run.sh"
+    cat > "${firstrun}" << 'FREOF'
+#!/bin/bash
+FLAG="${HOME}/.config/noctalia/.sycoca-built"
+[[ -f "${FLAG}" ]] && exit 0
+mkdir -p "$(dirname "${FLAG}")"
+kbuildsycoca6 --noincremental
+touch "${FLAG}"
+FREOF
+    chmod +x "${firstrun}"
+    print_success "Wrote ${firstrun}"
+
     if ! grep -q "qs -c noctalia-shell" "${cfg}"; then
         cat >> "${cfg}" << 'HYPREOF'
 
 # ────────────────────────────────────────────────────────────────────────────
-# Noctalia shell: bar, notifications, wallpaper, lock screen, launcher, polkit
+# Noctalia — environment
+# ────────────────────────────────────────────────────────────────────────────
+env = QT_QPA_PLATFORMTHEME,qt6ct
+
+# ────────────────────────────────────────────────────────────────────────────
+# Noctalia shell — bar, notifications, wallpaper, lock screen, launcher, polkit
 # ────────────────────────────────────────────────────────────────────────────
 exec-once = qs -c noctalia-shell
 exec-once = nm-applet --indicator
@@ -251,9 +269,10 @@ exec-once = blueman-applet
 exec-once = wl-paste --type text  --watch cliphist store
 exec-once = wl-paste --type image --watch cliphist store
 HYPREOF
-        print_success "Appended Noctalia exec-once block to hyprland.conf"
+        echo "exec-once = bash ${SCRIPT_HOME}/.config/hypr/noctalia-first-run.sh" >> "${cfg}"
+        print_success "Appended Noctalia env + exec-once block to hyprland.conf"
     else
-        print_success "Noctalia exec-once already present — skipping."
+        print_success "Noctalia config already present — skipping."
     fi
     echo ""
 }
@@ -330,6 +349,23 @@ PLJSON
     echo ""
 }
 
+# ── MIME application menu fix ─────────────────────────────────────────────────
+
+setup_mimetype_fix() {
+    print_step "Setting up MIME application menu symlink..."
+    local src="/etc/xdg/menus/applications.menu"
+    local dst="/etc/xdg/menus/gnome-applications.menu"
+    if [[ -L "${dst}" ]] || [[ -f "${dst}" ]]; then
+        print_success "gnome-applications.menu already exists — skipping."
+    elif [[ -f "${src}" ]]; then
+        $SUDO_CMD ln -s "${src}" "${dst}"
+        print_success "Linked gnome-applications.menu → applications.menu"
+    else
+        print_warning "${src} not found — skipping (applications.menu not present yet)."
+    fi
+    echo ""
+}
+
 # ── Completion ────────────────────────────────────────────────────────────────
 
 show_completion() {
@@ -360,6 +396,7 @@ main() {
     preflight
     ensure_aur_helper
     install_packages
+    setup_mimetype_fix
     ensure_hyprland_session
     configure_hyprland
     configure_portals
