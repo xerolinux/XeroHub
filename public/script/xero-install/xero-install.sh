@@ -23,6 +23,7 @@ SCRIPT_NAME="Xero Arch Installer"
 
 # URLs for fetching scripts
 XERO_KDE_URL="https://xerolinux.xyz/script/xero-install/xero-kde.sh"
+XERO_HYPR_URL="https://xerolinux.xyz/script/xero-install/xero-hypr.sh"
 
 # Mountpoint for installation
 MOUNTPOINT="/mnt"
@@ -55,6 +56,7 @@ CONFIG[swap_algo]="zstd"
 CONFIG[gfx_driver]="mesa"
 CONFIG[parallel_downloads]="5"
 CONFIG[aur_helper]="paru"
+CONFIG[desktop]="kde"
 CONFIG[uefi]="no"
 CONFIG[boot_part]=""
 CONFIG[root_part]=""
@@ -1032,6 +1034,29 @@ select_aur_helper() {
     sleep 0.5
 }
 
+select_desktop_env() {
+    show_header
+    show_submenu_header "🖥️  Desktop Environment"
+    echo ""
+    show_info "Choose your desktop environment"
+    echo ""
+
+    local desktops=(
+        "kde       │ KDE Plasma — full desktop, familiar layout (Recommended)"
+        "hyprland  │ Hyprland + Noctalia — tiling compositor, advanced users"
+    )
+
+    local selection=""
+    selection=$(printf '%s\n' "${desktops[@]}" | gum choose --height 4 --header "Desktop Environment:") || true
+
+    if [[ -n "$selection" ]]; then
+        CONFIG[desktop]=$(echo "$selection" | awk '{print $1}')
+        show_success "Desktop: ${CONFIG[desktop]}"
+    fi
+
+    sleep 0.5
+}
+
 apply_parallel_downloads() {
     local conf="$1"
     local count="${CONFIG[parallel_downloads]}"
@@ -1101,6 +1126,9 @@ show_main_menu() {
             fi
         fi
 
+        local de_label="KDE Plasma"
+        [[ "${CONFIG[desktop]}" == "hyprland" ]] && de_label="Hyprland + Noctalia"
+
         local menu_items=(
             ""
             "1.  🌐 Installer Language   │ ${CONFIG[installer_lang]}"
@@ -1112,14 +1140,15 @@ show_main_menu() {
             "7.  👤 Authentication       │ ${CONFIG[username]:-Not configured}"
             "8.  🕐 Timezone             │ ${CONFIG[timezone]}"
             "9.  ⚡ Parallel Downloads   │ ${CONFIG[parallel_downloads]}"
-            "10. 📦 AUR Helper           │ ${CONFIG[aur_helper]}"
+            "10. 🖥️  Desktop Environment  │ $de_label"
+            "11. 📦 AUR Helper           │ ${CONFIG[aur_helper]}"
             "─────────────────────────────────────────────"
-            "11. ✅ Start Installation"
+            "12. ✅ Start Installation"
             "0.  ❌ Exit"
         )
 
         local selection=""
-        selection=$(printf '%s\n' "${menu_items[@]}" | gum choose --height 18 --header $'Configure your installation:\n') || true
+        selection=$(printf '%s\n' "${menu_items[@]}" | gum choose --height 20 --header $'Configure your installation:\n') || true
 
         case "$selection" in
             "1."*)  select_installer_language ;;
@@ -1131,8 +1160,9 @@ show_main_menu() {
             "7."*)  configure_authentication ;;
             "8."*)  select_timezone ;;
             "9."*)  configure_parallel_downloads ;;
-            "10."*) select_aur_helper ;;
-            "11."*)
+            "10."*) select_desktop_env ;;
+            "11."*) select_aur_helper ;;
+            "12."*)
                 if validate_config; then
                     show_summary
                     local confirm_msg=""
@@ -1234,6 +1264,8 @@ show_summary() {
             "Encryption:       $encrypt_status" \
             "Swap:             ${CONFIG[swap]}" \
             "" \
+            "Desktop:          ${CONFIG[desktop]}" \
+            "AUR Helper:       ${CONFIG[aur_helper]}" \
             "Graphics:         ${CONFIG[gfx_driver]}" \
             "Boot Mode:        $boot_mode" \
             "Bootloader:       GRUB (on ${CONFIG[disk]})" \
@@ -1260,6 +1292,8 @@ show_summary() {
             "Encryption:       $encrypt_status" \
             "Swap:             ${CONFIG[swap]}" \
             "" \
+            "Desktop:          ${CONFIG[desktop]}" \
+            "AUR Helper:       ${CONFIG[aur_helper]}" \
             "Graphics:         ${CONFIG[gfx_driver]}" \
             "Boot Mode:        $boot_mode" \
             "Bootloader:       GRUB" \
@@ -1307,9 +1341,9 @@ perform_installation() {
     run_step "Installing graphics drivers..." install_graphics
     run_step "Configuring swap..." setup_swap_system
 
-    show_info "Preparing XeroLinux KDE installer..."
-    prepare_kde_installer
-    show_success "KDE installer ready"
+    show_info "Preparing desktop installer..."
+    prepare_desktop_installer
+    show_success "Desktop installer ready"
 
     echo ""
     gum style --foreground 82 --bold --border double --border-foreground 82 \
@@ -1322,7 +1356,7 @@ perform_installation() {
     echo ""
     gum input --placeholder "Press Enter to continue to KDE installation..."
 
-    run_kde_installer
+    run_desktop_installer
 
     show_header
     gum style --foreground 82 --bold --border double --border-foreground 82 \
@@ -1461,15 +1495,16 @@ mount_filesystems() {
         btrfs subvolume create "$MOUNTPOINT/@home"
         btrfs subvolume create "$MOUNTPOINT/@var"
         btrfs subvolume create "$MOUNTPOINT/@tmp"
-        btrfs subvolume create "$MOUNTPOINT/@snapshots"
+        # @snapshots NOT created here — snapper creates /.snapshots as a nested
+        # child subvolume of @ in setup_snapper(). A top-level sibling subvolume
+        # breaks snapper's subvolume relationship check and prevents snapshot creation.
         umount "$MOUNTPOINT"
 
         mount -o noatime,compress=zstd,subvol=@ "$root_device" "$MOUNTPOINT"
-        mkdir -p "$MOUNTPOINT"/{home,var,tmp,.snapshots,boot}
+        mkdir -p "$MOUNTPOINT"/{home,var,tmp,boot}
         mount -o noatime,compress=zstd,subvol=@home "$root_device" "$MOUNTPOINT/home"
         mount -o noatime,compress=zstd,subvol=@var "$root_device" "$MOUNTPOINT/var"
         mount -o noatime,compress=zstd,subvol=@tmp "$root_device" "$MOUNTPOINT/tmp"
-        mount -o noatime,compress=zstd,subvol=@snapshots "$root_device" "$MOUNTPOINT/.snapshots"
     else
         mount "$root_device" "$MOUNTPOINT"
         mkdir -p "$MOUNTPOINT/boot"
@@ -1826,16 +1861,32 @@ setup_snapper() {
 
     show_info "Configuring Snapper for Btrfs..."
 
-    # /.snapshots is already mounted as @snapshots subvolume (from mount_filesystems).
-    # snapper create-config checks if /.snapshots exists as a directory/mountpoint;
-    # since it does, it uses it as-is without creating a nested subvolume.
-    arch-chroot "$MOUNTPOINT" snapper -c root create-config / 2>/dev/null \
-        || show_warning "Snapper config creation had issues — check manually after boot"
+    # /.snapshots must NOT exist before this call. snapper create-config creates it
+    # as a btrfs subvolume nested INSIDE @, which is the required parent relationship.
+    # A pre-mounted top-level @snapshots sibling breaks snapper's subvolume check
+    # and silently prevents all snapshot creation.
+    if ! arch-chroot "$MOUNTPOINT" snapper -c root create-config /; then
+        show_warning "Snapper config creation failed — snapshot support disabled"
+        return 0
+    fi
 
-    # Lock down permissions on snapshots dir
+    # Lock down permissions
     arch-chroot "$MOUNTPOINT" chmod 750 /.snapshots 2>/dev/null || true
 
-    # Enable grub-btrfsd: watches for new snapshots and auto-regenerates grub.cfg
+    # Add /.snapshots to fstab so btrfs rollbacks don't swallow the snapshots dir.
+    # Snapper nested the subvolume at @/.snapshots inside the btrfs pool.
+    local root_uuid=""
+    if [[ "${CONFIG[encrypt]}" == "yes" ]]; then
+        root_uuid=$(blkid -s UUID -o value /dev/mapper/cryptroot 2>/dev/null)
+    else
+        root_uuid=$(blkid -s UUID -o value "${CONFIG[root_part]}" 2>/dev/null)
+    fi
+    if [[ -n "$root_uuid" ]]; then
+        echo "UUID=$root_uuid  /.snapshots  btrfs  noatime,compress=zstd,subvol=@/.snapshots  0  0" \
+            >> "$MOUNTPOINT/etc/fstab"
+    fi
+
+    # Enable grub-btrfsd: inotify-watches /.snapshots, regenerates grub.cfg on new snapshot
     arch-chroot "$MOUNTPOINT" systemctl enable grub-btrfsd 2>/dev/null \
         || show_warning "grub-btrfsd service not available"
 
@@ -1971,58 +2022,76 @@ EOF
 # KDE INSTALLER
 # ────────────────────────────────────────────────────────────────────────────────
 
-prepare_kde_installer() {
-    if [[ -f "/root/xero-kde.sh" ]]; then
-        cp /root/xero-kde.sh "$MOUNTPOINT/home/${CONFIG[username]}/xero-kde.sh"
+prepare_desktop_installer() {
+    local user="${CONFIG[username]}"
+    local user_home="$MOUNTPOINT/home/${user}"
+
+    if [[ "${CONFIG[desktop]}" == "hyprland" ]]; then
+        if [[ -f "/root/xero-hypr.sh" ]]; then
+            cp /root/xero-hypr.sh "${user_home}/xero-hypr.sh"
+        else
+            curl -fsSL "$XERO_HYPR_URL" -o "${user_home}/xero-hypr.sh" || {
+                cat > "${user_home}/xero-hypr.sh" << 'HYPRSCRIPT'
+#!/bin/bash
+echo "XeroLinux Hyprland installer placeholder"
+echo "Please download the actual script from: https://github.com/xerolinux/xero-scripts"
+HYPRSCRIPT
+            }
+        fi
+        chmod +x "${user_home}/xero-hypr.sh"
+        arch-chroot "$MOUNTPOINT" chown "${user}:${user}" "/home/${user}/xero-hypr.sh"
     else
-        curl -fsSL "$XERO_KDE_URL" -o "$MOUNTPOINT/home/${CONFIG[username]}/xero-kde.sh" || {
-            cat > "$MOUNTPOINT/home/${CONFIG[username]}/xero-kde.sh" << 'KDESCRIPT'
+        if [[ -f "/root/xero-kde.sh" ]]; then
+            cp /root/xero-kde.sh "${user_home}/xero-kde.sh"
+        else
+            curl -fsSL "$XERO_KDE_URL" -o "${user_home}/xero-kde.sh" || {
+                cat > "${user_home}/xero-kde.sh" << 'KDESCRIPT'
 #!/bin/bash
 echo "XeroLinux KDE installer placeholder"
 echo "Please download the actual script from: https://github.com/xerolinux/xero-scripts"
 KDESCRIPT
-        }
+            }
+        fi
+        chmod +x "${user_home}/xero-kde.sh"
+        arch-chroot "$MOUNTPOINT" chown "${user}:${user}" "/home/${user}/xero-kde.sh"
     fi
-
-    chmod +x "$MOUNTPOINT/home/${CONFIG[username]}/xero-kde.sh"
-    arch-chroot "$MOUNTPOINT" chown "${CONFIG[username]}:${CONFIG[username]}" "/home/${CONFIG[username]}/xero-kde.sh"
 }
 
-run_kde_installer() {
-    show_header
-    gum style --foreground 212 --bold --margin "1 2" \
-        "🎨 Running XeroLinux KDE Setup (as ${CONFIG[username]})..."
-    echo ""
-
+run_desktop_installer() {
     local user="${CONFIG[username]}"
     local user_home="/home/${user}"
-    local script_path="${user_home}/xero-kde.sh"
 
-    # Ensure script exists
+    if [[ "${CONFIG[desktop]}" == "hyprland" ]]; then
+        local script_path="${user_home}/xero-hypr.sh"
+        show_header
+        gum style --foreground 212 --bold --margin "1 2" \
+            "🌿 Running XeroLinux Hyprland + Noctalia Setup (as ${user})..."
+        echo ""
+    else
+        local script_path="${user_home}/xero-kde.sh"
+        show_header
+        gum style --foreground 212 --bold --margin "1 2" \
+            "🎨 Running XeroLinux KDE Setup (as ${user})..."
+        echo ""
+    fi
+
     if [[ ! -f "${MOUNTPOINT}${script_path}" ]]; then
-        show_error "KDE script not found at ${script_path}"
+        show_error "Desktop script not found at ${script_path}"
         return 1
     fi
 
-    # Ensure user exists inside chroot
     if ! arch-chroot "$MOUNTPOINT" id "$user" &>/dev/null; then
         show_error "User '${user}' does not exist in target system yet."
         return 1
     fi
 
-    # Ensure correct ownership (avoid root-owned dotfiles/configs)
     arch-chroot "$MOUNTPOINT" chown -R "${user}:${user}" "${user_home}"
 
-    # Temporarily allow passwordless sudo so the KDE script can install packages.
     echo "${user} ALL=(ALL:ALL) NOPASSWD: ALL" > "$MOUNTPOINT/etc/sudoers.d/99-xero-installer"
     chmod 0440 "$MOUNTPOINT/etc/sudoers.d/99-xero-installer"
 
-    # Run as the created user. Use a single su -l (login shell) to set up
-    # HOME/USER/XDG correctly, and pass the script path directly — avoids
-    # the nested runuser -> bash -lc chain that broke stdin/TTY passthrough.
     arch-chroot "$MOUNTPOINT" su -l "$user" -c "bash '${script_path}' '${CONFIG[aur_helper]}' '${CONFIG[filesystem]}'"
 
-    # Remove temporary sudo rule
     rm -f "$MOUNTPOINT/etc/sudoers.d/99-xero-installer"
 }
 
