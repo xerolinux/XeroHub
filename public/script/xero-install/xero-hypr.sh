@@ -433,7 +433,9 @@ install_packages() {
     install_group "Fonts & Themes" \
         ttf-fira-code otf-libertinus tex-gyre-fonts ttf-hack-nerd ttf-ubuntu-font-family \
         awesome-terminal-fonts ttf-jetbrains-mono-nerd adobe-source-sans-fonts \
+        tela-circle-icon-theme-purple \
         kvantum fastfetch adw-gtk-theme oh-my-posh-bin gnome-themes-extra
+
 
     # ── Language Servers ──────────────────────────────────────────────────────
     install_group "Language Servers" \
@@ -542,6 +544,7 @@ env = QT_QPA_PLATFORMTHEME,qt6ct
 # Noctalia shell — bar, notifications, wallpaper, lock screen, launcher, polkit
 # ────────────────────────────────────────────────────────────────────────────
 exec-once = qs -c noctalia-shell
+exec-once = dex --autostart
 exec-once = nm-applet --indicator
 exec-once = blueman-applet
 exec-once = wl-paste --type text  --watch cliphist store
@@ -749,7 +752,105 @@ EOF
     echo ""
 }
 
-# ── Step I: Copy skel + distro identity ───────────────────────────────────────
+# ── Step I: Qt / GTK / Icon theming ──────────────────────────────────────────
+
+configure_themes() {
+    [[ -z "${ACTUAL_HOME:-}" || -z "${ACTUAL_USER:-}" ]] && return 0
+
+    print_step "Configuring Qt + GTK icon theme and fonts..."
+
+    # qt5ct — style=kvantum so Noctalia's Qt color template can apply its palette
+    mkdir -p "$ACTUAL_HOME/.config/qt5ct"
+    cat > "$ACTUAL_HOME/.config/qt5ct/qt5ct.conf" << 'QT5CT'
+[Appearance]
+color_scheme_path=
+custom_palette=false
+icon_theme=Tela-circle-purple-dark
+standard_dialogs=default
+style=kvantum
+
+[Fonts]
+fixed="JetBrainsMono Nerd Font,11,-1,5,400,0,0,0,0,0,0,0,0,0,0,1"
+general="JetBrainsMono Nerd Font,11,-1,5,400,0,0,0,0,0,0,0,0,0,0,1"
+QT5CT
+
+    # qt6ct
+    mkdir -p "$ACTUAL_HOME/.config/qt6ct"
+    cat > "$ACTUAL_HOME/.config/qt6ct/qt6ct.conf" << 'QT6CT'
+[Appearance]
+color_scheme_path=
+custom_palette=false
+icon_theme=Tela-circle-purple-dark
+standard_dialogs=default
+style=kvantum
+
+[Fonts]
+fixed="JetBrainsMono Nerd Font,11,-1,5,400,0,0,0,0,0,0,0,0,0,0,1"
+general="JetBrainsMono Nerd Font,11,-1,5,400,0,0,0,0,0,0,0,0,0,0,1"
+QT6CT
+
+    # GTK3 — icon theme + dark pref + fonts only.
+    # Noctalia's GTK color template writes the actual theme colors via matugen.
+    mkdir -p "$ACTUAL_HOME/.config/gtk-3.0"
+    cat > "$ACTUAL_HOME/.config/gtk-3.0/settings.ini" << 'GTK3'
+[Settings]
+gtk-icon-theme-name=Tela-circle-purple-dark
+gtk-cursor-theme-name=Breeze_Snow
+gtk-font-name=JetBrainsMono Nerd Font 11
+gtk-application-prefer-dark-theme=1
+GTK3
+
+    # GTK4
+    mkdir -p "$ACTUAL_HOME/.config/gtk-4.0"
+    cat > "$ACTUAL_HOME/.config/gtk-4.0/settings.ini" << 'GTK4'
+[Settings]
+gtk-icon-theme-name=Tela-circle-purple-dark
+gtk-cursor-theme-name=Breeze_Snow
+gtk-font-name=JetBrainsMono Nerd Font 11
+gtk-application-prefer-dark-theme=1
+GTK4
+
+    # GTK2
+    cat > "$ACTUAL_HOME/.gtkrc-2.0" << 'GTK2'
+gtk-icon-theme-name="Tela-circle-purple-dark"
+gtk-cursor-theme-name="Breeze_Snow"
+gtk-font-name="JetBrainsMono Nerd Font 11"
+GTK2
+
+    # nwg-look — mirrors GTK3 settings so nwg-look shows the right values when opened
+    mkdir -p "$ACTUAL_HOME/.config/nwg-look"
+    cat > "$ACTUAL_HOME/.config/nwg-look/config" << 'NWGLOOK'
+gtk-icon-theme-name=Tela-circle-purple-dark
+gtk-cursor-theme-name=Breeze_Snow
+gtk-font-name=JetBrainsMono Nerd Font 11
+gtk-application-prefer-dark-theme=1
+NWGLOOK
+
+    # Noctalia color scheme — select Catppuccin as the predefined scheme.
+    # Noctalia then applies it to GTK, Qt, Alacritty, Konsole, etc. via its templates.
+    mkdir -p "$ACTUAL_HOME/.config/noctalia"
+    if [[ ! -f "$ACTUAL_HOME/.config/noctalia/settings.json" ]]; then
+        cat > "$ACTUAL_HOME/.config/noctalia/settings.json" << 'NOCCONF'
+{
+    "predefinedScheme": "Catppuccin"
+}
+NOCCONF
+    fi
+
+    $SUDO_CMD chown -R "$ACTUAL_USER:$ACTUAL_USER" \
+        "$ACTUAL_HOME/.config/qt5ct" \
+        "$ACTUAL_HOME/.config/qt6ct" \
+        "$ACTUAL_HOME/.config/gtk-3.0" \
+        "$ACTUAL_HOME/.config/gtk-4.0" \
+        "$ACTUAL_HOME/.gtkrc-2.0" \
+        "$ACTUAL_HOME/.config/nwg-look" \
+        "$ACTUAL_HOME/.config/noctalia" 2>/dev/null || true
+
+    print_success "Icon theme: Tela-circle-purple-dark. Color scheme: Catppuccin (via Noctalia)."
+    echo ""
+}
+
+# ── Step J: Copy skel + distro identity ───────────────────────────────────────
 
 copy_skel_to_user() {
     print_header
@@ -864,11 +965,11 @@ KONSOLERC
   </alias>
   <alias>
     <family>sans-serif</family>
-    <prefer><family>Noto Sans</family></prefer>
+    <prefer><family>JetBrainsMono Nerd Font</family></prefer>
   </alias>
   <alias>
     <family>serif</family>
-    <prefer><family>Noto Serif</family></prefer>
+    <prefer><family>JetBrainsMono Nerd Font</family></prefer>
   </alias>
 </fontconfig>
 FONTCFG
@@ -1064,6 +1165,7 @@ configure_portals
 install_noctalia_polkit
 setup_mimetype_fix
 copy_skel_to_user
+configure_themes
 configure_sddm
 finalize_system
 show_completion

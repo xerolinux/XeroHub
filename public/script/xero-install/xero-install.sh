@@ -1923,13 +1923,38 @@ SNAPCFG
             >> "$MOUNTPOINT/etc/fstab"
     fi
 
-    # 5. Enable services
-    arch-chroot "$MOUNTPOINT" systemctl enable grub-btrfsd 2>/dev/null \
-        || show_warning "grub-btrfsd service not available"
-    arch-chroot "$MOUNTPOINT" systemctl enable snapper-timeline.timer 2>/dev/null || true
-    arch-chroot "$MOUNTPOINT" systemctl enable snapper-cleanup.timer  2>/dev/null || true
+    # 5. Defer snapper timers + grub-btrfsd to first desktop login via a oneshot service.
+    #    Enabling them here (in a bare chroot) causes them to fire before the user's
+    #    filesystem is fully settled and before btrfs-assistant is available.
+    mkdir -p "$MOUNTPOINT/usr/local/bin"
+    cat > "$MOUNTPOINT/usr/local/bin/xero-snapper-init" << 'SNAPINIT'
+#!/bin/bash
+systemctl enable --now snapper-timeline.timer
+systemctl enable --now snapper-cleanup.timer
+systemctl enable --now grub-btrfsd
+touch /var/lib/xero-snapper-initialized
+systemctl disable xero-snapper-init.service
+SNAPINIT
+    chmod +x "$MOUNTPOINT/usr/local/bin/xero-snapper-init"
 
-    show_success "Snapper configured!"
+    cat > "$MOUNTPOINT/etc/systemd/system/xero-snapper-init.service" << 'SVCEOF'
+[Unit]
+Description=Initialize Snapper timers on first boot (XeroLinux)
+ConditionPathExists=!/var/lib/xero-snapper-initialized
+After=sysinit.target local-fs.target
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+ExecStart=/usr/local/bin/xero-snapper-init
+
+[Install]
+WantedBy=multi-user.target
+SVCEOF
+
+    arch-chroot "$MOUNTPOINT" systemctl enable xero-snapper-init.service 2>/dev/null || true
+
+    show_success "Snapper configured — timers activate on first boot."
 }
 
 create_user() {
