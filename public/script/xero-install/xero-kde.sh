@@ -821,7 +821,7 @@ copy_skel_to_user() {
 
     if git clone --depth=1 https://github.com/xerolinux/xero-layan-git.git "$WORKDIR" 2>/dev/null; then
         local THEME_SRC="$WORKDIR/XeroLayan"
-        local THEME_DEST="/usr/share/grub/themes/XeroLayan"
+        local THEME_DEST="/boot/grub/themes/XeroLayan"
 
         if [[ -d "$THEME_SRC" && -f "$THEME_SRC/theme.txt" ]]; then
 
