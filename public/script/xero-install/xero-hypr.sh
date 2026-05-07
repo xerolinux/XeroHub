@@ -81,7 +81,7 @@ prompt_user() {
     echo -e "  ${BLUE}•${NC} Noctalia shell (bar, launcher, notifications, wallpaper)"
     echo -e "  ${BLUE}•${NC} KDE apps: Dolphin, Konsole, Kate, Ark, Gwenview, Okular, KCalc"
     echo -e "  ${BLUE}•${NC} AUR helper: ${GREEN}${AUR_HELPER}${NC}"
-    echo -e "  ${BLUE}•${NC} SDDM with XeroDark theme"
+    echo -e "  ${BLUE}•${NC} SDDM with HyprSDDM theme"
     [[ "$FILESYSTEM" == "btrfs" ]] && \
         echo -e "  ${BLUE}•${NC} Btrfs tools: ${GREEN}btrfs-assistant + snapper integration${NC}"
     echo -e "  ${BLUE}•${NC} Your selected optional packages"
@@ -703,7 +703,7 @@ SVCEOF
     echo ""
 }
 
-# ── Step H: SDDM + XeroDark ───────────────────────────────────────────────────
+# ── Step H: SDDM + Catppuccin ────────────────────────────────────────────────
 
 configure_sddm() {
     print_header
@@ -712,18 +712,30 @@ configure_sddm() {
     print_success "SDDM installed!"
     echo ""
 
-    # XeroDark is a KDE-based SDDM theme — requires these QML modules even without
-    # a full Plasma install. breeze provides org.kde.breeze.components,
-    # plasma-workspace provides org.kde.plasma.private.keyboardIndicator.
-    print_step "Installing SDDM theme dependencies (KDE QML modules)..."
-    $SUDO_CMD pacman -S --needed --noconfirm breeze plasma-workspace \
-        || print_warning "Some SDDM theme deps failed — theme may show errors"
-    echo ""
-
-    print_step "Installing XeroDark SDDM theme..."
-    $SUDO_CMD git clone https://github.com/xerolinux/XeroDark.git /usr/share/sddm/themes/XeroDark \
-        || print_warning "Failed to clone XeroDark theme"
-    print_success "XeroDark theme installed!"
+    print_step "Installing HyprSDDM theme..."
+    local tmp_sddm
+    tmp_sddm=$(mktemp -d)
+    if git clone --no-checkout --depth=1 --filter=blob:none \
+            https://github.com/xerolinux/HyprXero-git.git "$tmp_sddm" 2>/dev/null; then
+        git -C "$tmp_sddm" sparse-checkout set \
+            Configs/System/usr/share/sddm/themes/HyprSDDM 2>/dev/null
+        git -C "$tmp_sddm" checkout 2>/dev/null
+        $SUDO_CMD mkdir -p /usr/share/sddm/themes
+        $SUDO_CMD cp -r "$tmp_sddm/Configs/System/usr/share/sddm/themes/HyprSDDM" \
+            /usr/share/sddm/themes/
+        rm -rf "$tmp_sddm"
+        # Patch theme.conf: XeroLinux wallpaper, purple accent, JetBrainsMono font
+        local tcf=/usr/share/sddm/themes/HyprSDDM/theme.conf
+        $SUDO_CMD sed -i \
+            -e 's|wallpaper="backgrounds/bg.png"|wallpaper="/usr/share/wallpapers/Xero-Plasma44.jpg"|' \
+            -e 's|accentColour="#568b22"|accentColour="#a06af0"|' \
+            -e 's|fontFamily="Noto Sans"|fontFamily="JetBrainsMono Nerd Font"|' \
+            "$tcf"
+        print_success "HyprSDDM theme installed!"
+    else
+        print_warning "Failed to clone HyprSDDM — SDDM will use default theme"
+        rm -rf "$tmp_sddm"
+    fi
     echo ""
 
     print_step "Writing SDDM configuration..."
@@ -743,7 +755,7 @@ HaltCommand=/usr/bin/systemctl poweroff
 RebootCommand=/usr/bin/systemctl reboot
 
 [Theme]
-Current=XeroDark
+Current=HyprSDDM
 
 [Users]
 MaximumUid=60000
@@ -1259,7 +1271,7 @@ NWGLOOK
     },
     "noctaliaPerformance": {
         "disableDesktopWidgets": true,
-        "disableWallpaper": true
+        "disableWallpaper": false
     },
     "notifications": {
         "backgroundOpacity": 1,
@@ -1438,17 +1450,11 @@ NOCCONF
     echo ""
 
     print_step "Setting Noctalia color scheme for KDE apps..."
-    for rc in katerc kwriterc gwenviewrc dolphinrc; do
+    for rc in katerc kwriterc dolphinrc gwenviewrc; do
         local rcfile="$ACTUAL_HOME/.config/$rc"
-        if grep -q "^\[UiSettings\]" "$rcfile" 2>/dev/null; then
-            if grep -q "^ColorScheme=" "$rcfile" 2>/dev/null; then
-                sed -i 's/^ColorScheme=.*/ColorScheme=noctalia/' "$rcfile"
-            else
-                sed -i '/^\[UiSettings\]/a ColorScheme=noctalia' "$rcfile"
-            fi
-        else
-            printf '\n[UiSettings]\nColorScheme=noctalia\n' >> "$rcfile"
-        fi
+        # Write section fresh — more reliable than conditional sed on files that may not exist yet
+        printf '\n[UiSettings]\nColorScheme=noctalia\n' >> "$rcfile"
+        $SUDO_CMD chown "$ACTUAL_USER:$ACTUAL_USER" "$rcfile"
     done
     print_success "KDE app color scheme set to: noctalia"
     echo ""
