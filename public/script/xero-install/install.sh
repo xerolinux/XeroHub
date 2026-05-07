@@ -83,6 +83,14 @@ curl -fsSL "$KDE_URL" -o /root/xero-kde.sh 2>/dev/null || {
     echo -e "${CYAN}Note: KDE script will be downloaded during installation${NC}"
 }
 [[ -f /root/xero-kde.sh ]] && chmod +x /root/xero-kde.sh
+
+# Download Hyprland script
+echo -e "${CYAN}Downloading XeroLinux Hyprland script...${NC}"
+HYPR_URL="https://xerolinux.xyz/script/xero-install/xero-hypr.sh"
+curl -fsSL "$HYPR_URL" -o /root/xero-hypr.sh 2>/dev/null || {
+    echo -e "${CYAN}Note: Hyprland script will be downloaded during installation${NC}"
+}
+[[ -f /root/xero-hypr.sh ]] && chmod +x /root/xero-hypr.sh
 echo -e "${GREEN}✓ Ready to install${NC}"
 
 echo ""
