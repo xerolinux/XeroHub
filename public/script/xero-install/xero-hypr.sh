@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# XeroLinux Hyprland + Noctalia Installer v1.8
+# XeroLinux Hyprland + Noctalia Installer v1.9
 
 SCRIPT_PATH="$(readlink -f "$0" 2>/dev/null || echo "")"
 

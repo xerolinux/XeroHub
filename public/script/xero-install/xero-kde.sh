@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# XeroLinux KDE Plasma Installer v1.8
+# XeroLinux KDE Plasma Installer v1.9
 
 SCRIPT_PATH="$(readlink -f "$0" 2>/dev/null || echo "")"
 
