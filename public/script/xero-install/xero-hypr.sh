@@ -1446,7 +1446,10 @@ cfg="$HOME/.config/hypr/hyprland.conf"
 # Remove from autostart first — runs exactly once regardless of outcome
 sed -i '/xero-wallpaper-init/d' "$cfg" 2>/dev/null
 [[ ! -f "$wp" ]] && exit 0
-# Wait for Noctalia to fully initialize before calling IPC
+# Restart Noctalia to apply fresh config, then set wallpaper
+killall qs 2>/dev/null
+sleep 0.5
+qs -c noctalia-shell &
 sleep 8
 qs -c noctalia-shell ipc call wallpaper set "$wp"
 WPSCRIPT
