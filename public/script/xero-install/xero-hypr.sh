@@ -1778,7 +1778,7 @@ visible=false
 TabBarVisibility=ShowTabBarWhenNeeded
 
 [UiSettings]
-ColorScheme=catppuccin-mocha
+ColorScheme=noctalia
 KONSOLERC
     print_success "Konsole config written (clean window: no toolbars, no menubar, tab bar on demand)."
 
