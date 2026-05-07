@@ -1437,16 +1437,45 @@ NOCCONF
         sed -i "s|/home/xero|${ACTUAL_HOME}|g" "$ACTUAL_HOME/.config/noctalia/settings.json"
     fi
 
-    print_step "Setting default wallpaper..."
-    mkdir -p "$ACTUAL_HOME/Pictures/Wallpapers"
-    local wp_src="/usr/share/wallpapers/Xero-Plasma44.jpg"
-    if [[ -f "$wp_src" ]]; then
-        $SUDO_CMD cp "$wp_src" "$ACTUAL_HOME/Pictures/Wallpapers/Xero-Plasma44.jpg"
-        print_success "Default wallpaper copied: Xero-Plasma44.jpg"
-    else
-        print_warning "Xero-Plasma44.jpg not found at $wp_src — wallpaper directory created but empty"
+    print_step "Installing first-boot wallpaper service..."
+    mkdir -p "$ACTUAL_HOME/.local/bin"
+    cat > "$ACTUAL_HOME/.local/bin/xero-wallpaper-init" << 'WPSCRIPT'
+#!/bin/bash
+wp="/usr/share/wallpapers/Xero-Plasma44.jpg"
+flag="$HOME/.local/share/xero-wallpaper-initialized"
+[[ -f "$flag" ]] && exit 0
+[[ ! -f "$wp" ]] && exit 0
+for i in $(seq 1 30); do
+    if qs -c noctalia-shell ipc call wallpaper set "$wp" 2>/dev/null; then
+        mkdir -p "$(dirname "$flag")"
+        touch "$flag"
+        exit 0
     fi
-    $SUDO_CMD chown -R "$ACTUAL_USER:$ACTUAL_USER" "$ACTUAL_HOME/Pictures"
+    sleep 2
+done
+WPSCRIPT
+    chmod +x "$ACTUAL_HOME/.local/bin/xero-wallpaper-init"
+
+    mkdir -p "$ACTUAL_HOME/.config/systemd/user/graphical-session.target.wants"
+    cat > "$ACTUAL_HOME/.config/systemd/user/xero-wallpaper-init.service" << 'WPSVC'
+[Unit]
+Description=Set initial XeroLinux wallpaper
+After=graphical-session.target
+ConditionPathExists=!%h/.local/share/xero-wallpaper-initialized
+
+[Service]
+Type=oneshot
+ExecStart=%h/.local/bin/xero-wallpaper-init
+
+[Install]
+WantedBy=graphical-session.target
+WPSVC
+    ln -sf "../xero-wallpaper-init.service" \
+        "$ACTUAL_HOME/.config/systemd/user/graphical-session.target.wants/xero-wallpaper-init.service"
+    $SUDO_CMD chown -R "$ACTUAL_USER:$ACTUAL_USER" \
+        "$ACTUAL_HOME/.local/bin" \
+        "$ACTUAL_HOME/.config/systemd"
+    print_success "First-boot wallpaper service installed"
     echo ""
 
     print_step "Setting Noctalia color scheme for KDE apps..."
