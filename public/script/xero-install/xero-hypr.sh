@@ -826,15 +826,597 @@ gtk-font-name=JetBrainsMono Nerd Font 11
 gtk-application-prefer-dark-theme=1
 NWGLOOK
 
-    # Noctalia color scheme — select Catppuccin as the predefined scheme.
-    # Noctalia then applies it to GTK, Qt, Alacritty, Konsole, etc. via its templates.
+    # Noctalia settings — full config based on XeroLinux reference install.
+    # /home/xero paths replaced with the actual user's home at install time.
     mkdir -p "$ACTUAL_HOME/.config/noctalia"
     if [[ ! -f "$ACTUAL_HOME/.config/noctalia/settings.json" ]]; then
         cat > "$ACTUAL_HOME/.config/noctalia/settings.json" << 'NOCCONF'
 {
-    "predefinedScheme": "Catppuccin"
+    "appLauncher": {
+        "autoPasteClipboard": false,
+        "clipboardWatchImageCommand": "wl-paste --type image --watch cliphist store",
+        "clipboardWatchTextCommand": "wl-paste --type text --watch cliphist store",
+        "clipboardWrapText": true,
+        "customLaunchPrefix": "",
+        "customLaunchPrefixEnabled": false,
+        "density": "default",
+        "enableClipPreview": true,
+        "enableClipboardChips": true,
+        "enableClipboardHistory": false,
+        "enableClipboardSmartIcons": true,
+        "enableSessionSearch": true,
+        "enableSettingsSearch": true,
+        "enableWindowsSearch": true,
+        "iconMode": "tabler",
+        "ignoreMouseInput": false,
+        "overviewLayer": false,
+        "pinnedApps": [],
+        "position": "center",
+        "screenshotAnnotationTool": "",
+        "showCategories": true,
+        "showIconBackground": false,
+        "sortByMostUsed": true,
+        "terminalCommand": "konsole -e",
+        "viewMode": "list"
+    },
+    "audio": {
+        "mprisBlacklist": [],
+        "preferredPlayer": "",
+        "spectrumFrameRate": 30,
+        "spectrumMirrored": true,
+        "visualizerType": "linear",
+        "volumeFeedback": false,
+        "volumeFeedbackSoundFile": "",
+        "volumeOverdrive": false,
+        "volumeStep": 5
+    },
+    "bar": {
+        "autoHideDelay": 500,
+        "autoShowDelay": 150,
+        "backgroundOpacity": 0.93,
+        "barType": "simple",
+        "capsuleColorKey": "none",
+        "capsuleOpacity": 1,
+        "contentPadding": 2,
+        "density": "default",
+        "displayMode": "always_visible",
+        "enableExclusionZoneInset": true,
+        "fontScale": 1,
+        "frameRadius": 12,
+        "frameThickness": 8,
+        "hideOnOverview": false,
+        "marginHorizontal": 4,
+        "marginVertical": 4,
+        "middleClickAction": "none",
+        "middleClickCommand": "",
+        "middleClickFollowMouse": false,
+        "monitors": [],
+        "mouseWheelAction": "none",
+        "mouseWheelWrap": true,
+        "outerCorners": true,
+        "position": "top",
+        "reverseScroll": false,
+        "rightClickAction": "controlCenter",
+        "rightClickCommand": "",
+        "rightClickFollowMouse": true,
+        "screenOverrides": [],
+        "showCapsule": true,
+        "showOnWorkspaceSwitch": true,
+        "showOutline": false,
+        "useSeparateOpacity": false,
+        "widgetSpacing": 6,
+        "widgets": {
+            "center": [
+                {
+                    "characterCount": 2,
+                    "colorizeIcons": false,
+                    "emptyColor": "secondary",
+                    "enableScrollWheel": true,
+                    "focusedColor": "primary",
+                    "followFocusedScreen": false,
+                    "fontWeight": "bold",
+                    "groupedBorderOpacity": 1,
+                    "hideUnoccupied": false,
+                    "iconScale": 0.8,
+                    "id": "Workspace",
+                    "labelMode": "index",
+                    "occupiedColor": "secondary",
+                    "pillSize": 0.6,
+                    "showApplications": false,
+                    "showApplicationsHover": false,
+                    "showBadge": true,
+                    "showLabelsOnlyWhenOccupied": true,
+                    "unfocusedIconsOpacity": 1
+                }
+            ],
+            "left": [
+                {
+                    "colorizeSystemIcon": "none",
+                    "colorizeSystemText": "none",
+                    "customIconPath": "",
+                    "enableColorization": false,
+                    "icon": "rocket",
+                    "iconColor": "none",
+                    "id": "Launcher",
+                    "useDistroLogo": false
+                },
+                {
+                    "clockColor": "none",
+                    "customFont": "",
+                    "formatHorizontal": "HH:mm ddd, MMM dd",
+                    "formatVertical": "HH mm - dd MM",
+                    "id": "Clock",
+                    "tooltipFormat": "HH:mm ddd, MMM dd",
+                    "useCustomFont": false
+                },
+                {
+                    "compactMode": true,
+                    "diskPath": "/",
+                    "iconColor": "none",
+                    "id": "SystemMonitor",
+                    "showCpuCores": false,
+                    "showCpuFreq": false,
+                    "showCpuTemp": true,
+                    "showCpuUsage": true,
+                    "showDiskAvailable": false,
+                    "showDiskUsage": false,
+                    "showDiskUsageAsPercent": false,
+                    "showGpuTemp": false,
+                    "showLoadAverage": false,
+                    "showMemoryAsPercent": false,
+                    "showMemoryUsage": true,
+                    "showNetworkStats": false,
+                    "showSwapUsage": false,
+                    "textColor": "none",
+                    "useMonospaceFont": true,
+                    "usePadding": false
+                },
+                {
+                    "colorizeIcons": false,
+                    "hideMode": "hidden",
+                    "id": "ActiveWindow",
+                    "maxWidth": 145,
+                    "scrollingMode": "hover",
+                    "showIcon": true,
+                    "showText": true,
+                    "textColor": "none",
+                    "useFixedWidth": false
+                },
+                {
+                    "compactMode": false,
+                    "hideMode": "hidden",
+                    "hideWhenIdle": false,
+                    "id": "MediaMini",
+                    "maxWidth": 145,
+                    "panelShowAlbumArt": true,
+                    "scrollingMode": "hover",
+                    "showAlbumArt": true,
+                    "showArtistFirst": true,
+                    "showProgressRing": true,
+                    "showVisualizer": false,
+                    "textColor": "none",
+                    "useFixedWidth": false,
+                    "visualizerType": "linear"
+                }
+            ],
+            "right": [
+                {
+                    "blacklist": [],
+                    "chevronColor": "none",
+                    "colorizeIcons": false,
+                    "drawerEnabled": true,
+                    "hidePassive": false,
+                    "id": "Tray",
+                    "pinned": []
+                },
+                {
+                    "hideWhenZero": false,
+                    "hideWhenZeroUnread": false,
+                    "iconColor": "none",
+                    "id": "NotificationHistory",
+                    "showUnreadBadge": true,
+                    "unreadBadgeColor": "primary"
+                },
+                {
+                    "deviceNativePath": "__default__",
+                    "displayMode": "graphic-clean",
+                    "hideIfIdle": false,
+                    "hideIfNotDetected": true,
+                    "id": "Battery",
+                    "showNoctaliaPerformance": false,
+                    "showPowerProfiles": false
+                },
+                {
+                    "displayMode": "onhover",
+                    "iconColor": "none",
+                    "id": "Volume",
+                    "middleClickCommand": "pwvucontrol || pavucontrol",
+                    "textColor": "none"
+                },
+                {
+                    "applyToAllMonitors": false,
+                    "displayMode": "onhover",
+                    "iconColor": "none",
+                    "id": "Brightness",
+                    "textColor": "none"
+                },
+                {
+                    "colorizeDistroLogo": false,
+                    "colorizeSystemIcon": "none",
+                    "colorizeSystemText": "none",
+                    "customIconPath": "",
+                    "enableColorization": false,
+                    "icon": "noctalia",
+                    "id": "ControlCenter",
+                    "useDistroLogo": false
+                }
+            ]
+        }
+    },
+    "brightness": {
+        "backlightDeviceMappings": [],
+        "brightnessStep": 5,
+        "enableDdcSupport": false,
+        "enforceMinimum": true
+    },
+    "calendar": {
+        "cards": [
+            { "enabled": true, "id": "calendar-header-card" },
+            { "enabled": true, "id": "calendar-month-card" },
+            { "enabled": true, "id": "weather-card" }
+        ]
+    },
+    "colorSchemes": {
+        "darkMode": true,
+        "generationMethod": "tonal-spot",
+        "manualSunrise": "06:30",
+        "manualSunset": "18:30",
+        "monitorForColors": "",
+        "predefinedScheme": "Catppuccin",
+        "schedulingMode": "off",
+        "syncGsettings": true,
+        "useWallpaperColors": false
+    },
+    "controlCenter": {
+        "cards": [
+            { "enabled": true,  "id": "profile-card" },
+            { "enabled": true,  "id": "shortcuts-card" },
+            { "enabled": true,  "id": "audio-card" },
+            { "enabled": false, "id": "brightness-card" },
+            { "enabled": true,  "id": "weather-card" },
+            { "enabled": true,  "id": "media-sysmon-card" }
+        ],
+        "diskPath": "/",
+        "position": "close_to_bar_button",
+        "shortcuts": {
+            "left": [
+                { "id": "Network" },
+                { "id": "Bluetooth" },
+                { "id": "WallpaperSelector" },
+                { "id": "NoctaliaPerformance" }
+            ],
+            "right": [
+                { "id": "Notifications" },
+                { "id": "PowerProfile" },
+                { "id": "KeepAwake" },
+                { "id": "NightLight" }
+            ]
+        }
+    },
+    "desktopWidgets": {
+        "enabled": false,
+        "gridSnap": false,
+        "gridSnapScale": false,
+        "monitorWidgets": [],
+        "overviewEnabled": true
+    },
+    "dock": {
+        "animationSpeed": 1,
+        "backgroundOpacity": 1,
+        "colorizeIcons": false,
+        "deadOpacity": 0.6,
+        "displayMode": "auto_hide",
+        "dockType": "floating",
+        "enabled": true,
+        "floatingRatio": 1,
+        "groupApps": false,
+        "groupClickAction": "cycle",
+        "groupContextMenuMode": "extended",
+        "groupIndicatorStyle": "dots",
+        "inactiveIndicators": false,
+        "indicatorColor": "primary",
+        "indicatorOpacity": 0.6,
+        "indicatorThickness": 3,
+        "launcherIcon": "",
+        "launcherIconColor": "none",
+        "launcherPosition": "end",
+        "launcherUseDistroLogo": false,
+        "monitors": [],
+        "onlySameOutput": true,
+        "pinnedApps": [],
+        "pinnedStatic": false,
+        "position": "bottom",
+        "showDockIndicator": false,
+        "showLauncherIcon": false,
+        "sitOnFrame": false,
+        "size": 1
+    },
+    "general": {
+        "allowPanelsOnScreenWithoutBar": true,
+        "allowPasswordWithFprintd": false,
+        "animationDisabled": false,
+        "animationSpeed": 1,
+        "autoStartAuth": false,
+        "avatarImage": "/home/xero/.face",
+        "boxRadiusRatio": 1,
+        "clockFormat": "hh\\nmm",
+        "clockStyle": "custom",
+        "compactLockScreen": false,
+        "dimmerOpacity": 0.2,
+        "enableBlurBehind": true,
+        "enableLockScreenCountdown": true,
+        "enableLockScreenMediaControls": false,
+        "enableShadows": true,
+        "forceBlackScreenCorners": false,
+        "iRadiusRatio": 1,
+        "keybinds": {
+            "keyDown":   ["Down"],
+            "keyEnter":  ["Return", "Enter"],
+            "keyEscape": ["Esc"],
+            "keyLeft":   ["Left"],
+            "keyRemove": ["Del"],
+            "keyRight":  ["Right"],
+            "keyUp":     ["Up"]
+        },
+        "language": "",
+        "lockOnSuspend": true,
+        "lockScreenAnimations": false,
+        "lockScreenBlur": 0,
+        "lockScreenCountdownDuration": 10000,
+        "lockScreenMonitors": [],
+        "lockScreenTint": 0,
+        "passwordChars": false,
+        "radiusRatio": 1,
+        "reverseScroll": false,
+        "scaleRatio": 1,
+        "screenRadiusRatio": 1,
+        "shadowDirection": "bottom_right",
+        "shadowOffsetX": 2,
+        "shadowOffsetY": 3,
+        "showChangelogOnStartup": true,
+        "showHibernateOnLockScreen": false,
+        "showScreenCorners": false,
+        "showSessionButtonsOnLockScreen": true,
+        "smoothScrollEnabled": true,
+        "telemetryEnabled": false
+    },
+    "hooks": {
+        "colorGeneration": "",
+        "darkModeChange": "",
+        "enabled": false,
+        "performanceModeDisabled": "",
+        "performanceModeEnabled": "",
+        "screenLock": "",
+        "screenUnlock": "",
+        "session": "",
+        "startup": "",
+        "wallpaperChange": ""
+    },
+    "idle": {
+        "customCommands": "[]",
+        "enabled": false,
+        "fadeDuration": 5,
+        "lockCommand": "",
+        "lockTimeout": 660,
+        "resumeLockCommand": "",
+        "resumeScreenOffCommand": "",
+        "resumeSuspendCommand": "",
+        "screenOffCommand": "",
+        "screenOffTimeout": 600,
+        "suspendCommand": "",
+        "suspendTimeout": 1800
+    },
+    "location": {
+        "analogClockInCalendar": false,
+        "autoLocate": false,
+        "firstDayOfWeek": -1,
+        "hideWeatherCityName": false,
+        "hideWeatherTimezone": false,
+        "name": "",
+        "showCalendarEvents": true,
+        "showCalendarWeather": true,
+        "showWeekNumberInCalendar": false,
+        "use12hourFormat": false,
+        "useFahrenheit": false,
+        "weatherEnabled": true,
+        "weatherShowEffects": true,
+        "weatherTaliaMascotAlways": false
+    },
+    "network": {
+        "bluetoothAutoConnect": true,
+        "bluetoothDetailsViewMode": "grid",
+        "bluetoothHideUnnamedDevices": false,
+        "bluetoothRssiPollIntervalMs": 60000,
+        "bluetoothRssiPollingEnabled": false,
+        "disableDiscoverability": false,
+        "networkPanelView": "wifi",
+        "wifiDetailsViewMode": "grid"
+    },
+    "nightLight": {
+        "autoSchedule": true,
+        "dayTemp": "6500",
+        "enabled": false,
+        "forced": false,
+        "manualSunrise": "06:30",
+        "manualSunset": "18:30",
+        "nightTemp": "4000"
+    },
+    "noctaliaPerformance": {
+        "disableDesktopWidgets": true,
+        "disableWallpaper": true
+    },
+    "notifications": {
+        "backgroundOpacity": 1,
+        "clearDismissed": true,
+        "criticalUrgencyDuration": 15,
+        "density": "default",
+        "enableBatteryToast": true,
+        "enableKeyboardLayoutToast": true,
+        "enableMarkdown": false,
+        "enableMediaToast": false,
+        "enabled": true,
+        "location": "top_right",
+        "lowUrgencyDuration": 3,
+        "monitors": [],
+        "normalUrgencyDuration": 8,
+        "overlayLayer": true,
+        "respectExpireTimeout": false,
+        "saveToHistory": {
+            "critical": true,
+            "low": true,
+            "normal": true
+        },
+        "sounds": {
+            "criticalSoundFile": "",
+            "enabled": false,
+            "excludedApps": "discord,firefox,chrome,chromium,edge",
+            "lowSoundFile": "",
+            "normalSoundFile": "",
+            "separateSounds": false,
+            "volume": 0.5
+        }
+    },
+    "osd": {
+        "autoHideMs": 2000,
+        "backgroundOpacity": 1,
+        "enabled": true,
+        "enabledTypes": [0, 1, 2],
+        "location": "top_right",
+        "monitors": [],
+        "overlayLayer": true
+    },
+    "plugins": {
+        "autoUpdate": false,
+        "notifyUpdates": true
+    },
+    "sessionMenu": {
+        "countdownDuration": 10000,
+        "enableCountdown": true,
+        "largeButtonsLayout": "single-row",
+        "largeButtonsStyle": true,
+        "position": "center",
+        "powerOptions": [
+            { "action": "lock",         "enabled": true, "keybind": "1" },
+            { "action": "suspend",      "enabled": true, "keybind": "2" },
+            { "action": "hibernate",    "enabled": true, "keybind": "3" },
+            { "action": "reboot",       "enabled": true, "keybind": "4" },
+            { "action": "logout",       "enabled": true, "keybind": "5" },
+            { "action": "shutdown",     "enabled": true, "keybind": "6" },
+            { "action": "rebootToUefi", "enabled": true, "keybind": "7" }
+        ],
+        "showHeader": true,
+        "showKeybinds": true
+    },
+    "settingsVersion": 59,
+    "systemMonitor": {
+        "batteryCriticalThreshold": 5,
+        "batteryWarningThreshold": 20,
+        "cpuCriticalThreshold": 90,
+        "cpuWarningThreshold": 80,
+        "criticalColor": "",
+        "diskAvailCriticalThreshold": 10,
+        "diskAvailWarningThreshold": 20,
+        "diskCriticalThreshold": 90,
+        "diskWarningThreshold": 80,
+        "enableDgpuMonitoring": false,
+        "externalMonitor": "resources || missioncenter || jdsystemmonitor || corestats || system-monitoring-center || gnome-system-monitor || plasma-systemmonitor || mate-system-monitor || ukui-system-monitor || deepin-system-monitor || pantheon-system-monitor",
+        "gpuCriticalThreshold": 90,
+        "gpuWarningThreshold": 80,
+        "memCriticalThreshold": 90,
+        "memWarningThreshold": 80,
+        "swapCriticalThreshold": 90,
+        "swapWarningThreshold": 80,
+        "tempCriticalThreshold": 90,
+        "tempWarningThreshold": 80,
+        "useCustomColors": false,
+        "warningColor": ""
+    },
+    "templates": {
+        "activeTemplates": [
+            { "enabled": true, "id": "gtk" },
+            { "enabled": true, "id": "hyprland" },
+            { "enabled": true, "id": "hyprtoolkit" },
+            { "enabled": true, "id": "alacritty" },
+            { "enabled": true, "id": "cava" },
+            { "enabled": true, "id": "discord" },
+            { "enabled": true, "id": "kitty" },
+            { "enabled": true, "id": "telegram" },
+            { "enabled": true, "id": "code" },
+            { "enabled": true, "id": "yazi" },
+            { "enabled": true, "id": "zenBrowser" },
+            { "enabled": true, "id": "qt" },
+            { "enabled": true, "id": "kcolorscheme" }
+        ],
+        "enableUserTheming": false
+    },
+    "ui": {
+        "boxBorderEnabled": false,
+        "fontDefault": "JetBrainsMono Nerd Font",
+        "fontDefaultScale": 1,
+        "fontFixed": "monospace",
+        "fontFixedScale": 1,
+        "panelBackgroundOpacity": 0.93,
+        "panelsAttachedToBar": true,
+        "scrollbarAlwaysVisible": true,
+        "settingsPanelMode": "attached",
+        "settingsPanelSideBarCardStyle": false,
+        "tooltipsEnabled": true,
+        "translucentWidgets": false
+    },
+    "wallpaper": {
+        "automationEnabled": false,
+        "directory": "/home/xero/Pictures/Wallpapers",
+        "enableMultiMonitorDirectories": false,
+        "enabled": true,
+        "favorites": [],
+        "fillColor": "#000000",
+        "fillMode": "crop",
+        "hideWallpaperFilenames": false,
+        "linkLightAndDarkWallpapers": true,
+        "monitorDirectories": [],
+        "overviewBlur": 0.4,
+        "overviewEnabled": false,
+        "overviewTint": 0.6,
+        "panelPosition": "follow_bar",
+        "randomIntervalSec": 300,
+        "setWallpaperOnAllMonitors": true,
+        "showHiddenFiles": false,
+        "skipStartupTransition": false,
+        "solidColor": "#1a1a2e",
+        "sortOrder": "name",
+        "transitionDuration": 1500,
+        "transitionEdgeSmoothness": 0.05,
+        "transitionType": ["fade", "disc", "stripes", "wipe", "pixelate", "honeycomb"],
+        "useOriginalImages": false,
+        "useSolidColor": false,
+        "useWallhaven": false,
+        "viewMode": "single",
+        "wallhavenApiKey": "",
+        "wallhavenCategories": "111",
+        "wallhavenOrder": "desc",
+        "wallhavenPurity": "100",
+        "wallhavenQuery": "",
+        "wallhavenRatios": "",
+        "wallhavenResolutionHeight": "",
+        "wallhavenResolutionMode": "atleast",
+        "wallhavenResolutionWidth": "",
+        "wallhavenSorting": "relevance",
+        "wallpaperChangeMode": "random"
+    }
 }
 NOCCONF
+        # Replace /home/xero paths with the actual user's home directory
+        sed -i "s|/home/xero|${ACTUAL_HOME}|g" "$ACTUAL_HOME/.config/noctalia/settings.json"
     fi
 
     $SUDO_CMD chown -R "$ACTUAL_USER:$ACTUAL_USER" \
@@ -928,10 +1510,18 @@ size = 12.0
 ALACRITTY
     print_success "Alacritty font config written."
 
-    print_step "Configuring Konsole fonts..."
+    print_step "Configuring Konsole fonts and color scheme..."
     mkdir -p "$ACTUAL_HOME/.local/share/konsole"
+
+    curl -fsSL \
+        "https://raw.githubusercontent.com/catppuccin/konsole/main/themes/catppuccin-mocha.colorscheme" \
+        -o "$ACTUAL_HOME/.local/share/konsole/catppuccin-mocha.colorscheme" 2>/dev/null \
+        && print_success "Catppuccin Mocha color scheme downloaded." \
+        || print_warning "Failed to fetch Catppuccin Konsole theme (non-critical)"
+
     cat > "$ACTUAL_HOME/.local/share/konsole/XeroLinux.profile" << 'KONSOLE'
 [Appearance]
+ColorScheme=catppuccin-mocha
 Font=JetBrainsMono Nerd Font,12,-1,5,400,0,0,0,0,0,0,0,0,0,0,1
 
 [General]
@@ -941,17 +1531,26 @@ TerminalColumns=120
 TerminalRows=30
 KONSOLE
     mkdir -p "$ACTUAL_HOME/.config"
-    if [[ -f "$ACTUAL_HOME/.config/konsolerc" ]]; then
-        grep -q "DefaultProfile=" "$ACTUAL_HOME/.config/konsolerc" \
-            && sed -i 's|^DefaultProfile=.*|DefaultProfile=XeroLinux.profile|' "$ACTUAL_HOME/.config/konsolerc" \
-            || echo "DefaultProfile=XeroLinux.profile" >> "$ACTUAL_HOME/.config/konsolerc"
-    else
-        cat > "$ACTUAL_HOME/.config/konsolerc" << 'KONSOLERC'
+    cat > "$ACTUAL_HOME/.config/konsolerc" << 'KONSOLERC'
 [Desktop Entry]
 DefaultProfile=XeroLinux.profile
+
+[KonsoleWindow]
+ShowMenuBarByDefault=false
+
+[MainWindow]
+ToolBarsMovable=Disabled
+
+[Toolbar mainToolBar]
+visible=false
+
+[Toolbar sessionToolBar]
+visible=false
+
+[TabBar]
+TabBarVisibility=ShowTabBarWhenNeeded
 KONSOLERC
-    fi
-    print_success "Konsole font config written."
+    print_success "Konsole config written (clean window: no toolbars, no menubar, tab bar on demand)."
 
     print_step "Configuring system fonts..."
     mkdir -p "$ACTUAL_HOME/.config/fontconfig"
