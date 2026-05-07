@@ -1652,7 +1652,10 @@ install_base_system() {
     # Btrfs snapshot support — only when btrfs is selected
     if [[ "${CONFIG[filesystem]}" == "btrfs" ]]; then
         show_info "Installing Btrfs snapshot support..."
-        pacstrap -K "$MOUNTPOINT" snapper snap-pac grub-btrfs inotify-tools 2>/dev/null || \
+        # snap-pac omitted here — its pacman hooks would fire on every package install
+        # during the chroot setup phase, creating unwanted snapshots before first login.
+        # It gets installed by xero-snapper-init on first boot instead.
+        pacstrap -K "$MOUNTPOINT" snapper grub-btrfs inotify-tools 2>/dev/null || \
             show_warning "Some Btrfs snapshot packages failed — continuing"
     fi
 
@@ -1929,6 +1932,9 @@ SNAPCFG
     mkdir -p "$MOUNTPOINT/usr/local/bin"
     cat > "$MOUNTPOINT/usr/local/bin/xero-snapper-init" << 'SNAPINIT'
 #!/bin/bash
+# Install snap-pac now — its pacman hooks will fire on the NEXT package operation,
+# which is the first real user-initiated install, not during system setup.
+pacman -S --needed --noconfirm snap-pac
 systemctl enable --now snapper-timeline.timer
 systemctl enable --now snapper-cleanup.timer
 systemctl enable --now grub-btrfsd
