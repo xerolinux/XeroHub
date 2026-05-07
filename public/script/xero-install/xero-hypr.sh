@@ -797,16 +797,36 @@ QT5CT
     mkdir -p "$ACTUAL_HOME/.config/qt6ct"
     cat > "$ACTUAL_HOME/.config/qt6ct/qt6ct.conf" << 'QT6CT'
 [Appearance]
-color_scheme_path=
-custom_palette=false
+color_scheme_path=/home/xero/.config/qt6ct/colors/noctalia.conf
+custom_palette=true
 icon_theme=Tela-circle-purple-dark
 standard_dialogs=default
-style=Breeze
+style=Fusion
 
 [Fonts]
-fixed="JetBrainsMono Nerd Font,11,-1,5,400,0,0,0,0,0,0,0,0,0,0,1"
-general="JetBrainsMono Nerd Font,11,-1,5,400,0,0,0,0,0,0,0,0,0,0,1"
+fixed="JetBrainsMono Nerd Font,11,-1,5,400,0,0,0,0,0,0,0,0,0,0,1,,0,0"
+general="JetBrainsMono Nerd Font,11,-1,5,400,0,0,0,0,0,0,0,0,0,0,1,,0,0"
+
+[Interface]
+activate_item_on_single_click=1
+buttonbox_layout=0
+cursor_flash_time=1000
+dialog_buttons_have_icons=1
+double_click_interval=400
+gui_effects=@Invalid()
+keyboard_scheme=2
+menus_have_icons=true
+show_shortcuts_in_context_menus=true
+stylesheets=@Invalid()
+toolbutton_style=4
+underline_shortcut=1
+wheel_scroll_lines=3
+
+[Troubleshooting]
+force_raster_widgets=1
+ignored_applications=@Invalid()
 QT6CT
+    sed -i "s|/home/xero|${ACTUAL_HOME}|g" "$ACTUAL_HOME/.config/qt6ct/qt6ct.conf"
 
     # GTK3 — icon theme + dark pref + fonts only.
     # Noctalia's GTK color template writes the actual theme colors via matugen.
@@ -869,7 +889,8 @@ NWGLOOK
         "iconMode": "tabler",
         "ignoreMouseInput": false,
         "overviewLayer": false,
-        "pinnedApps": [],
+        "pinnedApps": [
+        ],
         "position": "center",
         "screenshotAnnotationTool": "",
         "showCategories": true,
@@ -879,7 +900,8 @@ NWGLOOK
         "viewMode": "list"
     },
     "audio": {
-        "mprisBlacklist": [],
+        "mprisBlacklist": [
+        ],
         "preferredPlayer": "",
         "spectrumFrameRate": 30,
         "spectrumMirrored": true,
@@ -909,7 +931,8 @@ NWGLOOK
         "middleClickAction": "none",
         "middleClickCommand": "",
         "middleClickFollowMouse": false,
-        "monitors": [],
+        "monitors": [
+        ],
         "mouseWheelAction": "none",
         "mouseWheelWrap": true,
         "outerCorners": true,
@@ -918,7 +941,8 @@ NWGLOOK
         "rightClickAction": "controlCenter",
         "rightClickCommand": "",
         "rightClickFollowMouse": true,
-        "screenOverrides": [],
+        "screenOverrides": [
+        ],
         "showCapsule": true,
         "showOnWorkspaceSwitch": true,
         "showOutline": false,
@@ -1020,13 +1044,15 @@ NWGLOOK
             ],
             "right": [
                 {
-                    "blacklist": [],
+                    "blacklist": [
+                    ],
                     "chevronColor": "none",
                     "colorizeIcons": false,
                     "drawerEnabled": true,
                     "hidePassive": false,
                     "id": "Tray",
-                    "pinned": []
+                    "pinned": [
+                    ]
                 },
                 {
                     "hideWhenZero": false,
@@ -1073,16 +1099,26 @@ NWGLOOK
         }
     },
     "brightness": {
-        "backlightDeviceMappings": [],
+        "backlightDeviceMappings": [
+        ],
         "brightnessStep": 5,
         "enableDdcSupport": false,
         "enforceMinimum": true
     },
     "calendar": {
         "cards": [
-            { "enabled": true, "id": "calendar-header-card" },
-            { "enabled": true, "id": "calendar-month-card" },
-            { "enabled": true, "id": "weather-card" }
+            {
+                "enabled": true,
+                "id": "calendar-header-card"
+            },
+            {
+                "enabled": true,
+                "id": "calendar-month-card"
+            },
+            {
+                "enabled": true,
+                "id": "weather-card"
+            }
         ]
     },
     "colorSchemes": {
@@ -1098,27 +1134,61 @@ NWGLOOK
     },
     "controlCenter": {
         "cards": [
-            { "enabled": true,  "id": "profile-card" },
-            { "enabled": true,  "id": "shortcuts-card" },
-            { "enabled": true,  "id": "audio-card" },
-            { "enabled": false, "id": "brightness-card" },
-            { "enabled": true,  "id": "weather-card" },
-            { "enabled": true,  "id": "media-sysmon-card" }
+            {
+                "enabled": true,
+                "id": "profile-card"
+            },
+            {
+                "enabled": true,
+                "id": "shortcuts-card"
+            },
+            {
+                "enabled": true,
+                "id": "audio-card"
+            },
+            {
+                "enabled": false,
+                "id": "brightness-card"
+            },
+            {
+                "enabled": true,
+                "id": "weather-card"
+            },
+            {
+                "enabled": true,
+                "id": "media-sysmon-card"
+            }
         ],
         "diskPath": "/",
         "position": "close_to_bar_button",
         "shortcuts": {
             "left": [
-                { "id": "Network" },
-                { "id": "Bluetooth" },
-                { "id": "WallpaperSelector" },
-                { "id": "NoctaliaPerformance" }
+                {
+                    "id": "Network"
+                },
+                {
+                    "id": "Bluetooth"
+                },
+                {
+                    "id": "WallpaperSelector"
+                },
+                {
+                    "id": "NoctaliaPerformance"
+                }
             ],
             "right": [
-                { "id": "Notifications" },
-                { "id": "PowerProfile" },
-                { "id": "KeepAwake" },
-                { "id": "NightLight" }
+                {
+                    "id": "Notifications"
+                },
+                {
+                    "id": "PowerProfile"
+                },
+                {
+                    "id": "KeepAwake"
+                },
+                {
+                    "id": "NightLight"
+                }
             ]
         }
     },
@@ -1126,7 +1196,8 @@ NWGLOOK
         "enabled": false,
         "gridSnap": false,
         "gridSnapScale": false,
-        "monitorWidgets": [],
+        "monitorWidgets": [
+        ],
         "overviewEnabled": true
     },
     "dock": {
@@ -1134,7 +1205,7 @@ NWGLOOK
         "backgroundOpacity": 1,
         "colorizeIcons": false,
         "deadOpacity": 0.6,
-        "displayMode": "auto_hide",
+        "displayMode": "exclusive",
         "dockType": "floating",
         "enabled": true,
         "floatingRatio": 1,
@@ -1142,21 +1213,26 @@ NWGLOOK
         "groupClickAction": "cycle",
         "groupContextMenuMode": "extended",
         "groupIndicatorStyle": "dots",
-        "inactiveIndicators": false,
+        "inactiveIndicators": true,
         "indicatorColor": "primary",
         "indicatorOpacity": 0.6,
         "indicatorThickness": 3,
-        "launcherIcon": "",
-        "launcherIconColor": "none",
-        "launcherPosition": "end",
+        "launcherIcon": "brand-adobe",
+        "launcherIconColor": "primary",
+        "launcherPosition": "start",
         "launcherUseDistroLogo": false,
-        "monitors": [],
+        "monitors": [
+        ],
         "onlySameOutput": true,
-        "pinnedApps": [],
+        "pinnedApps": [
+            "org.kde.dolphin",
+            "org.kde.konsole",
+            "xero-toolkit"
+        ],
         "pinnedStatic": false,
         "position": "bottom",
-        "showDockIndicator": false,
-        "showLauncherIcon": false,
+        "showDockIndicator": true,
+        "showLauncherIcon": true,
         "sitOnFrame": false,
         "size": 1
     },
@@ -1179,20 +1255,36 @@ NWGLOOK
         "forceBlackScreenCorners": false,
         "iRadiusRatio": 1,
         "keybinds": {
-            "keyDown":   ["Down"],
-            "keyEnter":  ["Return", "Enter"],
-            "keyEscape": ["Esc"],
-            "keyLeft":   ["Left"],
-            "keyRemove": ["Del"],
-            "keyRight":  ["Right"],
-            "keyUp":     ["Up"]
+            "keyDown": [
+                "Down"
+            ],
+            "keyEnter": [
+                "Return",
+                "Enter"
+            ],
+            "keyEscape": [
+                "Esc"
+            ],
+            "keyLeft": [
+                "Left"
+            ],
+            "keyRemove": [
+                "Del"
+            ],
+            "keyRight": [
+                "Right"
+            ],
+            "keyUp": [
+                "Up"
+            ]
         },
         "language": "",
         "lockOnSuspend": true,
         "lockScreenAnimations": false,
         "lockScreenBlur": 0,
         "lockScreenCountdownDuration": 10000,
-        "lockScreenMonitors": [],
+        "lockScreenMonitors": [
+        ],
         "lockScreenTint": 0,
         "passwordChars": false,
         "radiusRatio": 1,
@@ -1286,7 +1378,8 @@ NWGLOOK
         "enabled": true,
         "location": "top_right",
         "lowUrgencyDuration": 3,
-        "monitors": [],
+        "monitors": [
+        ],
         "normalUrgencyDuration": 8,
         "overlayLayer": true,
         "respectExpireTimeout": false,
@@ -1309,9 +1402,14 @@ NWGLOOK
         "autoHideMs": 2000,
         "backgroundOpacity": 1,
         "enabled": true,
-        "enabledTypes": [0, 1, 2],
+        "enabledTypes": [
+            0,
+            1,
+            2
+        ],
         "location": "top_right",
-        "monitors": [],
+        "monitors": [
+        ],
         "overlayLayer": true
     },
     "plugins": {
@@ -1325,13 +1423,41 @@ NWGLOOK
         "largeButtonsStyle": true,
         "position": "center",
         "powerOptions": [
-            { "action": "lock",         "enabled": true, "keybind": "1" },
-            { "action": "suspend",      "enabled": true, "keybind": "2" },
-            { "action": "hibernate",    "enabled": true, "keybind": "3" },
-            { "action": "reboot",       "enabled": true, "keybind": "4" },
-            { "action": "logout",       "enabled": true, "keybind": "5" },
-            { "action": "shutdown",     "enabled": true, "keybind": "6" },
-            { "action": "rebootToUefi", "enabled": true, "keybind": "7" }
+            {
+                "action": "lock",
+                "enabled": true,
+                "keybind": "1"
+            },
+            {
+                "action": "suspend",
+                "enabled": true,
+                "keybind": "2"
+            },
+            {
+                "action": "hibernate",
+                "enabled": true,
+                "keybind": "3"
+            },
+            {
+                "action": "reboot",
+                "enabled": true,
+                "keybind": "4"
+            },
+            {
+                "action": "logout",
+                "enabled": true,
+                "keybind": "5"
+            },
+            {
+                "action": "shutdown",
+                "enabled": true,
+                "keybind": "6"
+            },
+            {
+                "action": "rebootToUefi",
+                "enabled": true,
+                "keybind": "7"
+            }
         ],
         "showHeader": true,
         "showKeybinds": true
@@ -1362,19 +1488,58 @@ NWGLOOK
     },
     "templates": {
         "activeTemplates": [
-            { "enabled": true, "id": "gtk" },
-            { "enabled": true, "id": "hyprland" },
-            { "enabled": true, "id": "hyprtoolkit" },
-            { "enabled": true, "id": "alacritty" },
-            { "enabled": true, "id": "cava" },
-            { "enabled": true, "id": "discord" },
-            { "enabled": true, "id": "kitty" },
-            { "enabled": true, "id": "telegram" },
-            { "enabled": true, "id": "code" },
-            { "enabled": true, "id": "yazi" },
-            { "enabled": true, "id": "zenBrowser" },
-            { "enabled": true, "id": "qt" },
-            { "enabled": true, "id": "kcolorscheme" }
+            {
+                "enabled": true,
+                "id": "gtk"
+            },
+            {
+                "enabled": true,
+                "id": "hyprland"
+            },
+            {
+                "enabled": true,
+                "id": "hyprtoolkit"
+            },
+            {
+                "enabled": true,
+                "id": "alacritty"
+            },
+            {
+                "enabled": true,
+                "id": "cava"
+            },
+            {
+                "enabled": true,
+                "id": "discord"
+            },
+            {
+                "enabled": true,
+                "id": "kitty"
+            },
+            {
+                "enabled": true,
+                "id": "telegram"
+            },
+            {
+                "enabled": true,
+                "id": "code"
+            },
+            {
+                "enabled": true,
+                "id": "yazi"
+            },
+            {
+                "enabled": true,
+                "id": "zenBrowser"
+            },
+            {
+                "enabled": true,
+                "id": "qt"
+            },
+            {
+                "enabled": true,
+                "id": "kcolorscheme"
+            }
         ],
         "enableUserTheming": false
     },
@@ -1397,12 +1562,14 @@ NWGLOOK
         "directory": "/home/xero/Pictures/Wallpapers",
         "enableMultiMonitorDirectories": false,
         "enabled": true,
-        "favorites": [],
+        "favorites": [
+        ],
         "fillColor": "#000000",
         "fillMode": "crop",
         "hideWallpaperFilenames": false,
         "linkLightAndDarkWallpapers": true,
-        "monitorDirectories": [],
+        "monitorDirectories": [
+        ],
         "overviewBlur": 0.4,
         "overviewEnabled": false,
         "overviewTint": 0.6,
@@ -1415,7 +1582,14 @@ NWGLOOK
         "sortOrder": "name",
         "transitionDuration": 1500,
         "transitionEdgeSmoothness": 0.05,
-        "transitionType": ["fade", "disc", "stripes", "wipe", "pixelate", "honeycomb"],
+        "transitionType": [
+            "fade",
+            "disc",
+            "stripes",
+            "wipe",
+            "pixelate",
+            "honeycomb"
+        ],
         "useOriginalImages": false,
         "useSolidColor": false,
         "useWallhaven": false,
