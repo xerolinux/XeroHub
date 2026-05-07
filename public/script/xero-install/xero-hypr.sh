@@ -703,6 +703,14 @@ configure_sddm() {
     print_success "SDDM installed!"
     echo ""
 
+    # XeroDark is a KDE-based SDDM theme — requires these QML modules even without
+    # a full Plasma install. breeze provides org.kde.breeze.components,
+    # plasma-workspace provides org.kde.plasma.private.keyboardIndicator.
+    print_step "Installing SDDM theme dependencies (KDE QML modules)..."
+    $SUDO_CMD pacman -S --needed --noconfirm breeze plasma-workspace \
+        || print_warning "Some SDDM theme deps failed — theme may show errors"
+    echo ""
+
     print_step "Installing XeroDark SDDM theme..."
     $SUDO_CMD git clone https://github.com/xerolinux/XeroDark.git /usr/share/sddm/themes/XeroDark \
         || print_warning "Failed to clone XeroDark theme"
@@ -774,18 +782,97 @@ copy_skel_to_user() {
     $SUDO_CMD cp -Rf /etc/skel/. "$ACTUAL_HOME"/
     $SUDO_CMD chown -R "$ACTUAL_USER:$ACTUAL_USER" "$ACTUAL_HOME"
 
-    OMP_LINE='eval "$(oh-my-posh init bash --config $HOME/.config/ohmyposh/xero.omp.json)"'
-    if ! grep -qF "oh-my-posh init bash" "$ACTUAL_HOME/.bashrc" 2>/dev/null; then
-        echo "" >> "$ACTUAL_HOME/.bashrc"
-        echo "# Oh-My-Posh Config" >> "$ACTUAL_HOME/.bashrc"
-        echo "$OMP_LINE" >> "$ACTUAL_HOME/.bashrc"
+    print_step "Fetching XeroLinux .bashrc..."
+    curl -fsSL "https://raw.githubusercontent.com/xerolinux/XeroBuild/main/FOSS/airootfs/etc/skel/.bashrc" \
+        -o "$ACTUAL_HOME/.bashrc" 2>/dev/null \
+        && print_success ".bashrc applied!" \
+        || print_warning "Failed to fetch .bashrc (non-critical)"
+
+    print_step "Fetching XeroLinux desktop configs..."
+    local tmp_cfg
+    tmp_cfg=$(mktemp -d)
+    if git clone --no-checkout --depth=1 --filter=blob:none \
+        https://github.com/xerolinux/desktop-config.git "$tmp_cfg" 2>/dev/null; then
+        git -C "$tmp_cfg" sparse-checkout set \
+            etc/skel/.config/fastfetch \
+            etc/skel/.config/ohmyposh \
+            etc/skel/.config/paru \
+            etc/skel/.config/bat \
+            etc/skel/.config/btop \
+            etc/skel/.config/topgrade.toml
+        git -C "$tmp_cfg" checkout 2>/dev/null
+        mkdir -p "$ACTUAL_HOME/.config"
+        for d in fastfetch ohmyposh paru bat btop; do
+            [[ -d "$tmp_cfg/etc/skel/.config/$d" ]] && \
+                $SUDO_CMD cp -Rf "$tmp_cfg/etc/skel/.config/$d" "$ACTUAL_HOME/.config/"
+        done
+        [[ -f "$tmp_cfg/etc/skel/.config/topgrade.toml" ]] && \
+            $SUDO_CMD cp "$tmp_cfg/etc/skel/.config/topgrade.toml" "$ACTUAL_HOME/.config/"
+        rm -rf "$tmp_cfg"
+        print_success "Desktop configs applied!"
+    else
+        rm -rf "$tmp_cfg"
+        print_warning "Could not fetch desktop configs (non-critical)"
     fi
 
-    if ! grep -qF "clear && fastfetch" "$ACTUAL_HOME/.bashrc" 2>/dev/null; then
-        echo "" >> "$ACTUAL_HOME/.bashrc"
-        echo "# Fastfetch on terminal start" >> "$ACTUAL_HOME/.bashrc"
-        echo "clear && fastfetch" >> "$ACTUAL_HOME/.bashrc"
+    print_step "Configuring Alacritty fonts..."
+    mkdir -p "$ACTUAL_HOME/.config/alacritty"
+    cat > "$ACTUAL_HOME/.config/alacritty/alacritty.toml" << 'ALACRITTY'
+[font]
+normal      = { family = "JetBrainsMono Nerd Font", style = "Regular" }
+bold        = { family = "JetBrainsMono Nerd Font", style = "Bold" }
+italic      = { family = "JetBrainsMono Nerd Font", style = "Italic" }
+bold_italic = { family = "JetBrainsMono Nerd Font", style = "Bold Italic" }
+size = 12.0
+ALACRITTY
+    print_success "Alacritty font config written."
+
+    print_step "Configuring Konsole fonts..."
+    mkdir -p "$ACTUAL_HOME/.local/share/konsole"
+    cat > "$ACTUAL_HOME/.local/share/konsole/XeroLinux.profile" << 'KONSOLE'
+[Appearance]
+Font=JetBrainsMono Nerd Font,12,-1,5,400,0,0,0,0,0,0,0,0,0,0,1
+
+[General]
+Name=XeroLinux
+Parent=FALLBACK/
+TerminalColumns=120
+TerminalRows=30
+KONSOLE
+    mkdir -p "$ACTUAL_HOME/.config"
+    if [[ -f "$ACTUAL_HOME/.config/konsolerc" ]]; then
+        grep -q "DefaultProfile=" "$ACTUAL_HOME/.config/konsolerc" \
+            && sed -i 's|^DefaultProfile=.*|DefaultProfile=XeroLinux.profile|' "$ACTUAL_HOME/.config/konsolerc" \
+            || echo "DefaultProfile=XeroLinux.profile" >> "$ACTUAL_HOME/.config/konsolerc"
+    else
+        cat > "$ACTUAL_HOME/.config/konsolerc" << 'KONSOLERC'
+[Desktop Entry]
+DefaultProfile=XeroLinux.profile
+KONSOLERC
     fi
+    print_success "Konsole font config written."
+
+    print_step "Configuring system fonts..."
+    mkdir -p "$ACTUAL_HOME/.config/fontconfig"
+    cat > "$ACTUAL_HOME/.config/fontconfig/fonts.conf" << 'FONTCFG'
+<?xml version="1.0"?>
+<!DOCTYPE fontconfig SYSTEM "fonts.dtd">
+<fontconfig>
+  <alias>
+    <family>monospace</family>
+    <prefer><family>JetBrainsMono Nerd Font</family></prefer>
+  </alias>
+  <alias>
+    <family>sans-serif</family>
+    <prefer><family>Noto Sans</family></prefer>
+  </alias>
+  <alias>
+    <family>serif</family>
+    <prefer><family>Noto Serif</family></prefer>
+  </alias>
+</fontconfig>
+FONTCFG
+    print_success "Fontconfig written."
 
     $SUDO_CMD chown -R "$ACTUAL_USER:$ACTUAL_USER" "$ACTUAL_HOME"
 
