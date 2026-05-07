@@ -98,7 +98,7 @@ prompt_user() {
     fi
 }
 
-# ── Package selection (same categories as xero-kde.sh) ────────────────────────
+# ── Package selection (same categories as xero-kde.sh) ───────────────────────
 
 customization_prompts() {
     clear
@@ -227,7 +227,7 @@ customization_prompts() {
     read -p "Press Enter to begin installation..."
 }
 
-# ── Package install helpers (identical to xero-kde.sh) ────────────────────────
+# ── Package install helpers (identical to xero-kde.sh) ───────────────────────
 
 install_group() {
     local group_name="$1"; shift
@@ -345,7 +345,7 @@ enable_if_installed() {
     fi
 }
 
-# ── Step A: Install all packages ──────────────────────────────────────────────
+# ── Step A: Install all packages ─────────────────────────────────────────────
 
 install_packages() {
     print_header
@@ -442,6 +442,7 @@ install_packages() {
         tela-circle-icon-theme-purple kde-wallpapers \
         fastfetch adw-gtk-theme oh-my-posh-bin gnome-themes-extra
 
+
     # ── Language Servers ──────────────────────────────────────────────────────
     install_group "Language Servers" \
         bash-language-server typescript-language-server vscode-json-languageserver
@@ -457,7 +458,7 @@ install_packages() {
     fi
 }
 
-# ── Step B: Install user-selected packages ────────────────────────────────────
+# ── Step B: Install user-selected packages ───────────────────────────────────
 
 install_user_packages() {
     print_header
@@ -478,7 +479,7 @@ install_user_packages() {
     echo ""
 }
 
-# ── Step C: Hyprland session file ─────────────────────────────────────────────
+# ── Step C: Hyprland session file ────────────────────────────────────────────
 
 ensure_hyprland_session() {
     print_step "Checking Hyprland session file..."
@@ -549,6 +550,7 @@ env = QT_QPA_PLATFORMTHEME,qt6ct
 # Noctalia shell — bar, notifications, wallpaper, lock screen, launcher, polkit
 # ────────────────────────────────────────────────────────────────────────────
 exec-once = qs -c noctalia-shell
+exec-once = /usr/local/bin/xero-wallpaper-init
 exec-once = dex --autostart
 exec-once = nm-applet --indicator
 exec-once = blueman-applet
@@ -702,7 +704,7 @@ SVCEOF
     echo ""
 }
 
-# ── Step H: SDDM + HyprSDDM ───────────────────────────────────────────────────
+# ── Step H: SDDM + Catppuccin ────────────────────────────────────────────────
 
 configure_sddm() {
     print_header
@@ -769,7 +771,7 @@ EOF
     echo ""
 }
 
-# ── Step I: Qt / GTK / Icon theming ───────────────────────────────────────────
+# ── Step I: Qt / GTK / Icon theming ──────────────────────────────────────────
 
 configure_themes() {
     [[ -z "${ACTUAL_HOME:-}" || -z "${ACTUAL_USER:-}" ]] && return 0
@@ -791,6 +793,7 @@ fixed="JetBrainsMono Nerd Font,11,-1,5,400,0,0,0,0,0,0,0,0,0,0,1"
 general="JetBrainsMono Nerd Font,11,-1,5,400,0,0,0,0,0,0,0,0,0,0,1"
 QT5CT
 
+    # qt6ct
     mkdir -p "$ACTUAL_HOME/.config/qt6ct"
     cat > "$ACTUAL_HOME/.config/qt6ct/qt6ct.conf" << 'QT6CT'
 [Appearance]
@@ -1605,27 +1608,27 @@ NWGLOOK
     }
 }
 NOCCONF
+        # Replace /home/xero paths with the actual user's home directory
         sed -i "s|/home/xero|${ACTUAL_HOME}|g" "$ACTUAL_HOME/.config/noctalia/settings.json"
     fi
 
-    print_step "Setting default wallpaper..."
-    local wp_src="/usr/share/wallpapers/Xero-Plasma44.jpg"
-    local noctalia_wp="/etc/xdg/quickshell/noctalia-shell/Assets/Wallpaper/noctalia.png"
-    mkdir -p "$ACTUAL_HOME/Pictures/Wallpapers"
-    if [[ -f "$wp_src" ]]; then
-        cp "$wp_src" "$ACTUAL_HOME/Pictures/Wallpapers/Xero-Plasma44.jpg"
-        $SUDO_CMD chown "$ACTUAL_USER:$ACTUAL_USER" \
-            "$ACTUAL_HOME/Pictures/Wallpapers/Xero-Plasma44.jpg"
-        if [[ -f "$noctalia_wp" ]]; then
-            $SUDO_CMD convert "$wp_src" "$noctalia_wp" 2>/dev/null \
-                && print_success "Default wallpaper set: Xero-Plasma44 (replaced noctalia.png)" \
-                || print_warning "imagemagick convert failed — noctalia.png not replaced"
-        else
-            print_success "Default wallpaper seeded to ~/Pictures/Wallpapers"
-        fi
-    else
-        print_warning "Xero-Plasma44.jpg not found — skipping wallpaper setup"
-    fi
+    print_step "Installing first-boot wallpaper script..."
+    $SUDO_CMD tee /usr/local/bin/xero-wallpaper-init > /dev/null << 'WPSCRIPT'
+#!/bin/bash
+wp="/usr/share/wallpapers/Xero-Plasma44.jpg"
+cfg="$HOME/.config/hypr/hyprland.conf"
+# Remove from autostart first — runs exactly once regardless of outcome
+sed -i '/xero-wallpaper-init/d' "$cfg" 2>/dev/null
+[[ ! -f "$wp" ]] && exit 0
+# Restart Noctalia to apply fresh config, then set wallpaper
+killall qs 2>/dev/null
+sleep 0.5
+qs -c noctalia-shell &
+sleep 8
+qs -c noctalia-shell ipc call wallpaper set "$wp"
+WPSCRIPT
+    $SUDO_CMD chmod +x /usr/local/bin/xero-wallpaper-init
+    print_success "First-boot wallpaper script installed"
     echo ""
 
     print_step "Setting Noctalia color scheme for KDE apps..."
@@ -1748,25 +1751,17 @@ Name=XeroLinux
 Parent=FALLBACK/
 TerminalColumns=120
 TerminalRows=30
-
-[Scrolling]
-HistoryMode=2
-ScrollBarPosition=2
-
-[Terminal Features]
-AnimatingCursorEnabled=true
-BlinkingCursorEnabled=true
 KONSOLE
     mkdir -p "$ACTUAL_HOME/.config"
     cat > "$ACTUAL_HOME/.config/konsolerc" << 'KONSOLERC'
 [Desktop Entry]
 DefaultProfile=XeroLinux.profile
 
-[General]
-ConfigVersion=1
-
 [KonsoleWindow]
 ShowMenuBarByDefault=false
+
+[MainWindow]
+ToolBarsMovable=Disabled
 
 [MainWindow][Toolbar mainToolBar]
 visible=false
@@ -1778,7 +1773,7 @@ visible=false
 TabBarVisibility=ShowTabBarWhenNeeded
 
 [UiSettings]
-ColorScheme=catppuccin-mocha
+ColorScheme=noctalia
 KONSOLERC
     print_success "Konsole config written (clean window: no toolbars, no menubar, tab bar on demand)."
 
@@ -1806,6 +1801,7 @@ FONTCFG
 
     $SUDO_CMD chown -R "$ACTUAL_USER:$ACTUAL_USER" "$ACTUAL_HOME"
 
+    # Create standard XDG user directories (Downloads, Documents, Pictures, etc.)
     # Runs as the actual user — no dbus/X11 needed, safe from TTY chroot.
     print_step "Creating XDG user directories..."
     if [[ "${EUID:-0}" -eq 0 ]]; then
@@ -1879,6 +1875,7 @@ FONTCFG
         echo ""
     fi
 
+    # Distro identity files
     print_step "Setting distro identity files... 🏷️"
     echo ""
 
@@ -1913,7 +1910,7 @@ FONTCFG
     echo ""
 }
 
-# ── Step K: Finalize ──────────────────────────────────────────────────────────
+# ── Step J: Finalize ──────────────────────────────────────────────────────────
 
 finalize_system() {
     print_header
