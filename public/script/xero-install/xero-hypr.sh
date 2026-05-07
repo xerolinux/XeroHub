@@ -70,6 +70,12 @@ check_root() {
 prompt_user() {
     print_header
 
+    echo -e "${RED}╔════════════════════════════════════════════════════════════════════════════════╗${NC}"
+    echo -e "${RED}║  MINIMAL INSTALL — Community best-effort. NO official support.                 ║${NC}"
+    echo -e "${RED}║  Issues with Hyprland + Noctalia are yours to solve. Experienced users ONLY !  ║${NC}"
+    echo -e "${RED}╚════════════════════════════════════════════════════════════════════════════════╝${NC}"
+    echo ""
+
     echo -e "${CYAN}This script will install:${NC}"
     echo -e "  ${BLUE}•${NC} Hyprland compositor + lock/idle/picker"
     echo -e "  ${BLUE}•${NC} Noctalia shell (bar, launcher, notifications, wallpaper)"
@@ -433,7 +439,7 @@ install_packages() {
     install_group "Fonts & Themes" \
         ttf-fira-code otf-libertinus tex-gyre-fonts ttf-hack-nerd ttf-ubuntu-font-family \
         awesome-terminal-fonts ttf-jetbrains-mono-nerd adobe-source-sans-fonts \
-        tela-circle-icon-theme-purple \
+        tela-circle-icon-theme-purple kde-wallpapers \
         fastfetch adw-gtk-theme oh-my-posh-bin gnome-themes-extra
 
 
@@ -1419,6 +1425,34 @@ NOCCONF
         sed -i "s|/home/xero|${ACTUAL_HOME}|g" "$ACTUAL_HOME/.config/noctalia/settings.json"
     fi
 
+    print_step "Setting default wallpaper..."
+    mkdir -p "$ACTUAL_HOME/Pictures/Wallpapers"
+    local wp_src="/usr/share/wallpapers/Xero-Plasma44.jpg"
+    if [[ -f "$wp_src" ]]; then
+        $SUDO_CMD cp "$wp_src" "$ACTUAL_HOME/Pictures/Wallpapers/Xero-Plasma44.jpg"
+        print_success "Default wallpaper copied: Xero-Plasma44.jpg"
+    else
+        print_warning "Xero-Plasma44.jpg not found at $wp_src — wallpaper directory created but empty"
+    fi
+    $SUDO_CMD chown -R "$ACTUAL_USER:$ACTUAL_USER" "$ACTUAL_HOME/Pictures"
+    echo ""
+
+    print_step "Setting Noctalia color scheme for KDE apps..."
+    for rc in katerc kwriterc gwenviewrc dolphinrc; do
+        local rcfile="$ACTUAL_HOME/.config/$rc"
+        if grep -q "^\[UiSettings\]" "$rcfile" 2>/dev/null; then
+            if grep -q "^ColorScheme=" "$rcfile" 2>/dev/null; then
+                sed -i 's/^ColorScheme=.*/ColorScheme=noctalia/' "$rcfile"
+            else
+                sed -i '/^\[UiSettings\]/a ColorScheme=noctalia' "$rcfile"
+            fi
+        else
+            printf '\n[UiSettings]\nColorScheme=noctalia\n' >> "$rcfile"
+        fi
+    done
+    print_success "KDE app color scheme set to: noctalia"
+    echo ""
+
     $SUDO_CMD chown -R "$ACTUAL_USER:$ACTUAL_USER" \
         "$ACTUAL_HOME/.config/qt5ct" \
         "$ACTUAL_HOME/.config/qt6ct" \
@@ -1549,6 +1583,9 @@ visible=false
 
 [TabBar]
 TabBarVisibility=ShowTabBarWhenNeeded
+
+[UiSettings]
+ColorScheme=noctalia
 KONSOLERC
     print_success "Konsole config written (clean window: no toolbars, no menubar, tab bar on demand)."
 
