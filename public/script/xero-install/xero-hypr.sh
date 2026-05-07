@@ -1649,6 +1649,20 @@ NOCCONF
 
     print_success "Icon theme: Tela-circle-purple-dark. Color scheme: Catppuccin (via Noctalia)."
     echo ""
+
+    print_step "Setting system-wide Qt platform theme..."
+    if ! grep -q "QT_QPA_PLATFORMTHEME" /etc/environment 2>/dev/null; then
+        echo "QT_QPA_PLATFORMTHEME=qt6ct" | $SUDO_CMD tee -a /etc/environment > /dev/null
+        print_success "QT_QPA_PLATFORMTHEME=qt6ct written to /etc/environment"
+    else
+        print_success "QT_QPA_PLATFORMTHEME already set in /etc/environment"
+    fi
+    echo ""
+
+    print_step "Copying user config to root (theme parity for root apps)..."
+    $SUDO_CMD cp -r "$ACTUAL_HOME/.config/." /root/.config/
+    print_success "User .config mirrored to /root/.config"
+    echo ""
 }
 
 # ── Step J: Copy skel + distro identity ───────────────────────────────────────
@@ -1996,3 +2010,4 @@ configure_themes
 configure_sddm
 finalize_system
 show_completion
+[[ -n "$SCRIPT_PATH" && -f "$SCRIPT_PATH" ]] && rm -f "$SCRIPT_PATH"
