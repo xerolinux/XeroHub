@@ -550,6 +550,7 @@ env = QT_QPA_PLATFORMTHEME,qt6ct
 # Noctalia shell — bar, notifications, wallpaper, lock screen, launcher, polkit
 # ────────────────────────────────────────────────────────────────────────────
 exec-once = qs -c noctalia-shell
+exec-once = /usr/local/bin/xero-wallpaper-init
 exec-once = dex --autostart
 exec-once = nm-applet --indicator
 exec-once = blueman-applet
@@ -1437,45 +1438,23 @@ NOCCONF
         sed -i "s|/home/xero|${ACTUAL_HOME}|g" "$ACTUAL_HOME/.config/noctalia/settings.json"
     fi
 
-    print_step "Installing first-boot wallpaper service..."
-    mkdir -p "$ACTUAL_HOME/.local/bin"
-    cat > "$ACTUAL_HOME/.local/bin/xero-wallpaper-init" << 'WPSCRIPT'
+    print_step "Installing first-boot wallpaper script..."
+    $SUDO_CMD tee /usr/local/bin/xero-wallpaper-init > /dev/null << 'WPSCRIPT'
 #!/bin/bash
 wp="/usr/share/wallpapers/Xero-Plasma44.jpg"
-flag="$HOME/.local/share/xero-wallpaper-initialized"
-[[ -f "$flag" ]] && exit 0
-[[ ! -f "$wp" ]] && exit 0
+cfg="$HOME/.config/hypr/hyprland.conf"
+remove_self() { sed -i '/xero-wallpaper-init/d' "$cfg" 2>/dev/null; }
+[[ ! -f "$wp" ]] && { remove_self; exit 0; }
 for i in $(seq 1 30); do
     if qs -c noctalia-shell ipc call wallpaper set "$wp" 2>/dev/null; then
-        mkdir -p "$(dirname "$flag")"
-        touch "$flag"
+        remove_self
         exit 0
     fi
     sleep 2
 done
 WPSCRIPT
-    chmod +x "$ACTUAL_HOME/.local/bin/xero-wallpaper-init"
-
-    mkdir -p "$ACTUAL_HOME/.config/systemd/user/graphical-session.target.wants"
-    cat > "$ACTUAL_HOME/.config/systemd/user/xero-wallpaper-init.service" << 'WPSVC'
-[Unit]
-Description=Set initial XeroLinux wallpaper
-After=graphical-session.target
-ConditionPathExists=!%h/.local/share/xero-wallpaper-initialized
-
-[Service]
-Type=oneshot
-ExecStart=%h/.local/bin/xero-wallpaper-init
-
-[Install]
-WantedBy=graphical-session.target
-WPSVC
-    ln -sf "../xero-wallpaper-init.service" \
-        "$ACTUAL_HOME/.config/systemd/user/graphical-session.target.wants/xero-wallpaper-init.service"
-    $SUDO_CMD chown -R "$ACTUAL_USER:$ACTUAL_USER" \
-        "$ACTUAL_HOME/.local/bin" \
-        "$ACTUAL_HOME/.config/systemd"
-    print_success "First-boot wallpaper service installed"
+    $SUDO_CMD chmod +x /usr/local/bin/xero-wallpaper-init
+    print_success "First-boot wallpaper script installed"
     echo ""
 
     print_step "Setting Noctalia color scheme for KDE apps..."
