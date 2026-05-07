@@ -434,7 +434,7 @@ install_packages() {
         ttf-fira-code otf-libertinus tex-gyre-fonts ttf-hack-nerd ttf-ubuntu-font-family \
         awesome-terminal-fonts ttf-jetbrains-mono-nerd adobe-source-sans-fonts \
         tela-circle-icon-theme-purple \
-        kvantum fastfetch adw-gtk-theme oh-my-posh-bin gnome-themes-extra
+        fastfetch adw-gtk-theme oh-my-posh-bin gnome-themes-extra
 
 
     # ── Language Servers ──────────────────────────────────────────────────────
@@ -759,7 +759,7 @@ configure_themes() {
 
     print_step "Configuring Qt + GTK icon theme and fonts..."
 
-    # qt5ct — style=kvantum so Noctalia's Qt color template can apply its palette
+    # qt5ct — style=Breeze so Noctalia's Qt color template can apply its palette
     mkdir -p "$ACTUAL_HOME/.config/qt5ct"
     cat > "$ACTUAL_HOME/.config/qt5ct/qt5ct.conf" << 'QT5CT'
 [Appearance]
@@ -767,7 +767,7 @@ color_scheme_path=
 custom_palette=false
 icon_theme=Tela-circle-purple-dark
 standard_dialogs=default
-style=kvantum
+style=Breeze
 
 [Fonts]
 fixed="JetBrainsMono Nerd Font,11,-1,5,400,0,0,0,0,0,0,0,0,0,0,1"
@@ -782,7 +782,7 @@ color_scheme_path=
 custom_palette=false
 icon_theme=Tela-circle-purple-dark
 standard_dialogs=default
-style=kvantum
+style=Breeze
 
 [Fonts]
 fixed="JetBrainsMono Nerd Font,11,-1,5,400,0,0,0,0,0,0,0,0,0,0,1"
@@ -1541,10 +1541,10 @@ ShowMenuBarByDefault=false
 [MainWindow]
 ToolBarsMovable=Disabled
 
-[Toolbar mainToolBar]
+[MainWindow][Toolbar mainToolBar]
 visible=false
 
-[Toolbar sessionToolBar]
+[MainWindow][Toolbar sessionToolBar]
 visible=false
 
 [TabBar]
