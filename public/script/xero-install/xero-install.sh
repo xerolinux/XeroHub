@@ -1861,20 +1861,57 @@ setup_snapper() {
 
     show_info "Configuring Snapper for Btrfs..."
 
-    # /.snapshots must NOT exist before this call. snapper create-config creates it
-    # as a btrfs subvolume nested INSIDE @, which is the required parent relationship.
-    # A pre-mounted top-level @snapshots sibling breaks snapper's subvolume check
-    # and silently prevents all snapshot creation.
-    if ! arch-chroot "$MOUNTPOINT" snapper -c root create-config /; then
-        show_warning "Snapper config creation failed — snapshot support disabled"
-        return 0
+    # snapper create-config requires dbus/PolicyKit — not available in a bare chroot.
+    # Write the config file and create the subvolume directly instead; functionally
+    # identical to what snapper create-config produces.
+
+    # 1. Write snapper config file directly into the mounted system
+    mkdir -p "$MOUNTPOINT/etc/snapper/configs"
+    cat > "$MOUNTPOINT/etc/snapper/configs/root" << 'SNAPCFG'
+SUBVOLUME="/"
+FSTYPE="btrfs"
+QGROUP=""
+SPACE_LIMIT="0.5"
+FREE_LIMIT="0.2"
+ALLOW_USERS=""
+ALLOW_GROUPS=""
+SYNC_ACL="no"
+BACKGROUND_COMPARISON="yes"
+NUMBER_CLEANUP="yes"
+NUMBER_MIN_AGE="1800"
+NUMBER_LIMIT="50"
+NUMBER_LIMIT_IMPORTANT="10"
+TIMELINE_CREATE="yes"
+TIMELINE_CLEANUP="yes"
+TIMELINE_MIN_AGE="1800"
+TIMELINE_LIMIT_HOURLY="5"
+TIMELINE_LIMIT_DAILY="7"
+TIMELINE_LIMIT_WEEKLY="0"
+TIMELINE_LIMIT_MONTHLY="0"
+TIMELINE_LIMIT_QUARTERLY="0"
+TIMELINE_LIMIT_YEARLY="0"
+EMPTY_PRE_POST_CLEANUP="yes"
+EMPTY_PRE_POST_MIN_AGE="1800"
+SNAPCFG
+
+    # 2. Register config name with snapper's conf.d so it knows it exists
+    mkdir -p "$MOUNTPOINT/etc/conf.d"
+    if [[ -f "$MOUNTPOINT/etc/conf.d/snapper" ]]; then
+        sed -i 's/^SNAPPER_CONFIGS=.*/SNAPPER_CONFIGS="root"/' "$MOUNTPOINT/etc/conf.d/snapper"
+    else
+        echo 'SNAPPER_CONFIGS="root"' > "$MOUNTPOINT/etc/conf.d/snapper"
     fi
 
-    # Lock down permissions
-    arch-chroot "$MOUNTPOINT" chmod 750 /.snapshots 2>/dev/null || true
+    # 3. Create /.snapshots as a btrfs subvolume nested inside @ from the host side —
+    #    no dbus needed, no chroot needed, just a direct btrfs command on the mountpoint.
+    if ! btrfs subvolume create "$MOUNTPOINT/.snapshots" 2>/dev/null; then
+        show_warning "Could not create /.snapshots subvolume — snapshot support may not work"
+        return 0
+    fi
+    chmod 750 "$MOUNTPOINT/.snapshots"
 
-    # Add /.snapshots to fstab so btrfs rollbacks don't swallow the snapshots dir.
-    # Snapper nested the subvolume at @/.snapshots inside the btrfs pool.
+    # 4. Add /.snapshots to fstab so rollbacks don't swallow the snapshots dir.
+    #    The subvolume path inside the btrfs pool is @/.snapshots.
     local root_uuid=""
     if [[ "${CONFIG[encrypt]}" == "yes" ]]; then
         root_uuid=$(blkid -s UUID -o value /dev/mapper/cryptroot 2>/dev/null)
@@ -1886,11 +1923,9 @@ setup_snapper() {
             >> "$MOUNTPOINT/etc/fstab"
     fi
 
-    # Enable grub-btrfsd: inotify-watches /.snapshots, regenerates grub.cfg on new snapshot
+    # 5. Enable services
     arch-chroot "$MOUNTPOINT" systemctl enable grub-btrfsd 2>/dev/null \
         || show_warning "grub-btrfsd service not available"
-
-    # Enable snapper timers for automatic timeline snapshots and cleanup
     arch-chroot "$MOUNTPOINT" systemctl enable snapper-timeline.timer 2>/dev/null || true
     arch-chroot "$MOUNTPOINT" systemctl enable snapper-cleanup.timer  2>/dev/null || true
 

@@ -440,8 +440,9 @@ install_packages() {
         bash-language-server typescript-language-server vscode-json-languageserver
 
     # ── XeroLinux Packages ────────────────────────────────────────────────────
+    # desktop-config omitted — KDE-specific, not applicable to Hyprland
     install_group "XeroLinux Packages" \
-        xero-toolkit extra-scripts desktop-config
+        xero-toolkit extra-scripts
 
     # ── Btrfs GUI tools (only when installed on Btrfs) ────────────────────────
     if [[ "$FILESYSTEM" == "btrfs" ]]; then
@@ -522,6 +523,9 @@ configure_hyprland() {
     else
         print_success "hyprland.conf exists — appending only."
     fi
+
+    # Set terminal to konsole — replaces default kitty
+    sed -i 's|^\$terminal\s*=.*|$terminal = konsole|' "$cfg" || true
 
     # Disable waybar if present — Noctalia replaces it
     sed -i 's|^\(exec-once\s*=\s*waybar\)|# \1  # disabled: Noctalia replaces waybar|' "$cfg" || true
@@ -679,7 +683,13 @@ ExecStartPost=/usr/bin/touch ${flag}
 WantedBy=default.target
 SVCEOF
 
-    systemctl --user enable noctalia-sycoca.service 2>/dev/null || true
+    # systemctl --user enable requires a running user session (dbus) — not available
+    # in a chroot/TTY install. Create the WantedBy symlink manually instead, which
+    # is exactly what systemctl --user enable does under the hood.
+    local wants_dir="${svc_dir}/default.target.wants"
+    mkdir -p "$wants_dir"
+    ln -sf "${svc_dir}/noctalia-sycoca.service" \
+        "${wants_dir}/noctalia-sycoca.service"
     print_success "Wrote + enabled noctalia-sycoca.service"
     echo ""
 }
@@ -778,6 +788,21 @@ copy_skel_to_user() {
     fi
 
     $SUDO_CMD chown -R "$ACTUAL_USER:$ACTUAL_USER" "$ACTUAL_HOME"
+
+    # Create standard XDG user directories (Downloads, Documents, Pictures, etc.)
+    # Runs as the actual user — no dbus/X11 needed, safe from TTY chroot.
+    print_step "Creating XDG user directories..."
+    if [[ "${EUID:-0}" -eq 0 ]]; then
+        su -l "$ACTUAL_USER" -c "xdg-user-dirs-update" 2>/dev/null \
+            && print_success "XDG user directories created!" \
+            || print_warning "xdg-user-dirs-update failed (non-critical)"
+    else
+        xdg-user-dirs-update 2>/dev/null \
+            && print_success "XDG user directories created!" \
+            || print_warning "xdg-user-dirs-update failed (non-critical)"
+    fi
+    echo ""
+
     print_success "XeroLinux configurations applied to $ACTUAL_HOME!"
     echo ""
 
