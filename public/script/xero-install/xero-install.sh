@@ -162,7 +162,6 @@ ensure_dependencies() {
     command -v parted &>/dev/null || deps_needed+=("parted")
     command -v arch-chroot &>/dev/null || deps_needed+=("arch-install-scripts")
 
-    # Used by this script:
     command -v sgdisk &>/dev/null || deps_needed+=("gptfdisk")
     command -v mkfs.btrfs &>/dev/null || deps_needed+=("btrfs-progs")
     command -v mkfs.fat &>/dev/null || deps_needed+=("dosfstools")
@@ -1034,6 +1033,10 @@ select_aur_helper() {
     sleep 0.5
 }
 
+# ────────────────────────────────────────────────────────────────────────────────
+# 11. DESKTOP ENVIRONMENT
+# ────────────────────────────────────────────────────────────────────────────────
+
 select_desktop_env() {
     show_header
     show_submenu_header "🖥️  Desktop Environment"
@@ -1056,6 +1059,10 @@ select_desktop_env() {
 
     sleep 0.5
 }
+
+# ────────────────────────────────────────────────────────────────────────────────
+# PACMAN HELPERS
+# ────────────────────────────────────────────────────────────────────────────────
 
 apply_parallel_downloads() {
     local conf="$1"
@@ -1531,7 +1538,6 @@ mount_filesystems() {
 # SYSTEM INSTALLATION
 # ────────────────────────────────────────────────────────────────────────────────
 
-
 # Import chaotic-aur key with fallback keyservers and retries
 import_chaotic_key() {
     local keyid="3056513887B78AEB"
@@ -1560,15 +1566,12 @@ import_chaotic_key() {
 }
 
 add_temp_repo() {
-    # Enable multilib repo on live ISO
     sed -i '/^#\[multilib\]/{N;s/#\[multilib\]\n#Include/[multilib]\nInclude/}' /etc/pacman.conf
 
-    # Temporarily add xerolinux repo to live ISO for pacstrap access
     if ! grep -q "\[xerolinux\]" /etc/pacman.conf; then
         echo -e '\n[xerolinux]\nSigLevel = Optional TrustAll\nServer = https://repos.xerolinux.xyz/$repo/$arch' >> /etc/pacman.conf
     fi
 
-    # Add chaotic-aur repo to live ISO
     if ! grep -q "\[chaotic-aur\]" /etc/pacman.conf; then
         import_chaotic_key
         pacman -U --noconfirm 'https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-keyring.pkg.tar.zst' \
@@ -1584,7 +1587,6 @@ add_temp_repo() {
 }
 
 install_base_system() {
-    # Add xerolinux and chaotic-aur repos to live ISO first
     add_temp_repo
 
     # ── Critical base (pacstrap aborts if these fail) ─────────────────────────
@@ -1966,7 +1968,6 @@ SVCEOF
 create_user() {
     echo "root:${CONFIG[root_password]}" | arch-chroot "$MOUNTPOINT" chpasswd
 
-    # Create required groups if they don't exist
     local groups_to_create="sys network scanner power cups realtime sambashare rfkill lp users video storage kvm optical audio wheel adm falcond"
     for grp in $groups_to_create; do
         arch-chroot "$MOUNTPOINT" groupadd -f "$grp" 2>/dev/null || true
@@ -2085,7 +2086,7 @@ EOF
 }
 
 # ────────────────────────────────────────────────────────────────────────────────
-# KDE INSTALLER
+# DESKTOP INSTALLER
 # ────────────────────────────────────────────────────────────────────────────────
 
 prepare_desktop_installer() {

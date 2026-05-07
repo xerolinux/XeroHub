@@ -9,7 +9,7 @@ AUR_HELPER="${1:-paru}"
 # Filesystem type passed as $2 from xero-install.sh; empty when run standalone
 FILESYSTEM="${2:-}"
 
-# Colors
+# ── Colours ───────────────────────────────────────────────────────────────────
 RED='\033[0;31m'
 GREEN='\033[0;32m'
 YELLOW='\033[1;33m'
@@ -46,22 +46,22 @@ print_warning() {
     sleep 1
 }
 
-# Detect if running in chroot environment
+# ── Environment detection ─────────────────────────────────────────────────────
+
 # NOTE: intentionally duplicated from xero-install.sh — this script runs standalone
 # inside the target chroot as an unprivileged user, so it needs its own copy.
 detect_chroot() {
     if [ "$(stat -c %d:%i /)" != "$(stat -c %d:%i /proc/1/root/.)" ] 2>/dev/null; then
-        return 0  # In chroot
+        return 0
     elif [ -f /etc/arch-chroot ]; then
-        return 0  # In chroot
+        return 0
     elif [ "${EUID:-0}" -eq 0 ] && [ -z "${SUDO_USER:-}" ]; then
-        return 0  # Running as root without sudo (likely chroot)
+        return 0
     else
-        return 1  # Not in chroot
+        return 1
     fi
 }
 
-# Set up sudo command (empty if running as root/in chroot)
 # NOTE: intentionally duplicated — see detect_chroot note above.
 setup_sudo() {
     if [ "${EUID:-0}" -eq 0 ]; then
@@ -72,7 +72,6 @@ setup_sudo() {
     fi
 }
 
-# Check if running as root
 # NOTE: intentionally OPPOSITE logic from xero-install.sh —
 #   xero-install.sh REQUIRES root (live ISO context).
 #   This script REJECTS root unless inside a chroot (user context).
@@ -84,7 +83,8 @@ check_root() {
     setup_sudo
 }
 
-# Prompt user
+# ── UI helpers ────────────────────────────────────────────────────────────────
+
 prompt_user() {
     print_header
 
@@ -109,7 +109,6 @@ prompt_user() {
     fi
 }
 
-# Customization prompts
 customization_prompts() {
     clear
 
@@ -219,7 +218,6 @@ customization_prompts() {
         esac
     done
 
-    # Trim leading whitespace from all variables
     BROWSER="$(echo $BROWSER)"
     SOCIAL="$(echo $SOCIAL)"
     DEV="$(echo $DEV)"
@@ -228,7 +226,6 @@ customization_prompts() {
     MUSIC="$(echo $MUSIC)"
     VIDEO="$(echo $VIDEO)"
 
-    # LibreOffice language selection
     LIBREOFFICE=""
     if [[ -n "$WANTS_LIBREOFFICE" ]]; then
         echo ""
@@ -451,14 +448,13 @@ install_group() {
 
     print_step "[$group_name] Installing ${#pkgs[@]} packages..."
 
-    # Fast path: install all at once
     if $SUDO_CMD pacman -S --needed --noconfirm "${pkgs[@]}" 2>/dev/null; then
         print_success "[$group_name] Done!"
         echo ""
         return 0
     fi
 
-    # Slow path: group failed — retry each individually so one bad pkg doesn't block the rest
+    # Group failed — retry individually so one bad pkg doesn't block the rest
     print_warning "[$group_name] Bulk install failed — retrying individually..."
     local failed=() installed=0
     for pkg in "${pkgs[@]}"; do
@@ -484,14 +480,13 @@ install_group_required() {
 
     print_step "[$group_name] Installing ${#pkgs[@]} packages (required)..."
 
-    # Fast path
     if $SUDO_CMD pacman -S --needed --noconfirm "${pkgs[@]}" 2>/dev/null; then
         print_success "[$group_name] Done!"
         echo ""
         return 0
     fi
 
-    # Slow path
+    # Group failed — retry individually so one bad pkg doesn't block the rest
     print_warning "[$group_name] Bulk install failed — retrying individually..."
     local failed=() installed=0
     for pkg in "${pkgs[@]}"; do
@@ -540,7 +535,8 @@ enable_if_installed() {
     fi
 }
 
-# Step B: Install all packages
+# ── Step B: Install packages ──────────────────────────────────────────────────
+
 install_packages() {
     print_header
     print_step "Starting KDE Plasma installation..."
@@ -655,7 +651,8 @@ install_packages() {
     fi
 }
 
-# Step D: Install user-selected packages
+# ── Step D: Install user-selected packages ────────────────────────────────────
+
 install_user_packages() {
     print_header
     print_step "Installing User-Selected Packages..."
@@ -675,7 +672,8 @@ install_user_packages() {
     echo ""
 }
 
-# System finalization
+# ── Step E: Finalize system ───────────────────────────────────────────────────
+
 finalize_system() {
     print_header
 
@@ -730,7 +728,8 @@ finalize_system() {
     echo ""
 }
 
-# Step E: Copy skel to actual created user's home
+# ── Step F: Apply XeroLinux configurations ────────────────────────────────────
+
 copy_skel_to_user() {
     print_header
 
@@ -792,14 +791,12 @@ copy_skel_to_user() {
     print_success "XeroLinux configurations applied to $ACTUAL_HOME!"
     echo ""
 
-    # Copy /etc/skel to /root
     print_step "Copying /etc/skel configurations to /root..."
     echo ""
     $SUDO_CMD cp -Rf /etc/skel/. /root/
     print_success "Configurations copied to /root!"
     echo ""
 
-    # Copy xero-toolkit.desktop to autostart
     print_step "Setting up XeroLinux Toolkit autostart... 🚀"
     echo ""
     $SUDO_CMD mkdir -p /etc/xdg/autostart
@@ -863,7 +860,6 @@ copy_skel_to_user() {
         echo ""
     fi
 
-    # Distro identity files
     print_step "Setting distro identity files... 🏷️"
     echo ""
 
@@ -907,7 +903,8 @@ copy_skel_to_user() {
     echo ""
 }
 
-# Step F: Install and configure SDDM
+# ── Step G: Install and configure SDDM ────────────────────────────────────────
+
 select_login_manager() {
     print_header
 
@@ -953,7 +950,8 @@ EOF
     echo ""
 }
 
-# Final message
+# ── Completion ────────────────────────────────────────────────────────────────
+
 show_completion() {
     print_header
     echo -e "${PURPLE}╔════════════════════════════════════════════════╗${NC}"
@@ -967,6 +965,8 @@ show_completion() {
     echo ""
 }
 
+# ── Main ──────────────────────────────────────────────────────────────────────
+
 check_root
 prompt_user
 customization_prompts
@@ -977,7 +977,7 @@ copy_skel_to_user
 select_login_manager
 show_completion
 
-# Clean up: remove this script
+# Self-destruct: remove this script after a successful run
 if [[ -n "$SCRIPT_PATH" && -f "$SCRIPT_PATH" ]]; then
     rm -f "$SCRIPT_PATH"
 fi
