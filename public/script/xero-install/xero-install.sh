@@ -1043,7 +1043,7 @@ select_desktop_env() {
 
     local desktops=(
         "kde       │ KDE Plasma — full desktop, familiar layout (Recommended)"
-        "hyprland  │ Hyprland + Noctalia — tiling compositor, advanced users"
+        "hyprland  │ Hyprland + Noctalia — minimal tiling WM, NO SUPPORT, advanced users only"
     )
 
     local selection=""
