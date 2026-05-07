@@ -1443,15 +1443,12 @@ NOCCONF
 #!/bin/bash
 wp="/usr/share/wallpapers/Xero-Plasma44.jpg"
 cfg="$HOME/.config/hypr/hyprland.conf"
-remove_self() { sed -i '/xero-wallpaper-init/d' "$cfg" 2>/dev/null; }
-[[ ! -f "$wp" ]] && { remove_self; exit 0; }
-for i in $(seq 1 30); do
-    if qs -c noctalia-shell ipc call wallpaper set "$wp" 2>/dev/null; then
-        remove_self
-        exit 0
-    fi
-    sleep 2
-done
+# Remove from autostart first — runs exactly once regardless of outcome
+sed -i '/xero-wallpaper-init/d' "$cfg" 2>/dev/null
+[[ ! -f "$wp" ]] && exit 0
+# Wait for Noctalia to fully initialize before calling IPC
+sleep 8
+qs -c noctalia-shell ipc call wallpaper set "$wp"
 WPSCRIPT
     $SUDO_CMD chmod +x /usr/local/bin/xero-wallpaper-init
     print_success "First-boot wallpaper script installed"
