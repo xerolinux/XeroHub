@@ -1302,6 +1302,7 @@ perform_installation() {
 
     run_step "Configuring system..." configure_system
     run_step "Installing GRUB bootloader..." install_bootloader
+    run_step "Configuring Btrfs snapshots..." setup_snapper
     run_step "Creating user account..." create_user
     run_step "Installing graphics drivers..." install_graphics
     run_step "Configuring swap..." setup_swap_system
@@ -1613,6 +1614,13 @@ install_base_system() {
     pacstrap -K "$MOUNTPOINT" $optional 2>/dev/null || \
         show_warning "Some optional base packages failed — continuing"
 
+    # Btrfs snapshot support — only when btrfs is selected
+    if [[ "${CONFIG[filesystem]}" == "btrfs" ]]; then
+        show_info "Installing Btrfs snapshot support..."
+        pacstrap -K "$MOUNTPOINT" snapper snap-pac grub-btrfs inotify-tools 2>/dev/null || \
+            show_warning "Some Btrfs snapshot packages failed — continuing"
+    fi
+
     genfstab -U "$MOUNTPOINT" >> "$MOUNTPOINT/etc/fstab"
 }
 
@@ -1813,6 +1821,31 @@ install_bootloader() {
     arch-chroot "$MOUNTPOINT" grub-mkconfig -o /boot/grub/grub.cfg
 }
 
+setup_snapper() {
+    [[ "${CONFIG[filesystem]}" != "btrfs" ]] && return 0
+
+    show_info "Configuring Snapper for Btrfs..."
+
+    # /.snapshots is already mounted as @snapshots subvolume (from mount_filesystems).
+    # snapper create-config checks if /.snapshots exists as a directory/mountpoint;
+    # since it does, it uses it as-is without creating a nested subvolume.
+    arch-chroot "$MOUNTPOINT" snapper -c root create-config / 2>/dev/null \
+        || show_warning "Snapper config creation had issues — check manually after boot"
+
+    # Lock down permissions on snapshots dir
+    arch-chroot "$MOUNTPOINT" chmod 750 /.snapshots 2>/dev/null || true
+
+    # Enable grub-btrfsd: watches for new snapshots and auto-regenerates grub.cfg
+    arch-chroot "$MOUNTPOINT" systemctl enable grub-btrfsd 2>/dev/null \
+        || show_warning "grub-btrfsd service not available"
+
+    # Enable snapper timers for automatic timeline snapshots and cleanup
+    arch-chroot "$MOUNTPOINT" systemctl enable snapper-timeline.timer 2>/dev/null || true
+    arch-chroot "$MOUNTPOINT" systemctl enable snapper-cleanup.timer  2>/dev/null || true
+
+    show_success "Snapper configured!"
+}
+
 create_user() {
     echo "root:${CONFIG[root_password]}" | arch-chroot "$MOUNTPOINT" chpasswd
 
@@ -1987,7 +2020,7 @@ run_kde_installer() {
     # Run as the created user. Use a single su -l (login shell) to set up
     # HOME/USER/XDG correctly, and pass the script path directly — avoids
     # the nested runuser -> bash -lc chain that broke stdin/TTY passthrough.
-    arch-chroot "$MOUNTPOINT" su -l "$user" -c "bash '${script_path}' '${CONFIG[aur_helper]}'"
+    arch-chroot "$MOUNTPOINT" su -l "$user" -c "bash '${script_path}' '${CONFIG[aur_helper]}' '${CONFIG[filesystem]}'"
 
     # Remove temporary sudo rule
     rm -f "$MOUNTPOINT/etc/sudoers.d/99-xero-installer"
