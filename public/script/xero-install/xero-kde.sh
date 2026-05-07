@@ -6,6 +6,8 @@ SCRIPT_PATH="$(readlink -f "$0" 2>/dev/null || echo "")"
 
 # AUR helper passed as $1 from xero-install.sh; default to paru
 AUR_HELPER="${1:-paru}"
+# Filesystem type passed as $2 from xero-install.sh; empty when run standalone
+FILESYSTEM="${2:-}"
 
 # Colors
 RED='\033[0;31m'
@@ -90,6 +92,8 @@ prompt_user() {
     echo -e "  ${BLUE}•${NC} KDE Plasma Desktop (XeroLinux curated selection)"
     echo -e "  ${BLUE}•${NC} Essential KDE Applications"
     echo -e "  ${BLUE}•${NC} AUR helper: ${GREEN}${AUR_HELPER}${NC}"
+    [[ "$FILESYSTEM" == "btrfs" ]] && \
+        echo -e "  ${BLUE}•${NC} Btrfs tools: ${GREEN}btrfs-assistant + snapper integration${NC}"
     echo -e "  ${BLUE}•${NC} Your selected optional packages"
     echo -e "  ${BLUE}•${NC} XeroLinux configurations"
     echo ""
@@ -644,6 +648,11 @@ install_packages() {
     # ── XeroLinux Packages ────────────────────────────────────────────────────
     install_group "XeroLinux Packages" \
         xero-toolkit extra-scripts desktop-config
+
+    # ── Btrfs GUI tools (only when installed on Btrfs) ────────────────────────
+    if [[ "$FILESYSTEM" == "btrfs" ]]; then
+        install_group "Btrfs Assistant" btrfs-assistant
+    fi
 }
 
 # Step D: Install user-selected packages
@@ -699,6 +708,7 @@ finalize_system() {
     print_step "Enabling conditional services..."
     enable_if_installed power-profiles-daemon
     enable_if_installed switcheroo-control
+    [[ "$FILESYSTEM" == "btrfs" ]] && enable_service_if_available grub-btrfsd
     print_success "Conditional services processed!"
     echo ""
 
