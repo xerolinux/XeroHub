@@ -1,6 +1,6 @@
 ---
 title: "XeroLinux Reviews"
-date: 2025-05-24
+date: 2026-05-09
 draft: false
 description: "Wanna Review XeroLinux ?"
 tags: ["XeroLinux", "Distro", "Review", "Overview"]
@@ -15,7 +15,7 @@ Honestly, I’m not entirely sure why, but that’s exactly why I wanted to take
 
 ## How to Reach Out
 
-Getting your hands on the ISOs is easier than you might think. If you already have an account on [**Fosstodon**](https://fosstodon.org/@XeroLinux), just send me a message there. If you don’t, no worries, you can quickly create an account using [**this invite link**](https://fosstodon.org/invite/VyhmPW4w). Alternatively, you can reach out on [**Discord**](https://discord.xerolinux.xyz). No access to those platforms ? Ok how about a simple [**E-mail**](mailto:steve@techxero.com).
+Getting your hands on the ISOs is easier than you might think. If you already have an account on [**Fosstodon**](https://fosstodon.org/@XeroLinux), just send me a message there. Alternatively, you can reach out on [**Discord**](https://discord.xerolinux.xyz). No access to those platforms ? Ok how about a simple [**E-mail**](mailto:steve@techxero.com).
 
 Just drop me a link to your channel or platform where you’d like to share your review, and I’ll send you a private download link for one or both ISOs, free of charge of course.
 
@@ -35,4 +35,4 @@ Thank you so much for taking the time to read this and consider helping out. Whe
 
 I’m really excited to connect with more people who share a passion for open source and innovation. Feel free to reach out anytime, I’m here to support you and answer any questions you might have. Together, we can make **XeroLinux** something truly special. Looking forward to hearing from you soon!
 
-Cheers :heart:
+Cheers !
