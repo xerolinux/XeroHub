@@ -643,7 +643,7 @@ install_packages() {
 
     # ── XeroLinux Packages ────────────────────────────────────────────────────
     install_group "XeroLinux Packages" \
-        xero-toolkit extra-scripts desktop-config
+        xero-toolkit xpm-gui extra-scripts desktop-config
 
     # ── Btrfs GUI tools (only when installed on Btrfs) ────────────────────────
     if [[ "$FILESYSTEM" == "btrfs" ]]; then
