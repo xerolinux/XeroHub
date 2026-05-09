@@ -35,8 +35,14 @@ const pages = defineCollection({
       image: z.string(),
       description: z.string(),
     })).optional(),
-    otherSystems: z.object({
+    otherHardware: z.array(z.object({
+      name: z.string(),
+      subtitle: z.string(),
       image: z.string(),
+      description: z.string(),
+    })).optional(),
+    otherSystems: z.object({
+      image: z.string().optional(),
       text: z.array(z.string()),
     }).optional(),
     thanks: z.string().optional(),
