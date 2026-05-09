@@ -8,7 +8,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 const pageId = Astro.url.pathname.replace(/^\//, '').replace(/\/$/, '').replace(/\//g, '-') || 'home';
 
 const entry = await getEntry('pages', 'gear');
-const { info, hardwareIntro, hardware, otherSystems, thanks } = entry.data;
+const { info, hardwareIntro, hardware, otherHardware, thanks } = entry.data;
 ---
 
 <Layout title={entry.data.title} description={entry.data.description}>
@@ -33,13 +33,12 @@ const { info, hardwareIntro, hardware, otherSystems, thanks } = entry.data;
           ))}
         </GlassCard>
 
-        <!-- The Hardware -->
+        <!-- Section 1: Current Gear -->
         <div>
-          <h2 class="fade-in font-heading text-2xl font-bold text-[var(--color-text-primary)] mb-6">The Hardware</h2>
+          <h2 class="fade-in font-heading text-2xl font-bold text-[var(--color-text-primary)] mb-6">Current Gear</h2>
           <p class="fade-in prose-inline text-[var(--color-text-secondary)] mb-8" set:html={inlineMarkdown(hardwareIntro!)} />
         </div>
 
-        <!-- Hardware Cards -->
         {hardware!.map(item => (
           <div class="fade-in">
             <GlassCard padding="p-0" class="overflow-hidden">
@@ -47,29 +46,75 @@ const { info, hardwareIntro, hardware, otherSystems, thanks } = entry.data;
               <div class="p-6">
                 <p class="text-xs font-medium text-[var(--color-accent-light)] mb-1 uppercase tracking-wider">{item.subtitle}</p>
                 <h3 class="font-heading text-xl font-bold text-[var(--color-text-primary)] mb-3">{item.name}</h3>
-                <p class="prose-inline text-[var(--color-text-secondary)] text-sm" set:html={inlineMarkdown(item.description)} />
+                {item.description.split('\n\n').length > 1 ? (
+                  <div class="mt-3 space-y-4">
+                    {item.description.split('\n\n').map((para, i) => (
+                      <>
+                        {i > 0 && (
+                          <div class="gear-marquee-wrap -mx-6 overflow-hidden py-1.5" aria-hidden="true">
+                            <div class="gear-marquee flex gap-8 whitespace-nowrap font-mono text-[10px] text-[var(--color-accent)]/60 tracking-widest w-max">
+                              {Array.from({length: 4}).map(() => (
+                                <span>0xA3F2 // CPU_LOAD: 12% // MEM: 4096MB // ARCH: x86_64 // NET: ETH0 // PKT: 0xFFD3 // KERNEL: 6.12.1 // UPTIME: 99.9% // DISK: /dev/nvme0 // IRQ: 0x0F //&nbsp;</span>
+                              ))}
+                            </div>
+                          </div>
+                        )}
+                        <div class="flex gap-3 items-start">
+                          <span class="shrink-0 w-2.5 h-2.5 rounded-full bg-[var(--color-accent)] shadow-[0_0_7px_var(--color-accent)] mt-1.5"></span>
+                          <p class="prose-inline text-[var(--color-text-secondary)] text-sm" set:html={inlineMarkdown(para)} />
+                        </div>
+                      </>
+                    ))}
+                  </div>
+                ) : (
+                  <p class="prose-inline text-[var(--color-text-secondary)] text-sm" set:html={inlineMarkdown(item.description)} />
+                )}
               </div>
             </GlassCard>
           </div>
         ))}
 
-        <!-- Other Systems -->
+        <!-- Section 2: Other (Lebanon) -->
         <div>
-          <h2 class="fade-in font-heading text-2xl font-bold text-[var(--color-text-primary)] mb-6">Other systems</h2>
+          <h2 class="fade-in font-heading text-2xl font-bold text-[var(--color-text-primary)] mb-6">Lebanon</h2>
         </div>
 
-        <div class="fade-in">
-          <GlassCard padding="p-0" class="overflow-hidden">
-            <img src={`${base}/${otherSystems!.image}`} alt="MacBook & SteamDeck" class="w-full" loading="lazy" />
-            <div class="p-6">
-              {otherSystems!.text.map((paragraph, i) => (
-                <p class:list={["prose-inline text-[var(--color-text-secondary)] text-sm", { "mt-3": i > 0 }]} set:html={inlineMarkdown(paragraph)} />
-              ))}
-            </div>
-          </GlassCard>
-        </div>
+        {otherHardware!.map(item => (
+          <div class="fade-in">
+            <GlassCard padding="p-0" class="overflow-hidden">
+              <img src={`${base}/${item.image}`} alt={item.name} class="w-full" loading="lazy" />
+              <div class="p-6">
+                <p class="text-xs font-medium text-[var(--color-accent-light)] mb-1 uppercase tracking-wider">{item.subtitle}</p>
+                <h3 class="font-heading text-xl font-bold text-[var(--color-text-primary)] mb-3">{item.name}</h3>
+                {item.description.split('\n\n').length > 1 ? (
+                  <div class="mt-3 space-y-4">
+                    {item.description.split('\n\n').map((para, i) => (
+                      <>
+                        {i > 0 && (
+                          <div class="gear-marquee-wrap -mx-6 overflow-hidden py-1.5" aria-hidden="true">
+                            <div class="gear-marquee flex gap-8 whitespace-nowrap font-mono text-[10px] text-[var(--color-accent)]/60 tracking-widest w-max">
+                              {Array.from({length: 4}).map(() => (
+                                <span>0xA3F2 // CPU_LOAD: 12% // MEM: 4096MB // ARCH: x86_64 // NET: ETH0 // PKT: 0xFFD3 // KERNEL: 6.12.1 // UPTIME: 99.9% // DISK: /dev/nvme0 // IRQ: 0x0F //&nbsp;</span>
+                              ))}
+                            </div>
+                          </div>
+                        )}
+                        <div class="flex gap-3 items-start">
+                          <span class="shrink-0 w-2.5 h-2.5 rounded-full bg-[var(--color-accent)] shadow-[0_0_7px_var(--color-accent)] mt-1.5"></span>
+                          <p class="prose-inline text-[var(--color-text-secondary)] text-sm" set:html={inlineMarkdown(para)} />
+                        </div>
+                      </>
+                    ))}
+                  </div>
+                ) : (
+                  <p class="prose-inline text-[var(--color-text-secondary)] text-sm" set:html={inlineMarkdown(item.description)} />
+                )}
+              </div>
+            </GlassCard>
+          </div>
+        ))}
 
-        <!-- Thanks -->
+<!-- Thanks -->
         <div class="fade-in">
           <GlassCard>
             <h3 class="font-heading text-xl font-semibold text-[var(--color-text-primary)] mb-3">Thanks for reading</h3>
@@ -80,3 +125,17 @@ const { info, hardwareIntro, hardware, otherSystems, thanks } = entry.data;
     </div>
   </section>
 </Layout>
+
+<style>
+  .gear-marquee-wrap {
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 12%, black 88%, transparent 100%);
+    mask-image: linear-gradient(to right, transparent 0%, black 12%, black 88%, transparent 100%);
+  }
+  .gear-marquee {
+    animation: gear-scroll 18s linear infinite;
+  }
+  @keyframes gear-scroll {
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+</style>
