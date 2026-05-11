@@ -452,7 +452,8 @@ install_packages() {
         pv mc gpm nbd lvm2 bolt lynx tldr nmap mdadm hyperv \
         mtools lsscsi screen tcpdump ethtool pcsclite \
         espeakup libfido2 xdg-utils smartmontools \
-        sequoia-sq edk2-shell python-pyqt6 libusb-compat wireguard-tools
+        sequoia-sq edk2-shell python-pyqt6 libusb-compat wireguard-tools \
+        grimblast-git grim slurp wl-clipboard
 
     # ── Python Libraries ──────────────────────────────────────────────────────
     install_group "Python Libraries" \
@@ -567,7 +568,9 @@ pcall(dofile, "${colors_file}")
 -- ────────────────────────────────────────────────────────────────────────────
 -- Noctalia — keybinds
 -- ────────────────────────────────────────────────────────────────────────────
-hl.bind("Print", hl.dsp.exec_cmd("qs msg -i noctalia-shell screenshot"))
+hl.bind("PRINT",              hl.dsp.exec_cmd("grimblast copysave area"))
+hl.bind("SUPER + PRINT",      hl.dsp.exec_cmd("grimblast copysave screen"))
+hl.bind("SUPER + SHIFT + PRINT", hl.dsp.exec_cmd("grimblast copysave active"))
 
 -- ────────────────────────────────────────────────────────────────────────────
 -- Noctalia — environment
