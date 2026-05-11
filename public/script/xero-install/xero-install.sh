@@ -56,6 +56,7 @@ CONFIG[swap_algo]="zstd"
 CONFIG[gfx_driver]="mesa"
 CONFIG[parallel_downloads]="5"
 CONFIG[aur_helper]="paru"
+CONFIG[extra_kernel]=""
 CONFIG[desktop]="kde"
 CONFIG[uefi]="no"
 CONFIG[boot_part]=""
@@ -1034,7 +1035,51 @@ select_aur_helper() {
 }
 
 # ────────────────────────────────────────────────────────────────────────────────
-# 11. DESKTOP ENVIRONMENT
+# 11. ADDITIONAL KERNEL
+# ────────────────────────────────────────────────────────────────────────────────
+
+select_extra_kernel() {
+    show_header
+    show_submenu_header "🐧 Additional Kernel"
+    echo ""
+
+    gum style --foreground 220 --bold --border normal --border-foreground 220 \
+        --align left --margin "0 2" --padding "0 1" \
+        "These kernels install ALONGSIDE the default linux kernel." \
+        "Do NOT select too many — each takes ~100 MB on the boot partition."
+    echo ""
+
+    local options=(
+        "None"
+        "linux-cachyos   │ CachyOS optimized kernel  (Chaotic-AUR)"
+        "linux-lts       │ Long Term Support kernel   (official repos)"
+    )
+
+    local selections=""
+    selections=$(printf '%s\n' "${options[@]}" | gum choose --no-limit \
+        --header "Additional kernels (Space to toggle, Enter to confirm):") || true
+
+    CONFIG[extra_kernel]=""
+    if [[ -z "$selections" ]] || echo "$selections" | grep -q "^None$"; then
+        show_success "No additional kernel selected"
+        sleep 0.5
+        return
+    fi
+
+    while IFS= read -r line; do
+        case "$line" in
+            "linux-cachyos"*) CONFIG[extra_kernel]+="linux-cachyos linux-cachyos-headers " ;;
+            "linux-lts"*)     CONFIG[extra_kernel]+="linux-lts linux-lts-headers " ;;
+        esac
+    done <<< "$selections"
+
+    CONFIG[extra_kernel]="${CONFIG[extra_kernel]% }"
+    show_success "Extra kernels queued: ${CONFIG[extra_kernel]}"
+    sleep 0.5
+}
+
+# ────────────────────────────────────────────────────────────────────────────────
+# 12. DESKTOP ENVIRONMENT
 # ────────────────────────────────────────────────────────────────────────────────
 
 select_desktop_env() {
@@ -1136,6 +1181,15 @@ show_main_menu() {
         local de_label="KDE Plasma"
         [[ "${CONFIG[desktop]}" == "hyprland" ]] && de_label="Hyprland + Noctalia"
 
+        local kernel_label="None"
+        if [[ "${CONFIG[extra_kernel]}" == *"linux-cachyos"* && "${CONFIG[extra_kernel]}" == *"linux-lts"* ]]; then
+            kernel_label="CachyOS + LTS"
+        elif [[ "${CONFIG[extra_kernel]}" == *"linux-cachyos"* ]]; then
+            kernel_label="CachyOS"
+        elif [[ "${CONFIG[extra_kernel]}" == *"linux-lts"* ]]; then
+            kernel_label="LTS"
+        fi
+
         local menu_items=(
             ""
             "1.  Installer Language    │ ${CONFIG[installer_lang]}"
@@ -1149,8 +1203,9 @@ show_main_menu() {
             "9.  Parallel Downloads    │ ${CONFIG[parallel_downloads]}"
             "10. Desktop Environment   │ $de_label"
             "11. AUR Helper            │ ${CONFIG[aur_helper]}"
+            "12. Additional Kernel     │ $kernel_label"
             "──────────────────────────────────────────────"
-            "12. Start Installation"
+            "13. Start Installation"
             "0.  Exit"
         )
 
@@ -1169,7 +1224,8 @@ show_main_menu() {
             "9."*)  configure_parallel_downloads ;;
             "10."*) select_desktop_env ;;
             "11."*) select_aur_helper ;;
-            "12."*)
+            "12."*) select_extra_kernel ;;
+            "13."*)
                 if validate_config; then
                     show_summary
                     local confirm_msg=""
@@ -1340,6 +1396,15 @@ perform_installation() {
     show_info "Adding XeroLinux and Chaotic-AUR repositories..."
     add_repos
     show_success "Repositories configured"
+
+    if [[ -n "${CONFIG[extra_kernel]}" ]]; then
+        show_info "Installing additional kernels: ${CONFIG[extra_kernel]}..."
+        # shellcheck disable=SC2086
+        arch-chroot "$MOUNTPOINT" pacman -S --needed --noconfirm ${CONFIG[extra_kernel]} \
+            || show_warning "Some extra kernel packages failed — continuing"
+        arch-chroot "$MOUNTPOINT" grub-mkconfig -o /boot/grub/grub.cfg 2>/dev/null || true
+        show_success "Additional kernels installed"
+    fi
 
     run_step "Configuring system..." configure_system
     run_step "Installing GRUB bootloader..." install_bootloader
