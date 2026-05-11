@@ -401,7 +401,7 @@ install_packages() {
     install_group "Noctalia Dependencies" \
         alacritty imagemagick python \
         cliphist wl-clipboard grim slurp \
-        gnome-menus \
+        gnome-menus noto-fonts-emoji \
         qt6ct qt5ct nwg-look \
         qt6-multimedia-ffmpeg papirus-icon-theme \
         network-manager-applet blueman
@@ -563,6 +563,11 @@ configure_hyprland() {
 -- Noctalia — colors (matugen-generated, updated on theme change)
 -- ────────────────────────────────────────────────────────────────────────────
 pcall(dofile, "${colors_file}")
+
+-- ────────────────────────────────────────────────────────────────────────────
+-- Noctalia — keybinds
+-- ────────────────────────────────────────────────────────────────────────────
+hl.bind("", "Print", "exec", "qs msg -i noctalia-shell screenshot")
 
 -- ────────────────────────────────────────────────────────────────────────────
 -- Noctalia — environment
