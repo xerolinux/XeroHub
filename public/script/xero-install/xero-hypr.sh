@@ -534,6 +534,7 @@ configure_hyprland() {
     local cfg_dir="${ACTUAL_HOME}/.config/hypr"
     local cfg="${cfg_dir}/hyprland.lua"
     mkdir -p "${cfg_dir}" "${cfg_dir}/noctalia"
+    chown -R "${ACTUAL_USER}:${ACTUAL_USER}" "${cfg_dir}" 2>/dev/null || true
 
     if [[ ! -f "$cfg" ]]; then
         local example="/usr/share/hypr/hyprland.lua"
@@ -2613,7 +2614,7 @@ Item {
   }
 }
 NP_HYPRSVC_EOF
-    $SUDO_CMD cp "$tmp" "$noc_base/Services/Compositor/HyprlandService.qml"
+    $SUDO_CMD install -m 644 "$tmp" "$noc_base/Services/Compositor/HyprlandService.qml"
     rm -f "$tmp"
     print_success "Updated: Services/Compositor/HyprlandService.qml"
 
@@ -3249,7 +3250,7 @@ Singleton {
   }
 }
 NP_TMPLREG_EOF
-    $SUDO_CMD cp "$tmp" "$noc_base/Services/Theming/TemplateRegistry.qml"
+    $SUDO_CMD install -m 644 "$tmp" "$noc_base/Services/Theming/TemplateRegistry.qml"
     rm -f "$tmp"
     print_success "Updated: Services/Theming/TemplateRegistry.qml"
 
@@ -3877,20 +3878,19 @@ starship)
     ;;
 esac
 NP_TMPLSH_EOF
-    $SUDO_CMD cp "$tmp" "$noc_base/Scripts/bash/template-apply.sh"
-    $SUDO_CMD chmod +x "$noc_base/Scripts/bash/template-apply.sh"
+    $SUDO_CMD install -m 755 "$tmp" "$noc_base/Scripts/bash/template-apply.sh"
     rm -f "$tmp"
     print_success "Updated: Scripts/bash/template-apply.sh"
 
     # ── Assets/Templates/hyprland.lua ────────────────────────────────────────
     tmp=$(mktemp)
     cat > "$tmp" << 'NP_HYPRLUATMPL_EOF'
-local primary = rgb({{colors.primary.default.hex_stripped}})
-local surface = rgb({{colors.surface.default.hex_stripped}})
-local secondary = rgb({{colors.secondary.default.hex_stripped}})
-local error = rgb({{colors.error.default.hex_stripped}})
-local tertiary = rgb({{colors.tertiary.default.hex_stripped}})
-local surface_lowest = rgb({{colors.surface_container_lowest.default.hex_stripped}})
+local primary = rgb("{{colors.primary.default.hex_stripped}}")
+local surface = rgb("{{colors.surface.default.hex_stripped}}")
+local secondary = rgb("{{colors.secondary.default.hex_stripped}}")
+local error = rgb("{{colors.error.default.hex_stripped}}")
+local tertiary = rgb("{{colors.tertiary.default.hex_stripped}}")
+local surface_lowest = rgb("{{colors.surface_container_lowest.default.hex_stripped}}")
 
 hl.config({
     general = {
@@ -3912,7 +3912,7 @@ hl.config({
 })
 NP_HYPRLUATMPL_EOF
     $SUDO_CMD mkdir -p "$noc_base/Assets/Templates"
-    $SUDO_CMD cp "$tmp" "$noc_base/Assets/Templates/hyprland.lua"
+    $SUDO_CMD install -m 644 "$tmp" "$noc_base/Assets/Templates/hyprland.lua"
     rm -f "$tmp"
     print_success "Written: Assets/Templates/hyprland.lua"
 
