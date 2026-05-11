@@ -390,7 +390,7 @@ install_packages() {
 
     # ── Hyprland Core (required) ──────────────────────────────────────────────
     install_group_required "Hyprland Core" \
-        hyprland hyprlock hypridle hyprpicker hyprcursor
+        hyprland hyprlock hypridle hyprpicker hyprcursor grimblast-git
 
     # ── Wayland & XDG Portals ─────────────────────────────────────────────────
     install_group "Wayland & Portals" \
@@ -452,8 +452,7 @@ install_packages() {
         pv mc gpm nbd lvm2 bolt lynx tldr nmap mdadm hyperv \
         mtools lsscsi screen tcpdump ethtool pcsclite \
         espeakup libfido2 xdg-utils smartmontools \
-        sequoia-sq edk2-shell python-pyqt6 libusb-compat wireguard-tools \
-        grimblast-git grim slurp wl-clipboard
+        sequoia-sq edk2-shell python-pyqt6 libusb-compat wireguard-tools
 
     # ── Python Libraries ──────────────────────────────────────────────────────
     install_group "Python Libraries" \
