@@ -788,10 +788,10 @@ configure_themes() {
 
     # qt5ct — style=Breeze so Noctalia's Qt color template can apply its palette
     mkdir -p "$ACTUAL_HOME/.config/qt5ct"
-    cat > "$ACTUAL_HOME/.config/qt5ct/qt5ct.conf" << 'QT5CT'
+    cat > "$ACTUAL_HOME/.config/qt5ct/qt5ct.conf" << QT5CT
 [Appearance]
-color_scheme_path=
-custom_palette=false
+color_scheme_path=${ACTUAL_HOME}/.config/qt5ct/colors/noctalia.conf
+custom_palette=true
 icon_theme=Tela-circle-purple-dark
 standard_dialogs=default
 style=Breeze
@@ -802,10 +802,10 @@ general="JetBrainsMono Nerd Font,11,-1,5,400,0,0,0,0,0,0,0,0,0,0,1"
 QT5CT
 
     mkdir -p "$ACTUAL_HOME/.config/qt6ct"
-    cat > "$ACTUAL_HOME/.config/qt6ct/qt6ct.conf" << 'QT6CT'
+    cat > "$ACTUAL_HOME/.config/qt6ct/qt6ct.conf" << QT6CT
 [Appearance]
-color_scheme_path=
-custom_palette=false
+color_scheme_path=${ACTUAL_HOME}/.config/qt6ct/colors/noctalia.conf
+custom_palette=true
 icon_theme=Tela-circle-purple-dark
 standard_dialogs=default
 style=Fusion
@@ -833,7 +833,6 @@ wheel_scroll_lines=3
 force_raster_widgets=1
 ignored_applications=@Invalid()
 QT6CT
-    sed -i "s|/home/xero|${ACTUAL_HOME}|g" "$ACTUAL_HOME/.config/qt6ct/qt6ct.conf"
 
     # GTK3 — icon theme + dark pref + fonts only.
     # Noctalia's GTK color template writes the actual theme colors via matugen.
