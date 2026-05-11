@@ -556,7 +556,13 @@ configure_hyprland() {
     sed -i 's|\(hl\.exec_cmd("waybar[^"]*")\)|-- \1  -- disabled: Noctalia replaces waybar|' "$cfg" || true
 
     if ! grep -q "qs -c noctalia-shell" "$cfg"; then
-        cat >> "$cfg" << 'HYPREOF'
+        local colors_file="${cfg_dir}/noctalia/noctalia-colors.lua"
+        cat >> "$cfg" << HYPREOF
+
+-- ────────────────────────────────────────────────────────────────────────────
+-- Noctalia — colors (matugen-generated, updated on theme change)
+-- ────────────────────────────────────────────────────────────────────────────
+pcall(dofile, "${colors_file}")
 
 -- ────────────────────────────────────────────────────────────────────────────
 -- Noctalia — environment
@@ -3606,7 +3612,7 @@ hyprland)
         echo "Created new config file with noctalia theme."
     else
         # Check if noctalia theme source already exists (flexible matching)
-        if grep -qE 'require\(.*noctalia.*\.lua\)' "$CONFIG_FILE"; then
+        if grep -qE '(dofile|require)\s*\(.*noctalia' "$CONFIG_FILE"; then
             echo "Theme already included, skipping modification."
         else
             # Only convert symlink when we actually need to write (NixOS read-only symlinks)
@@ -3885,12 +3891,12 @@ NP_TMPLSH_EOF
     # ── Assets/Templates/hyprland.lua ────────────────────────────────────────
     tmp=$(mktemp)
     cat > "$tmp" << 'NP_HYPRLUATMPL_EOF'
-local primary        = 0xFF{{colors.primary.default.hex_stripped}}
-local surface        = 0xFF{{colors.surface.default.hex_stripped}}
-local secondary      = 0xFF{{colors.secondary.default.hex_stripped}}
-local error_col      = 0xFF{{colors.error.default.hex_stripped}}
-local tertiary       = 0xFF{{colors.tertiary.default.hex_stripped}}
-local surface_lowest = 0xFF{{colors.surface_container_lowest.default.hex_stripped}}
+local primary        = "rgba({{colors.primary.default.hex_stripped}}ff)"
+local surface        = "rgba({{colors.surface.default.hex_stripped}}ff)"
+local secondary      = "rgba({{colors.secondary.default.hex_stripped}}ff)"
+local error_col      = "rgba({{colors.error.default.hex_stripped}}ff)"
+local tertiary       = "rgba({{colors.tertiary.default.hex_stripped}}ff)"
+local surface_lowest = "rgba({{colors.surface_container_lowest.default.hex_stripped}}ff)"
 
 hl.config({
     general = {
