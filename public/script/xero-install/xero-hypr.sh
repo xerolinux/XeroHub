@@ -56,6 +56,30 @@ setup_sudo() {
     fi
 }
 
+# Detect the real non-root user once — all config functions read these globals.
+# Called right after check_root so every subsequent function can rely on them.
+detect_actual_user() {
+    if [[ -n "${SUDO_USER:-}" && "${SUDO_USER}" != "root" ]]; then
+        ACTUAL_USER="$SUDO_USER"
+    elif [[ -n "${USER:-}" && "${USER}" != "root" ]]; then
+        ACTUAL_USER="$USER"
+    elif [[ "$(id -un 2>/dev/null)" != "root" ]]; then
+        ACTUAL_USER="$(id -un)"
+    else
+        ACTUAL_USER="$(getent passwd | awk -F: '$3 >= 1000 && $3 < 65534 && $1 != "nobody" && $6 ~ /^\/home\// {print $1; exit}')"
+    fi
+
+    if [[ -z "${ACTUAL_USER:-}" ]]; then
+        print_error "Could not determine target user — cannot apply configs. Aborting."
+        exit 1
+    fi
+
+    ACTUAL_HOME="$(getent passwd "$ACTUAL_USER" | cut -d: -f6 2>/dev/null)"
+    [[ -z "$ACTUAL_HOME" ]] && ACTUAL_HOME="/home/${ACTUAL_USER}"
+
+    print_success "Config target: ${ACTUAL_USER} → ${ACTUAL_HOME}"
+}
+
 # NOTE: intentionally OPPOSITE logic from xero-install.sh — rejects root outside chroot.
 check_root() {
     if [[ ${EUID:-0} -eq 0 ]] && ! detect_chroot; then
@@ -507,26 +531,23 @@ EOF
 configure_hyprland() {
     print_step "Configuring Hyprland..."
 
-    local user_home
-    if [[ -n "${SUDO_USER:-}" && "${SUDO_USER}" != "root" ]]; then
-        user_home="$(getent passwd "${SUDO_USER}" | cut -d: -f6)"
-    else
-        user_home="$HOME"
-    fi
-
-    local cfg_dir="${user_home}/.config/hypr"
+    local cfg_dir="${ACTUAL_HOME}/.config/hypr"
     local cfg="${cfg_dir}/hyprland.conf"
     mkdir -p "${cfg_dir}"
 
-    local example="/usr/share/hypr/hyprland.conf"
-    if [[ ! -f "$example" ]]; then
-        print_error "Default config not found at $example — ensure hyprland is installed."
-        return 1
-    fi
-
     if [[ ! -f "$cfg" ]]; then
-        cp "$example" "$cfg"
-        print_success "Copied default config from $example"
+        # Hyprland ≥0.42 no longer ships an example config — try known paths, else stub
+        local example=""
+        for p in "/usr/share/hyprland/hyprland.conf" "/usr/share/hypr/hyprland.conf"; do
+            [[ -f "$p" ]] && { example="$p"; break; }
+        done
+        if [[ -n "$example" ]]; then
+            cp "$example" "$cfg"
+            print_success "Copied default config from $example"
+        else
+            touch "$cfg"
+            print_success "No example config found — created empty hyprland.conf (Hyprland uses built-in defaults)"
+        fi
     else
         print_success "hyprland.conf exists — appending only."
     fi
@@ -567,14 +588,7 @@ HYPREOF
 configure_portals() {
     print_step "Configuring XDG portal preferences..."
 
-    local user_home
-    if [[ -n "${SUDO_USER:-}" && "${SUDO_USER}" != "root" ]]; then
-        user_home="$(getent passwd "${SUDO_USER}" | cut -d: -f6)"
-    else
-        user_home="$HOME"
-    fi
-
-    local p_dir="${user_home}/.config/xdg-desktop-portal"
+    local p_dir="${ACTUAL_HOME}/.config/xdg-desktop-portal"
     mkdir -p "$p_dir"
     cat > "${p_dir}/hyprland-portals.conf" << 'PORTEOF'
 [preferred]
@@ -591,14 +605,7 @@ PORTEOF
 install_noctalia_polkit() {
     print_step "Installing Noctalia polkit agent..."
 
-    local user_home
-    if [[ -n "${SUDO_USER:-}" && "${SUDO_USER}" != "root" ]]; then
-        user_home="$(getent passwd "${SUDO_USER}" | cut -d: -f6)"
-    else
-        user_home="$HOME"
-    fi
-
-    local plugins_dir="${user_home}/.config/noctalia/plugins"
+    local plugins_dir="${ACTUAL_HOME}/.config/noctalia/plugins"
     local dest="${plugins_dir}/polkit-agent"
 
     if [[ -d "$dest" ]]; then
@@ -623,7 +630,7 @@ install_noctalia_polkit() {
         print_warning "Could not clone noctalia-plugins — install polkit-agent manually later."
     fi
 
-    local plugins_json="${user_home}/.config/noctalia/plugins.json"
+    local plugins_json="${ACTUAL_HOME}/.config/noctalia/plugins.json"
     if [[ ! -f "$plugins_json" ]]; then
         cat > "$plugins_json" << 'PLJSON'
 {
@@ -655,13 +662,6 @@ PLJSON
 setup_mimetype_fix() {
     print_step "Applying MIME application menu fix..."
 
-    local user_home
-    if [[ -n "${SUDO_USER:-}" && "${SUDO_USER}" != "root" ]]; then
-        user_home="$(getent passwd "${SUDO_USER}" | cut -d: -f6)"
-    else
-        user_home="$HOME"
-    fi
-
     local src="/etc/xdg/menus/gnome-applications.menu"
     local dst="/etc/xdg/menus/applications.menu"
     if [[ -L "$dst" ]] || [[ -f "$dst" ]]; then
@@ -673,8 +673,8 @@ setup_mimetype_fix() {
         print_warning "$src not found — gnome-menus may not be installed yet."
     fi
 
-    local svc_dir="${user_home}/.config/systemd/user"
-    local noc_dir="${user_home}/.config/noctalia"
+    local svc_dir="${ACTUAL_HOME}/.config/systemd/user"
+    local noc_dir="${ACTUAL_HOME}/.config/noctalia"
     local flag="${noc_dir}/.sycoca-built"
     mkdir -p "$svc_dir" "$noc_dir"
     cat > "${svc_dir}/noctalia-sycoca.service" << SVCEOF
@@ -1670,27 +1670,6 @@ copy_skel_to_user() {
     print_step "Applying XeroLinux configurations... 📁"
     echo ""
 
-    if [[ -n "${SUDO_USER:-}" && "${SUDO_USER}" != "root" ]]; then
-        ACTUAL_USER="$SUDO_USER"
-    elif [[ -n "${USER:-}" && "${USER}" != "root" ]]; then
-        ACTUAL_USER="$USER"
-    elif [[ "$(id -un 2>/dev/null)" != "root" ]]; then
-        ACTUAL_USER="$(id -un)"
-    else
-        ACTUAL_USER="$(getent passwd | awk -F: '$3 >= 1000 && $3 < 65534 && $1 != "nobody" && $6 ~ /^\/home\// {print $1; exit}')"
-    fi
-
-    if [[ -z "${ACTUAL_USER:-}" ]]; then
-        print_warning "Could not determine target user, skipping config copy"
-        return 1
-    fi
-
-    ACTUAL_HOME="$(getent passwd "$ACTUAL_USER" | cut -d: -f6)"
-    if [[ -z "${ACTUAL_HOME:-}" || ! -d "$ACTUAL_HOME" ]]; then
-        print_warning "User home directory not found for $ACTUAL_USER, skipping"
-        return 1
-    fi
-
     print_step "Copying /etc/skel configurations to $ACTUAL_HOME for user $ACTUAL_USER..."
     echo ""
     $SUDO_CMD cp -Rf /etc/skel/. "$ACTUAL_HOME"/
@@ -1994,6 +1973,7 @@ show_completion() {
 # ── Main ──────────────────────────────────────────────────────────────────────
 
 check_root
+detect_actual_user
 prompt_user
 customization_prompts
 install_packages
