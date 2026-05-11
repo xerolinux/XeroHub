@@ -548,7 +548,7 @@ configure_hyprland() {
         print_success "hyprland.lua exists — appending only."
     fi
 
-    # Set terminal to konsole — replace kitty in Lua variable declaration
+    # Set terminal to konsole
     sed -i 's|local terminal\s*=\s*"kitty"|local terminal = "konsole"|' "$cfg" || true
 
     # Disable waybar if present — Noctalia replaces it
@@ -566,10 +566,9 @@ hl.env("QT_QPA_PLATFORMTHEME", "qt6ct")
 hl.env("QT_QPA_PLATFORM", "wayland")
 
 -- ────────────────────────────────────────────────────────────────────────────
--- Noctalia — autostart (bar, notifications, wallpaper, lock, launcher, polkit)
+-- Noctalia — autostart
 -- ────────────────────────────────────────────────────────────────────────────
 hl.on("hyprland.start", function()
-    -- Export session vars so D-Bus-activated apps inherit WAYLAND_DISPLAY
     hl.exec_cmd("dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP XDG_SESSION_TYPE DISPLAY")
     hl.exec_cmd("systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP XDG_SESSION_TYPE DISPLAY")
     hl.exec_cmd("qs -c noctalia-shell")
@@ -1954,6 +1953,14 @@ finalize_system() {
     $SUDO_CMD systemctl disable systemd-time-wait-sync   2>/dev/null || true
     print_success "Live-environment services disabled!"
     echo ""
+
+    if [[ -n "${ACTUAL_USER:-}" && -n "${ACTUAL_HOME:-}" ]]; then
+        print_step "Fixing ownership of user home directory..."
+        $SUDO_CMD chown -R "$ACTUAL_USER:$ACTUAL_USER" "$ACTUAL_HOME" \
+            && print_success "Ownership fixed for ${ACTUAL_USER}!" \
+            || print_warning "chown failed — some config files may be root-owned"
+        echo ""
+    fi
 }
 
 # ── Completion ────────────────────────────────────────────────────────────────
@@ -1971,6 +1978,183 @@ show_completion() {
     echo ""
 }
 
+# ── Noctalia: full Hyprland 0.55+ Lua compatibility patch (commit ce6e713) ─────
+
+patch_noctalia_dispatcher() {
+    local noc_base="/etc/xdg/quickshell/noctalia-shell"
+    local svc="$noc_base/Services/Compositor/HyprlandService.qml"
+
+    if [[ ! -f "$svc" ]]; then
+        print_warning "noctalia-shell not found at $noc_base — skipping Noctalia patches"
+        echo ""
+        return
+    fi
+
+    # ── 1. HyprlandService.qml — dispatch syntax ─────────────────────────────
+    print_step "Patching HyprlandService.qml for Hyprland 0.55+ dispatch syntax..."
+
+    if grep -q 'hl\.dsp\.exec_cmd' "$svc"; then
+        print_success "HyprlandService.qml already patched — skipping"
+    else
+        local patch_svc
+        patch_svc=$(mktemp --suffix=.py)
+        cat > "$patch_svc" << 'PYEOF'
+import sys
+path = sys.argv[1]
+with open(path, "r") as f:
+    content = f.read()
+patches = [
+    ('      Quickshell.execDetached(["hyprctl", "dispatch", "--", "exec"].concat(command));',
+     """      const cmd = command[0]
+      Quickshell.execDetached(["hyprctl", "dispatch", `hl.dsp.exec_cmd("${cmd.replace(/"/g, '\\"')}")`]);"""),
+    ("      Hyprland.dispatch(`workspace ${workspace.name}`);",
+     "      Hyprland.dispatch(`hl.dsp.focus {workspace = '${workspace.name}'}`);"),
+    ("      Hyprland.dispatch(`workspace ${workspace.idx}`);",
+     "      Hyprland.dispatch(`hl.dsp.focus {workspace = '${workspace.idx}'}`);"),
+    ("      Hyprland.dispatch(`focuswindow address:0x${windowId}`);",
+     "      Hyprland.dispatch(`hl.dsp.focus {window = 'address:0x${windowId}'}`);"),
+    ("      Hyprland.dispatch(`alterzorder top,address:0x${windowId}`); // Bring the focused window to the top (essential for Float Mode)",
+     "      Hyprland.dispatch(`hl.dsp.window.alter_zorder {mode = 'top', window = 'address:0x${windowId}'}`); // Bring the focused window to the top (essential for Float Mode)"),
+    ("      Hyprland.dispatch(`killwindow address:0x${window.id}`);",
+     "      Hyprland.dispatch(`hl.dsp.window.kill {window = 'address:0x${window.id}'}`);"),
+    ('      Quickshell.execDetached(["hyprctl", "dispatch", "dpms", "off"]);',
+     "      Hyprland.dispatch(\"hl.dsp.dpms { action = 'off' }\");"),
+    ('      Quickshell.execDetached(["hyprctl", "dispatch", "dpms", "on"]);',
+     "      Hyprland.dispatch(\"hl.dsp.dpms { action = 'on' }\");"),
+    ('      Quickshell.execDetached(["hyprctl", "dispatch", "exit"]);',
+     '      Hyprland.dispatch("hl.dsp.exit()");'),
+]
+changed = 0
+for old, new in patches:
+    if old in content:
+        content = content.replace(old, new)
+        changed += 1
+if changed > 0:
+    with open(path, "w") as f:
+        f.write(content)
+print(f"Applied {changed}/{len(patches)} patch(es) to {path}")
+PYEOF
+        if $SUDO_CMD python3 "$patch_svc" "$svc"; then
+            print_success "HyprlandService.qml patched!"
+        else
+            print_warning "HyprlandService.qml patch failed"
+        fi
+        rm -f "$patch_svc"
+    fi
+    echo ""
+
+    # ── 2. Assets/Templates/hyprland.lua — matugen Lua color template ────────
+    print_step "Creating Noctalia matugen Lua color template..."
+    local tmpl_dir="$noc_base/Assets/Templates"
+    local tmpl_lua="$tmpl_dir/hyprland.lua"
+    local tmpl_conf="$tmpl_dir/hyprland.conf"
+
+    if [[ ! -f "$tmpl_lua" ]]; then
+        local tmp_lua
+        tmp_lua=$(mktemp)
+        cat > "$tmp_lua" << 'LUATMPL'
+local primary = rgb({{colors.primary.default.hex_stripped}})
+local surface = rgb({{colors.surface.default.hex_stripped}})
+local secondary = rgb({{colors.secondary.default.hex_stripped}})
+local error = rgb({{colors.error.default.hex_stripped}})
+local tertiary = rgb({{colors.tertiary.default.hex_stripped}})
+local surface_lowest = rgb({{colors.surface_container_lowest.default.hex_stripped}})
+
+hl.config({
+    general = {
+        ["col.active_border"] = primary,
+        ["col.inactive_border"] = surface,
+    },
+    group = {
+        ["col.border_active"] = secondary,
+        ["col.border_inactive"] = surface,
+        ["col.border_locked_active"] = error,
+        ["col.border_locked_inactive"] = surface,
+        groupbar = {
+            ["col.active"] = secondary,
+            ["col.inactive"] = surface,
+            ["col.locked_active"] = error,
+            ["col.locked_inactive"] = surface,
+        },
+    },
+})
+LUATMPL
+        $SUDO_CMD cp "$tmp_lua" "$tmpl_lua"
+        rm -f "$tmp_lua"
+        print_success "Created $tmpl_lua"
+    else
+        print_success "hyprland.lua template exists — skipping"
+    fi
+    if [[ -f "$tmpl_conf" ]]; then
+        $SUDO_CMD rm -f "$tmpl_conf"
+        print_success "Removed obsolete hyprland.conf template"
+    fi
+    echo ""
+
+    # ── 3. Scripts/bash/template-apply.sh — conf→lua + source→require ────────
+    print_step "Patching template-apply.sh for Lua config paths..."
+    local apply_sh="$noc_base/Scripts/bash/template-apply.sh"
+
+    if [[ ! -f "$apply_sh" ]]; then
+        print_warning "template-apply.sh not found — skipping"
+    elif grep -q 'hyprland\.lua' "$apply_sh"; then
+        print_success "template-apply.sh already updated — skipping"
+    else
+        local patch_apply
+        patch_apply=$(mktemp --suffix=.py)
+        cat > "$patch_apply" << 'PYEOF'
+import sys
+path = sys.argv[1]
+with open(path, "r") as f:
+    content = f.read()
+patches = [
+    ('CONFIG_FILE="$CONFIG_DIR/hyprland.conf"',
+     'CONFIG_FILE="$CONFIG_DIR/hyprland.lua"'),
+    ('THEME_FILE="$CONFIG_DIR/noctalia/noctalia-colors.conf"',
+     'THEME_FILE="$CONFIG_DIR/noctalia/noctalia-colors.lua"'),
+    ('INCLUDE_LINE="source = $THEME_FILE"',
+     "INCLUDE_LINE=\"require('$THEME_FILE')\""),
+    (r'source\s*=\s*.*noctalia.*\.conf',
+     r'require\(.*noctalia.*\.lua\)'),
+]
+changed = 0
+for old, new in patches:
+    if old in content:
+        content = content.replace(old, new)
+        changed += 1
+if changed > 0:
+    with open(path, "w") as f:
+        f.write(content)
+print(f"Applied {changed}/{len(patches)} patch(es) to {path}")
+PYEOF
+        if $SUDO_CMD python3 "$patch_apply" "$apply_sh"; then
+            print_success "template-apply.sh patched!"
+        else
+            print_warning "template-apply.sh patch failed"
+        fi
+        rm -f "$patch_apply"
+    fi
+    echo ""
+
+    # ── 4. Services/Theming/TemplateRegistry.qml — conf→lua paths ────────────
+    print_step "Patching TemplateRegistry.qml for Lua template paths..."
+    local reg="$noc_base/Services/Theming/TemplateRegistry.qml"
+
+    if [[ ! -f "$reg" ]]; then
+        print_warning "TemplateRegistry.qml not found — skipping"
+    elif grep -q 'hyprland\.lua' "$reg"; then
+        print_success "TemplateRegistry.qml already updated — skipping"
+    else
+        $SUDO_CMD sed -i \
+            -e 's|"input": "hyprland\.conf"|"input": "hyprland.lua"|g' \
+            -e 's|noctalia-colors\.conf|noctalia-colors.lua|g' \
+            "$reg" \
+            && print_success "TemplateRegistry.qml patched!" \
+            || print_warning "TemplateRegistry.qml sed failed"
+    fi
+    echo ""
+}
+
 # ── Main ──────────────────────────────────────────────────────────────────────
 
 check_root
@@ -1978,6 +2162,7 @@ detect_actual_user
 prompt_user
 customization_prompts
 install_packages
+patch_noctalia_dispatcher
 install_user_packages
 ensure_hyprland_session
 copy_skel_to_user
