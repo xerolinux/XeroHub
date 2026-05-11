@@ -771,6 +771,12 @@ copy_skel_to_user() {
 
     $SUDO_CMD chown -R "$ACTUAL_USER:$ACTUAL_USER" "$ACTUAL_HOME"
 
+    print_step "Fetching XeroLinux .bashrc..."
+    curl -fsSL "https://raw.githubusercontent.com/xerolinux/XeroBuild/main/FOSS/airootfs/etc/skel/.bashrc" \
+        -o "$ACTUAL_HOME/.bashrc" 2>/dev/null \
+        && print_success ".bashrc applied!" \
+        || print_warning "Failed to fetch .bashrc (non-critical)"
+
     # Add Oh-My-Posh config to user's .bashrc if not already present
     OMP_LINE='eval "$(oh-my-posh init bash --config $HOME/.config/ohmyposh/xero.omp.json)"'
     if ! grep -qF "oh-my-posh init bash" "$ACTUAL_HOME/.bashrc" 2>/dev/null; then
