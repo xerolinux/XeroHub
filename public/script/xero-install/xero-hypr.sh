@@ -533,7 +533,7 @@ configure_hyprland() {
 
     local cfg_dir="${ACTUAL_HOME}/.config/hypr"
     local cfg="${cfg_dir}/hyprland.lua"
-    mkdir -p "${cfg_dir}"
+    mkdir -p "${cfg_dir}" "${cfg_dir}/noctalia"
 
     if [[ ! -f "$cfg" ]]; then
         local example="/usr/share/hypr/hyprland.lua"
