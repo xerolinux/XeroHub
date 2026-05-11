@@ -567,7 +567,7 @@ pcall(dofile, "${colors_file}")
 -- ────────────────────────────────────────────────────────────────────────────
 -- Noctalia — keybinds
 -- ────────────────────────────────────────────────────────────────────────────
-hl.bind("", "Print", "exec", "qs msg -i noctalia-shell screenshot")
+hl.bind("Print", hl.dsp.exec_cmd("qs msg -i noctalia-shell screenshot"))
 
 -- ────────────────────────────────────────────────────────────────────────────
 -- Noctalia — environment
