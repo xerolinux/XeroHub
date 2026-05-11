@@ -67,6 +67,30 @@ const { alert, isoFeatures, tuiFeatures } = entry.data;
       <h2 class="fade-in display-heading text-2xl sm:text-3xl text-center text-[var(--color-text-primary)] mb-8">
         Choose Your <span class="text-[var(--color-accent)]">Path</span> :
       </h2>
+
+      <!-- DE Choice Note -->
+      <div class="fade-in w-fit mx-auto mb-8">
+        <div class="flex items-start gap-3 p-4 rounded-xl bg-[var(--color-accent)]/10 border border-[var(--color-accent)]/30">
+          <svg class="w-5 h-5 text-[var(--color-accent)] shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+          <p class="text-sm text-[var(--color-text-secondary)] whitespace-nowrap flex items-center gap-2 flex-wrap">
+            <span class="text-[var(--color-text-muted)]">While</span>
+            <strong class="text-[var(--color-accent)]">ISO</strong>
+            <span class="text-[var(--color-text-muted)]">is</span>
+            <span class="inline-flex items-center px-2 py-0.5 rounded-full bg-green-500/15 border border-green-500/30 text-green-300 text-xs font-bold tracking-wide">KDE Plasma</span>
+            <span class="text-[var(--color-text-muted)]">Focused</span>
+            <span class="text-[var(--color-accent)]/40 font-light select-none">|</span>
+            <strong class="text-[var(--color-accent)]">T.U.I</strong>
+            <span class="text-[var(--color-text-muted)]">unlocks</span>
+            <a href="https://wiki.hypr.land/" target="_blank" rel="noopener" class="inline-flex items-center px-2 py-0.5 rounded-full bg-indigo-500/15 border border-indigo-500/30 text-indigo-300 text-xs font-bold tracking-wide hover:bg-indigo-500/25 transition-colors">Hyprland</a>
+            <span class="text-[var(--color-text-muted)]">with</span>
+            <a href="https://noctalia.dev/" target="_blank" rel="noopener" class="inline-flex items-center px-2 py-0.5 rounded-full bg-[var(--color-accent)]/15 border border-[var(--color-accent)]/30 text-[var(--color-accent)] text-xs font-bold tracking-wide hover:bg-[var(--color-accent)]/25 transition-colors">Noctalia-Shell</a>
+            <span class="text-[var(--color-text-muted)]">both pre-configured.</span>
+          </p>
+        </div>
+      </div>
+
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
         <!-- ISO Option -->
         <div class="fade-in fade-in-delay-1">
