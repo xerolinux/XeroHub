@@ -532,51 +532,49 @@ configure_hyprland() {
     print_step "Configuring Hyprland..."
 
     local cfg_dir="${ACTUAL_HOME}/.config/hypr"
-    local cfg="${cfg_dir}/hyprland.conf"
+    local cfg="${cfg_dir}/hyprland.lua"
     mkdir -p "${cfg_dir}"
 
     if [[ ! -f "$cfg" ]]; then
-        # Hyprland ≥0.42 no longer ships an example config — try known paths, else stub
-        local example=""
-        for p in "/usr/share/hyprland/hyprland.conf" "/usr/share/hypr/hyprland.conf"; do
-            [[ -f "$p" ]] && { example="$p"; break; }
-        done
-        if [[ -n "$example" ]]; then
+        local example="/usr/share/hypr/hyprland.lua"
+        if [[ -f "$example" ]]; then
             cp "$example" "$cfg"
             print_success "Copied default config from $example"
         else
             touch "$cfg"
-            print_success "No example config found — created empty hyprland.conf (Hyprland uses built-in defaults)"
+            print_success "No example config found — created empty hyprland.lua"
         fi
     else
-        print_success "hyprland.conf exists — appending only."
+        print_success "hyprland.lua exists — appending only."
     fi
 
-    # Set terminal to konsole — replaces default kitty
-    sed -i 's|^\$terminal\s*=.*|$terminal = konsole|' "$cfg" || true
+    # Set terminal to konsole — replace kitty in Lua variable declaration
+    sed -i 's|local terminal\s*=\s*"kitty"|local terminal = "konsole"|' "$cfg" || true
 
     # Disable waybar if present — Noctalia replaces it
-    sed -i 's|^\(exec-once\s*=\s*waybar\)|# \1  # disabled: Noctalia replaces waybar|' "$cfg" || true
+    sed -i 's|\(hl\.exec_cmd("waybar[^"]*")\)|-- \1  -- disabled: Noctalia replaces waybar|' "$cfg" || true
 
     if ! grep -q "qs -c noctalia-shell" "$cfg"; then
         cat >> "$cfg" << 'HYPREOF'
 
-# ────────────────────────────────────────────────────────────────────────────
-# Noctalia — environment
-# ────────────────────────────────────────────────────────────────────────────
-env = QT_QPA_PLATFORMTHEME,qt6ct
+-- ────────────────────────────────────────────────────────────────────────────
+-- Noctalia — environment
+-- ────────────────────────────────────────────────────────────────────────────
+hl.env("QT_QPA_PLATFORMTHEME", "qt6ct")
 
-# ────────────────────────────────────────────────────────────────────────────
-# Noctalia shell — bar, notifications, wallpaper, lock screen, launcher, polkit
-# ────────────────────────────────────────────────────────────────────────────
-exec-once = qs -c noctalia-shell
-exec-once = dex --autostart
-exec-once = nm-applet --indicator
-exec-once = blueman-applet
-exec-once = wl-paste --type text  --watch cliphist store
-exec-once = wl-paste --type image --watch cliphist store
+-- ────────────────────────────────────────────────────────────────────────────
+-- Noctalia — autostart (bar, notifications, wallpaper, lock, launcher, polkit)
+-- ────────────────────────────────────────────────────────────────────────────
+hl.on("hyprland.start", function()
+    hl.exec_cmd("qs -c noctalia-shell")
+    hl.exec_cmd("dex --autostart")
+    hl.exec_cmd("nm-applet --indicator")
+    hl.exec_cmd("blueman-applet")
+    hl.exec_cmd("wl-paste --type text --watch cliphist store")
+    hl.exec_cmd("wl-paste --type image --watch cliphist store")
+end)
 HYPREOF
-        print_success "Appended Noctalia env + exec-once block to hyprland.conf"
+        print_success "Appended Noctalia block to hyprland.lua"
     else
         print_success "Noctalia config already present — skipping."
     fi
