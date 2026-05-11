@@ -560,12 +560,18 @@ configure_hyprland() {
 -- ────────────────────────────────────────────────────────────────────────────
 -- Noctalia — environment
 -- ────────────────────────────────────────────────────────────────────────────
+hl.env("XDG_SESSION_TYPE", "wayland")
+hl.env("XDG_CURRENT_DESKTOP", "Hyprland")
 hl.env("QT_QPA_PLATFORMTHEME", "qt6ct")
+hl.env("QT_QPA_PLATFORM", "wayland")
 
 -- ────────────────────────────────────────────────────────────────────────────
 -- Noctalia — autostart (bar, notifications, wallpaper, lock, launcher, polkit)
 -- ────────────────────────────────────────────────────────────────────────────
 hl.on("hyprland.start", function()
+    -- Export session vars so D-Bus-activated apps inherit WAYLAND_DISPLAY
+    hl.exec_cmd("dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP XDG_SESSION_TYPE DISPLAY")
+    hl.exec_cmd("systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP XDG_SESSION_TYPE DISPLAY")
     hl.exec_cmd("qs -c noctalia-shell")
     hl.exec_cmd("dex --autostart")
     hl.exec_cmd("nm-applet --indicator")
@@ -792,8 +798,8 @@ QT5CT
     mkdir -p "$ACTUAL_HOME/.config/qt6ct"
     cat > "$ACTUAL_HOME/.config/qt6ct/qt6ct.conf" << 'QT6CT'
 [Appearance]
-color_scheme_path=/home/xero/.config/qt6ct/colors/noctalia.conf
-custom_palette=true
+color_scheme_path=
+custom_palette=false
 icon_theme=Tela-circle-purple-dark
 standard_dialogs=default
 style=Fusion
@@ -1647,12 +1653,9 @@ NOCCONF
     echo ""
 
     print_step "Setting system-wide Qt platform theme..."
-    if ! grep -q "QT_QPA_PLATFORMTHEME" /etc/environment 2>/dev/null; then
-        echo "QT_QPA_PLATFORMTHEME=qt6ct" | $SUDO_CMD tee -a /etc/environment > /dev/null
-        print_success "QT_QPA_PLATFORMTHEME=qt6ct written to /etc/environment"
-    else
-        print_success "QT_QPA_PLATFORMTHEME already set in /etc/environment"
-    fi
+    # QT_QPA_PLATFORMTHEME is set per-session via hl.env() in hyprland.lua.
+    # Writing it to /etc/environment is too broad — it affects SDDM and system
+    # services, which may not have qt6ct configured and will silently break.
     echo ""
 
     print_step "Copying user config to root (theme parity for root apps)..."
