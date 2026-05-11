@@ -397,12 +397,12 @@ install_packages() {
 
     # ── System Utilities A ────────────────────────────────────────────────────
     install_group "System Utilities A" \
-        duf gcc npm yad zip xdo gum inxi lzop nmon tree btop glfw htop lshw \
+        duf gcc npm yad zip gum inxi lzop nmon tree btop glfw htop lshw \
         cblas expac fuse3 lhasa meson unace unrar unzip p7zip iftop nvtop rhash sshfs \
-        vnstat nodejs cronie hwinfo arandr assimp netpbm wmctrl grsync libmtp polkit \
+        vnstat nodejs cronie hwinfo assimp netpbm wmctrl grsync libmtp polkit \
         sysprof semver zenity gparted plocate jsoncpp fuseiso gettext node-gyp \
-        intltool graphviz pkgstats pciutils inetutils downgrade s3fs-fuse playerctl \
-        asciinema oniguruma ventoy-bin cifs-utils lsb-release python-dbus dconf-editor \
+        intltool graphviz pkgstats pciutils inetutils downgrade playerctl \
+        oniguruma ventoy-bin cifs-utils lsb-release python-dbus dconf-editor \
         parallel xsettingsd polkit-qt6 systemdgenie \
         yt-dlp wavpack unarchiver rate-mirrors gnustep-base ocs-url xmlstarlet \
         libgsf tumbler freetype2 libopenraw poppler-qt6 poppler-glib ffmpegthumbnailer \
@@ -417,16 +417,16 @@ install_packages() {
         appstream-glib lib32-lm_sensors \
         xmlto ckbcomp yaml-cpp kirigami boost-libs polkit-gnome gtk-update-icon-cache \
         dex libxinerama bash-completion \
-        hblock cryptsetup mkinitcpio-utils mkinitcpio-archiso \
+        hblock cryptsetup mkinitcpio-utils \
         mkinitcpio-openswap mkinitcpio-nfs-utils boost kpmcore xdg-terminal-exec-git \
         eza ntp cava most dialog bind logrotate xdg-user-dirs \
-        archiso rsync sdparm ntfs-3g tpm2-tss udftools syslinux fatresize \
+        rsync sdparm ntfs-3g tpm2-tss udftools syslinux fatresize \
         nfs-utils exfatprogs tpm2-tools fsarchiver squashfs-tools \
         gpart dmraid parted hdparm usbmuxd usbutils testdisk ddrescue timeshift \
-        partclone partimage clonezilla open-iscsi memtest86+-efi usb_modeswitch \
-        fd tmux brltty msedit nvme-cli terminus-font foot-terminfo kitty-terminfo \
-        pv mc gpm nbd lvm2 bolt lynx tldr nmap irssi mdadm wvdial hyperv \
-        mtools lsscsi ndisc6 screen tcpdump ethtool xdotool pcsclite \
+        partclone partimage clonezilla memtest86+-efi usb_modeswitch \
+        fd tmux brltty nvme-cli terminus-font foot-terminfo kitty-terminfo \
+        pv mc gpm nbd lvm2 bolt lynx tldr nmap mdadm hyperv \
+        mtools lsscsi screen tcpdump ethtool pcsclite \
         espeakup libfido2 xdg-utils smartmontools \
         sequoia-sq edk2-shell python-pyqt6 libusb-compat wireguard-tools
 
@@ -865,8 +865,7 @@ NWGLOOK
     # Noctalia settings — full config based on XeroLinux reference install.
     # /home/xero paths replaced with the actual user's home at install time.
     mkdir -p "$ACTUAL_HOME/.config/noctalia"
-    if [[ ! -f "$ACTUAL_HOME/.config/noctalia/settings.json" ]]; then
-        cat > "$ACTUAL_HOME/.config/noctalia/settings.json" << 'NOCCONF'
+    cat > "$ACTUAL_HOME/.config/noctalia/settings.json" << 'NOCCONF'
 {
     "appLauncher": {
         "autoPasteClipboard": false,
@@ -1605,8 +1604,7 @@ NWGLOOK
     }
 }
 NOCCONF
-        sed -i "s|/home/xero|${ACTUAL_HOME}|g" "$ACTUAL_HOME/.config/noctalia/settings.json"
-    fi
+    sed -i "s|/home/xero|${ACTUAL_HOME}|g" "$ACTUAL_HOME/.config/noctalia/settings.json"
 
     print_step "Setting default wallpaper..."
     local wp_src="/usr/share/wallpapers/Xero-Plasma44.jpg"
@@ -2001,11 +1999,11 @@ customization_prompts
 install_packages
 install_user_packages
 ensure_hyprland_session
+copy_skel_to_user
 configure_hyprland
 configure_portals
 install_noctalia_polkit
 setup_mimetype_fix
-copy_skel_to_user
 configure_themes
 configure_sddm
 finalize_system

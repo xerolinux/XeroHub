@@ -1352,16 +1352,25 @@ perform_installation() {
     prepare_desktop_installer
     show_success "Desktop installer ready"
 
+    local de_name="KDE Plasma"
+    local de_prompt="KDE"
+    local box_width=60
+    if [[ "${CONFIG[desktop]}" == "hyprland" ]]; then
+        de_name="Hyprland + Noctalia"
+        de_prompt="Hyprland"
+        box_width=66
+    fi
+
     echo ""
     gum style --foreground 82 --bold --border double --border-foreground 82 \
-        --align center --width 60 --margin "1 2" --padding "1 2" \
+        --align center --width "$box_width" --margin "1 2" --padding "1 2" \
         "🎉 Base Installation Complete! 🎉" \
         "" \
         "The system will now chroot into your new installation" \
-        "to run the XeroLinux KDE setup script."
+        "to run the XeroLinux ${de_name} setup script."
 
     echo ""
-    gum input --placeholder "Press Enter to continue to KDE installation..."
+    gum input --placeholder "Press Enter to continue to ${de_prompt} installation..."
 
     run_desktop_installer
 
