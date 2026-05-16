@@ -3,6 +3,7 @@ import { getCollection, render } from 'astro:content';
 import Layout from '../../components/layout/Layout.astro';
 import GlassCard from '../../components/ui/GlassCard.astro';
 import PageViews from '../../components/ui/PageViews.astro';
+
 import { formatDate, readingTime } from '../../lib/utils';
 
 export async function getStaticPaths() {
@@ -66,6 +67,7 @@ const pageId = Astro.url.pathname.replace(/^\//, '').replace(/\/$/, '').replace(
       <div class="fade-in fade-in-delay-2 prose" id="post-content">
         <Content />
       </div>
+
     </div>
   </article>
 </Layout>
@@ -74,5 +76,98 @@ const pageId = Astro.url.pathname.replace(/^\//, '').replace(/\/$/, '').replace(
   document.querySelectorAll('#post-content a[href^="http"]').forEach(function (a) {
     a.setAttribute('target', '_blank');
     a.setAttribute('rel', 'noopener noreferrer');
+  });
+
+  document.querySelectorAll('#post-content pre').forEach(function (pre) {
+    // Build terminal shell
+    var wrap = document.createElement('div');
+    wrap.className = 'terminal-wrap';
+
+    var header = document.createElement('div');
+    header.className = 'terminal-header';
+    header.innerHTML =
+      '<span class="terminal-dot terminal-dot-red"></span>' +
+      '<span class="terminal-dot terminal-dot-yellow"></span>' +
+      '<span class="terminal-dot terminal-dot-green"></span>' +
+      '<span class="terminal-label">// xero :: terminal</span>';
+
+    pre.parentNode.insertBefore(wrap, pre);
+    wrap.appendChild(header);
+    wrap.appendChild(pre);
+
+    // Typing animation
+    var code = pre.querySelector('code');
+    if (!code) return;
+
+    var fullText = code.textContent || '';
+    var lines = fullText.split('\n');
+    code.innerHTML = '';
+
+    var cursor = document.createElement('span');
+    cursor.className = 'terminal-cursor';
+    code.appendChild(cursor);
+
+    var done = false;
+    var lineIdx = 0, charIdx = 0, currentSpan = null;
+
+    function lineColor(line) {
+      var t = line.trim();
+      if (!t) return '';
+      if (/^\[ XEROLINUX/.test(t))       return 'tc-accent';
+      if (/^\[ STATUS/.test(t))           return 'tc-green';
+      if (/^\[/.test(t))                  return 'tc-orange';
+      if (/^\$/.test(t))                  return 'tc-green';
+      if (/^>>.*[▲⚠]/.test(t))           return 'tc-red';
+      if (/^>>.*▼/.test(t))              return 'tc-orange';
+      if (/^>>/.test(t))                  return 'tc-orange';
+      if (/^\+/.test(t))                  return 'tc-green';
+      if (/^-/.test(t))                   return 'tc-red';
+      return 'tc-dim';
+    }
+
+    function buildColored() {
+      code.innerHTML = '';
+      lines.forEach(function (line, i) {
+        if (i > 0) code.appendChild(document.createTextNode('\n'));
+        var sp = document.createElement('span');
+        var cls = lineColor(line);
+        if (cls) sp.className = cls;
+        sp.textContent = line;
+        code.appendChild(sp);
+      });
+      var c = document.createElement('span');
+      c.className = 'terminal-cursor';
+      code.appendChild(c);
+    }
+
+    function typeNext() {
+      if (done) return;
+      if (lineIdx >= lines.length) { done = true; return; }
+      var line = lines[lineIdx];
+      if (charIdx === 0) {
+        if (lineIdx > 0) code.insertBefore(document.createTextNode('\n'), cursor);
+        currentSpan = document.createElement('span');
+        var cls = lineColor(line);
+        if (cls) currentSpan.className = cls;
+        code.insertBefore(currentSpan, cursor);
+      }
+      if (charIdx < line.length) {
+        currentSpan.textContent += line[charIdx];
+        charIdx++;
+        var ch = line[charIdx - 1];
+        var delay = ch === ' ' ? 25 : 40 + Math.random() * 30;
+        setTimeout(typeNext, delay);
+      } else {
+        lineIdx++; charIdx = 0;
+        setTimeout(typeNext, 150 + Math.random() * 120);
+      }
+    }
+
+    wrap.addEventListener('click', function () { done = true; buildColored(); });
+
+    var io = new IntersectionObserver(function (entries) {
+      if (entries[0].isIntersecting) { io.disconnect(); setTimeout(typeNext, 300); }
+    }, { threshold: 0.1 });
+    io.observe(pre);
   });
 </script>
