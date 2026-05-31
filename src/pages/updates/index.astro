@@ -1,45 +1,173 @@
 ---
 import { getCollection } from 'astro:content';
 import Layout from '../../components/layout/Layout.astro';
-import UpdateCard from '../../components/ui/UpdateCard.astro';
 import PageViews from '../../components/ui/PageViews.astro';
+import { formatDate } from '../../lib/utils';
 
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 const allUpdates = await getCollection('updates', ({ data }) => !data.draft);
 const sortedUpdates = allUpdates.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
 const pageId = Astro.url.pathname.replace(/^\//, '').replace(/\/$/, '').replace(/\//g, '-') || 'home';
+
+// Center the newest, flank it with older posts (most recent nearest the center).
+const _latest = sortedUpdates[0];
+const _rest = sortedUpdates.slice(1);
+const _left: typeof _rest = [];
+const _right: typeof _rest = [];
+_rest.forEach((u, i) => (i % 2 === 0 ? _right : _left).push(u));
+const displayUpdates = [..._left.reverse(), ...(_latest ? [_latest] : []), ..._right];
+const startIndex = _left.length;
+
+function excerpt(md: string | undefined, n: number): string {
+  if (!md) return '';
+  let t = md
+    .replace(/```[\s\S]*?```/g, ' ')
+    .replace(/!\[[^\]]*\]\([^)]*\)/g, ' ')
+    .replace(/\[([^\]]*)\]\([^)]*\)/g, '$1')
+    .replace(/<[^>]+>/g, ' ')
+    .replace(/[#>*_`~|]/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim();
+  return t.length > n ? t.slice(0, n).replace(/\s+\S*$/, '') + '…' : t;
+}
 ---
 
 <Layout title="Updates" description="Project updates and announcements from XeroLinux.">
-  <section class="pt-32 pb-20 px-4 sm:px-6 lg:px-8">
-    <div class="mx-auto max-w-7xl">
+  <section class="pt-32 sm:pt-52 pb-4 sm:pb-6 px-4 sm:px-6 lg:px-8">
+    <div class="mx-auto max-w-7xl 2xl:max-w-[100rem]">
       <!-- Header -->
-      <div class="fade-in text-center mb-12">
-        <h1 class="display-heading text-4xl sm:text-5xl text-[var(--color-text-primary)] mb-4">
-          <span class="text-[var(--color-accent)]">Updates</span>
-        </h1>
-        <p class="text-[var(--color-text-secondary)] text-center">
-          Project announcements, updates and changes
-        </p>
-        <div class="flex justify-center mt-2">
-          <PageViews pageId={pageId} />
+      <div class="fade-in news-section-head">
+        <span class="news-num">§</span>
+        <div class="news-title-wrap">
+          <div class="news-kicker">// The Gazette</div>
+          <h1 class="news-title">Latest <em>Updates</em></h1>
         </div>
+        <div class="news-line"></div>
+      </div>
+      <div class="fade-in fade-in-delay-1 flex items-center gap-3 mb-10 font-mono text-[0.65rem] uppercase tracking-[0.14em] text-[var(--color-text-muted)]">
+        <span>Project announcements, updates &amp; changes</span>
+        <span class="text-[var(--color-accent)]">·</span>
+        <PageViews pageId={pageId} />
       </div>
 
-      <!-- Updates Grid -->
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {sortedUpdates.map((update, i) => (
-          <div class={`fade-in fade-in-delay-${Math.min(i + 1, 4)}`}>
-            <UpdateCard
-              title={update.data.title}
-              description={update.data.description}
-              date={update.data.date}
-              image={update.data.image}
-              slug={update.id}
-              body={update.body || ''}
-            />
+      <!-- Coverflow gallery (desktop) -->
+      {sortedUpdates.length > 0 && (
+        <div class="fade-in fade-in-delay-1 hidden md:block">
+          <div class="cf-stage" data-coverflow data-cf-start={startIndex}>
+            <div class="cf-track">
+              {displayUpdates.map((update) => (
+                <a href={`${base}/updates/${update.id}/`} class="cf-item" data-cf>
+                  {update.data.image
+                    ? <img class="cf-img" src={`${base}${update.data.image}`} alt={update.data.title} width="1200" height="630" loading="lazy" decoding="async" />
+                    : <div class="cf-noimg"></div>}
+                  <div class="cf-body">
+                    <div class="cf-kick">{formatDate(update.data.date)}{update.data.tags && update.data.tags.length > 0 ? ' · ' + update.data.tags[0] : ''}</div>
+                    <div class="cf-title">{update.data.title}</div>
+                    <p class="cf-excerpt">{update.data.description || excerpt(update.body, 240)}</p>
+                  </div>
+                </a>
+              ))}
+            </div>
+            <button class="cf-arrow prev" data-cf-prev aria-label="Previous">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" /></svg>
+            </button>
+            <button class="cf-arrow next" data-cf-next aria-label="Next">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+            </button>
           </div>
-        ))}
-      </div>
+          <div class="cf-dots" data-cf-dots></div>
+        </div>
+      )}
+
+      <!-- Mobile: featured latest + index list -->
+      {_latest && (
+        <div class="fade-in fade-in-delay-1 md:hidden">
+          <a href={`${base}/updates/${_latest.id}/`} class="group block mb-8">
+            <article class="glass glass-trans rounded-2xl overflow-hidden">
+              {_latest.data.image && (
+                <div class="h-48 overflow-hidden">
+                  <img src={`${base}${_latest.data.image}`} alt={_latest.data.title} width="1200" height="630" loading="lazy" decoding="async" class="w-full h-full object-cover" />
+                </div>
+              )}
+              <div class="p-5">
+                <div class="flex items-center gap-2 mb-2 font-mono text-[0.58rem] uppercase tracking-[0.16em] text-[var(--color-accent)]">
+                  <span>Latest</span><span class="text-[var(--color-text-muted)]">·</span>
+                  <span class="text-[var(--color-text-muted)]">{formatDate(_latest.data.date)}</span>
+                </div>
+                <h2 class="display-heading text-2xl leading-snug text-[var(--color-text-primary)] mb-2">{_latest.data.title}</h2>
+                <p class="text-sm text-[var(--color-text-secondary)] leading-relaxed line-clamp-3" style="text-align:left;">{_latest.data.description || excerpt(_latest.body, 200)}</p>
+              </div>
+            </article>
+          </a>
+          {_rest.length > 0 && (
+            <div class="utoc">
+              {_rest.map((update, i) => (
+                <a href={`${base}/updates/${update.id}/`} class="utoc-row">
+                  <span class="utoc-num">{String(i + 2).padStart(2, '0')}</span>
+                  <span class="utoc-title">{update.data.title}</span>
+                  <span class="utoc-lead"></span>
+                  <span class="utoc-date">{formatDate(update.data.date)}</span>
+                </a>
+              ))}
+            </div>
+          )}
+        </div>
+      )}
+
+      <script is:inline>
+        (function () {
+          const stage = document.querySelector('[data-coverflow]');
+          if (!stage) return;
+          const items = Array.from(stage.querySelectorAll('[data-cf]'));
+          const dotsWrap = document.querySelector('[data-cf-dots]');
+          let active = parseInt(stage.dataset.cfStart || '0', 10) || 0;
+
+          const n = items.length;
+          function layout() {
+            items.forEach((el, i) => {
+              let off = i - active;
+              if (off > n / 2) off -= n;       // wrap around the ring
+              if (off < -n / 2) off += n;
+              const ab = Math.abs(off);
+              el.style.transform =
+                'translateX(' + (off * 58) + '%) translateZ(' + (-ab * 150) + 'px) rotateY(' + (off * -38) + 'deg) scale(' + (off === 0 ? 1 : 0.84) + ')';
+              el.style.opacity = ab > 2 ? '0' : '1';
+              el.style.zIndex = String(100 - ab);
+              el.style.pointerEvents = ab > 2 ? 'none' : 'auto';
+              el.classList.toggle('active', off === 0);
+            });
+            if (dotsWrap) {
+              Array.from(dotsWrap.children).forEach((d, i) => d.classList.toggle('active', i === active));
+            }
+          }
+          function go(i) { active = ((i % n) + n) % n; layout(); }
+
+          // dots
+          if (dotsWrap) {
+            items.forEach((_, i) => {
+              const b = document.createElement('button');
+              b.className = 'cf-dot';
+              b.setAttribute('aria-label', 'Go to ' + (i + 1));
+              b.addEventListener('click', () => go(i));
+              dotsWrap.appendChild(b);
+            });
+          }
+          // click a side card to center it; center card follows its link
+          items.forEach((el, i) => {
+            el.addEventListener('click', (e) => { if (i !== active) { e.preventDefault(); go(i); } });
+          });
+          const prev = document.querySelector('[data-cf-prev]');
+          const next = document.querySelector('[data-cf-next]');
+          if (prev) prev.addEventListener('click', () => go(active - 1));
+          if (next) next.addEventListener('click', () => go(active + 1));
+          stage.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowLeft') go(active - 1);
+            else if (e.key === 'ArrowRight') go(active + 1);
+          });
+          stage.tabIndex = 0;
+          layout();
+        })();
+      </script>
     </div>
   </section>
 </Layout>

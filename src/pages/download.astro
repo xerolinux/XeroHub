@@ -6,6 +6,7 @@ import Button from '../components/ui/Button.astro';
 import ChangelogModal from '../components/ui/ChangelogModal.astro';
 import PageViews from '../components/ui/PageViews.astro';
 import { inlineMarkdown } from '../lib/inline-markdown';
+import { discount, discountActive, discountedPriceEUR } from '../config';
 const pageId = Astro.url.pathname.replace(/^\//, '').replace(/\/$/, '').replace(/\//g, '-') || 'home';
 
 const entry = await getEntry('pages', 'download');
@@ -14,21 +15,22 @@ const { alert, isoFeatures, tuiFeatures } = entry.data;
 ---
 
 <Layout title={entry.data.title} description={entry.data.description}>
-  <section class="pt-32 pb-20 px-4 sm:px-6 lg:px-8">
-    <div class="mx-auto max-w-6xl">
+  <section class="pt-32 sm:pt-52 pb-20 px-4 sm:px-6 lg:px-8">
+    <div class="mx-auto max-w-6xl 2xl:max-w-[100rem]">
       <!-- Header -->
-      <div class="fade-in text-center mb-8">
-        <h1 class="display-heading text-2xl sm:text-5xl text-[var(--color-text-primary)] mb-4 whitespace-nowrap">
-          Looking for your next <span class="text-[var(--color-accent)]">Distro</span> ?
+      <div class="fade-in text-center mb-3">
+        <div class="news-kicker mb-2">// The Classifieds</div>
+        <h1 class="display-heading text-3xl sm:text-5xl text-[var(--color-text-primary)] leading-none">
+          Looking for your next <em class="italic text-[var(--color-accent)]">Distro</em>?
         </h1>
-        <div class="flex justify-center">
-          <PageViews pageId={pageId} />
-        </div>
+      </div>
+      <div class="fade-in flex justify-center mb-10">
+        <PageViews pageId={pageId} />
       </div>
 
       <!-- Alert -->
       <div class="fade-in w-fit mx-auto mb-10">
-        <div class="flex items-start gap-3 p-4 rounded-xl bg-orange-500/15 border border-orange-500/30">
+        <div class="flex items-start gap-3 p-4 rounded-xl bg-orange-500/15 border border-orange-500/30 card-depth">
           <svg class="w-5 h-5 text-orange-400 shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 24 24">
             <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/>
           </svg>
@@ -38,15 +40,17 @@ const { alert, isoFeatures, tuiFeatures } = entry.data;
         </div>
       </div>
 
-      <!-- Intro Cards -->
-      <div class="fade-in fade-in-delay-1 max-w-5xl mx-auto mb-12 flex flex-col gap-5 download-prose">
-        <div class="download-card">
-          <h3 class="download-card-title">Welcome / ISO</h3>
+      <!-- Intro editorial (two columns) -->
+      <div class="fade-in fade-in-delay-1 max-w-5xl 2xl:max-w-[100rem] mx-auto mb-12 news-3col cols-2">
+        <div class="news-col dropcap">
+          <div class="news-col-kicker">// Editorial · The ISO</div>
+          <h3 class="news-col-title">Welcome to XeroLinux</h3>
           <p>Welcome to the official <strong>XeroLinux</strong> download page. If you're just getting started, the <strong>ISO</strong> is your best bet, it comes with the <strong>Calamares</strong> GUI installer, which makes setup a breeze, while still giving you full control over manual drive partitioning. It's available through a small donation. This isn't a paywall or a demand, but a humble ask. If you find value in this project, your support goes a long way in keeping this project alive and actively developed. It also helps me weather the ongoing economic crisis here in <strong>Lebanon</strong>. Every bit counts, and I truly appreciate it.</p>
         </div>
-        <div class="download-card">
-          <h3 class="download-card-title">The T.U.I</h3>
-          <p>However, if you are unable to donate, I understand. The <strong>T.U.I installer</strong> gives you the same full <strong>XeroLinux</strong> experience through a much simplified and user-friendly terminal-based setup, completely free. Both paths lead to the same destination. <strong>For Advanced Users !</strong></p>
+        <div class="news-col">
+          <div class="news-col-kicker">// Editorial · The T.U.I</div>
+          <h3 class="news-col-title">The Free Alternative</h3>
+          <p>However, if you are unable to donate, I completely understand. The <strong>T.U.I installer</strong> gives you the exact same full <strong>XeroLinux</strong> experience through a streamlined, user-friendly terminal-based setup, entirely free of charge. Beyond <strong>KDE Plasma</strong>, it also unlocks <strong>Hyprland</strong> and <strong>Noctalia-Shell</strong>, each pre-configured and ready to go right out of the box. It is fully open source, community-driven, and built for those who feel at home in the terminal. Both paths lead to the very same destination, so pick whichever suits you best. <strong>For Advanced Users !</strong></p>
         </div>
       </div>
 
@@ -64,13 +68,18 @@ const { alert, isoFeatures, tuiFeatures } = entry.data;
       </div>
 
       <!-- Two Options -->
-      <h2 class="fade-in display-heading text-2xl sm:text-3xl text-center text-[var(--color-text-primary)] mb-8">
-        Choose Your <span class="text-[var(--color-accent)]">Path</span> :
-      </h2>
+      <div class="fade-in news-section-head">
+        <span class="news-num">01</span>
+        <div class="news-title-wrap">
+          <div class="news-kicker">// The Listings</div>
+          <h2 class="news-title">Choose Your <em>Path</em></h2>
+        </div>
+        <div class="news-line"></div>
+      </div>
 
-      <!-- DE Choice Note -->
-      <div class="fade-in w-fit mx-auto mb-8">
-        <div class="flex items-start gap-3 p-4 rounded-xl bg-[var(--color-accent)]/10 border border-[var(--color-accent)]/30">
+      <!-- DE Choice Note — distinct accent so it doesn't clone the ISO card -->
+      <div class="fade-in w-fit mx-auto mb-8" style="--col-accent: var(--acc-2);">
+        <div class="flex items-start gap-3 p-5 classified bg-[var(--color-accent)]/[0.06]">
           <svg class="w-5 h-5 text-[var(--color-accent)] shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
           </svg>
@@ -78,50 +87,72 @@ const { alert, isoFeatures, tuiFeatures } = entry.data;
             <span class="text-[var(--color-text-muted)]">While</span>
             <strong class="text-[var(--color-accent)]">ISO</strong>
             <span class="text-[var(--color-text-muted)]">is</span>
-            <span class="inline-flex items-center px-2 py-0.5 rounded-full bg-green-500/15 border border-green-500/30 text-green-300 text-xs font-bold tracking-wide">KDE Plasma</span>
+            <a href="https://kde.org" target="_blank" rel="noopener" class="inline-flex items-center px-2 py-0.5 rounded-full bg-green-500/15 border border-green-500/30 text-green-300 text-xs font-bold tracking-wide hover:bg-green-500/25 transition-colors pill-depth">KDE Plasma</a>
             <span class="text-[var(--color-text-muted)]">Focused</span>
             <span class="text-[var(--color-accent)]/40 font-light select-none">|</span>
             <strong class="text-[var(--color-accent)]">T.U.I</strong>
             <span class="text-[var(--color-text-muted)]">unlocks</span>
-            <a href="https://wiki.hypr.land/" target="_blank" rel="noopener" class="inline-flex items-center px-2 py-0.5 rounded-full bg-indigo-500/15 border border-indigo-500/30 text-indigo-300 text-xs font-bold tracking-wide hover:bg-indigo-500/25 transition-colors">Hyprland</a>
+            <a href="https://wiki.hypr.land/" target="_blank" rel="noopener" class="inline-flex items-center px-2 py-0.5 rounded-full bg-indigo-500/15 border border-indigo-500/30 text-indigo-300 text-xs font-bold tracking-wide hover:bg-indigo-500/25 transition-colors pill-depth">Hyprland</a>
             <span class="text-[var(--color-text-muted)]">with</span>
-            <a href="https://noctalia.dev/" target="_blank" rel="noopener" class="inline-flex items-center px-2 py-0.5 rounded-full bg-[var(--color-accent)]/15 border border-[var(--color-accent)]/30 text-[var(--color-accent)] text-xs font-bold tracking-wide hover:bg-[var(--color-accent)]/25 transition-colors">Noctalia-Shell</a>
+            <a href="https://noctalia.dev/" target="_blank" rel="noopener" class="inline-flex items-center px-2 py-0.5 rounded-full bg-[var(--color-accent)]/15 border border-[var(--color-accent)]/30 text-[var(--color-accent)] text-xs font-bold tracking-wide hover:bg-[var(--color-accent)]/25 transition-colors pill-depth">Noctalia-Shell</a>
             <span class="text-[var(--color-text-muted)]">both pre-configured.</span>
           </p>
         </div>
       </div>
 
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
+      <div class="rainbow grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6 lg:gap-8 mb-10 sm:mb-16">
         <!-- ISO Option -->
         <div class="fade-in fade-in-delay-1">
-          <GlassCard padding="p-8" class="h-full flex flex-col border-green-500/20 relative overflow-hidden">
-            <div class="absolute top-6 -right-10 rotate-45 w-40 text-center bg-green-500/90 text-white text-[10px] font-bold uppercase tracking-widest py-1 shadow-lg z-10">$$$ Paid $$$</div>
-            <h2 class="font-heading text-xl font-bold text-[var(--color-text-primary)] text-center mb-1">
+          <GlassCard padding="p-4 sm:p-6 lg:p-8" class="h-full flex flex-col relative overflow-hidden classified">
+            {discountActive && (
+              <div class="sale-stamp">
+                <span class="sale-stamp-pct">{discount.percent}%</span>
+                <span class="sale-stamp-off">OFF</span>
+                <span class="sale-stamp-sub">{discount.label}</span>
+              </div>
+            )}
+            <div class="flex items-center justify-between mb-5">
+              <span class="font-mono text-[0.58rem] uppercase tracking-[0.2em] text-[var(--color-text-muted)]">ISO · KDE Plasma</span>
+              <span class="font-mono text-[0.58rem] uppercase tracking-[0.14em] px-3 py-1 rounded-full bg-green-500/15 border border-green-500/40 text-green-300 pill-depth">Paid</span>
+            </div>
+            <h2 class="display-heading text-4xl text-[var(--color-text-primary)] leading-none mb-1">
               XeroLinux ISO
             </h2>
-            <p class="text-xs text-center uppercase tracking-wider text-green-400 font-medium mb-6">
-              Paid Support Option
+            <p class="text-xs uppercase tracking-wider text-green-400 font-medium mb-6 font-mono">
+              One-Time Contribution · Ref. ISO-KDE
             </p>
 
-            <h4 class="text-sm uppercase tracking-wider text-green-400 font-semibold mb-4 pb-3 border-b border-green-500/15">
-              Highlights
-            </h4>
+            <div class="ad-rule"><span>Highlights</span><div class="l"></div></div>
 
-            <ul class="space-y-3 mb-6 flex-1">
+            <ul class="mb-6 flex-1">
               {isoFeatures!.map(feature => (
-                <li class="flex items-start gap-3 text-sm text-[var(--color-text-secondary)]">
-                  <span class="text-green-400 font-bold shrink-0">&#10003;</span>
+                <li class="spec-li">
+                  <span class="mk text-green-400">&#10003;</span>
                   <span set:html={feature} />
                 </li>
               ))}
             </ul>
 
-            <div class="rounded-lg bg-green-500/10 border border-green-500/20 p-3 text-center text-sm text-green-300 font-semibold mb-6">
-              Simple, Beginner-Friendly Install
+            <!-- Price -->
+            <div class="mb-5 flex items-baseline gap-3">
+              {discountActive ? (
+                <>
+                  <span class="font-mono text-base text-[var(--color-text-muted)] line-through decoration-[#ff80e0]/70">€{discount.basePriceEUR}</span>
+                  <span class="display-heading text-4xl text-[var(--color-text-primary)] leading-none">€{discountedPriceEUR}</span>
+                  <span class="font-mono text-[0.6rem] uppercase tracking-[0.12em] text-[#ff80e0]">Save {discount.percent}% · {discount.note}</span>
+                </>
+              ) : (
+                <>
+                  <span class="display-heading text-4xl text-[var(--color-text-primary)] leading-none">€{discount.basePriceEUR}</span>
+                  <span class="font-mono text-[0.6rem] uppercase tracking-[0.12em] text-[var(--color-text-muted)]">one-time · lifetime</span>
+                </>
+              )}
             </div>
 
+            <p class="ad-note">Simple, beginner-friendly install.</p>
+
             <div class="flex gap-3 pt-4 border-t border-green-500/10">
-              <Button href="https://ko-fi.com/s/cf9def9630" external class="flex-1">
+              <Button href={discountActive ? 'https://ko-fi.com/xerolinux/link/ANN25' : 'https://ko-fi.com/s/cf9def9630'} external class="flex-1">
                 Ko-Fi Shop
               </Button>
               <Button href="/crypto/" variant="secondary" class="flex-1">
@@ -133,31 +164,30 @@ const { alert, isoFeatures, tuiFeatures } = entry.data;
 
         <!-- TUI Option -->
         <div class="fade-in fade-in-delay-2">
-          <GlassCard padding="p-8" class="h-full flex flex-col relative overflow-hidden">
-            <div class="absolute top-4 -right-8 rotate-45 bg-indigo-500/90 text-white text-[10px] font-bold uppercase tracking-widest py-1 px-10 shadow-lg z-10">Free</div>
-            <h2 class="font-heading text-xl font-bold text-[var(--color-text-primary)] text-center mb-1">
+          <GlassCard padding="p-4 sm:p-6 lg:p-8" class="h-full flex flex-col relative overflow-hidden classified free">
+            <div class="flex items-center justify-between mb-5">
+              <span class="font-mono text-[0.58rem] uppercase tracking-[0.2em] text-[var(--color-text-muted)]">T.U.I · Any Desktop</span>
+              <span class="font-mono text-[0.58rem] uppercase tracking-[0.14em] px-3 py-1 rounded-full bg-[#3ecf6e]/15 border border-[#3ecf6e]/40 text-[#3ecf6e] pill-depth">Free</span>
+            </div>
+            <h2 class="display-heading text-4xl text-[var(--color-text-primary)] leading-none mb-1">
               XeroLinux T.U.I
             </h2>
-            <p class="text-xs text-center uppercase tracking-wider text-indigo-400 font-medium mb-6">
-              Completely free
+            <p class="text-xs uppercase tracking-wider text-indigo-400 font-medium mb-6 font-mono">
+              Completely Free · Ref. TUI-MULTI
             </p>
 
-            <h4 class="text-sm uppercase tracking-wider text-indigo-400 font-semibold mb-4 pb-3 border-b border-indigo-500/15">
-              Highlights
-            </h4>
+            <div class="ad-rule"><span>Highlights</span><div class="l"></div></div>
 
-            <ul class="space-y-3 mb-6 flex-1">
+            <ul class="mb-6 flex-1">
               {tuiFeatures!.map(feature => (
-                <li class="flex items-start gap-3 text-sm text-[var(--color-text-secondary)]">
-                  <span class="text-indigo-400 font-bold shrink-0">&#10003;</span>
+                <li class="spec-li">
+                  <span class="mk text-indigo-400">&#10003;</span>
                   <span>{feature}</span>
                 </li>
               ))}
             </ul>
 
-            <div class="rounded-lg bg-red-500/10 border border-red-500/20 p-3 text-center text-sm text-red-300 font-semibold mb-6">
-              Advanced Mode. For Those Who Know the Risks
-            </div>
+            <p class="ad-note warn">Advanced mode. For those who know the risks.</p>
 
             <div class="pt-4 border-t border-indigo-500/10">
               <Button href="https://wiki.xerolinux.xyz/xero-install/" variant="secondary" external class="w-full">
@@ -181,3 +211,38 @@ const { alert, isoFeatures, tuiFeatures } = entry.data;
 
   <ChangelogModal />
 </Layout>
+
+<style>
+  .sale-stamp {
+    position: absolute;
+    top: 84px;
+    right: 18px;
+    z-index: 20;
+    width: 84px;
+    height: 84px;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 2px dashed #ff80e0;
+    color: #ff80e0;
+    background: rgba(255, 128, 224, 0.07);
+    box-shadow: 0 0 0 5px rgba(255, 128, 224, 0.06), inset 0 0 0 4px rgba(255, 128, 224, 0.12);
+    transform: rotate(-13deg);
+    font-family: var(--font-mono);
+    text-align: center;
+    line-height: 1;
+    animation: stamp-pop 0.5s cubic-bezier(0.2, 1.4, 0.5, 1) both;
+    pointer-events: none;
+  }
+  .sale-stamp-pct { font-size: 1.7rem; font-weight: 700; }
+  .sale-stamp-off { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.3em; margin-top: 1px; }
+  .sale-stamp-sub { font-size: 0.46rem; letter-spacing: 0.22em; text-transform: uppercase; margin-top: 5px; opacity: 0.85; }
+  @keyframes stamp-pop {
+    0%   { transform: rotate(-13deg) scale(2); opacity: 0; }
+    60%  { opacity: 1; }
+    100% { transform: rotate(-13deg) scale(1); opacity: 1; }
+  }
+  @media (prefers-reduced-motion: reduce) { .sale-stamp { animation: none; } }
+</style>

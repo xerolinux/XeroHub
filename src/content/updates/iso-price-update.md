@@ -4,7 +4,7 @@ date: 2026-05-16
 draft: false
 description: "A transparent look at why the XeroLinux ISO price is going up, and what that means for you."
 tags: ["XeroLinux", "ISO", "Pricing", "Announcement", "Changes"]
-image: "/images/updates/price-update.png"
+image: "/images/updates/price-update.webp"
 ---
 
 This is not a post I wanted to write. But after sitting with it longer than I probably should have, I owe you the truth rather than a quiet change with no explanation.

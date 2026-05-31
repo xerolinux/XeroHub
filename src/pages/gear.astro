@@ -12,22 +12,26 @@ const { info, hardwareIntro, hardware, otherHardware, thanks } = entry.data;
 ---
 
 <Layout title={entry.data.title} description={entry.data.description}>
-  <section class="pt-32 pb-20 px-4 sm:px-6 lg:px-8">
-    <div class="mx-auto max-w-4xl">
+  <section class="pt-32 sm:pt-52 pb-20 px-4 sm:px-6 lg:px-8">
+    <div class="mx-auto max-w-4xl 2xl:max-w-[80rem]">
       <!-- Header -->
-      <div class="fade-in text-center mb-12">
-        <h1 class="display-heading text-4xl sm:text-5xl text-[var(--color-text-primary)] mb-4">
-          My <span class="text-[var(--color-accent)]">Gear</span>
+      <div class="fade-in text-center mb-3">
+        <div class="news-kicker mb-2">// The Inventory</div>
+        <h1 class="display-heading text-4xl sm:text-6xl text-[var(--color-text-primary)] leading-none">
+          My <em class="italic text-[var(--color-accent)]">Gear</em>
         </h1>
-        <div class="flex justify-center">
-          <PageViews pageId={pageId} />
-        </div>
+      </div>
+      <div class="fade-in flex justify-center mb-12">
+        <PageViews pageId={pageId} />
       </div>
 
       <div class="fade-in fade-in-delay-1 space-y-8">
         <!-- Information -->
-        <GlassCard padding="p-8">
-          <h3 class="font-heading text-xl font-semibold text-[var(--color-text-primary)] mb-4">Information</h3>
+        <GlassCard padding="p-4 sm:p-6 lg:p-8" class="classified">
+          <div class="flex items-center gap-3 mb-4">
+            <span class="font-mono text-[0.6rem] uppercase tracking-[0.2em] text-[var(--color-accent)]">// Information</span>
+            <div class="flex-1 h-px bg-[var(--color-border)]"></div>
+          </div>
           {info!.map((paragraph, i) => (
             <p class:list={["prose-inline text-[var(--color-text-secondary)]", { "mt-3": i > 0 }]} set:html={inlineMarkdown(paragraph)} />
           ))}
@@ -35,24 +39,29 @@ const { info, hardwareIntro, hardware, otherHardware, thanks } = entry.data;
 
         <!-- Section 1: Current Gear -->
         <div>
-          <h2 class="fade-in font-heading text-2xl font-bold text-[var(--color-text-primary)] mb-6">Current Gear</h2>
+          <div class="fade-in flex items-center gap-4 mb-5">
+            <h2 class="display-heading text-2xl sm:text-3xl text-[var(--color-text-primary)] leading-none whitespace-nowrap">Current <em class="italic text-[var(--color-accent)]">Gear</em></h2>
+            <div class="news-line"></div>
+            <span class="news-kicker shrink-0">// Plate I</span>
+          </div>
           <p class="fade-in prose-inline text-[var(--color-text-secondary)] mb-8" set:html={inlineMarkdown(hardwareIntro!)} />
         </div>
 
         {hardware!.map(item => (
           <div class="fade-in">
-            <GlassCard padding="p-0" class="overflow-hidden">
-              <img src={`${base}/${item.image}`} alt={item.name} class="w-full" loading="lazy" />
+            <GlassCard padding="p-0" class="overflow-hidden classified">
+              <img src={`${base}/${item.image}`} alt={item.name} width="1280" height="720" class="w-full" loading="lazy" decoding="async" />
               <div class="p-6">
-                <p class="text-xs font-medium text-[var(--color-accent-light)] mb-1 uppercase tracking-wider">{item.subtitle}</p>
-                <h3 class="font-heading text-xl font-bold text-[var(--color-text-primary)] mb-3">{item.name}</h3>
+                <p class="font-mono text-[0.58rem] uppercase tracking-[0.2em] text-[var(--color-accent)] mb-2">// {item.subtitle}</p>
+                <h3 class="display-heading text-2xl text-[var(--color-text-primary)] leading-none mb-3">{item.name}</h3>
+                <div class="news-hr mb-4"></div>
                 {item.description.split('\n\n').length > 1 ? (
                   <div class="mt-3 space-y-4">
                     {item.description.split('\n\n').map((para, i) => (
                       <>
                         {i > 0 && (
                           <div class="gear-marquee-wrap -mx-6 overflow-hidden py-1.5" aria-hidden="true">
-                            <div class="gear-marquee flex gap-8 whitespace-nowrap font-mono text-[10px] text-[var(--color-accent)]/60 tracking-widest w-max">
+                            <div class="gear-marquee flex gap-4 sm:gap-8 whitespace-nowrap font-mono text-[10px] text-[var(--color-accent)]/60 tracking-widest w-max">
                               {Array.from({length: 4}).map(() => (
                                 <span>0xA3F2 // CPU_LOAD: 12% // MEM: 4096MB // ARCH: x86_64 // NET: ETH0 // PKT: 0xFFD3 // KERNEL: 6.12.1 // UPTIME: 99.9% // DISK: /dev/nvme0 // IRQ: 0x0F //&nbsp;</span>
                               ))}
@@ -76,23 +85,28 @@ const { info, hardwareIntro, hardware, otherHardware, thanks } = entry.data;
 
         <!-- Section 2: Other (Lebanon) -->
         <div>
-          <h2 class="fade-in font-heading text-2xl font-bold text-[var(--color-text-primary)] mb-6">Lebanon</h2>
+          <div class="fade-in flex items-center gap-4 mb-2">
+            <h2 class="display-heading text-2xl sm:text-3xl text-[var(--color-text-primary)] leading-none whitespace-nowrap"><em class="italic text-[var(--color-accent)]">Lebanon</em></h2>
+            <div class="news-line"></div>
+            <span class="news-kicker shrink-0">// Plate II</span>
+          </div>
         </div>
 
         {otherHardware!.map(item => (
           <div class="fade-in">
-            <GlassCard padding="p-0" class="overflow-hidden">
-              <img src={`${base}/${item.image}`} alt={item.name} class="w-full" loading="lazy" />
+            <GlassCard padding="p-0" class="overflow-hidden classified">
+              <img src={`${base}/${item.image}`} alt={item.name} width="1280" height="720" class="w-full" loading="lazy" decoding="async" />
               <div class="p-6">
-                <p class="text-xs font-medium text-[var(--color-accent-light)] mb-1 uppercase tracking-wider">{item.subtitle}</p>
-                <h3 class="font-heading text-xl font-bold text-[var(--color-text-primary)] mb-3">{item.name}</h3>
+                <p class="font-mono text-[0.58rem] uppercase tracking-[0.2em] text-[var(--color-accent)] mb-2">// {item.subtitle}</p>
+                <h3 class="display-heading text-2xl text-[var(--color-text-primary)] leading-none mb-3">{item.name}</h3>
+                <div class="news-hr mb-4"></div>
                 {item.description.split('\n\n').length > 1 ? (
                   <div class="mt-3 space-y-4">
                     {item.description.split('\n\n').map((para, i) => (
                       <>
                         {i > 0 && (
                           <div class="gear-marquee-wrap -mx-6 overflow-hidden py-1.5" aria-hidden="true">
-                            <div class="gear-marquee flex gap-8 whitespace-nowrap font-mono text-[10px] text-[var(--color-accent)]/60 tracking-widest w-max">
+                            <div class="gear-marquee flex gap-4 sm:gap-8 whitespace-nowrap font-mono text-[10px] text-[var(--color-accent)]/60 tracking-widest w-max">
                               {Array.from({length: 4}).map(() => (
                                 <span>0xA3F2 // CPU_LOAD: 12% // MEM: 4096MB // ARCH: x86_64 // NET: ETH0 // PKT: 0xFFD3 // KERNEL: 6.12.1 // UPTIME: 99.9% // DISK: /dev/nvme0 // IRQ: 0x0F //&nbsp;</span>
                               ))}
@@ -116,8 +130,11 @@ const { info, hardwareIntro, hardware, otherHardware, thanks } = entry.data;
 
 <!-- Thanks -->
         <div class="fade-in">
-          <GlassCard>
-            <h3 class="font-heading text-xl font-semibold text-[var(--color-text-primary)] mb-3">Thanks for reading</h3>
+          <GlassCard class="classified">
+            <div class="flex items-center gap-3 mb-3">
+              <span class="font-mono text-[0.6rem] uppercase tracking-[0.2em] text-[var(--color-accent)]">// Thanks for reading</span>
+              <div class="flex-1 h-px bg-[var(--color-border)]"></div>
+            </div>
             <p class="prose-inline text-[var(--color-text-secondary)] text-sm" set:html={inlineMarkdown(thanks!)} />
           </GlassCard>
         </div>

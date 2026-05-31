@@ -1,109 +1,108 @@
 ---
-// Animated floating gradient orbs + subtle particle canvas for the background
+// Site-wide background: data packets stepping along an invisible grid, like CPU/bus cycles.
+// No trails, slow cadence, accent-colored glowing dots. Canvas, no gradients.
 ---
 
-<div class="fixed inset-0 z-0 overflow-hidden pointer-events-none" aria-hidden="true">
-  <div class="bg-orb bg-orb-1"></div>
-  <div class="bg-orb bg-orb-2"></div>
-  <div class="bg-orb bg-orb-3"></div>
-  <div class="bg-orb bg-orb-4"></div>
-  <canvas id="bg-canvas"></canvas>
-</div>
+<canvas id="bg-flow" class="bg-flow" aria-hidden="true"></canvas>
 
 <script is:inline>
-  // Subtle floating particle system — optimized
-  (function() {
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-
-    const canvas = document.getElementById('bg-canvas');
+  (function () {
+    const canvas = document.getElementById('bg-flow');
     if (!canvas) return;
     const ctx = canvas.getContext('2d');
-    let particles = [];
-    let w, h;
-    let animId;
-    let paused = false;
-    const isMobile = window.innerWidth < 768;
-    const maxParticles = isMobile ? 30 : 60;
-    const lineDistSq = 12000;
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const CELL = 38;
+    const DIRS = [[1, 0], [-1, 0], [0, 1], [0, -1]];
+    let w, h, cols, rows, packets = [], animId, paused = false;
+    let tick = 0;
 
-    function resize() {
+    function spawn() {
+      const d = DIRS[(Math.random() * 4) | 0];
+      return {
+        cx: (Math.random() * cols) | 0,
+        cy: (Math.random() * rows) | 0,
+        dx: d[0], dy: d[1],
+        prog: 0,
+        speed: 0.006 + Math.random() * 0.005,    // slower cell-to-cell step
+        pink: Math.random() < 0.25,
+        colIdx: (Math.random() * 3) | 0,         // smaller muted palette
+        phase: Math.random() * Math.PI * 2,
+      };
+    }
+
+    function build() {
       w = canvas.width = window.innerWidth;
       h = canvas.height = window.innerHeight;
+      cols = Math.ceil(w / CELL);
+      rows = Math.ceil(h / CELL);
+      const count = Math.min((w * h) / 22000 | 0, window.innerWidth < 768 ? 40 : 100);
+      packets = [];
+      for (let i = 0; i < count; i++) packets.push(spawn());
     }
 
-    function createParticles() {
-      particles = [];
-      const count = Math.min(Math.floor((w * h) / 18000), maxParticles);
-      for (let i = 0; i < count; i++) {
-        particles.push({
-          x: Math.random() * w,
-          y: Math.random() * h,
-          r: Math.random() * 1.5 + 0.5,
-          dx: (Math.random() - 0.5) * 0.3,
-          dy: (Math.random() - 0.5) * 0.3,
-          opacity: Math.random() * 0.3 + 0.05,
-        });
-      }
-    }
-
-    function draw() {
-      if (paused) return;
-      ctx.clearRect(0, 0, w, h);
-      for (const p of particles) {
-        p.x += p.dx;
-        p.y += p.dy;
-        if (p.x < 0) p.x = w;
-        if (p.x > w) p.x = 0;
-        if (p.y < 0) p.y = h;
-        if (p.y > h) p.y = 0;
-        ctx.beginPath();
-        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(168, 125, 232, ${p.opacity})`;
-        ctx.fill();
-      }
-      // Skip line-drawing on mobile for performance
-      if (!isMobile) {
-        for (let i = 0; i < particles.length; i++) {
-          for (let j = i + 1; j < particles.length; j++) {
-            const dx = particles[i].x - particles[j].x;
-            const dy = particles[i].y - particles[j].y;
-            const dist = dx * dx + dy * dy;
-            if (dist < lineDistSq) {
-              ctx.beginPath();
-              ctx.moveTo(particles[i].x, particles[i].y);
-              ctx.lineTo(particles[j].x, particles[j].y);
-              ctx.strokeStyle = `rgba(121, 75, 196, ${0.04 * (1 - dist / lineDistSq)})`;
-              ctx.lineWidth = 0.5;
-              ctx.stroke();
-            }
+    function render() {
+      // Read theme dynamically so Xero-Dark actually darkens the canvas bg
+      ctx.fillStyle = (document.documentElement.getAttribute('data-theme') === 'dark') ? '#06070b' : '#212329';
+      ctx.fillRect(0, 0, w, h);
+      tick += 0.03;
+      for (const p of packets) {
+        p.prog += p.speed;
+        if (p.prog >= 1) {
+          p.prog = 0;
+          p.cx += p.dx;
+          p.cy += p.dy;
+          // wrap
+          if (p.cx < 0) p.cx = cols - 1; else if (p.cx >= cols) p.cx = 0;
+          if (p.cy < 0) p.cy = rows - 1; else if (p.cy >= rows) p.cy = 0;
+          // pure random roam at junctions — never gathers, ignores cursor
+          if (Math.random() < 0.32) {
+            if (p.dx) { p.dx = 0; p.dy = Math.random() < 0.5 ? 1 : -1; }
+            else { p.dy = 0; p.dx = Math.random() < 0.5 ? 1 : -1; }
           }
         }
+        const x = (p.cx + p.dx * p.prog) * CELL + CELL / 2;
+        const y = (p.cy + p.dy * p.prog) * CELL + CELL / 2;
+        // CPU-cycle pulse: size + brightness throb
+        const pulse = 0.5 + 0.5 * Math.sin(tick + p.phase);
+        const r = 0.8 + pulse * 0.6;
+        const a = 0.06 + pulse * 0.10;
+        // Muted Layan trio: indigo, soft magenta, slate
+        const palette = ['86, 87, 245', '180, 110, 200', '120, 130, 160'];
+        const col = palette[(p.colIdx ?? 0) % palette.length];
+        ctx.shadowBlur = 1 + pulse * 1.5;
+        ctx.shadowColor = 'rgba(' + col + ', 0.5)';
+        ctx.fillStyle = 'rgba(' + col + ', ' + a + ')';
+        ctx.beginPath();
+        ctx.arc(x, y, r, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.shadowBlur = 0;
       }
-      animId = requestAnimationFrame(draw);
     }
 
-    // Pause when tab is hidden
+    function loop() {
+      animId = requestAnimationFrame(loop);
+      if (paused) return;
+      render();
+    }
+
     document.addEventListener('visibilitychange', () => {
       if (document.hidden) {
         paused = true;
         if (animId) cancelAnimationFrame(animId);
-      } else {
+      } else if (!reduce) {
         paused = false;
-        animId = requestAnimationFrame(draw);
+        animId = requestAnimationFrame(loop);
       }
     });
 
-    let resizeTimer;
+    let rt;
     window.addEventListener('resize', () => {
-      clearTimeout(resizeTimer);
-      resizeTimer = setTimeout(() => {
-        resize();
-        createParticles();
-      }, 150);
+      clearTimeout(rt);
+      rt = setTimeout(build, 160);
     });
 
-    resize();
-    createParticles();
-    draw();
+    build();
+    render();
+    if (!reduce) animId = requestAnimationFrame(loop);
   })();
 </script>

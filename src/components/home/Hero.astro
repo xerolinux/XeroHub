@@ -1,99 +1,627 @@
 ---
 import Button from '../ui/Button.astro';
-import PageViews from '../ui/PageViews.astro';
+import { Image } from 'astro:assets';
+import logo from '../../assets/logo.png';
+import { discount, discountActive } from '../../config';
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
-const pageId = Astro.url.pathname.replace(/^\//, '').replace(/\/$/, '').replace(/\//g, '-') || 'home';
 ---
 
-<section class="relative pt-32 pb-6 sm:pb-20 px-4 sm:px-6 lg:px-8">
-  <div class="mx-auto max-w-5xl text-center">
-    <!-- Logo -->
-    <div class="fade-in mb-6">
-      <img src={`${base}/logos/logo.png`} alt="XeroLinux" width="192" height="192" class="w-28 h-28 sm:w-32 sm:h-32 mx-auto rounded-3xl shadow-lg shadow-[var(--color-accent-glow)]" />
-    </div>
+<section class="relative pt-32 sm:pt-52 pb-6 sm:pb-16 px-4 sm:px-6 lg:px-8">
+  <div class="mx-auto max-w-7xl 2xl:max-w-[100rem]">
 
-    <!-- Page Views -->
-    <div class="fade-in flex justify-center mb-4">
-      <PageViews pageId={pageId} />
-    </div>
-
-    <!-- Headline -->
-    <h1 class="fade-in fade-in-delay-1 display-heading text-4xl sm:text-5xl md:text-7xl tracking-tight mb-6">
-      <span class="bg-gradient-to-r from-[var(--color-accent)] via-[var(--color-accent-light)] to-[#c44b8b] bg-clip-text text-transparent">XeroLinux</span>
-    </h1>
-
-    <!-- Badge -->
-    <div class="fade-in fade-in-delay-1 flex justify-center mb-6">
-      <div class="inline-flex items-center gap-2.5 px-5 py-2 rounded-full glass text-sm text-[var(--color-text-secondary)]">
-        <svg class="w-4 h-4 text-[#1793D1]" viewBox="0 0 24 24" fill="currentColor">
-          <path d="M11.39.605C10.376 3.092 9.764 4.72 8.635 7.132c.693.734 1.543 1.589 2.923 2.554-1.484-.61-2.496-1.224-3.252-1.86C6.86 10.842 4.596 15.138 0 23.395c3.612-2.085 6.412-3.37 9.021-3.862a6.61 6.61 0 01-.171-1.547l.003-.115c.058-2.315 1.261-4.095 2.687-3.973 1.426.12 2.534 2.096 2.478 4.409a6.52 6.52 0 01-.146 1.243c2.58.505 5.352 1.787 8.914 3.844-.702-1.293-1.33-2.459-1.929-3.57-.943-.73-1.926-1.682-3.933-2.713 1.38.359 2.367.772 3.137 1.234-6.09-11.334-6.582-12.84-8.67-17.74z"/>
-        </svg>
-        Powered by : ArchLinux & KDE Plasma
-        <svg class="w-4 h-4 text-[#1D99F3]" viewBox="0 0 24 24" fill="currentColor">
-          <path d="M13.881 0L9.89.382v16.435l3.949-.594V9.216l5.308 7.772 4.162-1.317-5.436-7.475 5.479-7.05L19.105.17 13.84 7.22zM4.834 4.005a.203.203 0 0 0-.123.059L3.145 5.63a.203.203 0 0 0-.03.248L4.949 8.9a7.84 7.84 0 0 0-.772 1.759l-3.367.7a.203.203 0 0 0-.162.199v2.215c0 .093.064.174.155.196l3.268.8a7.83 7.83 0 0 0 .801 2.03L2.98 19.683a.203.203 0 0 0 .027.254l1.566 1.567a.204.204 0 0 0 .249.03l2.964-1.8c.582.336 1.21.6 1.874.78l.692 3.325c.02.094.102.161.198.161h2.215a.202.202 0 0 0 .197-.155l.815-3.332a7.807 7.807 0 0 0 1.927-.811l2.922 1.915c.08.053.186.042.254-.026l1.567-1.566a.202.202 0 0 0 .03-.248l-1.067-1.758-.345.11a.12.12 0 0 1-.135-.047L17.371 15.8a6.347 6.347 0 1 1-8.255-8.674V5.488c-.401.14-.79.31-1.159.511l-.001-.002-2.99-1.96a.203.203 0 0 0-.132-.033Z"/>
-        </svg>
-      </div>
-    </div>
-
-    <!-- Typing tagline -->
-    <p class="fade-in fade-in-delay-2 text-lg sm:text-xl text-[var(--color-text-secondary)] max-w-2xl mx-auto mb-10 leading-relaxed text-center" id="hero-tagline">
-      Discover a Distro Fueled by our Passion for GNU/Linux.
-    </p>
-
-    <!-- CMatrix Terminal -->
-    <div class="fade-in fade-in-delay-3 mx-auto max-w-2xl w-full mb-10">
-      <div class="glass overflow-hidden">
-        <!-- Title bar -->
-        <div class="flex items-center gap-2 px-4 py-2.5 bg-[var(--color-bg-secondary)] border-b border-[var(--color-border)]">
-          <div class="flex gap-1.5">
-            <div class="w-3 h-3 rounded-full bg-[#ff5f57]"></div>
-            <div class="w-3 h-3 rounded-full bg-[#febc2e]"></div>
-            <div class="w-3 h-3 rounded-full bg-[#28c840]"></div>
-          </div>
-          <span class="text-xs text-[var(--color-text-muted)] font-mono ml-2">xero@arch ~ </span>
+    {discountActive && (
+      <a
+        href={`${base}/download/`}
+        id="anniv-banner"
+        data-end={discount.end}
+        class="anniv fade-in group relative block mb-7 rounded-xl overflow-hidden border border-[var(--color-accent-2)]/50"
+      >
+        <div class="relative z-10 flex flex-wrap items-center justify-center gap-x-2 sm:gap-x-4 gap-y-1 px-3 py-2.5 sm:px-5 sm:py-3.5 text-center">
+          <span class="anniv-star font-mono text-xs sm:text-sm animate-pulse">★</span>
+          <span class="anniv-title font-heading font-bold text-sm sm:text-2xl tracking-tight leading-tight">{discount.bannerText}</span>
+          <span class="anniv-sub hidden md:inline font-mono text-[0.62rem] uppercase tracking-[0.16em]">{discount.bannerSub}</span>
+          <span class="anniv-cta font-mono text-[0.55rem] sm:text-[0.62rem] uppercase tracking-[0.14em] sm:tracking-[0.16em] inline-flex items-center gap-1">Get it <span class="transition-transform group-hover:translate-x-1">&#8250;</span></span>
         </div>
-        <!-- Terminal body -->
-        <div class="relative bg-black/40 p-0" style="height: 220px;">
-          <!-- Prompt line (overlay on top of canvas) -->
-          <div id="cmatrix-prompt" class="absolute top-0 left-0 right-0 z-10 px-4 py-2 font-mono text-sm">
-            <span class="text-[var(--color-accent-light)]">$</span>
-            <span id="cmatrix-typed" class="text-[var(--color-text-primary)] ml-1"></span>
-            <span id="cmatrix-cursor" class="inline-block w-2 h-4 bg-[var(--color-accent)] align-middle animate-pulse ml-0.5"></span>
-          </div>
-          <!-- Matrix rain canvas -->
+      </a>
+    )}
+
+    <!-- Front-page area: two independent cards bridged by stream canvas -->
+    <div class="fade-in relative">
+
+      <!-- Lead story (independent card) -->
+      <article class="hero-soft-shadow relative overflow-hidden rounded-2xl border border-[var(--color-border)] layan-panel card-depth p-5 sm:p-6 lg:mr-[calc(34.483%+16px)]">
+        <!-- Live matrix-rain background -->
+        <div class="absolute inset-0 z-0">
           <canvas id="cmatrix-canvas" class="w-full h-full block"></canvas>
+          <div id="cmatrix-prompt" class="hidden">
+            <span id="cmatrix-typed"></span><span id="cmatrix-cursor"></span>
+          </div>
+          <!-- readability scrim -->
+          <div class="absolute inset-0" style="background:linear-gradient(100deg, rgba(33, 35, 41,0.9) 0%, rgba(33, 35, 41,0.74) 50%, rgba(33, 35, 41,0.42) 100%);"></div>
         </div>
-      </div>
+
+        <!-- Content -->
+        <div class="relative z-10">
+        <!-- Kicker -->
+        <div class="flex items-center gap-3 mb-3 font-mono text-[0.62rem] uppercase tracking-[0.25em] text-[var(--color-accent)]">
+          <span>Front Page</span>
+          <span class="text-[var(--color-text-muted)]">//</span>
+          <span class="text-[var(--color-text-muted)]">Arch Linux Distribution</span>
+        </div>
+
+        <!-- Serif headline -->
+        <h1 class="display-heading text-2xl sm:text-[1.7rem] lg:text-[2.05rem] leading-tight text-[var(--color-text-primary)] mb-3 whitespace-normal sm:whitespace-nowrap">
+          A Distro Fueled by our
+          <span class="italic text-[var(--color-accent)]">Passion</span>
+          for GNU/Linux
+        </h1>
+
+        <!-- Byline -->
+        <div class="flex flex-wrap items-center gap-3 pb-2.5 mb-3 border-b border-[var(--color-border)] font-mono text-[0.65rem] uppercase tracking-[0.12em] text-[var(--color-text-muted)]">
+          <span class="flex items-center gap-2">
+            <Image src={logo} alt="XeroLinux" width="40" height="40" densities={[1, 2]} class="w-5 h-5 rounded" />
+            By DarkXero
+          </span>
+          <span class="text-[var(--color-accent)]">·</span>
+          <span>xerolinux.xyz</span>
+        </div>
+
+        <!-- Deck w/ powered-by icons -->
+        <p class="text-base sm:text-lg leading-relaxed text-[var(--color-text-secondary)] mb-2.5 flex items-center flex-wrap gap-2" style="text-align:left;">
+          <svg class="w-5 h-5 text-[#1793D1] shrink-0" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M11.39.605C10.376 3.092 9.764 4.72 8.635 7.132c.693.734 1.543 1.589 2.923 2.554-1.484-.61-2.496-1.224-3.252-1.86C6.86 10.842 4.596 15.138 0 23.395c3.612-2.085 6.412-3.37 9.021-3.862a6.61 6.61 0 01-.171-1.547l.003-.115c.058-2.315 1.261-4.095 2.687-3.973 1.426.12 2.534 2.096 2.478 4.409a6.52 6.52 0 01-.146 1.243c2.58.505 5.352 1.787 8.914 3.844-.702-1.293-1.33-2.459-1.929-3.57-.943-.73-1.926-1.682-3.933-2.713 1.38.359 2.367.772 3.137 1.234-6.09-11.334-6.582-12.84-8.67-17.74z"/>
+          </svg>
+          <strong class="text-[var(--color-text-primary)] font-bold">Powered by Arch Linux &amp; KDE Plasma.</strong>
+          <svg class="w-5 h-5 text-[#1D99F3] shrink-0" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M13.881 0L9.89.382v16.435l3.949-.594V9.216l5.308 7.772 4.162-1.317-5.436-7.475 5.479-7.05L19.105.17 13.84 7.22zM4.834 4.005a.203.203 0 0 0-.123.059L3.145 5.63a.203.203 0 0 0-.03.248L4.949 8.9a7.84 7.84 0 0 0-.772 1.759l-3.367.7a.203.203 0 0 0-.162.199v2.215c0 .093.064.174.155.196l3.268.8a7.83 7.83 0 0 0 .801 2.03L2.98 19.683a.203.203 0 0 0 .027.254l1.566 1.567a.204.204 0 0 0 .249.03l2.964-1.8c.582.336 1.21.6 1.874.78l.692 3.325c.02.094.102.161.198.161h2.215a.202.202 0 0 0 .197-.155l.815-3.332a7.807 7.807 0 0 0 1.927-.811l2.922 1.915c.08.053.186.042.254-.026l1.567-1.566a.202.202 0 0 0 .03-.248l-1.067-1.758-.345.11a.12.12 0 0 1-.135-.047L17.371 15.8a6.347 6.347 0 1 1-8.255-8.674V5.488c-.401.14-.79.31-1.159.511l-.001-.002-2.99-1.96a.203.203 0 0 0-.132-.033Z"/>
+          </svg>
+        </p>
+
+        <!-- Lead, drop-cap two columns -->
+        <div class="hero-lead text-sm sm:text-base text-[var(--color-text-secondary)] leading-relaxed sm:columns-2 sm:gap-7 mb-4">
+          <p style="text-align:justify;">XeroLinux is a curated, actively maintained Arch-based distribution that demystifies installation while preserving user-driven customization. A thoughtful balance of accessibility and the renowned flexibility of Arch Linux, shipped with a configured KDE Plasma 6 desktop and a suite of in-house tools like the XeroLinux Toolkit and Kernel Manager that let you install the CachyOS kernel and fine-tune your system for measurably better performance.</p>
+        </div>
+
+        <!-- CTAs -->
+        <div class="flex flex-row flex-wrap sm:flex-nowrap items-center gap-2.5">
+          <Button href={`${base}/download/`} size="sm">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+            </svg>
+            Download
+          </Button>
+          <Button href="https://wiki.xerolinux.xyz" variant="secondary" size="sm" external>
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+            </svg>
+            The Wiki
+          </Button>
+          <Button href="https://github.com/XeroLinux/XeroBuild" variant="secondary" size="sm" external>
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+            Github
+          </Button>
+        </div>
+        </div><!-- /content -->
+      </article>
+
+      <!-- 16px gap: cascading data-stream canvas (lg+ only) — picker style #100 -->
+      <canvas
+        id="hero-stream"
+        class="hidden lg:block"
+        data-stream-count="6"
+        data-speed-lo="0.08"
+        data-speed-hi="0.22"
+        data-trail-length="7"
+        data-char-spacing="7"
+        data-fade-rate="0.10"
+        data-font-size="10"
+        data-glow-radius="6"
+        data-interval="2"
+        data-charset="MIXED_HEX_KAT"
+        data-scheme="LAYAN_MULTI"
+      ></canvas>
+
+      <!-- System Record (independent card) -->
+      <aside class="hero-soft-shadow sys-record relative p-4 sm:p-5 flex flex-col gap-0 overflow-hidden rounded-2xl card-depth mt-4 lg:mt-0 lg:absolute lg:right-0 lg:top-0 lg:bottom-0 lg:w-[34.483%]">
+        <!-- Window titlebar — uses global .terminal-header pattern -->
+        <div class="terminal-header -mx-4 sm:-mx-5 -mt-4 sm:-mt-5 mb-3">
+          <span class="terminal-dot terminal-dot-red"></span>
+          <span class="terminal-dot terminal-dot-yellow"></span>
+          <span class="terminal-dot terminal-dot-green"></span>
+          <span class="terminal-label">system-record.log — XeroLinux</span>
+        </div>
+        <!-- decoration: corner brackets + circuit dots + accent stripe -->
+        <span class="sys-corner sys-corner-tl"></span>
+        <span class="sys-corner sys-corner-tr"></span>
+        <span class="sys-corner sys-corner-bl"></span>
+        <span class="sys-corner sys-corner-br"></span>
+        <span class="sys-stripe"></span>
+
+        <div class="sys-record-head flex items-center gap-2 pb-1.5 mb-1 border-b border-[var(--color-border)]">
+          <span class="sys-pulse"></span>
+          <span class="font-mono text-[0.6rem] uppercase tracking-[0.25em] text-[var(--color-accent-light)]">System Record</span>
+          <span class="ml-auto font-mono text-[0.55rem] uppercase tracking-[0.2em] text-[var(--color-positive)] flex items-center gap-1">
+            <span class="sys-live-dot"></span> live
+          </span>
+        </div>
+        {(() => {
+          const ico = {
+            os:      '<svg class="sr-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="14" rx="2"/><path d="M2 20h20"/></svg>',
+            kernel:  '<svg class="sr-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 11-2.83 2.83l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 11-4 0v-.09a1.65 1.65 0 00-1-1.51 1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 11-2.83-2.83l.06-.06a1.65 1.65 0 00.33-1.82 1.65 1.65 0 00-1.51-1H3a2 2 0 110-4h.09a1.65 1.65 0 001.51-1 1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 112.83-2.83l.06.06a1.65 1.65 0 001.82.33h0a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51h0a1.65 1.65 0 001.82-.33l.06-.06a2 2 0 112.83 2.83l-.06.06a1.65 1.65 0 00-.33 1.82v0a1.65 1.65 0 001.51 1H21a2 2 0 110 4h-.09a1.65 1.65 0 00-1.51 1z"/></svg>',
+            desktop: '<svg class="sr-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>',
+            display: '<svg class="sr-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="12" rx="1"/><path d="M7 20h10M9 16v4M15 16v4"/></svg>',
+            release: '<svg class="sr-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><path d="M20.49 15A9 9 0 116 4.51L23 10"/></svg>',
+            iso:     '<svg class="sr-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="3" fill="currentColor"/></svg>',
+            tui:     '<svg class="sr-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="6 9 9 12 6 15"/><line x1="12" y1="15" x2="16" y2="15"/></svg>'
+          };
+          const rows = [
+            ['OS',      'XeroLinux x86_64',     '',     ico.os],
+            ['Kernel',  'linux-arch-x86_64',    'org',  ico.kernel],
+            ['Desktop', 'KDE Plasma 6',         'acc',  ico.desktop],
+            ['Display', 'KWin / Wayland',       'cyn',  ico.display],
+            ['Release', 'Rolling',              'red',  ico.release],
+            ['ISO',     'One-time contribution','pink', ico.iso],
+            ['T.U.I',   'Free forever',         'grn',  ico.tui],
+          ];
+          const COLOR = {
+            acc:  'text-[var(--color-accent)]',
+            grn:  'text-[#3ecf6e]',
+            pink: 'text-[#ff80e0]',
+            org:  'text-[#ff8a1a]',
+            cyn:  'text-[#25d4f5]',
+            red:  'text-[#ee3939]',
+          };
+          return rows.map(([k, v, c, i]) => (
+            <div class="flex items-center justify-between py-1 border-b border-[var(--color-border)] font-mono text-[0.7rem]">
+              <span class="flex items-center gap-1.5 text-[var(--color-text-muted)] uppercase tracking-wider">
+                <Fragment set:html={i} />
+                {k}
+              </span>
+              <span class:list={['font-semibold', COLOR[c] || 'text-[var(--color-text-primary)]']}>{v}</span>
+            </div>
+          ));
+        })()}
+        <!-- Get it -->
+        <div class="mt-auto pt-3 border-t-2 border-[var(--color-accent)]">
+          <div class="font-mono text-[0.58rem] uppercase tracking-[0.2em] text-[var(--color-text-muted)] mb-2.5">Two ways in</div>
+          <a href={`${base}/download/`} class="group block rounded-lg border border-[var(--color-border)] layan-panel px-3.5 py-3 font-mono text-[0.7rem] leading-relaxed hover:border-[var(--color-accent)]/60 term-glow">
+            <div class="text-[var(--color-text-secondary)] mb-1.5">
+              <span class="text-[#3ecf6e]">$</span> <span class="text-white">get</span> xerolinux<span class="terminal-cursor"></span>
+            </div>
+            <div class="flex items-center gap-3">
+              <div class="grid grid-cols-[auto_2.2rem_1fr] items-center gap-x-2 text-[0.66rem] flex-1">
+                <span class="text-[var(--color-accent)]">├─</span>
+                <span class="text-[var(--color-text-primary)]">iso</span>
+                <span class="text-[var(--color-accent-2)]">contribution</span>
+                <span class="text-[var(--color-accent)]">└─</span>
+                <span class="text-[var(--color-text-primary)]">tui</span>
+                <span class="text-[#3ecf6e]">free forever</span>
+              </div>
+              <span class="text-[var(--color-accent)] text-xl leading-none drop-shadow-[0_0_8px_rgba(86, 87, 245,0.7)] transition-transform group-hover:translate-x-1 self-center ml-auto">&#9656;</span>
+            </div>
+            <!-- Conky EQ bars absolutely positioned, fill full link height -->
+            <div class="conky-v-wrap">
+              <div class="conky-v">
+                <div class="vb" title="CPU 67%"><i style="height:67%;background:#2bd05a;color:#2bd05a"></i></div>
+                <div class="vb" title="MEM 54%"><i style="height:54%;background:#f5b500;color:#f5b500"></i></div>
+                <div class="vb" title="DSK 21%"><i style="height:21%;background:#ee3939;color:#ee3939"></i></div>
+                <div class="vb" title="NET 30%"><i style="height:30%;background:#4285f4;color:#4285f4"></i></div>
+              </div>
+              <div class="conky-labels">
+                <span>CPU</span>
+                <span>MEM</span>
+                <span>DSK</span>
+                <span>NET</span>
+              </div>
+            </div>
+          </a>
+        </div>
+      </aside>
     </div>
 
-    <!-- CTA Buttons -->
-    <div class="fade-in fade-in-delay-3 flex flex-row flex-wrap items-center justify-center gap-3">
-      <Button href="https://wiki.xerolinux.xyz" variant="secondary" size="md" external>
-        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
-        </svg>
-        The Wiki
-      </Button>
-      <Button href={`${base}/download/`} size="md">
-        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
-        </svg>
-        Download
-      </Button>
-      <Button href="https://github.com/XeroLinux/XeroBuild" variant="secondary" size="md" external>
-        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-        Github
-      </Button>
-    </div>
-
-    <!-- Scroll indicator -->
-    <div class="fade-in fade-in-delay-4 mt-6 sm:mt-16 flex justify-center">
-      <div class="w-6 h-10 rounded-full border-2 border-[var(--color-border)] flex justify-center">
-        <div class="w-1.5 h-3 bg-[var(--color-accent)] rounded-full mt-2 animate-bounce"></div>
-      </div>
-    </div>
   </div>
 </section>
+
+<style>
+  /* Subtler shadow override for hero cards (beats global .card-depth + dark !important) */
+  .hero-soft-shadow {
+    box-shadow:
+      0 1px 3px rgba(0,0,0,0.18),
+      0 6px 14px rgba(0,0,0,0.22) !important;
+  }
+  :global(html[data-theme="dark"]) .hero-soft-shadow {
+    box-shadow:
+      0 1px 3px rgba(0,0,0,0.28),
+      0 6px 14px rgba(0,0,0,0.32) !important;
+  }
+
+  /* ── 16px gap stream canvas (picker #100) ── */
+  #hero-stream {
+    position: absolute;
+    top: 0;
+    right: 34.483%;
+    width: 16px;
+    height: 100%;
+    overflow: visible;
+    pointer-events: none;
+    z-index: 10;
+    display: block;
+  }
+
+  /* Neofetch-style row icons inside System Record — bigger now that the corner logo is gone */
+  .sys-record :global(.sr-ico) {
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+    color: var(--color-accent-light, #8a8bff);
+    filter: drop-shadow(0 0 4px rgba(86, 87, 245, 0.45));
+  }
+
+  /* ── System Record sidebar — ARCH LOGO + CONKY STAT BARS (mix of #79 + #80) ── */
+  .sys-record {
+    background: rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(86, 87, 245, 0.32);
+  }
+  .sys-record::before { display: none; }
+  .sys-stripe { display: none; }
+  /* Terminal-style dotted dividers between rows + under header */
+  .sys-record .sys-record-head,
+  .sys-record > div.flex {
+    border-bottom-style: dotted !important;
+    border-bottom-width: 2px !important;
+  }
+
+  /* Conky vertical EQ bars — absolutely positioned, fills ALL empty space inside the button */
+  .term-glow { position: relative; }
+  .term-glow .conky-v-wrap {
+    position: absolute;
+    left: 11rem;     /* start where iso/tui content ends */
+    right: 32px;     /* leave room for ▸ arrow */
+    top: 8px;        /* full vertical space — no wasted area */
+    bottom: 8px;
+    display: flex;
+    flex-direction: column;
+    pointer-events: none;
+  }
+  .term-glow .conky-v {
+    display: flex;
+    align-items: flex-end;
+    gap: 6px;
+    flex: 1;
+    min-height: 0;
+    width: 100%;
+  }
+  .term-glow .conky-v .vb {
+    flex: 1;
+    height: 100%;
+    background: rgba(255,255,255,0.07);
+    border-radius: 2px;
+    position: relative;
+    overflow: hidden;
+  }
+  .term-glow .conky-v .vb > i {
+    position: absolute;
+    left: 0; right: 0; bottom: 0;
+    border-radius: 2px;
+    box-shadow: 0 0 4px currentColor;
+  }
+  .term-glow .conky-labels {
+    display: flex;
+    gap: 6px;
+    width: 100%;
+    margin-top: 3px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.5rem;
+    letter-spacing: 0.05em;
+    color: #999;
+    line-height: 1;
+  }
+  .term-glow .conky-labels span {
+    flex: 1;
+    text-align: center;
+  }
+  /* Mobile: bars collapse to small fixed width on narrow screens to avoid overlap */
+  @media (max-width: 380px) {
+    .term-glow .conky-v-wrap { left: auto; width: 56px; right: 32px; }
+  }
+
+  /* No corner pulse dot — LIVE indicator in header is enough */
+  .sys-corner { display: none; }
+
+  /* Heading pulse + LIVE dot */
+  .sys-record-head { position: relative; z-index: 2; }
+  .sys-pulse {
+    width: 7px; height: 7px; border-radius: 50%;
+    background: var(--color-accent);
+    box-shadow: 0 0 0 2px rgba(86, 87, 245, 0.25), 0 0 8px rgba(86, 87, 245, 0.7);
+    animation: sysPulse 1.6s ease-in-out infinite;
+  }
+  .sys-live-dot {
+    display: inline-block;
+    width: 6px; height: 6px; border-radius: 50%;
+    background: var(--color-positive, #2bd05a);
+    box-shadow: 0 0 6px var(--color-positive, #2bd05a);
+    animation: sysLive 1.2s ease-in-out infinite;
+  }
+  @keyframes sysPulse {
+    0%, 100% { transform: scale(1); opacity: 1; }
+    50%      { transform: scale(1.25); opacity: 0.65; }
+  }
+  @keyframes sysLive {
+    0%, 100% { opacity: 1; }
+    50%      { opacity: 0.35; }
+  }
+  /* Content above decoration layers */
+  .sys-record > *:not(.sys-corner):not(.sys-stripe) { position: relative; z-index: 2; }
+  @media (prefers-reduced-motion: reduce) {
+    .sys-pulse, .sys-live-dot,
+    .sys-record::before, .sys-record::after, .sys-stripe {
+      animation: none;
+    }
+  }
+
+  .hero-lead p:first-of-type::first-letter {
+    font-family: var(--font-heading);
+    font-weight: 900;
+    float: left;
+    font-size: 3.4rem;
+    line-height: 0.78;
+    padding: 0.15rem 0.5rem 0 0;
+    color: var(--color-accent);
+  }
+
+  .anniv {
+    background:
+      radial-gradient(60% 140% at 15% 50%, rgba(86, 87, 245, 0.55) 0%, transparent 65%),
+      radial-gradient(60% 140% at 85% 50%, rgba(255, 128, 224, 0.45) 0%, transparent 65%),
+      linear-gradient(100deg, rgba(33, 35, 41, 0.85) 0%, rgba(63, 64, 200, 0.55) 50%, rgba(33, 35, 41, 0.85) 100%);
+    backdrop-filter: blur(6px) saturate(150%);
+    -webkit-backdrop-filter: blur(6px) saturate(150%);
+    box-shadow:
+      0 0 0 1px rgba(86, 87, 245, 0.35),
+      0 8px 28px rgba(0, 0, 0, 0.35),
+      0 0 20px rgba(86, 87, 245, 0.25);
+    animation: anniv-glow 2.4s ease-in-out infinite;
+  }
+  :global(html[data-theme="dark"]) .anniv {
+    background:
+      radial-gradient(50% 130% at 12% 50%, rgba(90, 91, 224, 0.32) 0%, transparent 70%),
+      radial-gradient(50% 130% at 88% 50%, rgba(200, 100, 170, 0.22) 0%, transparent 70%),
+      linear-gradient(100deg, #0e1014 0%, #18191f 50%, #0e1014 100%);
+    box-shadow:
+      inset 0 1px 0 rgba(131, 133, 245, 0.18),
+      0 0 0 1px rgba(90, 91, 224, 0.4),
+      0 6px 22px rgba(0, 0, 0, 0.75),
+      0 0 24px rgba(90, 91, 224, 0.3);
+  }
+  :global(html[data-theme="dark"]) .anniv-title {
+    background: linear-gradient(90deg, #a3a4ff 0%, #ff9ad9 55%, #ffd166 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-shadow: none;
+    filter: none;
+  }
+  :global(html[data-theme="dark"]) .anniv-star  { color: #ffcc4d; text-shadow: none; }
+  :global(html[data-theme="dark"]) .anniv-sub   { color: #5dd98a; text-shadow: none; }
+  :global(html[data-theme="dark"]) .anniv-cta   { color: #7aa9ff; text-shadow: none; }
+  :global(html[data-theme="dark"]) .anniv-cta span { color: #ff9ad9; text-shadow: none; }
+  .anniv::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(120deg, transparent 30%, rgba(255, 255, 255, 0.22) 50%, transparent 70%);
+    transform: translateX(-100%);
+    animation: anniv-sheen 3.6s ease-in-out infinite;
+    pointer-events: none;
+  }
+
+  /* Ticker-style rotating Layan accents per span */
+  .anniv-star  { color: var(--color-warning); text-shadow: 0 0 8px rgba(245, 181, 0, 0.55); }
+  .anniv-title {
+    background: linear-gradient(95deg, #7cff00 0%, #00d9ff 30%, #b347ff 60%, #ff3eb5 85%, #ffb800 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    filter:
+      drop-shadow(0 1px 2px rgba(0, 0, 0, 0.6))
+      drop-shadow(0 0 14px rgba(255, 62, 181, 0.5))
+      drop-shadow(0 0 18px rgba(0, 217, 255, 0.35));
+  }
+  .anniv-sub   { color: var(--color-positive); text-shadow: 0 0 6px rgba(43, 208, 90, 0.4); }
+  .anniv-cta   { color: var(--color-link); text-shadow: 0 0 6px rgba(66, 133, 244, 0.45); }
+  .anniv-cta span { color: var(--color-accent-2); }
+  :global(html[data-theme="dark"]) .anniv-title {
+    background: linear-gradient(90deg, var(--color-accent-light) 0%, #fff 40%, var(--color-accent-2) 75%, var(--color-warning) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+  }
+  :global(html[data-theme="dark"]) .anniv::after {
+    background: linear-gradient(120deg, transparent 30%, rgba(255, 255, 255, 0.10) 50%, transparent 70%);
+  }
+  @keyframes anniv-glow {
+    0%, 100% { box-shadow: 0 0 0 1px rgba(86, 87, 245, 0.3), 0 8px 24px rgba(0,0,0,0.3), 0 0 18px rgba(86, 87, 245, 0.22); }
+    50%      { box-shadow: 0 0 0 1px rgba(255, 128, 224, 0.4), 0 10px 32px rgba(0,0,0,0.35), 0 0 28px rgba(255, 128, 224, 0.32); }
+  }
+  :global(html[data-theme="dark"]) .anniv { animation: anniv-glow-dark 2.4s ease-in-out infinite; }
+  @keyframes anniv-glow-dark {
+    0%, 100% { box-shadow: 0 0 0 1px rgba(86, 87, 245, 0.35), 0 8px 28px rgba(0,0,0,0.6), 0 0 18px rgba(86, 87, 245, 0.28); }
+    50%      { box-shadow: 0 0 0 1px rgba(255, 128, 224, 0.45), 0 10px 36px rgba(0,0,0,0.65), 0 0 28px rgba(255, 128, 224, 0.38); }
+  }
+  @keyframes anniv-sheen {
+    0%   { transform: translateX(-100%); }
+    60%, 100% { transform: translateX(100%); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .anniv, .anniv::after { animation: none; }
+  }
+  /* Mobile: tighter pill, smaller glow halos so it stays legible without dominating the viewport */
+  @media (max-width: 640px) {
+    .anniv { border-radius: 0.6rem; }
+    .anniv-title {
+      filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.55)) drop-shadow(0 0 8px rgba(255, 62, 181, 0.35));
+    }
+    .anniv-cta span { font-size: 1.05em; }
+  }
+</style>
+
+<script is:inline>
+  // Hero gap data-stream canvas — picker style #100 (MULTICOLOR / MIXED_HEX_KAT)
+  (function () {
+    var c = document.getElementById('hero-stream');
+    if (!c || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+    var SCHEMES = {
+      GREEN_MATRIX:  { head: '#ffffff', trail: '#00ff88', tail: '#003311' },
+      RED_ALERT:     { head: '#ffffff', trail: '#ff3333', tail: '#330000' },
+      BLUE_DATA:     { head: '#ffffff', trail: '#3399ff', tail: '#001133' },
+      AMBER_RETRO:   { head: '#ffffff', trail: '#ffaa00', tail: '#331a00' },
+      CYAN_COLD:     { head: '#ffffff', trail: '#00ffff', tail: '#003333' },
+      PURPLE_SYS:    { head: '#ffffff', trail: '#aa44ff', tail: '#1a0033' },
+      XERO_ACCENT:   { head: '#ffffff', trail: '#a78bfa', tail: '#1a0f33' },
+      // Layan-tuned, dimmer heads, softer trails
+      LAYAN_INDIGO:  { head: '#d8daff', trail: '#5657f5', tail: '#0e1033' },
+      LAYAN_MAGENTA: { head: '#ffd9f1', trail: '#ff80e0', tail: '#2a0a22' },
+      LAYAN_VIOLET:  { head: '#ebe1ff', trail: '#a78bfa', tail: '#1a0f33' },
+      LAYAN_AZURE:   { head: '#d8eaff', trail: '#6ea8ff', tail: '#0a1a33' },
+      LAYAN_LAVENDER:{ head: '#e6dcff', trail: '#8a8bff', tail: '#11122a' }
+    };
+    var MULTI_KEYS = ['GREEN_MATRIX','RED_ALERT','BLUE_DATA','AMBER_RETRO','CYAN_COLD','PURPLE_SYS','XERO_ACCENT'];
+    var LAYAN_KEYS = ['LAYAN_INDIGO','LAYAN_MAGENTA','LAYAN_VIOLET','LAYAN_AZURE','LAYAN_LAVENDER'];
+
+    var KATAKANA = 'アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン'.split('');
+    var HEX = '0123456789ABCDEF'.split('');
+    var CHARSETS = { MIXED_HEX_KAT: HEX.concat(KATAKANA), KATAKANA: KATAKANA, HEX: HEX };
+
+    var p = {
+      streamCount:  parseInt(c.dataset.streamCount, 10),
+      speedLo:      parseFloat(c.dataset.speedLo),
+      speedHi:      parseFloat(c.dataset.speedHi),
+      trailLength:  parseInt(c.dataset.trailLength, 10),
+      charSpacing:  parseFloat(c.dataset.charSpacing),
+      fadeRate:     parseFloat(c.dataset.fadeRate),
+      fontSize:     parseInt(c.dataset.fontSize, 10),
+      glowRadius:   parseFloat(c.dataset.glowRadius),
+      interval:     parseInt(c.dataset.interval, 10),
+      charset:      CHARSETS[c.dataset.charset] || KATAKANA,
+      schemeName:   c.dataset.scheme
+    };
+
+    var W = 16, H = 0;
+    var ctx = c.getContext('2d');
+    var dpr = window.devicePixelRatio || 1;
+
+    function resize() {
+      var rect = c.getBoundingClientRect();
+      H = Math.max(120, rect.height);
+      c.width = W * dpr;
+      c.height = H * dpr;
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    }
+    resize();
+    var rt;
+    window.addEventListener('resize', function () { clearTimeout(rt); rt = setTimeout(resize, 150); });
+
+    function hexRgb(h) { return [parseInt(h.slice(1,3),16), parseInt(h.slice(3,5),16), parseInt(h.slice(5,7),16)]; }
+    function rgbStr(rgb, a) { return 'rgba(' + rgb[0] + ',' + rgb[1] + ',' + rgb[2] + ',' + a + ')'; }
+    function mix(a, b, t) { return [Math.round(a[0]+(b[0]-a[0])*t), Math.round(a[1]+(b[1]-a[1])*t), Math.round(a[2]+(b[2]-a[2])*t)]; }
+    function trailColor(sc, i, n) {
+      var tr = hexRgb(sc.trail), tl = hexRgb(sc.tail);
+      var t = n <= 1 ? 0 : i / (n - 1);
+      return mix(tr, tl, t);
+    }
+    function pickScheme() {
+      if (p.schemeName === 'MULTICOLOR') return SCHEMES[MULTI_KEYS[Math.floor(Math.random()*MULTI_KEYS.length)]];
+      if (p.schemeName === 'LAYAN_MULTI') return SCHEMES[LAYAN_KEYS[Math.floor(Math.random()*LAYAN_KEYS.length)]];
+      return SCHEMES[p.schemeName] || SCHEMES.XERO_ACCENT;
+    }
+
+    function newStream() {
+      return {
+        x: -12 + Math.random() * 40,
+        y: 20 + Math.random() * Math.max(40, H - 40),
+        speed: p.speedLo + Math.random() * (p.speedHi - p.speedLo),
+        trail: [],
+        scheme: pickScheme(),
+        frameCount: Math.floor(Math.random() * 5)
+      };
+    }
+    var streams = [];
+    for (var i = 0; i < p.streamCount; i++) streams.push(newStream());
+
+    var visible = true;
+    var io = new IntersectionObserver(function (entries) {
+      visible = entries[0].isIntersecting;
+    });
+    io.observe(c);
+
+    var animId;
+    function frame() {
+      animId = requestAnimationFrame(frame);
+      if (!visible) return;
+      ctx.clearRect(0, 0, W, H);
+      ctx.font = p.fontSize + 'px monospace';
+      ctx.textBaseline = 'middle';
+
+      for (var s, si = 0; si < streams.length; si++) {
+        s = streams[si];
+        s.x += s.speed;
+        s.frameCount++;
+
+        if (s.frameCount % p.interval === 0) {
+          s.trail.unshift({ char: p.charset[Math.floor(Math.random() * p.charset.length)], alpha: 1.0 });
+          for (var ti = 1; ti < s.trail.length; ti++) s.trail[ti].alpha -= p.fadeRate;
+          if (s.trail.length > p.trailLength) s.trail.length = p.trailLength;
+          s.trail = s.trail.filter(function (t) { return t.alpha > 0.02; });
+        }
+
+        for (var ti2 = 0; ti2 < s.trail.length; ti2++) {
+          var t = s.trail[ti2];
+          var cx = s.x - ti2 * p.charSpacing;
+          if (cx < -14 || cx > W + 14) continue;
+          if (ti2 === 0) {
+            ctx.shadowBlur = p.glowRadius;
+            ctx.shadowColor = s.scheme.trail;
+            ctx.fillStyle = s.scheme.head;
+            ctx.fillText(t.char, cx, s.y);
+            ctx.shadowBlur = 0;
+          } else {
+            var rgb = trailColor(s.scheme, ti2, p.trailLength);
+            ctx.fillStyle = rgbStr(rgb, t.alpha);
+            ctx.fillText(t.char, cx, s.y);
+          }
+        }
+
+        if (s.x > W + 14) {
+          s.x = -12;
+          s.y = 20 + Math.random() * Math.max(40, H - 40);
+          s.speed = p.speedLo + Math.random() * (p.speedHi - p.speedLo);
+          s.trail = [];
+          s.scheme = pickScheme();
+        }
+      }
+    }
+    requestAnimationFrame(frame);
+
+    document.addEventListener('visibilitychange', function () {
+      if (document.hidden && animId) { cancelAnimationFrame(animId); animId = null; }
+      else if (!animId) { animId = requestAnimationFrame(frame); }
+    });
+  })();
+</script>
+
+<script is:inline>
+  // Anniversary banner: hide client-side if past the end date (covers
+  // pages built before expiry but viewed after).
+  (function () {
+    var el = document.getElementById('anniv-banner');
+    if (!el) return;
+    var end = el.getAttribute('data-end');
+    if (!end) return;
+    var endTime = new Date(end + 'T23:59:59').getTime();
+    if (Date.now() > endTime) el.remove();
+  })();
+</script>
 
 <script is:inline>
 (function () {
@@ -116,10 +644,11 @@ const pageId = Astro.url.pathname.replace(/^\//, '').replace(/\/$/, '').replace(
   // Matrix characters (katakana + latin + digits)
   const chars = 'アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲンABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@#$%^&*';
 
-  // Site palette colors
-  const leadColor = '#e8d5ff';       // bright lavender (lead char)
-  const trailColor = '#a06af0';      // accent purple (trailing)
-  const dimColor = '#6040a0';        // dimmer purple (faded trail)
+  // Layan palette — lead is bright white; trail picked per-column from full Layan accent rotation
+  const leadColor = '#eaeaea';
+  // Indigo, magenta, link blue, violet, green, warning amber, negative red — full Layan accents
+  const trailPalette = ['#5657f5', '#ff80e0', '#4285f4', '#e040fb', '#2bd05a', '#f5b500', '#ee3939'];
+  const dimPalette   = ['#3f40c8', '#c050a0', '#2a5dc0', '#9a2bb0', '#1f8a3a', '#a07900', '#a02828'];
 
   function resize() {
     const rect = canvas.parentElement.getBoundingClientRect();
@@ -178,7 +707,7 @@ const pageId = Astro.url.pathname.replace(/^\//, '').replace(/\/$/, '').replace(
     const h = canvas.height / window.devicePixelRatio;
 
     // Longer trails with slower fade
-    ctx.fillStyle = 'rgba(26, 26, 46, 0.08)';
+    ctx.fillStyle = (document.documentElement.getAttribute('data-theme') === 'dark') ? 'rgba(6, 7, 11, 0.08)' : 'rgba(26, 28, 34, 0.08)';
     ctx.fillRect(0, 0, w, h);
 
     ctx.font = fontSize + 'px monospace';
@@ -194,18 +723,23 @@ const pageId = Astro.url.pathname.replace(/^\//, '').replace(/\/$/, '').replace(
       const y = drops[i] * fontSize;
 
       if (y > 0 && y < h + fontSize) {
+        // Per-column color picked from full Layan accent palette
+        const colorIdx = i % trailPalette.length;
+        const trailColor = trailPalette[colorIdx];
+        const dimColor   = dimPalette[colorIdx];
+
         // Lead character — bright lavender/white
         ctx.fillStyle = leadColor;
         ctx.fillText(char, x, y);
 
-        // One behind — bright accent purple
+        // One behind — bright Layan accent (per column)
         if (drops[i] > 1) {
           const c2 = chars[Math.random() * chars.length | 0];
           ctx.fillStyle = trailColor;
           ctx.fillText(c2, x, (drops[i] - 1) * fontSize);
         }
 
-        // Two behind — dimmer purple
+        // Two behind — dimmer variant of same accent
         if (drops[i] > 2) {
           const c3 = chars[Math.random() * chars.length | 0];
           ctx.fillStyle = dimColor;
@@ -242,15 +776,13 @@ const pageId = Astro.url.pathname.replace(/^\//, '').replace(/\/$/, '').replace(
 
     const w = canvas.width / window.devicePixelRatio;
     const h = canvas.height / window.devicePixelRatio;
-    ctx.fillStyle = 'rgba(26, 26, 46, 1)';
+    ctx.fillStyle = (document.documentElement.getAttribute('data-theme') === 'dark') ? 'rgba(6, 7, 11, 1)' : 'rgba(26, 28, 34, 1)';
     ctx.fillRect(0, 0, w, h);
 
     initDrops();
     lastFrame = 0;
     animId = requestAnimationFrame(drawMatrix);
-
-    // Rain lasts 25 seconds before resetting
-    setTimeout(resetTerminal, 25000);
+    // Rains continuously — no reset.
   }
 
   function resetTerminal() {

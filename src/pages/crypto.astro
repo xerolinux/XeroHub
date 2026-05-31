@@ -1,32 +1,36 @@
 ---
 import Layout from '../components/layout/Layout.astro';
+import { discount, discountActive, currentPriceEUR } from '../config';
+
+const isoPrice = currentPriceEUR;
 ---
 
 <Layout title="Crypto Portal" description="Support XeroLinux using cryptocurrency">
-  <section class="pt-32 pb-10 px-4 sm:px-6 lg:px-8">
-    <div class="mx-auto max-w-5xl">
+  <section class="pt-32 sm:pt-52 pb-10 px-4 sm:px-6 lg:px-8">
+    <div class="mx-auto max-w-5xl 2xl:max-w-[88rem]">
 
       <!-- Back pill -->
       <div class="fade-in flex justify-center mb-6">
-        <a href="/download/" class="inline-flex items-center gap-2 px-5 py-2 rounded-full glass text-sm font-medium text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)] hover:border-[var(--color-border-hover)] transition-all duration-200">
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <a href="/download/" class="back-pill">
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
           </svg>
-          Back to Download
+          cd ../download
         </a>
       </div>
 
       <!-- Header -->
       <div class="fade-in text-center mb-10">
-        <h1 class="display-heading text-3xl sm:text-5xl text-[var(--color-text-primary)] mb-2">
-          Crypto <span class="text-[var(--color-accent)]">Portal</span>
+        <div class="news-kicker mb-2">// The Exchange</div>
+        <h1 class="display-heading text-3xl sm:text-5xl text-[var(--color-text-primary)] leading-none mb-2">
+          Crypto <em class="italic text-[var(--color-accent)]">Portal</em>
         </h1>
         <p class="text-center text-[var(--color-text-secondary)] text-sm">Support XeroLinux using cryptocurrency</p>
       </div>
 
       <!-- Info alert -->
       <div class="fade-in w-fit mx-auto mb-10">
-        <div class="flex items-start gap-3 p-4 rounded-xl bg-green-500/15 border border-green-500/30">
+        <div class="flex items-start gap-3 p-4 rounded-xl bg-green-500/15 border border-green-500/30 card-depth">
           <svg class="w-5 h-5 text-green-400 shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 24 24">
             <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/>
           </svg>
@@ -40,7 +44,7 @@ import Layout from '../components/layout/Layout.astro';
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
 
         <!-- Left: Info -->
-        <div class="fade-in fade-in-delay-1 glass rounded-2xl p-6 flex flex-col">
+        <div class="fade-in fade-in-delay-1 glass classified rounded-2xl p-6 flex flex-col">
 
           <!-- Card header -->
           <div class="flex items-center gap-3 pb-4 border-b border-[var(--color-border)]">
@@ -57,7 +61,7 @@ import Layout from '../components/layout/Layout.astro';
 
           <!-- Welcome -->
           <div class="pt-4">
-            <h3 class="font-semibold text-sm text-[var(--color-text-primary)] flex items-center gap-2 mb-2">
+            <h3 class="font-mono text-[0.66rem] uppercase tracking-[0.18em] text-[var(--color-accent)] flex items-center gap-2 mb-2">
               <svg class="w-4 h-4 text-[var(--color-accent)] shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
@@ -66,13 +70,13 @@ import Layout from '../components/layout/Layout.astro';
             <p class="text-xs text-[var(--color-text-secondary)] leading-relaxed">We know we're a bit late to the game, but as the saying goes, better late than never! After countless requests from our awesome community, we're finally joining the crypto era and opening the gates to donations.</p>
             <a href="https://ko-fi.com/xerolinux" target="_blank" rel="noopener noreferrer" class="mt-3 flex items-center justify-center gap-2 px-3 py-2 rounded-lg bg-red-500/10 border border-red-500/30 text-red-300 text-xs font-medium hover:bg-red-500/20 hover:border-red-500/50 transition-all duration-200">
               <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0016.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 002 8.5c0 2.3 1.5 4.05 3 5.5l7 7 7-7z"/></svg>
-              No Crypto? No problem — donate on Ko-Fi!
+              No Crypto? No problem, donate on Ko-Fi!
             </a>
           </div>
 
           <!-- Just Donating -->
           <div class="pt-4 mt-4 border-t border-[var(--color-border)]">
-            <h3 class="font-semibold text-sm text-[var(--color-text-primary)] flex items-center gap-2 mb-2">
+            <h3 class="font-mono text-[0.66rem] uppercase tracking-[0.18em] text-[var(--color-accent)] flex items-center gap-2 mb-2">
               <svg class="w-4 h-4 text-[var(--color-accent)] shrink-0" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
               </svg>
@@ -83,7 +87,7 @@ import Layout from '../components/layout/Layout.astro';
 
           <!-- ISO Steps — flex-1 so it fills remaining card height -->
           <div class="pt-4 mt-4 border-t border-[var(--color-border)] flex-1 flex flex-col">
-            <h3 class="font-semibold text-sm text-[var(--color-text-primary)] flex items-center gap-2 mb-2">
+            <h3 class="font-mono text-[0.66rem] uppercase tracking-[0.18em] text-[var(--color-accent)] flex items-center gap-2 mb-2">
               <svg class="w-4 h-4 text-[var(--color-accent)] shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
               </svg>
@@ -93,7 +97,7 @@ import Layout from '../components/layout/Layout.astro';
             <ul class="flex-1 flex flex-col justify-around">
               <li class="flex items-start gap-3 text-xs text-[var(--color-text-secondary)] py-2 border-b border-[var(--color-border)]">
                 <svg class="w-4 h-4 text-[var(--color-accent)] shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z" /></svg>
-                Donate at least $15 to one of the available wallets.
+                Donate at least €{isoPrice} or more to one of the available wallets.{discountActive && <span class="text-[#ff80e0]"> ({discount.percent}% off €{discount.basePriceEUR})</span>}
               </li>
               <li class="flex items-start gap-3 text-xs text-[var(--color-text-secondary)] py-2 border-b border-[var(--color-border)]">
                 <svg class="w-4 h-4 text-[var(--color-accent)] shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" /></svg>
@@ -104,14 +108,18 @@ import Layout from '../components/layout/Layout.astro';
                 We'll send you the download link with access code via email.
               </li>
             </ul>
+            <p class="text-xs text-[var(--color-text-muted)] mt-3">
+              For price update info, please check
+              <a href="/updates/iso-price-update" class="post-link text-sm text-[var(--color-accent)] hover:text-[var(--color-accent-light)] underline underline-offset-2 transition-colors">this post</a>.
+            </p>
           </div>
         </div>
 
         <!-- Right: Wallets & Form -->
-        <div class="fade-in fade-in-delay-2 glass rounded-2xl p-6 flex flex-col">
+        <div class="fade-in fade-in-delay-2 glass classified rounded-2xl p-6 flex flex-col">
 
           <!-- Wallet selector -->
-          <p class="text-xs font-semibold uppercase tracking-widest text-[var(--color-text-secondary)] mb-3">Select Wallet</p>
+          <p class="font-mono text-[0.62rem] font-semibold uppercase tracking-[0.18em] text-[var(--color-accent)] mb-3">// Select Wallet</p>
           <div class="grid grid-cols-3 gap-3 mb-4">
             <button type="button" class="wallet-box rounded-xl p-3 border border-[var(--color-border)] bg-[var(--color-bg-primary)]/30 hover:border-[var(--color-accent)]/50 transition-all duration-200 text-center cursor-pointer" data-name="BTC" data-address="bc1qhl7qmeh8rlk35cggrr3py7j6670c4dnsh4veyl">
               <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-[#f7931a] to-[#ffab40] flex items-center justify-center font-bold text-white text-sm mx-auto mb-2">₿</div>
@@ -128,13 +136,13 @@ import Layout from '../components/layout/Layout.astro';
           </div>
 
           <!-- Live price display -->
-          <div id="price-display" class="mb-4 flex flex-wrap items-center justify-center gap-x-3 gap-y-1 px-3 py-2.5 rounded-xl border border-[#e06090]/40 bg-[var(--color-bg-primary)]/30 text-xs [animation:glow-breathe_4s_ease-in-out_infinite]">
-            <span class="text-[var(--color-text-muted)]">Min. $15 ≈</span>
-            <span id="price-btc" class="font-mono text-[var(--color-accent)]">—</span>
+          <div id="price-display" data-min={isoPrice} class="mb-4 flex flex-wrap items-center justify-center gap-x-3 gap-y-1 px-3 py-2.5 rounded-xl border border-[#ff80e0]/40 bg-[var(--color-bg-primary)]/30 text-xs [animation:glow-breathe_4s_ease-in-out_infinite]">
+            <span class="text-[var(--color-text-muted)]">Min. €{isoPrice} ≈</span>
+            <span id="price-btc" class="font-mono text-[var(--color-accent)]">…</span>
             <span class="text-[var(--color-border-hover)]">·</span>
-            <span id="price-usdt" class="font-mono text-[var(--color-accent)]">—</span>
+            <span id="price-usdt" class="font-mono text-[var(--color-accent)]">…</span>
             <span class="text-[var(--color-border-hover)]">·</span>
-            <span id="price-eth" class="font-mono text-[var(--color-accent)]">—</span>
+            <span id="price-eth" class="font-mono text-[var(--color-accent)]">…</span>
             <button id="price-refresh" title="Refresh prices" class="ml-1 text-[var(--color-text-muted)] hover:text-[var(--color-accent)] transition-colors duration-200 cursor-pointer">
               <svg id="refresh-icon" class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
             </button>
@@ -142,7 +150,7 @@ import Layout from '../components/layout/Layout.astro';
 
           <!-- Form — flex-1 so it fills remaining card height -->
           <div class="flex-1 flex flex-col">
-            <p class="text-xs font-semibold uppercase tracking-widest text-[var(--color-text-secondary)] mb-3">Submit Donation</p>
+            <p class="font-mono text-[0.62rem] font-semibold uppercase tracking-[0.18em] text-[var(--color-accent)] mb-3">// Submit Donation</p>
             <form id="donation-form" class="flex-1 flex flex-col gap-4">
               <!-- Honeypot -->
               <div style="position:absolute;left:-9999px;" aria-hidden="true">
@@ -222,7 +230,7 @@ import Layout from '../components/layout/Layout.astro';
       <!-- QR code -->
       <div class="flex justify-center mb-4">
         <div class="bg-white rounded-xl p-2.5">
-          <img id="qr-img" src="" alt="Wallet QR Code" class="w-44 h-44 block rounded-lg">
+          <img id="qr-img" src="" alt="Wallet QR Code" width="176" height="176" loading="lazy" decoding="async" class="w-44 h-44 block rounded-lg">
         </div>
       </div>
       <!-- Address + copy -->
@@ -244,23 +252,24 @@ import Layout from '../components/layout/Layout.astro';
 </Layout>
 
 <style>
+  .post-link { font-weight: 700 !important; }
   @keyframes spin { to { transform: rotate(360deg); } }
   @keyframes glow-breathe {
-    0%, 100% { box-shadow: 0 0 10px rgba(224, 96, 144, 0.3), 0 0 20px rgba(224, 96, 144, 0.15); }
-    50%       { box-shadow: 0 0 18px rgba(224, 96, 144, 0.65), 0 0 36px rgba(224, 96, 144, 0.35); }
+    0%, 100% { box-shadow: 0 0 10px rgba(255, 128, 224, 0.3), 0 0 20px rgba(255, 128, 224, 0.15); }
+    50%       { box-shadow: 0 0 18px rgba(255, 128, 224, 0.65), 0 0 36px rgba(255, 128, 224, 0.35); }
   }
   .crypto-input:focus {
-    border-color: rgba(160, 106, 240, 0.6);
-    box-shadow: 0 0 0 2px rgba(160, 106, 240, 0.15);
+    border-color: rgba(86, 87, 245, 0.6);
+    box-shadow: 0 0 0 2px rgba(86, 87, 245, 0.15);
   }
   .crypto-input.invalid {
     border-color: rgba(239, 68, 68, 0.6) !important;
     box-shadow: 0 0 0 2px rgba(239, 68, 68, 0.15) !important;
   }
   .wallet-box.active {
-    border-color: rgba(160, 106, 240, 0.6);
-    background: rgba(160, 106, 240, 0.1);
-    box-shadow: 0 0 16px rgba(160, 106, 240, 0.2);
+    border-color: rgba(86, 87, 245, 0.6);
+    background: rgba(86, 87, 245, 0.1);
+    box-shadow: 0 0 16px rgba(86, 87, 245, 0.2);
   }
   #form-message.success {
     background: rgba(34, 197, 94, 0.15);
@@ -293,13 +302,14 @@ import Layout from '../components/layout/Layout.astro';
     function fetchPrices() {
       var icon = document.getElementById('refresh-icon');
       icon.style.animation = 'spin 0.8s linear infinite';
-      fetch('https://api.coingecko.com/api/v3/simple/price?ids=bitcoin,ethereum,tether&vs_currencies=usd')
+      fetch('https://api.coingecko.com/api/v3/simple/price?ids=bitcoin,ethereum,tether&vs_currencies=eur')
         .then(function (r) { return r.json(); })
         .then(function (d) {
-          var min = 15;
-          document.getElementById('price-btc').textContent  = (min / d.bitcoin.usd).toFixed(6)  + ' BTC';
-          document.getElementById('price-usdt').textContent = (min / d.tether.usd).toFixed(2)   + ' USDT';
-          document.getElementById('price-eth').textContent  = (min / d.ethereum.usd).toFixed(4) + ' ETH';
+          var pd = document.getElementById('price-display');
+          var min = parseFloat(pd && pd.dataset.min) || 39;
+          document.getElementById('price-btc').textContent  = (min / d.bitcoin.eur).toFixed(6)  + ' BTC';
+          document.getElementById('price-usdt').textContent = (min / d.tether.eur).toFixed(2)   + ' USDT';
+          document.getElementById('price-eth').textContent  = (min / d.ethereum.eur).toFixed(4) + ' ETH';
         })
         .catch(function () {
           document.getElementById('price-display').style.display = 'none';

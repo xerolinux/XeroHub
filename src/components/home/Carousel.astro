@@ -17,9 +17,25 @@ const slides = [
 ---
 
 <section class="py-6 sm:py-16 px-4 sm:px-6 lg:px-8">
-  <div class="mx-auto max-w-5xl">
-    <div class="fade-in glass p-2 sm:p-3 rounded-2xl">
-      <div class="relative overflow-hidden rounded-xl" id="carousel">
+  <div class="mx-auto max-w-5xl 2xl:max-w-[100rem]">
+    <!-- Section header -->
+    <div class="fade-in news-section-head" style="margin-bottom:1.5rem;">
+      <div class="news-title-wrap">
+        <div class="news-kicker">// The Gallery</div>
+        <h2 class="news-title">Screen<em>shots</em></h2>
+      </div>
+      <div class="news-line"></div>
+    </div>
+
+    <!-- Terminal-window frame -->
+    <div class="fade-in rounded-2xl overflow-hidden border border-[var(--color-border)] layan-panel card-depth">
+      <div class="flex items-center gap-1.5 px-3.5 py-2.5 border-b border-[var(--color-border)] bg-[rgba(86, 87, 245,0.08)]">
+        <span class="w-2.5 h-2.5 rounded-full bg-[#ff5f57]"></span>
+        <span class="w-2.5 h-2.5 rounded-full bg-[#febc2e]"></span>
+        <span class="w-2.5 h-2.5 rounded-full bg-[#28c840]"></span>
+        <span class="ml-2 font-mono text-[0.6rem] uppercase tracking-[0.18em] text-[var(--color-text-muted)]">xero@arch:~/screenshots</span>
+      </div>
+      <div class="relative overflow-hidden" id="carousel">
         <!-- Slides -->
         <div class="relative aspect-[16/9]" id="carousel-track">
           {slides.map((slide, i) => (
@@ -35,11 +51,13 @@ const slides = [
                 alt={slide.caption}
                 width="2560"
                 height="1440"
-                class="w-full h-full object-cover rounded-xl"
+                class="w-full h-full object-cover"
                 loading={i === 0 ? 'eager' : 'lazy'}
               />
-              <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-4 sm:p-6 rounded-b-xl">
-                <p class="text-white text-sm sm:text-base font-medium">{slide.caption}</p>
+              <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/75 to-transparent px-4 sm:px-6 pt-10 pb-4 sm:pb-5">
+                <p class="font-mono text-[0.62rem] sm:text-xs uppercase tracking-[0.18em] text-white flex items-center gap-2">
+                  <span class="text-[var(--color-accent-light)]">&#9656;</span>{slide.caption}
+                </p>
               </div>
             </div>
           ))}

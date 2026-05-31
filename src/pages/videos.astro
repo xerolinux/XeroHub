@@ -10,33 +10,40 @@ const { youtubeHandle } = entry.data;
 ---
 
 <Layout title={entry.data.title} description={entry.data.description}>
-  <section class="pt-32 pb-20 px-4 sm:px-6 lg:px-8">
-    <div class="mx-auto max-w-6xl">
+  <section class="pt-32 sm:pt-52 pb-20 px-4 sm:px-6 lg:px-8">
+    <div class="mx-auto max-w-6xl 2xl:max-w-[100rem]">
       <!-- Header -->
-      <div class="fade-in text-center mb-12">
-        <h1 class="display-heading text-4xl sm:text-5xl text-[var(--color-text-primary)] mb-4">
-          Latest <span class="text-[var(--color-accent)]">Videos</span>
-        </h1>
-        <div class="flex justify-center">
-          <PageViews pageId={pageId} />
+      <div class="fade-in news-section-head">
+        <span class="news-num">VOD</span>
+        <div class="news-title-wrap">
+          <div class="news-kicker">// The Broadcast</div>
+          <h1 class="news-title">Latest <em>Videos</em></h1>
         </div>
+        <div class="news-line"></div>
+      </div>
+      <div class="fade-in flex mb-10">
+        <PageViews pageId={pageId} />
       </div>
 
       <!-- Video Grid -->
       <div
         id="video-grid"
-        class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
+        class="rainbow grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5"
         data-handle={youtubeHandle}
         data-api-key={import.meta.env.PUBLIC_YOUTUBE_API_KEY}
       >
         <!-- Loading Skeletons -->
         {Array.from({ length: 6 }).map(() => (
-          <div class="skeleton-card glass rounded-2xl overflow-hidden animate-pulse">
+          <div class="skeleton-card rounded-xl overflow-hidden border border-[var(--color-border)] layan-panel animate-pulse">
+            <div class="flex items-center gap-1.5 px-3 py-2 border-b border-[var(--color-border)] bg-[rgba(86, 87, 245,0.08)]">
+              <span class="w-2.5 h-2.5 rounded-full bg-[var(--color-bg-tertiary)]"></span>
+              <span class="w-2.5 h-2.5 rounded-full bg-[var(--color-bg-tertiary)]"></span>
+              <span class="w-2.5 h-2.5 rounded-full bg-[var(--color-bg-tertiary)]"></span>
+            </div>
             <div class="aspect-video bg-[var(--color-bg-tertiary)]"></div>
-            <div class="p-4 space-y-3">
-              <div class="h-4 bg-[var(--color-bg-tertiary)] rounded w-full"></div>
-              <div class="h-4 bg-[var(--color-bg-tertiary)] rounded w-3/4"></div>
-              <div class="h-3 bg-[var(--color-bg-tertiary)] rounded w-1/3"></div>
+            <div class="p-3.5 space-y-2">
+              <div class="h-3 w-3/4 bg-[var(--color-bg-tertiary)] rounded"></div>
+              <div class="h-2.5 w-1/2 bg-[var(--color-bg-tertiary)] rounded"></div>
             </div>
           </div>
         ))}
@@ -85,7 +92,7 @@ const { youtubeHandle } = entry.data;
   const API_KEY = grid.dataset.apiKey;
   const HANDLE = grid.dataset.handle;
   const API_BASE = 'https://www.googleapis.com/youtube/v3';
-  const MAX_VIDEOS = 6;
+  const MAX_VIDEOS = 4;
 
   let uploadsPlaylistId = null;
 
@@ -102,37 +109,64 @@ const { youtubeHandle } = entry.data;
     return d.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
   }
 
-  function createVideoCard(video) {
+  function createVideoCard(video, index) {
     const snippet = video.snippet;
     const videoId = snippet.resourceId.videoId;
-    const thumb = snippet.thumbnails.medium || snippet.thumbnails.default;
+    const thumb = (index === 0 ? (snippet.thumbnails.maxres || snippet.thumbnails.high) : null) || snippet.thumbnails.medium || snippet.thumbnails.default;
+    const featured = index === 0;
 
     const card = document.createElement('a');
     card.href = 'https://www.youtube.com/watch?v=' + videoId;
     card.target = '_blank';
     card.rel = 'noopener noreferrer';
-    card.className = 'glass glass-hover rounded-2xl overflow-hidden block group cursor-pointer';
+    card.className = 'group block cursor-pointer rounded-xl overflow-hidden border border-[var(--color-border)] layan-panel hover:border-[var(--color-border-hover)] transition-colors font-mono card-depth';
+    if (featured) card.style.gridColumn = '1 / -1';
 
-    card.innerHTML =
-      '<div class="aspect-video overflow-hidden relative">' +
-        '<img src="' + thumb.url + '" alt="' + snippet.title.replace(/"/g, '&quot;') + '" ' +
-          'class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" loading="lazy" />' +
-        '<div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">' +
-          '<div class="w-14 h-14 rounded-full bg-red-600/90 flex items-center justify-center shadow-lg">' +
-            '<svg class="w-6 h-6 text-white ml-0.5" fill="currentColor" viewBox="0 0 24 24">' +
-              '<path d="M8 5v14l11-7z"/>' +
-            '</svg>' +
-          '</div>' +
-        '</div>' +
-      '</div>' +
-      '<div class="p-4">' +
-        '<h3 class="text-sm font-medium text-[var(--color-text-primary)] line-clamp-2 mb-2">' +
-          snippet.title +
-        '</h3>' +
-        '<p class="text-xs text-[var(--color-text-muted)]">' +
-          formatDate(snippet.publishedAt) +
-        '</p>' +
+    var safeTitle = snippet.title.replace(/"/g, '&quot;');
+    var titlebar =
+      '<div class="flex items-center gap-1.5 px-3 py-2 border-b border-[var(--color-border)] bg-[rgba(86, 87, 245,0.08)]">' +
+        '<span class="w-2.5 h-2.5 rounded-full bg-[#ff5f57]"></span>' +
+        '<span class="w-2.5 h-2.5 rounded-full bg-[#febc2e]"></span>' +
+        '<span class="w-2.5 h-2.5 rounded-full bg-[#28c840]"></span>' +
+        '<span class="ml-2 text-[0.55rem] uppercase tracking-[0.16em] text-[var(--color-text-muted)] truncate">xero@arch:~/videos' + (featured ? ' --latest' : '') + '</span>' +
       '</div>';
+    var scan = '<div class="absolute inset-0 pointer-events-none" style="background:repeating-linear-gradient(0deg,transparent,transparent 2px,rgba(0,0,0,0.16) 2px,rgba(0,0,0,0.16) 3px)"></div>' +
+               '<div class="absolute inset-0 transition-colors duration-300 group-hover:bg-[rgba(86, 87, 245,0.16)]"></div>';
+
+    if (featured) {
+      card.innerHTML = titlebar +
+        '<div class="flex flex-col md:flex-row">' +
+          '<div class="relative md:w-3/5 overflow-hidden aspect-video md:aspect-auto md:min-h-[280px]">' +
+            '<img src="' + thumb.url + '" alt="' + safeTitle + '" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" decoding="async" width="480" height="270" />' +
+            scan +
+          '</div>' +
+          '<div class="flex-1 p-6 flex flex-col justify-center border-t md:border-t-0 md:border-l border-[var(--color-border)]">' +
+            '<div class="text-[0.58rem] uppercase tracking-[0.22em] text-[var(--color-accent)] mb-4">// Latest Upload</div>' +
+            '<div class="text-sm sm:text-base line-clamp-3 break-words text-[var(--color-text-secondary)] leading-relaxed">' +
+              '<span class="text-[#28c840]">$</span> mpv <span class="text-[var(--color-accent-light)]">"' + snippet.title + '"</span>' +
+            '</div>' +
+            '<div class="mt-4 text-[0.66rem] text-[var(--color-text-muted)] flex items-center gap-1">' +
+              '<span class="text-[var(--color-accent)]">#</span> ' + formatDate(snippet.publishedAt) + ' &middot; youtube' +
+              '<span class="inline-block w-1.5 h-3.5 align-middle bg-[var(--color-accent)] ml-1" style="animation:blink 1.1s step-end infinite"></span>' +
+            '</div>' +
+          '</div>' +
+        '</div>';
+    } else {
+      card.innerHTML = titlebar +
+        '<div class="relative aspect-video overflow-hidden">' +
+          '<img src="' + thumb.url + '" alt="' + safeTitle + '" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" decoding="async" width="480" height="270" />' +
+          scan +
+        '</div>' +
+        '<div class="p-3.5 text-xs leading-relaxed">' +
+          '<div class="line-clamp-2 break-words text-[var(--color-text-secondary)]">' +
+            '<span class="text-[#28c840]">$</span> mpv <span class="text-[var(--color-accent-light)]">"' + snippet.title + '"</span>' +
+          '</div>' +
+          '<div class="mt-1.5 text-[0.62rem] text-[var(--color-text-muted)] flex items-center gap-1">' +
+            '<span class="text-[var(--color-accent)]">#</span> ' + formatDate(snippet.publishedAt) + ' &middot; youtube' +
+            '<span class="inline-block w-1.5 h-3 align-middle bg-[var(--color-accent)] ml-1" style="animation:blink 1.1s step-end infinite"></span>' +
+          '</div>' +
+        '</div>';
+    }
 
     return card;
   }
@@ -215,8 +249,8 @@ const { youtubeHandle } = entry.data;
       grid.classList.remove('hidden');
       errorDiv.classList.add('hidden');
 
-      filtered.forEach(function (item) {
-        grid.appendChild(createVideoCard(item));
+      filtered.forEach(function (item, i) {
+        grid.appendChild(createVideoCard(item, i));
       });
     } catch (err) {
       showError(err.message);

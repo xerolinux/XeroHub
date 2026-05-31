@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://xerolinux.xyz/sitemap-index.xml

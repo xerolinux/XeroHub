@@ -4,7 +4,7 @@ date: 2026-02-27
 draft: false
 description: "What we are doing about it"
 tags: ["XeroLinux", "Age Verification", "Arch", "ArchLinux", "Linux", "ID", "SystemD"]
-image: "/images/updates/ageverification.png"
+image: "/images/updates/ageverification.webp"
 ---
 
 ## XeroLinux & The Great Age Attestation Circus
@@ -15,7 +15,7 @@ So here's what happened. The systemd project merged a pull request adding a new 
 
 Now before anyone reaches for the pitchforks, let's be fair about what this actually is. This is age *attestation*, not verification. There are no ID checks, no facial recognition, no third-party verification services. You can enter any value, including January 1st, 1900. There is no proof required, no ID scanning, and no external tracking. It's basically the same honor system every dodgy early-2000s website used when they asked "are you 18?" and you clicked yes without a second thought. We all know how well that worked.
 
-![Image](/images/age_verification.png)
+![Image](/images/age_verification.webp)
 
 The field was designed so only administrators can set it via the `homectl` utility, and the actual birth date would never be revealed to applications directly. The idea is that a portal acts as a gatekeeper, and apps only get a simple yes/no signal. Technically harmless? Probably. The beginning of a slippery slope? That's the part that has a lot of people, including us, raising an eyebrow.
 

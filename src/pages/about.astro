@@ -1,9 +1,10 @@
 ---
 import { getEntry, render } from 'astro:content';
 import Layout from '../components/layout/Layout.astro';
+import { Image } from 'astro:assets';
 import GlassCard from '../components/ui/GlassCard.astro';
-import Button from '../components/ui/Button.astro';
 import PageViews from '../components/ui/PageViews.astro';
+import darkxero from '../assets/darkxero.webp';
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 const pageId = Astro.url.pathname.replace(/^\//, '').replace(/\/$/, '').replace(/\//g, '-') || 'home';
 
@@ -26,46 +27,76 @@ const socialLinks = [
   { label: 'Mastodon', href: 'https://fosstodon.org/@XeroLinux', icon: '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.268 5.313c-.35-2.578-2.617-4.61-5.304-5.004C17.51.242 15.792 0 11.813 0h-.03c-3.98 0-4.835.242-5.288.309C3.882.692 1.496 2.518.917 5.127.64 6.412.61 7.837.661 9.143c.074 1.874.088 3.745.26 5.611.118 1.24.325 2.47.62 3.68.55 2.237 2.777 4.098 4.96 4.857 2.336.792 4.849.923 7.256.38.265-.061.527-.132.786-.213.585-.184 1.27-.39 1.774-.753a.057.057 0 00.023-.043v-1.809a.052.052 0 00-.02-.041.053.053 0 00-.046-.01 20.282 20.282 0 01-4.709.547c-2.73 0-3.463-1.284-3.674-1.818a5.593 5.593 0 01-.319-1.433.053.053 0 01.066-.054 19.648 19.648 0 004.581.536h.344c1.705 0 3.42-.093 5.104-.37 1.974-.343 3.82-1.485 4.007-4.594.073-1.219.099-2.44.072-3.66.006-.472.1-3.025-.012-4.593zm-3.445 7.654h-2.56v-7.03c0-1.517-.648-2.278-1.885-2.278-1.413 0-2.12.907-2.12 2.707v3.826h-2.55V6.366c0-1.8-.707-2.707-2.12-2.707-1.236 0-1.884.761-1.884 2.278v7.03H4.146V5.862c0-1.517.39-2.723 1.17-3.618.805-.896 1.858-1.354 3.166-1.354 1.513 0 2.66.578 3.423 1.734L12.88 4.1l.975-1.476c.763-1.156 1.91-1.734 3.423-1.734 1.307 0 2.361.458 3.165 1.354.782.895 1.171 2.101 1.171 3.618v7.105z"/></svg>' },
   { label: 'YouTube', href: 'https://youtube.com/@XeroLinux', icon: '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>' },
   { label: 'Twitter/X', href: 'https://x.com/XeroLinuxOP', icon: '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>' },
-  { label: 'Facebook', href: 'https://facebook.com/XeroLinux', icon: '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>' },
 ];
 ---
 
 <Layout title={entry.data.title} description={entry.data.description}>
-  <section class="pt-32 pb-20 px-4 sm:px-6 lg:px-8">
-    <div class="mx-auto max-w-4xl">
+  <section class="pt-32 sm:pt-52 pb-20 px-4 sm:px-6 lg:px-8">
+    <div class="mx-auto max-w-5xl 2xl:max-w-[80rem]">
       <!-- Header -->
-      <div class="fade-in text-center mb-16">
-        <h1 class="display-heading text-4xl sm:text-5xl text-[var(--color-text-primary)] mb-4">
-          About <span class="text-[var(--color-accent)]">Me</span>
+      <div class="fade-in text-center mb-4">
+        <div class="news-kicker mb-2">// The Profile</div>
+        <h1 class="display-heading text-4xl sm:text-6xl text-[var(--color-text-primary)] leading-none">
+          About <em class="italic text-[var(--color-accent)]">Me</em>
         </h1>
-        <div class="flex justify-center">
-          <PageViews pageId={pageId} />
-        </div>
+      </div>
+      <div class="fade-in flex justify-center mb-12">
+        <PageViews pageId={pageId} />
       </div>
 
       <!-- Avatar -->
       <div class="fade-in text-center mb-10">
-        <img src={`${base}/images/SKZO0zo.png`} alt="DarkXero" width="1327" height="274" loading="lazy" class="max-w-md w-full rounded-2xl mx-auto glass p-1" />
+        <Image src={darkxero} alt="DarkXero" widths={[400, 800, 1327]} sizes="(max-width: 640px) 90vw, 28rem" loading="lazy" class="max-w-md w-full rounded-2xl mx-auto glass p-1" />
       </div>
 
-      <!-- Bio Card -->
-      <div class="fade-in fade-in-delay-1 w-fit mx-auto">
-        <GlassCard padding="p-8 sm:p-10">
-          <h3 class="font-heading text-xl font-semibold text-[var(--color-text-primary)] mb-4">Who I Am</h3>
-          <div class="prose max-w-none">
-            <p>
-              My name's <strong>Steve</strong>, A.K.A <em>TechXero/DarkXero</em>, and I am a {age} year old Tech fanatic from <strong>Lebanon</strong>. I love technology. I am a <em>Multi-OS</em> User, as in, I don't stick to one Platform, I like to dabble in all of them. I currently use <strong>iOS</strong> and <strong>Android</strong> when it comes to <em>Smartphones</em>. <strong>macOS</strong>, <strong>Windows</strong> and <strong>Linux</strong> when it comes to <em>Desktop Operating Systems</em>.
-            </p>
-            <Content />
+      <!-- Bio article -->
+      <div class="fade-in fade-in-delay-1">
+        <GlassCard padding="p-2.5 sm:p-4 2xl:p-11" class="about-card">
+          <canvas id="about-matrix" aria-hidden="true"></canvas>
+          <div class="relative z-10">
+          <div class="flex items-center gap-3 mb-2 font-mono text-[0.62rem] uppercase tracking-[0.18em] text-[var(--color-accent)]">
+            <span>Who I Am</span>
+            <span class="text-[var(--color-text-muted)]">·</span>
+            <span class="text-[var(--color-text-muted)]">By DarkXero</span>
+          </div>
+          <h3 class="display-heading text-2xl sm:text-3xl text-[var(--color-text-primary)] mb-1 leading-tight">The man behind the distro</h3>
+          <div class="news-hr mb-6"></div>
+          <div class="2xl:flex 2xl:items-stretch 2xl:gap-12">
+            <div class="prose dropcap max-w-2xl [&_p]:!text-left [&_p]:leading-[1.85] [&_p]:mb-5">
+              <p>
+                My name's <strong>Steve</strong>, A.K.A <em>TechXero/DarkXero</em>, and I am a {age} year old Tech fanatic from <strong>Lebanon</strong>. I love technology. I am a <em>Multi-OS</em> User, as in, I don't stick to one Platform, I like to dabble in all of them. I currently use <strong>iOS</strong> and <strong>Android</strong> when it comes to <em>Smartphones</em>. <strong>macOS</strong>, <strong>Windows</strong> and <strong>Linux</strong> when it comes to <em>Desktop Operating Systems</em>.
+              </p>
+              <Content />
+            </div>
+            <!-- Decoration: fills the gap on wide screens, melds into the card otherwise -->
+            <div class="about-deco hidden 2xl:flex flex-1 flex-col justify-center items-center relative border-l border-dashed border-[var(--color-border)] pl-12">
+              <div class="relative">
+                <svg class="w-40 h-40 text-[var(--color-accent)] opacity-[0.14] drop-shadow-[0_0_24px_rgba(86, 87, 245,0.45)]" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d="M12 12a5 5 0 100-10 5 5 0 000 10zm0 2c-5 0-9 2.5-9 6v2h18v-2c0-3.5-4-6-9-6z" />
+                </svg>
+                <svg class="absolute -right-1 bottom-3 w-9 h-9 text-[var(--color-accent)] opacity-30" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" aria-hidden="true">
+                  <circle cx="12" cy="12" r="10" />
+                  <path d="M12 16v-4M12 8h.01" />
+                </svg>
+              </div>
+              <div class="mt-8 font-mono text-[0.62rem] uppercase tracking-[0.22em] text-[var(--color-text-muted)] opacity-50 space-y-1.5 text-center select-none">
+                <div><span class="text-[var(--color-accent)]/60">$</span> whoami</div>
+                <div>steve@xerolinux</div>
+              </div>
+            </div>
+          </div>
           </div>
         </GlassCard>
       </div>
 
       <!-- Social Links -->
       <div class="fade-in fade-in-delay-2 mt-12">
-        <h3 class="font-heading text-xl font-semibold text-[var(--color-text-primary)] mb-6 text-center">
-          Find me online
-        </h3>
+        <div class="news-section-head center mb-6">
+          <div class="news-title-wrap">
+            <div class="news-kicker">// The Directory</div>
+            <h3 class="news-title" style="font-size:1.6rem;">Find me <em>online</em></h3>
+          </div>
+        </div>
         <div class="flex flex-wrap justify-center gap-4">
           {socialLinks.map(link => (
             <a
@@ -83,4 +114,75 @@ const socialLinks = [
       </div>
     </div>
   </section>
+
+  <!-- Subtle matrix rain inside the about card -->
+  <script is:inline>
+    (function () {
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+      const canvas = document.getElementById('about-matrix');
+      if (!canvas) return;
+      const card = canvas.parentElement;
+      const ctx = canvas.getContext('2d');
+      const chars = '01<>/\\{}[]#$%&*+=:;.ABCDEFGHKLMNPRSTUVXYZ'.split('');
+      const tail = 8;
+      let w, h, fontSize, cols, drops;
+      let animId, paused = false, last = 0;
+      const interval = 95;
+
+      function resize() {
+        w = canvas.width = card.offsetWidth;
+        h = canvas.height = card.offsetHeight;
+        fontSize = 14;
+        cols = Math.ceil(w / fontSize);
+        drops = [];
+        for (let i = 0; i < cols; i++) drops[i] = Math.floor(Math.random() * -h / fontSize);
+      }
+
+      function draw(ts) {
+        animId = requestAnimationFrame(draw);
+        if (paused) return;
+        if (ts - last < interval) return;
+        last = ts;
+        ctx.clearRect(0, 0, w, h);
+        ctx.font = fontSize + 'px monospace';
+        ctx.textBaseline = 'top';
+        for (let i = 0; i < cols; i++) {
+          const head = drops[i];
+          for (let t = 0; t < tail; t++) {
+            const ry = head - t;
+            if (ry < 0) continue;
+            const ch = chars[(Math.random() * chars.length) | 0];
+            if (t === 0) ctx.fillStyle = 'rgba(208, 208, 216, 0.95)';
+            else ctx.fillStyle = 'rgba(86, 87, 245, ' + Math.max(0, 0.55 * (1 - t / tail)) + ')';
+            ctx.fillText(ch, i * fontSize, ry * fontSize);
+          }
+          drops[i]++;
+          if (drops[i] * fontSize > h + tail * fontSize && Math.random() > 0.97) drops[i] = 0;
+        }
+      }
+
+      document.addEventListener('visibilitychange', () => {
+        if (document.hidden) {
+          paused = true;
+          if (animId) cancelAnimationFrame(animId);
+        } else {
+          paused = false;
+          animId = requestAnimationFrame(draw);
+        }
+      });
+
+      if (window.ResizeObserver) {
+        let rt;
+        const ro = new ResizeObserver(() => {
+          clearTimeout(rt);
+          rt = setTimeout(resize, 120);
+        });
+        ro.observe(card);
+      }
+      window.addEventListener('resize', resize);
+
+      resize();
+      animId = requestAnimationFrame(draw);
+    })();
+  </script>
 </Layout>
