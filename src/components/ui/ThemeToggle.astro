@@ -1,0 +1,136 @@
+---
+interface Props {
+  compact?: boolean;
+}
+const { compact = false } = Astro.props;
+---
+
+<button
+  type="button"
+  class:list={['theme-toggle', compact ? 'tt-compact' : 'tt-full']}
+  aria-label="Toggle theme"
+  title="Click to switch theme"
+>
+  <span class="tt-label">Xero-Layan</span>
+  <span class="tt-knob">
+    <svg class="tt-ico tt-ico-sun" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path stroke-linecap="round" d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+    <svg class="tt-ico tt-ico-moon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+  </span>
+</button>
+
+<style>
+  .theme-toggle {
+    position: relative;
+    display: inline-grid;
+    place-items: center;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border-radius: 9999px;
+    border: 1px solid var(--color-border);
+    background: var(--color-bg-glass);
+    backdrop-filter: blur(6px) saturate(150%);
+    -webkit-backdrop-filter: blur(6px) saturate(150%);
+    font-family: var(--font-mono);
+    text-transform: uppercase;
+    cursor: pointer;
+    user-select: none;
+    appearance: none;
+    -webkit-appearance: none;
+    transition: border-color 0.2s, background 0.2s;
+  }
+  .theme-toggle:hover { border-color: var(--color-border-hover); }
+
+  .tt-full {
+    width: 7.5rem;
+    height: 2.25rem;
+    font-size: 0.6rem;
+    letter-spacing: 0.12em;
+    --knob: 1.6rem;
+    --pad: 0.325rem;
+    --knob-top: 0.275rem;
+    --knob-left: 0.175rem;
+  }
+  .tt-compact {
+    width: 6.5rem;
+    height: 2rem;
+    font-size: 0.55rem;
+    letter-spacing: 0.1em;
+    --knob: 1.4rem;
+    --pad: 0.3rem;
+    --knob-top: 0.25rem;
+    --knob-left: 0.15rem;
+  }
+
+  /* Label centered by grid place-items, then nudged right toward the open side opposite the knob. */
+  .tt-label {
+    grid-column: 1;
+    grid-row: 1;
+    color: var(--color-text-primary);
+    white-space: nowrap;
+    pointer-events: none;
+    line-height: 1;
+    transform: translateX(0.7rem);
+  }
+  .tt-compact .tt-label { transform: translateX(0.6rem); }
+  .tt-knob { grid-column: 1; grid-row: 1; }
+
+  /* Knob is an absolute overlay; does not affect flex center of label */
+  .tt-knob {
+    position: absolute;
+    top: var(--knob-top);
+    left: var(--knob-left);
+    width: var(--knob);
+    height: var(--knob);
+    border-radius: 9999px;
+    background: linear-gradient(135deg, var(--color-accent), var(--color-accent-dark));
+    box-shadow: 0 0 8px var(--color-accent-glow);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-text-primary);
+    transition: left 0.3s, background 0.3s, box-shadow 0.3s;
+    z-index: 2;
+  }
+
+  .tt-ico { width: 0.85rem; height: 0.85rem; }
+  .tt-full .tt-ico { width: 1rem; height: 1rem; }
+  .tt-ico-moon { display: none; }
+
+  :global(html[data-theme="dark"]) .theme-toggle .tt-knob {
+    left: calc(100% - var(--knob) - var(--knob-left));
+    background: linear-gradient(135deg, #1a1c22, #2a2c34);
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.18);
+  }
+  :global(html[data-theme="dark"]) .tt-full .tt-label { transform: translateX(-0.6rem); }
+  :global(html[data-theme="dark"]) .tt-compact .tt-label { transform: translateX(-0.5rem); }
+  :global(html[data-theme="dark"]) .tt-ico-sun { display: none; }
+  :global(html[data-theme="dark"]) .tt-ico-moon { display: block; }
+</style>
+
+<script is:inline>
+  (function () {
+    var btns = document.querySelectorAll('.theme-toggle');
+    if (!btns.length) return;
+    function applyLabel() {
+      var dark = document.documentElement.getAttribute('data-theme') === 'dark';
+      btns.forEach(function (b) {
+        var lbl = b.querySelector('.tt-label');
+        if (lbl) lbl.textContent = dark ? 'Xero-Dark' : 'Xero-Layan';
+      });
+    }
+    applyLabel();
+    function setTheme(t) {
+      if (t === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
+      else document.documentElement.removeAttribute('data-theme');
+      try { localStorage.setItem('xero-theme', t); } catch (e) {}
+      applyLabel();
+    }
+    btns.forEach(function (b) {
+      b.addEventListener('click', function () {
+        var cur = document.documentElement.getAttribute('data-theme');
+        setTheme(cur === 'dark' ? 'layan' : 'dark');
+      });
+    });
+  })();
+</script>

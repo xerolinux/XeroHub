@@ -24,7 +24,14 @@ const { pageId } = Astro.props;
     const elements = document.querySelectorAll<HTMLElement>('.page-views');
     if (!elements.length) return;
 
-    await signInAnonymously(auth);
+    // Wait for Firebase to settle any persisted session BEFORE deciding to sign in anon.
+    // Otherwise we wipe the admin's restored Google session on every page load.
+    if (typeof (auth as any).authStateReady === 'function') {
+      await (auth as any).authStateReady();
+    }
+    if (!auth.currentUser) {
+      await signInAnonymously(auth);
+    }
 
     // Group elements by pageId
     const pageIds = new Map<string, HTMLElement[]>();
@@ -47,16 +54,18 @@ const { pageId } = Astro.props;
         });
       });
 
-      // Dedup via sessionStorage — increment once per session per page
+      // Dedup via localStorage — count each visitor exactly ONCE per page, ever.
+      // Persists across refreshes, new tabs, re-opens, days, years. Visit 100 times = 1 view.
       const storageKey = `viewed-${pageId}`;
-      if (!sessionStorage.getItem(storageKey)) {
+      if (!localStorage.getItem(storageKey)) {
+        // Reserve the slot first so a fast refresh cannot double-count before the write resolves.
+        localStorage.setItem(storageKey, '1');
         try {
           await updateDoc(docRef, { views: increment(1) });
         } catch {
           // Document doesn't exist yet — create it
           await setDoc(docRef, { views: 1 });
         }
-        sessionStorage.setItem(storageKey, 'true');
       }
     }
   }

@@ -1,0 +1,94 @@
+rules_version = '2';
+
+// XeroLinux Firestore security rules.
+// Deploy: firebase deploy --only firestore:rules
+// Or paste into Firebase Console → Firestore → Rules tab.
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // ───────────── ADMIN ─────────────
+    function isAdmin() {
+      return request.auth != null
+        && request.auth.token.email_verified == true
+        && request.auth.token.email == 'steve@techxero.com';
+    }
+
+    // ───────────── PAGE VIEWS ─────────────
+    match /views/{pageId} {
+      allow read: if true;
+      // Any signed-in user (incl. anon) can increment views. Cap to a sane number.
+      allow create, update: if request.auth != null
+        && request.resource.data.keys().hasOnly(['views'])
+        && request.resource.data.views is int
+        && request.resource.data.views >= 0
+        && request.resource.data.views < 100000000;
+      allow delete: if isAdmin();
+    }
+
+    // ───────────── COMMENTS ─────────────
+    // Path: /comments/{pageId}/items/{commentId}
+    match /comments/{pageId}/items/{commentId} {
+      allow read: if true;
+
+      allow create: if request.auth != null
+        // Schema check — exact keys, correct types
+        && request.resource.data.keys().hasOnly(['name','body','uid','isAdmin','isVerified','photoURL','parentId','createdAt'])
+        && request.resource.data.name is string
+        && request.resource.data.body is string
+        && request.resource.data.uid is string
+        && request.resource.data.isAdmin is bool
+        && request.resource.data.isVerified is bool
+        && (request.resource.data.photoURL == null
+            || (request.resource.data.photoURL is string
+                && request.resource.data.photoURL.size() <= 500
+                && request.resource.data.photoURL.matches('^https://.*')))
+        && (request.resource.data.parentId == null
+            || (request.resource.data.parentId is string
+                && request.resource.data.parentId.size() <= 50))
+        && request.resource.data.createdAt == request.time
+        // Identity binding — uid must match the auth uid
+        && request.resource.data.uid == request.auth.uid
+        // Length caps
+        && request.resource.data.name.size() >= 2
+        && request.resource.data.name.size() <= 40
+        && request.resource.data.body.size() >= 2
+        && request.resource.data.body.size() <= 2000
+        // No anonymous posting — must be signed in via a real provider.
+        && request.auth.token.firebase.sign_in_provider != 'anonymous'
+        && request.resource.data.isVerified == true
+        // isAdmin flag honest — only true if the user is actually admin
+        && (request.resource.data.isAdmin == false || isAdmin())
+        // Parent (if set) must exist in this post's comments. Any depth allowed.
+        && (request.resource.data.parentId == null
+            || exists(/databases/$(database)/documents/comments/$(pageId)/items/$(request.resource.data.parentId)))
+        // Spam keyword block
+        && !request.resource.data.body.lower().matches('.*(viagra|casino|bitcoin doubler|loan offer|onlyfans|forex profit|t\\.me/|bit\\.ly/|tinyurl|nude|porn).*')
+        && !request.resource.data.name.lower().matches('.*(viagra|casino|http|porn).*')
+        // Rate limit — must have written a rate_limits doc no earlier than now
+        // and last post (if any) must be > 30s ago. Enforced in the same batch.
+        && getAfter(/databases/$(database)/documents/rate_limits/$(request.auth.uid)).data.lastPostAt == request.time
+        && (
+          !exists(/databases/$(database)/documents/rate_limits/$(request.auth.uid))
+          || get(/databases/$(database)/documents/rate_limits/$(request.auth.uid)).data.lastPostAt < request.time - duration.value(30, 's')
+        );
+
+      // No edits — comments are immutable to keep the record honest.
+      allow update: if false;
+
+      // Only admin can delete.
+      allow delete: if isAdmin();
+    }
+
+    // Per-user post throttle ledger. Written in the same batch as a comment.
+    match /rate_limits/{uid} {
+      allow read: if isAdmin();
+      allow create, update: if request.auth != null
+        && request.auth.uid == uid
+        && request.resource.data.keys().hasOnly(['lastPostAt','uid'])
+        && request.resource.data.uid == uid
+        && request.resource.data.lastPostAt == request.time;
+      allow delete: if isAdmin();
+    }
+  }
+}

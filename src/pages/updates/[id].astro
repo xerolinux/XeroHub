@@ -1,8 +1,10 @@
 ---
 import { getCollection, render } from 'astro:content';
+import { Image } from 'astro:assets';
 import Layout from '../../components/layout/Layout.astro';
-import GlassCard from '../../components/ui/GlassCard.astro';
 import PageViews from '../../components/ui/PageViews.astro';
+import Comments from '../../components/ui/Comments.astro';
+import logo from '../../assets/logo.png';
 
 import { formatDate, readingTime } from '../../lib/utils';
 
@@ -25,48 +27,70 @@ const pageId = Astro.url.pathname.replace(/^\//, '').replace(/\/$/, '').replace(
   description={update.data.description}
   image={update.data.image ? `${base}${update.data.image}` : undefined}
 >
-  <article class="pt-32 pb-20 px-4 sm:px-6 lg:px-8">
-    <div class="mx-auto max-w-3xl">
+  <article class="pt-32 sm:pt-52 pb-20 px-4 sm:px-6 lg:px-8">
+    <div class="mx-auto max-w-3xl 2xl:max-w-[88rem]">
       <!-- Header -->
-      <header class="fade-in mb-10">
-        <a href={`${base}/updates/`} class="inline-flex items-center gap-2 text-sm text-[var(--color-accent-light)] hover:text-[var(--color-accent)] transition-colors mb-6">
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <header class="fade-in mb-8">
+        <a href={`${base}/updates/`} class="back-pill mb-7">
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
           </svg>
-          Back to Updates
+          cd ../updates
         </a>
-        <div class="flex items-center gap-3 mb-4 text-sm text-[var(--color-text-muted)]">
-          <time datetime={update.data.date.toISOString()}>
-            {formatDate(update.data.date)}
-          </time>
-          <span class="w-1 h-1 rounded-full bg-[var(--color-text-muted)]"></span>
-          <span>{readingTime(update.body || '')}</span>
-          <span class="w-1 h-1 rounded-full bg-[var(--color-text-muted)]"></span>
-          <PageViews pageId={pageId} />
-        </div>
-        <h1 class="font-heading text-3xl sm:text-4xl font-bold text-[var(--color-text-primary)] leading-tight">
+        <div class="news-kicker mb-3">// Dispatch · XeroLinux HQ</div>
+        <h1 class="display-heading text-3xl sm:text-5xl text-[var(--color-text-primary)] leading-[1.04] mb-5">
           {update.data.title}
         </h1>
+        <div class="news-hr mb-4"></div>
+        <div class="flex flex-wrap items-center gap-x-3 gap-y-2 font-mono text-[0.64rem] uppercase tracking-[0.12em] text-[var(--color-text-muted)]">
+          <span class="flex items-center gap-2">
+            <Image src={logo} alt="XeroLinux" width="32" height="32" densities={[1, 2]} class="w-4 h-4 rounded" />
+            By DarkXero
+          </span>
+          <span class="text-[var(--color-accent)]">·</span>
+          <time datetime={update.data.date.toISOString()}>{formatDate(update.data.date)}</time>
+          <span class="text-[var(--color-accent)]">·</span>
+          <span>{readingTime(update.body || '')}</span>
+          <span class="text-[var(--color-accent)]">·</span>
+          <PageViews pageId={pageId} />
+          {update.data.tags && update.data.tags.length > 0 && (
+            <>
+              <span class="text-[var(--color-accent)]">·</span>
+              <span class="text-[var(--color-accent-light)]">Filed: {update.data.tags.slice(0, 3).join(' / ')}</span>
+            </>
+          )}
+        </div>
       </header>
 
       <!-- Featured Image -->
       {update.data.image && (
-        <div class="fade-in fade-in-delay-1 mb-10">
-          <GlassCard padding="p-2">
+        <figure class="fade-in fade-in-delay-1 mb-10 2xl:max-w-6xl 2xl:mx-auto">
+          <div class="rounded-2xl overflow-hidden border border-[var(--color-border)] card-depth">
             <img
               src={`${base}${update.data.image}`}
               alt={update.data.title}
               loading="lazy"
-              class="w-full rounded-xl"
+              class="w-full block"
             />
-          </GlassCard>
-        </div>
+          </div>
+          <figcaption class="news-figcap">Fig. · {update.data.title}</figcaption>
+        </figure>
       )}
 
       <!-- Content -->
-      <div class="fade-in fade-in-delay-2 prose" id="post-content">
+      <div class="fade-in fade-in-delay-2 prose dropcap" id="post-content">
         <Content />
       </div>
+
+      <!-- End of transmission -->
+      <div class="fade-in mt-12 flex items-center gap-4">
+        <div class="flex-1 news-hr"></div>
+        <span class="font-mono text-[0.62rem] uppercase tracking-[0.2em] text-[var(--color-text-muted)]">// EOF · 30</span>
+        <div class="flex-1 news-hr"></div>
+      </div>
+
+      <!-- Comments -->
+      <Comments postId={pageId} />
 
     </div>
   </article>
@@ -77,6 +101,15 @@ const pageId = Astro.url.pathname.replace(/^\//, '').replace(/\/$/, '').replace(
     a.setAttribute('target', '_blank');
     a.setAttribute('rel', 'noopener noreferrer');
   });
+
+  // Per-image accent rotation — each image picks a different palette slot
+  // because markdown wraps each <img> in its own <p>, defeating CSS :nth-of-type.
+  (function () {
+    var imgs = document.querySelectorAll('#post-content img');
+    imgs.forEach(function (img, i) {
+      img.style.setProperty('--col-accent', 'var(--acc-' + (i % 10) + ')');
+    });
+  })();
 
   document.querySelectorAll('#post-content pre').forEach(function (pre) {
     // Build terminal shell
@@ -117,6 +150,7 @@ const pageId = Astro.url.pathname.replace(/^\//, '').replace(/\/$/, '').replace(
       if (/^\[ STATUS/.test(t))           return 'tc-green';
       if (/^\[/.test(t))                  return 'tc-orange';
       if (/^\$/.test(t))                  return 'tc-green';
+      if (/^\/\//.test(t))                return 'tc-accent';
       if (/^>>.*[▲⚠]/.test(t))           return 'tc-red';
       if (/^>>.*▼/.test(t))              return 'tc-orange';
       if (/^>>/.test(t))                  return 'tc-orange';

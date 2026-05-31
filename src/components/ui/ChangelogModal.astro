@@ -4,11 +4,11 @@
   <div id="changelog-backdrop" class="absolute inset-0 bg-black/70 backdrop-blur-sm"></div>
 
   <!-- Modal container -->
-  <div class="relative w-full max-w-[860px] mx-4 glass rounded-2xl overflow-hidden" style="max-height: 86vh;">
+  <div class="relative w-full max-w-[860px] mx-4 layan-panel rounded-2xl overflow-hidden border border-[var(--color-border)] changelog-modal-wrap" style="max-height: 86vh;">
     <!-- Close button -->
     <button
       id="changelog-close"
-      class="absolute top-4 right-4 z-10 w-9 h-9 rounded-full bg-[var(--color-bg-secondary)] border border-[var(--color-border)] text-[var(--color-text-secondary)] hover:text-white hover:border-[var(--color-border-hover)] transition-all duration-200 flex items-center justify-center cursor-pointer"
+      class="absolute top-3 right-3 sm:top-4 sm:right-4 z-10 w-11 h-11 sm:w-9 sm:h-9 rounded-full bg-[var(--color-bg-secondary)] border border-[var(--color-border)] text-[var(--color-text-secondary)] hover:text-white hover:border-[var(--color-border-hover)] transition-all duration-200 flex items-center justify-center cursor-pointer"
       aria-label="Close changelog"
     >
       <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -17,7 +17,7 @@
     </button>
 
     <!-- Header -->
-    <div class="px-8 pt-8 pb-4">
+    <div class="px-4 sm:px-8 pt-5 sm:pt-8 pb-3 sm:pb-4">
       <h2 class="display-heading text-2xl text-[var(--color-text-primary)] flex items-center gap-3">
         <svg class="w-6 h-6 text-[var(--color-accent)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" />
@@ -28,11 +28,11 @@
     </div>
 
     <!-- Body -->
-    <div class="px-8 pb-8 overflow-y-auto" style="max-height: calc(86vh - 120px);">
+    <div class="px-4 sm:px-8 pb-5 sm:pb-8 overflow-y-auto" style="max-height: calc(86vh - 120px);">
 
       <!-- Date badge -->
       <div class="flex items-center gap-3 mb-6">
-        <span class="font-mono text-xs font-semibold tracking-widest text-[var(--color-accent)] bg-[var(--color-accent)]/10 border border-[var(--color-accent)]/25 rounded-full px-3 py-1">2026-03-01</span>
+        <span class="font-mono text-xs font-semibold tracking-widest text-[var(--color-accent)] bg-[var(--color-accent)]/10 border border-[var(--color-accent)]/25 rounded-full px-3 py-1">2026-06-01</span>
         <div class="flex-1 h-px bg-gradient-to-r from-[var(--color-accent)]/20 to-transparent"></div>
       </div>
 
@@ -40,80 +40,56 @@
       <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
 
         <!-- ISO panel -->
-        <div class="rounded-xl border border-green-500/20 bg-green-500/5 overflow-hidden">
-          <div class="flex items-center gap-2 px-4 py-2.5 bg-green-500/10 border-b border-green-500/20">
-            <svg class="w-4 h-4 text-green-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <div class="cl-panel cl-panel-iso rounded-xl overflow-hidden">
+          <div class="cl-panel-head">
+            <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
             </svg>
-            <span class="text-xs font-semibold uppercase tracking-widest text-green-400">ISO</span>
+            <span class="text-xs font-semibold uppercase tracking-widest">ISO</span>
           </div>
           <ul class="px-4 py-3 space-y-2.5">
             <li class="flex items-start gap-2.5 text-sm text-[var(--color-text-secondary)]">
-              <span class="text-green-400 font-bold shrink-0 mt-0.5">&#10003;</span>
-              <span>Updated to latest <strong class="text-[var(--color-text-primary)]">KDE</strong>.</span>
+              <span class="cl-check font-bold shrink-0 mt-0.5">&#10003;</span>
+              <span>New <strong class="text-[var(--color-text-primary)]">Online</strong> vs <strong class="text-[var(--color-text-primary)]">Offline</strong> install.</span>
             </li>
             <li class="flex items-start gap-2.5 text-sm text-[var(--color-text-secondary)]">
-              <span class="text-green-400 font-bold shrink-0 mt-0.5">&#10003;</span>
-              <span><strong class="text-[var(--color-text-primary)]">zRAM</strong> enabled by default.</span>
+              <span class="cl-check font-bold shrink-0 mt-0.5">&#10003;</span>
+              <span>Updated to latest <strong class="text-[var(--color-text-primary)]">KDE/Kernel</strong>.</span>
             </li>
             <li class="flex items-start gap-2.5 text-sm text-[var(--color-text-secondary)]">
-              <span class="text-green-400 font-bold shrink-0 mt-0.5">&#10003;</span>
-              <span><strong class="text-[var(--color-text-primary)]">Bios/MBR</strong> support added back.</span>
+              <span class="cl-check font-bold shrink-0 mt-0.5">&#10003;</span>
+              <span>All-new <strong class="text-[var(--color-text-primary)]">Package Manager</strong> GUI.</span>
             </li>
             <li class="flex items-start gap-2.5 text-sm text-[var(--color-text-secondary)]">
-              <span class="text-green-400 font-bold shrink-0 mt-0.5">&#10003;</span>
-              <span><strong class="text-[var(--color-text-primary)]">Plasma-Login</strong> used by default.</span>
-            </li>
-            <li class="flex items-start gap-2.5 text-sm text-[var(--color-text-secondary)]">
-              <span class="text-green-400 font-bold shrink-0 mt-0.5">&#10003;</span>
-              <span>System update during install.</span>
-            </li>
-            <li class="flex items-start gap-2.5 text-sm text-[var(--color-text-secondary)]">
-              <span class="text-green-400 font-bold shrink-0 mt-0.5">&#10003;</span>
-              <span>Updated to latest available <strong class="text-[var(--color-text-primary)]">Kernel</strong>.</span>
-            </li>
-            <li class="flex items-start gap-2.5 text-sm text-[var(--color-text-secondary)]">
-              <span class="text-green-400 font-bold shrink-0 mt-0.5">&#10003;</span>
-              <span><strong class="text-[var(--color-text-primary)]">nVidia</strong> ISO more robust for Laptops.</span>
-            </li>
-            <li class="flex items-start gap-2.5 text-sm text-[var(--color-text-secondary)]">
-              <span class="text-green-400 font-bold shrink-0 mt-0.5">&#10003;</span>
-              <span>Added new widgets &amp; updated the old.</span>
-            </li>
-            <li class="flex items-start gap-2.5 text-sm text-[var(--color-text-secondary)]">
-              <span class="text-green-400 font-bold shrink-0 mt-0.5">&#10003;</span>
-              <span>All-new <strong class="text-[var(--color-text-primary)]">Live Welcome</strong> tool made in <strong class="text-[var(--color-text-primary)]">Rust</strong>.</span>
-            </li>
-            <li class="flex items-start gap-2.5 text-sm text-[var(--color-text-secondary)]">
-              <span class="text-green-400 font-bold shrink-0 mt-0.5">&#10003;</span>
-              <span>Re-enabled <strong class="text-[var(--color-text-primary)]">BTRFS</strong> &amp; <strong class="text-[var(--color-text-primary)]">Encryption</strong> in Calamares.</span>
+              <span class="cl-check font-bold shrink-0 mt-0.5">&#10003;</span>
+              <span><strong class="text-[var(--color-text-primary)]">BTRFS</strong> support moved to the TUI.</span>
             </li>
           </ul>
         </div>
 
         <!-- TUI panel -->
-        <div class="rounded-xl border border-indigo-500/20 bg-indigo-500/5 overflow-hidden">
-          <div class="flex items-center gap-2 px-4 py-2.5 bg-indigo-500/10 border-b border-indigo-500/20">
-            <svg class="w-4 h-4 text-indigo-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <div class="cl-panel cl-panel-tui rounded-xl overflow-hidden">
+          <div class="cl-panel-head">
+            <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
             </svg>
-            <span class="text-xs font-semibold uppercase tracking-widest text-indigo-400">TUI</span>
+            <span class="text-xs font-semibold uppercase tracking-widest">TUI</span>
           </div>
           <ul class="px-4 py-3 space-y-2.5">
             <li class="flex items-start gap-2.5 text-sm text-[var(--color-text-secondary)]">
-              <span class="text-indigo-400 font-bold shrink-0 mt-0.5">&#10003;</span>
+              <span class="cl-check font-bold shrink-0 mt-0.5">&#10003;</span>
               <span><strong class="text-[var(--color-text-primary)]">BTRFS</strong> more robust.</span>
             </li>
             <li class="flex items-start gap-2.5 text-sm text-[var(--color-text-secondary)]">
-              <span class="text-indigo-400 font-bold shrink-0 mt-0.5">&#10003;</span>
+              <span class="cl-check font-bold shrink-0 mt-0.5">&#10003;</span>
               <span>Script cleanup, less issues.</span>
             </li>
             <li class="flex items-start gap-2.5 text-sm text-[var(--color-text-secondary)]">
-              <span class="text-indigo-400 font-bold shrink-0 mt-0.5">&#10003;</span>
+              <span class="cl-check font-bold shrink-0 mt-0.5">&#10003;</span>
               <span>New <strong class="text-[var(--color-text-primary)]">Hyprland</strong> + <strong class="text-[var(--color-text-primary)]">Noctalia</strong> option.</span>
             </li>
             <li class="flex items-start gap-2.5 text-sm text-[var(--color-text-secondary)]">
-              <span class="text-indigo-400 font-bold shrink-0 mt-0.5">&#10003;</span>
+              <span class="cl-check font-bold shrink-0 mt-0.5">&#10003;</span>
               <span><strong class="text-[var(--color-text-primary)]">BTRFS</strong> updates + <strong class="text-[var(--color-text-primary)]">Snapper</strong> + <strong class="text-[var(--color-text-primary)]">Grub-BTRFS</strong>.</span>
             </li>
           </ul>
@@ -131,6 +107,57 @@
     </div>
   </div>
 </div>
+
+<style>
+  .changelog-modal-wrap {
+    background: rgba(33, 35, 41, var(--layan-opacity, 0.6));
+    backdrop-filter: var(--layan-blur, blur(6px) saturate(150%));
+    -webkit-backdrop-filter: var(--layan-blur, blur(6px) saturate(150%));
+    box-shadow: var(--layan-shadow, 0 10px 28px rgba(0,0,0,0.5));
+  }
+  :global(html[data-theme="dark"]) .changelog-modal-wrap {
+    background: rgba(6, 7, 11, calc(var(--layan-opacity, 0.6) + 0.2));
+  }
+
+  .cl-panel {
+    border: 1px solid rgba(86, 87, 245, 0.22);
+    background: rgba(86, 87, 245, 0.06);
+    backdrop-filter: blur(4px) saturate(140%);
+    -webkit-backdrop-filter: blur(4px) saturate(140%);
+  }
+  .cl-panel-head {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.625rem 1rem;
+    border-bottom: 1px solid currentColor;
+    background: color-mix(in srgb, currentColor 10%, transparent);
+  }
+  .cl-panel-head svg, .cl-panel-head span { color: inherit; }
+
+  .cl-panel-iso {
+    color: var(--color-positive);
+    border-color: color-mix(in srgb, var(--color-positive) 30%, transparent);
+    background: color-mix(in srgb, var(--color-positive) 6%, transparent);
+  }
+  .cl-panel-iso .cl-panel-head { border-bottom-color: color-mix(in srgb, var(--color-positive) 30%, transparent); background: color-mix(in srgb, var(--color-positive) 10%, transparent); }
+  .cl-panel-iso .cl-check { color: var(--color-positive); }
+
+  .cl-panel-tui {
+    color: var(--color-accent);
+    border-color: color-mix(in srgb, var(--color-accent) 30%, transparent);
+    background: color-mix(in srgb, var(--color-accent) 6%, transparent);
+  }
+  .cl-panel-tui .cl-panel-head { border-bottom-color: color-mix(in srgb, var(--color-accent) 30%, transparent); background: color-mix(in srgb, var(--color-accent) 10%, transparent); }
+  .cl-panel-tui .cl-check { color: var(--color-accent-light); }
+
+  :global(html[data-theme="dark"]) .cl-panel-iso {
+    background: color-mix(in srgb, var(--color-positive) 10%, rgba(6,7,11,0.55));
+  }
+  :global(html[data-theme="dark"]) .cl-panel-tui {
+    background: color-mix(in srgb, var(--color-accent) 10%, rgba(6,7,11,0.55));
+  }
+</style>
 
 <script is:inline>
   (function () {

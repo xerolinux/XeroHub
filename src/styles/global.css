@@ -19,31 +19,180 @@
   src: url('https://fonts.gstatic.com/s/jetbrainsmono/v18/tDbY2o-flEEny0FZhsfKu5WU4zr3E_BX0PnT8RD8yKxjPVmUsaaDhw.woff2') format('woff2');
 }
 
-/* ─── Theme Tokens (Brightened) ─── */
+/* ─── Theme Tokens — Layan palette (Layan-kde by vinceliuice) ───
+   bg: rgb(33,35,41)..rgb(68,69,75)  -- cool dark greys
+   accent: rgb(86,87,245)             -- Layan indigo (signature)
+   accent-2 / pink: rgb(255,128,224)  -- Layan magenta (secondary highlight)
+   text: rgb(234,234,234) / rgb(221,221,221) / rgb(153,153,153) */
 @theme {
-  --color-bg-primary: #1a1a2e;
-  --color-bg-secondary: #242440;
-  --color-bg-tertiary: #30304e;
-  --color-bg-glass: rgba(36, 36, 64, 0.65);
-  --color-bg-glass-hover: rgba(48, 48, 78, 0.8);
+  /* Backgrounds — straight from Layan KDE color scheme */
+  --color-bg-primary: #212329;       /* Tooltip / Complementary bg */
+  --color-bg-secondary: #31313a;     /* View / Window / Header bg */
+  --color-bg-tertiary: #44454b;      /* Button bg */
+  /* ─────────────────────────────────────────────────────────────
+     KVANTUM GLASS KNOBS — edit these to retune every blurred panel site-wide.
+     `--layan-opacity` = 0..1 alpha for every glass surface
+     `--layan-blur`    = blur amount + saturation
+     `--layan-shadow`  = drop shadow stack used by all Layan panels
+     ───────────────────────────────────────────────────────────── */
+  --layan-opacity: 0.25;
+  --color-bg-glass: rgba(33, 35, 41, var(--layan-opacity));
+  --color-bg-glass-hover: rgba(49, 49, 58, calc(var(--layan-opacity) + 0.1));
+  --layan-blur: blur(6px) saturate(150%);
+  --layan-shadow: 0 10px 28px rgba(0, 0, 0, 0.5), 0 2px 6px rgba(0, 0, 0, 0.3);
 
-  --color-accent: #a06af0;
-  --color-accent-light: #c8a0ff;
-  --color-accent-dark: #7c4fd0;
-  --color-accent-glow: rgba(160, 106, 240, 0.5);
-  --color-accent-subtle: rgba(160, 106, 240, 0.18);
+  /* Primary accent — Layan DecorationFocus (rgb 86,87,245) */
+  --color-accent: #5657f5;
+  --color-accent-light: #8a8bff;
+  --color-accent-dark: #3f40c8;
+  --color-accent-glow: rgba(86, 87, 245, 0.55);
+  --color-accent-subtle: rgba(86, 87, 245, 0.2);
 
-  --color-text-primary: #f4f2ff;
-  --color-text-secondary: #c8c4e0;
-  --color-text-muted: #9e9abe;
+  /* Layan ForegroundActive — magenta secondary */
+  --color-accent-2: #ff80e0;
+  --color-accent-2-glow: rgba(255, 128, 224, 0.5);
 
-  --color-border: rgba(160, 106, 240, 0.25);
-  --color-border-hover: rgba(200, 160, 255, 0.5);
+  /* Layan ForegroundVisited — vivid violet (tertiary) */
+  --color-accent-3: #e040fb;
 
-  --font-display: 'Orbitron', system-ui, sans-serif;
-  --font-heading: 'Orbitron', system-ui, sans-serif;
-  --font-body: 'Inter', system-ui, sans-serif;
+  /* Layan ForegroundLink */
+  --color-link: #4285f4;
+
+  /* Layan semantic accents (brightened to read on dark bg) */
+  --color-positive: #2bd05a;      /* Layan ForegroundPositive #006e28 — brightened */
+  --color-warning:  #f5b500;      /* Layan ForegroundNeutral  #b08000 — brightened */
+  --color-negative: #ee3939;      /* Layan ForegroundNegative #bf0303 — brightened */
+  --color-positive-glow: rgba(43, 208, 90, 0.5);
+  --color-warning-glow:  rgba(245, 181, 0, 0.5);
+  --color-negative-glow: rgba(238, 57, 57, 0.5);
+
+  /* Foregrounds — Layan ForegroundNormal / Inactive */
+  --color-text-primary: #eaeaea;
+  --color-text-secondary: #dddddd;
+  --color-text-muted: #999999;
+
+  /* Sunset+Layan accent palette — every frame/divider/image cycles through these.
+     Use as rgba(var(--acc-N), alpha). */
+  --acc-0: 86, 87, 245;     /* Layan indigo */
+  --acc-1: 255, 107, 157;   /* sunset pink */
+  --acc-2: 255, 138, 61;    /* sunset orange */
+  --acc-3: 92, 224, 255;    /* ice cyan */
+  --acc-4: 184, 92, 232;    /* magenta-violet */
+  --acc-5: 255, 214, 107;   /* golden yellow */
+  --acc-6: 154, 75, 184;    /* lavender */
+  --acc-7: 255, 128, 224;   /* Layan magenta */
+  --acc-8: 43, 208, 90;     /* Layan positive */
+  --acc-9: 66, 133, 244;    /* Layan link blue */
+
+  /* Default local accent — overridden per-element via :nth-child rules below */
+  --col-accent: var(--page-accent, 86, 87, 245);
+
+  /* Borders + glow halos derive from local accent (overrides cascade naturally). */
+  --color-border:       rgba(var(--col-accent), 0.32);
+  --color-border-hover: rgba(var(--col-accent), 0.55);
+  --color-page-glow:    rgba(var(--col-accent), 0.45);
+  --color-page-glow-soft: rgba(var(--col-accent), 0.18);
+
+  /* GEEKY/DIGITAL THEME — Chakra Petch (techy) + JetBrains Mono */
+  --font-display: 'Chakra Petch', system-ui, sans-serif;
+  --font-heading: 'Chakra Petch', system-ui, sans-serif;
+  --font-body: 'Chakra Petch', system-ui, sans-serif;
   --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+}
+
+/* ─── Xero-Dark theme override (toggled via footer) ─── */
+html[data-theme="dark"] {
+  --color-bg-primary: #06070b;      /* near-black */
+  --color-bg-secondary: #0e1014;
+  --color-bg-tertiary: #18191f;
+  --color-bg-glass: rgba(6, 7, 11, 0.78);
+  --color-bg-glass-hover: rgba(14, 16, 22, 0.86);
+  --color-text-primary: #e6e6e6;
+  --color-text-secondary: #b0b0b8;
+  --color-text-muted: #707078;
+  --color-accent: #5a5be0;
+  --color-accent-light: #8385f5;
+  --color-accent-dark: #3a3b9e;
+  --color-accent-glow: rgba(90, 91, 224, 0.45);
+}
+html[data-theme="dark"] body { background-color: var(--color-bg-primary); }
+
+/* Bulk darken every hardcoded surface site-wide */
+html[data-theme="dark"] .bg-flow,
+html[data-theme="dark"] #bg-canvas { background-color: #06070b !important; }
+
+/* Frames/panels that bake in their own rgba (not picked up via var) */
+html[data-theme="dark"] .term-composer,
+html[data-theme="dark"] .comment-item,
+html[data-theme="dark"] .terminal-wrap,
+html[data-theme="dark"] .masthead-body,
+html[data-theme="dark"] .layan-panel,
+html[data-theme="dark"] .glass {
+  background: rgba(6, 7, 11, 0.78) !important;
+}
+html[data-theme="dark"] .terminal-wrap pre,
+html[data-theme="dark"] .prose pre {
+  background: rgba(6, 7, 11, 0.86) !important;
+}
+html[data-theme="dark"] .comment-item-header,
+html[data-theme="dark"] .term-composer-header {
+  background: linear-gradient(180deg, rgba(14, 16, 22, 0.7), rgba(6, 7, 11, 0.55)) !important;
+}
+html[data-theme="dark"] .comment-item-meta {
+  background: rgba(14, 16, 22, 0.4) !important;
+}
+html[data-theme="dark"] .sys-record {
+  background: rgba(0, 0, 0, 0.45) !important;
+}
+
+/* Coverflow cards (updates page) */
+html[data-theme="dark"] .cf-item {
+  background: rgba(6, 7, 11, 0.85) !important;
+}
+html[data-theme="dark"] .cf-img,
+html[data-theme="dark"] .cf-noimg {
+  background: #0e1014 !important;
+}
+
+/* Hero front-page article matrix-rain scrim — force dark gradient */
+html[data-theme="dark"] [style*="rgba(33, 35, 41"] {
+  background: linear-gradient(100deg, rgba(6, 7, 11, 0.92) 0%, rgba(6, 7, 11, 0.78) 50%, rgba(6, 7, 11, 0.5) 100%) !important;
+}
+html[data-theme="dark"] .anniv {
+  filter: brightness(0.55);
+}
+
+/* Sidebar / inline tints */
+html[data-theme="dark"] .term-input-inline,
+html[data-theme="dark"] .term-textarea {
+  background: rgba(255, 255, 255, 0.03) !important;
+  border-color: rgba(90, 91, 224, 0.25) !important;
+}
+html[data-theme="dark"] .composer-rules,
+html[data-theme="dark"] .composer-captcha-row,
+html[data-theme="dark"] .composer-toolbar {
+  background: rgba(255, 255, 255, 0.02) !important;
+  border-color: rgba(90, 91, 224, 0.18) !important;
+}
+
+/* Hero ribbon + accent boxes */
+html[data-theme="dark"] .anniv { filter: brightness(0.65); }
+
+/* Per-page accent: dim 30% so the dark base reads */
+html[data-theme="dark"] .comment-thread-nested,
+html[data-theme="dark"] .news-rule .nr-prompt span { filter: brightness(0.85); }
+
+/* Card scaffolding (`card-depth`) — beef shadow on dark */
+html[data-theme="dark"] .card-depth {
+  box-shadow:
+    0 2px 6px rgba(0,0,0,0.4),
+    0 12px 28px rgba(0,0,0,0.55),
+    0 28px 56px rgba(0,0,0,0.45) !important;
+}
+
+/* Scrollbar */
+html[data-theme="dark"] {
+  scrollbar-color: var(--color-accent-dark) #06070b;
 }
 
 /* ─── Base ─── */
@@ -54,6 +203,18 @@ html {
 
 html {
   scroll-behavior: smooth;
+}
+
+/* ── High-res readability ──
+   Everything is sized in rem (text, spacing, card widths), so bumping the
+   root font-size scales the WHOLE site up proportionally on big monitors:
+   cards, info boxes, button labels, padding, the lot. Driven by viewport
+   width (the practical proxy for monitor resolution). */
+@media (min-width: 2560px) {   /* 1440p / QHD and up */
+  html { font-size: 18px; }
+}
+@media (min-width: 3840px) {   /* 4K / UHD and up */
+  html { font-size: 22px; }
 }
 
 body {
@@ -91,16 +252,84 @@ code, pre {
   color: white;
 }
 
-/* ─── Glass Effect ─── */
+/* ─── Per-element accent rotation ─────────────────────────────────────────
+   Every sibling card/divider/image picks a different color from the palette.
+   The cascade flows: child sets --col-accent → its borders + glows recolor. */
+
+/* Generic: any direct child of any container that we mark with .rainbow */
+.rainbow > *:nth-child(10n+1) { --col-accent: var(--acc-0); }
+.rainbow > *:nth-child(10n+2) { --col-accent: var(--acc-1); }
+.rainbow > *:nth-child(10n+3) { --col-accent: var(--acc-2); }
+.rainbow > *:nth-child(10n+4) { --col-accent: var(--acc-3); }
+.rainbow > *:nth-child(10n+5) { --col-accent: var(--acc-4); }
+.rainbow > *:nth-child(10n+6) { --col-accent: var(--acc-5); }
+.rainbow > *:nth-child(10n+7) { --col-accent: var(--acc-6); }
+.rainbow > *:nth-child(10n+8) { --col-accent: var(--acc-7); }
+.rainbow > *:nth-child(10n+9) { --col-accent: var(--acc-8); }
+.rainbow > *:nth-child(10n)   { --col-accent: var(--acc-9); }
+
+/* Editorial 3-col / 2-col */
+.news-3col > .news-col:nth-child(7n+1) { --col-accent: var(--acc-0); }
+.news-3col > .news-col:nth-child(7n+2) { --col-accent: var(--acc-1); }
+.news-3col > .news-col:nth-child(7n+3) { --col-accent: var(--acc-3); }
+.news-3col > .news-col:nth-child(7n+4) { --col-accent: var(--acc-4); }
+.news-3col > .news-col:nth-child(7n+5) { --col-accent: var(--acc-5); }
+.news-3col > .news-col:nth-child(7n+6) { --col-accent: var(--acc-7); }
+.news-3col > .news-col:nth-child(7n)   { --col-accent: var(--acc-9); }
+
+/* (Classified rotation handled via `.rainbow` on parent grid for stable cascade) */
+
+/* Post body images each pick their own border tint */
+.prose img:nth-of-type(10n+1) { --col-accent: var(--acc-0); }
+.prose img:nth-of-type(10n+2) { --col-accent: var(--acc-1); }
+.prose img:nth-of-type(10n+3) { --col-accent: var(--acc-2); }
+.prose img:nth-of-type(10n+4) { --col-accent: var(--acc-3); }
+.prose img:nth-of-type(10n+5) { --col-accent: var(--acc-4); }
+.prose img:nth-of-type(10n+6) { --col-accent: var(--acc-5); }
+.prose img:nth-of-type(10n+7) { --col-accent: var(--acc-6); }
+.prose img:nth-of-type(10n+8) { --col-accent: var(--acc-7); }
+.prose img:nth-of-type(10n+9) { --col-accent: var(--acc-8); }
+.prose img:nth-of-type(10n)   { --col-accent: var(--acc-9); }
+.prose img {
+  border-color: rgba(var(--col-accent), 0.5) !important;
+}
+
+/* Masthead nav: each link's left-divider gets its own accent */
+.masthead-nav > .masthead-navlink:nth-child(7n+1) { --col-accent: var(--acc-1); }
+.masthead-nav > .masthead-navlink:nth-child(7n+2) { --col-accent: var(--acc-2); }
+.masthead-nav > .masthead-navlink:nth-child(7n+3) { --col-accent: var(--acc-3); }
+.masthead-nav > .masthead-navlink:nth-child(7n+4) { --col-accent: var(--acc-4); }
+.masthead-nav > .masthead-navlink:nth-child(7n+5) { --col-accent: var(--acc-5); }
+.masthead-nav > .masthead-navlink:nth-child(7n+6) { --col-accent: var(--acc-7); }
+.masthead-nav > .masthead-navlink:nth-child(7n)   { --col-accent: var(--acc-8); }
+.masthead-navlink + .masthead-navlink {
+  border-left-color: rgba(var(--col-accent), 0.55) !important;
+}
+
+/* Ad-note pills (KDE Plasma / Hyprland / Noctalia-Shell etc.) cycle accents */
+.ad-note > strong:nth-of-type(4n+1) { --col-accent: var(--acc-8); }
+.ad-note > strong:nth-of-type(4n+2) { --col-accent: var(--acc-0); }
+.ad-note > strong:nth-of-type(4n+3) { --col-accent: var(--acc-4); }
+.ad-note > strong:nth-of-type(4n)   { --col-accent: var(--acc-3); }
+
+/* ─── Glass Effect — Layan Kvantum spec ─── */
 .glass {
-  backdrop-filter: blur(20px) saturate(180%);
-  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  backdrop-filter: var(--layan-blur);
+  -webkit-backdrop-filter: var(--layan-blur);
   background: var(--color-bg-glass);
   border: 1px solid var(--color-border);
-  border-radius: 16px;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25),
-              0 2px 4px rgba(0, 0, 0, 0.15),
-              inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  box-shadow: var(--layan-shadow), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+/* Reusable Layan-style panel: same spec as .glass.
+   Use on terminal frames, info cards, sidebars, etc. */
+.layan-panel {
+  background: var(--color-bg-glass) !important;
+  backdrop-filter: var(--layan-blur) !important;
+  -webkit-backdrop-filter: var(--layan-blur) !important;
+  border: 1px solid var(--color-border);
+  box-shadow: var(--layan-shadow), inset 0 1px 0 rgba(255, 255, 255, 0.05);
 }
 
 .glass-hover {
@@ -112,7 +341,7 @@ code, pre {
   border-color: var(--color-border-hover);
   box-shadow: 0 14px 40px rgba(0, 0, 0, 0.35),
               0 4px 12px rgba(0, 0, 0, 0.2),
-              0 0 60px rgba(160, 106, 240, 0.12),
+              0 0 60px rgba(86, 87, 245, 0.12),
               inset 0 1px 0 rgba(255, 255, 255, 0.08);
   transform: translateY(-5px) scale(1.01);
 }
@@ -125,78 +354,15 @@ code, pre {
   pointer-events: none;
 }
 
-/* ─── Gradient Mesh Orbs (enhanced, brighter) ─── */
-.bg-orb {
+/* ─── CPU-cycle packets background (canvas grid dots, no gradients) ─── */
+.bg-flow {
   position: fixed;
-  border-radius: 50%;
-  filter: blur(100px);
-  opacity: 0.35;
-  pointer-events: none;
+  inset: 0;
   z-index: 0;
+  pointer-events: none;
+  background-color: #212329;
 }
 
-.bg-orb-1 {
-  width: 700px;
-  height: 700px;
-  background: radial-gradient(circle, #a06af0 0%, transparent 70%);
-  top: -250px;
-  right: -200px;
-  animation: float-orb-1 18s ease-in-out infinite;
-}
-
-.bg-orb-2 {
-  width: 600px;
-  height: 600px;
-  background: radial-gradient(circle, #e06090 0%, transparent 70%);
-  bottom: -200px;
-  left: -200px;
-  animation: float-orb-2 22s ease-in-out infinite;
-}
-
-.bg-orb-3 {
-  width: 500px;
-  height: 500px;
-  background: radial-gradient(circle, #6090e0 0%, transparent 70%);
-  top: 40%;
-  left: 40%;
-  animation: float-orb-3 26s ease-in-out infinite;
-}
-
-.bg-orb-4 {
-  width: 350px;
-  height: 350px;
-  background: radial-gradient(circle, #8870e0 0%, transparent 70%);
-  top: 20%;
-  right: 30%;
-  animation: float-orb-4 20s ease-in-out infinite;
-}
-
-@keyframes float-orb-1 {
-  0%, 100% { transform: translate(0, 0) scale(1); }
-  25% { transform: translate(-100px, 80px) scale(1.15); }
-  50% { transform: translate(-50px, 40px) scale(0.95); }
-  75% { transform: translate(60px, -50px) scale(1.05); }
-}
-
-@keyframes float-orb-2 {
-  0%, 100% { transform: translate(0, 0) scale(1); }
-  25% { transform: translate(80px, -100px) scale(1.1); }
-  50% { transform: translate(40px, -50px) scale(0.9); }
-  75% { transform: translate(-60px, 60px) scale(1.15); }
-}
-
-@keyframes float-orb-3 {
-  0%, 100% { transform: translate(-50%, -50%) scale(1); }
-  25% { transform: translate(-40%, -55%) scale(1.2); }
-  50% { transform: translate(-55%, -45%) scale(0.85); }
-  75% { transform: translate(-45%, -55%) scale(1.1); }
-}
-
-@keyframes float-orb-4 {
-  0%, 100% { transform: translate(0, 0) scale(1); }
-  33% { transform: translate(40px, 60px) scale(1.1); }
-  66% { transform: translate(-30px, -40px) scale(0.9); }
-}
 
 /* ─── Grain Overlay ─── */
 .grain::before {
@@ -224,8 +390,6 @@ code, pre {
 
 .fade-in-delay-1 { transition-delay: 0.1s; }
 .fade-in-delay-2 { transition-delay: 0.2s; }
-.fade-in-delay-3 { transition-delay: 0.3s; }
-.fade-in-delay-4 { transition-delay: 0.4s; }
 
 /* ─── Animated Feature Icons ─── */
 .icon-float {
@@ -240,19 +404,15 @@ code, pre {
   50% { transform: translateY(-6px); }
 }
 
-.icon-pulse {
-  animation: icon-pulse 2.5s ease-in-out infinite;
-}
-
-@keyframes icon-pulse {
-  0%, 100% { opacity: 0.8; transform: scale(1); }
-  50% { opacity: 1; transform: scale(1.08); }
-}
-
 /* ─── Blog Prose ─── */
 .prose {
   max-width: 720px;
   line-height: 1.8;
+}
+/* On large screens let the post body fill the wider container, but keep images from going overblown */
+@media (min-width: 1536px) {
+  #post-content.prose { max-width: 100%; }
+  #post-content.prose img { max-width: 60rem; margin-left: auto; margin-right: auto; }
 }
 
 .prose h2 {
@@ -295,16 +455,17 @@ code, pre {
   color: var(--color-accent);
 }
 
-/* Terminal wrapper injected by JS */
+/* Terminal wrapper injected by JS — Layan params */
 .terminal-wrap {
   margin: 1.5rem 0;
-  border-radius: 14px;
+  border-radius: 8px;
   overflow: hidden;
-  border: 1px solid rgba(160, 106, 240, 0.28);
-  box-shadow:
-    0 0 0 1px rgba(160, 106, 240, 0.06),
-    0 12px 48px rgba(0, 0, 0, 0.5),
-    0 0 80px rgba(160, 106, 240, 0.07);
+  border: 1px solid var(--color-border);
+  background: var(--color-bg-glass);
+  backdrop-filter: blur(6px) saturate(150%);
+  -webkit-backdrop-filter: blur(6px) saturate(150%);
+  box-shadow: var(--layan-shadow), 0 0 24px var(--color-page-glow-soft);
+  isolation: isolate;
 }
 
 .terminal-header {
@@ -312,8 +473,16 @@ code, pre {
   align-items: center;
   gap: 0.45rem;
   padding: 0.65rem 1.1rem;
-  background: linear-gradient(90deg, rgba(160, 106, 240, 0.16), rgba(48, 48, 78, 0.5));
-  border-bottom: 1px solid rgba(160, 106, 240, 0.2);
+  background: linear-gradient(180deg, #2c2e36 0%, #24262d 100%);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.45);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
+  position: relative;
+  z-index: 3;
+}
+html[data-theme="dark"] .terminal-header {
+  background: linear-gradient(180deg, #0e1014 0%, #06070b 100%);
+  border-bottom-color: rgba(0, 0, 0, 0.7);
+  box-shadow: inset 0 1px 0 rgba(131, 133, 245, 0.06);
 }
 
 .terminal-dot {
@@ -322,32 +491,33 @@ code, pre {
   border-radius: 50%;
   flex-shrink: 0;
 }
-.terminal-dot-red    { background: #ff5f57; box-shadow: 0 0 6px #ff5f5780; }
-.terminal-dot-yellow { background: #febc2e; box-shadow: 0 0 6px #febc2e80; }
-.terminal-dot-green  { background: #28c840; box-shadow: 0 0 6px #28c84080; }
+.terminal-dot-red    { background: #f46067; box-shadow: 0 0 6px rgba(244, 96, 103, 0.5); }
+.terminal-dot-yellow { background: #f9bd2b; box-shadow: 0 0 6px rgba(249, 189, 43, 0.5); }
+.terminal-dot-green  { background: #90c46c; box-shadow: 0 0 6px rgba(144, 196, 108, 0.5); }
 
 .terminal-label {
   margin-left: 0.6rem;
   font-family: 'JetBrains Mono', monospace;
-  font-size: 0.58rem;
+  font-size: 0.68rem;
   font-weight: 700;
   letter-spacing: 0.18em;
-  color: rgba(160, 106, 240, 0.65);
+  color: #8a8bff;
+  text-shadow: 0 0 6px rgba(86, 87, 245, 0.5);
   text-transform: uppercase;
   flex: 1;
 }
 
-.tc-green  { color: #28c840; }
-.tc-red    { color: #ff5f57; }
-.tc-orange { color: #febc2e; }
-.tc-accent { color: #c084fc; }
-.tc-dim    { color: rgba(200, 196, 224, 0.55); }
+.tc-green  { color: var(--color-positive); text-shadow: 0 0 6px var(--color-positive-glow); }
+.tc-red    { color: var(--color-negative); text-shadow: 0 0 6px var(--color-negative-glow); }
+.tc-orange { color: var(--color-warning);  text-shadow: 0 0 6px var(--color-warning-glow); }
+.tc-accent { color: #8a8bff;              text-shadow: 0 0 6px rgba(86, 87, 245, 0.45); }
+.tc-dim    { color: rgba(208, 208, 216, 0.55); }
 
 .terminal-cursor {
   display: inline-block;
   width: 7px;
   height: 0.9em;
-  background: rgba(160, 106, 240, 0.7);
+  background: rgba(86, 87, 245, 0.7);
   border-radius: 1px;
   margin-left: 2px;
   vertical-align: text-bottom;
@@ -361,7 +531,9 @@ code, pre {
 
 .prose pre,
 .terminal-wrap pre {
-  background: rgba(8, 8, 20, 0.95) !important;
+  background: var(--color-bg-glass) !important;
+  backdrop-filter: blur(6px) saturate(150%);
+  -webkit-backdrop-filter: blur(6px) saturate(150%);
   border: none !important;
   border-radius: 0 !important;
   margin: 0 !important;
@@ -382,8 +554,28 @@ code, pre {
 }
 
 .prose img {
-  border-radius: 12px;
-  margin: 1.5rem 0;
+  display: block;
+  width: 100%;
+  margin: 1.75rem 0;
+  padding: 14px;
+  border-radius: 14px;
+  border: 1px solid var(--color-border);
+  background:
+    linear-gradient(rgba(86, 87, 245,0.04), rgba(86, 87, 245,0.04)),
+    rgba(33, 35, 41, 0.55);
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.38), inset 0 0 0 1px rgba(255,255,255,0.03);
+}
+/* Terminal screenshot — no surrounding frame, just a drop shadow so it floats */
+.prose img[src$="neofetch-birthday.webp"] {
+  padding: 0;
+  border: none;
+  background: none;
+  border-radius: 0;
+  box-shadow: none;
+  filter:
+    drop-shadow(0 8px 18px rgba(0, 0, 0, 0.55))
+    drop-shadow(0 22px 60px rgba(0, 0, 0, 0.4))
+    drop-shadow(0 0 26px rgba(86, 87, 245, 0.22));
 }
 
 .prose ul, .prose ol {
@@ -434,34 +626,13 @@ code, pre {
   color: var(--color-accent);
 }
 
-/* ─── Nav underline animation ─── */
-.nav-link {
-  position: relative;
-}
-
-.nav-link::after {
-  content: '';
-  position: absolute;
-  bottom: -2px;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background: var(--color-accent);
-  transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.nav-link:hover::after,
-.nav-link.active::after {
-  width: 100%;
-}
-
 /* ─── Button Glow ─── */
 .btn-glow {
   position: relative;
   overflow: hidden;
   transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
   box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3),
-              0 0 20px rgba(160, 106, 240, 0.15);
+              0 0 20px rgba(86, 87, 245, 0.15);
 }
 
 .btn-glow::before {
@@ -480,44 +651,8 @@ code, pre {
 .btn-glow:hover {
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3),
               0 0 30px var(--color-accent-glow),
-              0 0 60px rgba(160, 106, 240, 0.2);
+              0 0 60px rgba(86, 87, 245, 0.2);
   transform: translateY(-3px) scale(1.02);
-}
-
-/* ─── Download Intro Cards ─── */
-.download-card {
-  border-radius: 0.75rem;
-  background: rgba(12, 12, 20, 0.6);
-  border-left: 3px solid rgba(255, 255, 255, 0.15);
-  box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.4),
-              0 1px 0 rgba(255, 255, 255, 0.02);
-  overflow: hidden;
-}
-
-.download-card-title {
-  padding: 0.75rem 1.5rem;
-  font-family: var(--font-heading);
-  font-size: 0.8rem;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.6);
-  background: rgba(255, 255, 255, 0.04);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-}
-
-.download-card p {
-  padding: 1rem 1.5rem 1.25rem;
-  margin: 0;
-  color: var(--color-text-secondary);
-  font-size: 0.95rem;
-  line-height: 1.8;
-  text-align: justify;
-}
-
-.download-card strong {
-  color: var(--color-text-primary);
-  font-weight: 600;
 }
 
 /* ─── CTA Pulse Glow ─── */
@@ -544,8 +679,547 @@ code, pre {
   .glass-hover:hover { transform: none; }
   .btn-glow:hover { transform: none; }
   .btn-glow::before { display: none; }
-  .icon-float, .icon-pulse { animation: none; }
-  .bg-orb { animation: none; }
+  .icon-float { animation: none; }
   .cta-pulse { animation: none; }
   #bg-canvas { display: none; }
 }
+
+/* ════════════════════════════════════════════════════════════════════
+   NEWSPAPER THEME (design 10) — visual layer only.
+   Delete this whole block + revert font tokens to restore original.
+   ════════════════════════════════════════════════════════════════════ */
+
+/* Display headings: Playfair, heavy, tight */
+.display-heading { font-weight: 900; letter-spacing: -0.025em; }
+h1, h2, h3 { letter-spacing: -0.015em; }
+
+/* Panels → ruled newsprint frames, softly rounded */
+.glass {
+  background: var(--color-bg-glass) !important;
+  backdrop-filter: blur(6px) saturate(150%) !important;
+  -webkit-backdrop-filter: blur(6px) saturate(150%) !important;
+  border: 1px solid var(--color-border) !important;
+  border-radius: 14px !important;
+  box-shadow:
+    0 2px 6px rgba(0,0,0,0.24),
+    0 12px 28px rgba(0,0,0,0.38),
+    0 28px 56px rgba(0,0,0,0.30) !important;
+}
+.glass.about-card {
+  background: rgba(26, 28, 34, 0.42) !important;
+  backdrop-filter: blur(22px) saturate(135%) !important;
+  -webkit-backdrop-filter: blur(22px) saturate(135%) !important;
+  position: relative;
+  overflow: hidden;
+}
+#about-matrix {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.08;
+}
+@media (prefers-reduced-motion: reduce) {
+  #about-matrix { display: none; }
+}
+.glass-hover { transition: background .25s ease, border-color .25s ease, transform .25s ease, box-shadow .25s ease !important; }
+.glass-hover:hover {
+  background: rgba(54, 56, 62, 0.9) !important;
+  border-color: var(--color-border-hover) !important;
+  box-shadow:
+    0 4px 12px rgba(0,0,0,0.28),
+    0 18px 42px rgba(0,0,0,0.44),
+    0 36px 72px rgba(0,0,0,0.34) !important;
+  transform: translateY(-3px) !important;
+}
+
+/* Rounded newspaper buttons */
+.btn-glow { border-radius: 10px !important; }
+
+/* ── Newspaper section header (kicker · serif title · rule) ── */
+.news-section-head {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-bottom: 2.5rem;
+}
+.news-num {
+  font-family: var(--font-heading);
+  font-weight: 900;
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  line-height: 0.8;
+  letter-spacing: -0.04em;
+  color: transparent;
+  -webkit-text-stroke: 1px var(--color-border-hover);
+  user-select: none;
+  flex-shrink: 0;
+}
+.news-title-wrap { flex-shrink: 0; }
+.news-kicker {
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  margin-bottom: 6px;
+}
+.news-title {
+  font-family: var(--font-heading);
+  font-weight: 900;
+  font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+  line-height: 1;
+  letter-spacing: -0.02em;
+  color: var(--color-text-primary);
+}
+.news-title em, .news-title .accent { font-style: italic; color: var(--color-accent); }
+.news-line {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, var(--color-accent), rgba(255, 128, 224,0.4) 50%, transparent);
+}
+.news-section-head.center {
+  flex-direction: column;
+  text-align: center;
+  gap: 8px;
+}
+.news-section-head.center .news-line { display: none; }
+
+@media (max-width: 640px) {
+  .news-section-head { gap: 12px; margin-bottom: 1.75rem; }
+  .news-num { font-size: 2.3rem; }
+  .news-title { font-size: 1.5rem; }
+  .news-section-head:not(.center) .news-line { display: none; }
+}
+
+/* ── Newspaper rule helpers — geeky terminal-style divider ── */
+.news-hr {
+  position: relative;
+  height: 1.4rem;
+  background:
+    repeating-linear-gradient(90deg,
+      rgba(var(--col-accent, 86 87 245), 0.55) 0 4px,
+      transparent 4px 9px
+    ) center / 100% 1px no-repeat;
+  overflow: hidden;
+}
+.news-hr::after {
+  content: '// ─ EOF ─';
+  position: absolute;
+  left: 50%; top: 50%;
+  transform: translate(-50%, -50%);
+  background: var(--color-bg-primary, #212329);
+  padding: 0 10px;
+  font-family: 'JetBrains Mono', ui-monospace, monospace;
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  color: var(--color-accent-light, #8a8bff);
+  text-shadow: 0 0 5px rgba(86, 87, 245, 0.55);
+  text-transform: uppercase;
+}
+/* Different label per data attribute, e.g. <div class="news-hr" data-eof="brief"> */
+.news-hr[data-eof="brief"]::after  { content: '// ─ BRIEF ─'; }
+.news-hr[data-eof="post"]::after   { content: '// ─ POST ─'; }
+.news-hr[data-eof="dispatch"]::after { content: '// ─ DISPATCH ─'; }
+.news-hr[data-eof="end"]::after    { content: '// ─ 30 · END ─'; }
+
+/* ── Editorial 3-column block ── */
+.news-3col {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border-top:    1px solid rgba(var(--top-accent,    var(--col-accent)), 0.45);
+  border-bottom: 1px solid rgba(var(--bottom-accent, var(--col-accent)), 0.45);
+  border-left:   1px solid rgba(var(--col-accent), 0.32);
+  border-right:  1px solid rgba(var(--col-accent), 0.32);
+  border-radius: 8px;
+  overflow: hidden;
+  background: var(--color-bg-glass);
+  backdrop-filter: var(--layan-blur);
+  -webkit-backdrop-filter: var(--layan-blur);
+  box-shadow: var(--layan-shadow), inset 0 1px 0 rgba(255,255,255,0.05);
+}
+.news-col {
+  padding: 28px 26px;
+  border-right: 1px solid rgba(var(--col-accent), 0.4);
+  border-top: 3px solid rgba(var(--col-accent), 1);
+  transition: background 0.2s ease;
+}
+.news-col:last-child { border-right: none; }
+.news-col:hover { background: rgba(var(--col-accent), 0.06); }
+.news-3col.cols-2 { grid-template-columns: repeat(2, 1fr); }
+.news-3col.cols-2 .news-col p { text-align: justify; }
+.news-col p + p { margin-top: 0.75rem; }
+.news-col-icon {
+  display: flex;
+  color: var(--color-accent);
+  margin-bottom: 14px;
+}
+.news-col-kicker {
+  font-family: var(--font-mono);
+  font-size: 0.58rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  margin-bottom: 8px;
+}
+.news-col-title {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1.2rem;
+  line-height: 1.15;
+  color: var(--color-text-primary);
+  margin-bottom: 10px;
+}
+.news-col p {
+  font-size: 0.85rem;
+  line-height: 1.65;
+  color: var(--color-text-secondary);
+  text-align: justify;
+}
+@media (max-width: 860px) {
+  .news-3col { grid-template-columns: 1fr; }
+  .news-col { border-right: none; border-bottom: 1px solid var(--color-border); }
+  .news-col:last-child { border-bottom: none; }
+}
+
+/* ── Stat cells (ruled row) ── */
+.stat-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border: 1px solid var(--color-border);
+  border-radius: 14px;
+  overflow: hidden;
+  background: rgba(26, 28, 34, 0.45);
+  box-shadow:
+    0 2px 6px rgba(0,0,0,0.24),
+    0 12px 28px rgba(0,0,0,0.38),
+    0 28px 56px rgba(0,0,0,0.30);
+}
+.stat-cell {
+  padding: 24px 20px;
+  border-right: 1px solid var(--color-border);
+  text-align: center;
+  transition: background 0.2s ease;
+}
+.stat-cell:last-child { border-right: none; }
+.stat-cell:hover { background: rgba(86, 87, 245, 0.05); }
+@media (max-width: 680px) {
+  .stat-row { grid-template-columns: 1fr 1fr; }
+  .stat-cell:nth-child(2) { border-right: none; }
+  .stat-cell:nth-child(1), .stat-cell:nth-child(2) { border-bottom: 1px solid var(--color-border); }
+}
+
+/* ── More-transparent glass (featured post, etc.) ── */
+.glass.glass-trans {
+  background: rgba(26, 28, 34, 0.12) !important;
+  backdrop-filter: blur(7px) saturate(130%) !important;
+  -webkit-backdrop-filter: blur(7px) saturate(130%) !important;
+}
+
+/* ── Coverflow (updates listing) ── */
+.cf-stage { position: relative; height: 520px; perspective: 1700px; overflow: hidden; }
+.cf-track { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; transform-style: preserve-3d; }
+.cf-item {
+  position: absolute;
+  width: 420px; max-width: 82vw; height: 470px;
+  border-radius: 18px; overflow: hidden;
+  border: 1px solid var(--color-border);
+  background: var(--color-bg-glass);
+  backdrop-filter: var(--layan-blur);
+  -webkit-backdrop-filter: var(--layan-blur);
+  box-shadow: var(--layan-shadow), inset 0 1px 0 rgba(255,255,255,0.04);
+  transition: transform .45s cubic-bezier(.2,.7,.2,1), opacity .45s, border-color .3s;
+  cursor: pointer; text-decoration: none; color: inherit;
+  display: flex; flex-direction: column;
+}
+.cf-item.active { border-color: var(--color-accent); }
+.cf-img { width: 100%; height: 250px; object-fit: cover; background: #31313a; flex: none; }
+.cf-noimg { width: 100%; height: 250px; background: rgba(86, 87, 245,0.12); flex: none; }
+.cf-body { padding: 22px 26px; flex: 1; display: flex; flex-direction: column; }
+.cf-kick { font-family: var(--font-mono); font-size: .62rem; letter-spacing: .16em; text-transform: uppercase; color: var(--color-accent); margin-bottom: 10px; }
+.cf-title { font-family: var(--font-heading); font-weight: 700; font-size: 1.5rem; line-height: 1.15; color: var(--color-text-primary); }
+.cf-item.active .cf-title { color: var(--color-accent-light); }
+.cf-excerpt { margin-top: 12px; font-size: .85rem; line-height: 1.55; color: var(--color-text-secondary); overflow: hidden; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; }
+.cf-arrow {
+  position: absolute; top: 50%; transform: translateY(-50%); z-index: 200;
+  width: 44px; height: 44px; border-radius: 50%;
+  background: rgba(26, 28, 34,.8); border: 1px solid var(--color-border-hover);
+  color: var(--color-text-primary); cursor: pointer; display: flex; align-items: center; justify-content: center;
+  transition: background .2s, border-color .2s, color .2s;
+}
+.cf-arrow:hover { background: var(--color-accent); border-color: var(--color-accent); color: #212329; }
+.cf-arrow.prev { left: 8px; } .cf-arrow.next { right: 8px; }
+.cf-dots { display: flex; justify-content: center; gap: 8px; margin-top: 18px; }
+.cf-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--color-border-hover); border: none; cursor: pointer; padding: 0; transition: background .2s, transform .2s; }
+.cf-dot.active { background: var(--color-accent); transform: scale(1.4); }
+@media (max-width: 640px) { .cf-stage { height: 460px; } .cf-item { height: 420px; } .cf-img, .cf-noimg { height: 200px; } .cf-title { font-size: 1.25rem; } }
+
+/* ── Mobile updates index (TOC) ── */
+.utoc { border-top: 1px solid var(--color-border); }
+.utoc-row { display: flex; align-items: baseline; gap: 12px; padding: 14px 4px; border-bottom: 1px solid var(--color-border); text-decoration: none; color: inherit; }
+.utoc-num { font-family: var(--font-heading); font-weight: 900; font-size: 1.1rem; color: transparent; -webkit-text-stroke: 1px var(--color-border-hover); flex: none; width: 30px; }
+.utoc-title { font-weight: 600; font-size: .95rem; color: var(--color-text-primary); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.utoc-lead { flex: 1; border-bottom: 2px dotted var(--color-border-hover); transform: translateY(-3px); min-width: 14px; }
+.utoc-date { font-family: var(--font-mono); font-size: .6rem; color: var(--color-text-muted); flex: none; white-space: nowrap; }
+
+/* ── Classified ad internals ── */
+.ad-rule { display: flex; align-items: center; gap: 12px; margin-bottom: 1rem; }
+.ad-rule > span {
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+.ad-rule .l { flex: 1; height: 1px; background: var(--color-border); }
+.spec-li {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  padding: 9px 0;
+  border-bottom: 1px solid var(--color-border);
+  font-size: 0.9rem;
+  line-height: 1.45;
+  color: var(--color-text-secondary);
+  text-align: left;
+}
+.spec-li:last-child { border-bottom: none; }
+.spec-li .mk { font-family: var(--font-mono); font-size: 0.85rem; flex-shrink: 0; line-height: 1.55; }
+.ad-note {
+  border-left: 3px solid rgba(var(--col-accent), 1);
+  padding: 0.4rem 0 0.4rem 1rem;
+  margin: 0.5rem 0 1.5rem;
+  font-family: var(--font-heading);
+  font-style: italic;
+  font-weight: 700;
+  font-size: 1.02rem;
+  line-height: 1.35;
+  color: var(--color-text-primary);
+}
+.ad-note.warn { border-left-color: #ff80e0; }
+
+/* ── Classified framed block — Layan spec ── */
+.classified {
+  position: relative;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  overflow: hidden;
+  background: var(--color-bg-glass);
+  backdrop-filter: var(--layan-blur);
+  -webkit-backdrop-filter: var(--layan-blur);
+  box-shadow: var(--layan-shadow), inset 0 1px 0 rgba(255,255,255,0.05);
+}
+.classified::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: rgba(var(--col-accent), 1);
+  box-shadow: 0 0 14px rgba(var(--col-accent), 0.55);
+}
+/* .free no longer forces green — let the parent .rainbow cascade pick its color */
+
+/* ── Shared card depth (terminal windows etc.) ── */
+.card-depth {
+  box-shadow:
+    0 2px 6px rgba(0,0,0,0.24),
+    0 12px 28px rgba(0,0,0,0.38),
+    0 28px 56px rgba(0,0,0,0.30);
+}
+
+/* ── Subtle pill / badge depth ── */
+.pill-depth {
+  box-shadow:
+    0 1px 2px rgba(0,0,0,0.30),
+    0 4px 10px rgba(0,0,0,0.30);
+}
+
+/* ── Terminal block depth + subtle accent glow ── */
+.term-glow {
+  box-shadow:
+    0 2px 6px rgba(0,0,0,0.24),
+    0 12px 28px rgba(0,0,0,0.38),
+    0 0 22px rgba(86, 87, 245,0.18);
+  transition: box-shadow .25s ease, border-color .25s ease;
+}
+.term-glow:hover {
+  box-shadow:
+    0 2px 6px rgba(0,0,0,0.24),
+    0 12px 28px rgba(0,0,0,0.38),
+    0 0 32px rgba(86, 87, 245,0.34);
+}
+
+/* ── Back pill — used on post/page headers for "cd ../" links ── */
+.back-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.45rem 1.1rem;
+  border-radius: 9999px;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--color-accent-light);
+  background: var(--color-bg-glass);
+  border: 1px solid rgba(86, 87, 245, 0.45);
+  box-shadow:
+    0 2px 6px rgba(0,0,0,0.30),
+    0 8px 20px rgba(0,0,0,0.28),
+    0 0 14px rgba(86, 87, 245, 0.18);
+  backdrop-filter: blur(6px) saturate(150%);
+  -webkit-backdrop-filter: blur(6px) saturate(150%);
+  text-decoration: none;
+  transition: color .2s ease, border-color .2s ease, box-shadow .25s ease, transform .2s ease;
+}
+.back-pill:hover {
+  color: #fff;
+  border-color: var(--color-accent);
+  box-shadow:
+    0 2px 6px rgba(0,0,0,0.30),
+    0 8px 20px rgba(0,0,0,0.32),
+    0 0 24px rgba(86, 87, 245, 0.38);
+  transform: translateX(-2px);
+}
+.back-pill svg { width: 0.9rem; height: 0.9rem; }
+
+/* ── Drop-cap article ── */
+.dropcap > p:first-of-type::first-letter,
+.dropcap.prose > p:first-of-type::first-letter {
+  font-family: var(--font-heading);
+  font-weight: 900;
+  float: left;
+  font-size: 3.2rem;
+  line-height: 0.74;
+  padding: 0.16rem 0.55rem 0 0;
+  color: var(--color-accent);
+}
+
+/* ── Figure caption ── */
+.news-figcap {
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  padding: 8px 4px 0;
+  border-top: 1px solid var(--color-border);
+  margin-top: 10px;
+}
+
+/* ── Post bodies → newspaper article prose ── */
+.prose blockquote {
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  background: none;
+  border: none;
+  border-left: 3px solid var(--color-accent);
+  border-radius: 0;
+  padding: 0.4rem 0 0.4rem 1.6rem;
+  margin: 2.2rem 0;
+  font-family: var(--font-heading);
+  font-style: italic;
+  font-weight: 700;
+  font-size: 1.5rem;
+  line-height: 1.4;
+  color: var(--color-text-primary);
+}
+.prose blockquote p { color: var(--color-text-primary); margin: 0; text-align: left; }
+.prose h2 {
+  border-bottom: 1px solid var(--color-border);
+  padding-bottom: 0.45rem;
+  font-weight: 800;
+}
+.prose h2::before {
+  content: '§ ';
+  color: var(--color-accent);
+  font-family: var(--font-mono);
+  font-size: 0.7em;
+  vertical-align: 0.1em;
+}
+
+/* Masthead deco rule across very top */
+#site-header::before {
+  content: '';
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  z-index: 60;
+  pointer-events: none;
+  background: linear-gradient(90deg, transparent, var(--color-accent) 22%, #ff80e0 50%, var(--color-accent) 78%, transparent);
+}
+
+/* Nameplate wordmark stays Playfair (from font-heading) */
+
+/* Double-rule helper for section breaks */
+/* Site-wide divider above footer — terminal prompt with wavy tilde fill */
+.news-rule {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin: 1.5rem auto 0;
+  font-family: 'JetBrains Mono', ui-monospace, monospace;
+  font-size: 0.8rem;
+  font-weight: 700;
+  line-height: 1;
+  white-space: nowrap;
+}
+/* Wavy tilde fill on each side — rainbow gradient via background-clip:text */
+.news-rule .nr-tilde {
+  flex: 1;
+  overflow: hidden;
+  background: linear-gradient(90deg,
+    rgba(86, 87, 245, 0.5),
+    rgba(138, 139, 255, 0.7),
+    rgba(86, 87, 245, 0.5));
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  letter-spacing: -0.15em;
+  font-weight: 700;
+  animation: nrTildeFlow 10s linear infinite;
+}
+.news-rule .nr-tilde:last-of-type {
+  text-align: right;
+  animation-direction: reverse;
+}
+@keyframes nrTildeFlow {
+  0%   { background-position: 0 0; }
+  100% { background-position: 200% 0; }
+}
+
+/* Terminal prompt segments — colored per element */
+.news-rule .nr-prompt {
+  flex-shrink: 0;
+  letter-spacing: 0;
+  text-shadow: 0 0 6px rgba(86, 87, 245, 0.35);
+}
+.news-rule .nr-user   { color: rgba(138, 139, 255, 0.85); }
+.news-rule .nr-at     { color: rgba(153, 153, 153, 0.6); }
+.news-rule .nr-host   { color: rgba(138, 139, 255, 0.85); }
+.news-rule .nr-colon  { color: rgba(153, 153, 153, 0.6); }
+.news-rule .nr-path   { color: rgba(86, 87, 245, 0.75); }
+.news-rule .nr-sigil  { color: rgba(138, 139, 255, 0.85); padding-left: 2px; }
+.news-rule .nr-cmd    { color: rgba(221, 221, 221, 0.75); }
+.news-rule .nr-str    { color: rgba(255, 128, 224, 0.7); }
+.news-rule .nr-cursor {
+  display: inline-block;
+  width: 8px; height: 0.9em;
+  background: #eaeaea;
+  margin-left: 3px;
+  vertical-align: text-bottom;
+  animation: nrCursorBlink 1s steps(2) infinite;
+}
+@keyframes nrCursorBlink {
+  0%, 49%   { opacity: 1; }
+  50%, 100% { opacity: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .news-rule .nr-tilde, .news-rule .nr-cursor { animation: none; }
+}
+
+/* Prose headings already serif; tighten section title rhythm */
+.prose h2, .prose h3 { letter-spacing: -0.01em; }

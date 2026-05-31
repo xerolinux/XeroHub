@@ -13,7 +13,30 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 const { title, description = 'XeroLinux - Arch, Refined. A tailored Linux experience.', image } = Astro.props;
 const pageTitle = title ? `${title} | XeroLinux HQ` : 'XeroLinux HQ';
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
-const ogImage = image || new URL(`${base}/images/og-cover.png`, Astro.site).href;
+const ogImage = image || new URL(`${base}/images/og-cover.webp`, Astro.site).href;
+
+// ── Per-page accent palette — sunset wallpaper inspiration + Layan ──
+// Each page gets ONE accent (deterministic by URL hash) used for borders + glow.
+// Same page = same color across visits. Different pages = different colors.
+const accentPalette: [string, string, string][] = [
+  ['86, 87, 245',   '138, 139, 255', '63, 64, 200'],   // Layan indigo
+  ['255, 107, 157', '255, 153, 188', '210, 60, 110'],  // sunset pink
+  ['255, 138, 61',  '255, 178, 110', '210, 95, 30'],   // sunset orange
+  ['92, 224, 255',  '170, 240, 255', '40, 170, 220'],  // ice cyan
+  ['184, 92, 232',  '215, 150, 245', '140, 55, 190'],  // magenta-violet
+  ['255, 214, 107', '255, 230, 160', '210, 170, 60'],  // golden yellow
+  ['154, 75, 184',  '195, 130, 220', '110, 40, 145'],  // lavender violet
+  ['255, 128, 224', '255, 175, 235', '210, 90, 185'],  // Layan magenta
+  ['43, 208, 90',   '120, 230, 150', '20, 160, 65'],   // Layan positive
+  ['66, 133, 244',  '130, 175, 250', '40, 95, 200'],   // Layan link blue
+];
+function pageHash(s: string) {
+  let h = 0;
+  for (let i = 0; i < s.length; i++) h = ((h << 5) - h + s.charCodeAt(i)) | 0;
+  return Math.abs(h);
+}
+const _idx = pageHash(Astro.url.pathname) % accentPalette.length;
+const [pageAccent, pageAccentLight, pageAccentDark] = accentPalette[_idx];
 ---
 
 <!doctype html>
@@ -43,26 +66,50 @@ const ogImage = image || new URL(`${base}/images/og-cover.png`, Astro.site).href
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- Preload primary woff2 files (body + mono — used immediately above the fold) -->
     <link rel="preload" as="font" type="font/woff2" crossorigin href="https://fonts.gstatic.com/s/inter/v18/UcCO3FwrK3iLTeHuS_nVMrMxCp50SjIw2boKoduKmMEVuLyfAZ9hiA.woff2" />
+    <link rel="preload" as="font" type="font/woff2" crossorigin href="https://fonts.gstatic.com/s/jetbrainsmono/v18/tDbY2o-flEEny0FZhsfKu5WU4zr3E_BX0PnT8RD8yKxjPVmUsaaDhw.woff2" />
+    <!-- Orbitron: print-media swap to avoid render block -->
     <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&display=swap" />
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
     <noscript><link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" /></noscript>
+
+    <!-- Chakra Petch (headings): same print-media swap pattern + preload for hint -->
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600;1,700&display=swap" />
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600;1,700&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600;1,700&display=swap" rel="stylesheet" /></noscript>
 
     <!-- DNS prefetch for third-party resources -->
     <link rel="dns-prefetch" href="https://www.youtube.com" />
     <link rel="dns-prefetch" href="https://firestore.googleapis.com" />
     <link rel="dns-prefetch" href="https://identitytoolkit.googleapis.com" />
 
-    <!-- Preload critical hero image -->
-    <link rel="preload" as="image" href={`${base}/logos/logo.png`} />
+    <!-- Logo served by Astro <Image> from src/assets/logo.png with srcset; Header instance uses loading="eager" so it loads immediately without an explicit preload. -->
 
     <!-- Favicon & Meta -->
     <link rel="icon" type="image/x-icon" href={`${base}/favicon.ico`} />
     <link rel="manifest" href={`${base}/site.webmanifest`} />
-    <meta name="theme-color" content="#794BC4" />
+    <meta name="theme-color" content="#5657f5" />
 
     <!-- RSS -->
     <link rel="alternate" type="application/rss+xml" title="XeroLinux" href={`${base}/rss.xml`} />
+
+    <!-- Per-page accent (drives borders, glow halos). Hash-picked from sunset palette. -->
+    <style set:html={`:root {
+      --page-accent: ${pageAccent};
+      --page-accent-light: ${pageAccentLight};
+      --page-accent-dark: ${pageAccentDark};
+    }`}></style>
+
+    <!-- Theme bootstrap — restore Xero-Dark before paint to avoid flash -->
+    <script is:inline>
+      (function () {
+        try {
+          var t = localStorage.getItem('xero-theme');
+          if (t === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
+        } catch (e) {}
+      })();
+    </script>
   </head>
   <body class="grain min-h-screen">
     <AnimatedBG />
@@ -71,6 +118,115 @@ const ogImage = image || new URL(`${base}/images/og-cover.png`, Astro.site).href
       <slot />
     </main>
     <Footer />
+
+    <!-- Per-element accent — curated wallpaper palette walked in DOM order.
+         Each next bordered element gets the next color → neighbors always differ.
+         Order is deterministic, so same page on refresh = same colors per element. -->
+    <script is:inline>
+      (function () {
+        // Sunset-wallpaper inspired palette (14 visually distinct colors)
+        var PALETTE = [
+          '255, 107, 157',   // sunset pink
+          '255, 138, 61',    // sunset orange
+          '255, 214, 107',   // golden yellow
+          '92, 224, 255',    // ice cyan
+          '125, 211, 252',   // sky cyan
+          '64, 96, 200',     // deep blue
+          '184, 92, 232',    // bright purple
+          '255, 95, 162',    // hot pink
+          '154, 75, 184',    // lavender violet
+          '176, 112, 224',   // light violet
+          '95, 224, 154',    // mint green
+          '86, 87, 245',     // Layan indigo
+          '255, 128, 224',   // Layan magenta
+          '255, 87, 119'     // coral
+        ];
+
+        function paintAccents() {
+          var sels = [
+            '.news-col', '.classified', '.layan-panel', '.terminal-wrap',
+            '.glass', '.term-composer', '.comment-form', '.comment-item',
+            '.news-hr', 'hr', '.spec-li',
+            '.masthead-navlink', '.cf-item', '.ad-note', '.stat-row',
+            '#post-content img', '.prose img',
+            '[class*="border-b"]', '[class*="border-t"]',
+            '[class*="border-l"]', '[class*="border-r"]'
+          ];
+          // Collect all unique elements in document order
+          var seen = new WeakSet();
+          var nodes = [];
+          sels.forEach(function (sel) {
+            try {
+              document.querySelectorAll(sel).forEach(function (el) {
+                if (seen.has(el)) return;
+                seen.add(el);
+                nodes.push(el);
+              });
+            } catch (e) {}
+          });
+          // Sort by DOM order (document position) so neighbors stay neighbors
+          nodes.sort(function (a, b) {
+            var pos = a.compareDocumentPosition(b);
+            if (pos & Node.DOCUMENT_POSITION_FOLLOWING) return -1;
+            if (pos & Node.DOCUMENT_POSITION_PRECEDING) return 1;
+            return 0;
+          });
+          // Walk and assign next palette color — set the var AND the actual border-color
+          // directly so it doesn't depend on var-in-var resolution.
+          nodes.forEach(function (el, i) {
+            var rgb = PALETTE[i % PALETTE.length];
+            el.style.setProperty('--col-accent', rgb);
+            // Force border-color so every visible side uses this hue
+            el.style.setProperty('border-color', 'rgba(' + rgb + ', 0.55)', 'important');
+          });
+
+          // Dual-border elements get distinct top/bottom/left/right colors directly
+          document.querySelectorAll(
+            '.masthead-nav, .news-3col, .term-composer-id-row, .masthead-body, .masthead-dateline, .masthead-nameplate-row'
+          ).forEach(function (el, i) {
+            var topI = (i * 3) % PALETTE.length;
+            var botI = (topI + 7) % PALETTE.length;
+            var lftI = (topI + 4) % PALETTE.length;
+            var rgtI = (topI + 10) % PALETTE.length;
+            el.style.setProperty('border-top-color',    'rgba(' + PALETTE[topI] + ', 0.55)', 'important');
+            el.style.setProperty('border-bottom-color', 'rgba(' + PALETTE[botI] + ', 0.55)', 'important');
+            el.style.setProperty('border-left-color',   'rgba(' + PALETTE[lftI] + ', 0.55)', 'important');
+            el.style.setProperty('border-right-color',  'rgba(' + PALETTE[rgtI] + ', 0.55)', 'important');
+          });
+        }
+
+        // Throttle re-paints triggered by dynamic content (videos, comments, etc.)
+        var pending = null;
+        function schedule() {
+          if (pending) return;
+          pending = requestAnimationFrame(function () { pending = null; paintAccents(); });
+        }
+
+        if (document.readyState === 'loading') {
+          document.addEventListener('DOMContentLoaded', paintAccents);
+        } else {
+          paintAccents();
+        }
+        document.addEventListener('astro:after-swap', paintAccents);
+
+        // Watch for dynamically-injected nodes (YouTube videos, live comments, etc.)
+        var mo = new MutationObserver(function (muts) {
+          for (var i = 0; i < muts.length; i++) {
+            if (muts[i].addedNodes && muts[i].addedNodes.length) {
+              schedule();
+              return;
+            }
+          }
+        });
+        if (document.body) {
+          mo.observe(document.body, { childList: true, subtree: true });
+        } else {
+          document.addEventListener('DOMContentLoaded', function () {
+            mo.observe(document.body, { childList: true, subtree: true });
+          });
+        }
+      })();
+    </script>
 
     <!-- Scroll reveal observer -->
     <script is:inline>

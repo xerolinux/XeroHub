@@ -23,7 +23,7 @@ function visitButton(url: string): string {
   <tr>
     <td align="center">
       <a href="${url}"
-         style="display:inline-block;padding:12px 32px;background:#a06af0;color:#ffffff;font-family:sans-serif;font-size:14px;font-weight:600;text-decoration:none;border-radius:8px;letter-spacing:0.04em;">
+         style="display:inline-block;padding:12px 32px;background:#5657f5;color:#ffffff;font-family:sans-serif;font-size:14px;font-weight:600;text-decoration:none;border-radius:8px;letter-spacing:0.04em;">
         Visit Site
       </a>
     </td>
