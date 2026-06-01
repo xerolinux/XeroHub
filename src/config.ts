@@ -77,4 +77,4 @@ export const kofiGoal = {
   link: 'https://ko-fi.com/xerolinux',
 };
 
-export const kofiGoalPct = Math.max(0, Math.min(100, Math.round((kofiGoal.currentEUR / kofiGoal.targetEUR) * 100)));
+export const kofiGoalPct = Math.max(0, Math.min(100, Math.floor((kofiGoal.currentEUR / kofiGoal.targetEUR) * 100)));

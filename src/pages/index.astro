@@ -5,8 +5,31 @@ import Carousel from '../components/home/Carousel.astro';
 import FeatureCards from '../components/home/FeatureCards.astro';
 import GlassCard from '../components/ui/GlassCard.astro';
 import Button from '../components/ui/Button.astro';
-import { kofiGoal, kofiGoalPct } from '../config';
+import { kofiGoal, kofiGoalPct as fallbackPct } from '../config';
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+
+const KOFI_PROXY_URL = 'https://kofi-goal-proxy.techxero.workers.dev/';
+
+let liveTitle: string = kofiGoal.title;
+let liveTargetEUR: number = kofiGoal.targetEUR;
+let liveCurrentEUR: number = kofiGoal.currentEUR;
+let liveGoalPct: number = fallbackPct;
+
+try {
+  const res = await fetch(KOFI_PROXY_URL, {
+    headers: { 'user-agent': 'xerohub-build' },
+    signal: AbortSignal.timeout(5000),
+  });
+  if (res.ok) {
+    const d = await res.json() as { percentage?: number; targetEUR?: number; currentEUR?: number; title?: string };
+    if (typeof d.percentage === 'number') liveGoalPct = Math.max(0, Math.min(100, Math.floor(d.percentage)));
+    if (typeof d.targetEUR === 'number')  liveTargetEUR = d.targetEUR;
+    if (typeof d.currentEUR === 'number') liveCurrentEUR = d.currentEUR;
+    if (d.title) liveTitle = d.title;
+  }
+} catch {
+  // build-time fetch failed; keep config fallback values
+}
 ---
 
 <Layout title="Home" description="The XeroLinux HQ">
@@ -118,7 +141,14 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 
     {kofiGoal.enabled && (
       <div class="fade-in fade-in-delay-1">
-        <a href={kofiGoal.link} target="_blank" rel="noopener noreferrer" class="kofi-goal-wrap block rounded-2xl px-4 sm:px-6 py-4 sm:py-5 group">
+        <a
+          href={kofiGoal.link}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="kofi-goal-wrap block rounded-2xl px-4 sm:px-6 py-4 sm:py-5 group"
+          data-kofi-goal
+          data-kofi-endpoint="https://kofi-goal-proxy.techxero.workers.dev/"
+        >
           <div class="flex items-center gap-3 mb-3">
             <span class="font-mono text-[0.58rem] uppercase tracking-[0.22em] text-[var(--color-accent)]">// Support Jar</span>
             <div class="flex-1 h-px bg-gradient-to-r from-[var(--color-accent)]/40 via-[var(--color-accent-2)]/25 to-transparent"></div>
@@ -126,12 +156,12 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
           </div>
 
           <div class="flex items-baseline justify-between gap-3 mb-2">
-            <span class="display-heading text-sm sm:text-base text-[var(--color-text-primary)] leading-tight">{kofiGoal.title}</span>
-            <span class="font-mono text-[0.62rem] sm:text-[0.68rem] tracking-widest text-[var(--color-accent-light)] shrink-0">{kofiGoalPct}%</span>
+            <span class="display-heading text-sm sm:text-base text-[var(--color-text-primary)] leading-tight" data-kofi-title>{liveTitle}</span>
+            <span class="font-mono text-[0.62rem] sm:text-[0.68rem] tracking-widest text-[var(--color-accent-light)] shrink-0" data-kofi-pct>{liveGoalPct}%</span>
           </div>
 
           <div class="kofi-bar">
-            <div class="kofi-bar-fill" style={`width: ${kofiGoalPct}%`}>
+            <div class="kofi-bar-fill" style={`width: ${liveGoalPct}%`} data-kofi-fill>
               <span class="kofi-bar-shine"></span>
             </div>
             <div class="kofi-bar-ticks" aria-hidden="true">
@@ -141,8 +171,8 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 
           <div class="flex items-center justify-between gap-3 mt-2 font-mono text-[0.6rem] sm:text-[0.65rem] tracking-wider">
             <span class="text-[var(--color-text-secondary)]">
-              <span class="text-[var(--color-positive)]">€{kofiGoal.currentEUR.toLocaleString()}</span>
-              <span class="text-[var(--color-text-muted)]"> / €{kofiGoal.targetEUR.toLocaleString()}</span>
+              <span class="text-[var(--color-positive)]" data-kofi-current>€{liveCurrentEUR.toLocaleString()}</span>
+              <span class="text-[var(--color-text-muted)]"> / <span data-kofi-target>€{liveTargetEUR.toLocaleString()}</span></span>
             </span>
             <span class="text-[var(--color-text-muted)] group-hover:text-[var(--color-accent-light)] transition-colors flex items-center gap-1">
               Support
@@ -230,6 +260,40 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
   </style>
 
   <script is:inline>
+    // Ko-Fi goal live updater — fetches CF Worker proxy, refreshes bar.
+    (function () {
+      const root = document.querySelector('[data-kofi-goal]');
+      if (!root) return;
+      const endpoint = root.dataset.kofiEndpoint;
+      if (!endpoint) return;
+
+      const elTitle   = root.querySelector('[data-kofi-title]');
+      const elPct     = root.querySelector('[data-kofi-pct]');
+      const elFill    = root.querySelector('[data-kofi-fill]');
+      const elCurrent = root.querySelector('[data-kofi-current]');
+      const elTarget  = root.querySelector('[data-kofi-target]');
+
+      const fmt = (n) => '€' + Number(n).toLocaleString('en-US');
+
+      function apply(data) {
+        if (!data || typeof data !== 'object') return;
+        const { percentage, targetEUR, currentEUR, title } = data;
+        if (typeof percentage === 'number' && !Number.isNaN(percentage)) {
+          const p = Math.max(0, Math.min(100, percentage));
+          if (elPct)  elPct.textContent  = Math.floor(p) + '%';
+          if (elFill) elFill.style.width = p + '%';
+        }
+        if (typeof targetEUR === 'number'  && elTarget)  elTarget.textContent  = fmt(targetEUR);
+        if (typeof currentEUR === 'number' && elCurrent) elCurrent.textContent = fmt(currentEUR);
+        if (title && elTitle) elTitle.textContent = title;
+      }
+
+      fetch(endpoint, { cache: 'no-store' })
+        .then(r => r.ok ? r.json() : null)
+        .then(apply)
+        .catch(() => { /* keep build-time fallback */ });
+    })();
+
     // YouTube lite-embed — load iframe only on click
     (function () {
       const yt = document.getElementById('yt-lite');
