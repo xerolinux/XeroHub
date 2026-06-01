@@ -25,7 +25,7 @@ const footerLinks = [
 ---
 
 <footer class="relative z-10 mt-24">
-  <div class="news-rule mx-auto max-w-3xl px-4 sm:px-6">
+  <div class="news-rule hidden md:block mx-auto max-w-3xl px-4 sm:px-6">
     <span class="nr-tilde">~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</span>
     <span class="nr-prompt"><span class="nr-user">xero</span><span class="nr-at">@</span><span class="nr-host">xerolinux</span><span class="nr-colon">:</span><span class="nr-path">~/hq</span><span class="nr-sigil">$</span>&nbsp;<span class="nr-cmd">echo</span>&nbsp;<span class="nr-str">"end of transmission"</span><span class="nr-cursor"></span></span>
     <span class="nr-tilde">~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</span>
@@ -33,7 +33,7 @@ const footerLinks = [
   <div class="mx-auto max-w-7xl 2xl:max-w-[100rem] px-4 sm:px-6 lg:px-8 py-12">
     <div class="grid grid-cols-1 md:grid-cols-5 gap-6 items-center">
       <!-- Brand -->
-      <div>
+      <div class="hidden md:block">
         <a href={`${base}/`} class="flex items-center gap-3 mb-4">
           <Image src={logo} alt="XeroLinux" width="72" height="72" densities={[1, 2]} loading="lazy" class="w-9 h-9 rounded-lg" />
           <span class="font-heading font-semibold text-lg text-[var(--color-text-primary)]">
@@ -46,7 +46,7 @@ const footerLinks = [
       </div>
 
       <!-- Col 2: Tech stack pills (fills space brand → nav) -->
-      <div class="flex flex-col items-center gap-2">
+      <div class="hidden md:flex flex-col items-center gap-2">
         <span class="font-mono text-[0.55rem] uppercase tracking-[0.2em] text-[var(--color-text-muted)]">Stack</span>
         <div class="grid grid-cols-2 gap-1.5 w-full max-w-[180px]">
           <span class="text-center px-2 py-1 rounded-full border border-[var(--color-accent)]/40 bg-[var(--color-accent)]/10 font-mono text-[0.55rem] uppercase tracking-[0.08em] text-[var(--color-accent-light)] leading-tight">astro</span>
@@ -67,7 +67,7 @@ const footerLinks = [
       </div>
 
       <!-- Col 4: Project pulse — uptime + counts (fills space nav → community) -->
-      <div class="flex flex-col items-center gap-2">
+      <div class="hidden md:flex flex-col items-center gap-2">
         <span class="font-mono text-[0.55rem] uppercase tracking-[0.2em] text-[var(--color-text-muted)]">Pulse</span>
         <div class="grid grid-cols-3 gap-x-3 font-mono text-[0.62rem] uppercase tracking-[0.1em] text-[var(--color-text-muted)] text-center">
           <span class="flex flex-col items-center gap-0.5">
@@ -90,7 +90,7 @@ const footerLinks = [
       </div>
 
       <!-- Socials -->
-      <div class="flex flex-col items-end text-right">
+      <div class="hidden md:flex flex-col items-end text-right">
         <h3 class="font-heading font-semibold text-sm uppercase tracking-wider text-[var(--color-text-muted)] mb-4">
           Community
         </h3>
@@ -286,7 +286,7 @@ const footerLinks = [
     </div>
 
     <!-- Bottom bar -->
-    <div class="mt-8 pt-8 border-t border-[var(--color-border)] flex flex-col sm:flex-row items-center justify-between gap-4">
+    <div class="hidden md:flex mt-8 pt-8 border-t border-[var(--color-border)] flex-col sm:flex-row items-center justify-between gap-4">
       <p class="text-sm text-[var(--color-text-muted)]">
         &copy; {currentYear} XeroLinux. Proudly made in Lebanon <Image src={lbFlag} alt="Lebanese Flag" width="25" height="18" densities={[1, 2]} loading="lazy" class="inline-block align-text-bottom" />
       </p>
