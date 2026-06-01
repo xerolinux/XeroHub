@@ -57,13 +57,15 @@ function excerpt(md: string | undefined, n: number): string {
             <div class="cf-track">
               {displayUpdates.map((update) => (
                 <a href={`${base}/updates/${update.id}/`} class="cf-item" data-cf>
-                  {update.data.image
-                    ? <img class="cf-img" src={`${base}${update.data.image}`} alt={update.data.title} width="1200" height="630" loading="lazy" decoding="async" />
-                    : <div class="cf-noimg"></div>}
-                  <div class="cf-body">
-                    <div class="cf-kick">{formatDate(update.data.date)}{update.data.tags && update.data.tags.length > 0 ? ' · ' + update.data.tags[0] : ''}</div>
-                    <div class="cf-title">{update.data.title}</div>
-                    <p class="cf-excerpt">{update.data.description || excerpt(update.body, 240)}</p>
+                  <div class="cf-inner">
+                    {update.data.image
+                      ? <img class="cf-img" src={`${base}${update.data.image}`} alt={update.data.title} width="1200" height="630" loading="lazy" decoding="async" />
+                      : <div class="cf-noimg"></div>}
+                    <div class="cf-body">
+                      <div class="cf-kick">{formatDate(update.data.date)}{update.data.tags && update.data.tags.length > 0 ? ' · ' + update.data.tags[0] : ''}</div>
+                      <div class="cf-title">{update.data.title}</div>
+                      <p class="cf-excerpt">{update.data.description || excerpt(update.body, 240)}</p>
+                    </div>
                   </div>
                 </a>
               ))}
