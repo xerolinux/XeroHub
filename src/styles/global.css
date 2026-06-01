@@ -881,9 +881,11 @@ h1, h2, h3 { letter-spacing: -0.015em; }
   text-align: justify;
 }
 @media (max-width: 860px) {
-  .news-3col { grid-template-columns: 1fr; }
-  .news-col { border-right: none; border-bottom: 1px solid var(--color-border); }
+  .news-3col,
+  .news-3col.cols-2 { grid-template-columns: 1fr; }
+  .news-col { border-right: none; border-bottom: 1px solid var(--color-border); padding: 20px 18px; }
   .news-col:last-child { border-bottom: none; }
+  .news-3col.cols-2 .news-col p { hyphens: none; }
 }
 
 /* ── Stat cells (ruled row) ── */
