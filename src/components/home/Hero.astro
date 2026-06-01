@@ -6,7 +6,7 @@ import { discount, discountActive } from '../../config';
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 ---
 
-<section class="relative pt-32 sm:pt-52 pb-6 sm:pb-16 px-4 sm:px-6 lg:px-8">
+<section class="relative pt-44 sm:pt-52 pb-6 sm:pb-16 px-4 sm:px-6 lg:px-8">
   <div class="mx-auto max-w-7xl 2xl:max-w-[100rem]">
 
     {discountActive && (
@@ -29,7 +29,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
     <div class="fade-in relative">
 
       <!-- Lead story (independent card) -->
-      <article class="hero-soft-shadow relative overflow-hidden rounded-2xl border border-[var(--color-border)] layan-panel card-depth p-5 sm:p-6 lg:mr-[calc(34.483%+16px)]">
+      <article class="hero-lead-card hero-soft-shadow relative overflow-hidden rounded-2xl border border-[var(--color-border)] layan-panel card-depth p-3 sm:p-6 lg:mr-[calc(34.483%+16px)]">
         <!-- Live matrix-rain background -->
         <div class="absolute inset-0 z-0">
           <canvas id="cmatrix-canvas" class="w-full h-full block"></canvas>
@@ -83,7 +83,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
         </div>
 
         <!-- CTAs -->
-        <div class="flex flex-row flex-wrap sm:flex-nowrap items-center gap-2.5">
+        <div class="hero-ctas flex flex-row flex-nowrap items-center gap-1.5 sm:gap-2.5">
           <Button href={`${base}/download/`} size="sm">
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
@@ -235,6 +235,35 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
       0 6px 14px rgba(0,0,0,0.32) !important;
   }
 
+  /* ── Mobile: squeeze lead article card ── */
+  @media (max-width: 639px) {
+    .hero-lead-card .display-heading {
+      font-size: 1.05rem !important;
+      line-height: 1.2 !important;
+      margin-bottom: 0.5rem !important;
+    }
+    .hero-lead-card > .relative > div:first-child { /* kicker */
+      font-size: 0.55rem !important;
+      letter-spacing: 0.18em !important;
+      gap: 0.5rem !important;
+      margin-bottom: 0.5rem !important;
+    }
+    .hero-lead-card .hero-lead { font-size: 0.86rem !important; line-height: 1.55 !important; margin-bottom: 0.7rem !important; }
+    .hero-lead-card p :global(strong) { font-size: 0.88rem !important; }
+    .hero-lead-card p :global(svg) { width: 1rem !important; height: 1rem !important; }
+    .hero-lead-card :global(.w-5.h-5) { width: 0.9rem; height: 0.9rem; }
+    .hero-ctas :global(a) {
+      padding: 0.45rem 0.6rem !important;
+      font-size: 0.65rem !important;
+      min-height: 36px !important;
+      gap: 0.3rem !important;
+      letter-spacing: 0.04em !important;
+      white-space: nowrap;
+      flex: 1 1 0;
+    }
+    .hero-ctas :global(a) :global(svg) { width: 0.85rem !important; height: 0.85rem !important; }
+  }
+
   /* ── 16px gap stream canvas (picker #100) ── */
   #hero-stream {
     position: absolute;
@@ -245,7 +274,9 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
     overflow: visible;
     pointer-events: none;
     z-index: 10;
-    display: block;
+  }
+  @media (max-width: 1023px) {
+    #hero-stream { display: none !important; }
   }
 
   /* Neofetch-style row icons inside System Record — bigger now that the corner logo is gone */
