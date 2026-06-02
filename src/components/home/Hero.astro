@@ -182,37 +182,30 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
           ));
         })()}
         <!-- Get it -->
-        <div class="mt-auto pt-3 border-t-2 border-[var(--color-accent)]">
-          <div class="font-mono text-[0.58rem] uppercase tracking-[0.2em] text-[var(--color-text-muted)] mb-2.5">Two ways in</div>
-          <a href={`${base}/download/`} class="group block rounded-lg border border-[var(--color-border)] layan-panel px-3.5 py-3 font-mono text-[0.7rem] leading-relaxed hover:border-[var(--color-accent)]/60 term-glow">
-            <div class="text-[var(--color-text-secondary)] mb-1.5">
-              <span class="text-[#3ecf6e]">$</span> <span class="text-white">get</span> xerolinux<span class="terminal-cursor"></span>
-            </div>
-            <div class="flex items-center gap-3">
-              <div class="grid grid-cols-[auto_2.2rem_1fr] items-center gap-x-2 text-[0.66rem] flex-1">
-                <span class="text-[var(--color-accent)]">├─</span>
-                <span class="text-[var(--color-text-primary)]">iso</span>
-                <span class="text-[var(--color-accent-2)]">contribution</span>
-                <span class="text-[var(--color-accent)]">└─</span>
-                <span class="text-[var(--color-text-primary)]">tui</span>
-                <span class="text-[#3ecf6e]">free forever</span>
+        <div class="mt-auto pt-2 border-t-2 border-[var(--color-accent)]">
+          <div class="font-mono text-[0.58rem] uppercase tracking-[0.2em] text-[var(--color-text-muted)] mb-1.5">Two ways in</div>
+          <a href={`${base}/download/`} class="group block rounded-lg border border-[var(--color-border)] layan-panel px-3.5 py-2.5 font-mono text-[0.7rem] leading-snug hover:border-[var(--color-accent)]/60 term-glow">
+            <div class="term-grid">
+              <div class="term-text">
+                <div class="text-[var(--color-text-secondary)]">
+                  <span class="text-[#3ecf6e]">$</span> <span class="text-white">get</span> xerolinux<span class="terminal-cursor"></span>
+                </div>
+                <div class="grid grid-cols-[auto_2.2rem_1fr] items-center gap-x-2 text-[0.66rem] leading-tight">
+                  <span class="text-[var(--color-accent)]">├─</span>
+                  <span class="text-[var(--color-text-primary)]">iso</span>
+                  <span class="text-[var(--color-accent-2)]">contribution</span>
+                  <span class="text-[var(--color-accent)]">└─</span>
+                  <span class="text-[var(--color-text-primary)]">tui</span>
+                  <span class="text-[#3ecf6e]">free forever</span>
+                </div>
               </div>
-              <span class="text-[var(--color-accent)] text-xl leading-none drop-shadow-[0_0_8px_rgba(86, 87, 245,0.7)] transition-transform group-hover:translate-x-1 self-center ml-auto">&#9656;</span>
-            </div>
-            <!-- Conky EQ bars absolutely positioned, fill full link height -->
-            <div class="conky-v-wrap">
-              <div class="conky-v">
-                <div class="vb" title="CPU 67%"><i style="height:67%;background:#2bd05a;color:#2bd05a"></i></div>
-                <div class="vb" title="MEM 54%"><i style="height:54%;background:#f5b500;color:#f5b500"></i></div>
-                <div class="vb" title="DSK 21%"><i style="height:21%;background:#ee3939;color:#ee3939"></i></div>
-                <div class="vb" title="NET 30%"><i style="height:30%;background:#4285f4;color:#4285f4"></i></div>
+              <div class="conky-h-wrap" data-conky>
+                <div class="hbar" data-bar="cpu" data-min="48" data-max="82" style="color:#2bd05a" title="CPU 60%"><span class="hbar-l">cpu</span><span class="hbar-t" data-bricks="18"></span><span class="hbar-p">60</span></div>
+                <div class="hbar" data-bar="mem" data-min="46" data-max="64" style="color:#f5b500" title="MEM 55%"><span class="hbar-l">mem</span><span class="hbar-t" data-bricks="18"></span><span class="hbar-p">55</span></div>
+                <div class="hbar" data-bar="dsk" data-min="20" data-max="24" style="color:#ee3939" title="DSK 22%"><span class="hbar-l">dsk</span><span class="hbar-t" data-bricks="18"></span><span class="hbar-p">22</span></div>
+                <div class="hbar" data-bar="net" data-min="12" data-max="68" style="color:#4285f4" title="NET 35%"><span class="hbar-l">net</span><span class="hbar-t" data-bricks="18"></span><span class="hbar-p">35</span></div>
               </div>
-              <div class="conky-labels">
-                <span>CPU</span>
-                <span>MEM</span>
-                <span>DSK</span>
-                <span>NET</span>
-              </div>
+              <span class="term-arrow text-[var(--color-accent)] text-xl leading-none drop-shadow-[0_0_8px_rgba(86,87,245,0.7)] transition-transform group-hover:translate-x-1">&#9656;</span>
             </div>
           </a>
         </div>
@@ -302,58 +295,100 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
     border-bottom-width: 2px !important;
   }
 
-  /* Conky vertical EQ bars — absolutely positioned, fills ALL empty space inside the button */
+  /* Conky horizontal brick-segment stat bars (style #22) */
   .term-glow { position: relative; }
-  .term-glow .conky-v-wrap {
-    position: absolute;
-    left: 11rem;     /* start where iso/tui content ends */
-    right: 32px;     /* leave room for ▸ arrow */
-    top: 8px;        /* full vertical space — no wasted area */
-    bottom: 8px;
+  .term-grid {
+    display: flex;
+    align-items: stretch;
+    gap: 14px;
+  }
+  .term-glow .term-text {
+    flex: 0 0 auto;
+    min-width: 0;
     display: flex;
     flex-direction: column;
-    pointer-events: none;
+    gap: 2px;
+    justify-content: center;
   }
-  .term-glow .conky-v {
+  .term-glow .term-arrow {
+    align-self: center;
+    margin-left: 2px;
+  }
+  .term-glow .conky-h-wrap {
     display: flex;
-    align-items: flex-end;
-    gap: 6px;
-    flex: 1;
-    min-height: 0;
-    width: 100%;
+    flex-direction: column;
+    flex: 1 1 0;
+    min-width: 0;
+    gap: 3px;
+    align-self: center;
+    padding: 4px 2px;
   }
-  .term-glow .conky-v .vb {
-    flex: 1;
-    height: 100%;
-    background: rgba(255,255,255,0.07);
+  .term-glow .hbar {
+    display: grid;
+    grid-template-columns: 22px 1fr 18px;
+    align-items: center;
+    gap: 6px;
+    line-height: 1;
+  }
+  .term-glow .hbar-l {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.5rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--color-text-muted, #8c8fa1);
+    text-align: right;
+    text-shadow: 0 0 4px rgba(86, 87, 245, 0.2);
+  }
+  .term-glow .hbar-p {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.5rem;
+    letter-spacing: 0.04em;
+    color: currentColor;
+    text-align: left;
+    font-variant-numeric: tabular-nums;
+    text-shadow: 0 0 4px currentColor;
+  }
+  .term-glow .hbar-t {
+    height: 8px;
+    background: rgba(0, 0, 0, 0.45);
+    border: 1px solid rgba(255, 255, 255, 0.06);
     border-radius: 2px;
     position: relative;
     overflow: hidden;
-  }
-  .term-glow .conky-v .vb > i {
-    position: absolute;
-    left: 0; right: 0; bottom: 0;
-    border-radius: 2px;
-    box-shadow: 0 0 4px currentColor;
-  }
-  .term-glow .conky-labels {
+    box-shadow:
+      inset 0 0 0 1px rgba(0, 0, 0, 0.35),
+      inset 0 1px 3px rgba(0, 0, 0, 0.55);
     display: flex;
-    gap: 6px;
-    width: 100%;
-    margin-top: 3px;
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.5rem;
-    letter-spacing: 0.05em;
-    color: #999;
-    line-height: 1;
+    gap: 1px;
+    padding: 1px;
   }
-  .term-glow .conky-labels span {
+  .term-glow .hbar-t :global(u) {
     flex: 1;
-    text-align: center;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.04);
+    border-radius: 1.5px;
+    transition: background 0.4s ease, box-shadow 0.4s ease;
   }
-  /* Mobile: bars collapse to small fixed width on narrow screens to avoid overlap */
+  .term-glow .hbar-t :global(u.on) {
+    background: currentColor;
+    box-shadow:
+      0 0 3px currentColor,
+      inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  }
+  @keyframes hbar-flicker {
+    0%, 100% { filter: brightness(1); }
+    48% { filter: brightness(1.12); }
+    50% { filter: brightness(0.9); }
+    52% { filter: brightness(1.06); }
+  }
+  .term-glow .hbar-t :global(u.on) { animation: hbar-flicker 3.4s ease-in-out infinite; }
+  @media (prefers-reduced-motion: reduce) {
+    .term-glow .hbar-t :global(u) { transition: none; }
+    .term-glow .hbar-t :global(u.on) { animation: none; }
+  }
+  /* Mobile: drop bars on very narrow screens to keep iso/tui legible */
   @media (max-width: 380px) {
-    .term-glow .conky-v-wrap { left: auto; width: 56px; right: 32px; }
+    .term-glow .conky-h-wrap { display: none; }
   }
 
   /* No corner pulse dot — LIVE indicator in header is enough */
@@ -651,6 +686,62 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
     if (!end) return;
     var endTime = new Date(end + 'T23:59:59').getTime();
     if (Date.now() > endTime) el.remove();
+  })();
+
+  // Conky-style segmented brick bars: smoothly fluctuate CPU/MEM/DSK/NET
+  // so the sidebar feels like it's actually reading from the system.
+  (function () {
+    var wrap = document.querySelector('[data-conky]');
+    if (!wrap) return;
+
+    var rows = wrap.querySelectorAll('.hbar');
+    if (!rows.length) return;
+
+    var state = [];
+    rows.forEach(function (row) {
+      var track = row.querySelector('.hbar-t');
+      var pct   = row.querySelector('.hbar-p');
+      var min   = parseFloat(row.getAttribute('data-min')) || 10;
+      var max   = parseFloat(row.getAttribute('data-max')) || 80;
+      var label = (row.getAttribute('data-bar') || '').toUpperCase();
+      var count = parseInt(track && track.getAttribute('data-bricks'), 10) || 18;
+
+      // Spawn bricks once
+      if (track && !track.children.length) {
+        var frag = document.createDocumentFragment();
+        for (var i = 0; i < count; i++) frag.appendChild(document.createElement('u'));
+        track.appendChild(frag);
+      }
+      var bricks = track ? track.querySelectorAll('u') : [];
+
+      state.push({
+        row: row, track: track, bricks: bricks, pct: pct,
+        min: min, max: max, label: label, count: count,
+        val: (min + max) / 2,
+      });
+    });
+
+    function tick() {
+      state.forEach(function (s) {
+        var range = s.max - s.min;
+        var step  = (Math.random() - 0.5) * range * 0.45;
+        var next  = s.val + step;
+        if (next < s.min) next = s.min + Math.random() * range * 0.15;
+        if (next > s.max) next = s.max - Math.random() * range * 0.15;
+        s.val = next;
+        var rounded = Math.round(next);
+        var on = Math.round((rounded / 100) * s.count);
+        for (var i = 0; i < s.bricks.length; i++) {
+          s.bricks[i].classList.toggle('on', i < on);
+        }
+        if (s.pct) s.pct.textContent = rounded;
+        s.row.setAttribute('title', s.label + ' ' + rounded + '%');
+      });
+    }
+
+    var reduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    tick();
+    if (!reduced) setInterval(tick, 1400);
   })();
 </script>
 
