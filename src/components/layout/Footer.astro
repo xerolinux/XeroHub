@@ -24,13 +24,13 @@ const footerLinks = [
 ];
 ---
 
-<footer class="relative z-10 mt-24">
+<footer class="relative z-10 mt-6 md:mt-24">
   <div class="news-rule hidden md:block mx-auto max-w-3xl px-4 sm:px-6">
     <span class="nr-tilde">~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</span>
     <span class="nr-prompt"><span class="nr-user">xero</span><span class="nr-at">@</span><span class="nr-host">xerolinux</span><span class="nr-colon">:</span><span class="nr-path">~/hq</span><span class="nr-sigil">$</span>&nbsp;<span class="nr-cmd">echo</span>&nbsp;<span class="nr-str">"end of transmission"</span><span class="nr-cursor"></span></span>
     <span class="nr-tilde">~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</span>
   </div>
-  <div class="mx-auto max-w-7xl 2xl:max-w-[100rem] px-4 sm:px-6 lg:px-8 py-12">
+  <div class="mx-auto max-w-7xl 2xl:max-w-[100rem] px-4 sm:px-6 lg:px-8 py-4 md:py-12">
     <div class="grid grid-cols-1 md:grid-cols-5 gap-6 items-center">
       <!-- Brand -->
       <div class="hidden md:block">
@@ -122,8 +122,8 @@ const footerLinks = [
       </div>
     </div>
 
-    <!-- Terminal status strip -->
-    <div class="mt-10 rounded-xl border border-[var(--color-border)] layan-panel overflow-hidden font-mono text-xs">
+    <!-- Terminal status strip — desktop only -->
+    <div class="hidden lg:block mt-10 rounded-xl border border-[var(--color-border)] layan-panel overflow-hidden font-mono text-xs">
       <div class="flex items-center gap-2 px-4 py-2 border-b border-[var(--color-border)] bg-[rgba(86, 87, 245,0.08)]">
         <span class="w-2.5 h-2.5 rounded-full bg-[#ff5f57]"></span>
         <span class="w-2.5 h-2.5 rounded-full bg-[#febc2e]"></span>

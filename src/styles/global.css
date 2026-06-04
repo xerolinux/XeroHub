@@ -213,7 +213,8 @@ html[data-ticker="inactive"] .masthead-ticker {
 /* Mobile + tablet (< lg breakpoint 1024px): treat iPad portrait/regular as
    mobile so font and spacing tweaks apply there too. */
 @media (max-width: 1023px) {
-  html[data-discount="inactive"] .hero-section { padding-top: 9rem; }
+  .hero-section { padding-top: 15rem; }
+  html[data-discount="inactive"] .hero-section { padding-top: 12rem; }
   .news-col-title { font-size: 1.5rem; }
   .news-col p { font-size: 1.1rem; line-height: 1.65; }
   /* Hero CTA buttons: bump label size. !important beats Tailwind's text-sm. */
