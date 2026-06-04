@@ -197,6 +197,19 @@ html[data-theme="dark"] {
   scrollbar-color: var(--color-accent-dark) #06070b;
 }
 
+/* ─── Runtime discount + ticker gating ───
+   Layout.astro sets html[data-discount] and html[data-ticker] at page load
+   based on the visitor's real clock. Components render BOTH states; CSS
+   below hides whichever doesn't match. Keeps the static build accurate
+   even after the window expires without a rebuild. */
+html[data-discount="inactive"] .discount-on,
+html[data-discount="active"] .discount-off {
+  display: none !important;
+}
+html[data-ticker="inactive"] .masthead-ticker {
+  display: none !important;
+}
+
 /* ─── Base ─── */
 html {
   scrollbar-width: thin;

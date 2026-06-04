@@ -19,7 +19,7 @@ function within(start: string, end: string): boolean {
 export const discount = {
   enabled: true,            // ← master switch (false = off everywhere, dates ignored)
   start: '2026-05-31',      // ← discount begins
-  end: '2026-06-04',        // ← discount ends (auto-reverts after)
+  end: '2026-06-03',        // ← discount ends (auto-reverts after)
   percent: 25,              // ← % off — drives every price site-wide
   basePriceEUR: 39,         // ← regular ISO price
   label: 'Discount',     // shown on the discount stamp

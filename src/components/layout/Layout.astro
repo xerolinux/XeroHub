@@ -3,6 +3,7 @@ import '../../styles/global.css';
 import Header from './Header.astro';
 import Footer from './Footer.astro';
 import AnimatedBG from './AnimatedBG.astro';
+import { discount, ticker } from '../../config';
 interface Props {
   title?: string;
   description?: string;
@@ -108,6 +109,31 @@ const [pageAccent, pageAccentLight, pageAccentDark] = accentPalette[_idx];
           var t = localStorage.getItem('xero-theme');
           if (t === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
         } catch (e) {}
+      })();
+    </script>
+
+    <!-- Runtime date gating — evaluates discount + ticker windows in the
+         visitor's clock so the static build doesn't freeze the state. -->
+    <script is:inline define:vars={{
+      discountEnabled: discount.enabled,
+      discountStart: discount.start,
+      discountEnd: discount.end,
+      tickerEnabled: ticker.enabled,
+      tickerStart: ticker.start,
+      tickerEnd: ticker.end,
+    }}>
+      (function () {
+        var html = document.documentElement;
+        function within(start, end) {
+          var now = Date.now();
+          var s = new Date(start + 'T00:00:00').getTime();
+          var e = new Date(end + 'T23:59:59').getTime();
+          return now >= s && now <= e;
+        }
+        var dOn = !!discountEnabled && within(discountStart, discountEnd);
+        var tOn = !!tickerEnabled && within(tickerStart, tickerEnd);
+        html.setAttribute('data-discount', dOn ? 'active' : 'inactive');
+        html.setAttribute('data-ticker', tOn ? 'active' : 'inactive');
       })();
     </script>
   </head>
