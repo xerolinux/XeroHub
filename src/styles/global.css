@@ -210,6 +210,17 @@ html[data-ticker="inactive"] .masthead-ticker {
   display: none !important;
 }
 
+/* Mobile: when discount banner is hidden, the hero section's top padding
+   over-shoots since no banner sits below the ticker. Shrink the gap. */
+@media (max-width: 640px) {
+  html[data-discount="inactive"] .hero-section { padding-top: 9rem; }
+}
+
+/* Mobile: bump download-page editorial titles for readability */
+@media (max-width: 640px) {
+  .news-col-title { font-size: 1.5rem; }
+}
+
 /* ─── Base ─── */
 html {
   scrollbar-width: thin;

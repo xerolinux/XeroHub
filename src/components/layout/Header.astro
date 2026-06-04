@@ -41,8 +41,8 @@ const externalLinks = [
       <div class="masthead-dateline">
         <span id="masthead-date">&nbsp;</span>
         <span class="md-dot">·</span>
-        <span class="hidden sm:inline">Vol. MMXXVI</span>
-        <span class="md-dot hidden sm:inline">·</span>
+        <span>Vol. MMXXVI</span>
+        <span class="md-dot">·</span>
         <span class="md-dot">·</span>
         <span class="md-accent" id="masthead-clock">--:--</span>
         <button type="button" id="clock-fmt" class="md-fmt" aria-label="Toggle 12/24 hour time">12H</button>
@@ -54,15 +54,11 @@ const externalLinks = [
           var btn = document.getElementById('clock-fmt');
           var fmt = (function () { try { return localStorage.getItem('clockFormat') || '12'; } catch (e) { return '12'; } })();
           var lastDateStr = '';
-          function dateOpts() {
-            return window.innerWidth < 640
-              ? { weekday: 'short', day: 'numeric', month: 'short' }
-              : { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' };
-          }
+          var DATE_OPTS = { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' };
           function tick() {
             var now = new Date();
             if (dateEl) {
-              var ds = now.toLocaleDateString('en-GB', dateOpts());
+              var ds = now.toLocaleDateString('en-GB', DATE_OPTS);
               if (ds !== lastDateStr) { dateEl.textContent = ds; lastDateStr = ds; }
             }
             if (el) {
@@ -79,11 +75,6 @@ const externalLinks = [
           });
           tick();
           setInterval(tick, 30000);
-          window.addEventListener('resize', function () {
-            // Force date redraw when crossing breakpoint
-            lastDateStr = '';
-            tick();
-          });
         })();
       </script>
 
@@ -203,9 +194,10 @@ const externalLinks = [
   }
   .masthead-dateline {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-    gap: 12px;
+    gap: 8px 12px;
     padding: 11px 0 7px;
     font-family: var(--font-mono);
     font-size: 0.7rem;
