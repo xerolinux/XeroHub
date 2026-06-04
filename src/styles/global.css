@@ -210,23 +210,22 @@ html[data-ticker="inactive"] .masthead-ticker {
   display: none !important;
 }
 
-/* Mobile: when discount banner is hidden, the hero section's top padding
-   over-shoots since no banner sits below the ticker. Shrink the gap. */
-@media (max-width: 640px) {
+/* Mobile + tablet (< lg breakpoint 1024px): treat iPad portrait/regular as
+   mobile so font and spacing tweaks apply there too. */
+@media (max-width: 1023px) {
   html[data-discount="inactive"] .hero-section { padding-top: 9rem; }
-}
-
-/* Mobile: bump download-page editorial titles for readability */
-@media (max-width: 640px) {
   .news-col-title { font-size: 1.5rem; }
   .news-col p { font-size: 1.1rem; line-height: 1.65; }
-  /* Hero CTA buttons: bump label size on mobile only.
-     !important to beat Tailwind's text-sm utility from the Button component. */
+  /* Hero CTA buttons: bump label size. !important beats Tailwind's text-sm. */
   .hero-ctas a,
   .hero-ctas button { font-size: 1rem !important; }
-  /* Download hero heading: scales with viewport width via clamp so it stays
-     on one line on tiny screens without underfilling on tablets. */
-  .dl-hero-title { font-size: clamp(1.2rem, 6vw, 2rem); }
+  /* Download hero heading: scales with viewport so it stays on one line
+     on phones without underfilling on tablets. */
+  .dl-hero-title { font-size: clamp(1.2rem, 5vw, 2.5rem); }
+  /* Hero headline + lead body: override Tailwind's sm: variants that kick in
+     at 640px and shrink things back down on iPad. */
+  .hero-lead-card h1 { font-size: 1.875rem !important; line-height: 1.15 !important; }
+  .hero-lead { font-size: 1rem !important; }
 }
 
 /* ─── Base ─── */
