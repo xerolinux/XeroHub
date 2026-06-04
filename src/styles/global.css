@@ -219,6 +219,14 @@ html[data-ticker="inactive"] .masthead-ticker {
 /* Mobile: bump download-page editorial titles for readability */
 @media (max-width: 640px) {
   .news-col-title { font-size: 1.5rem; }
+  .news-col p { font-size: 1.1rem; line-height: 1.65; }
+  /* Hero CTA buttons: bump label size on mobile only.
+     !important to beat Tailwind's text-sm utility from the Button component. */
+  .hero-ctas a,
+  .hero-ctas button { font-size: 1rem !important; }
+  /* Download hero heading: scales with viewport width via clamp so it stays
+     on one line on tiny screens without underfilling on tablets. */
+  .dl-hero-title { font-size: clamp(1.2rem, 6vw, 2rem); }
 }
 
 /* ─── Base ─── */
