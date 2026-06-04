@@ -6,7 +6,7 @@ import Button from '../components/ui/Button.astro';
 import ChangelogModal from '../components/ui/ChangelogModal.astro';
 import PageViews from '../components/ui/PageViews.astro';
 import { inlineMarkdown } from '../lib/inline-markdown';
-import { discount, discountActive, discountedPriceEUR } from '../config';
+import { discount, discountedPriceEUR } from '../config';
 const pageId = Astro.url.pathname.replace(/^\//, '').replace(/\/$/, '').replace(/\//g, '-') || 'home';
 
 const entry = await getEntry('pages', 'download');
@@ -104,13 +104,11 @@ const { alert, isoFeatures, tuiFeatures } = entry.data;
         <!-- ISO Option -->
         <div class="fade-in fade-in-delay-1">
           <GlassCard padding="p-4 sm:p-6 lg:p-8" class="h-full flex flex-col relative overflow-hidden classified">
-            {discountActive && (
-              <div class="sale-stamp">
-                <span class="sale-stamp-pct">{discount.percent}%</span>
-                <span class="sale-stamp-off">OFF</span>
-                <span class="sale-stamp-sub">{discount.label}</span>
-              </div>
-            )}
+            <div class="sale-stamp discount-on">
+              <span class="sale-stamp-pct">{discount.percent}%</span>
+              <span class="sale-stamp-off">OFF</span>
+              <span class="sale-stamp-sub">{discount.label}</span>
+            </div>
             <div class="flex items-center justify-between mb-5">
               <span class="font-mono text-[0.58rem] uppercase tracking-[0.2em] text-[var(--color-text-muted)]">ISO · KDE Plasma</span>
               <span class="font-mono text-[0.58rem] uppercase tracking-[0.14em] px-3 py-1 rounded-full bg-green-500/15 border border-green-500/40 text-green-300 pill-depth">Paid</span>
@@ -133,26 +131,24 @@ const { alert, isoFeatures, tuiFeatures } = entry.data;
               ))}
             </ul>
 
-            <!-- Price -->
-            <div class="mb-5 flex items-baseline gap-3">
-              {discountActive ? (
-                <>
-                  <span class="font-mono text-base text-[var(--color-text-muted)] line-through decoration-[#ff80e0]/70">€{discount.basePriceEUR}</span>
-                  <span class="display-heading text-4xl text-[var(--color-text-primary)] leading-none">€{discountedPriceEUR}</span>
-                  <span class="font-mono text-[0.6rem] uppercase tracking-[0.12em] text-[#ff80e0]">Save {discount.percent}% · {discount.note}</span>
-                </>
-              ) : (
-                <>
-                  <span class="display-heading text-4xl text-[var(--color-text-primary)] leading-none">€{discount.basePriceEUR}</span>
-                  <span class="font-mono text-[0.6rem] uppercase tracking-[0.12em] text-[var(--color-text-muted)]">one-time · lifetime</span>
-                </>
-              )}
+            <!-- Price — both states rendered; runtime gate hides the wrong one. -->
+            <div class="mb-5 flex items-baseline gap-3 discount-on">
+              <span class="font-mono text-base text-[var(--color-text-muted)] line-through decoration-[#ff80e0]/70">€{discount.basePriceEUR}</span>
+              <span class="display-heading text-4xl text-[var(--color-text-primary)] leading-none">€{discountedPriceEUR}</span>
+              <span class="font-mono text-[0.6rem] uppercase tracking-[0.12em] text-[#ff80e0]">Save {discount.percent}% · {discount.note}</span>
+            </div>
+            <div class="mb-5 flex items-baseline gap-3 discount-off">
+              <span class="display-heading text-4xl text-[var(--color-text-primary)] leading-none">€{discount.basePriceEUR}</span>
+              <span class="font-mono text-[0.6rem] uppercase tracking-[0.12em] text-[var(--color-text-muted)]">one-time · lifetime</span>
             </div>
 
             <p class="ad-note">Simple, beginner-friendly install.</p>
 
             <div class="flex gap-3 pt-4 border-t border-green-500/10">
-              <Button href={discountActive ? 'https://ko-fi.com/xerolinux/link/ANN25' : 'https://ko-fi.com/s/cf9def9630'} external class="flex-1">
+              <Button href="https://ko-fi.com/s/cf9def9630" external class="flex-1 discount-off">
+                Ko-Fi Shop
+              </Button>
+              <Button href="https://ko-fi.com/xerolinux/link/ANN25" external class="flex-1 discount-on">
                 Ko-Fi Shop
               </Button>
               <Button href="/crypto/" variant="secondary" class="flex-1">

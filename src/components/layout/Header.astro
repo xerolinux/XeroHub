@@ -1,5 +1,5 @@
 ---
-import { ticker, tickerActive } from '../../config';
+import { ticker } from '../../config';
 import ThemeToggle from '../ui/ThemeToggle.astro';
 import { Image } from 'astro:assets';
 import logo from '../../assets/logo.png';
@@ -29,7 +29,8 @@ const externalLinks = [
   { label: 'Merch', href: 'https://shop.xerolinux.xyz', icon: ico.merch },
 ];
 
-const today = new Date().toLocaleDateString('en-GB', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' });
+// Date is rendered client-side (see inline script below) so the static
+// build's "today" never drifts behind the visitor's real clock.
 ---
 
 <header class="fixed top-0 left-0 right-0 z-50" id="site-header">
@@ -38,33 +39,51 @@ const today = new Date().toLocaleDateString('en-GB', { weekday: 'long', day: 'nu
     <div class="mx-auto max-w-7xl 2xl:max-w-[100rem] px-4 sm:px-6 lg:px-8">
       <!-- Dateline row -->
       <div class="masthead-dateline">
-        <span class="hidden sm:inline">{today}</span>
+        <span id="masthead-date">&nbsp;</span>
+        <span class="md-dot">·</span>
+        <span class="hidden sm:inline">Vol. MMXXVI</span>
         <span class="md-dot hidden sm:inline">·</span>
-        <span>Vol. MMXXVI</span>
         <span class="md-dot">·</span>
         <span class="md-accent" id="masthead-clock">--:--</span>
         <button type="button" id="clock-fmt" class="md-fmt" aria-label="Toggle 12/24 hour time">12H</button>
       </div>
       <script is:inline>
         (function () {
+          var dateEl = document.getElementById('masthead-date');
           var el = document.getElementById('masthead-clock');
           var btn = document.getElementById('clock-fmt');
-          if (!el) return;
-          var fmt = localStorage.getItem('clockFormat') || '12';
+          var fmt = (function () { try { return localStorage.getItem('clockFormat') || '12'; } catch (e) { return '12'; } })();
+          var lastDateStr = '';
+          function dateOpts() {
+            return window.innerWidth < 640
+              ? { weekday: 'short', day: 'numeric', month: 'short' }
+              : { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' };
+          }
           function tick() {
             var now = new Date();
-            var t = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', hour12: fmt === '12' });
-            var tz = now.toLocaleTimeString([], { timeZoneName: 'short' }).split(' ').pop();
-            el.textContent = t + ' · ' + tz;
+            if (dateEl) {
+              var ds = now.toLocaleDateString('en-GB', dateOpts());
+              if (ds !== lastDateStr) { dateEl.textContent = ds; lastDateStr = ds; }
+            }
+            if (el) {
+              var t = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', hour12: fmt === '12' });
+              var tz = now.toLocaleTimeString([], { timeZoneName: 'short' }).split(' ').pop();
+              el.textContent = t + ' · ' + tz;
+            }
             if (btn) btn.textContent = fmt === '12' ? '12H' : '24H';
           }
           if (btn) btn.addEventListener('click', function () {
             fmt = fmt === '12' ? '24' : '12';
-            localStorage.setItem('clockFormat', fmt);
+            try { localStorage.setItem('clockFormat', fmt); } catch (e) {}
             tick();
           });
           tick();
           setInterval(tick, 30000);
+          window.addEventListener('resize', function () {
+            // Force date redraw when crossing breakpoint
+            lastDateStr = '';
+            tick();
+          });
         })();
       </script>
 
@@ -134,8 +153,9 @@ const today = new Date().toLocaleDateString('en-GB', { weekday: 'long', day: 'nu
     </div>
   </div>
 
-  <!-- Edition ticker strip -->
-  {tickerActive && ticker.items.length > 0 && (
+  <!-- Edition ticker strip — always rendered; runtime date gate in Layout
+       sets html[data-ticker] which the global CSS uses to hide when out of window. -->
+  {ticker.items.length > 0 && (
     <div class="masthead-ticker">
       <div class="ticker-track">
         {ticker.items.map((item, i) => <span class={`tk-${i % 7}`}>★ {item}</span>)}

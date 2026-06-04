@@ -1,8 +1,6 @@
 ---
 import Layout from '../components/layout/Layout.astro';
-import { discount, discountActive, currentPriceEUR } from '../config';
-
-const isoPrice = currentPriceEUR;
+import { discount, discountedPriceEUR, basePriceEUR } from '../config';
 ---
 
 <Layout title="Crypto Portal" description="Support XeroLinux using cryptocurrency">
@@ -97,7 +95,7 @@ const isoPrice = currentPriceEUR;
             <ul class="flex-1 flex flex-col justify-around">
               <li class="flex items-start gap-3 text-xs text-[var(--color-text-secondary)] py-2 border-b border-[var(--color-border)]">
                 <svg class="w-4 h-4 text-[var(--color-accent)] shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z" /></svg>
-                Donate at least €{isoPrice} or more to one of the available wallets.{discountActive && <span class="text-[#ff80e0]"> ({discount.percent}% off €{discount.basePriceEUR})</span>}
+                Donate at least <span class="discount-on">€{discountedPriceEUR}</span><span class="discount-off">€{basePriceEUR}</span> or more to one of the available wallets.<span class="discount-on text-[#ff80e0]"> ({discount.percent}% off €{basePriceEUR})</span>
               </li>
               <li class="flex items-start gap-3 text-xs text-[var(--color-text-secondary)] py-2 border-b border-[var(--color-border)]">
                 <svg class="w-4 h-4 text-[var(--color-accent)] shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" /></svg>
@@ -136,8 +134,8 @@ const isoPrice = currentPriceEUR;
           </div>
 
           <!-- Live price display -->
-          <div id="price-display" data-min={isoPrice} class="mb-4 flex flex-wrap items-center justify-center gap-x-3 gap-y-1 px-3 py-2.5 rounded-xl border border-[#ff80e0]/40 bg-[var(--color-bg-primary)]/30 text-xs [animation:glow-breathe_4s_ease-in-out_infinite]">
-            <span class="text-[var(--color-text-muted)]">Min. €{isoPrice} ≈</span>
+          <div id="price-display" data-min-discount={discountedPriceEUR} data-min-base={basePriceEUR} class="mb-4 flex flex-wrap items-center justify-center gap-x-3 gap-y-1 px-3 py-2.5 rounded-xl border border-[#ff80e0]/40 bg-[var(--color-bg-primary)]/30 text-xs [animation:glow-breathe_4s_ease-in-out_infinite]">
+            <span class="text-[var(--color-text-muted)]">Min. <span class="discount-on">€{discountedPriceEUR}</span><span class="discount-off">€{basePriceEUR}</span> ≈</span>
             <span id="price-btc" class="font-mono text-[var(--color-accent)]">…</span>
             <span class="text-[var(--color-border-hover)]">·</span>
             <span id="price-usdt" class="font-mono text-[var(--color-accent)]">…</span>
@@ -306,7 +304,9 @@ const isoPrice = currentPriceEUR;
         .then(function (r) { return r.json(); })
         .then(function (d) {
           var pd = document.getElementById('price-display');
-          var min = parseFloat(pd && pd.dataset.min) || 39;
+          var dActive = document.documentElement.getAttribute('data-discount') === 'active';
+          var minAttr = dActive ? (pd && pd.dataset.minDiscount) : (pd && pd.dataset.minBase);
+          var min = parseFloat(minAttr) || parseFloat(pd && pd.dataset.minBase) || 39;
           document.getElementById('price-btc').textContent  = (min / d.bitcoin.eur).toFixed(6)  + ' BTC';
           document.getElementById('price-usdt').textContent = (min / d.tether.eur).toFixed(2)   + ' USDT';
           document.getElementById('price-eth').textContent  = (min / d.ethereum.eur).toFixed(4) + ' ETH';

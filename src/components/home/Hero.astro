@@ -2,28 +2,27 @@
 import Button from '../ui/Button.astro';
 import { Image } from 'astro:assets';
 import logo from '../../assets/logo.png';
-import { discount, discountActive } from '../../config';
+import { discount } from '../../config';
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 ---
 
 <section class="relative pt-44 sm:pt-52 pb-6 sm:pb-16 px-4 sm:px-6 lg:px-8">
   <div class="mx-auto max-w-7xl 2xl:max-w-[100rem]">
 
-    {discountActive && (
-      <a
-        href={`${base}/download/`}
-        id="anniv-banner"
-        data-end={discount.end}
-        class="anniv fade-in group relative block mb-7 rounded-xl overflow-hidden border border-[var(--color-accent-2)]/50"
-      >
-        <div class="relative z-10 flex flex-wrap items-center justify-center gap-x-2 sm:gap-x-4 gap-y-1 px-3 py-2.5 sm:px-5 sm:py-3.5 text-center">
-          <span class="anniv-star font-mono text-xs sm:text-sm animate-pulse">★</span>
-          <span class="anniv-title font-heading font-bold text-sm sm:text-2xl tracking-tight leading-tight">{discount.bannerText}</span>
-          <span class="anniv-sub hidden md:inline font-mono text-[0.62rem] uppercase tracking-[0.16em]">{discount.bannerSub}</span>
-          <span class="anniv-cta font-mono text-[0.55rem] sm:text-[0.62rem] uppercase tracking-[0.14em] sm:tracking-[0.16em] inline-flex items-center gap-1">Get it <span class="transition-transform group-hover:translate-x-1">&#8250;</span></span>
-        </div>
-      </a>
-    )}
+    {/* Banner is always rendered; runtime date gate hides it when discount inactive. */}
+    <a
+      href={`${base}/download/`}
+      id="anniv-banner"
+      data-end={discount.end}
+      class="discount-on anniv fade-in group relative block mb-7 rounded-xl overflow-hidden border border-[var(--color-accent-2)]/50"
+    >
+      <div class="relative z-10 flex flex-wrap items-center justify-center gap-x-2 sm:gap-x-4 gap-y-1 px-3 py-2.5 sm:px-5 sm:py-3.5 text-center">
+        <span class="anniv-star font-mono text-xs sm:text-sm animate-pulse">★</span>
+        <span class="anniv-title font-heading font-bold text-sm sm:text-2xl tracking-tight leading-tight">{discount.bannerText}</span>
+        <span class="anniv-sub hidden md:inline font-mono text-[0.62rem] uppercase tracking-[0.16em]">{discount.bannerSub}</span>
+        <span class="anniv-cta font-mono text-[0.55rem] sm:text-[0.62rem] uppercase tracking-[0.14em] sm:tracking-[0.16em] inline-flex items-center gap-1">Get it <span class="transition-transform group-hover:translate-x-1">&#8250;</span></span>
+      </div>
+    </a>
 
     <!-- Front-page area: two independent cards bridged by stream canvas -->
     <div class="fade-in relative">
