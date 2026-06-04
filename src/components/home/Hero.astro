@@ -6,7 +6,7 @@ import { discount } from '../../config';
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 ---
 
-<section class="relative pt-44 sm:pt-52 pb-6 sm:pb-16 px-4 sm:px-6 lg:px-8">
+<section class="hero-section relative pt-44 sm:pt-52 pb-6 sm:pb-16 px-4 sm:px-6 lg:px-8">
   <div class="mx-auto max-w-7xl 2xl:max-w-[100rem]">
 
     {/* Banner is always rendered; runtime date gate hides it when discount inactive. */}
@@ -49,7 +49,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
         </div>
 
         <!-- Serif headline -->
-        <h1 class="display-heading text-2xl sm:text-[1.7rem] lg:text-[2.05rem] leading-tight text-[var(--color-text-primary)] mb-3 whitespace-normal sm:whitespace-nowrap">
+        <h1 class="display-heading text-3xl sm:text-[1.7rem] lg:text-[2.05rem] leading-tight text-[var(--color-text-primary)] mb-3 whitespace-normal sm:whitespace-nowrap">
           A Distro Fueled by our
           <span class="italic text-[var(--color-accent)]">Passion</span>
           for GNU/Linux
@@ -77,7 +77,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
         </p>
 
         <!-- Lead, drop-cap two columns -->
-        <div class="hero-lead text-sm sm:text-base text-[var(--color-text-secondary)] leading-relaxed sm:columns-2 sm:gap-7 mb-4">
+        <div class="hero-lead text-base sm:text-base text-[var(--color-text-secondary)] leading-relaxed sm:columns-2 sm:gap-7 mb-4">
           <p style="text-align:justify;">XeroLinux is a curated, actively maintained Arch-based distribution that demystifies installation while preserving user-driven customization. A thoughtful balance of accessibility and the renowned flexibility of Arch Linux, shipped with a configured KDE Plasma 6 desktop and a suite of in-house tools like the XeroLinux Toolkit and Kernel Manager that let you install the CachyOS kernel and fine-tune your system for measurably better performance.</p>
         </div>
 
