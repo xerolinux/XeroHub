@@ -49,12 +49,12 @@ export const currentPriceEUR = discountActive ? discountedPriceEUR : basePriceEU
 export const ticker = {
   enabled: true,            // master switch (false = always off, dates ignored)
   start: '2026-05-31',      // ticker appears from this date
-  end: '2026-06-06',        // ticker auto-hides after this date
+  end: '2026-12-31',        // ticker auto-hides after this date
   items: [
-    'Anniversary Release',
-    '6 Years of XeroLinux',
+    'Quarterly Release',
+    'Kernel Manager / SCX Tool',
     'Online vs Offline Install',
-    'Your Machine / Your Choice',
+    'Your Machine / Your Decision',
     'XeroLinux in-house Tools',
     'Donate once = Lifetime Updates',
     'XeroLinux Package Manager G.U.I',
