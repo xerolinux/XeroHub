@@ -21,6 +21,13 @@
   },
   "overrides": {
     "fast-xml-parser": "5.7.0",
-    "vite": "^7.3.2"
+    "vite": "^7.3.2",
+    "esbuild": "^0.28.1"
+  },
+  "allowScripts": {
+    "@firebase/util@1.15.1": true,
+    "esbuild@0.28.1": true,
+    "protobufjs@7.6.4": true,
+    "sharp@0.34.5": true
   }
 }
