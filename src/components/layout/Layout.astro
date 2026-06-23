@@ -112,8 +112,7 @@ const [pageAccent, pageAccentLight, pageAccentDark] = accentPalette[_idx];
       })();
     </script>
 
-    <!-- Runtime date gating — evaluates discount + ticker windows in the
-         visitor's clock so the static build doesn't freeze the state. -->
+    <!-- Runtime date gating: evaluates discount + ticker windows on the client clock. -->
     <script is:inline define:vars={{
       discountEnabled: discount.enabled,
       discountStart: discount.start,
