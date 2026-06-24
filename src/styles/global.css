@@ -1428,8 +1428,8 @@ html.input-mouse .masthead-dateline { display: flex !important; }
 html.input-mouse .masthead-actions { display: flex !important; }
 html.input-mouse #mobile-menu { display: none !important; }
 html.input-mouse #hero-stream { display: block !important; }
-html.input-mouse .hero-section { padding-top: 13rem; }
-html.input-mouse[data-discount="inactive"] .hero-section { padding-top: 11rem; }
+html.input-mouse .hero-section { padding-top: 17rem; }
+html.input-mouse[data-discount="inactive"] .hero-section { padding-top: 15rem; }
 /* Tailwind hidden + md:block (etc.) wrappers stay hidden because `hidden`
    wins specificity. Re-target the specific wrappers used in the site shell: */
 html.input-mouse .hero-lead-card { margin-right: calc(34.483% + 16px) !important; }
