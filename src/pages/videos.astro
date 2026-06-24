@@ -25,15 +25,15 @@ const { youtubeHandle } = entry.data;
         <PageViews pageId={pageId} />
       </div>
 
-      <!-- Video Grid -->
+      <!-- Video Grid: 1 hero on top + 3 across the row below -->
       <div
         id="video-grid"
-        class="rainbow grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5"
+        class="rainbow video-hero-grid grid grid-cols-1 sm:grid-cols-3 gap-5"
         data-handle={youtubeHandle}
         data-api-key={import.meta.env.PUBLIC_YOUTUBE_API_KEY}
       >
         <!-- Loading Skeletons -->
-        {Array.from({ length: 6 }).map(() => (
+        {Array.from({ length: 4 }).map(() => (
           <div class="skeleton-card rounded-xl overflow-hidden border border-[var(--color-border)] layan-panel animate-pulse">
             <div class="flex items-center gap-1.5 px-3 py-2 border-b border-[var(--color-border)] bg-[rgba(86, 87, 245,0.08)]">
               <span class="w-2.5 h-2.5 rounded-full bg-[var(--color-bg-tertiary)]"></span>
@@ -281,11 +281,17 @@ const { youtubeHandle } = entry.data;
 })();
 </script>
 
-<style>
+<style is:global>
   .line-clamp-2 {
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     overflow: hidden;
+  }
+  /* Hero layout: first child spans all 3 columns (the big top card),
+     remaining children occupy a 3-column row below. Global selector so
+     it matches the JS-injected card nodes (no Astro scope attribute). */
+  @media (min-width: 600px) {
+    .video-hero-grid > :first-child { grid-column: 1 / -1; }
   }
 </style>

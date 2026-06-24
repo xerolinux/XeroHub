@@ -1444,4 +1444,7 @@ html.input-mouse .sys-record {
 html.input-mouse .news-3col { grid-template-columns: repeat(3, 1fr) !important; }
 html.input-mouse .news-3col.cols-2 { grid-template-columns: repeat(2, 1fr) !important; }
 html.input-mouse .stat-row { grid-template-columns: repeat(4, 1fr) !important; }
-html.input-mouse .rainbow.grid { grid-template-columns: repeat(2, 1fr) !important; }
+/* `.rainbow.grid` is used by /download/ (2-col) AND /videos/ (3-col, hero-spanning).
+   Scope the force-2-col override to /download/ only by excluding the video grid. */
+html.input-mouse .rainbow.grid:not(.video-hero-grid) { grid-template-columns: repeat(2, 1fr) !important; }
+html.input-mouse .video-hero-grid { grid-template-columns: repeat(3, 1fr) !important; }
