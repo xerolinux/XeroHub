@@ -28,7 +28,7 @@ You start with the official [**Fedora Everything**](https://fedoraproject.org/mi
 
 The script does the rest. When it finishes, you reboot once and land in a configured **KDE Plasma** desktop on top of vanilla **Fedora**. No extra layer between you and upstream. No XeroLinux repos, no XeroLinux kernel, no XeroLinux packaging tricks. Pure Fedora, just dressed up so you don't have to do the dressing yourself.
 
-![Info Sheet 01: XeroDora — what you get](/images/updates/xerodora/features.webp)
+![Info Sheet 01: XeroDora :: what you get](/images/updates/xerodora/features.webp)
 
 ## Why this exists at all
 
