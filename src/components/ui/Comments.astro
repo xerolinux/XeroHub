@@ -8,6 +8,12 @@ const adminEmail = import.meta.env.PUBLIC_ADMIN_EMAIL || '';
 ---
 
 <section class="comments-section mt-16" data-post-id={postId} data-admin-email={adminEmail}>
+  <!-- Above-the-fold empty hint: visible before the login gate so a 0-comment post never looks broken. -->
+  <div class="comments-fold-empty" data-fold-empty hidden>
+    <span class="cfe-arrow">▸</span>
+    <span class="cfe-text">No comments yet. Be the first to break the silence.</span>
+  </div>
+
   <!-- Locked state — shown when user is not signed in (anon). Hides the composer. -->
   <div class="comments-locked term-composer mb-8 hidden" aria-live="polite">
     <div class="terminal-header">
@@ -210,6 +216,30 @@ const adminEmail = import.meta.env.PUBLIC_ADMIN_EMAIL || '';
 </section>
 
 <style is:global>
+  /* ───────────── Above-the-fold empty hint ───────────── */
+  .comments-fold-empty {
+    display: flex;
+    align-items: center;
+    gap: 0.55rem;
+    padding: 0.7rem 1rem;
+    margin-bottom: 1rem;
+    border-radius: 8px;
+    background: rgba(86, 87, 245, 0.05);
+    border: 1px dashed rgba(86, 87, 245, 0.3);
+    font-family: var(--font-mono, 'JetBrains Mono', ui-monospace, monospace);
+    font-size: 0.78rem;
+    color: var(--color-text-secondary);
+  }
+  .comments-fold-empty[hidden] { display: none; }
+  .comments-fold-empty .cfe-arrow {
+    color: var(--color-accent-light);
+    font-weight: 700;
+    text-shadow: 0 0 6px rgba(86, 87, 245, 0.45);
+  }
+  .comments-fold-empty .cfe-text {
+    letter-spacing: 0.02em;
+  }
+
   /* ───────────── Terminal identity bar ───────────── */
   .comments-identity-wrap {
     border-radius: 12px;
@@ -458,10 +488,24 @@ const adminEmail = import.meta.env.PUBLIC_ADMIN_EMAIL || '';
     max-width: 5rem !important;
     flex: 0 0 auto !important;
     text-align: center;
-    color: #8ab0f0 !important;
+    color: #fff !important;
     font-weight: 700;
+    font-size: 0.95rem !important;
+    padding: 0.35rem 0.6rem !important;
+    border: 1px solid rgba(96, 144, 224, 0.55) !important;
+    background: rgba(0, 0, 0, 0.35) !important;
+    border-radius: 6px !important;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04), 0 0 8px rgba(96, 144, 224, 0.15);
+    caret-color: var(--color-link);
+    transition: border-color 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
   }
-  .composer-captcha-input:focus { color: #fff !important; }
+  .composer-captcha-input::placeholder { color: rgba(255, 255, 255, 0.35); }
+  .composer-captcha-input:focus {
+    color: #fff !important;
+    border-color: var(--color-link) !important;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06), 0 0 14px rgba(96, 144, 224, 0.45);
+    background: rgba(0, 0, 0, 0.5) !important;
+  }
   .composer-captcha-refresh {
     padding: 0.3rem 0.5rem;
     color: #dddddd;
@@ -557,12 +601,32 @@ const adminEmail = import.meta.env.PUBLIC_ADMIN_EMAIL || '';
   .composer-toolbar {
     position: relative;
     display: flex; align-items: center; gap: 0.3rem;
-    padding: 0.35rem 0.45rem;
-    margin-bottom: 0.5rem;
-    background: rgba(86, 87, 245, 0.04);
-    border: 1px solid rgba(86, 87, 245, 0.18);
-    border-radius: 6px;
+    padding: 0.45rem 0.55rem;
+    margin-bottom: 0;
+    background: rgba(86, 87, 245, 0.09);
+    border: 1px solid rgba(86, 87, 245, 0.32);
+    border-bottom: none;
+    border-radius: 6px 6px 0 0;
     flex-wrap: wrap;
+    box-shadow: inset 0 -1px 0 rgba(86, 87, 245, 0.18);
+  }
+  .composer-toolbar::before {
+    content: '// FORMAT';
+    font-family: var(--font-mono, monospace);
+    font-size: 0.55rem;
+    font-weight: 700;
+    letter-spacing: 0.22em;
+    color: var(--color-accent-light);
+    margin-right: 0.55rem;
+    padding-right: 0.55rem;
+    border-right: 1px solid rgba(86, 87, 245, 0.2);
+    opacity: 0.85;
+  }
+  /* Merge the textarea top edge into the toolbar so they read as one control. */
+  .composer-toolbar + .term-composer-body-row .term-textarea {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border-top: 1px dashed rgba(86, 87, 245, 0.2);
   }
   .ctb-btn {
     min-width: 28px;
@@ -1317,6 +1381,7 @@ const adminEmail = import.meta.env.PUBLIC_ADMIN_EMAIL || '';
 
     const list = section.querySelector<HTMLElement>('.comments-list')!;
     const empty = section.querySelector<HTMLElement>('.comments-empty')!;
+    const foldEmpty = section.querySelector<HTMLElement>('[data-fold-empty]');
     const countLabel = section.querySelector<HTMLSpanElement>('.comments-count')!;
 
     let isAdmin = false;
@@ -1600,9 +1665,11 @@ const adminEmail = import.meta.env.PUBLIC_ADMIN_EMAIL || '';
 
       if (total === 0) {
         empty.style.display = '';
+        if (foldEmpty) foldEmpty.hidden = false;
         return;
       }
       empty.style.display = 'none';
+      if (foldEmpty) foldEmpty.hidden = true;
 
       // Build parent → children index. Promote orphan replies (parent deleted) to top.
       const docIds = new Set(currentDocs.map((c) => c.id));

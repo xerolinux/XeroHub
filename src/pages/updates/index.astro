@@ -9,6 +9,30 @@ const allUpdates = await getCollection('updates', ({ data }) => !data.draft);
 const sortedUpdates = allUpdates.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
 const pageId = Astro.url.pathname.replace(/^\//, '').replace(/\/$/, '').replace(/\//g, '-') || 'home';
 
+// Derive a single canonical category per post from its tag array.
+// Priority order matters: first match wins. Keeps the filter pivot stable as new tags get added.
+const CATEGORY_RULES: Array<{ name: string; match: string[] }> = [
+  { name: 'ISO',          match: ['ISO', 'Pricing'] },
+  { name: 'Community',    match: ['Community', 'Anniversary', 'Team', 'Help', 'Merch'] },
+  { name: 'Distro',       match: ['Distro', 'Review', 'Overview'] },
+  { name: 'Changes',      match: ['Changes', 'Wayland', 'X11', 'Browser', 'Firefox'] },
+  { name: 'Announcement', match: ['Announcement', 'Age Verification', 'ID'] },
+];
+function categoryFor(tags: string[] | undefined): string {
+  if (!tags || !tags.length) return 'Other';
+  for (const rule of CATEGORY_RULES) {
+    if (rule.match.some((m) => tags.includes(m))) return rule.name;
+  }
+  return 'Other';
+}
+// Build the set of categories actually represented in the posts so dead chips never render.
+const usedCategories = Array.from(
+  new Set(sortedUpdates.map((u) => categoryFor(u.data.tags)))
+).sort((a, b) => {
+  const order = CATEGORY_RULES.map((r) => r.name).concat(['Other']);
+  return order.indexOf(a) - order.indexOf(b);
+});
+
 // Center the newest, flank it with older posts (most recent nearest the center).
 const _latest = sortedUpdates[0];
 const _rest = sortedUpdates.slice(1);
@@ -44,31 +68,51 @@ function excerpt(md: string | undefined, n: number): string {
         </div>
         <div class="news-line"></div>
       </div>
-      <div class="fade-in fade-in-delay-1 flex items-center gap-3 mb-10 font-mono text-[0.65rem] uppercase tracking-[0.14em] text-[var(--color-text-muted)]">
+      <div class="fade-in fade-in-delay-1 flex items-center gap-3 mb-6 font-mono text-[0.65rem] uppercase tracking-[0.14em] text-[var(--color-text-muted)]">
         <span>Project announcements, updates &amp; changes</span>
         <span class="text-[var(--color-accent)]">·</span>
         <PageViews pageId={pageId} />
       </div>
+
+      <!-- Filter chips -->
+      {usedCategories.length > 1 && (
+        <div class="fade-in fade-in-delay-1 upd-filter" data-upd-filter role="tablist" aria-label="Filter updates by category">
+          <span class="upd-filter-label">// Filter</span>
+          <button type="button" class="upd-chip active" data-filter="all" role="tab" aria-selected="true">
+            <span class="upd-chip-glyph">▸</span>All
+            <span class="upd-chip-count">{sortedUpdates.length}</span>
+          </button>
+          {usedCategories.map((cat) => (
+            <button type="button" class="upd-chip" data-filter={cat} role="tab" aria-selected="false">
+              <span class="upd-chip-glyph">▸</span>{cat}
+              <span class="upd-chip-count">{sortedUpdates.filter((u) => categoryFor(u.data.tags) === cat).length}</span>
+            </button>
+          ))}
+        </div>
+      )}
 
       <!-- Coverflow gallery (desktop) -->
       {sortedUpdates.length > 0 && (
         <div class="fade-in fade-in-delay-1 hidden md:block">
           <div class="cf-stage" data-coverflow data-cf-start={startIndex}>
             <div class="cf-track">
-              {displayUpdates.map((update) => (
-                <a href={`${base}/updates/${update.id}/`} class="cf-item" data-cf>
-                  <div class="cf-inner">
-                    {update.data.image
-                      ? <img class="cf-img" src={`${base}${update.data.image}`} alt={update.data.title} width="1200" height="630" loading="lazy" decoding="async" />
-                      : <div class="cf-noimg"></div>}
-                    <div class="cf-body">
-                      <div class="cf-kick">{formatDate(update.data.date)}{update.data.tags && update.data.tags.length > 0 ? ' · ' + update.data.tags[0] : ''}</div>
-                      <div class="cf-title">{update.data.title}</div>
-                      <p class="cf-excerpt">{update.data.description || excerpt(update.body, 240)}</p>
+              {displayUpdates.map((update) => {
+                const cat = categoryFor(update.data.tags);
+                return (
+                  <a href={`${base}/updates/${update.id}/`} class="cf-item" data-cf data-category={cat}>
+                    <div class="cf-inner">
+                      {update.data.image
+                        ? <img class="cf-img" src={`${base}${update.data.image}`} alt={update.data.title} width="1200" height="630" loading="lazy" decoding="async" />
+                        : <div class="cf-noimg"></div>}
+                      <div class="cf-body">
+                        <div class="cf-kick"><span class={`upd-cat-badge upd-cat-${cat.toLowerCase()}`}>{cat}</span>{formatDate(update.data.date)}</div>
+                        <div class="cf-title">{update.data.title}</div>
+                        <p class="cf-excerpt">{update.data.description || excerpt(update.body, 240)}</p>
+                      </div>
                     </div>
-                  </div>
-                </a>
-              ))}
+                  </a>
+                );
+              })}
             </div>
             <button class="cf-arrow prev" data-cf-prev aria-label="Previous">
               <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" /></svg>
@@ -81,10 +125,121 @@ function excerpt(md: string | undefined, n: number): string {
         </div>
       )}
 
+      <style is:global>
+        /* ── Filter chips ── */
+        .upd-filter {
+          display: flex;
+          flex-wrap: wrap;
+          align-items: center;
+          gap: 0.4rem 0.5rem;
+          margin-bottom: 1.5rem;
+          padding: 0.55rem 0.75rem;
+          border-radius: 10px;
+          background: rgba(86, 87, 245, 0.04);
+          border: 1px dashed rgba(86, 87, 245, 0.22);
+        }
+        .upd-filter-label {
+          font-family: var(--font-mono, monospace);
+          font-size: 0.6rem;
+          letter-spacing: 0.22em;
+          text-transform: uppercase;
+          color: var(--color-accent-light);
+          padding-right: 0.4rem;
+          border-right: 1px solid rgba(86, 87, 245, 0.18);
+          margin-right: 0.25rem;
+        }
+        .upd-chip {
+          display: inline-flex;
+          align-items: center;
+          gap: 0.35rem;
+          padding: 0.32rem 0.7rem;
+          border-radius: 999px;
+          background: rgba(33, 35, 41, 0.45);
+          border: 1px solid rgba(86, 87, 245, 0.2);
+          color: var(--color-text-secondary);
+          font-family: var(--font-mono, monospace);
+          font-size: 0.68rem;
+          letter-spacing: 0.04em;
+          text-transform: uppercase;
+          cursor: pointer;
+          transition: color 0.15s ease, background 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease, transform 0.15s ease;
+        }
+        .upd-chip:hover {
+          color: var(--color-text-primary);
+          border-color: rgba(86, 87, 245, 0.55);
+          background: rgba(86, 87, 245, 0.1);
+        }
+        .upd-chip.active {
+          color: #fff;
+          background: linear-gradient(135deg, var(--color-accent), var(--color-accent-dark));
+          border-color: var(--color-accent-light);
+          box-shadow: 0 0 14px var(--color-accent-glow, rgba(86, 87, 245, 0.4));
+        }
+        .upd-chip .upd-chip-glyph {
+          color: var(--color-accent-light);
+          font-weight: 700;
+        }
+        .upd-chip.active .upd-chip-glyph { color: #fff; }
+        .upd-chip .upd-chip-count {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          min-width: 1.25rem;
+          height: 1.05rem;
+          padding: 0 0.35rem;
+          border-radius: 999px;
+          background: rgba(0, 0, 0, 0.35);
+          color: var(--color-accent-light);
+          font-size: 0.58rem;
+          font-weight: 700;
+          letter-spacing: 0.02em;
+        }
+        .upd-chip.active .upd-chip-count {
+          background: rgba(255, 255, 255, 0.2);
+          color: #fff;
+        }
+
+        /* ── Category badge on cards/rows ── */
+        .upd-cat-badge {
+          display: inline-flex;
+          align-items: center;
+          padding: 0.05rem 0.45rem;
+          border-radius: 4px;
+          font-family: var(--font-mono, monospace);
+          font-size: 0.54rem;
+          font-weight: 700;
+          letter-spacing: 0.18em;
+          text-transform: uppercase;
+          line-height: 1.55;
+          border: 1px solid currentColor;
+          margin-right: 0.45rem;
+          background: rgba(86, 87, 245, 0.08);
+        }
+        .upd-cat-iso          { color: #ff80e0; }
+        .upd-cat-community    { color: #3ecf6e; }
+        .upd-cat-distro       { color: #6ea8ff; }
+        .upd-cat-changes      { color: #f5b500; }
+        .upd-cat-announcement { color: #ee3939; }
+        .upd-cat-other        { color: var(--color-accent-light); }
+
+        /* utoc badge fits between title and date column */
+        .utoc-row { display: grid; grid-template-columns: auto 1fr auto auto auto; align-items: center; gap: 0.5rem; }
+        .utoc-row .upd-cat-badge { margin-right: 0; }
+
+        .utoc-empty {
+          padding: 1rem 0.75rem;
+          font-family: var(--font-mono, monospace);
+          font-size: 0.75rem;
+          color: var(--color-text-muted);
+          text-align: center;
+        }
+        .utoc-empty[hidden] { display: none; }
+      </style>
+
       <!-- Mobile: featured latest + index list -->
       {_latest && (
         <div class="fade-in fade-in-delay-1 md:hidden">
-          <a href={`${base}/updates/${_latest.id}/`} class="group block mb-8">
+          <a href={`${base}/updates/${_latest.id}/`} class="group block mb-8 upd-mobile-featured" data-category={categoryFor(_latest.data.tags)}>
             <article class="glass glass-trans rounded-2xl overflow-hidden">
               {_latest.data.image && (
                 <div class="h-48 overflow-hidden">
@@ -94,6 +249,7 @@ function excerpt(md: string | undefined, n: number): string {
               <div class="p-5">
                 <div class="flex items-center gap-2 mb-2 font-mono text-[0.58rem] uppercase tracking-[0.16em] text-[var(--color-accent)]">
                   <span>Latest</span><span class="text-[var(--color-text-muted)]">·</span>
+                  <span class={`upd-cat-badge upd-cat-${categoryFor(_latest.data.tags).toLowerCase()}`}>{categoryFor(_latest.data.tags)}</span>
                   <span class="text-[var(--color-text-muted)]">{formatDate(_latest.data.date)}</span>
                 </div>
                 <h2 class="display-heading text-2xl leading-snug text-[var(--color-text-primary)] mb-2">{_latest.data.title}</h2>
@@ -103,14 +259,21 @@ function excerpt(md: string | undefined, n: number): string {
           </a>
           {_rest.length > 0 && (
             <div class="utoc">
-              {_rest.map((update, i) => (
-                <a href={`${base}/updates/${update.id}/`} class="utoc-row">
-                  <span class="utoc-num">{String(i + 2).padStart(2, '0')}</span>
-                  <span class="utoc-title">{update.data.title}</span>
-                  <span class="utoc-lead"></span>
-                  <span class="utoc-date">{formatDate(update.data.date)}</span>
-                </a>
-              ))}
+              {_rest.map((update, i) => {
+                const cat = categoryFor(update.data.tags);
+                return (
+                  <a href={`${base}/updates/${update.id}/`} class="utoc-row" data-category={cat}>
+                    <span class="utoc-num">{String(i + 2).padStart(2, '0')}</span>
+                    <span class="utoc-title">{update.data.title}</span>
+                    <span class={`upd-cat-badge upd-cat-${cat.toLowerCase()}`}>{cat}</span>
+                    <span class="utoc-lead"></span>
+                    <span class="utoc-date">{formatDate(update.data.date)}</span>
+                  </a>
+                );
+              })}
+              <div class="utoc-empty" data-utoc-empty hidden>
+                <span>▸</span> No posts in this category yet.
+              </div>
             </div>
           )}
         </div>
@@ -118,17 +281,25 @@ function excerpt(md: string | undefined, n: number): string {
 
       <script is:inline>
         (function () {
+          // ── Desktop coverflow with filter support ──
           const stage = document.querySelector('[data-coverflow]');
-          if (!stage) return;
-          const items = Array.from(stage.querySelectorAll('[data-cf]'));
+          const filterBar = document.querySelector('[data-upd-filter]');
+          const allItems = stage ? Array.from(stage.querySelectorAll('[data-cf]')) : [];
           const dotsWrap = document.querySelector('[data-cf-dots]');
-          let active = parseInt(stage.dataset.cfStart || '0', 10) || 0;
+          const defaultStart = stage ? (parseInt(stage.dataset.cfStart || '0', 10) || 0) : 0;
 
-          const n = items.length;
+          let visible = allItems.slice();
+          let active = defaultStart;
+          let currentFilter = 'all';
+
           function layout() {
-            items.forEach((el, i) => {
+            const n = visible.length;
+            // Hide everything not in the current filter (keeps DOM intact for re-show).
+            allItems.forEach((el) => { el.style.display = visible.includes(el) ? '' : 'none'; });
+
+            visible.forEach((el, i) => {
               let off = i - active;
-              if (off > n / 2) off -= n;       // wrap around the ring
+              if (off > n / 2) off -= n;
               if (off < -n / 2) off += n;
               const ab = Math.abs(off);
               el.style.transform =
@@ -141,12 +312,18 @@ function excerpt(md: string | undefined, n: number): string {
             if (dotsWrap) {
               Array.from(dotsWrap.children).forEach((d, i) => d.classList.toggle('active', i === active));
             }
+            // Hide arrows + dots when single-card or empty filter result.
+            const showNav = visible.length > 1;
+            document.querySelectorAll('[data-cf-prev],[data-cf-next]').forEach((b) => {
+              b.style.display = showNav ? '' : 'none';
+            });
+            if (dotsWrap) dotsWrap.style.display = showNav ? '' : 'none';
           }
-          function go(i) { active = ((i % n) + n) % n; layout(); }
 
-          // dots
-          if (dotsWrap) {
-            items.forEach((_, i) => {
+          function rebuildDots() {
+            if (!dotsWrap) return;
+            dotsWrap.innerHTML = '';
+            visible.forEach((_, i) => {
               const b = document.createElement('button');
               b.className = 'cf-dot';
               b.setAttribute('aria-label', 'Go to ' + (i + 1));
@@ -154,10 +331,68 @@ function excerpt(md: string | undefined, n: number): string {
               dotsWrap.appendChild(b);
             });
           }
-          // click a side card to center it; center card follows its link
-          items.forEach((el, i) => {
-            el.addEventListener('click', (e) => { if (i !== active) { e.preventDefault(); go(i); } });
+
+          function go(i) {
+            const n = visible.length;
+            if (!n) return;
+            active = ((i % n) + n) % n;
+            layout();
+          }
+
+          function applyFilter(filter) {
+            currentFilter = filter;
+            visible = (filter === 'all')
+              ? allItems.slice()
+              : allItems.filter((el) => el.getAttribute('data-category') === filter);
+            // Default to centering the visible set so the user sees the newest match first.
+            active = Math.min(Math.floor(visible.length / 2), Math.max(0, visible.length - 1));
+            rebuildDots();
+            layout();
+
+            // Mirror to mobile lists.
+            document.querySelectorAll('.utoc .utoc-row').forEach((row) => {
+              const ok = filter === 'all' || row.getAttribute('data-category') === filter;
+              row.style.display = ok ? '' : 'none';
+            });
+            const mobileFeatured = document.querySelector('.upd-mobile-featured');
+            if (mobileFeatured) {
+              const ok = filter === 'all' || mobileFeatured.getAttribute('data-category') === filter;
+              mobileFeatured.style.display = ok ? '' : 'none';
+            }
+            const utocEmpty = document.querySelector('[data-utoc-empty]');
+            if (utocEmpty) {
+              const anyVisible = Array.from(document.querySelectorAll('.utoc .utoc-row')).some((r) => r.style.display !== 'none');
+              const featuredVisible = mobileFeatured ? mobileFeatured.style.display !== 'none' : false;
+              utocEmpty.hidden = anyVisible || featuredVisible;
+            }
+          }
+
+          // Wire chip clicks.
+          if (filterBar) {
+            filterBar.addEventListener('click', (e) => {
+              const btn = e.target.closest('.upd-chip');
+              if (!btn) return;
+              const filter = btn.getAttribute('data-filter') || 'all';
+              filterBar.querySelectorAll('.upd-chip').forEach((c) => {
+                const isActive = c === btn;
+                c.classList.toggle('active', isActive);
+                c.setAttribute('aria-selected', isActive ? 'true' : 'false');
+              });
+              applyFilter(filter);
+            });
+          }
+
+          if (!stage) return;
+
+          // Click a side card to center it; center card follows its link.
+          allItems.forEach((el) => {
+            el.addEventListener('click', (e) => {
+              const idx = visible.indexOf(el);
+              if (idx === -1) return;
+              if (idx !== active) { e.preventDefault(); go(idx); }
+            });
           });
+
           const prev = document.querySelector('[data-cf-prev]');
           const next = document.querySelector('[data-cf-next]');
           if (prev) prev.addEventListener('click', () => go(active - 1));
@@ -167,6 +402,8 @@ function excerpt(md: string | undefined, n: number): string {
             else if (e.key === 'ArrowRight') go(active + 1);
           });
           stage.tabIndex = 0;
+
+          rebuildDots();
           layout();
         })();
       </script>

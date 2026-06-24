@@ -15,7 +15,7 @@ const { alert, isoFeatures, tuiFeatures } = entry.data;
 ---
 
 <Layout title={entry.data.title} description={entry.data.description}>
-  <section class="pt-44 sm:pt-52 pb-4 sm:pb-20 px-4 sm:px-6 lg:px-8">
+  <section class="pt-44 sm:pt-52 pb-2 sm:pb-6 px-4 sm:px-6 lg:px-8">
     <div class="mx-auto max-w-6xl 2xl:max-w-[100rem]">
       <!-- Header -->
       <div class="fade-in text-center mb-3">
@@ -146,10 +146,10 @@ const { alert, isoFeatures, tuiFeatures } = entry.data;
 
             <div class="flex gap-3 pt-4 border-t border-green-500/10">
               <Button href="https://ko-fi.com/s/cf9def9630" external class="flex-1 discount-off">
-                Ko-Fi Shop
+                Get on Ko-Fi
               </Button>
               <Button href="https://ko-fi.com/xerolinux/link/ANN25" external class="flex-1 discount-on">
-                Ko-Fi Shop
+                {discount.label} on Ko-Fi
               </Button>
               <Button href="/crypto/" variant="secondary" class="flex-1">
                 Crypto Portal
@@ -183,28 +183,45 @@ const { alert, isoFeatures, tuiFeatures } = entry.data;
               ))}
             </ul>
 
-            <p class="ad-note warn">Advanced mode. For those who know the risks.</p>
+            <!-- Price area: mirrors ISO card layout so both cards read as siblings -->
+            <div class="mb-5 flex items-baseline gap-3">
+              <span class="display-heading text-4xl text-[#3ecf6e] leading-none">&euro;0</span>
+              <span class="font-mono text-[0.6rem] uppercase tracking-[0.12em] text-[var(--color-text-muted)]">free forever &middot; community-driven</span>
+            </div>
 
-            <div class="pt-4 border-t border-indigo-500/10">
-              <Button href="https://wiki.xerolinux.xyz/xero-install/" variant="secondary" external class="w-full">
-                Check the T.U.I Wiki for How-To
+            <p class="ad-note warn">Terminal-based. Full control.</p>
+
+            <div class="flex gap-3 pt-4 border-t border-indigo-500/10">
+              <Button href="https://wiki.xerolinux.xyz/xero-install/" external class="flex-1">
+                Read the Wiki
+              </Button>
+              <Button href="https://github.com/xerolinux/XeroHub/tree/main/public/script/xero-install" external variant="secondary" class="flex-1">
+                GitHub
+              </Button>
+              <Button href="https://discord.xerolinux.xyz" external variant="secondary" class="flex-1">
+                Discord
               </Button>
             </div>
           </GlassCard>
         </div>
       </div>
 
-      <!-- Side Project -->
-      <div class="fade-in news-section-head">
+      <!-- Side Project: stronger break so users see this isn't a third main download. -->
+      <div class="fade-in side-project-break" aria-hidden="true">
+        <span class="spb-line"></span>
+        <span class="spb-label">/* end of main listings */</span>
+        <span class="spb-line"></span>
+      </div>
+      <div class="fade-in news-section-head side-project-head">
         <span class="news-num">02</span>
         <div class="news-title-wrap">
-          <div class="news-kicker">// Side Project</div>
+          <div class="news-kicker"><span class="side-project-pill">Side Project</span> <span class="opacity-70">// Not a primary download</span></div>
           <h2 class="news-title">The Fedora <em>Detour</em></h2>
         </div>
         <div class="news-line"></div>
       </div>
 
-      <div class="fade-in fade-in-delay-3 mb-10 sm:mb-16">
+      <div class="fade-in fade-in-delay-3 mb-2 sm:mb-4">
         <GlassCard padding="p-4 sm:p-6 lg:p-8" class="relative overflow-hidden classified" style="--col-accent: var(--acc-3);">
           <div class="flex flex-col lg:flex-row lg:items-center gap-6 lg:gap-8">
             <div class="flex-1 min-w-0">
@@ -245,15 +262,6 @@ const { alert, isoFeatures, tuiFeatures } = entry.data;
     </div>
   </section>
 
-  <!-- EOF Separator -->
-  <section class="py-3 sm:pb-20 sm:pt-0 px-4 sm:px-6 lg:px-8">
-    <div class="fade-in mx-auto max-w-3xl flex items-center gap-4">
-      <div class="flex-1 h-px bg-gradient-to-r from-transparent via-[var(--color-border-hover)] to-transparent"></div>
-      <span class="font-mono text-sm text-[var(--color-text-muted)] tracking-widest whitespace-nowrap">~ ~ ~ E.O.F ~ ~ ~</span>
-      <div class="flex-1 h-px bg-gradient-to-r from-transparent via-[var(--color-border-hover)] to-transparent"></div>
-    </div>
-  </section>
-
   <ChangelogModal />
 </Layout>
 
@@ -290,4 +298,87 @@ const { alert, isoFeatures, tuiFeatures } = entry.data;
     100% { transform: rotate(-13deg) scale(1); opacity: 1; }
   }
   @media (prefers-reduced-motion: reduce) { .sale-stamp { animation: none; } }
+
+  /* ── Side-project separator before XeroDora ── */
+  .side-project-break {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin: 3rem auto 1.75rem;
+    max-width: 100%;
+  }
+  .side-project-break .spb-line {
+    flex: 1;
+    height: 1px;
+    background: repeating-linear-gradient(
+      90deg,
+      var(--color-border-hover) 0 6px,
+      transparent 6px 12px
+    );
+    opacity: 0.65;
+  }
+  .side-project-break .spb-label {
+    font-family: var(--font-mono, monospace);
+    /* Mobile-first: a touch bigger than the old value, no animation (battery). */
+    font-size: 0.84rem;
+    font-weight: 700;
+    letter-spacing: 0.22em;
+    text-transform: lowercase;
+    color: var(--color-accent-light);
+    padding: 0.32rem 0.85rem;
+    border: 1px solid rgba(86, 87, 245, 0.5);
+    border-radius: 5px;
+    background: rgba(86, 87, 245, 0.1);
+    box-shadow: 0 0 12px rgba(86, 87, 245, 0.25);
+    text-shadow: 0 0 6px rgba(86, 87, 245, 0.45);
+  }
+  /* Desktop sizing: just smaller than mobile. */
+  @media (min-width: 600px) {
+    .side-project-break .spb-label {
+      font-size: 0.7rem;
+    }
+  }
+  /* Pulse animation gated on TRUE pointer-fine + hover-hover devices (real mouse/trackpad).
+     Touch-only phones and tablets (and touch-2-in-1 laptops without a mouse attached) skip it. */
+  @media (hover: hover) and (pointer: fine) and (min-width: 600px) {
+    .side-project-break .spb-label {
+      animation: spb-pulse 2.6s ease-in-out infinite;
+    }
+  }
+  @keyframes spb-pulse {
+    0%, 100% {
+      box-shadow: 0 0 10px rgba(86, 87, 245, 0.2);
+      border-color: rgba(86, 87, 245, 0.45);
+    }
+    50% {
+      box-shadow: 0 0 22px rgba(86, 87, 245, 0.55), 0 0 36px rgba(255, 128, 224, 0.25);
+      border-color: rgba(86, 87, 245, 0.85);
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .side-project-break .spb-label { animation: none; }
+  }
+  /* Real touch devices (phones + tablets regardless of viewport width): no pulse.
+     Battery-friendly. Catches landscape phones / tablets where viewport >= md but
+     the device is still mobile. */
+  @media (hover: none) and (pointer: coarse) {
+    .side-project-break .spb-label { animation: none !important; }
+  }
+  .side-project-head .news-num { opacity: 0.55; }
+  .side-project-head .news-title { font-size: clamp(1.4rem, 2.6vw, 2rem); }
+  .side-project-pill {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.06rem 0.5rem;
+    border-radius: 4px;
+    font-family: var(--font-mono, monospace);
+    font-size: 0.58rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #ff8a1a;
+    background: rgba(255, 138, 26, 0.12);
+    border: 1px solid rgba(255, 138, 26, 0.4);
+    margin-right: 0.5rem;
+  }
 </style>

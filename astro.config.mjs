@@ -17,6 +17,9 @@ export default defineConfig({
     build: {
       cssMinify: 'esbuild',
     },
+    server: {
+      allowedHosts: ['healthy-bath-isle-fioricet.trycloudflare.com'],
+    },
   },
   markdown: {
     shikiConfig: {

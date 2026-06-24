@@ -2,24 +2,42 @@
 title: "XeroLinux Team"
 date: 2026-02-27
 draft: false
-description: "Growing the team"
+description: "Meet the people behind XeroLinux: the maintainers, developers, moderators, and admins keeping the project alive."
 tags: ["XeroLinux", "Changes", "Arch", "ArchLinux", "Linux", "Team"]
 image: "/images/updates/xero-team.webp"
 ---
 
-### Meet the XeroLinux Dream Team!
+### Behind XeroLinux
 
-**XeroLinux** is mainly a solo passion project from **Lebanon**, a country facing corruption and tough times, yet where grit turns challenges into triumphs. Unlike bloated teams behind massive distros, we're a lean, dedicated small crew fueled by pure open-source heart. That scrappy spirit shines through every release, with a donation wall keeping the lights on for mirrors and builds. Realism meets resilience, small team, big impact.
+**XeroLinux** is mainly a solo passion project run out of **Lebanon**, kept moving by a small, hand-picked crew rather than a corporate team. Donations cover mirrors, builds, and the running cost of keeping a rolling Arch derivative in good shape. What follows is who actually shows up.
 
-At the helm stands [**DarkXero**](https://github.com/DarkXero-dev), the ideas volcano, lead maintainer, and Lord of the distro, constantly erupting with bold concepts like toolkit overhauls and seamless Arch workflows, then wrangling the chaos into polished perfection through sheer grit and vision.
+### The Roster
 
-[**Synse**](https://github.com/synsejse/) & [**kyvran**](https://github.com/kyvran) are the dev ninjas deep in the trenches, hand-crafting and relentlessly perfecting our core toolkit *plus* other essential tools from scratch. They plunge into code depths with debug katanas, annihilating bugs via endless `gdb` sessions and ironclad test suites, ensuring your Plasma tweaks, install scripts, and custom goodies execute flawlessly on everything from vintage ThinkPads to modern beasts, zero crashes allowed.
+| Role | Name | Links |
+| --- | --- | --- |
+| Lead maintainer | **DarkXero** | [GitHub](https://github.com/DarkXero-dev) |
+| Toolkit developer | **Synse** | [GitHub](https://github.com/synsejse/) |
+| Toolkit developer | **kyvran** | [GitHub](https://github.com/kyvran) |
+| Discord moderator | **inittux111** | Discord |
+| Discord moderator | **Cracken** | Discord |
+| Server admin | **NatFetch** | Discord |
+| Server admin | **TheLegit** | [Twitch](https://www.twitch.tv/techben10) |
+| ISO builder &amp; release engineer | **Digidude512** | [GitHub](https://github.com/digidude512) |
 
-Holding down Discord fort: **inittux111**, and **Cracken**, mods maestros who smoothly onboard noobs with pro Arch guides while slinging meme shields at spam armies. **NatFetch** & [**TheLegit**](https://www.twitch.tv/techben10) rule as admin overlords, fortress-hardening servers, dropping stunning neofetch ASCII art, and igniting epic events, from ISO drop parties to marathon debug fests that crack the toughest nuts.
+### What Each Person Does
 
-Finally, there's [**Digidude512**](https://github.com/digidude512) our resident ISO builder and uploader extraordinaire, churning out fresh, lightning-fast builds and zipping them to mirrors worldwide, making sure you grab the latest **XeroLinux** goodness with a single click.
+**DarkXero** owns the direction: toolkit overhauls, Arch workflow decisions, release planning, and the bulk of code review.
 
-That's your **XeroLinux** crew, a perfect blend of vision, code mastery, and community fire.
+**Synse** and **kyvran** build and maintain the in-house toolkit and supporting utilities. Their work is what makes the post-install experience consistent across hardware, from older ThinkPads to current-gen builds.
 
-**[Join Discord Now!](https://discord.xerolinux.xyz)** Leap in, flex your builds, and let's crank Arch to eleven! 🐧 #XeroLinux
+**inittux111** and **Cracken** run the Discord moderation queue: onboarding new users, answering Arch-side questions, and clearing spam.
 
+**NatFetch** and **TheLegit** handle server administration for Discord and adjacent infrastructure, plus organize community events and release nights.
+
+**Digidude512** builds the ISOs and pushes them to the mirror network, so when a release lands it actually shows up where people download it.
+
+### Get Involved
+
+The fastest way in is Discord. Pull a build, file an issue, or just join the chat.
+
+**[Join Discord](https://discord.xerolinux.xyz)**
