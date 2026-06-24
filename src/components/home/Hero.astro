@@ -50,9 +50,9 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 
         <!-- Serif headline -->
         <h1 class="display-heading text-3xl sm:text-[1.7rem] lg:text-[2.05rem] leading-tight text-[var(--color-text-primary)] mb-3 whitespace-normal sm:whitespace-nowrap">
-          A Distro Fueled by our
-          <span class="italic text-[var(--color-accent)]">Passion</span>
-          for GNU/Linux
+          Arch, with the
+          <span class="italic text-[var(--color-accent)]">Sharp Edges</span>
+          Filed Off
         </h1>
 
         <!-- Byline -->
@@ -78,26 +78,26 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 
         <!-- Lead, drop-cap two columns -->
         <div class="hero-lead text-base sm:text-base text-[var(--color-text-secondary)] leading-relaxed sm:columns-2 sm:gap-7 mb-4">
-          <p style="text-align:justify;">XeroLinux is a curated, actively maintained Arch-based distribution that demystifies installation while preserving user-driven customization. A thoughtful balance of accessibility and the renowned flexibility of Arch Linux, shipped with a configured KDE Plasma 6 desktop and a suite of in-house tools like the XeroLinux Toolkit and Kernel Manager that let you install the CachyOS kernel and fine-tune your system for measurably better performance.</p>
+          <p style="text-align:justify;">XeroLinux ships a configured KDE Plasma 6 desktop on top of Arch with a working installer, a <strong class="text-[var(--color-text-primary)]">Kernel Manager</strong> for swapping in CachyOS and other tuned kernels, an <strong class="text-[var(--color-text-primary)]">SCX</strong> tool for modern schedulers, and the in-house <strong class="text-[var(--color-text-primary)]">XeroLinux Toolkit</strong> for post-install setup. A separate <strong class="text-[var(--color-text-primary)]">T.U.I.</strong> installer is free forever; the polished ISO uses a one-time contribution that unlocks updates for life.</p>
         </div>
 
-        <!-- CTAs -->
+        <!-- CTAs: primary Download, secondary Wiki, tertiary GitHub -->
         <div class="hero-ctas flex flex-row flex-nowrap items-center gap-1.5 sm:gap-2.5">
-          <Button href={`${base}/download/`} size="sm">
+          <Button href={`${base}/download/`} size="sm" class="hero-cta-primary">
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
             </svg>
             Download
           </Button>
-          <Button href="https://wiki.xerolinux.xyz" variant="secondary" size="sm" external>
+          <Button href="https://wiki.xerolinux.xyz" variant="secondary" size="sm" external class="hero-cta-secondary">
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
             </svg>
             The Wiki
           </Button>
-          <Button href="https://github.com/XeroLinux/XeroBuild" variant="secondary" size="sm" external>
+          <Button href="https://github.com/XeroLinux/XeroBuild" variant="secondary" size="sm" external class="hero-cta-tertiary">
             <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-            Github
+            GitHub
           </Button>
         </div>
         </div><!-- /content -->
@@ -181,9 +181,9 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
           ));
         })()}
         <!-- Get it -->
-        <div class="mt-auto pt-2 border-t-2 border-[var(--color-accent)]">
+        <div class="mt-auto mb-2 sm:mb-3 pt-2 border-t-2 border-[var(--color-accent)]">
           <div class="font-mono text-[0.58rem] uppercase tracking-[0.2em] text-[var(--color-text-muted)] mb-1.5">Two ways in</div>
-          <a href={`${base}/download/`} class="group block rounded-lg border border-[var(--color-border)] layan-panel px-3.5 py-2.5 font-mono text-[0.7rem] leading-snug hover:border-[var(--color-accent)]/60 term-glow">
+          <div class="block rounded-lg border border-[var(--color-border)] layan-panel px-3.5 py-2 font-mono text-[0.7rem] leading-snug term-glow" role="presentation">
             <div class="term-grid">
               <div class="term-text">
                 <div class="text-[var(--color-text-secondary)]">
@@ -204,9 +204,8 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
                 <div class="hbar" data-bar="dsk" data-min="20" data-max="24" style="color:#ee3939" title="DSK 22%"><span class="hbar-l">dsk</span><span class="hbar-t" data-bricks="18"></span><span class="hbar-p">22</span></div>
                 <div class="hbar" data-bar="net" data-min="12" data-max="68" style="color:#4285f4" title="NET 35%"><span class="hbar-l">net</span><span class="hbar-t" data-bricks="18"></span><span class="hbar-p">35</span></div>
               </div>
-              <span class="term-arrow text-[var(--color-accent)] text-xl leading-none drop-shadow-[0_0_8px_rgba(86,87,245,0.7)] transition-transform group-hover:translate-x-1">&#9656;</span>
             </div>
-          </a>
+          </div>
         </div>
       </aside>
     </div>
@@ -256,6 +255,40 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
     .hero-ctas :global(a) :global(svg) { width: 0.85rem !important; height: 0.85rem !important; }
   }
 
+  /* ── Desktop CTA hierarchy ──
+     Primary (Download) : filled + bright accent outline + glow.
+     Secondary (Wiki)   : darker outline, less visual weight than Primary.
+     Tertiary (GitHub)  : same SIZE as secondary, but ghost-transparent with no border/bg. */
+  @media (min-width: 640px) {
+    .hero-ctas :global(.hero-cta-primary) {
+      flex: 1 1 auto;
+      padding-inline: 1.1rem;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      border: 1px solid var(--color-accent-light);
+      box-shadow:
+        0 0 0 1px rgba(255, 255, 255, 0.08) inset,
+        0 6px 22px rgba(86, 87, 245, 0.45),
+        0 0 0 2px rgba(86, 87, 245, 0.18);
+    }
+    /* Wiki + GitHub share the .glass body (same blur, bg, shadow, padding, font, size).
+       The only difference is the border color so each button is its own visual lane. */
+    .hero-ctas :global(.hero-cta-secondary) {
+      flex: 0 1 auto;
+      border-color: rgba(110, 168, 255, 0.5) !important;
+    }
+    .hero-ctas :global(.hero-cta-secondary:hover) {
+      border-color: #6ea8ff !important;
+    }
+    .hero-ctas :global(.hero-cta-tertiary) {
+      flex: 0 1 auto;
+      border-color: rgba(255, 128, 224, 0.5) !important;
+    }
+    .hero-ctas :global(.hero-cta-tertiary:hover) {
+      border-color: var(--color-accent-2, #ff80e0) !important;
+    }
+  }
+
   /* ── 16px gap stream canvas (picker #100) ── */
   #hero-stream {
     position: absolute;
@@ -267,7 +300,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
     pointer-events: none;
     z-index: 10;
   }
-  @media (max-width: 1023px) {
+  @media (max-width: 599px) {
     #hero-stream { display: none !important; }
   }
 
@@ -366,7 +399,9 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
     height: 100%;
     background: rgba(255, 255, 255, 0.04);
     border-radius: 1.5px;
-    transition: background 0.4s ease, box-shadow 0.4s ease;
+    transition:
+      background 0.55s cubic-bezier(0.22, 1, 0.36, 1),
+      box-shadow 0.55s cubic-bezier(0.22, 1, 0.36, 1);
   }
   .term-glow .hbar-t :global(u.on) {
     background: currentColor;
@@ -374,13 +409,8 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
       0 0 3px currentColor,
       inset 0 1px 0 rgba(255, 255, 255, 0.3);
   }
-  @keyframes hbar-flicker {
-    0%, 100% { filter: brightness(1); }
-    48% { filter: brightness(1.12); }
-    50% { filter: brightness(0.9); }
-    52% { filter: brightness(1.06); }
-  }
-  .term-glow .hbar-t :global(u.on) { animation: hbar-flicker 3.4s ease-in-out infinite; }
+  /* No flicker keyframes: the previous brightness:0.9 dip read as a blank frame mid-cycle.
+     Bricks stay steady; the requestAnimationFrame loop + brick transition handle motion. */
   @media (prefers-reduced-motion: reduce) {
     .term-glow .hbar-t :global(u) { transition: none; }
     .term-glow .hbar-t :global(u.on) { animation: none; }
@@ -687,8 +717,8 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
     if (Date.now() > endTime) el.remove();
   })();
 
-  // Conky-style segmented brick bars: smoothly fluctuate CPU/MEM/DSK/NET
-  // so the sidebar feels like it's actually reading from the system.
+  // Conky-style segmented brick bars: each row interpolates toward a moving target
+  // via requestAnimationFrame so the brick threshold sweeps smoothly instead of snapping.
   (function () {
     var wrap = document.querySelector('[data-conky]');
     if (!wrap) return;
@@ -713,34 +743,70 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
       }
       var bricks = track ? track.querySelectorAll('u') : [];
 
+      var startVal = (min + max) / 2;
       state.push({
         row: row, track: track, bricks: bricks, pct: pct,
         min: min, max: max, label: label, count: count,
-        val: (min + max) / 2,
+        val: startVal,         // currently rendered value (smoothly interpolated)
+        target: startVal,      // value being chased; updated every ~1.2s
+        displayedPct: -1,      // cache last rendered percent so DOM only touches on change
+        displayedOn: -1,       // cache last brick threshold
       });
     });
 
-    function tick() {
-      state.forEach(function (s) {
-        var range = s.max - s.min;
-        var step  = (Math.random() - 0.5) * range * 0.45;
-        var next  = s.val + step;
-        if (next < s.min) next = s.min + Math.random() * range * 0.15;
-        if (next > s.max) next = s.max - Math.random() * range * 0.15;
-        s.val = next;
-        var rounded = Math.round(next);
-        var on = Math.round((rounded / 100) * s.count);
-        for (var i = 0; i < s.bricks.length; i++) {
-          s.bricks[i].classList.toggle('on', i < on);
-        }
-        if (s.pct) s.pct.textContent = rounded;
-        s.row.setAttribute('title', s.label + ' ' + rounded + '%');
-      });
+    var reduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    function pickTarget(s) {
+      var range = s.max - s.min;
+      var step  = (Math.random() - 0.5) * range * 0.7;
+      var next  = s.val + step;
+      if (next < s.min) next = s.min + Math.random() * range * 0.18;
+      if (next > s.max) next = s.max - Math.random() * range * 0.18;
+      s.target = next;
     }
 
-    var reduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    tick();
-    if (!reduced) setInterval(tick, 1400);
+    // Stagger first targets so the four bars don't move in lockstep
+    state.forEach(function (s, i) {
+      setTimeout(function () { pickTarget(s); }, i * 220);
+      // Refresh target on a per-row interval; slight jitter so rows desync naturally.
+      var period = 900 + Math.floor(Math.random() * 500);
+      setInterval(function () { pickTarget(s); }, period);
+    });
+
+    function frame() {
+      // Lerp val toward target each frame. ~0.07 per frame at 60fps = ~12 frames to converge.
+      for (var k = 0; k < state.length; k++) {
+        var s = state[k];
+        s.val += (s.target - s.val) * 0.07;
+
+        var rounded = Math.round(s.val);
+        if (rounded !== s.displayedPct) {
+          if (s.pct) s.pct.textContent = rounded;
+          s.row.setAttribute('title', s.label + ' ' + rounded + '%');
+          s.displayedPct = rounded;
+        }
+        var on = Math.round((s.val / 100) * s.count);
+        if (on !== s.displayedOn) {
+          for (var i = 0; i < s.bricks.length; i++) {
+            s.bricks[i].classList.toggle('on', i < on);
+          }
+          s.displayedOn = on;
+        }
+      }
+      if (!reduced) requestAnimationFrame(frame);
+    }
+
+    if (reduced) {
+      // Static render once for reduced-motion users
+      state.forEach(function (s) {
+        var rounded = Math.round(s.val);
+        if (s.pct) s.pct.textContent = rounded;
+        var on = Math.round((s.val / 100) * s.count);
+        for (var i = 0; i < s.bricks.length; i++) s.bricks[i].classList.toggle('on', i < on);
+      });
+    } else {
+      requestAnimationFrame(frame);
+    }
   })();
 </script>
 

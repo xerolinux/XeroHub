@@ -24,7 +24,7 @@ const footerLinks = [
 ];
 ---
 
-<footer class="relative z-10 mt-6 md:mt-24">
+<footer class="relative z-10 mt-3 md:mt-8">
   <div class="news-rule hidden md:block mx-auto max-w-3xl px-4 sm:px-6">
     <span class="nr-tilde">~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</span>
     <span class="nr-prompt"><span class="nr-user">xero</span><span class="nr-at">@</span><span class="nr-host">xerolinux</span><span class="nr-colon">:</span><span class="nr-path">~/hq</span><span class="nr-sigil">$</span>&nbsp;<span class="nr-cmd">echo</span>&nbsp;<span class="nr-str">"end of transmission"</span><span class="nr-cursor"></span></span>
@@ -122,171 +122,9 @@ const footerLinks = [
       </div>
     </div>
 
-    <!-- Terminal status strip — desktop only -->
-    <div class="hidden lg:block mt-10 rounded-xl border border-[var(--color-border)] layan-panel overflow-hidden font-mono text-xs">
-      <div class="flex items-center gap-2 px-4 py-2 border-b border-[var(--color-border)] bg-[rgba(86, 87, 245,0.08)]">
-        <span class="w-2.5 h-2.5 rounded-full bg-[#ff5f57]"></span>
-        <span class="w-2.5 h-2.5 rounded-full bg-[#febc2e]"></span>
-        <span class="w-2.5 h-2.5 rounded-full bg-[#28c840]"></span>
-        <span class="ml-2 text-[0.6rem] uppercase tracking-[0.18em] text-[var(--color-text-muted)]">xero@archlinux ~</span>
-      </div>
-      <div class="px-4 py-3 leading-relaxed" id="footer-neofetch">
-        <div><span class="text-[#28c840]" data-fn-host>guest@xerolinux</span><span class="text-[var(--color-text-muted)]">:</span><span class="text-[var(--color-accent-light)]">~</span><span class="text-[var(--color-text-muted)]">$</span> <span class="text-[var(--color-text-secondary)]">neofetch --quiet</span></div>
-        <div class="mt-1.5 grid grid-cols-2 sm:grid-cols-4 gap-x-4 gap-y-1 text-[var(--color-text-muted)]">
-          <span><span class="text-[var(--color-accent)]">os</span> <span data-fn-os>—</span></span>
-          <span><span class="text-[var(--color-accent)]">arch</span> <span data-fn-arch>—</span></span>
-          <span><span class="text-[var(--color-accent)]">connection</span> <span data-fn-net>—</span></span>
-          <span><span class="text-[var(--color-accent)]">gpu</span> <span data-fn-gpu>—</span></span>
-          <span><span class="text-[var(--color-accent)]">browser</span> <span data-fn-runtime>—</span></span>
-          <span><span class="text-[var(--color-accent)]">cpu</span> <span data-fn-cpu>—</span></span>
-          <span><span class="text-[var(--color-accent)]">ram</span> <span data-fn-ram>—</span></span>
-          <span><span class="text-[var(--color-accent)]">status</span> <span class="text-[#28c840]">● online</span></span>
-        </div>
-        <div class="mt-2"><span class="text-[#28c840]" data-fn-host>guest@xerolinux</span><span class="text-[var(--color-text-muted)]">:</span><span class="text-[var(--color-accent-light)]">~</span><span class="text-[var(--color-text-muted)]">$</span> <span class="inline-block w-2 h-3.5 align-middle bg-[var(--color-accent)] ml-1" style="animation:blink 1.1s step-end infinite;"></span></div>
-      </div>
-      <script is:inline>
-        (function () {
-          var n = navigator || {};
-          var ua = (n.userAgent || '');
-          var L = ua.toLowerCase();
-
-          function set(sel, val) {
-            document.querySelectorAll(sel).forEach(function (el) { el.textContent = val; });
-          }
-
-          /* ── OS ────────────────────────────────────────────── */
-          var os = 'Unknown';
-          if (/windows nt 10/.test(L)) os = 'Windows 10/11';
-          else if (/windows nt/.test(L)) os = 'Windows';
-          else if (/android/.test(L)) os = 'Android';
-          else if (/iphone|ipad|ipod/.test(L)) os = 'iOS';
-          else if (/mac os x/.test(L)) os = 'macOS';
-          else if (/cros/.test(L)) os = 'ChromeOS';
-          else if (/linux/.test(L)) os = 'Linux 🐧';
-          else if (/freebsd|openbsd|netbsd/.test(L)) os = 'BSD';
-          set('[data-fn-os]', os);
-
-          /* ── Browser name + version ─────────────────────── */
-          var br = 'browser';
-          var brVer = '';
-          var m;
-
-          function pickBrand(list) {
-            if (!Array.isArray(list)) return null;
-            // Look for ANY brand whose name mentions a known non-Chromium product.
-            var known = /vivaldi|brave|opera|edge|yandex|samsung|duckduckgo/i;
-            var hit = list.find(function (b) { return known.test(b.brand); });
-            if (hit) return hit;
-            // Otherwise drop generic placeholders and take the first remaining.
-            var rest = list.filter(function (b) {
-              return !/^Chromium$|^Not[ _\-]?A.?Brand$|^Google Chrome$/i.test(b.brand);
-            });
-            return rest[0] || null;
-          }
-
-          // 1) Client Hints brand list (sync, low-entropy)
-          if (n.userAgentData && n.userAgentData.brands) {
-            var hit = pickBrand(n.userAgentData.brands);
-            if (hit) {
-              br = hit.brand.toLowerCase().replace(/^microsoft /, '').replace(/[^a-z0-9]/g, '');
-              brVer = (hit.version || '').split('.')[0];
-            }
-          }
-
-          // 2) UA-string fallback
-          if (br === 'browser') {
-            if ((m = ua.match(/Vivaldi\/(\S+)/)))              { br = 'vivaldi'; brVer = m[1].split('.')[0]; }
-            else if ((m = ua.match(/Brave\/(\S+)/)))           { br = 'brave';   brVer = m[1].split('.')[0]; }
-            else if ((m = ua.match(/Edg\/(\S+)/)))             { br = 'edge';    brVer = m[1].split('.')[0]; }
-            else if ((m = ua.match(/OPR\/(\S+)/)))             { br = 'opera';   brVer = m[1].split('.')[0]; }
-            else if ((m = ua.match(/YaBrowser\/(\S+)/)))       { br = 'yandex';  brVer = m[1].split('.')[0]; }
-            else if ((m = ua.match(/Firefox\/(\S+)/)))         { br = 'firefox'; brVer = m[1].split('.')[0]; }
-            else if ((m = ua.match(/Chrome\/(\S+)/)))          { br = 'chrome';  brVer = m[1].split('.')[0]; }
-            else if ((m = ua.match(/Version\/(\S+).*Safari/))) { br = 'safari';  brVer = m[1].split('.')[0]; }
-          }
-          set('[data-fn-runtime]', br + (brVer ? ' ' + brVer : ''));
-
-          // 3) Async refinement via high-entropy hints
-          if (n.userAgentData && n.userAgentData.getHighEntropyValues) {
-            n.userAgentData.getHighEntropyValues(['fullVersionList']).then(function (v) {
-              var hit = pickBrand(v.fullVersionList);
-              if (hit) {
-                var nm = hit.brand.toLowerCase().replace(/^microsoft /, '').replace(/[^a-z0-9]/g, '');
-                var nv = (hit.version || '').split('.')[0];
-                set('[data-fn-runtime]', nm + (nv ? ' ' + nv : ''));
-              }
-            }).catch(function () {});
-          }
-
-          /* ── Engine → "kernel" ──────────────────────────── */
-          var engine = 'unknown';
-          if (/gecko\/\d/i.test(ua) && /firefox/i.test(ua)) {
-            engine = 'gecko';
-          } else if (/applewebkit/i.test(ua)) {
-            engine = /chrome|chromium|crios|edg|opr|vivaldi|samsung/i.test(ua) ? 'blink' : 'webkit';
-          }
-          // Try to attach engine version (chromium ver = chrome ver, webkit ver also in UA)
-          var em = ua.match(/(?:AppleWebKit|Gecko)\/(\S+)/);
-          var engineVer = '';
-          if (engine === 'blink' && brVer) engineVer = brVer;
-          else if (em) engineVer = em[1].split('.').slice(0, 2).join('.');
-          set('[data-fn-engine]', engine + (engineVer ? '-' + engineVer : ''));
-
-          /* ── GPU (WebGL renderer) → "de" ─────────────────── */
-          var gpu = 'unknown';
-          try {
-            var c = document.createElement('canvas');
-            var gl = c.getContext('webgl') || c.getContext('experimental-webgl');
-            if (gl) {
-              var info = gl.getExtension('WEBGL_debug_renderer_info');
-              if (info) {
-                var r = gl.getParameter(info.UNMASKED_RENDERER_WEBGL) || '';
-                // Trim ANGLE noise, parens, "Direct3D11 vs_5_0 ps_5_0"
-                gpu = r.replace(/^ANGLE \(([^,)]+).*\)$/, '$1').split('(')[0].trim();
-                if (gpu.length > 32) gpu = gpu.slice(0, 32) + '…';
-              } else {
-                gpu = (gl.getParameter(gl.RENDERER) || 'webgl').toString().slice(0, 32);
-              }
-            }
-          } catch (e) {}
-          set('[data-fn-gpu]', gpu);
-
-          /* ── Architecture (Chromium User-Agent Client Hints) */
-          if (n.userAgentData && n.userAgentData.getHighEntropyValues) {
-            n.userAgentData.getHighEntropyValues(['architecture', 'bitness', 'platformVersion']).then(function (v) {
-              var arch = (v.architecture || '') + (v.bitness ? '-' + v.bitness : '');
-              set('[data-fn-arch]', arch || 'unknown');
-              if (v.platformVersion) {
-                set('[data-fn-os]', os + ' ' + v.platformVersion);
-              }
-            }).catch(function () {
-              set('[data-fn-arch]', /WOW64|Win64|x86_64|x64/.test(ua) ? 'x86_64' : (/arm64|aarch64/i.test(ua) ? 'arm64' : (/i686|i386/.test(ua) ? 'i686' : 'unknown')));
-            });
-          } else {
-            set('[data-fn-arch]', /WOW64|Win64|x86_64|x64/.test(ua) ? 'x86_64' : (/arm64|aarch64/i.test(ua) ? 'arm64' : (/i686|i386/.test(ua) ? 'i686' : 'unknown')));
-          }
-
-          /* ── CPU / RAM ──────────────────────────────────── */
-          set('[data-fn-cpu]', (n.hardwareConcurrency || '?') + ' cores');
-          set('[data-fn-ram]', n.deviceMemory ? n.deviceMemory + ' GB' : 'n/a');
-
-          /* ── Network ────────────────────────────────────── */
-          var conn = n.connection || n.mozConnection || n.webkitConnection;
-          if (conn && conn.effectiveType) {
-            set('[data-fn-net]', conn.effectiveType + (conn.downlink ? ' · ' + conn.downlink + 'Mb' : ''));
-          } else {
-            set('[data-fn-net]', navigator.onLine ? 'online' : 'offline');
-          }
-
-          /* ── Hostname ────────────────────────────────────── */
-          var host = ('' + (n.platform || 'web')).toLowerCase().replace(/[^a-z0-9]/g, '') || 'web';
-          set('[data-fn-host]', 'visitor@' + host);
-        })();
-      </script>
-    </div>
 
     <!-- Bottom bar -->
-    <div class="hidden md:flex mt-8 pt-8 border-t border-[var(--color-border)] flex-col sm:flex-row items-center justify-between gap-4">
+    <div class="hidden md:flex mt-10 pt-8 border-t border-[var(--color-border)] flex-col sm:flex-row items-center justify-between gap-4">
       <p class="text-sm text-[var(--color-text-muted)]">
         &copy; {currentYear} XeroLinux. Proudly made in Lebanon <Image src={lbFlag} alt="Lebanese Flag" width="25" height="18" densities={[1, 2]} loading="lazy" class="inline-block align-text-bottom" />
       </p>
@@ -296,3 +134,4 @@ const footerLinks = [
     </div>
   </div>
 </footer>
+

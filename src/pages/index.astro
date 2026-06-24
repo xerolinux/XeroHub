@@ -38,10 +38,10 @@ try {
   <FeatureCards />
 
   <!-- Arch Refined Section -->
-  <section class="py-8 sm:py-20 px-4 sm:px-6 lg:px-8">
+  <section class="py-12 sm:py-20 px-4 sm:px-6 lg:px-8">
     <div class="mx-auto max-w-7xl 2xl:max-w-[100rem]">
       <div class="fade-in news-section-head">
-        <span class="news-num">02</span>
+        <span class="news-num">03</span>
         <div class="news-title-wrap">
           <div class="news-kicker">// Feature</div>
           <h2 class="news-title">Arch, <em>Refined</em></h2>
@@ -52,10 +52,10 @@ try {
         <div>
           <div class="fade-in fade-in-delay-1 space-y-4 text-[var(--color-text-secondary)]">
             <p>
-              <strong class="text-[var(--color-text-primary)]">XeroLinux</strong> represents an innovative <em>Arch-based</em> distribution designed to demystify the installation process while preserving the core principles of user-driven customization. This distribution offers a thoughtful approach to Linux that balances accessibility with the renowned flexibility of <strong class="text-[var(--color-text-primary)]">ArchLinux</strong>.
+              Underneath the polish, you get the real thing: a <strong class="text-[var(--color-text-primary)]">rolling Arch</strong> base with full pacman, the AUR, and direct upstream packages. Nothing is forked, nothing is held back behind a downstream release cycle.
             </p>
             <p>
-              <strong class="text-[var(--color-text-primary)]">XeroLinux</strong> embodies the true spirit of <strong class="text-[var(--color-text-primary)]">ArchLinux</strong>: a platform where you have the freedom to create your ideal computing environment, guided by curiosity, learning, and personal preference.
+              The job of XeroLinux is to remove the boring parts. Sane defaults, a working KDE Plasma 6 desktop, a Calamares-driven install that does not flinch on UEFI or NVMe, and a chassis of in-house tools layered on top. From there, the system is yours: theme it, strip it, rebuild it, the Arch you wanted from the start.
             </p>
           </div>
           <div class="fade-in fade-in-delay-2 mt-8">
@@ -69,23 +69,26 @@ try {
         </div>
         <div class="fade-in fade-in-delay-2">
           <GlassCard padding="p-3">
-            <div class="aspect-video rounded-xl overflow-hidden relative cursor-pointer group" id="yt-lite" data-vid="hj9I8UYXToY">
+            <div class="yt-lite aspect-video rounded-xl overflow-hidden relative cursor-pointer group" id="yt-lite" data-vid="hj9I8UYXToY">
               <img
-                src="https://i.ytimg.com/vi/hj9I8UYXToY/hqdefault.jpg"
+                src="https://i.ytimg.com/vi/hj9I8UYXToY/maxresdefault.jpg"
+                onerror="this.onerror=null;this.src='https://i.ytimg.com/vi/hj9I8UYXToY/hqdefault.jpg';"
                 alt="XeroLinux Overview"
-                width="480"
-                height="360"
+                width="1280"
+                height="720"
                 loading="lazy"
-                class="w-full h-full object-cover rounded-xl"
+                class="w-full h-full object-cover rounded-xl transition-transform duration-500 group-hover:scale-[1.03]"
               />
               <!-- Play button overlay -->
-              <div class="absolute inset-0 flex items-center justify-center bg-black/30 group-hover:bg-black/40 transition-colors rounded-xl">
-                <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform backdrop-blur-md bg-white/10 border border-white/20 shadow-lg">
-                  <svg class="w-6 h-6 sm:w-7 sm:h-7 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
+              <div class="absolute inset-0 flex items-center justify-center bg-black/30 group-hover:bg-black/45 transition-colors rounded-xl">
+                <div class="w-16 h-16 sm:w-20 sm:h-20 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform backdrop-blur-md bg-white/10 border border-white/25 shadow-[0_0_24px_rgba(86,87,245,0.45)] yt-play-glow">
+                  <svg class="w-7 h-7 sm:w-8 sm:h-8 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M8 5v14l11-7z"/>
                   </svg>
                 </div>
               </div>
+              <!-- Subtle YouTube label badge so it's clearly a video, not a static still -->
+              <span class="yt-badge">▸ YouTube</span>
             </div>
           </GlassCard>
         </div>
@@ -94,10 +97,10 @@ try {
   </section>
 
   <!-- Stats / Quick Info -->
-  <section class="py-6 sm:py-16 px-4 sm:px-6 lg:px-8">
+  <section class="py-12 sm:py-20 px-4 sm:px-6 lg:px-8">
     <div class="mx-auto max-w-5xl">
       <div class="fade-in news-section-head">
-        <span class="news-num">03</span>
+        <span class="news-num">04</span>
         <div class="news-title-wrap">
           <div class="news-kicker">// By the Numbers</div>
           <h2 class="news-title">The <em>Spec Sheet</em></h2>
@@ -110,13 +113,15 @@ try {
           { icon: `<svg viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5 shrink-0"><path d="M11.39.605C10.376 3.092 9.764 4.72 8.635 7.132c.693.734 1.543 1.589 2.923 2.554-1.484-.61-2.496-1.224-3.252-1.86C6.86 10.842 4.596 15.138 0 23.395c3.612-2.085 6.412-3.37 9.021-3.862a6.61 6.61 0 01-.171-1.547l.003-.115c.058-2.315 1.261-4.095 2.687-3.973 1.426.12 2.534 2.096 2.478 4.409a6.52 6.52 0 01-.146 1.243c2.58.505 5.352 1.787 8.914 3.844-.702-1.293-1.33-2.459-1.929-3.57-.943-.73-1.926-1.682-3.933-2.713 1.38.359 2.367.772 3.137 1.234-6.09-11.334-6.582-12.84-8.67-17.74z"/></svg>`, value: 'Arch Linux', label: 'Foundation' },
           { icon: `<svg viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5 shrink-0"><path d="M2 6a2 2 0 012-2h16a2 2 0 012 2v10a2 2 0 01-2 2h-5l1 2h1a1 1 0 110 2H7a1 1 0 110-2h1l1-2H4a2 2 0 01-2-2V6zm2 0v10h16V6H4z"/></svg>`, value: 'Wayland', label: 'Display Protocol' },
           { icon: `<svg viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5 shrink-0"><path d="M4 4a2 2 0 00-2 2v12a2 2 0 002 2h16a2 2 0 002-2V6a2 2 0 00-2-2H4zm0 2h16v12H4V6zm2 2v2h2V8H6zm3 0v2h2V8H9zm5 4v2h4v-2h-4z"/></svg>`, value: 'XeroHub', label: 'Toolkit' },
-        ].map((stat) => (
-          <div class="stat-cell">
-            <div class="flex items-center justify-center gap-2 font-heading text-lg sm:text-xl font-bold text-[var(--color-accent)] mb-1">
+        ].map((stat, i) => (
+          <div class={`stat-cell stat-cell-${i}`}>
+            <div class="stat-icon">
               <Fragment set:html={stat.icon} />
+            </div>
+            <div class="font-heading text-base sm:text-lg font-bold text-[var(--color-text-primary)] mb-1 leading-tight">
               {stat.value}
             </div>
-            <div class="font-mono text-[0.62rem] uppercase tracking-[0.14em] text-[var(--color-text-muted)]">
+            <div class="font-mono text-[0.6rem] uppercase tracking-[0.18em] text-[var(--color-text-muted)]">
               {stat.label}
             </div>
           </div>
@@ -186,6 +191,44 @@ try {
   </section>
 
   <style>
+    /* ── YouTube lite-embed: subtle play-button glow + badge + scale on hover ── */
+    .yt-lite {
+      border: 1px solid rgba(86, 87, 245, 0.25);
+      box-shadow:
+        0 4px 14px rgba(0, 0, 0, 0.35),
+        0 0 0 1px rgba(255, 255, 255, 0.02) inset;
+      transition: border-color 0.25s ease, box-shadow 0.25s ease;
+    }
+    .yt-lite:hover {
+      border-color: rgba(86, 87, 245, 0.6);
+      box-shadow:
+        0 6px 22px rgba(0, 0, 0, 0.45),
+        0 0 18px rgba(86, 87, 245, 0.25);
+    }
+    .yt-play-glow {
+      animation: yt-pulse 2.6s ease-in-out infinite;
+    }
+    @keyframes yt-pulse {
+      0%, 100% { box-shadow: 0 0 18px rgba(86, 87, 245, 0.35); }
+      50%      { box-shadow: 0 0 28px rgba(255, 128, 224, 0.55); }
+    }
+    @media (prefers-reduced-motion: reduce) { .yt-play-glow { animation: none; } }
+    .yt-badge {
+      position: absolute;
+      bottom: 0.65rem;
+      left: 0.7rem;
+      font-family: var(--font-mono, monospace);
+      font-size: 0.55rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #fff;
+      padding: 0.18rem 0.5rem;
+      border-radius: 4px;
+      background: linear-gradient(135deg, rgba(204, 0, 0, 0.85), rgba(140, 0, 0, 0.7));
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.45);
+    }
+
     .kofi-goal-wrap {
       background: rgba(33, 35, 41, var(--layan-opacity, 0.6));
       backdrop-filter: var(--layan-blur, blur(6px) saturate(150%));

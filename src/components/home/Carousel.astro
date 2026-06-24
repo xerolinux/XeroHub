@@ -3,23 +3,24 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 const slides = [
   {
     image: `${base}/images/Calamares.webp`,
-    caption: 'Calamares Installer',
+    caption: 'Calamares installer: pick keyboard, partitioning, and DE in a guided flow, no Arch wiki tabs required',
   },
   {
     image: `${base}/images/Desktop.webp`,
-    caption: 'KDE Plasma Desktop',
+    caption: 'KDE Plasma 6 out of the box: themed panels, Latte-style dock, Wayland session, ready to use',
   },
   {
     image: `${base}/images/Toolkit.webp`,
-    caption: 'Post-Install Toolkit',
+    caption: 'XeroLinux Toolkit: drivers, gaming stacks, themes, and system tweaks from one categorized panel',
   },
 ];
 ---
 
-<section class="py-6 sm:py-16 px-4 sm:px-6 lg:px-8">
+<section class="py-12 sm:py-20 px-4 sm:px-6 lg:px-8">
   <div class="mx-auto max-w-5xl 2xl:max-w-[100rem]">
     <!-- Section header -->
     <div class="fade-in news-section-head" style="margin-bottom:1.5rem;">
+      <span class="news-num">01</span>
       <div class="news-title-wrap">
         <div class="news-kicker">// The Gallery</div>
         <h2 class="news-title">Screen<em>shots</em></h2>
@@ -27,39 +28,54 @@ const slides = [
       <div class="news-line"></div>
     </div>
 
-    <!-- Terminal-window frame -->
-    <div class="fade-in rounded-2xl overflow-hidden border border-[var(--color-border)] layan-panel card-depth">
-      <div class="flex items-center gap-1.5 px-3.5 py-2.5 border-b border-[var(--color-border)] bg-[rgba(86, 87, 245,0.08)]">
+    <!-- Terminal-window frame: header + body share borders so the prompt reads as the actual window titlebar -->
+    <div class="fade-in screenshot-window rounded-2xl overflow-hidden border border-[var(--color-border)] layan-panel card-depth">
+      <div class="screenshot-titlebar">
         <span class="w-2.5 h-2.5 rounded-full bg-[#ff5f57]"></span>
         <span class="w-2.5 h-2.5 rounded-full bg-[#febc2e]"></span>
         <span class="w-2.5 h-2.5 rounded-full bg-[#28c840]"></span>
-        <span class="ml-2 font-mono text-[0.6rem] uppercase tracking-[0.18em] text-[var(--color-text-muted)]">xero@arch:~/screenshots</span>
+        <span class="screenshot-prompt">
+          <span class="sp-user">xero</span><span class="sp-at">@</span><span class="sp-host">arch</span><span class="sp-colon">:</span><span class="sp-path">~/screenshots</span><span class="sp-sigil">$</span>
+          <span class="sp-cmd">feh --slideshow</span>
+        </span>
+        <span class="screenshot-counter" data-slide-counter>[01/03]</span>
       </div>
-      <div class="relative overflow-hidden" id="carousel">
+      <div class="relative overflow-hidden screenshot-body" id="carousel">
         <!-- Slides -->
         <div class="relative aspect-[16/9]" id="carousel-track">
           {slides.map((slide, i) => (
-            <div
+            <button
+              type="button"
               class:list={[
-                'carousel-slide absolute inset-0 transition-opacity duration-700 ease-in-out',
+                'carousel-slide absolute inset-0 transition-opacity duration-700 ease-in-out cursor-zoom-in',
                 i === 0 ? 'opacity-100' : 'opacity-0'
               ]}
               data-index={i}
+              data-lightbox-trigger
+              data-image={slide.image}
+              data-caption={slide.caption}
+              aria-label={`Open screenshot ${i + 1}: ${slide.caption}`}
             >
               <img
                 src={slide.image}
                 alt={slide.caption}
                 width="2560"
                 height="1440"
-                class="w-full h-full object-cover"
+                class="w-full h-full object-cover pointer-events-none"
                 loading={i === 0 ? 'eager' : 'lazy'}
               />
-              <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/75 to-transparent px-4 sm:px-6 pt-10 pb-4 sm:pb-5">
-                <p class="font-mono text-[0.62rem] sm:text-xs uppercase tracking-[0.18em] text-white flex items-center gap-2">
-                  <span class="text-[var(--color-accent-light)]">&#9656;</span>{slide.caption}
-                </p>
+              <!-- Caption bar: dedicated bottom band styled as terminal status line -->
+              <div class="screenshot-caption-bar">
+                <span class="scb-index">[{String(i + 1).padStart(2, '0')}/{String(slides.length).padStart(2, '0')}]</span>
+                <span class="scb-text">{slide.caption}</span>
+                <span class="scb-zoom" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-3.5 h-3.5">
+                    <circle cx="11" cy="11" r="7"/><path d="M21 21l-4.35-4.35"/><path d="M11 8v6M8 11h6"/>
+                  </svg>
+                  click to zoom
+                </span>
               </div>
-            </div>
+            </button>
           ))}
         </div>
 
@@ -84,7 +100,7 @@ const slides = [
         </button>
 
         <!-- Dots -->
-        <div class="absolute bottom-12 sm:bottom-14 left-1/2 -translate-x-1/2 flex gap-1 z-10">
+        <div class="absolute bottom-14 sm:bottom-16 left-1/2 -translate-x-1/2 flex gap-1 z-10">
           {slides.map((_, i) => (
             <button
               class:list={[
@@ -105,6 +121,193 @@ const slides = [
   </div>
 </section>
 
+<!-- Lightbox modal -->
+<div id="screenshot-lightbox" class="lb hidden" role="dialog" aria-modal="true" aria-label="Screenshot preview" hidden>
+  <div class="lb-backdrop" data-lb-close></div>
+  <div class="lb-shell">
+    <button type="button" class="lb-close" data-lb-close aria-label="Close">
+      <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M18 6L6 18M6 6l12 12"/></svg>
+    </button>
+    <button type="button" class="lb-arrow lb-prev" data-lb-prev aria-label="Previous">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M15 19l-7-7 7-7"/></svg>
+    </button>
+    <button type="button" class="lb-arrow lb-next" data-lb-next aria-label="Next">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg>
+    </button>
+    <img class="lb-img" data-lb-img alt="" />
+    <div class="lb-caption" data-lb-caption></div>
+  </div>
+</div>
+
+<style>
+  /* ── Terminal window frame for the screenshot gallery ── */
+  .screenshot-window {
+    background:
+      linear-gradient(180deg, rgba(86, 87, 245, 0.04), transparent 12%),
+      var(--color-bg-glass);
+    box-shadow:
+      0 8px 22px rgba(0,0,0,0.32),
+      0 0 0 1px rgba(255,255,255,0.03) inset;
+  }
+  .screenshot-titlebar {
+    display: flex;
+    align-items: center;
+    gap: 0.42rem;
+    padding: 0.55rem 0.85rem;
+    background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(0,0,0,0.18));
+    border-bottom: 1px solid var(--color-border);
+    font-family: var(--font-mono, monospace);
+    font-size: 0.6rem;
+    letter-spacing: 0.04em;
+    color: var(--color-text-muted);
+  }
+  .screenshot-prompt {
+    margin-left: 0.45rem;
+    display: inline-flex;
+    align-items: baseline;
+    gap: 0;
+  }
+  .screenshot-prompt .sp-user { color: #3ecf6e; font-weight: 700; }
+  .screenshot-prompt .sp-at, .screenshot-prompt .sp-colon { color: var(--color-text-muted); }
+  .screenshot-prompt .sp-host { color: var(--color-accent-light); font-weight: 700; }
+  .screenshot-prompt .sp-path { color: #6090e0; }
+  .screenshot-prompt .sp-sigil { color: #3ecf6e; padding: 0 0.3rem; font-weight: 700; }
+  .screenshot-prompt .sp-cmd { color: var(--color-text-secondary); }
+  .screenshot-counter {
+    margin-left: auto;
+    font-size: 0.55rem;
+    letter-spacing: 0.18em;
+    color: var(--color-accent-light);
+    padding: 0.08rem 0.42rem;
+    border-radius: 4px;
+    background: rgba(86, 87, 245, 0.12);
+    border: 1px solid rgba(86, 87, 245, 0.32);
+  }
+  .screenshot-body { background: rgba(0,0,0,0.4); }
+
+  /* ── Caption bar: dedicated terminal-style strip at bottom of each slide ── */
+  .screenshot-caption-bar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.55rem 1rem 0.65rem;
+    background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.78) 60%, rgba(0,0,0,0.88) 100%);
+    font-family: var(--font-mono, monospace);
+    font-size: 0.66rem;
+    letter-spacing: 0.06em;
+    color: #fff;
+    border-top: 1px solid rgba(86, 87, 245, 0.22);
+    text-align: left;
+  }
+  .screenshot-caption-bar .scb-index {
+    flex-shrink: 0;
+    color: var(--color-accent-light);
+    font-weight: 700;
+    text-shadow: 0 0 6px rgba(86, 87, 245, 0.45);
+  }
+  .screenshot-caption-bar .scb-text {
+    flex: 1;
+    min-width: 0;
+    color: rgba(255, 255, 255, 0.92);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .screenshot-caption-bar .scb-zoom {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    flex-shrink: 0;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.55rem;
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+  }
+  @media (max-width: 640px) {
+    .screenshot-caption-bar .scb-text { white-space: normal; font-size: 0.62rem; }
+    .screenshot-caption-bar .scb-zoom { display: none; }
+  }
+
+  /* ── Lightbox ── */
+  .lb {
+    position: fixed;
+    inset: 0;
+    z-index: 9998;
+    display: none;
+    align-items: center;
+    justify-content: center;
+  }
+  .lb.is-open { display: flex; }
+  .lb.hidden { display: none; }
+  .lb-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.88);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+  }
+  .lb-shell {
+    position: relative;
+    width: min(94vw, 1400px);
+    max-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+  .lb-img {
+    max-width: 100%;
+    max-height: 80vh;
+    border-radius: 12px;
+    border: 1px solid rgba(86, 87, 245, 0.35);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.7);
+  }
+  .lb-caption {
+    color: #fff;
+    font-family: var(--font-mono, monospace);
+    font-size: 0.78rem;
+    letter-spacing: 0.05em;
+    text-align: center;
+    padding: 0.5rem 1rem;
+    background: rgba(86, 87, 245, 0.12);
+    border: 1px solid rgba(86, 87, 245, 0.3);
+    border-radius: 8px;
+    max-width: 80ch;
+  }
+  .lb-close, .lb-arrow {
+    position: absolute;
+    background: rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    color: #fff;
+    width: 44px;
+    height: 44px;
+    border-radius: 999px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background 0.15s ease, transform 0.15s ease;
+  }
+  .lb-close:hover, .lb-arrow:hover {
+    background: rgba(86, 87, 245, 0.6);
+    transform: scale(1.06);
+  }
+  .lb-close { top: -52px; right: 0; }
+  .lb-arrow.lb-prev { left: -56px; top: 50%; transform: translateY(-50%); }
+  .lb-arrow.lb-next { right: -56px; top: 50%; transform: translateY(-50%); }
+  .lb-arrow.lb-prev:hover { transform: translateY(-50%) scale(1.06); }
+  .lb-arrow.lb-next:hover { transform: translateY(-50%) scale(1.06); }
+  @media (max-width: 900px) {
+    .lb-close { top: 8px; right: 8px; }
+    .lb-arrow.lb-prev { left: 8px; }
+    .lb-arrow.lb-next { right: 8px; }
+  }
+</style>
+
 <script is:inline>
   (() => {
     const slides = document.querySelectorAll('.carousel-slide');
@@ -112,8 +315,15 @@ const slides = [
     const track = document.getElementById('carousel-track');
     const prevBtn = document.getElementById('carousel-prev');
     const nextBtn = document.getElementById('carousel-next');
+    const counter = document.querySelector('[data-slide-counter]');
+    const total = slides.length;
     let current = 0;
     let interval;
+
+    function pad(n) { return String(n).padStart(2, '0'); }
+    function updateCounter() {
+      if (counter) counter.textContent = '[' + pad(current + 1) + '/' + pad(total) + ']';
+    }
 
     function goTo(index) {
       slides.forEach((s, i) => {
@@ -129,10 +339,11 @@ const slides = [
         span.classList.toggle('w-2', i !== index);
       });
       current = index;
+      updateCounter();
     }
 
-    function next() { goTo((current + 1) % slides.length); }
-    function prev() { goTo((current - 1 + slides.length) % slides.length); }
+    function next() { goTo((current + 1) % total); }
+    function prev() { goTo((current - 1 + total) % total); }
     function startAutoplay() { interval = setInterval(next, 6000); }
     function stopAutoplay() { clearInterval(interval); }
 
@@ -146,16 +357,14 @@ const slides = [
       });
     });
 
-    // Touch/swipe support
+    // Touch/swipe
     let touchStartX = 0;
     let touchEndX = 0;
     const minSwipe = 50;
-
     track?.addEventListener('touchstart', (e) => {
       touchStartX = e.changedTouches[0].screenX;
       stopAutoplay();
     }, { passive: true });
-
     track?.addEventListener('touchend', (e) => {
       touchEndX = e.changedTouches[0].screenX;
       const diff = touchStartX - touchEndX;
@@ -166,6 +375,53 @@ const slides = [
       startAutoplay();
     }, { passive: true });
 
+    updateCounter();
     startAutoplay();
+
+    // ── Lightbox ──
+    const lb = document.getElementById('screenshot-lightbox');
+    if (!lb) return;
+    const lbImg = lb.querySelector('[data-lb-img]');
+    const lbCaption = lb.querySelector('[data-lb-caption]');
+    const lbPrev = lb.querySelector('[data-lb-prev]');
+    const lbNext = lb.querySelector('[data-lb-next]');
+    const closers = lb.querySelectorAll('[data-lb-close]');
+    let lbIndex = 0;
+
+    function showLb(index) {
+      lbIndex = ((index % total) + total) % total;
+      const trigger = slides[lbIndex];
+      if (!trigger) return;
+      const img = trigger.querySelector('img');
+      lbImg.src = (img && img.src) || trigger.getAttribute('data-image') || '';
+      lbImg.alt = trigger.getAttribute('data-caption') || '';
+      lbCaption.textContent = trigger.getAttribute('data-caption') || '';
+      lb.classList.add('is-open');
+      lb.hidden = false;
+      lb.classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+      stopAutoplay();
+    }
+    function hideLb() {
+      lb.classList.remove('is-open');
+      lb.hidden = true;
+      lb.classList.add('hidden');
+      document.body.style.overflow = '';
+      startAutoplay();
+    }
+    function lbStep(delta) { showLb(lbIndex + delta); }
+
+    slides.forEach((s) => {
+      s.addEventListener('click', () => showLb(parseInt(s.dataset.index)));
+    });
+    closers.forEach((c) => c.addEventListener('click', hideLb));
+    lbPrev?.addEventListener('click', () => lbStep(-1));
+    lbNext?.addEventListener('click', () => lbStep(1));
+    document.addEventListener('keydown', (e) => {
+      if (lb.hidden) return;
+      if (e.key === 'Escape') hideLb();
+      else if (e.key === 'ArrowLeft') lbStep(-1);
+      else if (e.key === 'ArrowRight') lbStep(1);
+    });
   })();
 </script>

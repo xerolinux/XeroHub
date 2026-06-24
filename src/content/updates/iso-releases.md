@@ -3,11 +3,9 @@ title: "XeroLinux Goes Quarterly"
 date: 2025-02-22
 draft: false
 description: "Quarterly Release Schedule"
-tags: ["XeroLinux", "ArchLinux", "FOSS", "Linux"]
+tags: ["XeroLinux", "ISO", "Announcement", "ArchLinux", "FOSS", "Linux"]
 image: "/images/updates/iso-releases.webp"
 ---
-
-# Breaking News: XeroLinux Goes Quarterly!
 
 Hey there, fellow tech wizards and Linux enthusiasts!
 

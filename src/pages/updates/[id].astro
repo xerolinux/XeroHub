@@ -28,9 +28,9 @@ const pageId = Astro.url.pathname.replace(/^\//, '').replace(/\/$/, '').replace(
   image={update.data.image ? `${base}${update.data.image}` : undefined}
 >
   <article class="pt-44 sm:pt-52 pb-20 px-4 sm:px-6 lg:px-8">
-    <div class="mx-auto max-w-3xl 2xl:max-w-[88rem]">
+    <div class="mx-auto max-w-3xl">
       <!-- Header -->
-      <header class="fade-in mb-8">
+      <header class="fade-in mb-12">
         <a href={`${base}/updates/`} class="back-pill mb-7">
           <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
@@ -56,7 +56,12 @@ const pageId = Astro.url.pathname.replace(/^\//, '').replace(/\/$/, '').replace(
           {update.data.tags && update.data.tags.length > 0 && (
             <>
               <span class="text-[var(--color-accent)]">·</span>
-              <span class="text-[var(--color-accent-light)]">Filed: {update.data.tags.slice(0, 3).join(' / ')}</span>
+              <span class="post-filed">
+                <span class="post-filed-label">Filed:</span>
+                {update.data.tags.slice(0, 4).map((t) => (
+                  <span class="post-filed-tag">{t}</span>
+                ))}
+              </span>
             </>
           )}
         </div>
@@ -64,13 +69,14 @@ const pageId = Astro.url.pathname.replace(/^\//, '').replace(/\/$/, '').replace(
 
       <!-- Featured Image -->
       {update.data.image && (
-        <figure class="fade-in fade-in-delay-1 mb-10 2xl:max-w-6xl 2xl:mx-auto">
+        <figure class="fade-in fade-in-delay-1 mt-2 mb-10">
           <div class="rounded-2xl overflow-hidden border border-[var(--color-border)] card-depth">
             <img
               src={`${base}${update.data.image}`}
               alt={update.data.title}
               loading="lazy"
-              class="w-full block"
+              class="w-full block post-zoomable"
+              data-lb-caption={update.data.title}
             />
           </div>
           <figcaption class="news-figcap">Fig. · {update.data.title}</figcaption>
@@ -85,7 +91,7 @@ const pageId = Astro.url.pathname.replace(/^\//, '').replace(/\/$/, '').replace(
       <!-- End of transmission -->
       <div class="fade-in mt-12 flex items-center gap-4">
         <div class="flex-1 news-hr"></div>
-        <span class="font-mono text-[0.62rem] uppercase tracking-[0.2em] text-[var(--color-text-muted)]">// EOF · 30</span>
+        <span class="font-mono text-[0.62rem] uppercase tracking-[0.2em] text-[var(--color-text-muted)]">// EOF · exit 0</span>
         <div class="flex-1 news-hr"></div>
       </div>
 
@@ -94,7 +100,441 @@ const pageId = Astro.url.pathname.replace(/^\//, '').replace(/\/$/, '').replace(
 
     </div>
   </article>
+
+  <!-- Lightbox moved to Layout.astro for site-wide reuse -->
 </Layout>
+
+<style is:global>
+  /* ── Proper code block with copy icon, no horizontal scroll, decorative gutter.
+        Uses the Layan glass palette so it blends with the rest of the site cards. ── */
+  #post-content .copy-block {
+    position: relative;
+    margin: 1.5rem 0;
+    border-radius: 10px;
+    overflow: hidden;
+    background:
+      linear-gradient(180deg, rgba(86, 87, 245, 0.08), rgba(255, 128, 224, 0.03) 60%, transparent 100%),
+      var(--color-bg-glass);
+    backdrop-filter: blur(6px) saturate(150%);
+    -webkit-backdrop-filter: blur(6px) saturate(150%);
+    border: 1px solid rgba(86, 87, 245, 0.32);
+    box-shadow:
+      0 1px 0 rgba(255, 255, 255, 0.05) inset,
+      0 8px 22px rgba(0, 0, 0, 0.32);
+  }
+  /* Left accent stripe: decorative bar, NOT a terminal titlebar */
+  #post-content .copy-block::before {
+    content: '';
+    position: absolute;
+    inset: 0 auto 0 0;
+    width: 3px;
+    background: linear-gradient(180deg, var(--color-accent) 0%, var(--color-accent-2, #ff80e0) 100%);
+    box-shadow: 0 0 10px rgba(86, 87, 245, 0.5);
+  }
+  /* Soft diagonal sheen so the box doesn't read as a flat black rectangle */
+  #post-content .copy-block::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(110% 80% at 100% 0%, rgba(255, 128, 224, 0.05) 0%, transparent 60%),
+      repeating-linear-gradient(0deg, transparent 0 23px, rgba(255, 255, 255, 0.015) 23px 24px);
+    pointer-events: none;
+  }
+
+  #post-content .copy-block-head {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+    padding: 0.42rem 0.7rem 0.42rem 0.95rem;
+    background: rgba(86, 87, 245, 0.08);
+    border-bottom: 1px solid rgba(86, 87, 245, 0.22);
+    font-family: var(--font-mono, monospace);
+    font-size: 0.6rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--color-accent-light);
+    z-index: 2;
+  }
+  #post-content .copy-block-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+  }
+  #post-content .copy-block-label::before {
+    content: '#';
+    color: var(--color-accent-2, #ff80e0);
+    font-weight: 700;
+  }
+  #post-content .copy-block-btn {
+    appearance: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    padding: 0;
+    background: rgba(86, 87, 245, 0.12);
+    border: 1px solid rgba(86, 87, 245, 0.32);
+    border-radius: 6px;
+    color: var(--color-accent-light);
+    cursor: pointer;
+    transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease, transform 0.15s ease;
+  }
+  #post-content .copy-block-btn svg {
+    width: 14px;
+    height: 14px;
+  }
+  #post-content .copy-block-btn:hover {
+    background: rgba(86, 87, 245, 0.28);
+    border-color: var(--color-accent);
+    color: #fff;
+    transform: translateY(-1px);
+  }
+  #post-content .copy-block-btn.copied {
+    background: rgba(43, 208, 90, 0.18);
+    border-color: var(--color-positive, #2bd05a);
+    color: var(--color-positive, #2bd05a);
+  }
+  /* Show the icon-check while copied, hide the clipboard one */
+  #post-content .copy-block-btn .icon-check { display: none; }
+  #post-content .copy-block-btn.copied .icon-check { display: block; }
+  #post-content .copy-block-btn.copied .icon-clip { display: none; }
+
+  /* The actual code area */
+  #post-content .copy-block pre {
+    position: relative;
+    margin: 0;
+    padding: 0.85rem 1rem 0.95rem 1.1rem;
+    background: transparent;
+    border: none;
+    border-radius: 0;
+    font-family: 'JetBrains Mono', var(--font-mono, monospace);
+    font-size: 0.82rem;
+    line-height: 1.6;
+    color: #d8daff;
+    /* No horizontal scroll: wrap long lines, break long tokens */
+    white-space: pre-wrap;
+    word-break: break-word;
+    overflow-wrap: anywhere;
+    overflow-x: hidden;
+    z-index: 1;
+    tab-size: 2;
+  }
+  #post-content .copy-block pre code {
+    background: none;
+    padding: 0;
+    color: inherit;
+    font-size: inherit;
+    border: none;
+  }
+  /* Smaller font on narrow screens so multi-column ascii still doesn't scroll */
+  @media (max-width: 640px) {
+    #post-content .copy-block pre { font-size: 0.74rem; line-height: 1.55; }
+  }
+
+  /* ── Decorated reference callout: NOT a terminal, NOT a code block, NO copy button ── */
+  #post-content .ref-callout {
+    position: relative;
+    margin: 1.75rem 0;
+    padding: 1.1rem 1.2rem 1.2rem 1.5rem;
+    border-radius: 12px;
+    background:
+      radial-gradient(120% 60% at 0% 0%, rgba(86, 87, 245, 0.10) 0%, transparent 55%),
+      radial-gradient(140% 100% at 100% 100%, rgba(255, 128, 224, 0.08) 0%, transparent 60%),
+      rgba(33, 35, 41, 0.45);
+    border: 1px solid rgba(86, 87, 245, 0.28);
+    box-shadow:
+      0 1px 0 rgba(255, 255, 255, 0.04) inset,
+      0 8px 22px rgba(0, 0, 0, 0.35);
+    overflow: hidden;
+  }
+  #post-content .ref-callout::before {
+    content: '';
+    position: absolute;
+    top: 0; bottom: 0; left: 0;
+    width: 4px;
+    background: linear-gradient(180deg, var(--color-accent), var(--color-accent-2, #ff80e0));
+    box-shadow: 0 0 12px rgba(86, 87, 245, 0.55);
+  }
+  #post-content .ref-callout::after {
+    content: '';
+    position: absolute;
+    top: -30px; right: -30px;
+    width: 140px; height: 140px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255, 128, 224, 0.18) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  #post-content .ref-callout-head {
+    display: flex;
+    align-items: center;
+    gap: 0.55rem;
+    margin-bottom: 0.85rem;
+    font-family: var(--font-mono, monospace);
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--color-accent-light);
+  }
+  #post-content .ref-callout-head svg {
+    width: 16px;
+    height: 16px;
+    color: var(--color-accent);
+    filter: drop-shadow(0 0 6px rgba(86, 87, 245, 0.5));
+  }
+
+  #post-content .ref-callout-list {
+    display: grid;
+    gap: 0.55rem;
+    margin: 0;
+  }
+  #post-content .ref-row {
+    display: grid;
+    grid-template-columns: 110px 1fr;
+    align-items: center;
+    gap: 0.85rem;
+    padding: 0.45rem 0.55rem;
+    border-radius: 6px;
+    background: rgba(0, 0, 0, 0.22);
+    border: 1px dashed rgba(86, 87, 245, 0.22);
+  }
+  #post-content .ref-key {
+    margin: 0;
+    display: flex;
+    justify-content: flex-start;
+  }
+  #post-content .ref-key span {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.15rem 0.55rem;
+    border-radius: 5px;
+    font-family: 'JetBrains Mono', var(--font-mono, monospace);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    line-height: 1.4;
+    border: 1px solid currentColor;
+    text-shadow: 0 0 8px currentColor;
+  }
+  #post-content .ref-key-vanilla span {
+    color: var(--color-positive, #2bd05a);
+    background: rgba(43, 208, 90, 0.1);
+  }
+  #post-content .ref-key-repo span {
+    color: var(--color-accent-light, #8a8bff);
+    background: rgba(86, 87, 245, 0.12);
+  }
+  #post-content .ref-key-flat span {
+    color: var(--color-accent-2, #ff80e0);
+    background: rgba(255, 128, 224, 0.12);
+  }
+  #post-content .ref-val {
+    margin: 0;
+    font-family: var(--font-mono, monospace);
+    font-size: 0.82rem;
+    color: var(--color-text-secondary);
+  }
+  #post-content .ref-val strong { color: var(--color-text-primary); }
+  @media (max-width: 540px) {
+    #post-content .ref-row { grid-template-columns: 80px 1fr; gap: 0.55rem; }
+    #post-content .ref-key span { font-size: 0.66rem; padding: 0.1rem 0.4rem; }
+    #post-content .ref-val { font-size: 0.74rem; }
+  }
+
+  /* ── Scope rules callout: makes the "must read" list impossible to scroll past ── */
+  #post-content .scope-rules {
+    position: relative;
+    margin: 2rem 0;
+    padding: 1.25rem 1.35rem 1.4rem;
+    border-radius: 12px;
+    background:
+      radial-gradient(120% 60% at 0% 0%, rgba(238, 57, 57, 0.14) 0%, transparent 55%),
+      radial-gradient(120% 60% at 100% 100%, rgba(255, 138, 26, 0.10) 0%, transparent 55%),
+      rgba(33, 35, 41, 0.55);
+    border: 1px solid rgba(238, 57, 57, 0.35);
+    box-shadow:
+      0 1px 0 rgba(255, 255, 255, 0.04) inset,
+      0 10px 24px rgba(0, 0, 0, 0.35),
+      0 0 28px rgba(238, 57, 57, 0.08);
+    overflow: hidden;
+  }
+  #post-content .scope-rules::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: repeating-linear-gradient(
+      90deg,
+      #ee3939 0 18px,
+      transparent 18px 32px
+    );
+    opacity: 0.85;
+  }
+  #post-content .scope-rules::after {
+    content: '';
+    position: absolute;
+    top: -40px; right: -40px;
+    width: 160px; height: 160px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(238, 57, 57, 0.18) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  #post-content .scope-rules-head {
+    position: relative;
+    display: flex;
+    align-items: baseline;
+    gap: 0.6rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.7rem;
+    border-bottom: 1px dashed rgba(238, 57, 57, 0.3);
+  }
+  #post-content .scope-rules-head svg {
+    width: 20px;
+    height: 20px;
+    color: #ee3939;
+    transform: translateY(3px);
+    filter: drop-shadow(0 0 6px rgba(238, 57, 57, 0.45));
+  }
+  #post-content .scope-rules-title {
+    font-family: var(--font-heading, 'Chakra Petch', sans-serif);
+    font-weight: 900;
+    font-size: 1.15rem;
+    color: #ffe1e1;
+    letter-spacing: 0.02em;
+  }
+  #post-content .scope-rules-sub {
+    margin-left: auto;
+    font-family: var(--font-mono, monospace);
+    font-size: 0.6rem;
+    font-weight: 700;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: #ff8a8a;
+    padding: 0.18rem 0.55rem;
+    border: 1px solid rgba(238, 57, 57, 0.4);
+    border-radius: 4px;
+    background: rgba(238, 57, 57, 0.08);
+  }
+  #post-content .scope-rules-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 0.7rem;
+  }
+  #post-content .scope-rule {
+    display: grid;
+    grid-template-columns: 64px 1fr;
+    align-items: stretch;
+    gap: 0.85rem;
+    padding: 0.65rem 0.75rem;
+    border-radius: 8px;
+    background: rgba(0, 0, 0, 0.25);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+  }
+  #post-content .scope-rule-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-heading, 'Chakra Petch', sans-serif);
+    font-weight: 900;
+    font-size: 0.95rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    border-radius: 6px;
+    line-height: 1;
+    padding: 0.35rem 0.4rem;
+    border: 1px solid currentColor;
+    text-shadow: 0 0 10px currentColor;
+  }
+  #post-content .scope-rule-no .scope-rule-badge {
+    color: #ee3939;
+    background: rgba(238, 57, 57, 0.12);
+  }
+  #post-content .scope-rule-only .scope-rule-badge {
+    color: var(--color-positive, #2bd05a);
+    background: rgba(43, 208, 90, 0.12);
+  }
+  #post-content .scope-rule-warn .scope-rule-badge {
+    color: #ff8a1a;
+    background: rgba(255, 138, 26, 0.12);
+  }
+  #post-content .scope-rule-body {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    font-size: 0.92rem;
+    line-height: 1.55;
+    color: var(--color-text-secondary);
+  }
+  #post-content .scope-rule-head-text {
+    color: #fff;
+    font-weight: 700;
+  }
+  #post-content .scope-rule-no  { border-left: 3px solid #ee3939; }
+  #post-content .scope-rule-only { border-left: 3px solid var(--color-positive, #2bd05a); }
+  #post-content .scope-rule-warn { border-left: 3px solid #ff8a1a; }
+  @media (max-width: 540px) {
+    #post-content .scope-rule { grid-template-columns: 56px 1fr; gap: 0.55rem; }
+    #post-content .scope-rule-badge { font-size: 0.78rem; padding: 0.3rem; }
+    #post-content .scope-rules-sub { display: none; }
+  }
+
+  /* Lightbox styles + JS moved to Layout.astro (site-wide). */
+  #post-content img,
+  article figure img.post-zoomable {
+    cursor: zoom-in;
+    transition: transform 0.25s ease;
+  }
+  #post-content img:hover,
+  article figure img.post-zoomable:hover { transform: scale(1.01); }
+</style>
+
+<style>
+  .post-filed {
+    display: inline-flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+  }
+  .post-filed-label {
+    color: var(--color-accent-light);
+    margin-right: 0.15rem;
+  }
+  .post-filed-tag {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.08rem 0.5rem;
+    font-family: var(--font-mono, monospace);
+    font-size: 0.58rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--color-accent);
+    background: rgba(86, 87, 245, 0.1);
+    border: 1px solid rgba(86, 87, 245, 0.3);
+    border-radius: 4px;
+    line-height: 1.5;
+    transition: color 0.15s ease, background 0.15s ease, border-color 0.15s ease;
+  }
+  .post-filed-tag::before {
+    content: '#';
+    color: var(--color-accent-light);
+    opacity: 0.7;
+    margin-right: 0.15em;
+  }
+  .post-filed-tag:hover {
+    color: #fff;
+    background: rgba(86, 87, 245, 0.25);
+    border-color: var(--color-accent);
+  }
+</style>
 
 <script is:inline>
   document.querySelectorAll('#post-content a[href^="http"]').forEach(function (a) {
@@ -111,7 +551,44 @@ const pageId = Astro.url.pathname.replace(/^\//, '').replace(/\/$/, '').replace(
     });
   })();
 
+  // Wire up copy-blocks (non-terminal, BBcode-style copyable boxes) BEFORE the terminal sweep
+  // so we can flag their <pre> children to be skipped by the terminal transform below.
+  document.querySelectorAll('#post-content .copy-block').forEach(function (block) {
+    var pre = block.querySelector('pre');
+    if (pre) pre.dataset.noTerm = 'true';
+    var btn = block.querySelector('.copy-block-btn');
+    if (!btn) return;
+    btn.addEventListener('click', function () {
+      var src = block.querySelector('pre code, pre');
+      if (!src) return;
+      var text = src.textContent || '';
+      var done = function () {
+        btn.classList.add('copied');
+        btn.setAttribute('aria-label', 'Copied');
+        setTimeout(function () {
+          btn.classList.remove('copied');
+          btn.setAttribute('aria-label', 'Copy to clipboard');
+        }, 1400);
+      };
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(done).catch(done);
+      } else {
+        var ta = document.createElement('textarea');
+        ta.value = text;
+        document.body.appendChild(ta);
+        ta.select();
+        try { document.execCommand('copy'); } catch (e) {}
+        document.body.removeChild(ta);
+        done();
+      }
+    });
+  });
+
+  // Lightbox JS moved to Layout.astro (site-wide).
+
   document.querySelectorAll('#post-content pre').forEach(function (pre) {
+    // Skip pre's inside .copy-block (they're BBcode-style copy boxes, not terminals)
+    if (pre.dataset.noTerm === 'true') return;
     // Build terminal shell
     var wrap = document.createElement('div');
     wrap.className = 'terminal-wrap';

@@ -34,19 +34,23 @@ const externalLinks = [
 ---
 
 <header class="fixed top-0 left-0 right-0 z-50" id="site-header">
+  <!-- Status bar: slim full-width WM-style strip ABOVE the masthead. Hidden on mobile. -->
+  <div class="masthead-dateline" role="status" aria-label="Site status bar">
+    <div class="mx-auto max-w-7xl 2xl:max-w-[100rem] px-4 sm:px-6 lg:px-8 masthead-dateline-inner">
+      <span>Vol. MMXXVI</span>
+      <span class="md-dot">·</span>
+      <span id="masthead-date">&nbsp;</span>
+      <span class="md-dot">·</span>
+      <span class="md-accent" id="masthead-clock">--:--</span>
+      <button type="button" id="clock-fmt" class="md-fmt" aria-label="Toggle 12/24 hour time">12H</button>
+      <span class="md-dot">·</span>
+      <span class="md-online"><span class="md-online-dot" aria-hidden="true"></span>online</span>
+    </div>
+  </div>
+
   <!-- Masthead body -->
   <div class="masthead-body">
     <div class="mx-auto max-w-7xl 2xl:max-w-[100rem] px-4 sm:px-6 lg:px-8">
-      <!-- Dateline row -->
-      <div class="masthead-dateline">
-        <span id="masthead-date">&nbsp;</span>
-        <span class="md-dot">·</span>
-        <span>Vol. MMXXVI</span>
-        <span class="md-dot">·</span>
-        <span class="md-dot">·</span>
-        <span class="md-accent" id="masthead-clock">--:--</span>
-        <button type="button" id="clock-fmt" class="md-fmt" aria-label="Toggle 12/24 hour time">12H</button>
-      </div>
       <script is:inline>
         (function () {
           var dateEl = document.getElementById('masthead-date');
@@ -118,8 +122,13 @@ const externalLinks = [
         </button>
       </div>
 
-      <!-- Nav row, double-ruled -->
-      <nav class="masthead-nav hidden md:flex">
+    </div>
+  </div>
+
+  <!-- Nav band: pulled out of the masthead-body so the top/bottom accent rules span 100vw, not just max-w-7xl -->
+  <div class="masthead-nav-band hidden md:block">
+    <div class="mx-auto max-w-7xl 2xl:max-w-[100rem] px-4 sm:px-6 lg:px-8">
+      <nav class="masthead-nav">
         {navLinks.map(link => (
           <a
             href={link.href}
@@ -189,25 +198,58 @@ const externalLinks = [
     background: var(--color-bg-glass);
     backdrop-filter: blur(6px) saturate(150%);
     -webkit-backdrop-filter: blur(6px) saturate(150%);
-    border-bottom: 1px solid var(--color-border);
-    box-shadow: 0 10px 28px rgba(0,0,0,0.5);
   }
+  /* Drop the box-shadow onto the whole fixed header wrapper so it sits below
+     the last horizontal band (nav-band/ticker), not buried behind it. */
+  #site-header { box-shadow: 0 10px 28px rgba(0,0,0,0.5); }
+  /* WM-style status bar: thin, FULL-WIDTH band above the masthead. Glass-blurred like the rest of the masthead. */
   .masthead-dateline {
+    width: 100%;
+    background: var(--color-bg-glass);
+    backdrop-filter: blur(6px) saturate(150%);
+    -webkit-backdrop-filter: blur(6px) saturate(150%);
+    border-bottom: 1px solid var(--color-border);
+    color: var(--color-text-muted);
+  }
+  .masthead-dateline-inner {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-    gap: 8px 12px;
-    padding: 11px 0 7px;
+    gap: 4px 10px;
+    /* Vertically center the text between the per-element-accent top line and the bar's bottom border.
+       Symmetric padding does the centering; the small extra top push clears the accent ribbon. */
+    padding: 11px 0 9px;
     font-family: var(--font-mono);
-    font-size: 0.7rem;
-    letter-spacing: 0.2em;
+    font-size: 0.62rem;
+    line-height: 1;
+    letter-spacing: 0.18em;
     text-transform: uppercase;
-    color: var(--color-text-muted);
-    border-bottom: 1px solid var(--color-border);
+    opacity: 0.82;
   }
-  .masthead-dateline .md-dot { color: var(--color-accent); opacity: 0.6; }
+  .masthead-dateline .md-dot { color: var(--color-accent); opacity: 0.55; }
   .masthead-dateline .md-accent { color: var(--color-accent-light); }
+  .masthead-dateline .md-online {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    color: var(--color-positive, #2bd05a);
+  }
+  .masthead-dateline .md-online-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: currentColor;
+    box-shadow: 0 0 6px currentColor;
+    animation: md-online-pulse 1.8s ease-in-out infinite;
+  }
+  @keyframes md-online-pulse {
+    0%, 100% { opacity: 1; }
+    50%      { opacity: 0.4; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .masthead-dateline .md-online-dot { animation: none; }
+  }
   .masthead-dateline .md-fmt {
     margin-left: 6px;
     padding: 1px 6px;
@@ -297,14 +339,21 @@ const externalLinks = [
   }
   .masthead-burger:hover { color: var(--color-text-primary); }
 
+  /* Nav band: full-width wrapper so the accent rules span 100vw, not just max-w-7xl. */
+  .masthead-nav-band {
+    width: 100%;
+    border-top: 1px solid rgba(var(--top-accent, var(--col-accent)), 0.45);
+    border-bottom: 1px solid rgba(var(--bottom-accent, var(--col-accent)), 0.45);
+    background: var(--color-bg-glass);
+    backdrop-filter: blur(6px) saturate(150%);
+    -webkit-backdrop-filter: blur(6px) saturate(150%);
+  }
   .masthead-nav {
+    display: flex;
     align-items: center;
     justify-content: center;
     gap: 6px;
     padding: 11px 0;
-    border-top: 1px solid rgba(var(--top-accent, var(--col-accent)), 0.45);
-    border-bottom: 1px solid rgba(var(--bottom-accent, var(--col-accent)), 0.45);
-    margin-top: 2px;
   }
   .masthead-navlink {
     display: inline-flex;
@@ -388,10 +437,12 @@ const externalLinks = [
   .ticker-track span.tk-3,
   .ticker-track span.tk-5 { color: color-mix(in srgb, var(--color-accent-light) 75%, rgba(180, 182, 196, 0.55)); }
 
-  /* ── Mobile: shrink masthead, avoid RSS/burger overlap ── */
-  @media (max-width: 767px) {
+  /* ── Mobile: shrink masthead, avoid RSS/burger overlap.
+        Threshold aligned with the Tailwind md/lg breakpoint (600px) so the
+        status bar + nav band + burger all flip together. No partial state. */
+  @media (max-width: 599px) {
     .masthead-actions { display: none; }          /* RSS lives in the mobile menu */
-    .masthead-dateline { font-size: 0.72rem; letter-spacing: 0.16em; gap: 10px; padding: 11px 0 8px; }
+    .masthead-dateline { display: none; }          /* status bar hidden on mobile, terminal aesthetic only on >= md */
     .masthead-nameplate-row { padding: 11px 0 9px; }
     .masthead-logo { width: 44px; height: 44px; }
     .masthead-title { font-size: 2.05rem; }

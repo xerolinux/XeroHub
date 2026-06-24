@@ -2,7 +2,7 @@
 title: "XeroLinux ISO Price Change"
 date: 2026-05-16
 draft: false
-description: "A transparent look at why the XeroLinux ISO price is going up, and what that means for you."
+description: "The XeroLinux ISO moves from &euro;29 to &euro;39 (one-time, lifetime updates). T.U.I. stays free. Hosting, mirrors, and personal cost-of-living pressure forced the change. Full breakdown inside."
 tags: ["XeroLinux", "ISO", "Pricing", "Announcement", "Changes"]
 image: "/images/updates/price-update.webp"
 ---
@@ -12,6 +12,8 @@ This is not a post I wanted to write. But after sitting with it longer than I pr
 **The XeroLinux ISO price is going up.**
 
 Here is why.
+
+> **By the numbers:** previously **€15**, now **€39** one-time, still includes lifetime updates. **T.U.I** stays at **€0**.
 
 ---
 
@@ -38,6 +40,8 @@ Despite this change, the drive behind **XeroLinux** has never been stronger. Not
 But passion does not cover server bills. And pretending otherwise helps nobody, least of all the people who actually depend on this project to keep shipping.
 
 > *"Rather than let this quietly fall apart behind the scenes, being upfront with you and keeping XeroLinux alive for the long haul is the only path worth taking."*
+>
+> &ndash; **DarkXero**, XeroLinux HQ
 
 The **T.U.I installer** remains completely free. No price change there. Every path still leads to the same full **XeroLinux** experience.
 

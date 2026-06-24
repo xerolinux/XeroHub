@@ -65,7 +65,7 @@ import { discount, discountedPriceEUR, basePriceEUR } from '../config';
               </svg>
               Welcome!
             </h3>
-            <p class="text-xs text-[var(--color-text-secondary)] leading-relaxed">We know we're a bit late to the game, but as the saying goes, better late than never! After countless requests from our awesome community, we're finally joining the crypto era and opening the gates to donations.</p>
+            <p class="text-xs text-[var(--color-text-secondary)] leading-relaxed">Crypto donations are now accepted. Pick a wallet, send any amount, and (if you want ISO access) follow the steps below to confirm your transaction.</p>
             <a href="https://ko-fi.com/xerolinux" target="_blank" rel="noopener noreferrer" class="mt-3 flex items-center justify-center gap-2 px-3 py-2 rounded-lg bg-red-500/10 border border-red-500/30 text-red-300 text-xs font-medium hover:bg-red-500/20 hover:border-red-500/50 transition-all duration-200">
               <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0016.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 002 8.5c0 2.3 1.5 4.05 3 5.5l7 7 7-7z"/></svg>
               No Crypto? No problem, donate on Ko-Fi!
@@ -199,7 +199,7 @@ import { discount, discountedPriceEUR, basePriceEUR } from '../config';
               <!-- Spam check + submit — pushed to bottom -->
               <div class="mt-auto flex flex-wrap items-center gap-3 pt-2">
                 <div class="flex items-center gap-2 text-xs text-[var(--color-text-secondary)]">
-                  <span>What is <strong id="math-question" class="text-[var(--color-text-primary)]"></strong>?</span>
+                  <span>What is <strong id="math-question" class="text-[var(--color-text-primary)]">3 + 4</strong>?</span>
                   <input type="text" id="human-check" name="human_check" required autocomplete="off" class="crypto-input w-16 px-2 py-1.5 rounded-lg border border-[var(--color-border)] bg-[var(--color-bg-primary)]/50 text-[var(--color-text-primary)] text-base sm:text-xs text-center focus:outline-none transition-all duration-200">
                 </div>
                 <button type="submit" id="submit-btn" disabled class="ml-auto px-5 py-2.5 rounded-xl bg-gradient-to-r from-[var(--color-accent)] to-[var(--color-accent-dark)] text-white text-xs font-semibold disabled:opacity-40 disabled:cursor-not-allowed hover:from-[var(--color-accent-light)] hover:to-[var(--color-accent)] transition-all duration-200 shadow-lg shadow-[var(--color-accent-glow)] cursor-pointer">Wait...</button>
@@ -292,9 +292,19 @@ import { discount, discountedPriceEUR, basePriceEUR } from '../config';
     ];
 
     let currentAddress = '';
-    let mathAnswer = 0, num1 = 0, num2 = 0;
+    let mathAnswer = 7, num1 = 3, num2 = 4;
     const pageLoadTime = Date.now();
     const MIN_TIME = 5;
+
+    // Captcha first so the math question is always populated, even if other JS later throws.
+    function generateMathEarly() {
+      num1 = Math.floor(Math.random() * 10) + 1;
+      num2 = Math.floor(Math.random() * 10) + 1;
+      mathAnswer = num1 + num2;
+      var q = document.getElementById('math-question');
+      if (q) q.textContent = num1 + ' + ' + num2;
+    }
+    generateMathEarly();
 
     // Live prices from CoinGecko
     function fetchPrices() {

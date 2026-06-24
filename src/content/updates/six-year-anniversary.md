@@ -75,7 +75,105 @@ If you have been on the fence about pulling the trigger, sitting on the TUI inst
 
 So here is the deal:
 
-![Anniversary sale: ISO 25 percent off until June 3rd](/images/updates/anniversary/sale.webp)
+<figure class="sale-expired-figure">
+  <div class="sale-expired-wrap">
+    <img src="/images/updates/anniversary/sale.webp" alt="Anniversary sale: ISO 25 percent off until June 3rd (expired)" loading="lazy" />
+    <span class="sale-expired-stamp" aria-hidden="true">
+      <span class="se-line se-line-main">Expired</span>
+      <span class="se-line se-line-sub">since 03 / 06 / 2026</span>
+    </span>
+  </div>
+  <figcaption class="sale-expired-note">
+    <span class="sen-arrow">&#9656;</span>
+    The 25% anniversary discount closed on <strong>June 3rd, 2026</strong>. You are reading this after the window. <em>See you at the next offer.</em>
+  </figcaption>
+</figure>
+
+<style>
+  .sale-expired-figure { margin: 1.75rem 0 2.25rem; }
+  .sale-expired-wrap {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    border-radius: 12px;
+    overflow: hidden;
+    isolation: isolate;
+  }
+  .sale-expired-wrap img {
+    width: 100%;
+    height: auto;
+    display: block;
+    /* Heavy blur on the underlying sale art so "25% off" copy is no longer legible. */
+    filter: grayscale(0.7) brightness(0.55) blur(14px);
+    transform: scale(1.05); /* expands the image so the blur doesn't reveal raw edges */
+    transform-origin: center;
+  }
+  .sale-expired-wrap::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(238,57,57,0.18), rgba(0,0,0,0.32));
+    pointer-events: none;
+  }
+  .sale-expired-stamp {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-14deg);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0.95rem 1.8rem;
+    border: 4px double #ee3939;
+    color: #ee3939;
+    font-family: var(--font-heading, 'Chakra Petch', sans-serif);
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.55);
+    background: transparent;
+    box-shadow:
+      0 0 0 4px rgba(238, 57, 57, 0.12),
+      0 6px 18px rgba(0, 0, 0, 0.45);
+    z-index: 2;
+    user-select: none;
+  }
+  .sale-expired-stamp .se-line-main {
+    font-size: clamp(2rem, 7vw, 3.2rem);
+    line-height: 0.95;
+    letter-spacing: 0.22em;
+  }
+  .sale-expired-stamp .se-line-sub {
+    font-family: var(--font-mono, monospace);
+    font-weight: 700;
+    font-size: 0.72rem;
+    letter-spacing: 0.28em;
+    margin-top: 0.45rem;
+    opacity: 0.85;
+  }
+  .sale-expired-note {
+    margin-top: 0.85rem;
+    padding: 0.55rem 0.85rem;
+    font-family: var(--font-mono, monospace);
+    font-size: 0.72rem;
+    letter-spacing: 0.04em;
+    color: var(--color-text-muted);
+    border-left: 2px solid #ee3939;
+    background: rgba(238, 57, 57, 0.05);
+    border-radius: 0 6px 6px 0;
+  }
+  .sale-expired-note .sen-arrow {
+    color: #ee3939;
+    margin-right: 0.4rem;
+    font-weight: 700;
+  }
+  .sale-expired-note strong { color: var(--color-text-primary); }
+  .sale-expired-note em {
+    color: var(--color-accent-light);
+    font-style: italic;
+  }
+</style>
 
 ## To the next six
 
