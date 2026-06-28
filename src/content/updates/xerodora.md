@@ -13,18 +13,7 @@ A side note from the **XeroLinux HQ**: there is a small **Fedora**-shaped thing 
 
 XeroDora is **not a distro**. It is not a respin, not an ISO, not a fork. It is one shell script.
 
-You start with the official [**Fedora Everything**](https://fedoraproject.org/misc/#everything) ISO, do the smallest possible install (kernel + base system + a network stack), reboot into the **TTY**, log in, and run a single line:
-
-<div class="copy-block" data-lang="bash">
-  <div class="copy-block-head">
-    <span class="copy-block-label">bash</span>
-    <button type="button" class="copy-block-btn" aria-label="Copy to clipboard" title="Copy">
-      <svg class="icon-clip" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-      <svg class="icon-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
-    </button>
-  </div>
-  <pre><code>curl -fsSL https://urls.xerolinux.xyz/XeroDora | bash</code></pre>
-</div>
+You start with the official [**Fedora Everything**](https://fedoraproject.org/misc/#everything) ISO, do the smallest possible install (kernel + base system + a network stack), reboot into the **TTY**, log in, and run our script.
 
 The script does the rest. When it finishes, you reboot once and land in a configured **KDE Plasma** desktop on top of vanilla **Fedora**. No extra layer between you and upstream. No XeroLinux repos, no XeroLinux kernel, no XeroLinux packaging tricks. Pure Fedora, just dressed up so you don't have to do the dressing yourself.
 
@@ -136,6 +125,8 @@ Pick the **XeroLinux ISO** (or the free **T.U.I.** installer) if you want a full
 Both can coexist. Some people run XeroLinux on the main rig and XeroDora on a Fedora work laptop. That is fine.
 
 So: there it is. **XeroDora.** A Fedora detour for those who wanted one. Use it, ignore it, or fork it. All three are valid.
+
+Instructions found on the **XeroDora** repo below.
 
 <div style="text-align:center; margin:2.5rem 0;">
   <a href="https://github.com/xerolinux/XeroDora" target="_blank" rel="noopener noreferrer" style="color:#fff; text-decoration:none;" class="inline-flex items-center gap-2 px-8 py-4 text-base font-medium rounded-xl btn-glow bg-gradient-to-r from-[var(--color-accent)] to-[var(--color-accent-dark)] hover:from-[var(--color-accent-light)] hover:to-[var(--color-accent)] transition-all duration-300 cursor-pointer">
