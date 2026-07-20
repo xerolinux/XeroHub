@@ -9,6 +9,7 @@ set +e
 # ── Colors ───────────────────────────────────────────────────────────────────
 RED='\033[0;31m'
 GREEN='\033[0;32m'
+YELLOW='\033[1;33m'
 CYAN='\033[0;36m'
 PURPLE='\033[0;35m'
 NC='\033[0m'
@@ -18,13 +19,18 @@ clear
 cat << 'EOF'
 ╔═══════════════════════════════════════════════════════════════════════════════╗
 ║                                                                               ║
-║                        ✨ Xero Arch Installer v1.9 ✨                         ║
+║                       ✨ Xero Arch Installer v1.9.1 ✨                        ║
 ║                                                                               ║
 ║          A beautiful, streamlined Arch Linux installer for XeroLinux          ║
 ║                                                                               ║
 ╚═══════════════════════════════════════════════════════════════════════════════╝
 EOF
 echo -e "${NC}"
+
+echo -e "${CYAN}Installs XeroLinux exactly as the official ISO does (KDE Plasma), with more${NC}"
+echo -e "${CYAN}configuration options than the ISO installer offers.${NC}"
+echo -e "${YELLOW}Intended for experienced Arch/Linux users. NOT recommended for beginners.${NC}"
+echo ""
 
 # ── Preflight Checks ─────────────────────────────────────────────────────────
 if [[ $EUID -ne 0 ]]; then
@@ -71,8 +77,8 @@ fi
 chmod +x xero-install.sh
 echo -e "${GREEN}✓ Installer downloaded${NC}"
 
-# ── Download DE Scripts ───────────────────────────────────────────────────────
-# Failures are non-fatal — the main installer will re-fetch if needed
+# ── Download KDE Script ───────────────────────────────────────────────────────
+# Failure is non-fatal - the main installer will re-fetch if needed
 echo -e "${CYAN}Downloading XeroLinux KDE script...${NC}"
 KDE_URL="https://xerolinux.xyz/script/xero-install/xero-kde.sh"
 curl -fsSL "$KDE_URL" -o /root/xero-kde.sh 2>/dev/null || {
@@ -80,12 +86,6 @@ curl -fsSL "$KDE_URL" -o /root/xero-kde.sh 2>/dev/null || {
 }
 [[ -f /root/xero-kde.sh ]] && chmod +x /root/xero-kde.sh
 
-echo -e "${CYAN}Downloading XeroLinux Hyprland script...${NC}"
-HYPR_URL="https://xerolinux.xyz/script/xero-install/xero-hypr.sh"
-curl -fsSL "$HYPR_URL" -o /root/xero-hypr.sh 2>/dev/null || {
-    echo -e "${CYAN}Note: Hyprland script will be downloaded during installation${NC}"
-}
-[[ -f /root/xero-hypr.sh ]] && chmod +x /root/xero-hypr.sh
 echo -e "${GREEN}✓ Ready to install${NC}"
 
 # ── Launch ────────────────────────────────────────────────────────────────────

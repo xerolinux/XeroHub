@@ -1,10 +1,14 @@
-# ✨ Xero Arch Installer v1.9
+# ✨ Xero Arch Installer v1.9.1
 
 A beautiful, streamlined Arch Linux installer designed by XeroLinux with a modern TUI.
 
+Installs XeroLinux exactly as the official ISO does (KDE Plasma), with more configuration
+options than the ISO installer offers. Intended for experienced Arch/Linux users - not
+beginner-friendly.
+
 ![Screenshot](https://i.imgur.com/vl5hMAF.png)
 
-![Xero Arch Installer](https://img.shields.io/badge/version-1.9-blue)
+![Xero Arch Installer](https://img.shields.io/badge/version-1.9.1-blue)
 ![License](https://img.shields.io/badge/license-GPL--3.0-green)
 
 ## Features
@@ -85,7 +89,8 @@ Modify the `install_base_system()` function in `xero-install.sh` to add packages
 
 | Version | Highlights |
 |---------|------------|
-| **v1.9** | Added Hyprland + Noctalia & expanded BTRFS pre-configured with Snapper + Grub-BTRFS |
+| **v1.9.1** | Removed Hyprland + Noctalia support - KDE-only, matches the official ISO |
+| **v1.9** | Added Hyprland + Noctalia (later removed in v1.9.1) & expanded BTRFS pre-configured with Snapper + Grub-BTRFS |
 | **v1.8** | AUR helper moved to main menu; SDDM + XeroDark as default; duplicate package and function cleanup |
 | **v1.7** | Manual partitioning mode, dual-boot EFI reuse support, filesystem and encryption choice in manual mode |
 | **v1.6** | Parallel downloads option, pacman tweaks (Color, ILoveCandy, VerbosePkgLists), misc bug fixes, faster installs |
