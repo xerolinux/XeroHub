@@ -2,7 +2,7 @@
 #
 # ╔═══════════════════════════════════════════════════════════════════════════════╗
 # ║                                                                               ║
-# ║                      ✨ Xero Arch Installer v1.9 ✨                           ║
+# ║                     ✨ Xero Arch Installer v1.9.1 ✨                          ║
 # ║                                                                               ║
 # ║          A beautiful, streamlined Arch Linux installer for XeroLinux         ║
 # ║                                                                               ║
@@ -18,12 +18,11 @@ set -Eeuo pipefail
 # CONFIGURATION
 # ────────────────────────────────────────────────────────────────────────────────
 
-VERSION="1.9"
+VERSION="1.9.1"
 SCRIPT_NAME="Xero Arch Installer"
 
-# URLs for fetching scripts
+# URL for fetching the KDE stage script
 XERO_KDE_URL="https://xerolinux.xyz/script/xero-install/xero-kde.sh"
-XERO_HYPR_URL="https://xerolinux.xyz/script/xero-install/xero-hypr.sh"
 
 # Mountpoint for installation
 MOUNTPOINT="/mnt"
@@ -57,7 +56,6 @@ CONFIG[gfx_driver]="mesa"
 CONFIG[parallel_downloads]="5"
 CONFIG[aur_helper]="paru"
 CONFIG[extra_kernel]=""
-CONFIG[desktop]="kde"
 CONFIG[uefi]="no"
 CONFIG[boot_part]=""
 CONFIG[root_part]=""
@@ -188,7 +186,9 @@ show_header() {
         --align center --width 70 --margin "1 2" --padding "1 2" \
         "✨ $SCRIPT_NAME v$VERSION ✨" \
         "" \
-        "A beautiful Arch Linux installer for XeroLinux"
+        "Installs XeroLinux exactly as the official ISO does (KDE Plasma)," \
+        "with more configuration options than the ISO installer." \
+        "For experienced Arch/Linux users. NOT beginner-friendly."
 }
 
 show_submenu_header() {
@@ -1079,33 +1079,6 @@ select_extra_kernel() {
 }
 
 # ────────────────────────────────────────────────────────────────────────────────
-# 12. DESKTOP ENVIRONMENT
-# ────────────────────────────────────────────────────────────────────────────────
-
-select_desktop_env() {
-    show_header
-    show_submenu_header "🖥️  Desktop Environment"
-    echo ""
-    show_info "Choose your desktop environment"
-    echo ""
-
-    local desktops=(
-        "kde       │ KDE Plasma — full desktop, familiar layout (Recommended)"
-        "hyprland  │ Hyprland + Noctalia — minimal tiling WM, NO SUPPORT, advanced users only"
-    )
-
-    local selection=""
-    selection=$(printf '%s\n' "${desktops[@]}" | gum choose --height 4 --header "Desktop Environment:") || true
-
-    if [[ -n "$selection" ]]; then
-        CONFIG[desktop]=$(echo "$selection" | awk '{print $1}')
-        show_success "Desktop: ${CONFIG[desktop]}"
-    fi
-
-    sleep 0.5
-}
-
-# ────────────────────────────────────────────────────────────────────────────────
 # PACMAN HELPERS
 # ────────────────────────────────────────────────────────────────────────────────
 
@@ -1178,9 +1151,6 @@ show_main_menu() {
             fi
         fi
 
-        local de_label="KDE Plasma"
-        [[ "${CONFIG[desktop]}" == "hyprland" ]] && de_label="Hyprland + Noctalia"
-
         local kernel_label="None"
         if [[ "${CONFIG[extra_kernel]}" == *"linux-cachyos"* && "${CONFIG[extra_kernel]}" == *"linux-lts"* ]]; then
             kernel_label="CachyOS + LTS"
@@ -1201,11 +1171,10 @@ show_main_menu() {
             "7.  Authentication        │ ${CONFIG[username]:-Not configured}"
             "8.  Timezone              │ ${CONFIG[timezone]}"
             "9.  Parallel Downloads    │ ${CONFIG[parallel_downloads]}"
-            "10. Desktop Environment   │ $de_label"
-            "11. AUR Helper            │ ${CONFIG[aur_helper]}"
-            "12. Additional Kernel     │ $kernel_label"
+            "10. AUR Helper            │ ${CONFIG[aur_helper]}"
+            "11. Additional Kernel     │ $kernel_label"
             "──────────────────────────────────────────────"
-            "13. Start Installation"
+            "12. Start Installation"
             "0.  Exit"
         )
 
@@ -1222,10 +1191,9 @@ show_main_menu() {
             "7."*)  configure_authentication ;;
             "8."*)  select_timezone ;;
             "9."*)  configure_parallel_downloads ;;
-            "10."*) select_desktop_env ;;
-            "11."*) select_aur_helper ;;
-            "12."*) select_extra_kernel ;;
-            "13."*)
+            "10."*) select_aur_helper ;;
+            "11."*) select_extra_kernel ;;
+            "12."*)
                 if validate_config; then
                     show_summary
                     local confirm_msg=""
@@ -1327,7 +1295,7 @@ show_summary() {
             "Encryption:       $encrypt_status" \
             "Swap:             ${CONFIG[swap]}" \
             "" \
-            "Desktop:          ${CONFIG[desktop]}" \
+            "Desktop:          KDE Plasma" \
             "AUR Helper:       ${CONFIG[aur_helper]}" \
             "Graphics:         ${CONFIG[gfx_driver]}" \
             "Boot Mode:        $boot_mode" \
@@ -1355,7 +1323,7 @@ show_summary() {
             "Encryption:       $encrypt_status" \
             "Swap:             ${CONFIG[swap]}" \
             "" \
-            "Desktop:          ${CONFIG[desktop]}" \
+            "Desktop:          KDE Plasma" \
             "AUR Helper:       ${CONFIG[aur_helper]}" \
             "Graphics:         ${CONFIG[gfx_driver]}" \
             "Boot Mode:        $boot_mode" \
@@ -1417,25 +1385,16 @@ perform_installation() {
     prepare_desktop_installer
     show_success "Desktop installer ready"
 
-    local de_name="KDE Plasma"
-    local de_prompt="KDE"
-    local box_width=60
-    if [[ "${CONFIG[desktop]}" == "hyprland" ]]; then
-        de_name="Hyprland + Noctalia"
-        de_prompt="Hyprland"
-        box_width=66
-    fi
-
     echo ""
     gum style --foreground 82 --bold --border double --border-foreground 82 \
-        --align center --width "$box_width" --margin "1 2" --padding "1 2" \
+        --align center --width 60 --margin "1 2" --padding "1 2" \
         "🎉 Base Installation Complete! 🎉" \
         "" \
         "The system will now chroot into your new installation" \
-        "to run the XeroLinux ${de_name} setup script."
+        "to run the XeroLinux KDE Plasma setup script."
 
     echo ""
-    gum input --placeholder "Press Enter to continue to ${de_prompt} installation..."
+    gum input --placeholder "Press Enter to continue to KDE installation..."
 
     run_desktop_installer
 
@@ -2167,54 +2126,30 @@ prepare_desktop_installer() {
     local user="${CONFIG[username]}"
     local user_home="$MOUNTPOINT/home/${user}"
 
-    if [[ "${CONFIG[desktop]}" == "hyprland" ]]; then
-        if [[ -f "/root/xero-hypr.sh" ]]; then
-            cp /root/xero-hypr.sh "${user_home}/xero-hypr.sh"
-        else
-            curl -fsSL "$XERO_HYPR_URL" -o "${user_home}/xero-hypr.sh" || {
-                cat > "${user_home}/xero-hypr.sh" << 'HYPRSCRIPT'
-#!/bin/bash
-echo "XeroLinux Hyprland installer placeholder"
-echo "Please download the actual script from: https://github.com/xerolinux/xero-scripts"
-HYPRSCRIPT
-            }
-        fi
-        chmod +x "${user_home}/xero-hypr.sh"
-        arch-chroot "$MOUNTPOINT" chown "${user}:${user}" "/home/${user}/xero-hypr.sh"
+    if [[ -f "/root/xero-kde.sh" ]]; then
+        cp /root/xero-kde.sh "${user_home}/xero-kde.sh"
     else
-        if [[ -f "/root/xero-kde.sh" ]]; then
-            cp /root/xero-kde.sh "${user_home}/xero-kde.sh"
-        else
-            curl -fsSL "$XERO_KDE_URL" -o "${user_home}/xero-kde.sh" || {
-                cat > "${user_home}/xero-kde.sh" << 'KDESCRIPT'
+        curl -fsSL "$XERO_KDE_URL" -o "${user_home}/xero-kde.sh" || {
+            cat > "${user_home}/xero-kde.sh" << 'KDESCRIPT'
 #!/bin/bash
 echo "XeroLinux KDE installer placeholder"
 echo "Please download the actual script from: https://github.com/xerolinux/xero-scripts"
 KDESCRIPT
-            }
-        fi
-        chmod +x "${user_home}/xero-kde.sh"
-        arch-chroot "$MOUNTPOINT" chown "${user}:${user}" "/home/${user}/xero-kde.sh"
+        }
     fi
+    chmod +x "${user_home}/xero-kde.sh"
+    arch-chroot "$MOUNTPOINT" chown "${user}:${user}" "/home/${user}/xero-kde.sh"
 }
 
 run_desktop_installer() {
     local user="${CONFIG[username]}"
     local user_home="/home/${user}"
+    local script_path="${user_home}/xero-kde.sh"
 
-    if [[ "${CONFIG[desktop]}" == "hyprland" ]]; then
-        local script_path="${user_home}/xero-hypr.sh"
-        show_header
-        gum style --foreground 212 --bold --margin "1 2" \
-            "🌿 Running XeroLinux Hyprland + Noctalia Setup (as ${user})..."
-        echo ""
-    else
-        local script_path="${user_home}/xero-kde.sh"
-        show_header
-        gum style --foreground 212 --bold --margin "1 2" \
-            "🎨 Running XeroLinux KDE Setup (as ${user})..."
-        echo ""
-    fi
+    show_header
+    gum style --foreground 212 --bold --margin "1 2" \
+        "🎨 Running XeroLinux KDE Setup (as ${user})..."
+    echo ""
 
     if [[ ! -f "${MOUNTPOINT}${script_path}" ]]; then
         show_error "Desktop script not found at ${script_path}"

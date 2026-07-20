@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# XeroLinux KDE Plasma Installer v1.9
+# XeroLinux KDE Plasma Installer v1.9.1
 
 SCRIPT_PATH="$(readlink -f "$0" 2>/dev/null || echo "")"
 
@@ -88,6 +88,10 @@ check_root() {
 prompt_user() {
     print_header
 
+    echo -e "${CYAN}This installs the same KDE Plasma desktop as the official XeroLinux ISO,${NC}"
+    echo -e "${CYAN}plus more configuration options than the ISO installer offers.${NC}"
+    echo -e "${YELLOW}For experienced Arch/Linux users. NOT beginner-friendly.${NC}"
+    echo ""
     echo -e "${CYAN}This script will install:${NC}"
     echo -e "  ${BLUE}•${NC} KDE Plasma Desktop (XeroLinux curated selection)"
     echo -e "  ${BLUE}•${NC} Essential KDE Applications"
