@@ -924,8 +924,11 @@ select_login_manager() {
     echo ""
 
     print_step "Installing XeroDark SDDM theme..."
-    $SUDO_CMD git clone https://github.com/xerolinux/XeroDark.git /usr/share/sddm/themes/XeroDark || print_warning "Failed to clone XeroDark theme"
-    print_success "XeroDark theme installed!"
+    if $SUDO_CMD git clone https://github.com/xerolinux/XeroDark.git /usr/share/sddm/themes/XeroDark; then
+        print_success "XeroDark theme installed!"
+    else
+        print_warning "Failed to clone XeroDark theme"
+    fi
     echo ""
 
     print_step "Writing SDDM configuration..."
