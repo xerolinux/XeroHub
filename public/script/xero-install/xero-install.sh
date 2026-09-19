@@ -1368,10 +1368,12 @@ perform_installation() {
     if [[ -n "${CONFIG[extra_kernel]}" ]]; then
         show_info "Installing additional kernels: ${CONFIG[extra_kernel]}..."
         # shellcheck disable=SC2086
-        arch-chroot "$MOUNTPOINT" pacman -S --needed --noconfirm ${CONFIG[extra_kernel]} \
-            || show_warning "Some extra kernel packages failed — continuing"
+        if arch-chroot "$MOUNTPOINT" pacman -S --needed --noconfirm ${CONFIG[extra_kernel]}; then
+            show_success "Additional kernels installed"
+        else
+            show_warning "Some extra kernel packages failed — continuing"
+        fi
         arch-chroot "$MOUNTPOINT" grub-mkconfig -o /boot/grub/grub.cfg 2>/dev/null || true
-        show_success "Additional kernels installed"
     fi
 
     run_step "Configuring system..." configure_system
@@ -1396,7 +1398,19 @@ perform_installation() {
     echo ""
     gum input --placeholder "Press Enter to continue to KDE installation..."
 
-    run_desktop_installer
+    if ! run_desktop_installer; then
+        show_header
+        gum style --foreground 214 --bold --border double --border-foreground 214 \
+            --align center --width 60 --margin "1 2" --padding "1 2" \
+            "⚠ Desktop Setup Did Not Complete ⚠" \
+            "" \
+            "The base system is installed, but the KDE Plasma setup" \
+            "script exited early or was cancelled." \
+            "" \
+            "Reboot into your system and re-run it manually:" \
+            "  bash ~/xero-kde.sh"
+        return 0
+    fi
 
     show_header
     gum style --foreground 82 --bold --border double --border-foreground 82 \
@@ -2167,8 +2181,11 @@ run_desktop_installer() {
     chmod 0440 "$MOUNTPOINT/etc/sudoers.d/99-xero-installer"
 
     arch-chroot "$MOUNTPOINT" su -l "$user" -c "bash '${script_path}' '${CONFIG[aur_helper]}' '${CONFIG[filesystem]}'"
+    local kde_status=$?
 
     rm -f "$MOUNTPOINT/etc/sudoers.d/99-xero-installer"
+
+    return "$kde_status"
 }
 
 # ────────────────────────────────────────────────────────────────────────────────
