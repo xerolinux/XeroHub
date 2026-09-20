@@ -2,7 +2,7 @@
 #
 # ╔═══════════════════════════════════════════════════════════════════════════════╗
 # ║                                                                               ║
-# ║                     ✨ Xero Arch Installer v1.9.1 ✨                          ║
+# ║                     ✨ Xero Arch Installer v2.0.0 ✨                          ║
 # ║                                                                               ║
 # ║          A beautiful, streamlined Arch Linux installer for XeroLinux         ║
 # ║                                                                               ║
@@ -18,7 +18,7 @@ set -Eeuo pipefail
 # CONFIGURATION
 # ────────────────────────────────────────────────────────────────────────────────
 
-VERSION="1.9.1"
+VERSION="2.0.0"
 SCRIPT_NAME="Xero Arch Installer"
 PART_LABEL="Part 1 - Pacstrap"
 

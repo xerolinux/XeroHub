@@ -19,7 +19,7 @@ clear
 cat << 'EOF'
 ╔═══════════════════════════════════════════════════════════════════════════════╗
 ║                                                                               ║
-║                       ✨ Xero Arch Installer v1.9.1 ✨                        ║
+║                       ✨ Xero Arch Installer v2.0.0 ✨                        ║
 ║                                                                               ║
 ║          A beautiful, streamlined Arch Linux installer for XeroLinux          ║
 ║                                                                               ║
