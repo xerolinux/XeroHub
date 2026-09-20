@@ -20,9 +20,7 @@ set -Eeuo pipefail
 
 VERSION="1.9.1"
 SCRIPT_NAME="Xero Arch Installer"
-
-# URL for fetching the KDE stage script
-XERO_KDE_URL="https://xerolinux.xyz/script/xero-install/xero-kde.sh"
+PART_LABEL="Part 1 - Pacstrap"
 
 # Mountpoint for installation
 MOUNTPOINT="/mnt"
@@ -33,7 +31,53 @@ GREEN='\033[0;32m'
 YELLOW='\033[1;33m'
 CYAN='\033[0;36m'
 PURPLE='\033[0;35m'
+BLUE='\033[0;34m'
 NC='\033[0m'
+
+# ── Screen-size-aware centering ────────────────────────────────────────────────
+# Real terminal width, not a hardcoded guess — so centering actually centers on
+# whatever console resolution the ISO booted into, not just an assumed 80 cols.
+term_cols() {
+    local cols
+    cols=$(tput cols 2>/dev/null) || cols=80
+    [[ "$cols" =~ ^[0-9]+$ ]] || cols=80
+    echo "$cols"
+}
+
+term_lines() {
+    local lines
+    lines=$(tput lines 2>/dev/null) || lines=24
+    [[ "$lines" =~ ^[0-9]+$ ]] || lines=24
+    echo "$lines"
+}
+
+# Number of blank lines to print above a block of $1 lines so it sits
+# vertically centered on the real terminal height, instead of pinned to
+# the top row.
+vpad_for() {
+    local content_height="$1"
+    local rows; rows=$(term_lines)
+    local pad=$(( (rows - content_height) / 2 ))
+    [[ $pad -lt 0 ]] && pad=0
+    echo "$pad"
+}
+
+print_vpad() {
+    local n="$1" i
+    for (( i = 0; i < n; i++ )); do echo ""; done
+}
+
+# Pads $1 with leading spaces to center it within $2 columns (default: real
+# terminal width). Used for gum choose/filter lists, which have no native
+# alignment flag of their own — gum renders each line's text exactly as
+# given, so centering the text itself is what actually centers the list.
+center_pad() {
+    local text="$1" width="${2:-$(term_cols)}"
+    local len=${#text}
+    local pad=$(( (width - len) / 2 ))
+    [[ $pad -lt 0 ]] && pad=0
+    printf '%*s%s' "$pad" '' "$text"
+}
 
 # Installation configuration (associative array)
 declare -A CONFIG
@@ -62,6 +106,18 @@ CONFIG[root_part]=""
 CONFIG[root_device]=""
 CONFIG[partition_mode]="auto"
 CONFIG[reuse_efi]="no"
+# Desktop-phase extra packages (picked from the main menu, installed later
+# by install_user_packages once the desktop phase runs as the new user).
+CONFIG[extra_browser]=""
+CONFIG[extra_social]=""
+CONFIG[extra_dev]=""
+CONFIG[extra_pass]=""
+CONFIG[extra_imaging]=""
+CONFIG[extra_music]=""
+CONFIG[extra_video]=""
+CONFIG[wants_libreoffice]="no"
+CONFIG[lo_locale]=""
+CONFIG[lo_hunspell]=""
 
 # ────────────────────────────────────────────────────────────────────────────────
 # ERROR HANDLING
@@ -74,6 +130,11 @@ on_err() {
     local line_no=${1:-?}
     local cmd=${2:-?}
 
+    # run_step_visual redirects each step's stdout/stderr to a logfile, so
+    # without this an error here would vanish into it instead of the user.
+    exec > /dev/tty 2>&1 || true
+    tput cnorm 2>/dev/null || true
+
     if have_gum; then
         gum style --foreground 196 --bold --margin "1 2" \
             "❌ ERROR (exit=$exit_code) at line $line_no" \
@@ -82,7 +143,7 @@ on_err() {
         gum style --foreground 245 --margin "0 2" \
             "Tip: If this was during formatting, it's often missing partitions (udev timing) or empty device paths."
         echo ""
-        gum input --placeholder "Press Enter to exit..."
+        gum input --placeholder "Press Enter to exit..." --width 50
     else
         echo -e "${RED}ERROR (exit=$exit_code) at line $line_no${NC}"
         echo -e "${RED}$cmd${NC}"
@@ -92,25 +153,14 @@ on_err() {
 }
 
 trap 'on_err "$LINENO" "$BASH_COMMAND"' ERR
+# Always restore the cursor and kill run_step_visual's background redraw
+# loop (a forked process, not a child that dies on its own) on any exit.
+DISPLAY_PID=""
+trap 'kill "$DISPLAY_PID" 2>/dev/null || true; tput cnorm 2>/dev/null || true' EXIT
 
 # ────────────────────────────────────────────────────────────────────────────────
 # UTILITY FUNCTIONS
 # ────────────────────────────────────────────────────────────────────────────────
-
-# Detect if running in chroot environment
-# NOTE: also present in xero-kde.sh — both scripts run standalone in different
-# contexts and cannot share a common library file.
-detect_chroot() {
-    if [ "$(stat -c %d:%i /)" != "$(stat -c %d:%i /proc/1/root/.)" ] 2>/dev/null; then
-        return 0  # In chroot
-    elif [ -f /etc/arch-chroot ]; then
-        return 0  # In chroot
-    elif [ "${EUID:-0}" -eq 0 ] && [ -z "${SUDO_USER:-}" ]; then
-        return 0  # Running as root without sudo (likely chroot)
-    else
-        return 1  # Not in chroot
-    fi
-}
 
 # Set up sudo command (empty if running as root/in chroot)
 setup_sudo() {
@@ -171,7 +221,7 @@ ensure_dependencies() {
 
     if [[ ${#deps_needed[@]} -gt 0 ]]; then
         echo -e "${CYAN}Installing required dependencies...${NC}"
-        pacman -Sy --noconfirm "${deps_needed[@]}" &>/dev/null
+        pacman -Sy --noconfirm "${deps_needed[@]}" &>/dev/null || true
     fi
 }
 
@@ -179,11 +229,44 @@ ensure_dependencies() {
 # GUM UI HELPERS
 # ────────────────────────────────────────────────────────────────────────────────
 
+show_splash() {
+    local cols; cols=$(term_cols)
+    clear
+    tput civis
+    # Content height: title (padding "2 0" = 2+1+2=5) + subtitle (1) +
+    # blank (1) + version (1) = 8 lines.
+    print_vpad "$(vpad_for 8)"
+    gum style --foreground 198 --bold --align center --width "$cols" --padding "2 0" \
+        "X E R O L I N U X"
+    gum style --foreground 45 --align center --width "$cols" \
+        "A R C H   I N S T A L L E R"
+    echo ""
+    gum style --foreground 245 --align center --width "$cols" \
+        "v$VERSION"
+    sleep 3
+
+    # Discard any keystrokes buffered during the sleep (an impatient Enter
+    # meant to skip the splash) so they can't leak into the main menu's
+    # gum choose right after and get consumed as a selection before the
+    # user ever sees the menu. Drains /dev/tty, never fd0: when launched
+    # via `curl | bash` (no file argument), fd0 IS bash's own script
+    # source being read incrementally — draining it here could eat bytes
+    # of the script itself that bash hasn't consumed yet.
+    while read -r -t 0.05 -n 1000 _ < /dev/tty 2>/dev/null; do :; done
+}
+
 show_header() {
     clear
+    local cols; cols=$(term_cols)
+    local box_width=$(( cols - 4 ))
+    [[ $box_width -lt 40 ]] && box_width=40
+    # Small top margin so the header doesn't sit glued to row 0 on
+    # submenu screens (whose own content below varies in height, so it
+    # can't be fully vertically centered here without knowing that).
+    print_vpad "$(( $(term_lines) / 10 ))"
     gum style \
         --foreground 212 --border-foreground 212 --border double \
-        --align center --width 70 --margin "1 2" --padding "1 2" \
+        --align center --width "$box_width" --margin "0 2" --padding "1 2" \
         "✨ $SCRIPT_NAME v$VERSION ✨" \
         "" \
         "Installs XeroLinux exactly as the official ISO does (KDE Plasma)," \
@@ -198,36 +281,181 @@ show_submenu_header() {
         "$title"
 }
 
+# Fall back to plain echo when gum isn't installed yet (true early in the
+# desktop phase, which reuses these same helpers before install_packages runs).
 show_info() {
-    gum style \
-        --foreground 81 --margin "0 2" \
-        "$1"
+    if have_gum; then
+        gum style --foreground 81 --margin "0 2" "$1"
+    else
+        echo "$1"
+    fi
 }
 
 show_success() {
-    gum style --foreground 82 "  ✓ $1"
+    if have_gum; then
+        gum style --foreground 82 "  ✓ $1"
+    else
+        echo "  OK: $1"
+    fi
 }
 
 show_error() {
-    gum style --foreground 196 "  ✗ $1"
+    if have_gum; then
+        gum style --foreground 196 "  ✗ $1"
+    else
+        echo "  ERROR: $1"
+    fi
 }
 
 show_warning() {
-    gum style --foreground 214 "  ⚠ $1"
+    if have_gum; then
+        gum style --foreground 214 "  ⚠ $1"
+    else
+        echo "  WARN: $1"
+    fi
 }
 
 confirm_action() {
-    gum confirm --affirmative "Yes" --negative "No" "$1"
+    # $2="no" focuses the "No" button by default — used for encryption
+    # prompts so an impatient double Enter can't silently turn it on.
+    if [[ "${2:-}" == "no" ]]; then
+        gum confirm --affirmative "Yes" --negative "No" --default=false "$1"
+    else
+        gum confirm --affirmative "Yes" --negative "No" "$1"
+    fi
 }
 
-run_step() {
-    # Runs a function/command in the CURRENT shell (no subshell),
-    # so CONFIG changes persist. If it fails, the ERR trap prints details.
-    local title="$1"
-    shift
-    show_info "$title"
-    "$@"
-    show_success "${title%...}"
+# Big block-letter "XEROLINUX" wordmark, 53 cols wide — drawn with the same
+# U+2588 FULL BLOCK used by the progress bar itself, so it's exactly as
+# console-safe as the bar already proven to render correctly here. Skipped
+# entirely on a narrow terminal (see draw_progress_bar) rather than wrapped.
+XEROLOGO=(
+    "█   █ █████ ████   ███  █     █████ █   █ █   █ █   █"
+    " █ █  █     █   █ █   █ █       █   ██  █ █   █  █ █ "
+    "  █   ████  ████  █   █ █       █   █ █ █ █   █   █  "
+    " █ █  █     █  █  █   █ █       █   █  ██ █   █  █ █ "
+    "█   █ █████ █   █  ███  █████ █████ █   █  ███  █   █"
+)
+
+# Pure bash/tput/printf, no gum — redrawn many times a second from
+# run_step_visual's background loop, and gum (a separate process per call)
+# hit real panics there under rapid repeated invocation.
+draw_progress_bar() {
+    local pct="$1" step_num="$2" total="$3" title="$4"
+    # $5 lets the caller pin the column width for the whole redraw loop
+    # instead of re-querying term_cols() every 0.3s, which occasionally
+    # flickered between values across frames and (since frames are never
+    # cleared between redraws) left two widths' text visible at once.
+    local cols="${5:-$(term_cols)}"
+    local width=50
+    [[ $width -gt $(( cols - 10 )) ]] && width=$(( cols - 10 ))
+    [[ $width -lt 10 ]] && width=10
+    local filled=$(( pct * width / 100 ))
+    local empty=$(( width - filled ))
+    local bar=""
+    [[ $filled -gt 0 ]] && bar+=$(printf '█%.0s' $(seq 1 "$filled"))
+    [[ $empty -gt 0 ]] && bar+=$(printf '░%.0s' $(seq 1 "$empty"))
+
+    # Wordmark only fits a real terminal, not the narrowest ones this still
+    # has to support — skipped below that width rather than wrapped/clipped.
+    if [[ $cols -ge 58 ]]; then
+        local logo_line
+        for logo_line in "${XEROLOGO[@]}"; do
+            printf '\033[38;5;198m\033[1m%s\033[0m\033[K\n' "$(center_pad "$logo_line" "$cols")"
+        done
+        printf '\033[K\n'
+    fi
+
+    # \033[K erases to end of line: center_pad only adds leading padding,
+    # so without this a wider previous frame's tail would never get
+    # overwritten (frames are never cleared between redraws, to avoid flicker).
+    printf '\033[38;5;198m\033[1m%s\033[0m\033[K\n' "$(center_pad "${pct}%" "$cols")"
+    printf '\033[K\n'
+    printf '\033[38;5;45m%s\033[0m\033[K\n' "$(center_pad "$bar" "$cols")"
+    printf '\033[K\n'
+    printf '\033[38;5;45m\033[1m%s\033[0m\033[K\n' "$(center_pad "$PART_LABEL" "$cols")"
+    printf '\033[38;5;212m\033[1m%s\033[0m\033[K\n' "$(center_pad "Step $step_num of $total: $title" "$cols")"
+    printf '\033[K\n'
+    printf '\033[38;5;245m%s\033[0m\033[K\n' "$(center_pad "(Be patient while system installs. If it looks stuck it's normal.)" "$cols")"
+}
+
+run_step_visual() {
+    # Runs a function/command in the CURRENT shell (no subshell), so CONFIG
+    # changes persist. Additionally shows a live percent bar + step title +
+    # a live-scrolling box of the step's own command output while it runs.
+    local step_num="$1" total="$2" title="$3"
+    shift 3
+    local func="$1"; shift
+
+    local logfile
+    logfile=$(mktemp)
+
+    # Percent range this step owns, from where the previous step left off to
+    # where the next starts. Progress within it is approximated from how
+    # much log output has appeared so far, capped short of the next step's
+    # value so it never overshoots before the step actually finishes.
+    local base_pct=$(( (step_num - 1) * 100 / total ))
+    local next_pct=$(( step_num * 100 / total ))
+    local range=$(( next_pct - base_pct ))
+    [[ $range -lt 1 ]] && range=1
+
+    # Redraws reposition to the top (`tput cup`) instead of re-clearing —
+    # frames are a fixed size, so this avoids visible flicker. Content
+    # height must match what draw_progress_bar prints at this width: 6
+    # extra lines for the logo when the terminal is wide enough to show it.
+    local cols; cols=$(term_cols)
+    local content_height=8
+    [[ $cols -ge 58 ]] && content_height=$(( content_height + 6 ))
+    local top_row; top_row=$(vpad_for "$content_height")
+
+    clear
+    tput civis
+    (
+        while true; do
+            tput cup "$top_row" 0
+            local lines sub live_pct
+            lines=$(wc -l < "$logfile" 2>/dev/null || echo 0)
+            sub=$(( lines / 4 ))
+            [[ $sub -gt $(( range - 1 )) ]] && sub=$(( range - 1 ))
+            [[ $sub -lt 0 ]] && sub=0
+            live_pct=$(( base_pct + sub ))
+            draw_progress_bar "$live_pct" "$step_num" "$total" "$title" "$cols"
+            sleep 0.3
+        done
+    ) &
+    local display_pid=$!
+    DISPLAY_PID="$display_pid"
+
+    "$func" "$@" > "$logfile" 2>&1
+    local status=$?
+
+    # `wait` on a job we just killed reports its SIGTERM exit status (143) —
+    # that's expected, not a real failure, but under `set -e` a bare nonzero
+    # return here would trigger the global ERR trap and kill the whole
+    # installer. `|| true` on both is required, not cosmetic.
+    kill "$display_pid" 2>/dev/null || true
+    wait "$display_pid" 2>/dev/null || true
+    DISPLAY_PID=""
+    tput cnorm
+
+    if [[ $status -ne 0 ]]; then
+        clear
+        print_vpad "$top_row"
+        draw_progress_bar "$base_pct" "$step_num" "$total" "$title" "$cols"
+        show_error "Step failed: $title"
+        # The live output box is gone by design, but on an actual failure
+        # "Step failed: X" with no detail at all is worse than the box —
+        # show the tail of what the step actually printed before it died.
+        if [[ -s "$logfile" ]]; then
+            echo ""
+            echo "Last output before failure:"
+            tail -n 15 "$logfile"
+        fi
+        rm -f "$logfile"
+        return $status
+    fi
+    rm -f "$logfile"
+    return 0
 }
 
 # ────────────────────────────────────────────────────────────────────────────────
@@ -462,7 +690,7 @@ manual_partitioning() {
 
     if [[ ${#partitions[@]} -eq 0 ]]; then
         show_error "No partitions found. Create partitions first and try again."
-        gum input --placeholder "Press Enter to continue..."
+        gum input --placeholder "Press Enter to continue..." --width 50
         return
     fi
 
@@ -524,7 +752,7 @@ manual_partitioning() {
 
     if [[ -z "$root_sel" ]]; then
         show_error "No root partition selected."
-        gum input --placeholder "Press Enter to continue..."
+        gum input --placeholder "Press Enter to continue..." --width 50
         return
     fi
 
@@ -557,7 +785,7 @@ manual_partitioning() {
 
     if [[ -z "$fs_selection" ]]; then
         show_error "No filesystem selected."
-        gum input --placeholder "Press Enter to continue..."
+        gum input --placeholder "Press Enter to continue..." --width 50
         return
     fi
 
@@ -569,7 +797,7 @@ manual_partitioning() {
     show_info "Root Partition Encryption (LUKS2)"
     echo ""
 
-    if confirm_action "Enable encryption on the root partition?"; then
+    if confirm_action "Enable encryption on the root partition?" "no"; then
         CONFIG[encrypt]="yes"
         CONFIG[encrypt_boot]="no"   # manual mode: root-only encryption only
 
@@ -619,7 +847,7 @@ select_disk() {
 
     if [[ ${#disks[@]} -eq 0 ]]; then
         show_error "No suitable disks found!"
-        gum input --placeholder "Press Enter to exit..."
+        gum input --placeholder "Press Enter to exit..." --width 50
         exit 1
     fi
 
@@ -659,7 +887,7 @@ select_disk() {
     show_info "Disk Encryption (LUKS2)"
     echo ""
 
-    if confirm_action "Enable full disk encryption?"; then
+    if confirm_action "Enable full disk encryption?" "no"; then
         CONFIG[encrypt]="yes"
 
         echo ""
@@ -1079,6 +1307,200 @@ select_extra_kernel() {
 }
 
 # ────────────────────────────────────────────────────────────────────────────────
+# EXTRA PACKAGES (desktop-phase optional apps, picked up front like every
+# other setting instead of mid-KDE-install — the actual `pacman -S` calls
+# for these happen later, in install_user_packages, once the desktop phase
+# is running as the target user with a real chroot pacman database; nothing
+# here queries package existence, it only records the choice)
+# ────────────────────────────────────────────────────────────────────────────────
+
+LO_LANG_MENU=(
+    "Use system locale|SYSTEM|"
+    "English (US)|en_US|hunspell-en_us"
+    "English (GB)|en_GB|hunspell-en_gb"
+    "English (AU)|en_AU|hunspell-en_au"
+    "English (CA)|en_CA|hunspell-en_ca"
+    "German|de_DE|hunspell-de"
+    "Greek|el_GR|hunspell-el"
+    "French|fr_FR|hunspell-fr"
+    "Hebrew|he_IL|hunspell-he"
+    "Hungarian|hu_HU|hunspell-hu"
+    "Italian|it_IT|hunspell-it"
+    "Dutch|nl_NL|hunspell-nl"
+    "Polish|pl_PL|hunspell-pl"
+    "Romanian|ro_RO|hunspell-ro"
+    "Russian|ru_RU|hunspell-ru"
+    "Spanish (generic)|es|hunspell-es_any"
+    "Spanish (Argentina)|es_AR|hunspell-es_ar"
+    "Spanish (Bolivia)|es_BO|hunspell-es_bo"
+    "Spanish (Chile)|es_CL|hunspell-es_cl"
+    "Spanish (Colombia)|es_CO|hunspell-es_co"
+    "Spanish (Costa Rica)|es_CR|hunspell-es_cr"
+    "Spanish (Cuba)|es_CU|hunspell-es_cu"
+    "Spanish (Dominican Republic)|es_DO|hunspell-es_do"
+    "Spanish (Ecuador)|es_EC|hunspell-es_ec"
+    "Spanish (Spain)|es_ES|hunspell-es_es"
+    "Spanish (Guatemala)|es_GT|hunspell-es_gt"
+    "Spanish (Honduras)|es_HN|hunspell-es_hn"
+    "Spanish (Mexico)|es_MX|hunspell-es_mx"
+    "Spanish (Nicaragua)|es_NI|hunspell-es_ni"
+    "Spanish (Panama)|es_PA|hunspell-es_pa"
+    "Spanish (Peru)|es_PE|hunspell-es_pe"
+    "Spanish (Puerto Rico)|es_PR|hunspell-es_pr"
+    "Spanish (Paraguay)|es_PY|hunspell-es_py"
+    "Spanish (El Salvador)|es_SV|hunspell-es_sv"
+    "Spanish (Uruguay)|es_UY|hunspell-es_uy"
+    "Spanish (Venezuela)|es_VE|hunspell-es_ve"
+    "Custom (enter locale code)|CUSTOM|"
+)
+
+configure_extra_packages() {
+    show_header
+    show_submenu_header "📦 Extra Packages"
+    echo ""
+    show_info "To select hit x, to save hit Enter key."
+    echo ""
+
+    # Label -> package lookup, scoped per category below.
+    declare -A PKG_MAP=(
+        ["Floorp"]="floorp" ["Firefox"]="firefox" ["Brave"]="brave-bin"
+        ["LibreWolf"]="librewolf" ["Vivaldi"]="vivaldi-meta" ["Tor Browser"]="tor-browser-bin"
+        ["Mullvad Browser"]="mullvad-browser-bin" ["Ungoogled Chromium"]="ungoogled-chromium-bin"
+        ["FileZilla"]="filezilla" ["Helium Browser"]="helium-browser-bin" ["Zen Browser"]="zen-browser-bin"
+        ["ZapZap (WhatsApp)"]="zapzap" ["Discord"]="discord" ["Vesktop"]="vesktop"
+        ["Telegram"]="telegram-desktop" ["Ferdium (All-in-one)"]="ferdium-bin"
+        ["Hugo"]="hugo" ["Meld (diff viewer)"]="meld" ["VSCodium"]="vscodium" ["GitHub Desktop"]="github-desktop"
+        ["KeePassXC"]="keepassxc" ["Bitwarden"]="bitwarden" ["pass"]="pass"
+        ["GIMP"]="gimp" ["Krita"]="krita" ["Inkscape"]="inkscape"
+        ["MPV"]="mpv" ["Amarok"]="amarok" ["Spotify"]="spotify"
+        ["Tenacity"]="tenacity" ["JamesDSP"]="jamesdsp" ["EasyEffects"]="easyeffects"
+        ["MakeMKV"]="makemkv" ["Kdenlive"]="kdenlive" ["Avidemux"]="avidemux-qt" ["MKVToolNix"]="mkvtoolnix-gui"
+    )
+
+    # Checkbox picker for one category; echoes chosen package names. Header
+    # goes through gum's own --header, not a plain echo above it — gum
+    # choose repaints its draw region on start and would wipe that.
+    pick_category() {
+        local color="$1" label="$2"; shift 2
+        local sel line out=""
+        sel=$(printf '%s\n' "$@" | gum choose --no-limit --height 12 \
+            --header="-- ${label} --" --header.foreground "$color" \
+            --selected-prefix "[x] " --unselected-prefix "[ ] " \
+            --selected.foreground "198") || true
+        while IFS= read -r line; do
+            [[ -n "$line" ]] && out="$out ${PKG_MAP[$line]-}"
+        done <<< "$sel"
+        echo ""
+        echo "$out"
+    }
+
+    local browser social dev pass imaging music video wants_lo=""
+
+    browser=$(pick_category 6 "WEB BROWSERS" \
+        "Floorp" "Firefox" "Brave" "LibreWolf" "Vivaldi" "Tor Browser" \
+        "Mullvad Browser" "Ungoogled Chromium" "FileZilla" "Helium Browser" "Zen Browser")
+
+    social=$(pick_category 2 "SOCIAL & COMMUNICATION" \
+        "ZapZap (WhatsApp)" "Discord" "Vesktop" "Telegram" "Ferdium (All-in-one)")
+
+    dev=$(pick_category 5 "DEVELOPMENT TOOLS" \
+        "Hugo" "Meld (diff viewer)" "VSCodium" "GitHub Desktop")
+
+    pass=$(pick_category 3 "PASSWORD MANAGERS" \
+        "KeePassXC" "Bitwarden" "pass")
+
+    imaging=$(pick_category 4 "CREATIVE & IMAGING" \
+        "GIMP" "Krita" "Inkscape")
+
+    music=$(pick_category 1 "MUSIC & AUDIO" \
+        "MPV" "Amarok" "Spotify" "Tenacity" "JamesDSP" "EasyEffects")
+
+    video=$(pick_category 2 "VIDEO EDITING" \
+        "MakeMKV" "Kdenlive" "Avidemux" "MKVToolNix")
+
+    local office_sel=""
+    office_sel=$(printf '%s\n' "LibreOffice" | gum choose --no-limit --height 3 \
+        --header="-- OFFICE --" --header.foreground 6 \
+        --selected-prefix "[x] " --unselected-prefix "[ ] " \
+        --selected.foreground "198") || true
+    echo ""
+    [[ "$office_sel" == "LibreOffice" ]] && wants_lo="yes"
+
+    CONFIG[extra_browser]="$(echo $browser)"
+    CONFIG[extra_social]="$(echo $social)"
+    CONFIG[extra_dev]="$(echo $dev)"
+    CONFIG[extra_pass]="$(echo $pass)"
+    CONFIG[extra_imaging]="$(echo $imaging)"
+    CONFIG[extra_music]="$(echo $music)"
+    CONFIG[extra_video]="$(echo $video)"
+    CONFIG[wants_libreoffice]="${wants_lo:-no}"
+    CONFIG[lo_locale]=""
+    CONFIG[lo_hunspell]=""
+
+    if [[ "${CONFIG[wants_libreoffice]}" == "yes" ]]; then
+        echo ""
+        show_info "LibreOffice selected — choose your language (UI + spellcheck):"
+        echo ""
+
+        local i idx label loc sys_loc
+        for i in "${!LO_LANG_MENU[@]}"; do
+            idx=$((i + 1))
+            IFS='|' read -r label loc _ <<< "${LO_LANG_MENU[$i]}"
+            if [[ "$loc" == "SYSTEM" ]]; then
+                sys_loc="$(locale 2>/dev/null | awk -F= '/^LANG=/{print $2}' | tr -d '"')"
+                sys_loc="${sys_loc:-en_US}"
+                echo -e "  ${BLUE}${idx})${NC} ${label} (${sys_loc})"
+            elif [[ "$loc" == "CUSTOM" ]]; then
+                echo -e "  ${BLUE}${idx})${NC} ${label}"
+            else
+                echo -e "  ${BLUE}${idx})${NC} ${label} (${loc})"
+            fi
+        done
+        echo ""
+
+        local lang_choice=""
+        read -r -p "Enter choice (default: English US): " lang_choice < /dev/tty
+        [[ -z "$lang_choice" ]] && lang_choice=2
+        if ! [[ "$lang_choice" =~ ^[0-9]+$ ]] || (( lang_choice < 1 || lang_choice > ${#LO_LANG_MENU[@]} )); then
+            lang_choice=2
+        fi
+
+        local hunspell_selected=""
+        IFS='|' read -r _ loc hunspell_selected <<< "${LO_LANG_MENU[$((lang_choice - 1))]}"
+
+        if [[ "$loc" == "SYSTEM" ]]; then
+            loc="$(locale 2>/dev/null | awk -F= '/^LANG=/{print $2}' | tr -d '"')"
+            loc="${loc:-en_US}"
+        elif [[ "$loc" == "CUSTOM" ]]; then
+            read -r -p "Enter locale code (examples: en_US, en_GB, fr_FR, es_MX, ru_RU, zh_CN): " loc < /dev/tty
+            loc="${loc:-en_US}"
+            hunspell_selected=""
+        fi
+
+        CONFIG[lo_locale]="$loc"
+        CONFIG[lo_hunspell]="$hunspell_selected"
+    fi
+
+    echo ""
+    echo -e "${PURPLE}═══════════════════════════════════════════════════════════════════════${NC}"
+    echo -e "${GREEN}Selection Summary:${NC}"
+    [[ -n "${CONFIG[extra_browser]}" ]]  && echo -e "  Browsers:    ${CYAN}${CONFIG[extra_browser]}${NC}"
+    [[ -n "${CONFIG[extra_social]}" ]]   && echo -e "  Social:      ${CYAN}${CONFIG[extra_social]}${NC}"
+    [[ -n "${CONFIG[extra_dev]}" ]]      && echo -e "  Dev Tools:   ${CYAN}${CONFIG[extra_dev]}${NC}"
+    [[ -n "${CONFIG[extra_pass]}" ]]     && echo -e "  Passwords:   ${CYAN}${CONFIG[extra_pass]}${NC}"
+    [[ -n "${CONFIG[extra_imaging]}" ]]  && echo -e "  Creative:    ${CYAN}${CONFIG[extra_imaging]}${NC}"
+    [[ -n "${CONFIG[extra_music]}" ]]    && echo -e "  Music/Audio: ${CYAN}${CONFIG[extra_music]}${NC}"
+    [[ -n "${CONFIG[extra_video]}" ]]    && echo -e "  Video:       ${CYAN}${CONFIG[extra_video]}${NC}"
+    [[ "${CONFIG[wants_libreoffice]}" == "yes" ]] && echo -e "  LibreOffice: ${CYAN}yes (${CONFIG[lo_locale]})${NC}"
+    if [[ -z "${CONFIG[extra_browser]}${CONFIG[extra_social]}${CONFIG[extra_dev]}${CONFIG[extra_pass]}${CONFIG[extra_imaging]}${CONFIG[extra_music]}${CONFIG[extra_video]}" && "${CONFIG[wants_libreoffice]}" != "yes" ]]; then
+        echo -e "  ${YELLOW}(no extra packages selected)${NC}"
+    fi
+    echo -e "${PURPLE}═══════════════════════════════════════════════════════════════════════${NC}"
+    echo ""
+    gum input --placeholder "Press Enter to continue..." --width 50
+}
+
+# ────────────────────────────────────────────────────────────────────────────────
 # PACMAN HELPERS
 # ────────────────────────────────────────────────────────────────────────────────
 
@@ -1117,12 +1539,31 @@ configure_pacman_options() {
 
 show_main_menu() {
     while true; do
-        show_header
+        clear
+        local cols; cols=$(term_cols)
+        local box_width=$(( cols - 4 ))
+        [[ $box_width -lt 40 ]] && box_width=40
+
+        # Vertically center the WHOLE screen (header + boot mode line +
+        # the choose list) as one block, instead of centering the header
+        # alone and leaving everything below it pinned under it — header
+        # (border 2 + padding 2 + 5 text lines = 9) + boot-mode line (1)
+        # + blank (1) + the choose widget's fixed --height 20 = 31.
+        print_vpad "$(vpad_for 31)"
+
+        gum style \
+            --foreground 212 --border-foreground 212 --border double \
+            --align center --width "$box_width" --margin "0 2" --padding "1 2" \
+            "✨ $SCRIPT_NAME v$VERSION ✨" \
+            "" \
+            "Installs XeroLinux exactly as the official ISO does (KDE Plasma)," \
+            "with more configuration options than the ISO installer." \
+            "For experienced Arch/Linux users. NOT beginner-friendly."
 
         local boot_mode="BIOS"
         [[ "${CONFIG[uefi]}" == "yes" ]] && boot_mode="UEFI"
 
-        gum style --foreground 245 --margin "0 2" \
+        gum style --foreground 245 --align center --width "$cols" \
             "Boot Mode: $boot_mode"
         echo ""
 
@@ -1160,6 +1601,14 @@ show_main_menu() {
             kernel_label="LTS"
         fi
 
+        local extra_pkg_count=0
+        for _grp in extra_browser extra_social extra_dev extra_pass extra_imaging extra_music extra_video; do
+            [[ -n "${CONFIG[$_grp]}" ]] && (( extra_pkg_count += $(wc -w <<< "${CONFIG[$_grp]}") ))
+        done
+        [[ "${CONFIG[wants_libreoffice]}" == "yes" ]] && (( extra_pkg_count++ ))
+        local extra_pkg_label="None"
+        [[ $extra_pkg_count -gt 0 ]] && extra_pkg_label="$extra_pkg_count selected"
+
         local menu_items=(
             ""
             "1.  Installer Language    │ ${CONFIG[installer_lang]}"
@@ -1173,13 +1622,30 @@ show_main_menu() {
             "9.  Parallel Downloads    │ ${CONFIG[parallel_downloads]}"
             "10. AUR Helper            │ ${CONFIG[aur_helper]}"
             "11. Additional Kernel     │ $kernel_label"
+            "12. Extra Packages        │ $extra_pkg_label"
             "──────────────────────────────────────────────"
-            "12. Start Installation"
+            "13. Start Installation"
             "0.  Exit"
         )
 
+        # gum choose has no alignment/centering flag, but --padding wraps
+        # the WHOLE widget (header, every item, footer help text) in a
+        # uniform box — unlike padding each item's own text, this also
+        # doesn't get stripped off the highlighted cursor line the way
+        # manual leading-space padding does (a genuine gum quirk: the
+        # cursor line's own leading whitespace gets trimmed, so a manually
+        # left-padded item snaps back to column 0 the moment it's
+        # selected; verified empirically).
+        local max_len=0 item
+        for item in "${menu_items[@]}"; do
+            [[ ${#item} -gt $max_len ]] && max_len=${#item}
+        done
+        local block_pad=$(( ($(term_cols) - max_len) / 2 ))
+        [[ $block_pad -lt 0 ]] && block_pad=0
+
         local selection=""
-        selection=$(printf '%s\n' "${menu_items[@]}" | gum choose --height 20 --header $'Configure your installation:\n') || true
+        selection=$(printf '%s\n' "${menu_items[@]}" | gum choose --height 20 \
+            --padding "0 $block_pad" --header "Configure your installation:"$'\n') || true
 
         case "$selection" in
             "1."*)  select_installer_language ;;
@@ -1193,7 +1659,8 @@ show_main_menu() {
             "9."*)  configure_parallel_downloads ;;
             "10."*) select_aur_helper ;;
             "11."*) select_extra_kernel ;;
-            "12."*)
+            "12."*) configure_extra_packages ;;
+            "13."*)
                 if validate_config; then
                     show_summary
                     local confirm_msg=""
@@ -1248,7 +1715,7 @@ validate_config() {
             show_error "$error"
         done
         echo ""
-        gum input --placeholder "Press Enter to continue..."
+        gum input --placeholder "Press Enter to continue..." --width 50
         return 1
     fi
 
@@ -1273,6 +1740,14 @@ show_summary() {
 
     local boot_mode="BIOS/Legacy"
     [[ "${CONFIG[uefi]}" == "yes" ]] && boot_mode="UEFI"
+
+    local extra_pkg_summary="None"
+    local _epc=0 _grp
+    for _grp in extra_browser extra_social extra_dev extra_pass extra_imaging extra_music extra_video; do
+        [[ -n "${CONFIG[$_grp]}" ]] && (( _epc += $(wc -w <<< "${CONFIG[$_grp]}") ))
+    done
+    [[ "${CONFIG[wants_libreoffice]}" == "yes" ]] && (( _epc++ ))
+    [[ $_epc -gt 0 ]] && extra_pkg_summary="$_epc selected"
 
     if [[ "${CONFIG[partition_mode]}" == "manual" ]]; then
         local efi_note=""
@@ -1300,7 +1775,8 @@ show_summary() {
             "Graphics:         ${CONFIG[gfx_driver]}" \
             "Boot Mode:        $boot_mode" \
             "Bootloader:       GRUB (on ${CONFIG[disk]})" \
-            "Downloads:        ${CONFIG[parallel_downloads]} parallel"
+            "Downloads:        ${CONFIG[parallel_downloads]} parallel" \
+            "Extra Packages:   $extra_pkg_summary"
 
         echo ""
         gum style --foreground 196 --bold --margin "0 2" \
@@ -1328,7 +1804,8 @@ show_summary() {
             "Graphics:         ${CONFIG[gfx_driver]}" \
             "Boot Mode:        $boot_mode" \
             "Bootloader:       GRUB" \
-            "Downloads:        ${CONFIG[parallel_downloads]} parallel"
+            "Downloads:        ${CONFIG[parallel_downloads]} parallel" \
+            "Extra Packages:   $extra_pkg_summary"
 
         echo ""
         gum style --foreground 196 --bold --margin "0 2" \
@@ -1341,63 +1818,45 @@ show_summary() {
 # INSTALLATION
 # ────────────────────────────────────────────────────────────────────────────────
 
+install_extra_kernels() {
+    # shellcheck disable=SC2086
+    arch-chroot "$MOUNTPOINT" pacman -S --needed --noconfirm ${CONFIG[extra_kernel]} \
+        || echo "Some extra kernel packages failed — continuing"
+    arch-chroot "$MOUNTPOINT" grub-mkconfig -o /boot/grub/grub.cfg 2>/dev/null || true
+}
+
 perform_installation() {
-    show_header
-    gum style --foreground 212 --bold --margin "1 2" \
-        "🚀 Starting Installation..."
-    echo ""
+    # Build the ordered step list dynamically based on config, so the
+    # percent bar's total always matches what will actually run.
+    local step_labels=() step_funcs=()
 
-    # IMPORTANT: run stateful functions in THIS shell (no gum spin subshell).
-    run_step "Partitioning disk..." partition_disk
-
+    step_labels+=("Partitioning disk");            step_funcs+=("partition_disk")
     if [[ "${CONFIG[encrypt]}" == "yes" ]]; then
-        run_step "Setting up encryption..." setup_encryption
+        step_labels+=("Setting up encryption");    step_funcs+=("setup_encryption")
     fi
-
-    run_step "Formatting partitions..." format_partitions
-    run_step "Mounting filesystems..." mount_filesystems
-
-    show_info "Installing base system (this may take a while)..."
-    install_base_system
-    show_success "Base system installed"
-
-    show_info "Adding XeroLinux and Chaotic-AUR repositories..."
-    add_repos
-    show_success "Repositories configured"
-
+    step_labels+=("Formatting partitions");         step_funcs+=("format_partitions")
+    step_labels+=("Mounting filesystems");          step_funcs+=("mount_filesystems")
+    step_labels+=("Installing base system");        step_funcs+=("install_base_system")
+    step_labels+=("Adding repositories");           step_funcs+=("add_repos")
     if [[ -n "${CONFIG[extra_kernel]}" ]]; then
-        show_info "Installing additional kernels: ${CONFIG[extra_kernel]}..."
-        # shellcheck disable=SC2086
-        if arch-chroot "$MOUNTPOINT" pacman -S --needed --noconfirm ${CONFIG[extra_kernel]}; then
-            show_success "Additional kernels installed"
-        else
-            show_warning "Some extra kernel packages failed — continuing"
-        fi
-        arch-chroot "$MOUNTPOINT" grub-mkconfig -o /boot/grub/grub.cfg 2>/dev/null || true
+        step_labels+=("Installing additional kernels"); step_funcs+=("install_extra_kernels")
     fi
+    step_labels+=("Configuring system");            step_funcs+=("configure_system")
+    step_labels+=("Installing GRUB bootloader");    step_funcs+=("install_bootloader")
+    step_labels+=("Configuring Btrfs snapshots");   step_funcs+=("setup_snapper")
+    step_labels+=("Creating user account");         step_funcs+=("create_user")
+    step_labels+=("Installing graphics drivers");   step_funcs+=("install_graphics")
+    step_labels+=("Configuring swap");              step_funcs+=("setup_swap_system")
+    step_labels+=("Preparing desktop installer");   step_funcs+=("prepare_desktop_installer")
 
-    run_step "Configuring system..." configure_system
-    run_step "Installing GRUB bootloader..." install_bootloader
-    run_step "Configuring Btrfs snapshots..." setup_snapper
-    run_step "Creating user account..." create_user
-    run_step "Installing graphics drivers..." install_graphics
-    run_step "Configuring swap..." setup_swap_system
+    local total=${#step_labels[@]}
+    local i
+    for i in "${!step_labels[@]}"; do
+        run_step_visual "$((i + 1))" "$total" "${step_labels[$i]}" "${step_funcs[$i]}"
+    done
 
-    show_info "Preparing desktop installer..."
-    prepare_desktop_installer
-    show_success "Desktop installer ready"
-
-    echo ""
-    gum style --foreground 82 --bold --border double --border-foreground 82 \
-        --align center --width 60 --margin "1 2" --padding "1 2" \
-        "🎉 Base Installation Complete! 🎉" \
-        "" \
-        "The system will now chroot into your new installation" \
-        "to run the XeroLinux KDE Plasma setup script."
-
-    echo ""
-    gum input --placeholder "Press Enter to continue to KDE installation..."
-
+    # Straight into Part 2 (xero-kde.sh) — no banner/pause/gate here, the
+    # user already agreed to everything destructive earlier.
     if ! run_desktop_installer; then
         show_header
         gum style --foreground 214 --bold --border double --border-foreground 214 \
@@ -1434,7 +1893,16 @@ partition_disk() {
 
     local disk="${CONFIG[disk]}"
 
-    [[ -n "$disk" ]] || { echo "ERROR: CONFIG[disk] is empty"; exit 1; }
+    # A prior run against this same disk (aborted, retried without reboot)
+    # can leave its old partitions mounted under $MOUNTPOINT — the kernel
+    # then refuses to re-read the partition table ("... unable to inform
+    # the kernel of the change, probably because it/they are in use"),
+    # failing `parted mklabel` outright. Clear that state before wiping.
+    swapoff -a 2>/dev/null || true
+    umount -R "$MOUNTPOINT" 2>/dev/null || true
+    [[ -e /dev/mapper/cryptroot ]] && cryptsetup close cryptroot 2>/dev/null || true
+
+    [[ -n "$disk" ]] || { echo "ERROR: CONFIG[disk] is empty"; return 1; }
 
     wipefs -af "$disk" 2>/dev/null || true
     sgdisk -Z "$disk" &>/dev/null || true
@@ -1483,39 +1951,39 @@ partition_disk() {
         echo "ERROR: Boot partition not ready after partitioning."
         echo "  boot_part='${CONFIG[boot_part]}' block? no"
         lsblk -f "$disk" || true
-        exit 1
+        return 1
     fi
     if [[ ! -b "${CONFIG[root_part]}" ]]; then
         echo "ERROR: Root partition not ready after partitioning."
         echo "  root_part='${CONFIG[root_part]}' block? no"
         lsblk -f "$disk" || true
-        exit 1
+        return 1
     fi
 }
 
 setup_encryption() {
     [[ "${CONFIG[encrypt]}" == "yes" ]] || return 0
 
-    [[ -n "${CONFIG[encrypt_password]}" ]] || { echo "ERROR: Encryption enabled but password is empty"; exit 1; }
-    [[ -b "${CONFIG[root_part]}" ]] || { echo "ERROR: root_part '${CONFIG[root_part]}' is not a block device"; exit 1; }
+    [[ -n "${CONFIG[encrypt_password]}" ]] || { echo "ERROR: Encryption enabled but password is empty"; return 1; }
+    [[ -b "${CONFIG[root_part]}" ]] || { echo "ERROR: root_part '${CONFIG[root_part]}' is not a block device"; return 1; }
 
     echo -n "${CONFIG[encrypt_password]}" | cryptsetup luksFormat --type luks2 "${CONFIG[root_part]}" - 2>/dev/null
     echo -n "${CONFIG[encrypt_password]}" | cryptsetup open "${CONFIG[root_part]}" cryptroot -
 
     CONFIG[root_device]="/dev/mapper/cryptroot"
 
-    [[ -b "${CONFIG[root_device]}" ]] || { echo "ERROR: cryptroot mapper not created"; exit 1; }
+    [[ -b "${CONFIG[root_device]}" ]] || { echo "ERROR: cryptroot mapper not created"; return 1; }
 }
 
 format_partitions() {
     local root_device="${CONFIG[root_part]}"
     [[ "${CONFIG[encrypt]}" == "yes" ]] && root_device="${CONFIG[root_device]}"
 
-    [[ -b "$root_device" ]] || { echo "ERROR: root device '$root_device' is not a block device"; exit 1; }
+    [[ -b "$root_device" ]] || { echo "ERROR: root device '$root_device' is not a block device"; return 1; }
 
     # Format boot partition (skipped for BIOS encrypted boot or when reusing existing EFI)
     if [[ -n "${CONFIG[boot_part]}" ]]; then
-        [[ -b "${CONFIG[boot_part]}" ]] || { echo "ERROR: boot_part '${CONFIG[boot_part]}' is not a block device"; exit 1; }
+        [[ -b "${CONFIG[boot_part]}" ]] || { echo "ERROR: boot_part '${CONFIG[boot_part]}' is not a block device"; return 1; }
 
         if [[ "${CONFIG[reuse_efi]}" == "yes" ]]; then
             echo "Reusing existing EFI partition ${CONFIG[boot_part]} — skipping format"
@@ -1533,7 +2001,7 @@ format_partitions() {
         btrfs) mkfs.btrfs -f "$root_device" ;;
         ext4)  mkfs.ext4 -F "$root_device" ;;
         xfs)   mkfs.xfs -f "$root_device" ;;
-        *)     echo "ERROR: Unknown filesystem '${CONFIG[filesystem]}'"; exit 1 ;;
+        *)     echo "ERROR: Unknown filesystem '${CONFIG[filesystem]}'"; return 1 ;;
     esac
 }
 
@@ -1541,7 +2009,7 @@ mount_filesystems() {
     local root_device="${CONFIG[root_part]}"
     [[ "${CONFIG[encrypt]}" == "yes" ]] && root_device="${CONFIG[root_device]}"
 
-    [[ -b "$root_device" ]] || { echo "ERROR: root device '$root_device' is not a block device"; exit 1; }
+    [[ -b "$root_device" ]] || { echo "ERROR: root device '$root_device' is not a block device"; return 1; }
 
     if [[ "${CONFIG[filesystem]}" == "btrfs" ]]; then
         mount "$root_device" "$MOUNTPOINT"
@@ -1596,7 +2064,7 @@ import_chaotic_key() {
     local imported=0
 
     for ks in "${keyservers[@]}"; do
-        if pacman-key --recv-key "$keyid" --keyserver "$ks" 2>/dev/null; then
+        if timeout 20 pacman-key --recv-key "$keyid" --keyserver "$ks" 2>/dev/null; then
             imported=1
             break
         fi
@@ -1605,7 +2073,7 @@ import_chaotic_key() {
 
     if [[ $imported -eq 0 ]]; then
         show_warning "All keyservers failed — trying hkps fallback..."
-        pacman-key --recv-key "$keyid" \
+        timeout 20 pacman-key --recv-key "$keyid" \
             --keyserver hkps://keyserver.ubuntu.com 2>/dev/null || true
     fi
 
@@ -1625,12 +2093,19 @@ add_temp_repo() {
             || show_warning "chaotic-keyring install failed — repo may not work fully"
         pacman -U --noconfirm 'https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-mirrorlist.pkg.tar.zst' \
             || show_warning "chaotic-mirrorlist install failed"
-        echo -e '\n[chaotic-aur]\nInclude = /etc/pacman.d/chaotic-mirrorlist' >> /etc/pacman.conf
+        # chaotic-aur is a bonus repo — a transient CDN outage on either
+        # package above must not wire pacman.conf to a nonexistent Include
+        # file, which would hard-fail every subsequent pacman call.
+        if [[ -f /etc/pacman.d/chaotic-mirrorlist ]]; then
+            echo -e '\n[chaotic-aur]\nInclude = /etc/pacman.d/chaotic-mirrorlist' >> /etc/pacman.conf
+        else
+            show_warning "chaotic-mirrorlist missing — skipping chaotic-aur repo for this install"
+        fi
     fi
 
     apply_parallel_downloads /etc/pacman.conf
     configure_pacman_options /etc/pacman.conf
-    pacman -Sy
+    pacman -Sy || show_warning "pacman -Sy had errors — continuing"
 }
 
 install_base_system() {
@@ -1678,9 +2153,14 @@ install_base_system() {
     critical+=" xorg-apps xorg-xinit xorg-server xorg-xwayland"
     critical+=" libinput xf86-input-void xf86-input-libinput"
 
-    # Install critical packages — abort on failure
+    # Install critical packages — abort on failure. --noconfirm is explicit
+    # here (not just relying on pacstrap's own default) so nothing can ever
+    # block waiting on stdin; stdbuf forces line-buffered output since
+    # pacman fully-buffers once it detects stdout isn't a real terminal,
+    # which otherwise made output arrive in large delayed chunks instead of
+    # scrolling live in the progress display.
     # shellcheck disable=SC2086
-    pacstrap -K "$MOUNTPOINT" $critical
+    stdbuf -oL -eL pacstrap -K "$MOUNTPOINT" --noconfirm $critical
 
     # ── Optional packages (failures logged, install continues) ────────────────
     local optional=""
@@ -1695,7 +2175,7 @@ install_base_system() {
 
     show_info "Installing optional base packages (failures non-fatal)..."
     # shellcheck disable=SC2086
-    pacstrap -K "$MOUNTPOINT" $optional 2>/dev/null || \
+    stdbuf -oL -eL pacstrap -K "$MOUNTPOINT" --noconfirm $optional 2>/dev/null || \
         show_warning "Some optional base packages failed — continuing"
 
     # Btrfs snapshot support — only when btrfs is selected
@@ -1704,7 +2184,7 @@ install_base_system() {
         # snap-pac omitted here — its pacman hooks would fire on every package install
         # during the chroot setup phase, creating unwanted snapshots before first login.
         # It gets installed by xero-snapper-init on first boot instead.
-        pacstrap -K "$MOUNTPOINT" snapper grub-btrfs inotify-tools 2>/dev/null || \
+        stdbuf -oL -eL pacstrap -K "$MOUNTPOINT" --noconfirm snapper grub-btrfs inotify-tools 2>/dev/null || \
             show_warning "Some Btrfs snapshot packages failed — continuing"
     fi
 
@@ -1724,7 +2204,7 @@ add_repos() {
         local imported=0
 
         for ks in "${keyservers[@]}"; do
-            if arch-chroot "$MOUNTPOINT" pacman-key --recv-key "$keyid" --keyserver "$ks" 2>/dev/null; then
+            if timeout 20 arch-chroot "$MOUNTPOINT" pacman-key --recv-key "$keyid" --keyserver "$ks" 2>/dev/null; then
                 imported=1
                 break
             fi
@@ -1732,7 +2212,7 @@ add_repos() {
         done
 
         [[ $imported -eq 0 ]] && \
-            arch-chroot "$MOUNTPOINT" pacman-key --recv-key "$keyid" \
+            timeout 20 arch-chroot "$MOUNTPOINT" pacman-key --recv-key "$keyid" \
                 --keyserver hkps://keyserver.ubuntu.com 2>/dev/null || true
 
         arch-chroot "$MOUNTPOINT" pacman-key --lsign-key "$keyid" || true
@@ -1745,12 +2225,22 @@ add_repos() {
             'https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-mirrorlist.pkg.tar.zst' \
             || show_warning "chaotic-mirrorlist install failed"
 
-        echo -e '\n[chaotic-aur]\nInclude = /etc/pacman.d/chaotic-mirrorlist' >> "$MOUNTPOINT/etc/pacman.conf"
+        # chaotic-aur is a bonus repo, not required for the install to
+        # succeed — a transient CDN outage on either package above (a real
+        # 503 from cdn-mirror.chaotic.cx has been observed live) must not
+        # wire pacman.conf to an Include file that doesn't exist, which
+        # would hard-fail every subsequent `pacman -Sy`/-S for the rest of
+        # the install over a repo nobody asked to depend on.
+        if [[ -f "$MOUNTPOINT/etc/pacman.d/chaotic-mirrorlist" ]]; then
+            echo -e '\n[chaotic-aur]\nInclude = /etc/pacman.d/chaotic-mirrorlist' >> "$MOUNTPOINT/etc/pacman.conf"
+        else
+            show_warning "chaotic-mirrorlist missing — skipping chaotic-aur repo for this install"
+        fi
     fi
 
     apply_parallel_downloads "$MOUNTPOINT/etc/pacman.conf"
     configure_pacman_options "$MOUNTPOINT/etc/pacman.conf"
-    arch-chroot "$MOUNTPOINT" pacman -Sy
+    arch-chroot "$MOUNTPOINT" pacman -Sy || show_warning "pacman -Sy had errors — continuing"
 }
 
 configure_system() {
@@ -2133,26 +2623,57 @@ EOF
 }
 
 # ────────────────────────────────────────────────────────────────────────────────
-# DESKTOP INSTALLER
+# DESKTOP INSTALLER — xero-kde.sh is always fetched independently (not
+# self-copied), so it works whether xero-install.sh runs as a real file or
+# piped straight into bash (`curl .../xero-install.sh | bash`).
 # ────────────────────────────────────────────────────────────────────────────────
+
+# Overridable for local testing, e.g. XERO_KDE_URL=http://<local-server>/xero-kde.sh
+XERO_KDE_URL="${XERO_KDE_URL:-https://xerolinux.xyz/script/xero-install/xero-kde.sh}"
+DESKTOP_STATE_FILE_NAME=".xero-desktop-state"
 
 prepare_desktop_installer() {
     local user="${CONFIG[username]}"
     local user_home="$MOUNTPOINT/home/${user}"
 
-    if [[ -f "/root/xero-kde.sh" ]]; then
-        cp /root/xero-kde.sh "${user_home}/xero-kde.sh"
-    else
-        curl -fsSL "$XERO_KDE_URL" -o "${user_home}/xero-kde.sh" || {
+    # Fetch fresh every time — a cached /root/xero-kde.sh is only a fallback
+    # for when the fetch fails, never preferred over a current copy.
+    if ! curl -4 --connect-timeout 5 --max-time 20 -fsSL "$XERO_KDE_URL" -o "${user_home}/xero-kde.sh"; then
+        if [[ -f "/root/xero-kde.sh" ]] && ! grep -q "KDE installer placeholder" /root/xero-kde.sh; then
+            show_warning "Could not fetch the latest xero-kde.sh — falling back to a cached copy."
+            cp /root/xero-kde.sh "${user_home}/xero-kde.sh"
+        else
+            show_warning "Could not fetch xero-kde.sh — the KDE phase will NOT actually install anything!"
             cat > "${user_home}/xero-kde.sh" << 'KDESCRIPT'
 #!/bin/bash
 echo "XeroLinux KDE installer placeholder"
 echo "Please download the actual script from: https://github.com/xerolinux/xero-scripts"
 KDESCRIPT
-        }
+        fi
     fi
     chmod +x "${user_home}/xero-kde.sh"
-    arch-chroot "$MOUNTPOINT" chown "${user}:${user}" "/home/${user}/xero-kde.sh"
+
+    # Extra-package selections from the main menu travel to xero-kde.sh via
+    # a small state file, not positional args — several of these are long
+    # space-separated package-name strings, which get unwieldy and
+    # escape-prone as args. xero-kde.sh sources this itself; every
+    # variable it reads has a safe default there even if this file is
+    # missing entirely (e.g. someone runs xero-kde.sh standalone).
+    {
+        printf 'BROWSER=%q\n' "${CONFIG[extra_browser]}"
+        printf 'SOCIAL=%q\n' "${CONFIG[extra_social]}"
+        printf 'DEV=%q\n' "${CONFIG[extra_dev]}"
+        printf 'PASS=%q\n' "${CONFIG[extra_pass]}"
+        printf 'IMAGING=%q\n' "${CONFIG[extra_imaging]}"
+        printf 'MUSIC=%q\n' "${CONFIG[extra_music]}"
+        printf 'VIDEO=%q\n' "${CONFIG[extra_video]}"
+        printf 'WANTS_LIBREOFFICE=%q\n' "${CONFIG[wants_libreoffice]}"
+        printf 'LO_LOCALE=%q\n' "${CONFIG[lo_locale]}"
+        printf 'LO_HUNSPELL=%q\n' "${CONFIG[lo_hunspell]}"
+    } > "${user_home}/${DESKTOP_STATE_FILE_NAME}"
+
+    arch-chroot "$MOUNTPOINT" chown "${user}:${user}" \
+        "/home/${user}/xero-kde.sh" "/home/${user}/${DESKTOP_STATE_FILE_NAME}"
 }
 
 run_desktop_installer() {
@@ -2160,13 +2681,20 @@ run_desktop_installer() {
     local user_home="/home/${user}"
     local script_path="${user_home}/xero-kde.sh"
 
-    show_header
-    gum style --foreground 212 --bold --margin "1 2" \
-        "🎨 Running XeroLinux KDE Setup (as ${user})..."
-    echo ""
-
+    # No show_header/status line here — it redrew the whole "Xero Arch
+    # Installer" branding box for a single frame right before arch-chroot's
+    # own exec clears it again for xero-kde.sh's progress screen: a visible
+    # flash with nothing readable in it. Silent straight through instead.
     if [[ ! -f "${MOUNTPOINT}${script_path}" ]]; then
         show_error "Desktop script not found at ${script_path}"
+        return 1
+    fi
+
+    # The placeholder stub exits 0 after two echo lines — without this
+    # check it "succeeds" instantly with nothing installed, and the caller
+    # shows the same "Installation Complete!" banner as a real run.
+    if grep -q "KDE installer placeholder" "${MOUNTPOINT}${script_path}"; then
+        show_error "xero-kde.sh could not be fetched — refusing to run the placeholder stub."
         return 1
     fi
 
@@ -2177,6 +2705,7 @@ run_desktop_installer() {
 
     arch-chroot "$MOUNTPOINT" chown -R "${user}:${user}" "${user_home}"
 
+    mkdir -p "$MOUNTPOINT/etc/sudoers.d"
     echo "${user} ALL=(ALL:ALL) NOPASSWD: ALL" > "$MOUNTPOINT/etc/sudoers.d/99-xero-installer"
     chmod 0440 "$MOUNTPOINT/etc/sudoers.d/99-xero-installer"
 
@@ -2193,6 +2722,7 @@ run_desktop_installer() {
 # ────────────────────────────────────────────────────────────────────────────────
 
 main() {
+    show_splash
     check_root
     check_uefi
     # Skip internet/deps check if launched from install.sh (deps already installed)
