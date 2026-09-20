@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# XeroLinux KDE Plasma Installer v1.9.1
+# XeroLinux KDE Plasma Installer v2.0.0
 #
 # Fetched by xero-install.sh's prepare_desktop_installer and run via
 # `arch-chroot ... su -l "$user" -c "bash '$script_path' ..."` — always a
