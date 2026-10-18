@@ -18,16 +18,16 @@ function within(start: string, end: string): boolean {
 
 export const discount = {
   enabled: true,            // ← master switch (false = off everywhere, dates ignored)
-  start: '2026-05-31',      // ← discount begins
-  end: '2026-06-03',        // ← discount ends (auto-reverts after)
-  percent: 25,              // ← % off — drives every price site-wide
+  start: '2026-12-01',      // ← discount begins
+  end: '2027-01-31',        // ← discount ends (auto-reverts after)
+  percent: 35,              // ← % off — drives every price site-wide
   basePriceEUR: 39,         // ← regular ISO price
   label: 'Discount',     // shown on the discount stamp
   note: 'Limited-time offer', // small note beside the price
 
   // Homepage banner copy (edit freely):
-  bannerText: '25% Anniversary Discount !!!',
-  bannerSub: 'Celebrating 6 years of XeroLinux - grab the ISO while it lasts',
+  bannerText: '35% Limited Time Discount',
+  bannerSub: 'Grab the ISO while it lasts !!!',
 };
 
 /** True when the discount should show anywhere on the site. */

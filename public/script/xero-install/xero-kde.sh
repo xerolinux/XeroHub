@@ -422,7 +422,7 @@ install_packages() {
     install_group_required "KDE Plasma Core" \
         kf6 qt6 kde-system libplasma \
         kwin krdp milou breeze oxygen drkonqi kwrited \
-        kgamma kscreen kmenuedit bluedevil kpipewire plasma-nm plasma-pa \
+        kscreen kmenuedit bluedevil kpipewire plasma-nm plasma-pa \
         plasma-sdk libkscreen breeze-gtk breeze-cursors breeze-icons powerdevil \
         kinfocenter flatpak-kcm kdecoration ksshaskpass kwallet-pam \
         libksysguard plasma-vault ksystemstats kde-cli-tools oxygen-sounds \
@@ -437,11 +437,11 @@ install_packages() {
     install_group "KDE Applications" \
         krdc krfb smb4k alligator kdeconnect kio-admin kio-extras kio-gdrive \
         konversation kio-zeroconf kdenetwork-filesharing signon-kwallet-extension \
-        okular kamera svgpart skanlite gwenview spectacle colord-kde kcolorchooser \
+        okular kamera svgpart skanlite gwenview spectacle kcolorchooser \
         kimagemapeditor kdegraphics-thumbnailers \
         ark kate kgpg kfind sweeper konsole kdialog yakuake skanpage filelight \
         kmousetool kcharselect markdownpart qalculate-qt keditbookmarks kdebugsettings \
-        kwalletmanager dolphin-plugins \
+        kwalletmanager dolphin-plugins kup \
         k3b kamoso audiotube plasmatube audiocd-kio
 
     # ── Wayland & Display ─────────────────────────────────────────────────────
@@ -456,14 +456,14 @@ install_packages() {
     # ── System Utilities (split into two calls to reduce transaction size) ─────
     install_group "System Utilities A" \
         duf gcc npm yad zip xdo gum inxi lzop nmon tree vala btop glfw htop lshw \
-        cblas expac fuse3 lhasa meson unace unrar unzip p7zip iftop nvtop rhash sshfs \
+        cblas expac fuse3 lhasa meson unace unrar unzip 7zip iftop nvtop rhash sshfs \
         vnstat nodejs cronie hwinfo arandr assimp netpbm wmctrl grsync libmtp polkit \
         sysprof semver zenity gparted plocate jsoncpp fuseiso gettext node-gyp \
         intltool graphviz pkgstats pciutils inetutils downgrade s3fs-fuse playerctl \
         asciinema oniguruma ventoy-bin cifs-utils lsb-release python-dbus dconf-editor \
         laptop-detect perl-xml-parser gnome-disk-utility appmenu-gtk-module \
         parallel xsettingsd polkit-qt6 systemdgenie \
-        yt-dlp wavpack unarchiver rate-mirrors gnustep-base ocs-url xmlstarlet \
+        yt-dlp wavpack unarchiver rate-mirrors gnustep-base xmlstarlet \
         libgsf tumbler freetype2 libopenraw poppler-qt6 poppler-glib ffmpegthumbnailer \
         gvfs mtpfs udiskie udisks2 libldm gvfs-afc gvfs-mtp gvfs-nfs gvfs-smb \
         gvfs-goa gvfs-wsdd gvfs-dnssd gvfs-gphoto2 gvfs-onedrive \

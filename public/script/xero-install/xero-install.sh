@@ -1373,7 +1373,7 @@ configure_extra_packages() {
         ["KeePassXC"]="keepassxc" ["Bitwarden"]="bitwarden" ["pass"]="pass"
         ["GIMP"]="gimp" ["Krita"]="krita" ["Inkscape"]="inkscape"
         ["MPV"]="mpv" ["Amarok"]="amarok" ["Spotify"]="spotify"
-        ["Tenacity"]="tenacity" ["JamesDSP"]="jamesdsp" ["EasyEffects"]="easyeffects"
+        ["Tenacity"]="tenacity" ["JamesDSP"]="jamesdsp" ["EasyEffects"]="easyeffects calf lsp-plugins-lv2 mda.lv2 x42-plugins-lv2 zam-plugins-lv2"
         ["MakeMKV"]="makemkv" ["Kdenlive"]="kdenlive" ["Avidemux"]="avidemux-qt" ["MKVToolNix"]="mkvtoolnix-gui"
     )
 
