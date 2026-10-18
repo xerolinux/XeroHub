@@ -1,23 +1,7 @@
 @import "tailwindcss";
 
 /* ─── Fonts ─── */
-/* Orbitron loaded via Google Fonts <link> in Layout.astro for cross-device support */
-
-@font-face {
-  font-family: 'Inter';
-  font-style: normal;
-  font-weight: 300 700;
-  font-display: swap;
-  src: url('https://fonts.gstatic.com/s/inter/v18/UcCO3FwrK3iLTeHuS_nVMrMxCp50SjIw2boKoduKmMEVuLyfAZ9hiA.woff2') format('woff2');
-}
-
-@font-face {
-  font-family: 'JetBrains Mono';
-  font-style: normal;
-  font-weight: 400 700;
-  font-display: swap;
-  src: url('https://fonts.gstatic.com/s/jetbrainsmono/v18/tDbY2o-flEEny0FZhsfKu5WU4zr3E_BX0PnT8RD8yKxjPVmUsaaDhw.woff2') format('woff2');
-}
+/* Orbitron + Chakra Petch + JetBrains Mono loaded via Google Fonts <link> in Layout.astro. */
 
 /* ─── Theme Tokens — Layan palette (Layan-kde by vinceliuice) ───
    bg: rgb(33,35,41)..rgb(68,69,75)  -- cool dark greys
@@ -246,16 +230,36 @@ html {
   scroll-behavior: smooth;
 }
 
-/* ── High-res readability ──
-   Everything is sized in rem (text, spacing, card widths), so bumping the
-   root font-size scales the WHOLE site up proportionally on big monitors:
-   cards, info boxes, button labels, padding, the lot. Driven by viewport
-   width (the practical proxy for monitor resolution). */
-@media (min-width: 2560px) {   /* 1440p / QHD and up */
-  html { font-size: 18px; }
+/* ── High-res behavior ──
+   Pin root font to 16px past the design max so rem-based sizes stop growing
+   on wide/high-DPI monitors. Body is capped tight (1280px) so 4K/5K monitors
+   stop stretching the UI edge-to-edge and content/boxes/pills stay sensible. */
+html { font-size: 16px; }
+@media (min-width: 1281px) {
+  html { font-size: 16px; }
+  body { max-width: 1280px; margin-inline: auto; }
 }
-@media (min-width: 3840px) {   /* 4K / UHD and up */
-  html { font-size: 22px; }
+/* Embedded media: cap width so carousels + YouTube embeds stay sensible on wide
+   monitors even when their parent container is wider. */
+iframe, embed, object, video {
+  max-width: 100%;
+  display: block;
+}
+@media (min-width: 1281px) {
+  iframe, embed, object, video,
+  .screenshot-window,
+  .yt-lite,
+  #carousel,
+  .cf-coverflow,
+  .cf-stage {
+    max-width: 1100px;
+    margin-inline: auto;
+  }
+  /* Gear page: stop hardware GlassCards from stretching full width on 4K. */
+  .classified {
+    max-width: 1100px;
+    margin-inline: auto;
+  }
 }
 
 body {
