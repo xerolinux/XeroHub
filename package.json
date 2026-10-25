@@ -24,7 +24,7 @@
   },
   "overrides": {
     "fast-xml-parser": "5.7.0",
-    "vite": "^8.0.0",
+    "vite": "^8.1.6",
     "esbuild": "^0.28.1",
     "@grpc/grpc-js": "^1.13.6"
   },
