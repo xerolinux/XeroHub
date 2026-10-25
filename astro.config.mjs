@@ -15,7 +15,7 @@ export default defineConfig({
   vite: {
     plugins: [tailwindcss()],
     build: {
-      cssMinify: 'esbuild',
+      cssMinify: 'lightningcss',
     },
     server: {
       allowedHosts: ['healthy-bath-isle-fioricet.trycloudflare.com'],
