@@ -78,7 +78,7 @@ button{font:inherit;cursor:pointer}
 .wcard{display:flex;flex-wrap:wrap;justify-content:center;gap:max(14px, 1.6cqw);align-items:center}
 .qr{width:max(130px, 21cqh);height:max(130px, 21cqh);border-radius:12px;background:#ffffff;padding:8px;box-sizing:border-box;flex:none;image-rendering:pixelated}
 .addr{font-family:'JetBrains Mono',monospace;font-size:.86em;word-break:break-all;padding:10px 12px;border-radius:10px}
-.dtop{display:grid;grid-template-columns:minmax(0,6fr) minmax(0,4fr);grid-template-rows:minmax(0,1fr);align-items:safe center;flex:1 0 auto}
+.dtop{display:grid;grid-template-columns:minmax(0,6fr) minmax(0,4fr);grid-template-rows:minmax(0,1fr);align-items:safe center;flex:1 1 auto;min-height:0}
 .dcell{min-width:0;min-height:0;height:100%;display:flex;align-items:center;justify-content:center}
 .dshot{display:block;max-width:100%;max-height:100%;width:auto;height:auto;margin:0 auto;border-radius:12px;box-shadow:0 10px 28px rgba(0,0,0,0.5)}
 .dock{flex:none;align-self:center;display:flex;align-items:flex-end;gap:max(8px,1cqw);padding:10px 16px;border-radius:18px;max-width:100%;box-sizing:border-box}
@@ -132,7 +132,6 @@ button{font:inherit;cursor:pointer}
 .c-xero .pri,.c-xero .navdl{background:linear-gradient(135deg,var(--b1),var(--b2)) !important;box-shadow:0 6px 22px var(--halo)}
 .fade{transition:opacity 2.6s ease-in-out}
 .buy{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);align-content:safe center;flex:1 0 auto}
-.feats.two{grid-template-columns:repeat(2,minmax(0,1fr));column-gap:18px}
 .edrow{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
 .disc.mini{width:max(36px,4.4cqh);height:max(36px,4.4cqh)}
 .accback{padding-left:12px !important;background:rgba(255,255,255,.07);border:1px solid var(--accentL);transition:background .15s,border-color .15s}.accback:hover,.accback:focus-visible{background:var(--soft);border-color:var(--text)}
@@ -220,7 +219,7 @@ section:has(>.term:not([hidden]))>:not(.term):not([data-winbar]):not(.ring){visi
   .c-xero .orb{animation:none}
   .termbtn,.term{display:none !important}
   .clgrid{grid-template-columns:minmax(0,1fr)}
-  .buy,.edrow,.feats.two{grid-template-columns:minmax(0,1fr)}
+  .buy,.edrow{grid-template-columns:minmax(0,1fr)}
   .root{height:auto;min-height:100vh;min-height:100dvh;overflow:visible;place-items:start stretch}
   .root{padding:12px 16px}
   .frame{display:block;position:relative !important;left:0 !important;top:0 !important;width:100% !important;height:auto !important;transform:none !important}

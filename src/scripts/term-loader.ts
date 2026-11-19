@@ -12,14 +12,9 @@ async function boot() {
   return m;
 }
 
-const wasOpen = () => {
-  try { return JSON.parse(sessionStorage.getItem('xero-term') ?? 'null')?.open === true; } catch { return false; }
-};
-
 document.addEventListener('astro:page-load', () => {
   bound = false;
   if (window.matchMedia(MOBILE).matches) return;
-  if (wasOpen()) void boot();
   document.querySelector('[data-term-open]')?.addEventListener('click', async () => (await boot()).toggleTerminal());
 });
 

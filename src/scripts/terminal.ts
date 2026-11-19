@@ -87,13 +87,13 @@ const HELP: [string, [string, string][]][] = [
 const strip = (s: string) => s.replace(/<[^>]+>/g, '');
 const fmt = (n: number) => n.toLocaleString('en-US');
 
-interface State { open: boolean; lines: Line[]; hist: string[]; vim: boolean; inst?: string[] }
+interface State { lines: Line[]; hist: string[]; vim: boolean; inst?: string[] }
 function load(): State {
   try {
     const s = JSON.parse(sessionStorage.getItem(KEY) ?? 'null') as State | null;
     if (s) return s;
   } catch { /* storage blocked */ }
-  return { open: false, lines: [], hist: [], vim: false };
+  return { lines: [], hist: [], vim: false };
 }
 
 let state = load();
@@ -928,7 +928,7 @@ function exec(e: Term, line: string, root = false): 'stop' | void {
     case 'cd': {
       const target = (args[0] ?? '~').replace(/^~\/?/, '').replace(/^\.\.?\/?$/, '').replace(/\/$/, '');
       if (!(target in PAGES)) { print(`cd: no such file or directory: ${args[0]}`, 'terr'); break; }
-      save();
+      close(e);
       navigate(PAGES[target]);
       return 'stop';
     }
@@ -1048,7 +1048,6 @@ function open(e: NonNullable<ReturnType<typeof els>>) {
   e.term.style.setProperty('--tbh', `${bar?.offsetHeight ?? 0}px`);
   e.term.hidden = false;
   if (!state.lines.length) print(['XeroLinux xsh 1.0. Type "help" to get started.', '']);
-  state.open = true;
   paint(e);
   clearInterval(clockTimer);
   clockTimer = window.setInterval(() => stamp(e.prompt), 1000);
@@ -1059,7 +1058,6 @@ function open(e: NonNullable<ReturnType<typeof els>>) {
 function close(e: NonNullable<ReturnType<typeof els>>) {
   saverStop?.();
   clearInterval(clockTimer);
-  state.open = false;
   e.term.hidden = true;
   save();
   e.btn?.focus();
@@ -1102,7 +1100,6 @@ export function initTerminal() {
     }
   });
 
-  if (state.open) open(e);
 }
 
 export function toggleTerminal() {
