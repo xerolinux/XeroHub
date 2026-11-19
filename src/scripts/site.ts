@@ -4,6 +4,9 @@ import { STACKED } from './layout';
 
 const DESIGN_W = 1920;
 const DESIGN_H = 950;
+// Smallest canvas every page fits without scrolling; shorter or narrower windows shrink it to fit.
+const MIN_W = 1400;
+const MIN_H = 880;
 const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
 function fit() {
@@ -11,12 +14,16 @@ function fit() {
   if (!frame) return;
   const w = window.innerWidth;
   const h = window.innerHeight;
-  if (w > DESIGN_W && !window.matchMedia(STACKED).matches) {
+  const big = w > DESIGN_W;
+  const scale = big ? Math.min(w / DESIGN_W, h / DESIGN_H) : Math.min(w / MIN_W, h / MIN_H);
+  if (!window.matchMedia(STACKED).matches && (big || scale < 1)) {
     frame.classList.add('scaled');
-    frame.style.transform = `translate(-50%, -50%) scale(${Math.min(w / DESIGN_W, h / DESIGN_H)})`;
+    frame.style.width = `${big ? DESIGN_W : w / scale}px`;
+    frame.style.height = `${big ? DESIGN_H : h / scale}px`;
+    frame.style.transform = `translate(-50%, -50%) scale(${scale})`;
   } else {
     frame.classList.remove('scaled');
-    frame.style.transform = '';
+    frame.style.width = frame.style.height = frame.style.transform = '';
   }
 }
 window.addEventListener('resize', fit);
