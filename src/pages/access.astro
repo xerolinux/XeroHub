@@ -65,7 +65,7 @@ const btn = 'min-height: 46px; display: inline-flex; align-items: center; justif
               <div style="text-align: right;"><div class="big" data-f="total" style="font-size: 1.4em; color: var(--accentL);"></div><div class="kick" style="margin-top: 4px; font-size: .68em;">all-time</div></div>
             </div>
             <div class="chips"><span class="chip" data-f="date" style="background: var(--glass);"></span><span class="chip" style="background: var(--glass);">x86_64</span><span class="chip" data-f="size" style="background: var(--glass);"></span><span class="chip" style="background: var(--glass);">ISO</span></div>
-            <div style="margin-top: max(8px, 1.5cqh); display: flex; gap: 10px; flex-wrap: nowrap; white-space: nowrap;">
+            <div data-btnrow style="margin-top: max(8px, 1.5cqh); display: flex; gap: 10px; flex-wrap: wrap;">
               <button type="button" data-get={e.id} style={btn + ' flex: 1 1 auto; min-height: 48px; border: 0; font-size: 1.05em; background: var(--accent); color: #ffffff;'}><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"></path><path d="m7 10 5 5 5-5"></path><path d="M5 21h14"></path></svg>Download · <span data-f="size"></span></button>
               <button type="button" data-pop-open aria-expanded="false" style={btn + ' min-height: 48px; border: 1px solid var(--line); background: transparent; color: var(--text);'}>Verify checksums</button>
             </div>

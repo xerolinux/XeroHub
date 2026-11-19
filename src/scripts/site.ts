@@ -1,5 +1,6 @@
 import { navigate } from 'astro:transitions/client';
 import { FREE_DEFAULT, SETTINGS_URL } from '../config';
+import { STACKED } from './layout';
 
 const DESIGN_W = 1920;
 const DESIGN_H = 950;
@@ -10,7 +11,7 @@ function fit() {
   if (!frame) return;
   const w = window.innerWidth;
   const h = window.innerHeight;
-  if (w > DESIGN_W && h > 600) {
+  if (w > DESIGN_W && !window.matchMedia(STACKED).matches) {
     frame.classList.add('scaled');
     frame.style.transform = `translate(-50%, -50%) scale(${Math.min(w / DESIGN_W, h / DESIGN_H)})`;
   } else {

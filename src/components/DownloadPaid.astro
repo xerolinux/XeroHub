@@ -63,7 +63,7 @@ const btn = 'min-height: 46px; display: inline-flex; align-items: center; justif
           </div>
         ))}
       </div>
-      <div style="margin-top: auto; display: flex; gap: 10px; flex-wrap: nowrap;">
+      <div data-btnrow style="margin-top: auto; display: flex; gap: 10px; flex-wrap: wrap;">
         <a data-sale="off" href={KOFI_ISO_URL} target="_blank" rel="noopener noreferrer" class="pri" style={btn + ' flex: 1 1 auto; background: var(--accent); color: #ffffff;'}>Get it on Ko-fi</a>
         <a data-sale="on" hidden href={SALE.kofiUrl} target="_blank" rel="noopener noreferrer" class="pri" style={btn + ' flex: 1 1 auto; background: var(--accent); color: #ffffff;'}>{SALE.label} on Ko-fi</a>
         <a href="/support/" style={btn + ' border: 1px solid var(--line); color: var(--text);'}>Pay with crypto</a>
@@ -82,7 +82,7 @@ const btn = 'min-height: 46px; display: inline-flex; align-items: center; justif
       <ul class="feats" style="font-size: .92em;">
         {tuiFeatures.map((f) => <li style="display: flex; gap: 8px;"><span style="color: var(--accentL);">▸</span><span>{f}</span></li>)}
       </ul>
-      <div style="margin-top: auto; display: flex; gap: 10px; flex-wrap: nowrap;">
+      <div data-btnrow style="margin-top: auto; display: flex; gap: 10px; flex-wrap: wrap;">
         <a href="https://wiki.xerolinux.xyz/xero-install/" target="_blank" rel="noopener noreferrer" style={btn + ' flex: 1 1 auto; border: 1px solid var(--line); color: var(--text);'}>Read the guide</a>
         <a href="https://github.com/xerolinux/XeroHub/tree/main/public/script/xero-install" target="_blank" rel="noopener noreferrer" style={btn + ' border: 1px solid var(--line); color: var(--text);'}>GitHub</a>
       </div>

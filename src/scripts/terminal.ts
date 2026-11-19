@@ -1,3 +1,4 @@
+import { STACKED as MOBILE } from './layout';
 import { navigate } from 'astro:transitions/client';
 
 interface TermData {
@@ -8,7 +9,6 @@ interface TermData {
 interface Line { t: string; c?: string; kind?: 'fetch' | 'help' | 'cmd'; p?: string; at?: number }
 
 const KEY = 'xero-term';
-const MOBILE = '(max-width: 960px), (max-height: 600px)';
 const PAGES: Record<string, string> = { '': '/', about: '/about/', gear: '/gear/', tools: '/tools/', support: '/support/', download: '/download/' };
 const FORTUNES = [
   'Your desktop, your rules, we just provide the toolkit.',

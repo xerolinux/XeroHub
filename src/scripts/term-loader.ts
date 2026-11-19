@@ -1,5 +1,5 @@
 // The terminal is a desktop-only easter egg, so its code loads on first use instead of with every page.
-const MOBILE = '(max-width: 960px), (max-height: 600px)';
+import { STACKED as MOBILE } from './layout';
 let mod: Promise<typeof import('./terminal')> | undefined;
 let bound = false;
 

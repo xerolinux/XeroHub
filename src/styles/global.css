@@ -26,7 +26,7 @@ button{font:inherit;cursor:pointer}
 .hdr{display:flex;flex-wrap:wrap;gap:12px 24px;align-items:center;justify-content:space-between}
 .nav{display:flex;align-items:center;gap:6px}
 .nav button,.nav a{min-height:44px;display:inline-flex;align-items:center;gap:8px;padding:0 16px;border-radius:10px;text-decoration:none}
-.ctas{display:flex;flex-wrap:nowrap;gap:10px;align-items:center}
+.ctas{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
 .ctas a,.ctas button{white-space:nowrap;gap:8px;min-height:44px;display:inline-flex;align-items:center;justify-content:center;box-sizing:border-box;text-decoration:none}
 .dlhead{display:flex;flex-wrap:wrap;gap:12px 32px;align-items:flex-end;justify-content:space-between}
 .dlg{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));align-content:center;align-items:start;flex:1 1 auto;min-height:0}
@@ -159,7 +159,8 @@ button{font:inherit;cursor:pointer}
 .kgfoot{font-family:'JetBrains Mono',monospace;font-size:max(12px,1.35cqh)}
 .kgfoot b{color:#5fd38a}
 @media (max-height:760px) and (min-width:961px){.kgoal{gap:3px;padding:8px 12px}.kgbar{height:8px}}
-@media (max-height:730px) and (min-width:961px){.main>section .slg{display:none}}
+@media (max-height:730px) and (min-width:961px),(min-width:961px) and (max-aspect-ratio:3/2) and (min-aspect-ratio:111/100){.main>section .slg{display:none}}
+@media (min-width:961px) and (max-width:1199px){.ghl{display:none}}
 .kgcta{display:inline-flex;align-items:center;gap:4px;color:var(--text)}
 .mode{display:contents}
 [data-free="true"] [data-mode="paid"],[data-free="false"] [data-mode="free"]{display:none !important}
@@ -213,7 +214,10 @@ a.seg.s3:hover,a.seg.s3:focus-visible{background:#e07aa8;color:#06070b}
 .tmatrix{position:absolute;inset:0;width:100%;height:100%;border-radius:inherit;will-change:transform}
 .term.saver>:not(.tmatrix){visibility:hidden}
 section:has(>.term:not([hidden]))>:not(.term):not([data-winbar]):not(.ring){visibility:hidden}
-@media (max-width:960px),(max-height:600px){
+@media (max-width:960px),(max-height:600px),(max-aspect-ratio:11/10){
+  .hdr,.main,.main>section,.ftr{min-width:0}
+  .nav{width:100%;min-width:0;gap:0;justify-content:space-between;overflow-x:auto;scrollbar-width:none}
+  .nav button,.nav a{padding:0 9px;gap:6px}
   :root{--blur:blur(10px) saturate(140%)}
   .c-xero .orb{animation:none}
   .termbtn,.term{display:none !important}
@@ -253,6 +257,8 @@ section:has(>.term:not([hidden]))>:not(.term):not([data-winbar]):not(.ring){visi
   .ctas .pri{flex:0 0 auto}
   .ctas{gap:6px}
   .ghl{display:none}
+  [data-btnrow]>*{flex:1 1 auto}
+
   .ctas a,.ctas button{padding-left:9px !important;padding-right:9px !important;font-size:14px !important;gap:6px}
   .slg{grid-template-columns:minmax(0,1fr)}
   .cap{display:none}
