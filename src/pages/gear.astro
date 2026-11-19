@@ -1,158 +1,99 @@
 ---
-import { getEntry } from 'astro:content';
-import Layout from '../components/layout/Layout.astro';
-import GlassCard from '../components/ui/GlassCard.astro';
-import PageViews from '../components/ui/PageViews.astro';
-import { inlineMarkdown } from '../lib/inline-markdown';
-const base = import.meta.env.BASE_URL.replace(/\/$/, '');
-const pageId = Astro.url.pathname.replace(/^\//, '').replace(/\/$/, '').replace(/\//g, '-') || 'home';
-
-const entry = await getEntry('pages', 'gear');
-const { info, hardwareIntro, hardware, otherHardware, thanks } = entry.data;
+import Shell from '../layouts/Shell.astro';
 ---
 
-<Layout title={entry.data.title} description={entry.data.description}>
-  <section class="pt-44 sm:pt-52 pb-4 sm:pb-6 px-4 sm:px-6 lg:px-8">
-    <div class="mx-auto max-w-4xl 2xl:max-w-[80rem]">
-      <!-- Header -->
-      <div class="fade-in text-center mb-3">
-        <div class="news-kicker mb-2">// The Inventory</div>
-        <h1 class="display-heading text-4xl sm:text-6xl text-[var(--color-text-primary)] leading-none">
-          My <em class="italic text-[var(--color-accent)]">Gear</em>
-        </h1>
-      </div>
-      <div class="fade-in flex justify-center mb-12">
-        <PageViews pageId={pageId} />
-      </div>
-
-      <div class="fade-in fade-in-delay-1 space-y-8">
-        <!-- Information -->
-        <GlassCard padding="p-4 sm:p-6 lg:p-8" class="classified">
-          <div class="flex items-center gap-3 mb-4">
-            <span class="font-mono text-[0.6rem] uppercase tracking-[0.2em] text-[var(--color-accent)]">// Information</span>
-            <div class="flex-1 h-px bg-[var(--color-border)]"></div>
+<Shell title="Gear" description="The hardware DarkXero uses to build and test XeroLinux." current="/gear/" label="Gear" winTitle="~/gear" winSub="ls /dev/hardware">
+        <div class="pane" data-tabs style="padding: max(14px, 2.4cqh) max(18px, 2cqw); gap: max(10px, 1.8cqh); font-size: max(13px, 1.45cqh); color: var(--text2);">
+          <div style="flex: none;">
+            <div class="kick" style="color: var(--accentL);">// The Setup</div>
+            <h2 style="margin: 6px 0 0; font-family: 'Chakra Petch', sans-serif; font-size: 2em; line-height: 1; color: var(--text);">My Gear</h2>
           </div>
-          {info!.map((paragraph, i) => (
-            <p class:list={["prose-inline text-[var(--color-text-secondary)]", { "mt-3": i > 0 }]} set:html={inlineMarkdown(paragraph)} />
-          ))}
-        </GlassCard>
-
-        <!-- Section 1: Current Gear -->
-        <div>
-          <div class="fade-in flex items-center gap-4 mb-5">
-            <h2 class="display-heading text-2xl sm:text-3xl text-[var(--color-text-primary)] leading-none whitespace-nowrap">Current <em class="italic text-[var(--color-accent)]">Gear</em></h2>
-            <div class="news-line"></div>
-            <span class="news-kicker shrink-0">// Plate I</span>
+          <div class="gintro" style="flex: none; font-size: .94em;">
+            <p>Some people call me an <strong style="color: var(--text);">Arch</strong> &amp; <strong style="color: var(--text);">KDE Plasma</strong> shill, and I don't see the problem with that. I use what works for me, and <strong style="color: var(--text);">Arch</strong> has been great. Sure, there are issues, but none have been deal-breakers for my use case. I've tried other distros, but <strong style="color: var(--text);">Arch</strong> is the one I can easily adapt to and fix when problems arise. Just wanted to cover these facts before moving on with the Hardware &amp; Software I use...</p>
+            <p>Between here and back home in <strong style="color: var(--text);">Lebanon</strong>, I run 2 Desktops (one of which is an HTPC back home), 2 Laptops, a Mini PC, a Steam Deck, and a Raspberry Pi. Details on each below.</p>
           </div>
-          <p class="fade-in prose-inline text-[var(--color-text-secondary)] mb-8" set:html={inlineMarkdown(hardwareIntro!)} />
-        </div>
-
-        {hardware!.map(item => (
-          <div class="fade-in">
-            <GlassCard padding="p-0" class="overflow-hidden classified">
-              <img src={`${base}/${item.image}`} alt={item.name} width="1280" height="720" class="w-full" loading="lazy" decoding="async" />
-              <div class="p-6">
-                <p class="font-mono text-[0.58rem] uppercase tracking-[0.2em] text-[var(--color-accent)] mb-2">// {item.subtitle}</p>
-                <h3 class="display-heading text-2xl text-[var(--color-text-primary)] leading-none mb-3">{item.name}</h3>
-                <div class="news-hr mb-4"></div>
-                {item.description.split('\n\n').length > 1 ? (
-                  <div class="mt-3 space-y-4">
-                    {item.description.split('\n\n').map((para, i) => (
-                      <>
-                        {i > 0 && (
-                          <div class="gear-marquee-wrap -mx-6 overflow-hidden py-1.5" aria-hidden="true">
-                            <div class="gear-marquee flex gap-4 sm:gap-8 whitespace-nowrap font-mono text-[10px] text-[var(--color-accent)]/60 tracking-widest w-max">
-                              {Array.from({length: 4}).map(() => (
-                                <span>0xA3F2 // CPU_LOAD: 12% // MEM: 4096MB // ARCH: x86_64 // NET: ETH0 // PKT: 0xFFD3 // KERNEL: 6.12.1 // UPTIME: 99.9% // DISK: /dev/nvme0 // IRQ: 0x0F //&nbsp;</span>
-                              ))}
-                            </div>
-                          </div>
-                        )}
-                        <div class="flex gap-3 items-start">
-                          <span class="shrink-0 w-2.5 h-2.5 rounded-full bg-[var(--color-accent)] shadow-[0_0_7px_var(--color-accent)] mt-1.5"></span>
-                          <p class="prose-inline text-[var(--color-text-secondary)] text-sm" set:html={inlineMarkdown(para)} />
-                        </div>
-                      </>
-                    ))}
-                  </div>
-                ) : (
-                  <p class="prose-inline text-[var(--color-text-secondary)] text-sm" set:html={inlineMarkdown(item.description)} />
-                )}
+          <div class="gtabs" style="flex: none;">
+              <button type="button" class="gt" data-tab="0" aria-pressed="true" style="color: var(--text);">
+                <img src="/media/XeroMain.webp" alt="">
+                <span style="display: flex; flex-direction: column; min-width: 0;"><span style="font-weight: 600; font-size: .92em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">StationXero</span><span style="font-size: .76em; color: var(--text2); white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Main Rig</span></span>
+              </button>
+              <button type="button" class="gt" data-tab="1" aria-pressed="false" style="color: var(--text);">
+                <img src="/media/XeroMini.webp" alt="">
+                <span style="display: flex; flex-direction: column; min-width: 0;"><span style="font-weight: 600; font-size: .92em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">XeroMini</span><span style="font-size: .76em; color: var(--text2); white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Mini Workstation</span></span>
+              </button>
+              <button type="button" class="gt" data-tab="2" aria-pressed="false" style="color: var(--text);">
+                <img src="/media/XeroCosmic.webp" alt="">
+                <span style="display: flex; flex-direction: column; min-width: 0;"><span style="font-weight: 600; font-size: .92em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Thinkpad T14</span><span style="font-size: .76em; color: var(--text2); white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Laptop</span></span>
+              </button>
+              <button type="button" class="gt" data-tab="3" aria-pressed="false" style="color: var(--text);">
+                <img src="/media/HTPC.webp" alt="">
+                <span style="display: flex; flex-direction: column; min-width: 0;"><span style="font-weight: 600; font-size: .92em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">The HTPC</span><span style="font-size: .76em; color: var(--text2); white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Media Server</span></span>
+              </button>
+              <button type="button" class="gt" data-tab="4" aria-pressed="false" style="color: var(--text);">
+                <img src="/media/Deck.webp" alt="">
+                <span style="display: flex; flex-direction: column; min-width: 0;"><span style="font-weight: 600; font-size: .92em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Other Devices</span><span style="font-size: .76em; color: var(--text2); white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Deck, XPS, Pi</span></span>
+              </button>
+          </div>
+          <div class="gwrap">
+            <div class="gp" data-pane="0">
+              <div class="gdet" style="gap: max(14px, 1.8cqw);">
+                <img class="gimg" src="/media/XeroMain.webp" alt="StationXero desktop">
+                <div class="gtxt">
+                  <h3 style="margin: 0; font-family: 'Chakra Petch', sans-serif; font-size: 1.6em; color: var(--text);">StationXero</h3>
+                  <div class="kick" style="margin: 4px 0 12px; color: var(--accentL);">The Beast · Main Rig</div>
+                  <div class="chips" style="margin-bottom: 14px;"><span class="chip" style="background: var(--soft);"><b style="color: var(--accentL);">GPU</b>RX 7800XT</span><span class="chip" style="background: var(--soft);"><b style="color: var(--accentL);">CPU</b>Ryzen 9 5950X</span><span class="chip" style="background: var(--soft);"><b style="color: var(--accentL);">RAM</b>32GB DDR4</span></div>
+                  <p>Main rig, the one I do all my <em>Development</em>, <em>Gaming</em> and other things on. It has an <code>RX 7800XT</code> and a <code>Ryzen 9 5950X</code> with a whopping <code>32GB DDR4@3200Mt/s</code> RAM. I think this machine still has a few years of reliable service left in it in this economy.</p>
+                </div>
               </div>
-            </GlassCard>
-          </div>
-        ))}
-
-        <!-- Section 2: Other (Lebanon) -->
-        <div>
-          <div class="fade-in flex items-center gap-4 mb-2">
-            <h2 class="display-heading text-2xl sm:text-3xl text-[var(--color-text-primary)] leading-none whitespace-nowrap"><em class="italic text-[var(--color-accent)]">Lebanon</em></h2>
-            <div class="news-line"></div>
-            <span class="news-kicker shrink-0">// Plate II</span>
-          </div>
-        </div>
-
-        {otherHardware!.map(item => (
-          <div class="fade-in">
-            <GlassCard padding="p-0" class="overflow-hidden classified">
-              <img src={`${base}/${item.image}`} alt={item.name} width="1280" height="720" class="w-full" loading="lazy" decoding="async" />
-              <div class="p-6">
-                <p class="font-mono text-[0.58rem] uppercase tracking-[0.2em] text-[var(--color-accent)] mb-2">// {item.subtitle}</p>
-                <h3 class="display-heading text-2xl text-[var(--color-text-primary)] leading-none mb-3">{item.name}</h3>
-                <div class="news-hr mb-4"></div>
-                {item.description.split('\n\n').length > 1 ? (
-                  <div class="mt-3 space-y-4">
-                    {item.description.split('\n\n').map((para, i) => (
-                      <>
-                        {i > 0 && (
-                          <div class="gear-marquee-wrap -mx-6 overflow-hidden py-1.5" aria-hidden="true">
-                            <div class="gear-marquee flex gap-4 sm:gap-8 whitespace-nowrap font-mono text-[10px] text-[var(--color-accent)]/60 tracking-widest w-max">
-                              {Array.from({length: 4}).map(() => (
-                                <span>0xA3F2 // CPU_LOAD: 12% // MEM: 4096MB // ARCH: x86_64 // NET: ETH0 // PKT: 0xFFD3 // KERNEL: 6.12.1 // UPTIME: 99.9% // DISK: /dev/nvme0 // IRQ: 0x0F //&nbsp;</span>
-                              ))}
-                            </div>
-                          </div>
-                        )}
-                        <div class="flex gap-3 items-start">
-                          <span class="shrink-0 w-2.5 h-2.5 rounded-full bg-[var(--color-accent)] shadow-[0_0_7px_var(--color-accent)] mt-1.5"></span>
-                          <p class="prose-inline text-[var(--color-text-secondary)] text-sm" set:html={inlineMarkdown(para)} />
-                        </div>
-                      </>
-                    ))}
-                  </div>
-                ) : (
-                  <p class="prose-inline text-[var(--color-text-secondary)] text-sm" set:html={inlineMarkdown(item.description)} />
-                )}
-              </div>
-            </GlassCard>
-          </div>
-        ))}
-
-<!-- Thanks -->
-        <div class="fade-in">
-          <GlassCard class="classified">
-            <div class="flex items-center gap-3 mb-3">
-              <span class="font-mono text-[0.6rem] uppercase tracking-[0.2em] text-[var(--color-accent)]">// Thanks for reading</span>
-              <div class="flex-1 h-px bg-[var(--color-border)]"></div>
             </div>
-            <p class="prose-inline text-[var(--color-text-secondary)] text-sm" set:html={inlineMarkdown(thanks!)} />
-          </GlassCard>
+            <div class="gp" data-pane="1" hidden>
+              <div class="gdet" style="gap: max(14px, 1.8cqw);">
+                <img class="gimg" loading="lazy" decoding="async" src="/media/XeroMini.webp" alt="XeroMini PC">
+                <div class="gtxt">
+                  <h3 style="margin: 0; font-family: 'Chakra Petch', sans-serif; font-size: 1.6em; color: var(--text);">XeroMini</h3>
+                  <div class="kick" style="margin: 4px 0 12px; color: var(--accentL);">Mini Workstation</div>
+                  <div class="chips" style="margin-bottom: 14px;"><span class="chip" style="background: var(--soft);"><b style="color: var(--accentL);">CPU</b>Ryzen 5 7530U</span><span class="chip" style="background: var(--soft);"><b style="color: var(--accentL);">RAM</b>32GB</span></div>
+                  <p>This is my awesome Mini PC. It has <code>32GB RAM</code> after upgrade, with a <code>Ryzen 5 7530U</code>. That thing is not showing any signs of slowing down. It's a great little machine. It is my portable <strong style="color: var(--text);">XeroLinux</strong> project system, where I store all my files and I use it when I travel to work on the project.</p>
+                </div>
+              </div>
+            </div>
+            <div class="gp" data-pane="2" hidden>
+              <div class="gdet" style="gap: max(14px, 1.8cqw);">
+                <img class="gimg" loading="lazy" decoding="async" src="/media/XeroCosmic.webp" alt="Lenovo Thinkpad T14 Gen 1">
+                <div class="gtxt">
+                  <h3 style="margin: 0; font-family: 'Chakra Petch', sans-serif; font-size: 1.6em; color: var(--text);">Lenovo Thinkpad T14 Gen 1</h3>
+                  <div class="kick" style="margin: 4px 0 12px; color: var(--accentL);">Laptop</div>
+                  <div class="chips" style="margin-bottom: 14px;"><span class="chip" style="background: var(--soft);"><b style="color: var(--accentL);">CPU</b>Ryzen 5 PRO 4650U</span><span class="chip" style="background: var(--soft);"><b style="color: var(--accentL);">RAM</b>16GB</span><span class="chip" style="background: var(--soft);"><b style="color: var(--accentL);">SSD</b>1TB NVMe</span></div>
+                  <p>Used in the office, with <code>1Tb nVme</code>, a <code>Ryzen 5 PRO 4650U</code>, <code>16Gb RAM</code> and an iGPU. I mainly use this thing for testing <strong style="color: var(--text);">Cosmic Epoch</strong>. I love this D.E behind KDE, I think the devs are on to something great. It will never see <strong style="color: var(--text);">Windows</strong> mark my words. It's the most <strong style="color: var(--text);">Linux</strong> friendly laptop on the market today...</p>
+                </div>
+              </div>
+            </div>
+            <div class="gp" data-pane="3" hidden>
+              <div class="gdet" style="gap: max(14px, 1.8cqw);">
+                <img class="gimg" loading="lazy" decoding="async" src="/media/HTPC.webp" alt="The HTPC">
+                <div class="gtxt">
+                  <h3 style="margin: 0; font-family: 'Chakra Petch', sans-serif; font-size: 1.6em; color: var(--text);">The HTPC</h3>
+                  <div class="kick" style="margin: 4px 0 12px; color: var(--accentL);">Media Server</div>
+                  <div class="chips" style="margin-bottom: 14px;"><span class="chip" style="background: var(--soft);"><b style="color: var(--accentL);">CPU</b>Core i7 6800K</span><span class="chip" style="background: var(--soft);"><b style="color: var(--accentL);">GPU</b>GTX 1080</span><span class="chip" style="background: var(--soft);"><b style="color: var(--accentL);">RAM</b>16GB</span><span class="chip" style="background: var(--soft);"><b style="color: var(--accentL);">Storage</b>~68TB</span></div>
+                  <p>Has a <code>Core-i7 6800K</code>, with a <code>GTX 1080</code> GPU, and <code>16GB RAM</code>. Being my HTPC, it has 14 Drives of various sizes totalling <code>~68TB</code> of storage. The only app installed on that thing is <a href="https://jellyfin.org" target="_blank" rel="noopener noreferrer" style="color: var(--accentL);">Jellyfin</a> as a <em>Flatpak</em>. It's currently running <strong style="color: var(--text);">XeroLinux</strong>.</p>
+                </div>
+              </div>
+            </div>
+            <div class="gp" data-pane="4" hidden>
+              <div class="gdet" style="gap: max(14px, 1.8cqw);">
+                <img class="gimg" loading="lazy" decoding="async" src="/media/Deck.webp" alt="Steam Deck">
+                <div class="gtxt">
+                  <h3 style="margin: 0; font-family: 'Chakra Petch', sans-serif; font-size: 1.6em; color: var(--text);">Other Random Devices</h3>
+                  <div class="kick" style="margin: 4px 0 12px; color: var(--accentL);">Portable Workstation &amp; More</div>
+                  <div class="chips" style="margin-bottom: 14px;"><span class="chip" style="background: var(--soft);">Steam Deck</span><span class="chip" style="background: var(--soft);">Dell XPS 13</span><span class="chip" style="background: var(--soft);">Raspberry Pi 4</span></div>
+                  <p>A <strong style="color: var(--text);">Steam Deck</strong> which used to be my retro gaming console, but repurposed as portable Workstation with <strong style="color: var(--text);">XeroLinux</strong> installed on it. It's the perfect little compact on the go tool that just sits there quietly doing its thing.</p>
+                  <p>And last but not least, an old-ass <strong style="color: var(--text);">Dell-XPS</strong>, 13' Capacitive 4K Touch screen, with an <code>Intel Core i7 7600</code> and <code>16GB RAM</code>. That thing sits around, maybe try a few Distros on it every now and then.</p>
+                  <p>And as an honorable mention, a <strong style="color: var(--text);">Raspberry Pi 4</strong> <code>4GB</code> that is gathering dust as with many of my other unused devices. Maybe one day will find a good use for it lol.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <p style="flex: none; margin: 0; padding-top: max(8px, 1.2cqh); border-top: 1px solid var(--line); font-size: .88em;">That's it folks. Now you have a better idea of what equipment I use on a daily basis to bring you everything I do. I did not list all the softwares I use coz it's a long list that varies a lot. Thanks for reading.</p>
         </div>
-      </div>
-    </div>
-  </section>
-</Layout>
-
-<style>
-  .gear-marquee-wrap {
-    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 12%, black 88%, transparent 100%);
-    mask-image: linear-gradient(to right, transparent 0%, black 12%, black 88%, transparent 100%);
-  }
-  .gear-marquee {
-    animation: gear-scroll 18s linear infinite;
-  }
-  @keyframes gear-scroll {
-    0%   { transform: translateX(0); }
-    100% { transform: translateX(-50%); }
-  }
-</style>
+      
+</Shell>

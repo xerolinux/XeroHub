@@ -1,0 +1,768 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>XeroLinux, Frosted One Screen</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@600;700&amp;family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap">
+<style>
+body{margin:0}
+a{color:inherit}a:hover{opacity:.85}
+button{font:inherit;cursor:pointer}
+.root{height:100vh;height:100dvh;overflow:hidden;display:grid;place-items:center}
+.frame{z-index:1;display:grid;place-items:center}
+.stage{position:relative;width:95.6%;height:96.4%;display:grid;grid-template-rows:auto minmax(0,1fr) auto;container-type:size}
+.main{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);min-height:0}
+.bg{position:absolute;inset:0;overflow:hidden;z-index:0}
+.hdr{display:flex;flex-wrap:wrap;gap:12px 24px;align-items:center;justify-content:space-between}
+.nav{display:flex;align-items:center;gap:6px}
+.nav button,.nav a{min-height:44px;display:inline-flex;align-items:center;gap:8px;padding:0 16px;border-radius:10px;text-decoration:none}
+.ctas{display:flex;flex-wrap:nowrap;gap:10px;align-items:center}
+.ctas a,.ctas button{white-space:nowrap;gap:8px;min-height:44px;display:inline-flex;align-items:center;justify-content:center;box-sizing:border-box;text-decoration:none}
+.dlhead{display:flex;flex-wrap:wrap;gap:12px 32px;align-items:flex-end;justify-content:space-between}
+.dlg{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));align-content:center;align-items:start;flex:1 1 auto;min-height:0}
+.ed{display:flex;flex-direction:column;box-sizing:border-box}
+.big{font-family:'Chakra Petch',sans-serif;font-weight:700;line-height:1;font-variant-numeric:tabular-nums}
+.hash{font-family:'JetBrains Mono',monospace;font-size:.78em;word-break:break-all;line-height:1.45}
+.hrow{display:flex;gap:10px;align-items:flex-start}
+.disc{position:relative;flex:none;width:max(76px, 14cqh);height:max(76px, 14cqh);border-radius:50%;animation:spin 7s linear infinite}
+.disc::after{content:'';position:absolute;inset:0;border-radius:50%;background:repeating-radial-gradient(circle,transparent 0 2px,rgba(0,0,0,0.1) 2px 3px);-webkit-mask:radial-gradient(circle,transparent 30%,#000 31%);mask:radial-gradient(circle,transparent 30%,#000 31%)}
+@keyframes spin{to{transform:rotate(360deg)}}
+.hrow button{flex:none;min-height:32px;padding:0 10px;border-radius:8px;font-size:.78em}
+.slg{display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}
+.shot{position:relative;flex:1 1 auto;min-height:0}
+.cap{margin-left:auto}
+.thumbs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr))}
+.tb{display:flex;align-items:center;gap:12px;min-height:44px;text-align:left}
+.ti{width:max(56px, 4.4cqw)}
+.pane{flex:1 1 auto;min-height:0;overflow-y:auto;scrollbar-width:thin;scrollbar-color:#5657f5 transparent;display:flex;flex-direction:column;box-sizing:border-box}
+.pane p{margin:0 0 .8em;line-height:1.6}
+.pane p:last-child{margin-bottom:0}
+.pane code{font-family:'JetBrains Mono',monospace;font-size:.86em;padding:1px 5px;border-radius:5px;background:rgba(86,87,245,0.22)}
+.kick{font-family:'JetBrains Mono',monospace;font-size:.78em;letter-spacing:.14em;text-transform:uppercase}
+.ab2{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,7fr);align-items:stretch;flex:0 0 auto}
+.pane:has(> .ab2){justify-content:safe center}
+.abcard{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;border-radius:20px;min-height:0}
+.avring{width:max(110px,17cqh);height:max(110px,17cqh);border-radius:50%;display:grid;place-items:center;flex:none}
+.facts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;width:100%}
+.fact{display:flex;flex-direction:column;gap:2px;padding:max(8px,1.1cqh) 10px;border-radius:12px;font-size:.78em}
+.fact b{font-family:'Chakra Petch',sans-serif;font-size:1.6em;line-height:1.1}
+.soc{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:8px}
+.soc a{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;min-height:max(60px,7.5cqh);padding:6px;border-radius:12px;text-decoration:none;font-size:.8em;text-align:center;transition:background .2s,transform .2s}
+.soc a:hover{transform:translateY(-2px)}
+.soc a:hover{opacity:1;background:rgba(86,87,245,0.28)}
+.soc svg{width:max(20px,2.4cqh);height:max(20px,2.4cqh);flex:none}
+.gintro{columns:2;column-gap:32px}
+.gintro p{break-inside:avoid}
+.gtabs{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:8px}
+.gt{display:flex;align-items:center;gap:10px;min-height:44px;padding:6px;border-radius:12px;text-align:left}
+.gt img{width:max(44px, 3.4cqw);aspect-ratio:4/3;object-fit:cover;border-radius:7px;flex:none}
+.gwrap{flex:1 1 auto;min-height:0;display:grid;grid-template-rows:minmax(0,1fr)}
+.gdet{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);min-height:0;height:100%}
+.gimg{width:100%;height:100%;object-fit:cover;border-radius:14px;display:block;min-height:0}
+.gtxt{min-height:0;overflow-y:auto;scrollbar-width:thin;scrollbar-color:#5657f5 transparent}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{display:inline-flex;gap:6px;padding:4px 10px;border-radius:8px;font-family:'JetBrains Mono',monospace;font-size:.76em}
+.sup{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);flex:1 1 auto;min-height:0}
+.wsel{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+.wsel button{display:flex;align-items:center;justify-content:center;gap:8px;min-height:44px;border-radius:10px;font-weight:600}
+.wcard{display:flex;gap:max(14px, 1.6cqw);align-items:center}
+.qr{width:max(130px, 21cqh);height:max(130px, 21cqh);border-radius:12px;background:#ffffff;padding:8px;box-sizing:border-box;flex:none;image-rendering:pixelated}
+.addr{font-family:'JetBrains Mono',monospace;font-size:.86em;word-break:break-all;padding:10px 12px;border-radius:10px}
+.dtop{display:grid;grid-template-columns:minmax(0,6fr) minmax(0,4fr);grid-template-rows:minmax(0,1fr);align-items:center;flex:1 1 auto;min-height:0}
+.dcell{min-width:0;min-height:0;height:100%;display:flex;align-items:center;justify-content:center}
+.dshot{display:block;max-width:100%;max-height:100%;width:auto;height:auto;margin:0 auto;border-radius:12px;box-shadow:0 10px 28px rgba(0,0,0,0.5)}
+.dock{flex:none;align-self:center;display:flex;align-items:flex-end;gap:max(8px,1cqw);padding:10px 16px;border-radius:18px;max-width:100%;box-sizing:border-box}
+.dk{flex:none;padding:0;border-radius:12px;overflow:hidden;width:max(48px,6cqh);height:max(48px,6cqh);transition:transform .2s,width .2s,height .2s}
+.dk:hover{transform:translateY(-6px)}
+.dk[aria-pressed="true"]{width:max(60px,7.6cqh);height:max(60px,7.6cqh);transform:translateY(-8px)}
+.dk img{width:100%;height:100%;object-fit:cover;object-position:top;display:block}
+.feats{display:grid;grid-template-columns:minmax(0,1fr);gap:6px;margin:0;padding:0;list-style:none}
+.cmd{display:flex;gap:8px;align-items:stretch}
+.cmd pre{flex:1;min-width:0;margin:0;padding:8px 10px;border-radius:8px;font-family:'JetBrains Mono',monospace;font-size:.8em;white-space:pre-wrap;word-break:break-all}
+.cmd button{flex:none;min-width:64px;border-radius:8px;font-size:.78em}
+.ftr{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between;align-items:center}
+.root{--o1:#5657f5;--o2:#ff80e0;--o3:#e040fb;--g1:#8a8bff;--g2:#ff80e0;--b1:#5657f5;--b2:#a23fd8;--edge:rgba(138,139,255,.35);--halo:rgba(86,87,245,.28)}
+.c-cyber{--o1:#5657f5;--o2:#5ce0ff;--o3:#2f7cff;--g1:#5ce0ff;--g2:#8a8bff;--b1:#3f40c8;--b2:#0e6fb0;--edge:rgba(92,224,255,.4);--halo:rgba(92,224,255,.22)}
+.c-terminal{--o1:#2bd05a;--o2:#5ce0ff;--o3:#1aa37a;--g1:#2bd05a;--g2:#5ce0ff;--b1:#1d8f45;--b2:#0e7a7a;--edge:rgba(43,208,90,.4);--halo:rgba(43,208,90,.2)}
+.c-neon{--o1:#5ce0ff;--o2:#ff80e0;--o3:#5657f5;--g1:#5ce0ff;--g2:#ff80e0;--b1:#a23fd8;--b2:#0e6fb0;--edge:rgba(92,224,255,.4);--halo:rgba(255,128,224,.22)}
+.c-xero{--o1:#4a6cf7;--o2:#c2286f;--o3:#7b5cd6;--g1:#7e9bff;--g2:#e07aa8;--b1:#3d5bd0;--b2:#6a44c2;--edge:rgba(123,92,214,.4);--halo:rgba(74,108,247,.18)}
+.c-xero .hl{background:linear-gradient(90deg,#7e9bff,#a98bf0,#e07aa8,#a98bf0,#7e9bff) !important;background-size:200% auto !important;-webkit-background-clip:text !important;background-clip:text !important;animation:hlmove 10s ease-in-out infinite alternate}
+@keyframes hlmove{to{background-position:100% 0}}
+@property --xa{syntax:'<angle>';inherits:false;initial-value:0deg}
+.c-xero .hdr,.c-xero .main>section,.c-xero .ftr{position:relative;border-color:transparent !important}
+.c-xero .hdr::before,.c-xero .main>section::before,.c-xero .ftr::before{content:'';position:absolute;inset:0;border-radius:inherit;padding:1px;background:conic-gradient(from var(--xa),rgba(74,108,247,.9),rgba(123,92,214,.85),rgba(194,40,111,.75),rgba(123,92,214,.85),rgba(74,108,247,.9));-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask:linear-gradient(#000 0 0) content-box exclude,linear-gradient(#000 0 0);animation:ring 10s linear infinite;pointer-events:none;z-index:2}
+.c-xero .main>section:first-child::before{animation-delay:-3.3s}
+.c-xero .main>section:last-child::before{animation-delay:-6.6s}
+@keyframes ring{to{--xa:360deg}}
+.c-xero .hdr,.c-xero .ftr{box-shadow:0 12px 30px rgba(0,0,0,.35),0 0 18px rgba(74,108,247,.12)}
+.c-xero .main>section:first-child{box-shadow:0 12px 30px rgba(0,0,0,.35),0 0 18px rgba(123,92,214,.12)}
+.c-xero .main>section:last-child{box-shadow:0 12px 30px rgba(0,0,0,.35),0 0 18px rgba(194,40,111,.12)}
+.c-xero .bg img{filter:blur(30px) brightness(.68) saturate(1.15) !important}
+.c-xero .o1{opacity:.3;animation:drift 14s ease-in-out infinite alternate,hue 28s linear infinite}.c-xero .o2{opacity:.22;animation:drift 17s ease-in-out -7s infinite alternate,hue 28s linear -9s infinite}.c-xero .o3{opacity:.2;animation:drift 20s ease-in-out -14s infinite alternate,hue 28s linear -18s infinite}
+@keyframes hue{0%,100%{background:#4a6cf7}33%{background:#7b5cd6}66%{background:#c2286f}}
+.c-xero .grid{opacity:.06}
+.c-xero .scan{background:repeating-linear-gradient(0deg,rgba(255,255,255,.015) 0 1px,transparent 1px 3px)}
+.c-xero .scan::after{display:none}
+.scan{display:none;position:absolute;inset:0;background:repeating-linear-gradient(0deg,rgba(255,255,255,.035) 0 1px,transparent 1px 3px)}
+.scan::after{content:'';position:absolute;left:0;right:0;height:22vh;background:linear-gradient(180deg,transparent,rgba(142,92,240,.07),transparent);animation:sweep 9s linear infinite}
+@keyframes sweep{from{top:-22vh}to{top:100%}}
+.c-xero .scan{display:block}
+.c-xero .main>section h1::after{content:'_';color:#d77aa5;margin-left:.08em;animation:blink 1.1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+.c-xero .kick::before{content:'> ';color:#d77aa5}
+.orb{display:none;position:absolute;border-radius:50%;filter:blur(90px);animation:drift 24s ease-in-out infinite alternate}
+.o1{width:48vmax;height:48vmax;left:-10vmax;top:-12vmax;background:var(--o1);opacity:.55}
+.o2{width:42vmax;height:42vmax;right:-8vmax;bottom:-14vmax;background:var(--o2);opacity:.38;animation-delay:-8s}
+.o3{width:30vmax;height:30vmax;left:42%;top:28%;background:var(--o3);opacity:.22;animation-delay:-16s}
+@keyframes drift{to{transform:translate(6vmax,4vmax) scale(1.1)}}
+.grid{display:none;position:absolute;inset:0;background-image:linear-gradient(var(--edge) 1px,transparent 1px),linear-gradient(90deg,var(--edge) 1px,transparent 1px);background-size:56px 56px;opacity:.16;-webkit-mask-image:radial-gradient(ellipse at center,#000 30%,transparent 80%);mask-image:radial-gradient(ellipse at center,#000 30%,transparent 80%)}
+.c-xero .orb,.c-aurora .orb,.c-vivid .orb,.c-cyber .orb,.c-terminal .orb,.c-neon .orb{display:block}
+.c-xero .grid,.c-cyber .grid,.c-terminal .grid,.c-neon .grid{display:block}
+.c-glow .hdr,.c-vivid .hdr,.c-cyber .hdr,.c-terminal .hdr,.c-neon .hdr,.c-glow .main>section,.c-vivid .main>section,.c-cyber .main>section,.c-terminal .main>section,.c-neon .main>section,.c-glow .ftr,.c-vivid .ftr,.c-cyber .ftr,.c-terminal .ftr,.c-neon .ftr{box-shadow:0 0 0 1px var(--edge),0 10px 40px var(--halo),inset 0 1px 0 rgba(255,255,255,.08)}
+.hl{color:inherit}
+.c-xero .hl,.c-glow .hl,.c-vivid .hl,.c-cyber .hl,.c-terminal .hl,.c-neon .hl{background:linear-gradient(90deg,var(--g1),var(--g2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.c-xero .pri,.c-xero .navdl,.c-vivid .pri,.c-cyber .pri,.c-terminal .pri,.c-neon .pri,.c-vivid .navdl,.c-cyber .navdl,.c-terminal .navdl,.c-neon .navdl{background:linear-gradient(135deg,var(--b1),var(--b2)) !important;box-shadow:0 6px 22px var(--halo)}
+.fade{transition:opacity .9s ease}
+@media (max-width:960px),(max-height:600px){
+  .root{height:auto;min-height:100vh;min-height:100dvh;overflow:visible;place-items:start stretch}
+  .root{padding:12px 16px}
+  .frame{display:block;position:relative !important;left:0 !important;top:0 !important;width:100% !important;height:auto !important;transform:none !important}
+  .stage{width:100%;height:auto;container-type:inline-size}
+  .main{grid-template-columns:minmax(0,1fr)}
+  .bg{position:fixed}
+  .shot{flex:none;aspect-ratio:16/9}
+  .pane{overflow:visible}
+  .ab2{grid-template-columns:minmax(0,1fr)}
+  .gintro{columns:1}
+  .gtabs{display:flex;overflow-x:auto;padding-bottom:4px}
+  .gt{flex:0 0 200px}
+  .gdet{grid-template-columns:minmax(0,1fr);height:auto}
+  .gimg{height:auto;aspect-ratio:16/9}
+  .gtxt{overflow:visible}
+  .sup{grid-template-columns:minmax(0,1fr)}
+  .dlg{grid-template-columns:minmax(0,1fr)}
+  .dtop{grid-template-columns:minmax(0,1fr);grid-template-rows:none}
+  .dcell{height:auto}
+  .dshot{width:100%;max-height:none}
+  .dock{overflow-x:auto;justify-content:flex-start}
+}
+@media (max-width:600px){
+  .hdr{gap:4px}
+  .nav{width:100%;gap:0;justify-content:space-between;overflow-x:auto;scrollbar-width:none}
+  .nav button,.nav a{padding:0 12px;font-size:14px}
+  .nl{display:none}
+  .ext{display:none}
+  .wcard{flex-direction:column;align-items:stretch}
+  .qr{align-self:center;width:200px;height:200px}
+  .navdl{display:none !important}
+  .ctas .pri{flex:1 1 auto}
+  .ctas a,.ctas button{padding-left:12px !important;padding-right:12px !important}
+  .slg{grid-template-columns:minmax(0,1fr)}
+  .cap{display:none}
+  .tb{flex-direction:column;align-items:stretch;gap:6px;text-align:center}
+  .ti{width:100%}
+  .ftr{justify-content:center;text-align:center}
+}
+@media (prefers-reduced-motion:reduce){.orb,.c-xero .orb,.scan::after,.c-xero .hl,.c-xero .hdr::before,.c-xero .main>section::before,.c-xero .ftr::before,.c-xero .main>section h1::after{animation:none !important}.fade{transition:none}.disc{animation:none}}
+</style>
+</helmet>
+<div class="root {{cmode}}" style="position: relative; background: {{c.bg}}; color: {{c.text}}; font-family: Inter, system-ui, sans-serif; box-sizing: border-box;">
+  <div class="bg" aria-hidden="true">
+    <sc-for list="{{slides}}" as="s" hint-placeholder-count="3">
+      <img class="fade" src="{{s.src}}" alt="" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; filter: blur(30px) brightness(.55); transform: scale(1.12); opacity: {{s.op}};">
+    </sc-for>
+    <div class="grid"></div><div class="scan"></div><div class="orb o1"></div><div class="orb o2"></div><div class="orb o3"></div>
+  </div>
+
+  <div class="frame" style="position: {{fpos}}; left: {{foff}}; top: {{foff}}; width: {{fw}}; height: {{fh}}; transform: {{ftf}}; transform-origin: center;">
+  <div class="stage" style="gap: max(12px, 1.8cqh);">
+  <header class="hdr" style="position: relative; z-index: 1; padding: max(6px, 1cqh) max(10px, 1.4cqw); border-radius: 16px; background: {{glass}}; border: 1px solid {{c.line}}; backdrop-filter: {{blurCss}}; -webkit-backdrop-filter: {{blurCss}};">
+    <a href="#" aria-label="XeroLinux home" style="display: flex; align-items: center; gap: 12px; min-height: 44px; text-decoration: none; font-family: 'Chakra Petch', sans-serif; font-weight: 700; font-size: max(18px, 2.2cqh);"><img src="/_blob/8e7fe94944f3c963c634a5d8f6498c44" alt="" style="width: max(28px, 3cqh); height: max(28px, 3cqh);"><span>XeroLinux</span></a>
+    <nav class="nav" aria-label="Main" style="font-size: max(14px, 1.6cqh);">
+      <sc-for list="{{views}}" as="v" hint-placeholder-count="3">
+        <button type="button" aria-pressed="{{v.pressed}}" onClick="{{v.pick}}" aria-label="{{v.label}}" style="border: 0; font-weight: 500; color: {{v.fg}}; background: {{v.bg}};"><sc-if value="{{v.iHome}}" hint-placeholder-val="{{ false }}"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex: none;"><path d="M3 10.5 12 3l9 7.5"></path><path d="M5 9.5V21h14V9.5"></path><path d="M10 21v-6h4v6"></path></svg></sc-if><sc-if value="{{v.iAbout}}" hint-placeholder-val="{{ false }}"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex: none;"><circle cx="12" cy="8" r="4"></circle><path d="M4 21c0-4 4-6 8-6s8 2 8 6"></path></svg></sc-if><sc-if value="{{v.iGear}}" hint-placeholder-val="{{ false }}"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex: none;"><rect x="3" y="4" width="18" height="12" rx="2"></rect><path d="M8 20h8"></path><path d="M12 16v4"></path></svg></sc-if><sc-if value="{{v.iTools}}" hint-placeholder-val="{{ false }}"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex: none;"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.5 2.5-2.4-.6-.6-2.4z"></path></svg></sc-if><sc-if value="{{v.iSupport}}" hint-placeholder-val="{{ false }}"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex: none;"><path d="M12 20s-7-4.5-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.5-7 10-7 10z"></path></svg></sc-if><span class="nl">{{v.label}}</span></button>
+      </sc-for>
+      <a href="https://shop.xerolinux.xyz" target="_blank" rel="noopener noreferrer" aria-label="Merch (opens in a new tab)" style="font-weight: 500; color: {{c.text2}};"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex: none;"><path d="M6 7h12l-1 13H7z"></path><path d="M9 7a3 3 0 0 1 6 0"></path></svg><span class="nl">Merch</span><svg class="ext" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"></path><path d="M8 7h9v9"></path></svg></a>
+      <button type="button" class="navdl" aria-pressed="{{dlPressed}}" onClick="{{goDl}}" style="margin-left: 8px; border: 0; background: {{c.accent}}; color: #ffffff; font-weight: 600;"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex: none;"><path d="M12 3v12"></path><path d="m7 10 5 5 5-5"></path><path d="M5 21h14"></path></svg><span class="nl">Download</span></button>
+    </nav>
+  </header>
+
+  <main class="main" style="position: relative; z-index: 1; gap: max(12px, 1.8cqh);">
+    <section style="min-height: 0; display: flex; flex-direction: column; justify-content: center; gap: max(14px, 2.4cqh); padding: max(20px, 3.4cqh) max(20px, 2.4cqw); border-radius: 22px; background: {{glass}}; border: 1px solid {{c.line}}; backdrop-filter: {{blurCss}}; -webkit-backdrop-filter: {{blurCss}};">
+      <div style="font-family: 'JetBrains Mono', monospace; font-size: max(12px, 1.35cqh); letter-spacing: .14em; text-transform: uppercase; color: {{c.accentL}};">Arch Linux · KDE Plasma 6 · Wayland</div>
+      <h1 style="margin: 0; font-family: 'Chakra Petch', sans-serif; font-size: max(32px, 5.4cqh); line-height: 1.04; font-weight: 700;">Arch, with the <span class="hl">sharp edges</span> filed off.</h1>
+      <p style="margin: 0; font-size: max(15px, 1.85cqh); line-height: 1.55; color: {{c.text2}}; max-width: 40em;">A configured KDE Plasma 6 desktop on top of Arch, with a working installer, a Kernel Manager for CachyOS and other tuned kernels, an SCX tool for modern schedulers, and the in-house XeroLinux Toolkit for post-install setup.</p>
+      <div class="ctas">
+        <button type="button" class="pri" onClick="{{goDl}}" style="border: 0; background: {{c.accent}}; color: #ffffff; font-weight: 600; font-size: max(16px, 1.9cqh); padding: max(12px, 1.5cqh) max(24px, 1.8cqw); border-radius: 12px;"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex: none;"><path d="M12 3v12"></path><path d="m7 10 5 5 5-5"></path><path d="M5 21h14"></path></svg>Download</button>
+        <a href="https://wiki.xerolinux.xyz" target="_blank" rel="noopener noreferrer" style="border: 1px solid {{c.line}}; font-size: max(14px, 1.6cqh); padding: max(10px, 1.3cqh) max(18px, 1.2cqw); border-radius: 12px;"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex: none;"><path d="M4 19.5V5a2 2 0 0 1 2-2h14v16H6a2 2 0 0 0-2 2z"></path><path d="M8 7h8"></path><path d="M8 11h6"></path></svg>The Wiki</a>
+        <a href="https://github.com/xerolinux" target="_blank" rel="noopener noreferrer" style="font-size: max(14px, 1.6cqh); padding: 10px 8px; color: {{c.text2}};"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="flex: none;"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"></path></svg>GitHub</a>
+      </div>
+      <ul class="slg" style="margin: 0; padding: max(14px, 2cqh) 0 0; border-top: 1px solid {{c.line}}; list-style: none; gap: max(8px, 1.2cqh) 20px; font-size: max(14px, 1.55cqh);">
+        <li style="display: flex; gap: 10px;"><span style="color: {{c.accentL}};">▸</span>Quarterly Release</li>
+        <li style="display: flex; gap: 10px;"><span style="color: {{c.accentL}};">▸</span>Kernel Manager / SCX Tool</li>
+        <li style="display: flex; gap: 10px;"><span style="color: {{c.accentL}};">▸</span>Online vs Offline Install</li>
+        <li style="display: flex; gap: 10px;"><span style="color: {{c.accentL}};">▸</span>Your Machine / Your Decision</li>
+        <li style="display: flex; gap: 10px;"><span style="color: {{c.accentL}};">▸</span>XeroLinux in-house Tools</li>
+        <li style="display: flex; gap: 10px;"><span style="color: {{c.accentL}};">▸</span>Package Manager G.U.I</li>
+      </ul>
+    </section>
+
+    <section aria-label="{{winLabel}}" style="min-height: 0; display: flex; flex-direction: column; border-radius: 22px; overflow: hidden; background: {{glass}}; border: 1px solid {{c.line}}; backdrop-filter: {{blurCss}}; -webkit-backdrop-filter: {{blurCss}};">
+      <div style="display: flex; align-items: center; gap: 8px; padding: max(8px, 1.1cqh) 16px; border-bottom: 1px solid {{c.line}}; font-family: 'JetBrains Mono', monospace; font-size: max(12px, 1.35cqh); color: {{c.text2}};">
+        <span aria-hidden="true" style="width: 11px; height: 11px; border-radius: 50%; background: #ee3939;"></span><span aria-hidden="true" style="width: 11px; height: 11px; border-radius: 50%; background: #f5b500;"></span><span aria-hidden="true" style="width: 11px; height: 11px; border-radius: 50%; background: #2bd05a;"></span>
+        <span style="margin-left: 8px; color: {{c.text}};">{{winTitle}}</span>
+        <span class="cap">{{winSub}}</span>
+      </div>
+
+      <sc-if value="{{isHome}}" hint-placeholder-val="{{ true }}">
+        <div class="shot">
+          <sc-for list="{{slides}}" as="s" hint-placeholder-count="3">
+            <img class="fade" src="{{s.src}}" alt="{{s.alt}}" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: {{s.op}};">
+          </sc-for>
+        </div>
+        <div class="thumbs" style="gap: max(8px, 1cqw); padding: max(10px, 1.4cqh);">
+          <sc-for list="{{slides}}" as="s" hint-placeholder-count="3">
+            <button type="button" class="tb" aria-pressed="{{s.pressed}}" aria-label="Show {{s.label}}" onClick="{{s.pick}}" style="padding: 6px; border-radius: 12px; color: {{c.text}}; background: {{s.tbg}}; border: 1px solid {{s.tborder}};">
+              <img class="ti" src="{{s.src}}" alt="" style="aspect-ratio: 16 / 9; object-fit: cover; border-radius: 8px; display: block; flex: none;">
+              <span style="font-size: max(13px, 1.45cqh); font-weight: 600;">{{s.label}}</span>
+            </button>
+          </sc-for>
+        </div>
+      </sc-if>
+
+      <sc-if value="{{isAbout}}" hint-placeholder-val="{{ false }}">
+        <div class="pane" style="padding: max(14px, 2.4cqh) max(18px, 2cqw); font-size: max(13px, 1.5cqh); color: {{c.text2}};">
+          <div class="ab2" style="gap: max(16px, 2cqw);">
+            <aside class="abcard" style="gap: max(10px, 1.6cqh); padding: max(18px, 2.6cqh) max(16px, 1.6cqw); background: {{c.soft}}; border: 1px solid {{c.line}};">
+              <div class="avring" style="background: radial-gradient(circle, rgba(138,139,255,0.35) 0%, rgba(86,87,245,0.12) 55%, transparent 70%); border: 2px solid {{c.accentL}};">
+                <img src="/_blob/b7379176955d79e9358edbb1b668b767" alt="DarkXero avatar" style="width: 78%; height: 78%; object-fit: contain; display: block;">
+              </div>
+              <div>
+                <div style="font-family: 'Chakra Petch', sans-serif; font-weight: 700; font-size: 2em; line-height: 1; color: {{c.text}};">Steve</div>
+                <div class="kick" style="margin-top: 6px; color: {{c.accentL}};">TechXero · DarkXero</div>
+              </div>
+              <div style="font-size: .92em;">Creator and maintainer of XeroLinux</div>
+              <div class="facts">
+                <div class="fact" style="background: {{glass}};"><b style="color: {{c.text}};">{{age}}</b><span>years old</span></div>
+                <div class="fact" style="background: {{glass}};"><b style="color: {{c.text}};">Lebanon</b><span>home</span></div>
+                <div class="fact" style="background: {{glass}};"><b style="color: {{c.text}};">2019</b><span>on Linux since</span></div>
+                <div class="fact" style="background: {{glass}};"><b style="color: {{c.text}};">2020</b><span>XeroLinux born</span></div>
+              </div>
+              <div style="display: flex; flex-direction: column; align-items: center; gap: 8px;">
+                <div class="kick" style="font-size: .7em;">Multi-OS user</div>
+                <div class="chips" style="justify-content: center;"><span class="chip" style="background: {{glass}};">iOS</span><span class="chip" style="background: {{glass}};">Android</span><span class="chip" style="background: {{glass}};">macOS</span><span class="chip" style="background: {{glass}};">Windows</span><span class="chip" style="background: {{glass}};">Linux</span></div>
+              </div>
+            </aside>
+            <div style="min-width: 0; display: flex; flex-direction: column; justify-content: center; gap: max(12px, 1.8cqh);">
+              <div>
+                <div class="kick" style="color: {{c.accentL}};">// The Profile</div>
+                <h2 style="margin: 6px 0 0; font-family: 'Chakra Petch', sans-serif; font-size: 2.2em; line-height: 1.05; color: {{c.text}};">The man behind the distro</h2>
+              </div>
+              <p style="margin: 0; line-height: 1.65;">I love technology. I don't stick to one platform, I like to dabble in all of them.</p>
+              <p style="margin: 0; line-height: 1.65;">I have been using <strong style="color: {{c.text}};">Gnu/Linux</strong> since 2019. In 2020 I decided to create <strong style="color: {{c.text}};">XeroLinux</strong> to satisfy my needs. After sharing it with some friends, they convinced me to make it public, and the rest is history as they say...</p>
+              <p style="margin: 0; line-height: 1.65;">To know more about me, my likes/dislikes, and other juicy details, visit my <a href="https://techxero.com" target="_blank" rel="noopener noreferrer" style="color: {{c.accentL}};">Personal Site</a>. Enjoy your stay here.</p>
+              <div style="font-family: 'Chakra Petch', sans-serif; font-weight: 700; font-size: 1.3em; color: {{c.accentL}};">Cheers y'all</div>
+              <div style="height: 1px; background: {{c.line}};"></div>
+              <div class="kick" style="color: {{c.accentL}};">// Find me online</div>
+              <div class="soc" style="color: {{c.text}};">
+                <a href="https://wiki.xerolinux.xyz" target="_blank" rel="noopener noreferrer" style="background: {{c.soft}}; border: 1px solid {{c.line}};"><svg aria-hidden="true" viewBox="0 0 24 24" fill="currentColor" style="color: {{c.accentL}};"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 12.9 13 13.5 13 15h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H8c0-2.21 1.79-4 4-4s4 1.79 4 4c0 .88-.36 1.680-.93 2.25z"></path></svg>Wiki</a>
+                <a href="https://discord.gg/5sqxTSuKZu" target="_blank" rel="noopener noreferrer" style="background: {{c.soft}}; border: 1px solid {{c.line}};"><svg aria-hidden="true" viewBox="0 0 24 24" fill="currentColor" style="color: {{c.accentL}};"><path d="M20.317 4.37a19.791 19.791 0 00-4.885-1.515.074.074 0 00-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 00-5.487 0 12.64 12.64 0 00-.617-1.25.077.077 0 00-.079-.037A19.736 19.736 0 003.677 4.37a.07.07 0 00-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 00.031.057 19.9 19.9 0 005.993 3.03.078.078 0 00.084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 00-.041-.106 13.107 13.107 0 01-1.872-.892.077.077 0 01-.008-.128 10.2 10.2 0 00.372-.292.074.074 0 01.077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 01.078.01c.12.098.246.198.373.292a.077.077 0 01-.006.127 12.299 12.299 0 01-1.873.892.077.077 0 00-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 00.084.028 19.839 19.839 0 006.002-3.03.077.077 0 00.032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 00-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"></path></svg>Discord</a>
+                <a href="https://github.com/xerolinux" target="_blank" rel="noopener noreferrer" style="background: {{c.soft}}; border: 1px solid {{c.line}};"><svg aria-hidden="true" viewBox="0 0 24 24" fill="currentColor" style="color: {{c.accentL}};"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"></path></svg>GitHub</a>
+                <a href="https://fosstodon.org/@XeroLinux" target="_blank" rel="noopener noreferrer" style="background: {{c.soft}}; border: 1px solid {{c.line}};"><svg aria-hidden="true" viewBox="0 0 24 24" fill="currentColor" style="color: {{c.accentL}};"><path d="M23.268 5.313c-.35-2.578-2.617-4.61-5.304-5.004C17.51.242 15.792 0 11.813 0h-.03c-3.98 0-4.835.242-5.288.309C3.882.692 1.496 2.518.917 5.127.64 6.412.61 7.837.661 9.143c.074 1.874.088 3.745.26 5.611.118 1.24.325 2.47.62 3.68.55 2.237 2.777 4.098 4.96 4.857 2.336.792 4.849.923 7.256.38.265-.061.527-.132.786-.213.585-.184 1.27-.39 1.774-.753a.057.057 0 00.023-.043v-1.809a.052.052 0 00-.02-.041.053.053 0 00-.046-.01 20.282 20.282 0 01-4.709.547c-2.73 0-3.463-1.284-3.674-1.818a5.593 5.593 0 01-.319-1.433.053.053 0 01.066-.054 19.648 19.648 0 004.581.536h.344c1.705 0 3.42-.093 5.104-.37 1.974-.343 3.82-1.485 4.007-4.594.073-1.219.099-2.44.072-3.66.006-.472.1-3.025-.012-4.593zm-3.445 7.654h-2.56v-7.03c0-1.517-.648-2.278-1.885-2.278-1.413 0-2.12.907-2.12 2.707v3.826h-2.55V6.366c0-1.8-.707-2.707-2.12-2.707-1.236 0-1.884.761-1.884 2.278v7.030H4.146V5.862c0-1.517.39-2.723 1.17-3.618.805-.896 1.858-1.354 3.166-1.354 1.513 0 2.66.578 3.423 1.734L12.88 4.1l.975-1.476c.763-1.156 1.91-1.734 3.423-1.734 1.307 0 2.361.458 3.165 1.354.782.895 1.171 2.101 1.171 3.618v7.105z"></path></svg>Mastodon</a>
+                <a href="https://youtube.com/@XeroLinux" target="_blank" rel="noopener noreferrer" style="background: {{c.soft}}; border: 1px solid {{c.line}};"><svg aria-hidden="true" viewBox="0 0 24 24" fill="currentColor" style="color: {{c.accentL}};"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.070 0 12 0 12s0 3.930.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.930 24 12 24 12s0-3.930-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"></path></svg>YouTube</a>
+                <a href="https://x.com/XeroLinuxOP" target="_blank" rel="noopener noreferrer" style="background: {{c.soft}}; border: 1px solid {{c.line}};"><svg aria-hidden="true" viewBox="0 0 24 24" fill="currentColor" style="color: {{c.accentL}};"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></svg>Twitter/X</a>
+                <a href="https://bytes.xerolinux.xyz" target="_blank" rel="noopener noreferrer" style="background: {{c.soft}}; border: 1px solid {{c.line}};"><svg aria-hidden="true" viewBox="0 0 24 24" fill="currentColor" style="color: {{c.accentL}};"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 14H4V8l8 5 8-5v10zm-8-7L4 6h16l-8 5z"></path></svg>XeroBytes</a>
+                <a href="https://linkedin.com/in/schaanine" target="_blank" rel="noopener noreferrer" style="background: {{c.soft}}; border: 1px solid {{c.line}};"><svg aria-hidden="true" viewBox="0 0 24 24" fill="currentColor" style="color: {{c.accentL}};"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.370 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.920-2.063 2.063-2.063 1.140 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.200 24 24 23.227 24 22.271V1.729C24 .774 23.200 0 22.222 0h.003z"></path></svg>LinkedIn</a>
+                <a href="https://techxero.com" target="_blank" rel="noopener noreferrer" style="background: {{c.soft}}; border: 1px solid {{c.line}};"><svg aria-hidden="true" viewBox="0 0 24 24" fill="currentColor" style="color: {{c.accentL}};"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.930c-3.950-.490-7-3.850-7-7.930 0-.620.080-1.210.210-1.790L9 15v1c0 1.100.900 2 2 2v1.930zm6.900-2.540c-.260-.810-1-1.390-1.900-1.390h-1v-3c0-.550-.450-1-1-1H8v-2h2c.550 0 1-.450 1-1V7h2c1.100 0 2-.900 2-2v-.410c2.930 1.190 5 4.060 5 7.410 0 2.080-.800 3.970-2.100 5.390z"></path></svg>Personal Site</a>
+                <a href="https://ko-fi.com/XeroLinux" target="_blank" rel="noopener noreferrer" style="background: {{c.soft}}; border: 1px solid {{c.line}};"><svg aria-hidden="true" viewBox="0 0 24 24" fill="currentColor" style="color: {{c.accentL}};"><path d="M23.881 8.948c-.773-4.085-4.859-4.593-4.859-4.593H.723c-.604 0-.679.798-.679.798s-.082 7.324-.022 11.822c.164 2.424 2.586 2.672 2.586 2.672s8.267-.023 11.966-.049c2.438-.426 2.683-2.566 2.658-3.734 4.352.240 7.422-2.831 6.649-6.916zm-11.062 3.511c-1.246 1.453-4.011 3.976-4.011 3.976s-.121.119-.310.023c-.076-.057-.108-.090-.108-.090-.443-.441-3.368-3.049-4.034-3.954-.709-.965-1.041-2.700-.091-3.710.951-1.010 3.005-1.086 4.363.407 0 0 1.565-1.782 3.468-.963 1.904.820 1.832 3.011.723 4.311zm6.173.478c-.928.116-1.682.028-1.682.028V7.284h1.770s1.971.551 1.971 2.638c0 1.913-.985 2.667-2.059 3.015z"></path></svg>Ko-fi</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </sc-if>
+
+      <sc-if value="{{isGear}}" hint-placeholder-val="{{ false }}">
+        <div class="pane" style="padding: max(14px, 2.4cqh) max(18px, 2cqw); gap: max(10px, 1.8cqh); font-size: max(13px, 1.45cqh); color: {{c.text2}};">
+          <div style="flex: none;">
+            <div class="kick" style="color: {{c.accentL}};">// The Setup</div>
+            <h2 style="margin: 6px 0 0; font-family: 'Chakra Petch', sans-serif; font-size: 2em; line-height: 1; color: {{c.text}};">My Gear</h2>
+          </div>
+          <div class="gintro" style="flex: none; font-size: .94em;">
+            <p>Some people call me an <strong style="color: {{c.text}};">Arch</strong> &amp; <strong style="color: {{c.text}};">KDE Plasma</strong> shill, and I don't see the problem with that. I use what works for me, and <strong style="color: {{c.text}};">Arch</strong> has been great. Sure, there are issues, but none have been deal-breakers for my use case. I've tried other distros, but <strong style="color: {{c.text}};">Arch</strong> is the one I can easily adapt to and fix when problems arise. Just wanted to cover these facts before moving on with the Hardware &amp; Software I use...</p>
+            <p>Between here and back home in <strong style="color: {{c.text}};">Lebanon</strong>, I run 2 Desktops (one of which is an HTPC back home), 2 Laptops, a Mini PC, a Steam Deck, and a Raspberry Pi. Details on each below.</p>
+          </div>
+          <div class="gtabs" style="flex: none;">
+            <sc-for list="{{devices}}" as="d" hint-placeholder-count="5">
+              <button type="button" class="gt" aria-pressed="{{d.pressed}}" onClick="{{d.pick}}" style="color: {{c.text}}; background: {{d.bg}}; border: 1px solid {{d.border}};">
+                <img src="{{d.src}}" alt="">
+                <span style="display: flex; flex-direction: column; min-width: 0;"><span style="font-weight: 600; font-size: .92em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">{{d.name}}</span><span style="font-size: .76em; color: {{c.text2}}; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">{{d.sub}}</span></span>
+              </button>
+            </sc-for>
+          </div>
+          <div class="gwrap">
+            <sc-if value="{{g0}}" hint-placeholder-val="{{ true }}">
+              <div class="gdet" style="gap: max(14px, 1.8cqw);">
+                <img class="gimg" src="/_blob/943ac4bee20669832e63aa006cca0d17" alt="StationXero desktop">
+                <div class="gtxt">
+                  <h3 style="margin: 0; font-family: 'Chakra Petch', sans-serif; font-size: 1.6em; color: {{c.text}};">StationXero</h3>
+                  <div class="kick" style="margin: 4px 0 12px; color: {{c.accentL}};">The Beast · Main Rig</div>
+                  <div class="chips" style="margin-bottom: 14px;"><span class="chip" style="background: {{c.soft}};"><b style="color: {{c.accentL}};">GPU</b>RX 7800XT</span><span class="chip" style="background: {{c.soft}};"><b style="color: {{c.accentL}};">CPU</b>Ryzen 9 5950X</span><span class="chip" style="background: {{c.soft}};"><b style="color: {{c.accentL}};">RAM</b>32GB DDR4</span></div>
+                  <p>Main rig, the one I do all my <em>Development</em>, <em>Gaming</em> and other things on. It has an <code>RX 7800XT</code> and a <code>Ryzen 9 5950X</code> with a whopping <code>32GB DDR4@3200Mt/s</code> RAM. I think this machine still has a few years of reliable service left in it in this economy.</p>
+                </div>
+              </div>
+            </sc-if>
+            <sc-if value="{{g1}}" hint-placeholder-val="{{ false }}">
+              <div class="gdet" style="gap: max(14px, 1.8cqw);">
+                <img class="gimg" src="/_blob/ac27bb486fef9d30d985d9c76a73daaa" alt="XeroMini PC">
+                <div class="gtxt">
+                  <h3 style="margin: 0; font-family: 'Chakra Petch', sans-serif; font-size: 1.6em; color: {{c.text}};">XeroMini</h3>
+                  <div class="kick" style="margin: 4px 0 12px; color: {{c.accentL}};">Mini Workstation</div>
+                  <div class="chips" style="margin-bottom: 14px;"><span class="chip" style="background: {{c.soft}};"><b style="color: {{c.accentL}};">CPU</b>Ryzen 5 7530U</span><span class="chip" style="background: {{c.soft}};"><b style="color: {{c.accentL}};">RAM</b>32GB</span></div>
+                  <p>This is my awesome Mini PC. It has <code>32GB RAM</code> after upgrade, with a <code>Ryzen 5 7530U</code>. That thing is not showing any signs of slowing down. It's a great little machine. It is my portable <strong style="color: {{c.text}};">XeroLinux</strong> project system, where I store all my files and I use it when I travel to work on the project.</p>
+                </div>
+              </div>
+            </sc-if>
+            <sc-if value="{{g2}}" hint-placeholder-val="{{ false }}">
+              <div class="gdet" style="gap: max(14px, 1.8cqw);">
+                <img class="gimg" src="/_blob/3815c99fe0dc68fa81d20f8a5c297efe" alt="Lenovo Thinkpad T14 Gen 1">
+                <div class="gtxt">
+                  <h3 style="margin: 0; font-family: 'Chakra Petch', sans-serif; font-size: 1.6em; color: {{c.text}};">Lenovo Thinkpad T14 Gen 1</h3>
+                  <div class="kick" style="margin: 4px 0 12px; color: {{c.accentL}};">Laptop</div>
+                  <div class="chips" style="margin-bottom: 14px;"><span class="chip" style="background: {{c.soft}};"><b style="color: {{c.accentL}};">CPU</b>Ryzen 5 PRO 4650U</span><span class="chip" style="background: {{c.soft}};"><b style="color: {{c.accentL}};">RAM</b>16GB</span><span class="chip" style="background: {{c.soft}};"><b style="color: {{c.accentL}};">SSD</b>1TB NVMe</span></div>
+                  <p>Used in the office, with <code>1Tb nVme</code>, a <code>Ryzen 5 PRO 4650U</code>, <code>16Gb RAM</code> and an iGPU. I mainly use this thing for testing <strong style="color: {{c.text}};">Cosmic Epoch</strong>. I love this D.E behind KDE, I think the devs are on to something great. It will never see <strong style="color: {{c.text}};">Windows</strong> mark my words. It's the most <strong style="color: {{c.text}};">Linux</strong> friendly laptop on the market today...</p>
+                </div>
+              </div>
+            </sc-if>
+            <sc-if value="{{g3}}" hint-placeholder-val="{{ false }}">
+              <div class="gdet" style="gap: max(14px, 1.8cqw);">
+                <img class="gimg" src="/_blob/d041cc6592cc404f3bc655ebeba1290f" alt="The HTPC">
+                <div class="gtxt">
+                  <h3 style="margin: 0; font-family: 'Chakra Petch', sans-serif; font-size: 1.6em; color: {{c.text}};">The HTPC</h3>
+                  <div class="kick" style="margin: 4px 0 12px; color: {{c.accentL}};">Media Server</div>
+                  <div class="chips" style="margin-bottom: 14px;"><span class="chip" style="background: {{c.soft}};"><b style="color: {{c.accentL}};">CPU</b>Core i7 6800K</span><span class="chip" style="background: {{c.soft}};"><b style="color: {{c.accentL}};">GPU</b>GTX 1080</span><span class="chip" style="background: {{c.soft}};"><b style="color: {{c.accentL}};">RAM</b>16GB</span><span class="chip" style="background: {{c.soft}};"><b style="color: {{c.accentL}};">Storage</b>~68TB</span></div>
+                  <p>Has a <code>Core-i7 6800K</code>, with a <code>GTX 1080</code> GPU, and <code>16GB RAM</code>. Being my HTPC, it has 14 Drives of various sizes totalling <code>~68TB</code> of storage. The only app installed on that thing is <a href="https://jellyfin.org" target="_blank" rel="noopener noreferrer" style="color: {{c.accentL}};">Jellyfin</a> as a <em>Flatpak</em>. It's currently running <strong style="color: {{c.text}};">XeroLinux</strong>.</p>
+                </div>
+              </div>
+            </sc-if>
+            <sc-if value="{{g4}}" hint-placeholder-val="{{ false }}">
+              <div class="gdet" style="gap: max(14px, 1.8cqw);">
+                <img class="gimg" src="/_blob/eb3ffa208c66905e1fe84e532e79e2c9" alt="Steam Deck">
+                <div class="gtxt">
+                  <h3 style="margin: 0; font-family: 'Chakra Petch', sans-serif; font-size: 1.6em; color: {{c.text}};">Other Random Devices</h3>
+                  <div class="kick" style="margin: 4px 0 12px; color: {{c.accentL}};">Portable Workstation &amp; More</div>
+                  <div class="chips" style="margin-bottom: 14px;"><span class="chip" style="background: {{c.soft}};">Steam Deck</span><span class="chip" style="background: {{c.soft}};">Dell XPS 13</span><span class="chip" style="background: {{c.soft}};">Raspberry Pi 4</span></div>
+                  <p>A <strong style="color: {{c.text}};">Steam Deck</strong> which used to be my retro gaming console, but repurposed as portable Workstation with <strong style="color: {{c.text}};">XeroLinux</strong> installed on it. It's the perfect little compact on the go tool that just sits there quietly doing its thing.</p>
+                  <p>And last but not least, an old-ass <strong style="color: {{c.text}};">Dell-XPS</strong>, 13' Capacitive 4K Touch screen, with an <code>Intel Core i7 7600</code> and <code>16GB RAM</code>. That thing sits around, maybe try a few Distros on it every now and then.</p>
+                  <p>And as an honorable mention, a <strong style="color: {{c.text}};">Raspberry Pi 4</strong> <code>4GB</code> that is gathering dust as with many of my other unused devices. Maybe one day will find a good use for it lol.</p>
+                </div>
+              </div>
+            </sc-if>
+          </div>
+          <p style="flex: none; margin: 0; padding-top: max(8px, 1.2cqh); border-top: 1px solid {{c.line}}; font-size: .88em;">That's it folks. Now you have a better idea of what equipment I use on a daily basis to bring you everything I do. I did not list all the softwares I use coz it's a long list that varies a lot. Thanks for reading.</p>
+        </div>
+      </sc-if>
+
+      <sc-if value="{{isSupport}}" hint-placeholder-val="{{ false }}">
+        <div class="pane" style="padding: max(14px, 2.4cqh) max(18px, 2cqw); gap: max(12px, 2cqh); font-size: max(13px, 1.5cqh); color: {{c.text2}};">
+          <div class="sup" style="gap: max(18px, 2.4cqw); align-items: center;">
+            <div style="display: flex; flex-direction: column; gap: max(12px, 1.8cqh);">
+              <div>
+                <div class="kick" style="color: {{c.accentL}};">// The Exchange</div>
+                <h2 style="margin: 6px 0 0; font-family: 'Chakra Petch', sans-serif; font-size: 2em; line-height: 1.05; color: {{c.text}};">Support XeroLinux</h2>
+              </div>
+              <p>XeroLinux is free to download. If it earns a place on your machine and you'd like to help keep it alive and actively developed, a donation goes a long way. Any amount is super appreciated.</p>
+              <a href="https://ko-fi.com/xerolinux" target="_blank" rel="noopener noreferrer" style="display: flex; align-items: center; gap: 14px; min-height: 44px; padding: max(12px, 1.6cqh) 18px; border-radius: 14px; text-decoration: none; background: {{c.accent}}; color: #ffffff;">
+                <svg aria-hidden="true" width="28" height="28" viewBox="0 0 24 24" fill="currentColor" style="flex: none;"><path d="M23.881 8.948c-.773-4.085-4.859-4.593-4.859-4.593H.723c-.604 0-.679.798-.679.798s-.082 7.324-.022 11.822c.164 2.424 2.586 2.672 2.586 2.672s8.267-.023 11.966-.049c2.438-.426 2.683-2.566 2.658-3.734 4.352.24 7.422-2.831 6.649-6.916zm-11.062 3.511c-1.246 1.453-4.011 3.976-4.011 3.976s-.121.119-.31.023c-.076-.057-.108-.09-.108-.09-.443-.441-3.368-3.049-4.034-3.954-.709-.965-1.041-2.7-.091-3.71.951-1.01 3.005-1.086 4.363.407 0 0 1.565-1.782 3.468-.963 1.904.82 1.832 3.011.723 4.311zm6.173.478c-.928.116-1.682.028-1.682.028V7.284h1.77s1.971.551 1.971 2.638c0 1.913-.985 2.667-2.059 3.015z"></path></svg>
+                <span style="display: flex; flex-direction: column;"><strong style="font-size: 1.05em;">No crypto? No problem.</strong><span style="font-size: .9em;">Donate on Ko-fi</span></span>
+                <span aria-hidden="true" style="margin-left: auto;">↗</span>
+              </a>
+              <p style="padding: 12px 16px; border-radius: 12px; background: {{c.soft}};"><strong style="color: {{c.text}};">Don't see your preferred wallet?</strong> <a href="https://discord.xerolinux.xyz" target="_blank" rel="noopener noreferrer" style="color: {{c.accentL}};">Reach out on Discord</a> and we'll send you the address.</p>
+            </div>
+            <div style="display: flex; flex-direction: column; gap: max(12px, 1.8cqh); padding: max(16px, 2.2cqh); border-radius: 18px; background: {{c.soft}}; border: 1px solid {{c.line}};">
+              <div class="kick" style="color: {{c.accentL}};">// Select Wallet</div>
+              <div class="wsel">
+                <sc-for list="{{wallets}}" as="w" hint-placeholder-count="3">
+                  <button type="button" aria-pressed="{{w.pressed}}" onClick="{{w.pick}}" style="color: {{c.text}}; background: {{w.bg}}; border: 1px solid {{w.border}};"><span aria-hidden="true" style="font-size: 1.2em; color: {{c.accentL}};">{{w.sym}}</span>{{w.name}}</button>
+                </sc-for>
+              </div>
+              <div class="wcard">
+                <img class="qr" src="{{wal.qr}}" alt="QR code for the {{wal.name}} address">
+                <div style="display: flex; flex-direction: column; gap: 10px; min-width: 0; flex: 1;">
+                  <div style="font-size: .82em;">Network: <strong style="color: {{c.text}};">{{wal.net}}</strong></div>
+                  <div class="addr" style="color: {{c.text}}; background: {{glass}}; border: 1px solid {{c.line}};">{{wal.addr}}</div>
+                  <button type="button" onClick="{{copy}}" style="min-height: 44px; border-radius: 10px; border: 0; font-weight: 600; background: {{c.accent}}; color: #ffffff;">{{copyLabel}}</button>
+                  <div style="font-size: .78em;">Send only {{wal.coin}} on the {{wal.net}} network to this address.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </sc-if>
+
+      <sc-if value="{{isDownload}}" hint-placeholder-val="{{ false }}">
+        <div class="pane" style="padding: max(14px, 2.4cqh) max(18px, 2cqw); gap: max(12px, 2cqh); font-size: max(13px, 1.5cqh); color: {{c.text2}};">
+          <div class="dlhead" style="flex: none;">
+            <div>
+              <div class="kick" style="color: {{c.accentL}};">// Get XeroLinux · Free · Quarterly</div>
+              <h2 style="margin: 6px 0 0; font-family: 'Chakra Petch', sans-serif; font-size: 2em; line-height: 1; color: {{c.text}};">Download</h2>
+            </div>
+            <div style="display: flex; gap: max(16px, 2cqw); align-items: flex-end;">
+              <div style="text-align: right;">
+                <div class="big" style="font-size: 2.8em; color: {{c.text}};">{{allTime}}</div>
+                <div class="kick" style="margin-top: 6px;">downloads all-time</div>
+              </div>
+              <div style="text-align: right; padding-left: max(16px, 2cqw); border-left: 1px solid {{c.line}};">
+                <div class="big" style="font-size: 2.8em; color: {{c.accentL}};">{{relTotal}}</div>
+                <div class="kick" style="margin-top: 6px;">this release</div>
+              </div>
+            </div>
+          </div>
+          <div class="dlg" style="gap: max(12px, 1.4cqw);">
+            <sc-for list="{{editions}}" as="e" hint-placeholder-count="2">
+              <article class="ed" style="position: relative; gap: max(10px, 1.5cqh); padding: max(16px, 2.2cqh); border-radius: 18px; background: {{c.soft}}; border: 1px solid {{c.line}};">
+                <div style="display: flex; gap: max(14px, 1.6cqw); align-items: center;">
+                  <div class="disc" aria-hidden="true" style="background: {{e.discBg}}; box-shadow: {{e.discShadow}};"></div>
+                  <div style="min-width: 0; display: flex; flex-direction: column; gap: 5px;">
+                    <div style="font-family: 'Chakra Petch', sans-serif; font-weight: 700; font-size: 1.45em; color: {{c.text}};"><span style="color: {{e.c1}};">{{e.l1}}</span><span style="color: {{c.text2}};">{{e.sep}}</span><span style="color: {{e.c2}};">{{e.l2}}</span></div>
+                    <div style="font-size: .86em;">{{e.note}}</div>
+                    <div class="kick" style="margin-top: 6px; color: {{c.accentL}};">Latest release · {{e.ver}}</div>
+                    <div style="font-family: 'JetBrains Mono', monospace; font-size: .82em; color: {{c.text}}; word-break: break-all;">{{e.file}}</div>
+                  </div>
+                </div>
+                <div style="display: flex; align-items: flex-end; justify-content: space-between; gap: 12px; padding: max(10px, 1.4cqh) 16px; border-radius: 14px; background: {{glass}}; border: 1px solid {{c.line}};">
+                  <div>
+                    <div class="big" style="font-size: 2.6em; color: {{c.text}};">{{e.rel}}</div>
+                    <div class="kick" style="margin-top: 6px;">downloads this release</div>
+                  </div>
+                  <div style="text-align: right;">
+                    <div class="big" style="font-size: 1.4em; color: {{c.accentL}};">{{e.total}}</div>
+                    <div class="kick" style="margin-top: 4px; font-size: .68em;">all-time</div>
+                  </div>
+                </div>
+                <div class="chips"><span class="chip" style="background: {{glass}};">{{e.date}}</span><span class="chip" style="background: {{glass}};">x86_64</span><span class="chip" style="background: {{glass}};">{{e.size}}</span><span class="chip" style="background: {{glass}};">ISO</span></div>
+                <div style="margin-top: max(8px, 1.5cqh); display: flex; gap: 10px; flex-wrap: nowrap; white-space: nowrap;">
+                  <a href="#" style="flex: 1 1 auto; min-height: 48px; display: inline-flex; align-items: center; justify-content: center; gap: 10px; border-radius: 12px; text-decoration: none; font-weight: 700; font-size: 1.05em; background: {{c.accent}}; color: #ffffff;"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"></path><path d="m7 10 5 5 5-5"></path><path d="M5 21h14"></path></svg>Download · {{e.size}}</a>
+                  <button type="button" aria-expanded="{{e.expanded}}" onClick="{{e.toggle}}" style="flex: 0 1 auto; min-height: 48px; padding: 0 16px; border-radius: 12px; border: 1px solid {{c.line}}; background: transparent; color: {{c.text}}; font-weight: 600;">Verify checksums</button>
+                </div>
+                <sc-if value="{{e.open}}" hint-placeholder-val="{{ false }}">
+                  <div role="dialog" aria-label="{{e.file}} checksums" style="position: absolute; inset: 0; z-index: 2; box-sizing: border-box; display: flex; flex-direction: column; gap: max(8px, 1.3cqh); padding: max(16px, 2.2cqh); border-radius: 18px; overflow-y: auto; background: {{glassSolid}}; border: 1px solid {{c.accentL}}; backdrop-filter: {{blurCss}}; -webkit-backdrop-filter: {{blurCss}};">
+                    <div style="display: flex; align-items: flex-start; justify-content: space-between; gap: 12px;">
+                      <div style="min-width: 0;">
+                        <div style="font-family: 'Chakra Petch', sans-serif; font-weight: 700; font-size: 1.25em; color: {{c.text}};">Verify checksums</div>
+                        <div style="font-family: 'JetBrains Mono', monospace; font-size: .76em; word-break: break-all;">{{e.file}}</div>
+                      </div>
+                      <button type="button" onClick="{{e.toggle}}" aria-label="Close checksums" style="flex: none; min-width: 44px; min-height: 44px; border-radius: 10px; border: 1px solid {{c.line}}; background: transparent; color: {{c.text}}; font-size: 1.2em;">✕</button>
+                    </div>
+                    <sc-for list="{{e.hashes}}" as="h" hint-placeholder-count="3">
+                      <div class="hrow" style="padding: 10px 12px; border-radius: 12px; background: {{c.soft}};">
+                        <div style="flex: 1; min-width: 0;"><div class="kick" style="font-size: .66em; color: {{c.accentL}};">{{h.algo}}</div><div class="hash" style="color: {{c.text}};">{{h.val}}</div></div>
+                        <button type="button" onClick="{{h.copy}}" aria-label="Copy {{h.algo}}" style="border: 1px solid {{c.line}}; background: transparent; color: {{c.text}};">{{h.label}}</button>
+                      </div>
+                    </sc-for>
+                    <div style="margin-top: auto; font-size: .8em;">Check after downloading: <code style="font-family: 'JetBrains Mono', monospace; font-size: .95em; padding: 2px 6px; border-radius: 5px; background: {{c.soft}}; color: {{c.text}}; word-break: break-all;">sha256sum {{e.file}}</code></div>
+                  </div>
+                </sc-if>
+              </article>
+            </sc-for>
+          </div>
+          <p style="flex: none; margin: 0; font-size: .86em;">Not sure which one? Pick <strong style="color: {{c.text}};">nVidia</strong> only if your machine has an nVidia GPU, otherwise grab <strong style="color: {{c.text}};">Intel / AMD</strong>.</p>
+        </div>
+      </sc-if>
+
+      <sc-if value="{{isTools}}" hint-placeholder-val="{{ false }}">
+        <div class="pane" style="padding: max(14px, 2.4cqh) max(18px, 2cqw); gap: max(12px, 1.8cqh); font-size: max(13px, 1.5cqh); color: {{c.text2}};">
+          <div class="dtop" style="gap: max(16px, 2cqw);">
+            <div class="dcell">
+              <sc-if value="{{tool.isImg}}" hint-placeholder-val="{{ true }}">
+                <img class="dshot" src="{{tool.shot}}" alt="{{tool.name}} screenshot" style="border: 1px solid {{c.line}};">
+              </sc-if>
+              <sc-if value="{{tool.isVid}}" hint-placeholder-val="{{ false }}">
+                <video class="dshot" src="{{tool.vid}}" poster="{{tool.shot}}" autoplay="" muted="" loop="" playsinline="" aria-label="{{tool.name}} demo video" style="border: 1px solid {{c.line}};"></video>
+              </sc-if>
+            </div>
+            <div style="min-width: 0; display: flex; flex-direction: column; gap: max(10px, 1.4cqh);">
+              <div class="kick" style="color: {{c.accentL}};">{{tool.cat}}</div>
+              <h3 style="margin: 0; font-family: 'Chakra Petch', sans-serif; font-size: 2.1em; line-height: 1; color: {{c.text}};">{{tool.name}}</h3>
+              <p style="margin: 0;">{{tool.desc}}</p>
+              <ul class="feats" style="font-size: .94em;">
+                <sc-for list="{{tool.featsList}}" as="f" hint-placeholder-count="3">
+                  <li style="display: flex; gap: 8px;"><span style="color: {{c.accentL}};">▸</span><span>{{f.t}}</span></li>
+                </sc-for>
+              </ul>
+              <div style="display: flex; flex-direction: column; gap: 4px;">
+                <div style="font-size: .8em;">{{tool.cmdLabel}}</div>
+                <div class="cmd"><pre style="background: {{glass}}; color: {{c.text}}; border: 1px solid {{c.line}};">{{tool.cmd}}</pre><button type="button" onClick="{{tool.copy}}" aria-label="Copy command" style="border: 1px solid {{c.line}}; background: transparent; color: {{c.text}};">{{tool.copyLabel}}</button></div>
+              </div>
+              <div style="display: flex; flex-wrap: nowrap; gap: 10px;">
+                <sc-if value="{{tool.hasDl}}" hint-placeholder-val="{{ false }}">
+                  <a href="{{tool.dl}}" target="_blank" rel="noopener noreferrer" style="min-height: 44px; display: inline-flex; align-items: center; white-space: nowrap; padding: 0 18px; border-radius: 10px; text-decoration: none; font-weight: 700; background: {{c.accent}}; color: #ffffff;">Download AppImage</a>
+                </sc-if>
+                <sc-if value="{{tool.hasGh}}" hint-placeholder-val="{{ false }}">
+                  <a href="{{tool.gh}}" target="_blank" rel="noopener noreferrer" style="min-height: 44px; display: inline-flex; align-items: center; gap: 8px; white-space: nowrap; padding: 0 16px; border-radius: 10px; text-decoration: none; border: 1px solid {{c.line}}; color: {{c.text}};"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="flex: none;"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"></path></svg>GitHub</a>
+                </sc-if>
+              </div>
+            </div>
+          </div>
+          <nav class="dock" aria-label="Tools" style="background: {{glassSolid}}; border: 1px solid {{c.line}};">
+            <sc-for list="{{tools}}" as="t" hint-placeholder-count="9">
+              <button type="button" class="dk" aria-pressed="{{t.pressed}}" aria-label="{{t.name}}" title="{{t.name}}" onClick="{{t.open}}" style="border: 2px solid {{t.border}}; background: transparent;"><img src="{{t.thumb}}" alt=""></button>
+            </sc-for>
+          </nav>
+          <div style="flex: none; text-align: center; font-size: .76em;">Some tools are AI-assisted. All are tested before release. Use at your own discretion.</div>
+        </div>
+      </sc-if>
+    </section>
+  </main>
+
+  <footer class="ftr" style="position: relative; z-index: 1; padding: max(10px, 1.1cqh) max(16px, 1.4cqw); border-radius: 14px; background: {{glass}}; border: 1px solid {{c.line}}; backdrop-filter: {{blurCss}}; -webkit-backdrop-filter: {{blurCss}}; font-size: max(13px, 1.4cqh); color: {{c.text2}};">
+    <span>XeroLinux · Powered by Arch Linux &amp; KDE Plasma</span>
+    <span style="font-family: 'JetBrains Mono', monospace;">Free to download · Quarterly releases</span>
+  </footer>
+  </div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"theme":{"editor":"enum","options":["Layan","Layan Dark"],"default":"Layan"},"glass":{"editor":"range","min":0.3,"max":0.9,"step":0.05,"default":0.55,"section":"Glass"},"color":{"editor":"enum","options":["Xero","Flat","Glow","Aurora","Vivid","Cyber","Terminal","Neon"],"default":"Xero"},"blur":{"editor":"range","min":0,"max":30,"step":1,"unit":"px","default":16,"section":"Glass"},"$preview":{"width":1920,"height":1080}}'>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { z: this.scaleFor(), i: 0, view: 'home', gi: 0, wi: 0, copied: false, ck: '', hc: '', ti: 0, tc: '' };
+  }
+  componentDidUpdate() {
+    document.querySelectorAll('video.dshot').forEach((v) => {
+      v.muted = true;
+      if (v.paused) v.play().catch(() => {});
+    });
+  }
+  scaleFor() {
+    const w = window.innerWidth;
+    const h = window.innerHeight;
+    return w > 1920 && h > 600 ? Math.min(w / 1920, h / 950) : 0;
+  }
+  componentDidMount() {
+    this.fit = () => this.setState({ z: this.scaleFor() });
+    window.addEventListener('resize', this.fit);
+    this.start();
+  }
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.fit);
+    clearInterval(this.timer);
+    clearTimeout(this.copyTimer);
+    clearTimeout(this.hashTimer);
+    clearTimeout(this.cmdTimer);
+  }
+  start() {
+    clearInterval(this.timer);
+    if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    this.timer = setInterval(() => this.setState((s) => ({ i: (s.i + 1) % 3 })), 6000);
+  }
+  renderVals() {
+    const dark = this.props.theme === 'Layan Dark';
+    const c = dark
+      ? { bg: '#06070b', text: '#e6e6e6', text2: '#b0b0b8', accent: '#5a5be0', accentL: '#8385f5', line: 'rgba(90,91,224,0.32)', soft: 'rgba(90,91,224,0.16)', rgb: '6,7,11' }
+      : { bg: '#212329', text: '#eaeaea', text2: '#dddddd', accent: '#5657f5', accentL: '#8a8bff', line: 'rgba(86,87,245,0.32)', soft: 'rgba(86,87,245,0.18)', rgb: '33,35,41' };
+    const a = this.props.glass ?? 0.55;
+    const b = this.props.blur ?? 16;
+    const items = [
+      { label: 'KDE Plasma 6', alt: 'KDE Plasma 6 desktop', caption: 'Themed panels, Wayland session, ready to use', src: '/_blob/0c9b9ea0dccf6da30cfaac57be9c21e8' },
+      { label: 'Calamares', alt: 'Calamares installer', caption: 'Keyboard, partitioning and desktop in a guided flow', src: '/_blob/12b090f29a62e43b6fa07a5ba8862b6a' },
+      { label: 'XeroLinux Toolkit', alt: 'XeroLinux Toolkit', caption: 'Drivers, gaming stacks, themes and tweaks', src: '/_blob/0801bebad16b8ec95ede34be94198a3b' }
+    ];
+    const { i, view, gi } = this.state;
+    const slides = items.map((it, k) => ({
+      ...it,
+      op: k === i ? '1' : '0',
+      pressed: k === i ? 'true' : 'false',
+      tbg: k === i ? c.soft : 'transparent',
+      tborder: k === i ? c.accentL : c.line,
+      pick: () => { this.setState({ i: k }); this.start(); }
+    }));
+    const views = [['home', 'Home'], ['about', 'About'], ['gear', 'Gear'], ['tools', 'Tools'], ['support', 'Support']].map(([id, label]) => ({
+      label,
+      iHome: id === 'home',
+      iAbout: id === 'about',
+      iGear: id === 'gear',
+      iTools: id === 'tools',
+      iSupport: id === 'support',
+      pressed: id === view ? 'true' : 'false',
+      bg: id === view ? c.soft : 'transparent',
+      fg: id === view ? c.text : c.text2,
+      pick: () => this.setState({ view: id })
+    }));
+    const devices = [
+      { name: 'StationXero', sub: 'Main Rig', src: '/_blob/943ac4bee20669832e63aa006cca0d17' },
+      { name: 'XeroMini', sub: 'Mini Workstation', src: '/_blob/ac27bb486fef9d30d985d9c76a73daaa' },
+      { name: 'Thinkpad T14', sub: 'Laptop', src: '/_blob/3815c99fe0dc68fa81d20f8a5c297efe' },
+      { name: 'The HTPC', sub: 'Media Server', src: '/_blob/d041cc6592cc404f3bc655ebeba1290f' },
+      { name: 'Other Devices', sub: 'Deck, XPS, Pi', src: '/_blob/eb3ffa208c66905e1fe84e532e79e2c9' }
+    ].map((d, k) => ({
+      ...d,
+      pressed: k === gi ? 'true' : 'false',
+      bg: k === gi ? c.soft : 'transparent',
+      border: k === gi ? c.accentL : c.line,
+      pick: () => this.setState({ gi: k })
+    }));
+    const walletList = [
+      { name: 'BTC', sym: '₿', coin: 'BTC', net: 'Bitcoin', addr: 'bc1qhl7qmeh8rlk35cggrr3py7j6670c4dnsh4veyl', qr: '/_blob/044dd6c234bd9ece8c26a516e90516d9' },
+      { name: 'USDT', sym: '₮', coin: 'USDT', net: 'TRON (TRC-20)', addr: 'TLgG5Qh8XL1M98it9TSLRzoLDVCPwYQhYd', qr: '/_blob/7b0918f678c12c8580d8631d0bbd8ec0' },
+      { name: 'ETH', sym: 'Ξ', coin: 'ETH', net: 'Ethereum', addr: '0xEe53C2dcbf1AC11aC964f318b2759BcF70D6C0A0', qr: '/_blob/9c6a32323fc38c104eebacfa4b1e26db' }
+    ];
+    const wi = this.state.wi;
+    const wal = walletList[wi];
+    const wallets = walletList.map((w, k) => ({
+      ...w,
+      pressed: k === wi ? 'true' : 'false',
+      bg: k === wi ? c.soft : 'transparent',
+      border: k === wi ? c.accentL : c.line,
+      pick: () => this.setState({ wi: k, copied: false })
+    }));
+    const copy = () => {
+      const done = () => {
+        this.setState({ copied: true });
+        clearTimeout(this.copyTimer);
+        this.copyTimer = setTimeout(() => this.setState({ copied: false }), 2000);
+      };
+      if (navigator.clipboard) navigator.clipboard.writeText(wal.addr).then(done, () => {});
+    };
+    const B = (id) => '/_blob/' + id;
+    const toolData = [
+      { slug: 'xpackagemanager', name: 'xPackageManager', cat: 'Flagship · System', desc: 'pacman and Flatpak in one native window, written in Rust.', feats: ['Install, update and remove from one place', 'Built-in repair tools', 'One-click pacman rollback'], cmdLabel: 'On XeroLinux', cmd: 'sudo pacman -Syy xpm-gui', gh: 'https://github.com/xerolinux/xPackageManager', shot: '6cfa5e90d9c70b45a06fd1417a0ac72f', thumb: '3ea7d87655eeb4966f84677dc30e5aed' },
+      { slug: 'customization-hub', name: 'Customization Hub', cat: 'Look & Feel', desc: 'Every XeroLinux theme, rice and script in one app, on any Arch-based system.', feats: ['Desktop rices and layouts', '8 GRUB themes', 'System scripts and tools'], cmdLabel: 'Needs python-pyqt6, then run', cmd: 'curl -fsSL https://xerolinux.xyz/script/xero-tool.py | python3', shot: '8137d9e09fbd6bbc60043a56234cf5e1' },
+      { slug: 'scheduler-tool', name: 'Scheduler Tool', cat: 'System', desc: 'Switch sched-ext CPU schedulers on the fly from a GUI.', feats: ['Live scheduler switching', 'Auto, gaming, lowlatency and powersave modes', 'Optional auto-start on boot'], cmdLabel: 'Needs scx-scheds and scx-tools, then run', cmd: 'curl -fsSL https://urls.xerolinux.xyz/SCXTool | python3', shot: '3f36f1707e6115923c86655ac6b26a7b' },
+      { slug: 'ibackup-restore', name: 'iBackup/Restore', cat: 'Apps', desc: 'Back up and restore iPhone and iPad on Linux.', feats: ['Full and encrypted backups', 'Browse photos and documents', 'iOS updates and recovery'], cmdLabel: 'Needs usbmuxd, then run the AppImage', cmd: 'sudo pacman -S usbmuxd', gh: 'https://github.com/xerolinux/xero-ibr', dl: 'https://github.com/xerolinux/xero-ibr/releases/latest', shot: '50980936889680186dbee864ded6ed13' },
+      { slug: 'howdy-qt', name: 'Howdy-Qt', cat: 'Apps', desc: 'Windows Hello style face login for Linux.', feats: ['Add and test face models', 'SDDM and lock screen support', 'Per-service face auth'], cmdLabel: 'Build and install', cmd: 'git clone https://github.com/xerolinux/xero-howdy-qt\ncd xero-howdy-qt/Packaging/ && makepkg -si', gh: 'https://github.com/xerolinux/xero-howdy-qt', shot: 'a50e2591701128e2751bd7545443d27d' },
+      { slug: 'efiboot-manager', name: 'EFIBoot Manager', cat: 'System', desc: 'Manage UEFI boot entries without a terminal. Use at your own risk.', feats: ['Reorder boot entries', 'Enable, disable or delete entries', 'Confirm before every change'], cmdLabel: 'Build and install', cmd: 'git clone https://github.com/xerolinux/EfiBootGUI\ncd EfiBootGUI/ && makepkg -si', gh: 'https://github.com/xerolinux/EfiBootGUI', shot: '8f9de5265459c2d96196ab2e22f208e0' },
+      { slug: 'wallpaper-browser', name: 'Wallpaper Browser', cat: 'Look & Feel', desc: 'Browse and download static and live wallpapers in one app.', feats: ['Six online sources', 'Batch downloads', 'Set wallpapers directly'], cmdLabel: 'Build and install', cmd: 'git clone https://github.com/xerolinux/xero-wallpapers-gui\ncd xero-wallpapers-gui/ && makepkg -si', gh: 'https://github.com/xerolinux/xero-wallpapers-gui', shot: '1b8b94505aeb3bd338707ec2f5c15edf', vid: '34e37a293dc25fb5baf585d8a572ed6f' },
+      { slug: 'php-server-gui', name: 'PHP Server GUI', cat: 'Apps', desc: 'Start a local PHP dev server in one click.', feats: ['New or existing projects', 'One-click php -S server', 'Live server log'], cmdLabel: 'Build and install', cmd: 'git clone https://github.com/xerolinux/phpgui\ncd phpgui/packaging/ && makepkg -si', gh: 'https://github.com/xerolinux/phpgui', shot: 'f7c9ecac7ebfeb0db6e769c51a80202f' },
+      { slug: 'plymouth-tips', name: 'Plymouth Tips', cat: 'Look & Feel', desc: 'Slow down a boot splash that flashes by on fast NVMe drives.', feats: ['Under [Service] add: ExecStartPre=/usr/bin/sleep 6', 'Then run: sudo systemctl daemon-reload', 'Change the 6 to suit your hardware'], cmdLabel: 'Open a drop-in', cmd: 'sudo systemctl edit plymouth-quit.service --drop-in=long_splash.conf', shot: '91b4f82132135f567f699edef9b66c2a' }
+    ];
+    const ti = this.state.ti;
+    const tools = toolData.map((t, k) => ({
+      name: t.name,
+      thumb: B(t.thumb || t.shot),
+      pressed: k === ti ? 'true' : 'false',
+      border: k === ti ? c.accentL : 'transparent',
+      open: () => this.setState({ ti: k, tc: '' })
+    }));
+    const ct = toolData[ti];
+    const copyCmd = () => {
+      if (!navigator.clipboard) return;
+      navigator.clipboard.writeText(ct.cmd).then(() => {
+        this.setState({ tc: ct.slug });
+        clearTimeout(this.cmdTimer);
+        this.cmdTimer = setTimeout(() => this.setState({ tc: '' }), 2000);
+      }, () => {});
+    };
+    const tool = {
+      name: ct.name,
+      cat: ct.cat,
+      desc: ct.desc,
+      shot: B(ct.shot),
+      isVid: !!ct.vid,
+      isImg: !ct.vid,
+      vid: ct.vid ? B(ct.vid) : '',
+      featsList: ct.feats.map((t) => ({ t })),
+      cmdLabel: ct.cmdLabel,
+      cmd: ct.cmd,
+      copy: copyCmd,
+      copyLabel: this.state.tc === ct.slug ? 'Copied' : 'Copy',
+      hasGh: !!ct.gh,
+      gh: ct.gh || '',
+      hasDl: !!ct.dl,
+      dl: ct.dl || ''
+    };
+    const now = new Date();
+    const age = now.getFullYear() - 1980 - (now < new Date(now.getFullYear(), 7, 12) ? 1 : 0);
+    const win = {
+      home: [items[i].label, items[i].caption, 'Screenshots'],
+      about: ['~/about', 'whoami', 'About'],
+      gear: ['~/gear', 'ls /dev/hardware', 'Gear'],
+      support: ['~/support', 'thank you', 'Support'],
+      tools: ['~/tools/' + ct.slug, ct.name, 'Xero Tools'],
+      download: ['~/download', 'xerolinux-2026.09', 'Download']
+    }[view];
+    const fmt = (n) => n.toLocaleString('en-US');
+    const copyHash = (key, val) => () => {
+      if (!navigator.clipboard) return;
+      navigator.clipboard.writeText(val).then(() => {
+        this.setState({ hc: key });
+        clearTimeout(this.hashTimer);
+        this.hashTimer = setTimeout(() => this.setState({ hc: '' }), 2000);
+      }, () => {});
+    };
+    const edData = [
+      { id: 'std', l1: 'Intel', sep: ' / ', l2: 'AMD', c1: '#4285f4', c2: '#ee3939', note: 'For systems with an Intel or AMD GPU/iGPU', da: '66,133,244', db: '238,57,57', ver: '2026.09', file: 'xerolinux-2026.09-x86_64.iso', date: 'Sep 2, 2026', size: '5.7 GB', counts: [387, 486, 171],
+        md5: '9ea937dbe275d7b932fc43be3f2d5b15', sha1: '6294044b253bfdad32708e8114ace024d87aabff', sha256: 'a78a468bf960bf656751d42ce1e7d0a2880b567c5c638a89301a4917effdf8d6' },
+      { id: 'nvidia', l1: 'nVidia', sep: '', l2: '', c1: '#2bd05a', c2: '#2bd05a', note: 'For systems with an nVidia GPU', da: '43,208,90', db: '86,87,245', ver: '2026.09', file: 'xerolinux-nvidia-2026.09-x86_64.iso', date: 'Sep 2, 2026', size: '7.1 GB', counts: [296, 500, 156],
+        md5: '2e4eeee16c8fb81c37d62c4badf75ee2', sha1: '87d2219d089ee0a607003abe2b520145cf6239d6', sha256: 'df0397bd601a0f8f8835ff6671fb8c843c663e238cd9cb4a791027a86a640797' }
+    ];
+    const ck = this.state.ck;
+    const editions = edData.map((e) => {
+      const open = ck === e.id;
+      const total = e.counts.reduce((s, n) => s + n, 0);
+      return {
+        ...e,
+        total: fmt(total),
+        discBg: 'radial-gradient(circle, ' + c.bg + ' 0 14%, rgba(255,255,255,0.55) 14.5% 16.5%, rgba(10,12,28,0.35) 17% 30%, transparent 30.5%), conic-gradient(from 0deg, rgb(' + e.da + '), rgba(' + e.da + ',0.55) 12%, #fff 18%, rgba(' + e.da + ',0.7) 25%, rgb(' + e.db + ') 42%, rgba(' + e.db + ',0.6) 55%, #fff 62%, rgba(' + e.db + ',0.75) 70%, rgb(' + e.da + ') 88%, rgb(' + e.da + '))',
+        discShadow: '0 0 30px rgba(' + e.da + ',0.45), 0 0 54px rgba(' + e.db + ',0.2), inset 0 0 0 1px rgba(255,255,255,0.35)',
+        rel: fmt(e.counts[e.counts.length - 1]),
+        open,
+        expanded: open ? 'true' : 'false',
+        toggle: () => this.setState({ ck: open ? '' : e.id }),
+        hashes: ['sha256', 'sha1', 'md5'].map((algo) => ({
+          algo: algo.toUpperCase(),
+          val: e[algo],
+          label: this.state.hc === e.id + algo ? 'Copied' : 'Copy',
+          copy: copyHash(e.id + algo, e[algo])
+        }))
+      };
+    });
+    const allCounts = edData.flatMap((e) => e.counts);
+    const relSum = edData.reduce((s, e) => s + e.counts[e.counts.length - 1], 0);
+    return {
+      c,
+      slides,
+      views,
+      devices,
+      age,
+      isHome: view === 'home',
+      isAbout: view === 'about',
+      isGear: view === 'gear',
+      isSupport: view === 'support',
+      isDownload: view === 'download',
+      isTools: view === 'tools',
+      tools,
+      tool,
+      dlPressed: view === 'download' ? 'true' : 'false',
+      goDl: () => this.setState({ view: 'download' }),
+      editions,
+      allTime: fmt(allCounts.reduce((s, n) => s + n, 0)),
+      relTotal: fmt(relSum),
+      wallets,
+      wal,
+      copy,
+      copyLabel: this.state.copied ? 'Copied' : 'Copy Address',
+      g0: gi === 0, g1: gi === 1, g2: gi === 2, g3: gi === 3, g4: gi === 4,
+      winTitle: win[0],
+      winSub: win[1],
+      winLabel: win[2],
+      glass: 'rgba(' + c.rgb + ',' + a + ')',
+      glassSolid: 'rgba(' + c.rgb + ',0.94)',
+      cmode: 'c-' + String(this.props.color ?? 'Xero').toLowerCase(),
+      fpos: this.state.z ? 'absolute' : 'relative',
+      foff: this.state.z ? '50%' : '0',
+      fw: this.state.z ? '1920px' : '100%',
+      fh: this.state.z ? '950px' : '100%',
+      ftf: this.state.z ? 'translate(-50%, -50%) scale(' + this.state.z + ')' : 'none',
+      blurCss: 'blur(' + b + 'px) saturate(150%)'
+    };
+  }
+}
+</script>
+</body>
+</html>

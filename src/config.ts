@@ -1,80 +1,42 @@
-// ─────────────────────────────────────────────────────────────
-//  XeroLinux — ONE global discount switch.
-//
-//  Set it here once. When live it applies EVERYWHERE automatically:
-//  the homepage banner, the Download ISO card (stamp + struck price)
-//  and the Crypto page (minimum donation + live converter).
-//
-//  Live when `enabled` is true AND today is between `start` and
-//  `end` (inclusive). Past `end` everything reverts on its own.
-// ─────────────────────────────────────────────────────────────
+// Download service (Cloudflare Worker). Not deployed until ISOs go free;
+// until then its stats fetch fails and the counts baked into the page are shown.
+export const DL_API = 'https://dl.xerolinux.xyz';
 
-function within(start: string, end: string): boolean {
-  const now = Date.now();
-  const s = new Date(start + 'T00:00:00').getTime();
-  const e = new Date(end + 'T23:59:59').getTime();
-  return now >= s && now <= e;
-}
+// Paid or free is read at runtime from public/settings.json ({ "free": true | false }),
+// so flipping it needs no rebuild. The build-time value is only the first-paint default.
+export { free as FREE_DEFAULT } from '../public/settings.json';
+export const SETTINGS_URL = '/settings.json';
 
-export const discount = {
-  enabled: true,            // ← master switch (false = off everywhere, dates ignored)
-  start: '2026-12-01',      // ← discount begins
-  end: '2027-01-31',        // ← discount ends (auto-reverts after)
-  percent: 35,              // ← % off — drives every price site-wide
-  basePriceEUR: 39,         // ← regular ISO price
-  label: 'Discount',     // shown on the discount stamp
-  note: 'Limited-time offer', // small note beside the price
+// Paid period.
+export const ISO_PRICE_EUR = 39;
+export const KOFI_ISO_URL = 'https://ko-fi.com/s/cf9def9630';
+// VPS buyer API (iso.xerolinux.xyz). Codes, link limits and counting stay on the VPS until March.
+export const PORTAL_API = 'https://iso.xerolinux.xyz/KDEPlasma/api.php';
+// Optional read-only VPS endpoint with live counts; empty keeps the built-in numbers.
+export const PAID_STATS_URL = '';
 
-  // Homepage banner copy (edit freely):
-  bannerText: '35% Limited Time Discount',
-  bannerSub: 'Grab the ISO while it lasts !!!',
-};
-
-/** True when the discount should show anywhere on the site. */
-export const discountActive = discount.enabled && within(discount.start, discount.end);
-
-/** Prices in whole euros. */
-export const basePriceEUR = discount.basePriceEUR;
-export const discountedPriceEUR = Math.round(discount.basePriceEUR * (1 - discount.percent / 100));
-
-/** What to charge right now — discounted while active, else full price. */
-export const currentPriceEUR = discountActive ? discountedPriceEUR : basePriceEUR;
-
-// ─────────────────────────────────────────────────────────────
-//  Masthead ticker (the scrolling strip under the nameplate).
-//  Date-based like the discount: shows only while `enabled` is
-//  true AND today is between `start` and `end` (auto-hides after).
-//  Edit `items` freely; each one gets a star prefix automatically.
-// ─────────────────────────────────────────────────────────────
-export const ticker = {
-  enabled: true,            // master switch (false = always off, dates ignored)
-  start: '2026-05-31',      // ticker appears from this date
-  end: '2026-12-31',        // ticker auto-hides after this date
-  items: [
-    'Quarterly Release',
-    'Kernel Manager / SCX Tool',
-    'Online vs Offline Install',
-    'Your Machine / Your Decision',
-    'XeroLinux in-house Tools',
-    'Donate once = Lifetime Updates',
-    'XeroLinux Package Manager G.U.I',
-  ],
-};
-
-/** True when the ticker should show right now. */
-export const tickerActive = ticker.enabled && within(ticker.start, ticker.end);
-
-// ─────────────────────────────────────────────────────────────
-//  Ko-Fi general goal (rendered as a custom Layan-themed bar).
-//  Update `currentEUR` here as donations come in — the bar fills
-//  automatically. `link` opens the Ko-Fi page in a new tab.
-// ─────────────────────────────────────────────────────────────
-export const kofiGoal = {
+// Sale switch. Shown only while enabled and today is between start and end (checked in the browser).
+export const SALE = {
   enabled: true,
-  title: 'Maintenance / Survival Goal',
-  currentEUR: 1000,
-  targetEUR: 2000,
-  link: 'https://ko-fi.com/xerolinux',
+  start: '2026-12-01',
+  end: '2027-01-31',
+  percent: 35,
+  label: 'Discount',
+  note: 'Limited-time offer',
+  kofiUrl: 'https://ko-fi.com/xerolinux/link/ANN25',
 };
+export const salePriceEUR = Math.round(ISO_PRICE_EUR * (1 - SALE.percent / 100));
 
-export const kofiGoalPct = Math.max(0, Math.min(100, Math.floor((kofiGoal.currentEUR / kofiGoal.targetEUR) * 100)));
+// Same Firebase project as the old site, so the visit counter carries on from its totals.
+export const FIREBASE = { apiKey: 'AIzaSyDT_MJQFqPiRXwqJzRJN_VdNR9qF-1ki_s', projectId: 'xerolinux-6e564' };
+export const COUNT_HOSTS = ['xerolinux.xyz', 'www.xerolinux.xyz'];
+
+// Ko-fi goal bar in the hero. Live figures come from the kofi-goal-proxy Worker (worker/);
+// these are the fallback if it can't be reached at build or in the browser.
+export const KOFI_GOAL = {
+  proxy: 'https://kofi-goal-proxy.techxero.workers.dev/',
+  link: 'https://ko-fi.com/xerolinux',
+  title: 'Maintenance/Survival',
+  currentEUR: 1620,
+  targetEUR: 2000,
+};

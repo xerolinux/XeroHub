@@ -1,0 +1,93 @@
+---
+import Changelog from './Changelog.astro';
+import { ISO_PRICE_EUR, KOFI_ISO_URL, PAID_STATS_URL, SALE, salePriceEUR } from '../config';
+import { EDITIONS } from '../data/editions';
+
+const looks = {
+  std: { l1: 'Intel', sep: ' / ', l2: 'AMD', c1: '#4285f4', c2: '#ee3939', a: '66,133,244', b: '238,57,57' },
+  nvidia: { l1: 'nVidia', sep: '', l2: '', c1: '#2bd05a', c2: '#2bd05a', a: '43,208,90', b: '86,87,245' },
+};
+const editions = EDITIONS.map((e) => ({ ...e, ...looks[e.id] }));
+const fmt = (n: number) => n.toLocaleString('en-US');
+const allTime = editions.reduce((s, e) => s + e.total, 0);
+const releaseTotal = editions.reduce((s, e) => s + e.release, 0);
+const disc = (a: string, b: string) =>
+  `background: radial-gradient(circle, var(--bg) 0 14%, rgba(255,255,255,0.55) 14.5% 16.5%, rgba(10,12,28,0.35) 17% 30%, transparent 30.5%), conic-gradient(from 0deg, rgb(${a}), rgba(${a},0.55) 12%, #fff 18%, rgba(${a},0.7) 25%, rgb(${b}) 42%, rgba(${b},0.6) 55%, #fff 62%, rgba(${b},0.75) 70%, rgb(${a}) 88%, rgb(${a})); box-shadow: 0 0 18px rgba(${a},0.4), inset 0 0 0 1px rgba(255,255,255,0.35);`;
+const isoFeatures = ['Live Environment based', 'Post-install toolkit included', 'Dedicated Intel/AMD & nVidia ISOs', 'Guided Calamares graphical installer', 'Sched-ext Tool for managing Schedulers', 'Hybrid graphics optimized out of the box'];
+const tuiFeatures = ['Same destination as the ISO', "Answer, confirm & you're done", 'No-nonsense Bash-powered installer', 'More encryption options than the ISO', 'Simple question-based terminal setup', 'Full XeroLinux experience at zero cost'];
+const card = 'position: relative; display: flex; flex-direction: column; gap: max(10px, 1.4cqh); padding: max(16px, 2.2cqh); border-radius: 18px; background: var(--soft); border: 1px solid var(--line);';
+const btn = 'min-height: 46px; display: inline-flex; align-items: center; justify-content: center; gap: 8px; white-space: nowrap; padding: 0 16px; border-radius: 12px; text-decoration: none; font-weight: 600;';
+---
+
+<div class="pane" data-stats={PAID_STATS_URL || undefined} style="padding: max(14px, 2.4cqh) max(18px, 2cqw); gap: max(12px, 2cqh); font-size: max(13px, 1.5cqh); color: var(--text2);">
+  <div class="dlhead" style="flex: none;">
+    <div>
+      <div class="kick" style="color: var(--accentL);">// Get XeroLinux · Quarterly</div>
+      <div style="margin-top: 6px; display: flex; align-items: center; gap: 14px;"><h2 style="margin: 0; font-family: 'Chakra Petch', sans-serif; font-size: 2em; line-height: 1; color: var(--text);">Download</h2><Changelog /></div>
+    </div>
+    <div style="display: flex; gap: max(16px, 2cqw); align-items: flex-end;">
+      <div style="text-align: right;">
+        <div class="big" data-stat="allTime" style="font-size: 2.8em; color: var(--text);">{fmt(allTime)}</div>
+        <div class="kick" style="margin-top: 6px;">downloads all-time</div>
+      </div>
+      <div style="text-align: right; padding-left: max(16px, 2cqw); border-left: 1px solid var(--line);">
+        <div class="big" data-stat="releaseTotal" style="font-size: 2.8em; color: var(--accentL);">{fmt(releaseTotal)}</div>
+        <div class="kick" style="margin-top: 6px;">this release</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="buy" data-sale-window data-enabled={String(SALE.enabled)} data-start={SALE.start} data-end={SALE.end} style="gap: max(12px, 1.4cqw);">
+    <article style={card}>
+      <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 12px;">
+        <div>
+          <div class="kick" style="color: var(--accentL);">KDE Plasma · One-time contribution</div>
+          <h3 style="margin: 6px 0 0; font-family: 'Chakra Petch', sans-serif; font-size: 1.8em; line-height: 1; color: var(--text);">XeroLinux ISO</h3>
+        </div>
+        <div style="text-align: right;">
+          <div data-sale="off"><div class="big" style="font-size: 2.4em; color: var(--text);">€{ISO_PRICE_EUR}</div><div style="font-size: .8em;">one-time · lifetime updates</div></div>
+          <div data-sale="on" hidden><div class="big" style="font-size: 2.4em; color: var(--text);"><s style="font-size: .55em; color: var(--text2); margin-right: 8px;">€{ISO_PRICE_EUR}</s>€{salePriceEUR}</div><div style="font-size: .8em; color: var(--accentL);">Save {SALE.percent}% · {SALE.note}</div></div>
+        </div>
+      </div>
+      <ul class="feats two" style="font-size: .92em;">
+        {isoFeatures.map((f) => <li style="display: flex; gap: 8px;"><span style="color: var(--accentL);">▸</span><span>{f}</span></li>)}
+      </ul>
+      <div class="edrow">
+        {editions.map((e) => (
+          <div style="display: flex; align-items: center; gap: 12px; padding: 10px 12px; border-radius: 12px; background: var(--glass); border: 1px solid var(--line);">
+            <div class="disc mini" aria-hidden="true" style={disc(e.a, e.b)}></div>
+            <div style="min-width: 0;">
+              <div style="font-family: 'Chakra Petch', sans-serif; font-weight: 700; font-size: 1.1em;"><span style={`color: ${e.c1};`}>{e.l1}</span><span style="color: var(--text2);">{e.sep}</span><span style={`color: ${e.c2};`}>{e.l2}</span></div>
+              <div style="font-size: .8em;"><b class="big" data-stat={`${e.id}.release`} style="color: var(--text);">{fmt(e.release)}</b> this release · <span data-stat={`${e.id}.total`}>{fmt(e.total)}</span> all-time</div>
+            </div>
+          </div>
+        ))}
+      </div>
+      <div style="margin-top: auto; display: flex; gap: 10px; flex-wrap: nowrap;">
+        <a data-sale="off" href={KOFI_ISO_URL} target="_blank" rel="noopener noreferrer" class="pri" style={btn + ' flex: 1 1 auto; background: var(--accent); color: #ffffff;'}>Get it on Ko-fi</a>
+        <a data-sale="on" hidden href={SALE.kofiUrl} target="_blank" rel="noopener noreferrer" class="pri" style={btn + ' flex: 1 1 auto; background: var(--accent); color: #ffffff;'}>{SALE.label} on Ko-fi</a>
+        <a href="/support/" style={btn + ' border: 1px solid var(--line); color: var(--text);'}>Pay with crypto</a>
+        <a href="/access/" style={btn + ' border: 1px solid var(--accentL); color: var(--text);'}>I have a code</a>
+      </div>
+    </article>
+
+    <article style={card}>
+      <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 12px;">
+        <div>
+          <div class="kick" style="color: var(--accentL);">Terminal installer · Any desktop</div>
+          <h3 style="margin: 6px 0 0; font-family: 'Chakra Petch', sans-serif; font-size: 1.8em; line-height: 1; color: var(--text);">XeroLinux T.U.I</h3>
+        </div>
+        <div style="text-align: right;"><div class="big" style="font-size: 2.4em; color: var(--text);">€0</div><div style="font-size: .8em;">free forever</div></div>
+      </div>
+      <ul class="feats" style="font-size: .92em;">
+        {tuiFeatures.map((f) => <li style="display: flex; gap: 8px;"><span style="color: var(--accentL);">▸</span><span>{f}</span></li>)}
+      </ul>
+      <div style="margin-top: auto; display: flex; gap: 10px; flex-wrap: nowrap;">
+        <a href="https://wiki.xerolinux.xyz/xero-install/" target="_blank" rel="noopener noreferrer" style={btn + ' flex: 1 1 auto; border: 1px solid var(--line); color: var(--text);'}>Read the guide</a>
+        <a href="https://github.com/xerolinux/XeroHub/tree/main/public/script/xero-install" target="_blank" rel="noopener noreferrer" style={btn + ' border: 1px solid var(--line); color: var(--text);'}>GitHub</a>
+      </div>
+    </article>
+  </div>
+
+  <p style="flex: none; margin: 0; font-size: .86em;">Donate once and every quarterly release after that is yours. Prefer free? The T.U.I installs the same system underneath.</p>
+</div>

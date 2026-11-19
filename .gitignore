@@ -26,3 +26,7 @@ gh-pages.md
 
 # jetbrains setting folder
 .idea/
+
+# local tool and editor state
+.claude/settings.local.json
+*.kate-swp

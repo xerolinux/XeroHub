@@ -1,0 +1,36 @@
+---
+import { CHANGELOG } from '../data/changelog';
+
+const panels = [['ISO', 'iso', '#2bd05a'], ['T.U.I', 'tui', 'var(--accentL)']] as const;
+---
+
+<button type="button" data-cl-open aria-haspopup="dialog" style="min-height: 36px; display: inline-flex; align-items: center; gap: 8px; padding: 0 12px; border-radius: 10px; border: 1px solid var(--line); background: transparent; color: var(--text); font-size: .82em; font-weight: 600;">
+  <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2"></path><rect x="9" y="3" width="6" height="4" rx="1"></rect><path d="M9 12h6"></path><path d="M9 16h4"></path></svg>
+  Changelog
+</button>
+<div data-cl hidden class="clwrap">
+  <div class="clbody" role="dialog" aria-modal="true" aria-label="XeroLinux changelog"><span class="ring" aria-hidden="true"></span>
+  <div style="display: flex; align-items: flex-start; justify-content: space-between; gap: 12px;">
+    <div>
+      <div class="kick" style="color: var(--accentL);">// What's new</div>
+      <h3 style="margin: 6px 0 0; font-family: 'Chakra Petch', sans-serif; font-size: 1.8em; line-height: 1; color: var(--text);">XeroLinux Changelog</h3>
+    </div>
+    <button type="button" data-cl-close aria-label="Close changelog" style="flex: none; min-width: 44px; min-height: 44px; border-radius: 10px; border: 1px solid var(--line); background: transparent; color: var(--text); font-size: 1.2em;">✕</button>
+  </div>
+  {CHANGELOG.map((r) => (
+    <section style="display: flex; flex-direction: column; gap: 12px;">
+      <div style="display: flex; align-items: center; gap: 12px;"><span class="chip" style="background: var(--soft); color: var(--accentL);">{r.date}</span><span style="flex: 1; height: 1px; background: var(--line);"></span></div>
+      <div class="clgrid">
+        {panels.map(([name, key, color]) => (
+          <div style={`border-radius: 14px; overflow: hidden; background: var(--soft); border: 1px solid var(--line); border-top: 2px solid ${color};`}>
+            <div class="kick" style={`padding: 10px 14px; color: ${color}; border-bottom: 1px solid var(--line);`}>{name}</div>
+            <ul style="margin: 0; padding: 12px 14px; list-style: none; display: flex; flex-direction: column; gap: 10px; color: var(--text2);">
+              {r[key].map((item) => <li style="display: flex; gap: 10px;"><span style={`color: ${color}; font-weight: 700;`}>✓</span><span set:html={item} /></li>)}
+            </ul>
+          </div>
+        ))}
+      </div>
+    </section>
+  ))}
+  </div>
+</div>

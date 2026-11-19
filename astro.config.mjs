@@ -3,27 +3,28 @@ import { defineConfig } from 'astro/config';
 import tailwindcss from '@tailwindcss/vite';
 import sitemap from '@astrojs/sitemap';
 
-// https://astro.build/config
 export default defineConfig({
   site: 'https://xerolinux.xyz',
   output: 'static',
-  compressHTML: true,
-  build: {
-    inlineStylesheets: 'auto',
+  // Old site URLs that still get traffic from search and bookmarks.
+  redirects: {
+    '/updates': '/',
+    '/updates/age-attestation': '/',
+    '/updates/browser-situation': '/',
+    '/updates/help-needed': '/',
+    '/updates/iso-price-update': '/',
+    '/updates/iso-releases': '/',
+    '/updates/six-year-anniversary': '/',
+    '/updates/xero-reviews': '/',
+    '/updates/xero-wayland': '/',
+    '/updates/xerodora': '/',
+    '/updates/xerolinux-changes': '/',
+    '/updates/xerolinux-team': '/',
+    '/crypto': '/support/',
+    '/videos': '/',
   },
-  integrations: [sitemap()],
+  integrations: [sitemap({ filter: (page) => !page.includes('/access/') })],
   vite: {
     plugins: [tailwindcss()],
-    build: {
-      cssMinify: 'lightningcss',
-    },
-    server: {
-      allowedHosts: ['healthy-bath-isle-fioricet.trycloudflare.com'],
-    },
-  },
-  markdown: {
-    shikiConfig: {
-      theme: 'github-dark-default',
-    },
   },
 });

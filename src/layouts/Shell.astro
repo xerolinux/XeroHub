@@ -1,0 +1,127 @@
+---
+import '../styles/global.css';
+import { ClientRouter } from 'astro:transitions';
+import { FREE_DEFAULT } from '../config';
+import KofiGoal from '../components/KofiGoal.astro';
+import { CHANGELOG } from '../data/changelog';
+import { EDITIONS } from '../data/editions';
+
+interface Props {
+  title: string;
+  description: string;
+  current: string;
+  label: string;
+  winTitle: string;
+  winSub: string;
+}
+
+const { title, description, current, label, winTitle, winSub } = Astro.props;
+const pageTitle = current === '/' ? 'XeroLinux' : `${title} | XeroLinux`;
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+---
+
+<!doctype html>
+<html lang="en" transition:animate="none">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="theme-color" content="#5657f5" />
+    <title>{pageTitle}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalURL} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" />
+    <script is:inline>
+      try { if (localStorage.getItem('theme') === 'dark') document.documentElement.dataset.theme = 'dark'; } catch (e) {}
+    </script>
+    <script is:inline define:vars={{ FREE_DEFAULT }}>
+      var f = String(FREE_DEFAULT);
+      try { f = localStorage.getItem('xero-free') || f; } catch (e) {}
+      document.documentElement.dataset.free = f;
+    </script>
+    <ClientRouter />
+  </head>
+  <body>
+<div class="root c-xero">
+  <div class="bg" aria-hidden="true" transition:persist="bg">
+      <img class="fade on" data-bg="0" src="/media/bg-desktop.webp" alt="" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transform: scale(1.12);">
+      <img class="fade" data-bg="1" src="/media/bg-calamares.webp" alt="" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transform: scale(1.12);">
+      <img class="fade" data-bg="2" src="/media/bg-toolkit.webp" alt="" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transform: scale(1.12);">
+    <div class="bgdim"></div><div class="grid"></div><div class="scan"></div><div class="orb o1"></div><div class="orb o2"></div><div class="orb o3"></div>
+  </div>
+
+  <div class="frame" data-frame>
+  <div class="stage" style="gap: max(12px, 1.8cqh);">
+  <header class="hdr" transition:persist="hdr" style="position: relative; z-index: 1; padding: max(6px, 1cqh) max(10px, 1.4cqw); border-radius: 16px; background: var(--glass); border: 1px solid var(--line); backdrop-filter: var(--blur); -webkit-backdrop-filter: var(--blur);"><span class="ring" aria-hidden="true"></span>
+    <a href="/" aria-label="XeroLinux home" style="display: flex; align-items: center; gap: 12px; min-height: 44px; text-decoration: none; font-family: 'Chakra Petch', sans-serif; font-weight: 700; font-size: max(18px, 2.2cqh);"><img src="/logos/xero-icon.webp" alt="" style="width: max(28px, 3cqh); height: max(28px, 3cqh);"><span>XeroLinux</span></a>
+    <nav class="nav" aria-label="Main" style="font-size: max(14px, 1.6cqh);">
+      <a href="/" aria-current={current === "/" ? "page" : undefined} style="font-weight: 500; color: var(--text2);"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex: none;"><path d="M3 10.5 12 3l9 7.5"></path><path d="M5 9.5V21h14V9.5"></path><path d="M10 21v-6h4v6"></path></svg><span class="nl">Home</span></a>
+      <a href="/about/" aria-current={current === "/about/" ? "page" : undefined} style="font-weight: 500; color: var(--text2);"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex: none;"><circle cx="12" cy="8" r="4"></circle><path d="M4 21c0-4 4-6 8-6s8 2 8 6"></path></svg><span class="nl">About</span></a>
+      <a href="/gear/" aria-current={current === "/gear/" ? "page" : undefined} style="font-weight: 500; color: var(--text2);"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex: none;"><rect x="3" y="4" width="18" height="12" rx="2"></rect><path d="M8 20h8"></path><path d="M12 16v4"></path></svg><span class="nl">Gear</span></a>
+      <a href="/tools/" aria-current={current === "/tools/" ? "page" : undefined} style="font-weight: 500; color: var(--text2);"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex: none;"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.5 2.5-2.4-.6-.6-2.4z"></path></svg><span class="nl">Tools</span></a>
+      <a href="/support/" aria-current={current === "/support/" ? "page" : undefined} style="font-weight: 500; color: var(--text2);"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex: none;"><path d="M12 20s-7-4.5-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.5-7 10-7 10z"></path></svg><span class="nl">Support</span></a>
+      <a href="https://shop.xerolinux.xyz" target="_blank" rel="noopener noreferrer" aria-label="Merch (opens in a new tab)" style="font-weight: 500; color: var(--text2);"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex: none;"><path d="M6 7h12l-1 13H7z"></path><path d="M9 7a3 3 0 0 1 6 0"></path></svg><span class="nl">Merch</span><svg class="ext" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"></path><path d="M8 7h9v9"></path></svg></a>
+      <a href="/download/" class="navdl" aria-current={current === "/download/" ? "page" : undefined} style="margin-left: 8px; background: var(--accent); color: #ffffff; font-weight: 600;"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex: none;"><path d="M12 3v12"></path><path d="m7 10 5 5 5-5"></path><path d="M5 21h14"></path></svg><span class="nl">Download</span></a>
+    </nav>
+  </header>
+
+  <main class="main" data-current={current} style="position: relative; z-index: 1; gap: max(12px, 1.8cqh);">
+    <section transition:persist="hero" style="min-height: 0; display: flex; flex-direction: column; justify-content: center; gap: max(14px, 2.4cqh); padding: max(20px, 3.4cqh) max(20px, 2.4cqw); border-radius: 22px; background: var(--glass); border: 1px solid var(--line); backdrop-filter: var(--blur); -webkit-backdrop-filter: var(--blur);"><span class="ring" aria-hidden="true"></span>
+      <div style="font-family: 'JetBrains Mono', monospace; font-size: max(12px, 1.35cqh); letter-spacing: .14em; text-transform: uppercase; color: var(--accentL);">Arch Linux · KDE Plasma 6 · Wayland</div>
+      <div class="htitle"><svg class="archlogo" viewBox="0 0 24 24" role="img" aria-label="Arch Linux"><defs><linearGradient id="archg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7e9bff"/><stop offset=".55" stop-color="#a98bf0"/><stop offset="1" stop-color="#e07aa8"/></linearGradient></defs><path fill="url(#archg)" d="M11.39.605C10.376 3.092 9.764 4.72 8.635 7.132c.693.734 1.543 1.589 2.923 2.554-1.484-.61-2.496-1.224-3.252-1.86C6.86 10.842 4.596 15.138 0 23.395c3.612-2.085 6.412-3.37 9.021-3.862a6.61 6.61 0 0 1-.171-1.547l.003-.115c.058-2.315 1.261-4.095 2.687-3.973 1.426.12 2.534 2.096 2.478 4.409a6.52 6.52 0 0 1-.146 1.243c2.58.505 5.352 1.787 8.914 3.844-.702-1.293-1.33-2.459-1.929-3.57-.943-.73-1.926-1.682-3.933-2.713 1.38.359 2.367.772 3.137 1.234-6.09-11.334-6.582-12.84-8.67-17.74z"/></svg><h1 style="margin: 0; font-family: 'Chakra Petch', sans-serif; font-size: max(32px, 5.4cqh); line-height: 1.04; font-weight: 700;">Arch, with the <span class="hl">sharp edges</span> filed off.</h1></div>
+      <p style="margin: 0; font-size: max(15px, 1.85cqh); line-height: 1.55; color: var(--text2); max-width: 40em;">A configured KDE Plasma 6 desktop on top of Arch, with a working installer, a Kernel Manager for CachyOS and other tuned kernels, an SCX tool for modern schedulers, and the in-house XeroLinux Toolkit for post-install setup.</p>
+      <div class="ctas">
+        <a href="/download/" class="pri" style=" background: var(--accent); color: #ffffff; font-weight: 600; font-size: max(16px, 1.9cqh); padding: max(12px, 1.5cqh) max(24px, 1.8cqw); border-radius: 12px;"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex: none;"><path d="M12 3v12"></path><path d="m7 10 5 5 5-5"></path><path d="M5 21h14"></path></svg>Download</a>
+        <a href="https://wiki.xerolinux.xyz" target="_blank" rel="noopener noreferrer" style="border: 1px solid var(--line); font-size: max(14px, 1.6cqh); padding: max(10px, 1.3cqh) max(18px, 1.2cqw); border-radius: 12px;"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex: none;"><path d="M4 19.5V5a2 2 0 0 1 2-2h14v16H6a2 2 0 0 0-2 2z"></path><path d="M8 7h8"></path><path d="M8 11h6"></path></svg>The Wiki</a>
+        <a href="https://github.com/xerolinux" target="_blank" rel="noopener noreferrer" aria-label="GitHub" class="ghbtn" style="font-size: max(14px, 1.6cqh); padding: max(8px, 1.1cqh) max(12px, .9cqw); border-radius: 12px; color: var(--text2);"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="flex: none;"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"></path></svg><span class="ghl">GitHub</span></a>
+      </div>
+      <ul class="slg" style="margin: 0; padding: max(14px, 2cqh) 0 0; border-top: 1px solid var(--line); list-style: none; gap: max(8px, 1.2cqh) 20px; font-size: max(14px, 1.55cqh);">
+        <li style="display: flex; gap: 10px;"><span style="color: var(--accentL);">▸</span>Quarterly Release</li>
+        <li style="display: flex; gap: 10px;"><span style="color: var(--accentL);">▸</span>Kernel Manager / SCX Tool</li>
+        <li style="display: flex; gap: 10px;"><span style="color: var(--accentL);">▸</span>Online vs Offline Install</li>
+        <li style="display: flex; gap: 10px;"><span style="color: var(--accentL);">▸</span>Your Machine / Your Decision</li>
+        <li style="display: flex; gap: 10px;"><span style="color: var(--accentL);">▸</span>XeroLinux in-house Tools</li>
+        <li style="display: flex; gap: 10px;"><span style="color: var(--accentL);">▸</span>Package Manager G.U.I</li>
+      </ul>
+      <KofiGoal />
+    </section>
+
+    <section aria-label={label} style="min-height: 0; display: flex; flex-direction: column; border-radius: 22px; overflow: hidden; background: var(--glass); border: 1px solid var(--line); backdrop-filter: var(--blur); -webkit-backdrop-filter: var(--blur);"><span class="ring" aria-hidden="true"></span>
+      <div data-winbar style="display: flex; align-items: center; gap: 8px; padding: max(8px, 1.1cqh) 16px; border-bottom: 1px solid var(--line); font-family: 'JetBrains Mono', monospace; font-size: max(12px, 1.35cqh); color: var(--text2);">
+        <span aria-hidden="true" style="width: 11px; height: 11px; border-radius: 50%; background: #ee3939;"></span><span aria-hidden="true" style="width: 11px; height: 11px; border-radius: 50%; background: #f5b500;"></span><span aria-hidden="true" style="width: 11px; height: 11px; border-radius: 50%; background: #2bd05a;"></span>
+        <span data-wt style="margin-left: 8px; color: var(--text);">{winTitle}</span>
+        <span data-ws class="cap">{winSub}</span>
+        <button type="button" class="termbtn" data-term-open aria-label="Open terminal" title="Terminal (`)">&gt;_</button>
+      </div>
+      <slot />
+      <div class="term" data-term hidden role="region" aria-label="Terminal">
+        <div class="tout" data-term-out aria-live="polite"></div>
+        <div class="tline"><div data-term-prompt class="tprompt"></div><div class="tin"><span class="tcorner" aria-hidden="true"></span><svg class="pico tcaret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg><input data-term-in type="text" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="Terminal command" /></div></div>
+      </div>
+      <script type="application/json" id="term-data" set:html={JSON.stringify({ changelog: CHANGELOG, editions: EDITIONS, path: Astro.url.pathname })} />
+    </section>
+  </main>
+
+  <footer class="ftr" transition:persist="ftr" style="position: relative; z-index: 1; padding: max(10px, 1.1cqh) max(16px, 1.4cqw); border-radius: 14px; background: var(--glass); border: 1px solid var(--line); backdrop-filter: var(--blur); -webkit-backdrop-filter: var(--blur); font-size: max(13px, 1.4cqh); color: var(--text2);"><span class="ring" aria-hidden="true"></span>
+    <span>XeroLinux · Powered by Arch Linux &amp; KDE Plasma</span>
+    <span class="visits" title="Unique visits across xerolinux.xyz"><svg aria-hidden="true" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg><b data-visits-n>-</b> visits</span>
+    <span style="display: flex; align-items: center; gap: 14px;"><span style="font-family: 'JetBrains Mono', monospace;"><span data-mode="free">Free to download · Quarterly releases</span><span data-mode="paid">Quarterly releases · Free T.U.I installer</span></span><button type="button" class="themebtn" data-theme-toggle>Theme</button></span>
+  </footer>
+  </div>
+  </div>
+</div>
+    <script>
+      import '../scripts/site.ts';
+      import '../scripts/term-loader.ts';
+      import { initVisits } from '../scripts/visits.ts';
+      document.addEventListener('astro:page-load', initVisits);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,98 @@
+---
+import Shell from '../layouts/Shell.astro';
+import { PORTAL_API, KOFI_ISO_URL } from '../config';
+
+const editions = [
+  { id: 'std', l1: 'Intel', sep: ' / ', l2: 'AMD', c1: '#4285f4', c2: '#ee3939', note: 'For systems with an Intel or AMD GPU/iGPU', a: '66,133,244', b: '238,57,57' },
+  { id: 'nvidia', l1: 'nVidia', sep: '', l2: '', c1: '#2bd05a', c2: '#2bd05a', note: 'For systems with an nVidia GPU', a: '43,208,90', b: '86,87,245' },
+];
+const disc = (a: string, b: string) =>
+  `background: radial-gradient(circle, var(--bg) 0 14%, rgba(255,255,255,0.55) 14.5% 16.5%, rgba(10,12,28,0.35) 17% 30%, transparent 30.5%), conic-gradient(from 0deg, rgb(${a}), rgba(${a},0.55) 12%, #fff 18%, rgba(${a},0.7) 25%, rgb(${b}) 42%, rgba(${b},0.6) 55%, #fff 62%, rgba(${b},0.75) 70%, rgb(${a}) 88%, rgb(${a})); box-shadow: 0 0 30px rgba(${a},0.45), 0 0 54px rgba(${b},0.2), inset 0 0 0 1px rgba(255,255,255,0.35);`;
+const field = 'width: 100%; box-sizing: border-box; min-height: 46px; padding: 0 14px; border-radius: 12px; border: 1px solid var(--line); background: var(--glass); color: var(--text); font: inherit;';
+const btn = 'min-height: 46px; display: inline-flex; align-items: center; justify-content: center; gap: 8px; white-space: nowrap; padding: 0 16px; border-radius: 12px; font-weight: 600;';
+---
+
+<Shell title="ISO access" description="Enter your donation email and access code to download the XeroLinux ISO." current="/download/" label="ISO access" winTitle="~/download/access" winSub="enter your access code">
+  <div class="pane" data-access={PORTAL_API} style="padding: max(14px, 2.4cqh) max(18px, 2cqw); gap: max(12px, 2cqh); font-size: max(13px, 1.5cqh); color: var(--text2);">
+
+    <div data-view="login" style="flex: 1 1 auto; display: grid; place-items: center;">
+      <form data-login class="accform" style="gap: max(12px, 1.6cqh); padding: max(20px, 3cqh) max(20px, 2.4cqw); border-radius: 20px; background: var(--soft); border: 1px solid var(--line);">
+        <div>
+          <div class="kick" style="color: var(--accentL);">// ISO access</div>
+          <h2 style="margin: 6px 0 0; font-family: 'Chakra Petch', sans-serif; font-size: 2em; line-height: 1; color: var(--text);">Enter your access code</h2>
+          <p style="margin: 10px 0 0;">Use the email and code from your Ko-fi or crypto donation.</p>
+        </div>
+        <label style="display: flex; flex-direction: column; gap: 6px; font-size: .86em;">Donation email
+          <input name="email" type="email" required autocomplete="email" style={field} />
+        </label>
+        <label style="display: flex; flex-direction: column; gap: 6px; font-size: .86em;">Access code
+          <input name="code" type="text" required autocomplete="off" autocapitalize="characters" spellcheck="false" style={field + " font-family: 'JetBrains Mono', monospace; letter-spacing: .06em;"} />
+        </label>
+        <p data-msg role="alert" style="margin: 0; min-height: 1.4em; color: #ee7a9a;"></p>
+        <div style="display: flex; gap: 10px;">
+          <button type="submit" class="pri" style={btn + ' flex: 1 1 auto; border: 0; background: var(--accent); color: #ffffff;'}>Access</button>
+          <a href="/download/" class="accback" style={btn + ' text-decoration: none; color: var(--text);'}><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"></path></svg>Back</a>
+        </div>
+        <p style="margin: 0; font-size: .8em;">No code yet? <a href={KOFI_ISO_URL} target="_blank" rel="noopener noreferrer" style="color: var(--accentL);">Get the ISO on Ko-fi</a> or <a href="/support/" style="color: var(--accentL);">pay with crypto</a>.</p>
+      </form>
+    </div>
+
+    <div data-view="files" hidden style="flex: 1 1 auto; min-height: 0; display: flex; flex-direction: column; gap: max(12px, 2cqh);">
+      <div class="dlhead" style="flex: none;">
+        <div>
+          <div class="kick" style="color: var(--accentL);">// Thanks for the support</div>
+          <h2 style="margin: 6px 0 0; font-family: 'Chakra Petch', sans-serif; font-size: 2em; line-height: 1; color: var(--text);">Your downloads</h2>
+        </div>
+        <div style="display: flex; align-items: center; gap: 14px;">
+          <div style="text-align: right;"><div class="big" data-f="links" style="font-size: 2.4em; color: var(--text);">5</div><div class="kick" data-f="linksLabel" style="margin-top: 6px;">download links left</div></div>
+          <button type="button" data-logout style={btn + ' border: 1px solid var(--line); background: transparent; color: var(--text);'}>Sign out</button>
+        </div>
+      </div>
+      <div class="dlg" style="gap: max(12px, 1.4cqw);">
+        {editions.map((e) => (
+          <article class="ed" data-edition={e.id} style="position: relative; gap: max(10px, 1.5cqh); padding: max(16px, 2.2cqh); border-radius: 18px; background: var(--soft); border: 1px solid var(--line);">
+            <div style="display: flex; gap: max(14px, 1.6cqw); align-items: center;">
+              <div class="disc" aria-hidden="true" style={disc(e.a, e.b)}></div>
+              <div style="min-width: 0; display: flex; flex-direction: column; gap: 5px;">
+                <div style="font-family: 'Chakra Petch', sans-serif; font-weight: 700; font-size: 1.45em; color: var(--text);"><span style={`color: ${e.c1};`}>{e.l1}</span><span style="color: var(--text2);">{e.sep}</span><span style={`color: ${e.c2};`}>{e.l2}</span></div>
+                <div style="font-size: .86em;">{e.note}</div>
+                <div class="kick" style="margin-top: 6px; color: var(--accentL);">Latest release · <span data-f="version"></span></div>
+                <div data-f="file" style="font-family: 'JetBrains Mono', monospace; font-size: .82em; color: var(--text); word-break: break-all;"></div>
+              </div>
+            </div>
+            <div style="display: flex; align-items: flex-end; justify-content: space-between; gap: 12px; padding: max(10px, 1.4cqh) 16px; border-radius: 14px; background: var(--glass); border: 1px solid var(--line);">
+              <div><div class="big" data-f="release" style="font-size: 2.6em; color: var(--text);"></div><div class="kick" style="margin-top: 6px;">downloads this release</div></div>
+              <div style="text-align: right;"><div class="big" data-f="total" style="font-size: 1.4em; color: var(--accentL);"></div><div class="kick" style="margin-top: 4px; font-size: .68em;">all-time</div></div>
+            </div>
+            <div class="chips"><span class="chip" data-f="date" style="background: var(--glass);"></span><span class="chip" style="background: var(--glass);">x86_64</span><span class="chip" data-f="size" style="background: var(--glass);"></span><span class="chip" style="background: var(--glass);">ISO</span></div>
+            <div style="margin-top: max(8px, 1.5cqh); display: flex; gap: 10px; flex-wrap: nowrap; white-space: nowrap;">
+              <button type="button" data-get={e.id} style={btn + ' flex: 1 1 auto; min-height: 48px; border: 0; font-size: 1.05em; background: var(--accent); color: #ffffff;'}><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"></path><path d="m7 10 5 5 5-5"></path><path d="M5 21h14"></path></svg>Download · <span data-f="size"></span></button>
+              <button type="button" data-pop-open aria-expanded="false" style={btn + ' min-height: 48px; border: 1px solid var(--line); background: transparent; color: var(--text);'}>Verify checksums</button>
+            </div>
+            <p data-f="err" role="alert" style="margin: 0; color: #ee7a9a; font-size: .86em;"></p>
+            <div role="dialog" aria-label="Checksums" data-pop hidden style="position: absolute; inset: 0; z-index: 2; box-sizing: border-box; display: flex; flex-direction: column; gap: max(8px, 1.3cqh); padding: max(16px, 2.2cqh); border-radius: 18px; overflow-y: auto; background: var(--glassSolid); border: 1px solid var(--accentL); backdrop-filter: var(--blur); -webkit-backdrop-filter: var(--blur);">
+              <div style="display: flex; align-items: flex-start; justify-content: space-between; gap: 12px;">
+                <div style="min-width: 0;">
+                  <div style="font-family: 'Chakra Petch', sans-serif; font-weight: 700; font-size: 1.25em; color: var(--text);">Verify checksums</div>
+                  <div data-f="file" style="font-family: 'JetBrains Mono', monospace; font-size: .76em; word-break: break-all;"></div>
+                </div>
+                <button type="button" data-pop-close aria-label="Close checksums" style="flex: none; min-width: 44px; min-height: 44px; border-radius: 10px; border: 1px solid var(--line); background: transparent; color: var(--text); font-size: 1.2em;">✕</button>
+              </div>
+              {['sha256', 'sha1', 'md5'].map((h) => (
+                <div class="hrow" style="padding: 10px 12px; border-radius: 12px; background: var(--soft);">
+                  <div style="flex: 1; min-width: 0;"><div class="kick" style="font-size: .66em; color: var(--accentL);">{h.toUpperCase()}</div><div class="hash" data-f={h} style="color: var(--text);"></div></div>
+                  <button type="button" data-copy="" data-copy-f={h} aria-label={`Copy ${h.toUpperCase()}`} style="border: 1px solid var(--line); background: transparent; color: var(--text);">Copy</button>
+                </div>
+              ))}
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </div>
+</Shell>
+
+<script>
+  import { initAccess } from '../scripts/access.ts';
+  document.addEventListener('astro:page-load', initAccess);
+</script>
