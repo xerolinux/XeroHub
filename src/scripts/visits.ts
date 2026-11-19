@@ -34,17 +34,18 @@ async function token(): Promise<string> {
   return id;
 }
 
+// Server-side sum: billed one read per 1000 docs, where listing the collection costs one read per doc.
 async function total(id: string) {
-  let sum = 0;
-  let page = '';
-  do {
-    const r = await fetch(`${DOCS}/views?pageSize=300${page ? `&pageToken=${page}` : ''}`, { headers: { Authorization: `Bearer ${id}` } });
-    if (!r.ok) throw new Error(String(r.status));
-    const d = await r.json();
-    for (const doc of d.documents ?? []) sum += Number(doc.fields?.views?.integerValue ?? 0);
-    page = d.nextPageToken ?? '';
-  } while (page);
-  return sum;
+  const d = await post(`${DOCS}:runAggregationQuery`, {
+    structuredAggregationQuery: {
+      aggregations: [{ alias: 'total', sum: { field: { fieldPath: 'views' } } }],
+      structuredQuery: { from: [{ collectionId: 'views' }] },
+    },
+  }, id);
+  const v = d[0]?.result?.aggregateFields?.total;
+  const n = Number(v?.integerValue ?? v?.doubleValue);
+  if (!n) throw new Error('no total');
+  return n;
 }
 
 // Same page ids and once-per-visitor-per-page flag as the old site, so returning visitors are not counted again.
