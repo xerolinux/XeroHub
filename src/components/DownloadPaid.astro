@@ -13,7 +13,7 @@ const allTime = editions.reduce((s, e) => s + e.total, 0);
 const releaseTotal = editions.reduce((s, e) => s + e.release, 0);
 const disc = (a: string, b: string) =>
   `background: radial-gradient(circle, var(--bg) 0 14%, rgba(255,255,255,0.55) 14.5% 16.5%, rgba(10,12,28,0.35) 17% 30%, transparent 30.5%), conic-gradient(from 0deg, rgb(${a}), rgba(${a},0.55) 12%, #fff 18%, rgba(${a},0.7) 25%, rgb(${b}) 42%, rgba(${b},0.6) 55%, #fff 62%, rgba(${b},0.75) 70%, rgb(${a}) 88%, rgb(${a})); box-shadow: 0 0 18px rgba(${a},0.4), inset 0 0 0 1px rgba(255,255,255,0.35);`;
-const isoFeatures = ['Live Environment based', 'Post-install toolkit included', 'Dedicated Intel/AMD & nVidia ISOs', 'Guided Calamares graphical installer', 'Sched-ext Tool for managing Schedulers', 'Hybrid graphics optimized out of the box'];
+const isoFeatures = ['Live Environment based', 'Post-install toolkit included', 'Dedicated Intel/AMD & nVidia ISOs', 'Guided Calamares graphical installer', 'Kernel Manager for CachyOS & tuned kernels', 'Hybrid graphics optimized out of the box'];
 const tuiFeatures = ['Same destination as the ISO', "Answer, confirm & you're done", 'No-nonsense Bash-powered installer', 'More encryption options than the ISO', 'Simple question-based terminal setup', 'Full XeroLinux experience at zero cost'];
 const card = 'position: relative; display: flex; flex-direction: column; gap: max(10px, calc(1.4*var(--qh))); padding: max(16px, calc(2.2*var(--qh))); border-radius: 18px; background: var(--soft); border: 1px solid var(--line);';
 const btn = 'min-height: 46px; display: inline-flex; align-items: center; justify-content: center; gap: 8px; white-space: nowrap; padding: 0 10px; border-radius: 12px; text-decoration: none; font-weight: 600;';
@@ -87,7 +87,7 @@ const btn = 'min-height: 46px; display: inline-flex; align-items: center; justif
       </div>
       <div class="cmd one" style="margin-top: auto;"><pre style="background: var(--glass); color: var(--text); border: 1px solid var(--line);">curl -fsSL https://urls.xerolinux.xyz/xeroinstall | bash</pre><button type="button" data-copy="curl -fsSL https://urls.xerolinux.xyz/xeroinstall | bash" aria-label="Copy install command" title="Copy" style="border: 1px solid var(--line); background: transparent; color: var(--text);"><svg aria-hidden="true" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button></div>
       <div data-btnrow style="display: flex; gap: 8px; flex-wrap: wrap; justify-content: flex-end;">
-        <a hidden href="https://wiki.xerolinux.xyz/xero-install/" target="_blank" rel="noopener noreferrer" style={btn + ' flex: 1 1 auto; border: 1px solid var(--line); color: var(--text);'}>Read the guide</a>
+        <a href="https://wiki.xerolinux.xyz/xero-install/" target="_blank" rel="noopener noreferrer" style={btn + ' flex: 1 1 auto; border: 1px solid var(--line); color: var(--text);'}>Read the guide</a>
         <a href="https://github.com/xerolinux/XeroHub/tree/main/public/script/xero-install" target="_blank" rel="noopener noreferrer" style={btn + ' border: 1px solid var(--line); color: var(--text);'}>GitHub</a>
       </div>
     </article>

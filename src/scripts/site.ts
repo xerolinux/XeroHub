@@ -63,6 +63,34 @@ function syncRings() {
   });
 }
 
+interface Asset { name: string; browser_download_url: string }
+
+// Same approach as the wiki: swap release-page links for the newest AppImage files.
+async function releaseAssets(repo: string): Promise<Asset[]> {
+  const key = `gh-assets:${repo}`;
+  try { const hit = sessionStorage.getItem(key); if (hit) return JSON.parse(hit); } catch { /* storage blocked */ }
+  const r = await fetch(`https://api.github.com/repos/${repo}/releases/latest`);
+  if (!r.ok) throw new Error(String(r.status));
+  const assets: Asset[] = ((await r.json()).assets ?? []).map((a: Asset) => ({ name: a.name, browser_download_url: a.browser_download_url }));
+  try { sessionStorage.setItem(key, JSON.stringify(assets)); } catch { /* storage blocked */ }
+  return assets;
+}
+
+function appImageLinks() {
+  const links = [...document.querySelectorAll<HTMLAnchorElement>('[data-appimage]')];
+  for (const repo of new Set(links.map((a) => a.dataset.appimage!))) {
+    releaseAssets(repo).then((assets) => {
+      for (const a of links.filter((l) => l.dataset.appimage === repo)) {
+        const file = assets.find((x) => x.name.endsWith(`-${a.dataset.arch}.AppImage`));
+        if (!file) continue;
+        a.href = file.browser_download_url;
+        a.setAttribute('download', '');
+        a.removeAttribute('target');
+      }
+    }).catch(() => {});
+  }
+}
+
 function initPage() {
   fit();
   syncRings();
@@ -91,6 +119,7 @@ function initPage() {
     }));
   });
 
+  appImageLinks();
   document.querySelectorAll<HTMLButtonElement>('[data-copy]').forEach((btn) => {
     const label = btn.innerHTML;
     btn.addEventListener('click', () => {

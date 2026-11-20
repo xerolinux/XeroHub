@@ -794,8 +794,6 @@ const PKGS: Pkg[] = [
   ['xerolinux', 'xero-ibr', '1.2.0-1', 'iBackup/Restore for configs and package lists'],
   ['xerolinux', 'xero-howdy-qt', '1.1.0-1', 'Qt front end for Howdy face unlock'],
   ['xerolinux', 'xero-wallpapers-gui', '1.0.3-1', 'Browse and apply XeroLinux wallpapers'],
-  ['xerolinux', 'efibootgui', '1.0.1-1', 'Manage EFI boot entries from a GUI'],
-  ['xerolinux', 'phpgui', '1.0.0-1', 'Run a local PHP server from a GUI'],
 ];
 const BASE_INST = ['base', 'linux', 'pacman', 'systemd', 'plasma-desktop', 'kwin', 'konsole', 'firefox', 'fastfetch', 'flatpak', 'linux-cachyos', 'xpackagemanager'];
 const PROTECTED = ['base', 'linux', 'pacman', 'systemd'];
