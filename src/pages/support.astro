@@ -3,22 +3,22 @@ import Shell from '../layouts/Shell.astro';
 ---
 
 <Shell title="Support" description="Support XeroLinux with crypto or Ko-fi." current="/support/" label="Support" winTitle="~/support" winSub="thank you">
-        <div class="pane" style="padding: max(14px, 2.4cqh) max(18px, 2cqw); gap: max(12px, 2cqh); font-size: max(13px, 1.5cqh); color: var(--text2);">
+        <div class="pane" style="padding: max(14px, calc(2.4*var(--qh))) max(18px, 2cqw); gap: max(12px, calc(2*var(--qh))); font-size: max(13px, calc(1.5*var(--qh))); color: var(--text2);">
           <div class="sup" style="gap: max(18px, 2.4cqw); align-items: center;">
-            <div style="display: flex; flex-direction: column; gap: max(12px, 1.8cqh);">
+            <div style="display: flex; flex-direction: column; gap: max(12px, calc(1.8*var(--qh)));">
               <div>
                 <div class="kick" style="color: var(--accentL);">// The Exchange</div>
                 <h2 style="margin: 6px 0 0; font-family: 'Chakra Petch', sans-serif; font-size: 2em; line-height: 1.05; color: var(--text);">Support XeroLinux</h2>
               </div>
               <p><span data-mode="free">XeroLinux is free to download. </span>If it earns a place on your machine and you'd like to help keep it alive and actively developed, a donation goes a long way. Any amount is super appreciated.</p>
-              <a href="https://ko-fi.com/xerolinux" target="_blank" rel="noopener noreferrer" style="display: flex; align-items: center; gap: 14px; min-height: 44px; padding: max(12px, 1.6cqh) 18px; border-radius: 14px; text-decoration: none; background: var(--accent); color: #ffffff;">
+              <a href="https://ko-fi.com/xerolinux" target="_blank" rel="noopener noreferrer" style="display: flex; align-items: center; gap: 14px; min-height: 44px; padding: max(12px, calc(1.6*var(--qh))) 18px; border-radius: 14px; text-decoration: none; background: var(--accent); color: #ffffff;">
                 <svg aria-hidden="true" width="28" height="28" viewBox="0 0 24 24" fill="currentColor" style="flex: none;"><path d="M23.881 8.948c-.773-4.085-4.859-4.593-4.859-4.593H.723c-.604 0-.679.798-.679.798s-.082 7.324-.022 11.822c.164 2.424 2.586 2.672 2.586 2.672s8.267-.023 11.966-.049c2.438-.426 2.683-2.566 2.658-3.734 4.352.24 7.422-2.831 6.649-6.916zm-11.062 3.511c-1.246 1.453-4.011 3.976-4.011 3.976s-.121.119-.31.023c-.076-.057-.108-.09-.108-.09-.443-.441-3.368-3.049-4.034-3.954-.709-.965-1.041-2.7-.091-3.71.951-1.01 3.005-1.086 4.363.407 0 0 1.565-1.782 3.468-.963 1.904.82 1.832 3.011.723 4.311zm6.173.478c-.928.116-1.682.028-1.682.028V7.284h1.77s1.971.551 1.971 2.638c0 1.913-.985 2.667-2.059 3.015z"></path></svg>
                 <span style="display: flex; flex-direction: column;"><strong style="font-size: 1.05em;">No crypto? No problem.</strong><span style="font-size: .9em;">Donate on Ko-fi</span></span>
                 <span aria-hidden="true" style="margin-left: auto;">↗</span>
               </a>
               <p style="padding: 12px 16px; border-radius: 12px; background: var(--soft);"><strong style="color: var(--text);">Don't see your preferred wallet?</strong> <a href="https://discord.xerolinux.xyz" target="_blank" rel="noopener noreferrer" style="color: var(--accentL);">Reach out on Discord</a> and we'll send you the address.</p>
             </div>
-            <div data-tabs style="display: flex; flex-direction: column; gap: max(12px, 1.8cqh); padding: max(16px, 2.2cqh); border-radius: 18px; background: var(--soft); border: 1px solid var(--line);">
+            <div data-tabs style="display: flex; flex-direction: column; gap: max(12px, calc(1.8*var(--qh))); padding: max(16px, calc(2.2*var(--qh))); border-radius: 18px; background: var(--soft); border: 1px solid var(--line);">
               <div class="kick" style="color: var(--accentL);">// Select Wallet</div>
               <div class="wsel">
                 <button type="button" data-tab="0" aria-pressed="true"><span aria-hidden="true" style="font-size: 1.2em; color: var(--accentL);">₿</span>BTC</button>

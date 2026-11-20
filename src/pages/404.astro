@@ -3,9 +3,9 @@ import Shell from '../layouts/Shell.astro';
 ---
 
 <Shell title="Not found" description="Page not found." current="" label="Not found" winTitle="~/404" winSub="no such file or directory">
-      <div class="pane" style="padding: max(14px, 2.4cqh) max(18px, 2cqw); justify-content: center; align-items: center; gap: max(12px, 1.8cqh); text-align: center; color: var(--text2);">
+      <div class="pane" style="padding: max(14px, calc(2.4*var(--qh))) max(18px, 2cqw); justify-content: center; align-items: center; gap: max(12px, calc(1.8*var(--qh))); text-align: center; color: var(--text2);">
         <div class="kick" style="color: var(--accentL);">// 404</div>
-        <h2 style="margin: 0; font-family: 'Chakra Petch', sans-serif; font-size: max(28px, 4cqh); color: var(--text);">Nothing here</h2>
+        <h2 style="margin: 0; font-family: 'Chakra Petch', sans-serif; font-size: max(28px, calc(4*var(--qh))); color: var(--text);">Nothing here</h2>
         <a href="/" style="color: var(--accentL);">Back home</a>
       </div>
 </Shell>

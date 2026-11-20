@@ -3,12 +3,12 @@ import Shell from '../layouts/Shell.astro';
 ---
 
 <Shell title="Tools" description="XeroLinux in-house tools: xPackageManager, Customization Hub, Scheduler Tool and more." current="/tools/" label="Xero Tools" winTitle="~/tools/xpackagemanager" winSub="xPackageManager">
-      <div class="pane" data-tabs style="padding: max(14px, 2.4cqh) max(18px, 2cqw); gap: max(12px, 1.8cqh); font-size: max(13px, 1.5cqh); color: var(--text2);">
+      <div class="pane" data-tabs style="padding: max(14px, calc(2.4*var(--qh))) max(18px, 2cqw); gap: max(12px, calc(1.8*var(--qh))); font-size: max(13px, calc(1.5*var(--qh))); color: var(--text2);">
           <div class="dtop" data-pane="0" data-title="~/tools/xpackagemanager" data-sub="xPackageManager" style="gap: max(16px, 2cqw);">
             <div class="dcell">
               <img class="dshot" src="/media/xpm-demo.webp" alt="xPackageManager screenshot" loading="lazy" style="border: 1px solid var(--line);">
             </div>
-            <div style="min-width: 0; display: flex; flex-direction: column; gap: max(10px, 1.4cqh);">
+            <div style="min-width: 0; display: flex; flex-direction: column; gap: max(10px, calc(1.4*var(--qh)));">
               <div class="kick" style="color: var(--accentL);">Flagship · System</div>
               <h3 style="margin: 0; font-family: 'Chakra Petch', sans-serif; font-size: 2.1em; line-height: 1; color: var(--text);">xPackageManager</h3>
               <p style="margin: 0;">pacman and Flatpak in one native window, written in Rust.</p>
@@ -28,7 +28,7 @@ import Shell from '../layouts/Shell.astro';
             <div class="dcell">
               <img class="dshot" src="/media/xero-tool.webp" alt="Customization Hub screenshot" loading="lazy" style="border: 1px solid var(--line);">
             </div>
-            <div style="min-width: 0; display: flex; flex-direction: column; gap: max(10px, 1.4cqh);">
+            <div style="min-width: 0; display: flex; flex-direction: column; gap: max(10px, calc(1.4*var(--qh)));">
               <div class="kick" style="color: var(--accentL);">Look &amp; Feel</div>
               <h3 style="margin: 0; font-family: 'Chakra Petch', sans-serif; font-size: 2.1em; line-height: 1; color: var(--text);">Customization Hub</h3>
               <p style="margin: 0;">Every XeroLinux theme, rice and script in one app, on any Arch-based system.</p>
@@ -47,7 +47,7 @@ import Shell from '../layouts/Shell.astro';
             <div class="dcell">
               <img class="dshot" src="/media/scx-tool.webp" alt="Scheduler Tool screenshot" loading="lazy" style="border: 1px solid var(--line);">
             </div>
-            <div style="min-width: 0; display: flex; flex-direction: column; gap: max(10px, 1.4cqh);">
+            <div style="min-width: 0; display: flex; flex-direction: column; gap: max(10px, calc(1.4*var(--qh)));">
               <div class="kick" style="color: var(--accentL);">System</div>
               <h3 style="margin: 0; font-family: 'Chakra Petch', sans-serif; font-size: 2.1em; line-height: 1; color: var(--text);">Scheduler Tool</h3>
               <p style="margin: 0;">Switch sched-ext CPU schedulers on the fly from a GUI.</p>
@@ -66,7 +66,7 @@ import Shell from '../layouts/Shell.astro';
             <div class="dcell">
               <img class="dshot" src="/media/ibr-demo.webp" alt="iBackup/Restore screenshot" loading="lazy" style="border: 1px solid var(--line);">
             </div>
-            <div style="min-width: 0; display: flex; flex-direction: column; gap: max(10px, 1.4cqh);">
+            <div style="min-width: 0; display: flex; flex-direction: column; gap: max(10px, calc(1.4*var(--qh)));">
               <div class="kick" style="color: var(--accentL);">Apps</div>
               <h3 style="margin: 0; font-family: 'Chakra Petch', sans-serif; font-size: 2.1em; line-height: 1; color: var(--text);">iBackup/Restore</h3>
               <p style="margin: 0;">Back up and restore iPhone and iPad on Linux.</p>
@@ -86,7 +86,7 @@ import Shell from '../layouts/Shell.astro';
             <div class="dcell">
               <img class="dshot" src="/media/HowdyQt.webp" alt="Howdy-Qt screenshot" loading="lazy" style="border: 1px solid var(--line);">
             </div>
-            <div style="min-width: 0; display: flex; flex-direction: column; gap: max(10px, 1.4cqh);">
+            <div style="min-width: 0; display: flex; flex-direction: column; gap: max(10px, calc(1.4*var(--qh)));">
               <div class="kick" style="color: var(--accentL);">Apps</div>
               <h3 style="margin: 0; font-family: 'Chakra Petch', sans-serif; font-size: 2.1em; line-height: 1; color: var(--text);">Howdy-Qt</h3>
               <p style="margin: 0;">Windows Hello style face login for Linux.</p>
@@ -108,7 +108,7 @@ cd xero-howdy-qt/Packaging/ &amp;&amp; makepkg -si" aria-label="Copy command" st
             <div class="dcell">
               <img class="dshot" src="/media/EFIBootGUIMain.webp" alt="EFIBoot Manager screenshot" loading="lazy" style="border: 1px solid var(--line);">
             </div>
-            <div style="min-width: 0; display: flex; flex-direction: column; gap: max(10px, 1.4cqh);">
+            <div style="min-width: 0; display: flex; flex-direction: column; gap: max(10px, calc(1.4*var(--qh)));">
               <div class="kick" style="color: var(--accentL);">System</div>
               <h3 style="margin: 0; font-family: 'Chakra Petch', sans-serif; font-size: 2.1em; line-height: 1; color: var(--text);">EFIBoot Manager</h3>
               <p style="margin: 0;">Manage UEFI boot entries without a terminal. Use at your own risk.</p>
@@ -130,7 +130,7 @@ cd EfiBootGUI/ &amp;&amp; makepkg -si" aria-label="Copy command" style="border: 
             <div class="dcell">
               <video class="dshot" src="/media/walls-demo.mp4" poster="/media/walls-still.webp" preload="none" muted loop playsinline aria-label="Wallpaper Browser demo video" style="border: 1px solid var(--line);"></video>
             </div>
-            <div style="min-width: 0; display: flex; flex-direction: column; gap: max(10px, 1.4cqh);">
+            <div style="min-width: 0; display: flex; flex-direction: column; gap: max(10px, calc(1.4*var(--qh)));">
               <div class="kick" style="color: var(--accentL);">Look &amp; Feel</div>
               <h3 style="margin: 0; font-family: 'Chakra Petch', sans-serif; font-size: 2.1em; line-height: 1; color: var(--text);">Wallpaper Browser</h3>
               <p style="margin: 0;">Browse and download static and live wallpapers in one app.</p>
@@ -152,7 +152,7 @@ cd xero-wallpapers-gui/ &amp;&amp; makepkg -si" aria-label="Copy command" style=
             <div class="dcell">
               <img class="dshot" src="/media/phpgui.webp" alt="PHP Server GUI screenshot" loading="lazy" style="border: 1px solid var(--line);">
             </div>
-            <div style="min-width: 0; display: flex; flex-direction: column; gap: max(10px, 1.4cqh);">
+            <div style="min-width: 0; display: flex; flex-direction: column; gap: max(10px, calc(1.4*var(--qh)));">
               <div class="kick" style="color: var(--accentL);">Apps</div>
               <h3 style="margin: 0; font-family: 'Chakra Petch', sans-serif; font-size: 2.1em; line-height: 1; color: var(--text);">PHP Server GUI</h3>
               <p style="margin: 0;">Start a local PHP dev server in one click.</p>
@@ -174,7 +174,7 @@ cd phpgui/packaging/ &amp;&amp; makepkg -si" aria-label="Copy command" style="bo
             <div class="dcell">
               <img class="dshot" src="/media/Delay.webp" alt="Plymouth Tips screenshot" loading="lazy" style="border: 1px solid var(--line);">
             </div>
-            <div style="min-width: 0; display: flex; flex-direction: column; gap: max(10px, 1.4cqh);">
+            <div style="min-width: 0; display: flex; flex-direction: column; gap: max(10px, calc(1.4*var(--qh)));">
               <div class="kick" style="color: var(--accentL);">Look &amp; Feel</div>
               <h3 style="margin: 0; font-family: 'Chakra Petch', sans-serif; font-size: 2.1em; line-height: 1; color: var(--text);">Plymouth Tips</h3>
               <p style="margin: 0;">Slow down a boot splash that flashes by on fast NVMe drives.</p>
