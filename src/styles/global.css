@@ -223,7 +223,8 @@ section:has(>.term:not([hidden]))>:not(.term):not([data-winbar]):not(.ring){visi
   .root{height:auto;min-height:100vh;min-height:100dvh;overflow:visible;place-items:start stretch}
   .root{padding:12px 16px}
   .frame{display:block;position:relative !important;left:0 !important;top:0 !important;width:100% !important;height:auto !important;transform:none !important}
-  .stage{width:100%;height:auto;container-type:inline-size;--qh:1svh}
+  .stage{width:100%;height:auto;container-type:inline-size;--qh:clamp(7.5px,calc(1.1cqi + 4px),11px)}
+  .archlogo{align-self:center;height:calc(8*var(--qh));max-height:none}
   .main{grid-template-columns:minmax(0,1fr)}
   .main:not([data-current="/"])>section:last-of-type{order:-1}
   .bg{position:fixed}
@@ -262,7 +263,6 @@ section:has(>.term:not([hidden]))>:not(.term):not([data-winbar]):not(.ring){visi
   .cap{display:none}
   .tb{flex-direction:column;align-items:stretch;gap:6px;text-align:center}
   .ti{width:100%}
-  .archlogo{align-self:center;height:64px;max-height:64px}
   .ftr{grid-template-columns:1fr;justify-items:center;text-align:center}.ftr>:last-child{justify-self:center}
 }
 @media (prefers-reduced-motion:reduce){.clwrap,.clbody{animation:none}
