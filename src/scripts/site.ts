@@ -1,6 +1,9 @@
 import { navigate } from 'astro:transitions/client';
 import { FREE_DEFAULT, SETTINGS_URL } from '../config';
 import { STACKED } from './layout';
+import { applyTheme, currentTheme } from './theme';
+import './picker';
+import { initFestive } from './festive';
 
 const DESIGN_W = 1920;
 const DESIGN_H = 950;
@@ -89,11 +92,11 @@ function initPage() {
   });
 
   document.querySelectorAll<HTMLButtonElement>('[data-copy]').forEach((btn) => {
-    const label = btn.textContent;
+    const label = btn.innerHTML;
     btn.addEventListener('click', () => {
       navigator.clipboard?.writeText(btn.dataset.copy ?? '').then(() => {
-        btn.textContent = 'Copied';
-        window.setTimeout(() => { btn.textContent = label; }, 2000);
+        btn.textContent = btn.querySelector('svg') ? '✓' : 'Copied';
+        window.setTimeout(() => { btn.innerHTML = label; }, 2000);
       }, () => {});
     });
   });
@@ -216,21 +219,13 @@ function loadStats() {
     .catch(() => {});
 }
 
-document.querySelector<HTMLButtonElement>('[data-theme-toggle]')?.addEventListener('click', () => {
-  const root = document.documentElement;
-  const dark = root.dataset.theme !== 'dark';
-  if (dark) root.dataset.theme = 'dark';
-  else delete root.dataset.theme;
-  try { localStorage.setItem('theme', dark ? 'dark' : 'light'); } catch { /* storage blocked */ }
-});
-
 document.addEventListener('astro:after-swap', () => {
   const root = document.documentElement;
   let free = String(FREE_DEFAULT);
-  try {
-    if (localStorage.getItem('theme') === 'dark') root.dataset.theme = 'dark';
-    free = localStorage.getItem(FREE_KEY) ?? free;
-  } catch { /* storage blocked */ }
+  applyTheme(currentTheme());
+  try { free = localStorage.getItem(FREE_KEY) ?? free; } catch { /* storage blocked */ }
   root.dataset.free = free;
 });
 document.addEventListener('astro:page-load', initPage);
+
+initFestive();

@@ -1,4 +1,8 @@
 import { STACKED as MOBILE } from './layout';
+import { THEMES, THEME_IDS, type ThemeId } from '../data/themes';
+import { activePalette, currentTheme, setTheme } from './theme';
+import { FESTIVE_IDS, FESTIVITIES, type FestiveId } from '../data/festive';
+import { festiveState, forceFestive, setFestiveOn } from './festive';
 import { navigate } from 'astro:transitions/client';
 
 interface TermData {
@@ -6,7 +10,7 @@ interface TermData {
   editions: { name: string; file: string; sizeGB: string; sha256: string; release: number; total: number }[];
   path: string;
 }
-interface Line { t: string; c?: string; kind?: 'fetch' | 'help' | 'cmd'; p?: string; at?: number }
+interface Line { t: string; c?: string; kind?: 'fetch' | 'help' | 'cmd' | 'themes'; p?: string; at?: number }
 
 const KEY = 'xero-term';
 const PAGES: Record<string, string> = { '': '/', about: '/about/', gear: '/gear/', tools: '/tools/', support: '/support/', download: '/download/' };
@@ -50,7 +54,7 @@ const HELP: [string, [string, string][]][] = [
     ['fastfetch', 'System info with StationXero specs (alias: neofetch)'],
     ['btop', 'Live browser monitor (aliases: htop, top), q to quit'],
     ['whoami', 'Print the current user'],
-    ['theme dark|light', 'Switch the site theme'],
+    ['theme [name|random]', 'List or switch site themes'],
   ]],
   ['XeroLinux', [
     ['changelog', 'Notes for the current release'],
@@ -126,6 +130,7 @@ function paint(e: NonNullable<ReturnType<typeof els>>) {
   e.out.replaceChildren(...state.lines.map((l) => {
     if (l.kind === 'fetch') return fastfetch(e.data);
     if (l.kind === 'help') return helpTable();
+    if (l.kind === 'themes') return themeList();
     if (l.kind === 'cmd') return echo(l.p ?? '~', l.t, l.at);
     const div = document.createElement('div');
     div.textContent = l.t;
@@ -243,7 +248,7 @@ function fastfetch(data: TermData) {
     ['Downloads', `${fmt(all)} all-time, ${fmt(rel)} this release`],
     ['Uptime', `${new Date().getFullYear() - 2020} years (since 2020)`],
     ['Shell', 'xsh 1.0'],
-    ['Theme', 'Layan [Xero]'],
+    ['Theme', `${activePalette().name} [Xero]`],
   ];
   const labels = ['c-blue', 'c-purple', 'c-pink'];
   const rows: [string, string?][][] = [
@@ -268,7 +273,27 @@ function fastfetch(data: TermData) {
 
 type Saver = (ctx: CanvasRenderingContext2D, w: number, h: number, dpr: number) => () => void;
 
-const THEME = ['#4a6cf7', '#7e9bff', '#7b5cd6', '#a98bf0', '#c2286f', '#e07aa8'];
+const themeColors = () => { const p = activePalette(); return [p.c1, p.c1L, p.c2, p.c2L, p.c3, p.c3L]; };
+let THEME: string[];
+
+function themeList() {
+  const cur = currentTheme();
+  const wrap = document.createElement('div');
+  for (const id of THEME_IDS) {
+    const p = THEMES[id];
+    const line = row([[id === cur ? '* ' : '  ', 'tok'], [id.padEnd(18), id === cur ? 'tok' : 'tcmd']]);
+    for (const c of [p.bg, p.c1, p.c2, p.c3, p.c1L, p.c2L, p.c3L, p.green]) {
+      const sw = document.createElement('span');
+      sw.className = 'tblk';
+      sw.style.background = c;
+      sw.textContent = '  ';
+      line.append(sw);
+    }
+    line.append(Object.assign(document.createElement('span'), { className: 'tdim', textContent: `  ${p.name}` }));
+    wrap.append(line);
+  }
+  return wrap;
+}
 
 function glyphAtlas(chars: string[], colors: string[], size: number, dpr: number) {
   const cw = Math.ceil(size * 0.62 * dpr);
@@ -289,7 +314,7 @@ function glyphAtlas(chars: string[], colors: string[], size: number, dpr: number
 const cmatrix: Saver = (ctx, w, h, dpr) => {
   const size = 16;
   const chars = '0123456789ABCDEFXEROLINUX<>/{}[]#$%&*+=?'.split('');
-  const colors = [...THEME, '#eef0ff'];
+  const colors = [...THEME, activePalette().text];
   const head = colors.length - 1;
   const { atlas, cw, ch } = glyphAtlas(chars, colors, size, dpr);
   const cols = Math.floor(w / cw);
@@ -359,6 +384,8 @@ function screensaver(e: NonNullable<ReturnType<typeof els>>, saver: Saver, frame
   canvas.setAttribute('aria-hidden', 'true');
   e.term.append(canvas);
   e.term.classList.add('saver');
+  THEME = themeColors();
+  BT = btColors();
   const dpr = Math.min(window.devicePixelRatio || 1, 2);
   canvas.width = Math.round(canvas.clientWidth * dpr);
   canvas.height = Math.round(canvas.clientHeight * dpr);
@@ -379,6 +406,7 @@ function screensaver(e: NonNullable<ReturnType<typeof els>>, saver: Saver, frame
     e.term.classList.remove('saver');
     window.removeEventListener('keydown', onKey, true);
     canvas.removeEventListener('click', stop);
+    document.removeEventListener('xero-theme', restart);
     saverStop = null;
     e.input.focus();
   };
@@ -388,12 +416,18 @@ function screensaver(e: NonNullable<ReturnType<typeof els>>, saver: Saver, frame
     ev.stopPropagation();
     stop();
   };
+  const restart = () => { stop(); screensaver(e, saver, frameMs, quit); };
   window.addEventListener('keydown', onKey, true);
+  document.addEventListener('xero-theme', restart);
   if (!quit) canvas.addEventListener('click', stop);
   saverStop = stop;
 }
 
-const BT = { text: '#c9cbdc', dim: '#3b3e56', mid: '#7d809c', hi: '#eef0ff', cpu: '#a98bf0', mem: '#5fd38a', net: '#ee7a9a', proc: '#5ed3e6', blue: '#7e9bff', pink: '#e07aa8' };
+const btColors = () => {
+  const p = activePalette();
+  return { text: p.text2, dim: mix(p.term, p.dim, 0.3), mid: p.dim, hi: p.text, cpu: p.c2L, mem: p.green, net: p.red, proc: p.cyan, blue: p.c1L, pink: p.c3L, c1: p.c1, c3: p.c3, hot: p.red, ink: p.term, memDim: mix(p.green, '#000000', 0.45) };
+};
+let BT: ReturnType<typeof btColors>;
 const BT_PROCS: [string, string, number, number][] = [
   ['cs2', '/home/darkxero/.local/share/Steam/steamapps/common/cs2/cs2', 14, 3900],
   ['firefox', '/usr/lib/firefox/firefox', 6, 1650],
@@ -423,9 +457,9 @@ const clamp = (v: number, lo: number, hi: number) => Math.max(lo, Math.min(hi, v
 const walk = (v: number, target: number, k: number, noise: number, lo = 0, hi = 100) => clamp(v + (target - v) * k + (Math.random() - 0.5) * noise, lo, hi);
 const mix = (a: string, b: string, t: number) => {
   const p = (h: string, i: number) => parseInt(h.slice(1 + i * 2, 3 + i * 2), 16);
-  return `rgb(${[0, 1, 2].map((i) => Math.round(p(a, i) + (p(b, i) - p(a, i)) * t)).join(',')})`;
+  return `#${[0, 1, 2].map((i) => Math.round(p(a, i) + (p(b, i) - p(a, i)) * t).toString(16).padStart(2, '0')).join('')}`;
 };
-const heat = (t: number) => (t < 0.5 ? mix('#4a6cf7', '#a98bf0', t * 2) : mix('#a98bf0', '#e0477f', (t - 0.5) * 2));
+const heat = (t: number) => (t < 0.5 ? mix(BT.c1, BT.cpu, t * 2) : mix(BT.cpu, BT.hot, (t - 0.5) * 2));
 const human = (kib: number) => (kib >= 1024 ? `${(kib / 1024).toFixed(2)} MiB/s` : `${kib.toFixed(2)} KiB/s`);
 
 const btopSaver: Saver = (ctx, w, h, dpr) => {
@@ -598,7 +632,7 @@ const btopSaver: Saver = (ctx, w, h, dpr) => {
     const end = ic + iw - 2;
     txt(ic + 2, 2, 'CPU', BT.cpu, true);
     const mw = Math.max(6, iw - 32);
-    meter(ic + 6, 2, mw, tot / 100, '#4a6cf7', heat(tot / 100));
+    meter(ic + 6, 2, mw, tot / 100, BT.c1, heat(tot / 100));
     rtxt(ic + 6 + mw + 5, 2, `${tot}%`, BT.hi);
     graph(ic + 6 + mw + 6, 2, 6, 1, totalMini);
     rtxt(end, 2, `${Math.round(45 + tot * 0.42)}°C ${Math.round(70 + tot * 1.4)}W`, BT.pink);
@@ -614,7 +648,7 @@ const btopSaver: Saver = (ctx, w, h, dpr) => {
     rtxt(end, 3 + rows, `Load avg: ${l1.toFixed(2)} ${l5.toFixed(2)} ${l15.toFixed(2)}`, BT.text, true);
     const gy = ih - 1;
     txt(ic + 2, gy, 'GPU', BT.cpu, true);
-    meter(ic + 6, gy, mw, gpu / 100, '#4a6cf7', heat(gpu / 100));
+    meter(ic + 6, gy, mw, gpu / 100, BT.c1, heat(gpu / 100));
     rtxt(ic + 6 + mw + 5, gy, `${Math.round(gpu)}%`, BT.hi);
     rtxt(end, gy, `${(2 + gpu * 0.09).toFixed(1)}G/16G ${Math.round(38 + gpu * 0.42)}°C`, BT.pink);
     graph(1, 1, ic - 2, cpuH - 3, total);
@@ -636,7 +670,7 @@ const btopSaver: Saver = (ctx, w, h, dpr) => {
       txt(2, r, label, BT.text);
       rtxt(half - 1, r, `${v.toFixed(2)} GiB`, BT.hi);
       if (tall) {
-        meter(2, r + 1, half - 9, v / 31.3, mix(col, '#06070b', 0.4), col);
+        meter(2, r + 1, half - 9, v / 31.3, mix(col, BT.ink, 0.4), col);
         rtxt(half - 1, r + 1, `${Math.round((v / 31.3) * 100)}%`, col);
       }
     });
@@ -649,10 +683,10 @@ const btopSaver: Saver = (ctx, w, h, dpr) => {
       rtxt(leftW - 2, dr, fmtS(size), BT.hi, true);
       const bw = leftW - half - 10;
       txt(half + 1, dr + 1, 'U', BT.text);
-      meter(half + 3, dr + 1, bw, u / size, '#1f9d55', BT.mem);
+      meter(half + 3, dr + 1, bw, u / size, BT.memDim, BT.mem);
       rtxt(leftW - 2, dr + 1, fmtS(u), BT.text);
       txt(half + 1, dr + 2, 'F', BT.text);
-      meter(half + 3, dr + 2, bw, 1 - u / size, '#c2286f', BT.pink);
+      meter(half + 3, dr + 2, bw, 1 - u / size, BT.c3, BT.pink);
       rtxt(leftW - 2, dr + 2, fmtS(size - u), BT.text);
       dr += 3;
     }
@@ -664,8 +698,8 @@ const btopSaver: Saver = (ctx, w, h, dpr) => {
     const ghalf = Math.max(1, Math.floor((netH - 2) / 2));
     const dmax = Math.max(...downH.slice(-gw * 2), 1);
     const umax = Math.max(...upH.slice(-gw * 2), 1);
-    graph(1, nr + 1, gw, ghalf, downH.map((v) => v / dmax), false, (t) => mix('#4a6cf7', '#a98bf0', t));
-    graph(1, nr + 1 + ghalf, gw, ghalf, upH.map((v) => v / umax), true, (t) => mix('#c2286f', '#e07aa8', t));
+    graph(1, nr + 1, gw, ghalf, downH.map((v) => v / dmax), false, (t) => mix(BT.c1, BT.cpu, t));
+    graph(1, nr + 1 + ghalf, gw, ghalf, upH.map((v) => v / umax), true, (t) => mix(BT.c3, BT.pink, t));
     const sx = leftW - sw - 1;
     const lines: [string, string, string][] = [['v', human(down), BT.blue], ['v Top:', human(downTop), BT.text], ['v Total:', `${(downTot / 1024).toFixed(0)} MiB`, BT.text], ['^', human(up), BT.pink], ['^ Top:', human(upTop), BT.text], ['^ Total:', `${(upTot / 1024).toFixed(0)} MiB`, BT.text]];
     txt(sx, nr + 1, 'download', BT.hi, true);
@@ -698,7 +732,7 @@ const btopSaver: Saver = (ctx, w, h, dpr) => {
     list.forEach((p, i) => {
       const r = hr + 1 + i;
       const fade = clamp(1 - i / (list.length * 1.4), 0.35, 1);
-      const f = (col: string) => mix('#06070b', col.startsWith('#') ? col : BT.text, fade);
+      const f = (col: string) => mix(BT.ink, col.startsWith('#') ? col : BT.text, fade);
       rtxt(pc + 7, r, String(p.pid), f(BT.text));
       txt(colProg, r, p.name.slice(0, 13), f(BT.mem));
       if (cmdW > 6) txt(colCmd, r, p.cmd.slice(0, cmdW), f(BT.mid));
@@ -964,12 +998,30 @@ function exec(e: Term, line: string, root = false): 'stop' | void {
       break;
     }
     case 'theme': {
+      let t = args[0];
+      if (!t) { state.lines.push({ t: '', kind: 'themes' }); print('usage: theme <name> | theme random', 'tdim'); break; }
+      if (t === 'random') { const others = THEME_IDS.filter((id) => id !== currentTheme()); t = others[Math.floor(Math.random() * others.length)]; }
+      if (!(THEME_IDS as string[]).includes(t)) { print(`theme: unknown theme '${t}' (run theme to list)`, 'terr'); break; }
+      setTheme(t as ThemeId);
+      print(`Theme set to ${THEMES[t as ThemeId].name}.`, 'tok');
+      break;
+    }
+    case 'festive': {
       const t = args[0];
-      if (t !== 'dark' && t !== 'light') { print('usage: theme dark|light', 'terr'); break; }
-      if (t === 'dark') document.documentElement.dataset.theme = 'dark';
-      else delete document.documentElement.dataset.theme;
-      try { localStorage.setItem('theme', t); } catch { /* storage blocked */ }
-      print(`Theme set to Layan${t === 'dark' ? ' Dark' : ''}.`, 'tok');
+      const st = festiveState();
+      if (t === 'on' || t === 'off') {
+        if (!st.id) { print('festive: nothing to celebrate today', 'tdim'); break; }
+        setFestiveOn(t === 'on');
+        print(`${FESTIVITIES[st.id].name} decorations ${t}.`, 'tok');
+      } else if (t && (t === 'auto' || (FESTIVE_IDS as string[]).includes(t))) {
+        forceFestive(t === 'auto' ? null : (t as FestiveId));
+        print(t === 'auto' ? 'festive: back to the calendar' : `festive: forcing ${FESTIVITIES[t as FestiveId].name} (this browser only)`, 'tok');
+      } else if (t) {
+        print('usage: festive [on|off|auto|<name>]', 'terr');
+      } else {
+        print(st.id ? `${FESTIVITIES[st.id].name}: decorations ${st.on ? 'on' : 'off'}${st.forced ? ' (forced)' : ''}` : 'No festivity today.', st.id ? 'tok' : 'tdim');
+        print(`festive <name>|auto  (${FESTIVE_IDS.join(' ')})`, 'tdim');
+      }
       break;
     }
     case 'fortune':
@@ -1086,6 +1138,15 @@ export function initTerminal() {
       if (!more.length) {
         const hits = COMMANDS.filter((c) => c.startsWith(cmd));
         if (hits.length === 1) e.input.value = `${hits[0]} `;
+        else if (hits.length > 1) { print(hits.join('  '), 'tdim'); paint(e); }
+      } else if (cmd === 'theme') {
+        const hits = [...THEME_IDS, 'random'].filter((id) => id.startsWith(more.join(' ')));
+        if (hits.length === 1) e.input.value = `theme ${hits[0]}`;
+        else if (hits.length > 1) { print(hits.join('  '), 'tdim'); paint(e); }
+      } else if (cmd === 'festive') {
+        const opts = ['on', 'off', 'auto', ...FESTIVE_IDS];
+        const hits = opts.filter((o) => o.startsWith(more.join(' ')));
+        if (hits.length === 1) e.input.value = `festive ${hits[0]}`;
         else if (hits.length > 1) { print(hits.join('  '), 'tdim'); paint(e); }
       } else if (cmd === 'cd') {
         const hits = Object.keys(PAGES).filter((p) => p && p.startsWith(more.join(' ').replace(/^~\//, '')));
