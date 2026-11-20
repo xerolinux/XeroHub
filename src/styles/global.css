@@ -225,6 +225,7 @@ section:has(>.term:not([hidden]))>:not(.term):not([data-winbar]):not(.ring){visi
   .frame{display:block;position:relative !important;left:0 !important;top:0 !important;width:100% !important;height:auto !important;transform:none !important}
   .stage{width:100%;height:auto;container-type:inline-size}
   .main{grid-template-columns:minmax(0,1fr)}
+  .main:not([data-current="/"])>section:last-of-type{order:-1}
   .bg{position:fixed}
   .shot{flex:none;aspect-ratio:16/9}
   .pane{overflow:visible}
