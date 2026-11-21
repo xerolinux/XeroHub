@@ -793,6 +793,7 @@ const PKGS: Pkg[] = [
   ['xerolinux', 'xpackagemanager', '1.4.2-1', 'Rust + Qt6 GUI for pacman and Flatpak'],
   ['xerolinux', 'xero-ibr', '1.2.0-1', 'iBackup/Restore for configs and package lists'],
   ['xerolinux', 'xero-howdy-qt', '1.1.0-1', 'Qt front end for Howdy face unlock'],
+  ['xerolinux', 'xfprintd-gui', '0.1.5-1', 'GTK4 GUI to manage fingerprint enrollment and PAM integration'],
   ['xerolinux', 'xero-wallpapers-gui', '1.0.3-1', 'Browse and apply XeroLinux wallpapers'],
 ];
 const BASE_INST = ['base', 'linux', 'pacman', 'systemd', 'plasma-desktop', 'kwin', 'konsole', 'firefox', 'fastfetch', 'flatpak', 'linux-cachyos', 'xpackagemanager'];
