@@ -794,7 +794,9 @@ const PKGS: Pkg[] = [
   ['xerolinux', 'xero-ibr', '1.2.0-1', 'iBackup/Restore for configs and package lists'],
   ['xerolinux', 'xero-howdy-qt', '1.1.0-1', 'Qt front end for Howdy face unlock'],
   ['xerolinux', 'xfprintd-gui', '0.1.5-1', 'GTK4 GUI to manage fingerprint enrollment and PAM integration'],
+  ['xerolinux', 'xsb-gui', '0.1.4-1', 'XeroLinux Limine/SecureBoot Enabler'],
   ['xerolinux', 'xero-wallpapers-gui', '1.0.3-1', 'Browse and apply XeroLinux wallpapers'],
+  ['xerolinux', 'xspeedtest', '0.1.2-1', 'Qt 6 / QML front-end for speedtest-cli with a Plasma 6 widget'],
 ];
 const BASE_INST = ['base', 'linux', 'pacman', 'systemd', 'plasma-desktop', 'kwin', 'konsole', 'firefox', 'fastfetch', 'flatpak', 'linux-cachyos', 'xpackagemanager'];
 const PROTECTED = ['base', 'linux', 'pacman', 'systemd'];

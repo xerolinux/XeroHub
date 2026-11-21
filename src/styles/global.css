@@ -173,7 +173,7 @@ button{font:inherit;cursor:pointer}
 [data-btnrow]:has([data-appimage]){gap:6px !important;flex-wrap:nowrap !important}[data-btnrow]:has([data-appimage]) a{padding:0 10px !important;font-size:.92em}
 @media (max-width:400px){[data-btnrow]:has([data-appimage]) a{padding:0 8px !important;font-size:.84em}}
 @media (max-width:340px){[data-btnrow]:has([data-appimage]){flex-wrap:wrap !important}}
-.cmd.one{position:relative;container-type:inline-size}.cmd.one pre{padding:9px 40px 9px 10px;white-space:pre;word-break:normal;overflow-x:auto;scrollbar-width:none;letter-spacing:-.02em;font-size:min(calc((100cqi - 56px)/(var(--n,55)*.636)),.8em)}.cmd.one button{position:absolute;right:5px;top:50%;transform:translateY(-50%);min-width:30px;height:28px;padding:0;display:inline-flex;align-items:center;justify-content:center}
+.cmd.one{position:relative;container-type:inline-size}.cmd.one pre{padding:9px 40px 9px 10px;white-space:pre;word-break:normal;overflow-x:auto;scrollbar-width:none;letter-spacing:-.02em;font-size:min(calc((100cqi - 58px)/(var(--n,55)*.65)),.8em)}.cmd.one button{position:absolute;right:5px;top:50%;transform:translateY(-50%);min-width:30px;height:28px;padding:0;display:inline-flex;align-items:center;justify-content:center}
 .ftr{display:grid;grid-template-columns:1fr auto 1fr;gap:8px 24px;align-items:center}.ftr>:last-child{justify-self:end}
 .c-xero{--o1:var(--c1);--o2:var(--c3);--o3:var(--c2);--g1:var(--c1L);--g2:var(--c3L);--b1:var(--btn1);--b2:var(--btn2);--edge:color-mix(in srgb,var(--c2) 40%,transparent);--halo:color-mix(in srgb,var(--c1) 18%,transparent)}
 .c-xero .hl{background:linear-gradient(90deg,var(--c1L),var(--c2L),var(--c3L),var(--c2L),var(--c1L)) !important;background-size:200% auto !important;-webkit-background-clip:text !important;background-clip:text !important;animation:hlmove 10s ease-in-out infinite alternate}
@@ -352,3 +352,4 @@ section:has(>.term:not([hidden]))>:not(.term):not([data-winbar]):not(.ring){visi
   .fade{transition:none}
   .disc{animation:none}
 }
+@media (max-width:600px){.dock{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));overflow:visible;align-self:stretch;justify-items:center}.dock .dk{width:100%;max-width:72px;height:auto;aspect-ratio:1}}
