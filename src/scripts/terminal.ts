@@ -4,6 +4,7 @@ import { activePalette, currentTheme, setTheme } from './theme';
 import { FESTIVE_IDS, FESTIVITIES, type FestiveId } from '../data/festive';
 import { festiveState, forceFestive, setFestiveOn } from './festive';
 import { navigate } from 'astro:transitions/client';
+import { winvaders } from './winvaders';
 
 interface TermData {
   changelog: { date: string; iso: string[]; tui: string[] }[];
@@ -25,7 +26,7 @@ const FORTUNES = [
   'Built in Rust. No Electron. No regrets.',
   'Arch Linux package management, finally civilised.',
 ];
-const COMMANDS = ['help', 'ls', 'cd', 'pwd', 'clear', 'exit', 'history', 'whoami', 'neofetch', 'fastfetch', 'btop', 'htop', 'top', 'theme', 'changelog', 'download', 'sha256sum', 'pacman', 'checkupdates', 'reflector', 'uname', 'archinstall', 'cmatrix', 'matrix', 'pipes', 'fortune', 'cowsay', 'btw', 'vim', 'emacs', 'nano', 'sudo', 'yay', 'paru', 'make'];
+const COMMANDS = ['help', 'ls', 'cd', 'pwd', 'clear', 'exit', 'history', 'whoami', 'neofetch', 'fastfetch', 'btop', 'htop', 'top', 'theme', 'changelog', 'download', 'sha256sum', 'pacman', 'checkupdates', 'reflector', 'uname', 'archinstall', 'cmatrix', 'matrix', 'pipes', 'winvaders', 'fortune', 'cowsay', 'btw', 'vim', 'emacs', 'nano', 'sudo', 'yay', 'paru', 'make'];
 const LOGO = [
   '\\\\\\\\        ////',
   ' \\\\\\\\      //// ',
@@ -78,6 +79,7 @@ const HELP: [string, [string, string][]][] = [
     ['pipes', 'The pipes.sh screensaver, any key to stop'],
   ]],
   ['Fun', [
+    ['winvaders', 'Shoot down Windows apps: 12 levels, 4 bosses, Esc to quit'],
     ['fortune', 'A random XeroLinux one-liner'],
     ['cowsay <text>', 'A cow says your text'],
     ['btw', 'You know what this does'],
@@ -271,7 +273,7 @@ function fastfetch(data: TermData) {
   return wrap;
 }
 
-type Saver = (ctx: CanvasRenderingContext2D, w: number, h: number, dpr: number) => () => void;
+type Saver = (ctx: CanvasRenderingContext2D, w: number, h: number, dpr: number) => (() => void) & { dispose?: () => void };
 
 const themeColors = () => { const p = activePalette(); return [p.c1, p.c1L, p.c2, p.c2L, p.c3, p.c3L]; };
 let THEME: string[];
@@ -402,6 +404,7 @@ function screensaver(e: NonNullable<ReturnType<typeof els>>, saver: Saver, frame
   raf = requestAnimationFrame(loop);
   const stop = () => {
     cancelAnimationFrame(raf);
+    frame.dispose?.();
     canvas.remove();
     e.term.classList.remove('saver');
     window.removeEventListener('keydown', onKey, true);
@@ -1060,6 +1063,11 @@ function exec(e: Term, line: string, root = false): 'stop' | void {
       print('pipes.sh (press any key)', 'tdim');
       paint(e);
       screensaver(e, pipes, 33);
+      return 'stop';
+    case 'winvaders':
+      print('winvaders: C:\\WINDOWS> invade.exe (Esc to quit)', 'tdim');
+      paint(e);
+      screensaver(e, winvaders(activePalette(), Math.min(12, Math.max(1, Number(args[0]) || 1))), 0, ['Escape']);
       return 'stop';
     case 'pacman':
       return pacman(e, args, root);
