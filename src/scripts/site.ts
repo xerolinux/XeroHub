@@ -15,8 +15,9 @@ const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 function fit() {
   const frame = document.querySelector<HTMLElement>('[data-frame]');
   if (!frame) return;
-  const w = window.innerWidth;
-  const h = window.innerHeight;
+  const pad = getComputedStyle(frame.parentElement!);
+  const w = window.innerWidth - parseFloat(pad.paddingLeft) - parseFloat(pad.paddingRight);
+  const h = window.innerHeight - parseFloat(pad.paddingTop) - parseFloat(pad.paddingBottom);
   const big = w > DESIGN_W;
   const scale = big ? Math.min(w / DESIGN_W, h / DESIGN_H) : Math.min(w / MIN_W, h / MIN_H);
   if (!window.matchMedia(STACKED).matches && (big || scale < 1)) {

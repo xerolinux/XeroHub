@@ -1,7 +1,8 @@
 @import "tailwindcss";
 
 :root{--blur:blur(16px) saturate(150%);color-scheme:dark}
-html,body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui,sans-serif}
+html{background:color-mix(in srgb,var(--c2) 15%,var(--bg))}
+html,body{margin:0;color:var(--text);font-family:Inter,system-ui,sans-serif}
 [hidden]{display:none !important}
 .fade{opacity:0}
 .fade.on{opacity:1}
@@ -96,12 +97,12 @@ html,body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,syst
 a{color:inherit}
 a:hover{opacity:.85}
 button{font:inherit;cursor:pointer}
-.root{position:relative;height:100vh;height:100dvh;overflow:hidden;display:grid;place-items:center}
+.root{position:relative;box-sizing:border-box;height:100vh;height:100dvh;padding:env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);overflow:hidden;display:grid;place-items:center}
 .frame{position:relative;z-index:1;display:grid;place-items:center;width:100%;height:100%}
-.frame.scaled{position:absolute;left:50%;top:50%;transform-origin:center}
+.frame.scaled{position:absolute;left:calc(50% + (env(safe-area-inset-left) - env(safe-area-inset-right))/2);top:calc(50% + (env(safe-area-inset-top) - env(safe-area-inset-bottom))/2);transform-origin:center}
 .stage{position:relative;width:95.6%;height:96.4%;display:grid;grid-template-rows:auto minmax(0,1fr) auto;container-type:size;--qh:1cqh}
 .main{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);min-height:0}
-.bg{position:absolute;inset:0;overflow:hidden;z-index:0}
+.bg{position:fixed;inset:0 0 auto;height:calc(100lvh + env(safe-area-inset-bottom));overflow:hidden;z-index:0}
 .hdr{display:flex;flex-wrap:wrap;gap:12px 24px;align-items:center;justify-content:space-between}
 .nav{display:flex;align-items:center;gap:6px}
 .nav button,.nav a{min-height:44px;display:inline-flex;align-items:center;gap:8px;padding:0 16px;border-radius:10px;text-decoration:none}
@@ -303,13 +304,12 @@ section:has(>.term:not([hidden]))>:not(.term):not([data-winbar]):not(.ring){visi
   .clgrid{grid-template-columns:minmax(0,1fr)}
   .buy,.edrow{grid-template-columns:minmax(0,1fr)}
   .root{height:auto;min-height:100vh;min-height:100dvh;overflow:visible;place-items:start stretch}
-  .root{padding:12px 16px}
+  .root{padding:max(12px,env(safe-area-inset-top)) max(16px,env(safe-area-inset-right)) calc(12px + env(safe-area-inset-bottom)) max(16px,env(safe-area-inset-left))}
   .frame{display:block;position:relative !important;left:0 !important;top:0 !important;width:100% !important;height:auto !important;transform:none !important}
   .stage{width:100%;height:auto;container-type:inline-size;--qh:clamp(7.5px,calc(1.1cqi + 4px),11px)}
   .archlogo{align-self:center;height:calc(8*var(--qh));max-height:none}
   .main{grid-template-columns:minmax(0,1fr)}
   .main:not([data-current="/"])>section:last-of-type{order:-1}
-  .bg{position:fixed}
   .shot{flex:none;aspect-ratio:16/9}
   .pane{overflow:visible}
   .ab2{grid-template-columns:minmax(0,1fr)}
