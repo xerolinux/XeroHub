@@ -118,7 +118,8 @@ It must behave **exactly like today's VPS portal** (`r2lib/portal.php` plus `KDE
   - `release` is the count for the current catalog file.
   - `allTime` and `releaseTotal` are the sums over both editions.
 - `links(user TEXT PRIMARY KEY, n INTEGER)`, the same as `code-links.json`.
-- **Catalog:** the same shape as `r2lib/catalog.json` (`{"std": [{name, key, size, modified, md5, sha1, sha256}], "nvidia": [...]}`), stored in Workers KV.
+- **Catalog:** the same shape as `r2lib/catalog.json` (`{"std": [{name, key, size, modified, md5, sha1, sha256}], "nvidia": [...]}`), stored in D1 (one row per edition) rather than KV, so a registered ISO is visible everywhere at once.
+- **Free switch:** `/dl` only serves visitors while the site's `public/settings.json` has `"free": true`. Staff are not gated.
 - **March import:** the VPS's `downloads.json` (both editions) and `catalog.json` are imported once, as is. Past downloads keep their counts.
 
 ### Catalog updates

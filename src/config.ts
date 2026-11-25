@@ -1,5 +1,5 @@
-// Download service (Cloudflare Worker). Not deployed until ISOs go free;
-// until then its stats fetch fails and the counts baked into the page are shown.
+// Download service (Cloudflare Worker in dl/). It follows the same "free" flag as the site;
+// until it is deployed the stats fetch fails and the counts baked into the page are shown.
 export const DL_API = 'https://dl.xerolinux.xyz';
 
 // Paid or free is read at runtime from public/settings.json ({ "free": true | false }),

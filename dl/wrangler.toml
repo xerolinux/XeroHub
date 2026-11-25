@@ -1,0 +1,18 @@
+name = "xero-dl"
+main = "src/index.ts"
+compatibility_date = "2026-11-20"
+workers_dev = false
+preview_urls = false
+routes = [{ pattern = "dl.xerolinux.xyz", custom_domain = true }]
+
+[vars]
+SETTINGS_URL = "https://xerolinux.xyz/settings.json"
+ORIGINS = "https://xerolinux.xyz,https://www.xerolinux.xyz,http://localhost:4321,http://127.0.0.1:4321"
+R2_ENDPOINT = "https://f5e0b3aa6964c4838b67f4aabdbdb55e.r2.cloudflarestorage.com"
+R2_BUCKET = "xeroiso"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "xero-dl"
+database_id = "624eb52e-774e-4b12-98e3-3688c8e01203"
+migrations_dir = "migrations"
