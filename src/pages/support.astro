@@ -1,59 +1,101 @@
 ---
 import Shell from '../layouts/Shell.astro';
+import { KOFI_GOAL } from '../config';
+import { GOAL } from '../data/kofi';
+
+const eur = (n: number) => `€${n.toLocaleString('en-US')}`;
+const pct = Math.min(100, Math.max(0, GOAL.pct));
+
+const goes = [
+  ['Servers & bandwidth', 'The website, download hosting and every ISO you pull down.'],
+  ['Real hardware', 'Testing every release on Intel, AMD and nVidia.'],
+  ['Time', 'Building, fixing, packaging and answering questions on Discord.'],
+];
+const wallets = [
+  { id: 'BTC', glyph: '₿', net: 'Bitcoin', addr: 'bc1qhl7qmeh8rlk35cggrr3py7j6670c4dnsh4veyl', qr: '/media/qr-btc.png' },
+  { id: 'USDT', glyph: '₮', net: 'TRON (TRC-20)', addr: 'TLgG5Qh8XL1M98it9TSLRzoLDVCPwYQhYd', qr: '/media/qr-usdt.png' },
+  { id: 'ETH', glyph: 'Ξ', net: 'Ethereum', addr: '0xEe53C2dcbf1AC11aC964f318b2759BcF70D6C0A0', qr: '/media/qr-eth.png' },
+];
+const kofiIcon = 'M23.881 8.948c-.773-4.085-4.859-4.593-4.859-4.593H.723c-.604 0-.679.798-.679.798s-.082 7.324-.022 11.822c.164 2.424 2.586 2.672 2.586 2.672s8.267-.023 11.966-.049c2.438-.426 2.683-2.566 2.658-3.734 4.352.24 7.422-2.831 6.649-6.916zm-11.062 3.511c-1.246 1.453-4.011 3.976-4.011 3.976s-.121.119-.31.023c-.076-.057-.108-.09-.108-.09-.443-.441-3.368-3.049-4.034-3.954-.709-.965-1.041-2.7-.091-3.71.951-1.01 3.005-1.086 4.363.407 0 0 1.565-1.782 3.468-.963 1.904.82 1.832 3.011.723 4.311zm6.173.478c-.928.116-1.682.028-1.682.028V7.284h1.77s1.971.551 1.971 2.638c0 1.913-.985 2.667-2.059 3.015z';
 ---
 
-<Shell title="Support" description="Support XeroLinux with crypto or Ko-fi." current="/support/" label="Support" winTitle="~/support" winSub="thank you">
-        <div class="pane" style="padding: max(14px, calc(2.4*var(--qh))) max(18px, 2cqw); gap: max(12px, calc(2*var(--qh))); font-size: max(13px, calc(1.5*var(--qh))); color: var(--text2);">
-          <div class="sup" style="gap: max(18px, 2.4cqw); align-items: center;">
-            <div style="display: flex; flex-direction: column; gap: max(12px, calc(1.8*var(--qh)));">
-              <div>
-                <div class="kick" style="color: var(--accentL);">// The Exchange</div>
-                <h2 style="margin: 6px 0 0; font-family: 'Chakra Petch', sans-serif; font-size: 2em; line-height: 1.05; color: var(--text);">Support XeroLinux</h2>
-              </div>
-              <p><span data-mode="free">XeroLinux is free to download. </span>If it earns a place on your machine and you'd like to help keep it alive and actively developed, a donation goes a long way. Any amount is super appreciated.</p>
-              <a href="https://ko-fi.com/xerolinux" target="_blank" rel="noopener noreferrer" style="display: flex; align-items: center; gap: 14px; min-height: 44px; padding: max(12px, calc(1.6*var(--qh))) 18px; border-radius: 14px; text-decoration: none; background: var(--accent); color: #ffffff;">
-                <svg aria-hidden="true" width="28" height="28" viewBox="0 0 24 24" fill="currentColor" style="flex: none;"><path d="M23.881 8.948c-.773-4.085-4.859-4.593-4.859-4.593H.723c-.604 0-.679.798-.679.798s-.082 7.324-.022 11.822c.164 2.424 2.586 2.672 2.586 2.672s8.267-.023 11.966-.049c2.438-.426 2.683-2.566 2.658-3.734 4.352.24 7.422-2.831 6.649-6.916zm-11.062 3.511c-1.246 1.453-4.011 3.976-4.011 3.976s-.121.119-.31.023c-.076-.057-.108-.09-.108-.09-.443-.441-3.368-3.049-4.034-3.954-.709-.965-1.041-2.7-.091-3.71.951-1.01 3.005-1.086 4.363.407 0 0 1.565-1.782 3.468-.963 1.904.82 1.832 3.011.723 4.311zm6.173.478c-.928.116-1.682.028-1.682.028V7.284h1.77s1.971.551 1.971 2.638c0 1.913-.985 2.667-2.059 3.015z"></path></svg>
-                <span style="display: flex; flex-direction: column;"><strong style="font-size: 1.05em;">No crypto? No problem.</strong><span style="font-size: .9em;">Donate on Ko-fi</span></span>
-                <span aria-hidden="true" style="margin-left: auto;">↗</span>
-              </a>
-              <p style="padding: 12px 16px; border-radius: 12px; background: var(--soft);"><strong style="color: var(--text);">Don't see your preferred wallet?</strong> <a href="https://discord.xerolinux.xyz" target="_blank" rel="noopener noreferrer" style="color: var(--accentL);">Reach out on Discord</a> and we'll send you the address.</p>
-            </div>
-            <div data-tabs style="display: flex; flex-direction: column; gap: max(12px, calc(1.8*var(--qh))); padding: max(16px, calc(2.2*var(--qh))); border-radius: 18px; background: var(--soft); border: 1px solid var(--line);">
-              <div class="kick" style="color: var(--accentL);">// Select Wallet</div>
-              <div class="wsel">
-                <button type="button" data-tab="0" aria-pressed="true"><span aria-hidden="true" style="font-size: 1.2em; color: var(--accentL);">₿</span>BTC</button>
-                <button type="button" data-tab="1" aria-pressed="false"><span aria-hidden="true" style="font-size: 1.2em; color: var(--accentL);">₮</span>USDT</button>
-                <button type="button" data-tab="2" aria-pressed="false"><span aria-hidden="true" style="font-size: 1.2em; color: var(--accentL);">Ξ</span>ETH</button>
-              </div>
-              <div class="wcard" data-pane="0">
-                <img class="qr" src="/media/qr-btc.png" alt="QR code for the BTC address">
-                <div style="display: flex; flex-direction: column; gap: 10px; min-width: 0; flex: 1 1 160px;">
-                  <div style="font-size: .9em;">Network: <strong style="color: var(--text);">Bitcoin</strong></div>
-                  <div class="addr" style="color: var(--text); background: var(--glass); border: 1px solid var(--line);">bc1qhl7qmeh8rlk35cggrr3py7j6670c4dnsh4veyl</div>
-                  <button type="button" data-copy="bc1qhl7qmeh8rlk35cggrr3py7j6670c4dnsh4veyl" style="min-height: 44px; border-radius: 10px; border: 0; font-weight: 600; background: var(--accent); color: #ffffff;">Copy Address</button>
-                  <div style="font-size: .86em;">Send only BTC on the Bitcoin network to this address.</div>
-                </div>
-              </div>
-              <div class="wcard" data-pane="1" hidden>
-                <img class="qr" src="/media/qr-usdt.png" alt="QR code for the USDT address">
-                <div style="display: flex; flex-direction: column; gap: 10px; min-width: 0; flex: 1 1 160px;">
-                  <div style="font-size: .9em;">Network: <strong style="color: var(--text);">TRON (TRC-20)</strong></div>
-                  <div class="addr" style="color: var(--text); background: var(--glass); border: 1px solid var(--line);">TLgG5Qh8XL1M98it9TSLRzoLDVCPwYQhYd</div>
-                  <button type="button" data-copy="TLgG5Qh8XL1M98it9TSLRzoLDVCPwYQhYd" style="min-height: 44px; border-radius: 10px; border: 0; font-weight: 600; background: var(--accent); color: #ffffff;">Copy Address</button>
-                  <div style="font-size: .86em;">Send only USDT on the TRON (TRC-20) network to this address.</div>
-                </div>
-              </div>
-              <div class="wcard" data-pane="2" hidden>
-                <img class="qr" src="/media/qr-eth.png" alt="QR code for the ETH address">
-                <div style="display: flex; flex-direction: column; gap: 10px; min-width: 0; flex: 1 1 160px;">
-                  <div style="font-size: .9em;">Network: <strong style="color: var(--text);">Ethereum</strong></div>
-                  <div class="addr" style="color: var(--text); background: var(--glass); border: 1px solid var(--line);">0xEe53C2dcbf1AC11aC964f318b2759BcF70D6C0A0</div>
-                  <button type="button" data-copy="0xEe53C2dcbf1AC11aC964f318b2759BcF70D6C0A0" style="min-height: 44px; border-radius: 10px; border: 0; font-weight: 600; background: var(--accent); color: #ffffff;">Copy Address</button>
-                  <div style="font-size: .86em;">Send only ETH on the Ethereum network to this address.</div>
-                </div>
-              </div>
-            </div>
-          </div>
+<Shell title="Support" description="XeroLinux is funded by its community. Support it on Ko-fi or with crypto." current="/support/" label="Support" winTitle="~/support" winSub="thank you">
+  <div class="pane" style="padding: max(14px, calc(2.4*var(--qh))) max(18px, 2cqw); gap: max(12px, calc(2*var(--qh))); font-size: max(13px, calc(1.5*var(--qh))); color: var(--text2);">
+    <div class="dlhead" style="flex: none;">
+      <div>
+        <div class="kick" style="color: var(--accentL);">// Keep it alive</div>
+        <h2 style="margin: 6px 0 0; font-family: 'Chakra Petch', sans-serif; font-size: 2em; line-height: 1; color: var(--text);">Support XeroLinux</h2>
+      </div>
+      <div class="sstats">
+        <div><div class="big">0</div><div class="kick">ads</div></div>
+        <div><div class="big" data-kg="supporters">{GOAL.supporters.toLocaleString('en-US')}</div><div class="kick">supporters</div></div>
+        <div><div class="big pprice">100%</div><div class="kick">community funded</div></div>
+      </div>
+    </div>
+
+    <div class="supbody">
+      <div class="spitch">
+        <div style="display: flex; flex-direction: column; gap: max(10px, calc(1.4*var(--qh)));">
+          <div class="slead">XeroLinux runs on you.</div>
+          <p style="margin: 0;">There's no company, no investors and no ads behind XeroLinux. Every quarterly release, every download and every hour spent testing on real hardware is paid for by the people who use it. <strong style="color: var(--text);">Your support is how the bills get paid.</strong></p>
+          <p style="margin: 0;"><span data-mode="free">XeroLinux is free to download, and it stays that way because of donations. </span>If it saves you time or makes your desktop nicer to live with, chipping in keeps it going. Any amount helps, and all of it goes back into the project.</p>
         </div>
-      
+        <div>
+          <div class="kick" style="color: var(--accentL);">// Where it goes</div>
+          <ul class="sgo">
+            {goes.map(([t, d]) => <li><span aria-hidden="true">▸</span><span><b>{t}</b>{d}</span></li>)}
+          </ul>
+        </div>
+      </div>
+
+      <div class="kfm" data-kgoal={KOFI_GOAL.proxy}>
+        <div class="kfmtop">
+          <a class="kbadge" href={KOFI_GOAL.link} target="_blank" rel="noopener noreferrer" aria-label="Support on Ko-fi">
+            <svg class="kring" aria-hidden="true" viewBox="0 0 150 150"><defs><path id="kring-path" d="M75 75 m-60 0 a60 60 0 1 1 120 0 a60 60 0 1 1 -120 0"></path></defs><text><textPath href="#kring-path">SUPPORT XEROLINUX · BUY A COFFEE · </textPath></text></svg>
+            <span class="kcup"><svg aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d={kofiIcon}></path></svg></span>
+          </a>
+          <div class="kfmtxt">
+            <div class="kick" style="color: var(--accentL);">// Ko-fi · <span data-kg="title">{GOAL.title}</span></div>
+            <div style="margin-top: 4px; font-family: 'Chakra Petch', sans-serif; font-weight: 700; font-size: 1.5em; line-height: 1.15; color: var(--text);">Every coffee keeps <span class="khl">XeroLinux going.</span></div>
+            <div style="margin-top: 4px; font-size: .9em;">Every euro goes into this goal and the next release.</div>
+          </div>
+          <a href={KOFI_GOAL.link} target="_blank" rel="noopener noreferrer" class="pri dlbtn kbtn">
+            <svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d={kofiIcon}></path></svg>Support on Ko-fi<span aria-hidden="true">↗</span>
+          </a>
+        </div>
+        <div class="kroad" role="img" aria-label={`${eur(GOAL.currentEUR)} of ${eur(GOAL.targetEUR)} raised, ${pct}% of the ${GOAL.title} goal`}>
+          <i data-kg="fill" style={`width: ${pct}%`}><span class="kme"><span><b data-kg="current">{eur(GOAL.currentEUR)}</b> · <span data-kg="pct">{pct}%</span></span></span></i>
+          {[0, 0.25, 0.5, 0.75, 1].map((q, i) => <span class="kms" style={`left: ${q * 100}%; --nc: ${['var(--c1L)', 'color-mix(in srgb,var(--c1L),var(--c2L))', 'var(--c2L)', 'color-mix(in srgb,var(--c2L),var(--c3L))', 'var(--c3L)'][i]};`}><span>{eur(Math.round(GOAL.targetEUR * q))}</span></span>)}
+          <svg class="kflag" aria-hidden="true" viewBox="0 0 26 30"><defs><pattern id="kchk" width="6" height="6" patternUnits="userSpaceOnUse"><rect width="6" height="6" fill="#f0f0f2"></rect><rect width="3" height="3" fill="#1b1c2e"></rect><rect x="3" y="3" width="3" height="3" fill="#1b1c2e"></rect></pattern><linearGradient id="kshade" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#000" stop-opacity="0"></stop><stop offset=".5" stop-color="#000" stop-opacity=".25"></stop><stop offset="1" stop-color="#fff" stop-opacity=".15"></stop></linearGradient></defs><rect x="1.5" y="1" width="2.5" height="29" rx="1.2" fill="#d8d8e2"></rect><path d="M4 2c5-2 9 2 14 0s6-1 7 0v12c-1-1-3-2-7 0s-9-2-14 0z" fill="url(#kchk)"></path><path d="M4 2c5-2 9 2 14 0s6-1 7 0v12c-1-1-3-2-7 0s-9-2-14 0z" fill="url(#kshade)"></path></svg>
+        </div>
+      </div>
+
+      <div class="crow" data-tabs>
+        <div class="kick">// Prefer crypto?</div>
+        <div class="chead">
+          <div class="wsel" role="group" aria-label="Wallet">
+            {wallets.map((w, i) => <button type="button" data-tab={String(i)} aria-pressed={i === 0 ? "true" : "false"}><span aria-hidden="true">{w.glyph}</span>{w.id}</button>)}
+          </div>
+          <div class="wdisc">Other wallet? <a href="https://discord.xerolinux.xyz" target="_blank" rel="noopener noreferrer" style="color: var(--accentL);">Ask on Discord</a>.</div>
+        </div>
+        {wallets.map((w, i) => (
+          <div class="wpane" data-pane={String(i)} hidden={i !== 0}>
+            <div class="wtext">
+              <div class="wsend">Send only <strong style="color: var(--text);">{w.id}</strong> on the <strong style="color: var(--text);">{w.net}</strong> network.</div>
+              <div class="wslogan">
+                <span><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M3 21h18M5 21V10M19 21V10M9 21v-7M15 21v-7M2 10l10-6 10 6"></path><path d="M3 3l18 18"></path></svg>No banks</span>
+                <span><svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="9" cy="8" r="4"></circle><path d="M2 21a7 7 0 0 1 14 0M17 8l5 5M22 8l-5 5"></path></svg>No middlemen</span>
+                <span><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>Straight to XeroLinux</span>
+              </div>
+              <div class="waddr">
+                <code class="addr">{w.addr}</code>
+                <button type="button" data-copy={w.addr} aria-label={`Copy ${w.id} address`}>Copy</button>
+              </div>
+            </div>
+            <img class="qr" src={w.qr} alt={`QR code for the ${w.id} address`} width="180" height="180" loading={i === 0 ? "eager" : "lazy"} decoding="async">
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
 </Shell>

@@ -216,17 +216,17 @@ async function loadGoal() {
   if (!el?.dataset.kgoal || Date.now() - goalAt < 60_000) return;
   goalAt = Date.now();
   try {
-    const d = await (await fetch(el.dataset.kgoal)).json() as { percentage?: number; currentEUR?: number; targetEUR?: number; title?: string };
+    const d = await (await fetch(el.dataset.kgoal)).json() as { percentage?: number; currentEUR?: number; targetEUR?: number; title?: string; supporters?: number | null };
     if (typeof d.percentage !== 'number' || typeof d.targetEUR !== 'number') return;
     const pct = Math.min(100, Math.max(0, Math.round(d.percentage)));
     const eur = (n: number) => `€${n.toLocaleString('en-US')}`;
-    const put = (k: string, v: string) => { const t = el.querySelector(`[data-kg="${k}"]`); if (t) t.textContent = v; };
+    const put = (k: string, v: string) => document.querySelectorAll(`[data-kg="${k}"]`).forEach((t) => { t.textContent = v; });
     put('pct', `${pct}%`);
     put('current', eur(d.currentEUR ?? Math.round((pct / 100) * d.targetEUR)));
     put('target', eur(d.targetEUR));
     if (d.title) put('title', d.title);
-    el.querySelector<HTMLElement>('[data-kg="fill"]')!.style.width = `${pct}%`;
-    el.setAttribute('aria-label', `Ko-fi goal: ${d.title ?? ''}, ${pct}% funded. Opens Ko-fi.`);
+    if (typeof d.supporters === 'number') put('supporters', d.supporters.toLocaleString('en-US'));
+    document.querySelectorAll<HTMLElement>('[data-kg="fill"]').forEach((f) => { f.style.width = `${pct}%`; });
   } catch { /* keep the build-time figures */ }
 }
 

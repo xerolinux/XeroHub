@@ -2,7 +2,6 @@
 import '../styles/global.css';
 import { ClientRouter } from 'astro:transitions';
 import { FREE_DEFAULT } from '../config';
-import KofiGoal from '../components/KofiGoal.astro';
 import { CHANGELOG } from '../data/changelog';
 import { EDITIONS } from '../data/editions';
 import { DEFAULT_THEME, THEMES, THEME_IDS, themeCss } from '../data/themes';
@@ -78,7 +77,6 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
       <a href="/gear/" aria-current={current === "/gear/" ? "page" : undefined} style="font-weight: 500; color: var(--text2);"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex: none;"><rect x="3" y="4" width="18" height="12" rx="2"></rect><path d="M8 20h8"></path><path d="M12 16v4"></path></svg><span class="nl">Gear</span></a>
       <a href="/tools/" aria-current={current === "/tools/" ? "page" : undefined} style="font-weight: 500; color: var(--text2);"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex: none;"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.5 2.5-2.4-.6-.6-2.4z"></path></svg><span class="nl">Tools</span></a>
       <a href="/support/" aria-current={current === "/support/" ? "page" : undefined} style="font-weight: 500; color: var(--text2);"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex: none;"><path d="M12 20s-7-4.5-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.5-7 10-7 10z"></path></svg><span class="nl">Support</span></a>
-      <a href="https://shop.xerolinux.xyz" target="_blank" rel="noopener noreferrer" aria-label="Merch (opens in a new tab)" style="font-weight: 500; color: var(--text2);"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex: none;"><path d="M6 7h12l-1 13H7z"></path><path d="M9 7a3 3 0 0 1 6 0"></path></svg><span class="nl">Merch</span><svg class="ext" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"></path><path d="M8 7h9v9"></path></svg></a>
       <a href="/download/" class="navdl" aria-current={current === "/download/" ? "page" : undefined} style="margin-left: 8px; background: var(--accent); color: #ffffff; font-weight: 600;"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex: none;"><path d="M12 3v12"></path><path d="m7 10 5 5 5-5"></path><path d="M5 21h14"></path></svg><span class="nl">Download</span></a>
     </nav>
   </header>
@@ -101,7 +99,14 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
         <li style="display: flex; gap: 10px;"><span style="color: var(--accentL);">▸</span>XeroLinux in-house Tools</li>
         <li style="display: flex; gap: 10px;"><span style="color: var(--accentL);">▸</span>Package Manager G.U.I</li>
       </ul>
-      <KofiGoal />
+      <div class="helpx">
+        <span class="kick" style="color: var(--accentL);">// Other ways to help</span>
+        <div>
+          <a href="https://github.com/sponsors/xerolinux" target="_blank" rel="noopener noreferrer"><svg aria-hidden="true" viewBox="0 0 24 24" fill="currentColor" style="color: #db61a2;"><path d="M12 21.35 10.55 20.03C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54z"></path></svg>Become a GitHub Sponsor</a>
+          <a href="https://discord.xerolinux.xyz" target="_blank" rel="noopener noreferrer"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>Help on Discord</a>
+          <a href="https://shop.xerolinux.xyz" target="_blank" rel="noopener noreferrer"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><path d="M3 6h18"></path><path d="M16 10a4 4 0 0 1-8 0"></path></svg>Grab merch</a>
+        </div>
+      </div>
     </section>
 
     <section aria-label={label} style="min-height: 0; display: flex; flex-direction: column; border-radius: 22px; overflow: hidden; background: var(--glass); border: 1px solid var(--line); backdrop-filter: var(--blur); -webkit-backdrop-filter: var(--blur);"><span class="ring" aria-hidden="true"></span>

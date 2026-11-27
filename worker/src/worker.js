@@ -4,7 +4,21 @@
 
 const KOFI_URL =
   'https://ko-fi.com/streamalerts/goaloverlay/sa_15ba9acd-650c-42b5-a225-c7a85489118a';
+const PROFILE_URL = 'https://ko-fi.com/xerolinux';
 const CACHE_TTL = 60;
+const UA = { 'user-agent': 'Mozilla/5.0 (kofi-goal-proxy)' };
+
+// The supporter count is only on the profile page; a failure there must not break the goal.
+async function supporterCount() {
+  try {
+    const res = await fetch(PROFILE_URL, { headers: UA, cf: { cacheTtl: 600, cacheEverything: true } });
+    if (!res.ok) return null;
+    const m = /([\d,]+)\s+Supporters?\b/i.exec(await res.text());
+    return m ? Number(m[1].replace(/,/g, '')) : null;
+  } catch {
+    return null;
+  }
+}
 
 export default {
   async fetch(request, _env, ctx) {
@@ -24,10 +38,10 @@ export default {
     if (cached) return cached;
 
     try {
-      const res = await fetch(KOFI_URL, {
-        headers: { 'user-agent': 'Mozilla/5.0 (kofi-goal-proxy)' },
-        cf: { cacheTtl: CACHE_TTL, cacheEverything: true },
-      });
+      const [res, supporters] = await Promise.all([
+        fetch(KOFI_URL, { headers: UA, cf: { cacheTtl: CACHE_TTL, cacheEverything: true } }),
+        supporterCount(),
+      ]);
       if (!res.ok) throw new Error(`upstream ${res.status}`);
       const html = await res.text();
 
@@ -49,6 +63,7 @@ export default {
         currentEUR,
         currency: cur || '€',
         title: title || null,
+        supporters,
         fetchedAt: Date.now(),
       });
 

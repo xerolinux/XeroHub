@@ -31,7 +31,7 @@ export const salePriceEUR = Math.round(ISO_PRICE_EUR * (1 - SALE.percent / 100))
 export const FIREBASE = { apiKey: 'AIzaSyDT_MJQFqPiRXwqJzRJN_VdNR9qF-1ki_s', projectId: 'xerolinux-6e564' };
 export const COUNT_HOSTS = ['xerolinux.xyz', 'www.xerolinux.xyz'];
 
-// Ko-fi goal bar in the hero. Live figures come from the kofi-goal-proxy Worker (worker/);
+// Ko-fi goal bar and supporter count on the Support page. Live figures come from the kofi-goal-proxy Worker (worker/);
 // these are the fallback if it can't be reached at build or in the browser.
 export const KOFI_GOAL = {
   proxy: 'https://kofi-goal-proxy.techxero.workers.dev/',
@@ -39,4 +39,5 @@ export const KOFI_GOAL = {
   title: 'Maintenance/Survival',
   currentEUR: 1620,
   targetEUR: 2000,
+  supporters: 773,
 };
