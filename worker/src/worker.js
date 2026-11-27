@@ -1,24 +1,17 @@
-// Ko-Fi Goal Overlay → JSON proxy.
-// Fetches the Ko-Fi goal overlay HTML, parses the embedded Vue data block,
-// returns CORS-friendly JSON. Cached at the CF edge for CACHE_TTL seconds.
+// Ko-fi supporter count → CORS-friendly JSON. Ko-fi blocks direct scrapes from browsers and CI, but not from Workers.
 
-const KOFI_URL =
-  'https://ko-fi.com/streamalerts/goaloverlay/sa_15ba9acd-650c-42b5-a225-c7a85489118a';
 const PROFILE_URL = 'https://ko-fi.com/xerolinux';
-const CACHE_TTL = 60;
-const UA = { 'user-agent': 'Mozilla/5.0 (kofi-goal-proxy)' };
+const CACHE_TTL = 600;
 
-// The supporter count is only on the profile page; a failure there must not break the goal.
-async function supporterCount() {
-  try {
-    const res = await fetch(PROFILE_URL, { headers: UA, cf: { cacheTtl: 600, cacheEverything: true } });
-    if (!res.ok) return null;
-    const m = /([\d,]+)\s+Supporters?\b/i.exec(await res.text());
-    return m ? Number(m[1].replace(/,/g, '')) : null;
-  } catch {
-    return null;
-  }
-}
+const json = (body, status = 200) =>
+  new Response(JSON.stringify(body), {
+    status,
+    headers: {
+      'content-type': 'application/json; charset=utf-8',
+      'access-control-allow-origin': '*',
+      ...(status === 200 && { 'cache-control': `public, max-age=${CACHE_TTL}` }),
+    },
+  });
 
 export default {
   async fetch(request, _env, ctx) {
@@ -34,59 +27,23 @@ export default {
 
     const cache = caches.default;
     const cacheKey = new Request(new URL(request.url).toString(), { method: 'GET' });
-    let cached = await cache.match(cacheKey);
+    const cached = await cache.match(cacheKey);
     if (cached) return cached;
 
     try {
-      const [res, supporters] = await Promise.all([
-        fetch(KOFI_URL, { headers: UA, cf: { cacheTtl: CACHE_TTL, cacheEverything: true } }),
-        supporterCount(),
-      ]);
+      const res = await fetch(PROFILE_URL, {
+        headers: { 'user-agent': 'Mozilla/5.0 (kofi-goal-proxy)' },
+        cf: { cacheTtl: CACHE_TTL, cacheEverything: true },
+      });
       if (!res.ok) throw new Error(`upstream ${res.status}`);
-      const html = await res.text();
+      const m = /([\d,]+)\s+Supporters?\b/i.exec(await res.text());
+      if (!m) throw new Error('supporter count not found');
 
-      const pct   = /percentage:\s*'([^']*)'/.exec(html)?.[1];
-      const amt   = /amount:\s*'([^']*)'/.exec(html)?.[1];
-      const cur   = /currency:\s*'([^']*)'/.exec(html)?.[1];
-      const title = /title:\s*'([^']*)'/.exec(html)?.[1];
-
-      const percentage = pct != null && pct !== '' ? Number(pct) : null;
-      const targetEUR  = amt != null && amt !== '' ? Number(amt) : null;
-      const currentEUR =
-        percentage != null && targetEUR != null
-          ? Math.round((percentage / 100) * targetEUR)
-          : null;
-
-      const body = JSON.stringify({
-        percentage,
-        targetEUR,
-        currentEUR,
-        currency: cur || '€',
-        title: title || null,
-        supporters,
-        fetchedAt: Date.now(),
-      });
-
-      const response = new Response(body, {
-        headers: {
-          'content-type': 'application/json; charset=utf-8',
-          'access-control-allow-origin': '*',
-          'cache-control': `public, max-age=${CACHE_TTL}`,
-        },
-      });
+      const response = json({ supporters: Number(m[1].replace(/,/g, '')), fetchedAt: Date.now() });
       ctx.waitUntil(cache.put(cacheKey, response.clone()));
       return response;
     } catch (err) {
-      return new Response(
-        JSON.stringify({ error: String(err && err.message ? err.message : err) }),
-        {
-          status: 502,
-          headers: {
-            'content-type': 'application/json; charset=utf-8',
-            'access-control-allow-origin': '*',
-          },
-        }
-      );
+      return json({ error: String(err?.message ?? err) }, 502);
     }
   },
 };

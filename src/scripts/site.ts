@@ -206,28 +206,19 @@ function initPage() {
 
   loadStats();
   void syncSettings();
-  void loadGoal();
+  void loadSupporters();
 }
 
-let goalAt = 0;
+let supportersAt = 0;
 
-async function loadGoal() {
-  const el = document.querySelector<HTMLElement>('[data-kgoal]');
-  if (!el?.dataset.kgoal || Date.now() - goalAt < 60_000) return;
-  goalAt = Date.now();
+async function loadSupporters() {
+  const el = document.querySelector<HTMLElement>('[data-supporters]');
+  if (!el?.dataset.supporters || Date.now() - supportersAt < 60_000) return;
+  supportersAt = Date.now();
   try {
-    const d = await (await fetch(el.dataset.kgoal)).json() as { percentage?: number; currentEUR?: number; targetEUR?: number; title?: string; supporters?: number | null };
-    if (typeof d.percentage !== 'number' || typeof d.targetEUR !== 'number') return;
-    const pct = Math.min(100, Math.max(0, Math.round(d.percentage)));
-    const eur = (n: number) => `€${n.toLocaleString('en-US')}`;
-    const put = (k: string, v: string) => document.querySelectorAll(`[data-kg="${k}"]`).forEach((t) => { t.textContent = v; });
-    put('pct', `${pct}%`);
-    put('current', eur(d.currentEUR ?? Math.round((pct / 100) * d.targetEUR)));
-    put('target', eur(d.targetEUR));
-    if (d.title) put('title', d.title);
-    if (typeof d.supporters === 'number') put('supporters', d.supporters.toLocaleString('en-US'));
-    document.querySelectorAll<HTMLElement>('[data-kg="fill"]').forEach((f) => { f.style.width = `${pct}%`; });
-  } catch { /* keep the build-time figures */ }
+    const d = await (await fetch(el.dataset.supporters)).json() as { supporters?: number };
+    if (typeof d.supporters === 'number') el.textContent = d.supporters.toLocaleString('en-US');
+  } catch { /* keep the build-time figure */ }
 }
 
 const FREE_KEY = 'xero-free';

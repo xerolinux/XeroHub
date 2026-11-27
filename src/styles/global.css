@@ -151,7 +151,7 @@ button{font:inherit;cursor:pointer}
 .sstats{display:flex;gap:max(16px,2cqw);align-items:flex-end}
 .sstats>div{text-align:right}.sstats>div+div{padding-left:max(16px,2cqw);border-left:1px solid var(--line)}
 .sstats .big{font-size:2.8em;color:var(--text)}.sstats .kick{margin-top:6px}
-.supbody{flex:1 0 auto;display:flex;flex-direction:column;justify-content:center;gap:max(12px,calc(1.6*var(--qh)))}
+.supbody{flex:1 0 auto;display:flex;flex-direction:column;justify-content:space-evenly;gap:max(12px,calc(1.6*var(--qh)))}
 .spitch{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:max(18px,3cqw);align-items:center}
 .slead{font-family:'Chakra Petch',sans-serif;font-weight:700;font-size:2.1em;line-height:1.05;background:linear-gradient(120deg,var(--c1L),var(--c2L) 50%,var(--c3L));-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 4px 18px color-mix(in srgb,var(--c2) 45%,transparent))}
 .sgo{list-style:none;margin:max(8px,calc(1*var(--qh))) 0 0;padding:0;display:flex;flex-direction:column;gap:max(8px,calc(1.1*var(--qh)))}
@@ -164,13 +164,14 @@ button{font:inherit;cursor:pointer}
 .helpx a:hover{border-color:var(--accentL);transform:translateY(-1px)}
 .helpx a svg{flex:none;width:18px;height:18px}
 @media (prefers-reduced-motion:reduce){.helpx a:hover{transform:none}}
-.kfm{position:relative;font-size:1.1em;display:flex;flex-direction:column;gap:max(10px,calc(1.2*var(--qh)));padding:max(14px,calc(1.8*var(--qh))) max(16px,1.6cqw);isolation:isolate}
+.kfm{position:relative;font-size:1.1em;display:flex;flex-wrap:wrap;align-items:center;gap:14px max(16px,1.8cqw);padding:max(14px,calc(1.8*var(--qh))) max(16px,1.6cqw);isolation:isolate}
 .kfm::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(var(--line),var(--line)) bottom/100% 1px no-repeat,linear-gradient(180deg,color-mix(in srgb,var(--accent) 5%,transparent),color-mix(in srgb,var(--accent) 20%,transparent));-webkit-mask:linear-gradient(90deg,transparent,#000 15%,#000 85%,transparent);mask:linear-gradient(90deg,transparent,#000 15%,#000 85%,transparent)}
 .kfm::before{content:"";position:absolute;left:0;right:0;top:0;height:1px;background:linear-gradient(90deg,transparent,var(--c1L),var(--c2L),var(--c3L),transparent);opacity:.25}
-.kfmtop{display:flex;flex-wrap:wrap;align-items:center;gap:14px max(16px,1.8cqw)}
-.kfmtxt{flex:1 1 240px;min-width:0}
+.kfmtxt{flex:1 1 240px;min-width:0;container-type:inline-size}
+.kfmh{margin-top:4px;font:700 clamp(1.5em,5.1cqi,2.1em)/1.15 'Chakra Petch',sans-serif;color:var(--text)}
+.kfms{margin-top:6px;font-size:clamp(.9em,3.35cqi,1.25em)}
 @media (max-height:820px) and (min-width:1024px){.kfm{font-size:1em}.kbadge{width:max(72px,calc(9.5*var(--qh)))}}
-.khl{background:linear-gradient(90deg,var(--c1L),var(--c2L),var(--c3L));-webkit-background-clip:text;background-clip:text;color:transparent}
+.khl{background:linear-gradient(90deg,var(--c1L),var(--c2L),var(--c3L));-webkit-background-clip:text;background-clip:text;color:transparent;white-space:nowrap}
 .kbadge{position:relative;flex:none;display:grid;place-items:center;width:max(84px,calc(11.5*var(--qh)));aspect-ratio:1;text-decoration:none}
 .kring{position:absolute;inset:0;width:100%;height:100%;animation:kspin 16s linear infinite}
 .kring text{font:11.5px 'JetBrains Mono',monospace;letter-spacing:3.4px;fill:var(--text2)}
@@ -179,16 +180,6 @@ button{font:inherit;cursor:pointer}
 .kbadge:hover .kcup,.kbadge:focus-visible .kcup{transform:scale(1.07)}
 @keyframes kspin{to{transform:rotate(360deg)}}
 @media (prefers-reduced-motion:reduce){.kring{animation:none}.kbadge:hover .kcup{transform:none}}
-.kroad{position:relative;isolation:isolate;height:4px;margin:max(26px,calc(3.4*var(--qh))) 12px max(22px,calc(2.8*var(--qh)));border-radius:2px;background:rgba(255,255,255,.07)}
-.kroad>i{position:absolute;inset:0 auto 0 0;border-radius:2px;background:linear-gradient(90deg,color-mix(in srgb,var(--c1L) 55%,#ffffff),color-mix(in srgb,var(--c2L) 55%,#ffffff),color-mix(in srgb,var(--c3L) 55%,#ffffff));transition:width .8s ease}
-.kroad>i::before,.kroad>i::after{content:"";position:absolute;inset:-3px 0;z-index:-1;border-radius:4px;background:linear-gradient(90deg,var(--c1L),var(--c2L),var(--c3L));filter:blur(5px)}
-.kroad>i::after{inset:-8px -4px;filter:blur(14px);opacity:.7}
-.kms{position:absolute;top:50%;width:14px;height:14px;border-radius:50%;transform:translate(-50%,-50%);background:var(--bg);border:3px solid color-mix(in srgb,var(--nc) 45%,#ffffff);box-shadow:0 0 8px var(--nc),0 0 18px var(--nc)}
-.kms span{position:absolute;top:18px;left:50%;transform:translateX(-50%);font:.86em 'JetBrains Mono',monospace;color:var(--dim);white-space:nowrap}
-.kflag{position:absolute;left:100%;bottom:6px;width:max(22px,calc(2.8*var(--qh)));height:auto;transform:translateX(-2px);}
-.kme{position:absolute;right:0;bottom:8px;transform:translateX(50%);display:flex;flex-direction:column;align-items:center;font:700 .9em 'JetBrains Mono',monospace;color:var(--text);white-space:nowrap}
-.kme b{color:var(--green)}
-.kme::after{content:"";width:2px;height:14px;margin-top:4px;background:var(--text)}
 .kbtn{min-height:56px;display:inline-flex;align-items:center;justify-content:center;gap:12px;padding:0 26px;border-radius:14px;text-decoration:none;font-weight:700;font-size:1.08em;color:#ffffff;white-space:nowrap}
 .crow{font-size:.95em;display:grid;grid-template-columns:auto minmax(0,1fr) auto;grid-template-areas:"kick send qr" "pills slogan qr" "disc addr qr";gap:8px max(20px,2.6cqw);align-items:center}
 .wpane,.chead,.wtext{display:contents}
@@ -365,12 +356,11 @@ section:has(>.term:not([hidden]))>:not(.term):not([data-winbar]):not(.ring){visi
   .nav button,.nav a{padding:0 12px;font-size:14px}
   .nl{display:none}
   .qr{justify-self:center;width:180px;height:180px}
-  .kme{align-items:flex-end;transform:translateX(1px)}
   .wsend{line-height:normal}
   .waddr{height:auto}.addr{white-space:normal;word-break:break-all;padding:8px 12px}
   .kbtn{flex:1 1 100%}
   .sstats{width:100%;justify-content:space-between;gap:10px}.sstats>div{text-align:left}.sstats>div+div{padding-left:10px}.sstats .big{font-size:1.9em}.sstats>div{flex:1}.sstats .kick{letter-spacing:.06em}.sstats .kick::before{content:none}
-  .kfmtxt{flex:1 1 0}.kbadge{width:72px}.kfmtxt>div:nth-child(2){font-size:1.25em !important}
+  .kfmtxt{flex:1 1 0}.kbadge{width:72px}.kfmh{font-size:1.25em}.kfms{font-size:.9em}
   .navdl{margin-left:0 !important}
   .ctas .pri{flex:0 0 auto}
   .ctas{gap:6px}
