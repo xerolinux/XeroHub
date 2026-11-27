@@ -22,10 +22,10 @@ const btn = 'min-height: 46px; display: inline-flex; align-items: center; justif
           <h2 style="margin: 6px 0 0; font-family: 'Chakra Petch', sans-serif; font-size: 2em; line-height: 1; color: var(--text);">Enter your access code</h2>
           <p style="margin: 10px 0 0;">Use the email and code from your Ko-fi or crypto donation.</p>
         </div>
-        <label style="display: flex; flex-direction: column; gap: 6px; font-size: .86em;">Donation email
+        <label style="display: flex; flex-direction: column; gap: 6px; font-size: .92em;">Donation email
           <input name="email" type="email" required autocomplete="email" style={field} />
         </label>
-        <label style="display: flex; flex-direction: column; gap: 6px; font-size: .86em;">Access code
+        <label style="display: flex; flex-direction: column; gap: 6px; font-size: .92em;">Access code
           <input name="code" type="text" required autocomplete="off" autocapitalize="characters" spellcheck="false" style={field + " font-family: 'JetBrains Mono', monospace; letter-spacing: .06em;"} />
         </label>
         <p data-msg role="alert" style="margin: 0; min-height: 1.4em; color: #ee7a9a;"></p>
@@ -33,7 +33,7 @@ const btn = 'min-height: 46px; display: inline-flex; align-items: center; justif
           <button type="submit" class="pri" style={btn + ' flex: 1 1 auto; border: 0; background: var(--accent); color: #ffffff;'}>Access</button>
           <a href="/download/" class="accback" style={btn + ' text-decoration: none; color: var(--text);'}><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"></path></svg>Back</a>
         </div>
-        <p style="margin: 0; font-size: .8em;">No code yet? <a href={KOFI_ISO_URL} target="_blank" rel="noopener noreferrer" style="color: var(--accentL);">Get the ISO on Ko-fi</a> or <a href="/support/" style="color: var(--accentL);">pay with crypto</a>.</p>
+        <p style="margin: 0; font-size: .88em;">No code yet? <a href={KOFI_ISO_URL} target="_blank" rel="noopener noreferrer" style="color: var(--accentL);">Get the ISO on Ko-fi</a> or <a href="/support/" style="color: var(--accentL);">pay with crypto</a>.</p>
       </form>
     </div>
 
@@ -55,32 +55,32 @@ const btn = 'min-height: 46px; display: inline-flex; align-items: center; justif
               <div class="disc" aria-hidden="true" style={disc(e.a, e.b)}></div>
               <div style="min-width: 0; display: flex; flex-direction: column; gap: 5px;">
                 <div style="font-family: 'Chakra Petch', sans-serif; font-weight: 700; font-size: 1.45em; color: var(--text);"><span style={`color: ${e.c1};`}>{e.l1}</span><span style="color: var(--text2);">{e.sep}</span><span style={`color: ${e.c2};`}>{e.l2}</span></div>
-                <div style="font-size: .86em;">{e.note}</div>
+                <div style="font-size: .92em;">{e.note}</div>
                 <div class="kick" style="margin-top: 6px; color: var(--accentL);">Latest release · <span data-f="version"></span></div>
-                <div data-f="file" style="font-family: 'JetBrains Mono', monospace; font-size: .82em; color: var(--text); word-break: break-all;"></div>
+                <div data-f="file" style="font-family: 'JetBrains Mono', monospace; font-size: .9em; color: var(--text); word-break: break-all;"></div>
               </div>
             </div>
             <div style="display: flex; align-items: flex-end; justify-content: space-between; gap: 12px; padding: max(10px, calc(1.4*var(--qh))) 16px; border-radius: 14px; background: var(--glass); border: 1px solid var(--line);">
               <div><div class="big" data-f="release" style="font-size: 2.6em; color: var(--text);"></div><div class="kick" style="margin-top: 6px;">downloads this release</div></div>
-              <div style="text-align: right;"><div class="big" data-f="total" style="font-size: 1.4em; color: var(--accentL);"></div><div class="kick" style="margin-top: 4px; font-size: .68em;">all-time</div></div>
+              <div style="text-align: right;"><div class="big" data-f="total" style="font-size: 1.4em; color: var(--accentL);"></div><div class="kick" style="margin-top: 4px; font-size: .78em;">all-time</div></div>
             </div>
             <div class="chips"><span class="chip" data-f="date" style="background: var(--glass);"></span><span class="chip" style="background: var(--glass);">x86_64</span><span class="chip" data-f="size" style="background: var(--glass);"></span><span class="chip" style="background: var(--glass);">ISO</span></div>
             <div data-btnrow style="margin-top: max(8px, calc(1.5*var(--qh))); display: flex; gap: 10px; flex-wrap: wrap;">
               <button type="button" data-get={e.id} style={btn + ' flex: 1 1 auto; min-height: 48px; border: 0; font-size: 1.05em; background: var(--accent); color: #ffffff;'}><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"></path><path d="m7 10 5 5 5-5"></path><path d="M5 21h14"></path></svg>Download · <span data-f="size"></span></button>
               <button type="button" data-pop-open aria-expanded="false" style={btn + ' min-height: 48px; border: 1px solid var(--line); background: transparent; color: var(--text);'}>Verify checksums</button>
             </div>
-            <p data-f="err" role="alert" style="margin: 0; color: #ee7a9a; font-size: .86em;"></p>
+            <p data-f="err" role="alert" style="margin: 0; color: #ee7a9a; font-size: .92em;"></p>
             <div role="dialog" aria-label="Checksums" data-pop hidden style="position: absolute; inset: 0; z-index: 2; box-sizing: border-box; display: flex; flex-direction: column; gap: max(8px, calc(1.3*var(--qh))); padding: max(16px, calc(2.2*var(--qh))); border-radius: 18px; overflow-y: auto; background: var(--glassSolid); border: 1px solid var(--accentL); backdrop-filter: var(--blur); -webkit-backdrop-filter: var(--blur);">
               <div style="display: flex; align-items: flex-start; justify-content: space-between; gap: 12px;">
                 <div style="min-width: 0;">
                   <div style="font-family: 'Chakra Petch', sans-serif; font-weight: 700; font-size: 1.25em; color: var(--text);">Verify checksums</div>
-                  <div data-f="file" style="font-family: 'JetBrains Mono', monospace; font-size: .76em; word-break: break-all;"></div>
+                  <div data-f="file" style="font-family: 'JetBrains Mono', monospace; font-size: .86em; word-break: break-all;"></div>
                 </div>
                 <button type="button" data-pop-close aria-label="Close checksums" style="flex: none; min-width: 44px; min-height: 44px; border-radius: 10px; border: 1px solid var(--line); background: transparent; color: var(--text); font-size: 1.2em;">✕</button>
               </div>
               {['sha256', 'sha1', 'md5'].map((h) => (
                 <div class="hrow" style="padding: 10px 12px; border-radius: 12px; background: var(--soft);">
-                  <div style="flex: 1; min-width: 0;"><div class="kick" style="font-size: .66em; color: var(--accentL);">{h.toUpperCase()}</div><div class="hash" data-f={h} style="color: var(--text);"></div></div>
+                  <div style="flex: 1; min-width: 0;"><div class="kick" style="font-size: .76em; color: var(--accentL);">{h.toUpperCase()}</div><div class="hash" data-f={h} style="color: var(--text);"></div></div>
                   <button type="button" data-copy="" data-copy-f={h} aria-label={`Copy ${h.toUpperCase()}`} style="border: 1px solid var(--line); background: transparent; color: var(--text);">Copy</button>
                 </div>
               ))}

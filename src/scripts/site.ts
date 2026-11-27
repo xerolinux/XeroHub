@@ -92,6 +92,18 @@ function appImageLinks() {
   }
 }
 
+function lightbox() {
+  let lb = document.querySelector<HTMLDialogElement>('dialog.lb');
+  if (lb) return lb;
+  lb = document.createElement('dialog');
+  lb.className = 'lb';
+  lb.setAttribute('aria-label', 'Photo');
+  lb.innerHTML = '<button type="button" aria-label="Close photo">✕</button><img alt="">';
+  lb.addEventListener('click', () => lb!.close());
+  document.body.append(lb);
+  return lb;
+}
+
 function initPage() {
   fit();
   syncRings();
@@ -119,6 +131,29 @@ function initPage() {
       });
     }));
   });
+
+  const kset = [...document.querySelectorAll<HTMLButtonElement>('[data-kset]')];
+  if (kset.length) {
+    const groupBtns = [...document.querySelectorAll<HTMLButtonElement>('.dk[data-group]')];
+    const pick = (name: string) => {
+      kset.forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.kset === name)));
+      groupBtns.forEach((b) => { b.hidden = b.dataset.group !== name; });
+      groupBtns.find((b) => b.dataset.group === name)?.click();
+    };
+    kset.forEach((b) => b.addEventListener('click', () => {
+      pick(b.dataset.kset ?? 'apps');
+      history.replaceState(history.state, '', b.dataset.kset === 'scripts' ? '#scripts' : location.pathname);
+    }));
+    if (location.hash === '#scripts') pick('scripts');
+  }
+
+  document.querySelectorAll<HTMLButtonElement>('[data-lightbox]').forEach((btn) => btn.addEventListener('click', () => {
+    const lb = lightbox();
+    const img = lb.querySelector('img')!;
+    img.src = btn.dataset.lightbox ?? '';
+    img.alt = btn.querySelector('img')?.alt ?? '';
+    lb.showModal();
+  }));
 
   appImageLinks();
   document.querySelectorAll<HTMLButtonElement>('[data-copy]').forEach((btn) => {

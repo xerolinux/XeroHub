@@ -1,5 +1,32 @@
 ---
 import Shell from '../layouts/Shell.astro';
+
+const GH = 'M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z';
+const btn = 'min-height: 44px; display: inline-flex; align-items: center; gap: 8px; white-space: nowrap; padding: 0 16px; border-radius: 10px; text-decoration: none; border: 1px solid var(--line); color: var(--text);';
+const scripts = [
+  {
+    id: '20', slug: 'xero-tui', name: 'Xero T.U.I', kick: 'Script · Arch Linux', tty: '/media/xero-tui.webp',
+    lead: 'Turns a fresh Arch install into the full XeroLinux desktop from the terminal, free.',
+    feats: ['Same destination as the ISO', 'Simple question-based setup', 'More encryption options than the ISO'],
+    label: 'From an Arch install, run', cmd: 'curl -fsSL https://urls.xerolinux.xyz/xeroinstall | bash',
+  },
+  {
+    id: '21', slug: 'xerodora', name: 'XeroDora', kick: 'Script · Fedora', shot: '/media/xerodora.webp',
+    lead: 'Turns a base Fedora Everything install into a ready KDE Plasma desktop, one command.',
+    feats: ['RPMFusion, Flathub and Terra set up', 'Codecs, faster dnf and a handy app set', 'Optional apps menu and XeroLinux rice'],
+    label: 'From the Fedora TTY, run', cmd: 'curl -fsSL https://urls.xerolinux.xyz/XeroDora | bash',
+    repo: 'https://github.com/xerolinux/XeroDora',
+  },
+  {
+    id: '22', slug: 'xerolayan', name: 'XeroLayan', kick: 'Script · Rice · Arch & Fedora', shot: '/media/xerolayan.webp',
+    lead: 'The XeroLinux Layan rice for KDE Plasma, on Arch or Fedora KDE.',
+    feats: ['Detects Arch or Fedora KDE by itself', 'Layan theming and Plasma layout', 'Fedora needs RPM Fusion (free and nonfree)'],
+    label: 'Clone and run', cmd: 'git clone https://github.com/xerolinux/xero-layan-git\ncd xero-layan-git/ && ./install.sh',
+    note: 'Themes come from their own artists and may lag behind app updates.',
+    repo: 'https://github.com/xerolinux/xero-layan-git',
+  },
+];
+const longest = (cmd: string) => Math.max(...cmd.split('\n').map((l) => l.length));
 ---
 
 <Shell title="Tools" description="XeroLinux in-house tools: xPackageManager, Customization Hub, iBackup/Restore and more." current="/tools/" label="Xero Tools" winTitle="~/tools/xpackagemanager" winSub="xPackageManager">
@@ -18,7 +45,7 @@ import Shell from '../layouts/Shell.astro';
                 <li style="display: flex; gap: 8px;"><span style="color: var(--accentL);">▸</span><span>One-click pacman rollback</span></li>
               </ul>
               <div style="display: flex; flex-direction: column; gap: 4px;">
-                <div style="font-size: .8em;">On XeroLinux</div>
+                <div style="font-size: .88em;">On XeroLinux</div>
                 <div class="cmd one" style="--n: 24;"><pre style="background: var(--glass); color: var(--text); border: 1px solid var(--line);">sudo pacman -Syy xpm-gui</pre><button type="button" data-copy="sudo pacman -Syy xpm-gui" aria-label="Copy command" title="Copy" style="border: 1px solid var(--line); background: transparent; color: var(--text);"><svg aria-hidden="true" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button></div>
               </div>
               <div data-btnrow style="display: flex; flex-wrap: wrap; gap: 10px;"><a href="https://github.com/xerolinux/xPackageManager" target="_blank" rel="noopener noreferrer" style="min-height: 44px; display: inline-flex; align-items: center; gap: 8px; white-space: nowrap; padding: 0 16px; border-radius: 10px; text-decoration: none; border: 1px solid var(--line); color: var(--text);"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="flex: none;"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"></path></svg>GitHub</a></div>
@@ -38,7 +65,7 @@ import Shell from '../layouts/Shell.astro';
                 <li style="display: flex; gap: 8px;"><span style="color: var(--accentL);">▸</span><span>System scripts and tools</span></li>
               </ul>
               <div style="display: flex; flex-direction: column; gap: 4px;">
-                <div style="font-size: .8em;">Needs python-pyqt6, then run</div>
+                <div style="font-size: .88em;">Needs python-pyqt6, then run</div>
                 <div class="cmd one" style="--n: 62;"><pre style="background: var(--glass); color: var(--text); border: 1px solid var(--line);">curl -fsSL https://xerolinux.xyz/script/xero-tool.py | python3</pre><button type="button" data-copy="curl -fsSL https://xerolinux.xyz/script/xero-tool.py | python3" aria-label="Copy command" title="Copy" style="border: 1px solid var(--line); background: transparent; color: var(--text);"><svg aria-hidden="true" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button></div>
               </div>
             </div>
@@ -57,7 +84,7 @@ import Shell from '../layouts/Shell.astro';
                 <li style="display: flex; gap: 8px;"><span style="color: var(--accentL);">▸</span><span>iOS updates and recovery</span></li>
               </ul>
               <div style="display: flex; flex-direction: column; gap: 4px;">
-                <div style="font-size: .8em;">Needs usbmuxd, then run the AppImage</div>
+                <div style="font-size: .88em;">Needs usbmuxd, then run the AppImage</div>
                 <div class="cmd one" style="--n: 22;"><pre style="background: var(--glass); color: var(--text); border: 1px solid var(--line);">sudo pacman -S usbmuxd</pre><button type="button" data-copy="sudo pacman -S usbmuxd" aria-label="Copy command" title="Copy" style="border: 1px solid var(--line); background: transparent; color: var(--text);"><svg aria-hidden="true" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button></div>
               </div>
               <div data-btnrow style="display: flex; flex-wrap: wrap; gap: 10px;"><a href="https://github.com/xerolinux/xero-ibr/releases/latest" data-appimage="xerolinux/xero-ibr" data-arch="x86_64" target="_blank" rel="noopener noreferrer" style="min-height: 44px; display: inline-flex; align-items: center; white-space: nowrap; padding: 0 18px; border-radius: 10px; text-decoration: none; font-weight: 700; background: var(--accent); color: #ffffff;">Download AppImage</a><a href="https://github.com/xerolinux/xero-ibr/releases/latest" data-appimage="xerolinux/xero-ibr" data-arch="aarch64" target="_blank" rel="noopener noreferrer" title="AppImage for ARM64 (aarch64)" style="min-height: 44px; display: inline-flex; align-items: center; white-space: nowrap; padding: 0 14px; border-radius: 10px; text-decoration: none; border: 1px solid var(--line); color: var(--text);">ARM64</a><a href="https://github.com/xerolinux/xero-ibr" target="_blank" rel="noopener noreferrer" style="min-height: 44px; display: inline-flex; align-items: center; gap: 8px; white-space: nowrap; padding: 0 16px; border-radius: 10px; text-decoration: none; border: 1px solid var(--line); color: var(--text);"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="flex: none;"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"></path></svg>GitHub</a></div>
@@ -77,7 +104,7 @@ import Shell from '../layouts/Shell.astro';
                 <li style="display: flex; gap: 8px;"><span style="color: var(--accentL);">▸</span><span>Per-service face auth</span></li>
               </ul>
               <div style="display: flex; flex-direction: column; gap: 4px;">
-                <div style="font-size: .8em;">Build and install</div>
+                <div style="font-size: .88em;">Build and install</div>
                 <div class="cmd one" style="--n: 52;"><pre style="background: var(--glass); color: var(--text); border: 1px solid var(--line);">git clone https://github.com/xerolinux/xero-howdy-qt
 cd xero-howdy-qt/Packaging/ &amp;&amp; makepkg -si</pre><button type="button" data-copy="git clone https://github.com/xerolinux/xero-howdy-qt
 cd xero-howdy-qt/Packaging/ &amp;&amp; makepkg -si" aria-label="Copy command" title="Copy" style="border: 1px solid var(--line); background: transparent; color: var(--text);"><svg aria-hidden="true" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button></div>
@@ -99,7 +126,7 @@ cd xero-howdy-qt/Packaging/ &amp;&amp; makepkg -si" aria-label="Copy command" ti
                 <li style="display: flex; gap: 8px;"><span style="color: var(--accentL);">▸</span><span>Polkit and graphical prompts</span></li>
               </ul>
               <div style="display: flex; flex-direction: column; gap: 4px;">
-                <div style="font-size: .8em;">On XeroLinux</div>
+                <div style="font-size: .88em;">On XeroLinux</div>
                 <div class="cmd one" style="--n: 27;"><pre style="background: var(--glass); color: var(--text); border: 1px solid var(--line);">sudo pacman -S xfprintd-gui</pre><button type="button" data-copy="sudo pacman -S xfprintd-gui" aria-label="Copy command" title="Copy" style="border: 1px solid var(--line); background: transparent; color: var(--text);"><svg aria-hidden="true" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button></div>
               </div>
               <div data-btnrow style="display: flex; flex-wrap: wrap; gap: 10px;"><a href="https://github.com/xerolinux/xfprintd-gui" target="_blank" rel="noopener noreferrer" style="min-height: 44px; display: inline-flex; align-items: center; gap: 8px; white-space: nowrap; padding: 0 16px; border-radius: 10px; text-decoration: none; border: 1px solid var(--line); color: var(--text);"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="flex: none;"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"></path></svg>GitHub</a></div>
@@ -118,9 +145,9 @@ cd xero-howdy-qt/Packaging/ &amp;&amp; makepkg -si" aria-label="Copy command" ti
                 <li style="display: flex; gap: 8px;"><span style="color: var(--accentL);">▸</span><span>Secure Boot keys signed via sbctl</span></li>
                 <li style="display: flex; gap: 8px;"><span style="color: var(--accentL);">▸</span><span>Keeps dual-boot and LUKS setups</span></li>
               </ul>
-              <div style="font-size: .84em; color: var(--yellow);">⚠ Replaces your bootloader. Back up first.</div>
+              <div style="font-size: .9em; color: var(--yellow);">⚠ Replaces your bootloader. Back up first.</div>
               <div style="display: flex; flex-direction: column; gap: 4px;">
-                <div style="font-size: .8em;">On XeroLinux</div>
+                <div style="font-size: .88em;">On XeroLinux</div>
                 <div class="cmd one" style="--n: 22;"><pre style="background: var(--glass); color: var(--text); border: 1px solid var(--line);">sudo pacman -S xsb-gui</pre><button type="button" data-copy="sudo pacman -S xsb-gui" aria-label="Copy command" title="Copy" style="border: 1px solid var(--line); background: transparent; color: var(--text);"><svg aria-hidden="true" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button></div>
               </div>
               <div data-btnrow style="display: flex; flex-wrap: wrap; gap: 10px;"><a href="https://wiki.xerolinux.xyz/secure-boot/" target="_blank" rel="noopener noreferrer" style="min-height: 44px; display: inline-flex; align-items: center; gap: 8px; white-space: nowrap; padding: 0 16px; border-radius: 10px; text-decoration: none; border: 1px solid var(--line); color: var(--text);"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex: none;"><path d="M4 19.5V5a2 2 0 0 1 2-2h14v16H6a2 2 0 0 0-2 2z"></path><path d="M8 7h8"></path><path d="M8 11h6"></path></svg>Documentation</a></div>
@@ -140,7 +167,7 @@ cd xero-howdy-qt/Packaging/ &amp;&amp; makepkg -si" aria-label="Copy command" ti
                 <li style="display: flex; gap: 8px;"><span style="color: var(--accentL);">▸</span><span>Set wallpapers directly</span></li>
               </ul>
               <div style="display: flex; flex-direction: column; gap: 4px;">
-                <div style="font-size: .8em;">On XeroLinux</div>
+                <div style="font-size: .88em;">On XeroLinux</div>
                 <div class="cmd one" style="--n: 37;"><pre style="background: var(--glass); color: var(--text); border: 1px solid var(--line);">sudo pacman -S xero-wallpaper-browser</pre><button type="button" data-copy="sudo pacman -S xero-wallpaper-browser" aria-label="Copy command" title="Copy" style="border: 1px solid var(--line); background: transparent; color: var(--text);"><svg aria-hidden="true" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button></div>
               </div>
               <div data-btnrow style="display: flex; flex-wrap: wrap; gap: 10px;"><a href="https://github.com/xerolinux/xero-wallpapers-gui" target="_blank" rel="noopener noreferrer" style="min-height: 44px; display: inline-flex; align-items: center; gap: 8px; white-space: nowrap; padding: 0 16px; border-radius: 10px; text-decoration: none; border: 1px solid var(--line); color: var(--text);"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="flex: none;"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"></path></svg>GitHub</a><a href="https://github.com/xerolinux/xero-wallpapers-gui/releases/latest" data-appimage="xerolinux/xero-wallpapers-gui" data-arch="x86_64" target="_blank" rel="noopener noreferrer" style="min-height: 44px; display: inline-flex; align-items: center; white-space: nowrap; padding: 0 18px; border-radius: 10px; text-decoration: none; font-weight: 700; background: var(--accent); color: #ffffff;">Download AppImage</a><a href="https://github.com/xerolinux/xero-wallpapers-gui/releases/latest" data-appimage="xerolinux/xero-wallpapers-gui" data-arch="aarch64" target="_blank" rel="noopener noreferrer" title="AppImage for ARM64 (aarch64)" style="min-height: 44px; display: inline-flex; align-items: center; white-space: nowrap; padding: 0 14px; border-radius: 10px; text-decoration: none; border: 1px solid var(--line); color: var(--text);">ARM64</a></div>
@@ -160,7 +187,7 @@ cd xero-howdy-qt/Packaging/ &amp;&amp; makepkg -si" aria-label="Copy command" ti
                 <li style="display: flex; gap: 8px;"><span style="color: var(--accentL);">▸</span><span>Plasma 6 desktop and panel widget</span></li>
               </ul>
               <div style="display: flex; flex-direction: column; gap: 4px;">
-                <div style="font-size: .8em;">Build and install</div>
+                <div style="font-size: .88em;">Build and install</div>
                 <div class="cmd one" style="--n: 52;"><pre style="background: var(--glass); color: var(--text); border: 1px solid var(--line);">git clone https://github.com/xerolinux/xSpeedTestGUI
 cd xSpeedTestGUI/packaging/ &amp;&amp; makepkg -si</pre><button type="button" data-copy="git clone https://github.com/xerolinux/xSpeedTestGUI
 cd xSpeedTestGUI/packaging/ &amp;&amp; makepkg -si" aria-label="Copy command" title="Copy" style="border: 1px solid var(--line); background: transparent; color: var(--text);"><svg aria-hidden="true" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button></div>
@@ -168,16 +195,46 @@ cd xSpeedTestGUI/packaging/ &amp;&amp; makepkg -si" aria-label="Copy command" ti
               <div data-btnrow style="display: flex; flex-wrap: wrap; gap: 10px;"><a href="https://github.com/xerolinux/xSpeedTestGUI" target="_blank" rel="noopener noreferrer" style="min-height: 44px; display: inline-flex; align-items: center; gap: 8px; white-space: nowrap; padding: 0 16px; border-radius: 10px; text-decoration: none; border: 1px solid var(--line); color: var(--text);"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="flex: none;"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"></path></svg>GitHub</a></div>
             </div>
           </div>
-          <nav class="dock" aria-label="Tools" style="background: var(--glassSolid); border: 1px solid var(--line);">
-            <button type="button" class="dk" data-tab="0" aria-pressed="true" aria-label="xPackageManager" title="xPackageManager"><img src="/media/thumbs/xpm-still.webp" alt="" width="96" height="96"></button>
-            <button type="button" class="dk" data-tab="1" aria-pressed="false" aria-label="Customization Hub" title="Customization Hub"><img src="/media/thumbs/xero-tool.webp" alt="" width="96" height="96"></button>
-            <button type="button" class="dk" data-tab="3" aria-pressed="false" aria-label="iBackup/Restore" title="iBackup/Restore"><img src="/media/thumbs/ibr-demo.webp" alt="" width="96" height="96"></button>
-            <button type="button" class="dk" data-tab="4" aria-pressed="false" aria-label="Howdy-Qt" title="Howdy-Qt"><img src="/media/thumbs/HowdyQt.webp" alt="" width="96" height="96"></button>
-            <button type="button" class="dk" data-tab="9" aria-pressed="false" aria-label="Fingerprint GUI" title="Fingerprint GUI"><img src="/media/thumbs/xfprintd-gui.webp" alt="" width="96" height="96"></button>
-            <button type="button" class="dk" data-tab="10" aria-pressed="false" aria-label="Limine/SecureBoot Enabler" title="Limine/SecureBoot Enabler"><img src="/media/thumbs/xsb-gui.webp" alt="" width="96" height="96"></button>
-            <button type="button" class="dk" data-tab="6" aria-pressed="false" aria-label="Wallpaper Browser" title="Wallpaper Browser"><img src="/media/thumbs/walls-still.webp" alt="" width="96" height="96"></button>
-            <button type="button" class="dk" data-tab="11" aria-pressed="false" aria-label="xSpeedTest" title="xSpeedTest"><img src="/media/thumbs/xspeedtest.webp" alt="" width="96" height="96"></button>
+          {scripts.map((sc) => (
+            <div class="dtop" data-pane={sc.id} data-title={`~/scripts/${sc.slug}`} data-sub={sc.name} hidden style="gap: max(16px, 2cqw);">
+              <div class="dcell">
+                {sc.tty ? (
+                  <div class="ttywin">
+                    <div class="ttybar" aria-hidden="true"><i></i><i></i><i></i><span>xero-install · tty1</span></div>
+                    <img src={sc.tty} alt={`${sc.name} installing XeroLinux in a terminal`} loading="lazy" width="1274" height="650">
+                  </div>
+                ) : <img class="dshot" src={sc.shot} alt={`${sc.name} screenshot`} loading="lazy" style="border: 1px solid var(--line);">}
+              </div>
+              <div style="min-width: 0; display: flex; flex-direction: column; gap: max(10px, calc(1.4*var(--qh)));">
+                <div class="kick" style="color: var(--accentL);">{sc.kick}</div>
+                <h3 style="margin: 0; font-family: 'Chakra Petch', sans-serif; font-size: 2.1em; line-height: 1; color: var(--text);">{sc.name}</h3>
+                <p style="margin: 0;">{sc.lead}</p>
+                <ul class="feats" style="font-size: .94em;">
+                  {sc.feats.map((f) => <li style="display: flex; gap: 8px;"><span style="color: var(--accentL);">▸</span><span>{f}</span></li>)}
+                </ul>
+                <div style="display: flex; flex-direction: column; gap: 4px;">
+                  <div style="font-size: .88em;">{sc.label}</div>
+                  <div class="cmd one" style={`--n: ${longest(sc.cmd)};`}><pre style="background: var(--glass); color: var(--text); border: 1px solid var(--line);">{sc.cmd}</pre><button type="button" data-copy={sc.cmd} aria-label="Copy command" title="Copy" style="border: 1px solid var(--line); background: transparent; color: var(--text);"><svg aria-hidden="true" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button></div>
+                  {sc.note && <div style="font-size: .86em;">{sc.note}</div>}
+                </div>
+                {sc.repo && <div data-btnrow style="display: flex; flex-wrap: wrap; gap: 10px;"><a href={sc.repo} target="_blank" rel="noopener noreferrer" style={btn}><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="flex: none;"><path d={GH}></path></svg>GitHub</a></div>}
+              </div>
+            </div>
+          ))}
+          <nav class="dock" aria-label="Tools and scripts" style="background: var(--glassSolid); border: 1px solid var(--line);">
+            <div class="kset" role="group" aria-label="Show"><button type="button" data-kset="apps" aria-pressed="true">Apps</button><button type="button" data-kset="scripts" aria-pressed="false">Scripts</button></div>
+            <button type="button" class="dk" data-group="apps" data-tab="0" aria-pressed="true" aria-label="xPackageManager" title="xPackageManager"><img src="/media/thumbs/xpm-still.webp" alt="" width="96" height="96"></button>
+            <button type="button" class="dk" data-group="apps" data-tab="1" aria-pressed="false" aria-label="Customization Hub" title="Customization Hub"><img src="/media/thumbs/xero-tool.webp" alt="" width="96" height="96"></button>
+            <button type="button" class="dk" data-group="apps" data-tab="3" aria-pressed="false" aria-label="iBackup/Restore" title="iBackup/Restore"><img src="/media/thumbs/ibr-demo.webp" alt="" width="96" height="96"></button>
+            <button type="button" class="dk" data-group="apps" data-tab="4" aria-pressed="false" aria-label="Howdy-Qt" title="Howdy-Qt"><img src="/media/thumbs/HowdyQt.webp" alt="" width="96" height="96"></button>
+            <button type="button" class="dk" data-group="apps" data-tab="9" aria-pressed="false" aria-label="Fingerprint GUI" title="Fingerprint GUI"><img src="/media/thumbs/xfprintd-gui.webp" alt="" width="96" height="96"></button>
+            <button type="button" class="dk" data-group="apps" data-tab="10" aria-pressed="false" aria-label="Limine/SecureBoot Enabler" title="Limine/SecureBoot Enabler"><img src="/media/thumbs/xsb-gui.webp" alt="" width="96" height="96"></button>
+            <button type="button" class="dk" data-group="apps" data-tab="6" aria-pressed="false" aria-label="Wallpaper Browser" title="Wallpaper Browser"><img src="/media/thumbs/walls-still.webp" alt="" width="96" height="96"></button>
+            <button type="button" class="dk" data-group="apps" data-tab="11" aria-pressed="false" aria-label="xSpeedTest" title="xSpeedTest"><img src="/media/thumbs/xspeedtest.webp" alt="" width="96" height="96"></button>
+            {scripts.map((sc) => (
+              <button type="button" class="dk" data-group="scripts" data-tab={sc.id} aria-pressed="false" aria-label={sc.name} title={sc.name} hidden><img src={(sc.tty ?? sc.shot)!.replace('/media/', '/media/thumbs/')} alt="" width="96" height="96"></button>
+            ))}
           </nav>
-          <div style="flex: none; text-align: center; font-size: .76em;">Some tools are AI-assisted. All are tested before release. Use at your own discretion.</div>
+          <div style="flex: none; text-align: center; font-size: .86em;">Some tools are AI-assisted. All are tested before release. Use at your own discretion.</div>
       </div>
 </Shell>
