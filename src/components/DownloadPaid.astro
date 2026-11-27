@@ -1,20 +1,12 @@
 ---
 import Changelog from './Changelog.astro';
 import { ISO_PRICE_EUR, KOFI_ISO_URL, PAID_STATS_URL, SALE, salePriceEUR } from '../config';
-import { EDITIONS } from '../data/editions';
+import { EDITIONS, ISO_FEATURES } from '../data/editions';
+import EditionCol from './EditionCol.astro';
 
-const looks = {
-  std: { l1: 'Intel', sep: ' / ', l2: 'AMD', c1: '#84b0f8', c2: '#f69292', a: '66,133,244', b: '238,57,57', blurb: 'For systems with an Intel or AMD GPU/iGPU' },
-  nvidia: { l1: 'nVidia', sep: '', l2: '', c1: '#2bd05a', c2: '#2bd05a', a: '43,208,90', b: '86,87,245', blurb: 'For systems with an nVidia GPU' },
-};
-const editions = EDITIONS.map((e) => ({ ...e, ...looks[e.id] }));
 const fmt = (n: number) => n.toLocaleString('en-US');
-const allTime = editions.reduce((s, e) => s + e.total, 0);
-const releaseTotal = editions.reduce((s, e) => s + e.release, 0);
-const disc = (a: string, b: string) =>
-  `background: radial-gradient(circle, var(--bg) 0 14%, rgba(255,255,255,0.55) 14.5% 16.5%, rgba(10,12,28,0.35) 17% 30%, transparent 30.5%), conic-gradient(from 0deg, rgb(${a}), rgba(${a},0.55) 12%, #fff 18%, rgba(${a},0.7) 25%, rgb(${b}) 42%, rgba(${b},0.6) 55%, #fff 62%, rgba(${b},0.75) 70%, rgb(${a}) 88%, rgb(${a})); box-shadow: 0 0 18px rgba(${a},0.4), inset 0 0 0 1px rgba(255,255,255,0.35);`;
-const isoFeatures = ['Live Environment based', 'Post-install toolkit included', 'Dedicated Intel/AMD & nVidia ISOs', 'Guided Calamares graphical installer', 'Kernel Manager for CachyOS & tuned kernels', 'Hybrid graphics optimized out of the box'];
-const version = EDITIONS[0].file.match(/\d{4}\.\d{2}/)?.[0] ?? '';
+const allTime = EDITIONS.reduce((s, e) => s + e.total, 0);
+const releaseTotal = EDITIONS.reduce((s, e) => s + e.release, 0);
 const btn = 'min-height: 48px; display: inline-flex; align-items: center; justify-content: center; gap: 8px; white-space: nowrap; padding: 0 10px; border-radius: 12px; text-decoration: none; font-weight: 600;';
 ---
 
@@ -36,20 +28,10 @@ const btn = 'min-height: 48px; display: inline-flex; align-items: center; justif
     </div>
   </div>
 
-  <div class="paid" data-sale-window data-enabled={String(SALE.enabled)} data-start={SALE.start} data-end={SALE.end}>
+  <div class="dlbody" data-sale-window data-enabled={String(SALE.enabled)} data-start={SALE.start} data-end={SALE.end}>
     <div class="pedits">
-      {editions.map((e) => (
-        <div class="pedit" style={`--ea: ${e.a}; --eb: ${e.b};`}>
-          <div class="dglow"><div class="disc" aria-hidden="true" style={disc(e.a, e.b)}></div></div>
-          <div style="min-width: 0; display: flex; flex-direction: column; gap: 5px;">
-            <div class="pname" style="font-family: 'Chakra Petch', sans-serif; font-weight: 700; font-size: 1.45em;"><span style={`color: ${e.c1};`}>{e.l1}</span><span style="color: var(--text2);">{e.sep}</span><span style={`color: ${e.c2};`}>{e.l2}</span></div>
-            <div style="font-size: .92em;">{e.blurb}</div>
-            <div class="kick" style="margin-top: 6px; color: var(--accentL);">Latest release · <span data-stat={`${e.id}.version`}>{version}</span></div>
-            <div data-stat={`${e.id}.file`} style="font-family: 'JetBrains Mono', monospace; font-size: .9em; color: var(--text); overflow-wrap: anywhere;">{e.file}</div>
-            <div style="margin-top: 6px; font-size: .92em;"><b class="big" data-stat={`${e.id}.release`} style={`font-size: 1.5em; color: ${e.c1};`}>{fmt(e.release)}</b> this release · <span data-stat={`${e.id}.total`}>{fmt(e.total)}</span> all-time</div>
-            <div class="chips" style="margin-top: 4px;"><span class="chip" style="background: var(--glass);">x86_64</span><span class="chip" style="background: var(--glass);">{e.sizeGB}</span></div>
-          </div>
-        </div>
+      {EDITIONS.map((e) => (
+        <div class="pedit" style={`--ea: ${e.a}; --eb: ${e.b};`}><EditionCol e={e} /></div>
       ))}
     </div>
 
@@ -72,7 +54,7 @@ const btn = 'min-height: 48px; display: inline-flex; align-items: center; justif
     </div>
 
     <ul class="feats pfeats" style="font-size: .9em;">
-      {isoFeatures.map((f) => <li style="display: flex; gap: 8px;"><span style="color: var(--accentL);">▸</span><span>{f}</span></li>)}
+      {ISO_FEATURES.map((f) => <li style="display: flex; gap: 8px;"><span style="color: var(--accentL);">▸</span><span>{f}</span></li>)}
     </ul>
   </div>
 </div>

@@ -1,0 +1,17 @@
+---
+import { VERSION, discStyle, type EditionInfo } from '../data/editions';
+
+interface Props { e: EditionInfo }
+const { e } = Astro.props;
+const fmt = (n: number) => n.toLocaleString('en-US');
+---
+
+<div class="dglow"><div class="disc" aria-hidden="true" style={discStyle(e.a, e.b)}></div></div>
+<div class="ecol">
+  <div class="pname" style="font-family: 'Chakra Petch', sans-serif; font-weight: 700; font-size: 1.45em;"><span style={`color: ${e.c1};`}>{e.l1}</span><span style="color: var(--text2);">{e.sep}</span><span style={`color: ${e.c2};`}>{e.l2}</span></div>
+  <div style="font-size: .92em;">{e.blurb}</div>
+  <div class="kick" style="margin-top: 6px; color: var(--accentL);">Latest release · <span data-stat={`${e.id}.version`}>{VERSION}</span></div>
+  <div data-stat={`${e.id}.file`} style="font-family: 'JetBrains Mono', monospace; font-size: .9em; color: var(--text); overflow-wrap: anywhere;">{e.file}</div>
+  <div style="margin-top: 6px; font-size: .92em;"><b class="big" data-stat={`${e.id}.release`} style={`font-size: 1.5em; color: ${e.c1};`}>{fmt(e.release)}</b> this release · <span data-stat={`${e.id}.total`}>{fmt(e.total)}</span> all-time</div>
+  <div class="chips" style="margin-top: 4px;"><span class="chip" style="background: var(--glass);">{e.date}</span><span class="chip" style="background: var(--glass);">x86_64</span><span class="chip" style="background: var(--glass);">{e.sizeGB}</span></div>
+</div>
