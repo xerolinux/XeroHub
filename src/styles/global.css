@@ -262,6 +262,12 @@ button{font:inherit;cursor:pointer}
 @keyframes clin{from{opacity:0;transform:translateY(8px) scale(.98)}}
 .clgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
 .clbody strong{color:var(--text)}
+.howto{width:min(100%,max(520px,40cqw));line-height:1.55;font-size:max(14.5px,calc(1.62*var(--qh)))}
+.howto a,.howto a strong{color:var(--accentL)}
+.hsteps{margin:0;padding:0;list-style:none;counter-reset:hs;display:flex;flex-direction:column;gap:10px}
+.hsteps li{counter-increment:hs;display:flex;gap:12px;align-items:baseline}
+.hsteps li::before{content:counter(hs,decimal-leading-zero);flex:none;font:700 .9em 'JetBrains Mono',monospace;color:var(--accentL)}
+.hnote{margin:0;padding:10px 14px;border-left:2px solid var(--c3L);border-radius:0 10px 10px 0;background:color-mix(in srgb,var(--c3L) 8%,transparent)}
 .visits{display:inline-flex;align-items:center;gap:6px;padding:2px 10px;border-radius:999px;border:1px solid var(--line);font-family:'JetBrains Mono',monospace;font-size:.92em;color:var(--text2)}.visits svg{color:var(--accentL)}.visits b{color:var(--text);font-weight:700}
 .htitle{display:flex;align-items:stretch;gap:max(16px,1.6cqw)}
 .htitle h1{text-wrap:balance}

@@ -9,6 +9,7 @@ const scripts = [
     lead: 'Turns a fresh Arch install into the full XeroLinux desktop from the terminal, free.',
     feats: ['Same destination as the ISO', 'Simple question-based setup', 'More encryption options than the ISO'],
     label: 'From an Arch install, run', cmd: 'curl -fsSL https://urls.xerolinux.xyz/xeroinstall | bash',
+    howto: true,
   },
   {
     id: '21', slug: 'xerodora', name: 'XeroDora', kick: 'Script · Fedora', shot: '/media/xerodora.webp',
@@ -218,6 +219,31 @@ cd xSpeedTestGUI/packaging/ &amp;&amp; makepkg -si" aria-label="Copy command" ti
                   {sc.note && <div style="font-size: .86em;">{sc.note}</div>}
                 </div>
                 {sc.repo && <div data-btnrow style="display: flex; flex-wrap: wrap; gap: 10px;"><a href={sc.repo} target="_blank" rel="noopener noreferrer" style={btn}><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="flex: none;"><path d={GH}></path></svg>GitHub</a></div>}
+                {sc.howto && (
+                  <div data-btnrow style="display: flex; flex-wrap: wrap; gap: 10px;">
+                    <button type="button" data-cl-open aria-haspopup="dialog" style={`${btn} background: transparent; font: inherit; font-weight: 600;`}><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex: none;"><circle cx="12" cy="12" r="10"></circle><path d="M9.1 9a3 3 0 0 1 5.8 1c0 2-3 3-3 3"></path><path d="M12 17h.01"></path></svg>How-to</button>
+                    <div data-cl hidden class="clwrap">
+                      <div class="clbody howto" role="dialog" aria-modal="true" aria-label="How to use Xero T.U.I"><span class="ring" aria-hidden="true"></span>
+                        <div style="display: flex; align-items: flex-start; justify-content: space-between; gap: 12px;">
+                          <div>
+                            <div class="kick" style="color: var(--accentL);">// How-to</div>
+                            <h3 style="margin: 6px 0 0; font-family: 'Chakra Petch', sans-serif; font-size: 1.8em; line-height: 1; color: var(--text);">Using Xero T.U.I</h3>
+                          </div>
+                          <button type="button" data-cl-close aria-label="Close how-to" style="flex: none; min-width: 44px; min-height: 44px; border-radius: 10px; border: 1px solid var(--line); background: transparent; color: var(--text); font-size: 1.2em;">✕</button>
+                        </div>
+                        <p style="margin: 0;">To use this script you will need to boot using the <a href="https://archlinux.org/download/" target="_blank" rel="noopener noreferrer"><strong>Arch ISO</strong></a>.</p>
+                        <ol class="hsteps">
+                          <li><span>Use Ethernet or connect to WiFi using <a href="https://wiki.archlinux.org/title/Network_configuration/Wireless" target="_blank" rel="noopener noreferrer">this guide</a>.</span></li>
+                          <li><span>Run the command and pick the right config, <strong>especially nVidia</strong>.</span></li>
+                          <li><span>Watch it go.</span></li>
+                        </ol>
+                        <p style="margin: 0;">Once done, reboot and enjoy. This script uses <strong>SDDM</strong>, not Plasma Login Manager, for compatibility.</p>
+                        <p class="hnote">If you run into a black screen on nVidia, check <a href="https://wiki.xerolinux.xyz/distro/#nvidia-bsod" target="_blank" rel="noopener noreferrer">this post on the Wiki</a>.</p>
+                        <p style="margin: 0; align-self: flex-start; font-family: 'Chakra Petch', sans-serif; font-weight: 700; font-size: 1.3em;" class="khl">Have fun!</p>
+                      </div>
+                    </div>
+                  </div>
+                )}
               </div>
             </div>
           ))}
