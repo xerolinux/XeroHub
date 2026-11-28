@@ -104,6 +104,14 @@ function lightbox() {
   return lb;
 }
 
+function openLightbox(src: string, alt: string) {
+  const lb = lightbox();
+  const img = lb.querySelector('img')!;
+  img.src = src;
+  img.alt = alt;
+  lb.showModal();
+}
+
 function initPage() {
   fit();
   syncRings();
@@ -148,11 +156,7 @@ function initPage() {
   }
 
   document.querySelectorAll<HTMLButtonElement>('[data-lightbox]').forEach((btn) => btn.addEventListener('click', () => {
-    const lb = lightbox();
-    const img = lb.querySelector('img')!;
-    img.src = btn.dataset.lightbox ?? '';
-    img.alt = btn.querySelector('img')?.alt ?? '';
-    lb.showModal();
+    openLightbox(btn.dataset.lightbox ?? '', btn.querySelector('img')?.alt ?? '');
   }));
 
   appImageLinks();
@@ -207,6 +211,9 @@ function initPage() {
   loadStats();
   void syncSettings();
   void loadSupporters();
+  void loadAnnouncements();
+  pollAnnouncements();
+  liveBars();
 }
 
 let supportersAt = 0;
@@ -219,6 +226,124 @@ async function loadSupporters() {
     const d = await (await fetch(el.dataset.supporters)).json() as { supporters?: number };
     if (typeof d.supporters === 'number') el.textContent = d.supporters.toLocaleString('en-US');
   } catch { /* keep the build-time figure */ }
+}
+
+interface Post { id: string; ts: string; edited: string | null; text: string; images: string[]; files?: { name: string; url: string }[] }
+
+const esc = (s: string) => s.replace(/[&<>"']/g, (c) => `&#${c.charCodeAt(0)};`);
+const stamp = (iso: string) => new Date(iso).toLocaleString('en-US', { month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit', hourCycle: 'h23' });
+
+// Discord's markdown subset, on already-escaped text; links are http(s) only.
+const SITES: Record<string, string> = { 'github.com': 'GitHub', 'youtube.com': 'YouTube', 'youtu.be': 'YouTube', 'aur.archlinux.org': 'the AUR', 'wiki.xerolinux.xyz': 'the Wiki', 'xerolinux.xyz': 'xerolinux.xyz', 'ko-fi.com': 'Ko-fi', 'reddit.com': 'Reddit' };
+
+// A bare URL shown as a name: owner/repo for GitHub, otherwise the site's name.
+function linkName(raw: string) {
+  try {
+    const u = new URL(raw.replace(/&#38;/g, '&'));
+    const host = u.hostname.replace(/^www\./, '');
+    const parts = u.pathname.split('/').filter(Boolean);
+    if (host === 'github.com' && parts.length >= 2) return `${parts[0]}/${parts[1]} on GitHub`;
+    if (SITES[host]) return SITES[host];
+    return host;
+  } catch {
+    return raw;
+  }
+}
+
+function discordMarkdown(text: string) {
+  // Code and links are set aside first so formatting never reaches inside them.
+  const kept: string[] = [];
+  const keep = (html: string) => `\u0000${kept.push(html) - 1}\u0000`;
+  const link = (href: string, label: string) => keep(`<a href="${href}" target="_blank" rel="noopener noreferrer">${label}</a>`);
+  return esc(text)
+    .replace(/```(?:\w*\n)?([\s\S]*?)```/g, (_, c) => keep(`<pre>${c.trim()}</pre>`))
+    .replace(/`([^`\n]+)`/g, (_, c) => keep(`<code>${c}</code>`))
+    .replace(/\[([^\]\n]+)\]\((https?:\/\/[^\s)]+)\)/g, (_, label, href) => link(href, label))
+    .replace(/https?:\/\/[^\s<\u0000]+[^\s<.,;:!?)\u0000]/g, (url) => link(url, `${linkName(url)} ↗`))
+    .replace(/^#{1,3} (.+)$/gm, '<b class="ah">$1</b>')
+    .replace(/^-# (.+)$/gm, '<small>$1</small>')
+    .replace(/^&#62; (.+)$/gm, '<q>$1</q>')
+    .replace(/\*\*(.+?)\*\*/g, '<b>$1</b>')
+    .replace(/__(.+?)__/g, '<u>$1</u>')
+    .replace(/~~(.+?)~~/g, '<s>$1</s>')
+    .replace(/(^|[^*\w])[*_](?=\S)(.+?)(?<=\S)[*_](?![*\w])/g, '$1<i>$2</i>')
+    .replace(/\|\|(.+?)\|\|/g, '<span class="spoil" tabindex="0">$1</span>')
+    .replace(/\u0000(\d+)\u0000/g, (_, i) => kept[+i]);
+}
+
+// Five bars this week, fading to two for anything older than three months
+function bars(iso: string) {
+  const days = (Date.now() - new Date(iso).getTime()) / 864e5;
+  const on = days <= 7 ? 5 : days <= 30 ? 4 : days <= 90 ? 3 : 2;
+  return [5, 8, 11, 14, 17].map((h, k) => `<i style="height:${h}px"${k < on ? ' class="on"' : ''}></i>`).join('');
+}
+
+// 64 pastel tints, stepped round the colour wheel by the golden angle so neighbours never look alike
+const tint = (i: number) => `hsl(${Math.round(((i % 64) * 137.508 + 230) % 360)} 72% 72%)`;
+
+let annAt = 0;
+let annFeed = '';
+let annTimer = 0;
+
+// While the Updates page is open and visible, check for new posts every 5 minutes
+function pollAnnouncements() {
+  if (annTimer || !document.querySelector('[data-ann]')) return;
+  annTimer = window.setInterval(() => {
+    if (!document.querySelector('[data-ann]')) { clearInterval(annTimer); annTimer = 0; return; }
+    if (!document.hidden) { annAt = 0; void loadAnnouncements(); }
+  }, 300_000);
+}
+
+// Faint signal-bars wave behind the Live strip; stops once the page navigates away
+function liveBars() {
+  const canvas = document.querySelector<HTMLCanvasElement>('[data-ann-bars]');
+  const g = canvas?.getContext('2d');
+  if (!canvas || !g) return;
+  const draw = (t: number) => {
+    if (!canvas.isConnected) return;
+    const dpr = devicePixelRatio || 1;
+    // Sized from the strip, not the canvas, so a canvas without its CSS can't grow itself
+    const box = canvas.parentElement!;
+    const w = box.clientWidth, h = box.clientHeight;
+    if (canvas.width !== w * dpr || canvas.height !== h * dpr) { canvas.width = w * dpr; canvas.height = h * dpr; }
+    g.setTransform(dpr, 0, 0, dpr, 0, 0);
+    g.clearRect(0, 0, w, h);
+    const n = Math.floor(w / 9);
+    for (let i = 0; i < n; i++) {
+      const lit = Math.max(1, Math.round((Math.sin(t / 330 - i * 0.35) * 0.5 + 0.5) * 4));
+      for (let s = 0; s < 4; s++) {
+        const bh = 4 + s * 5;
+        g.fillStyle = `rgba(255,255,255,${s < lit ? 0.09 : 0.03})`;
+        g.fillRect(i * 9, h - bh - 3, 3, bh);
+      }
+    }
+    if (!reduced) requestAnimationFrame(draw);
+  };
+  requestAnimationFrame(draw);
+}
+
+async function loadAnnouncements() {
+  const log = document.querySelector<HTMLElement>('[data-ann]');
+  // The throttle only applies when posts are already on screen; a fresh visit always loads
+  if (!log?.dataset.ann || (log.querySelector('.atx') && Date.now() - annAt < 30_000)) return;
+  annAt = Date.now();
+  const status = document.querySelector<HTMLElement>('[data-ann-status]');
+  try {
+    const d = await (await fetch(log.dataset.ann)).json() as { posts?: Post[]; error?: string };
+    if (!d.posts) throw new Error(d.error ?? 'bad response');
+    if (status) status.textContent = `synced ${new Date().toTimeString().slice(0, 5)}`;
+    const feed = JSON.stringify(d.posts);
+    if (feed === annFeed && log.querySelector('.atx')) return;
+    annFeed = feed;
+    const total = d.posts.length;
+    log.innerHTML = d.posts.map((p, i) => `<article class="atx" style="--tint:${tint(i)}"><div class="atop"><span class="abars" title="Signal fades with age">${bars(p.ts)}</span><span class="afreq">TX-${String(total - i).padStart(3, '0')}</span><time datetime="${esc(p.ts)}">${stamp(p.ts)}</time>${p.edited ? '<span>edited</span>' : ''}${i ? '' : '<span class="aonair">on air</span>'}</div><div class="abody"><span class="awm" aria-hidden="true">${String(total - i).padStart(3, '0')}</span>${p.text ? `<div class="atext">${discordMarkdown(p.text)}</div>` : ''}${p.images.length || p.files?.length ? `<div class="aatt">${p.images.map((u, k) => `<button type="button" class="aimg" data-src="${esc(u)}">View image ${k + 1}</button>`).join('')}${(p.files ?? []).map((f) => `<a class="afile" href="${esc(f.url)}" target="_blank" rel="noopener noreferrer">${esc(f.name)}</a>`).join('')}</div>` : ''}</div></article>`).join('')
+      || '<p class="aempty">No updates yet.</p>';
+    log.querySelectorAll<HTMLButtonElement>('.aimg').forEach((b) => b.addEventListener('click', () => openLightbox(b.dataset.src ?? '', b.textContent ?? '')));
+  } catch {
+    annAt = 0;
+    log.innerHTML = '<p class="aempty">Could not reach the updates feed. Try again in a minute.</p>';
+    if (status) status.textContent = 'offline';
+  }
 }
 
 const FREE_KEY = 'xero-free';

@@ -8,7 +8,6 @@ export default defineConfig({
   output: 'static',
   // Old site URLs that still get traffic from search and bookmarks.
   redirects: {
-    '/updates': '/',
     '/updates/age-attestation': '/',
     '/updates/browser-situation': '/',
     '/updates/help-needed': '/',

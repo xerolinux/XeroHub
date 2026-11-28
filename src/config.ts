@@ -32,6 +32,10 @@ export const FIREBASE = { apiKey: 'AIzaSyDT_MJQFqPiRXwqJzRJN_VdNR9qF-1ki_s', pro
 export const COUNT_HOSTS = ['xerolinux.xyz', 'www.xerolinux.xyz'];
 
 // Supporter count comes from the kofi-goal-proxy Worker (worker/); this is the fallback if it can't be reached.
+// Announcements page: the xero-announce Worker (announce/) mirrors the Discord channel live.
+export const ANNOUNCE_API = import.meta.env.DEV ? 'http://localhost:8787/' : 'https://xero-announce.techxero.workers.dev/';
+export const ANNOUNCE_CHANNEL = 'https://discord.com/channels/1196558590094356543/1200742607131770930';
+
 export const KOFI = {
   proxy: 'https://kofi-goal-proxy.techxero.workers.dev/',
   link: 'https://ko-fi.com/xerolinux',

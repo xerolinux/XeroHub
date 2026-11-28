@@ -1,0 +1,13 @@
+name = "xero-announce"
+main = "src/worker.js"
+compatibility_date = "2026-11-20"
+workers_dev = true
+preview_urls = false
+
+# DISCORD_TOKEN is a secret: `npx wrangler secret put DISCORD_TOKEN` (local dev: .dev.vars)
+# Only posts by these Discord user IDs (comma-separated) show; empty means the server owner.
+[vars]
+GUILD_ID = "1196558590094356543"
+CHANNEL_ID = "1200742607131770930"
+CACHE_TTL = "300"
+AUTHOR_IDS = "185110497979269120"
