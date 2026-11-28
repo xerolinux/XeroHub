@@ -592,11 +592,26 @@ select_locales() {
 
     if [[ -n "$kb_selection" ]]; then
         CONFIG[keyboard]="$kb_selection"
-        loadkeys "$kb_selection" 2>/dev/null || true
+        loadkeys "$(console_keymap "$kb_selection")" 2>/dev/null || true
         show_success "Keyboard layout: $kb_selection"
     fi
 
     sleep 0.5
+}
+
+# Menu entries are XKB-style names; these have a differently named console
+# keymap (or none, in which case the console falls back to us).
+console_keymap() {
+    case "$1" in
+        se)          echo "sv-latin1" ;;
+        be)          echo "be-latin1" ;;
+        ch)          echo "de_CH-latin1" ;;
+        at)          echo "de-latin1" ;;
+        tr)          echo "trq" ;;
+        latam)       echo "la-latin1" ;;
+        kr|ara)      echo "us" ;;
+        *)           echo "$1" ;;
+    esac
 }
 
 # ────────────────────────────────────────────────────────────────────────────────
@@ -1322,7 +1337,7 @@ LO_LANG_MENU=(
     "English (CA)|en_CA|hunspell-en_ca"
     "German|de_DE|hunspell-de"
     "Greek|el_GR|hunspell-el"
-    "French|fr_FR|hunspell-fr"
+    "French|fr_FR|hunspell-fr-classical"
     "Hebrew|he_IL|hunspell-he"
     "Hungarian|hu_HU|hunspell-hu"
     "Italian|it_IT|hunspell-it"
@@ -1442,14 +1457,12 @@ configure_extra_packages() {
         show_info "LibreOffice selected — choose your language (UI + spellcheck):"
         echo ""
 
-        local i idx label loc sys_loc
+        local i idx label loc
         for i in "${!LO_LANG_MENU[@]}"; do
             idx=$((i + 1))
             IFS='|' read -r label loc _ <<< "${LO_LANG_MENU[$i]}"
             if [[ "$loc" == "SYSTEM" ]]; then
-                sys_loc="$(locale 2>/dev/null | awk -F= '/^LANG=/{print $2}' | tr -d '"')"
-                sys_loc="${sys_loc:-en_US}"
-                echo -e "  ${BLUE}${idx})${NC} ${label} (${sys_loc})"
+                echo -e "  ${BLUE}${idx})${NC} ${label} (${CONFIG[locale]%%.*})"
             elif [[ "$loc" == "CUSTOM" ]]; then
                 echo -e "  ${BLUE}${idx})${NC} ${label}"
             else
@@ -1468,9 +1481,10 @@ configure_extra_packages() {
         local hunspell_selected=""
         IFS='|' read -r _ loc hunspell_selected <<< "${LO_LANG_MENU[$((lang_choice - 1))]}"
 
+        # SYSTEM stays a marker and resolves to the system locale when the
+        # state file is written, so changing Locales afterwards still applies.
         if [[ "$loc" == "SYSTEM" ]]; then
-            loc="$(locale 2>/dev/null | awk -F= '/^LANG=/{print $2}' | tr -d '"')"
-            loc="${loc:-en_US}"
+            :
         elif [[ "$loc" == "CUSTOM" ]]; then
             read -r -p "Enter locale code (examples: en_US, en_GB, fr_FR, es_MX, ru_RU, zh_CN): " loc < /dev/tty
             loc="${loc:-en_US}"
@@ -1491,7 +1505,7 @@ configure_extra_packages() {
     [[ -n "${CONFIG[extra_imaging]}" ]]  && echo -e "  Creative:    ${CYAN}${CONFIG[extra_imaging]}${NC}"
     [[ -n "${CONFIG[extra_music]}" ]]    && echo -e "  Music/Audio: ${CYAN}${CONFIG[extra_music]}${NC}"
     [[ -n "${CONFIG[extra_video]}" ]]    && echo -e "  Video:       ${CYAN}${CONFIG[extra_video]}${NC}"
-    [[ "${CONFIG[wants_libreoffice]}" == "yes" ]] && echo -e "  LibreOffice: ${CYAN}yes (${CONFIG[lo_locale]})${NC}"
+    [[ "${CONFIG[wants_libreoffice]}" == "yes" ]] && echo -e "  LibreOffice: ${CYAN}yes (${CONFIG[lo_locale]/#SYSTEM/system locale})${NC}"
     if [[ -z "${CONFIG[extra_browser]}${CONFIG[extra_social]}${CONFIG[extra_dev]}${CONFIG[extra_pass]}${CONFIG[extra_imaging]}${CONFIG[extra_music]}${CONFIG[extra_video]}" && "${CONFIG[wants_libreoffice]}" != "yes" ]]; then
         echo -e "  ${YELLOW}(no extra packages selected)${NC}"
     fi
@@ -1698,6 +1712,8 @@ validate_config() {
             errors+=("Root partition '${CONFIG[root_part]}' is not a valid block device")
         [[ -n "${CONFIG[boot_part]}" && ! -b "${CONFIG[boot_part]}" ]] && \
             errors+=("Boot partition '${CONFIG[boot_part]}' is not a valid block device")
+        [[ "${CONFIG[uefi]}" == "yes" && -z "${CONFIG[boot_part]}" ]] && \
+            errors+=("UEFI needs an EFI System Partition (Manual mode)")
     else
         [[ -z "${CONFIG[disk]}" ]] && errors+=("Disk not configured")
     fi
@@ -1819,9 +1835,12 @@ show_summary() {
 # ────────────────────────────────────────────────────────────────────────────────
 
 install_extra_kernels() {
-    # shellcheck disable=SC2086
-    arch-chroot "$MOUNTPOINT" pacman -S --needed --noconfirm ${CONFIG[extra_kernel]} \
-        || echo "Some extra kernel packages failed — continuing"
+    local kernel
+    for kernel in ${CONFIG[extra_kernel]}; do
+        [[ "$kernel" == *-headers ]] && continue
+        arch-chroot "$MOUNTPOINT" pacman -S --needed --noconfirm "$kernel" "${kernel}-headers" \
+            || echo "$kernel failed to install, continuing"
+    done
     arch-chroot "$MOUNTPOINT" grub-mkconfig -o /boot/grub/grub.cfg 2>/dev/null || true
 }
 
@@ -1838,12 +1857,14 @@ perform_installation() {
     step_labels+=("Mounting filesystems");          step_funcs+=("mount_filesystems")
     step_labels+=("Installing base system");        step_funcs+=("install_base_system")
     step_labels+=("Adding repositories");           step_funcs+=("add_repos")
+    if [[ "${CONFIG[filesystem]}" == "btrfs" ]]; then
+        step_labels+=("Configuring Btrfs snapshots"); step_funcs+=("setup_snapper")
+    fi
     if [[ -n "${CONFIG[extra_kernel]}" ]]; then
         step_labels+=("Installing additional kernels"); step_funcs+=("install_extra_kernels")
     fi
     step_labels+=("Configuring system");            step_funcs+=("configure_system")
     step_labels+=("Installing GRUB bootloader");    step_funcs+=("install_bootloader")
-    step_labels+=("Configuring Btrfs snapshots");   step_funcs+=("setup_snapper")
     step_labels+=("Creating user account");         step_funcs+=("create_user")
     step_labels+=("Installing graphics drivers");   step_funcs+=("install_graphics")
     step_labels+=("Configuring swap");              step_funcs+=("setup_swap_system")
@@ -2012,21 +2033,37 @@ mount_filesystems() {
     [[ -b "$root_device" ]] || { echo "ERROR: root device '$root_device' is not a block device"; return 1; }
 
     if [[ "${CONFIG[filesystem]}" == "btrfs" ]]; then
+        # ArchWiki Snapper layout: everything that must survive a rollback
+        # (or can't be snapshotted, like an active swap file) lives outside @,
+        # and snapshots go in a top-level @snapshots, not nested inside @.
+        local subvols=(
+            "@:"
+            "@home:home"
+            "@root:root"
+            "@srv:srv"
+            "@cache:var/cache"
+            "@tmp:var/tmp"
+            "@log:var/log"
+            "@swap:swap"
+            "@snapshots:.snapshots"
+        )
+        local opts="noatime,compress=zstd,space_cache=v2" entry
+
         mount "$root_device" "$MOUNTPOINT"
-        btrfs subvolume create "$MOUNTPOINT/@"
-        btrfs subvolume create "$MOUNTPOINT/@home"
-        btrfs subvolume create "$MOUNTPOINT/@var"
-        btrfs subvolume create "$MOUNTPOINT/@tmp"
-        # @snapshots NOT created here — snapper creates /.snapshots as a nested
-        # child subvolume of @ in setup_snapper(). A top-level sibling subvolume
-        # breaks snapper's subvolume relationship check and prevents snapshot creation.
+        for entry in "${subvols[@]}"; do
+            btrfs subvolume create "$MOUNTPOINT/${entry%%:*}"
+        done
         umount "$MOUNTPOINT"
 
-        mount -o noatime,compress=zstd,subvol=@ "$root_device" "$MOUNTPOINT"
-        mkdir -p "$MOUNTPOINT"/{home,var,tmp,boot}
-        mount -o noatime,compress=zstd,subvol=@home "$root_device" "$MOUNTPOINT/home"
-        mount -o noatime,compress=zstd,subvol=@var "$root_device" "$MOUNTPOINT/var"
-        mount -o noatime,compress=zstd,subvol=@tmp "$root_device" "$MOUNTPOINT/tmp"
+        mount -o "$opts,subvol=@" "$root_device" "$MOUNTPOINT"
+        for entry in "${subvols[@]:1}"; do
+            mkdir -p "$MOUNTPOINT/${entry#*:}"
+            mount -o "$opts,subvol=${entry%%:*}" "$root_device" "$MOUNTPOINT/${entry#*:}"
+        done
+        mkdir -p "$MOUNTPOINT/boot"
+        # pacman leaves existing directories' modes alone, so set the FHS ones here
+        chmod 750 "$MOUNTPOINT/root" "$MOUNTPOINT/.snapshots"
+        chmod 1777 "$MOUNTPOINT/var/tmp"
     else
         mount "$root_device" "$MOUNTPOINT"
         mkdir -p "$MOUNTPOINT/boot"
@@ -2149,6 +2186,9 @@ install_base_system() {
     # Printing & scanning
     critical+=" cups hplip print-manager scanner-support printer-support"
 
+    # Btrfs snapshots in the GRUB menu (snap-pac comes last, from xero-kde.sh)
+    [[ "${CONFIG[filesystem]}" == "btrfs" ]] && critical+=" snapper grub-btrfs"
+
     # Xorg & input
     critical+=" xorg-apps xorg-xinit xorg-server xorg-xwayland"
     critical+=" libinput xf86-input-void xf86-input-libinput"
@@ -2177,16 +2217,6 @@ install_base_system() {
     # shellcheck disable=SC2086
     stdbuf -oL -eL pacstrap -K "$MOUNTPOINT" --noconfirm $optional 2>/dev/null || \
         show_warning "Some optional base packages failed — continuing"
-
-    # Btrfs snapshot support — only when btrfs is selected
-    if [[ "${CONFIG[filesystem]}" == "btrfs" ]]; then
-        show_info "Installing Btrfs snapshot support..."
-        # snap-pac omitted here — its pacman hooks would fire on every package install
-        # during the chroot setup phase, creating unwanted snapshots before first login.
-        # It gets installed by xero-snapper-init on first boot instead.
-        stdbuf -oL -eL pacstrap -K "$MOUNTPOINT" --noconfirm snapper grub-btrfs inotify-tools 2>/dev/null || \
-            show_warning "Some Btrfs snapshot packages failed — continuing"
-    fi
 
     genfstab -U "$MOUNTPOINT" >> "$MOUNTPOINT/etc/fstab"
 }
@@ -2252,12 +2282,13 @@ configure_system() {
     arch-chroot "$MOUNTPOINT" locale-gen
     echo "LANG=${CONFIG[locale]}" > "$MOUNTPOINT/etc/locale.conf"
 
-    echo "KEYMAP=${CONFIG[keyboard]}" > "$MOUNTPOINT/etc/vconsole.conf"
+    echo "KEYMAP=$(console_keymap "${CONFIG[keyboard]}")" > "$MOUNTPOINT/etc/vconsole.conf"
 
     # Map console keymap names to X11 layout names where they differ
     local xkb_layout="${CONFIG[keyboard]}"
     local xkb_variant=""
     case "${CONFIG[keyboard]}" in
+        uk)        xkb_layout="gb" ;;
         pt-latin9) xkb_layout="pt" ;;
         br-abnt2)  xkb_layout="br" ;;
         jp106)     xkb_layout="jp" ;;
@@ -2298,10 +2329,14 @@ EOF
 wifi.backend=wpa_supplicant
 EOF
 
-    if [[ "${CONFIG[encrypt]}" == "yes" ]]; then
-        sed -i 's/^HOOKS=.*/HOOKS=(base systemd autodetect microcode modconf kms keyboard sd-vconsole block sd-encrypt filesystems fsck)/' "$MOUNTPOINT/etc/mkinitcpio.conf"
-        arch-chroot "$MOUNTPOINT" mkinitcpio -P
-    fi
+    # busybox (udev) initramfs, same as the official ISO: grub-btrfs-overlayfs
+    # is a busybox hook, and it is what makes a read-only snapshot bootable.
+    local hooks="base udev autodetect microcode modconf kms keyboard keymap consolefont block"
+    [[ "${CONFIG[encrypt]}" == "yes" ]] && hooks+=" encrypt"
+    hooks+=" filesystems fsck"
+    [[ "${CONFIG[filesystem]}" == "btrfs" ]] && hooks+=" grub-btrfs-overlayfs"
+    sed -i "s/^HOOKS=.*/HOOKS=(${hooks})/" "$MOUNTPOINT/etc/mkinitcpio.conf"
+    arch-chroot "$MOUNTPOINT" mkinitcpio -P
 }
 
 install_bootloader() {
@@ -2387,119 +2422,135 @@ install_bootloader() {
     sed -i 's/^GRUB_DISTRIBUTOR=.*/GRUB_DISTRIBUTOR="XeroLinux"/' "$MOUNTPOINT/etc/default/grub"
     sed -i 's/^#*GRUB_DISABLE_OS_PROBER=.*/GRUB_DISABLE_OS_PROBER=false/' "$MOUNTPOINT/etc/default/grub"
 
-    # If encrypted, set LUKS2 kernel cmdline for sd-encrypt hook
+    # If encrypted, point the encrypt hook at the LUKS2 partition
     if [[ "${CONFIG[encrypt]}" == "yes" ]]; then
         local uuid=""
         uuid=$(blkid -s UUID -o value "${CONFIG[root_part]}")
-        sed -i "s|^GRUB_CMDLINE_LINUX=.*|GRUB_CMDLINE_LINUX=\"rd.luks.name=${uuid}=cryptroot root=/dev/mapper/cryptroot\"|" \
+        sed -i "s|^GRUB_CMDLINE_LINUX=.*|GRUB_CMDLINE_LINUX=\"cryptdevice=UUID=${uuid}:cryptroot root=/dev/mapper/cryptroot\"|" \
             "$MOUNTPOINT/etc/default/grub"
     fi
 
     arch-chroot "$MOUNTPOINT" grub-mkconfig -o /boot/grub/grub.cfg
 }
 
+# Mirrors xen-installer's snapshots job (Snapper template + create-config,
+# CachyOS's grub-btrfs-snapper units). Runs before the first grub-mkconfig.
+SNAPSHOT_DETECTION_SCRIPT="/etc/grub.d/41_snapshots-btrfs"
+
 setup_snapper() {
     [[ "${CONFIG[filesystem]}" != "btrfs" ]] && return 0
 
     show_info "Configuring Snapper for Btrfs..."
 
-    # snapper create-config requires dbus/PolicyKit — not available in a bare chroot.
-    # Write the config file and create the subvolume directly instead; functionally
-    # identical to what snapper create-config produces.
-
-    # 1. Write snapper config file directly into the mounted system
-    mkdir -p "$MOUNTPOINT/etc/snapper/configs"
-    cat > "$MOUNTPOINT/etc/snapper/configs/root" << 'SNAPCFG'
+    mkdir -p "$MOUNTPOINT/etc/snapper/config-templates"
+    cat > "$MOUNTPOINT/etc/snapper/config-templates/xero-root" << 'SNAPCFG'
+# subvolume to snapshot
 SUBVOLUME="/"
+
+# filesystem type
 FSTYPE="btrfs"
+
+# btrfs qgroup for space aware cleanup algorithms
 QGROUP=""
+
+# fraction or absolute size of the filesystems space the snapshots may use
 SPACE_LIMIT="0.5"
+
+# fraction or absolute size of the filesystems space that should be free
 FREE_LIMIT="0.2"
+
+# users and groups allowed to work with config
 ALLOW_USERS=""
 ALLOW_GROUPS=""
+
+# sync users and groups from ALLOW_USERS and ALLOW_GROUPS to .snapshots
+# directory
 SYNC_ACL="no"
+
+# start comparing pre- and post-snapshot in background after creating
+# post-snapshot
 BACKGROUND_COMPARISON="yes"
+
+# run daily number cleanup
 NUMBER_CLEANUP="yes"
+
+# limit for number cleanup
 NUMBER_MIN_AGE="1800"
 NUMBER_LIMIT="50"
-NUMBER_LIMIT_IMPORTANT="10"
-TIMELINE_CREATE="yes"
+NUMBER_LIMIT_IMPORTANT="15"
+
+# create hourly snapshots
+TIMELINE_CREATE="no"
+
+# cleanup hourly snapshots after some time
 TIMELINE_CLEANUP="yes"
+
+# limits for timeline cleanup
 TIMELINE_MIN_AGE="1800"
 TIMELINE_LIMIT_HOURLY="5"
 TIMELINE_LIMIT_DAILY="7"
 TIMELINE_LIMIT_WEEKLY="0"
 TIMELINE_LIMIT_MONTHLY="0"
-TIMELINE_LIMIT_QUARTERLY="0"
 TIMELINE_LIMIT_YEARLY="0"
+
+# cleanup empty pre-post-pairs
 EMPTY_PRE_POST_CLEANUP="yes"
+
+# limits for empty pre-post-pair cleanup
 EMPTY_PRE_POST_MIN_AGE="1800"
 SNAPCFG
 
-    # 2. Register config name with snapper's conf.d so it knows it exists
-    mkdir -p "$MOUNTPOINT/etc/conf.d"
-    if [[ -f "$MOUNTPOINT/etc/conf.d/snapper" ]]; then
-        sed -i 's/^SNAPPER_CONFIGS=.*/SNAPPER_CONFIGS="root"/' "$MOUNTPOINT/etc/conf.d/snapper"
-    else
-        echo 'SNAPPER_CONFIGS="root"' > "$MOUNTPOINT/etc/conf.d/snapper"
-    fi
+    # create-config makes its own .snapshots subvolume and fails if one is there.
+    # ArchWiki Snapper "Configuration of snapper and mount point": unmount
+    # @snapshots, create the config, delete snapper's subvolume, re-mount.
+    local snapshots="$MOUNTPOINT/.snapshots" source="" options=""
+    read -r source options < <(findmnt -n -o SOURCE,OPTIONS "$snapshots")
+    umount "$snapshots"
+    rmdir "$snapshots"
+    # --no-dbus: snapperd isn't running inside arch-chroot
+    arch-chroot "$MOUNTPOINT" snapper --no-dbus -c root create-config --template xero-root /
+    btrfs subvolume delete "$snapshots"
+    mkdir -p "$snapshots"
+    mount -o "$options" "${source%%\[*}" "$snapshots"
+    chmod 750 "$snapshots"
 
-    # 3. Create /.snapshots as a btrfs subvolume nested inside @ from the host side —
-    #    no dbus needed, no chroot needed, just a direct btrfs command on the mountpoint.
-    if ! btrfs subvolume create "$MOUNTPOINT/.snapshots" 2>/dev/null; then
-        show_warning "Could not create /.snapshots subvolume — snapshot support may not work"
-        return 0
-    fi
-    chmod 750 "$MOUNTPOINT/.snapshots"
-
-    # 4. Add /.snapshots to fstab so rollbacks don't swallow the snapshots dir.
-    #    The subvolume path inside the btrfs pool is @/.snapshots.
-    local root_uuid=""
-    if [[ "${CONFIG[encrypt]}" == "yes" ]]; then
-        root_uuid=$(blkid -s UUID -o value /dev/mapper/cryptroot 2>/dev/null)
-    else
-        root_uuid=$(blkid -s UUID -o value "${CONFIG[root_part]}" 2>/dev/null)
-    fi
-    if [[ -n "$root_uuid" ]]; then
-        echo "UUID=$root_uuid  /.snapshots  btrfs  noatime,compress=zstd,subvol=@/.snapshots  0  0" \
-            >> "$MOUNTPOINT/etc/fstab"
-    fi
-
-    # 5. Defer snapper timers + grub-btrfsd to first desktop login via a oneshot service.
-    #    Enabling them here (in a bare chroot) causes them to fire before the user's
-    #    filesystem is fully settled and before btrfs-assistant is available.
-    mkdir -p "$MOUNTPOINT/usr/local/bin"
-    cat > "$MOUNTPOINT/usr/local/bin/xero-snapper-init" << 'SNAPINIT'
-#!/bin/bash
-# Install snap-pac now — its pacman hooks will fire on the NEXT package operation,
-# which is the first real user-initiated install, not during system setup.
-pacman -S --needed --noconfirm snap-pac
-systemctl enable --now snapper-timeline.timer
-systemctl enable --now snapper-cleanup.timer
-systemctl enable --now grub-btrfsd
-touch /var/lib/xero-snapper-initialized
-systemctl disable xero-snapper-init.service
-SNAPINIT
-    chmod +x "$MOUNTPOINT/usr/local/bin/xero-snapper-init"
-
-    cat > "$MOUNTPOINT/etc/systemd/system/xero-snapper-init.service" << 'SVCEOF'
+    # grub-btrfs boot-menu integration, as shipped by CachyOS (grub-btrfs-support)
+    cat > "$MOUNTPOINT/etc/systemd/system/grub-btrfs-snapper.path" << 'UNIT'
 [Unit]
-Description=Initialize Snapper timers on first boot (XeroLinux)
-ConditionPathExists=!/var/lib/xero-snapper-initialized
-After=sysinit.target local-fs.target
+Description=Monitors for new snapshots
 
-[Service]
-Type=oneshot
-RemainAfterExit=yes
-ExecStart=/usr/local/bin/xero-snapper-init
+[Path]
+PathModified=/.snapshots
 
 [Install]
 WantedBy=multi-user.target
-SVCEOF
+UNIT
+    cat > "$MOUNTPOINT/etc/systemd/system/grub-btrfs-snapper.service" << 'UNIT'
+[Unit]
+Description=Regenerate grub-btrfs.cfg
 
-    arch-chroot "$MOUNTPOINT" systemctl enable xero-snapper-init.service 2>/dev/null || true
+[Service]
+Type=oneshot
+Environment="PATH=/sbin:/bin:/usr/sbin:/usr/bin"
+EnvironmentFile=/etc/default/grub-btrfs/config
+ExecStart=bash -c 'if [[ -z $(/usr/bin/findmnt -n / | /usr/bin/grep --fixed-strings ".snapshots") ]]; then if [ -s "${GRUB_BTRFS_GRUB_DIRNAME:-/boot/grub}/grub-btrfs.cfg" ]; then /etc/grub.d/41_snapshots-btrfs; else ${GRUB_BTRFS_MKCONFIG:-grub-mkconfig} -o ${GRUB_BTRFS_GRUB_DIRNAME:-/boot/grub}/grub.cfg; fi; fi'
+UNIT
 
-    show_success "Snapper configured — timers activate on first boot."
+    local unit
+    for unit in snapper-cleanup.timer grub-btrfs-snapper.path; do
+        arch-chroot "$MOUNTPOINT" systemctl enable "$unit" || show_warning "Could not enable $unit"
+    done
+
+    # 41_snapshots-btrfs mounts root by UUID to list snapshots: unreliable
+    # mid-install, and there are none yet. xero-kde.sh restores it once the
+    # Fresh installation snapshot exists. grub-mkconfig gates on `test -x`,
+    # so the executable bit has to go too, not just the name.
+    if [[ -f "$MOUNTPOINT$SNAPSHOT_DETECTION_SCRIPT" ]]; then
+        mv "$MOUNTPOINT$SNAPSHOT_DETECTION_SCRIPT" "$MOUNTPOINT$SNAPSHOT_DETECTION_SCRIPT.xero-disabled"
+        chmod 644 "$MOUNTPOINT$SNAPSHOT_DETECTION_SCRIPT.xero-disabled"
+    fi
+
+    show_success "Snapper and grub-btrfs configured."
 }
 
 create_user() {
@@ -2607,15 +2658,15 @@ EOF
             ;;
         "file")
             if [[ "${CONFIG[filesystem]}" == "btrfs" ]]; then
-                arch-chroot "$MOUNTPOINT" truncate -s 0 /swapfile
-                arch-chroot "$MOUNTPOINT" chattr +C /swapfile
-                arch-chroot "$MOUNTPOINT" fallocate -l 4G /swapfile
+                # mkswapfile sets NOCOW, preallocates and runs mkswap in one go
+                btrfs filesystem mkswapfile --size 4g --uuid clear "$MOUNTPOINT/swap/swapfile"
+                echo "/swap/swapfile none swap defaults 0 0" >> "$MOUNTPOINT/etc/fstab"
             else
                 arch-chroot "$MOUNTPOINT" dd if=/dev/zero of=/swapfile bs=1M count=4096 status=progress
+                arch-chroot "$MOUNTPOINT" chmod 600 /swapfile
+                arch-chroot "$MOUNTPOINT" mkswap /swapfile
+                echo "/swapfile none swap defaults 0 0" >> "$MOUNTPOINT/etc/fstab"
             fi
-            arch-chroot "$MOUNTPOINT" chmod 600 /swapfile
-            arch-chroot "$MOUNTPOINT" mkswap /swapfile
-            echo "/swapfile none swap defaults 0 0" >> "$MOUNTPOINT/etc/fstab"
             ;;
         "none")
             ;;
@@ -2668,7 +2719,9 @@ KDESCRIPT
         printf 'MUSIC=%q\n' "${CONFIG[extra_music]}"
         printf 'VIDEO=%q\n' "${CONFIG[extra_video]}"
         printf 'WANTS_LIBREOFFICE=%q\n' "${CONFIG[wants_libreoffice]}"
-        printf 'LO_LOCALE=%q\n' "${CONFIG[lo_locale]}"
+        local lo_locale="${CONFIG[lo_locale]}"
+        [[ "$lo_locale" == "SYSTEM" ]] && lo_locale="${CONFIG[locale]}"
+        printf 'LO_LOCALE=%q\n' "$lo_locale"
         printf 'LO_HUNSPELL=%q\n' "${CONFIG[lo_hunspell]}"
     } > "${user_home}/${DESKTOP_STATE_FILE_NAME}"
 

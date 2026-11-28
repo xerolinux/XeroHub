@@ -228,9 +228,9 @@ enable_if_installed() {
 }
 
 # ── Locale helpers (LibreOffice package resolution) ───────────────────────────
-# LO_HUNSPELL only comes back empty from configure_extra_packages' CUSTOM
-# locale path — every other choice there already carries its exact hunspell
-# package name. Resolution happens here (not in xero-install.sh) because it
+# LO_HUNSPELL only comes back empty from configure_extra_packages' system
+# locale and CUSTOM paths; every other choice there already carries its exact
+# hunspell package name. Resolution happens here (not in xero-install.sh) because it
 # needs THIS target's own pacman database, which doesn't exist yet on the
 # live ISO.
 
@@ -241,18 +241,29 @@ normalize_locale() {
     echo "$loc"
 }
 
+# Arch names dictionaries inconsistently (hunspell-de, hunspell-en_gb,
+# hunspell-pt-br, hunspell-fr-classical), so try the likely names in order.
 hunspell_from_locale() {
     local loc; loc="$(normalize_locale "$1")"
     local lang="${loc%%_*}" region=""
     [[ "$loc" == *"_"* ]] && region="${loc#*_}"
     lang="${lang,,}"; region="${region,,}"
+    local candidates=()
+    [[ -n "$region" ]] && candidates+=("hunspell-${lang}_${region}" "hunspell-${lang}-${region}")
+    candidates+=("hunspell-$lang")
     case "$lang" in
-        en) [[ -n "$region" ]] && echo "hunspell-en_${region}" || echo "hunspell-en_us" ;;
-        es) [[ -n "$region" ]] && echo "hunspell-es_${region}" || echo "hunspell-es_any" ;;
-        zh|ja|ko) echo "" ;;
-        pt) [[ "$region" == "br" ]] && echo "hunspell-pt_br" || echo "hunspell-pt_pt" ;;
-        *) [[ -n "$region" ]] && echo "hunspell-${lang}_${region}" || echo "hunspell-$lang" ;;
+        en) candidates+=("hunspell-en_us") ;;
+        es) candidates+=("hunspell-es_any") ;;
+        fr) candidates+=("hunspell-fr-classical") ;;
     esac
+    local c
+    for c in "${candidates[@]}"; do
+        if pacman -Si "$c" &>/dev/null; then
+            echo "$c"
+            return 0
+        fi
+    done
+    echo ""
 }
 
 lo_langpack_from_locale() {
@@ -414,9 +425,11 @@ install_packages() {
     print_success "System updated!"
 
     print_step "Installing AUR helper ($AUR_HELPER)..."
-    $SUDO_CMD pacman -S --needed --noconfirm "$AUR_HELPER" \
-        || { print_error "AUR helper ($AUR_HELPER) installation failed!"; return 1; }
-    print_success "AUR helper ($AUR_HELPER) installed!"
+    if $SUDO_CMD pacman -S --needed --noconfirm "$AUR_HELPER"; then
+        print_success "AUR helper ($AUR_HELPER) installed!"
+    else
+        print_warning "AUR helper ($AUR_HELPER) failed to install (needs Chaotic-AUR), continuing without it"
+    fi
 
     # ── KDE Plasma Core (required — fails the step if nothing installs) ───────
     install_group_required "KDE Plasma Core" \
@@ -574,7 +587,6 @@ finalize_system() {
     print_step "Enabling conditional services..."
     enable_if_installed power-profiles-daemon
     enable_if_installed switcheroo-control
-    { [[ "$FILESYSTEM" == "btrfs" ]] && enable_service_if_available grub-btrfsd; } || true
     print_success "Conditional services processed!"
 
     # ── GPU tools (separate transaction to avoid rollback contamination) ───────
@@ -786,6 +798,39 @@ EOF
     print_success "sddm.service enabled!"
 }
 
+# ── Step H: Btrfs snapshots ───────────────────────────────────────────────────
+
+# Last on purpose: snap-pac's hooks snapshot every pacman transaction from
+# here on, so installing it earlier would leave one pair per package group.
+enable_snapshots() {
+    print_step "Installing snap-pac..."
+    # SNAP_PAC_SKIP: its own post hook would otherwise fire without a pre snapshot
+    $SUDO_CMD env SNAP_PAC_SKIP=y pacman -S --needed --noconfirm snap-pac \
+        && print_success "snap-pac installed, every pacman transaction now gets a snapshot pair" \
+        || print_warning "snap-pac failed to install (non-critical)"
+
+    # Mirrors xen-installer's finalize: restore grub-btrfs's detection script
+    # (disabled by xero-install.sh), take one permanent snapshot of the
+    # finished system, then regenerate grub.cfg so it is in the boot menu.
+    local script="/etc/grub.d/41_snapshots-btrfs"
+    if [[ -f "$script.xero-disabled" ]]; then
+        $SUDO_CMD mv "$script.xero-disabled" "$script"
+        $SUDO_CMD chmod 755 "$script"
+    fi
+
+    print_step "Taking the Fresh installation snapshot..."
+    if $SUDO_CMD snapper --no-dbus -c root create --description "Fresh installation"; then
+        print_success "Snapshot created!"
+    else
+        print_warning "Could not create the snapshot (non-critical)"
+    fi
+
+    print_step "Adding snapshots to the GRUB menu..."
+    $SUDO_CMD grub-mkconfig -o /boot/grub/grub.cfg \
+        && print_success "GRUB snapshots menu ready!" \
+        || print_warning "grub-mkconfig had errors, the menu updates on the next snapshot"
+}
+
 # ── Completion ────────────────────────────────────────────────────────────────
 
 show_completion() {
@@ -820,6 +865,10 @@ kde_step_funcs=(
     copy_skel_to_user
     select_login_manager
 )
+if [[ "$FILESYSTEM" == "btrfs" ]]; then
+    kde_step_labels+=("Enabling Btrfs snapshots")
+    kde_step_funcs+=(enable_snapshots)
+fi
 kde_total_steps=${#kde_step_labels[@]}
 for kde_step_i in "${!kde_step_labels[@]}"; do
     # No `set -e` in this script, so a failed step would otherwise fall

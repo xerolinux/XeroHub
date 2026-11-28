@@ -1,114 +1,11 @@
-# ✨ Xero Arch Installer v1.9.1
+# Xero T.U.I
 
-A beautiful, streamlined Arch Linux installer designed by XeroLinux with a modern TUI.
+![Xero T.U.I installing XeroLinux in a terminal](https://xerolinux.xyz/media/xero-tui.webp)
 
-Installs XeroLinux exactly as the official ISO does (KDE Plasma), with more configuration
-options than the ISO installer offers. Intended for experienced Arch/Linux users - not
-beginner-friendly.
+A terminal installer that turns the Arch Linux live ISO into the full XeroLinux KDE Plasma desktop, the same destination as the official ISO, with more options: auto or manual partitioning, Btrfs, ext4 or XFS, LUKS2 encryption of root or root and boot, graphics drivers for Intel, AMD, NVIDIA and VMs, ZRAM or a swap file, an extra kernel, and optional apps picked up front. It uses SDDM rather than Plasma Login Manager for compatibility. Meant for experienced Arch users.
 
-![Screenshot](https://i.imgur.com/vl5hMAF.png)
-
-![Xero Arch Installer](https://img.shields.io/badge/version-1.9.1-blue)
-![License](https://img.shields.io/badge/license-GPL--3.0-green)
-
-## Features
-
-- 💾 **Flexible Disk Setup** - Support for BTRFS, EXT4, and XFS
-- 🔒 **LUKS2 Encryption** - Optional encryption with root-only or root+boot
-- 🎮 **Graphics Drivers** - Easy selection for NVIDIA, AMD, Intel, or VMs
-- 🔄 **Smart Swap** - ZRAM with compression or traditional swap file
-- 📦 **AUR Helper Choice** - Select paru or yay from the main installer menu
-- 🚀 **Automated KDE Setup** - Runs XeroLinux KDE installer in chroot
-
-## Quick Start
-
-Boot into the Arch Linux live ISO and run the following command :
+Boot the [Arch ISO](https://archlinux.org/download/), get online, then run:
 
 ```bash
 bash <(curl -fsSL https://urls.xerolinux.xyz/xeroinstall)
 ```
-
-## What Gets Installed
-
-### Base System
-
-- Linux kernel + headers
-- GRUB bootloader + XeroLayan theme
-- Essential system utilities
-- NetworkManager (wpa_supplicant backend)
-
-### After Base Install
-
-The installer automatically runs the XeroLinux KDE script which installs:
-
-- KDE Plasma Desktop (full curated selection)
-- SDDM with XeroDark theme
-- XeroLinux packages and configurations
-- AUR helper of your choice (paru or yay)
-- Optional: browsers, social apps, creative tools, office suite
-
-## Requirements
-
-- Arch Linux live ISO (latest recommended)
-- Internet connection
-- UEFI or BIOS system
-- At least 20GB disk space
-
-## Troubleshooting
-
-### No internet connection
-```bash
-# For WiFi
-iwctl
-[iwd]# device list
-[iwd]# station wlan0 scan
-[iwd]# station wlan0 get-networks
-[iwd]# station wlan0 connect "NetworkName"
-
-# For Ethernet
-dhcpcd
-```
-
-### Installer won't start
-
-```bash
-# Install gum manually
-pacman -Sy gum
-
-# Run installer directly
-bash xero-install.sh
-```
-
-## Customization
-
-### Adding Packages
-
-Modify the `install_base_system()` function in `xero-install.sh` to add packages to the base install, or the relevant `install_group()` call in `xero-kde.sh` for KDE-stage packages.
-
-## Version History
-
-| Version | Highlights |
-|---------|------------|
-| **v1.9.1** | Removed Hyprland + Noctalia support - KDE-only, matches the official ISO |
-| **v1.9** | Added Hyprland + Noctalia (later removed in v1.9.1) & expanded BTRFS pre-configured with Snapper + Grub-BTRFS |
-| **v1.8** | AUR helper moved to main menu; SDDM + XeroDark as default; duplicate package and function cleanup |
-| **v1.7** | Manual partitioning mode, dual-boot EFI reuse support, filesystem and encryption choice in manual mode |
-| **v1.6** | Parallel downloads option, pacman tweaks (Color, ILoveCandy, VerbosePkgLists), misc bug fixes, faster installs |
-| **v1.5** | Larger boot partition, trimmed package list, simplified connectivity check |
-| **v1.4** | All package prompts merged into one screen, leaner default selection |
-| **v1.3** | LUKS2 encryption, choose root-only or root+boot encryption scope |
-| **v1.0** | Initial release — BTRFS, LUKS, GPU drivers, ZRAM |
-
-## Credits
-
-- [archinstall](https://github.com/archlinux/archinstall) - Inspiration and logic reference
-- [gum](https://github.com/charmbracelet/gum) - Beautiful TUI components
-- [XeroLinux](https://xerolinux.xyz) - Distribution and KDE configuration
-
-## License
-
-GPL-3.0 License - See [LICENSE](LICENSE) for details.
-
----
-
-Made with ❤️ by the XeroLinux Team
